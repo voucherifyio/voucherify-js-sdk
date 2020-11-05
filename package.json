@@ -1,0 +1,24 @@
+{
+  "name": "voucherify-js-sdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/voucherifyio/voucherify-js-sdk.git",
+  "author": "Eddy Wilson <eddyw@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@types/node-fetch": "^2.5.7",
+    "bili": "^5.0.5",
+    "core-js-pure": "3.6.5",
+    "lerna": "^3.22.1",
+    "node-fetch": "^2.6.1",
+    "rollup-plugin-filesize": "^9.0.2",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.3",
+    "whatwg-fetch": "^3.4.1"
+  },
+  "dependencies": {
+    "qs": "^6.9.4"
+  }
+}

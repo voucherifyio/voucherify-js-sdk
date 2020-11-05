@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"module": "esnext",
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"strict": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"removeComments": true,
+		"declaration": true,
+		"declarationMap": true,
+		"declarationDir": "typings",
+		"newLine": "lf",
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true,
+		"paths": {
+			"@voucherify/core": [
+				"../core/lib"
+			],
+			"@voucherify/manager": [
+				"../manager/lib"
+			],
+			"@voucherify/widget": [
+				"../widget/lib"
+			],
+			"@voucherify/client": [
+				"../client/lib"
+			],
+		}
+	}
+}

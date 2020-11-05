@@ -1,0 +1,31 @@
+{
+  "name": "@voucherify/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/voucherifyio/voucherify-js-sdk#readme",
+  "license": "MIT",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voucherifyio/voucherify-js-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/voucherifyio/voucherify-js-sdk/issues"
+  },
+  "devDependencies": {
+    "typedoc": "^0.19.2"
+  }
+}
