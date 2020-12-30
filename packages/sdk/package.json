@@ -1,0 +1,44 @@
+{
+	"name": "@voucherify/sdk",
+	"version": "0.0.1",
+	"description": "Official Voucherify SDK",
+	"author": "Voucherify",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/voucherifyio/voucherify-js-sdk.git",
+		"directory": "packages/sdk"
+	},
+	"bugs": {
+		"url": "https://github.com/voucherifyio/voucherify-js-sdk/issues",
+		"email": "support@voucherify.io"
+	},
+	"keywords": [
+		"Voucherify"
+	],
+	"main": "dist/index.js",
+	"module": "dist/sdk.esm.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"README.md",
+		"dist"
+	],
+	"scripts": {
+		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node",
+		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
+		"test": "tsdx test",
+		"lint": "tsdx lint src",
+		"prepublish": "yarn build"
+	},
+	"dependencies": {
+		"axios": "0.21.1",
+		"lodash": "4.17.20",
+		"lodash-es": "4.17.20"
+	},
+	"devDependencies": {
+		"@types/lodash": "4.14.166"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

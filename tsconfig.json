@@ -1,0 +1,25 @@
+{
+	"extends": "./tsconfig.build.json",
+	"include": [
+		"packages",
+		"types",
+	],
+	"compilerOptions": {
+		"allowJs": false,
+		"baseUrl": ".",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noEmit": true,
+		"typeRoots": [
+			"./node_modules/@types",
+			"./types"
+		],
+		"paths": {
+			"@voucherify/sdk": [
+				"packages/sdk/src"
+			],
+		}
+	}
+}

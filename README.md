@@ -1,1 +1,0 @@
-# voucherify-js-sdk
