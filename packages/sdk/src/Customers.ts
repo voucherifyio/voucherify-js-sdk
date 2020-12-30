@@ -1,35 +1,31 @@
 import omit from 'lodash/omit'
 import { encode } from './helpers'
+import { Customers } from './types/Customers'
 import type { RequestController } from './RequestController'
 
-interface CustomersScrollParams {
-	starting_after?: string
-	order?: 'created_at' | '-created_at'
-}
-export class Customers {
+class Customers {
 	constructor(private client: RequestController) {}
 
-	create(customer: $FixMe) {
-		return this.client.post('/customers', customer)
+	create(customer: Customers.Create.Body) {
+		return this.client.post<Customers.Create.Response>('/customers', customer)
 	}
 	get(customerId: string) {
-		return this.client.get(`/customers/${encode(customerId)}`)
+		return this.client.get<Customers.Get.Response>(`/customers/${encode(customerId)}`)
 	}
-	list(params?: $FixMe) {
-		return this.client.get('/customers', params)
+	list(params: Customers.List.Params) {
+		return this.client.get<Customers.List.Response>('/customers', params)
 	}
-	async *scroll(params: CustomersScrollParams = {}) {
+	async *scroll(params: Customers.Scroll.Params): AsyncGenerator<Customers.Scroll.Yield, void, Customers.Scroll.Yield> {
 		let startingAfter =
 			params.starting_after ?? (params.order === 'created_at' ? '1970-01-01T00:00:00Z' : '2200-01-01T00:00:00Z')
-		let response = await this.client.get<$FixMe>(
+		let response = await this.client.get<Customers.Scroll.Response>(
 			'/customers',
 			Object.assign({}, params, { starting_after: startingAfter }),
 		)
 
-		while (true) {
-			if (response.customers.length === 0) {
-				break
-			}
+		loop: while (true) {
+			if (response.customers.length === 0) break loop
+
 			for (const customer of response.customers) {
 				if (params.order === 'created_at') {
 					startingAfter = startingAfter > customer.created_at ? startingAfter : customer.created_at
@@ -38,9 +34,8 @@ export class Customers {
 				}
 				yield customer
 			}
-			if (!response.has_more) {
-				break
-			}
+
+			if (!response.has_more) break loop
 
 			response = await this.client.get(
 				'/customers',
@@ -50,13 +45,17 @@ export class Customers {
 			)
 		}
 	}
-	update(customer: $FixMe) {
-		return this.client.put(`/customers/${encode(customer.id || customer.source_id)}`, omit(customer, ['id']))
+	update(customer: Customers.Update.Params) {
+		const id = 'id' in customer ? customer.id : customer.source_id
+		return this.client.put<Customers.Update.Response>(`/customers/${encode(id)}`, omit(customer, ['id']))
 	}
 	delete(customerId: string) {
-		return this.client.delete(`/customers/${encode(customerId)}`)
+		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
 	}
-	updateConsents(customer: $FixMe, consents: $FixMe) {
-		return this.client.put(`/customers/${encode(customer.id || customer.source_id)}/consents`, consents)
+	updateConsents(customer: Customers.UpdateConsents.Params, consents: Customers.UpdateConsents.Consents) {
+		const id = 'id' in customer ? customer.id : customer.source_id
+		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
 	}
 }
+
+export { Customers }
