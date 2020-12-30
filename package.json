@@ -27,10 +27,8 @@
 		"changeset:code": "EDITOR=\"code --wait \" changeset",
 		"changeset:empty": "changeset --empty",
 		"changeset:status": "changeset status",
-		"stable:version": "changeset version",
-		"stable:release": "changeset publish",
-		"canary:version": "changeset version --snapshot canary",
-		"canary:release": "changeset publish --tag canary"
+		"pkg:version": "changeset version",
+		"pkg:release": "changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "0.2.7",
