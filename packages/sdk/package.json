@@ -28,7 +28,7 @@
 		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
 		"test": "tsdx test",
 		"lint": "tsdx lint src",
-		"prepublish": "npm run build"
+		"prepublish": "yarn build"
 	},
 	"dependencies": {
 		"axios": "0.21.1",
