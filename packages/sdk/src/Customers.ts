@@ -23,8 +23,8 @@ class Customers {
 			Object.assign({}, params, { starting_after: startingAfter }),
 		)
 
-		loop: while (true) {
-			if (response.customers.length === 0) break loop
+		while (true) {
+			if (response.customers.length === 0) break
 
 			for (const customer of response.customers) {
 				if (params.order === 'created_at') {
@@ -35,7 +35,7 @@ class Customers {
 				yield customer
 			}
 
-			if (!response.has_more) break loop
+			if (!response.has_more) break
 
 			response = await this.client.get(
 				'/customers',
