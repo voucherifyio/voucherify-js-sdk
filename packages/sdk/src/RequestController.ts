@@ -15,6 +15,7 @@ interface RequestControllerHeaders {
 	'X-App-Token': string
 	'X-Voucherify-Channel': string
 	'X-Voucherify-API-Version'?: string
+	'Content-Type': 'application/json'
 }
 
 export class RequestController {
@@ -31,6 +32,7 @@ export class RequestController {
 			'X-App-Id': applicationId,
 			'X-App-Token': clientSecretKey,
 			'X-Voucherify-Channel': channel || `${environment()}-SDK-v${__VERSION__}`,
+			'Content-Type': 'application/json',
 		}
 
 		if (apiVersion) {
@@ -40,6 +42,7 @@ export class RequestController {
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/v1/`,
 			headers: this.headers,
+			responseType: 'json',
 		})
 		this.request.interceptors.response.use(void 0, (error: AxiosError<unknown>) => {
 			if (error?.response?.status) {
