@@ -4,16 +4,16 @@ import type { RequestController } from './RequestController'
 export class Redemptions {
 	constructor(private client: RequestController) {}
 
-	redeem(code: string, body?: $FixMe) {
+	public redeem(code: string, body?: $FixMe) {
 		return this.client.post(`/vouchers/${encode(code)}/redemption`, body ?? {})
 	}
-	list(params?: $FixMe) {
+	public list(params?: $FixMe) {
 		return this.client.get('/redemptions', params)
 	}
-	getForVoucher(code: string) {
+	public getForVoucher(code: string) {
 		return this.client.get(`/vouchers/${encode(code)}/redemption`)
 	}
-	rollback(redemptionId: string, params?: $FixMe) {
+	public rollback(redemptionId: string, params?: $FixMe) {
 		let qs: $FixMe = {}
 		let payload: $FixMe = {}
 

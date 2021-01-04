@@ -1,10 +1,14 @@
-// eslint-disable no-restricted-globals
-
 export function encode(value: string = '') {
 	return encodeURIComponent(value)
 }
+export function isNumber(value: any): value is number {
+	return typeof value === 'number' && value === value
+}
 export function isString(value: any): value is string {
 	return typeof value === 'string'
+}
+export function isOptionalString(value: any): value is string | undefined {
+	return value == null || isString(value)
 }
 export function isObject<T extends Record<string, any> = Record<string, any>>(value: any): value is T {
 	return typeof value === 'object' && !Array.isArray(value) && value !== null
