@@ -16,6 +16,7 @@
 	"keywords": [
 		"Voucherify"
 	],
+	"sideEffects": false,
 	"main": "dist/index.js",
 	"module": "dist/sdk.esm.js",
 	"typings": "dist/index.d.ts",
@@ -27,7 +28,7 @@
 		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node",
 		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
 		"test": "tsdx test",
-		"lint": "tsdx lint src",
+		"lint": "yarn tsc --noEmit -p ./tsconfig.build.json && tsdx lint src",
 		"prepublish": "yarn build"
 	},
 	"dependencies": {

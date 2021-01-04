@@ -1,21 +1,48 @@
-import { isObject, isString, isNumber, assert } from './helpers'
+import { isObject, isString, isNumber, assert, toQueryParams, isOptionalObject, isOptionalString } from './helpers'
 import type { RequestController } from './RequestController'
 
 export class ClientSide {
 	constructor(private client: RequestController, private trackingId?: string) {}
 
+	public setIdentity(identity?: string) {
+		this.trackingId = identity
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference/#vouchers-validate
 	 */
-	public validate(_params: $FixMe) {
-		/**
-		 * @todo mismatch in API reference and voucherify.js (client) code,
-		 * e.g:
-		 * - code accepts `orderMetadata` but it isn't documented
-		 * - there is `order.items` in documentation but not used in voucherify.js
-		 **/
-		throw Error('client.validate is not implemented yet')
+	public validate(params: $FixMe) {
+		assert(
+			isObject(params) || isString(params),
+			'client.validate: expected "params" argument to be an object or a string',
+		)
+
+		const query: Record<string, unknown> = {}
+
+		if (isString(params)) {
+			query.code = params
+		} else {
+			query.code = params.code
+			query.item = params.items
+			query.amount = params.amount
+			query.metadata = params.metadata
+			query.order = { metadata: params.orderMetadata }
+			query.customer = params.customer
+			query.trackingId = this.trackingId
+		}
+
+		assert(isOptionalObject(query?.customer), 'client.validate: expected "params.customer" to be an object')
+		assert(isOptionalString(query?.customer?.source_id), 'client.validate: expected "params.customer.source_id" to be a string') // prettier-ignore
+		assert(isOptionalObject(query?.customer?.metadata), 'client.validate: expected "params.customer.metadata" to be an object') // prettier-ignore
+
+		const queryParams = toQueryParams(query)
+
+		const path = query.code ? '/validate' : '/promotions/validation'
+
+		return this.client.get(path, queryParams)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference#redeem-voucher-client-side
+	 */
 	public redeem(code: string, payload: $FixMe = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
 		assert(isObject(payload), 'client.redeem - expected payload to be an object')
@@ -39,9 +66,9 @@ export class ClientSide {
 
 		return this.client.post<$FixMe>('/publish', payload, { campaign })
 	}
-	public listVouchers(filters?: $FixMe) {
-		return this.client.get<$FixMe>('/vouchers', filters)
-	}
+	/**
+	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
+	 */
 	public track(event_name: $FixMe, metadata: $FixMe, customer?: $FixMe) {
 		const payload: $FixMe = {
 			event: event_name,
