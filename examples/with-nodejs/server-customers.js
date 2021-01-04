@@ -1,9 +1,7 @@
-'use strict'
+// require('source-map-support').install()
+const { VoucherifyManager } = require('@voucherify/sdk')
 
-require('source-map-support').install()
-const voucherifyClient = require('../packages/sdk').default
-
-const voucherify = voucherifyClient({
+const voucherify = VoucherifyManager({
 	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',
 	clientSecretKey: '3266b9f8-e246-4f79-bdf0-833929b1380c',
 })
@@ -14,4 +12,4 @@ async function scrollCustomers() {
 	}
 }
 
-scrollCustomers().catch(err => console.error(err))
+scrollCustomers().catch(console.error)

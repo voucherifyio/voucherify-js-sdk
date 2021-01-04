@@ -4,13 +4,13 @@ import type { RequestController } from './RequestController'
 export class Segments {
 	constructor(private client: RequestController) {}
 
-	create(segment: $FixMe) {
+	public create(segment: $FixMe) {
 		return this.client.post('/segments', segment)
 	}
-	get(segmentId: string) {
+	public get(segmentId: string) {
 		return this.client.get(`/segments/${encode(segmentId)}`)
 	}
-	delete(segmentId: string) {
+	public delete(segmentId: string) {
 		return this.client.delete(`/segments/${encode(segmentId)}`)
 	}
 }

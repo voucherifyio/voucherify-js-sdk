@@ -1,13 +1,13 @@
 {
-	"name": "@voucherify/sdk",
+	"name": "react-widget",
 	"version": "0.0.1",
-	"description": "Official Voucherify SDK",
+	"description": "> TODO: description",
 	"author": "Voucherify",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/voucherifyio/voucherify-js-sdk.git",
-		"directory": "packages/sdk"
+		"directory": "packages/react-widget"
 	},
 	"bugs": {
 		"url": "https://github.com/voucherifyio/voucherify-js-sdk/issues",
@@ -18,28 +18,27 @@
 	],
 	"sideEffects": false,
 	"main": "dist/index.js",
-	"module": "dist/sdk.esm.js",
+	"module": "dist/react-widget.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",
 		"dist"
 	],
 	"scripts": {
-		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node",
-		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
+		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser",
+		"build": "tsdx build --tsconfig tsconfig.build.json --target browser",
 		"test": "tsdx test",
 		"lint": "yarn tsc --noEmit -p ./tsconfig.build.json && tsdx lint src",
 		"prepublish": "yarn build"
 	},
+	"peerDependencies": {
+		"react": "^16.8.0 || ^17.0.0",
+		"react-dom": "^16.8.0 || ^17.0.0"
+	},
 	"dependencies": {
-		"axios": "0.21.1",
-		"lodash": "4.17.20",
-		"lodash-es": "4.17.20"
+		"@voucherify/sdk": "^0.0.1"
 	},
 	"devDependencies": {
-		"@types/lodash": "4.14.166"
-	},
-	"publishConfig": {
-		"access": "public"
+		"@types/react": "^17.0.0"
 	}
 }

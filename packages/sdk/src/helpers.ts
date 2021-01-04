@@ -1,13 +1,22 @@
-// eslint-disable no-restricted-globals
-
 export function encode(value: string = '') {
 	return encodeURIComponent(value)
+}
+export function isNumber(value: any): value is number {
+	return typeof value === 'number' && value === value
 }
 export function isString(value: any): value is string {
 	return typeof value === 'string'
 }
+export function isOptionalString(value: any): value is string | undefined {
+	return value == null || isString(value)
+}
 export function isObject<T extends Record<string, any> = Record<string, any>>(value: any): value is T {
 	return typeof value === 'object' && !Array.isArray(value) && value !== null
+}
+export function isOptionalObject<T extends Record<string, any> = Record<string, any>>(
+	value: any,
+): value is T | null | undefined {
+	return value == null || isObject(value)
 }
 export function isFunction(value: any): value is Function {
 	return typeof value === 'function'
@@ -38,4 +47,29 @@ export function environment(): string {
 export function assert(condition: any, message?: string): asserts condition {
 	if (condition) return
 	throw new Error(message)
+}
+
+export function toQueryParams(obj: Record<string, unknown>): Record<string, string> {
+	const entries: [string, string][] = []
+
+	function mapToEntries(prefix: string | null, record: Record<string, unknown> | unknown[]) {
+		Object.entries(record).map(([key, val]) => {
+			if (val == null) return
+
+			switch (typeof val) {
+				case 'string':
+				case 'number':
+				case 'boolean':
+				case 'bigint':
+					if (prefix) return entries.push([`${prefix}[${key}]`, val.toString()])
+					return entries.push([key, val.toString()])
+				case 'object':
+					if (prefix) return mapToEntries(`${prefix}[${key}]`, <Record<string, unknown>>val)
+					return mapToEntries(key, <Record<string, unknown>>val)
+			}
+		})
+	}
+	mapToEntries(null, obj)
+
+	return Object.fromEntries(entries)
 }

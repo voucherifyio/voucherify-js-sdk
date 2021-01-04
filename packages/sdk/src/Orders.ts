@@ -5,16 +5,16 @@ import type { RequestController } from './RequestController'
 export class Orders {
 	constructor(private client: RequestController) {}
 
-	create(order: $FixMe) {
+	public create(order: $FixMe) {
 		return this.client.post('/orders', order)
 	}
-	get(orderId: $FixMe) {
+	public get(orderId: $FixMe) {
 		return this.client.get(`/orders/${encode(orderId)}`)
 	}
-	update(order: $FixMe) {
+	public update(order: $FixMe) {
 		return this.client.put(`/orders/${encode(order.id || order.source_id)}`, omit(order, ['id']))
 	}
-	list(params: $FixMe) {
+	public list(params: $FixMe) {
 		return this.client.get('/orders', params)
 	}
 }

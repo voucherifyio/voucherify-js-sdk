@@ -20,6 +20,7 @@
 		"resolveJsonModule": true,
 		"useDefineForClassFields": true,
 		"forceConsistentCasingInFileNames": true,
-		"downlevelIteration": true
+		"downlevelIteration": true,
+		"removeComments": true,
 	}
 }

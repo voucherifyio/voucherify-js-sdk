@@ -1,5 +1,6 @@
 module.exports = {
-	parser: '@typescript-eslint/parser',
+	parser: require.resolve('@typescript-eslint/parser'),
+	plugins: ['@typescript-eslint'],
 	extends: ['prettier/@typescript-eslint', 'plugin:prettier/recommended'],
 	globals: {
 		__DEV__: 'readonly',
@@ -21,6 +22,10 @@ module.exports = {
 	rules: {
 		'@typescript-eslint/consistent-type-assertions': 'off',
 		'@typescript-eslint/no-redeclare': 'off',
+		'@typescript-eslint/explicit-member-accessibility': [
+			'error',
+			{ accessibility: 'explicit', overrides: { constructors: 'no-public' } },
+		],
 	},
 	ignorePatterns: ['dist', 'node_modules'],
 }

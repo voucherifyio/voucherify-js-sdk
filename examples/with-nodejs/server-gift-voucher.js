@@ -1,9 +1,7 @@
-'use strict'
+// require('source-map-support').install()
+const { VoucherifyManager } = require('@voucherify/sdk')
 
-require('source-map-support').install()
-const voucherifyClient = require('../packages/sdk').default
-
-const voucherify = voucherifyClient({
+const voucherify = VoucherifyManager({
 	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',
 	clientSecretKey: '3266b9f8-e246-4f79-bdf0-833929b1380c',
 })
@@ -17,13 +15,13 @@ voucherify.vouchers
 			amount: 10000,
 		},
 		category: 'Node SDK Test',
-		start_date: '2016-01-01T00:00:00Z',
-		expiration_date: '2016-12-31T23:59:59Z',
+		start_date: '2021-01-01T00:00:00Z',
+		expiration_date: '2021-12-31T23:59:59Z',
 	})
 	.then(function (result) {
 		console.log('Voucher %s created. Redeeming...', result.code)
 		voucherCode = result.code
-		return voucherify.redemptions.redeem({ voucher: result.code, order: { amount: 5000 } }, 'tester')
+		return voucherify.redemptions.redeem(result.code, { order: { amount: 5000 } }, 'tester')
 	})
 	.then(function (result) {
 		console.log('Voucher %s redeemed. Redemption id: %s, Rolling back...', result.voucher.code, result.id)
@@ -38,5 +36,5 @@ voucherify.vouchers
 		console.log('Voucher %s deleted. Result: %j', voucherCode, result)
 	})
 	.catch(function (error) {
-		console.error('Error: %s', error)
+		console.error(error)
 	})

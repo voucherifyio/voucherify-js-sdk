@@ -4,10 +4,10 @@ import type { Exports } from './Exports'
 class DistributionsPublications {
 	constructor(private client: RequestController) {}
 
-	list(params: $FixMe) {
+	public list(params: $FixMe) {
 		return this.client.get('/publications', params)
 	}
-	create(params: $FixMe) {
+	public create(params: $FixMe) {
 		return this.client.post('/publications', params)
 	}
 }
@@ -18,7 +18,7 @@ export class Distributions {
 		this.publications = new DistributionsPublications(this.client)
 	}
 
-	publish(params: $FixMe) {
+	public publish(params: $FixMe) {
 		return this.client.post('/vouchers/publish', params)
 	}
 }

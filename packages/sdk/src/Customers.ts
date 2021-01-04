@@ -6,16 +6,18 @@ import type { RequestController } from './RequestController'
 class Customers {
 	constructor(private client: RequestController) {}
 
-	create(customer: Customers.Create.Body) {
+	public create(customer: Customers.Create.Body) {
 		return this.client.post<Customers.Create.Response>('/customers', customer)
 	}
-	get(customerId: string) {
+	public get(customerId: string) {
 		return this.client.get<Customers.Get.Response>(`/customers/${encode(customerId)}`)
 	}
-	list(params: Customers.List.Params) {
+	public list(params: Customers.List.Params) {
 		return this.client.get<Customers.List.Response>('/customers', params)
 	}
-	async *scroll(params: Customers.Scroll.Params): AsyncGenerator<Customers.Scroll.Yield, void, Customers.Scroll.Yield> {
+	public async *scroll(
+		params: Customers.Scroll.Params,
+	): AsyncGenerator<Customers.Scroll.Yield, void, Customers.Scroll.Yield> {
 		let startingAfter =
 			params.starting_after ?? (params.order === 'created_at' ? '1970-01-01T00:00:00Z' : '2200-01-01T00:00:00Z')
 		let response = await this.client.get<Customers.Scroll.Response>(
@@ -45,14 +47,14 @@ class Customers {
 			)
 		}
 	}
-	update(customer: Customers.Update.Params) {
+	public update(customer: Customers.Update.Params) {
 		const id = 'id' in customer ? customer.id : customer.source_id
 		return this.client.put<Customers.Update.Response>(`/customers/${encode(id)}`, omit(customer, ['id']))
 	}
-	delete(customerId: string) {
+	public delete(customerId: string) {
 		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
 	}
-	updateConsents(customer: Customers.UpdateConsents.Params, consents: Customers.UpdateConsents.Consents) {
+	public updateConsents(customer: Customers.UpdateConsents.Params, consents: Customers.UpdateConsents.Consents) {
 		const id = 'id' in customer ? customer.id : customer.source_id
 		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
 	}
