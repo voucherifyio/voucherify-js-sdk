@@ -1,0 +1,44 @@
+{
+	"name": "react-widget",
+	"version": "0.0.1",
+	"description": "> TODO: description",
+	"author": "Voucherify",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/voucherifyio/voucherify-js-sdk.git",
+		"directory": "packages/react-widget"
+	},
+	"bugs": {
+		"url": "https://github.com/voucherifyio/voucherify-js-sdk/issues",
+		"email": "support@voucherify.io"
+	},
+	"keywords": [
+		"Voucherify"
+	],
+	"sideEffects": false,
+	"main": "dist/index.js",
+	"module": "dist/react-widget.esm.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"README.md",
+		"dist"
+	],
+	"scripts": {
+		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser",
+		"build": "tsdx build --tsconfig tsconfig.build.json --target browser",
+		"test": "tsdx test",
+		"lint": "yarn tsc --noEmit -p ./tsconfig.build.json && tsdx lint src",
+		"prepublish": "yarn build"
+	},
+	"peerDependencies": {
+		"react": "^16.8.0 || ^17.0.0",
+		"react-dom": "^16.8.0 || ^17.0.0"
+	},
+	"dependencies": {
+		"@voucherify/sdk": "^0.0.1"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.0"
+	}
+}
