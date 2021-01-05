@@ -11,9 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 500
+          # Fetch Git history so that Changesets can generate changelogs with the correct commits
+          # - A value of 0 will fetch all Git history, this can get slow as the history grows
+          # - Set a reasonable value of the number of commits you want to fetch from Git history (e.g: last 50 commits)
+          # - Adjust this value if necessary once we have stable releases
+          fetch-depth: 100
 
-      - name: Setup Node.js 14.x
+      - name: Setup Node.js 14.x And npm Org
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
