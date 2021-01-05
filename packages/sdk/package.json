@@ -28,7 +28,10 @@
 		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node",
 		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
 		"test": "tsdx test",
-		"lint": "yarn tsc --noEmit -p ./tsconfig.build.json && tsdx lint src",
+		"lint": "yarn lint:ts && yarn lint:eslint",
+		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
+		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
+		"lint:eslint:fix": "eslint './src/**/*.{ts,tsx,js,d.ts}' --fix",
 		"prepublish": "yarn build"
 	},
 	"dependencies": {

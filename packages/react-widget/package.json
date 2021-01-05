@@ -28,7 +28,10 @@
 		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser",
 		"build": "tsdx build --tsconfig tsconfig.build.json --target browser",
 		"test": "tsdx test",
-		"lint": "yarn tsc --noEmit -p ./tsconfig.build.json && tsdx lint src",
+		"lint": "yarn lint:ts && yarn lint:eslint",
+		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
+		"lint:eslint": "eslint './**/*.{ts,tsx,js,d.ts}'",
+		"lint:eslint:fix": "eslint './**/*.{ts,tsx,js,d.ts}' --fix",
 		"prepublish": "yarn build"
 	},
 	"peerDependencies": {
@@ -36,9 +39,9 @@
 		"react-dom": "^16.8.0 || ^17.0.0"
 	},
 	"dependencies": {
-		"@voucherify/sdk": "^0.0.1"
+		"@voucherify/sdk": "0.0.1"
 	},
 	"devDependencies": {
-		"@types/react": "^17.0.0"
+		"@types/react": "^17.0.1"
 	}
 }
