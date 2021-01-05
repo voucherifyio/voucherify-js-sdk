@@ -1,7 +1,7 @@
 module.exports = {
-	parser: require.resolve('@typescript-eslint/parser'),
+	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
-	extends: ['prettier/@typescript-eslint', 'plugin:prettier/recommended'],
+	extends: ['react-app', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
 	globals: {
 		__DEV__: 'readonly',
 		__VERSION__: 'readonly',
