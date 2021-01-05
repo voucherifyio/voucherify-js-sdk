@@ -1,3 +1,0 @@
----
----
-- enable changesets and GitHub action for automatic versioning and releases
