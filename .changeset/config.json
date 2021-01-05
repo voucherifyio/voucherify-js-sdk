@@ -7,9 +7,14 @@
 		}
 	],
 	"commit": false,
-	"linked": [],
-	"access": "restricted",
-	"baseBranch": "master",
+	"linked": [
+		[
+			"@voucherify/sdk",
+			"@voucherify/react-widget"
+		]
+	],
+	"access": "public",
+	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
 	"ignore": []
 }
