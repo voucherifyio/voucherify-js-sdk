@@ -19,9 +19,11 @@
 	"scripts": {
 		"lerna": "lerna",
 		"start": "lerna run start --stream --parallel",
-		"lint": "lerna run lint",
-		"lint:fix": "lerna run lint -- --fix",
 		"build": "lerna run build",
+		"lint": "lerna run lint",
+		"lint:ts": "lerna run lint:ts",
+		"lint:eslint": "lerna run lint:eslint",
+		"lint:eslint:fix": "lerna run lint:eslint:fix",
 		"prepublish": "lerna run prepublish",
 		"changeset": "changeset",
 		"changeset:code": "EDITOR=\"code --wait \" changeset",
