@@ -21,6 +21,6 @@
 		"useDefineForClassFields": true,
 		"forceConsistentCasingInFileNames": true,
 		"downlevelIteration": true,
-		"removeComments": true,
+		"removeComments": false,
 	}
 }
