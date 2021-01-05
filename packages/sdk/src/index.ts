@@ -1,2 +1,2 @@
-export * from './VoucherifyManager'
-export * from './VoucherifyCustomer'
+export * from './VoucherifyServerSide'
+export * from './VoucherifyClientSide'

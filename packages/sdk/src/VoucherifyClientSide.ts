@@ -2,7 +2,7 @@ import { RequestController } from './RequestController'
 import { ClientSide } from './ClientSide'
 import { assert, isObject, isString, isOptionalString, environment } from './helpers'
 
-export interface VoucherifyCustomer {
+export interface VoucherifyClientSideOptions {
 	applicationId: string
 	clientToken: string
 	baseUrl?: string
@@ -15,7 +15,7 @@ export interface VoucherifyCustomerHeaders {
 	'X-Voucherify-Channel'?: string
 	origin?: string
 }
-export function VoucherifyCustomer(options: VoucherifyCustomer) {
+export function VoucherifyClientSide(options: VoucherifyClientSideOptions) {
 	assert(isObject(options), 'VoucherifyCustomer: expected "options" argument to be an object')
 	assert(isString(options.applicationId), 'VoucherifyCustomer: "options.applicationId" is required')
 	assert(isString(options.clientToken), 'VoucherifyCustomer: "options.clientToken" is required')
