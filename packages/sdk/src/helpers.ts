@@ -2,6 +2,7 @@ export function encode(value: string = '') {
 	return encodeURIComponent(value)
 }
 export function isNumber(value: any): value is number {
+	// eslint-disable-next-line no-self-compare
 	return typeof value === 'number' && value === value
 }
 export function isString(value: any): value is string {
@@ -28,7 +29,7 @@ export function exists<T extends any>(value: T): value is NonNullable<T> {
 export function environment(): string {
 	if (typeof window !== 'undefined' && typeof window.document !== 'undefined') {
 		return 'Browser'
-		/* eslint-disable-next-line no-restricted-globals */
+		// eslint-disable-next-line no-restricted-globals
 	} else if (typeof self === 'object' && self.constructor && self.constructor.name === 'DedicatedWorkerGlobalScope') {
 		return 'WebWorker'
 	} else if (typeof process !== 'undefined' && process.versions != null && process.versions.node != null) {
@@ -54,7 +55,7 @@ export function toQueryParams(obj: Record<string, unknown>): Record<string, stri
 
 	function mapToEntries(prefix: string | null, record: Record<string, unknown> | unknown[]) {
 		Object.entries(record).map(([key, val]) => {
-			if (val == null) return
+			if (val == null) return void 0
 
 			switch (typeof val) {
 				case 'string':
@@ -66,6 +67,8 @@ export function toQueryParams(obj: Record<string, unknown>): Record<string, stri
 				case 'object':
 					if (prefix) return mapToEntries(`${prefix}[${key}]`, <Record<string, unknown>>val)
 					return mapToEntries(key, <Record<string, unknown>>val)
+				default:
+					return void 0
 			}
 		})
 	}

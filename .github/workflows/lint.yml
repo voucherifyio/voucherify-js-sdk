@@ -1,13 +1,13 @@
 name: Lint
 on: [push]
 jobs:
-  lint:
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 500
+      - name: Check out Git repository
+        uses: actions/checkout@v2
 
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
@@ -18,7 +18,7 @@ jobs:
         uses: c-hive/gha-yarn-cache@v1
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-scripts
 
-      - name: Lint
+      - name: Lint TypeScript and eslint
         run: yarn lint

@@ -19,28 +19,28 @@ import { ValidationRules } from './ValidationRules'
 import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
 
-export interface VoucherifyManagerOptions {
+export interface VoucherifyServerSideOptions {
 	baseUrl?: string
 	applicationId: string
 	clientSecretKey: string
 	apiVersion?: string
 	channel?: string
 }
-export interface VoucherifyManagerHeaders {
+export interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
 	'X-App-Token': string
 	'X-Voucherify-Channel': string
 	'X-Voucherify-API-Version'?: string
 	'Content-Type': 'application/json'
 }
-export function VoucherifyManager(options: VoucherifyManagerOptions) {
+export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	assert(isObject(options), 'VoucherifyManager: the "options" argument must be an object')
 	assert(isString(options.applicationId), 'VoucherifyManager: "options.applicationId" is required')
 	assert(isString(options.clientSecretKey), 'VoucherifyManager: "options.clientSecretKey" is required')
 	assert(isOptionalString(options.apiVersion), 'VoucherifyManager: expected "options.apiVersion" to be a string')
 	assert(isOptionalString(options.channel), 'VoucherifyManager: expected "options.channel" to be a string')
 
-	const headers: VoucherifyManagerHeaders = {
+	const headers: VoucherifyServerSideHeaders = {
 		'X-App-Id': options.applicationId,
 		'X-App-Token': options.clientSecretKey,
 		'X-Voucherify-Channel': options.channel || `${environment()}-SDK-v${__VERSION__}`,

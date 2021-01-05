@@ -1,7 +1,7 @@
 // require('source-map-support').install()
-const { VoucherifyManager } = require('@voucherify/sdk')
+const { VoucherifyServerSide } = require('@voucherify/sdk')
 
-const voucherify = VoucherifyManager({
+const voucherify = VoucherifyServerSide({
 	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',
 	clientSecretKey: '3266b9f8-e246-4f79-bdf0-833929b1380c',
 	apiVersion: 'v2017-04-05',
