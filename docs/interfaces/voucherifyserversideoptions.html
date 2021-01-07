@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VoucherifyServerSideOptions | @voucherify/sdk - v0.0.3</title>
+	<meta name="description" content="Documentation for @voucherify/sdk - v0.0.3">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@voucherify/sdk - v0.0.3</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@voucherify/sdk - v0.0.3</a>
+				</li>
+				<li>
+					<a href="voucherifyserversideoptions.html">VoucherifyServerSideOptions</a>
+				</li>
+			</ul>
+			<h1>Interface VoucherifyServerSideOptions</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">VoucherifyServerSideOptions</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#apiurl" class="tsd-kind-icon">api<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#applicationid" class="tsd-kind-icon">application<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#channel" class="tsd-kind-icon">channel</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#dangerouslysetsecretkeyinbrowser" class="tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#secretkey" class="tsd-kind-icon">secret<wbr>Key</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="apiurl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> api<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Optionally, you can add <code>apiUrl</code> to the client options if you want to use Voucherify running in a specific region.</p>
+						</div>
+						<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span>
+<span style="color: #000000">})</span>
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="apiversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> api<wbr>Version</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Optionally, you can add <code>apiVersion</code> to the client options if you want to use a <a href="http://docs.voucherify.io/docs/api-version-upgrades?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq">specific API version</a>.</p>
+						</div>
+						<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">apiVersion:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;v2017-04-20&#039;</span>
+<span style="color: #000000">})</span>
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="applicationid" class="tsd-anchor"></a>
+					<h3>application<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">application<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="http://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/login">Log-in</a> to Voucherify web interface and obtain your <code>Application Keys</code> from <a href="https://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/app/configuration">Configuration</a>:</p>
+						</div>
+						<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span>
+<span style="color: #000000">})</span>
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="channel" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> channel</h3>
+					<div class="tsd-signature tsd-kind-icon">channel<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dangerouslysetsecretkeyinbrowser" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</h3>
+					<div class="tsd-signature tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set this option to disable displaying the warning about exposing your <code>secretKey</code> if you&#39;re using VoucherifyServerSide in a browser environment.
+							By setting this option to <code>true</code>, you acknowledge that you understand the risks of exposing your <code>secretKey</code> to a browser environment.</p>
+						</div>
+						<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">dangerouslySetSecretKeyInBrowser:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span>
+<span style="color: #000000">})</span>
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="secretkey" class="tsd-anchor"></a>
+					<h3>secret<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">secret<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="http://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/login">Log-in</a> to Voucherify web interface and obtain your <code>Application Keys</code> from <a href="https://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/app/configuration">Configuration</a>:</p>
+						</div>
+						<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span>
+<span style="color: #000000">})</span>
+</code></pre>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="../classes/balance.html" class="tsd-kind-icon">Balance</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/campaigns.html" class="tsd-kind-icon">Campaigns</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/clientside.html" class="tsd-kind-icon">Client<wbr>Side</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/consents.html" class="tsd-kind-icon">Consents</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/customers.html" class="tsd-kind-icon">Customers</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/distributions.html" class="tsd-kind-icon">Distributions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/events.html" class="tsd-kind-icon">Events</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/exports.html" class="tsd-kind-icon">Exports</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/loyalties.html" class="tsd-kind-icon">Loyalties</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/orders.html" class="tsd-kind-icon">Orders</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/products.html" class="tsd-kind-icon">Products</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/promotiontiers.html" class="tsd-kind-icon">Promotion<wbr>Tiers</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/promotions.html" class="tsd-kind-icon">Promotions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/redemptions.html" class="tsd-kind-icon">Redemptions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/requestcontroller.html" class="tsd-kind-icon">Request<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/rewards.html" class="tsd-kind-icon">Rewards</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/segments.html" class="tsd-kind-icon">Segments</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/validationrules.html" class="tsd-kind-icon">Validation<wbr>Rules</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/validations.html" class="tsd-kind-icon">Validations</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/voucherifyerror.html" class="tsd-kind-icon">Voucherify<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/vouchers.html" class="tsd-kind-icon">Vouchers</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="balancecreateparams.html" class="tsd-kind-icon">Balance<wbr>Create<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="customerobject.html" class="tsd-kind-icon">Customer<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="customerscommonlistresponse.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="voucherifyclientsideoptions.html" class="tsd-kind-icon">Voucherify<wbr>Client<wbr>Side<wbr>Options</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="voucherifyserversideoptions.html" class="tsd-kind-icon">Voucherify<wbr>Server<wbr>Side<wbr>Options</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#apiurl" class="tsd-kind-icon">api<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#applicationid" class="tsd-kind-icon">application<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#channel" class="tsd-kind-icon">channel</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#dangerouslysetsecretkeyinbrowser" class="tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#secretkey" class="tsd-kind-icon">secret<wbr>Key</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customerscreatebody" class="tsd-kind-icon">Customers<wbr>Create<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customerscreateresponse" class="tsd-kind-icon">Customers<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersgetresponse" class="tsd-kind-icon">Customers<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customerslistparams" class="tsd-kind-icon">Customers<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customerslistresponse" class="tsd-kind-icon">Customers<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersscrollparams" class="tsd-kind-icon">Customers<wbr>Scroll<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersscrollresponse" class="tsd-kind-icon">Customers<wbr>Scroll<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersscrollyield" class="tsd-kind-icon">Customers<wbr>Scroll<wbr>Yield</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersupdateconsentsbody" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersupdateconsentsparams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersupdateparams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#customersupdateresponse" class="tsd-kind-icon">Customers<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#voucherifyclientside" class="tsd-kind-icon">Voucherify<wbr>Client<wbr>Side</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#voucherifyserverside" class="tsd-kind-icon">Voucherify<wbr>Server<wbr>Side</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

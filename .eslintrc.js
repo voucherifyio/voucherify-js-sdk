@@ -27,5 +27,5 @@ module.exports = {
 			{ accessibility: 'explicit', overrides: { constructors: 'no-public' } },
 		],
 	},
-	ignorePatterns: ['dist', 'node_modules'],
+	ignorePatterns: ['dist', 'node_modules', 'docs'],
 }
