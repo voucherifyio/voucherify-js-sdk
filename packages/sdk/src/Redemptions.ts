@@ -4,15 +4,27 @@ import type { RequestController } from './RequestController'
 export class Redemptions {
 	constructor(private client: RequestController) {}
 
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher
+	 */
 	public redeem(code: string, body?: $FixMe) {
 		return this.client.post(`/vouchers/${encode(code)}/redemption`, body ?? {})
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
+	 */
 	public list(params?: $FixMe) {
 		return this.client.get('/redemptions', params)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions
+	 */
 	public getForVoucher(code: string) {
 		return this.client.get(`/vouchers/${encode(code)}/redemption`)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#rollback-redemption
+	 */
 	public rollback(redemptionId: string, params?: $FixMe) {
 		let qs: $FixMe = {}
 		let payload: $FixMe = {}

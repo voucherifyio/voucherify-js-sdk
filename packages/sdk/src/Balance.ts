@@ -1,10 +1,16 @@
+import * as T from './types/Balance'
 import { encode } from './helpers'
 import type { RequestController } from './RequestController'
 
 export class Balance {
 	constructor(private client: RequestController) {}
 
-	public create(code: $FixMe, params: $FixMe) {
+	/**
+	 * Add Gift Voucher Balance
+	 * This method gives a possibility to add balance to an existing gift voucher.
+	 * @see https://docs.voucherify.io/reference/#add-gift-voucher-balance
+	 */
+	public create(code: string, params: T.BalanceCreateParams) {
 		return this.client.post(`/vouchers/${encode(code)}/balance`, params)
 	}
 }

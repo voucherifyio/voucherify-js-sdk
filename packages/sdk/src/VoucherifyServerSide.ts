@@ -81,13 +81,30 @@ export interface VoucherifyServerSideOptions {
 	 */
 	dangerouslySetSecretKeyInBrowser?: boolean
 }
-export interface VoucherifyServerSideHeaders {
+interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
 	'X-App-Token': string
 	'X-Voucherify-Channel': string
 	'X-Voucherify-API-Version'?: string
 	'Content-Type': 'application/json'
 }
+// export interface VoucherifyServerSideNamespaces {
+// 	campaigns: Campaigns
+// 	consents: Consents
+// 	customers: Customers
+// 	distributions: Distributions
+// 	events: Events
+// 	loyalties: Loyalties
+// 	orders: Orders
+// 	products: Products
+// 	promotions: Promotions
+// 	redemptions: Redemptions
+// 	rewards: Rewards
+// 	segments: Segments
+// 	validationRules: ValidationRules
+// 	validations: Validations
+// 	vouchers: Vouchers
+// }
 export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	assert(isObject(options), 'VoucherifyServerSide: the "options" argument must be an object')
 	assert(isString(options.applicationId), 'VoucherifyServerSide: "options.applicationId" is required')

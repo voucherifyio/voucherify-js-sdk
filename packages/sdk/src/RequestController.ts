@@ -7,6 +7,9 @@ export interface RequestControllerOptions {
 	headers: Record<string, any>
 }
 
+/**
+ * @internal
+ */
 export class RequestController {
 	private baseURL: string
 	private basePath: string

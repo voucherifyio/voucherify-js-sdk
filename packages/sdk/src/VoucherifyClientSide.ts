@@ -2,6 +2,8 @@ import { RequestController } from './RequestController'
 import { ClientSide } from './ClientSide'
 import { assert, isObject, isString, isOptionalString, environment } from './helpers'
 
+export type { ClientSide }
+
 export interface VoucherifyClientSideOptions {
 	/**
 	 * Optionally, you can add `apiUrl` to the client options if you want to use Voucherify running in a specific region.
@@ -53,13 +55,13 @@ export interface VoucherifyClientSideOptions {
 	 */
 	origin?: string
 }
-export interface VoucherifyCustomerHeaders {
+interface VoucherifyCustomerHeaders {
 	'X-Client-Application-Id': string
 	'X-Client-Token': string
 	'X-Voucherify-Channel'?: string
 	origin?: string
 }
-export function VoucherifyClientSide(options: VoucherifyClientSideOptions) {
+export function VoucherifyClientSide(options: VoucherifyClientSideOptions): ClientSide {
 	assert(isObject(options), 'VoucherifyCustomer: expected "options" argument to be an object')
 	assert(isString(options.clientApplicationId), 'VoucherifyCustomer: "options.clientApplicationId" is required')
 	assert(isString(options.clientSecretKey), 'VoucherifyCustomer: "options.clientSecretKey" is required')
