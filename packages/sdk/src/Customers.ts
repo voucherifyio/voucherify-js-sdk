@@ -1,26 +1,46 @@
 import omit from 'lodash/omit'
 import { encode } from './helpers'
-import { Customers } from './types/Customers'
+import * as T from './types/Customers'
 import type { RequestController } from './RequestController'
 
 class Customers {
 	constructor(private client: RequestController) {}
 
-	public create(customer: Customers.Create.Body) {
-		return this.client.post<Customers.Create.Response>('/customers', customer)
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
+	 */
+	public create(customer: T.CustomersCreateBody) {
+		return this.client.post<T.CustomersCreateResponse>('/customers', customer)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
+	 */
 	public get(customerId: string) {
-		return this.client.get<Customers.Get.Response>(`/customers/${encode(customerId)}`)
+		return this.client.get<T.CustomersGetResponse>(`/customers/${encode(customerId)}`)
 	}
-	public list(params: Customers.List.Params) {
-		return this.client.get<Customers.List.Response>('/customers', params)
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers
+	 */
+	public list(params: T.CustomersListParams) {
+		return this.client.get<T.CustomersListResponse>('/customers', params)
 	}
+	/**
+	 * Standard list customers API has limitation of available pages to be shown equal to 100. To cover cases when you would like to fetch more, you must use scroll capabilities.
+	 *
+	 * ```javascript
+	 * async function () {
+	 *		for await (const customer of voucherify.customers.scroll(params)) {
+	 *			console.log('Customer', customer)
+	 *		}
+	 * }
+	 * ```
+	 */
 	public async *scroll(
-		params: Customers.Scroll.Params,
-	): AsyncGenerator<Customers.Scroll.Yield, void, Customers.Scroll.Yield> {
+		params: T.CustomersScrollParams,
+	): AsyncGenerator<T.CustomersScrollYield, void, T.CustomersScrollYield> {
 		let startingAfter =
 			params.starting_after ?? (params.order === 'created_at' ? '1970-01-01T00:00:00Z' : '2200-01-01T00:00:00Z')
-		let response = await this.client.get<Customers.Scroll.Response>(
+		let response = await this.client.get<T.CustomersScrollResponse>(
 			'/customers',
 			Object.assign({}, params, { starting_after: startingAfter }),
 		)
@@ -47,14 +67,23 @@ class Customers {
 			)
 		}
 	}
-	public update(customer: Customers.Update.Params) {
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
+	 */
+	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
-		return this.client.put<Customers.Update.Response>(`/customers/${encode(id)}`, omit(customer, ['id']))
+		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, omit(customer, ['id']))
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+	 */
 	public delete(customerId: string) {
 		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
 	}
-	public updateConsents(customer: Customers.UpdateConsents.Params, consents: Customers.UpdateConsents.Consents) {
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents
+	 */
+	public updateConsents(customer: T.CustomersUpdateConsentsParams, consents: T.CustomersUpdateConsentsBody) {
 		const id = 'id' in customer ? customer.id : customer.source_id
 		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
 	}

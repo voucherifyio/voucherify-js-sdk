@@ -1,3 +1,6 @@
+/**
+ * @internal
+ */
 export class VoucherifyError extends Error {
 	constructor(statusCode: number, body?: unknown) {
 		body = body ?? {}

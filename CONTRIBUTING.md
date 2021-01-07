@@ -47,6 +47,7 @@ See [here](https://github.com/atlassian/changesets/blob/master/docs/adding-a-cha
 - `yarn` - installs dependencies and builds all packages
 - `yarn start` - build all packages and watch for changes
 - `yarn build` - build all packages
+- `yarn docs` - build all packages documentation
 - `yarn lint` - lint eslint errors and TypeScript errors in all packages
 - `yarn lint:ts` - lint only TypeScript errors in all packages
 - `yarn lint:eslint` - lint only eslint errors in all packages
