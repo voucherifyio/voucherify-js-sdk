@@ -45,7 +45,7 @@ export interface CustomerObject {
 	object: string
 }
 
-interface CustomerRequest {
+export interface CustomerRequest {
 	id?: string
 	name?: string
 	email?: string
@@ -63,7 +63,7 @@ interface CustomerRequest {
 	phone?: string
 }
 
-interface CustomersCommonListRequest {
+export interface CustomersCommonListRequest {
 	limit?: number
 	page?: number
 	email?: string
