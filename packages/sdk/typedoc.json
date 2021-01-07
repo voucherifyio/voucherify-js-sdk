@@ -1,7 +1,7 @@
 {
 	"tsconfig": "./tsconfig.build.json",
-	"out": "docs",
-	"json": "docs/docs.json",
+	"out": "../../docs",
+	"json": "../../docs/docs.json",
 	"entryPoints": [
 		"src/index.ts"
 	],
