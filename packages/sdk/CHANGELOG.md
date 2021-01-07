@@ -1,5 +1,14 @@
 # @voucherify/sdk
 
+## 0.0.4
+
+### Patch Changes
+
+- [`e3285c5`](https://github.com/voucherifyio/voucherify-js-sdk/commit/e3285c5c2f20d65a4b767c3d9eebdef9172259a1) [#10](https://github.com/voucherifyio/voucherify-js-sdk/pull/10) Thanks [@eddyw](https://github.com/eddyw)! - Export missing types
+
+  - export missing type `CustomerRequest`
+  - export missing type `CustomersCommonListRequest`
+
 ## 0.0.3
 
 ### Patch Changes
