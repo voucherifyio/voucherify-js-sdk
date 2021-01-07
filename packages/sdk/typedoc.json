@@ -1,0 +1,15 @@
+{
+	"tsconfig": "./tsconfig.build.json",
+	"out": "docs",
+	"json": "docs/docs.json",
+	"entryPoints": [
+		"src/index.ts"
+	],
+	"hideGenerator": true,
+	"includeVersion": true,
+	"disableSources": true,
+	"listInvalidSymbolLinks": true,
+	"excludeExternals": false,
+	"excludePrivate": false,
+	"excludeProtected": false
+}

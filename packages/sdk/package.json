@@ -32,6 +32,7 @@
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
 		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
 		"lint:eslint:fix": "eslint './src/**/*.{ts,tsx,js,d.ts}' --fix",
+		"docs": "typedoc",
 		"prepublish": "yarn build"
 	},
 	"dependencies": {
