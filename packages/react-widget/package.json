@@ -1,7 +1,6 @@
 {
 	"name": "@voucherify/react-widget",
 	"version": "0.0.4",
-	"private": true,
 	"description": "> TODO: description",
 	"author": "Voucherify",
 	"license": "MIT",
