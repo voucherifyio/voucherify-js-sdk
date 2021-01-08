@@ -1,6 +1,6 @@
 {
 	"name": "@voucherify/react-widget",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "> TODO: description",
 	"author": "Voucherify",
 	"license": "MIT",
@@ -39,7 +39,7 @@
 		"react-dom": "^16.8.0 || ^17.0.0"
 	},
 	"dependencies": {
-		"@voucherify/sdk": "0.0.4"
+		"@voucherify/sdk": "0.0.5"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.0",
