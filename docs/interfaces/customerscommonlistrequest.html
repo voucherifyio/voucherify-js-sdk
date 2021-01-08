@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CustomersCommonListResponse | @voucherify/sdk - v0.0.5</title>
+	<title>CustomersCommonListRequest | @voucherify/sdk - v0.0.5</title>
 	<meta name="description" content="Documentation for @voucherify/sdk - v0.0.5">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@voucherify/sdk - v0.0.5</a>
 				</li>
 				<li>
-					<a href="customerscommonlistresponse.html">CustomersCommonListResponse</a>
+					<a href="customerscommonlistrequest.html">CustomersCommonListRequest</a>
 				</li>
 			</ul>
-			<h1>Interface CustomersCommonListResponse</h1>
+			<h1>Interface CustomersCommonListRequest</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CustomersCommonListResponse</span>
+						<span class="target">CustomersCommonListRequest</span>
 					</li>
 				</ul>
 			</section>
@@ -80,11 +80,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistresponse.html#customers" class="tsd-kind-icon">customers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistresponse.html#data_ref" class="tsd-kind-icon">data_<wbr>ref</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistresponse.html#has_more" class="tsd-kind-icon">has_<wbr>more</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistresponse.html#object" class="tsd-kind-icon">object</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistresponse.html#total" class="tsd-kind-icon">total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#city" class="tsd-kind-icon">city</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#email" class="tsd-kind-icon">email</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#limit" class="tsd-kind-icon">limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#order" class="tsd-kind-icon">order</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#page" class="tsd-kind-icon">page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customerscommonlistrequest.html#starting_after" class="tsd-kind-icon">starting_<wbr>after</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,37 +95,51 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="customers" class="tsd-anchor"></a>
-					<h3>customers</h3>
-					<div class="tsd-signature tsd-kind-icon">customers<span class="tsd-signature-symbol">:</span> <a href="customerobject.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerObject</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="city" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> city</h3>
+					<div class="tsd-signature tsd-kind-icon">city<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="data_ref" class="tsd-anchor"></a>
-					<h3>data_<wbr>ref</h3>
-					<div class="tsd-signature tsd-kind-icon">data_<wbr>ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;customers&quot;</span></div>
+					<a name="email" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> email</h3>
+					<div class="tsd-signature tsd-kind-icon">email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="has_more" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> has_<wbr>more</h3>
-					<div class="tsd-signature tsd-kind-icon">has_<wbr>more<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="limit" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> limit</h3>
+					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="object" class="tsd-anchor"></a>
-					<h3>object</h3>
-					<div class="tsd-signature tsd-kind-icon">object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;list&quot;</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="total" class="tsd-anchor"></a>
-					<h3>total</h3>
-					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="order" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> order</h3>
+					<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;created_at&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;-created_at&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="page" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> page</h3>
+					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="starting_after" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> starting_<wbr>after</h3>
+					<div class="tsd-signature tsd-kind-icon">starting_<wbr>after<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
@@ -142,22 +158,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="customerscommonlistresponse.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Response</a>
+						<a href="customerscommonlistrequest.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Request</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="customerscommonlistresponse.html#customers" class="tsd-kind-icon">customers</a>
+								<a href="customerscommonlistrequest.html#city" class="tsd-kind-icon">city</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="customerscommonlistresponse.html#data_ref" class="tsd-kind-icon">data_<wbr>ref</a>
+								<a href="customerscommonlistrequest.html#email" class="tsd-kind-icon">email</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="customerscommonlistresponse.html#has_more" class="tsd-kind-icon">has_<wbr>more</a>
+								<a href="customerscommonlistrequest.html#limit" class="tsd-kind-icon">limit</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="customerscommonlistresponse.html#object" class="tsd-kind-icon">object</a>
+								<a href="customerscommonlistrequest.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="customerscommonlistresponse.html#total" class="tsd-kind-icon">total</a>
+								<a href="customerscommonlistrequest.html#order" class="tsd-kind-icon">order</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="customerscommonlistrequest.html#page" class="tsd-kind-icon">page</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="customerscommonlistrequest.html#starting_after" class="tsd-kind-icon">starting_<wbr>after</a>
 							</li>
 						</ul>
 					</li>

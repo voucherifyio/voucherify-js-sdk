@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "@voucherify/sdk - v0.0.3",
+	"name": "@voucherify/sdk - v0.0.5",
 	"kind": 0,
 	"kindString": "Project",
 	"flags": {},
@@ -92,7 +92,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 571,
+										"id": 595,
 										"name": "BalanceCreateParams"
 									}
 								}
@@ -1152,6 +1152,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
+										"id": 545,
 										"name": "CustomerRequest"
 									}
 								}
@@ -1301,6 +1302,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
+										"id": 561,
 										"name": "CustomersCommonListRequest"
 									}
 								}
@@ -1310,7 +1312,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 545,
+										"id": 569,
 										"name": "CustomersCommonListResponse"
 									}
 								],
@@ -1347,6 +1349,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
+										"id": 561,
 										"name": "CustomersCommonListRequest"
 									}
 								}
@@ -1406,7 +1409,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 559,
+										"id": 583,
 										"name": "CustomersUpdateParams"
 									}
 								}
@@ -1457,7 +1460,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 565,
+										"id": 589,
 										"name": "CustomersUpdateConsentsParams"
 									}
 								},
@@ -7792,14 +7795,14 @@
 			]
 		},
 		{
-			"id": 571,
+			"id": 595,
 			"name": "BalanceCreateParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 572,
+					"id": 596,
 					"name": "amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7815,7 +7818,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						572
+						596
 					]
 				}
 			]
@@ -8395,13 +8398,564 @@
 		},
 		{
 			"id": 545,
+			"name": "CustomerRequest",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 552,
+					"name": "address",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 553,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 554,
+											"name": "city",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 558,
+											"name": "country",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 556,
+											"name": "line_1",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 557,
+											"name": "line_2",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 559,
+											"name": "postal_code",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										},
+										{
+											"id": 555,
+											"name": "state",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												554,
+												558,
+												556,
+												557,
+												559,
+												555
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 550,
+					"name": "description",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 548,
+					"name": "email",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 546,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 549,
+					"name": "metadata",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								],
+								"name": "Record"
+							}
+						]
+					}
+				},
+				{
+					"id": 547,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 560,
+					"name": "phone",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 551,
+					"name": "source_id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						552,
+						550,
+						548,
+						546,
+						549,
+						547,
+						560,
+						551
+					]
+				}
+			]
+		},
+		{
+			"id": 561,
+			"name": "CustomersCommonListRequest",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 565,
+					"name": "city",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 564,
+					"name": "email",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 562,
+					"name": "limit",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						]
+					}
+				},
+				{
+					"id": 566,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 567,
+					"name": "order",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "literal",
+								"value": "created_at"
+							},
+							{
+								"type": "literal",
+								"value": "-created_at"
+							}
+						]
+					}
+				},
+				{
+					"id": 563,
+					"name": "page",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						]
+					}
+				},
+				{
+					"id": 568,
+					"name": "starting_after",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "reference",
+								"name": "Date"
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						565,
+						564,
+						562,
+						566,
+						567,
+						563,
+						568
+					]
+				}
+			]
+		},
+		{
+			"id": 569,
 			"name": "CustomersCommonListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 549,
+					"id": 573,
 					"name": "customers",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8416,7 +8970,7 @@
 					}
 				},
 				{
-					"id": 548,
+					"id": 572,
 					"name": "data_ref",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8427,7 +8981,7 @@
 					}
 				},
 				{
-					"id": 550,
+					"id": 574,
 					"name": "has_more",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8449,7 +9003,7 @@
 					}
 				},
 				{
-					"id": 546,
+					"id": 570,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8460,7 +9014,7 @@
 					}
 				},
 				{
-					"id": 547,
+					"id": 571,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8476,24 +9030,24 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						549,
-						548,
-						550,
-						546,
-						547
+						573,
+						572,
+						574,
+						570,
+						571
 					]
 				}
 			]
 		},
 		{
-			"id": 602,
+			"id": 626,
 			"name": "VoucherifyClientSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 603,
+					"id": 627,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8519,7 +9073,7 @@
 					}
 				},
 				{
-					"id": 604,
+					"id": 628,
 					"name": "clientApplicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8534,7 +9088,7 @@
 					}
 				},
 				{
-					"id": 605,
+					"id": 629,
 					"name": "clientSecretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8549,7 +9103,7 @@
 					}
 				},
 				{
-					"id": 607,
+					"id": 631,
 					"name": "origin",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8581,7 +9135,7 @@
 					}
 				},
 				{
-					"id": 606,
+					"id": 630,
 					"name": "trackingId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8608,24 +9162,24 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						603,
-						604,
-						605,
-						607,
-						606
+						627,
+						628,
+						629,
+						631,
+						630
 					]
 				}
 			]
 		},
 		{
-			"id": 592,
+			"id": 616,
 			"name": "VoucherifyServerSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 593,
+					"id": 617,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8651,7 +9205,7 @@
 					}
 				},
 				{
-					"id": 596,
+					"id": 620,
 					"name": "apiVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8677,7 +9231,7 @@
 					}
 				},
 				{
-					"id": 594,
+					"id": 618,
 					"name": "applicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8692,7 +9246,7 @@
 					}
 				},
 				{
-					"id": 597,
+					"id": 621,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8714,7 +9268,7 @@
 					}
 				},
 				{
-					"id": 598,
+					"id": 622,
 					"name": "dangerouslySetSecretKeyInBrowser",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8740,7 +9294,7 @@
 					}
 				},
 				{
-					"id": 595,
+					"id": 619,
 					"name": "secretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -8760,29 +9314,30 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						593,
-						596,
-						594,
-						597,
-						598,
-						595
+						617,
+						620,
+						618,
+						621,
+						622,
+						619
 					]
 				}
 			]
 		},
 		{
-			"id": 551,
+			"id": 575,
 			"name": "CustomersCreateBody",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
+				"id": 545,
 				"name": "CustomerRequest"
 			}
 		},
 		{
-			"id": 552,
+			"id": 576,
 			"name": "CustomersCreateResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8794,7 +9349,7 @@
 			}
 		},
 		{
-			"id": 553,
+			"id": 577,
 			"name": "CustomersGetResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8806,53 +9361,55 @@
 			}
 		},
 		{
-			"id": 554,
+			"id": 578,
 			"name": "CustomersListParams",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
+				"id": 561,
 				"name": "CustomersCommonListRequest"
 			}
 		},
 		{
-			"id": 555,
+			"id": 579,
 			"name": "CustomersListResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 545,
+				"id": 569,
 				"name": "CustomersCommonListResponse"
 			}
 		},
 		{
-			"id": 556,
+			"id": 580,
 			"name": "CustomersScrollParams",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
+				"id": 561,
 				"name": "CustomersCommonListRequest"
 			}
 		},
 		{
-			"id": 557,
+			"id": 581,
 			"name": "CustomersScrollResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 545,
+				"id": 569,
 				"name": "CustomersCommonListResponse"
 			}
 		},
 		{
-			"id": 558,
+			"id": 582,
 			"name": "CustomersScrollYield",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8864,7 +9421,7 @@
 			}
 		},
 		{
-			"id": 570,
+			"id": 594,
 			"name": "CustomersUpdateConsentsBody",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8885,7 +9442,7 @@
 			}
 		},
 		{
-			"id": 565,
+			"id": 589,
 			"name": "CustomersUpdateConsentsParams",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8896,14 +9453,14 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 566,
+							"id": 590,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 567,
+									"id": 591,
 									"name": "id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8919,7 +9476,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										567
+										591
 									]
 								}
 							]
@@ -8928,14 +9485,14 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 568,
+							"id": 592,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 569,
+									"id": 593,
 									"name": "source_id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8951,7 +9508,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										569
+										593
 									]
 								}
 							]
@@ -8961,7 +9518,7 @@
 			}
 		},
 		{
-			"id": 559,
+			"id": 583,
 			"name": "CustomersUpdateParams",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -8972,14 +9529,14 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 560,
+							"id": 584,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 561,
+									"id": 585,
 									"name": "id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8995,7 +9552,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										561
+										585
 									]
 								}
 							]
@@ -9004,14 +9561,14 @@
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 562,
+							"id": 586,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 563,
+									"id": 587,
 									"name": "source_id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9027,7 +9584,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										563
+										587
 									]
 								}
 							]
@@ -9037,7 +9594,7 @@
 			}
 		},
 		{
-			"id": 564,
+			"id": 588,
 			"name": "CustomersUpdateResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -9049,28 +9606,28 @@
 			}
 		},
 		{
-			"id": 599,
+			"id": 623,
 			"name": "VoucherifyClientSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 600,
+					"id": 624,
 					"name": "VoucherifyClientSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 601,
+							"id": 625,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 602,
+								"id": 626,
 								"name": "VoucherifyClientSideOptions"
 							}
 						}
@@ -9084,28 +9641,28 @@
 			]
 		},
 		{
-			"id": 573,
+			"id": 597,
 			"name": "VoucherifyServerSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 574,
+					"id": 598,
 					"name": "VoucherifyServerSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 575,
+							"id": 599,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 592,
+								"id": 616,
 								"name": "VoucherifyServerSideOptions"
 							}
 						}
@@ -9113,14 +9670,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 576,
+							"id": 600,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 578,
+									"id": 602,
 									"name": "campaigns",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9132,7 +9689,7 @@
 									}
 								},
 								{
-									"id": 584,
+									"id": 608,
 									"name": "consents",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9144,7 +9701,7 @@
 									}
 								},
 								{
-									"id": 583,
+									"id": 607,
 									"name": "customers",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9156,7 +9713,7 @@
 									}
 								},
 								{
-									"id": 579,
+									"id": 603,
 									"name": "distributions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9168,7 +9725,7 @@
 									}
 								},
 								{
-									"id": 591,
+									"id": 615,
 									"name": "events",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9180,7 +9737,7 @@
 									}
 								},
 								{
-									"id": 588,
+									"id": 612,
 									"name": "loyalties",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9192,7 +9749,7 @@
 									}
 								},
 								{
-									"id": 585,
+									"id": 609,
 									"name": "orders",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9204,7 +9761,7 @@
 									}
 								},
 								{
-									"id": 586,
+									"id": 610,
 									"name": "products",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9216,7 +9773,7 @@
 									}
 								},
 								{
-									"id": 582,
+									"id": 606,
 									"name": "promotions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9228,7 +9785,7 @@
 									}
 								},
 								{
-									"id": 581,
+									"id": 605,
 									"name": "redemptions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9240,7 +9797,7 @@
 									}
 								},
 								{
-									"id": 587,
+									"id": 611,
 									"name": "rewards",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9252,7 +9809,7 @@
 									}
 								},
 								{
-									"id": 589,
+									"id": 613,
 									"name": "segments",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9264,7 +9821,7 @@
 									}
 								},
 								{
-									"id": 590,
+									"id": 614,
 									"name": "validationRules",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9276,7 +9833,7 @@
 									}
 								},
 								{
-									"id": 580,
+									"id": 604,
 									"name": "validations",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9288,7 +9845,7 @@
 									}
 								},
 								{
-									"id": 577,
+									"id": 601,
 									"name": "vouchers",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9305,21 +9862,21 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										578,
-										584,
-										583,
-										579,
-										591,
-										588,
-										585,
-										586,
-										582,
-										581,
-										587,
-										589,
-										590,
-										580,
-										577
+										602,
+										608,
+										607,
+										603,
+										615,
+										612,
+										609,
+										610,
+										606,
+										605,
+										611,
+										613,
+										614,
+										604,
+										601
 									]
 								}
 							]
@@ -9361,37 +9918,39 @@
 			"title": "Interfaces",
 			"kind": 256,
 			"children": [
-				571,
+				595,
 				500,
 				545,
-				602,
-				592
+				561,
+				569,
+				626,
+				616
 			]
 		},
 		{
 			"title": "Type aliases",
 			"kind": 4194304,
 			"children": [
-				551,
-				552,
-				553,
-				554,
-				555,
-				556,
-				557,
-				558,
-				570,
-				565,
-				559,
-				564
+				575,
+				576,
+				577,
+				578,
+				579,
+				580,
+				581,
+				582,
+				594,
+				589,
+				583,
+				588
 			]
 		},
 		{
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				599,
-				573
+				623,
+				597
 			]
 		}
 	]
