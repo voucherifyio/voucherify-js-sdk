@@ -17,16 +17,16 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-	"main": "dist/index.js",
-	"module": "dist/sdk.esm.js",
+	"main": "dist/voucherifysdk.umd.production.min.js",
+	"module": "dist/voucherifysdk.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",
 		"dist"
 	],
 	"scripts": {
-		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node",
-		"build": "tsdx build --tsconfig tsconfig.build.json --target node",
+		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node --name VoucherifySDK --format esm,umd",
+		"build": "tsdx build --tsconfig tsconfig.build.json --target node --name VoucherifySDK --format esm,umd",
 		"test": "tsdx test",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
@@ -36,12 +36,7 @@
 		"prepublish": "yarn build"
 	},
 	"dependencies": {
-		"axios": "0.21.1",
-		"lodash": "4.17.20",
-		"lodash-es": "4.17.20"
-	},
-	"devDependencies": {
-		"@types/lodash": "4.14.166"
+		"axios": "0.21.1"
 	},
 	"publishConfig": {
 		"access": "public"
