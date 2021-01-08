@@ -6,6 +6,7 @@
 			"ESNext"
 		],
 		"target": "ES2016",
+		"moduleResolution": "Node",
 		"importHelpers": true,
 		"declaration": true,
 		"sourceMap": true,
@@ -14,8 +15,6 @@
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-		"moduleResolution": "node",
-		"jsx": "react",
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"useDefineForClassFields": true,

@@ -1,5 +1,4 @@
-import omit from 'lodash/omit'
-import { encode } from './helpers'
+import { encode, omit } from './helpers'
 import * as T from './types/Customers'
 import type { RequestController } from './RequestController'
 
@@ -72,7 +71,9 @@ class Customers {
 	 */
 	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
-		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, omit(customer, ['id']))
+		const customerWithoutId = omit<Record<string, string>, string>(customer, ['id'])
+
+		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer

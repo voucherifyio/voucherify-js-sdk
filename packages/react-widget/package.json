@@ -1,7 +1,6 @@
 {
 	"name": "@voucherify/react-widget",
 	"version": "0.0.4",
-	"private": true,
 	"description": "> TODO: description",
 	"author": "Voucherify",
 	"license": "MIT",
@@ -18,21 +17,21 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-	"main": "dist/index.js",
-	"module": "dist/react-widget.esm.js",
+	"main": "dist/voucherifywidget.umd.production.min.js",
+	"module": "dist/voucherifywidget.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",
 		"dist"
 	],
 	"scripts": {
-		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser",
-		"build": "tsdx build --tsconfig tsconfig.build.json --target browser",
+		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser --name VoucherifyWidget --format esm,umd",
+		"build": "tsdx build --tsconfig tsconfig.build.json --target browser --name VoucherifyWidget --format esm,umd",
 		"test": "tsdx test",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
-		"lint:eslint": "eslint './**/*.{ts,tsx,js,d.ts}'",
-		"lint:eslint:fix": "eslint './**/*.{ts,tsx,js,d.ts}' --fix",
+		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
+		"lint:eslint:fix": "eslint './src/**/*.{ts,tsx,js,d.ts}' --fix",
 		"prepublish": "yarn build"
 	},
 	"peerDependencies": {
@@ -43,6 +42,8 @@
 		"@voucherify/sdk": "0.0.4"
 	},
 	"devDependencies": {
-		"@types/react": "^17.0.0"
+		"@types/react": "^17.0.0",
+		"@types/react-dom": "17.0.0",
+		"clsx": "1.1.1"
 	}
 }

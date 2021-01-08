@@ -20,6 +20,7 @@ module.exports = {
 		},
 	},
 	rules: {
+		'react-hooks/exhaustive-deps': 'off',
 		'@typescript-eslint/consistent-type-assertions': 'off',
 		'@typescript-eslint/no-redeclare': 'off',
 		'@typescript-eslint/explicit-member-accessibility': [
