@@ -21,9 +21,5 @@
 		"forceConsistentCasingInFileNames": true,
 		"downlevelIteration": true,
 		"removeComments": false,
-		"typeRoots": [
-			"./node_modules/@types",
-			"./types"
-		],
 	}
 }
