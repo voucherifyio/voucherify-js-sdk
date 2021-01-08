@@ -7,5 +7,4 @@ module.exports = {
 	useTabs: true,
 	endOfLine: 'lf',
 	arrowParens: 'avoid',
-	parser: 'typescript',
 }
