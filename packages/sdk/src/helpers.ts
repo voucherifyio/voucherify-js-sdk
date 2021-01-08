@@ -76,3 +76,18 @@ export function toQueryParams(obj: Record<string, unknown>): Record<string, stri
 
 	return Object.fromEntries(entries)
 }
+
+/**
+ * Return an object containing all properties of `obj` excluding the ones in `keys` array
+ * e.g:
+ * ```javascript
+ * omit({ a: 1, b: 2, c: 3, d: 4 }, ['b', 'd']) // output: { a: 1, c: 3 }
+ * ```
+ */
+export function omit<T extends {}, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
+	return Object.fromEntries(
+		Object.entries(obj).filter(([propertyKey]) => {
+			return !keys.includes(propertyKey as K)
+		}),
+	) as Omit<T, K>
+}
