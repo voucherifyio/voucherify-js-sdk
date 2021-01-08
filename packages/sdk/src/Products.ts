@@ -1,5 +1,4 @@
-import omit from 'lodash/omit'
-import { encode } from './helpers'
+import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
 
 export class Products {
