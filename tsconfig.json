@@ -7,6 +7,9 @@
 	"compilerOptions": {
 		"allowJs": false,
 		"baseUrl": ".",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"jsx": "preserve",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
