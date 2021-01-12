@@ -1,5 +1,6 @@
 import { isObject, isString, isNumber, assert, toQueryParams, isOptionalObject, isOptionalString } from './helpers'
 import type { RequestController } from './RequestController'
+import * as T from './types/ClientSide'
 
 export class ClientSide {
 	constructor(private client: RequestController, private trackingId?: string) {}
@@ -10,7 +11,7 @@ export class ClientSide {
 	/**
 	 * @see https://docs.voucherify.io/reference/#vouchers-validate
 	 */
-	public validate(params: $FixMe) {
+	public validate(params: T.ClientSideValidationParams) {
 		assert(
 			isObject(params) || isString(params),
 			'client.validate: expected "params" argument to be an object or a string',
@@ -22,10 +23,10 @@ export class ClientSide {
 			query.code = params
 		} else {
 			query.code = params.code
-			query.item = params.items
+			query.item = params.order?.items
 			query.amount = params.amount
 			query.metadata = params.metadata
-			query.order = { metadata: params.orderMetadata }
+			query.order = { metadata: params.order?.metadata }
 			query.customer = params.customer
 			query.trackingId = this.trackingId
 		}
@@ -43,7 +44,7 @@ export class ClientSide {
 	/**
 	 * @see https://docs.voucherify.io/reference#redeem-voucher-client-side
 	 */
-	public redeem(code: string, payload: $FixMe = {}) {
+	public redeem(code: string, payload: T.ClientSideRedeemPayload = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
 		assert(isObject(payload), 'client.redeem - expected payload to be an object')
 		assert(isObject(payload.order), 'client.redeem - expected payload.order to be an object')
@@ -54,7 +55,7 @@ export class ClientSide {
 		payload.customer = payload.customer ?? {}
 		payload.customer.source_id = payload.customer.source_id ?? this.trackingId
 
-		return this.client.post<$FixMe>('/redeem', payload, { code })
+		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
 	public publish(campaign: string, payload: $FixMe = {}) {
 		assert(isString(campaign), 'client.publish - campaign is required to publish a voucher')

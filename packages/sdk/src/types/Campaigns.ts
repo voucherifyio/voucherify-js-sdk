@@ -98,13 +98,9 @@ export interface Campaigns {
 	limit?: number
 	page?: number
 	campaign_type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
-	filters: {
-		condition: Record<
-			string,
-			{
-				conditions: Record<string, string[]>
-			}
-		>
+	filters?: {
+		junction?: string
+		[filter_condition: string]: any
 	}
 }
 

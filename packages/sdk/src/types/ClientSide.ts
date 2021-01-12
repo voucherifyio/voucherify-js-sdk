@@ -4,24 +4,28 @@ export interface Item {
 	sku_id?: string
 	quantity?: number
 }
-export interface ClientSideValidateParams {
+
+export interface ValidationParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
 	order?: {
 		items?: Item[]
+		metadata?: Record<string, any>
 	}
 	customer?: {
 		source_id?: string
-		metadata?: Record<string, string>
+		metadata?: Record<string, any>
 	}
+	metadata?: Record<string, any>
+
 	session_type?: 'LOCK'
 	session_key?: string
 	session_ttl?: number
 	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
 }
 
-export interface ClientSideRedeem {
+export interface RedeemPayload {
 	tracking_id?: string
 	customer?: {
 		id?: string
@@ -44,10 +48,10 @@ export interface ClientSideRedeem {
 		id?: string
 		source_id?: string
 		amount?: number
-		metadata?: Record<string, string>
+		metadata?: Record<string, any>
 		items?: Item[]
 	}
-	metadata?: Record<string, string>
+	metadata?: Record<string, any>
 	reward?: {
 		id?: string
 	}
@@ -56,7 +60,7 @@ export interface ClientSideRedeem {
 	}
 }
 
-export interface postRedeemResponse {
+export interface RedeemResponse {
 	id?: string
 	object?: string
 	date?: string
@@ -66,8 +70,8 @@ export interface postRedeemResponse {
 		object?: string
 		id?: string
 		source_id?: string
-		amount?: 1000
-		discount_amount?: 10
+		amount?: number
+		discount_amount?: number
 		created_at?: string
 		updated_at?: string
 		items?: Item[]
@@ -77,11 +81,9 @@ export interface postRedeemResponse {
 		}
 		referrer?: string
 		status?: string
-		metadata?: null
+		metadata?: Record<string, any>
 	}
-	metadata?: {
-		referrer?: 'pinterest.com'
-	}
+	metadata?: Record<string, any>
 	result?: string
 	voucher?: {
 		code?: string
@@ -112,9 +114,13 @@ export interface postRedeemResponse {
 		}
 		active?: boolean
 		additional_info?: string
-		metadata?: null
+		metadata?: Record<string, any>
 		is_referral_code?: boolean
 		updated_at?: string
 		object?: string
 	}
 }
+
+export type ClientSideValidationParams = ValidationParams
+export type ClientSideRedeemPayload = RedeemPayload
+export type ClientSideRedeemResponse = RedeemResponse
