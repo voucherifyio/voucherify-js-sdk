@@ -1,16 +1,14 @@
-export interface Item {
-	source_id?: string
-	product_id?: string
-	sku_id?: string
-	quantity?: number
-}
-
-export interface ValidationParams {
+export interface ClientSideParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
 	order?: {
-		items?: Item[]
+		items?: {
+			source_id?: string
+			product_id?: string
+			sku_id?: string
+			quantity?: number
+		}[]
 		metadata?: Record<string, any>
 	}
 	customer?: {
@@ -18,14 +16,13 @@ export interface ValidationParams {
 		metadata?: Record<string, any>
 	}
 	metadata?: Record<string, any>
-
 	session_type?: 'LOCK'
 	session_key?: string
 	session_ttl?: number
 	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
 }
 
-export interface RedeemPayload {
+export interface ClientSidePayload {
 	tracking_id?: string
 	customer?: {
 		id?: string
@@ -49,7 +46,12 @@ export interface RedeemPayload {
 		source_id?: string
 		amount?: number
 		metadata?: Record<string, any>
-		items?: Item[]
+		items?: {
+			source_id?: string
+			product_id?: string
+			sku_id?: string
+			quantity?: number
+		}[]
 	}
 	metadata?: Record<string, any>
 	reward?: {
@@ -60,7 +62,7 @@ export interface RedeemPayload {
 	}
 }
 
-export interface RedeemResponse {
+export interface ClientSideResponse {
 	id?: string
 	object?: string
 	date?: string
@@ -74,7 +76,12 @@ export interface RedeemResponse {
 		discount_amount?: number
 		created_at?: string
 		updated_at?: string
-		items?: Item[]
+		items?: {
+			source_id?: string
+			product_id?: string
+			sku_id?: string
+			quantity?: number
+		}[]
 		customer?: {
 			id?: string
 			object?: string
@@ -92,6 +99,9 @@ export interface RedeemResponse {
 		type?: string
 		discount?: {
 			type?: string
+			effect?: string
+			unit_type?: string
+			unit_off?: number
 			amount_off?: number
 			precent_off?: number
 		}
@@ -121,6 +131,41 @@ export interface RedeemResponse {
 	}
 }
 
-export type ClientSideValidationParams = ValidationParams
-export type ClientSideRedeemPayload = RedeemPayload
-export type ClientSideRedeemResponse = RedeemResponse
+export interface ClientSideEventCustomer {
+	id?: string
+	source_id?: string
+	name?: string
+	email?: string
+	description?: string
+	metadata?: Record<string, any>
+}
+
+export interface ClientSideReferral {
+	code?: string
+}
+
+export interface ClientSideLoyalty {
+	code?: string
+}
+
+export interface ClientSideTrackPayload {
+	event: string
+	metadata?: Record<string, any>
+	customer?: any
+	referral?: ClientSideReferral
+	loyalty?: ClientSideLoyalty
+}
+
+export interface CliendSideTrackResponse {
+	object?: 'event'
+	type?: string
+}
+
+export type ClientSideValidationParams = ClientSideParams
+export type ClientSideRedeemPayload = ClientSidePayload
+export type ClientSideRedeemResponse = ClientSideResponse
+export type ClientSideTrackEventCustomer = ClientSideEventCustomer
+export type ClientSideTrackEventReferral = ClientSideReferral
+export type ClientSideTrackEventLoyalty = ClientSideLoyalty
+export type ClientSideTrackEventPayload = ClientSideTrackPayload
+export type ClientSideTrackEventResponse = CliendSideTrackResponse

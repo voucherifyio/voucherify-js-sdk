@@ -1,6 +1,8 @@
-import { isObject, isString, isNumber, assert, toQueryParams, isOptionalObject, isOptionalString } from './helpers'
-import type { RequestController } from './RequestController'
 import * as T from './types/ClientSide'
+
+import { assert, isNumber, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
+
+import type { RequestController } from './RequestController'
 
 export class ClientSide {
 	constructor(private client: RequestController, private trackingId?: string) {}
@@ -64,20 +66,28 @@ export class ClientSide {
 		payload.customer = payload.customer ?? {}
 		payload.customer.source_id = payload.customer.source_id ?? this.trackingId
 		payload.channel = payload.channel ?? 'Voucherify.js' // @todo - removed hard-coded channel
-
 		return this.client.post<$FixMe>('/publish', payload, { campaign })
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
 	 */
-	public track(event_name: $FixMe, metadata: $FixMe, customer?: $FixMe) {
-		const payload: $FixMe = {
+	public track(
+		event_name: string,
+		metadata: Record<string, any>,
+		customer?: T.ClientSideTrackEventCustomer,
+		referral?: T.ClientSideTrackEventReferral,
+		loyalty?: T.ClientSideTrackEventLoyalty,
+	) {
+		const payload: T.ClientSideTrackEventPayload = {
 			event: event_name,
 			metadata: metadata,
 			customer: customer ?? {},
+			referral: referral ?? {},
+			loyalty: loyalty ?? {},
 		}
+
 		payload.customer.source_id = (customer ?? {}).source_id ?? this.trackingId
 
-		return this.client.post<$FixMe>('/events', payload)
+		return this.client.post<T.ClientSideTrackEventResponse>('/events', payload)
 	}
 }

@@ -1,23 +1,15 @@
+import { VoucherObject } from './Vouchers'
+
 export interface CampaignObject {
 	name: string
+	type?: string
 	campaign_type?: string
 	start_date?: string
 	expiration_date?: string
 	vouchers_count?: number
-	voucher?: {
-		type?: string
-		discount?: {
-			type?: string
-			percent_off?: string
-			amount_off?: number
-		}
-		redemption?: {
-			qunatity?: number
-		}
-		code_config?: {
-			pattern?: string
-		}
-	}
+	object?: 'campaign'
+	referral_program?: boolean
+	voucher?: VoucherObject
 	metadata?: Record<string, string>
 }
 

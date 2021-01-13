@@ -26,3 +26,8 @@ voucherify.campaigns
 	.catch(function (err) {
 		console.error(err)
 	})
+
+voucherify.loyalties
+	.listEarningRules('camp_H8aFdW5lkC38H77sCl5FxKUv')
+	.then(result => console.log(result))
+	.catch(error => console.log(error))
