@@ -98,7 +98,7 @@ export interface DistributionsPublicationsListParams {
 	is_referral_code?: boolean
 	filters?: {
 		junction?: string
-		[filter_condition: string]: any
+		[filter_condition: string]: $FixMe
 	}
 }
 
