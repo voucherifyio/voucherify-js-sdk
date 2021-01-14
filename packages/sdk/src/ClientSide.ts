@@ -59,18 +59,6 @@ export class ClientSide {
 
 		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
-	// @todo - add payload Type
-	public publish(campaign: string, payload: $FixMe = {}) {
-		assert(isString(campaign), 'client.publish - campaign is required to publish a voucher')
-		assert(isObject(payload), 'client.redeem - expected payload to be an object')
-
-		payload.customer = payload.customer ?? {}
-		payload.customer.source_id = payload.customer.source_id ?? this.trackingId
-		payload.channel = payload.channel ?? 'Voucherify.js' // @todo - removed hard-coded channel
-
-		// @todo - add ReturnType
-		return this.client.post<$FixMe>('/publish', payload, { campaign })
-	}
 	/**
 	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
 	 */
