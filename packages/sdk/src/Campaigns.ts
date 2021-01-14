@@ -1,11 +1,13 @@
+import * as T from './types/Campaigns'
+
 import { encode } from './helpers'
 import type { RequestController } from './RequestController'
 
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
 
-	public examine(body: $FixMe, params?: $FixMe) {
-		return this.client.post('/campaigns/qualification', body, params)
+	public examine(body: T.CampaignsQualificationsBody, params?: T.CampaignsQualificationsParams) {
+		return this.client.post<T.CampaignsQualificationsResponse>('/campaigns/qualification', body, params)
 	}
 }
 
@@ -18,43 +20,47 @@ export class Campaigns {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-campaign
 	 */
-	public create(campaign: $FixMe) {
-		return this.client.post('/campaigns', campaign)
+	public create(campaign: T.CampaignsCreateCampaign) {
+		return this.client.post<T.CampaignsCreateCampaignResponse>('/campaigns', campaign)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-campaign
 	 */
-	public update(nameOrId: $FixMe, campaign: $FixMe) {
-		return this.client.put(`/campaigns/${encode(nameOrId)}`, campaign)
+	public update(nameOrId: string, campaign: T.CampaignsUpdateCampaign) {
+		return this.client.put<T.CampaignsUpdateCampaignResponse>(`/campaigns/${encode(nameOrId)}`, campaign)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-campaign
 	 */
-	public get(name: $FixMe) {
-		return this.client.get(`/campaigns/${encode(name)}`)
+	public get(name: string) {
+		return this.client.get<T.CampaignsGetCampaignResponse>(`/campaigns/${encode(name)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-campaign
 	 */
-	public delete(name: $FixMe, params?: { force: boolean }) {
-		return this.client.delete(`/campaigns/${encode(name)}`, { force: !!params?.force })
+	public delete(name: string, params?: T.CampaignsDeleteParams) {
+		return this.client.delete(`/campaigns/${encode(name)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign
 	 */
-	public addVoucher(campaignName: string, body: $FixMe = {}) {
-		return this.client.post(`/campaigns/${encode(campaignName)}/vouchers`, body)
+	public addVoucher(
+		campaignName: string,
+		params: T.CampaignsAddVoucherParams = {},
+		body: T.CampaignsAddVoucherBody = {},
+	) {
+		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(campaignName)}/vouchers`, params, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
 	 */
-	public importVouchers(campaignName: string, vouchers: $FixMe) {
+	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers[]) {
 		return this.client.post(`/campaigns/${encode(campaignName)}/import`, vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/v2017-04-20/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-campaigns
 	 */
-	public list(params: $FixMe) {
+	public list(params: T.CampaignsListParams) {
 		return this.client.get('/campaigns', params)
 	}
 }
