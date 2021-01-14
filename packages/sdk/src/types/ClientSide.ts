@@ -143,8 +143,16 @@ export interface ClientSideRedeemResponse {
 }
 
 export interface ClientSidePublishPayload {
+	source_id?: string
 	channel?: 'Voucherify.js' | string
 	customer?: ClientSideCustomer
+	voucher?: string
+	metadata?: Record<string, any>
+}
+
+export interface ClientSidePublishCampaign {
+	name: string
+	count?: number
 }
 
 // I don't know what in which type is distribution param stored
