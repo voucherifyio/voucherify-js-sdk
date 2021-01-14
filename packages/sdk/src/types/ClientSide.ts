@@ -142,9 +142,77 @@ export interface ClientSideRedeemResponse {
 	}
 }
 
-// @todo - export interface ClientSidePublishPayload
+export interface ClientSidePublishPayload {
+	channel?: 'Voucherify.js' | string
+	customer?: ClientSideCustomer
+}
 
-// @todo - export interface ClientSidePublishResponse
+// I don't know what in which type is distribution param stored
+export interface ClientSidePublishResponse {
+	id?: string
+	object?: 'publication'
+	created_at?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata: {}
+	channel?: 'Voucherify.js'
+	source_id?: string
+	result?: string
+	customer?: {
+		id?: string
+		name?: string
+		email?: string
+		source_id?: string
+		metadata?: Record<string, any>
+		object?: 'customer'
+	}
+	voucher: {
+		id?: string
+		code?: string
+		campaign?: string
+		campaign_id?: string
+		category?: string
+		type?: string
+		discount?: ClientSideVoucherDiscountUnit | ClientSideVoucherDiscountAmount | ClientSideVoucherDiscountPercent
+		gift: null
+		loyalty_card: null
+		start_date: null
+		expiration_date: null
+		validity_timeframe: null
+		validity_day_of_week: null
+		active: true
+		additional_info: null
+		metadata?: Record<string, any>
+		assets?: {
+			qr?: {
+				id?: string
+				url?: string
+			}
+			barcode?: {
+				id?: string
+				url?: string
+			}
+		}
+		is_referral_code?: boolean
+		created_at?: string
+		updated_at?: string
+		holder_id?: string
+		object?: 'voucher'
+		distributions?: any
+		publish: {
+			object?: 'list'
+			count?: number
+			url?: string
+		}
+		redemption?: {
+			object?: 'list'
+			quantity?: number
+			redeemed_quantity?: number
+			url?: string
+		}
+	}
+	vouchers_id?: string[]
+}
 
 export interface ClientSideTrackLoyalty {
 	code?: string
