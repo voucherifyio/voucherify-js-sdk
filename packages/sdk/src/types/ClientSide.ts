@@ -206,7 +206,7 @@ export interface ClientSidePublishResponse {
 		updated_at?: string
 		holder_id?: string
 		object?: 'voucher'
-		distributions?: any
+		distributions?: $FixMe
 		publish: {
 			object?: 'list'
 			count?: number
