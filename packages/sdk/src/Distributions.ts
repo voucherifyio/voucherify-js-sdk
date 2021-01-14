@@ -19,21 +19,11 @@ class DistributionsPublications {
 		return this.client.post<T.DistributionsPublicationsCreateResponse>('/publications', params)
 	}
 }
+
 export class Distributions {
 	public publications: DistributionsPublications
 
 	constructor(private client: RequestController, public exports: Exports) {
 		this.publications = new DistributionsPublications(this.client)
-	}
-
-	// @todo - fix documentation link - it's broken currently
-
-	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#publish-voucher
-	 */
-
-	// @todo - I can't find informations regarding structure for params & ReturnType
-	public publish(params: $FixMe) {
-		return this.client.post('/vouchers/publish', params)
 	}
 }
