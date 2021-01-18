@@ -44,9 +44,13 @@ describe('Customers API', () => {
 		expect(axios.get).toHaveBeenCalledWith('/customers', { params: {} })
 	})
 
-	it('should list more than 100 customers', async () => {
-		//@todo
-	})
+	it('should scroll through customers and sort them by descending order without initial cursor (starting_after)', async () => {})
+
+	it('should scroll through customers and sort them by descending order with initial cursor (starting_after)', async () => {})
+
+	it('should scroll through customers and sort them by ascending order without initial cursor (starting_after)', async () => {})
+
+	it('should scroll through customers and sort them by ascending order with initial cursor (starting_after)', async () => {})
 
 	it('should update customer', async () => {
 		const updateCustomer = { id: '098765', name: 'Changed Name' }
