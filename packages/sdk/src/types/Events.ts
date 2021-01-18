@@ -1,23 +1,19 @@
+import { CustomerRequest } from './Customers'
+
 export interface EventsParams {
-	event?: string
-	customer?: {
-		source_id?: string
-		id?: string
-		name?: string
-		email?: string
-		metadata?: Record<string, any>
-	}
+	event: string
+	customer: CustomerRequest
 	metadata?: Record<string, any>
 	referral?: {
-		code?: string
+		code: string
 		referrer_id?: string
 	}
 	loyalty?: {
-		code?: string
+		code: string
 	}
 }
 
 export interface EventsResponse {
-	object?: 'event'
-	type?: string
+	object: 'event'
+	type: string
 }
