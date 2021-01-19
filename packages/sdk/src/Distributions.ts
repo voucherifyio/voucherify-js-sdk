@@ -9,7 +9,7 @@ class DistributionsPublications {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications
 	 */
-	public list(params: T.DistributionsPublicationsListParams) {
+	public list(params: T.DistributionsPublicationsListParams = {}) {
 		return this.client.get<T.DistributionsPublicationsListResponse>('/publications', params)
 	}
 	/**

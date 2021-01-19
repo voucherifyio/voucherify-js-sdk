@@ -1,54 +1,61 @@
-interface DistributionsPublicationsVoucherDiscountUnit {
-	type?: 'UNIT'
+import { CustomerRequest, CustomerObject } from './Customers'
+
+type VoucherType = 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW_CODE'
+
+type OrderType =
+	| 'id'
+	| '-id'
+	| 'voucher_code'
+	| '-voucher_code'
+	| 'tracking_id'
+	| '-tracking_id'
+	| 'customer_id'
+	| '-customer_id'
+	| 'created_at'
+	| '-created_at'
+	| 'channel'
+	| '-channel'
+
+export interface VoucherDiscount {
+	type: 'UNIT' | 'AMOUNT' | 'DISCOUNT'
 	unit_off?: number
 	effect?: string
-}
-interface DistributionsPublicationsVoucherDiscountAmount {
-	type?: 'AMOUNT'
 	amount_off?: number
-}
-interface DistributionsPublicationsVoucherDiscountPercent {
-	type?: 'PERCENT'
 	percent_off?: number
+	amount_limit?: number
 }
 
 interface DistributionsPublicationsVoucher {
 	code?: string
 	object?: 'voucher'
 	campaign?: string
-	gift?: {
+	gift: {
 		amount?: number
 		balance?: number
 	}
-	loyalty_card?: {
+	loyalty_card: {
 		amount?: number
-		balance?: number
+		balance: number
 	}
 	is_referral_code?: boolean
-	discount?:
-		| DistributionsPublicationsVoucherDiscountUnit
-		| DistributionsPublicationsVoucherDiscountAmount
-		| DistributionsPublicationsVoucherDiscountPercent
+	discount?: VoucherDiscount
 }
 
 interface DistributionsPublicationsCreateResponseVoucher {
-	id?: string
-	code?: string
+	id: string
+	code: string
 	campaign?: string
 	campaign_id?: string
-	category?: string
+	category?: VoucherType
 	type?: string
-	discount?:
-		| DistributionsPublicationsVoucherDiscountUnit
-		| DistributionsPublicationsVoucherDiscountAmount
-		| DistributionsPublicationsVoucherDiscountPercent
-	gift?: {
+	discount?: VoucherDiscount
+	gift: {
 		amount?: number
 		balance?: number
 	}
-	loyalty_card?: {
+	loyalty_card: {
 		amount?: number
-		balance?: number
+		balance: number
 	}
 	start_date?: string
 	expiration_date?: string
@@ -57,31 +64,31 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	active?: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
-	assets?: {
-		qr?: {
-			id?: string
-			url?: string
+	assets: {
+		qr: {
+			id: string
+			url: string
 		}
-		barcode?: {
-			id?: string
-			url?: string
+		barcode: {
+			id: string
+			url: string
 		}
 	}
 	is_referral_code?: boolean
-	created_at?: string
+	created_at: string
 	updated_at?: string
 	holder_id?: string
-	object?: string
-	publish?: {
-		object?: string
-		count?: number
-		url?: string
+	object: 'voucher'
+	publish: {
+		object: string
+		count: number
+		url: string
 	}
-	redemption?: {
-		object?: string
-		quantity?: number
-		redeemed_quantity?: number
-		url?: string
+	redemption: {
+		object: string
+		quantity: number
+		redeemed_quantity: number
+		url: string
 	}
 }
 // Eddy's comment (regarding how to set up filters type) is not quite working here - as we can have multiple `conditions` inside the `filter_condition`. I did not explained it correctly
@@ -89,15 +96,15 @@ interface DistributionsPublicationsCreateResponseVoucher {
 export interface DistributionsPublicationsListParams {
 	limit?: number
 	page?: number
-	order?: 'id' | 'voucher_code' | 'tracking_id' | 'customer_id' | 'created_at' | 'channel'
+	order?: OrderType
 	campaign?: string
 	customer?: string
 	voucher?: string
-	result?: string
-	voucher_type?: string
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher_type?: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 	is_referral_code?: boolean
 	filters?: {
-		junction?: string
+		junction?: 'OR' | 'AND'
 		[filter_condition: string]: $FixMe
 	}
 }
@@ -131,38 +138,24 @@ export interface DistributionsPublicationsCreateParams {
 	join_once?: boolean
 	source_id?: string
 	campaign?: {
-		name?: string
+		name: string
 		count?: number
 	}
 	voucher?: string
 	channel?: string
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
+	customer: CustomerRequest
 }
 
 export interface DistributionsPublicationsCreateResponse {
-	id?: string
-	object?: string
-	created_at?: string
+	id: string
+	object: 'publication'
+	created_at: string
 	customer_id?: string
 	tracking_id?: string
 	metadata?: Record<string, any>
 	channel?: string
 	source_id?: string
-	result?: string
-	customer?: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object?: 'customer'
-	}
+	result?: 'SUCCESS' | 'FAILURE'
+	customer?: CustomerObject
 	voucher: DistributionsPublicationsCreateResponseVoucher
 }
