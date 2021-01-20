@@ -29,7 +29,7 @@ export class Orders {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-orders
 	 */
-	public list(params: T.OrdersListParams) {
+	public list(params: T.OrdersListParams = {}) {
 		return this.client.get<T.OrdersListResponse>('/orders', params)
 	}
 }

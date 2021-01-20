@@ -1,3 +1,5 @@
+import { CustomerRequest } from './Customers'
+
 export interface OrdersItem {
 	sku_id?: string
 	product_id?: string
@@ -18,31 +20,23 @@ export interface OrdersItem {
 }
 
 export interface OrdersCreate {
-	customer?: {
-		source_id?: string
-		name?: string
-		email?: string
-		metadata?: Record<string, any>
-	}
+	customer?: CustomerRequest
 	amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
 }
 
 export interface OrdersCreateResponse {
-	id?: string
+	id: string
 	source_id?: string
-	created_at?: string
+	created_at: string
 	updated_at?: string
-	status?: string
+	status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
 	amount?: number
 	discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
-	customer?: {
-		id?: string
-		object: 'customer'
-	}
+	customer?: CustomerRequest
 	object: 'order'
 }
 
@@ -56,7 +50,7 @@ export interface OrdersUpdate {
 	amount?: number
 	metadata?: Record<string, any>
 	customer?: {
-		id?: string
+		id: string
 	}
 }
 
@@ -68,8 +62,8 @@ export interface OrdersListParams {
 }
 
 export interface OrdersListResponse {
-	object?: string
-	total?: string
+	object: 'list'
+	total: number
 	data_ref: 'orders'
 	orders: OrdersGetResponse[]
 }
