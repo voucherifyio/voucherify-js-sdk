@@ -49,7 +49,7 @@ export interface CustomerRequest {
 	id?: string
 	name?: string
 	email?: string
-	metadata?: Record<string, string>
+	metadata?: Record<string, any>
 	description?: string
 	source_id?: string
 	address?: {
