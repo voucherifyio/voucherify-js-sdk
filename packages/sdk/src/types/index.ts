@@ -1,3 +1,5 @@
 export * from './Customers'
 export * from './Balance'
 export * from './ClientSide'
+export * from './Consents'
+export * from './Events'
