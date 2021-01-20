@@ -1,22 +1,22 @@
 export interface ExportResource {
-	exported_object?: 'voucher' | 'redemption' | 'publication' | 'customer'
+	exported_object: 'voucher' | 'redemption' | 'publication' | 'customer'
 	parameters?: {
 		order?: string
 		fields?: string[]
 		filters?: {
-			junction?: string
+			junction?: 'AND' | 'OR'
 			[filter_condition: string]: $FixMe
 		}
 	}
 }
 
 export interface ExportsCreateResponse {
-	id?: string
-	object?: 'export'
-	created_at?: string
-	status?: string
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
 	channel?: string
-	exported_object?: string
+	exported_object: string
 	parameters?: {
 		fields?: string[]
 		filters?: {
@@ -25,7 +25,7 @@ export interface ExportsCreateResponse {
 		}
 	}
 	result?: {
-		url?: string
+		url: string
 	}
 }
 
