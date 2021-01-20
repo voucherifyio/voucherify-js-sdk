@@ -15,8 +15,8 @@ export interface ProductsCreateResponse {
 	attributes?: string[]
 	created_at?: string
 	skus?: {
-		object?: 'list'
-		total?: number
+		object: 'list'
+		total: number
 		data?: {
 			id?: string
 			source_id?: string
@@ -66,8 +66,8 @@ export interface ProductsListParams {
 }
 
 export interface ProductsListResponse {
-	object?: 'list'
-	total?: number
+	object: 'list'
+	total: number
 	products?: ProductsGetResponse[]
 }
 
@@ -97,7 +97,7 @@ export type ProductsUpdateSkuResponse = ProductsGetSkuResponse
 export type ProductsDeleteSkuParams = ProductsDeleteParams
 
 export interface ProductsListSkus {
-	object?: 'list'
-	total?: number
+	object: 'list'
+	total: number
 	skus: ProductsGetSkuResponse[]
 }
