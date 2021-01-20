@@ -46,8 +46,8 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	code: string
 	campaign?: string
 	campaign_id?: string
-	category?: VoucherType
-	type?: string
+	category?: string
+	type?: VoucherType
 	discount?: VoucherDiscount
 	gift: {
 		amount?: number
@@ -109,29 +109,31 @@ export interface DistributionsPublicationsListParams {
 	}
 }
 
-export interface DistributionsPublicationsListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'publications'
-	publications?: {
+interface PublicationResponse {
+	id: string
+	source_id?: string
+	object: 'publication'
+	created_at: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	channel?: string
+	result: 'SUCCESS' | 'FAILURE'
+	customer?: {
+		object?: string
 		id?: string
-		source_id?: string
-		object?: 'publication'
-		created_at?: string
-		customer_id?: string
-		tracking_id?: string
-		metadata?: Record<string, any>
-		channel?: string
-		result?: string
-		customer?: {
-			object?: string
-			id?: string
-		}
-		voucher?: DistributionsPublicationsVoucher
-		vouchers?: string[]
-		failure_code?: string
-		failure_message?: string
-	}[]
+	}
+	voucher?: DistributionsPublicationsVoucher
+	vouchers?: string[]
+	failure_code?: string
+	failure_message?: string
+}
+
+export interface DistributionsPublicationsListResponse {
+	object: 'list'
+	total: number
+	data_ref: 'publications'
+	publications?: PublicationResponse[]
 }
 
 export interface DistributionsPublicationsCreateParams {
