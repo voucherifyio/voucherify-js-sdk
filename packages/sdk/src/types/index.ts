@@ -1,5 +1,6 @@
 export * from './Customers'
 export * from './Balance'
+export * from './Segments'
 export * from './Exports'
 export * from './Orders'
 export * from './Consents'
