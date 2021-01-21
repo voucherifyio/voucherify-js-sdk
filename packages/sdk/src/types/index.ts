@@ -1,3 +1,6 @@
 export * from './Customers'
 export * from './Balance'
 export * from './PromotionTiers'
+export * from './Orders'
+export * from './Consents'
+export * from './Events'
