@@ -16,7 +16,7 @@ export interface ExportsCreateResponse {
 	created_at: string
 	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
 	channel?: string
-	exported_object: string
+	exported_object: 'voucher' | 'redemption' | 'publication' | 'customer'
 	parameters?: {
 		fields?: string[]
 		filters?: {
