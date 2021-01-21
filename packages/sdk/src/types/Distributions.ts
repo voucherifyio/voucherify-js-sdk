@@ -30,11 +30,11 @@ interface DistributionsPublicationsVoucher {
 	object?: 'voucher'
 	campaign?: string
 	gift: {
-		amount?: number
-		balance?: number
+		amount: number
+		balance: number
 	}
 	loyalty_card: {
-		amount?: number
+		amount: number
 		balance: number
 	}
 	is_referral_code?: boolean
@@ -50,11 +50,11 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	type?: VoucherType
 	discount?: VoucherDiscount
 	gift: {
-		amount?: number
-		balance?: number
+		amount: number
+		balance: number
 	}
 	loyalty_card: {
-		amount?: number
+		amount: number
 		balance: number
 	}
 	start_date?: string
@@ -121,7 +121,7 @@ interface PublicationResponse {
 	result: 'SUCCESS' | 'FAILURE'
 	customer?: {
 		object?: string
-		id?: string
+		id: string
 	}
 	voucher?: DistributionsPublicationsVoucher
 	vouchers?: string[]
@@ -152,7 +152,7 @@ export interface DistributionsPublicationsCreateResponse {
 	id: string
 	object: 'publication'
 	created_at: string
-	customer_id?: string
+	customer_id: string
 	tracking_id?: string
 	metadata?: Record<string, any>
 	channel?: string
