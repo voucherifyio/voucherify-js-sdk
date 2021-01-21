@@ -2,4 +2,4 @@
 '@voucherify/sdk': patch
 ---
 
-Added Segments types & missing Segment List POST method
+Added Segments types & missing Segment List method

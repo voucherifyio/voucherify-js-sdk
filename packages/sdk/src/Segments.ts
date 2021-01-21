@@ -25,12 +25,10 @@ export class Segments {
 		return this.client.delete(`/segments/${encode(segmentId)}`)
 	}
 
-	// I see that list method is missing
-
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-segments
 	 */
 	public list(customerId: string) {
-		return this.client.delete(`/customers/${encode(customerId)}/segments`)
+		return this.client.get<T.SegmentsListResponse>(`/customers/${encode(customerId)}/segments`)
 	}
 }
