@@ -28,6 +28,12 @@ export class Products {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-metadata-in-bulk
+	 */
+	public bulkMetadataUpdate(products: T.ProductsBulkMetadataUpdate) {
+		return this.client.post<T.ProductsBulkMetadataUpdateResponse>('/products/metadata', products)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-in-bulk
 	 */
 	public bulkUpdate(products: T.ProductsBulkUpdate) {
@@ -37,7 +43,7 @@ export class Products {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product
 	 */
 	public delete(productId: string, params?: T.ProductsDeleteParams) {
-		return this.client.delete(`/products/${encode(productId)}`, { qs: params })
+		return this.client.delete(`/products/${encode(productId)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products
@@ -70,7 +76,7 @@ export class Products {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-sku
 	 */
 	public deleteSku(productId: string, skuId: string, params?: T.ProductsDeleteSkuParams) {
-		return this.client.delete(`/products/${encode(productId)}/skus/${encode(skuId)}`, { qs: params })
+		return this.client.delete(`/products/${encode(productId)}/skus/${encode(skuId)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus
