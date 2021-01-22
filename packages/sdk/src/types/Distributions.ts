@@ -1,4 +1,4 @@
-import { CustomerRequest, CustomerObject } from './Customers'
+import { CustomerRequest, CustomerObject, SimpleCustomer } from './Customers'
 
 type VoucherType = 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW_CODE'
 
@@ -29,11 +29,11 @@ interface DistributionsPublicationsVoucher {
 	code?: string
 	object?: 'voucher'
 	campaign?: string
-	gift: {
+	gift?: {
 		amount: number
 		balance: number
 	}
-	loyalty_card: {
+	loyalty_card?: {
 		amount: number
 		balance: number
 	}
@@ -49,11 +49,11 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	category?: string
 	type?: VoucherType
 	discount?: VoucherDiscount
-	gift: {
+	gift?: {
 		amount: number
 		balance: number
 	}
-	loyalty_card: {
+	loyalty_card?: {
 		amount: number
 		balance: number
 	}
@@ -100,7 +100,7 @@ export interface DistributionsPublicationsListParams {
 	campaign?: string
 	customer?: string
 	voucher?: string
-	result?: 'SUCCESS' | 'FAILURE'
+	result: 'SUCCESS' | 'FAILURE'
 	voucher_type?: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 	is_referral_code?: boolean
 	filters?: {
@@ -157,7 +157,7 @@ export interface DistributionsPublicationsCreateResponse {
 	metadata?: Record<string, any>
 	channel?: string
 	source_id?: string
-	result?: 'SUCCESS' | 'FAILURE'
-	customer?: CustomerObject
+	result: 'SUCCESS' | 'FAILURE'
+	customer?: SimpleCustomer
 	voucher: DistributionsPublicationsCreateResponseVoucher
 }
