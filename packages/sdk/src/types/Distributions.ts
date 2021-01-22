@@ -100,7 +100,7 @@ export interface DistributionsPublicationsListParams {
 	campaign?: string
 	customer?: string
 	voucher?: string
-	result: 'SUCCESS' | 'FAILURE'
+	result?: 'SUCCESS' | 'FAILURE'
 	voucher_type?: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 	is_referral_code?: boolean
 	filters?: {
