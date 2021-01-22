@@ -32,6 +32,7 @@ export interface ProductsCreateResponse {
 	price?: number
 	attributes?: string[]
 	created_at: string
+	image_url?: string
 }
 
 export type ProductsGetResponse = ProductsCreateResponse & ProductsGetResponseSkus
@@ -46,7 +47,7 @@ export type ProductsUpdate = {
 	metadata?: Record<string, any>
 }
 
-export type ProductsUpdateResponse = ProductsCreateResponse & ProductsGetResponseSkus
+export type ProductsUpdateResponse = ProductsCreateResponse
 
 export interface ProductsBulkMetadataUpdate {
 	source_ids: string[]
