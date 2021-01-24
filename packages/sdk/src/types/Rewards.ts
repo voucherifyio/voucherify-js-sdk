@@ -4,8 +4,8 @@ export interface RewardsListParams {
 }
 
 export interface RewardsListResponse {
-	object?: 'list'
-	total?: number
+	object: 'list'
+	total: number
 	data_ref?: string
 	data: {
 		id?: string
@@ -70,9 +70,9 @@ export interface RewardsListAssigmentsParams {
 }
 
 export interface RewardsListAssigmentsResponse {
-	total?: number
-	data?: RewardsAssigmentObject[]
-	object?: 'list'
+	total: number
+	data: RewardsAssigmentObject[]
+	object: 'list'
 	data_ref?: 'data'
 }
 
