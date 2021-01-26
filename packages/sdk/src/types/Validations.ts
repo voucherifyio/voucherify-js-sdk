@@ -61,6 +61,18 @@ export interface ValidationsValidateVoucherParams {
 }
 
 export interface ValidationsValidateVoucherResponse {
+	applicable_to?: {
+		object: 'list'
+		total: number
+		data?: {
+			id: string
+			object: 'product'
+			source_id?: string
+		}[]
+	}
+	campaign?: string
+	campaign_id?: string
+	metadata?: Record<string, any>
 	code?: string
 	valid?: boolean
 	discount: VouchersDiscountAmount | VouchersDiscountUnit | VouchersDiscountPercent
@@ -70,7 +82,7 @@ export interface ValidationsValidateVoucherResponse {
 		discount_amount?: number
 		items?: VouchersItem[]
 	}
-	tracking_id?: string
+	tracking_id: string
 }
 export interface ValidationsValidateCode {
 	customer?: {
