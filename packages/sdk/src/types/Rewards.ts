@@ -3,67 +3,85 @@ export interface RewardsListParams {
 	limit?: number
 }
 
+export interface RewardsCreateResponse {
+	id: string
+	name?: string
+	paramteres?: {
+		campaign?: {
+			id: string
+			balance?: number
+		}
+		product?: {
+			id?: string
+			sku_id?: string
+		}
+		coin?: {
+			exchange_ratio: number
+		}
+	}
+	type?: 'MATERIAL' | 'CAMPAIGN' | 'COIN'
+	stock?: number
+	redeemed?: number
+	attributes?: {
+		image_url?: string
+		description?: string
+	}
+	created_at: string
+	updated_at?: string
+	object: 'reward'
+}
+
 export interface RewardsListResponse {
 	object: 'list'
 	total: number
-	data_ref?: string
-	data: {
-		id?: string
-		name?: string
-		parameters?: {
-			campaign?: {
-				id?: string
-			}
-		}
-		created_at?: string
-		updated_at?: string
-		object?: string
-	}[]
+	data_ref: 'data'
+	data: RewardsCreateResponse[]
 }
 
 export interface RewardsCreate {
-	name?: string
-	parameters?: {
+	name: string
+	parameters: {
 		campaign?: {
+			id: string
+			balance?: number
+		}
+		product?: {
 			id?: string
+			sku_id?: string
+		}
+		coin?: {
+			exchange_ratio: number
 		}
 	}
-}
-
-export interface RewardsCreateResponse {
-	id?: string
-	name?: string
-	created_at?: string
-	parameters?: {
-		automation_id?: string
-		campaign?: {
-			id?: string
-			type?: string
-		}
+	type?: 'MATERIAL' | 'CAMPAIGN' | 'COIN'
+	stock?: number
+	attributes?: {
+		image_url?: string
+		description?: string
 	}
-	object?: 'reward'
 }
 
 export type RewardsGetResponse = RewardsCreateResponse
 
-export type RewardsUpdate = RewardsCreate & { id?: string }
+export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
 
 export type RewardsUpdateResponse = RewardsCreateResponse
 
 export interface RewardsAssigmentObject {
-	id?: string
-	reward_id?: string
+	id: string
+	reward_id: string
 	related_object_id?: string
 	related_object_type?: string
 	parameters?: {
 		loyalty?: {
-			points?: number
+			points: number
 		}
 	}
-	created_at?: string
+	created_at: string
 	updated_at?: string
-	object?: 'reward_assignment'
+	object: 'reward_assignment'
 }
+
 export interface RewardsListAssigmentsParams {
 	limit?: number
 	page?: number
@@ -73,7 +91,7 @@ export interface RewardsListAssigmentsResponse {
 	total: number
 	data: RewardsAssigmentObject[]
 	object: 'list'
-	data_ref?: 'data'
+	data_ref: 'data'
 }
 
 export interface RewardsCreateAssigment {
@@ -87,6 +105,6 @@ export interface RewardsCreateAssigment {
 
 export type RewardsCreateAssigmentResponse = RewardsAssigmentObject
 
-export type RewardsUpdateAssigment = RewardsCreateAssigment & { id?: string }
+export type RewardsUpdateAssigment = RewardsCreateAssigment & { id: string }
 
 export type RewardsUpdateAssigmentResponse = RewardsAssigmentObject

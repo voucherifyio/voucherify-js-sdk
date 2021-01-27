@@ -39,7 +39,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments
 	 */
-	public listAssignments(rewardId: string, params: T.RewardsListAssigmentsParams) {
+	public listAssignments(rewardId: string, params: T.RewardsListAssigmentsParams = {}) {
 		return this.client.get<T.RewardsListAssigmentsResponse>(`/rewards/${encode(rewardId)}/assignments`, params)
 	}
 	/**
