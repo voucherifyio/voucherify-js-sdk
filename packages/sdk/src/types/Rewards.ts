@@ -3,23 +3,9 @@ export interface RewardsListParams {
 	limit?: number
 }
 
-export interface RewardsCreateResponse {
+export interface RewardsResponse {
 	id: string
 	name?: string
-	paramteres?: {
-		campaign?: {
-			id: string
-			balance?: number
-		}
-		product?: {
-			id?: string
-			sku_id?: string
-		}
-		coin?: {
-			exchange_ratio: number
-		}
-	}
-	type?: 'MATERIAL' | 'CAMPAIGN' | 'COIN'
 	stock?: number
 	redeemed?: number
 	attributes?: {
@@ -31,6 +17,8 @@ export interface RewardsCreateResponse {
 	object: 'reward'
 }
 
+export type RewardsCreateResponse = RewardsResponse & RewardsTypeResponse
+
 export interface RewardsListResponse {
 	object: 'list'
 	total: number
@@ -38,28 +26,53 @@ export interface RewardsListResponse {
 	data: RewardsCreateResponse[]
 }
 
-export interface RewardsCreate {
+export interface Rewards {
 	name: string
-	parameters: {
-		campaign?: {
-			id: string
-			balance?: number
-		}
-		product?: {
-			id?: string
-			sku_id?: string
-		}
-		coin?: {
-			exchange_ratio: number
-		}
-	}
-	type?: 'MATERIAL' | 'CAMPAIGN' | 'COIN'
 	stock?: number
 	attributes?: {
 		image_url?: string
 		description?: string
 	}
 }
+
+interface RewardsTypeMaterial {
+	type?: 'MATERIAL'
+	parameters: {
+		product?: {
+			id?: string
+			sku?: string
+		}
+	}
+}
+
+interface RewardsTypeCampaign {
+	type?: 'CAMPAIGN'
+	parameters: {
+		campaign?: {
+			id: string
+			balance?: number
+		}
+	}
+}
+
+export type RewardsTypeCampaignResponse = RewardsTypeCampaign & {
+	parameters: { campaign?: { type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM' } }
+}
+
+interface RewardsTypeCoin {
+	type?: 'COIN'
+	parameters: {
+		coin?: {
+			exchange_ratio?: number
+		}
+	}
+}
+
+export type RewardsType = RewardsTypeCampaign | RewardsTypeCoin | RewardsTypeMaterial
+
+export type RewardsTypeResponse = RewardsTypeCampaignResponse | RewardsTypeCoin | RewardsTypeMaterial
+
+export type RewardsCreate = Rewards & RewardsType
 
 export type RewardsGetResponse = RewardsCreateResponse
 
@@ -98,7 +111,7 @@ export interface RewardsCreateAssigment {
 	campaign?: string
 	parameters?: {
 		loyalty?: {
-			points?: number
+			points: number
 		}
 	}
 }
