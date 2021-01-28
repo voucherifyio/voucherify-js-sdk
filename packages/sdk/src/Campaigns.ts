@@ -49,6 +49,13 @@ export class Campaigns {
 	public addVoucher(name: string, params: T.CampaignsAddVoucherParams = {}) {
 		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, params)
 	}
+
+	public addVoucherSpecific(name: string, code: string, params: T.CampaignsAddVoucherParams = {}) {
+		return this.client.post<T.CampaignsAddVoucherResponse>(
+			`/campaigns/${encode(name)}/vouchers/${encode(code)}`,
+			params,
+		)
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
 	 */
