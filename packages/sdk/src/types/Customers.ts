@@ -1,3 +1,12 @@
+export interface SimpleCustomer {
+	id: string
+	name?: string
+	email?: string
+	source_id?: string
+	metadata?: Record<string, any>
+	object: 'customer'
+}
+
 export interface CustomerObject {
 	id: string
 	source_id: string
