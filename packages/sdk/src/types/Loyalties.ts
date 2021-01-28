@@ -1,5 +1,3 @@
-import { Loyalties } from '../Loyalties'
-
 interface LoyaltiesVoucherDiscountUnit {
 	type?: 'UNIT'
 	unit_off?: number
@@ -36,21 +34,21 @@ export interface LoyaltiesListParams {
 	page?: number
 }
 
+interface ValidationRulesResponse {
+	id: string
+	rule_id: string
+	related_object_id: string
+	related_object_type: 'campaign'
+	created_at: string
+	updated_at?: string
+	object: 'validation_rules_assignment'
+}
+
 export interface LoyaltiesListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'campaigns'
-	campaigns?: {
-		name: string
-		campaign_type?: string
-		start_date?: string
-		expiration_date?: string
-		vouchers_count?: number
-		object?: 'campaign'
-		referral_program?: boolean
-		voucher?: LoyaltiesVoucher
-		metadata?: Record<string, string>
-	}[]
+	object: 'list'
+	total: number
+	data_ref: 'campaigns'
+	campaigns?: LoyaltiesCreateCampaignResponse[]
 }
 
 export interface LoyaltiesCreateCampaign {
@@ -78,26 +76,37 @@ export interface LoyaltiesCreateCampaign {
 }
 
 export interface LoyaltiesCreateCampaignResponse {
-	id?: string
-	name?: string
-	campaign_type?: string
-	type?: string
-	description?: string
+	id: string
+	name: string
+	campaign_type?: 'LOYALTY_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	category?: string
+	auto_join?: boolean
+	join_once?: boolean
+	description: string
 	start_date?: string
-	expiration_date?: string
-	validity_timeframe?: string
-	metadata?: Record<string, any>
-	vouchers_count?: number
-	vouchers_generation_status?: string
-	active?: boolean
-	voucher?: LoyaltiesVoucher
-	validation_rules_assignments?: {
-		object?: 'list'
-		total?: number
-		data_ref?: 'data'
-		data?: $FixMe[]
+	validation_rules_assignments: {
+		data?: ValidationRulesResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
 	}
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, string>
+	created_at: string
+	vouchers_generation_status: 'DONE'
+	active: boolean
+	voucher?: LoyaltiesVoucher
 	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
 	object?: 'campaign'
 }
 
@@ -125,9 +134,9 @@ export interface LoyaltiesListRewardAssigmentsParams {
 }
 
 export interface LoyaltiesListRewardAssigmentsResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
+	object: 'list'
+	total: number
+	data_ref: 'data'
 	data: {
 		id?: string
 		reward_id?: string
@@ -147,21 +156,21 @@ export interface LoyaltiesListRewardAssigmentsResponse {
 export interface LoyaltiesCreateRewardAssigments {
 	reward?: string
 	parameters?: {
-		points?: number
+		points: number
 	}
 }
 
 export interface LoyaltiesCreateRewardAssigmentResponse {
-	id?: string
+	id: string
 	reward_id?: string
 	related_object_id?: string
 	related_object_type?: string
 	parameters?: {
 		loyalty?: {
-			points?: number
+			points: number
 		}
 	}
-	created_at?: string
+	created_at: string
 	updated_at?: string
 	object: 'reward_assignment'
 }
@@ -170,7 +179,7 @@ export interface LoyaltiesUpdateRewardAssigment {
 	id: string
 	parameters?: {
 		loyalty?: {
-			points?: number
+			points: number
 		}
 	}
 }
@@ -197,25 +206,25 @@ export interface LoyaltyProportional {
 	}
 }
 export interface LoyaltiesListEarningRulesResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: string
+	object: 'list'
+	total: number
+	data_ref: string
 	data: {
 		id: string
 		created_at: string
-		updated_at: string
-		validation_rule_id: string
-		loyalty: LoyaltyFixed | LoyaltyProportional | $FixMe
-		segment: {
+		updated_at?: string
+		validation_rule_id?: string
+		loyalty?: LoyaltyFixed | LoyaltyProportional | $FixMe
+		segment?: {
 			id: string
 		}
-		event: 'customer.segment.entered' | 'order.paid' | string
-		source: {
-			banner: string
-			object_id: string
-			object_type: string
+		event?: 'customer.segment.entered' | 'order.paid' | string
+		source?: {
+			banner?: string
+			object_id?: string
+			object_type?: string
 		}
-		object?: 'earning_rule'
+		object: 'earning_rule'
 		automation_id: string
 	}[]
 }
@@ -230,9 +239,9 @@ export interface LoyaltiesCreateEarningRule {
 }
 
 export interface LoyaltiesCreateEarningRuleResponse {
-	id?: string
-	object?: 'earning_rule'
-	created_at?: string
+	id: string
+	object: 'earning_rule'
+	created_at: string
 	validation_rule_id?: string
 	source?: {
 		banner?: string
@@ -240,7 +249,7 @@ export interface LoyaltiesCreateEarningRuleResponse {
 		object_type?: string
 	}
 	loyalty?: {
-		points?: number
+		points: number
 	}
 	event?: string
 }
@@ -249,10 +258,10 @@ export interface LoyaltiesUpdateEarningRule {
 	id: string
 	validation_rule_id?: string
 	source?: {
-		banner?: string
+		banner: string
 	}
 	loyalty?: {
-		points?: number
+		points: number
 	}
 }
 
@@ -272,11 +281,11 @@ export interface LoyaltiesListMembersParams {
 }
 
 export interface LoyaltiesListMembersResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: string
-	vouchers: {
-		id?: string
+	object: 'list'
+	total: number
+	data_ref: string
+	vouchers?: {
+		id: string
 		code?: string
 		campaign?: string
 		campaign_id?: string
@@ -290,8 +299,11 @@ export interface LoyaltiesListMembersResponse {
 		}
 		start_date?: string
 		expiration_date?: string
-		validity_timeframe?: string
-		validity_day_of_week?: string
+		validity_timeframe?: {
+			interval?: string
+			duration?: string
+		}
+		validity_day_of_week?: number[]
 		publish?: {
 			count?: number
 			entries?: $FixMe
@@ -325,7 +337,7 @@ export interface LoyaltiesCreateMember {
 }
 
 export interface LoyaltiesCreateMemberResponse {
-	id?: string
+	id: string
 	code?: string
 	campaign?: string
 	campaign_id?: string
@@ -337,8 +349,11 @@ export interface LoyaltiesCreateMemberResponse {
 	}
 	start_date?: string
 	expiration_date?: string
-	validity_timeframe?: string
-	validity_day_of_week?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
 	publish?: {
 		object?: string
 		count?: number
@@ -411,14 +426,14 @@ export interface LoyaltiesRedeemReward {
 }
 
 export interface LoyaltiesRedeemRewardResponse {
-	id?: string
+	id: string
 	object?: string
-	date?: string
+	date: string
 	customer_id?: string
 	tracking_id?: string
 	amount?: number
 	reward: {
-		id?: string
+		id: string
 		assignment_id?: string
 		voucher: {
 			id?: string
@@ -435,8 +450,11 @@ export interface LoyaltiesRedeemRewardResponse {
 			loyalty_card?: { points: number; balance: number }
 			start_date?: string
 			expiration_date?: string
-			validity_timeframe?: string
-			validity_day_of_week?: string
+			validity_timeframe?: {
+				interval?: string
+				duration?: string
+			}
+			validity_day_of_week?: number[]
 			publish?: {
 				count?: number
 				entries?: $FixMe
@@ -494,8 +512,11 @@ export interface LoyaltiesRedeemRewardResponse {
 		}
 		start_date?: string
 		expiration_date?: string
-		validity_timeframe?: string
-		validity_day_of_week?: string
+		validity_timeframe?: {
+			interval?: string
+			duration?: string
+		}
+		validity_day_of_week?: number[]
 		publish: {
 			object?: string
 			count?: number

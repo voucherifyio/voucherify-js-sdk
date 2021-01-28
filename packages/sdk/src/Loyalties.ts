@@ -6,7 +6,7 @@ import type { RequestController } from './RequestController'
 export class Loyalties {
 	constructor(private client: RequestController) {}
 
-	public list(params: T.LoyaltiesListParams) {
+	public list(params: T.LoyaltiesListParams = {}) {
 		return this.client.get<T.LoyaltiesListResponse>('/loyalties', params)
 	}
 	public create(campaign: T.LoyaltiesCreateCampaign) {
