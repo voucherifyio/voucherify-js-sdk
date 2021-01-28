@@ -149,6 +149,7 @@ export interface CampaignsDeleteParams {
 }
 
 export interface CampaignsAddVoucherParams {
+	code?: string
 	category?: string
 	metadata?: Record<string, any>
 	additional_info?: string
