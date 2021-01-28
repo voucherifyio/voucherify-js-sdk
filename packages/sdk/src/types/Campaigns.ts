@@ -23,46 +23,63 @@ interface CampaignsVoucher {
 	type?: string
 	is_referral_code?: boolean
 	discount?: CampaignsVoucherDiscountAmount | CampaignsVoucherDiscountPercent | CampaignsVoucherDiscountUnit
-	loyalty_card?: $FixMe
+	loyalty_card?: {
+		points: number
+		balance: number
+	}
 	redemption?: {
-		quantity?: number
+		quantity: number
 	}
 }
 
+interface ValidationRulesResponse {
+	id: string
+	rule_id: string
+	related_object_id: string
+	related_object_type: 'campaign'
+	created_at: string
+	updated_at?: string
+	object: 'validation_rules_assignment'
+}
+
 export interface CampaignResponse {
-	id?: string
-	name?: string
-	campaign_type?: string
-	type?: string
-	description?: string
+	id: string
+	name: string
+	campaign_type?: 'LOYALTY_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	category?: string
+	auto_join?: boolean
+	join_once?: boolean
+	description: string
 	start_date?: string
-	expiration_date?: string
-	validity_timeframe?: string
-	validity_day_of_week?: string
-	metadata?: Record<string, any>
-	vouchers_generation_status?: string
-	active?: boolean
-	voucher: CampaignsVoucher
-	validation_rules_assignments?: {
-		object?: 'list'
-		total?: number
-		data_ref?: 'data'
-		data: {
-			id?: string
-			rule_id?: string
-			related_object_id?: string
-			related_object_type?: string
-			created_at?: string
-			object?: 'validation_rules_assignment'
-		}[]
+	validation_rules_assignments: {
+		data?: ValidationRulesResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
 	}
-	referral_program?: $FixMe
-	object?: 'campaign'
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, string>
+	created_at: string
+	vouchers_generation_status: 'DONE'
+	active: boolean
+	voucher?: CampaignsVoucher
+	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
+	object: 'campaign'
 }
 
 export interface CampaignsQualificationsBody {
 	customer?: {
-		id?: string
+		id: string
 		name?: string
 		email?: string
 		metadata?: Record<string, any>
@@ -79,7 +96,7 @@ export interface CampaignsQualificationsBody {
 		phone?: string
 	}
 	order: {
-		id?: string
+		id: string
 		source_id?: string
 		items?: {
 			product_id?: string
@@ -109,9 +126,9 @@ export interface CampaignsQualificationsParams {
 }
 
 export interface CampaignsQualificationsResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
+	object: 'list'
+	total: number
+	data_ref: 'data'
 	data: CampaignResponse[]
 	id?: string
 	created_at?: string
@@ -146,7 +163,10 @@ export interface CampaignsAddVoucherResponse {
 	category?: string
 	type?: string
 	discount: CampaignsVoucherDiscountPercent | CampaignsVoucherDiscountAmount | CampaignsVoucherDiscountUnit
-	gift?: $FixMe
+	gift?: {
+		amount: number
+		balance: number
+	}
 	start_date?: string
 	expiration_date?: string
 	publish?: {
@@ -163,6 +183,15 @@ export interface CampaignsAddVoucherResponse {
 	metadata?: Record<string, any>
 }
 
+export interface CampaignsImportVouchers {
+	code: string
+	redemption?: {
+		quantity: number
+	}
+	metadata?: Record<string, any>
+	additional_info?: string
+}
+
 export interface CampaignsListParams {
 	limit?: number
 	page?: number
@@ -174,9 +203,9 @@ export interface CampaignsListParams {
 }
 
 export interface CampaignsListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'campaigns'
+	object: 'list'
+	total: number
+	data_ref: 'campaigns'
 	campaigns: CampaignResponse[]
 }
 
