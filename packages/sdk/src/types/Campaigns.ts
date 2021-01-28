@@ -149,11 +149,12 @@ export interface CampaignsDeleteParams {
 }
 
 export interface CampaignsAddVoucherParams {
-	vouchers_count?: number
-}
-
-export interface CampaignsAddVoucherBody {
-	vouchers_count?: number
+	category?: string
+	metadata?: Record<string, any>
+	additional_info?: string
+	redemption?: {
+		quantity: number
+	}
 }
 
 export interface CampaignsAddVoucherResponse {
