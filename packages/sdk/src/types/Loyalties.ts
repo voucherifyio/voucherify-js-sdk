@@ -107,7 +107,7 @@ export interface LoyaltiesCreateCampaignResponse {
 	use_voucher_metadata_schema?: boolean
 	protected?: boolean
 	vouchers_count?: number
-	object?: 'campaign'
+	object: 'campaign'
 }
 
 export type LoyaltiesGetCampaignResponse = LoyaltiesCreateCampaignResponse
