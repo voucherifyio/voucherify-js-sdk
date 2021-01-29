@@ -44,32 +44,73 @@ export interface RedemptionsRedeemResponse {
 	metadata?: Record<string, any>
 	result?: string
 	voucher?: {
-		code?: string
+		id: string
+		code: string
 		campaign?: string
 		category?: string
-		type?: string
-		discount?: RedemptionsVoucherDiscountPercent | RedemptionsVoucherDiscountAmount | RedemptionsVoucherDiscountUnit
-		gift?: $FixMe
+		type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
+		discount: RedemptionsVoucherDiscountAmount | RedemptionsVoucherDiscountPercent | RedemptionsVoucherDiscountUnit
+		gift?: {
+			amount: number
+		}
+		loyalty_card?: {
+			points: number
+		}
 		start_date?: string
 		expiration_date?: string
-		validity_timeframe?: string
+		validity_timeframe?: {
+			interval: string
+			duration: string
+		}
+		validity_day_of_week?: number[]
 		publish?: {
 			object: 'list'
 			count: number
+			data_ref: 'entries'
+			entries: $FixMe[]
+			total: number
 			url: string
 		}
-		redemption: {
+		redemption?: {
 			object: 'list'
-			quantity: number
+			quantity?: number
 			redeemed_quantity: number
+			data_ref: 'redemption_entries'
+			redemption_entries: $FixMe[]
+			total: number
 			url: string
 		}
 		active: boolean
 		additional_info?: string
 		metadata?: Record<string, any>
-		is_referral_code: false
+		assets?: {
+			qr?: {
+				id: string
+				url: string
+			}
+			barcode?: {
+				id: string
+				url: string
+			}
+		}
+		is_referral_code: boolean
+		referrer_id?: string
+		holder_id?: string
 		updated_at?: string
 		object: 'voucher'
+		validation_rules_assignments: {
+			object: 'list'
+			total: number
+			data_ref: 'data'
+			data?: {
+				id: string
+				rule_id?: string
+				related_object_id?: string
+				related_object_type?: string
+				created_at: string
+				object: 'validation_rules_assignment'
+			}[]
+		}
 	}
 }
 
@@ -91,23 +132,29 @@ export interface RedemptionsListResponse {
 	total: number
 	data_ref: 'redemptions'
 	redemptions: {
-		object: 'redemption'
 		id?: string
+		object: 'redemption'
+		date?: string
 		customer_id?: string
 		tracking_id?: string
-		date?: string
-		result?: string
-		failure_code?: $FixMe
 		order?: {
 			amount?: number
 			items?: OrdersItem[]
 		}
 		metadata?: Record<string, any>
+		result?: string
+		customer?: SimpleCustomer
+		related_object_type?: 'string'
 		voucher?: {
 			code?: string
 			campaign?: string
 		}
-		customer?: $FixMe
+		gift?: {
+			amount: number
+		}
+		loyalty_card?: {
+			points: number
+		}
 	}[]
 }
 
