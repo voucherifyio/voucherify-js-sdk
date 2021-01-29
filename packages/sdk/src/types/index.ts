@@ -1,6 +1,7 @@
 export * from './Customers'
 export * from './Balance'
 export * from './Vouchers'
+export * from './Rewards'
 export * from './Products'
 export * from './Distributions'
 export * from './Segments'
