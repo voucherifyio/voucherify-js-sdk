@@ -55,8 +55,15 @@ interface RewardsTypeCampaign {
 	}
 }
 
-export type RewardsTypeCampaignResponse = RewardsTypeCampaign & {
-	parameters: { campaign?: { type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM' } }
+interface RewardsTypeCampaignResponse {
+	type?: 'CAMPAIGN'
+	parameters: {
+		campaign?: {
+			id: string
+			balance?: number
+			type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+		}
+	}
 }
 
 interface RewardsTypeCoin {
@@ -70,7 +77,10 @@ interface RewardsTypeCoin {
 
 export type RewardsType = RewardsTypeCampaign | RewardsTypeCoin | RewardsTypeMaterial
 
-export type RewardsTypeResponse = RewardsTypeCampaignResponse | RewardsTypeCoin | RewardsTypeMaterial
+export type RewardsTypeResponse =
+	| Required<RewardsTypeCampaignResponse>
+	| Required<RewardsTypeCoin>
+	| Required<RewardsTypeMaterial>
 
 export type RewardsCreate = Rewards & RewardsType
 
