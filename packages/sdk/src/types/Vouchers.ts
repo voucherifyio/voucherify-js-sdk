@@ -1,21 +1,5 @@
-export interface VouchersItem {
-	sku_id?: string
-	product_id?: string
-	related_object?: 'product' | 'sku'
-	source_id?: string
-	quantity?: number
-	price?: number
-	amount?: number
-	product?: {
-		override?: boolean
-		name?: string
-		metadata?: Record<string, any>
-	}
-	sku?: {
-		override?: boolean
-		sku?: string
-	}
-}
+import { OrdersGetResponse } from './Orders'
+import { SimpleCustomer } from './Customers'
 
 interface DiscountUnit {
 	type?: 'UNIT'
@@ -33,25 +17,82 @@ interface DiscountPercent {
 	percent_off?: number
 }
 
+export interface VouchersResponse {
+	id: string
+	code: string
+	campaign?: string
+	category?: string
+	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
+	discount: DiscountAmount | DiscountPercent | DiscountUnit
+	gift?: {
+		amount: number
+	}
+	loyalty_card?: {
+		points: number
+	}
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week?: number[]
+	publish?: {
+		object: 'list'
+		count: number
+		data_ref: 'entries'
+		entries: $FixMe[]
+		total: number
+		url: string
+	}
+	redemption?: {
+		object: 'list'
+		quantity?: number
+		redeemed_quantity: number
+		data_ref: 'redemption_entries'
+		redemption_entries: $FixMe[]
+		total: number
+		url: string
+	}
+	active: boolean
+	additional_info?: string
+	metadata?: Record<string, any>
+	assets?: {
+		qr?: {
+			id: string
+			url: string
+		}
+		barcode?: {
+			id: string
+			url: string
+		}
+	}
+	is_referral_code: boolean
+	referrer_id?: string
+	holder_id?: string
+	updated_at?: string
+	object: 'voucher'
+	validation_rules_assignments: {
+		object: 'list'
+		total: number
+		data_ref: 'data'
+		data?: {
+			id: string
+			rule_id?: string
+			related_object_id?: string
+			related_object_type?: string
+			created_at: string
+			object: 'validation_rules_assignment'
+		}[]
+	}
+}
+
 export interface VouchersQualificationExamineBody {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
-	order?: {
-		id?: string
-		source_id?: string
-		amount?: number
-		items?: VouchersItem[]
-		metadata?: Record<string, any>
-	}
+	customer?: Omit<SimpleCustomer, 'object'> & { description: string }
+	order?: Pick<OrdersGetResponse, 'id' | 'source_id' | 'amount' | 'items' | 'metadata'>
 	reward?: {
-		id?: string
-		assigment_id?: string
+		id: string
+		assignment_id?: string
 	}
 	metadata?: Record<string, any>
 }
@@ -63,86 +104,28 @@ export interface VouchersQualificationExamineParams {
 }
 
 export interface VouchersQualificationExamineResponse {
-	id?: string
-	created_at?: string
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
-	data?: {
-		id?: string
-		code?: string
-		campaign?: string
-		category?: string
-		type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-		discount: DiscountAmount | DiscountPercent | DiscountUnit
-		gift?: {
-			amount?: number
-		}
-		loyalty_card?: {
-			points?: number
-		}
-		start_date?: string
-		expiration_date?: string
-		validity_timeframe?: string
-		validity_day_of_week?: string
-		publish?: {
-			object?: 'list'
-			count?: number
-			url?: string
-		}
-		redemption?: {
-			object?: 'list'
-			quantity: number
-			redeemed_quantity: number
-			url?: string
-		}
-		active?: boolean
-		additional_info?: string
-		metadata: Record<string, any>
-		assets?: {
-			qr?: {
-				id?: string
-				url?: string
-			}
-			barcode?: {
-				id?: string
-				url?: string
-			}
-		}
-		is_referral_code?: boolean
-		updated_at?: string
-		object?: 'voucher'
-		validation_rules_assignments: {
-			object?: 'list'
-			total?: number
-			data_ref?: 'data'
-			data?: {
-				id?: string
-				rule_id?: string
-				related_object_id?: string
-				related_object_type?: string
-				created_at?: string
-				object?: 'validation_rules_assignment'
-			}[]
-		}
-	}[]
+	id: string
+	created_at: string
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data?: VouchersResponse[]
 }
 
-export interface VouchersCreate {
-	code: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit
-	gift?: {
-		amount?: number
-	}
-	category?: string
-	additional_info?: string
-	start_date?: string
-	expiration_date?: string
-	active?: boolean
-	redemption?: {
-		quantity?: number
-	}
+export type VouchersCreate = Pick<
+	VouchersResponse,
+	| 'code'
+	| 'type'
+	| 'discount'
+	| 'gift'
+	| 'category'
+	| 'additional_info'
+	| 'start_date'
+	| 'expiration_date'
+	| 'active'
+	| 'redemption'
+	| 'metadata'
+> & {
 	code_config?: {
 		length?: number
 		charset?: string
@@ -150,77 +133,11 @@ export interface VouchersCreate {
 		prefix?: string
 		suffix?: string
 	}
-	metadata?: Record<string, any>
 }
 
-export interface VouchersCreateResponse {
-	code: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit
-	gift?: {
-		amount?: number
-	}
-	category?: string
-	additional_info?: string
-	start_date?: string
-	expiration_date?: string
-	active?: boolean
-	publish?: {
-		object?: 'list'
-		count?: number
-		url?: string
-	}
-	redemption?: {
-		object?: 'list'
-		quantity?: number
-		redeemed_quantity?: number
-		url?: string
-	}
-	metadata?: Record<string, any>
-}
+export type VouchersCreateResponse = Omit<VouchersResponse, 'validation_rules_assignments'>
 
-export interface VouchersGetResponse {
-	code: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit
-	gift?: {
-		amount?: number
-	}
-	category?: string
-	additional_info?: string
-	start_date?: string
-	expiration_date?: string
-	active?: boolean
-	publish?: {
-		object?: 'list'
-		count?: number
-		data_ref?: 'entries'
-		entries?: $FixMe[]
-		total?: number
-		url?: string
-	}
-	redemption?: {
-		object?: 'list'
-		total?: number
-		data_ref?: 'redemption_entries'
-		quantity?: number
-		redeemed_quantity?: number
-		redeemed_amount?: number
-		url?: string
-		redemption_entries?: $FixMe[]
-	}
-	assets?: {
-		barcode?: {
-			id?: string
-			url?: string
-		}
-		qr?: {
-			id?: string
-			url?: string
-		}
-	}
-	metadata?: Record<string, any>
-}
+export type VouchersGetResponse = VouchersResponse
 
 export interface VouchersUpdate {
 	code?: string
@@ -231,11 +148,11 @@ export interface VouchersUpdate {
 	additional_info?: string
 	metadata?: Record<string, any>
 	gift?: {
-		amount?: number
+		amount: number
 	}
 }
 
-export type VouchersUpdateResponse = VouchersCreateResponse
+export type VouchersUpdateResponse = VouchersResponse
 
 export interface VouchersDeleteParams {
 	force?: boolean
@@ -258,23 +175,23 @@ export interface VouchersListParams {
 }
 
 export interface VouchersListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'vouchers'
-	vouchers: VouchersGetResponse[]
+	object: 'list'
+	total: number
+	data_ref: 'vouchers'
+	vouchers: VouchersResponse[]
 }
 
 export interface VouchersEnableParams {
 	code?: string
 }
 
-export type VouchersEnableResponse = VouchersCreateResponse
+export type VouchersEnableResponse = VouchersResponse
 
 export interface VouchersDisableParams {
 	code?: string
 }
 
-export type VouchersDisableResponse = VouchersCreateResponse
+export type VouchersDisableResponse = VouchersResponse
 
 export interface VouchersImport {
 	code: string
@@ -287,5 +204,3 @@ export interface VouchersImport {
 	active?: boolean
 	metadata?: Record<string, any>
 }
-
-export interface VouchersImportResponse {}
