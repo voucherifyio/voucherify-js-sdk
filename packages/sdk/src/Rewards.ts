@@ -39,20 +39,20 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments
 	 */
-	public listAssignments(rewardId: string, params: T.RewardsListAssigmentsParams = {}) {
-		return this.client.get<T.RewardsListAssigmentsResponse>(`/rewards/${encode(rewardId)}/assignments`, params)
+	public listAssignments(rewardId: string, params: T.RewardsListAssignmentsParams = {}) {
+		return this.client.get<T.RewardsListAssignmentsResponse>(`/rewards/${encode(rewardId)}/assignments`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment
 	 */
-	public createAssignment(rewardId: string, assignment: T.RewardsCreateAssigment) {
-		return this.client.post<T.RewardsCreateAssigmentResponse>(`/rewards/${encode(rewardId)}/assignments`, assignment)
+	public createAssignment(rewardId: string, assignment: T.RewardsCreateAssignment) {
+		return this.client.post<T.RewardsCreateAssignmentResponse>(`/rewards/${encode(rewardId)}/assignments`, assignment)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment
 	 */
-	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssigment) {
-		return this.client.put<T.RewardsUpdateAssigmentResponse>(
+	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssignment) {
+		return this.client.put<T.RewardsUpdateAssignmentResponse>(
 			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
 			omit(assignment, ['id']),
 		)
