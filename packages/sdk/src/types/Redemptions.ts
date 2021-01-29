@@ -1,3 +1,6 @@
+import { OrdersItem, OrdersCreateResponse } from './Orders'
+import { SimpleCustomer } from './Customers'
+
 interface RedemptionsVoucherDiscountUnit {
 	type?: 'UNIT'
 	unit_off?: number
@@ -14,79 +17,30 @@ interface RedemptionsVoucherDiscountPercent {
 	percent_off?: number
 }
 
-export interface RedemptionsItem {
-	sku_id?: string
-	product_id?: string
-	related_object?: 'product' | 'sku'
-	source_id?: string
-	quantity?: number
-	price?: number
-	amount?: number
-	product?: {
-		override?: boolean
-		name?: string
-		metadata?: Record<string, any>
-	}
-	sku?: {
-		override?: boolean
-		sku?: string
-	}
-}
-
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
-	order?: {
-		id?: string
-		source_id?: string
-		amount?: number
-		items?: RedemptionsItem[]
-		status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
-		metadata?: Record<string, any>
-	}
+	customer?: SimpleCustomer & { description?: string }
+	order?: Pick<OrdersCreateResponse, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
 	metadata?: Record<string, any>
 	reward?: {
 		id?: string
 		points?: number
 	}
 	gift?: {
-		credits?: number
+		credits: number
 	}
 	session?: {
-		key?: string
+		key: string
 	}
 }
 
 export interface RedemptionsRedeemResponse {
-	id?: string
-	object?: 'redemption'
+	id: string
+	object: 'redemption'
 	date?: string
 	customer_id?: string
 	tracking_id?: string
-	order?: {
-		object?: 'order'
-		id?: string
-		source_id?: string
-		amount?: 20050
-		discount_amount?: 10
-		created_at?: string
-		updated_at?: string
-		items?: RedemptionsItem[]
-		customer?: {
-			id?: string
-			object?: string
-		}
-		referrer?: $FixMe
-		status?: string
-		metadata?: Record<string, any>
-	}
+	order?: OrdersCreateResponse
 	metadata?: Record<string, any>
 	result?: string
 	voucher?: {
@@ -99,23 +53,23 @@ export interface RedemptionsRedeemResponse {
 		start_date?: string
 		expiration_date?: string
 		validity_timeframe?: string
-		publish: {
-			object?: 'list'
-			count?: number
-			url?: string
+		publish?: {
+			object: 'list'
+			count: number
+			url: string
 		}
 		redemption: {
 			object: 'list'
-			quantity?: number
-			redeemed_quantity?: number
-			url?: string
+			quantity: number
+			redeemed_quantity: number
+			url: string
 		}
-		active?: boolean
+		active: boolean
 		additional_info?: string
 		metadata?: Record<string, any>
-		is_referral_code?: false
+		is_referral_code: false
 		updated_at?: string
-		object?: 'voucher'
+		object: 'voucher'
 	}
 }
 
@@ -133,11 +87,11 @@ export interface RedemptionsListParams {
 
 // Here API returns string for 'total' as in other API examples it returns number
 export interface RedemptionsListResponse {
-	object?: 'list'
-	total?: string
-	data_ref?: 'redemptions'
+	object: 'list'
+	total: number
+	data_ref: 'redemptions'
 	redemptions: {
-		object?: 'redemption'
+		object: 'redemption'
 		id?: string
 		customer_id?: string
 		tracking_id?: string
@@ -146,7 +100,7 @@ export interface RedemptionsListResponse {
 		failure_code?: $FixMe
 		order?: {
 			amount?: number
-			items?: RedemptionsItem[]
+			items?: OrdersItem[]
 		}
 		metadata?: Record<string, any>
 		voucher?: {
@@ -158,10 +112,10 @@ export interface RedemptionsListResponse {
 }
 
 export interface RedemptionsGetForVoucherResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: string
-	quantity?: number
+	object: 'list'
+	total: number
+	data_ref: string
+	quantity: number
 	redeemed_quantity?: number
 	redeemed_amount?: number
 	redemption_entries?: {
@@ -172,11 +126,7 @@ export interface RedemptionsGetForVoucherResponse {
 		tracking_id?: string
 		order?: {
 			amount?: number
-			items?: {
-				product_id?: string
-				sku_id?: string
-				quantity?: number
-			}[]
+			items?: Pick<OrdersItem, 'product_id' | 'sku_id' | 'quantity'>[]
 		}
 		result?: string
 	}[]
@@ -185,14 +135,7 @@ export interface RedemptionsGetForVoucherResponse {
 export interface RedemptionsRollbackParams {
 	reason?: string
 	tracking_id?: string
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
+	customer?: SimpleCustomer & { description?: string }
 }
 
 export interface RedemptionsRollbackQs {
@@ -201,19 +144,12 @@ export interface RedemptionsRollbackQs {
 }
 
 export interface RedemptionsRollbackPayload {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
+	customer?: SimpleCustomer & { description?: string }
 }
 
 export interface RedemptionsRollbackResponse {
-	id?: string
-	object?: string
+	id: string
+	object: 'redemption_rollback'
 	date?: string
 	customer_id?: string
 	tracking_id?: string
