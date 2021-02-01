@@ -2,19 +2,19 @@
   <img src="./voucherify-nodejs-sdk.png" />
 </p>
 
-<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> SDK for Node.js</h3>
+<h3 align="center">Official Voucherify SDK for JavaScript</h3>
 
 <p align="center">
-  <a href="https://travis-ci.org/voucherifyio/voucherify-nodejs-sdk"><img src="https://travis-ci.org/voucherifyio/voucherify-nodejs-sdk.svg?branch=master" alt="Build Status"/></a>
-  <a href="https://www.npmjs.com/package/voucherify"><img src="https://img.shields.io/npm/v/voucherify.svg" alt="NPM Version"/></a>
-  <a href="https://www.npmjs.com/package/voucherify"><img src="https://img.shields.io/npm/dm/voucherify.svg" alt="NPM Downloads"/></a>
+  <a href="#"><img src="https://travis-ci.org/voucherifyio/voucherify-nodejs-sdk.svg?branch=master" alt="Build Status"/></a>
+  <a href="#"><img src="https://img.shields.io/npm/v/voucherify.svg" alt="NPM Version"/></a>
+  <a href="#"><img src="https://img.shields.io/npm/dm/voucherify.svg" alt="NPM Downloads"/></a>
 </p>
 <hr />
 
 <p align="center">
-<b><a href="#migration-to-5x">Migration to 5.x</a></b>
+<b><a href="#installation">Installation</a></b>
 |
-<b><a href="#setup">Setup</a></b>
+<b><a href="#migration">Migration</a></b>
 |
 <b><a href="#error-handling">Error handling</a></b>
 |
@@ -23,8 +23,10 @@
 <b><a href="#changelog">Changelog</a></b>
 </p>
 
-<p align="center">Server Side</p>
+<p align="center"><b>Server Side</b></p>
 <p align="center">
+<a href="#server-side-setup">Setup</a>
+|
 <a href="#vouchers-api">Vouchers</a>
 |
 <a href="#campaigns-api">Campaigns</a>
@@ -54,72 +56,57 @@
 <a href="#promotions-api">Promotions</a>
 |
 <a href="#events-api">Events</a>
-|
-<a href="#utils">Utils</a>
 </p>
-<p align="center">Client Side</p>
+<p align="center"><b>Client Side</b></p>
 <p align="center">
-<a href="#vouchers-api">Vouchers</a>
+<a href="#client-side-setup">Setup</a>
 |
-<a href="#campaigns-api">Campaigns</a>
+<a href="#">Set Identity</a>
 |
-<a href="#distributions-api">Distributions</a>
+<a href="#">Validate</a>
 |
-<a href="#validations-api">Validations</a>
+<a href="#">Redeem</a>
 |
-<a href="#redemptions-api">Redemptions</a>
+<a href="#">Publish</a>
 |
-<a href="#customers-api">Customers</a>
-|
-<a href="#consents-api">Consents</a>
-|
-<a href="#orders-api">Orders</a>
-|
-<a href="#products-api">Products</a>
-|
-<a href="#rewards-api">Rewards</a>
-|
-<a href="#loyalties-api">Loyalties</a>
-|
-<a href="#segments-api">Segments</a>
-|
-<a href="#validation-rules-api">Validation Rules</a>
-|
-<a href="#promotions-api">Promotions</a>
-|
-<a href="#events-api">Events</a>
-|
-<a href="#utils">Utils</a>
+<a href="#">Track custom events</a>
 </p>
 
 ---
 
 ## About
 
-This SDK is fully consistent with restful API Voucherify provides.
-You will find detailed description and example responses at [official docs](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq).
-Method headers point to more detailed descriptions of params you can use.
+Voucherify.js is a JavaScript SDK which is fully consistent with restful API Voucherify provides.
 
-## Setup
+You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Method headers point to more detailed descriptions of arguments you can use.
+
+Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+
+---
+
+## Installation
 
 ```sh
 npm install voucherify --save
 ```
 
-Mext, [log-in](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general):
+Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general).
+
+---
 
 ## Server Side
 
-### Setup
+### <a name="server-side-setup"></a>Setup
 
 ```javascript
 const { VoucherifyServerSide } = require('@voucherify/sdk')
 
 const client = VoucherifyServerSide({
 	applicationId: 'YOUR-APPLICATION-ID',
-	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05', // optional
+	secretKey: 'YOUR-CLIENT-SECRET-KEY',
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
+	apiVersion: 'v2018-08-01', // optional
+	channel: 'e-commerce', // optional
 })
 ```
 
@@ -175,15 +162,21 @@ client.vouchers.list(params)
 #### [Enable Voucher]
 
 ```javascript
-client.vouchers.enable()
 client.vouchers.enable(code)
+client.vouchers.enable({ code: 'TEST-VOUCHER' })
 ```
 
 #### [Disable Voucher]
 
 ```javascript
-client.vouchers.disable()
 client.vouchers.disable(code)
+client.vouchers.disable({ code: 'TEST-VOUCHER' })
+```
+
+#### [Add Gift Voucher Balance]
+
+```javascript
+client.vouchers.balance.create(code, { amount: 2000 })
 ```
 
 #### [Import Vouchers]
@@ -192,19 +185,10 @@ client.vouchers.disable(code)
 client.vouchers.import(vouchers)
 ```
 
-#### [Add Gift Voucher Balance]
-
-```javascript
-client.vouchers.balance.create(code, { amount })
-```
-
 #### [Examine Vouchers Qualification]
 
 ```javascript
-client.vouchers.qualifications.examine(bodyParams)
-client.vouchers.qualifications.examine(bodyParams, queryParams)
-// Example
-client.vouchers.qualifications.examine({}, { audienceRulesOnly: true, limit: 10 })
+client.vouchers.qualifications.examine(body, params)
 ```
 
 ---
@@ -236,17 +220,17 @@ client.campaigns.update(campaignId, campaign)
 client.campaigns.update(campaignName, campaign)
 ```
 
+#### [Get Campaign]
+
+```javascript
+client.campaigns.get(name)
+```
+
 #### [Delete Campaign]
 
 ```javascript
 client.campaigns.delete(campaignName)
 client.campaigns.delete(campaignName, { force: true })
-```
-
-#### [Get Campaign]
-
-```javascript
-client.campaigns.get(name)
 ```
 
 #### [Add Voucher to Campaign]
@@ -259,12 +243,10 @@ client.campaigns.addVoucher(campaignName, params)
 #### [Import Vouchers to Campaign]
 
 ```javascript
-client.campaigns.importVouchers(campaignName, vouchers, callback)
+client.campaigns.importVouchers(campaignName, vouchers)
 ```
 
 #### [List Campaigns]
-
-Since API version: `v2017-04-20`.
 
 ```javascript
 client.campaigns.list()
@@ -274,10 +256,8 @@ client.campaigns.list(params)
 #### [Examine Campaigns Qualification]
 
 ```javascript
-client.campaigns.qualifications.examine(bodyParams)
-client.campaigns.qualifications.examine(bodyParams, queryParams)
-// Example
-client.campaigns.qualifications.examine({}, { audienceRulesOnly: true, limit: 10 })
+client.campaigns.qualifications.examine(body)
+client.campaigns.qualifications.examine(body, params)
 ```
 
 ---
@@ -346,17 +326,19 @@ Methods are provided within `client.validations.*` namespace.
 ```javascript
 client.validations.validateVoucher(code)
 client.validations.validateVoucher(code, params)
+```
 
-// or
+Other possibility
 
+```
 client.validations.validate(code)
 client.validations.validate(code, params)
 ```
 
-#### [Validate Promotion Campaign](#validate-promotion-campaign)
+#### [Validate Promotion Campaign]
 
 ```javascript
-client.validations.validate(params)
+client.validations.promotions.validate(params)
 ```
 
 ---
@@ -377,17 +359,6 @@ Methods are provided within `client.redemptions.*` namespace.
 ```javascript
 client.redemptions.redeem(code)
 client.redemptions.redeem(code, params)
-
-// Deprecated!
-client.redemptions.redeem({ code, ...params })
-client.redemptions.redeem({ code, ...params }, tracking_id)
-client.redemptions.redeem(code, tracking_id) // use: client.redemptions.redeem(code, {customer: {source_id}})
-```
-
-#### [Redeem Loyalty Card]
-
-```javascript
-client.redemptions.redeem(loyaltyCardId, params)
 ```
 
 #### [List Redemptions]
@@ -408,7 +379,6 @@ client.redemptions.getForVoucher(code)
 ```javascript
 client.redemptions.rollback(redemptionId)
 client.redemptions.rollback(redemptionId, params)
-client.redemptions.rollback(redemptionId, reason)
 ```
 
 Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
@@ -439,7 +409,7 @@ client.promotions.create(promotionCampaign)
 #### [Validate Promotion Campaign]
 
 ```javascript
-client.promotions.validate(validationContext)
+client.validations.promotions.validate(params)
 ```
 
 #### [List Promotion's Tiers]
@@ -454,22 +424,19 @@ Check [promotion's tier object](http://docs.voucherify.io/reference?utm_source=g
 
 ```javascript
 client.promotions.tiers.listAll()
-client.promotions.tiers.listAll({ is_available: true })
-client.promotions.tiers.listAll({ page: 2, limit: 10 })
+client.promotions.tiers.listAll(params})
 ```
-
-You can list all currently available promotions by specifying `is_available` flag.
 
 #### [Create Promotion's Tier]
 
 ```javascript
-client.promotions.tiers.create(promotionId, promotionsTier)
+client.promotions.tiers.create(promotionId, params)
 ```
 
 #### [Redeem Promotion's Tier]
 
 ```javascript
-client.promotions.tiers.redeem(promotionsTierId, redemptionContext)
+client.promotions.tiers.redeem(promotionsTierId, params)
 ```
 
 #### [Update Promotion's Tier]
@@ -545,17 +512,13 @@ async function () {
 }
 ```
 
-`params` argument is consistent with `list` method.
-Keep in mind `scroll` doesn't support callback version.
-
-You can optionally define scrolling cursor based on customer creation date using property `starting_after`.
-By default returned customers are in descending order, if you want to change it to ascending define `order` equal to `create_at`.
+With optional arguments
 
 ```javascript
 async function () {
   for await (const customer of client.customers.scroll({
     starting_after: "2020-01-01", // optional
-    order: "create_at" // optional (by default order is "-create_at" which corresponds to descending).
+    order: "created_at" // default: "-created_at"
     ...params})
   ) {
     console.log('Customer', customer)
@@ -563,9 +526,13 @@ async function () {
 }
 ```
 
-Keep in mind this operation may drain your API call limits fairly quickly.
-In the hood it fetches customers in max possible batches of 100.
-So in example if you have 100'000 customers scroll over all of them, you will use 1000 API calls.
+`params` argument is consistent with `list` method.
+
+You can optionally define scrolling cursor based on customer creation date using property `starting_after`.
+
+By default returned customers are in descending order, if you want to change it to ascending define `order` equal to `create_at`.
+
+Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.
 
 #### [Update Customer's Consents]
 
@@ -579,7 +546,7 @@ client.customers.updateConsents(customer, consents)
 
 Methods are provided within `client.consents.*` namespace.
 
-- [List Customers](#list-customers)
+- [List Consents](#list-consents)
 
 You can [update Customer's consents](#update-customers-consents) in Customer namespace.
 
@@ -619,6 +586,8 @@ client.orders.get(orderId)
 ```javascript
 client.orders.update(order)
 ```
+
+`order` object must contain `id` or `source_id`.
 
 #### [List Orders]
 
@@ -1036,13 +1005,6 @@ client.validationRules.listAssignments(validationRuleId)
 client.validationRules.listAssignments(validationRuleId, params)
 ```
 
-#### [Validate Validation Rule]
-
-```javascript
-client.validationRules.validate(validationRuleId)
-client.validationRules.validate(validationRuleId, params)
-```
-
 ---
 
 ### Events API
@@ -1062,11 +1024,9 @@ client.events.create(eventName, { customer, referral, metadata })
 client.events.create(eventName, { customer, referral, loyalty, metadata })
 ```
 
----
-
 ## Client Side
 
-### Setup
+### ### <a name="client-side-setup"></a>Setup
 
 ```javascript
 const { VoucherifyClientSide } = require('@voucherify/sdk')
@@ -1074,14 +1034,117 @@ const { VoucherifyClientSide } = require('@voucherify/sdk')
 const client = VoucherifyClientSide({
 	clientApplicationId: 'YOUR-APPLICATION-ID',
 	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
-	trackingId: 'gustav@purpleson.com', // or client.setIldentity('gustav@purpleson.com')
-	origin: 'example.com',
+	apiUrl: 'https://<region>.api.voucherify.io', // optional
+	trackingId: 'gustav@purpleson.com', // or client.setIdentity('gustav@purpleson.com')
+	origin: 'example.com', // read more below
 })
+```
+
+The `origin` property is required in Node.js, but when using in client-side environment (in browser) this option will be ignored.
+
+We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user. This method will generate a tracking_id on the server side unless you specify it on your own using `client.setIdentity` method. In both cases you will receive it in the validation response.
+
+### Client Side API
+
+Methods are provided within `client.*` namespace.
+
+### [Set Identity]
+
+```javascript
+client.setIdentity(trackingId)
+```
+
+#### [Validate](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-validate)
+
+Check [params object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+```javascript
+client.validate(params)
+```
+
+#### [Redeem](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side)
+
+Check [payload object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+```javascript
+client.redeem(code, payload)
+```
+
+#### [Publish]
+
+Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+```javascript
+client.publish(campaignName, payload)
+```
+
+#### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
+
+Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+```javascript
+client.track(eventName, metadata, customer)
 ```
 
 ---
 
-### Migration from old Node js SDK
+## Migration
+
+### From Voucherify Nodejs SDK
+
+<table>
+ <tr>
+    <th>
+      Method
+    </th>
+    <th>
+      Previously
+    </th>
+    <th>
+      Currently
+    </th>
+  </tr>
+<tr>
+  <td>
+    Initialization
+  </td>
+  <td>
+
+```javascript
+const client = VoucherifyServerSide({
+	apiUrl: 'https://<region>.api.voucherify.io',
+	applicationId: 'YOUR-APPLICATION-ID',
+	secretKey: 'YOUR-CLIENT-SECRET-KEY',
+	apiVersion: 'v2017-04-05',
+	channel: 'e-commerce',
+})
+```
+
+  </td>
+  <td>
+
+```javascript
+const client = VoucherifyServerSide({
+	apiUrl: 'https://<region>.api.voucherify.io',
+	applicationId: 'YOUR-APPLICATION-ID',
+	secretKey: 'YOUR-CLIENT-SECRET-KEY',
+	apiVersion: 'v2017-04-05',
+	channel: 'e-commerce',
+})
+```
+
+  </td>
+</tr>
+
+</table>
+
+<table>
+
+  <tr>
+
+  <td>
+
+### From Voucherify.js
 
 ---
 
@@ -1090,6 +1153,105 @@ const client = VoucherifyClientSide({
 Depending what you have choose `error` object of rejected Promise or first argument of provided callback has
 consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
 
+---
+
 ## Contributing
 
-Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues).
+Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify.js by visiting [CONTRIBUTING.md](/contributing.md)
+
+[create voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-voucher
+[get voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-get
+[update voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-voucher
+[delete voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-voucher
+[list vouchers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
+[enable voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher
+[disable voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher
+[import vouchers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1
+[examine vouchers qualification]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#push-qualification-request
+[add gift voucher balance]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-gift-voucher-balance
+[create campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-campaign
+[update campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-campaign
+[get campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-campaign
+[add voucher to campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign
+[import vouchers to campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
+[list campaigns]: https://docs.voucherify.io/v2017-04-20/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-campaigns
+[examine campaigns qualification]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-qualification-request
+[create loyalty program]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-loyalty-program
+[get loyalty program]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-loyalty-program
+[update loyalty program]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-loyalty-program
+[delete loyalty program]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-loyalty-program
+[list loyalty programs]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-loyalty-programs
+[create loyalty reward assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment-1
+[update loyalty reward assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment-1
+[delete loyalty reward assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-reward-assignment-1
+[list loyalty reward assignments]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments-1
+[create loyalty earning rules]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-earning-rule
+[update loyalty earning rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-earning-rule
+[delete loyalty earning rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-earning-rule
+[list loyalty earning rules]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-earning-rules
+[create loyalty member]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-member
+[get loyalty member]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-member
+[list loyalty members]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-members
+[get member activities]: https://docs.voucherify.io/reference#get-member-activities
+[add loyalty card balance]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-loyalty-card-balance
+[redeem loyalty card]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-loyalty-card
+[publish voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#publish-voucher
+[create export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-export
+[get export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-export
+[delete export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-export
+[list publications]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications
+[validate voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-voucher
+[redeem voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher
+[list redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
+[get voucher's redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions
+[rollback redemption]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#rollback-redemption
+[create promotion campaign]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign
+[validate promotion campaign]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1
+[list promotion's tiers]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-promotions
+[list all promotion tiers]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers
+[create promotion's tier]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-promotion-tier-to-campaign
+[redeem promotion's tier]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-promotion
+[update promotion's tier]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-promotion
+[delete promotion's tier]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-promotion
+[create customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
+[get customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
+[update customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
+[delete customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+[list customers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers
+[update customer's consents]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents
+[list consents]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consents
+[create order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-order
+[get order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-order
+[update order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-order
+[list orders]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-orders
+[create product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
+[get product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product
+[update product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-product
+[bulk update products]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-in-bulk
+[delete product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product
+[list products]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products
+[create sku]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-sku
+[get sku]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-sku
+[update sku]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-sku
+[delete sku]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-sku
+[list all product skus]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus
+[create reward]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward
+[get reward]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-reward
+[update reward]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward
+[delete reward]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-reward
+[list rewards]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-rewards
+[create reward assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment
+[update reward assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment
+[list reward assignments]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments
+[create validation rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules
+[get validation rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
+[update validation rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
+[delete validation rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
+[list rules]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rules
+[create rule assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules-assignment
+[delete rule assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules-assignment
+[list rule assignments]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rule-assignments
+[create segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
+[get segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
+[delete segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-segment
+[create custom event]: http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-custom-event-object
