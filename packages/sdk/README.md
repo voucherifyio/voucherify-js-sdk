@@ -12,6 +12,8 @@
 <hr />
 
 <p align="center">
+<b><a href="#about">About</a></b>
+|
 <b><a href="#installation">Installation</a></b>
 |
 <b><a href="#migration">Migration</a></b>
@@ -61,15 +63,15 @@
 <p align="center">
 <a href="#client-side-setup">Setup</a>
 |
-<a href="#">Set Identity</a>
+<a href="#set-identity">Set Identity</a>
 |
-<a href="#">Validate</a>
+<a href="#validate">Validate</a>
 |
-<a href="#">Redeem</a>
+<a href="#redeem">Redeem</a>
 |
-<a href="#">Publish</a>
+<a href="#publish">Publish</a>
 |
-<a href="#">Track custom events</a>
+<a href="#track-custom-events">Track custom events</a>
 </p>
 
 ---
@@ -526,11 +528,9 @@ async function () {
 }
 ```
 
-`params` argument is consistent with `list` method.
+`params` argument is consistent with `client.customers.list()` method.
 
-You can optionally define scrolling cursor based on customer creation date using property `starting_after`.
-
-By default returned customers are in descending order, if you want to change it to ascending define `order` equal to `create_at`.
+You can optionally define scrolling cursor based on customer creation date using property `starting_after`. By default returned customers are in descending order, if you want to change it to ascending define `order` equal to `created_at`.
 
 Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.
 
@@ -1026,7 +1026,7 @@ client.events.create(eventName, { customer, referral, loyalty, metadata })
 
 ## Client Side
 
-### ### <a name="client-side-setup"></a>Setup
+### <a name="client-side-setup"></a>Setup
 
 ```javascript
 const { VoucherifyClientSide } = require('@voucherify/sdk')
@@ -1048,7 +1048,13 @@ We are tracking users which are validating vouchers with those who consume them 
 
 Methods are provided within `client.*` namespace.
 
-### [Set Identity]
+- [Set Identity](#set-identity)
+- [Validate](#validate)
+- [Redeem](#redeem)
+- [Publish](#publish)
+- [Track custom events](#track-custom-events)
+
+#### Set Identity
 
 ```javascript
 client.setIdentity(trackingId)
@@ -1070,7 +1076,7 @@ Check [payload object](https://docs.voucherify.io/v1/reference#the-customer-obje
 client.redeem(code, payload)
 ```
 
-#### [Publish]
+#### Publish
 
 Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
 
@@ -1093,16 +1099,16 @@ client.track(eventName, metadata, customer)
 ### From Voucherify Nodejs SDK
 
 <table>
- <tr>
-    <th>
-      Method
-    </th>
-    <th>
-      Previously
-    </th>
-    <th>
-      Currently
-    </th>
+<tr>
+  <th>
+    Method
+  </th>
+  <th>
+    Previously
+  </th>
+  <th>
+    Currently
+  </th>
   </tr>
 <tr>
   <td>
@@ -1135,23 +1141,60 @@ const client = VoucherifyServerSide({
 
   </td>
 </tr>
-
 </table>
 
+### From Voucherify.js
+
 <table>
-
-  <tr>
-
+<tr>
+  <th>
+    Method
+  </th>
+  <th>
+    Previously
+  </th>
+  <th>
+    Currently
+  </th>
+  </tr>
+<tr>
+  <td>
+    Initialization
+  </td>
   <td>
 
-### From Voucherify.js
+```javascript
+const client = VoucherifyServerSide({
+	apiUrl: 'https://<region>.api.voucherify.io',
+	applicationId: 'YOUR-APPLICATION-ID',
+	secretKey: 'YOUR-CLIENT-SECRET-KEY',
+	apiVersion: 'v2017-04-05',
+	channel: 'e-commerce',
+})
+```
+
+  </td>
+  <td>
+
+```javascript
+const client = VoucherifyServerSide({
+	apiUrl: 'https://<region>.api.voucherify.io',
+	applicationId: 'YOUR-APPLICATION-ID',
+	secretKey: 'YOUR-CLIENT-SECRET-KEY',
+	apiVersion: 'v2017-04-05',
+	channel: 'e-commerce',
+})
+```
+
+  </td>
+</tr>
+</table>
 
 ---
 
 ## Error handling
 
-Depending what you have choose `error` object of rejected Promise or first argument of provided callback has
-consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
+Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
 
 ---
 
