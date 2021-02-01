@@ -12,7 +12,7 @@ class VouchersQualification {
 	 * As a sample use case, you can imagine a requirement of displaying below cart the coupons eligible to a customer. The customer can take and apply the proposed voucher.
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#push-qualification-request
 	 */
-	public examine(body: T.VouchersQualificationExamineBody, params?: T.VouchersQualificationExamineParams) {
+	public examine(body: T.VouchersQualificationExamineBody, params: T.VouchersQualificationExamineParams = {}) {
 		return this.client.post<T.VouchersQualificationExamineResponse>('/vouchers/qualification', body, params)
 	}
 }
@@ -43,13 +43,13 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-voucher
 	 */
-	public delete(code: string, params?: T.VouchersDeleteParams) {
+	public delete(code: string, params: T.VouchersDeleteParams = {}) {
 		return this.client.delete(`/vouchers/${encode(code)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
 	 */
-	public list(params?: T.VouchersListParams) {
+	public list(params: T.VouchersListParams = {}) {
 		return this.client.get<T.VouchersListResponse>('/vouchers', params)
 	}
 	/**

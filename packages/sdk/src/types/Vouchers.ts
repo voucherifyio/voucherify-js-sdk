@@ -4,17 +4,19 @@ import { SimpleCustomer } from './Customers'
 interface DiscountUnit {
 	type?: 'UNIT'
 	unit_off?: number
-	effect?: string
+	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	unit_type?: string
 }
 
 interface DiscountAmount {
 	type?: 'AMOUNT'
-	amount_off?: string
+	amount_off?: number
 }
 
 interface DiscountPercent {
 	type?: 'PERCENT'
 	percent_off?: number
+	amount_limit?: number
 }
 
 export interface VouchersResponse {
@@ -23,7 +25,7 @@ export interface VouchersResponse {
 	campaign?: string
 	category?: string
 	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit
+	discount?: DiscountAmount | DiscountPercent | DiscountUnit
 	gift?: {
 		amount: number
 	}
@@ -104,28 +106,14 @@ export interface VouchersQualificationExamineParams {
 }
 
 export interface VouchersQualificationExamineResponse {
-	id: string
-	created_at: string
 	object: 'list'
 	total: number
 	data_ref: 'data'
 	data?: VouchersResponse[]
 }
 
-export type VouchersCreate = Pick<
-	VouchersResponse,
-	| 'code'
-	| 'type'
-	| 'discount'
-	| 'gift'
-	| 'category'
-	| 'additional_info'
-	| 'start_date'
-	| 'expiration_date'
-	| 'active'
-	| 'redemption'
-	| 'metadata'
-> & {
+export interface VouchersCreateParameters {
+	code?: string
 	code_config?: {
 		length?: number
 		charset?: string
@@ -133,7 +121,16 @@ export type VouchersCreate = Pick<
 		prefix?: string
 		suffix?: string
 	}
+	redemption?: {
+		quantity: number
+	}
 }
+
+export type VouchersCreate = VouchersCreateParameters &
+	Pick<
+		VouchersResponse,
+		'type' | 'discount' | 'gift' | 'category' | 'additional_info' | 'start_date' | 'expiration_date' | 'metadata'
+	>
 
 export type VouchersCreateResponse = Omit<VouchersResponse, 'validation_rules_assignments'>
 
