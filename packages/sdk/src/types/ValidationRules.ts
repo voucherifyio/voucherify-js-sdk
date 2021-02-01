@@ -1,5 +1,5 @@
 export interface ValidationRulesCreate {
-	name?: string
+	name: string
 	error?: {
 		message?: string
 	}
@@ -10,7 +10,7 @@ export interface ValidationRulesCreate {
 }
 
 export interface ValidationRulesCreateResponse {
-	id?: string
+	id: string
 	name: string
 	error?: {
 		message?: string
@@ -19,38 +19,41 @@ export interface ValidationRulesCreateResponse {
 		logic?: string
 		[rule: string]: $FixMe
 	}
-	createdAt?: string
-	updatedAt?: string
-	object?: 'validation_rules'
-	assignments_count?: string
+	created_at: string
+	updated_at?: string
+	object: 'validation_rules'
 }
 
-export type ValidationRulesGetResponse = ValidationRulesCreateResponse
-
-export interface ValidationRulesUpdate {
-	name?: string
-	rules?: {
-		logic?: string
-		[rule: string]: $FixMe
+export interface ValidationRulesValidateResponse {
+	valid: boolean
+	rule_id: string
+	applicable_to: {
+		data: any[]
+		object: 'list'
+		total: number
 	}
 }
 
+export type ValidationRulesGetResponse = ValidationRulesCreateResponse & { assignments_count?: string }
+
+export type ValidationRulesUpdate = Partial<ValidationRulesCreate> & { id: string }
+
 export type ValidationRulesUpdateResponse = ValidationRulesCreateResponse
 
-export interface ValidationRulesCreateAssigment {
+export interface ValidationRulesCreateAssignment {
 	voucher?: string
 	campaign?: string
 	promotion_tier?: string
 }
 
-export interface ValidationRulesCreateAssigmentResponse {
-	id?: string
-	rule_id?: string
+export interface ValidationRulesCreateAssignmentResponse {
+	id: string
+	rule_id: string
 	related_object_id?: string
 	related_object_type?: string
 	created_at?: string
-	updated_at?: string
-	object?: 'validation_rules_assignment'
+	updated_at: string
+	object: 'validation_rules_assignment'
 }
 
 export interface ValidationRulesListParams {
@@ -59,17 +62,20 @@ export interface ValidationRulesListParams {
 }
 
 export interface ValidationRulesListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
-	data: ValidationRulesCreateResponse[]
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: ValidationRulesGetResponse[]
 }
 
-export type ValidationRulesListAssigmentsParams = ValidationRulesListParams
+export interface ValidationRulesListAssignmentsParams {
+	limit?: number
+	page?: number
+}
 
-export interface ValidationRulesListAssigmentsResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
-	data: ValidationRulesCreateAssigmentResponse[]
+export interface ValidationRulesListAssignmentsResponse {
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: ValidationRulesCreateAssignmentResponse[]
 }

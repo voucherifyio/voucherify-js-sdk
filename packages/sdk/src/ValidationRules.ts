@@ -36,8 +36,8 @@ export class ValidationRules {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules-assignment
 	 */
-	public createAssignment(validationRuleId: string, assignment: T.ValidationRulesCreateAssigment) {
-		return this.client.post<T.ValidationRulesCreateAssigmentResponse>(
+	public createAssignment(validationRuleId: string, assignment: T.ValidationRulesCreateAssignment) {
+		return this.client.post<T.ValidationRulesCreateAssignmentResponse>(
 			`/validation-rules/${encode(validationRuleId)}/assignments`,
 			assignment,
 		)
@@ -49,23 +49,24 @@ export class ValidationRules {
 		return this.client.delete(`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`)
 	}
 
-	// @todo - I can't find any information regarding this method
-
-	public validate(validationRuleId: string, params?: $FixMe) {
-		return this.client.post<$FixMe>(`/validation-rules/${encode(validationRuleId)}/validation`, params)
+	public validate(validationRuleId: string, params: $FixMe = {}) {
+		return this.client.post<T.ValidationRulesValidateResponse>(
+			`/validation-rules/${encode(validationRuleId)}/validation`,
+			params,
+		)
 	}
 
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rules
 	 */
-	public list(params: T.ValidationRulesListParams) {
+	public list(params: T.ValidationRulesListParams = {}) {
 		return this.client.get<T.ValidationRulesListResponse>('/validation-rules', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rule-assignments
 	 */
-	public listAssignments(validationRuleId: string, params: T.ValidationRulesListAssigmentsParams) {
-		return this.client.get<T.ValidationRulesListAssigmentsResponse>(
+	public listAssignments(validationRuleId: string, params: T.ValidationRulesListAssignmentsParams = {}) {
+		return this.client.get<T.ValidationRulesListAssignmentsResponse>(
 			`/validation-rules/${encode(validationRuleId)}/assignments`,
 			params,
 		)
