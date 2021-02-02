@@ -1216,3 +1216,5 @@ Voucherify `error` object always has consistent structure, described in details 
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/contributing.md)
 
 # <a name="changelog"></a>🗄️ Changelog
+
+- **2021-02-01** - `0.1.0` - First version
