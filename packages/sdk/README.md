@@ -1,4 +1,4 @@
-# Voucherify.js
+# Voucherify JS SDK
 
 <p>
   <a href="#"><img src="https://travis-ci.org/voucherifyio/voucherify-nodejs-sdk.svg?branch=master" alt="Build Status"/></a>
@@ -6,7 +6,7 @@
   <a href="#"><img src="https://img.shields.io/npm/dm/voucherify.svg" alt="NPM Downloads"/></a>
 </p>
 
-Voucherify.js is a JavaScript SDK which is fully consistent with restful API Voucherify provides. Voucherify.js has fully integrated TypeScript support.
+Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
 
 Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
 
@@ -43,18 +43,27 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
 
 # 📝 Documentation
 
-You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Method headers point to more detailed descriptions of arguments you can use.
+You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
 
-Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
+📚 Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
-Having troubles? Check our [Help center](https://support.voucherify.io/).
+👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
 
-Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
+🧪 Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
 
 # ⚙️ Installation
 
 ```sh
 npm install voucherify --save
+```
+
+Or you can link it from jsdelivr CDN:
+
+```html
+<script
+	type="text/javascript"
+	src="https://cdn.jsdelivr.net/gh/rspective/voucherify.js@latest/dist/voucherify.min.js"
+></script>
 ```
 
 Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general).
@@ -66,9 +75,11 @@ Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_cam
 ```javascript
 const { VoucherifyServerSide } = require('@voucherify/sdk')
 
+// import { VoucherifyServerSide } from '@voucherify/sdk' ES6 compatible
+
 const client = VoucherifyServerSide({
 	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
+	secretKey: 'YOUR-SECRET-KEY',
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
@@ -1053,7 +1064,7 @@ Check [context object](https://docs.voucherify.io/v1/reference#the-customer-obje
 
 # ↔️ Migration
 
-## From Voucherify Nodejs SDK
+## From [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
 <table>
 <tr>
@@ -1074,12 +1085,11 @@ Check [context object](https://docs.voucherify.io/v1/reference#the-customer-obje
   <td>
 
 ```javascript
-const client = VoucherifyServerSide({
-	apiUrl: 'https://<region>.api.voucherify.io',
+const voucherifyClient = require('voucherify')
+
+const client = voucherifyClient({
 	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05',
-	channel: 'e-commerce',
+	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
 })
 ```
 
@@ -1087,16 +1097,50 @@ const client = VoucherifyServerSide({
   <td>
 
 ```javascript
+const { VoucherifyServerSide } = require('@voucherify/sdk')
+
 const client = VoucherifyServerSide({
-	apiUrl: 'https://<region>.api.voucherify.io',
 	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05',
-	channel: 'e-commerce',
+	secretKey: 'YOUR-SECRET-KEY',
 })
 ```
 
   </td>
+</tr>
+<tr>
+<td>
+Callbacks
+</td>
+<td>
+
+```javascript
+client.vouchers.get('v1GiJYuuS', (error, result) => {
+	if (error) {
+		// handle error
+		return
+	}
+
+	// do the work
+})
+```
+
+</td>
+<td>
+
+Dropped support for callbacks, use promise instead
+
+```javascript
+client.vouchers
+	.get('v1GiJYuuS')
+	.then(result => {
+		console.log(result)
+	})
+	.catch(error => {
+		console.error('Error: %s', error)
+	})
+```
+
+</td>
 </tr>
 <tr>
   <td>
@@ -1105,25 +1149,19 @@ const client = VoucherifyServerSide({
   <td>
 
 ```javascript
-const client = VoucherifyServerSide({
-	apiUrl: 'https://<region>.api.voucherify.io',
-	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05',
-	channel: 'e-commerce',
-})
+client.validationRules.validate(validationRuleId)
 ```
 
   </td>
   <td>
 
-unsupported
+Support dropped
 
   </td>
 </tr>
 </table>
 
-## From Voucherify.js
+## From [Voucherify.js](https://github.com/rspective/voucherify.js/)
 
 <table>
 <tr>
@@ -1144,12 +1182,11 @@ unsupported
   <td>
 
 ```javascript
-const client = VoucherifyServerSide({
-	apiUrl: 'https://<region>.api.voucherify.io',
-	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05',
-	channel: 'e-commerce',
+var id = 'CLIENT-APPLICATION-ID'
+var key = 'CLIENT-SECRET-KEY'
+
+$(function () {
+	Voucherify.initialize(id, key)
 })
 ```
 
@@ -1157,14 +1194,50 @@ const client = VoucherifyServerSide({
   <td>
 
 ```javascript
-const client = VoucherifyServerSide({
-	apiUrl: 'https://<region>.api.voucherify.io',
-	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-CLIENT-SECRET-KEY',
-	apiVersion: 'v2017-04-05',
-	channel: 'e-commerce',
+const { VoucherifyClientSide } = require('@voucherify/sdk')
+
+const client = VoucherifyClientSide({
+	clientApplicationId: 'CLIENT-APPLICATION-ID',
+	clientSecretKey: 'CLIENT-SECRET-KEY',
 })
 ```
+
+  </td>
+</tr>
+<td>
+Callbacks
+</td>
+<td>
+
+```javascript
+client.validate(params, function callback(response) {})
+```
+
+</td>
+<td>
+
+Dropped support for callbacks for all client-side methods, use promises instead
+
+```javascript
+client.validate(params).then(console.log).catch(console.log)
+```
+
+</td>
+</tr>
+<tr>
+  <td>
+    List vouchers
+  </td>
+  <td>
+
+```javascript
+Voucherify.listVouchers(filters, function callback(response) {})
+```
+
+  </td>
+  <td>
+
+Dropped support for listVouchers method
 
   </td>
 </tr>
@@ -1172,7 +1245,7 @@ const client = VoucherifyServerSide({
 
 # 🦸 TypeScript
 
-Voucherify.js maintains types for our latest API.
+Voucherify JS SDK maintains types for our latest API.
 
 Import Voucherify as a default import (not `* as Voucherify`).
 
@@ -1211,6 +1284,6 @@ Voucherify `error` object always has consistent structure, described in details 
 
 # 🛠️ Contributing
 
-Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify.js by visiting [CONTRIBUTING.md](/contributing.md)
+Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/contributing.md)
 
 # 🗄️ Changelog
