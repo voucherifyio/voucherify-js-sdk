@@ -1066,23 +1066,9 @@ Check [context object](https://docs.voucherify.io/v1/reference#the-customer-obje
 
 ## From [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
-<table>
-<tr>
-  <th>
-    Method
-  </th>
-  <th>
-    Previously
-  </th>
-  <th>
-    Currently
-  </th>
-  </tr>
-<tr>
-  <td>
-    Initialization
-  </td>
-  <td>
+### Initialization
+
+#### Previously
 
 ```javascript
 const voucherifyClient = require('voucherify')
@@ -1093,8 +1079,7 @@ const client = voucherifyClient({
 })
 ```
 
-  </td>
-  <td>
+#### Currently
 
 ```javascript
 const { VoucherifyServerSide } = require('@voucherify/sdk')
@@ -1105,13 +1090,9 @@ const client = VoucherifyServerSide({
 })
 ```
 
-  </td>
-</tr>
-<tr>
-<td>
-Callbacks
-</td>
-<td>
+### Callbacks
+
+#### Previously
 
 ```javascript
 client.vouchers.get('v1GiJYuuS', (error, result) => {
@@ -1124,74 +1105,35 @@ client.vouchers.get('v1GiJYuuS', (error, result) => {
 })
 ```
 
-</td>
-<td>
+#### Currently
 
-Dropped support for callbacks, use promise instead
+Dropped support for callbacks, use promises instead
 
-```javascript
-client.vouchers
-	.get('v1GiJYuuS')
-	.then(result => {
-		console.log(result)
-	})
-	.catch(error => {
-		console.error('Error: %s', error)
-	})
-```
+### Validate Validation Rules
 
-</td>
-</tr>
-<tr>
-  <td>
-    Validate Validation Rules
-  </td>
-  <td>
+#### Previously
 
 ```javascript
 client.validationRules.validate(validationRuleId)
 ```
 
-  </td>
-  <td>
+#### Currently
 
-Support dropped
-
-  </td>
-</tr>
-</table>
+Dropped support
 
 ## From [Voucherify.js](https://github.com/rspective/voucherify.js/)
 
-<table>
-<tr>
-  <th>
-    Method
-  </th>
-  <th>
-    Previously
-  </th>
-  <th>
-    Currently
-  </th>
-  </tr>
-<tr>
-  <td>
-    Initialization
-  </td>
-  <td>
+### Initialization
+
+#### Previously
 
 ```javascript
-var id = 'CLIENT-APPLICATION-ID'
-var key = 'CLIENT-SECRET-KEY'
-
 $(function () {
-	Voucherify.initialize(id, key)
+	Voucherify.initialize('CLIENT-APPLICATION-ID', 'CLIENT-SECRET-KEY')
 })
 ```
 
-  </td>
-  <td>
+#### Currently
 
 ```javascript
 const { VoucherifyClientSide } = require('@voucherify/sdk')
@@ -1202,19 +1144,15 @@ const client = VoucherifyClientSide({
 })
 ```
 
-  </td>
-</tr>
-<td>
-Callbacks
-</td>
-<td>
+### Callbacks
+
+#### Previously
 
 ```javascript
 client.validate(params, function callback(response) {})
 ```
 
-</td>
-<td>
+#### Currently
 
 Dropped support for callbacks for all client-side methods, use promises instead
 
@@ -1222,26 +1160,17 @@ Dropped support for callbacks for all client-side methods, use promises instead
 client.validate(params).then(console.log).catch(console.log)
 ```
 
-</td>
-</tr>
-<tr>
-  <td>
-    List vouchers
-  </td>
-  <td>
+### List Vouchers
+
+#### Previously
 
 ```javascript
 Voucherify.listVouchers(filters, function callback(response) {})
 ```
 
-  </td>
-  <td>
+#### Currently
 
-Dropped support for listVouchers method
-
-  </td>
-</tr>
-</table>
+Dropped support
 
 # 🦸 TypeScript
 
