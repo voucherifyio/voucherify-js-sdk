@@ -12,9 +12,9 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
 
 # 🔖 Table of contents
 
-- [Documentation](#📝-documentation)
-- [Installation](#⚙️-installation)
-- [Server side](#🤖-server-side)
+- [Documentation](#documentation)
+- [Installation](#installation)
+- [Server side](#server-side)
   - [Setup](#server-side-setup")
   - [Methods](#server-side-methods)
     - [Vouchers](#vouchers-api)
@@ -32,16 +32,16 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
     - [Validation Rules](#validation-rules-api)
     - [Promotions](#promotions-api)
     - [Events](#events-api)
-- [Client side](#💅-client-side)
+- [Client side](#client-side)
   - [Setup](#client-side-setup)
   - [Methods](#client-side-methods)
-- [Migration](#↔️-migration)
-- [Typescript](#🦸-typescript)
-- [Error handling](#😨-error-handling)
-- [Contributing](#🛠️-contributing)
-- [Changelog](#🗄️-changelog)
+- [Migration](#migration)
+- [Typescript](#typescript)
+- [Error handling](#error-handling)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
 
-# 📝 Documentation
+# <a name="documentation"></a>📝 Documentation
 
 You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
 
@@ -51,7 +51,7 @@ You will find detailed description and example responses at our [official docume
 
 🧪 Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
 
-# ⚙️ Installation
+# <a name="installation"></a>⚙️ Installation
 
 ```sh
 npm install voucherify --save
@@ -68,7 +68,7 @@ Or you can link it from jsdelivr CDN:
 
 Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general).
 
-# 🤖 Server Side
+# <a name="server-side"></a>🤖 Server Side
 
 ## <a name="server-side-setup"></a>Setup
 
@@ -1062,7 +1062,7 @@ client.track(eventName, metadata, customer)
 
 Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
 
-# ↔️ Migration
+# <a name="migration"></a>↔️ Migration
 
 ## From [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
@@ -1172,7 +1172,7 @@ Voucherify.listVouchers(filters, function callback(response) {})
 
 Dropped support
 
-# 🦸 TypeScript
+# <a name="typescript"></a>🦸 TypeScript
 
 Voucherify JS SDK maintains types for our latest API.
 
@@ -1207,12 +1207,12 @@ voucherify.vouchers
 
 You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs-typescript).
 
-# 😨 Error handling
+# <a name="error-handling"></a>😨 Error handling
 
 Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
 
-# 🛠️ Contributing
+# <a name="contributing"></a>🛠️ Contributing
 
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/contributing.md)
 
-# 🗄️ Changelog
+# <a name="changelog"></a>🗄️ Changelog
