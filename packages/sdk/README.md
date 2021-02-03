@@ -45,7 +45,7 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
 
 You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
 
-You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/)
+You can also use our detailed documentation provided by our package [here://voucherifyio.github.io/voucherify-js-sdk/)
 
 📚 Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
@@ -64,7 +64,8 @@ Or you can link it from jsdelivr CDN:
 ```html
 <script
 	type="text/javascript"
-	src="https://cdn.jsdelivr.net/gh/rspective/voucherify.js@latest/dist/voucherify.min.js"
+	src="https://unpkg.com/@voucherify/sdk/dist/voucherifysdk.umd.production.min.js"
+	crossorigin
 ></script>
 ```
 
