@@ -55,11 +55,13 @@ You can also use our detailed documentation provided by our package [here://vouc
 
 # <a name="installation"></a>⚙️ Installation
 
+Local installation:
+
 ```sh
 npm install voucherify --save
 ```
 
-Or you can link it from jsdelivr CDN:
+CDN installation:
 
 ```html
 <script
@@ -1067,157 +1069,32 @@ Check [context object](https://docs.voucherify.io/v1/reference#the-customer-obje
 
 # <a name="migration"></a>↔️ Migration
 
-## From [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
-
-### Initialization
-
-#### Previously
-
-```javascript
-const voucherifyClient = require('voucherify')
-
-const client = voucherifyClient({
-	applicationId: 'YOUR-APPLICATION-ID',
-	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
-})
-```
-
-#### Currently
-
-```javascript
-const { VoucherifyServerSide } = require('@voucherify/sdk')
-
-const client = VoucherifyServerSide({
-	applicationId: 'YOUR-APPLICATION-ID',
-	secretKey: 'YOUR-SECRET-KEY',
-})
-```
-
-### Callbacks
-
-#### Previously
-
-```javascript
-client.vouchers.get('v1GiJYuuS', (error, result) => {
-	if (error) {
-		// handle error
-		return
-	}
-
-	// do the work
-})
-```
-
-#### Currently
-
-Dropped support for callbacks, use promises instead
-
-### Validate Validation Rules
-
-#### Previously
-
-```javascript
-client.validationRules.validate(validationRuleId)
-```
-
-#### Currently
-
-Dropped support
-
-## From [Voucherify.js](https://github.com/rspective/voucherify.js/)
-
-### Initialization
-
-#### Previously
-
-```javascript
-$(function () {
-	Voucherify.initialize('CLIENT-APPLICATION-ID', 'CLIENT-SECRET-KEY')
-})
-```
-
-#### Currently
-
-```javascript
-const { VoucherifyClientSide } = require('@voucherify/sdk')
-
-const client = VoucherifyClientSide({
-	clientApplicationId: 'CLIENT-APPLICATION-ID',
-	clientSecretKey: 'CLIENT-SECRET-KEY',
-})
-```
-
-### Callbacks
-
-#### Previously
-
-```javascript
-client.validate(params, function callback(response) {})
-```
-
-#### Currently
-
-Dropped support for callbacks for all client-side methods, use promises instead
-
-```javascript
-client.validate(params).then(console.log).catch(console.log)
-```
-
-### List Vouchers
-
-#### Previously
-
-```javascript
-Voucherify.listVouchers(filters, function callback(response) {})
-```
-
-#### Currently
-
-Dropped support
+Check our [MIGRATION GUIDE](./MIGRATION.md) to learn more about switching to our newest SDK.
 
 # <a name="typescript"></a>🦸 TypeScript
 
-Voucherify JS SDK maintains types for our latest API.
+Voucherify JS SDK includes TypeScript declarations for our latest API.
 
-Import Voucherify as a default import (not `* as Voucherify`).
-
-```
-// createVoucher.ts
-
-const { VoucherifyServerSide } = require('@voucherify/sdk')
-
-const voucherify = VoucherifyServerSide({
-	applicationId: 'APPLICATION-ID',
-	secretKey: 'SECRET-KEY',
-})
-
-voucherify.vouchers
-	.create({
-		type: 'GIFT_VOUCHER',
-		gift: {
-			amount: 10000,
-		},
-		category: 'Typescript test',
-	})
-	.then(function (result) {
-		console.log('Voucher %s created.', result.code)
-	})
-	.catch(function (error) {
-		console.error(error)
-	})
-
-```
-
-You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs-typescript).
+You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs).
 
 # <a name="error-handling"></a>😨 Error handling
 
 Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
 
+# <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
+
+Legacy client-side Voucherify JS SDK is available here: [voucherify.js](https://github.com/rspective/voucherify.js).
+
+Legacy server-side Voucherify JS SDK is available here: [voucherify-nodejs-sdk](https://github.com/voucherifyio/voucherify-nodejs-sdk).
+
 # <a name="contributing"></a>🛠️ Contributing
 
-Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues). Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/contributing.md)
+Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues).
+
+Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/CONTRIBUTING.md)
 
 # <a name="changelog"></a>🗄️ Changelog
 
-- **2021-02-01** - `0.1.0` - First version
+Visit [CHANGELOG](./CHANGELOG.md) to learn more about new changes.
+
+Voucherify React Widget CHANGELOG can be found [here](../react-widget/CHANGELOG.md)
