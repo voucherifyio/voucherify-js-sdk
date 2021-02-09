@@ -1,6 +1,6 @@
 import * as T from './types/Vouchers'
 
-import { encode, isObject } from './helpers'
+import { encode } from './helpers'
 import type { RequestController } from './RequestController'
 import type { Balance } from './Balance'
 
@@ -55,25 +55,37 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher
 	 */
-	public enable(params: string | T.VouchersEnableParams) {
-		if (isObject(params)) {
-			return this.client.post<T.VouchersEnableResponse>('/vouchers/enable', params)
-		}
-		return this.client.post<T.VouchersEnableResponse>(`/vouchers/${encode(params)}/enable`, {})
+	public enable(code: string) {
+		return this.client.post<T.VouchersEnableResponse>(`/vouchers/${encode(code)}/enable`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher
 	 */
-	public disable(params: string | T.VouchersDisableParams) {
-		if (isObject(params)) {
-			return this.client.post<T.VouchersDisableResponse>('/vouchers/disable', params)
-		}
-		return this.client.post<T.VouchersDisableResponse>(`/vouchers/${encode(params)}/disable`, {})
+	public disable(code: string) {
+		return this.client.post<T.VouchersDisableResponse>(`/vouchers/${encode(code)}/disable`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1
 	 */
 	public import(vouchers: T.VouchersImport[]) {
 		return this.client.post('/vouchers/import', vouchers)
+	}
+  /**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk
+	 */
+	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
+		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata', params)
+	}
+  /**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk
+	 */
+	public bulkUpdate(vouchers: T.VouchersBulkUpdate) {
+		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk', vouchers)
+	}
+  /**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session
+	 */
+	public releaseValidationSession(code: string, sessionKey: string) {
+		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
 	}
 }

@@ -113,6 +113,7 @@ export interface VouchersQualificationExamineResponse {
 }
 
 export interface VouchersCreateParameters {
+	active?: boolean
 	code?: string
 	code_config?: {
 		length?: number
@@ -137,7 +138,7 @@ export type VouchersCreateResponse = Omit<VouchersResponse, 'validation_rules_as
 export type VouchersGetResponse = VouchersResponse
 
 export interface VouchersUpdate {
-	code?: string
+	code: string
 	category?: string
 	start_date?: string
 	expiration_date?: string
@@ -169,6 +170,19 @@ export interface VouchersListParams {
 		after?: string
 		before?: string
 	}
+	order?:
+		| '-created_at'
+		| 'created_at'
+		| '-updated_at'
+		| 'updated_at'
+		| '-type'
+		| 'type'
+		| '-code'
+		| 'code'
+		| '-campaign'
+		| 'campaign'
+		| '-category'
+		| 'category'
 }
 
 export interface VouchersListResponse {
@@ -178,15 +192,7 @@ export interface VouchersListResponse {
 	vouchers: VouchersResponse[]
 }
 
-export interface VouchersEnableParams {
-	code?: string
-}
-
 export type VouchersEnableResponse = VouchersResponse
-
-export interface VouchersDisableParams {
-	code?: string
-}
 
 export type VouchersDisableResponse = VouchersResponse
 
@@ -200,4 +206,35 @@ export interface VouchersImport {
 	expiration_date?: string
 	active?: boolean
 	metadata?: Record<string, any>
+	redemption?: {
+		quantity: number
+	}
 }
+
+export interface VouchersBulkUpdateObject {
+	code: string
+	metadata?: Record<string, any>
+}
+
+export type VouchersBulkUpdate = VouchersBulkUpdateObject[]
+
+export interface VouchersBulkUpdateMetadata {
+	codes: string[]
+	metadata?: Record<string, any>
+}
+
+export interface VouchersBulkUpdateMetadataObjectResponse {
+	code: string
+	found: boolean
+	updated: boolean
+}
+
+export type VouchersBulkUpdateMetadataResponse = VouchersBulkUpdateMetadataObjectResponse[]
+
+export interface VouchersBulkUpdateObjectResponse {
+	code: string
+	found: boolean
+	updated: boolean
+}
+
+export type VouchersBulkUpdateResponse = VouchersBulkUpdateObjectResponse[]
