@@ -7,36 +7,23 @@ const voucherify = VoucherifyServerSide({
 	apiVersion: 'v2017-04-05',
 })
 
-voucherify.vouchers
+voucherify.campaigns
 	.list({
-		created_at: {
-			after: '2021-02-08T08:00:00Z',
+		limit: 10,
+		page: 1,
+		filters: {
+			junction: 'AND',
+			'metadata.lang': {
+				conditions: {
+					$is: ['en'],
+					$is_not: ['es'],
+				},
+			},
 		},
 	})
-	.then(voucher => {
-		console.log('OKS: %j', voucher)
+	.then(function(result) {
+		console.log(result)
 	})
-	.catch(error => {
-		console.log(error)
+	.catch(function(err) {
+		console.error(err)
 	})
-
-// voucherify.campaigns
-// 	.list({
-// 		limit: 10,
-// 		page: 1,
-// 		filters: {
-// 			junction: 'AND',
-// 			'metadata.lang': {
-// 				conditions: {
-// 					$is: ['en'],
-// 					$is_not: ['es'],
-// 				},
-// 			},
-// 		},
-// 	})
-// 	.then(function (result) {
-// 		console.log(result)
-// 	})
-// 	.catch(function (err) {
-// 		console.error(err)
-// 	})
