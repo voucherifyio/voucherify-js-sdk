@@ -4,18 +4,7 @@ import { VoucherifyClientSideOptions } from '@voucherify/sdk'
 import { useVoucherifyClient } from './hooks/useVoucherifyClient'
 import { VoucherifyLogo } from './VoucherifyLogo'
 
-const INVALID_AMOUNT = 'invalid_amount'
-const INVALID_NUMBER = 'invalid_number'
-const MISSING_AMOUNT = 'missing_amount'
-// const INVALID_CUSTOMER_PHONE = 'invalid_customer_phone'
-
 interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
-  /**
-   * Identifier of a campaign object which will provide unique codes
-   * 
-   * @see https://docs.voucherify.io/reference#the-campaign-object
-   */
-  campaignName: string
 	/**
 	 * CSS class applied to the input when entered code is invalid
 	 */
@@ -41,61 +30,28 @@ interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	 */
 	logoAlt?: string
 	/**
-	 *  a callback function invoked when publishing voucher will succeed, it takes response as a parameter
+	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
 	 */
 	onPublished?: (response: $FixMe) => void
 	/**
 	 * a callback function invoked when there is an error
 	 */
-  onError?: (error: $FixMe) => void
-  /**
-	 * list of the customer input fields that are displayed in widget
+	onError?: (error: $FixMe) => void
+	/**
+	 * flag enables the amount input field
 	 */
-  customerFields?: {
-    name: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
-    required: boolean
-  }[]
-  /**
-	 * a text displayed on the button (default: "Get voucher")
+  campaignName?: string
+	customerFields?: {
+		name: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
+		required: boolean
+	}[]
+	/**
+	 * a text displayed on the button (default: "Validate")
 	 */
-  textPublish?: string
-/**
-	 * text displayed as a placeholder in the name input field
-	 */
-  customerNamePlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the email input field
-	 */
-  customerEmailPlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the phone input field
-	 */
-  customerPhonePlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the first address line input field
-	 */
-  customerLine1Placeholder?: string
-  /**
-	 * text displayed as a placeholder in the second address line input field
-	 */
-  customerLine2Placeholder?: string
-  /**
-	 * text displayed as a placeholder in the postal code input field
-	 */
-  customerPostalCodePlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the city input field
-	 */
-  customerCityPlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the state input field
-	 */
-  customerStatePlaceholder?: string
-  /**
-	 * text displayed as a placeholder in the country input field
-	 */
-  customerCountryPlaceholder?: string
-
+	customerNamePlaceholder?: string
+	customerEmailPlaceholder?: string
+	customerPhonePlaceholder?: string
+	textPublish?: string
 }
 export function VoucherifyPublish({
 	apiUrl,
@@ -111,17 +67,11 @@ export function VoucherifyPublish({
 	logoAlt,
 	onPublished,
 	onError,
-	customerFields,
-	textPublish = 'Publish',
-  customerNamePlaceholder,
-  customerEmailPlaceholder,
-  customerPhonePlaceholder,
-  customerLine1Placeholder,
-  customerLine2Placeholder,
-  customerPostalCodePlaceholder,
-  customerCityPlaceholder,
-  customerStatePlaceholder,
-  customerCountryPlaceholder,
+	customerFields = [],
+	customerNamePlaceholder,
+	customerEmailPlaceholder,
+	customerPhonePlaceholder,
+	textPublish = 'Get voucher',
 }: VoucherifyPublishOptions) {
 	const classNameInvalid = classInvalid || 'voucherifyInvalid'
 	const classNameValid = classValid || 'voucherifyValid'
@@ -151,159 +101,134 @@ export function VoucherifyPublish({
 	React.useEffect(() => {
 		resetInputs()
 		setDisabled(false)
-  }, [client])
+	}, [client])
 
-  const classNameCustomerName = clsx({
+	const classNameCustomerName = clsx({
 		voucherifyCustomerName: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerName,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerName,
-		[classNameValid]: validInputState.voucherifyCustomerName,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerName,
-  })
-  
-  const classNameCustomerEmail = clsx({
-		voucherifyCustomerEmail: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerEmail,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerEmail,
-		[classNameValid]: validInputState.voucherifyCustomerEmail,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerEmail,
-  })
-  
-    const classNameCustomerPhone = clsx({
-		voucherifyCustomerPhone: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerPhone,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerPhone,
-		[classNameValid]: validInputState.voucherifyCustomerPhone,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerPhone,
-  })
-  
-   const classNameCustomerLine1 = clsx({
-		voucherifyCustomerLine1: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerLine1,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerLine1,
-		[classNameValid]: validInputState.voucherifyCustomerLine1,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerLine1,
-  })
-  
-   const classNameCustomerLine2 = clsx({
-		voucherifyCustomerLine2: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerLine2,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerLine2,
-		[classNameValid]: validInputState.voucherifyCustomerLine2,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerLine2,
-  })
-
-  const classNameCustomerCity = clsx({
-		voucherifyCustomerCity: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerCity,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerCity,
-		[classNameValid]: validInputState.voucherifyCustomerCity,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerCity,
-  })
-  
-   const classNameCustomerPostalCode = clsx({
-		voucherifyCustomerPostalCode: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerPostalCode,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerPostalCode,
-		[classNameValid]: validInputState.voucherifyCustomerPostalCode,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerPostalCode,
-  })
-  
-     const classNameCustomerState = clsx({
-		voucherifyCustomerState: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerState,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerState,
-		[classNameValid]: validInputState.voucherifyCustomerState,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerState,
+		[classNameInvalid]: invalidInputState.name,
+		[classNameInvalidAnimation]: invalidInputState.name,
+		[classNameValid]: validInputState.name,
+		[classNameValidAnimation]: validInputState.name,
 	})
 
-    const classNameCustomerCountry = clsx({
-		voucherifyCustomerCountry: true,
-		[classNameInvalid]: invalidInputState.voucherifyCustomerCountry,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCustomerCountry,
-		[classNameValid]: validInputState.voucherifyCustomerCountry,
-		[classNameValidAnimation]: validInputState.voucherifyCustomerCountry,
-  })
-  
-  const classNamePublish = clsx({
+	const classNameCustomerPhone = clsx({
+		voucherifyCustomerPhone: true,
+		[classNameInvalid]: invalidInputState.phone,
+		[classNameInvalidAnimation]: invalidInputState.phone,
+		[classNameValid]: validInputState.phone,
+		[classNameValidAnimation]: validInputState.phone,
+	})
+
+	const classNameCustomerEmail = clsx({
+		voucherifyCustomerEmail: true,
+		[classNameInvalid]: invalidInputState.email,
+		[classNameInvalidAnimation]: invalidInputState.email,
+		[classNameValid]: validInputState.email,
+		[classNameValidAnimation]: validInputState.email,
+	})
+
+  	const classNameCustomerLine1 = clsx({
+		voucherifyCustomerLine1: true,
+		[classNameInvalid]: invalidInputState.line_1,
+		[classNameInvalidAnimation]: invalidInputState.line_1,
+		[classNameValid]: validInputState.line_1,
+		[classNameValidAnimation]: validInputState.line_1,
+	})
+
+    	const classNameCustomerLine2 = clsx({
+		voucherifyCustomerLine2: true,
+		[classNameInvalid]: invalidInputState.line_2,
+		[classNameInvalidAnimation]: invalidInputState.line_2,
+		[classNameValid]: validInputState.line_2,
+		[classNameValidAnimation]: validInputState.line_2,
+	})
+
+const classNameCustomerPostalCode = clsx({
+		voucherifyCustomerPostalCode: true,
+		[classNameInvalid]: invalidInputState.postal_code,
+		[classNameInvalidAnimation]: invalidInputState.postal_code,
+		[classNameValid]: validInputState.postal_code,
+      [classNameValidAnimation]: validInputState.postal_code,
+	})
+
+	const classNamePublish = clsx({
 		voucherifyPublish: true,
 		[classNameInvalid]: invalidInputState.voucherifyPublish,
 		[classNameValid]: validInputState.voucherifyPublish,
-  })
-  
-	const classNameValidate = clsx({
-		voucherifyValidate: true,
-		[classNameInvalid]: invalidInputState.voucherifyValidate,
-		[classNameValid]: validInputState.voucherifyValidate,
 	})
 
 	const onSubmit = React.useCallback(
 		function onSubmit(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 			setInput(prev => ({
 				...prev,
-        voucherifyTracking: '',
-        voucherifyPublishStatus: '',
+				name: '',
+				phone: '',
+				email: '',
+				voucherifyPublishStatus: '',
+				voucherifyTracking: '',
 			}))
 
-			setInvalidInputState(prev => ({ ...prev, voucherifyPublish: false }))
-			setValidInputState(prev => ({ ...prev, voucherifyPublish: false }))
+			console.log(input)
 
-			if (!input.voucherifyCode.trim()) {
-				setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
-				return
+			setInvalidInputState(prev => ({
+				...prev,
+				name: false,
+				phone: false,
+				email: false,
+				voucherifyPublishStatus: false,
+				voucherifyPublish: false,
+			}))
+
+			setValidInputState(prev => ({
+				...prev,
+				name: false,
+				phone: false,
+				email: false,
+				voucherifyPublishStatus: false,
+				voucherifyPublish: false,
+			}))
+
+			const payload: VoucherifyPublishPayload = {
+				customer: {
+					name: input.name,
+					phone: input.phone,
+					email: input.email,
+					source_id: input.email,
+					address: {
+						line_1: input.line_1,
+						line_2: input.line_2,
+						postal_code: input.postal_code,
+						city: input.city,
+						state: input.state,
+						country: input.country,
+					},
+				},
 			}
 
-			const payload: $FixMe = {
-				code: input.voucherifyCode,
-				amount: parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10),
-			}
-
-			setSubmitting(true)
+			customerFields.forEach(field => {
+				if (field.required && input[field.name] === '') {
+					setInvalidInputState(prev => ({ ...prev, [field.name]: true }))
+				}
+			})
 
 			client
-				.validate(payload)
+				.publish(campaignName, payload)
 				.then(function (_response) {
 					const response: $FixMe = _response
 
-					if (!response || !response.valid) {
-						setInvalidInputState(prev => ({ ...prev, voucherifyPublish: true }))
-						setValidInputState(prev => ({ ...prev, voucherifyPublish: false }))
-
-						const context: $FixMe = response?.context || {}
-						const responseJSON: $FixMe = context?.responseJSON || {}
-						const error_key = responseJSON?.key
-
-						if (
-							amount &&
-							(error_key === INVALID_AMOUNT || error_key === INVALID_NUMBER || error_key === MISSING_AMOUNT)
-						) {
-							setInvalidInputState(prev => ({ ...prev, voucherifyAmount: true }))
-							setValidInputState(prev => ({ ...prev, voucherifyAmount: false }))
-						} else {
-							setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
-							setValidInputState(prev => ({ ...prev, voucherifyCode: false }))
-						}
-						return
-					}
-
 					setInvalidInputState(prev => ({
 						...prev,
-						voucherifyCode: false,
-						voucherifyAmount: false,
 					}))
+
 					setInput(prev => ({
 						...prev,
-						
-            voucherifyTracking: response?.tracking_id || '',
-            voucherifyPublishStatus: response?.tracking_id || '',
+						voucherifyTracking: response?.tracking_id || '',
 					}))
 
 					setDisabled(true)
 
 					setValidInputState(prev => ({
 						...prev,
-						voucherifyCode: true,
-						voucherifyAmount: true,
 						voucherifyPublish: true,
 					}))
 					setInvalidInputState(prev => ({
@@ -319,208 +244,142 @@ export function VoucherifyPublish({
 				})
 				.finally(() => setSubmitting(false))
 		},
-		[input, onError, onPublished, amount],
+		[input, onError, onPublished],
 	)
 
 	return (
-		<div className="voucherifyContainer">
+		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
-      {customerFields?.some((el) => el.name === 'name') && (
-        <input
-          type="text"
-          placeholder={customerNamePlaceholder || 'e.g. Bruce Wayne'}
-          name="voucherifyCustomerName"
-          value={input['voucherifyCustomerName']}
-          onChange={onInputChange}
-          className={classNameCustomerName}
-          disabled={isSubmitting || allDisabled}
-          required={customerFields?.find((el) => el.name === 'name')?.required}
-        />
-        )
-      }
-			
-      <div className='voucherifyRow'>
-        <input
-				type="text"
-				placeholder={customerEmailPlaceholder || 'e.g. bruce@wayneenterprise.com'}
-				name="voucherifyCustomerEmail"
-				value={input['voucherifyCustomerEmail']}
-				onChange={onInputChange}
-				className={classNameCustomerEmail}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'email')?.required}
-			/>
-      <input
-				type="text"
-				placeholder={customerPhonePlaceholder || 'e.g. 0012 000 000 000'}
-				name="voucherifyCustomerPhone"
-				value={input['voucherifyCustomerPhone']}
-				onChange={onInputChange}
-				className={classNameCustomerPhone}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'phone')?.required}
+			{customerFields.some(val => val.name === 'name') && (
+				<input
+					type="text"
+					placeholder={customerNamePlaceholder ? customerNamePlaceholder : 'e.g. Bruce Wayne'}
+					name="name"
+					value={input['name']}
+					onChange={onInputChange}
+					className={classNameCustomerName}
+					disabled={isSubmitting || allDisabled}
+				/>
+			)}
+			{customerFields.some(val => val.name === 'email' || val.name === 'phone') && (
+				<div className="voucherifyRow">
+					{customerFields.some(val => val.name === 'email') && (
+						<input
+							type="text"
+							placeholder={customerEmailPlaceholder ? customerEmailPlaceholder : 'e.g. bruce@wayne.com'}
+							name="email"
+							value={input['email']}
+							onChange={onInputChange}
+							className={classNameCustomerEmail}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+					{customerFields.some(val => val.name === 'phone') && (
+						<input
+							type="text"
+							placeholder={customerPhonePlaceholder ? customerPhonePlaceholder : 'e.g. +0000 000 000 000'}
+							name="phone"
+							value={input['phone']}
+							onChange={onInputChange}
+							className={classNameCustomerPhone}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+				</div>
+			)}
 
-			/>
-       </div>
-      <input
-				type="text"
-				placeholder={customerLine1Placeholder || "e.g. 1007 Mountain Drive"}
-				name="voucherifyCustomerLine1"
-				value={input['voucherifyCustomerLine1']}
-				onChange={onInputChange}
-				className={classNameCustomerLine1}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'line_1')?.required}
-
-			/>
-      <input
-				type="text"
-				placeholder={customerLine2Placeholder || "e.g. Building B"}
-				name="voucherifyCustomerLine2"
-				value={input['voucherifyCustomerLine2']}
-				onChange={onInputChange}
-				className={classNameCustomerLine2}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'line_2')?.required}
-			/>
-      <input
-				type="text"
-				placeholder={customerCityPlaceholder || 'e.g. Gotham'}
-				name="voucherifyCustomerCity"
-				value={input['voucherifyCustomerCity']}
-				onChange={onInputChange}
-				className={classNameCustomerCity}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'city')?.required}
-
-			/>
-      <div className='voucherifyRow'>
-        <input
-				type="text"
-				placeholder={customerPostalCodePlaceholder || 'e.g. 07001'}
-				name="voucherifyCustomerPostalCode"
-				value={input['voucherifyCustomerPostalCode']}
-				onChange={onInputChange}
-				className={classNameCustomerPostalCode}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'postal_code')?.required || false}
-			/>
-      
-      </div>
-      <div className='voucherifyRow'>
-        <input
-				type="text"
-				placeholder={customerStatePlaceholder || e.g. New Jersey}
-				name="voucherifyCustomerState"
-				value={input['voucherifyCustomerState']}
-				onChange={onInputChange}
-				className={classNameCustomerState}
-        disabled={isSubmitting || allDisabled}
-                required={customerFields?.find((el) => el.name === 'state')?.required}
-
-			/>
-       <input
-				type="text"
-				placeholder={customerCountryPlaceholder || 'e.g. USA'}
-				name="voucherifyCustomerCountry"
-				value={input['voucherifyCustomerCountry']}
-				onChange={onInputChange}
-				className={classNameCustomerCountry}
-        disabled={isSubmitting || allDisabled}
-        required={customerFields?.find((el) => el.name === 'country')?.required}
-			/>
-      </div>
-			
 			<input
 				type="hidden"
 				name="voucherifyTracking"
 				value={input['voucherifyTracking']}
 				className="voucherifyTracking"
 			/>
-      <input
-        type="text"
+			<input
+				type="text"
 				name="voucherifyPublishStatus"
 				value={input['voucherifyPublishStatus']}
 				className="voucherifyPublishStatus"
 			/>
 			<button className={classNamePublish} disabled={isSubmitting || allDisabled} onClick={onSubmit}>
-				<span className="voucherifyVPublishText">{textPublish}</span>
+				<span className="VoucherifyPublishText">{textPublish}</span>
 			</button>
 		</div>
 	)
 }
 
-interface VoucherifyValidateInputs {
-  voucherifyCustomerName: string
-  voucherifyCustomerEmail: string
-  voucherifyCustomerPhone: string
-  voucherifyCustomerLine1: string
-  voucherifyCustomerLine2: string
-  voucherifyCustomerPostalCode: string
-  voucherifyCustomerCity: string
-  voucherifyCustomerState: string
-  voucherifyCustomerCountry: string
-	voucherifyCode: string
-	voucherifyAmount: string
-	voucherifyDiscountType: string
-	voucherifyPercentOff: string
-	voucherifyAmountOff: string
-  voucherifyUnitOff: string
-  voucherifyPublishStatus: string
-	voucherifyTracking: string
+interface VoucherifyPublishPayload {
+	customer?: {
+		name?: string
+		email?: string
+		source_id?: string
+		phone?: string
+		address?: {
+			line_1?: string
+			line_2?: string
+			postal_code?: string
+			city?: string
+			state?: string
+			country?: string
+		}
+	}
 }
-function getEmptyInputs(): VoucherifyValidateInputs {
+interface VoucherifyPublishInputs {
+	name: string
+	email: string
+	phone: string
+	line_1: string
+	line_2: string
+	postal_code: string
+	city: string
+	state: string
+	country: string
+	voucherifyPublishStatus: string
+	voucherifyTracking: string
+	voucherifyPublish: string
+}
+function getEmptyInputs(): VoucherifyPublishInputs {
 	return {
-    voucherifyCustomerName: '',
-    voucherifyCustomerEmail: '',
-    voucherifyCustomerPhone: '',
-    voucherifyCustomerLine1: '',
-    voucherifyCustomerLine2: '',
-    voucherifyCustomerPostalCode: '',
-    voucherifyCustomerCity: '',
-    voucherifyCustomerState: '',
-    voucherifyCustomerCountry: '',
-		voucherifyCode: '',
-		voucherifyAmount: '',
-		voucherifyDiscountType: '',
-		voucherifyPercentOff: '',
-		voucherifyAmountOff: '',
-    voucherifyUnitOff: '',
-    voucherifyPublishStatus: '',
+		name: '',
+		email: '',
+		phone: '',
+		line_1: '',
+		line_2: '',
+		postal_code: '',
+		city: '',
+		state: '',
+		country: '',
+		voucherifyPublishStatus: '',
 		voucherifyTracking: '',
+		voucherifyPublish: '',
 	}
 }
 
-interface VoucherifyValidateInputsState {
-  voucherifyCustomerName: boolean
-  voucherifyCustomerEmail: boolean
-  voucherifyCustomerPhone: boolean
-  voucherifyCustomerLine1: boolean
-  voucherifyCustomerLine2: boolean
-  voucherifyCustomerPostalCode: boolean
-  voucherifyCustomerCity: boolean
-  voucherifyCustomerState: boolean
-  voucherifyCustomerCountry: boolean
-	voucherifyCode: boolean
-  voucherifyAmount: boolean
-  voucherifyPublish: boolean
-	voucherifyValidate: boolean
+interface VoucherifyPublishInputsState {
+	name: boolean
+	phone: boolean
+	email: boolean
+	line_1: boolean
+	line_2: boolean
+	postal_code: boolean
+	city: boolean
+	state: boolean
+	country: boolean
+	voucherifyPublishStatus: boolean
+	voucherifyPublish: boolean
 }
-function getEmptyInputState(): VoucherifyValidateInputsState {
+function getEmptyInputState(): VoucherifyPublishInputsState {
 	return {
-    voucherifyCustomerName: false,
-    voucherifyCustomerEmail: false,
-    voucherifyCustomerPhone: false,
-    voucherifyCustomerLine1: false,
-    voucherifyCustomerLine2: false,
-    voucherifyCustomerPostalCode: false,
-    voucherifyCustomerCity: false,
-    voucherifyCustomerState: false,
-    voucherifyCustomerCountry: false,
-		voucherifyCode: false,
-    voucherifyAmount: false,
-    voucherifyPublish: false,
-		voucherifyValidate: false,
+		name: false,
+		phone: false,
+		email: false,
+		line_1: false,
+		line_2: false,
+		postal_code: false,
+		city: false,
+		state: false,
+		country: false,
+		voucherifyPublishStatus: false,
+		voucherifyPublish: false,
 	}
 }
 
@@ -530,7 +389,7 @@ function useInputs() {
 	const [validInputState, setValidInputState] = React.useState(getEmptyInputState)
 
 	const onInputChange = React.useCallback(function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-		const name = event.target.name as keyof VoucherifyValidateInputs
+		const name = event.target.name as keyof VoucherifyPublishInputs
 		setInput(prev => ({ ...prev, [name]: event.target.value }))
 	}, [])
 

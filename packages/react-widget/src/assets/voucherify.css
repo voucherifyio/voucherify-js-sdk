@@ -155,14 +155,18 @@ div.voucherifyContainer button.voucherifyPublish.voucherifyValid {
 
 div.voucherifyContainer .voucherifyRow {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
 }
 
 div.voucherifyContainer .voucherifyRow > input {
-	flex: 1;
+	width: 49%;
 }
 
 div.voucherifyContainer .voucherifyRow > input:not(:last-of-type) {
-	margin-right: 0.8em;
+	/* margin-right: 0.8em; */
 }
 
 div.voucherifyContainer button.voucherifyRedeem,
