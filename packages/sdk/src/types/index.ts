@@ -1,5 +1,6 @@
 export * from './Customers'
 export * from './Balance'
+export * from './Vouchers'
 export * from './ValidationRules'
 export * from './Rewards'
 export * from './Products'

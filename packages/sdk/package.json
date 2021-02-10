@@ -36,7 +36,9 @@
 		"prepublish": "yarn build"
 	},
 	"dependencies": {
-		"axios": "0.21.1"
+		"@types/qs": "^6.9.5",
+		"axios": "0.21.1",
+		"qs": "^6.9.6"
 	},
 	"publishConfig": {
 		"access": "public"
