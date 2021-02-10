@@ -107,6 +107,9 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Disable Voucher](#disable-voucher)
 - [Import Vouchers](#import-vouchers)
 - [Examine Vouchers Qualification](#examine-vouchers-qualification)
+- [Update Vouchers Metadata in bulk](#update-vouchers-metadata-in-bulk)
+- [Update Vouchers in bulk](#update-vouchers-in-bulk)
+- [Release Validation Session](#release-validation-session)
 
 #### [Create Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-voucher)
 
@@ -174,6 +177,11 @@ client.vouchers.import(vouchers)
 client.vouchers.qualifications.examine(body, params)
 ```
 
+#### [Update Vouchers Metadata in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk)
+
+#### [Update Vouchers in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk)
+
+#### [Release Validation Session](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session)
 ---
 
 ### Campaigns
