@@ -40,7 +40,8 @@ interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	/**
 	 * flag enables the amount input field
 	 */
-  campaignName?: string
+	campaignName: string
+
 	customerFields?: {
 		name: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
 		required: boolean
@@ -51,7 +52,35 @@ interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	customerNamePlaceholder?: string
 	customerEmailPlaceholder?: string
 	customerPhonePlaceholder?: string
+	customerLine1Placeholder?: string
+	customerLine2Placeholder?: string
+	customerPostalCodePlaceholder?: string
+	customerCityPlaceholder?: string
+	customerStatePlaceholder?: string
+	customerCountryPlaceholder?: string
 	textPublish?: string
+}
+
+interface VoucherifyPublishResponse {
+	channel: 'Voucherify.js'
+	created_at: string
+	customer?: {
+		id: string
+		email?: string
+		source_id?: string
+		object: 'customer'
+		metadata?: Record<string, any>
+		name?: string
+	}
+	customer_id?: string
+	id: string
+	metadata?: Record<string, any>
+	object: 'publication'
+	result: 'SUCCESS'
+	source_id?: string
+	tracking_id?: string
+	voucher: $FixMe
+	vouchers_id?: string[]
 }
 export function VoucherifyPublish({
 	apiUrl,
@@ -67,10 +96,17 @@ export function VoucherifyPublish({
 	logoAlt,
 	onPublished,
 	onError,
+	campaignName,
 	customerFields = [],
 	customerNamePlaceholder,
 	customerEmailPlaceholder,
 	customerPhonePlaceholder,
+	customerLine1Placeholder,
+	customerLine2Placeholder,
+	customerPostalCodePlaceholder,
+	customerCityPlaceholder,
+	customerStatePlaceholder,
+	customerCountryPlaceholder,
 	textPublish = 'Get voucher',
 }: VoucherifyPublishOptions) {
 	const classNameInvalid = classInvalid || 'voucherifyInvalid'
@@ -79,6 +115,7 @@ export function VoucherifyPublish({
 	const classNameValidAnimation = classValidAnimation || 'voucherifyAnimationTada'
 
 	const [allDisabled, setDisabled] = React.useState(false)
+	const [visible, setVisible] = React.useState(true)
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
 		clientApplicationId,
@@ -127,7 +164,7 @@ export function VoucherifyPublish({
 		[classNameValidAnimation]: validInputState.email,
 	})
 
-  	const classNameCustomerLine1 = clsx({
+	const classNameCustomerLine1 = clsx({
 		voucherifyCustomerLine1: true,
 		[classNameInvalid]: invalidInputState.line_1,
 		[classNameInvalidAnimation]: invalidInputState.line_1,
@@ -135,7 +172,7 @@ export function VoucherifyPublish({
 		[classNameValidAnimation]: validInputState.line_1,
 	})
 
-    	const classNameCustomerLine2 = clsx({
+	const classNameCustomerLine2 = clsx({
 		voucherifyCustomerLine2: true,
 		[classNameInvalid]: invalidInputState.line_2,
 		[classNameInvalidAnimation]: invalidInputState.line_2,
@@ -143,14 +180,44 @@ export function VoucherifyPublish({
 		[classNameValidAnimation]: validInputState.line_2,
 	})
 
-const classNameCustomerPostalCode = clsx({
+	const classNameCustomerPostalCode = clsx({
 		voucherifyCustomerPostalCode: true,
 		[classNameInvalid]: invalidInputState.postal_code,
 		[classNameInvalidAnimation]: invalidInputState.postal_code,
 		[classNameValid]: validInputState.postal_code,
-      [classNameValidAnimation]: validInputState.postal_code,
+		[classNameValidAnimation]: validInputState.postal_code,
 	})
 
+	const classNameCustomerCity = clsx({
+		voucherifyCustomerCity: true,
+		[classNameInvalid]: invalidInputState.city,
+		[classNameInvalidAnimation]: invalidInputState.city,
+		[classNameValid]: validInputState.city,
+		[classNameValidAnimation]: validInputState.city,
+	})
+
+	const classNameCustomerState = clsx({
+		voucherifyCustomerState: true,
+		[classNameInvalid]: invalidInputState.state,
+		[classNameInvalidAnimation]: invalidInputState.state,
+		[classNameValid]: validInputState.state,
+		[classNameValidAnimation]: validInputState.state,
+	})
+
+	const classNameCustomerCountry = clsx({
+		voucherifyCustomerCountry: true,
+		[classNameInvalid]: invalidInputState.country,
+		[classNameInvalidAnimation]: invalidInputState.country,
+		[classNameValid]: validInputState.country,
+		[classNameValidAnimation]: validInputState.country,
+	})
+	const classNamePublishStatus = clsx({
+		voucherifyPublishStatus: true,
+		[classNameInvalid]: invalidInputState.voucherifyPublishStatus,
+		[classNameInvalidAnimation]: invalidInputState.voucherifyPublishStatus,
+		[classNameValid]: validInputState.voucherifyPublishStatus,
+		[classNameValidAnimation]: validInputState.voucherifyPublishStatus,
+	})
 	const classNamePublish = clsx({
 		voucherifyPublish: true,
 		[classNameInvalid]: invalidInputState.voucherifyPublish,
@@ -214,8 +281,8 @@ const classNameCustomerPostalCode = clsx({
 			client
 				.publish(campaignName, payload)
 				.then(function (_response) {
-					const response: $FixMe = _response
-
+					const response: VoucherifyPublishResponse = _response
+					console.log(response)
 					setInvalidInputState(prev => ({
 						...prev,
 					}))
@@ -223,17 +290,20 @@ const classNameCustomerPostalCode = clsx({
 					setInput(prev => ({
 						...prev,
 						voucherifyTracking: response?.tracking_id || '',
+						voucherifyPublishStatus: response.voucher.code,
 					}))
 
 					setDisabled(true)
+					setVisible(false)
 
 					setValidInputState(prev => ({
 						...prev,
-						voucherifyPublish: true,
+						voucherifyPublishStatus: true,
 					}))
+
 					setInvalidInputState(prev => ({
 						...prev,
-						voucherifyPublish: false,
+						voucherifyPublishStatus: false,
 					}))
 
 					if (typeof onPublished === 'function') onPublished(response)
@@ -250,7 +320,7 @@ const classNameCustomerPostalCode = clsx({
 	return (
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
-			{customerFields.some(val => val.name === 'name') && (
+			{visible && customerFields.some(val => val.name === 'name') && (
 				<input
 					type="text"
 					placeholder={customerNamePlaceholder ? customerNamePlaceholder : 'e.g. Bruce Wayne'}
@@ -261,11 +331,11 @@ const classNameCustomerPostalCode = clsx({
 					disabled={isSubmitting || allDisabled}
 				/>
 			)}
-			{customerFields.some(val => val.name === 'email' || val.name === 'phone') && (
+			{visible && customerFields.some(val => val.name === 'email' || val.name === 'phone') && (
 				<div className="voucherifyRow">
-					{customerFields.some(val => val.name === 'email') && (
+					{visible && customerFields.some(val => val.name === 'email') && (
 						<input
-							type="text"
+							type="email"
 							placeholder={customerEmailPlaceholder ? customerEmailPlaceholder : 'e.g. bruce@wayne.com'}
 							name="email"
 							value={input['email']}
@@ -274,7 +344,7 @@ const classNameCustomerPostalCode = clsx({
 							disabled={isSubmitting || allDisabled}
 						/>
 					)}
-					{customerFields.some(val => val.name === 'phone') && (
+					{visible && customerFields.some(val => val.name === 'phone') && (
 						<input
 							type="text"
 							placeholder={customerPhonePlaceholder ? customerPhonePlaceholder : 'e.g. +0000 000 000 000'}
@@ -287,22 +357,99 @@ const classNameCustomerPostalCode = clsx({
 					)}
 				</div>
 			)}
-
+			{visible && customerFields.some(val => val.name === 'line_1') && (
+				<input
+					type="text"
+					placeholder={customerLine1Placeholder ? customerLine1Placeholder : 'e.g. Wayne Manor'}
+					name="line_1"
+					value={input['line_1']}
+					onChange={onInputChange}
+					className={classNameCustomerLine1}
+					disabled={isSubmitting || allDisabled}
+				/>
+			)}
+			{visible && customerFields.some(val => val.name === 'line_2') && (
+				<input
+					type="text"
+					placeholder={customerLine2Placeholder ? customerLine2Placeholder : 'e.g. 22B'}
+					name="line_2"
+					value={input['line_2']}
+					onChange={onInputChange}
+					className={classNameCustomerLine2}
+					disabled={isSubmitting || allDisabled}
+				/>
+			)}
+			{visible && customerFields.some(val => val.name === 'postal_code' || val.name === 'city') && (
+				<div className="voucherifyRow">
+					{visible && customerFields.some(val => val.name === 'postal_code') && (
+						<input
+							type="text"
+							placeholder={customerPostalCodePlaceholder ? customerPostalCodePlaceholder : 'e.g. 00-0014'}
+							name="postal_code"
+							value={input['postal_code']}
+							onChange={onInputChange}
+							className={classNameCustomerPostalCode}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+					{visible && customerFields.some(val => val.name === 'city') && (
+						<input
+							type="text"
+							placeholder={customerCityPlaceholder ? customerCityPlaceholder : 'e.g. Gotham'}
+							name="city"
+							value={input['city']}
+							onChange={onInputChange}
+							className={classNameCustomerCity}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+				</div>
+			)}
+			{visible && customerFields.some(val => val.name === 'state' || val.name === 'country') && (
+				<div className="voucherifyRow">
+					{visible && customerFields.some(val => val.name === 'state') && (
+						<input
+							type="text"
+							placeholder={customerStatePlaceholder ? customerStatePlaceholder : 'e.g. New Jersey'}
+							name="state"
+							value={input['state']}
+							onChange={onInputChange}
+							className={classNameCustomerState}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+					{visible && customerFields.some(val => val.name === 'country') && (
+						<input
+							type="text"
+							placeholder={customerCountryPlaceholder ? customerCountryPlaceholder : 'e.g. USA'}
+							name="country"
+							value={input['country']}
+							onChange={onInputChange}
+							className={classNameCustomerCountry}
+							disabled={isSubmitting || allDisabled}
+						/>
+					)}
+				</div>
+			)}
 			<input
 				type="hidden"
 				name="voucherifyTracking"
 				value={input['voucherifyTracking']}
 				className="voucherifyTracking"
 			/>
-			<input
-				type="text"
-				name="voucherifyPublishStatus"
-				value={input['voucherifyPublishStatus']}
-				className="voucherifyPublishStatus"
-			/>
-			<button className={classNamePublish} disabled={isSubmitting || allDisabled} onClick={onSubmit}>
-				<span className="VoucherifyPublishText">{textPublish}</span>
-			</button>
+			{!visible && (
+				<input
+					type="text"
+					name="voucherifyPublishStatus"
+					className={classNamePublishStatus}
+					value={input['voucherifyPublishStatus']}
+				/>
+			)}
+			{visible && (
+				<button className={classNamePublish} disabled={isSubmitting || allDisabled} onClick={onSubmit}>
+					<span className="VoucherifyPublishText">{textPublish}</span>
+				</button>
+			)}
 		</div>
 	)
 }
