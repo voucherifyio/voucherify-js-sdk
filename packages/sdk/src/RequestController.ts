@@ -26,7 +26,6 @@ export class RequestController {
 			baseURL: `${this.baseURL}/${this.basePath}/`,
 			headers: this.headers,
 			responseType: 'json',
-			
 		})
 		this.request.interceptors.response.use(void 0, (error: AxiosError<unknown>) => {
 			/**
@@ -46,7 +45,7 @@ export class RequestController {
 	public async get<T>(path: string, params?: Record<string, any>): Promise<T> {
 		const response = await this.request.get<T>(path, {
 			params,
-			paramsSerializer: function(params) {
+			paramsSerializer: function (params) {
 				return Qs.stringify(params, { arrayFormat: 'brackets', encode: false })
 			},
 		})
