@@ -1,51 +1,12 @@
-interface CampaignsVoucherDiscountUnit {
-	type?: 'UNIT'
-	unit_off?: number
-	effect?: string
-}
-
-interface CampaignsVoucherDiscountAmount {
-	type?: 'AMOUNT'
-	amount_off?: string
-}
-
-interface CampaignsVoucherDiscountPercent {
-	type?: 'PERCENT'
-	percent_off?: number
-}
-
-interface CampaignsVoucher {
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-	}
-	type?: string
-	is_referral_code?: boolean
-	discount?: CampaignsVoucherDiscountAmount | CampaignsVoucherDiscountPercent | CampaignsVoucherDiscountUnit
-	loyalty_card?: {
-		points: number
-		balance: number
-	}
-	redemption?: {
-		quantity: number
-	}
-}
-
-interface ValidationRulesResponse {
-	id: string
-	rule_id: string
-	related_object_id: string
-	related_object_type: 'campaign'
-	created_at: string
-	updated_at?: string
-	object: 'validation_rules_assignment'
-}
+import { SimpleVoucher, VouchersImport, VouchersResponse } from './Vouchers'
+import { OrdersGetResponse } from './Orders'
+import { CustomerRequest } from './Customers'
+import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
 export interface CampaignResponse {
 	id: string
 	name: string
-	campaign_type?: 'LOYALTY_PROGRAM'
+	campaign_type?: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	category?: string
 	auto_join?: boolean
@@ -53,7 +14,7 @@ export interface CampaignResponse {
 	description: string
 	start_date?: string
 	validation_rules_assignments: {
-		data?: ValidationRulesResponse[]
+		data?: ValidationRulesCreateAssignmentResponse[]
 		object: 'list'
 		total: number
 		data_ref: 'data'
@@ -69,8 +30,12 @@ export interface CampaignResponse {
 	created_at: string
 	vouchers_generation_status: 'DONE'
 	active: boolean
-	voucher?: CampaignsVoucher
-	referral_program?: boolean
+	voucher?: SimpleVoucher
+	referral_program?: {
+		conversion_event_type: $FixMe
+		custom_event: $FixMe
+		referee_reward: $FixMe
+	}
 	use_voucher_metadata_schema?: boolean
 	protected?: boolean
 	vouchers_count?: number
@@ -78,45 +43,8 @@ export interface CampaignResponse {
 }
 
 export interface CampaignsQualificationsBody {
-	customer?: {
-		id: string
-		name?: string
-		email?: string
-		metadata?: Record<string, any>
-		description?: string
-		source_id?: string
-		address?: {
-			city?: string
-			state?: string
-			line_1?: string
-			line_2?: string
-			country?: string
-			postal_code?: string
-		}
-		phone?: string
-	}
-	order: {
-		id: string
-		source_id?: string
-		items?: {
-			product_id?: string
-			sku_id?: string
-			related_object?: string
-			source_id?: string
-			quantity?: number
-			price?: number
-			product?: {
-				name?: string
-				override?: boolean
-				metadata?: Record<string, any>
-			}
-			sku?: {
-				override?: boolean
-				sku?: string
-				metadata?: Record<string, any>
-			}
-		}[]
-	}
+	customer?: CustomerRequest
+	order: Pick<OrdersGetResponse, 'id' | 'source_id' | 'items'>
 }
 
 export interface CampaignsQualificationsParams {
@@ -136,7 +64,7 @@ export interface CampaignsQualificationsResponse {
 
 export type CampaignsCreateCampaign = Omit<
 	CampaignResponse,
-	'vouchers_generation_status' | 'validation_rules_assigments' | 'object'
+	'vouchers_generation_status' | 'validation_rules_assignments' | 'object'
 >
 
 export type CampaignsUpdateCampaign = Pick<
@@ -148,51 +76,30 @@ export interface CampaignsDeleteParams {
 	force?: boolean
 }
 
-export interface CampaignsAddVoucherParams {
-	code?: string
-	category?: string
-	metadata?: Record<string, any>
-	additional_info?: string
-	redemption?: {
-		quantity: number
-	}
-}
+export type CampaignsAddVoucherParams = Pick<
+	VouchersImport,
+	'code' | 'category' | 'redemption' | 'metadata' | 'additional_info'
+>
 
-export interface CampaignsAddVoucherResponse {
-	code?: string
-	object?: string
-	campaign?: string
-	category?: string
-	type?: string
-	discount: CampaignsVoucherDiscountPercent | CampaignsVoucherDiscountAmount | CampaignsVoucherDiscountUnit
-	gift?: {
-		amount: number
-		balance: number
-	}
-	start_date?: string
-	expiration_date?: string
-	publish?: {
-		count?: number
-		entries: string[]
-	}
-	redemption: {
-		quantity?: number
-		redeemed_quantity?: number
-		redemption_entries?: string[]
-	}
-	active: true
-	additional_info?: string
-	metadata?: Record<string, any>
-}
+export type CampaignsAddVoucherResponse = Pick<
+	VouchersResponse,
+	| 'code'
+	| 'object'
+	| 'campaign'
+	| 'category'
+	| 'type'
+	| 'discount'
+	| 'gift'
+	| 'start_date'
+	| 'expiration_date'
+	| 'publish'
+	| 'redemption'
+	| 'active'
+	| 'additional_info'
+	| 'metadata'
+>
 
-export interface CampaignsImportVouchers {
-	code: string
-	redemption?: {
-		quantity: number
-	}
-	metadata?: Record<string, any>
-	additional_info?: string
-}
+export type CampaignsImportVouchers = Pick<VouchersImport, 'code' | 'redemption' | 'metadata' | 'additional_info'>
 
 export interface CampaignsListParams {
 	limit?: number
