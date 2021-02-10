@@ -1,20 +1,5 @@
 import { OrdersItem } from './Orders'
-
-interface VouchersDiscountUnit {
-	type?: 'UNIT'
-	unit_off?: number
-	effect?: string
-}
-
-interface VouchersDiscountAmount {
-	type?: 'AMOUNT'
-	amount_off?: string
-}
-
-interface VouchersDiscountPercent {
-	type?: 'PERCENT'
-	percent_off?: number
-}
+import { DiscountAmount, DiscountUnit, DiscountPercent } from './Vouchers'
 
 export interface ValidationsValidateVoucherParams {
 	customer?: {
@@ -58,7 +43,7 @@ export interface ValidationsValidateVoucherResponse {
 	metadata?: Record<string, any>
 	code?: string
 	valid?: boolean
-	discount: VouchersDiscountAmount | VouchersDiscountUnit | VouchersDiscountPercent
+	discount: DiscountAmount | DiscountUnit | DiscountPercent
 	order: {
 		object?: 'order'
 		amount?: number
