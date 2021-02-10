@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosError } from 'axios'
 import { VoucherifyError } from './VoucherifyError'
+import Qs from 'qs'
 
 export interface RequestControllerOptions {
 	baseURL: string
@@ -42,7 +43,12 @@ export class RequestController {
 		this.request.defaults.baseURL = `${baseURL}/${this.basePath}/`
 	}
 	public async get<T>(path: string, params?: Record<string, any>): Promise<T> {
-		const response = await this.request.get<T>(path, { params })
+		const response = await this.request.get<T>(path, {
+			params,
+			paramsSerializer: function (params) {
+				return Qs.stringify(params, { arrayFormat: 'brackets', encode: false })
+			},
+		})
 		return response.data
 	}
 	public async post<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
