@@ -1,21 +1,4 @@
-export interface VouchersItem {
-	sku_id?: string
-	product_id?: string
-	related_object?: 'product' | 'sku'
-	source_id?: string
-	quantity?: number
-	price?: number
-	amount?: number
-	product?: {
-		override?: boolean
-		name?: string
-		metadata?: Record<string, any>
-	}
-	sku?: {
-		override?: boolean
-		sku?: string
-	}
-}
+import { OrdersItem } from './Orders'
 
 interface VouchersDiscountUnit {
 	type?: 'UNIT'
@@ -46,14 +29,14 @@ export interface ValidationsValidateVoucherParams {
 		id?: string
 		source_id?: string
 		amount?: number
-		items?: VouchersItem[]
+		items?: OrdersItem[]
 		metadata?: Record<string, any>
 	}
 	gift?: {
-		credits?: number
+		credits: number
 	}
 	session?: {
-		type?: 'LOCK'
+		type: 'LOCK'
 		key?: string
 		ttl?: number
 		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
@@ -80,7 +63,7 @@ export interface ValidationsValidateVoucherResponse {
 		object?: 'order'
 		amount?: number
 		discount_amount?: number
-		items?: VouchersItem[]
+		items?: OrdersItem[]
 	}
 	tracking_id: string
 }
@@ -96,7 +79,7 @@ export interface ValidationsValidateCode {
 	order?: {
 		id?: string
 		source_id?: string
-		items?: VouchersItem[]
+		items?: OrdersItem[]
 		amount?: number
 		metadata?: Record<string, any>
 	}
