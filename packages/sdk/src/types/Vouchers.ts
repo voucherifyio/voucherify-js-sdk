@@ -1,19 +1,19 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 
-interface DiscountUnit {
+export interface DiscountUnit {
 	type?: 'UNIT'
 	unit_off?: number
 	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
 	unit_type?: string
 }
 
-interface DiscountAmount {
+export interface DiscountAmount {
 	type?: 'AMOUNT'
 	amount_off?: number
 }
 
-interface DiscountPercent {
+export interface DiscountPercent {
 	type?: 'PERCENT'
 	percent_off?: number
 	amount_limit?: number
