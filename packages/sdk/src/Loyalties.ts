@@ -5,33 +5,50 @@ import type { RequestController } from './RequestController'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
-
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-loyalty-programs
+	 */
 	public list(params: T.LoyaltiesListParams = {}) {
 		return this.client.get<T.LoyaltiesListResponse>('/loyalties', params)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-loyalty-program
+	 */
 	public create(campaign: T.LoyaltiesCreateCampaign) {
 		return this.client.post<T.LoyaltiesCreateCampaignResponse>('/loyalties', campaign)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-loyalty-program
+	 */
 	public get(campaignId: string) {
 		return this.client.get<T.LoyaltiesGetCampaignResponse>(`/loyalties/${encode(campaignId)}`)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-loyalty-program
+	 */
 	public update(campaign: T.LoyaltiesUpdateCampaign) {
 		return this.client.put<T.LoyaltiesUpdateCampaignResponse>(
 			`/loyalties/${encode(campaign.id)}`,
 			omit(campaign, ['id']),
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-loyalty-program
+	 */
 	public delete(campaign: T.LoyaltiesDeleteCampaign) {
-		return this.client.delete(`/loyalties/${encode(campaign.id)}`)
+		return this.client.delete(`/loyalties/${encode(campaign.id)}`, omit(campaign, ['id']))
 	}
-	public listRewardAssignments(campaignId: string, params: T.LoyaltiesListRewardAssignmentsParams) {
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments-1
+	 */
+	public listRewardAssignments(campaignId: string, params: T.LoyaltiesListRewardAssignmentsParams = {}) {
 		return this.client.get<T.LoyaltiesListRewardAssignmentsResponse>(`/loyalties/${encode(campaignId)}/rewards`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment-1
 	 */
-	public createRewardAssignments(campaignId: string, assignment: T.LoyaltiesCreateRewardAssignments) {
-		return this.client.post<T.LoyaltiesCreateRewardAssignmentResponse>(
+	public createRewardAssignments(campaignId: string, assignment: T.LoyaltiesCreateRewardAssignments[]) {
+		return this.client.post<T.LoyaltiesCreateRewardAssignmentResponse[]>(
 			`/loyalties/${encode(campaignId)}/rewards`,
 			assignment,
 		)
@@ -54,7 +71,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-earning-rules
 	 */
-	public listEarningRules(campaignId: string, params: T.LoyaltiesListEarningRulesParams) {
+	public listEarningRules(campaignId: string, params: T.LoyaltiesListEarningRulesParams = {}) {
 		return this.client.get<T.LoyaltiesListEarningRulesResponse>(
 			`/loyalties/${encode(campaignId)}/earning-rules`,
 			params,

@@ -1,17 +1,20 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersResponse } from './Vouchers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
+import { SimpleCustomer } from './Customers'
 
 interface LoyaltiesVoucher {
 	code_config?: {
 		length?: number
 		charset?: string
 		pattern?: string
+		prefix?: string
+		suffix?: string
 	}
 	type?: string
 	is_referral_code?: boolean
-	discount?: DiscountAmount | DiscountPercent | DiscountUnit
 	loyalty_card?: {
 		points: number
+		balance: number
 	}
 	redemption?: {
 		quantity?: number
@@ -34,21 +37,23 @@ export interface LoyaltiesCreateCampaign {
 	name: string
 	start_date?: string
 	expiration_date?: string
-	type?: string
+	type?: 'AUTO_UPDATE' | 'STATIC'
 	vouchers_count?: number
-	voucher?: {
-		type?: string
+	voucher: {
+		type?: 'LOYALTY_CARD'
 		redemption?: {
-			quantity?: number
+			quantity: number
 		}
-		loyalty_card?: {
-			points?: number
+		loyalty_card: {
+			points: number
 			balance?: number
 		}
 		code_config?: {
-			lenght?: number
+			length?: number
 			charset?: string
 			pattern?: string
+			prefix?: string
+			suffix?: string
 		}
 	}
 	metadata?: Record<string, any>
@@ -62,9 +67,9 @@ export interface LoyaltiesCreateCampaignResponse {
 	category?: string
 	auto_join?: boolean
 	join_once?: boolean
-	description: string
+	description?: string
 	start_date?: string
-	validation_rules_assignments: {
+	validation_rules_assignments?: {
 		data?: ValidationRulesCreateAssignmentResponse[]
 		object: 'list'
 		total: number
@@ -77,9 +82,9 @@ export interface LoyaltiesCreateCampaignResponse {
 		duration?: string
 	}
 	validity_day_of_week?: number[]
-	metadata?: Record<string, string>
+	metadata?: Record<string, any>
 	created_at: string
-	vouchers_generation_status: 'DONE'
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
 	voucher?: LoyaltiesVoucher
 	referral_program?: boolean
@@ -97,7 +102,7 @@ export interface LoyaltiesUpdateCampaign {
 	expiration_date?: string
 	metadata?: Record<string, any>
 	description?: string
-	type?: string
+	type?: 'AUTO_UPDATE' | 'STATIC'
 }
 
 export type LoyaltiesUpdateCampaignResponse = LoyaltiesCreateCampaignResponse
@@ -116,36 +121,25 @@ export interface LoyaltiesListRewardAssignmentsResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: {
-		id?: string
-		reward_id?: string
-		related_object_id?: string
-		related_object_type?: string
-		parameters: {
-			loyalty?: {
-				points: number
-			}
-		}
-		created_at?: string
-		updated_at?: string
-		object: 'reward_assignment'
-	}[]
+	data: LoyaltiesCreateRewardAssignmentResponse[]
 }
 
 export interface LoyaltiesCreateRewardAssignments {
-	reward?: string
-	parameters?: {
-		points: number
+	reward: string
+	parameters: {
+		loyalty: {
+			points: number
+		}
 	}
 }
 
 export interface LoyaltiesCreateRewardAssignmentResponse {
 	id: string
-	reward_id?: string
+	reward_id: string
 	related_object_id?: string
 	related_object_type?: string
 	parameters?: {
-		loyalty?: {
+		loyalty: {
 			points: number
 		}
 	}
@@ -156,8 +150,8 @@ export interface LoyaltiesCreateRewardAssignmentResponse {
 
 export interface LoyaltiesUpdateRewardAssignment {
 	id: string
-	parameters?: {
-		loyalty?: {
+	parameters: {
+		loyalty: {
 			points: number
 		}
 	}
@@ -172,66 +166,54 @@ export interface LoyaltiesListEarningRulesParams {
 
 export interface LoyaltyFixed {
 	type: 'FIXED'
-	points?: number
+	points: number
 }
 
 export interface LoyaltyProportional {
 	type: 'PROPORTIONAL'
 	order?: {
-		amount?: {
-			every?: number
-			points?: number
+		amount: {
+			every: number
+			points: number
 		}
 	}
 }
-export interface LoyaltiesListEarningRulesResponse {
-	object: 'list'
-	total: number
-	data_ref: string
-	data: {
-		id: string
-		created_at: string
-		updated_at?: string
-		validation_rule_id?: string
-		loyalty?: LoyaltyFixed | LoyaltyProportional | $FixMe
-		segment?: {
-			id: string
-		}
-		event?: 'customer.segment.entered' | 'order.paid' | string
-		source?: {
-			banner?: string
-			object_id?: string
-			object_type?: string
-		}
-		object: 'earning_rule'
-		automation_id: string
-	}[]
-}
 
-export interface LoyaltiesCreateEarningRule {
-	event?: 'order.paid' | 'customer.segment.entered' | string
-	validation_rule_id?: string
-	loyalty?: LoyaltyProportional | LoyaltyFixed | $FixMe
-	source?: { banner?: string }
-	custom_event?: { schema_id?: string }
-	segment?: { id?: string }
-}
-
-export interface LoyaltiesCreateEarningRuleResponse {
+export interface LoyaltiesEarningRulesResponse {
 	id: string
-	object: 'earning_rule'
 	created_at: string
+	updated_at?: string
 	validation_rule_id?: string
+	loyalty: LoyaltyFixed | LoyaltyProportional
+	segment?: {
+		id: string
+	}
+	event: 'customer.segment.entered' | 'order.paid' | string
 	source?: {
 		banner?: string
 		object_id?: string
 		object_type?: string
 	}
-	loyalty?: {
-		points: number
-	}
-	event?: string
+	object: 'earning_rule'
+	automation_id: string
 }
+export interface LoyaltiesListEarningRulesResponse {
+	object: 'list'
+	total: number
+	data_ref: string
+	data: LoyaltiesEarningRulesResponse[]
+}
+
+export interface LoyaltiesCreateEarningRule {
+	event: 'order.paid' | 'customer.segment.entered' | string
+	validation_rule_id?: string
+	loyalty: LoyaltyProportional | LoyaltyFixed
+	source?: { banner?: string }
+	custom_event?: { schema_id?: string }
+	segment?: { id?: string }
+}
+
+export type LoyaltiesCreateEarningRuleResponse = LoyaltiesEarningRulesResponse
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string
@@ -244,7 +226,7 @@ export interface LoyaltiesUpdateEarningRule {
 	}
 }
 
-export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesCreateEarningRuleResponse
+export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponse
 
 export interface LoyaltiesListMembersParams {
 	limit?: number
@@ -259,75 +241,16 @@ export interface LoyaltiesListMembersParams {
 	}
 }
 
-export interface LoyaltiesListMembersResponse {
-	object: 'list'
-	total: number
-	data_ref: string
-	vouchers?: {
-		id: string
-		code?: string
-		campaign?: string
-		campaign_id?: string
-		category?: string
-		type?: string
-		discount?: DiscountUnit | DiscountAmount | DiscountPercent
-		gift?: {
-			amount?: number
-			balance?: number
-		}
-		loyalty_card?: {
-			points?: number
-			balance?: number
-		}
-		start_date?: string
-		expiration_date?: string
-		validity_timeframe?: {
-			interval?: string
-			duration?: string
-		}
-		validity_day_of_week?: number[]
-		publish?: {
-			count?: number
-			entries?: string[]
-		}
-		redemption?: {
-			quantity?: number
-			redeemed_quantity?: number
-			redemption_entries?: string[]
-		}
-		active?: boolean
-		additional_info?: string
-		metadata?: Record<string, any>
-		is_referral_code?: boolean
-		holder_id?: string
-		updated_at?: string
-	}[]
-}
-
-export interface LoyaltiesCreateMember {
-	voucher?: string
-	channel?: string
-	customer?: {
-		id?: string
-		name?: string
-		email?: string
-		metadata?: Record<string, string>
-		description?: string
-		source_id?: string
-	}
-	metadata?: Record<string, string>
-}
-
-export interface LoyaltiesCreateMemberResponse {
+export interface LoyaltiesVoucherResponse {
 	id: string
-	code?: string
-	campaign?: string
-	campaign_id?: string
+	code: string
+	campaign: string
+	campaign_id: string
 	category?: string
-	type?: string
-	loyalty_card?: {
-		points?: number
-		balance?: number
+	type: 'LOYALTY_CARD'
+	loyalty_card: {
+		points: number
+		balance: number
 	}
 	start_date?: string
 	expiration_date?: string
@@ -337,15 +260,14 @@ export interface LoyaltiesCreateMemberResponse {
 	}
 	validity_day_of_week?: number[]
 	publish?: {
-		object?: string
 		count?: number
-		url?: string
+		entries?: string[]
 	}
-	redemption: {
-		object?: string
+	redemption?: {
 		quantity?: number
+		redeemed_points?: number
 		redeemed_quantity?: number
-		url?: string
+		redemption_entries?: string[]
 	}
 	active?: boolean
 	additional_info?: string
@@ -355,32 +277,41 @@ export interface LoyaltiesCreateMemberResponse {
 	updated_at?: string
 }
 
+export interface LoyaltiesListMembersResponse {
+	object: 'list'
+	total: number
+	data_ref: 'vouchers'
+	vouchers: LoyaltiesVoucherResponse[]
+}
+
+export interface LoyaltiesCreateMember {
+	voucher?: string
+	channel?: string
+	customer: {
+		id?: string
+		name?: string
+		email?: string
+		metadata?: Record<string, any>
+		description?: string
+		source_id?: string
+	}
+	metadata?: Record<string, any>
+}
+
+export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
+
 export type LoyaltiesGetMemberResponse = LoyaltiesCreateMemberResponse
 
 export interface LoyaltiesGetMemberActivitiesResponse {
-	object?: string
-	data_ref?: string
-	total?: number
-	activities?: {
-		id?: string
-		type?: string
-		object?: string
-		created_at?: string
-		data?: {
-			previous_attributes?: {
-				loyalty_card?: {
-					points?: number
-					balance?: number
-				}
-			}
-			object?: {
-				loyalty_card?: {
-					points?: number
-					balance?: number
-				}
-				object?: string
-			}
-		}
+	object: 'list'
+	data_ref: 'activities'
+	total: number
+	activities: {
+		id: string
+		type: string
+		object: string
+		created_at: string
+		data: any
 	}[]
 }
 
@@ -389,11 +320,11 @@ export interface LoyaltiesAddPoints {
 }
 
 export interface LoyaltiesAddPointsResponse {
-	points?: number
-	total?: number
-	balance?: number
-	type?: string
-	object?: string
+	points: number
+	total: number
+	balance: number
+	type: string
+	object: 'balance'
 	related_object?: {
 		type?: string
 		id?: string
@@ -401,71 +332,24 @@ export interface LoyaltiesAddPointsResponse {
 }
 
 export interface LoyaltiesRedeemReward {
-	reward?: {
-		id?: string
+	reward: {
+		id: string
 	}
 	metadata?: Record<string, any>
 }
 
 export interface LoyaltiesRedeemRewardResponse {
+	customer: SimpleCustomer
 	id: string
-	object?: string
+	object: 'redemption'
 	date: string
-	customer_id?: string
+	customer_id: string
 	tracking_id?: string
 	amount?: number
 	reward: {
 		id: string
-		assignment_id?: string
-		voucher: {
-			id?: string
-			code?: string
-			campaign?: string
-			campaign_id?: string
-			category?: string
-			type?: string
-			discount?: DiscountUnit | DiscountAmount | DiscountPercent
-			gift?: {
-				amount?: number
-				balance?: number
-			}
-			loyalty_card?: {
-				points?: number
-				balance?: number
-			}
-			start_date?: string
-			expiration_date?: string
-			validity_timeframe?: {
-				interval?: string
-				duration?: string
-			}
-			validity_day_of_week?: number[]
-			publish?: {
-				count?: number
-				entries: $FixMe[]
-			}
-			redemption?: {
-				quantity?: number
-				redeemed_quantity?: number
-				redemption_entries: $FixMe[]
-			}
-			active?: boolean
-			additional_info?: string
-			metadata: Record<string, any>
-			assets?: {
-				qr?: {
-					id: string
-					url: string
-				}
-				barcode?: {
-					id: string
-					url: string
-				}
-			}
-			is_referral_code?: boolean
-			holder_id?: string
-			updated_at?: string
-		}
+		assignment_id: string
+		voucher?: VouchersResponse
 		name?: string
 		created_at?: string
 		parameters: {
@@ -480,7 +364,7 @@ export interface LoyaltiesRedeemRewardResponse {
 	metadata?: Record<string, any>
 	result?: string
 	voucher: {
-		id?: string
+		id: string
 		code?: string
 		campaign?: string
 		campaign_id?: string
@@ -491,8 +375,8 @@ export interface LoyaltiesRedeemRewardResponse {
 			amount: number
 			balance: number
 		}
-		loyalty_card: {
-			points?: number
+		loyalty_card?: {
+			points: number
 			balance?: number
 		}
 		start_date?: string
