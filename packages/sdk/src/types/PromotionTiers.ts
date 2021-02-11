@@ -1,18 +1,7 @@
-interface PromotionTiersVoucherDiscountUnit {
-	type?: 'UNIT'
-	unit_off?: number
-	effect?: string
-}
-
-interface PromotionTiersVoucherDiscountAmount {
-	type?: 'AMOUNT'
-	amount_off?: string
-}
-
-interface PromotionTiersVoucherDiscountPercent {
-	type?: 'PERCENT'
-	percent_off?: number
-}
+import { DiscountUnit, DiscountAmount, DiscountPercent } from './Vouchers'
+import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
+import { SimpleCustomer } from './Customers'
+import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 export interface PromotionTiersTier {
 	id?: string
@@ -26,46 +15,11 @@ export interface PromotionTiersTier {
 		expiration_date?: string
 		active?: boolean
 	}
-	validation_rule_assignments?: {
-		object?: 'list'
-		total?: number
-		data_ref?: 'data'
-		data: {
-			id?: string
-			rule_id?: string
-			related_object_id?: string
-			related_object_type?: 'promotion_tier'
-			created_at?: string
-			updated_at?: string
-			object?: 'validation_rules_assignment'
-		}[]
-	}
+	validation_rule_assignments?: ValidationRulesListAssignmentsResponse
 	action: {
-		discount?:
-			| PromotionTiersVoucherDiscountUnit
-			| PromotionTiersVoucherDiscountAmount
-			| PromotionTiersVoucherDiscountPercent
+		discount?: DiscountUnit | DiscountPercent | DiscountAmount
 	}
 	metadata: Record<string, any>
-}
-
-export interface PromotionTiersItem {
-	sku_id?: string
-	product_id?: string
-	related_object?: 'product' | 'sku'
-	source_id?: string
-	quantity?: number
-	price?: number
-	amount?: number
-	product?: {
-		override?: boolean
-		name?: string
-		metadata?: Record<string, any>
-	}
-	sku?: {
-		override?: boolean
-		sku?: string
-	}
 }
 
 export interface PromotionTiersListAllParams {
@@ -75,8 +29,8 @@ export interface PromotionTiersListAllParams {
 }
 
 export interface PromotionTiersListAllResponse {
-	object?: 'list'
-	data_ref?: string
+	object: 'list'
+	data_ref: string
 	tiers?: PromotionTiersTier[]
 	has_more?: boolean
 }
@@ -87,30 +41,20 @@ export interface PromotionTiersCreateParams {
 	name?: string
 	banner?: string
 	action?: {
-		discount?:
-			| PromotionTiersVoucherDiscountUnit
-			| PromotionTiersVoucherDiscountAmount
-			| PromotionTiersVoucherDiscountPercent
+		discount?: DiscountUnit | DiscountPercent | DiscountAmount
 	}
 	metadata?: Record<string, any>
 }
 
-export type PromotionTiersCreateResponse = Omit<PromotionTiersTier, 'validation_rule_assigments'>
+export type PromotionTiersCreateResponse = Omit<PromotionTiersTier, 'validation_rule_assignments'>
 
 export interface PromotionTiersRedeemParams {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
+	customer?: Omit<SimpleCustomer, 'object'> & { description?: string }
 	order?: {
 		id?: string
 		source_id?: string
 		amount?: number
-		items?: PromotionTiersItem[]
+		items?: OrdersItem[]
 		status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
 		metadata?: Record<string, any>
 	}
@@ -126,23 +70,7 @@ export interface PromotionTiersRedeemResponse {
 	date?: string
 	customer_id?: string
 	tracking_id?: string
-	order: {
-		object?: 'order'
-		id?: string
-		source_id?: string
-		amount?: number
-		discount_amount?: number
-		created_at?: string
-		updated_at?: string
-		items?: PromotionTiersItem[]
-		customer?: {
-			id: string
-			object: string
-		}
-		referrer?: $FixMe
-		status?: string
-		metadata?: Record<string, any>
-	}
+	order: OrdersCreateResponse & { referrer?: $FixMe }
 	result?: string
 	promotion_tier?: {
 		id?: string
@@ -163,10 +91,7 @@ export interface PromotionTiersRedeemResponse {
 			[orders: string]: $FixMe
 		}
 		action?: {
-			discount?:
-				| PromotionTiersVoucherDiscountUnit
-				| PromotionTiersVoucherDiscountAmount
-				| PromotionTiersVoucherDiscountPercent
+			discount?: DiscountUnit | DiscountPercent | DiscountAmount
 		}
 		metadata?: Record<string, any>
 	}
@@ -174,4 +99,4 @@ export interface PromotionTiersRedeemResponse {
 
 export type PromotionTiersUpdateParams = PromotionTiersCreateParams
 
-export type PromotionTiersUpdateResponse = Omit<PromotionTiersTier, 'validation_rule_assigments'>
+export type PromotionTiersUpdateResponse = Omit<PromotionTiersTier, 'validation_rule_assignments'>
