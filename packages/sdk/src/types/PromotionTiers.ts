@@ -97,6 +97,6 @@ export interface PromotionTiersRedeemResponse {
 	}
 }
 
-export type PromotionTiersUpdateParams = PromotionTiersCreateParams
+export type PromotionTiersUpdateParams = PromotionTiersCreateParams & { id: string }
 
 export type PromotionTiersUpdateResponse = Omit<PromotionTiersTier, 'validation_rule_assignments'>
