@@ -24,14 +24,14 @@ export class Loyalties {
 	public delete(campaign: T.LoyaltiesDeleteCampaign) {
 		return this.client.delete(`/loyalties/${encode(campaign.id)}`)
 	}
-	public listRewardAssignments(campaignId: string, params: T.LoyaltiesListRewardAssigmentsParams) {
-		return this.client.get<T.LoyaltiesListRewardAssigmentsResponse>(`/loyalties/${encode(campaignId)}/rewards`, params)
+	public listRewardAssignments(campaignId: string, params: T.LoyaltiesListRewardAssignmentsParams) {
+		return this.client.get<T.LoyaltiesListRewardAssignmentsResponse>(`/loyalties/${encode(campaignId)}/rewards`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment-1
 	 */
-	public createRewardAssignments(campaignId: string, assignment: T.LoyaltiesCreateRewardAssigments) {
-		return this.client.post<T.LoyaltiesCreateRewardAssigmentResponse>(
+	public createRewardAssignments(campaignId: string, assignment: T.LoyaltiesCreateRewardAssignments) {
+		return this.client.post<T.LoyaltiesCreateRewardAssignmentResponse>(
 			`/loyalties/${encode(campaignId)}/rewards`,
 			assignment,
 		)
@@ -39,8 +39,8 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment-1
 	 */
-	public updateRewardAssignment(campaignId: string, assignment: T.LoyaltiesUpdateRewardAssigment) {
-		return this.client.put<T.LoyaltiesUpdateRewardAssigmentResponse>(
+	public updateRewardAssignment(campaignId: string, assignment: T.LoyaltiesUpdateRewardAssignment) {
+		return this.client.put<T.LoyaltiesUpdateRewardAssignmentResponse>(
 			`/loyalties/${encode(campaignId)}/rewards/${assignment.id}`,
 			omit(assignment, ['id']),
 		)
