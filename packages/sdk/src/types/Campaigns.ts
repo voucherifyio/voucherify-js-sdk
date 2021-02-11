@@ -77,8 +77,13 @@ export interface CampaignsDeleteParams {
 }
 
 export type CampaignsAddVoucherParams = Pick<
-	VouchersImport,
+	Partial<VouchersImport>,
 	'code' | 'category' | 'redemption' | 'metadata' | 'additional_info'
+>
+
+export type CampaignsAddCertainVoucherParams = Pick<
+	Partial<VouchersImport>,
+	'category' | 'redemption' | 'metadata' | 'additional_info'
 >
 
 export type CampaignsAddVoucherResponse = Pick<
@@ -98,6 +103,8 @@ export type CampaignsAddVoucherResponse = Pick<
 	| 'additional_info'
 	| 'metadata'
 >
+
+export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
 export type CampaignsImportVouchers = Pick<VouchersImport, 'code' | 'redemption' | 'metadata' | 'additional_info'>
 

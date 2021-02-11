@@ -45,9 +45,18 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign
 	 */
 
-	// @todo - fix addVoucher params & body
 	public addVoucher(name: string, params: T.CampaignsAddVoucherParams = {}) {
 		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-with-certain-code-to-campaign
+	 */
+
+	public addCertainVoucher(name: string, code: string, params: T.CampaignsAddCertainVoucherParams = {}) {
+		return this.client.post<T.CampaignsAddCertainVoucherResponse>(
+			`/campaigns/${encode(name)}/vouchers/${encode(code)}`,
+			params,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
