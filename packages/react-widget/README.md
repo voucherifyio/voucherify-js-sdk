@@ -134,6 +134,75 @@ Additional props for Validate Voucherify React Widget
 
 ## <a name="publish"></a>Publish
 
+```javascript
+import * as React from 'react'
+
+import * as ReactDOM from 'react-dom'
+
+import { VoucherifyPublish } from '@voucherify/react-widgets'
+
+const App = () => {
+	const onPublishedResponse = response => {
+		console.log('Do something with response: ', response)
+	}
+
+	const onErrorResponse = error => {
+		console.log('Do something with error: ', error)
+	}
+
+	return (
+		<VoucherifyPublish
+			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
+			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
+			textPlaceholder="e.g. Testing7fjWdr"
+			onPublished={onPublishedResponse}
+			onError={onErrorResponse}
+			campaignName="Test Campaign"
+			customerFields={[
+				{ name: 'name', required: true },
+				{ name: 'email', required: false },
+			]}
+		/>
+	)
+}
+
+export default App
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+Additional props for Validate Voucherify React Widget
+
+| Prop                          | Type       | Description                                                                                                 |
+| ----------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
+| classInvalid                  | `string`   | CSS class applied to the input when entered code is invalid                                                 |
+| classInvalidAnimation         | `string`   | CSS class describing animation of the input field when entered code is invalid                              |
+| classValid                    | `string`   | CSS class applied to the input when entered code is valid                                                   |
+| classValidAnimation           | `string`   | CSS class describing animation of the input field when entered code is valid                                |
+| logoSrc                       | `string`   | source of the image appearing in the circle at the top                                                      |
+| logoAlt                       | `string`   | alt message of the image appearing in the circle at the top                                                 |
+| onPublished                   | `function` | a callback function invoked after the voucher publication, it takes the publication response as a parameter |
+| onError                       | `function` | a callback function invoked when there is an error                                                          |
+| campaignName                  | `string`   | `required field` Name of the campaign to which voucher will be published                                    |
+| customerFields                | `array`    | array containing [customerFields objects](#customerFields-object)                                           |
+| customerNamePlaceholder       | `string`   | Placeholder for name input field                                                                            |
+| customerEmailPlaceholder      | `string`   | Placeholder for email input field                                                                           |
+| customerPhonePlaceholder      | `string`   | Placeholder for phone input field                                                                           |
+| customerLine1Placeholder      | `string`   | Placeholder for name input field                                                                            |
+| customerLine2Placeholder      | `string`   | Placeholder for address line 1 input field                                                                  |
+| customerPostalCodePlaceholder | `string`   | Placeholder for address line 2 input field                                                                  |
+| customerCityPlaceholder       | `string`   | Placeholder for address city input field                                                                    |
+| customerStatePlaceholder      | `string`   | Placeholder for address state input field                                                                   |
+| customerCountryPlaceholder    | `string`   | Placeholder for address country input field                                                                 |
+| textValidate                  | `string`   | a text displayed on the button (default: "Get voucher")                                                     |
+
+<a name="#customerFields-object"></a>customerFields object
+
+| Key      | Type      | Value                                                                                   |
+| -------- | --------- | --------------------------------------------------------------------------------------- |
+| name     | `string`  | 'name', 'email', 'phone', 'line_1', 'line_2', 'city', 'postal_code', 'state', 'country' |
+| required | `boolean` |
+
 # <a name="typescript"></a>🦸 TypeScript
 
 Voucherify React Widget includes TypeScript declarations.
