@@ -881,11 +881,15 @@ client.loyalties.getMemberActivities(campaignId, memberId)
 client.loyalties.addPoints(campaignId, memberId, balance)
 ```
 
+`memberId` referrers to Loyalty Card code.
+
 #### [Redeem Loyalty Card]
 
 ```javascript
 client.loyalties.redeemReward(campaignId, memberId, reward, order)
 ```
+
+`memberId` referrers to Loyalty Card code.
 
 ---
 

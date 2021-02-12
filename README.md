@@ -51,7 +51,7 @@ Voucherify React Widget contains several client-side Voucherify methods, which a
 
 # <a name="migration"></a>↔️ Migration
 
-Check our [MIGRATION GUIDE](/MIGRATION.md) to learn more about switching to the newest Voucherify JS SDK.
+Check out [MIGRATION GUIDE](/packages/sdk/MIGRATION.md) to learn more about switching to the newest Voucherify JS SDK.
 
 # <a name="typescript"></a>🦸 TypeScript
 
