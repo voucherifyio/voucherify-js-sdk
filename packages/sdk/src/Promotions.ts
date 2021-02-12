@@ -10,7 +10,7 @@ export class Promotions {
 	 * @see http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign
 	 */
 	public create(campaign: T.PromotionsCreate) {
-		return this.campaignsNamespace.create(campaign)
+		return this.campaignsNamespace.create<T.PromotionsCreateResponse>(campaign)
 	}
 	/**
 	 * @see http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1
