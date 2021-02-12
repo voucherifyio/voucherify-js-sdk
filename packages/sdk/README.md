@@ -182,6 +182,7 @@ client.vouchers.qualifications.examine(body, params)
 #### [Update Vouchers in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk)
 
 #### [Release Validation Session](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session)
+
 ---
 
 ### Campaigns
@@ -872,6 +873,8 @@ client.loyalties.listMembers(campaignId, params)
 client.loyalties.getMemberActivities(campaignId, memberId)
 ```
 
+`memberId` referrers to Loyalty Card code.
+
 #### [Add Loyalty Card Balance](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-loyalty-card-balance)
 
 ```javascript
@@ -881,7 +884,7 @@ client.loyalties.addPoints(campaignId, memberId, balance)
 #### [Redeem Loyalty Card]
 
 ```javascript
-client.loyalties.redeemReward(campaignId, memberId, reward)
+client.loyalties.redeemReward(campaignId, memberId, reward, order)
 ```
 
 ---

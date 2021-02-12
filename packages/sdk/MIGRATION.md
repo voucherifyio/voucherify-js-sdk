@@ -57,6 +57,22 @@ client.validationRules.validate(validationRuleId)
 
 Dropped support
 
+### Loyalties Redeem Reward
+
+#### Previously
+
+```javascript
+client.loyalties.redeemReward(campaignId, memberId, reward)
+```
+
+#### Currently
+
+Order required
+
+```javascript
+client.loyalties.redeemReward(campaignId, memberId, reward, order)
+```
+
 ## From [Voucherify.js](https://github.com/rspective/voucherify.js/)
 
 ### Initialization
