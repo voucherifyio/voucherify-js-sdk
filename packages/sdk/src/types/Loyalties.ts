@@ -1,6 +1,8 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersResponse } from './Vouchers'
+import { VouchersResponse } from './Vouchers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { SimpleCustomer } from './Customers'
+import { OrdersItem } from './Orders'
+import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -338,46 +340,106 @@ export interface LoyaltiesRedeemReward {
 	metadata?: Record<string, any>
 }
 
+export interface LoyaltiesRedeemOrder {
+	id?: string
+	source_id?: string
+	amount: number
+	items?: OrdersItem[]
+	metadata?: Record<string, any>
+}
+
+interface CoinReward {
+	assignment_id: string
+	loyalty_tier_id: string
+	id: string
+	name: string
+	created_at: string
+	updated_at?: string
+	parameters: {
+		automation_id?: string
+		coin: {
+			exchange_ratio: number
+			points_ratio: number
+		}
+	}
+	type: 'COIN'
+	object: 'reward'
+}
+
+interface MaterialReward {
+	assignment_id: string
+	loyalty_tier_id: string
+	product: ProductsCreateResponse & ProductsCreateSkuResponse
+	id: string
+	name: string
+	created_at: string
+	updated_at?: string
+	parameters: {
+		automation_id?: string
+		product?: {
+			id: string
+		}
+	}
+	type: 'MATERIAL'
+	object: 'reward'
+}
+
+interface CampaignReward {
+	assignment_id: string
+	loyalty_tier_id: string
+	voucher: VouchersResponse
+	id: string
+	name: string
+	created_at: string
+	updated_at?: string
+	parameters: {
+		automation_id?: string
+		campaign?: {
+			id: string
+		}
+	}
+	type: 'CAMPAIGN'
+	object: 'reward'
+}
+
 export interface LoyaltiesRedeemRewardResponse {
-	customer: SimpleCustomer
 	id: string
 	object: 'redemption'
 	date: string
 	customer_id: string
-	tracking_id?: string
-	amount?: number
-	reward: {
+	amount: number
+	order: {
 		id: string
-		assignment_id: string
-		voucher?: VouchersResponse
-		name?: string
-		created_at?: string
-		parameters: {
-			automation_id?: string
-			campaign: {
-				id?: string
+		status: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
+		amount: number
+		discount_amount: number
+		total_discount_amount: number
+		total_amount: number
+		items: OrdersItem[]
+		created_at: string
+		customer: {
+			id: string
+			object: 'customer'
+			referrals: {
+				campaigns: any[]
+				total: number
 			}
 		}
-		type?: string
-		object?: string
 	}
-	metadata?: Record<string, any>
-	result?: string
+	customer: SimpleCustomer
+	reward: MaterialReward | CampaignReward | CoinReward
+	result: 'SUCCESS' | 'FAILURE'
+	tracking_id?: string
 	voucher: {
 		id: string
 		code?: string
 		campaign?: string
 		campaign_id?: string
 		category?: string
-		type?: string
-		discount?: DiscountUnit | DiscountAmount | DiscountPercent
-		gift?: {
-			amount: number
-			balance: number
-		}
+		type: 'LOYALTY_CARD'
 		loyalty_card?: {
 			points: number
-			balance?: number
+			balance: number
 		}
 		start_date?: string
 		expiration_date?: string
@@ -387,23 +449,52 @@ export interface LoyaltiesRedeemRewardResponse {
 		}
 		validity_day_of_week?: number[]
 		publish: {
-			object?: string
-			count?: number
-			url?: string
+			object: 'list'
+			count: number
+			url: string
 		}
 		redemption: {
-			object?: string
-			quantity: null
-			redeemed_quantity?: number
-			url?: string
-			redeemed_points?: number
+			object: 'list'
+			quantity: number
+			redeemed_quantity: number
+			url: string
+			redeemed_points: number
 		}
 		active: true
 		additional_info?: string
-		metadata?: Record<string, any>
-		is_referral_code: false
-		holder_id?: string
-		updated_at?: string
-		object?: string
+		assets?: {
+			qr?: {
+				id: string
+				url: string
+			}
+			barcode?: {
+				id: string
+				url: string
+			}
+		}
+		is_referral_code: boolean
+		referrer_id: string
+		holder_id: string
+		updated_at: string
+		holder: {
+			id: string
+			source_id: string
+			metadata?: Record<string, any>
+			object: 'customer'
+		}
+		object?: 'voucher'
+		validation_rules_assignments: {
+			object: 'list'
+			total: number
+			data_ref: 'data'
+			data?: {
+				id: string
+				rule_id?: string
+				related_object_id?: string
+				related_object_type?: string
+				created_at: string
+				object: 'validation_rules_assignment'
+			}[]
+		}
 	}
 }

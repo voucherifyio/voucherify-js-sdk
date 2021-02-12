@@ -21,9 +21,9 @@ voucherify.campaigns
 			},
 		},
 	})
-	.then(function(result) {
+	.then(function (result) {
 		console.log(result)
 	})
-	.catch(function(err) {
+	.catch(function (err) {
 		console.error(err)
 	})

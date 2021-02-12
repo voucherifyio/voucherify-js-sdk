@@ -139,10 +139,16 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-loyalty-card
 	 */
-	public redeemReward(campaignId: string, memberId: string, reward: T.LoyaltiesRedeemReward) {
+	public redeemReward(
+		campaignId: string,
+		memberId: string,
+		reward: T.LoyaltiesRedeemReward,
+		order: T.LoyaltiesRedeemOrder,
+	) {
 		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/redemption`,
 			reward,
+			order,
 		)
 	}
 }
