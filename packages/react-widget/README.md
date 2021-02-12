@@ -1,9 +1,10 @@
 # Voucherify React Widget
 
 <p>
-  <a href="#"><img src="https://travis-ci.org/voucherifyio/voucherify-nodejs-sdk.svg?branch=master" alt="Build Status"/></a>
-  <a href="#"><img src="https://img.shields.io/npm/v/voucherify.svg" alt="NPM Version"/></a>
-  <a href="#"><img src="https://img.shields.io/npm/dm/voucherify.svg" alt="NPM Downloads"/></a>
+  <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
+  <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Lint/badge.svg?branch=main" alt="Lint Status"/></a>
+  <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/react-widget" alt="React Widget NPM Version"/></a>
+  <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/react-widget" alt="React Widget NPM Downloads"/></a>
 </p>
 
 Voucherify React Widget contains several client-side Voucherify methods, which are useful in integrating your promotion logic straight to your e-commerce store.
