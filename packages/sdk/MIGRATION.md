@@ -1,6 +1,11 @@
 # Voucherify JS SDK Migration guide
 
-## From [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
+# 🔖 Table of contents
+
+- [Migration from Voucherify Node.js SDK](#voucherify-node-js)
+- [Migration from Voucherify.js](#voucherify-js)
+
+## <a name="voucherify-node-js"></a>Migration from [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
 ### Initialization
 
@@ -73,7 +78,7 @@ Order required
 client.loyalties.redeemReward(campaignId, memberId, reward, order)
 ```
 
-## From [Voucherify.js](https://github.com/rspective/voucherify.js/)
+## <a name="voucherify-js"></a>From [Voucherify.js](https://github.com/rspective/voucherify.js/)
 
 ### Initialization
 
