@@ -1,43 +1,46 @@
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+
 import { OrdersItem } from './Orders'
-import { DiscountUnit, DiscountAmount, DiscountPercent } from './Vouchers'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
+
+export interface PromotionTier {
+	id: string
+	object: 'promotion_tier'
+	name: string
+	banner?: string
+	campaign: {
+		id: string
+		object: 'campaign'
+		start_date?: string
+		expiration_date?: string
+		active: boolean
+	}
+	action: {
+		discount: DiscountUnit | DiscountAmount | DiscountPercent
+	}
+	metadata: Record<string, any>
+	hierarchy: number
+	validation_rule_assignments: {
+		data?: ValidationRulesCreateAssignmentResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
+	}
+}
 
 export interface PromotionsCreateResponse {
 	id: string
 	name: string
 	campaign_type?: 'PROMOTION'
-	type: 'AUTO_UPDATE' | 'STATIC'
+	type: 'STATIC'
 	description: string
 	start_date?: string
 	expiration_date?: string
 	promotion: {
 		object: 'list'
 		data_ref: 'tiers'
-		tiers?: {
-			id: string
-			object: 'promotion_tier'
-			name: string
-			banner?: string
-			campaign: {
-				id: string
-				object: 'campaign'
-				start_date?: string
-				expiration_date?: string
-				active: boolean
-			}
-			action: {
-				discount: DiscountUnit | DiscountAmount | DiscountPercent
-			}
-			metadata: Record<string, any>
-			hierarchy: number
-			validation_rule_assignments: {
-				data?: ValidationRulesCreateAssignmentResponse[]
-				object: 'list'
-				total: number
-				data_ref: 'data'
-			}
-		}[]
+		tiers?: PromotionTier[]
 		has_more: boolean
 	}
 	category?: string
