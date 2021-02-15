@@ -1,8 +1,9 @@
-import { VouchersResponse } from './Vouchers'
-import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-import { SimpleCustomer } from './Customers'
-import { OrdersItem } from './Orders'
+import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
+
+import { SimpleCustomer } from './Customers'
+import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
+import { VouchersResponse } from './Vouchers'
 
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -109,8 +110,7 @@ export interface LoyaltiesUpdateCampaign {
 
 export type LoyaltiesUpdateCampaignResponse = LoyaltiesCreateCampaignResponse
 
-export interface LoyaltiesDeleteCampaign {
-	id: string
+export interface LoyaltiesDeleteCampaignParams {
 	force?: boolean
 }
 
@@ -333,18 +333,17 @@ export interface LoyaltiesAddPointsResponse {
 	}
 }
 
-export interface LoyaltiesRedeemReward {
+export interface LoyaltiesRedeemRewardParams {
 	reward: {
 		id: string
 	}
-	metadata?: Record<string, any>
-}
-
-export interface LoyaltiesRedeemOrder {
-	id?: string
-	source_id?: string
-	amount: number
-	items?: OrdersItem[]
+	order?: {
+		id?: string
+		source_id?: string
+		amount: number
+		items?: OrdersItem[]
+		metadata?: Record<string, any>
+	}
 	metadata?: Record<string, any>
 }
 
@@ -408,15 +407,9 @@ export interface LoyaltiesRedeemRewardResponse {
 	date: string
 	customer_id: string
 	amount: number
-	order: {
-		id: string
-		status: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
-		amount: number
-		discount_amount: number
+	order?: Omit<OrdersCreateResponse, 'customer'> & {
 		total_discount_amount: number
 		total_amount: number
-		items: OrdersItem[]
-		created_at: string
 		customer: {
 			id: string
 			object: 'customer'

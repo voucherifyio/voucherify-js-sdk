@@ -1,6 +1,7 @@
 import * as T from './types/Loyalties'
 
 import { encode, omit } from './helpers'
+
 import type { RequestController } from './RequestController'
 
 export class Loyalties {
@@ -35,8 +36,8 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-loyalty-program
 	 */
-	public delete(campaign: T.LoyaltiesDeleteCampaign) {
-		return this.client.delete(`/loyalties/${encode(campaign.id)}`, omit(campaign, ['id']))
+	public delete(campaignId: string, params?: T.LoyaltiesDeleteCampaignParams) {
+		return this.client.delete(`/loyalties/${encode(campaignId)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments-1
@@ -139,16 +140,10 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-loyalty-card
 	 */
-	public redeemReward(
-		campaignId: string,
-		memberId: string,
-		reward: T.LoyaltiesRedeemReward,
-		order: T.LoyaltiesRedeemOrder,
-	) {
+	public redeemReward(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
 		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
-			`/loyalties/${encode(campaignId)}/members/${memberId}/redemption`,
-			reward,
-			order,
+			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/redemption`,
+			params,
 		)
 	}
 }
