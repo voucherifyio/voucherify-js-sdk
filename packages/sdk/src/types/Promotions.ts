@@ -79,6 +79,7 @@ export interface PromotionsCreate {
 			action: {
 				discount: DiscountUnit | DiscountAmount | DiscountPercent
 			}
+			metadata?: Record<string, any>
 		}[]
 	}
 }
@@ -103,6 +104,14 @@ export interface PromotionsValidateResponse {
 		banner?: string
 		discount?: DiscountUnit | DiscountAmount | DiscountPercent
 		discount_amount?: number
+		metadata?: Record<string, any>
+		order?: {
+			id?: string
+			source_id?: string
+			amount: number
+			items?: OrdersItem[]
+			metadata?: Record<string, any>
+		}
 	}[]
 	tracking_id?: string
 }
