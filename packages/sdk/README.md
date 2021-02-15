@@ -887,10 +887,12 @@ client.loyalties.addPoints(campaignId, memberId, balance)
 #### [Redeem Loyalty Card]
 
 ```javascript
-client.loyalties.redeemReward(campaignId, memberId, reward, order)
+client.loyalties.redeemReward(campaignId, memberId, params)
 ```
 
 `memberId` referrers to Loyalty Card code.
+
+When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
 
 ---
 
