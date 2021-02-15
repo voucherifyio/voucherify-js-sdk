@@ -34,7 +34,7 @@ export interface PromotionsCreateResponse {
 	name: string
 	campaign_type?: 'PROMOTION'
 	type: 'STATIC'
-	description: string
+	description?: string
 	start_date?: string
 	expiration_date?: string
 	promotion: {
