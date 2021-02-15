@@ -43,7 +43,7 @@ export interface LoyaltiesCreateCampaign {
 	type?: 'AUTO_UPDATE' | 'STATIC'
 	vouchers_count?: number
 	voucher: {
-		type?: 'LOYALTY_CARD'
+		type: 'LOYALTY_CARD'
 		redemption?: {
 			quantity: number
 		}
