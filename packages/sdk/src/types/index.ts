@@ -1,6 +1,7 @@
 export * from './Customers'
 export * from './Balance'
 export * from './PromotionTiers'
+export * from './Promotions'
 export * from './Loyalties'
 export * from './Vouchers'
 export * from './ValidationRules'
