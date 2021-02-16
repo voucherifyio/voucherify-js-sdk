@@ -236,7 +236,6 @@ export function VoucherifyPublish({
 				voucherifyTracking: '',
 			}))
 
-
 			setInvalidInputState(prev => ({
 				...prev,
 				name: false,
