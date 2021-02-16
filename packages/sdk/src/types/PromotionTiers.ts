@@ -1,7 +1,8 @@
-import { DiscountUnit, DiscountAmount, DiscountPercent } from './Vouchers'
-import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
-import { SimpleCustomer } from './Customers'
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
+
+import { SimpleCustomer } from './Customers'
+import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
 
 export interface PromotionTiersTier {
 	id?: string
@@ -19,7 +20,7 @@ export interface PromotionTiersTier {
 	action: {
 		discount?: DiscountUnit | DiscountPercent | DiscountAmount
 	}
-	metadata: Record<string, any>
+	metadata?: Record<string, any>
 }
 
 export interface PromotionTiersListAllParams {
