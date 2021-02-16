@@ -1,25 +1,11 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
 
 import { OrdersItem } from './Orders'
+import { PromotionTiersTier } from './PromotionTiers'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
-export interface PromotionTier {
-	id: string
-	object: 'promotion_tier'
-	name: string
-	banner?: string
-	campaign: {
-		id: string
-		object: 'campaign'
-		start_date?: string
-		expiration_date?: string
-		active: boolean
-	}
-	action: {
-		discount: DiscountUnit | DiscountAmount | DiscountPercent
-	}
-	metadata?: Record<string, any>
+export type PromotionTier = PromotionTiersTier & {
 	hierarchy: number
 	validation_rule_assignments: {
 		data?: ValidationRulesCreateAssignmentResponse[]

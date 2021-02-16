@@ -18,7 +18,7 @@ export interface PromotionTiersTier {
 	}
 	validation_rule_assignments?: ValidationRulesListAssignmentsResponse
 	action: {
-		discount?: DiscountUnit | DiscountPercent | DiscountAmount
+		discount: DiscountUnit | DiscountPercent | DiscountAmount
 	}
 	metadata?: Record<string, any>
 }
