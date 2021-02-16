@@ -19,7 +19,7 @@ export interface PromotionTier {
 	action: {
 		discount: DiscountUnit | DiscountAmount | DiscountPercent
 	}
-	metadata: Record<string, any>
+	metadata?: Record<string, any>
 	hierarchy: number
 	validation_rule_assignments: {
 		data?: ValidationRulesCreateAssignmentResponse[]
