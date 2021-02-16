@@ -1,8 +1,9 @@
 import * as React from 'react'
-import clsx from 'clsx'
+
 import { VoucherifyClientSideOptions } from '@voucherify/sdk'
-import { useVoucherifyClient } from './hooks/useVoucherifyClient'
 import { VoucherifyLogo } from './VoucherifyLogo'
+import clsx from 'clsx'
+import { useVoucherifyClient } from './hooks/useVoucherifyClient'
 
 interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	/**
@@ -235,7 +236,6 @@ export function VoucherifyPublish({
 				voucherifyTracking: '',
 			}))
 
-			console.log(input)
 
 			setInvalidInputState(prev => ({
 				...prev,
@@ -282,7 +282,6 @@ export function VoucherifyPublish({
 				.publish(campaignName, payload)
 				.then(function (_response) {
 					const response: VoucherifyPublishResponse = _response
-					console.log(response)
 					setInvalidInputState(prev => ({
 						...prev,
 					}))
