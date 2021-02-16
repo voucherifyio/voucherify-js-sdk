@@ -4,11 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Voucherify Widget – VoucherifyValidate</title>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherify.css"
-		/>
+		<link rel="stylesheet" type="text/css" href="http://localhost:5000/packages/react-widget/dist/voucherify.css" />
 	</head>
 
 	<body>
@@ -19,12 +15,12 @@
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script
 			type="text/javascript"
-			src="https://unpkg.com/@voucherify/sdk@0.0.5/dist/voucherifysdk.umd.production.min.js"
+			src="http://localhost:5000/packages/sdk/dist/voucherifysdk.umd.production.min.js"
 			crossorigin
 		></script>
 		<script
 			type="text/javascript"
-			src="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherifywidget.umd.production.min.js"
+			src="http://localhost:5000/packages/react-widget/dist/voucherifywidget.umd.production.min.js"
 			crossorigin
 		></script>
 		<script type="text/javascript">
@@ -32,12 +28,12 @@
 			const reactDom = window.ReactDOM
 
 			reactDom.render(
-				React.createElement(VoucherifyWidget.VoucherifyValidate, {
-					clientApplicationId: '011240bf-d5fc-4ef1-9e82-11eb68c43bf5',
-					clientSecretKey: '9e2230c5-71fb-460a-91c6-fbee64707a20',
-					textPlaceholder: 'e.g. Testing7fjWdr',
+				React.createElement(VoucherifyWidget.VoucherifyRedeem, {
+					clientApplicationId: '46f55356-1fdd-4102-b632-712b09b2dcf9',
+					clientSecretKey: 'd59c93a3-7815-4a87-96e2-80f756db7d3d',
+					textPlaceholder: 'e.g. RNL6L',
 					amount: true,
-					onValidated: function (response) {
+					onRedeemed: function (response) {
 						console.log('Do something with response:', response)
 					},
 					onError: function (error) {

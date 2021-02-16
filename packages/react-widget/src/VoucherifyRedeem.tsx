@@ -1,11 +1,9 @@
 import * as React from 'react'
-import clsx from 'clsx'
-import { VoucherifyClientSideOptions } from '@voucherify/sdk'
-import { useVoucherifyClient } from './hooks/useVoucherifyClient'
-import { VoucherifyLogo } from './VoucherifyLogo'
 
-const RESOURCE_NOT_FOUND = 'resource_not_found'
-const ORDER_RULES_VIOLATED = 'order_rules_violated'
+import { VoucherifyClientSideOptions } from '@voucherify/sdk'
+import { VoucherifyLogo } from './VoucherifyLogo'
+import clsx from 'clsx'
+import { useVoucherifyClient } from './hooks/useVoucherifyClient'
 
 interface VoucherifyRedeemOptions extends VoucherifyClientSideOptions {
 	/**
@@ -35,7 +33,7 @@ interface VoucherifyRedeemOptions extends VoucherifyClientSideOptions {
 	/**
 	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
 	 */
-	onRedeem?: (response: $FixMe) => void
+	onRedeemed?: (response: $FixMe) => void
 	/**
 	 * a callback function invoked when there is an error
 	 */
@@ -53,10 +51,135 @@ interface VoucherifyRedeemOptions extends VoucherifyClientSideOptions {
 	 */
 	amountPlaceholder?: string
 	/**
-	 * a text displayed on the button (default: "Validate")
+	 * a text displayed on the button (default: "Redeem")
 	 */
 	textRedeem?: string
 }
+
+interface DiscountUnit {
+	type?: 'UNIT'
+	unit_off?: number
+	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	unit_type?: string
+}
+
+interface DiscountAmount {
+	type?: 'AMOUNT'
+	amount_off?: number
+}
+
+interface DiscountPercent {
+	type?: 'PERCENT'
+	percent_off?: number
+	amount_limit?: number
+}
+
+interface VoucherifyRedeemResponse {
+	id: string
+	object: 'redemption'
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	order?: {
+		id: string
+		source_id?: string
+		created_at: string
+		updated_at?: string
+		status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
+		amount?: number
+		discount_amount?: number
+		items?: {
+			sku_id?: string
+			product_id?: string
+			related_object?: 'product' | 'sku'
+			source_id?: string
+			quantity?: number
+			price?: number
+			amount?: number
+			product?: {
+				override?: boolean
+				name?: string
+				metadata?: Record<string, any>
+			}
+			sku?: {
+				override?: boolean
+				sku?: string
+			}
+		}[]
+		object: 'order'
+	}
+	result?: string
+	voucher?: {
+		id: string
+		code: string
+		campaign?: string
+		category?: string
+		type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
+		discount?: DiscountAmount | DiscountPercent | DiscountUnit
+		gift?: {
+			amount: number
+		}
+		loyalty_card?: {
+			points: number
+		}
+		start_date?: string
+		expiration_date?: string
+		validity_timeframe?: {
+			interval: string
+			duration: string
+		}
+		validity_day_of_week?: number[]
+		publish?: {
+			object: 'list'
+			count: number
+			data_ref: 'entries'
+			entries: $FixMe[]
+			total: number
+			url: string
+		}
+		redemption?: {
+			object: 'list'
+			quantity?: number
+			redeemed_quantity: number
+			data_ref: 'redemption_entries'
+			redemption_entries: $FixMe[]
+			total: number
+			url: string
+		}
+		active: boolean
+		additional_info?: string
+		metadata?: Record<string, any>
+		assets?: {
+			qr?: {
+				id: string
+				url: string
+			}
+			barcode?: {
+				id: string
+				url: string
+			}
+		}
+		is_referral_code: boolean
+		referrer_id?: string
+		holder_id?: string
+		updated_at?: string
+		object: 'voucher'
+		validation_rules_assignments: {
+			object: 'list'
+			total: number
+			data_ref: 'data'
+			data?: {
+				id: string
+				rule_id?: string
+				related_object_id?: string
+				related_object_type?: string
+				created_at: string
+				object: 'validation_rules_assignment'
+			}[]
+		}
+	}
+}
+
 export function VoucherifyRedeem({
 	apiUrl,
 	clientApplicationId,
@@ -69,7 +192,7 @@ export function VoucherifyRedeem({
 	classValidAnimation,
 	logoSrc,
 	logoAlt,
-	onRedeem,
+	onRedeemed,
 	onError,
 	amount,
 	textPlaceholder,
@@ -133,15 +256,13 @@ export function VoucherifyRedeem({
 				voucherifyTracking: '',
 			}))
 
-			setInvalidInputState(prev => ({ ...prev, VoucherifyRedeem: false }))
-			setValidInputState(prev => ({ ...prev, VoucherifyRedeem: false }))
+			setInvalidInputState(prev => ({ ...prev, voucherifyRedeem: false }))
+			setValidInputState(prev => ({ ...prev, voucherifyRedeem: false }))
 
 			if (!input.voucherifyCode.trim()) {
 				setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
 				return
 			}
-
-			const code: string = input.voucherifyCode
 
 			const payload: $FixMe = {
 				order: {
@@ -152,10 +273,13 @@ export function VoucherifyRedeem({
 			setSubmitting(true)
 
 			client
-				.redeem(code, payload)
+				.redeem(input.voucherifyCode, payload)
 				.then(function (_response) {
-					console.log('response', _response)
-					const response: $FixMe = _response
+					const response: VoucherifyRedeemResponse = _response
+					if (!response || response.result !== 'SUCCESS') {
+						setInvalidInputState(prev => ({ ...prev, voucherifyRedeem: true }))
+						setValidInputState(prev => ({ ...prev, voucherifyRedeem: false }))
+					}
 
 					setInvalidInputState(prev => ({
 						...prev,
@@ -180,30 +304,20 @@ export function VoucherifyRedeem({
 						voucherifyRedeem: false,
 					}))
 
-					if (typeof onRedeem === 'function') onRedeem(response)
+					if (typeof onRedeemed === 'function') onRedeemed(response)
 				})
 				.catch(err => {
-					if (err.key === ORDER_RULES_VIOLATED) {
-						setInvalidInputState(prev => ({ ...prev, voucherifyCode: false, voucherifyAmount: true }))
-
-						setValidInputState(prev => ({ ...prev, voucherifyAmount: false }))
-					}
-
-					if (err.key === RESOURCE_NOT_FOUND) {
-						setInvalidInputState(prev => ({ ...prev, voucherifyAmount: false, voucherifyCode: true }))
-						setValidInputState(prev => ({ ...prev, voucherifyCode: false }))
-					}
+					console.error(err)
 					if (typeof onError === 'function') onError(err)
 				})
 				.finally(() => setSubmitting(false))
 		},
-		[input, onError, onRedeem, amount],
+		[input, onError, onRedeemed, amount],
 	)
 
 	return (
 		<div className="voucherifyContainer">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
-
 			<input
 				type="text"
 				placeholder={textPlaceholder || 'e.g. abc-123'}
@@ -221,6 +335,12 @@ export function VoucherifyRedeem({
 				onChange={onInputChange}
 				className={classNameAmount}
 				disabled={isSubmitting || allDisabled}
+			/>
+			<input
+				type="hidden"
+				name="voucherifyTracking"
+				value={input['voucherifyTracking']}
+				className="voucherifyTracking"
 			/>
 			<button className={classNameRedeem} disabled={isSubmitting || allDisabled} onClick={onSubmit}>
 				<span className="voucherifyRedeemText">{textRedeem}</span>
