@@ -1,7 +1,7 @@
 import * as T from './types/PromotionTiers'
 
-import { encode } from './helpers'
 import type { RequestController } from './RequestController'
+import { encode } from './helpers'
 
 export class PromotionTiers {
 	constructor(private client: RequestController) {}
@@ -9,7 +9,7 @@ export class PromotionTiers {
 	/**
 	 * @see http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers
 	 */
-	public listAll(params: T.PromotionTiersListAllParams) {
+	public listAll(params: T.PromotionTiersListAllParams = {}) {
 		return this.client.get<T.PromotionTiersListAllResponse>('/promotions/tiers', params)
 	}
 	/**
