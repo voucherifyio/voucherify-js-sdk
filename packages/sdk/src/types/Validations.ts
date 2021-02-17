@@ -1,5 +1,7 @@
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+
 import { OrdersItem } from './Orders'
-import { DiscountAmount, DiscountUnit, DiscountPercent } from './Vouchers'
+import { PromotionsValidateParams } from './Promotions'
 
 export interface ValidationsValidateVoucherParams {
 	customer?: {
@@ -52,23 +54,7 @@ export interface ValidationsValidateVoucherResponse {
 	}
 	tracking_id: string
 }
-export interface ValidationsValidateCode {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
-	order?: {
-		id?: string
-		source_id?: string
-		items?: OrdersItem[]
-		amount?: number
-		metadata?: Record<string, any>
-	}
-	metadata?: Record<string, any>
-}
+
+export type ValidationsValidateCode = PromotionsValidateParams
 
 export type ValidationsValidateContext = ValidationsValidateVoucherParams
