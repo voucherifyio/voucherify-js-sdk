@@ -164,7 +164,7 @@ export type CampaignsAddVoucherBody = Pick<
 >
 
 export interface CampaignsAddVoucherParams {
-	vouchers_count: number
+	vouchers_count?: number
 }
 
 export type CampaignsAddCertainVoucherParams = Pick<
