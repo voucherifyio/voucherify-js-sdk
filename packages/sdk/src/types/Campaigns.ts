@@ -1,17 +1,88 @@
 import { SimpleVoucher, VouchersImport, VouchersResponse } from './Vouchers'
-import { OrdersGetResponse } from './Orders'
+
 import { CustomerRequest } from './Customers'
+import { OrdersGetResponse } from './Orders'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
+interface ReferralProgramCustomEventRedemption {
+	conversion_event_type: 'custom_event'
+	custom_event: {
+		id: string
+		name: string
+	}
+}
+
+interface ReferralProgramCustomEventGiftCard {
+	conversion_event_type: 'custom_event'
+	custom_event: {
+		id: string
+		name: string
+	}
+	referee_reward: {
+		related_object_parent: {
+			id: string
+			name: string
+			object: 'CAMPAIGN'
+		}
+		amount: number
+		type: 'GIFT_VOUCHER'
+	}
+}
+
+interface ReferralProgramCustomEventLoyaltyCard {
+	conversion_event_type: 'custom_event'
+	custom_event: {
+		id: string
+		name: string
+	}
+	referee_reward: {
+		related_object_parent: {
+			id: string
+			name: string
+			object: 'CAMPAIGN'
+		}
+		amount: number
+		type: 'LOYALTY_CARD'
+	}
+}
+interface ReferralProgramRedemptionGiftCard {
+	conversion_event_type: 'redemption'
+	referee_reward: {
+		related_object_parent: {
+			id: string
+			name: string
+			object: 'CAMPAIGN'
+		}
+		amount: number
+		type: 'GIFT_VOUCHER'
+	}
+}
+
+interface ReferralProgramRedemptionLoyaltyCard {
+	conversion_event_type: 'redemption'
+	referee_reward: {
+		related_object_parent: {
+			id: string
+			name: string
+			object: 'CAMPAIGN'
+		}
+		amount: number
+		type: 'LOYALTY_CARD'
+	}
+}
+
+interface ReferralProgramRedemption {
+	conversion_event_type: 'redemption'
+}
 export interface CampaignResponse {
 	id: string
 	name: string
-	campaign_type?: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	category?: string
 	auto_join?: boolean
 	join_once?: boolean
-	description: string
+	description?: string
 	start_date?: string
 	validation_rules_assignments: {
 		data?: ValidationRulesCreateAssignmentResponse[]
@@ -26,16 +97,18 @@ export interface CampaignResponse {
 		duration?: string
 	}
 	validity_day_of_week?: number[]
-	metadata?: Record<string, string>
+	metadata?: Record<string, any>
 	created_at: string
-	vouchers_generation_status: 'DONE'
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
 	voucher?: SimpleVoucher
-	referral_program?: {
-		conversion_event_type: $FixMe
-		custom_event: $FixMe
-		referee_reward: $FixMe
-	}
+	referral_program?:
+		| ReferralProgramCustomEventRedemption
+		| ReferralProgramCustomEventLoyaltyCard
+		| ReferralProgramCustomEventGiftCard
+		| ReferralProgramRedemptionGiftCard
+		| ReferralProgramRedemptionLoyaltyCard
+		| ReferralProgramRedemption
 	use_voucher_metadata_schema?: boolean
 	protected?: boolean
 	vouchers_count?: number
@@ -44,7 +117,7 @@ export interface CampaignResponse {
 
 export interface CampaignsQualificationsBody {
 	customer?: CustomerRequest
-	order: Pick<OrdersGetResponse, 'id' | 'source_id' | 'items'>
+	order?: Pick<OrdersGetResponse, 'id' | 'source_id' | 'items'>
 }
 
 export interface CampaignsQualificationsParams {
@@ -64,8 +137,17 @@ export interface CampaignsQualificationsResponse {
 
 export type CampaignsCreateCampaign = Omit<
 	CampaignResponse,
-	'vouchers_generation_status' | 'validation_rules_assignments' | 'object'
->
+	| 'id'
+	| 'protected'
+	| 'vouchers_generation_status'
+	| 'validation_rules_assignments'
+	| 'object'
+	| 'created_at'
+	| 'active'
+> & {
+	created_at?: string
+	active?: boolean
+}
 
 export type CampaignsUpdateCampaign = Pick<
 	CampaignResponse,
@@ -76,10 +158,14 @@ export interface CampaignsDeleteParams {
 	force?: boolean
 }
 
-export type CampaignsAddVoucherParams = Pick<
+export type CampaignsAddVoucherBody = Pick<
 	Partial<VouchersImport>,
-	'code' | 'category' | 'redemption' | 'metadata' | 'additional_info'
+	'code_config' | 'category' | 'redemption' | 'metadata' | 'additional_info'
 >
+
+export interface CampaignsAddVoucherParams {
+	vouchers_count: number
+}
 
 export type CampaignsAddCertainVoucherParams = Pick<
 	Partial<VouchersImport>,
@@ -106,7 +192,10 @@ export type CampaignsAddVoucherResponse = Pick<
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
-export type CampaignsImportVouchers = Pick<VouchersImport, 'code' | 'redemption' | 'metadata' | 'additional_info'>
+export type CampaignsImportVouchers = Pick<
+	VouchersImport,
+	'code' | 'redemption' | 'metadata' | 'additional_info' | 'active'
+>
 
 export interface CampaignsListParams {
 	limit?: number

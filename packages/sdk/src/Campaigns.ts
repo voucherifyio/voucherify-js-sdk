@@ -1,12 +1,12 @@
 import * as T from './types/Campaigns'
 
-import { encode } from './helpers'
 import type { RequestController } from './RequestController'
+import { encode } from './helpers'
 
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
 
-	public examine(body: T.CampaignsQualificationsBody, params?: T.CampaignsQualificationsParams) {
+	public examine(body: T.CampaignsQualificationsBody = {}, params?: T.CampaignsQualificationsParams) {
 		return this.client.post<T.CampaignsQualificationsResponse>('/campaigns/qualification', body, params)
 	}
 }
@@ -38,24 +38,24 @@ export class Campaigns {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-campaign
 	 */
-	public delete(name: string, params?: T.CampaignsDeleteParams) {
+	public delete(name: string, params: T.CampaignsDeleteParams = {}) {
 		return this.client.delete(`/campaigns/${encode(name)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign
 	 */
 
-	public addVoucher(name: string, params: T.CampaignsAddVoucherParams = {}) {
-		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, params)
+	public addVoucher(name: string, body: T.CampaignsAddVoucherBody = {}, params: T.CampaignsAddVoucherParams = {}) {
+		return this.client.post<T.CampaignsAddVoucherResponse | {}>(`/campaigns/${encode(name)}/vouchers`, body, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-with-certain-code-to-campaign
 	 */
 
-	public addCertainVoucher(name: string, code: string, params: T.CampaignsAddCertainVoucherParams = {}) {
+	public addCertainVoucher(name: string, code: string, body: T.CampaignsAddCertainVoucherParams = {}) {
 		return this.client.post<T.CampaignsAddCertainVoucherResponse>(
 			`/campaigns/${encode(name)}/vouchers/${encode(code)}`,
-			params,
+			body,
 		)
 	}
 	/**
@@ -67,7 +67,7 @@ export class Campaigns {
 	/**
 	 * @see https://docs.voucherify.io/v2017-04-20/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-campaigns
 	 */
-	public list(params: T.CampaignsListParams) {
+	public list(params: T.CampaignsListParams = {}) {
 		return this.client.get('/campaigns', params)
 	}
 }

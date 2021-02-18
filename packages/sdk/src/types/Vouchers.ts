@@ -1,13 +1,16 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 
+export type VoucherType = 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
 	code_config?: {
 		length?: number
 		charset?: string
 		pattern?: string
+		prefix?: string
+		suffix?: string
 	}
-	type?: string
+	type: VoucherType
 	is_referral_code?: boolean
 	discount?: DiscountUnit | DiscountAmount | DiscountPercent
 	loyalty_card?: {
@@ -226,6 +229,13 @@ export interface VouchersImport {
 	metadata?: Record<string, any>
 	redemption?: {
 		quantity: number
+	}
+	code_config?: {
+		length?: number
+		charset?: string
+		pattern?: string
+		prefix?: string
+		suffix?: string
 	}
 }
 
