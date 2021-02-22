@@ -98,7 +98,6 @@ export type CampaignsCreateCampaign = Omit<
 	| 'created_at'
 	| 'active'
 > & {
-	created_at?: string
 	active?: boolean
 }
 
