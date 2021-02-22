@@ -1,6 +1,7 @@
 import * as T from './types/Redemptions'
 
 import { encode, isObject, isString } from './helpers'
+
 import type { RequestController } from './RequestController'
 
 export class Redemptions {
@@ -9,13 +10,19 @@ export class Redemptions {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher
 	 */
-	public redeem(code: string, body?: T.RedemptionsRedeemBody) {
-		return this.client.post<T.RedemptionsRedeemResponse>(`/vouchers/${encode(code)}/redemption`, body ?? {})
+	public redeem(code: string, body: T.RedemptionsRedeemBody = {}) {
+		return this.client.post<T.RedemptionsRedeemResponse>(`/vouchers/${encode(code)}/redemption`, body)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-redemption
+	 */
+	public get(redemptionId: string) {
+		return this.client.get<T.Redemption>(`/redemptions/${encode(redemptionId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
 	 */
-	public list(params?: T.RedemptionsListParams) {
+	public list(params: T.RedemptionsListParams = {}) {
 		return this.client.get<T.RedemptionsListResponse>('/redemptions', params)
 	}
 	/**
@@ -28,23 +35,25 @@ export class Redemptions {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#rollback-redemption
 	 */
 	public rollback(redemptionId: string, params?: T.RedemptionsRollbackParams) {
-		let qs: T.RedemptionsRollbackQs = {}
+		let queryParams: T.RedemptionsRollbackQueryParams = {}
 		let payload: T.RedemptionsRollbackPayload = {}
 
 		if (isString(params)) {
-			qs.reason = encode(params)
+			queryParams.reason = params
 		} else if (isObject(params)) {
 			const { reason, tracking_id: trackingId, customer } = params
 
-			qs = {
-				reason: reason ? encode(reason) : undefined,
-				tracking_id: trackingId ? encode(trackingId) : undefined,
+			queryParams = {
+				reason: reason ? reason : undefined,
+				tracking_id: trackingId ? trackingId : undefined,
 			}
 			payload = { customer }
 		}
 
-		return this.client.post<T.RedemptionsRollbackResponse>(`/redemptions/${encode(redemptionId)}/rollback`, payload, {
-			qs,
-		})
+		return this.client.post<T.RedemptionsRollbackResponse>(
+			`/redemptions/${encode(redemptionId)}/rollback`,
+			payload,
+			queryParams,
+		)
 	}
 }

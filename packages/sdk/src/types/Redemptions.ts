@@ -1,11 +1,12 @@
-import { OrdersItem, OrdersCreateResponse } from './Orders'
+import { OrdersCreateResponse, OrdersItem } from './Orders'
+
 import { SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
 	customer?: SimpleCustomer & { description?: string }
-	order?: Pick<OrdersCreateResponse, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
+	order?: Pick<Partial<OrdersCreateResponse>, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
 	metadata?: Record<string, any>
 	reward?: {
 		id?: string
@@ -27,8 +28,8 @@ export interface RedemptionsRedeemResponse {
 	tracking_id?: string
 	order?: OrdersCreateResponse
 	metadata?: Record<string, any>
-	result?: string
-	voucher?: VouchersResponse
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher: VouchersResponse
 }
 
 export interface RedemptionsListParams {
@@ -43,35 +44,43 @@ export interface RedemptionsListParams {
 	}
 }
 
+export interface Redemption {
+	id: string
+	object: 'redemption'
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	order?: Omit<OrdersCreateResponse, 'object'> & {
+		related_object_id: string
+		related_object_type: 'redemption'
+		referrer?: string
+	}
+	metadata?: Record<string, any>
+	result: 'SUCCESS' | 'FAILURE'
+	failure_code?: string
+	failure_message?: string
+	customer?: SimpleCustomer
+	related_object_type?: 'string'
+	voucher?: {
+		code?: string
+		campaign?: string
+		id: string
+		object: 'voucher'
+		campaign_id: string
+	}
+	gift?: {
+		amount: number
+	}
+	loyalty_card?: {
+		points: number
+	}
+}
+
 export interface RedemptionsListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'redemptions'
-	redemptions: {
-		id?: string
-		object: 'redemption'
-		date?: string
-		customer_id?: string
-		tracking_id?: string
-		order?: {
-			amount?: number
-			items?: OrdersItem[]
-		}
-		metadata?: Record<string, any>
-		result?: string
-		customer?: SimpleCustomer
-		related_object_type?: 'string'
-		voucher?: {
-			code?: string
-			campaign?: string
-		}
-		gift?: {
-			amount: number
-		}
-		loyalty_card?: {
-			points: number
-		}
-	}[]
+	redemptions: Redemption[]
 }
 
 export interface RedemptionsGetForVoucherResponse {
@@ -101,7 +110,7 @@ export interface RedemptionsRollbackParams {
 	customer?: SimpleCustomer & { description?: string }
 }
 
-export interface RedemptionsRollbackQs {
+export interface RedemptionsRollbackQueryParams {
 	reason?: string
 	tracking_id?: string
 }
@@ -118,6 +127,7 @@ export interface RedemptionsRollbackResponse {
 	tracking_id?: string
 	redemption?: string
 	reason?: string
-	result?: string
+	result: 'SUCCESS' | 'FAILURE'
 	voucher?: VouchersResponse
+	customer?: SimpleCustomer
 }
