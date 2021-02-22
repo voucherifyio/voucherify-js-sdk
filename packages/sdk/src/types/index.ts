@@ -1,5 +1,6 @@
 export * from './Customers'
 export * from './Balance'
+export * from './Campaigns'
 export * from './PromotionTiers'
 export * from './Promotions'
 export * from './Loyalties'

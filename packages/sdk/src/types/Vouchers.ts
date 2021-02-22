@@ -1,6 +1,27 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 
+export type VoucherType = 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+export interface SimpleVoucher {
+	code_config?: {
+		length?: number
+		charset?: string
+		pattern?: string
+		prefix?: string
+		suffix?: string
+	}
+	type: VoucherType
+	is_referral_code?: boolean
+	discount?: DiscountUnit | DiscountAmount | DiscountPercent
+	loyalty_card?: {
+		points: number
+		balance: number
+	}
+	redemption?: {
+		quantity: number
+	}
+}
+
 export interface DiscountUnit {
 	type?: 'UNIT'
 	unit_off?: number
@@ -43,7 +64,7 @@ export interface VouchersResponse {
 		object: 'list'
 		count: number
 		data_ref: 'entries'
-		entries: $FixMe[]
+		entries: string[]
 		total: number
 		url: string
 	}
@@ -52,7 +73,7 @@ export interface VouchersResponse {
 		quantity?: number
 		redeemed_quantity: number
 		data_ref: 'redemption_entries'
-		redemption_entries: $FixMe[]
+		redemption_entries: string[]
 		total: number
 		url: string
 	}
@@ -208,6 +229,13 @@ export interface VouchersImport {
 	metadata?: Record<string, any>
 	redemption?: {
 		quantity: number
+	}
+	code_config?: {
+		length?: number
+		charset?: string
+		pattern?: string
+		prefix?: string
+		suffix?: string
 	}
 }
 
