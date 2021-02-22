@@ -10,70 +10,29 @@ interface ReferralProgramCustomEventRedemption {
 		id: string
 		name: string
 	}
-}
-
-interface ReferralProgramCustomEventGiftCard {
-	conversion_event_type: 'custom_event'
-	custom_event: {
-		id: string
-		name: string
-	}
-	referee_reward: {
+	referee_reward?: {
 		related_object_parent: {
 			id: string
 			name: string
 			object: 'CAMPAIGN'
 		}
 		amount: number
-		type: 'GIFT_VOUCHER'
+		type: 'GIFT_VOUCHER' | 'LOYALTY_CARD'
 	}
 }
-
-interface ReferralProgramCustomEventLoyaltyCard {
-	conversion_event_type: 'custom_event'
-	custom_event: {
-		id: string
-		name: string
-	}
-	referee_reward: {
-		related_object_parent: {
-			id: string
-			name: string
-			object: 'CAMPAIGN'
-		}
-		amount: number
-		type: 'LOYALTY_CARD'
-	}
-}
-interface ReferralProgramRedemptionGiftCard {
-	conversion_event_type: 'redemption'
-	referee_reward: {
-		related_object_parent: {
-			id: string
-			name: string
-			object: 'CAMPAIGN'
-		}
-		amount: number
-		type: 'GIFT_VOUCHER'
-	}
-}
-
-interface ReferralProgramRedemptionLoyaltyCard {
-	conversion_event_type: 'redemption'
-	referee_reward: {
-		related_object_parent: {
-			id: string
-			name: string
-			object: 'CAMPAIGN'
-		}
-		amount: number
-		type: 'LOYALTY_CARD'
-	}
-}
-
 interface ReferralProgramRedemption {
 	conversion_event_type: 'redemption'
+	referee_reward?: {
+		related_object_parent: {
+			id: string
+			name: string
+			object: 'CAMPAIGN'
+		}
+		amount: number
+		type: 'GIFT_VOUCHER' | 'LOYALTY_CARD'
+	}
 }
+
 export interface CampaignResponse {
 	id: string
 	name: string
@@ -102,13 +61,7 @@ export interface CampaignResponse {
 	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
 	voucher?: SimpleVoucher
-	referral_program?:
-		| ReferralProgramCustomEventRedemption
-		| ReferralProgramCustomEventLoyaltyCard
-		| ReferralProgramCustomEventGiftCard
-		| ReferralProgramRedemptionGiftCard
-		| ReferralProgramRedemptionLoyaltyCard
-		| ReferralProgramRedemption
+	referral_program?: ReferralProgramCustomEventRedemption | ReferralProgramRedemption
 	use_voucher_metadata_schema?: boolean
 	protected?: boolean
 	vouchers_count?: number
