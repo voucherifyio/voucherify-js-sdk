@@ -1,33 +1,9 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
 
 import { OrdersItem } from './Orders'
+import { PromotionTier } from './PromotionTiers'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-
-export interface PromotionTier {
-	id: string
-	object: 'promotion_tier'
-	name: string
-	banner?: string
-	campaign: {
-		id: string
-		object: 'campaign'
-		start_date?: string
-		expiration_date?: string
-		active: boolean
-	}
-	action: {
-		discount: DiscountUnit | DiscountAmount | DiscountPercent
-	}
-	metadata?: Record<string, any>
-	hierarchy: number
-	validation_rule_assignments: {
-		data?: ValidationRulesCreateAssignmentResponse[]
-		object: 'list'
-		total: number
-		data_ref: 'data'
-	}
-}
 
 export interface PromotionsCreateResponse {
 	id: string
@@ -44,8 +20,8 @@ export interface PromotionsCreateResponse {
 		has_more: boolean
 	}
 	category?: string
-	auto_join?: boolean
-	join_once?: boolean
+	auto_join: boolean
+	join_once: boolean
 	validation_rules_assignments: {
 		data?: ValidationRulesCreateAssignmentResponse[]
 		object: 'list'
@@ -62,8 +38,8 @@ export interface PromotionsCreateResponse {
 	created_at: string
 	vouchers_generation_status: 'DONE'
 	active: boolean
-	use_voucher_metadata_schema?: boolean
-	protected?: boolean
+	use_voucher_metadata_schema: boolean
+	protected: boolean
 	object: 'campaign'
 }
 

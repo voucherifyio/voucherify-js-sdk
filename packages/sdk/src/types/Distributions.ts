@@ -1,6 +1,6 @@
 import { CustomerRequest, SimpleCustomer } from './Customers'
 
-type VoucherType = 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW_CODE'
+import { VoucherType } from './Vouchers'
 
 type OrderType =
 	| 'id'
