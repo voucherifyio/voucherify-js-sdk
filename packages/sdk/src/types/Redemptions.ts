@@ -28,7 +28,7 @@ export interface RedemptionsRedeemResponse {
 	tracking_id?: string
 	order?: OrdersCreateResponse
 	metadata?: Record<string, any>
-	result: 'SUCCESS' | 'FAILURE'
+	result?: 'SUCCESS' | 'FAILURE'
 	voucher: VouchersResponse
 }
 
@@ -62,11 +62,11 @@ export interface Redemption {
 	customer?: SimpleCustomer
 	related_object_type?: 'string'
 	voucher?: {
-		code: string
+		code?: string
 		campaign?: string
 		id: string
 		object: 'voucher'
-		campaign_id?: string
+		campaign_id: string
 	}
 	gift?: {
 		amount: number
@@ -90,18 +90,7 @@ export interface RedemptionsGetForVoucherResponse {
 	quantity: number
 	redeemed_quantity?: number
 	redeemed_amount?: number
-	redemption_entries?: {
-		id?: string
-		object?: string
-		date?: string
-		customer_id?: string
-		tracking_id?: string
-		order?: {
-			amount?: number
-			items?: Pick<OrdersItem, 'product_id' | 'sku_id' | 'quantity'>[]
-		}
-		result?: string
-	}[]
+	redemption_entries?: RedemptionsRedeemResponse[]
 }
 
 export interface RedemptionsRollbackParams {
