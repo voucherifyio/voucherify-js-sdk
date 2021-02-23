@@ -1,5 +1,6 @@
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
+import { RewardsCreateResponse } from './Rewards'
 import { SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 
@@ -28,8 +29,19 @@ export interface RedemptionsRedeemResponse {
 	tracking_id?: string
 	order?: OrdersCreateResponse
 	metadata?: Record<string, any>
-	result?: 'SUCCESS' | 'FAILURE'
+	result: 'SUCCESS' | 'FAILURE'
 	voucher: VouchersResponse
+	customer?: SimpleCustomer
+	reward?: RewardsCreateResponse
+	related_object_type: 'voucher'
+	gift?: {
+		amount: number
+	}
+	loyalty_card?: {
+		points: number
+	}
+	failure_code?: string
+	failure_message?: string
 }
 
 export interface RedemptionsListParams {
@@ -80,7 +92,7 @@ export interface RedemptionsListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'redemptions'
-	redemptions: Redemption[]
+	redemptions: (Redemption | SimpleRollback)[]
 }
 
 export interface RedemptionsGetForVoucherResponse {
@@ -90,7 +102,7 @@ export interface RedemptionsGetForVoucherResponse {
 	quantity: number
 	redeemed_quantity?: number
 	redeemed_amount?: number
-	redemption_entries?: RedemptionsRedeemResponse[]
+	redemption_entries?: (Redemption | SimpleRollback)[]
 }
 
 export interface RedemptionsRollbackParams {
@@ -115,8 +127,33 @@ export interface RedemptionsRollbackResponse {
 	customer_id?: string
 	tracking_id?: string
 	redemption?: string
+	amount?: number
 	reason?: string
 	result: 'SUCCESS' | 'FAILURE'
 	voucher?: VouchersResponse
 	customer?: SimpleCustomer
+	reward?: {
+		assignment_id: string
+		object: 'reward'
+	}
+}
+
+export type SimpleRollback = Pick<
+	RedemptionsRollbackResponse,
+	'id' | 'object' | 'date' | 'customer_id' | 'tracking_id' | 'redemption' | 'result' | 'customer'
+> & {
+	related_object_type: 'voucher'
+	voucher: {
+		id: string
+		object: 'voucher'
+		code: string
+		campaign?: string
+		campaign_id?: string
+	}
+	gift?: {
+		amount: number
+	}
+	loyalty_card?: {
+		points: number
+	}
 }
