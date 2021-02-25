@@ -1,5 +1,4 @@
-import { OrdersCreateResponse, OrdersItem } from './Orders'
-
+import { OrdersCreateResponse } from './Orders'
 import { RewardsCreateResponse } from './Rewards'
 import { SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
