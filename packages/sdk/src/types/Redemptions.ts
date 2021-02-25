@@ -73,11 +73,11 @@ export interface Redemption {
 	customer?: SimpleCustomer
 	related_object_type?: 'string'
 	voucher?: {
-		code?: string
+		code: string
 		campaign?: string
 		id: string
 		object: 'voucher'
-		campaign_id: string
+		campaign_id?: string
 	}
 	gift?: {
 		amount: number
