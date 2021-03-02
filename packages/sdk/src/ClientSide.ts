@@ -13,7 +13,7 @@ export class ClientSide {
 	/**
 	 * @see https://docs.voucherify.io/reference/#vouchers-validate
 	 */
-	public validate(params: T.ClientSideValidateParams) {
+	public validate(params: T.ClientSideValidateParams | string) {
 		assert(
 			isObject(params) || isString(params),
 			'client.validate: expected "params" argument to be an object or a string',
@@ -25,10 +25,10 @@ export class ClientSide {
 			query.code = params
 		} else {
 			query.code = params.code
-			query.item = params.order?.items
+			query.items = params.items
 			query.amount = params.amount
 			query.metadata = params.metadata
-			query.order = { metadata: params.order?.metadata }
+			query.order = { metadata: params.orderMetadata }
 			query.customer = params.customer
 			query.trackingId = this.trackingId
 		}

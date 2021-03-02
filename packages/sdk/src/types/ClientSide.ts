@@ -1,15 +1,13 @@
-import { VouchersResponse, DiscountUnit, DiscountAmount, DiscountPercent } from './Vouchers'
 import { CustomerRequest, SimpleCustomer } from './Customers'
-import { OrdersItem, OrdersCreateResponse } from './Orders'
+import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersResponse } from './Vouchers'
+import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 export interface ClientSideValidateParams {
-	code: string
+	code?: string
 	tracking_id?: string
 	amount?: number
-	order?: {
-		items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
-		metadata?: Record<string, any>
-	}
+	items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
+	orderMetadata?: Record<string, any>
 	customer?: Pick<CustomerRequest, 'source_id' | 'metadata'>
 	metadata?: Record<string, any>
 	session_type?: 'LOCK'
