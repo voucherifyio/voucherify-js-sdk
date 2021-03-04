@@ -19,19 +19,27 @@ export class ClientSide {
 			'client.validate: expected "params" argument to be an object or a string',
 		)
 
-		const query: Record<string, unknown> = {}
+		const query: Record<string, any> = {}
 
 		if (isString(params)) {
 			query.code = params
 		} else {
 			query.code = params.code
-			query.items = params.items
+			query.item = params.items
 			query.amount = params.amount
 			query.metadata = params.metadata
 			query.order = { metadata: params.orderMetadata }
 			query.customer = params.customer
 			query.trackingId = this.trackingId
 		}
+
+		console.log(query.code)
+
+		if (!!query.code) {
+			query.code = query.code.replace(/[\r\n\t\f\v]/g, '').trim()
+		}
+
+		console.log(query.code)
 
 		assert(isOptionalObject(query?.customer), 'client.validate: expected "params.customer" to be an object')
 		assert(isOptionalString(query?.customer?.source_id), 'client.validate: expected "params.customer.source_id" to be a string') // prettier-ignore
@@ -52,7 +60,7 @@ export class ClientSide {
 		assert(isObject(payload.order), 'client.redeem - expected payload.order to be an object')
 		assert(isNumber(payload.order.amount), 'client.redeem - expected payload.order.amount to be a number')
 
-		code = code.trim()
+		code = code.replace(/[\r\n\t\f\v]/g, '').trim()
 
 		payload.customer = payload.customer ?? {}
 		payload.customer.source_id = payload.customer.source_id ?? this.trackingId
@@ -95,5 +103,25 @@ export class ClientSide {
 		}
 
 		return this.client.post<T.ClientSideTrackResponse>('/events', payload)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference#list-vouchers
+	 */
+	public listVouchers(params: T.ClientSideListVouchersParams = {}) {
+		assert(isObject(params), 'client.listVouchers - expected params to be an object')
+
+		const query: Record<string, any> = {}
+
+		query.campaign = params.campaign
+		query.category = params.category
+		query.page = params.page
+		query.limit = params.limit
+		query.customer = params.customer
+		query.created_at = params.created_at
+		query.updated_at = params.updated_at
+
+		const queryParams = toQueryParams(query)
+
+		return this.client.get<T.ClientSideValidateResponse>('/vouchers', queryParams)
 	}
 }

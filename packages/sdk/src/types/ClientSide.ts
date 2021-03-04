@@ -16,6 +16,16 @@ export interface ClientSideValidateParams {
 	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
 }
 
+export interface ClientSideListVouchersParams {
+	campaign?: string
+	category?: string
+	page?: number
+	limit?: number
+	customer?: string
+	created_at?: string
+	updated_at?: string
+}
+
 export interface ClientSideValidateResponse {
 	code?: string
 	valid?: boolean
