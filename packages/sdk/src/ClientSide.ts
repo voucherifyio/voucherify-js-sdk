@@ -33,13 +33,9 @@ export class ClientSide {
 			query.trackingId = this.trackingId
 		}
 
-		console.log(query.code)
-
 		if (!!query.code) {
 			query.code = query.code.replace(/[\r\n\t\f\v]/g, '').trim()
 		}
-
-		console.log(query.code)
 
 		assert(isOptionalObject(query?.customer), 'client.validate: expected "params.customer" to be an object')
 		assert(isOptionalString(query?.customer?.source_id), 'client.validate: expected "params.customer.source_id" to be a string') // prettier-ignore
