@@ -101,7 +101,7 @@ export interface ClientSideTrackReferral {
 export interface ClientSideTrackPayload {
 	event: string
 	metadata?: Record<string, any>
-	customer?: CustomerRequest
+	customer: CustomerRequest
 	loyalty?: ClientSideTrackLoyalty
 	referral?: ClientSideTrackReferral
 }
