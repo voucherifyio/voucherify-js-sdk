@@ -33,10 +33,10 @@ export interface ClientSideListVouchersResponse {
 }
 export interface ClientSideValidateResponse {
 	code?: string
-	valid?: boolean
+	valid: boolean
 	discount?: DiscountUnit | DiscountAmount | DiscountPercent
-	order: {
-		object?: 'order'
+	order?: {
+		object: 'order'
 		amount?: number
 		discount_amount?: number
 		items: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]

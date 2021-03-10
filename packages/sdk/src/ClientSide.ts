@@ -76,6 +76,11 @@ export class ClientSide {
 		preparedPayload.customer.source_id = payload.customer?.source_id ?? this.trackingId
 		preparedPayload.channel = payload.channel ?? 'Voucherify.js' // @todo - removed hard-coded channel
 
+		assert(
+			isString(preparedPayload.customer?.source_id),
+			'client.publish - expected payload to contain customer source id or to have tracking id set up by Voucherify client',
+		)
+
 		queryParams.campaign = campaign.replace(/[\r\n\t\f\v]/g, '').trim()
 
 		return this.client.post<T.ClientSidePublishResponse>('/publish', preparedPayload, queryParams)
