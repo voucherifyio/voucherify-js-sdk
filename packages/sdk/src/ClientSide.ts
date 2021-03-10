@@ -111,7 +111,7 @@ export class ClientSide {
 
 		assert(
 			isString(payload.customer?.source_id),
-			'client.publish - expected payload to contain customer source id or to have tracking id set up by Voucherify client',
+			'client.track - expected payload to contain customer source id or to have tracking id set up by Voucherify client',
 		)
 
 		return this.client.post<T.ClientSideTrackResponse>('/events', payload)
