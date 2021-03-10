@@ -4,6 +4,17 @@ import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
 
+export interface SimplePromotionTier {
+	tracking_id: string
+	metadata?: Record<string, any>
+	valid: boolean
+	id: string
+	name: string
+	banner?: string
+	discount: DiscountUnit | DiscountPercent | DiscountAmount
+	hierarchy: number
+	object: 'promotion_tier'
+}
 export interface PromotionTier {
 	id: string
 	object: 'promotion_tier'

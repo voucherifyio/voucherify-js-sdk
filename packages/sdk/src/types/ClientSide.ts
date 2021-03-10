@@ -1,6 +1,9 @@
-import { CustomerRequest, SimpleCustomer } from './Customers'
-import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersResponse } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
+
+import { CustomerRequest } from './Customers'
+import { DistributionsPublicationsCreateResponse } from './Distributions'
+import { SimplePromotionTier } from './PromotionTiers'
 
 export interface ClientSideValidateParams {
 	code?: string
@@ -16,16 +19,18 @@ export interface ClientSideValidateParams {
 	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
 }
 
-export interface ClientSideListVouchersParams {
-	campaign?: string
-	category?: string
-	page?: number
-	limit?: number
-	customer?: string
-	created_at?: string
-	updated_at?: string
-}
+export type ClientSideListVouchersParams = VouchersListParams
+export type ClientSideVoucherListing = Pick<
+	VouchersResponse,
+	'active' | 'code' | 'metadata' | 'assets' | 'object' | 'expiration_date' | 'start_date'
+>
 
+export interface ClientSideListVouchersResponse {
+	object: 'list'
+	total: number
+	data_ref: 'vouchers'
+	vouchers: ClientSideVoucherListing[]
+}
 export interface ClientSideValidateResponse {
 	code?: string
 	valid?: boolean
@@ -37,18 +42,13 @@ export interface ClientSideValidateResponse {
 		items: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
 	}
 	tracking_id?: string
+	promotions?: SimplePromotionTier[]
 }
 
 export interface ClientSideRedeemPayload {
 	tracking_id?: string
 	customer?: CustomerRequest
-	order?: {
-		id?: string
-		source_id?: string
-		amount?: number
-		items?: ClientSideRedeemItem[]
-		metadata?: Record<string, any>
-	}
+	order?: ClientSideRedeemOrder
 	metadata?: Record<string, any>
 	reward?: {
 		id: string
@@ -59,14 +59,14 @@ export interface ClientSideRedeemPayload {
 }
 
 export interface ClientSideRedeemResponse {
-	id?: string
-	object?: string
+	id: string
+	object: 'redemption'
 	date?: string
 	customer_id?: string
 	tracking_id?: string
 	order?: OrdersCreateResponse
 	metadata?: Record<string, any>
-	result?: string
+	result: 'SUCCESS' | 'FAILURE'
 	voucher?: VouchersResponse
 }
 
@@ -78,26 +78,19 @@ export interface ClientSidePublishPayload {
 	metadata?: Record<string, any>
 }
 
+export type ClientSidePublishPreparedPayload = ClientSidePublishPayload
+
+export interface ClientSidePublishQueryParams {
+	join_once?: boolean
+	campaign?: string
+}
+
 export interface ClientSidePublishCampaign {
 	name: string
 	count?: number
 }
 
-export interface ClientSidePublishResponse {
-	id: string
-	object: 'publication'
-	created_at: string
-	customer_id?: string
-	tracking_id?: string
-	metadata: Record<string, any>
-	channel?: 'Voucherify.js' | string
-	source_id?: string
-	result?: string
-	customer?: SimpleCustomer
-	voucher: VouchersResponse
-	vouchers_id?: string[]
-}
-
+export type ClientSidePublishResponse = DistributionsPublicationsCreateResponse & { vouchers_id?: string[] }
 export interface ClientSideTrackLoyalty {
 	code?: string
 }
@@ -114,8 +107,12 @@ export interface ClientSideTrackPayload {
 }
 
 export interface ClientSideTrackResponse {
-	object?: 'event'
-	type?: string
+	object: 'event'
+	type: string
+}
+
+export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 'source_id' | 'metadata' | 'amount'>> & {
+	items?: ClientSideRedeemItem[]
 }
 
 export type ClientSideRedeemItem = Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>

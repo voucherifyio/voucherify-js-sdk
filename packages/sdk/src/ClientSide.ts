@@ -1,6 +1,6 @@
 import * as T from './types/ClientSide'
 
-import { assert, isNumber, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
+import { assert, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -52,9 +52,6 @@ export class ClientSide {
 	 */
 	public redeem(code: string, payload: T.ClientSideRedeemPayload = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
-		assert(isObject(payload), 'client.redeem - expected payload to be an object')
-		assert(isObject(payload.order), 'client.redeem - expected payload.order to be an object')
-		assert(isNumber(payload.order.amount), 'client.redeem - expected payload.order.amount to be a number')
 
 		code = code.replace(/[\r\n\t\f\v]/g, '').trim()
 
@@ -63,17 +60,25 @@ export class ClientSide {
 
 		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
-
-	public publish(campaign: T.ClientSidePublishCampaign, payload: T.ClientSidePublishPayload = {}) {
-		assert(isObject(campaign), 'client.publish - expected campaign to be an object')
-		assert(isString(campaign.name), 'client.publish - campaign name is required to publish a voucher')
+	/**
+	 * @see https://docs.voucherify.io/reference#create-publication
+	 */
+	public publish(
+		campaign: string,
+		payload: T.ClientSidePublishPayload = {},
+		queryParams: T.ClientSidePublishQueryParams = {},
+	) {
 		assert(isObject(payload), 'client.publish - expected payload to be an object')
 
-		payload.customer = payload.customer ?? {}
-		payload.customer.source_id = payload.customer.source_id ?? this.trackingId
-		payload.channel = payload.channel ?? 'Voucherify.js' // @todo - removed hard-coded channel
+		const preparedPayload: T.ClientSidePublishPreparedPayload = {}
 
-		return this.client.post<T.ClientSidePublishResponse>('/publish', payload, campaign)
+		preparedPayload.customer = payload.customer ?? {}
+		preparedPayload.customer.source_id = payload.customer?.source_id ?? this.trackingId
+		preparedPayload.channel = payload.channel ?? 'Voucherify.js' // @todo - removed hard-coded channel
+
+		queryParams.campaign = campaign.replace(/[\r\n\t\f\v]/g, '').trim()
+
+		return this.client.post<T.ClientSidePublishResponse>('/publish', preparedPayload, queryParams)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
@@ -81,15 +86,18 @@ export class ClientSide {
 
 	public track(
 		event_name: string,
-		metadata: Record<string, any>,
-		customer?: T.ClientSideTrackCustomer,
+		customer: T.ClientSideTrackCustomer,
+		metadata?: Record<string, any>,
 		referral?: T.ClientSideTrackReferral,
 		loyalty?: T.ClientSideTrackLoyalty,
 	) {
+		assert(isString(event_name), 'client.track - expected event name to be an string')
+		assert(isObject(customer), 'client.track - expected customer to be an object')
+
 		const payload: T.ClientSideTrackPayload = {
 			event: event_name,
-			metadata: metadata,
-			customer: customer ?? {},
+			metadata: metadata ?? {},
+			customer: customer,
 			referral: referral ?? {},
 			loyalty: loyalty ?? {},
 		}
@@ -104,8 +112,6 @@ export class ClientSide {
 	 * @see https://docs.voucherify.io/reference#list-vouchers
 	 */
 	public listVouchers(params: T.ClientSideListVouchersParams = {}) {
-		assert(isObject(params), 'client.listVouchers - expected params to be an object')
-
 		const query: Record<string, any> = {}
 
 		query.campaign = params.campaign
@@ -118,6 +124,6 @@ export class ClientSide {
 
 		const queryParams = toQueryParams(query)
 
-		return this.client.get<T.ClientSideValidateResponse>('/vouchers', queryParams)
+		return this.client.get<T.ClientSideListVouchersResponse>('/vouchers', queryParams)
 	}
 }
