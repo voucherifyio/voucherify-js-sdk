@@ -1,5 +1,6 @@
 export * from './Customers'
 export * from './Balance'
+export * from './ClientSide'
 export * from './Redemptions'
 export * from './Validations'
 export * from './Campaigns'

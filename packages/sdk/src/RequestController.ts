@@ -1,6 +1,7 @@
-import axios, { AxiosInstance, AxiosError } from 'axios'
-import { VoucherifyError } from './VoucherifyError'
+import axios, { AxiosError, AxiosInstance } from 'axios'
+
 import Qs from 'qs'
+import { VoucherifyError } from './VoucherifyError'
 
 export interface RequestControllerOptions {
 	baseURL: string
