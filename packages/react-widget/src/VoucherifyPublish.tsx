@@ -6,6 +6,7 @@ import {
 	NotDefinedPlaceholder,
 	VoucherifyClientSideOptions,
 } from '@voucherify/sdk'
+import { removeEmptyAttributes, splitLongKey, validatePhoneNumber } from './helpers'
 
 import { VoucherifyLogo } from './VoucherifyLogo'
 import clsx from 'clsx'
@@ -158,17 +159,6 @@ export function VoucherifyPublish({
 	}, [client])
 
 	const classNames: any[] = Object.keys(input).map(key => {
-		function capitalizeString(string: string) {
-			return string.charAt(0).toUpperCase() + string.slice(1)
-		}
-
-		function splitLongKey(key: string) {
-			return key
-				.split('_')
-				.map(k => capitalizeString(k))
-				.join('')
-		}
-
 		let className: string
 
 		if (key === 'voucherifyPublishStatus' || key === 'voucherifyTracking' || key === 'voucherifyPublish') {
@@ -270,21 +260,7 @@ export function VoucherifyPublish({
 				},
 			}
 
-			const removeEmptyAttributes = (obj: { [x: string]: any }) => {
-				Object.keys(obj).forEach(
-					k =>
-						(obj[k] && typeof obj[k] === 'object' && removeEmptyAttributes(obj[k])) ||
-						(!obj[k] && (obj[k] !== undefined || obj[k] === '') && delete obj[k]),
-				)
-				return obj
-			}
-
 			const sanitizedPayload = removeEmptyAttributes(payload)
-
-			const validatePhoneNumber = (phoneNumber: string) => {
-				var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
-				return re.test(phoneNumber)
-			}
 
 			const missingRequired = customerFields
 				.map(field => {
