@@ -270,6 +270,17 @@ export function VoucherifyPublish({
 				},
 			}
 
+			const removeEmptyAttributes = (obj: { [x: string]: any }) => {
+				Object.keys(obj).forEach(
+					k =>
+						(obj[k] && typeof obj[k] === 'object' && removeEmptyAttributes(obj[k])) ||
+						(!obj[k] && (obj[k] !== undefined || obj[k] === '') && delete obj[k]),
+				)
+				return obj
+			}
+
+			const sanitizedPayload = removeEmptyAttributes(payload)
+
 			const validatePhoneNumber = (phoneNumber: string) => {
 				var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
 				return re.test(phoneNumber)
@@ -294,7 +305,7 @@ export function VoucherifyPublish({
 
 			if (!missingRequired) {
 				client
-					.publish(campaignName, payload)
+					.publish(campaignName, sanitizedPayload)
 					.then(function (_response) {
 						const response: ClientSidePublishResponse = _response
 						setInvalidInputState(prev => ({
