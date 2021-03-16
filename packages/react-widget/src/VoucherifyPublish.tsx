@@ -6,7 +6,7 @@ import {
 	NotDefinedPlaceholder,
 	VoucherifyClientSideOptions,
 } from '@voucherify/sdk'
-import { removeEmptyAttributes, splitLongKey, validatePhoneNumber } from './helpers'
+import { removeEmptyAttributes, splitLongKey, validateEmail, validatePhoneNumber } from './helpers'
 
 import { VoucherifyLogo } from './VoucherifyLogo'
 import clsx from 'clsx'
@@ -182,18 +182,29 @@ export function VoucherifyPublish({
 		country: 'e.g. USA',
 	}
 
-	const createInput = (inputName: string, inputPlaceholder: string = '') => (
-		<input
-			type={inputName}
-			placeholder={inputPlaceholder ? inputPlaceholder : notDefinedPlaceholders[`${inputName}`]}
-			name={inputName}
-			value={input[`${inputName}`]}
-			onChange={onInputChange}
-			className={classNames.find((cls: any) => cls.name === inputName).classes}
-			disabled={isSubmitting || allDisabled}
-			style={{ display: visible ? 'block' : 'none' }}
-		></input>
-	)
+	const createInput = (inputName: string, inputPlaceholder: string = '') => {
+		let inputType: string
+
+		if (inputName === 'phone') {
+			inputType = 'tel'
+		} else if (inputName === 'email') {
+			inputType = 'email'
+		} else {
+			inputType = 'text'
+		}
+		return (
+			<input
+				type={inputType}
+				placeholder={inputPlaceholder ? inputPlaceholder : notDefinedPlaceholders[`${inputName}`]}
+				name={inputName}
+				value={input[`${inputName}`]}
+				onChange={onInputChange}
+				className={classNames.find((cls: any) => cls.name === inputName).classes}
+				disabled={isSubmitting || allDisabled}
+				style={{ display: visible ? 'block' : 'none' }}
+			></input>
+		)
+	}
 
 	const onSubmit = React.useCallback(
 		function onSubmit(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -233,6 +244,10 @@ export function VoucherifyPublish({
 					}
 					if (field.name === 'phone' && input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
 						result['phone'] = validatePhoneNumber(input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim())
+						return result
+					}
+					if (field.name === 'email' && input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
+						result['email'] = validateEmail(input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
 					result[field.name] = true
@@ -293,6 +308,11 @@ export function VoucherifyPublish({
 					})
 					.catch(err => {
 						console.error(err)
+						setInputState(prev => ({
+							...prev,
+							voucherifyPublish: false,
+						}))
+
 						if (typeof onError === 'function') onError(err)
 					})
 					.finally(() => setSubmitting(false))
