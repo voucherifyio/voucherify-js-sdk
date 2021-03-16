@@ -133,6 +133,7 @@ export function VoucherifyPublish({
 
 	const [allDisabled, setDisabled] = React.useState(false)
 	const [visible, setVisible] = React.useState(true)
+	const [runPublishOnce, setRunPublishOnce] = React.useState(false)
 
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
@@ -142,16 +143,7 @@ export function VoucherifyPublish({
 		origin,
 	})
 
-	const {
-		input,
-		invalidInputState,
-		validInputState,
-		onInputChange,
-		resetInputs,
-		setInput,
-		setInvalidInputState,
-		setValidInputState,
-	} = useVoucherifyPublishInputs()
+	const { input, inputStates, onInputChange, resetInputs, setInput, setInputState } = useVoucherifyPublishInputs()
 
 	React.useEffect(() => {
 		resetInputs()
@@ -166,13 +158,11 @@ export function VoucherifyPublish({
 		} else {
 			className = `voucherifyCustomer${splitLongKey(key)}`
 		}
-		const classes = clsx({
-			[className]: true,
-			[classNameInvalid]: invalidInputState[`${key}`],
-			[classNameInvalidAnimation]: invalidInputState[`${key}`],
-			[classNameValid]: validInputState[`${key}`],
-			[classNameValidAnimation]: validInputState[`${key}`],
-		})
+
+		const classes = clsx([
+			className,
+			runPublishOnce ? (inputStates[key] ? '' : `${classNameInvalid} ${classNameInvalidAnimation}`) : '',
+		])
 
 		return {
 			name: key,
@@ -207,41 +197,14 @@ export function VoucherifyPublish({
 
 	const onSubmit = React.useCallback(
 		function onSubmit(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+			setSubmitting(true)
 			setInput(prev => ({
 				...prev,
 				voucherifyPublishStatus: '',
 				voucherifyTracking: '',
 			}))
 
-			setInvalidInputState(prev => ({
-				...prev,
-				name: false,
-				email: false,
-				phone: false,
-				line_1: false,
-				line_2: false,
-				postal_code: false,
-				city: false,
-				state: false,
-				country: false,
-				voucherifyPublishStatus: false,
-				voucherifyPublish: false,
-			}))
-
-			setValidInputState(prev => ({
-				...prev,
-				name: false,
-				email: false,
-				phone: false,
-				line_1: false,
-				line_2: false,
-				postal_code: false,
-				city: false,
-				state: false,
-				country: false,
-				voucherifyPublishStatus: false,
-				voucherifyPublish: false,
-			}))
+			setRunPublishOnce(true)
 
 			const payload: ClientSidePublishPayload = {
 				customer: {
@@ -262,31 +225,46 @@ export function VoucherifyPublish({
 
 			const sanitizedPayload = removeEmptyAttributes(payload)
 
-			const missingRequired = customerFields
-				.map(field => {
-					if (
-						field.name === 'phone' &&
-						validatePhoneNumber(input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim()) === false
-					) {
-						setInvalidInputState(prev => ({ ...prev, [field.name]: true }))
-						return true
-					} else if (field.required && input[field.name].trim() === '') {
-						setInvalidInputState(prev => ({ ...prev, [field.name]: true }))
-						return true
-					} else {
-						return false
+			const inputStatesAfterValidation = customerFields.reduce(
+				(result, field) => {
+					if (field.required && input[field.name].trim() === '') {
+						result[field.name] = false
+						return result
 					}
-				})
-				.some(val => val === true)
+					if (field.name === 'phone' && input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
+						result['phone'] = validatePhoneNumber(input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim())
+						return result
+					}
+					result[field.name] = true
+					return result
+				},
+				{
+					name: true,
+					email: true,
+					phone: true,
+					line_1: true,
+					line_2: true,
+					postal_code: true,
+					city: true,
+					state: true,
+					country: true,
+					voucherifyPublishStatus: true,
+					voucherifyPublish: true,
+				},
+			)
 
-			if (!missingRequired) {
+			setInputState(prev => ({
+				...prev,
+				...inputStatesAfterValidation,
+			}))
+
+			const validationFailed = Object.values(inputStatesAfterValidation).some(val => !val)
+
+			if (!validationFailed) {
 				client
 					.publish(campaignName, sanitizedPayload)
 					.then(function (_response) {
 						const response: ClientSidePublishResponse = _response
-						setInvalidInputState(prev => ({
-							...prev,
-						}))
 
 						setInput(prev => ({
 							...prev,
@@ -306,14 +284,9 @@ export function VoucherifyPublish({
 						setDisabled(true)
 						setVisible(false)
 
-						setValidInputState(prev => ({
+						setInputState(prev => ({
 							...prev,
 							voucherifyPublishStatus: true,
-						}))
-
-						setInvalidInputState(prev => ({
-							...prev,
-							voucherifyPublishStatus: false,
 						}))
 
 						if (typeof onPublished === 'function') onPublished(response)
@@ -323,6 +296,8 @@ export function VoucherifyPublish({
 						if (typeof onError === 'function') onError(err)
 					})
 					.finally(() => setSubmitting(false))
+			} else {
+				setSubmitting(false)
 			}
 		},
 		[input, onError, onPublished],
@@ -369,7 +344,7 @@ export function VoucherifyPublish({
 			<input
 				type="text"
 				name="voucherifyPublishStatus"
-				className={classNames.find((cls: any) => cls.name === 'voucherifyPublishStatus').classes}
+				className={`voucherifyPublishStatus ${classNameValid} ${classNameValidAnimation}`}
 				value={input['voucherifyPublishStatus']}
 				style={{ display: !visible ? 'block' : 'none' }}
 			/>
