@@ -2,7 +2,7 @@ div.voucherifyContainer {
 	position: relative;
 	display: block;
 
-	width: 12em;
+	min-width: 12em;
 
 	margin: 1.75em auto 0 auto;
 	border: 1px solid #e5e5e5;
@@ -30,7 +30,7 @@ div.voucherifyContainer *::after {
 }
 
 div.voucherifyContainer.wide {
-	width: 22em;
+	max-width: 22em;
 }
 
 div.voucherifyContainer figure.voucherifyLogo {
@@ -146,6 +146,7 @@ div.voucherifyContainer input.voucherifyCustomerPostalCode.voucherifyValid,
 div.voucherifyContainer input.voucherifyCustomerCity.voucherifyValid,
 div.voucherifyContainer input.voucherifyCustomerState.voucherifyValid,
 div.voucherifyContainer input.voucherifyCustomerCountry.voucherifyValid,
+div.voucherifyContainer input.voucherifyPublishStatus.voucherifyValid,
 div.voucherifyContainer button.voucherifyPublish.voucherifyValid {
 	border: 1px solid #08ffb9;
 	background-color: #08ffb9;
@@ -155,14 +156,22 @@ div.voucherifyContainer button.voucherifyPublish.voucherifyValid {
 
 div.voucherifyContainer .voucherifyRow {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
 }
 
 div.voucherifyContainer .voucherifyRow > input {
-	flex: 1;
+	width: 49%;
+}
+
+div.voucherifyContainer .voucherifyRow > input:only-child {
+	width: 100%;
 }
 
 div.voucherifyContainer .voucherifyRow > input:not(:last-of-type) {
-	margin-right: 0.8em;
+	/* margin-right: 0.8em; */
 }
 
 div.voucherifyContainer button.voucherifyRedeem,
