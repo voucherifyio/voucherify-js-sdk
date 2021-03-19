@@ -15,7 +15,7 @@ const metadata = {
 	test: true,
 }
 voucherify
-	.track('Custom event 123', customer, metadata)
+	.track('Custom event 123', metadata, customer)
 	.then(result => {
 		console.log(result)
 	})

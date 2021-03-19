@@ -62,8 +62,8 @@ export function toQueryParams(obj: Record<string, unknown>): Record<string, stri
 				case 'number':
 				case 'boolean':
 				case 'bigint':
-					if (prefix) return entries.push([`${prefix}[${key}]`, encode(val.toString())])
-					return entries.push([key, encode(val.toString())])
+					if (prefix) return entries.push([`${prefix}[${key}]`, val.toString()])
+					return entries.push([key, val.toString()])
 				case 'object':
 					if (prefix) return mapToEntries(`${prefix}[${key}]`, <Record<string, unknown>>val)
 					return mapToEntries(key, <Record<string, unknown>>val)

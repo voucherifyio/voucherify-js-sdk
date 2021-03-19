@@ -11,6 +11,6 @@ export class Balance {
 	 * @see https://docs.voucherify.io/reference/#add-gift-voucher-balance
 	 */
 	public create(code: string, params: T.BalanceCreateParams) {
-		return this.client.post<T.BalanceCreateResponse>(`/vouchers/${encode(code)}/balance`, params)
+		return this.client.post(`/vouchers/${encode(code)}/balance`, params)
 	}
 }
