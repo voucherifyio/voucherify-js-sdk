@@ -136,19 +136,30 @@ export function VoucherifyRedeem({
 
 			const payload: ClientSideRedeemWidgetPayload = {
 				order: {
-					amount: parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10),
+					amount:
+						input.voucherifyAmount.trim() === '' ||
+						isNaN(parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10))
+							? 0
+							: parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10),
 				},
 			}
 
 			const sanitizedPayload = removeEmptyAttributes(payload)
 
-			const code: string = input.voucherifyCode.replace(/[\r\n\t\f\s\v]/g, '').trim()
+			const code: string = input.voucherifyCode.replace(/[\r\n\t\f\v]/g, '').trim()
 
-			if (!code || input.voucherifyAmount.trim() === '') {
+			if (
+				!code ||
+				(input.voucherifyAmount.trim() !== '' &&
+					isNaN(parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10)))
+			) {
 				return setInputState(prev => ({
 					...prev,
 					voucherifyCode: !code ? true : false,
-					voucherifyAmount: amount && input.voucherifyAmount.trim() === '' ? true : false,
+					voucherifyAmount:
+						amount && isNaN(parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10))
+							? true
+							: false,
 				}))
 			}
 
