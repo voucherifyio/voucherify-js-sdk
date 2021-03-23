@@ -121,6 +121,23 @@ export interface VoucherifyRedeemInputs {
 	voucherifyAmount: string
 	voucherifyTracking: string
 }
+
+export interface VoucherifyValidateInputsState {
+	[index: string]: boolean
+	voucherifyCode: boolean
+	voucherifyAmount: boolean
+	voucherifyValidate: boolean
+}
+export interface VoucherifyValidateInputs {
+	[index: string]: string | number
+	voucherifyCode: string
+	voucherifyAmount: string
+	voucherifyDiscountType: string
+	voucherifyPercentOff: number
+	voucherifyAmountOff: number
+	voucherifyUnitOff: number
+	voucherifyTracking: string
+}
 export type NotDefinedPlaceholder = Pick<
 	VoucherifyPublishInputs,
 	'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'postal_code' | 'city' | 'state' | 'country'

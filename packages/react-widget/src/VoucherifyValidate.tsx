@@ -1,13 +1,19 @@
 import * as React from 'react'
-import clsx from 'clsx'
-import { VoucherifyClientSideOptions } from '@voucherify/sdk'
-import { useVoucherifyClient } from './hooks/useVoucherifyClient'
-import { VoucherifyLogo } from './VoucherifyLogo'
 
-const INVALID_AMOUNT = 'invalid_amount'
-const INVALID_NUMBER = 'invalid_number'
-const MISSING_AMOUNT = 'missing_amount'
-// const INVALID_CUSTOMER_PHONE = 'invalid_customer_phone'
+import {
+	ClientSideValidateParams,
+	ClientSideValidateResponse,
+	DiscountAmount,
+	DiscountPercent,
+	DiscountUnit,
+	VoucherifyClientSideOptions,
+} from '@voucherify/sdk'
+
+import { VoucherifyLogo } from './VoucherifyLogo'
+import clsx from 'clsx'
+import { removeEmptyAttributes } from './helpers'
+import { useVoucherifyClient } from './hooks/useVoucherifyClient'
+import { useVoucherifyValidateInputs } from './hooks/useVoucherifyValidateInputs'
 
 interface VoucherifyValidateOptions extends VoucherifyClientSideOptions {
 	/**
@@ -37,11 +43,11 @@ interface VoucherifyValidateOptions extends VoucherifyClientSideOptions {
 	/**
 	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
 	 */
-	onValidated?: (response: $FixMe) => void
+	onValidated?: (response: ClientSideValidateResponse) => void
 	/**
 	 * a callback function invoked when there is an error
 	 */
-	onError?: (error: $FixMe) => void
+	onError?: (error: any) => void
 	/**
 	 * flag enables the amount input field
 	 */
@@ -101,31 +107,28 @@ export function VoucherifyValidate({
 		setInput,
 		setInvalidInputState,
 		setValidInputState,
-	} = useInputs()
+	} = useVoucherifyValidateInputs()
+
+	const [runValidateOnce, setRunValidateOnce] = React.useState(false)
 
 	React.useEffect(() => {
 		resetInputs()
 		setDisabled(false)
 	}, [client])
 
-	const classNameCode = clsx({
-		voucherifyCode: true,
-		[classNameInvalid]: invalidInputState.voucherifyCode,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyCode,
-		[classNameValid]: validInputState.voucherifyCode,
-		[classNameValidAnimation]: validInputState.voucherifyCode,
-	})
-	const classNameAmount = clsx({
-		voucherifyAmount: true,
-		[classNameInvalid]: invalidInputState.voucherifyAmount,
-		[classNameInvalidAnimation]: invalidInputState.voucherifyAmount,
-		[classNameValid]: validInputState.voucherifyAmount,
-		[classNameValidAnimation]: validInputState.voucherifyAmount,
-	})
-	const classNameValidate = clsx({
-		voucherifyValidate: true,
-		[classNameInvalid]: invalidInputState.voucherifyValidate,
-		[classNameValid]: validInputState.voucherifyValidate,
+	const classNames: any[] = Object.keys(invalidInputState).map(key => {
+		let className: string = key
+
+		const classes = clsx([
+			className,
+			runValidateOnce ? (invalidInputState[key] ? `${classNameInvalid} ${classNameInvalidAnimation}` : '') : '',
+			runValidateOnce ? (validInputState[key] ? `${classNameValid} ${classNameValidAnimation}` : '') : '',
+		])
+
+		return {
+			name: key,
+			classes,
+		}
 	})
 
 	const onSubmit = React.useCallback(
@@ -133,50 +136,53 @@ export function VoucherifyValidate({
 			setInput(prev => ({
 				...prev,
 				voucherifyDiscountType: '',
-				voucherifyAmountOff: '',
-				voucherifyUnitOff: '',
-				voucherifyPercentOff: '',
+				voucherifyAmountOff: 0,
+				voucherifyUnitOff: 0,
+				voucherifyPercentOff: 0,
 				voucherifyTracking: '',
 			}))
 
 			setInvalidInputState(prev => ({ ...prev, voucherifyValidate: false }))
 			setValidInputState(prev => ({ ...prev, voucherifyValidate: false }))
 
+			setRunValidateOnce(true)
+
 			if (!input.voucherifyCode.trim()) {
 				setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
 				return
 			}
 
-			const payload: $FixMe = {
+			const payload: ClientSideValidateParams = {
 				code: input.voucherifyCode,
-				amount: parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10),
+				amount:
+					input.voucherifyAmount.trim() === '' ||
+					isNaN(parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10))
+						? 0
+						: parseInt((parseFloat(input.voucherifyAmount.replace(/,/, '.')) * 100).toString(), 10),
 			}
+
+			const sanitizedPayload = removeEmptyAttributes(payload)
 
 			setSubmitting(true)
 
 			client
-				.validate(payload)
+				.validate(sanitizedPayload)
 				.then(function (_response) {
-					const response: $FixMe = _response
+					const response: ClientSideValidateResponse = _response
 
 					if (!response || !response.valid) {
-						setInvalidInputState(prev => ({ ...prev, voucherifyValidate: true }))
-						setValidInputState(prev => ({ ...prev, voucherifyValidate: false }))
-
-						const context: $FixMe = response?.context || {}
-						const responseJSON: $FixMe = context?.responseJSON || {}
-						const error_key = responseJSON?.key
-
-						if (
-							amount &&
-							(error_key === INVALID_AMOUNT || error_key === INVALID_NUMBER || error_key === MISSING_AMOUNT)
-						) {
-							setInvalidInputState(prev => ({ ...prev, voucherifyAmount: true }))
-							setValidInputState(prev => ({ ...prev, voucherifyAmount: false }))
-						} else {
-							setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
-							setValidInputState(prev => ({ ...prev, voucherifyCode: false }))
-						}
+						setInvalidInputState(prev => ({
+							...prev,
+							voucherifyValidate: true,
+							voucherifyAmount: true,
+							voucherifyCode: true,
+						}))
+						setValidInputState(prev => ({
+							...prev,
+							voucherifyValidate: false,
+							voucherifyAmount: false,
+							voucherifyCode: false,
+						}))
 						return
 					}
 
@@ -185,14 +191,44 @@ export function VoucherifyValidate({
 						voucherifyCode: false,
 						voucherifyAmount: false,
 					}))
-					setInput(prev => ({
-						...prev,
-						voucherifyDiscountType: response?.discount?.type || '',
-						voucherifyAmountOff: response?.discount?.amount_off || 0,
-						voucherifyUnitOff: response?.discount?.unit_off || 0,
-						voucherifyPercentOff: response?.discount?.percent_off || 0,
-						voucherifyTracking: response?.tracking_id || '',
-					}))
+
+					const responseDiscount = response?.discount as DiscountUnit | DiscountAmount | DiscountPercent
+
+					switch (responseDiscount.type) {
+						case 'AMOUNT':
+							setInput(prev => ({
+								...prev,
+								voucherifyDiscountType: responseDiscount.type || '',
+								voucherifyAmountOff: responseDiscount.amount_off || 0,
+								voucherifyUnitOff: 0,
+								voucherifyPercentOff: 0,
+								voucherifyTracking: response?.tracking_id || '',
+							}))
+							break
+						case 'UNIT':
+							setInput(prev => ({
+								...prev,
+								voucherifyDiscountType: responseDiscount.type || '',
+								voucherifyAmountOff: 0,
+								voucherifyUnitOff: responseDiscount.unit_off || 0,
+								voucherifyPercentOff: 0,
+								voucherifyTracking: response?.tracking_id || '',
+							}))
+							break
+
+						case 'PERCENT':
+							setInput(prev => ({
+								...prev,
+								voucherifyDiscountType: responseDiscount.type || '',
+								voucherifyAmountOff: 0,
+								voucherifyUnitOff: 0,
+								voucherifyPercentOff: responseDiscount.percent_off || 0,
+								voucherifyTracking: response?.tracking_id || '',
+							}))
+							break
+						default:
+							break
+					}
 
 					setDisabled(true)
 
@@ -211,6 +247,20 @@ export function VoucherifyValidate({
 				})
 				.catch(err => {
 					console.error(err)
+					if (err.message === 'Missing order') {
+						setInvalidInputState(prev => ({
+							...prev,
+							voucherifyValidate: true,
+							voucherifyAmount: true,
+							voucherifyCode: false,
+						}))
+						setValidInputState(prev => ({
+							...prev,
+							voucherifyValidate: false,
+							voucherifyAmount: false,
+							voucherifyCode: false,
+						}))
+					}
 					if (typeof onError === 'function') onError(err)
 				})
 				.finally(() => setSubmitting(false))
@@ -227,7 +277,7 @@ export function VoucherifyValidate({
 				name="voucherifyCode"
 				value={input['voucherifyCode']}
 				onChange={onInputChange}
-				className={classNameCode}
+				className={classNames.find((cls: any) => cls.name === 'voucherifyCode').classes}
 				disabled={isSubmitting || allDisabled}
 			/>
 			<input
@@ -236,7 +286,7 @@ export function VoucherifyValidate({
 				name="voucherifyAmount"
 				value={input['voucherifyAmount']}
 				onChange={onInputChange}
-				className={classNameAmount}
+				className={classNames.find((cls: any) => cls.name === 'voucherifyAmount').classes}
 				disabled={isSubmitting || allDisabled}
 			/>
 			<input
@@ -264,71 +314,13 @@ export function VoucherifyValidate({
 				value={input['voucherifyTracking']}
 				className="voucherifyTracking"
 			/>
-			<button className={classNameValidate} disabled={isSubmitting || allDisabled} onClick={onSubmit}>
+			<button
+				className={classNames.find((cls: any) => cls.name === 'voucherifyValidate').classes}
+				disabled={isSubmitting || allDisabled}
+				onClick={onSubmit}
+			>
 				<span className="voucherifyValidateText">{textValidate}</span>
 			</button>
 		</div>
 	)
-}
-
-interface VoucherifyValidateInputs {
-	voucherifyCode: string
-	voucherifyAmount: string
-	voucherifyDiscountType: string
-	voucherifyPercentOff: string
-	voucherifyAmountOff: string
-	voucherifyUnitOff: string
-	voucherifyTracking: string
-}
-function getEmptyInputs(): VoucherifyValidateInputs {
-	return {
-		voucherifyCode: '',
-		voucherifyAmount: '',
-		voucherifyDiscountType: '',
-		voucherifyPercentOff: '',
-		voucherifyAmountOff: '',
-		voucherifyUnitOff: '',
-		voucherifyTracking: '',
-	}
-}
-
-interface VoucherifyValidateInputsState {
-	voucherifyCode: boolean
-	voucherifyAmount: boolean
-	voucherifyValidate: boolean
-}
-function getEmptyInputState(): VoucherifyValidateInputsState {
-	return {
-		voucherifyCode: false,
-		voucherifyAmount: false,
-		voucherifyValidate: false,
-	}
-}
-
-function useInputs() {
-	const [input, setInput] = React.useState(getEmptyInputs)
-	const [invalidInputState, setInvalidInputState] = React.useState(getEmptyInputState)
-	const [validInputState, setValidInputState] = React.useState(getEmptyInputState)
-
-	const onInputChange = React.useCallback(function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-		const name = event.target.name as keyof VoucherifyValidateInputs
-		setInput(prev => ({ ...prev, [name]: event.target.value }))
-	}, [])
-
-	const resetInputs = React.useCallback(function reset() {
-		setInput(getEmptyInputs)
-		setInvalidInputState(getEmptyInputState)
-		setValidInputState(getEmptyInputState)
-	}, [])
-
-	return {
-		input,
-		invalidInputState,
-		validInputState,
-		onInputChange,
-		resetInputs,
-		setInput,
-		setInvalidInputState,
-		setValidInputState,
-	}
 }
