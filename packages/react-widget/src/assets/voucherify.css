@@ -3,6 +3,7 @@ div.voucherifyContainer {
 	display: block;
 
 	min-width: 12em;
+	max-width: 17em;
 
 	margin: 1.75em auto 0 auto;
 	border: 1px solid #e5e5e5;
@@ -216,7 +217,8 @@ div.voucherifyContainer button.voucherifyPublish.voucherifyValid {
 	font-weight: bold;
 }
 
-div.voucherifyContainer button.voucherifyPublish.voucherifyInvalid {
+div.voucherifyContainer button.voucherifyPublish.voucherifyInvalid,
+div.voucherifyContainer button.voucherifyRedeem.voucherifyInvalid {
 	background-color: #f8dffe;
 }
 

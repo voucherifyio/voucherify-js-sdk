@@ -109,6 +109,18 @@ export interface VoucherifyPublishInputsState {
 	voucherifyPublish: boolean
 }
 
+export interface VoucherifyRedeemInputsState {
+	[index: string]: boolean
+	voucherifyCode: boolean
+	voucherifyAmount: boolean
+	voucherifyRedeem: boolean
+}
+export interface VoucherifyRedeemInputs {
+	[index: string]: string
+	voucherifyCode: string
+	voucherifyAmount: string
+	voucherifyTracking: string
+}
 export type NotDefinedPlaceholder = Pick<
 	VoucherifyPublishInputs,
 	'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'postal_code' | 'city' | 'state' | 'country'
@@ -151,6 +163,11 @@ export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 's
 	items?: ClientSideRedeemItem[]
 }
 
+export interface ClientSideRedeemWidgetPayload {
+	order?: {
+		amount?: number
+	}
+}
 export type ClientSideRedeemItem = Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>
 export type ClientSideResponseItem = ClientSideRedeemItem
 export type ClientSideTrackCustomer = CustomerRequest
