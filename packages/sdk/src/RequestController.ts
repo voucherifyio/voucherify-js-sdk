@@ -27,7 +27,6 @@ export class RequestController {
 			baseURL: `${this.baseURL}/${this.basePath}/`,
 			headers: this.headers,
 			responseType: 'json',
-			withCredentials: true,
 		})
 		this.request.interceptors.response.use(void 0, (error: AxiosError<unknown>) => {
 			/**
