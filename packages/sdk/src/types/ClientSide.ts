@@ -9,9 +9,12 @@ export interface ClientSideValidateParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
-	items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
+	items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'>[]
 	orderMetadata?: Record<string, any>
 	customer?: Pick<CustomerRequest, 'source_id' | 'metadata'>
+	reward?: {
+		id: string
+	}
 	metadata?: Record<string, any>
 	session_type?: 'LOCK'
 	session_key?: string
@@ -35,13 +38,31 @@ export interface ClientSideValidateResponse {
 	code?: string
 	valid: boolean
 	discount?: DiscountUnit | DiscountAmount | DiscountPercent
+	applicable_to?: {
+		object: 'list'
+		total: number
+		data?: {
+			id: string
+			object: 'product'
+			source_id?: string
+		}[]
+	}
 	order?: {
-		object: 'order'
-		amount?: number
-		discount_amount?: number
+		amount: number
+		discount_amount: number
+		total_discount_amount: number
+		total_amount: number
 		items: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
 	}
 	tracking_id?: string
+	campaign_id?: string
+	loyalty?: {
+		points_cost: number
+	}
+	gift?: {
+		amount: number
+		balance: number
+	}
 	promotions?: SimplePromotionTier[]
 }
 
