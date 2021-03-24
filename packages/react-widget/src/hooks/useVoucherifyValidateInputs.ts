@@ -23,8 +23,7 @@ function getEmptyInputState(): VoucherifyValidateInputsState {
 
 export function useVoucherifyValidateInputs() {
 	const [input, setInput] = useState(getEmptyInputs)
-	const [invalidInputState, setInvalidInputState] = useState(getEmptyInputState)
-	const [validInputState, setValidInputState] = useState(getEmptyInputState)
+	const [inputState, setInputState] = useState(getEmptyInputState)
 
 	const onInputChange = useCallback(function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const name = event.target.name as keyof VoucherifyValidateInputs
@@ -33,18 +32,15 @@ export function useVoucherifyValidateInputs() {
 
 	const resetInputs = useCallback(function reset() {
 		setInput(getEmptyInputs)
-		setInvalidInputState(getEmptyInputState)
-		setValidInputState(getEmptyInputState)
+		setInputState(getEmptyInputState)
 	}, [])
 
 	return {
 		input,
-		invalidInputState,
-		validInputState,
+		inputState,
 		onInputChange,
 		resetInputs,
 		setInput,
-		setInvalidInputState,
-		setValidInputState,
+		setInputState,
 	}
 }

@@ -98,16 +98,7 @@ export function VoucherifyValidate({
 		origin,
 	})
 
-	const {
-		input,
-		invalidInputState,
-		validInputState,
-		onInputChange,
-		resetInputs,
-		setInput,
-		setInvalidInputState,
-		setValidInputState,
-	} = useVoucherifyValidateInputs()
+	const { input, inputState, onInputChange, resetInputs, setInput, setInputState } = useVoucherifyValidateInputs()
 
 	const [runValidateOnce, setRunValidateOnce] = React.useState(false)
 
@@ -116,13 +107,16 @@ export function VoucherifyValidate({
 		setDisabled(false)
 	}, [client])
 
-	const classNames: any[] = Object.keys(invalidInputState).map(key => {
+	const classNames: any[] = Object.keys(inputState).map(key => {
 		let className: string = key
 
 		const classes = clsx([
 			className,
-			runValidateOnce ? (invalidInputState[key] ? `${classNameInvalid} ${classNameInvalidAnimation}` : '') : '',
-			runValidateOnce ? (validInputState[key] ? `${classNameValid} ${classNameValidAnimation}` : '') : '',
+			runValidateOnce
+				? inputState[key]
+					? `${classNameValid} ${classNameValidAnimation}`
+					: `${classNameInvalid} ${classNameInvalidAnimation}`
+				: '',
 		])
 
 		return {
@@ -142,13 +136,10 @@ export function VoucherifyValidate({
 				voucherifyTracking: '',
 			}))
 
-			setInvalidInputState(prev => ({ ...prev, voucherifyValidate: false }))
-			setValidInputState(prev => ({ ...prev, voucherifyValidate: false }))
-
-			setRunValidateOnce(true)
+			setInputState(prev => ({ ...prev, voucherifyValidate: false }))
 
 			if (!input.voucherifyCode.trim()) {
-				setInvalidInputState(prev => ({ ...prev, voucherifyCode: true }))
+				setInputState(prev => ({ ...prev, voucherifyCode: false }))
 				return
 			}
 
@@ -171,13 +162,7 @@ export function VoucherifyValidate({
 					const response: ClientSideValidateResponse = _response
 
 					if (!response || !response.valid) {
-						setInvalidInputState(prev => ({
-							...prev,
-							voucherifyValidate: true,
-							voucherifyAmount: true,
-							voucherifyCode: true,
-						}))
-						setValidInputState(prev => ({
+						setInputState(prev => ({
 							...prev,
 							voucherifyValidate: false,
 							voucherifyAmount: false,
@@ -186,84 +171,82 @@ export function VoucherifyValidate({
 						return
 					}
 
-					setInvalidInputState(prev => ({
-						...prev,
-						voucherifyCode: false,
-						voucherifyAmount: false,
-					}))
+					if (response?.discount) {
+						const responseDiscount = response?.discount as DiscountUnit | DiscountAmount | DiscountPercent
 
-					const responseDiscount = response?.discount as DiscountUnit | DiscountAmount | DiscountPercent
+						switch (responseDiscount.type) {
+							case 'AMOUNT':
+								setInput(prev => ({
+									...prev,
+									voucherifyDiscountType: responseDiscount.type || '',
+									voucherifyAmountOff: responseDiscount.amount_off || 0,
+									voucherifyUnitOff: 0,
+									voucherifyPercentOff: 0,
+									voucherifyTracking: response?.tracking_id || '',
+								}))
+								break
+							case 'UNIT':
+								setInput(prev => ({
+									...prev,
+									voucherifyDiscountType: responseDiscount.type || '',
+									voucherifyAmountOff: 0,
+									voucherifyUnitOff: responseDiscount.unit_off || 0,
+									voucherifyPercentOff: 0,
+									voucherifyTracking: response?.tracking_id || '',
+								}))
+								break
 
-					switch (responseDiscount.type) {
-						case 'AMOUNT':
-							setInput(prev => ({
-								...prev,
-								voucherifyDiscountType: responseDiscount.type || '',
-								voucherifyAmountOff: responseDiscount.amount_off || 0,
-								voucherifyUnitOff: 0,
-								voucherifyPercentOff: 0,
-								voucherifyTracking: response?.tracking_id || '',
-							}))
-							break
-						case 'UNIT':
-							setInput(prev => ({
-								...prev,
-								voucherifyDiscountType: responseDiscount.type || '',
-								voucherifyAmountOff: 0,
-								voucherifyUnitOff: responseDiscount.unit_off || 0,
-								voucherifyPercentOff: 0,
-								voucherifyTracking: response?.tracking_id || '',
-							}))
-							break
-
-						case 'PERCENT':
-							setInput(prev => ({
-								...prev,
-								voucherifyDiscountType: responseDiscount.type || '',
-								voucherifyAmountOff: 0,
-								voucherifyUnitOff: 0,
-								voucherifyPercentOff: responseDiscount.percent_off || 0,
-								voucherifyTracking: response?.tracking_id || '',
-							}))
-							break
-						default:
-							break
+							case 'PERCENT':
+								setInput(prev => ({
+									...prev,
+									voucherifyDiscountType: responseDiscount.type || '',
+									voucherifyAmountOff: 0,
+									voucherifyUnitOff: 0,
+									voucherifyPercentOff: responseDiscount.percent_off || 0,
+									voucherifyTracking: response?.tracking_id || '',
+								}))
+								break
+							default:
+								break
+						}
+					} else {
+						setInput(prev => ({
+							...prev,
+							voucherifyDiscountType: 'GIFT_CARD',
+							voucherifyAmountOff: response?.order?.total_discount_amount || 0,
+							voucherifyUnitOff: 0,
+							voucherifyPercentOff: 0,
+							voucherifyTracking: response?.tracking_id || '',
+						}))
 					}
 
 					setDisabled(true)
 
-					setValidInputState(prev => ({
+					setInputState(prev => ({
 						...prev,
 						voucherifyCode: true,
 						voucherifyAmount: true,
 						voucherifyValidate: true,
-					}))
-					setInvalidInputState(prev => ({
-						...prev,
-						voucherifyValidate: false,
 					}))
 
 					if (typeof onValidated === 'function') onValidated(response)
 				})
 				.catch(err => {
 					console.error(err)
-					if (err.message === 'Missing order') {
-						setInvalidInputState(prev => ({
-							...prev,
-							voucherifyValidate: true,
-							voucherifyAmount: true,
-							voucherifyCode: false,
-						}))
-						setValidInputState(prev => ({
+					if (err.key === 'missing_order') {
+						setInputState(prev => ({
 							...prev,
 							voucherifyValidate: false,
 							voucherifyAmount: false,
-							voucherifyCode: false,
+							voucherifyCode: true,
 						}))
 					}
 					if (typeof onError === 'function') onError(err)
 				})
-				.finally(() => setSubmitting(false))
+				.finally(() => {
+					setSubmitting(false)
+					setRunValidateOnce(true)
+				})
 		},
 		[input, onError, onValidated, amount],
 	)
