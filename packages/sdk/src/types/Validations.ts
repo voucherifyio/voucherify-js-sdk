@@ -56,11 +56,11 @@ export interface ValidationsValidateVoucherResponse {
 	loyalty?: {
 		points_cost: number
 	}
-	order: {
-		amount?: number
-		discount_amount?: number
-		total_discount_amount?: number
-		total_amount?: number
+	order?: {
+		amount: number
+		discount_amount: number
+		total_discount_amount: number
+		total_amount: number
 		items?: OrdersItem[]
 	}
 	tracking_id: string

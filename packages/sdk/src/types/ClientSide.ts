@@ -52,7 +52,7 @@ export interface ClientSideValidateResponse {
 		discount_amount: number
 		total_discount_amount: number
 		total_amount: number
-		items: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
+		items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
 	}
 	tracking_id?: string
 	campaign_id?: string
