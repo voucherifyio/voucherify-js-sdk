@@ -22,6 +22,9 @@ export interface ValidationsValidateVoucherParams {
 	gift?: {
 		credits: number
 	}
+	reward?: {
+		id: string
+	}
 	session?: {
 		type: 'LOCK'
 		key?: string
@@ -45,11 +48,19 @@ export interface ValidationsValidateVoucherResponse {
 	metadata?: Record<string, any>
 	code?: string
 	valid?: boolean
-	discount: DiscountAmount | DiscountUnit | DiscountPercent
-	order: {
-		object?: 'order'
-		amount?: number
-		discount_amount?: number
+	discount?: DiscountAmount | DiscountUnit | DiscountPercent
+	gift?: {
+		amount: number
+		balance: number
+	}
+	loyalty?: {
+		points_cost: number
+	}
+	order?: {
+		amount: number
+		discount_amount: number
+		total_discount_amount: number
+		total_amount: number
 		items?: OrdersItem[]
 	}
 	tracking_id: string
