@@ -47,9 +47,7 @@ export interface CustomerObject {
 		points: number
 		referred_customers: number
 	}
-	metadata: {
-		lang: string
-	}
+	metadata: Record<string, any>
 	created_at: string
 	object: string
 }
