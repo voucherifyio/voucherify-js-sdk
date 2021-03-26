@@ -5,11 +5,16 @@ import { CustomerRequest } from './Customers'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
 
+type ClientSideItem = Pick<
+	OrdersItem,
+	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
+>
+
 export interface ClientSideValidateParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
-	items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'>[]
+	items?: ClientSideItem[]
 	orderMetadata?: Record<string, any>
 	customer?: Pick<CustomerRequest, 'source_id' | 'metadata'>
 	reward?: {
@@ -52,7 +57,7 @@ export interface ClientSideValidateResponse {
 		discount_amount: number
 		total_discount_amount: number
 		total_amount: number
-		items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
+		items?: ClientSideItem[]
 	}
 	tracking_id?: string
 	campaign_id?: string
@@ -181,7 +186,7 @@ export interface ClientSideTrackResponse {
 }
 
 export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 'source_id' | 'metadata' | 'amount'>> & {
-	items?: ClientSideRedeemItem[]
+	items?: ClientSideItem[]
 }
 
 export interface ClientSideRedeemWidgetPayload {
@@ -189,6 +194,4 @@ export interface ClientSideRedeemWidgetPayload {
 		amount?: number
 	}
 }
-export type ClientSideRedeemItem = Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>
-export type ClientSideResponseItem = ClientSideRedeemItem
 export type ClientSideTrackCustomer = CustomerRequest
