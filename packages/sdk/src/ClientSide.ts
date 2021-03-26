@@ -30,7 +30,7 @@ export class ClientSide {
 			query.metadata = params.metadata
 			query.order = { metadata: params.orderMetadata }
 			query.customer = params.customer
-			query.trackingId = this.trackingId
+			query.tracking_id = this.trackingId
 		}
 
 		if (!!query.code) {

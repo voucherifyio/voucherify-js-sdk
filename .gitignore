@@ -1,5 +1,6 @@
 .vscode
 .old
+.DS_Store
 
 # Logs
 logs

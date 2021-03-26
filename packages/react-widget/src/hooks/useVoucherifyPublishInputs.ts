@@ -1,4 +1,4 @@
-import { VoucherifyPublishInputs, VoucherifyPublishInputsState } from '@voucherify/sdk'
+import { VoucherifyPublishInputs, VoucherifyPublishInputsState } from '../types/VoucherifyPublish'
 import { useCallback, useState } from 'react'
 
 function getEmptyInputs(): VoucherifyPublishInputs {

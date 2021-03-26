@@ -5,11 +5,16 @@ import { CustomerRequest } from './Customers'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
 
+type ClientSideItem = Pick<
+	OrdersItem,
+	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
+>
+
 export interface ClientSideValidateParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
-	items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'>[]
+	items?: ClientSideItem[]
 	orderMetadata?: Record<string, any>
 	customer?: Pick<CustomerRequest, 'source_id' | 'metadata'>
 	reward?: {
@@ -52,7 +57,7 @@ export interface ClientSideValidateResponse {
 		discount_amount: number
 		total_discount_amount: number
 		total_amount: number
-		items?: Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>[]
+		items?: ClientSideItem[]
 	}
 	tracking_id?: string
 	campaign_id?: string
@@ -99,54 +104,6 @@ export interface ClientSidePublishPayload {
 	metadata?: Record<string, any>
 }
 
-export interface VoucherifyPublishInputs {
-	[index: string]: string
-	name: string
-	email: string
-	phone: string
-	line_1: string
-	line_2: string
-	postal_code: string
-	city: string
-	state: string
-	country: string
-	voucherifyPublishStatus: string
-	voucherifyTracking: string
-	voucherifyPublish: string
-}
-
-export interface VoucherifyPublishInputsState {
-	[index: string]: boolean
-	name: boolean
-	phone: boolean
-	email: boolean
-	line_1: boolean
-	line_2: boolean
-	postal_code: boolean
-	city: boolean
-	state: boolean
-	country: boolean
-	voucherifyPublishStatus: boolean
-	voucherifyPublish: boolean
-}
-
-export interface VoucherifyRedeemInputsState {
-	[index: string]: boolean
-	voucherifyCode: boolean
-	voucherifyAmount: boolean
-	voucherifyRedeem: boolean
-}
-export interface VoucherifyRedeemInputs {
-	[index: string]: string
-	voucherifyCode: string
-	voucherifyAmount: string
-	voucherifyTracking: string
-}
-export type NotDefinedPlaceholder = Pick<
-	VoucherifyPublishInputs,
-	'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'postal_code' | 'city' | 'state' | 'country'
-> & { [index: string]: string }
-
 export type ClientSidePublishPreparedPayload = ClientSidePublishPayload
 
 export interface ClientSidePublishQueryParams {
@@ -181,7 +138,7 @@ export interface ClientSideTrackResponse {
 }
 
 export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 'source_id' | 'metadata' | 'amount'>> & {
-	items?: ClientSideRedeemItem[]
+	items?: ClientSideItem[]
 }
 
 export interface ClientSideRedeemWidgetPayload {
@@ -189,6 +146,4 @@ export interface ClientSideRedeemWidgetPayload {
 		amount?: number
 	}
 }
-export type ClientSideRedeemItem = Pick<OrdersItem, 'source_id' | 'product_id' | 'sku' | 'quantity'>
-export type ClientSideResponseItem = ClientSideRedeemItem
 export type ClientSideTrackCustomer = CustomerRequest

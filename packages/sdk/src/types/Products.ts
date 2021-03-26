@@ -11,16 +11,7 @@ export interface ProductsGetResponseSkus {
 	skus?: {
 		object: 'list'
 		total: number
-		data?: {
-			id?: string
-			source_id?: string
-			sku?: string
-			currency?: string
-			price?: number
-			attributes: Record<string, string>
-			created_at?: string
-			object?: string
-		}[]
+		data?: ProductsGetSkuResponse[]
 	}
 }
 
@@ -96,6 +87,7 @@ export interface ProductsCreateSkuResponse {
 	id: string
 	source_id?: string
 	sku?: string
+	price?: number
 	attributes?: Record<string, string>
 	metadata?: Record<string, any>
 	updated_at?: string
