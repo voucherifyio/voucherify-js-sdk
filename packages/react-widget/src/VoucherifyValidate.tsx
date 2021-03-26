@@ -238,7 +238,7 @@ export function VoucherifyValidate({
 							...prev,
 							voucherifyValidate: false,
 							voucherifyAmount: false,
-							voucherifyCode: true,
+							voucherifyCode: false,
 						}))
 					}
 					if (typeof onError === 'function') onError(err)

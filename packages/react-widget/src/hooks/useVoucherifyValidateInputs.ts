@@ -1,4 +1,4 @@
-import { VoucherifyValidateInputs, VoucherifyValidateInputsState } from '@voucherify/sdk'
+import { VoucherifyValidateInputs, VoucherifyValidateInputsState } from '../types/VoucherifyValidate'
 import { useCallback, useState } from 'react'
 
 function getEmptyInputs(): VoucherifyValidateInputs {

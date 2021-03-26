@@ -1,13 +1,9 @@
 import * as React from 'react'
 
-import {
-	ClientSidePublishPayload,
-	ClientSidePublishResponse,
-	NotDefinedPlaceholder,
-	VoucherifyClientSideOptions,
-} from '@voucherify/sdk'
+import { ClientSidePublishPayload, ClientSidePublishResponse, VoucherifyClientSideOptions } from '@voucherify/sdk'
 import { removeEmptyAttributes, splitLongKey, validateEmail, validatePhoneNumber } from './helpers'
 
+import { NotDefinedPlaceholder } from './types/VoucherifyPublish'
 import { VoucherifyLogo } from './VoucherifyLogo'
 import clsx from 'clsx'
 import { useVoucherifyClient } from './hooks/useVoucherifyClient'
