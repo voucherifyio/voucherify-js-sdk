@@ -1,5 +1,5 @@
 // require('source-map-support').install()
-import { VoucherifyServerSide } from '@voucherify/sdk'
+const { VoucherifyServerSide } = require('@voucherify/sdk')
 
 const voucherify = VoucherifyServerSide({
 	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',
@@ -21,11 +21,11 @@ voucherify.vouchers
 	.then(function (result) {
 		console.log('Voucher %s created. Redeeming...', result.code)
 		voucherCode = result.code
-		return voucherify.redemptions.redeem(result.code, { order: { amount: 5000 } })
+		return voucherify.redemptions.redeem(result.code, { order: { amount: 5000 } }, 'tester')
 	})
 	.then(function (result) {
 		console.log('Voucher %s redeemed. Redemption id: %s, Rolling back...', result.voucher.code, result.id)
-		return voucherify.redemptions.rollback(result.id, { reason: 'Just so' })
+		return voucherify.redemptions.rollback(result.id, 'just so', 'tester')
 	})
 	.then(function (result) {
 		console.log('Redemption %s rolled back. Rollback id: %s', result.redemption, result.id)
