@@ -1,6 +1,6 @@
 import * as T from './types/ClientSide'
 
-import { assert, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
+import { assert, encode, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -11,8 +11,9 @@ export class ClientSide {
 		this.trackingId = identity
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/#vouchers-validate
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-validate
 	 */
+
 	public validate(params: T.ClientSideValidateParams | string) {
 		assert(
 			isObject(params) || isString(params),
@@ -48,7 +49,28 @@ export class ClientSide {
 		return this.client.get<T.ClientSideValidateResponse>(path, queryParams)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#redeem-voucher-client-side
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side
+	 */
+	public createCustomer(customer: T.ClientSideCustomerParams) {
+		assert(isObject(customer), 'client.createCustomer - please provide a valid Customer object')
+
+		return this.client.post<T.ClientSideCustomerResponse>('/customers', customer)
+	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client
+	 */
+	public updateConsents(
+		customer: T.ClientSideCustomersUpdateConsentsParams,
+		consents: T.ClientSideCustomersUpdateConsentsBody,
+	) {
+		assert(isObject(customer), 'client.createCustomer - please provide a valid Customer object')
+
+		const id = 'id' in customer ? customer.id : customer.source_id
+		return this.client.put<any>(`/customers/${encode(id)}/consents`, consents)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side
 	 */
 	public redeem(code: string, payload: T.ClientSideRedeemPayload = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
@@ -61,7 +83,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#create-publication
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-publication
 	 */
 	public publish(
 		campaign: string,
@@ -86,7 +108,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSidePublishResponse>('/publish', preparedPayload, queryParams)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side
 	 */
 
 	public track(
@@ -117,7 +139,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideTrackResponse>('/events', payload)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#list-vouchers
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
 	 */
 	public listVouchers(params: T.ClientSideListVouchersParams = {}) {
 		const query: Record<string, any> = {}
