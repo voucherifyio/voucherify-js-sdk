@@ -121,7 +121,7 @@ export class Loyalties {
 		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/${encode(campaignId)}/members/${memberId}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#get-member-activities
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-member-activities
 	 */
 	public getMemberActivities(campaignId: string, memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(

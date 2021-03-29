@@ -11,7 +11,7 @@ export class ClientSide {
 		this.trackingId = identity
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/#vouchers-validate
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq##vouchers-validate
 	 */
 	public validate(params: T.ClientSideValidateParams | string) {
 		assert(
@@ -48,7 +48,7 @@ export class ClientSide {
 		return this.client.get<T.ClientSideValidateResponse>(path, queryParams)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#redeem-voucher-client-side
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side
 	 */
 	public redeem(code: string, payload: T.ClientSideRedeemPayload = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
@@ -61,7 +61,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#create-publication
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-publication
 	 */
 	public publish(
 		campaign: string,
@@ -86,7 +86,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSidePublishResponse>('/publish', preparedPayload, queryParams)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#track-custom-event-client-side
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side
 	 */
 
 	public track(
@@ -117,7 +117,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideTrackResponse>('/events', payload)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference#list-vouchers
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
 	 */
 	public listVouchers(params: T.ClientSideListVouchersParams = {}) {
 		const query: Record<string, any> = {}
