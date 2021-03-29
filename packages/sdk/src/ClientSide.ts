@@ -1,6 +1,6 @@
 import * as T from './types/ClientSide'
 
-import { assert, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
+import { assert, encode, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -133,5 +133,18 @@ export class ClientSide {
 		const queryParams = toQueryParams(query)
 
 		return this.client.get<T.ClientSideListVouchersResponse>('/vouchers', queryParams)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
+	 */
+	public createCustomer(customer: T.ClientSideCustomersCreateParams) {
+		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer)
+	}
+	public updateConsents(
+		customer: T.ClientSideCustomersUpdateConsentsParams,
+		consents: T.ClientSideCustomersUpdateConsentsBody,
+	) {
+		const id = 'id' in customer ? customer.id : customer.source_id
+		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
 	}
 }
