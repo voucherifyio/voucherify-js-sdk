@@ -1,5 +1,7 @@
-import { encode, omit } from './helpers'
 import * as T from './types/Customers'
+
+import { encode, omit } from './helpers'
+
 import type { RequestController } from './RequestController'
 
 class Customers {
