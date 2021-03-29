@@ -140,6 +140,9 @@ export class ClientSide {
 	public createCustomer(customer: T.ClientSideCustomersCreateParams) {
 		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client
+	 */
 	public updateConsents(
 		customer: T.ClientSideCustomersUpdateConsentsParams,
 		consents: T.ClientSideCustomersUpdateConsentsBody,
