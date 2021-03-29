@@ -1,15 +1,26 @@
+import {
+	CustomerObject,
+	CustomerRequest,
+	CustomersCreateBody,
+	CustomersUpdateConsentsBody,
+	CustomersUpdateConsentsParams,
+} from './Customers'
 import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
-import { CustomerRequest } from './Customers'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
+
+export type ClientSideCustomersUpdateConsentsParams = CustomersUpdateConsentsParams
+export type ClientSideCustomersUpdateConsentsBody = CustomersUpdateConsentsBody
 
 type ClientSideItem = Pick<
 	OrdersItem,
 	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
 >
 
+export type ClientSideCustomerParams = CustomersCreateBody
+export type ClientSideCustomerResponse = CustomerObject
 export interface ClientSideValidateParams {
 	code?: string
 	tracking_id?: string
