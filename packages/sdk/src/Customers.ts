@@ -71,11 +71,8 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 	 */
-	public update(customer: T.CustomersUpdateParams) {
-		const id = 'id' in customer ? customer.id : customer.source_id
-		const customerWithoutId = omit<Record<string, string>, string>(customer, ['id'])
-
-		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
+	public update(idOrSourceId: string, params: T.CustomersUpdateParams) {
+		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(idOrSourceId)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
@@ -86,9 +83,8 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents
 	 */
-	public updateConsents(customer: T.CustomersUpdateConsentsParams, consents: T.CustomersUpdateConsentsBody) {
-		const id = 'id' in customer ? customer.id : customer.source_id
-		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
+	public updateConsents(idOrSourceId: string, consents: T.CustomersUpdateConsentsBody) {
+		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
 }
 

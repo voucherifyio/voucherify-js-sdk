@@ -1,10 +1,4 @@
-import {
-	CustomerRequest,
-	CustomersCreateBody,
-	CustomersCreateResponse,
-	CustomersUpdateConsentsBody,
-	CustomersUpdateConsentsParams,
-} from './Customers'
+import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
 import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
@@ -15,8 +9,6 @@ type ClientSideItem = Pick<
 	OrdersItem,
 	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
 >
-
-export type ClientSideCustomersUpdateConsentsParams = CustomersUpdateConsentsParams
 
 export type ClientSideCustomersUpdateConsentsBody = CustomersUpdateConsentsBody
 

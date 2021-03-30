@@ -143,11 +143,7 @@ export class ClientSide {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client
 	 */
-	public updateConsents(
-		customer: T.ClientSideCustomersUpdateConsentsParams,
-		consents: T.ClientSideCustomersUpdateConsentsBody,
-	) {
-		const id = 'id' in customer ? customer.id : customer.source_id
-		return this.client.put<undefined>(`/customers/${encode(id)}/consents`, consents)
+	public updateConsents(idOrSourceId: string, consents: T.ClientSideCustomersUpdateConsentsBody) {
+		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
 }
