@@ -111,7 +111,7 @@ export type CustomersScrollParams = CustomersCommonListRequest
 export type CustomersScrollResponse = CustomersCommonListResponse
 export type CustomersScrollYield = CustomerObject
 
-export type CustomersUpdateParams = Omit<CustomerRequest, 'id'>
+export type CustomersUpdateParams = { id: string } | { source_id: string }
 export type CustomersUpdateResponse = CustomerObject
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
