@@ -9,6 +9,7 @@ import { removeEmptyAttributes, splitLongKey, validateEmail, validatePhoneNumber
 
 import { NotDefinedPlaceholder } from './types/VoucherifyPublish'
 import { VoucherifyLogo } from './VoucherifyLogo'
+import { VoucherifySubscribeLoadedConsents } from './types/VoucherifySubscribe'
 import clsx from 'clsx'
 import { useVoucherifyClient } from './hooks/useVoucherifyClient'
 import { useVoucherifySubscribeInputs } from './hooks/useVoucherifySubscribeInputs'
@@ -101,8 +102,6 @@ export function VoucherifySubscribe({
 	const [allDisabled, setDisabled] = React.useState(false)
 	const [visible, setVisible] = React.useState(true)
 	const [runSubscribeOnce, setRunSubscribeOnce] = React.useState(false)
-	const [loading, setLoading] = React.useState(true)
-	const [loadedConsents, setLoadedConsents] = React.useState<any>([])
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
 		clientApplicationId,
@@ -110,6 +109,7 @@ export function VoucherifySubscribe({
 		trackingId,
 		origin,
 	})
+	const [loadedConsents, setLoadedConsents] = React.useState<VoucherifySubscribeLoadedConsents>([])
 
 	const {
 		input,
@@ -129,9 +129,9 @@ export function VoucherifySubscribe({
 	}, [client])
 
 	React.useEffect(() => {
+		//Mock fetching data
 		setTimeout(() => {
 			console.log('Data fetched')
-			setLoading(false)
 			setLoadedConsents([
 				{
 					id: 'xxxx',
@@ -328,7 +328,7 @@ export function VoucherifySubscribe({
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
 
-			{loading ? (
+			{loadedConsents.length === 0 ? (
 				<div className="loader">Loading consents...</div>
 			) : (
 				<>

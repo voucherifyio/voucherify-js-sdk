@@ -1,34 +1,21 @@
-export interface VoucherifySubscribeInputs {
+import { VoucherifyWidgetCustomer, VoucherifyWidgetCustomerState } from './VoucherifyPublish'
+
+// This will be fixed
+export type VoucherifySubscribeLoadedConsents = any[]
+
+export type VoucherifySubscribeInputs = {
 	[index: string]: string
-	name: string
-	email: string
-	phone: string
-	line_1: string
-	line_2: string
-	postal_code: string
-	city: string
-	state: string
-	country: string
 	voucherifySubscribeStatus: string
 	voucherifySubscribe: string
-}
+} & VoucherifyWidgetCustomer
 
 export type ConsentsInput = Record<string, string | boolean>
 
-export interface VoucherifySubscribeInputsState {
+export type VoucherifySubscribeInputsState = {
 	[index: string]: boolean
-	name: boolean
-	phone: boolean
-	email: boolean
-	line_1: boolean
-	line_2: boolean
-	postal_code: boolean
-	city: boolean
-	state: boolean
-	country: boolean
 	voucherifySubscribeStatus: boolean
 	voucherifySubscribe: boolean
-}
+} & VoucherifyWidgetCustomerState
 
 export type NotDefinedPlaceholder = Pick<
 	VoucherifySubscribeInputs,
