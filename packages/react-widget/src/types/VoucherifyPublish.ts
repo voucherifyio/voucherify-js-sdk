@@ -1,4 +1,4 @@
-export interface VoucherifyPublishInputs {
+export interface VoucherifyWidgetCustomer {
 	[index: string]: string
 	name: string
 	email: string
@@ -9,12 +9,9 @@ export interface VoucherifyPublishInputs {
 	city: string
 	state: string
 	country: string
-	voucherifyPublishStatus: string
-	voucherifyTracking: string
-	voucherifyPublish: string
 }
 
-export interface VoucherifyPublishInputsState {
+export interface VoucherifyWidgetCustomerState {
 	[index: string]: boolean
 	name: boolean
 	phone: boolean
@@ -25,9 +22,18 @@ export interface VoucherifyPublishInputsState {
 	city: boolean
 	state: boolean
 	country: boolean
+}
+
+export type VoucherifyPublishInputs = {
+	voucherifyPublishStatus: string
+	voucherifyTracking: string
+	voucherifyPublish: string
+} & VoucherifyWidgetCustomer
+
+export type VoucherifyPublishInputsState = {
 	voucherifyPublishStatus: boolean
 	voucherifyPublish: boolean
-}
+} & VoucherifyWidgetCustomerState
 
 export type NotDefinedPlaceholder = Pick<
 	VoucherifyPublishInputs,
