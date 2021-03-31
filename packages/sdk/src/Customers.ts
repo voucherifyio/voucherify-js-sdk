@@ -73,7 +73,8 @@ class Customers {
 	 */
 	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
-		const customerWithoutId = omit<Record<string, string>, string>(customer, ['id'])
+
+		const customerWithoutId = omit(customer, ['id'])
 
 		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
 	}

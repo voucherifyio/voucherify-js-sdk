@@ -65,11 +65,11 @@ export interface CustomerObject {
 
 export interface CustomerRequest {
 	id?: string
+	source_id?: string
 	name?: string
 	email?: string
 	metadata?: Record<string, any>
 	description?: string
-	source_id?: string
 	address?: {
 		city?: string
 		state?: string
@@ -111,7 +111,9 @@ export type CustomersScrollParams = CustomersCommonListRequest
 export type CustomersScrollResponse = CustomersCommonListResponse
 export type CustomersScrollYield = CustomerObject
 
-export type CustomersUpdateParams = { id: string } | { source_id: string }
+type IdOrSourceId = { id: string } | { source_id: string }
+export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
+
 export type CustomersUpdateResponse = CustomerObject
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
