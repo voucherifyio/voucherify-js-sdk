@@ -1,7 +1,8 @@
 import * as T from './types/Customers'
 
-import type { RequestController } from './RequestController'
 import { encode, omit } from './helpers'
+
+import type { RequestController } from './RequestController'
 
 class Customers {
 	constructor(private client: RequestController) {}
@@ -70,12 +71,12 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 	 */
-    public update(customer: T.CustomersUpdateParams) {
+	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
 		const customerWithoutId = omit<Record<string, string>, string>(customer, ['id'])
 
 		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
-
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
 	 */
