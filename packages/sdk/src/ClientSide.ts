@@ -141,6 +141,12 @@ export class ClientSide {
 		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side
+	 */
+	public listConsents() {
+		return this.client.get<T.ClientSideConsentsListResponse>('/consents')
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client
 	 */
 	public updateConsents(idOrSourceId: string, consents: T.ClientSideCustomersUpdateConsentsBody) {
