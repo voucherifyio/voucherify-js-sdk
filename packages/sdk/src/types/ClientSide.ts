@@ -1,7 +1,7 @@
+import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
 import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
-import { CustomerRequest } from './Customers'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
 
@@ -9,6 +9,12 @@ type ClientSideItem = Pick<
 	OrdersItem,
 	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
 >
+
+export type ClientSideCustomersUpdateConsentsBody = CustomersUpdateConsentsBody
+
+export type ClientSideCustomersCreateParams = CustomersCreateBody
+
+export type ClientSideCustomersCreateResponse = CustomersCreateResponse
 
 export interface ClientSideValidateParams {
 	code?: string
