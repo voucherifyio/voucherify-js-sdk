@@ -1,13 +1,24 @@
 import * as React from 'react'
 
-import { ClientSidePublishPayload, ClientSidePublishResponse, VoucherifyClientSideOptions } from '@voucherify/sdk'
+import {
+	ClientSideCustomersCreateParams,
+	ClientSideCustomersCreateResponse,
+	VoucherifyClientSideOptions,
+} from '@voucherify/sdk'
 import { removeEmptyAttributes, splitLongKey, validateEmail, validatePhoneNumber } from './helpers'
 
 import { NotDefinedPlaceholder } from './types/VoucherifyPublish'
 import { VoucherifyLogo } from './VoucherifyLogo'
 import clsx from 'clsx'
 import { useVoucherifyClient } from './hooks/useVoucherifyClient'
-import { useVoucherifyPublishInputs } from './hooks/useVoucherifyPublishInputs'
+import { useVoucherifySubscribeInputs } from './hooks/useVoucherifySubscribeInputs'
+
+// const CUSTOMER_EXISTS =
+// 	"Your subscription to our list has been created some time ago. We've updated your profile details."
+// const NEW_CUSTOMER = 'Your subscription to our list has been confirmed. Thank you for subscribing!'
+// const UNCONFIRMED_CUSTOMER = 'Confirm your subscription to our list. Check your email for further instructions.'
+const ERROR_MESSAGE =
+	'We ran into a configuration error. Please try that again. If the error persists, please contact support.'
 
 interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
@@ -37,15 +48,11 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
 	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
 	 */
-	onPublished?: (response: ClientSidePublishResponse) => void
+	onSubscribed?: (response: any) => void
 	/**
 	 * a callback function invoked when there is an error
 	 */
 	onError?: (error: any) => void
-	/**
-	 * name of the campaign to which voucher will be published
-	 */
-	campaignName: string
 	/**
 	 * list of fields to be displayed on the widget
 	 */
@@ -63,12 +70,12 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	 */
 	consents: string[]
 	/**
-	 * a text displayed on the button (default: "Get Voucher")
+	 * a text displayed on the button (default: "Subscribe")
 	 */
 	textSubscribe?: string
 }
 
-export function VoucherifyPublish({
+export function VoucherifySubscribe({
 	apiUrl,
 	clientApplicationId,
 	clientSecretKey,
@@ -80,20 +87,11 @@ export function VoucherifyPublish({
 	classValidAnimation,
 	logoSrc,
 	logoAlt,
-	onPublished,
+	onSubscribed,
 	onError,
-	campaignName,
+	emailPlaceholder,
 	customerFields = [],
-	// customerNamePlaceholder,
-	// customerEmailPlaceholder,
-	// customerPhonePlaceholder,
-	// customerLine1Placeholder,
-	// customerLine2Placeholder,
-	// customerPostalCodePlaceholder,
-	// customerCityPlaceholder,
-	// customerStatePlaceholder,
-	// customerCountryPlaceholder,
-	textSubscribe = 'Get voucher',
+	textSubscribe = 'Subscribe',
 }: VoucherifySubscribeOptions) {
 	const classNameInvalid = classInvalid || 'voucherifyInvalid'
 	const classNameValid = classValid || 'voucherifyValid'
@@ -102,8 +100,9 @@ export function VoucherifyPublish({
 
 	const [allDisabled, setDisabled] = React.useState(false)
 	const [visible, setVisible] = React.useState(true)
-	const [runPublishOnce, setRunPublishOnce] = React.useState(false)
-
+	const [runSubscribeOnce, setRunSubscribeOnce] = React.useState(false)
+	const [loading, setLoading] = React.useState(true)
+	const [loadedConsents, setLoadedConsents] = React.useState<any>([])
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
 		clientApplicationId,
@@ -112,17 +111,46 @@ export function VoucherifyPublish({
 		origin,
 	})
 
-	const { input, inputStates, onInputChange, resetInputs, setInput, setInputState } = useVoucherifyPublishInputs()
+	const {
+		input,
+		inputStates,
+		consentsInput,
+		onConsentsInputChange,
+		onInputChange,
+		resetInputs,
+		setInput,
+		setInputState,
+		setConsentsInput,
+	} = useVoucherifySubscribeInputs()
 
 	React.useEffect(() => {
 		resetInputs()
 		setDisabled(false)
 	}, [client])
 
+	React.useEffect(() => {
+		setTimeout(() => {
+			console.log('Data fetched')
+			setLoading(false)
+			setLoadedConsents([
+				{
+					id: 'xxxx',
+					name: 'dddd',
+					description: 'ddd',
+				},
+				{
+					id: 'xxxx',
+					name: 'dddd',
+					description: 'ddd',
+				},
+			])
+		}, 2000)
+	}, [])
+
 	const classNames: any[] = Object.keys(input).map(key => {
 		let className: string
 
-		if (key === 'voucherifyPublishStatus' || key === 'voucherifyTracking' || key === 'voucherifyPublish') {
+		if (key === 'voucherifySubscribeStatus' || key === 'voucherifySubscribe') {
 			className = key
 		} else {
 			className = `voucherifyCustomer${splitLongKey(key)}`
@@ -130,7 +158,7 @@ export function VoucherifyPublish({
 
 		const classes = clsx([
 			className,
-			runPublishOnce ? (inputStates[key] ? '' : `${classNameInvalid} ${classNameInvalidAnimation}`) : '',
+			runSubscribeOnce ? (inputStates[key] ? '' : `${classNameInvalid} ${classNameInvalidAnimation}`) : '',
 		])
 
 		return {
@@ -180,26 +208,24 @@ export function VoucherifyPublish({
 			setSubmitting(true)
 			setInput(prev => ({
 				...prev,
-				voucherifyPublishStatus: '',
+				voucherifySubscribeStatus: '',
 				voucherifyTracking: '',
 			}))
 
-			setRunPublishOnce(true)
+			setRunSubscribeOnce(true)
 
-			const payload: ClientSidePublishPayload = {
-				customer: {
-					name: input.name,
-					phone: input.phone.replace(/[\r\n\t\f\s\v]/g, '').trim(),
-					email: input.email,
-					source_id: input.email,
-					address: {
-						line_1: input.line_1,
-						line_2: input.line_2,
-						postal_code: input.postal_code,
-						city: input.city,
-						state: input.state,
-						country: input.country,
-					},
+			const payload: ClientSideCustomersCreateParams = {
+				source_id: input.email,
+				name: input.name,
+				phone: input.phone.replace(/[\r\n\t\f\s\v]/g, '').trim(),
+				email: input.email,
+				address: {
+					line_1: input.line_1,
+					line_2: input.line_2,
+					postal_code: input.postal_code,
+					city: input.city,
+					state: input.state,
+					country: input.country,
 				},
 			}
 
@@ -232,8 +258,8 @@ export function VoucherifyPublish({
 					city: true,
 					state: true,
 					country: true,
-					voucherifyPublishStatus: true,
-					voucherifyPublish: true,
+					voucherifySubscribeStatus: true,
+					voucherifySubscribe: true,
 				},
 			)
 
@@ -246,10 +272,11 @@ export function VoucherifyPublish({
 
 			if (!validationFailed) {
 				client
-					.publish(campaignName, sanitizedPayload)
+					.createCustomer(sanitizedPayload)
 					.then(function (_response) {
-						const response: ClientSidePublishResponse = _response
+						const response: ClientSideCustomersCreateResponse = _response
 
+						// Check for errors
 						setInput(prev => ({
 							...prev,
 							name: '',
@@ -261,26 +288,31 @@ export function VoucherifyPublish({
 							city: '',
 							state: '',
 							country: '',
-							voucherifyTracking: response?.tracking_id || '',
-							voucherifyPublishStatus: response.voucher.code,
+							voucherifySubscribeStatus: 'Thank you for subscribing',
 						}))
 
+						setConsentsInput({})
+
 						setDisabled(true)
+
+						// Set Subscribe Message visible
 						setVisible(false)
 
 						setInputState(prev => ({
 							...prev,
-							voucherifyPublishStatus: true,
+							voucherifySubscribeStatus: true,
 						}))
 
-						if (typeof onPublished === 'function') onPublished(response)
+						if (typeof onSubscribed === 'function') onSubscribed(response)
 					})
 					.catch(err => {
+						setVisible(false)
 						console.error(err)
 						setInputState(prev => ({
 							...prev,
-							voucherifyPublish: false,
+							voucherifySubscribe: false,
 						}))
+						setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
 
 						if (typeof onError === 'function') onError(err)
 					})
@@ -289,70 +321,81 @@ export function VoucherifyPublish({
 				setSubmitting(false)
 			}
 		},
-		[input, onError, onPublished],
+		[input, onError, onSubscribed],
 	)
 
 	return (
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
 
-			{customerFields.some(val => val.name === 'name') &&
-				createInput('name', customerFields.find(field => field.name === 'name')?.placeholder)}
+			{loading ? (
+				<div className="loader">Loading consents...</div>
+			) : (
+				<>
+					{customerFields.some(val => val.name === 'name') &&
+						createInput('name', customerFields.find(field => field.name === 'name')?.placeholder)}
 
-			{customerFields.some(val => val.name === 'phone') && (
-				<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
-					{createInput('email', emailPlaceholder)}
-					{customerFields.some(val => val.name === 'phone') &&
-						createInput('phone', customerFields.find(field => field.name === 'phone')?.placeholder)}
-				</div>
+					<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
+						{createInput('email', emailPlaceholder)}
+						{customerFields.some(val => val.name === 'phone') &&
+							createInput('phone', customerFields.find(field => field.name === 'phone')?.placeholder)}
+					</div>
+
+					{customerFields.some(val => val.name === 'line_1') &&
+						createInput('line_1', customerFields.find(field => field.name === 'line_1')?.placeholder)}
+					{customerFields.some(val => val.name === 'line_2') &&
+						createInput('line_2', customerFields.find(field => field.name === 'line_2')?.placeholder)}
+
+					{customerFields.some(val => val.name === 'postal_code' || val.name === 'city') && (
+						<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
+							{customerFields.some(val => val.name === 'postal_code') &&
+								createInput('postal_code', customerFields.find(field => field.name === 'postal_code')?.placeholder)}
+							{customerFields.some(val => val.name === 'city') &&
+								createInput('city', customerFields.find(field => field.name === 'city')?.placeholder)}
+						</div>
+					)}
+
+					{customerFields.some(val => val.name === 'state' || val.name === 'country') && (
+						<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
+							{customerFields.some(val => val.name === 'state') &&
+								createInput('state', customerFields.find(field => field.name === 'state')?.placeholder)}
+							{customerFields.some(val => val.name === 'country') &&
+								createInput('country', customerFields.find(field => field.name === 'country')?.placeholder)}
+						</div>
+					)}
+
+					<input
+						type="text"
+						name="voucherifySubscribeStatus"
+						className={`voucherifySubscribeStatus ${classNameValid} ${classNameValidAnimation}`}
+						value={input['voucherifySubscribeStatus']}
+						style={{ display: !visible ? 'block' : 'none' }}
+					/>
+					{loadedConsents.map((consent: any) => (
+						<>
+							<label className="voucherifyCheckboxContainer" style={{ display: visible ? 'block' : 'none' }}>
+								{consent.description}
+								<input
+									type="checkbox"
+									id={consent.name}
+									name={consent.name}
+									onChange={onConsentsInputChange}
+									value={consentsInput[consent.name] === true ? 'on' : 'off'}
+								/>
+								<span className="voucherifyCheckmark"></span>
+							</label>
+						</>
+					))}
+					<button
+						className={classNames.find((cls: any) => cls.name === 'voucherifySubscribe').classes}
+						disabled={isSubmitting || allDisabled}
+						onClick={onSubmit}
+						style={{ display: visible ? 'block' : 'none' }}
+					>
+						<span className="voucherifySubscribeText">{textSubscribe}</span>
+					</button>
+				</>
 			)}
-
-			{customerFields.some(val => val.name === 'line_1') &&
-				createInput('line_1', customerFields.find(field => field.name === 'line_1')?.placeholder)}
-			{customerFields.some(val => val.name === 'line_2') &&
-				createInput('line_2', customerFields.find(field => field.name === 'line_2')?.placeholder)}
-
-			{customerFields.some(val => val.name === 'postal_code' || val.name === 'city') && (
-				<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
-					{customerFields.some(val => val.name === 'postal_code') &&
-						createInput('postal_code', customerFields.find(field => field.name === 'postal_code')?.placeholder)}
-					{customerFields.some(val => val.name === 'city') &&
-						createInput('city', customerFields.find(field => field.name === 'city')?.placeholder)}
-				</div>
-			)}
-
-			{customerFields.some(val => val.name === 'state' || val.name === 'country') && (
-				<div className="voucherifyRow" style={{ display: visible ? 'flex' : 'none' }}>
-					{customerFields.some(val => val.name === 'state') &&
-						createInput('state', customerFields.find(field => field.name === 'state')?.placeholder)}
-					{customerFields.some(val => val.name === 'country') &&
-						createInput('country', customerFields.find(field => field.name === 'country')?.placeholder)}
-				</div>
-			)}
-
-			<input
-				type="hidden"
-				name="voucherifyTracking"
-				value={input['voucherifyTracking']}
-				className="voucherifyTracking"
-			/>
-
-			<input
-				type="text"
-				name="voucherifyPublishStatus"
-				className={`voucherifyPublishStatus ${classNameValid} ${classNameValidAnimation}`}
-				value={input['voucherifyPublishStatus']}
-				style={{ display: !visible ? 'block' : 'none' }}
-			/>
-
-			<button
-				className={classNames.find((cls: any) => cls.name === 'voucherifyPublish').classes}
-				disabled={isSubmitting || allDisabled}
-				onClick={onSubmit}
-				style={{ display: visible ? 'block' : 'none' }}
-			>
-				<span className="VoucherifyPublishText">{textSubscribe}</span>
-			</button>
 		</div>
 	)
 }
