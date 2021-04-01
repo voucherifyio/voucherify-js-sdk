@@ -17,21 +17,27 @@ import { useVoucherifySubscribeInputs } from './hooks/useVoucherifySubscribeInpu
 // const CUSTOMER_EXISTS =
 // 	"Your subscription to our list has been created some time ago. We've updated your profile details."
 // const NEW_CUSTOMER = 'Your subscription to our list has been confirmed. Thank you for subscribing!'
-// const UNCONFIRMED_CUSTOMER = 'Confirm your subscription to our list. Check your email for further instructions.'
+const UNCONFIRMED_CUSTOMER = 'Confirm your subscription to our list. Check your email for further instructions.'
 const ERROR_MESSAGE =
 	'We ran into a configuration error. Please try that again. If the error persists, please contact support.'
 
 interface WidgetAndCustomerFields {
 	required: boolean
-	placeholder: string
+	placeholder?: string
 }
 type WidgetFields = {
 	name: 'name' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
 } & WidgetAndCustomerFields
 
 type FullWidgetFields = {
-	name: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
+	name?: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
+	id?: string
 } & WidgetAndCustomerFields
+
+interface Consents {
+	id: string
+	required: boolean
+}
 interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
 	 * CSS class applied to the input when entered code is invalid
@@ -66,6 +72,10 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	 */
 	onError?: (error: any) => void
 	/**
+	 * require customer to confirm subscription by email
+	 */
+	enableDoubleOptIn?: boolean
+	/**
 	 * list of fields to be displayed on the widget
 	 */
 	customerFields?: WidgetFields[]
@@ -76,12 +86,11 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
 	 * list of consents ids to be displayed on the widget
 	 */
-	consents: string[]
+	consents: Consents[]
 	/**
 	 * a text displayed on the button (default: "Subscribe")
 	 */
 	textSubscribe?: string
-
 	/**
 	 * a text displayed after successful subscription (default: "Thank you for subscribing")
 	 */
@@ -105,6 +114,7 @@ export function VoucherifySubscribe({
 	onError,
 	emailPlaceholder,
 	customerFields = [],
+	enableDoubleOptIn = false,
 	textSubscribe = 'Subscribe',
 	textSubscribeSuccess = 'Thank you for subscribing',
 }: VoucherifySubscribeOptions) {
@@ -128,6 +138,7 @@ export function VoucherifySubscribe({
 	const widgetFields: FullWidgetFields[] = [
 		...customerFields,
 		{ name: 'email', required: true, placeholder: emailPlaceholder },
+		...consents,
 	]
 
 	const { input, inputStates, onInputChange, resetInputs, setInput, setInputState } = useVoucherifySubscribeInputs()
@@ -137,12 +148,34 @@ export function VoucherifySubscribe({
 		setDisabled(false)
 	}, [client])
 
-	const onRender = React.useCallback(async function _onRender() {
-		const fetchedData = await client.listConsents()
-		const fetchedConsents = fetchedData.consents.data
-		const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2))
-		setLoadedConsents(filteredConsents)
-	}, [])
+	const onRender = React.useCallback(
+		async function _onRender() {
+			if (!enableDoubleOptIn) {
+				const fetchedData = await client.listConsents()
+				const fetchedConsents = fetchedData.consents.data
+				const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2.id))
+				setLoadedConsents(filteredConsents)
+
+				const inputCopy = input
+				const inputStatesCopy = inputStates
+
+				filteredConsents.forEach(consent => {
+					Object.assign(inputCopy, { [consent.id]: '' })
+					Object.assign(inputStatesCopy, { [consent.id]: true })
+				})
+
+				setInput(prev => ({
+					...prev,
+					...inputCopy,
+				}))
+				setInputState(prev => ({
+					...prev,
+					...inputStatesCopy,
+				}))
+			}
+		},
+		[enableDoubleOptIn],
+	)
 
 	React.useEffect(() => {
 		onRender()
@@ -234,7 +267,16 @@ export function VoucherifySubscribe({
 
 			const inputStatesAfterValidation = widgetFields.reduce(
 				(result, field) => {
-					if (field.required && input[field.name].trim() === '') {
+					if (
+						!enableDoubleOptIn &&
+						field.required &&
+						field?.id &&
+						(input[field.id] === 'off' || input[field.id].trim() === '')
+					) {
+						result[field.id] = false
+						return result
+					}
+					if (field.required && field?.name && input[field.name].trim() === '') {
 						result[field.name] = false
 						return result
 					}
@@ -246,21 +288,15 @@ export function VoucherifySubscribe({
 						result['email'] = validateEmail(input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
-					result[field.name] = true
+					if (field?.name) {
+						result[field.name] = true
+					} else if (field?.id) {
+						result[field.id] = true
+					}
 					return result
 				},
 				{
-					name: true,
-					email: true,
-					phone: true,
-					line_1: true,
-					line_2: true,
-					postal_code: true,
-					city: true,
-					state: true,
-					country: true,
-					voucherifySubscribeStatus: true,
-					voucherifySubscribe: true,
+					...inputStates,
 				},
 			)
 
@@ -272,9 +308,31 @@ export function VoucherifySubscribe({
 			const validationFailed = Object.values(inputStatesAfterValidation).some(val => !val)
 
 			if (!validationFailed) {
+				setInput({
+					name: '',
+					email: '',
+					phone: '',
+					line_1: '',
+					line_2: '',
+					postal_code: '',
+					city: '',
+					state: '',
+					country: '',
+					voucherifySubscribe: '',
+					voucherifySubscribeStatus: textSubscribeSuccess,
+				})
+
 				client
-					.createCustomer(sanitizedPayload)
+					.createCustomer(sanitizedPayload, { enableDoubleOptIn })
 					.then(function (_response: ClientSideCustomersCreateResponse) {
+						if (_response.object === 'unconfirmed_customer') {
+							setInput(prev => ({
+								...prev,
+								voucherifySubscribeStatus: UNCONFIRMED_CUSTOMER,
+							}))
+							return
+						}
+
 						const createdCustomerId = _response.id
 						const {
 							name,
@@ -304,20 +362,6 @@ export function VoucherifySubscribe({
 						return client.updateConsents(createdCustomerId, consentsCopy)
 					})
 					.then(function (_response) {
-						setInput({
-							name: '',
-							email: '',
-							phone: '',
-							line_1: '',
-							line_2: '',
-							postal_code: '',
-							city: '',
-							state: '',
-							country: '',
-							voucherifySubscribe: '',
-							voucherifySubscribeStatus: textSubscribeSuccess,
-						})
-
 						setDisabled(true)
 
 						// Set Subscribe Message visible
@@ -353,7 +397,7 @@ export function VoucherifySubscribe({
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
 
-			{loadedConsents.length === 0 ? (
+			{!enableDoubleOptIn && loadedConsents.length === 0 ? (
 				<div className="loader">Loading consents...</div>
 			) : (
 				<>
@@ -389,28 +433,35 @@ export function VoucherifySubscribe({
 						</div>
 					)}
 
-					<input
-						type="text"
-						name="voucherifySubscribeStatus"
+					<div
 						className={`voucherifySubscribeStatus ${classNameValid} ${classNameValidAnimation}`}
-						value={input['voucherifySubscribeStatus']}
 						style={{ display: !visible ? 'block' : 'none' }}
-					/>
-					{loadedConsents.map((consent: any) => (
-						<>
-							<label className="voucherifyCheckboxContainer" style={{ display: visible ? 'block' : 'none' }}>
-								{consent.description}
-								<input
-									type="checkbox"
-									id={consent.name}
-									name={consent.id}
-									onChange={onInputChange}
-									value={input[consent.id] === 'on' ? 'off' : 'on'}
-								/>
-								<span className="voucherifyCheckmark"></span>
-							</label>
-						</>
-					))}
+					>
+						<p>{input['voucherifySubscribeStatus']}</p>
+					</div>
+					{!enableDoubleOptIn &&
+						loadedConsents.map((consent: any) => (
+							<>
+								<label className="voucherifyCheckboxContainer" style={{ display: visible ? 'block' : 'none' }}>
+									{consent.description}
+									<input
+										type="checkbox"
+										id={consent.name}
+										name={consent.id}
+										onChange={onInputChange}
+										value={input[consent.id] === 'on' ? 'on' : 'off'}
+									/>
+									{classNames.some(val => val.name === consent.id) && (
+										<span
+											// className="voucherifyCheckmark"
+											className={`voucherifyCheckmark ${
+												classNames.find((cls: any) => cls.name === consent.id).classes
+											}`}
+										></span>
+									)}
+								</label>
+							</>
+						))}
 					<button
 						className={classNames.find((cls: any) => cls.name === 'voucherifySubscribe').classes}
 						disabled={isSubmitting || allDisabled}

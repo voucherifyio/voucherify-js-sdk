@@ -39,7 +39,14 @@ export function useVoucherifySubscribeInputs() {
 
 	const onInputChange = useCallback(function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const name = event.target.name as keyof VoucherifySubscribeInputs
-		setInput(prev => ({ ...prev, [name]: event.target.value }))
+
+		if (event.target.value === 'off') {
+			setInput(prev => ({ ...prev, [name]: 'on' }))
+		} else if (event.target.value === 'on') {
+			setInput(prev => ({ ...prev, [name]: 'off' }))
+		} else {
+			setInput(prev => ({ ...prev, [name]: event.target.value }))
+		}
 	}, [])
 
 	const resetInputs = useCallback(function reset() {
