@@ -2,6 +2,7 @@ import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, Customer
 import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
+import { ConsentsListResponse } from './Consents'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
 
@@ -153,3 +154,5 @@ export interface ClientSideRedeemWidgetPayload {
 	}
 }
 export type ClientSideTrackCustomer = CustomerRequest
+
+export type ClientSideConsentsListResponse = ConsentsListResponse

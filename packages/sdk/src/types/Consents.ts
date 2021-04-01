@@ -1,4 +1,4 @@
-interface ConstentGroup {
+interface ConsentGroup {
 	id: string
 	name: string
 	description: string
@@ -23,7 +23,7 @@ export interface ConsentsListResponse {
 		object: 'list'
 		total: number
 		data_ref: 'data'
-		data: ConstentGroup[]
+		data: ConsentGroup[]
 	}
 	consents: {
 		object: 'list'
