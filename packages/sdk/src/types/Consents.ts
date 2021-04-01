@@ -8,7 +8,7 @@ interface ConsentGroup {
 	object: 'consent_group'
 }
 
-interface Consent {
+export interface Consent {
 	id: string
 	name: string
 	description: string

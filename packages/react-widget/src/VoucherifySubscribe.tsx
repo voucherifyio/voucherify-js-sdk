@@ -21,6 +21,17 @@ import { useVoucherifySubscribeInputs } from './hooks/useVoucherifySubscribeInpu
 const ERROR_MESSAGE =
 	'We ran into a configuration error. Please try that again. If the error persists, please contact support.'
 
+interface WidgetAndCustomerFields {
+	required: boolean
+	placeholder: string
+}
+type WidgetFields = {
+	name: 'name' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
+} & WidgetAndCustomerFields
+
+type FullWidgetFields = {
+	name: 'name' | 'email' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
+} & WidgetAndCustomerFields
 interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
 	 * CSS class applied to the input when entered code is invalid
@@ -57,11 +68,7 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	/**
 	 * list of fields to be displayed on the widget
 	 */
-	customerFields?: {
-		name: 'name' | 'phone' | 'line_1' | 'line_2' | 'city' | 'postal_code' | 'state' | 'country'
-		required: boolean
-		placeholder: string
-	}[]
+	customerFields?: WidgetFields[]
 	/**
 	 * a placeholder text to displayed on required 'email' field
 	 */
@@ -74,6 +81,11 @@ interface VoucherifySubscribeOptions extends VoucherifyClientSideOptions {
 	 * a text displayed on the button (default: "Subscribe")
 	 */
 	textSubscribe?: string
+
+	/**
+	 * a text displayed after successful subscription (default: "Thank you for subscribing")
+	 */
+	textSubscribeSuccess?: string
 }
 
 export function VoucherifySubscribe({
@@ -88,11 +100,13 @@ export function VoucherifySubscribe({
 	classValidAnimation,
 	logoSrc,
 	logoAlt,
+	consents,
 	onSubscribed,
 	onError,
 	emailPlaceholder,
 	customerFields = [],
 	textSubscribe = 'Subscribe',
+	textSubscribeSuccess = 'Thank you for subscribing',
 }: VoucherifySubscribeOptions) {
 	const classNameInvalid = classInvalid || 'voucherifyInvalid'
 	const classNameValid = classValid || 'voucherifyValid'
@@ -111,41 +125,28 @@ export function VoucherifySubscribe({
 	})
 	const [loadedConsents, setLoadedConsents] = React.useState<VoucherifySubscribeLoadedConsents>([])
 
-	const {
-		input,
-		inputStates,
-		consentsInput,
-		onConsentsInputChange,
-		onInputChange,
-		resetInputs,
-		setInput,
-		setInputState,
-		setConsentsInput,
-	} = useVoucherifySubscribeInputs()
+	const widgetFields: FullWidgetFields[] = [
+		...customerFields,
+		{ name: 'email', required: true, placeholder: emailPlaceholder },
+	]
+
+	const { input, inputStates, onInputChange, resetInputs, setInput, setInputState } = useVoucherifySubscribeInputs()
 
 	React.useEffect(() => {
 		resetInputs()
 		setDisabled(false)
 	}, [client])
 
-	React.useEffect(() => {
-		//Mock fetching data
-		setTimeout(() => {
-			console.log('Data fetched')
-			setLoadedConsents([
-				{
-					id: 'xxxx',
-					name: 'dddd',
-					description: 'ddd',
-				},
-				{
-					id: 'xxxx',
-					name: 'dddd',
-					description: 'ddd',
-				},
-			])
-		}, 2000)
+	const onRender = React.useCallback(async function _onRender() {
+		const fetchedData = await client.listConsents()
+		const fetchedConsents = fetchedData.consents.data
+		const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2))
+		setLoadedConsents(filteredConsents)
 	}, [])
+
+	React.useEffect(() => {
+		onRender()
+	}, [onRender])
 
 	const classNames: any[] = Object.keys(input).map(key => {
 		let className: string
@@ -206,6 +207,7 @@ export function VoucherifySubscribe({
 	const onSubmit = React.useCallback(
 		function onSubmit(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 			setSubmitting(true)
+
 			setInput(prev => ({
 				...prev,
 				voucherifySubscribeStatus: '',
@@ -231,7 +233,7 @@ export function VoucherifySubscribe({
 
 			const sanitizedPayload = removeEmptyAttributes(payload)
 
-			const inputStatesAfterValidation = customerFields.reduce(
+			const inputStatesAfterValidation = widgetFields.reduce(
 				(result, field) => {
 					if (field.required && input[field.name].trim() === '') {
 						result[field.name] = false
@@ -241,7 +243,7 @@ export function VoucherifySubscribe({
 						result['phone'] = validatePhoneNumber(input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
-					if (input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
+					if (field.name === 'email' && input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
 						result['email'] = validateEmail(input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
@@ -273,12 +275,37 @@ export function VoucherifySubscribe({
 			if (!validationFailed) {
 				client
 					.createCustomer(sanitizedPayload)
-					.then(function (_response) {
-						const response: ClientSideCustomersCreateResponse = _response
+					.then(function (_response: ClientSideCustomersCreateResponse) {
+						const createdCustomerId = _response.id
+						const {
+							name,
+							email,
+							phone,
+							line_1,
+							line_2,
+							postal_code,
+							city,
+							state,
+							country,
+							voucherifySubscribeStatus,
+							voucherifySubscribe,
+							...consents
+						} = input
 
-						// Check for errors
-						setInput(prev => ({
-							...prev,
+						const consentsCopy: any = JSON.parse(JSON.stringify(consents))
+
+						Object.keys(consentsCopy).forEach(function (key) {
+							if (consentsCopy[key] === 'on') {
+								consentsCopy[key] = true
+							} else {
+								consentsCopy[key] = false
+							}
+						})
+
+						return client.updateConsents(createdCustomerId, consentsCopy)
+					})
+					.then(function (_response) {
+						setInput({
 							name: '',
 							email: '',
 							phone: '',
@@ -288,10 +315,9 @@ export function VoucherifySubscribe({
 							city: '',
 							state: '',
 							country: '',
-							voucherifySubscribeStatus: 'Thank you for subscribing',
-						}))
-
-						setConsentsInput({})
+							voucherifySubscribe: '',
+							voucherifySubscribeStatus: textSubscribeSuccess,
+						})
 
 						setDisabled(true)
 
@@ -303,7 +329,7 @@ export function VoucherifySubscribe({
 							voucherifySubscribeStatus: true,
 						}))
 
-						if (typeof onSubscribed === 'function') onSubscribed(response)
+						if (typeof onSubscribed === 'function') onSubscribed(_response)
 					})
 					.catch(err => {
 						setVisible(false)
@@ -378,9 +404,9 @@ export function VoucherifySubscribe({
 								<input
 									type="checkbox"
 									id={consent.name}
-									name={consent.name}
-									onChange={onConsentsInputChange}
-									value={consentsInput[consent.name] === true ? 'on' : 'off'}
+									name={consent.id}
+									onChange={onInputChange}
+									value={input[consent.id] === 'on' ? 'off' : 'on'}
 								/>
 								<span className="voucherifyCheckmark"></span>
 							</label>

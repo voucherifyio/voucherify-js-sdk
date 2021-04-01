@@ -1,21 +1,20 @@
 import { VoucherifyWidgetCustomer, VoucherifyWidgetCustomerState } from './VoucherifyPublish'
 
-// This will be fixed
-export type VoucherifySubscribeLoadedConsents = any[]
+import { Consent } from '@voucherify/sdk'
+
+export type VoucherifySubscribeLoadedConsents = Consent[]
 
 export type VoucherifySubscribeInputs = {
-	[index: string]: string
 	voucherifySubscribeStatus: string
 	voucherifySubscribe: string
-} & VoucherifyWidgetCustomer
-
-export type ConsentsInput = Record<string, string | boolean>
+} & VoucherifyWidgetCustomer &
+	Record<string, string>
 
 export type VoucherifySubscribeInputsState = {
-	[index: string]: boolean
 	voucherifySubscribeStatus: boolean
 	voucherifySubscribe: boolean
-} & VoucherifyWidgetCustomerState
+} & VoucherifyWidgetCustomerState &
+	Record<string, boolean>
 
 export type NotDefinedPlaceholder = Pick<
 	VoucherifySubscribeInputs,
