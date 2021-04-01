@@ -137,8 +137,9 @@ export class ClientSide {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
 	 */
-	public createCustomer(customer: T.ClientSideCustomersCreateParams) {
-		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer)
+	public createCustomer(customer: T.ClientSideCustomersCreateParams, options: T.ClientSideCustomersCreateOptions = {}) {
+		console.log(options)
+		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer, options)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side
