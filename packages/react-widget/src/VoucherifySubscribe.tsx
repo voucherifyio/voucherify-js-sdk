@@ -207,7 +207,6 @@ export function VoucherifySubscribe({
 	const onSubmit = React.useCallback(
 		function onSubmit(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 			setSubmitting(true)
-
 			setInput(prev => ({
 				...prev,
 				voucherifySubscribeStatus: '',
