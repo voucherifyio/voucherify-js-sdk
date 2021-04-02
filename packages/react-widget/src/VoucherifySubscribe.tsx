@@ -126,6 +126,7 @@ export function VoucherifySubscribe({
 	const [allDisabled, setDisabled] = React.useState(false)
 	const [visible, setVisible] = React.useState(true)
 	const [runSubscribeOnce, setRunSubscribeOnce] = React.useState(false)
+	const [consentsError, setConsentsError] = React.useState(false)
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
 		clientApplicationId,
@@ -149,29 +150,53 @@ export function VoucherifySubscribe({
 	}, [client])
 
 	const onRender = React.useCallback(
-		async function _onRender() {
-			if (!enableDoubleOptIn) {
-				const fetchedData = await client.listConsents()
-				const fetchedConsents = fetchedData.consents.data
-				const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2.id))
-				setLoadedConsents(filteredConsents)
+		function _onRender() {
+			if (!enableDoubleOptIn && consents !== [] && consents !== undefined) {
+				client
+					.listConsents()
+					.then(fetchedData => {
+						const fetchedConsents = fetchedData.consents.data
+						const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2.id))
+						if (filteredConsents.length === 0 || filteredConsents.length !== consents.length) {
+							setInputState(prev => ({
+								...prev,
+								voucherifySubscribeStatus: true,
+							}))
+							setConsentsError(true)
+							setVisible(false)
 
-				const inputCopy = input
-				const inputStatesCopy = inputStates
+							setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
+						} else {
+							const inputCopy = input
+							const inputStatesCopy = inputStates
 
-				filteredConsents.forEach(consent => {
-					Object.assign(inputCopy, { [consent.id]: '' })
-					Object.assign(inputStatesCopy, { [consent.id]: true })
-				})
+							filteredConsents.forEach(consent => {
+								Object.assign(inputCopy, { [consent.id]: '' })
+								Object.assign(inputStatesCopy, { [consent.id]: true })
+							})
 
-				setInput(prev => ({
-					...prev,
-					...inputCopy,
-				}))
-				setInputState(prev => ({
-					...prev,
-					...inputStatesCopy,
-				}))
+							setInput(prev => ({
+								...prev,
+								...inputCopy,
+							}))
+							setInputState(prev => ({
+								...prev,
+								...inputStatesCopy,
+							}))
+							setLoadedConsents(filteredConsents)
+						}
+					})
+					.catch(err => {
+						setVisible(false)
+						console.error(err)
+						setInputState(prev => ({
+							...prev,
+							voucherifySubscribe: false,
+						}))
+						setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
+
+						if (typeof onError === 'function') onError(err)
+					})
 			}
 		},
 		[enableDoubleOptIn],
@@ -243,7 +268,6 @@ export function VoucherifySubscribe({
 			setInput(prev => ({
 				...prev,
 				voucherifySubscribeStatus: '',
-				voucherifyTracking: '',
 			}))
 
 			setRunSubscribeOnce(true)
@@ -269,22 +293,22 @@ export function VoucherifySubscribe({
 				(result, field) => {
 					if (
 						!enableDoubleOptIn &&
-						field.required &&
+						field?.required &&
 						field?.id &&
 						(input[field.id] === 'off' || input[field.id].trim() === '')
 					) {
 						result[field.id] = false
 						return result
 					}
-					if (field.required && field?.name && input[field.name].trim() === '') {
+					if (field?.required && field?.name && input[field.name].trim() === '') {
 						result[field.name] = false
 						return result
 					}
-					if (field.name === 'phone' && input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
+					if (field?.name === 'phone' && input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
 						result['phone'] = validatePhoneNumber(input['phone'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
-					if (field.name === 'email' && input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
+					if (field?.name === 'email' && input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim() !== '') {
 						result['email'] = validateEmail(input['email'].replace(/[\r\n\t\f\s\v]/g, '').trim())
 						return result
 					}
@@ -346,6 +370,7 @@ export function VoucherifySubscribe({
 							country,
 							voucherifySubscribeStatus,
 							voucherifySubscribe,
+							voucherifyTracking,
 							...consents
 						} = input
 
@@ -392,12 +417,11 @@ export function VoucherifySubscribe({
 		},
 		[input, onError, onSubscribed],
 	)
-
 	return (
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
 
-			{!enableDoubleOptIn && loadedConsents.length === 0 ? (
+			{!consentsError && !enableDoubleOptIn && loadedConsents.length === 0 ? (
 				<div className="loader">Loading consents...</div>
 			) : (
 				<>
@@ -434,7 +458,11 @@ export function VoucherifySubscribe({
 					)}
 
 					<div
-						className={`voucherifySubscribeStatus ${classNameValid} ${classNameValidAnimation}`}
+						className={
+							consentsError
+								? `voucherifySubscribeStatus ${classNameInvalid} ${classNameInvalidAnimation}`
+								: `voucherifySubscribeStatus ${classNameValid} ${classNameValidAnimation}`
+						}
 						style={{ display: !visible ? 'block' : 'none' }}
 					>
 						<p>{input['voucherifySubscribeStatus']}</p>

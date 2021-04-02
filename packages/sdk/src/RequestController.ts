@@ -53,9 +53,6 @@ export class RequestController {
 		return response.data
 	}
 	public async post<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
-		// check params
-		console.log(params)
-
 		let response
 		if (params?.enableDoubleOptIn) {
 			response = await this.request.post<T>(path, body, { params, headers: { 'X-Voucherify-Double-Opt-In': true } })
