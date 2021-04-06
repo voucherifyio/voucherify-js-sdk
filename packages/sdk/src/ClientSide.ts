@@ -138,7 +138,12 @@ export class ClientSide {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
 	 */
 	public createCustomer(customer: T.ClientSideCustomersCreateParams, options: T.ClientSideCustomersCreateOptions = {}) {
-		return this.client.post<T.ClientSideCustomersCreateResponse>('/customers', customer, options)
+		return this.client.post<T.ClientSideCustomersCreateResponse>(
+			'/customers',
+			customer,
+			options,
+			options?.enableDoubleOptIn ? { 'X-Voucherify-Double-Opt-In': true } : {},
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side

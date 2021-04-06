@@ -52,14 +52,13 @@ export class RequestController {
 		})
 		return response.data
 	}
-	public async post<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
-		let response
-		if (params?.enableDoubleOptIn) {
-			response = await this.request.post<T>(path, body, { params, headers: { 'X-Voucherify-Double-Opt-In': true } })
-		} else {
-			response = await this.request.post<T>(path, body, { params })
-		}
-
+	public async post<T>(
+		path: string,
+		body: Record<string, any>,
+		params?: Record<string, any>,
+		headers?: Record<string, any>,
+	): Promise<T> {
+		const response = await this.request.post<T>(path, body, { params, headers })
 		return response.data
 	}
 	public async put<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {

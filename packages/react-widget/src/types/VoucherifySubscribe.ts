@@ -8,7 +8,7 @@ export type VoucherifySubscribeInputs = {
 	voucherifySubscribeStatus: string
 	voucherifySubscribe: string
 } & VoucherifyWidgetCustomer &
-	Record<string, string>
+	Record<any, any>
 
 export type VoucherifySubscribeInputsState = {
 	voucherifySubscribeStatus: boolean
