@@ -156,7 +156,7 @@ export function VoucherifySubscribe({
 					.listConsents()
 					.then(fetchedData => {
 						const fetchedConsents = fetchedData.consents.data
-						const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2.id))
+						const filteredConsents = fetchedConsents.filter(o1 => consents.some(o2 => o1.id === o2?.id))
 						if (filteredConsents.length === 0 || filteredConsents.length !== consents.length) {
 							setInputState(prev => ({
 								...prev,
@@ -197,9 +197,18 @@ export function VoucherifySubscribe({
 
 						if (typeof onError === 'function') onError(err)
 					})
+			} else if (!enableDoubleOptIn && consents === undefined) {
+				setInputState(prev => ({
+					...prev,
+					voucherifySubscribeStatus: true,
+				}))
+				setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
+
+				setConsentsError(true)
+				setVisible(false)
 			}
 		},
-		[enableDoubleOptIn],
+		[enableDoubleOptIn, consentsError],
 	)
 
 	React.useEffect(() => {
