@@ -63,6 +63,9 @@ export interface CustomerObject {
 	object: 'customer'
 }
 
+export type CustomerUnconfirmed = Pick<CustomerObject, 'summary' | 'email' | 'loyalty'> & {
+	object: 'unconfirmed_customer'
+}
 export interface CustomerRequest {
 	id?: string
 	source_id?: string
@@ -100,9 +103,9 @@ export interface CustomersCommonListResponse {
 }
 
 export type CustomersCreateBody = CustomerRequest
-export type CustomersCreateResponse = CustomerObject
+export type CustomersCreateResponse = CustomerObject | CustomerUnconfirmed
 
-export type CustomersGetResponse = CustomerObject
+export type CustomersGetResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersListParams = CustomersCommonListRequest
 export type CustomersListResponse = CustomersCommonListResponse
@@ -114,6 +117,6 @@ export type CustomersScrollYield = CustomerObject
 type IdOrSourceId = { id: string } | { source_id: string }
 export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
-export type CustomersUpdateResponse = CustomerObject
+export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>

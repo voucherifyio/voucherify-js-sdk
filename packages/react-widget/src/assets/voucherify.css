@@ -1,4 +1,5 @@
 div.voucherifyContainer {
+	font-family: Arial, Helvetica, sans-serif;
 	position: relative;
 	display: block;
 
@@ -101,7 +102,8 @@ div.voucherifyContainer input.voucherifyCustomerPostalCode,
 div.voucherifyContainer input.voucherifyCustomerCity,
 div.voucherifyContainer input.voucherifyCustomerState,
 div.voucherifyContainer input.voucherifyCustomerCountry,
-div.voucherifyContainer input.voucherifyPublishStatus {
+div.voucherifyContainer input.voucherifyPublishStatus,
+div.voucherifyContainer div.voucherifySubscribeStatus {
 	display: block;
 	box-sizing: border-box;
 	color: #444444;
@@ -122,9 +124,13 @@ div.voucherifyContainer input.voucherifyPublishStatus {
 	outline: none;
 }
 
+div.voucherifyContainer div.voucherifySubscribeStatus {
+	height: auto;
+}
 div.voucherifyContainer button.voucherifyRedeem,
 div.voucherifyContainer button.voucherifyValidate,
-div.voucherifyContainer button.voucherifyPublish {
+div.voucherifyContainer button.voucherifyPublish,
+div.voucherifyContainer button.voucherifySubscribe {
 	display: block;
 	margin: 1.5em auto 1.5em auto;
 	border: none;
@@ -152,7 +158,9 @@ div.voucherifyContainer input.voucherifyCustomerPostalCode.voucherifyInvalid,
 div.voucherifyContainer input.voucherifyCustomerCity.voucherifyInvalid,
 div.voucherifyContainer input.voucherifyCustomerState.voucherifyInvalid,
 div.voucherifyContainer input.voucherifyCustomerCountry.voucherifyInvalid,
-div.voucherifyContainer button.voucherifyValidate.voucherifyInvalid {
+div.voucherifyContainer button.voucherifyValidate.voucherifyInvalid,
+div.voucherifyContainer div.voucherifySubscribeStatus.voucherifyInvalid,
+div.voucherifyContainer span.voucherifyCheckmark.voucherifyInvalid {
 	background-color: #f8dffe;
 	border: 1px solid #ebd7f4;
 }
@@ -170,6 +178,8 @@ div.voucherifyContainer input.voucherifyCustomerState.voucherifyValid,
 div.voucherifyContainer input.voucherifyCustomerCountry.voucherifyValid,
 div.voucherifyContainer input.voucherifyPublishStatus.voucherifyValid,
 div.voucherifyContainer button.voucherifyPublish.voucherifyValid,
+div.voucherifyContainer div.voucherifySubscribeStatus.voucherifyValid,
+div.voucherifyContainer button.voucherifySubscribe.voucherifyValid,
 div.voucherifyContainer button.voucherifyValidate.voucherifyValid {
 	border: 1px solid #08ffb9;
 	background-color: #08ffb9;
@@ -194,26 +204,164 @@ div.voucherifyContainer .voucherifyRow > input:only-child {
 }
 
 div.voucherifyContainer button.voucherifyValidate:not(.voucherifyInvalid):hover,
-div.voucherifyContainer button.voucherifyPublish:not(.voucherifyInvalid):hover {
+div.voucherifyContainer button.voucherifyPublish:not(.voucherifyInvalid):hover,
+div.voucherifyContainer button.voucherifySubscribe:not(.voucherifyInvalid):hover {
 	background-color: rgba(8, 255, 185, 0.8);
 }
 
 div.voucherifyContainer button.voucherifyValidate:disabled,
-div.voucherifyContainer button.voucherifyPublish:disabled {
+div.voucherifyContainer button.voucherifyPublish:disabled,
+div.voucherifyContainer button.voucherifySubscribe:disabled {
 	background-color: #e5e5e5;
 	color: #959595;
 	cursor: default;
 }
 
-div.voucherifyContainer button.voucherifyPublish.voucherifyValid {
+div.voucherifyContainer button.voucherifyPublish.voucherifyValid,
+div.voucherifyContainer button.voucherifySubscribe.voucherifyValid {
 	background-color: #08ffb9;
 	color: rgba(63, 49, 49, 0.8);
 	font-weight: bold;
 }
 
 div.voucherifyContainer button.voucherifyPublish.voucherifyInvalid,
+div.voucherifyContainer button.voucherifySubscribe.voucherifyInvalid,
 div.voucherifyContainer button.voucherifyRedeem.voucherifyInvalid {
 	background-color: #f8dffe;
+}
+/****
+* From Single Element CSS Spinners: https://projects.lukehaas.me/css-loaders/
+****/
+
+.loader {
+	font-size: 10px;
+	margin: 50px auto;
+	text-indent: -9999em;
+	width: 11em;
+	height: 11em;
+	border-radius: 50%;
+	background: #08ffb9;
+	background: -moz-linear-gradient(left, #08ffb9 10%, rgba(255, 255, 255, 0) 42%);
+	background: -webkit-linear-gradient(left, #08ffb9 10%, rgba(255, 255, 255, 0) 42%);
+	background: -o-linear-gradient(left, #08ffb9 10%, rgba(255, 255, 255, 0) 42%);
+	background: -ms-linear-gradient(left, #08ffb9 10%, rgba(255, 255, 255, 0) 42%);
+	background: linear-gradient(to right, #08ffb9 10%, rgba(255, 255, 255, 0) 42%);
+	position: relative;
+	-webkit-animation: load3 1.4s infinite linear;
+	animation: load3 1.4s infinite linear;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.loader:before {
+	width: 50%;
+	height: 50%;
+	background: #08ffb9;
+	border-radius: 100% 0 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+}
+.loader:after {
+	background: white;
+	width: 75%;
+	height: 75%;
+	border-radius: 50%;
+	content: '';
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.voucherifyCheckboxContainer {
+	display: block;
+	color: #444444;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.voucherifyCheckboxContainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.voucherifyCheckmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: white;
+}
+
+/* On mouse-over, add a grey background color */
+.voucherifyCheckboxContainer:hover input ~ .voucherifyCheckmark {
+	background-color: #ccc;
+}
+
+.voucherifyCheckboxContainer input:checked ~ .voucherifyCheckmark {
+	background-color: #08ffb9;
+}
+
+/* Create the voucherifyCheckmark/indicator (hidden when not checked) */
+.voucherifyCheckmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+/* Show the voucherifyCheckmark when checked */
+.voucherifyCheckboxContainer input:checked ~ .voucherifyCheckmark:after {
+	display: block;
+}
+
+/* Style the voucherifyCheckmark/indicator */
+.voucherifyCheckboxContainer .voucherifyCheckmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+@-webkit-keyframes load3 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes load3 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 /****
