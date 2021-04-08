@@ -37,10 +37,10 @@
 	},
 	"dependencies": {
 		"axios": "0.21.1",
-		"qs": "^6.9.6"
+		"qs": "6.9.6"
 	},
 	"devDependencies": {
-		"@types/qs": "^6.9.5"
+		"@types/qs": "6.9.6"
 	},
 	"publishConfig": {
 		"access": "public"
