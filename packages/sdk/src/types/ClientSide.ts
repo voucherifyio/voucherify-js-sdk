@@ -15,10 +15,6 @@ export type ClientSideCustomersUpdateConsentsBody = CustomersUpdateConsentsBody
 
 export type ClientSideCustomersCreateParams = CustomersCreateBody
 
-export interface ClientSideCustomersCreateOptions {
-	enableDoubleOptIn?: boolean
-}
-
 export type ClientSideCustomersCreateResponse = CustomersCreateResponse
 
 export interface ClientSideValidateParams {

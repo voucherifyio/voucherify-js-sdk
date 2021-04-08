@@ -328,7 +328,7 @@ export function VoucherifySubscribe({
 
 			if (!validationFailed) {
 				client
-					.createCustomer(sanitizedPayload, { enableDoubleOptIn })
+					.createCustomer(sanitizedPayload, enableDoubleOptIn)
 					.then(function (_response: ClientSideCustomersCreateResponse) {
 						if (_response.object === 'unconfirmed_customer') {
 							setInput(prev => ({
