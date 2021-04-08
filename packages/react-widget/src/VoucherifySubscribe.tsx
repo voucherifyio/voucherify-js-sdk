@@ -118,6 +118,7 @@ export function VoucherifySubscribe({
 	const [visible, setVisible] = React.useState(true)
 	const [runSubscribeOnce, setRunSubscribeOnce] = React.useState(false)
 	const [consentsError, setConsentsError] = React.useState(false)
+	const [loading, setLoading] = React.useState(true)
 	const [client, isSubmitting, setSubmitting] = useVoucherifyClient({
 		apiUrl,
 		clientApplicationId,
@@ -155,7 +156,6 @@ export function VoucherifySubscribe({
 							}))
 							setConsentsError(true)
 							setVisible(false)
-
 							setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
 						} else {
 							const foundConsents: any = {}
@@ -176,8 +176,10 @@ export function VoucherifySubscribe({
 							}))
 							setLoadedConsents(filteredConsents)
 						}
+						setLoading(false)
 					})
 					.catch(err => {
+						setLoading(false)
 						setVisible(false)
 						console.error(err)
 						setInputState(prev => ({
@@ -188,15 +190,8 @@ export function VoucherifySubscribe({
 
 						if (typeof onError === 'function') onError(err)
 					})
-			} else if (!enableDoubleOptIn && consents === undefined) {
-				setInputState(prev => ({
-					...prev,
-					voucherifySubscribeStatus: true,
-				}))
-				setInput(prev => ({ ...prev, voucherifySubscribeStatus: ERROR_MESSAGE }))
-
-				setConsentsError(true)
-				setVisible(false)
+			} else {
+				setLoading(false)
 			}
 		},
 		[enableDoubleOptIn, consentsError],
@@ -348,28 +343,31 @@ export function VoucherifySubscribe({
 							voucherifySubscribeStatus: textSubscribeSuccess,
 						}))
 
-						const createdCustomerId = _response.id
-						const {
-							name,
-							email,
-							phone,
-							line_1,
-							line_2,
-							postal_code,
-							city,
-							state,
-							country,
-							voucherifySubscribeStatus,
-							voucherifySubscribe,
-							voucherifyTracking,
-							...consents
-						} = input
+						if (loadedConsents.length !== 0) {
+							const createdCustomerId = _response.id
+							const {
+								name,
+								email,
+								phone,
+								line_1,
+								line_2,
+								postal_code,
+								city,
+								state,
+								country,
+								voucherifySubscribeStatus,
+								voucherifySubscribe,
+								voucherifyTracking,
+								...consents
+							} = input
 
-						Object.keys(consents).forEach(function (key) {
-							consents[key] = consents[key] === 'on'
-						})
+							Object.keys(consents).forEach(function (key) {
+								consents[key] = consents[key] === 'on'
+							})
 
-						return client.updateConsents(createdCustomerId, consents)
+							return client.updateConsents(createdCustomerId, consents)
+						}
+						return
 					})
 					.then(function (_response) {
 						setDisabled(true)
@@ -419,7 +417,7 @@ export function VoucherifySubscribe({
 		<div className="voucherifyContainer wide">
 			<VoucherifyLogo src={logoSrc} alt={logoAlt} />
 
-			{!consentsError && !enableDoubleOptIn && loadedConsents.length === 0 ? (
+			{loading ? (
 				<div className="loader">Loading consents...</div>
 			) : (
 				<>
@@ -466,6 +464,7 @@ export function VoucherifySubscribe({
 						<p>{input['voucherifySubscribeStatus']}</p>
 					</div>
 					{!enableDoubleOptIn &&
+						loadedConsents.length !== 0 &&
 						loadedConsents.map((consent: any) => (
 							<>
 								{classNames.some(val => val.name === consent.id) && (
