@@ -21,6 +21,7 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
   - [Validate](#validate)
   - [Redeem](#redeem)
   - [Publish](#publish)
+  - [Subscribe](#subscribe)
 - [Typescript](#typescript)
 - [Error handling](#error-handling)
 - [Contributing](#contributing)
@@ -132,6 +133,56 @@ Additional props for Validate Voucherify React Widget
 
 ## <a name="redeem"></a>Redeem
 
+```javascript
+import * as React from 'react'
+
+import * as ReactDOM from 'react-dom'
+
+import { VoucherifyRedeem } from '@voucherify/react-widgets'
+
+const App = () => {
+	const onRedeemResponse = response => {
+		console.log('Do something with response: ', response)
+	}
+
+	const onErrorResponse = error => {
+		console.log('Do something with error: ', error)
+	}
+
+	return (
+		<VoucherifyRedeem
+			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
+			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
+			textPlaceholder="e.g. Testing7fjWdr"
+			amount
+			onRedeem={onRedeemResponse}
+			onError={onErrorResponse}
+		/>
+	)
+}
+
+export default App
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+Additional props for Redeem Voucherify React Widget
+
+| Prop                  | Type       | Description                                                                                                 |
+| --------------------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
+| classInvalid          | `string`   | CSS class applied to the input when entered code is invalid                                                 |
+| classInvalidAnimation | `string`   | CSS class describing animation of the input field when entered code is invalid                              |
+| classValid            | `string`   | CSS class applied to the input when entered code is valid                                                   |
+| classValidAnimation   | `string`   | CSS class describing animation of the input field when entered code is valid                                |
+| logoSrc               | `string`   | source of the image appearing in the circle at the top                                                      |
+| logoAlt               | `string`   | alt message of the image appearing in the circle at the top                                                 |
+| onRedeemed            | `function` | a callback function invoked when the entered code is valid, it takes the redemption response as a parameter |
+| onError               | `function` | a callback function invoked when there is an error                                                          |
+| amount                | `boolean`  | flag enables the amount input field                                                                         |
+| textPlaceholder       | `string`   | text displayed as a placeholder in the code input field                                                     |
+| amountPlaceholder     | `string`   | text displayed as a placeholder in the amount input field (`amount: true` is required)                      |
+| textValidate          | `string`   | a text displayed on the button (default: "Redeem")                                                          |
+
 ## <a name="publish"></a>Publish
 
 ```javascript
@@ -171,14 +222,14 @@ export default App
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
-Additional props for Validate Voucherify React Widget
+Additional props for Publish Voucherify React Widget
 
 | Prop                          | Type       | Description                                                                                                 |
 | ----------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------- |
-| classInvalid                  | `string`   | CSS class applied to the input when entered code is invalid                                                 |
-| classInvalidAnimation         | `string`   | CSS class describing animation of the input field when entered code is invalid                              |
-| classValid                    | `string`   | CSS class applied to the input when entered code is valid                                                   |
-| classValidAnimation           | `string`   | CSS class describing animation of the input field when entered code is valid                                |
+| classInvalid                  | `string`   | CSS class applied to the input when entered data is invalid                                                 |
+| classInvalidAnimation         | `string`   | CSS class describing animation of the input field when entered data is invalid                              |
+| classValid                    | `string`   | CSS class applied to the input when entered data is valid                                                   |
+| classValidAnimation           | `string`   | CSS class describing animation of the input field when entered data is valid                                |
 | logoSrc                       | `string`   | source of the image appearing in the circle at the top                                                      |
 | logoAlt                       | `string`   | alt message of the image appearing in the circle at the top                                                 |
 | onPublished                   | `function` | a callback function invoked after the voucher publication, it takes the publication response as a parameter |
@@ -201,6 +252,79 @@ Additional props for Validate Voucherify React Widget
 | Key      | Type      | Value                                                                                   |
 | -------- | --------- | --------------------------------------------------------------------------------------- |
 | name     | `string`  | 'name', 'email', 'phone', 'line_1', 'line_2', 'city', 'postal_code', 'state', 'country' |
+| required | `boolean` |
+
+## <a name="subscribe"></a>Subscribe
+
+```javascript
+import * as React from 'react'
+
+import * as ReactDOM from 'react-dom'
+
+import { VoucherifySubscribe } from '@voucherify/react-widgets'
+
+const App = () => {
+	const onSubscribedResponse = response => {
+		console.log('Do something with response: ', response)
+	}
+
+	const onErrorResponse = error => {
+		console.log('Do something with error: ', error)
+	}
+
+	return (
+		<VoucherifySubscribe
+			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
+			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
+			textPlaceholder="e.g. Testing7fjWdr"
+			onSubscribed={onSubscribedResponse}
+			onError={onErrorResponse}
+			consents={[{ id: 'cnst_Dfzhg69KrRPGHffXK9EwUaOL', required: true }, { id: 'cnst_KIcC6Gmff1HxGPR3Y0V3x8Lr' }]}
+			customerFields={[
+				{ name: 'name', required: true },
+				{ name: 'email', required: false },
+			]}
+		/>
+	)
+}
+
+export default App
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+Additional props for Subscribe Voucherify React Widget
+
+| Prop                  | Type       | Description                                                                                                          |
+| --------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| classInvalid          | `string`   | CSS class applied to the input when entered data is invalid                                                          |
+| classInvalidAnimation | `string`   | CSS class describing animation of the input field when entered data is invalid                                       |
+| classValid            | `string`   | CSS class applied to the input when entered data is valid                                                            |
+| classValidAnimation   | `string`   | CSS class describing animation of the input field when entered data is valid                                         |
+| logoSrc               | `string`   | source of the image appearing in the circle at the top                                                               |
+| logoAlt               | `string`   | alt message of the image appearing in the circle at the top                                                          |
+| onSubscribed          | `function` | a callback function invoked after the successful subscription, it takes the updated consents response as a parameter |
+| onError               | `function` | a callback function invoked when there is an error                                                                   |
+| enableDoubleOptIn     | `boolean`  | require customer to confirm subscription by email                                                                    |
+| customerFields        | `array`    | array containing [customerFields subscribe objects](#customerFields-object-subscribe)                                |
+| emailPlaceholder      | `string`   | a placeholder text to displayed on required 'email' field                                                            |
+| consents              | `array`    | array containing [consents objects](#consents-object)                                                                |
+| textSubscribe         | `string`   | aa text displayed on the button (default: "Subscribe")                                                               |
+| textSubscribeSuccess  | `string`   | a text displayed after successful subscription (default: "Thank you for subscribing")                                |
+
+<a name="#customerFields-object-subscribe"></a>customerFields subscribe object
+
+| Key         | Type      | Value                                                                          |
+| ----------- | --------- | ------------------------------------------------------------------------------ |
+| name        | `string`  | 'name', 'phone', 'line_1', 'line_2', 'city', 'postal_code', 'state', 'country' |
+| required    | `boolean` |
+| placeholder | `string   |
+
+<a name="#consents-object"></a>consents object
+
+| Key      | Type      |
+| -------- | --------- |
+| id       | `string`  |
 | required | `boolean` |
 
 # <a name="typescript"></a>🦸 TypeScript

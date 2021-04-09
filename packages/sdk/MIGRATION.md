@@ -7,9 +7,18 @@
 
 ## <a name="voucherify-node-js"></a>Migration from [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
-### Initialization
-
-#### Previously
+<table>
+<thead>
+  <tr>
+    <th>Case</th>
+    <th>Previously</th>
+    <th>Currently</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Initialization</td>
+    <td>
 
 ```javascript
 const voucherifyClient = require('voucherify')
@@ -20,7 +29,8 @@ const client = voucherifyClient({
 })
 ```
 
-#### Currently
+</td>
+    <td>
 
 ```javascript
 const { VoucherifyServerSide } = require('@voucherify/sdk')
@@ -31,9 +41,12 @@ const client = VoucherifyServerSide({
 })
 ```
 
-### Callbacks
+</td>
 
-#### Previously
+  </tr>
+  <tr>
+    <td>Callbacks</td>
+    <td>
 
 ```javascript
 client.vouchers.get('v1GiJYuuS', (error, result) => {
@@ -46,31 +59,36 @@ client.vouchers.get('v1GiJYuuS', (error, result) => {
 })
 ```
 
-#### Currently
-
+</td>
+    <td>
 Dropped support for callbacks, use promises instead
-
-### Validate Validation Rules
-
-#### Previously
+    
+</td>
+  </tr>
+  <tr>
+    <td>Validate Validation Rules</td>
+    <td>
 
 ```javascript
 client.validationRules.validate(validationRuleId)
 ```
 
-#### Currently
-
+</td>
+    <td>
 Dropped support
-
-### Loyalties Redeem Reward
-
-#### Previously
+    
+</td>
+  </tr>
+  <tr>
+    <td>Loyalties Redeem Reward</td>
+    <td>
 
 ```javascript
 client.loyalties.redeemReward(campaignId, memberId, reward)
 ```
 
-#### Currently
+</td>
+    <td>
 
 Order required
 
@@ -78,11 +96,25 @@ Order required
 client.loyalties.redeemReward(campaignId, memberId, reward, order)
 ```
 
+</td>
+  </tr>
+</tbody>
+</table>
+
 ## <a name="voucherify-js"></a>From [Voucherify.js](https://github.com/rspective/voucherify.js/)
 
-### Initialization
-
-#### Previously
+<table>
+<thead>
+  <tr>
+    <th>Case</th>
+    <th>Previously</th>
+    <th>Currently</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Initialization</td>
+    <td>
 
 ```javascript
 $(function () {
@@ -90,7 +122,8 @@ $(function () {
 })
 ```
 
-#### Currently
+</td>
+    <td>
 
 ```javascript
 const { VoucherifyClientSide } = require('@voucherify/sdk')
@@ -101,30 +134,53 @@ const client = VoucherifyClientSide({
 })
 ```
 
-### Callbacks
+</td>
 
-#### Previously
+  </tr>
+  <tr>
+    <td>Initialization - Base URL</td>
+    <td>
+
+```javascript
+$(function () {
+	Voucherify.setBaseUrl('https://<region1>.api.voucherify.io')
+})
+```
+
+</td>
+    <td>
+
+```javascript
+const client = VoucherifyClientSide({
+	clientApplicationId: 'CLIENT-APPLICATION-ID',
+	clientSecretKey: 'CLIENT-SECRET-KEY',
+	apiUrl: 'https://<region1>.api.voucherify.io',
+})
+```
+
+</td>
+
+  </tr>
+  <tr>
+    <td>Callbacks</td>
+    <td>
 
 ```javascript
 client.validate(params, function callback(response) {})
 ```
 
-#### Currently
-
+</td>
+    <td>
 Dropped support for callbacks for all client-side methods, use promises instead
 
 ```javascript
 client.validate(params).then(console.log).catch(console.log)
 ```
 
-### List Vouchers
-
-#### Previously
-
-```javascript
-Voucherify.listVouchers(filters, function callback(response) {})
-```
-
-#### Currently
-
-Dropped support
+</td>
+  </tr>
+  
+  
+  
+</tbody>
+</table>

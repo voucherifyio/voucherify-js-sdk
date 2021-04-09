@@ -11,19 +11,19 @@ import { useVoucherifyPublishInputs } from './hooks/useVoucherifyPublishInputs'
 
 interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	/**
-	 * CSS class applied to the input when entered code is invalid
+	 * CSS class applied to the input when entered data is invalid
 	 */
 	classInvalid?: string
 	/**
-	 * CSS class describing animation of the input field when entered code is invalid
+	 * CSS class describing animation of the input field when entered data is invalid
 	 */
 	classInvalidAnimation?: string
 	/**
-	 * CSS class applied to the input when entered code is valid
+	 * CSS class applied to the input when entered data is valid
 	 */
 	classValid?: string
 	/**
-	 * CSS class describing animation of the input field when entered code is valid
+	 * CSS class describing animation of the input field when entered data is valid
 	 */
 	classValidAnimation?: string
 	/**
@@ -35,7 +35,7 @@ interface VoucherifyPublishOptions extends VoucherifyClientSideOptions {
 	 */
 	logoAlt?: string
 	/**
-	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
+	 * a callback function invoked when the entered data is valid, it takes the validation response as a parameter
 	 */
 	onPublished?: (response: ClientSidePublishResponse) => void
 	/**

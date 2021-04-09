@@ -34,7 +34,7 @@ interface VoucherifyRedeemOptions extends VoucherifyClientSideOptions {
 	 */
 	logoAlt?: string
 	/**
-	 * a callback function invoked when the entered code is valid, it takes the validation response as a parameter
+	 * a callback function invoked when the entered code is valid, it takes the redemption response as a parameter
 	 */
 	onRedeemed?: (response: ClientSideRedeemResponse) => void
 	/**

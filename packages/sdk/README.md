@@ -136,7 +136,7 @@ client.vouchers.update(voucher)
 
 ```javascript
 client.vouchers.delete(code)
-client.vouchers.delete(code, { force: true })
+client.vouchers.delete(code, params)
 ```
 
 #### [List Vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers)
@@ -150,20 +150,18 @@ client.vouchers.list(params)
 
 ```javascript
 client.vouchers.enable(code)
-client.vouchers.enable({ code: 'TEST-VOUCHER' })
 ```
 
 #### [Disable Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher)
 
 ```javascript
 client.vouchers.disable(code)
-client.vouchers.disable({ code: 'TEST-VOUCHER' })
 ```
 
 #### [Add Gift Voucher Balance](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-gift-voucher-balance)
 
 ```javascript
-client.vouchers.balance.create(code, { amount: 2000 })
+client.vouchers.balance.create(code, params)
 ```
 
 #### [Import Vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1)
@@ -180,9 +178,21 @@ client.vouchers.qualifications.examine(body, params)
 
 #### [Update Vouchers Metadata in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk)
 
+```javascript
+client.vouchers.bulkUpdateMetadata(params)
+```
+
 #### [Update Vouchers in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk)
 
+```javascript
+client.vouchers.bulkUpdate(vouchers)
+```
+
 #### [Release Validation Session](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session)
+
+```javascript
+client.vouchers.releaseValidationSession(code, sessionKey)
+```
 
 ---
 
@@ -223,14 +233,22 @@ client.campaigns.get(name)
 
 ```javascript
 client.campaigns.delete(campaignName)
-client.campaigns.delete(campaignName, { force: true })
+client.campaigns.delete(campaignName, params)
 ```
 
 #### [Add Voucher to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign)
 
 ```javascript
 client.campaigns.addVoucher(campaignName)
-client.campaigns.addVoucher(campaignName, params)
+client.campaigns.addVoucher(campaignName, body)
+client.campaigns.addVoucher(campaignName, body, params)
+```
+
+#### [Add certain Voucher to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-with-certain-code-to-campaign)
+
+```javascript
+client.campaigns.addCertainVoucher(campaignName, code, codeParams)
+client.campaigns.addCertainVoucher(campaignName, code)
 ```
 
 #### [Import Vouchers to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers)
@@ -302,7 +320,7 @@ client.distributions.publications.create(params)
 
 ### Validations
 
-Methods are provided within `client.validations.*` namespace.
+Methods are provided within `client.validations.*` or `client.promotions.*` namespace.
 
 - [Validate Voucher](#validate-voucher)
 - [Validate Promotion Campaign](#validate-promotion-campaign)
@@ -316,7 +334,7 @@ client.validations.validateVoucher(code, params)
 
 Other possibility
 
-```
+```javascript
 client.validations.validate(code)
 client.validations.validate(code, params)
 ```
@@ -324,7 +342,13 @@ client.validations.validate(code, params)
 #### [Validate Promotion Campaign](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1)
 
 ```javascript
-client.validations.promotions.validate(params)
+client.promotions.validate(params)
+```
+
+Other possibility
+
+```javascript
+client.validations.validate(params)
 ```
 
 ---
@@ -334,6 +358,7 @@ client.validations.promotions.validate(params)
 Methods are provided within `client.redemptions.*` namespace.
 
 - [Redeem Voucher](#redeem-voucher)
+- [Get Redemption](#get-redemption)
 - [Redeem Promotion's Tier](#redeem-promotions-tier)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Redemptions](#list-redemptions)
@@ -345,6 +370,12 @@ Methods are provided within `client.redemptions.*` namespace.
 ```javascript
 client.redemptions.redeem(code)
 client.redemptions.redeem(code, params)
+```
+
+#### [Get Redemption](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-redemption)
+
+```javascript
+client.redemptions.get(redemptionId)
 ```
 
 #### [List Redemptions](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions)
@@ -384,7 +415,7 @@ Methods are provided within `client.promotions.*` namespace.
 - [Update Promotion Tier](#update-promotions-tier)
 - [Delete Promotion Tier](#delete-promotions-tier)
 
-You can [Validate Promotion Campaign](#validate-promotion-campaign) in `client.validations.*` namespace.
+Read how to [Validate Promotion Campaign](#validate-promotion-campaign) in Validations section
 
 #### [Create Promotion Campaign](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign)
 
@@ -935,7 +966,7 @@ Methods are provided within `client.validationRules.*` namespace.
 - [Update Rule](#update-validation-rule)
 - [Delete Rule](#delete-validation-rule)
 - [Create Rule Assignment](#create-validation-rule-assignment)
-- [Delete Rule Assignment](#delete-rvalidation-ule-assignment)
+- [Delete Rule Assignment](#delete-validation-rule-assignment)
 - [List Rules](#list-validation-rules)
 - [List Rule Assignments](#list-validation-rule-assignments)
 
@@ -971,7 +1002,7 @@ client.validationRules.delete(validationRuleId)
 client.validationRules.createAssignment(validationRuleId, assignment)
 ```
 
-#### [Delete Validation Rule Assignment](<(https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules-assignment)>)
+#### [Delete Validation Rule Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules-assignment)
 
 ```javascript
 client.validationRules.deleteAssignment(validationRuleId, assignmentId)
@@ -1038,8 +1069,11 @@ Methods are provided within `client.*` namespace.
 - [Validate](#validate)
 - [Redeem](#redeem)
 - [Publish](#publish)
-- [List Promotion's Tiers](#list-promotions-tiers-client-side)
 - [Track custom events](#track-custom-events)
+- [List vouchers](#list-vouchers)
+- [Create customer](#create-customer)
+- [List consents](#list-consents)
+- [Update consents](#update-consents)
 
 #### Set Identity
 
@@ -1053,28 +1087,17 @@ client.setIdentity(trackingId)
 client.validate(params)
 ```
 
-Check [params object](https://docs.voucherify.io/v1/reference#the-customer-object).
-
 #### [Redeem](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side)
 
 ```javascript
 client.redeem(code, payload)
 ```
 
-Check [payload object](https://docs.voucherify.io/v1/reference#the-customer-object).
-
 #### Publish
 
 ```javascript
 client.publish(campaignName, payload)
-```
-
-Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
-
-#### <a name="list-promotions-tiers-client-side"></a>[List Promotion Tiers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers-client-side)
-
-```javascript
-client.publish(campaignName, payload)
+client.publish(campaignName, payload, queryParams)
 ```
 
 #### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
@@ -1084,6 +1107,34 @@ client.track(eventName, metadata, customer)
 ```
 
 Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+#### [List vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers)
+
+```javascript
+client.listVouchers()
+client.listVouchers(params)
+```
+
+#### [Create customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer)
+
+```javascript
+client.createCustomer(customer)
+client.createCustomer(customer, enableDoubleOptIn)
+```
+
+`enableDoubleOptIn` sets request header to `{X-Voucherify-Double-Opt-In: true}`, which forces user to confirm registration / subscription.
+
+#### [List consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side)
+
+```javascript
+client.listConsents()
+```
+
+#### [Update consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client)
+
+```javascript
+client.updateConsents(idOrSourceId, consents)
+```
 
 # <a name="migration"></a>↔️ Migration
 
