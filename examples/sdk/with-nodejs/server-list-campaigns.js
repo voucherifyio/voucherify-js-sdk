@@ -1,4 +1,6 @@
-// require('source-map-support').install()const { VoucherifyServerSide } = require('@voucherify/sdk')
+// require('source-map-support').install()
+
+const { VoucherifyServerSide } = require('@voucherify/sdk')
 
 const voucherify = VoucherifyServerSide({
 	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',

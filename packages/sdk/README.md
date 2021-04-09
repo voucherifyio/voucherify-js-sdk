@@ -1069,11 +1069,12 @@ Methods are provided within `client.*` namespace.
 - [Validate](#validate)
 - [Redeem](#redeem)
 - [Publish](#publish)
-- [Track custom events](#track-custom-events)
 - [List vouchers](#list-vouchers)
 - [Create customer](#create-customer)
 - [List consents](#list-consents)
 - [Update consents](#update-consents)
+- [List Promotion's Tiers](#list-promotions-tiers-client-side)
+- [Track custom events](#track-custom-events)
 
 #### Set Identity
 
@@ -1136,6 +1137,24 @@ client.listConsents()
 client.updateConsents(idOrSourceId, consents)
 ```
 
+=======
+
+#### <a name="list-promotions-tiers-client-side"></a>[List Promotion Tiers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers-client-side)
+
+```javascript
+client.publish(campaignName, payload)
+```
+
+#### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
+
+```javascript
+client.track(eventName, metadata, customer)
+```
+
+Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+> > > > > > > 0cdf868c331cb5eed6fb3a8b512a5274494e7a58
+
 # <a name="migration"></a>↔️ Migration
 
 Check our [MIGRATION GUIDE](./MIGRATION.md) to learn more about switching to our newest SDK.
@@ -1167,3 +1186,7 @@ Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING
 Visit [CHANGELOG](./CHANGELOG.md) to learn more about new changes.
 
 Voucherify React Widget CHANGELOG can be found [here](../react-widget/CHANGELOG.md)
+
+```
+
+```
