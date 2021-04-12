@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>Project @voucherify/sdk - v0.0.5</h1>
+			<h1>@voucherify/sdk - v0.0.5</h1>
 		</div>
 	</div>
 </header>
@@ -58,9 +58,1046 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
-					<h1>Todo</h1>
+				<a href="#voucherify-js-sdk" id="voucherify-js-sdk" style="color: inherit; text-decoration: none;">
+					<h1>Voucherify JS SDK</h1>
 				</a>
+				<p>
+					<a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
+					<a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Lint/badge.svg?branch=main" alt="Lint Status"/></a>
+					<a href="#"><img src="https://img.shields.io/npm/v/@voucherify/sdk?label=SDK" alt="SDK NPM Version"/></a>
+					<a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/sdk?label=SDK%20downloads" alt="SDK NPM Downloads"/></a>
+				</p>
+				<p>Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained <a href="https://github.com/voucherifyio/voucherify-nodejs-sdk">Voucherify Node.js SDK</a> and <a href="https://github.com/rspective/voucherify.js/">Voucherify.js</a>.</p>
+				<p>Learn more about Voucherify by visiting <a href="http://voucherify.io?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq">our site</a>.</p>
+				<a href="#🔖-table-of-contents" id="🔖-table-of-contents" style="color: inherit; text-decoration: none;">
+					<h1>🔖 Table of contents</h1>
+				</a>
+				<ul>
+					<li><a href="#documentation">Documentation</a></li>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#server-side">Server side</a><ul>
+							<li><a href="#server-side-setup%22">Setup</a></li>
+							<li><a href="#server-side-methods">Methods</a><ul>
+									<li><a href="#vouchers-api">Vouchers</a></li>
+									<li><a href="#campaigns-api">Campaigns</a></li>
+									<li><a href="#distributions-api">Validations</a></li>
+									<li><a href="#validations-api">Distributions</a></li>
+									<li><a href="#redemptions-api">Redemptions</a></li>
+									<li><a href="#customers-api">Customers</a></li>
+									<li><a href="#consents-api">Consents</a></li>
+									<li><a href="#orders-api">Orders</a></li>
+									<li><a href="#products-api">Products</a></li>
+									<li><a href="#rewards-api">Rewards</a></li>
+									<li><a href="#loyalties-api">Loyalties</a></li>
+									<li><a href="#segments-api">Segments</a></li>
+									<li><a href="#validation-rules-api">Validation Rules</a></li>
+									<li><a href="#promotions-api">Promotions</a></li>
+									<li><a href="#events-api">Events</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#client-side">Client side</a><ul>
+							<li><a href="#client-side-setup">Setup</a></li>
+							<li><a href="#client-side-methods">Methods</a></li>
+						</ul>
+					</li>
+					<li><a href="#migration">Migration</a></li>
+					<li><a href="#typescript">Typescript</a></li>
+					<li><a href="#error-handling">Error handling</a></li>
+					<li><a href="#contributing">Contributing</a></li>
+					<li><a href="#changelog">Changelog</a></li>
+				</ul>
+				<a href="#📝-documentation" id="📝-documentation" style="color: inherit; text-decoration: none;">
+					<h1><a name="documentation"></a>📝 Documentation</h1>
+				</a>
+				<p>You will find detailed description and example responses at our <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq">official documentation</a>. Most method headers point to more detailed descriptions of arguments you can use.</p>
+				<p>You can also use our detailed documentation provided by our package <a href="https://voucherifyio.github.io/voucherify-js-sdk/">here</a>.</p>
+				<p>📚 Want to learn more? Visit our <a href="https://voucherify.io">official site</a> or our <a href="https://success.voucherify.io">Success Portal</a>.</p>
+				<p>👽 Having troubles? Check our <a href="https://support.voucherify.io/">Help center</a>.</p>
+				<p>🧪 Looking for promotion ideas? Check our <a href="https://cookbook.voucherify.io/">Cookbook</a> to get an inspiration.</p>
+				<a href="#⚙️-installation" id="⚙️-installation" style="color: inherit; text-decoration: none;">
+					<h1><a name="installation"></a>⚙️ Installation</h1>
+				</a>
+				<p>Local installation:</p>
+				<pre><code class="language-sh"><span style="color: #000000">npm install voucherify --save</span>
+</code></pre>
+				<p>CDN installation:</p>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script</span>
+<span style="color: #000000FF">    </span><span style="color: #FF0000">type</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;text/javascript&quot;</span>
+<span style="color: #000000FF">    </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@voucherify/sdk/dist/voucherifysdk.umd.production.min.js&quot;</span>
+<span style="color: #000000FF">    </span><span style="color: #FF0000">crossorigin</span>
+<span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<p>Then, <a href="http://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/login">login</a> to your Voucherify Dashboard and get your API keys from <a href="https://app.voucherify.io/?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#/app/core/projects/current/general">Configuration</a>.</p>
+				<a href="#🤖-server-side" id="🤖-server-side" style="color: inherit; text-decoration: none;">
+					<h1><a name="server-side"></a>🤖 Server Side</h1>
+				</a>
+				<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+					<h2><a name="server-side-setup"></a>Setup</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">VoucherifyServerSide</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@voucherify/sdk&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #008000">// import { VoucherifyServerSide } from &#039;@voucherify/sdk&#039; ES6 compatible</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">apiVersion:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;v2018-08-01&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">channel:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;e-commerce&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
+					<h2><a name="server-side-methods"></a>Methods</h2>
+				</a>
+				<a href="#vouchers" id="vouchers" style="color: inherit; text-decoration: none;">
+					<h3>Vouchers</h3>
+				</a>
+				<p>Methods are provided within <code>client.vouchers.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-voucher">Create Voucher</a></li>
+					<li><a href="#get-voucher">Get Voucher</a></li>
+					<li><a href="#update-voucher">Update Voucher</a></li>
+					<li><a href="#delete-voucher">Delete Voucher</a></li>
+					<li><a href="#add-gift-voucher-balance">Add Gift Voucher Balance</a></li>
+					<li><a href="#list-vouchers">List Vouchers</a></li>
+					<li><a href="#enable-voucher">Enable Voucher</a></li>
+					<li><a href="#disable-voucher">Disable Voucher</a></li>
+					<li><a href="#import-vouchers">Import Vouchers</a></li>
+					<li><a href="#examine-vouchers-qualification">Examine Vouchers Qualification</a></li>
+					<li><a href="#update-vouchers-metadata-in-bulk">Update Vouchers Metadata in bulk</a></li>
+					<li><a href="#update-vouchers-in-bulk">Update Vouchers in bulk</a></li>
+					<li><a href="#release-validation-session">Release Validation Session</a></li>
+				</ul>
+				<a href="#create-voucher" id="create-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-voucher">Create Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">voucher</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-voucher-object">voucher object</a>.</p>
+				<a href="#get-voucher" id="get-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#vouchers-get">Get Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-voucher" id="update-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-voucher">Update Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">voucher</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-voucher" id="delete-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-voucher">Delete Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-vouchers" id="list-vouchers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-vouchers">List Vouchers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#enable-voucher" id="enable-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#enable-voucher">Enable Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">enable</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#disable-voucher" id="disable-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#disable-voucher">Disable Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">disable</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#add-gift-voucher-balance" id="add-gift-voucher-balance" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#add-gift-voucher-balance">Add Gift Voucher Balance</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #001080">balance</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#import-vouchers" id="import-vouchers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#import-vouchers-1">Import Vouchers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">import</span><span style="color: #000000">(</span><span style="color: #001080">vouchers</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#examine-vouchers-qualification" id="examine-vouchers-qualification" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#push-qualification-request">Examine Vouchers Qualification</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #001080">qualifications</span><span style="color: #000000">.</span><span style="color: #795E26">examine</span><span style="color: #000000">(</span><span style="color: #001080">body</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-vouchers-metadata-in-bulk" id="update-vouchers-metadata-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-vouchers-metadata-in-bulk">Update Vouchers Metadata in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">bulkUpdateMetadata</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-vouchers-in-bulk" id="update-vouchers-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-vouchers-in-bulk">Update Vouchers in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">bulkUpdate</span><span style="color: #000000">(</span><span style="color: #001080">vouchers</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#release-validation-session" id="release-validation-session" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#release-validation-session">Release Validation Session</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">releaseValidationSession</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">sessionKey</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#campaigns" id="campaigns" style="color: inherit; text-decoration: none;">
+					<h3>Campaigns</h3>
+				</a>
+				<p>Methods are provided within <code>client.campaigns.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-campaign">Create Campaign</a></li>
+					<li><a href="#update-campaign">Update Campaign</a></li>
+					<li><a href="#get-campaign">Get Campaign</a></li>
+					<li><a href="#add-voucher-to-campaign">Add Voucher to Campaign</a></li>
+					<li><a href="#import-vouchers-to-campaign">Import Vouchers to Campaign</a></li>
+					<li><a href="#list-campaigns">List Campaigns</a></li>
+					<li><a href="#examine-campaigns-qualification">Examine Campaigns Qualification</a></li>
+				</ul>
+				<a href="#create-campaign" id="create-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-campaign">Create Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">campaign</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-campaign" id="update-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-campaign">Update Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">campaign</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">campaign</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Method will update only fields passed to <code>campaign</code> argument.</p>
+				<a href="#get-campaign" id="get-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-campaign">Get Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">name</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-campaign" id="delete-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-campaign">Delete Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#add-voucher-to-campaign" id="add-voucher-to-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#add-voucher-to-campaign">Add Voucher to Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">addVoucher</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">addVoucher</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">body</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">addVoucher</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">body</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#add-certain-voucher-to-campaign" id="add-certain-voucher-to-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#add-voucher-with-certain-code-to-campaign">Add certain Voucher to Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">addCertainVoucher</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">codeParams</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">addCertainVoucher</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#import-vouchers-to-campaign" id="import-vouchers-to-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#import-vouchers">Import Vouchers to Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">importVouchers</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">vouchers</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-campaigns" id="list-campaigns" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-campaigns">List Campaigns</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#examine-campaigns-qualification" id="examine-campaigns-qualification" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-qualification-request">Examine Campaigns Qualification</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #001080">qualifications</span><span style="color: #000000">.</span><span style="color: #795E26">examine</span><span style="color: #000000">(</span><span style="color: #001080">body</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #001080">qualifications</span><span style="color: #000000">.</span><span style="color: #795E26">examine</span><span style="color: #000000">(</span><span style="color: #001080">body</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#distributions" id="distributions" style="color: inherit; text-decoration: none;">
+					<h3>Distributions</h3>
+				</a>
+				<p>Methods are provided within <code>client.distributions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-export">Create Export</a></li>
+					<li><a href="#get-export">Get Export</a></li>
+					<li><a href="#delete-export">Delete Export</a></li>
+					<li><a href="#list-publications">List publications</a></li>
+					<li><a href="#create-publication">Create publication</a></li>
+				</ul>
+				<a href="#create-export" id="create-export" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-export">Create Export</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">exportObject</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-export-object">the export object</a>.</p>
+				<a href="#get-export" id="get-export" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-export">Get Export</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">exportId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-export" id="delete-export" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-export">Delete Export</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">exportId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-publications" id="list-publications" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-publications">List publications</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">publications</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">publications</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-publication" id="create-publication" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-publication">Create publication</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">publications</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#validations" id="validations" style="color: inherit; text-decoration: none;">
+					<h3>Validations</h3>
+				</a>
+				<p>Methods are provided within <code>client.validations.*</code> or <code>client.promotions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#validate-voucher">Validate Voucher</a></li>
+					<li><a href="#validate-promotion-campaign">Validate Promotion Campaign</a></li>
+				</ul>
+				<a href="#validate-voucher" id="validate-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#validate-voucher">Validate Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validateVoucher</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validateVoucher</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Other possibility</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#validate-promotion-campaign" id="validate-promotion-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#validate-promotions-1">Validate Promotion Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Other possibility</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#redemption" id="redemption" style="color: inherit; text-decoration: none;">
+					<h3>Redemption</h3>
+				</a>
+				<p>Methods are provided within <code>client.redemptions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#redeem-voucher">Redeem Voucher</a></li>
+					<li><a href="#get-redemption">Get Redemption</a></li>
+					<li><a href="#redeem-promotions-tier">Redeem Promotion&#39;s Tier</a></li>
+					<li><a href="#redeem-loyalty-card">Redeem Loyalty Card</a></li>
+					<li><a href="#list-redemptions">List Redemptions</a></li>
+					<li><a href="#get-vouchers-redemptions">Get Voucher&#39;s Redemptions</a></li>
+					<li><a href="#rollback-redemption">Rollback Redemption</a></li>
+				</ul>
+				<a href="#redeem-voucher" id="redeem-voucher" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#redeem-voucher">Redeem Voucher</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">redeem</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">redeem</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-redemption" id="get-redemption" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-redemption">Get Redemption</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">redemptionId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-redemptions" id="list-redemptions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-redemptions">List Redemptions</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-voucher39s-redemptions" id="get-voucher39s-redemptions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#vouchers-redemptions">Get Voucher&#39;s Redemptions</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">getForVoucher</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#rollback-redemption" id="rollback-redemption" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#rollback-redemption">Rollback Redemption</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">rollback</span><span style="color: #000000">(</span><span style="color: #001080">redemptionId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">redemptions</span><span style="color: #000000">.</span><span style="color: #795E26">rollback</span><span style="color: #000000">(</span><span style="color: #001080">redemptionId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-redemption-rollback-object">redemption rollback object</a>.</p>
+				<hr>
+				<a href="#promotions" id="promotions" style="color: inherit; text-decoration: none;">
+					<h3>Promotions</h3>
+				</a>
+				<p>Methods are provided within <code>client.promotions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-promotion-campaign">Create Promotion Campaign</a></li>
+					<li><a href="#validate-promotion-campaign">Validate Promotion Campaign</a></li>
+					<li><a href="#list-promotions-tiers">List Promotion&#39;s Tiers</a></li>
+					<li><a href="#list-all-promotion-tiers">List All Promotion Tiers</a></li>
+					<li><a href="#create-promotions-tier">Add Promotion Tier to Campaign</a></li>
+					<li><a href="#redeem-promotion">Redeem Promotion</a></li>
+					<li><a href="#update-promotions-tier">Update Promotion Tier</a></li>
+					<li><a href="#delete-promotions-tier">Delete Promotion Tier</a></li>
+				</ul>
+				<p>Read how to <a href="#validate-promotion-campaign">Validate Promotion Campaign</a> in Validations section</p>
+				<a href="#create-promotion-campaign" id="create-promotion-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-promotion-campaign">Create Promotion Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">promotionCampaign</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-promotion-campaign">promotion campaign object</a>.</p>
+				<a href="#list-promotion39s-tiers" id="list-promotion39s-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-promotions">List Promotion&#39;s Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">promotionCampaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-promotion-object">promotion&#39;s tier object</a></p>
+				<a href="#list-all-promotion-tiers" id="list-all-promotion-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-promotion-tiers">List All Promotion Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">})</span>
+</code></pre>
+				<a href="#add-promotion-tier-to-campaign" id="add-promotion-tier-to-campaign" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#add-promotion-tier-to-campaign">Add Promotion Tier to Campaign</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">promotionId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#redeem-promotion" id="redeem-promotion" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#redeem-promotion">Redeem Promotion</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">redeem</span><span style="color: #000000">(</span><span style="color: #001080">promotionsTierId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-promotion-tier" id="update-promotion-tier" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-promotion">Update Promotion Tier</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">promotionsTier</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-promotion-tier" id="delete-promotion-tier" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-promotion">Delete Promotion Tier</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">promotionsTierId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#customers" id="customers" style="color: inherit; text-decoration: none;">
+					<h3>Customers</h3>
+				</a>
+				<p>Methods are provided within <code>client.customers.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-customer">Create Customer</a></li>
+					<li><a href="#get-customer">Get Customer</a></li>
+					<li><a href="#update-customer">Update Customer</a></li>
+					<li><a href="#delete-customer">Delete Customer</a></li>
+					<li><a href="#list-customers">List Customers</a></li>
+					<li><a href="#update-customers-consents">Update Customer&#39;s Consents</a></li>
+				</ul>
+				<a href="#create-customer" id="create-customer" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-customer">Create Customer</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-customer-object">customer object</a>.</p>
+				<a href="#get-customer" id="get-customer" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-customer">Get Customer</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-customer" id="update-customer" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-customer">Update Customer</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>customer</code> object must contain <code>id</code> or <code>source_id</code>.</p>
+				<a href="#delete-customer" id="delete-customer" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-customer">Delete Customer</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-customers" id="list-customers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-customers">List Customers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Standard list customers API has limitation of available pages to be shown equal to 100. To cover cases when you would like to fetch more, you must use scroll capabilities as shown below.</p>
+				<a href="#scroll-through-customers" id="scroll-through-customers" style="color: inherit; text-decoration: none;">
+					<h4>Scroll through customers</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> () {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">for</span><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> (</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">customer</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">scroll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Customer&#039;</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>With optional arguments</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> () {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">for</span><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> (</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">customer</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">scroll</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">starting_after:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;2020-01-01&quot;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">order:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;created_at&quot;</span><span style="color: #000000"> </span><span style="color: #008000">// default: &quot;-created_at&quot;</span>
+<span style="color: #000000">    ...</span><span style="color: #001080">params</span><span style="color: #000000">})</span>
+<span style="color: #000000">  ) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Customer&#039;</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p><code>params</code> argument is consistent with <code>client.customers.list()</code> method.</p>
+				<p>You can optionally define scrolling cursor based on customer creation date using property <code>starting_after</code>. By default returned customers are in descending order, if you want to change it to ascending define <code>order</code> equal to <code>created_at</code>.</p>
+				<p>Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.</p>
+				<a href="#update-customer39s-consents" id="update-customer39s-consents" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-customers-consents">Update Customer&#39;s Consents</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateConsents</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">consents</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#consents" id="consents" style="color: inherit; text-decoration: none;">
+					<h3>Consents</h3>
+				</a>
+				<p>Methods are provided within <code>client.consents.*</code> namespace.</p>
+				<ul>
+					<li><a href="#get-consents">Get Consents</a></li>
+				</ul>
+				<p>You can <a href="#update-customers-consents">update Customer&#39;s consents</a> in <code>client.customer.*</code> namespace.</p>
+				<a href="#get-consents" id="get-consents" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-consents">Get Consents</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">consents</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+</code></pre>
+				<hr>
+				<a href="#orders" id="orders" style="color: inherit; text-decoration: none;">
+					<h3>Orders</h3>
+				</a>
+				<p>Methods are provided within <code>client.orders.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-order">Create Order</a></li>
+					<li><a href="#get-order">Get Order</a></li>
+					<li><a href="#update-order">Update Order</a></li>
+					<li><a href="#list-orders">List Orders</a></li>
+				</ul>
+				<a href="#create-order" id="create-order" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-order">Create Order</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">orders</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">order</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-order-object">the order object</a>.</p>
+				<a href="#get-order" id="get-order" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-order">Get Order</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">orders</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">orderId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-order" id="update-order" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-order">Update Order</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">orders</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">order</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>order</code> object must contain <code>id</code> or <code>source_id</code>.</p>
+				<a href="#list-orders" id="list-orders" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-orders">List Orders</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">orders</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">orders</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#products" id="products" style="color: inherit; text-decoration: none;">
+					<h3>Products</h3>
+				</a>
+				<p>Methods are provided within <code>client.products.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-product">Create Product</a></li>
+					<li><a href="#get-product">Get Product</a></li>
+					<li><a href="#update-product">Update Product</a></li>
+					<li><a href="#delete-product">Delete Product</a></li>
+					<li><a href="#update-products-in-bulk">Update Products in Bulk</a></li>
+					<li><a href="#list-products">List Products</a></li>
+					<li><a href="#create-sku">Create SKU</a></li>
+					<li><a href="#get-sku">Get SKU</a></li>
+					<li><a href="#update-sku">Update SKU</a></li>
+					<li><a href="#delete-sku">Delete SKU</a></li>
+					<li><a href="#list-all-product-skus">List all product SKUs</a></li>
+				</ul>
+				<a href="#create-product" id="create-product" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-product">Create Product</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">product</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-product-object">product object</a>.</p>
+				<a href="#get-product" id="get-product" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-product">Get Product</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-product" id="update-product" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-product">Update Product</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">product</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-product" id="delete-product" style="color: inherit; text-decoration: none;">
+					<h4><a href="(https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-product)">Delete Product</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, { </span><span style="color: #001080">force:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> })</span>
+</code></pre>
+				<a href="#update-products-in-bulk" id="update-products-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-products-in-bulk">Update Products in Bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">bulkUpdate</span><span style="color: #000000">(</span><span style="color: #001080">products</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-products" id="list-products" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-products">List Products</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-sku" id="create-sku" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-skus">Create SKU</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">createSku</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, </span><span style="color: #001080">sku</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-sku-object">SKU object</a>.</p>
+				<a href="#get-sku" id="get-sku" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-skus">Get SKU</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">getSku</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, </span><span style="color: #001080">skuId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-sku" id="update-sku" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-skus">Update SKU</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">updateSku</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, </span><span style="color: #001080">sku</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-sku" id="delete-sku" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-skus">Delete SKU</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">deleteSku</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, </span><span style="color: #001080">skuId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">deleteSku</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">, </span><span style="color: #001080">skuId</span><span style="color: #000000">, { </span><span style="color: #001080">force:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> })</span>
+</code></pre>
+				<a href="#list-all-product-skus" id="list-all-product-skus" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-skus">List all product SKUs</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">listSkus</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#rewards-api" id="rewards-api" style="color: inherit; text-decoration: none;">
+					<h3>Rewards API</h3>
+				</a>
+				<p>Methods are provided within <code>client.rewards.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-reward">Create Reward</a></li>
+					<li><a href="#get-reward">Get Reward</a></li>
+					<li><a href="#update-reward">Update Reward</a></li>
+					<li><a href="#delete-reward">Delete Reward</a></li>
+					<li><a href="#list-rewards">List Rewards</a></li>
+					<li><a href="#create-reward-assignment">Create Reward Assignment</a></li>
+					<li><a href="#update-reward-assignment">Update Reward Assignment</a></li>
+					<li><a href="#delete-reward-assignment">Delete Reward Assignment</a></li>
+					<li><a href="#list-reward-assignments">List Reward Assignments</a></li>
+				</ul>
+				<a href="#create-reward" id="create-reward" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-reward">Create Reward</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">reward</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-reward-object">reward object</a>.</p>
+				<a href="#get-reward" id="get-reward" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-reward">Get Reward</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-reward" id="update-reward" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-reward">Update Reward</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">reward</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-reward" id="delete-reward" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-reward">Delete Reward</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-rewards" id="list-rewards" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-rewards">List Rewards</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-reward-assignment" id="create-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-reward-assignment">Create Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">createAssignment</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-reward-assignment-object">reward assignment object</a>.</p>
+				<a href="#update-reward-assignment" id="update-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-reward-assignment">Update Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">updateAssignment</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-reward-assignment" id="delete-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-reward-assignment">Delete Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">deleteAssignment</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-reward-assignments" id="list-reward-assignments" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-reward-assignments">List Reward Assignments</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#loyalties-api" id="loyalties-api" style="color: inherit; text-decoration: none;">
+					<h3>Loyalties API</h3>
+				</a>
+				<p>Methods are provided within <code>client.loyalties.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-loyalty-program">Create Loyalty Program</a></li>
+					<li><a href="#get-loyalty-program">Get Loyalty Program</a></li>
+					<li><a href="#update-loyalty-program">Update Loyalty Program</a></li>
+					<li><a href="#delete-loyalty-program">Delete Loyalty Program</a></li>
+					<li><a href="#list-loyalty-programs">List Loyalty Programs</a></li>
+					<li><a href="#create-loyalty-program-reward-assignment">Create Loyalty Program Reward Assignment</a></li>
+					<li><a href="#update-loyalty-program-reward-assignment">Update Loyalty Program Reward Assignment</a></li>
+					<li><a href="#delete-loyalty-program-reward-assignment">Delete Loyalty Program Reward Assignment</a></li>
+					<li><a href="#list-loyalty-program-reward-assignments">List Loyalty Program Reward Assignments</a></li>
+					<li><a href="#create-loyalty-program-earning-rules">Create Loyalty Program Earning Rules</a></li>
+					<li><a href="#update-loyalty-program-earning-rule">Update Loyalty Program Earning Rule</a></li>
+					<li><a href="#delete-loyalty-program-earning-rule">Delete Loyalty Program Earning Rule</a></li>
+					<li><a href="#list-loyalty-program-earning-rules">List Loyalty Program Earning Rules</a></li>
+					<li><a href="#create-loyalty-program-member">Create Loyalty Program Member</a></li>
+					<li><a href="#get-loyalty-program-member">Get Loyalty Program Member</a></li>
+					<li><a href="#list-loyalty-members">List Loyalty Program Members</a></li>
+					<li><a href="#get-loyalty-program-member-activities">Get Loyalty Program Member Activities</a></li>
+					<li><a href="#add-loyalty-card-balance">Add Loyalty Card Balance</a></li>
+					<li><a href="#redeem-loyalty-card">Redeem Loyalty Card</a></li>
+				</ul>
+				<a href="#create-loyalty-program" id="create-loyalty-program" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-loyalty-program">Create Loyalty Program</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">campaign</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-loyalty-program" id="get-loyalty-program" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-loyalty-program">Get Loyalty Program</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-loyalty-program" id="update-loyalty-program" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-loyalty-program">Update Loyalty Program</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">campaign</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-loyalty-program" id="delete-loyalty-program" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-loyalty-program">Delete Loyalty Program</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-loyalty-programs" id="list-loyalty-programs" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-loyalty-programs">List Loyalty Programs</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-loyalty-program-reward-assignment" id="create-loyalty-program-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-reward-assignment-1">Create Loyalty Program Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">createRewardAssignments</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-loyalty-program-reward-assignment" id="update-loyalty-program-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-reward-assignment-1">Update Loyalty Program Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">updateRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-loyalty-program-reward-assignment" id="delete-loyalty-program-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-reward-assignment-1">Delete Loyalty Program Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">deleteRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-loyalty-program-reward-assignments" id="list-loyalty-program-reward-assignments" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-reward-assignments-1">List Loyalty Program Reward Assignments</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listRewardAssignments</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listRewardAssignments</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-loyalty-program-earning-rules" id="create-loyalty-program-earning-rules" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-earning-rule">Create Loyalty Program Earning Rules</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">createEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRules</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-loyalty-program-earning-rule" id="update-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-earning-rule">Update Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">updateEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRule</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-loyalty-program-earning-rule" id="delete-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-earning-rule">Delete Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">deleteEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-loyalty-program-earning-rules" id="list-loyalty-program-earning-rules" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-earning-rules">List Loyalty Program Earning Rules</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listEarningRules</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listEarningRules</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-loyalty-program-member" id="create-loyalty-program-member" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-member">Create Loyalty Program Member</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">createMember</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">member</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-loyalty-program-member" id="get-loyalty-program-member" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-member">Get Loyalty Program Member</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMember</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-loyalty-program-members" id="list-loyalty-program-members" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-members">List Loyalty Program Members</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listMembers</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listMembers</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-loyalty-program-member-activities" id="get-loyalty-program-member-activities" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference#get-member-activities">Get Loyalty Program Member Activities</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMemberActivities</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#add-loyalty-card-balance" id="add-loyalty-card-balance" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#add-loyalty-card-balance">Add Loyalty Card Balance</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">addPoints</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">balance</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#redeem-loyalty-card" id="redeem-loyalty-card" style="color: inherit; text-decoration: none;">
+					<h4>[Redeem Loyalty Card]</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">redeemReward</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<p>When redeeming reward with type <code>COIN</code> you need to provide additional <code>order</code> object in the <code>params</code></p>
+				<hr>
+				<a href="#segments-api" id="segments-api" style="color: inherit; text-decoration: none;">
+					<h3>Segments API</h3>
+				</a>
+				<p>Methods are provided within <code>client.segments.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-segment">Create Segment</a></li>
+					<li><a href="#get-segment">Get Segment</a></li>
+					<li><a href="#delete-segment">Delete Segment</a></li>
+				</ul>
+				<a href="#create-segment" id="create-segment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-segment">Create Segment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">segments</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">segment</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-segment-object">the segment object</a>.</p>
+				<a href="#get-segment" id="get-segment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-segment">Get Segment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">segments</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">segmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-segment" id="delete-segment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-segment">Delete Segment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">segments</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">segmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#validation-rules" id="validation-rules" style="color: inherit; text-decoration: none;">
+					<h3>Validation Rules</h3>
+				</a>
+				<p>Methods are provided within <code>client.validationRules.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-validation-rule">Create Rule</a></li>
+					<li><a href="#get-validation-rule">Get Rule</a></li>
+					<li><a href="#update-validation-rule">Update Rule</a></li>
+					<li><a href="#delete-validation-rule">Delete Rule</a></li>
+					<li><a href="#create-validation-rule-assignment">Create Rule Assignment</a></li>
+					<li><a href="#delete-validation-rule-assignment">Delete Rule Assignment</a></li>
+					<li><a href="#list-validation-rules">List Rules</a></li>
+					<li><a href="#list-validation-rule-assignments">List Rule Assignments</a></li>
+				</ul>
+				<a href="#create-validation-rule" id="create-validation-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-validation-rules">Create Validation Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">validationRule</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-validation-rule-object">validation rule object</a>.</p>
+				<a href="#get-validation-rule" id="get-validation-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-validation-rules">Get Validation Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-validation-rule" id="update-validation-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-validation-rules">Update Validation Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">update</span><span style="color: #000000">(</span><span style="color: #001080">validationRule</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-validation-rule" id="delete-validation-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-validation-rules">Delete Validation Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-validation-rule-assignment" id="create-validation-rule-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-validation-rules-assignment">Create Validation Rule Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">createAssignment</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-validation-rule-assignment" id="delete-validation-rule-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#delete-validation-rules-assignment">Delete Validation Rule Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">deleteAssignment</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-validation-rules" id="list-validation-rules" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-validation-rules">List Validation Rules</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-validation-rule-assignments" id="list-validation-rule-assignments" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-validation-rule-assignments">List Validation Rule Assignments</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#events" id="events" style="color: inherit; text-decoration: none;">
+					<h3>Events</h3>
+				</a>
+				<p>Methods are provided within <code>client.events.*</code> namespace.</p>
+				<ul>
+					<li><a href="#create-custom-event">Create Custom Event</a></li>
+				</ul>
+				<a href="#create-custom-event" id="create-custom-event" style="color: inherit; text-decoration: none;">
+					<h4><a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#the-custom-event-object">Create Custom Event</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">events</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, { </span><span style="color: #001080">customer</span><span style="color: #000000"> })</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">events</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, { </span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000"> })</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">events</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, { </span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">referral</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000"> })</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">events</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, { </span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">referral</span><span style="color: #000000">, </span><span style="color: #001080">loyalty</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000"> })</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">customer object</a>.</p>
+				<a href="#💅-client-side" id="💅-client-side" style="color: inherit; text-decoration: none;">
+					<h1>💅 Client Side</h1>
+				</a>
+				<a href="#setup-1" id="setup-1" style="color: inherit; text-decoration: none;">
+					<h2><a name="client-side-setup"></a>Setup</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">VoucherifyClientSide</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@voucherify/sdk&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyClientSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">clientApplicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">clientSecretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-CLIENT-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">trackingId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gustav@purpleson.com&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// or client.setIdentity(&#039;gustav@purpleson.com&#039;)</span>
+<span style="color: #000000">    </span><span style="color: #001080">origin:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;example.com&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// read more below</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<p>The <code>origin</code> property is required in Node.js, but when using in client-side environment (in browser) this option will be ignored.</p>
+				<p>We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user. This method will generate a tracking_id on the server side unless you specify it on your own using <code>client.setIdentity</code> method. In both cases you will receive it in the validation response.</p>
+				<a href="#methods-1" id="methods-1" style="color: inherit; text-decoration: none;">
+					<h2><a name="client-side-methods"></a>Methods</h2>
+				</a>
+				<p>Methods are provided within <code>client.*</code> namespace.</p>
+				<ul>
+					<li><a href="#set-identity">Set Identity</a></li>
+					<li><a href="#validate">Validate</a></li>
+					<li><a href="#redeem">Redeem</a></li>
+					<li><a href="#publish">Publish</a></li>
+					<li><a href="#list-vouchers">List vouchers</a></li>
+					<li><a href="#create-customer">Create customer</a></li>
+					<li><a href="#list-consents">List consents</a></li>
+					<li><a href="#update-consents">Update consents</a></li>
+					<li><a href="#list-promotions-tiers-client-side">List Promotion&#39;s Tiers</a></li>
+					<li><a href="#track-custom-events">Track custom events</a></li>
+				</ul>
+				<a href="#set-identity" id="set-identity" style="color: inherit; text-decoration: none;">
+					<h4>Set Identity</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">setIdentity</span><span style="color: #000000">(</span><span style="color: #001080">trackingId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#validate" id="validate" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#vouchers-validate">Validate</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#redeem" id="redeem" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#redeem-voucher-client-side">Redeem</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">redeem</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#publish" id="publish" style="color: inherit; text-decoration: none;">
+					<h4>Publish</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">, </span><span style="color: #001080">queryParams</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#track-custom-events" id="track-custom-events" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">Track custom events</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">context object</a>.</p>
+				<a href="#list-vouchers-1" id="list-vouchers-1" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-vouchers">List vouchers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">listVouchers</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">listVouchers</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#create-customer-1" id="create-customer-1" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-customer">Create customer</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">createCustomer</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">createCustomer</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">enableDoubleOptIn</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>enableDoubleOptIn</code> sets request header to <code>{X-Voucherify-Double-Opt-In: true}</code>, which forces user to confirm registration / subscription.</p>
+				<a href="#list-consents" id="list-consents" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-consent-client-side">List consents</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">listConsents</span><span style="color: #000000">()</span>
+</code></pre>
+				<a href="#update-consents" id="update-consents" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-customers-consents-client">Update consents</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">updateConsents</span><span style="color: #000000">(</span><span style="color: #001080">idOrSourceId</span><span style="color: #000000">, </span><span style="color: #001080">consents</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>=======</p>
+				<a href="#list-promotion-tiers" id="list-promotion-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a name="list-promotions-tiers-client-side"></a><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-promotion-tiers-client-side">List Promotion Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#track-custom-events-1" id="track-custom-events-1" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">Track custom events</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">context object</a>.</p>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<blockquote>
+								<blockquote>
+									<blockquote>
+										<blockquote>
+											<p>0cdf868c331cb5eed6fb3a8b512a5274494e7a58</p>
+										</blockquote>
+									</blockquote>
+								</blockquote>
+							</blockquote>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				<a href="#↔️-migration" id="↔️-migration" style="color: inherit; text-decoration: none;">
+					<h1><a name="migration"></a>↔️ Migration</h1>
+				</a>
+				<p>Check our <a href="./MIGRATION.md">MIGRATION GUIDE</a> to learn more about switching to our newest SDK.</p>
+				<a href="#🦸-typescript" id="🦸-typescript" style="color: inherit; text-decoration: none;">
+					<h1><a name="typescript"></a>🦸 TypeScript</h1>
+				</a>
+				<p>Voucherify JS SDK includes TypeScript declarations for our latest API.</p>
+				<p>You can find TS example in <a href="/examples/with-nodejs">examples/with-nodejs-typescript</a>.</p>
+				<a href="#😨-error-handling" id="😨-error-handling" style="color: inherit; text-decoration: none;">
+					<h1><a name="error-handling"></a>😨 Error handling</h1>
+				</a>
+				<p>Voucherify <code>error</code> object always has consistent structure, described in details in our <a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#errors">API reference</a>.</p>
+				<a href="#👴-legacy-voucherify-js-sdks" id="👴-legacy-voucherify-js-sdks" style="color: inherit; text-decoration: none;">
+					<h1><a name="legacy"></a>👴 Legacy Voucherify JS SDKs</h1>
+				</a>
+				<p>Legacy client-side Voucherify JS SDK is available here: <a href="https://github.com/rspective/voucherify.js">voucherify.js</a>.</p>
+				<p>Legacy server-side Voucherify JS SDK is available here: <a href="https://github.com/voucherifyio/voucherify-nodejs-sdk">voucherify-nodejs-sdk</a>.</p>
+				<a href="#🛠️-contributing" id="🛠️-contributing" style="color: inherit; text-decoration: none;">
+					<h1><a name="contributing"></a>🛠️ Contributing</h1>
+				</a>
+				<p>Bug reports and pull requests are welcome through <a href="https://github.com/voucherifyio/voucherify-nodejs-sdk/issues">GitHub Issues</a>.</p>
+				<p>Read more about how to Contribute to Voucherify JS SDK by visiting <a href="/CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+				<a href="#🗄️-changelog" id="🗄️-changelog" style="color: inherit; text-decoration: none;">
+					<h1><a name="changelog"></a>🗄️ Changelog</h1>
+				</a>
+				<p>Visit <a href="./CHANGELOG.md">CHANGELOG</a> to learn more about new changes.</p>
+				<p>Voucherify React Widget CHANGELOG can be found <a href="../react-widget/CHANGELOG.md">here</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -140,6 +1177,78 @@
 						<a href="interfaces/balancecreateparams.html" class="tsd-kind-icon">Balance<wbr>Create<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/balancecreateresponse.html" class="tsd-kind-icon">Balance<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignresponse.html" class="tsd-kind-icon">Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsaddvoucherparams.html" class="tsd-kind-icon">Campaigns<wbr>Add<wbr>Voucher<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsdeleteparams.html" class="tsd-kind-icon">Campaigns<wbr>Delete<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignslistparams.html" class="tsd-kind-icon">Campaigns<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignslistresponse.html" class="tsd-kind-icon">Campaigns<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsqualificationsbody.html" class="tsd-kind-icon">Campaigns<wbr>Qualifications<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsqualificationsparams.html" class="tsd-kind-icon">Campaigns<wbr>Qualifications<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsqualificationsresponse.html" class="tsd-kind-icon">Campaigns<wbr>Qualifications<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidelistvouchersresponse.html" class="tsd-kind-icon">Client<wbr>Side<wbr>List<wbr>Vouchers<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidepublishcampaign.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Publish<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidepublishpayload.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Publish<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidepublishqueryparams.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Publish<wbr>Query<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsideredeempayload.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Redeem<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsideredeemresponse.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Redeem<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsideredeemwidgetpayload.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Redeem<wbr>Widget<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidetrackloyalty.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Track<wbr>Loyalty</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidetrackpayload.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Track<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidetrackreferral.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Track<wbr>Referral</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidetrackresponse.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Track<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidevalidateparams.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Validate<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientsidevalidateresponse.html" class="tsd-kind-icon">Client<wbr>Side<wbr>Validate<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/consent.html" class="tsd-kind-icon">Consent</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/consentslistresponse.html" class="tsd-kind-icon">Consents<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/customerobject.html" class="tsd-kind-icon">Customer<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -152,10 +1261,415 @@
 						<a href="interfaces/customerscommonlistresponse.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/discountamount.html" class="tsd-kind-icon">Discount<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/discountpercent.html" class="tsd-kind-icon">Discount<wbr>Percent</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/discountunit.html" class="tsd-kind-icon">Discount<wbr>Unit</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/distributionspublicationscreateparams.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>Create<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/distributionspublicationscreateresponse.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/distributionspublicationslistparams.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/distributionspublicationslistresponse.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eventsparams.html" class="tsd-kind-icon">Events<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/eventsresponse.html" class="tsd-kind-icon">Events<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/exportresource.html" class="tsd-kind-icon">Export<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/exportscreateresponse.html" class="tsd-kind-icon">Exports<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesaddpoints.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>Points</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesaddpointsresponse.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>Points<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreatecampaign.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreatecampaignresponse.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreateearningrule.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Earning<wbr>Rule</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreatemember.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreaterewardassignmentresponse.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Reward<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiescreaterewardassignments.html" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Reward<wbr>Assignments</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesdeletecampaignparams.html" class="tsd-kind-icon">Loyalties<wbr>Delete<wbr>Campaign<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesearningrulesresponse.html" class="tsd-kind-icon">Loyalties<wbr>Earning<wbr>Rules<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesgetmemberactivitiesresponse.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Activities<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistearningrulesparams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistearningrulesresponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistmembersparams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Members<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistmembersresponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Members<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistparams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistresponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistrewardassignmentsparams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Reward<wbr>Assignments<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltieslistrewardassignmentsresponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Reward<wbr>Assignments<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesredeemrewardparams.html" class="tsd-kind-icon">Loyalties<wbr>Redeem<wbr>Reward<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesredeemrewardresponse.html" class="tsd-kind-icon">Loyalties<wbr>Redeem<wbr>Reward<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesupdatecampaign.html" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesupdateearningrule.html" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Earning<wbr>Rule</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesupdaterewardassignment.html" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Reward<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltiesvoucherresponse.html" class="tsd-kind-icon">Loyalties<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltyfixed.html" class="tsd-kind-icon">Loyalty<wbr>Fixed</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/loyaltyproportional.html" class="tsd-kind-icon">Loyalty<wbr>Proportional</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/orderscreate.html" class="tsd-kind-icon">Orders<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/orderscreateresponse.html" class="tsd-kind-icon">Orders<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ordersitem.html" class="tsd-kind-icon">Orders<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/orderslistparams.html" class="tsd-kind-icon">Orders<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/orderslistresponse.html" class="tsd-kind-icon">Orders<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ordersupdate.html" class="tsd-kind-icon">Orders<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productsbulkmetadataupdate.html" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Metadata<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productscreate.html" class="tsd-kind-icon">Products<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productscreateresponse.html" class="tsd-kind-icon">Products<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productscreatesku.html" class="tsd-kind-icon">Products<wbr>Create<wbr>Sku</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productscreateskuresponse.html" class="tsd-kind-icon">Products<wbr>Create<wbr>Sku<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productsdeleteparams.html" class="tsd-kind-icon">Products<wbr>Delete<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productsdeleteskuparams.html" class="tsd-kind-icon">Products<wbr>Delete<wbr>Sku<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productsgetresponseskus.html" class="tsd-kind-icon">Products<wbr>Get<wbr>Response<wbr>Skus</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productslistparams.html" class="tsd-kind-icon">Products<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productslistresponse.html" class="tsd-kind-icon">Products<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/productslistskus.html" class="tsd-kind-icon">Products<wbr>List<wbr>Skus</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontier.html" class="tsd-kind-icon">Promotion<wbr>Tier</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontierscreateparams.html" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Create<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontierslistallparams.html" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>List<wbr>All<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontierslistallresponse.html" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>List<wbr>All<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontiersredeemparams.html" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Redeem<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotiontiersredeemresponse.html" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Redeem<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotionscreate.html" class="tsd-kind-icon">Promotions<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotionscreateresponse.html" class="tsd-kind-icon">Promotions<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotionsvalidateparams.html" class="tsd-kind-icon">Promotions<wbr>Validate<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/promotionsvalidateresponse.html" class="tsd-kind-icon">Promotions<wbr>Validate<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemption.html" class="tsd-kind-icon">Redemption</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsgetforvoucherresponse.html" class="tsd-kind-icon">Redemptions<wbr>Get<wbr>For<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionslistparams.html" class="tsd-kind-icon">Redemptions<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionslistresponse.html" class="tsd-kind-icon">Redemptions<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsredeembody.html" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsredeemresponse.html" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsrollbackparams.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsrollbackpayload.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsrollbackqueryparams.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Query<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/redemptionsrollbackresponse.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardsassignmentobject.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardscreateassignment.html" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardslistassignmentsparams.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardslistassignmentsresponse.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardslistparams.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardslistresponse.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rewardsresponse.html" class="tsd-kind-icon">Rewards<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/segmentscreate.html" class="tsd-kind-icon">Segments<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/segmentscreateresponse.html" class="tsd-kind-icon">Segments<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/segmentslistresponse.html" class="tsd-kind-icon">Segments<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/simplecustomer.html" class="tsd-kind-icon">Simple<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/simplepromotiontier.html" class="tsd-kind-icon">Simple<wbr>Promotion<wbr>Tier</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/simplevoucher.html" class="tsd-kind-icon">Simple<wbr>Voucher</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationrulescreate.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationrulescreateassignment.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Create<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationrulescreateassignmentresponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Create<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationrulescreateresponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationruleslistassignmentsparams.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Assignments<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationruleslistassignmentsresponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Assignments<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationruleslistparams.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationruleslistresponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationrulesvalidateresponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Validate<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationsvalidatevoucherparams.html" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Voucher<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validationsvalidatevoucherresponse.html" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voucherdiscount.html" class="tsd-kind-icon">Voucher<wbr>Discount</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/voucherifyclientsideoptions.html" class="tsd-kind-icon">Voucherify<wbr>Client<wbr>Side<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/voucherifyserversideoptions.html" class="tsd-kind-icon">Voucherify<wbr>Server<wbr>Side<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersbulkupdatemetadata.html" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersbulkupdatemetadataobjectresponse.html" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Metadata<wbr>Object<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersbulkupdateobject.html" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersbulkupdateobjectresponse.html" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Object<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voucherscreateparameters.html" class="tsd-kind-icon">Vouchers<wbr>Create<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersdeleteparams.html" class="tsd-kind-icon">Vouchers<wbr>Delete<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersimport.html" class="tsd-kind-icon">Vouchers<wbr>Import</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voucherslistparams.html" class="tsd-kind-icon">Vouchers<wbr>List<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voucherslistresponse.html" class="tsd-kind-icon">Vouchers<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersqualificationexaminebody.html" class="tsd-kind-icon">Vouchers<wbr>Qualification<wbr>Examine<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersqualificationexamineparams.html" class="tsd-kind-icon">Vouchers<wbr>Qualification<wbr>Examine<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersqualificationexamineresponse.html" class="tsd-kind-icon">Vouchers<wbr>Qualification<wbr>Examine<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersresponse.html" class="tsd-kind-icon">Vouchers<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/vouchersupdate.html" class="tsd-kind-icon">Vouchers<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsaddcertainvoucherparams" class="tsd-kind-icon">Campaigns<wbr>Add<wbr>Certain<wbr>Voucher<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsaddcertainvoucherresponse" class="tsd-kind-icon">Campaigns<wbr>Add<wbr>Certain<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsaddvoucherbody" class="tsd-kind-icon">Campaigns<wbr>Add<wbr>Voucher<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsaddvoucherresponse" class="tsd-kind-icon">Campaigns<wbr>Add<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignscreatecampaign" class="tsd-kind-icon">Campaigns<wbr>Create<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignscreatecampaignresponse" class="tsd-kind-icon">Campaigns<wbr>Create<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsgetcampaignresponse" class="tsd-kind-icon">Campaigns<wbr>Get<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsimportvouchers" class="tsd-kind-icon">Campaigns<wbr>Import<wbr>Vouchers</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsupdatecampaign" class="tsd-kind-icon">Campaigns<wbr>Update<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#campaignsupdatecampaignresponse" class="tsd-kind-icon">Campaigns<wbr>Update<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsideconsentslistresponse" class="tsd-kind-icon">Client<wbr>Side<wbr>Consents<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidecustomerscreateparams" class="tsd-kind-icon">Client<wbr>Side<wbr>Customers<wbr>Create<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidecustomerscreateresponse" class="tsd-kind-icon">Client<wbr>Side<wbr>Customers<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidecustomersupdateconsentsbody" class="tsd-kind-icon">Client<wbr>Side<wbr>Customers<wbr>Update<wbr>Consents<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidelistvouchersparams" class="tsd-kind-icon">Client<wbr>Side<wbr>List<wbr>Vouchers<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidepublishpreparedpayload" class="tsd-kind-icon">Client<wbr>Side<wbr>Publish<wbr>Prepared<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidepublishresponse" class="tsd-kind-icon">Client<wbr>Side<wbr>Publish<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsideredeemorder" class="tsd-kind-icon">Client<wbr>Side<wbr>Redeem<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidetrackcustomer" class="tsd-kind-icon">Client<wbr>Side<wbr>Track<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#clientsidevoucherlisting" class="tsd-kind-icon">Client<wbr>Side<wbr>Voucher<wbr>Listing</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#customerunconfirmed" class="tsd-kind-icon">Customer<wbr>Unconfirmed</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#customerscreatebody" class="tsd-kind-icon">Customers<wbr>Create<wbr>Body</a>
@@ -185,13 +1699,160 @@
 						<a href="modules.html#customersupdateconsentsbody" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#customersupdateconsentsparams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#customersupdateparams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#customersupdateresponse" class="tsd-kind-icon">Customers<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#exportsgetresponse" class="tsd-kind-icon">Exports<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiescreateearningruleresponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Earning<wbr>Rule<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiescreatememberresponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Member<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiesgetcampaignresponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiesgetmemberresponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiesupdatecampaignresponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiesupdateearningruleresponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Earning<wbr>Rule<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#loyaltiesupdaterewardassignmentresponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Reward<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ordersgetresponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ordersupdateresponse" class="tsd-kind-icon">Orders<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsbulkmetadataupdateresponse" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Metadata<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsbulkupdate" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsbulkupdateresponse" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsgetresponse" class="tsd-kind-icon">Products<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsgetskuresponse" class="tsd-kind-icon">Products<wbr>Get<wbr>Sku<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsupdate" class="tsd-kind-icon">Products<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsupdateresponse" class="tsd-kind-icon">Products<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsupdatesku" class="tsd-kind-icon">Products<wbr>Update<wbr>Sku</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#productsupdateskuresponse" class="tsd-kind-icon">Products<wbr>Update<wbr>Sku<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#promotiontierscreateresponse" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#promotiontierslistresponse" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#promotiontiersupdateparams" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Update<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#promotiontiersupdateresponse" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardscreate" class="tsd-kind-icon">Rewards<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardscreateassignmentresponse" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardscreateresponse" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardsgetresponse" class="tsd-kind-icon">Rewards<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardstype" class="tsd-kind-icon">Rewards<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardstyperesponse" class="tsd-kind-icon">Rewards<wbr>Type<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardsupdate" class="tsd-kind-icon">Rewards<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardsupdateassignment" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardsupdateassignmentresponse" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rewardsupdateresponse" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#segmentsgetresponse" class="tsd-kind-icon">Segments<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#simplerollback" class="tsd-kind-icon">Simple<wbr>Rollback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#validationrulesgetresponse" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#validationrulesupdate" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#validationrulesupdateresponse" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#validationsvalidatecode" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#validationsvalidatecontext" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchertype" class="tsd-kind-icon">Voucher<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersbulkupdate" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersbulkupdatemetadataresponse" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Metadata<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersbulkupdateresponse" class="tsd-kind-icon">Vouchers<wbr>Bulk<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#voucherscreate" class="tsd-kind-icon">Vouchers<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#voucherscreateresponse" class="tsd-kind-icon">Vouchers<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersdisableresponse" class="tsd-kind-icon">Vouchers<wbr>Disable<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersenableresponse" class="tsd-kind-icon">Vouchers<wbr>Enable<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersgetresponse" class="tsd-kind-icon">Vouchers<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#vouchersupdateresponse" class="tsd-kind-icon">Vouchers<wbr>Update<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#voucherifyclientside" class="tsd-kind-icon">Voucherify<wbr>Client<wbr>Side</a>

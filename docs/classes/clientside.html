@@ -86,10 +86,14 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#createcustomer" class="tsd-kind-icon">create<wbr>Customer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#listconsents" class="tsd-kind-icon">list<wbr>Consents</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#listvouchers" class="tsd-kind-icon">list<wbr>Vouchers</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#publish" class="tsd-kind-icon">publish</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#redeem" class="tsd-kind-icon">redeem</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#setidentity" class="tsd-kind-icon">set<wbr>Identity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#track" class="tsd-kind-icon">track</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#updateconsents" class="tsd-kind-icon">update<wbr>Consents</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="clientside.html#validate" class="tsd-kind-icon">validate</a></li>
 							</ul>
 						</section>
@@ -125,33 +129,10 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="publish" class="tsd-anchor"></a>
-					<h3>publish</h3>
+					<a name="createcustomer" class="tsd-anchor"></a>
+					<h3>create<wbr>Customer</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>campaign<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payload<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>campaign: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>payload: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = ...</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="redeem" class="tsd-anchor"></a>
-					<h3>redeem</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">redeem<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payload<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Customer<span class="tsd-signature-symbol">(</span>customer<span class="tsd-signature-symbol">: </span><a href="../interfaces/customerrequest.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerRequest</a>, enableDoubleOptIn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#customerscreateresponse" class="tsd-signature-type" data-tsd-kind="Type alias">CustomersCreateResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -160,7 +141,118 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference#redeem-voucher-client-side">https://docs.voucherify.io/reference#redeem-voucher-client-side</a></p>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-customer">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-customer</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>customer: <a href="../interfaces/customerrequest.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerRequest</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enableDoubleOptIn: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#customerscreateresponse" class="tsd-signature-type" data-tsd-kind="Type alias">CustomersCreateResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listconsents" class="tsd-anchor"></a>
+					<h3>list<wbr>Consents</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Consents<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/consentslistresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ConsentsListResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-consent-client-side">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-consent-client-side</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/consentslistresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ConsentsListResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listvouchers" class="tsd-anchor"></a>
+					<h3>list<wbr>Vouchers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Vouchers<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/voucherslistparams.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidelistvouchersresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideListVouchersResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-vouchers">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-vouchers</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../interfaces/voucherslistparams.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListParams</a><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidelistvouchersresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideListVouchersResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="publish" class="tsd-anchor"></a>
+					<h3>publish</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>campaign<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payload<span class="tsd-signature-symbol">?: </span><a href="../interfaces/clientsidepublishpayload.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSidePublishPayload</a>, queryParams<span class="tsd-signature-symbol">?: </span><a href="../interfaces/clientsidepublishqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSidePublishQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#clientsidepublishresponse" class="tsd-signature-type" data-tsd-kind="Type alias">ClientSidePublishResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-publication">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#create-publication</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>campaign: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>payload: <a href="../interfaces/clientsidepublishpayload.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSidePublishPayload</a><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+								<li>
+									<h5>queryParams: <a href="../interfaces/clientsidepublishqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSidePublishQueryParams</a><span class="tsd-signature-symbol"> = {}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#clientsidepublishresponse" class="tsd-signature-type" data-tsd-kind="Type alias">ClientSidePublishResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="redeem" class="tsd-anchor"></a>
+					<h3>redeem</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">redeem<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payload<span class="tsd-signature-symbol">?: </span><a href="../interfaces/clientsideredeempayload.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideRedeemPayload</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsideredeemresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideRedeemResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#redeem-voucher-client-side">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#redeem-voucher-client-side</a></p>
 									</dd>
 								</dl>
 							</div>
@@ -170,10 +262,10 @@
 									<h5>code: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>payload: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = ...</span></h5>
+									<h5>payload: <a href="../interfaces/clientsideredeempayload.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideRedeemPayload</a><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsideredeemresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideRedeemResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -201,7 +293,7 @@
 					<a name="track" class="tsd-anchor"></a>
 					<h3>track</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">(</span>event_name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, metadata<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, customer<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">(</span>event_name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, customer<span class="tsd-signature-symbol">: </span><a href="../interfaces/customerrequest.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerRequest</a>, metadata<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, referral<span class="tsd-signature-symbol">?: </span><a href="../interfaces/clientsidetrackreferral.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackReferral</a>, loyalty<span class="tsd-signature-symbol">?: </span><a href="../interfaces/clientsidetrackloyalty.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackLoyalty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidetrackresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -210,23 +302,59 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference#track-custom-event-client-side">https://docs.voucherify.io/reference#track-custom-event-client-side</a></p>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side</a></p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event_name: <span class="tsd-signature-type">any</span></h5>
+									<h5>event_name: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>metadata: <span class="tsd-signature-type">any</span></h5>
+									<h5>customer: <a href="../interfaces/customerrequest.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerRequest</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> customer: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> metadata: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> referral: <a href="../interfaces/clientsidetrackreferral.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackReferral</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> loyalty: <a href="../interfaces/clientsidetrackloyalty.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackLoyalty</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidetrackresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideTrackResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="updateconsents" class="tsd-anchor"></a>
+					<h3>update<wbr>Consents</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Consents<span class="tsd-signature-symbol">(</span>idOrSourceId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, consents<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-customers-consents-client">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#update-customers-consents-client</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>idOrSourceId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>consents: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -234,7 +362,7 @@
 					<a name="validate" class="tsd-anchor"></a>
 					<h3>validate</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">validate<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">validate<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/clientsidevalidateparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideValidateParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidevalidateresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideValidateResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -243,17 +371,17 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference/#vouchers-validate">https://docs.voucherify.io/reference/#vouchers-validate</a></p>
+									<dd><p><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq##vouchers-validate">https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq##vouchers-validate</a></p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5>params: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/clientsidevalidateparams.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideValidateParams</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/clientsidevalidateresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ClientSideValidateResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -278,6 +406,15 @@
 								<a href="clientside.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="clientside.html#createcustomer" class="tsd-kind-icon">create<wbr>Customer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="clientside.html#listconsents" class="tsd-kind-icon">list<wbr>Consents</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="clientside.html#listvouchers" class="tsd-kind-icon">list<wbr>Vouchers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="clientside.html#publish" class="tsd-kind-icon">publish</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -288,6 +425,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="clientside.html#track" class="tsd-kind-icon">track</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="clientside.html#updateconsents" class="tsd-kind-icon">update<wbr>Consents</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="clientside.html#validate" class="tsd-kind-icon">validate</a>
