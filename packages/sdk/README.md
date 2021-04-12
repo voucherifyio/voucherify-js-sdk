@@ -16,23 +16,23 @@ Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_sour
 - [Documentation](#documentation)
 - [Installation](#installation)
 - [Server side](#server-side)
-  - [Setup](#server-side-setup")
+  - [Setup](#server-side-setup)
   - [Methods](#server-side-methods)
-    - [Vouchers](#vouchers-api)
-    - [Campaigns](#campaigns-api)
-    - [Validations](#distributions-api)
-    - [Distributions](#validations-api)
-    - [Redemptions](#redemptions-api)
-    - [Customers](#customers-api)
-    - [Consents](#consents-api)
-    - [Orders](#orders-api)
-    - [Products](#products-api)
-    - [Rewards](#rewards-api)
-    - [Loyalties](#loyalties-api)
-    - [Segments](#segments-api)
-    - [Validation Rules](#validation-rules-api)
-    - [Promotions](#promotions-api)
-    - [Events](#events-api)
+    - [Vouchers](#vouchers)
+    - [Campaigns](#campaigns)
+    - [Distributions](#distributions)
+    - [Validations](#validations)
+    - [Redemptions](#redemptions)
+    - [Customers](#customers)
+    - [Consents](#consents)
+    - [Orders](#orders)
+    - [Products](#products)
+    - [Rewards](#rewards)
+    - [Loyalties](#loyalties)
+    - [Segments](#segments)
+    - [Validation Rules](#validation-rules)
+    - [Promotions](#promotions)
+    - [Events](#events)
 - [Client side](#client-side)
   - [Setup](#client-side-setup)
   - [Methods](#client-side-methods)
@@ -353,7 +353,7 @@ client.validations.validate(params)
 
 ---
 
-### Redemption
+### Redemptions
 
 Methods are provided within `client.redemptions.*` namespace.
 
@@ -699,7 +699,7 @@ client.products.listSkus(productId)
 
 ---
 
-### Rewards API
+### Rewards
 
 Methods are provided within `client.rewards.*` namespace.
 
@@ -775,7 +775,7 @@ client.rewards.listAssignments(rewardId, params)
 
 ---
 
-### Loyalties API
+### Loyalties
 
 Methods are provided within `client.loyalties.*` namespace.
 
@@ -927,7 +927,7 @@ When redeeming reward with type `COIN` you need to provide additional `order` ob
 
 ---
 
-### Segments API
+### Segments
 
 Methods are provided within `client.segments.*` namespace.
 
