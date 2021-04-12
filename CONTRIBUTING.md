@@ -1,4 +1,4 @@
-# Contributing to @Voucherify
+# Contributing to Voucherify JS SDK
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local machine
 2. Create a new branch: `git checkout -b MY_BRANCH_NAME`
@@ -17,14 +17,14 @@
 1. Run `yarn changeset`
 2. Select the packages you want to include in the changeset using <kbd>↑</kbd> and <kbd>↓</kbd> to navigate to packages, and <kbd>space</kbd> to select a package. Hit enter when all desired packages are selected. If no package is selected, a blank changeset will be created (e.g: use a blank changeset when changing/adding `examples/` or changes outside of `packages/*`)
 3. You will be prompted to select a bump type for each selected package. Select an appropriate bump type for the changes made
-	- `major` version when you make incompatible API changes,
-	- `minor` version when you add functionality in a backwards compatible manner, and
-	- `patch` version when you make backwards compatible bug fixes
-	> See [here](https://semver.org/) for more information on semver versioning
+   - `major` version when you make incompatible API changes,
+   - `minor` version when you add functionality in a backwards compatible manner, and
+   - `patch` version when you make backwards compatible bug fixes
+     > See [here](https://semver.org/) for more information on semver versioning
 4. Your final prompt will be to provide a message to go alongside the changeset. This will be written into the changelog when the next release occurs. A good idea of what should be in a changeset is:
-	- WHAT the change is
-	- WHY the change was made
-	- HOW a consumer should update their code
+   - WHAT the change is
+   - WHY the change was made
+   - HOW a consumer should update their code
 5. A new changeset file, written in Markdown, will be added to `.changeset/[UNIQUE_ID].md` - the message you have typed can be found here. You can edit this file and add additional information or bump type of any package
 6. Once you're happy with the changeset commit this file to your branch
 
@@ -35,11 +35,11 @@ See [here](https://github.com/atlassian/changesets/blob/master/docs/adding-a-cha
 1. Review [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork)
 2. Merge [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) against `main` branch
 3. A GitHub workflow will run and do automatic versioning from changesets and open a special pull request with title `Version Packages`
-	- If a pull request `Version Packages` already exists (is open), then new changes are automatically combined into the existing PR so you can continue to review and merge other pull requests
+   - If a pull request `Version Packages` already exists (is open), then new changes are automatically combined into the existing PR so you can continue to review and merge other pull requests
 4. Once you feel comfortable to make a release, merge `Version Packages` pull request against `main`
 5. A GitHub workflow will run to:
-	- Automatically publish packages to the npm registry
-	- Create a [GitHub release](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-releases) with a changelog of all changes, and link changes to commits
+   - Automatically publish packages to the npm registry
+   - Create a [GitHub release](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-releases) with a changelog of all changes, and link changes to commits
 
 ## Available scripts
 
