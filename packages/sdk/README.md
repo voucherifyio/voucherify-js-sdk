@@ -1073,7 +1073,6 @@ Methods are provided within `client.*` namespace.
 - [Create customer](#create-customer)
 - [List consents](#list-consents)
 - [Update consents](#update-consents)
-- [List Promotion's Tiers](#list-promotions-tiers-client-side)
 - [Track custom events](#track-custom-events)
 
 #### Set Identity
@@ -1100,14 +1099,6 @@ client.redeem(code, payload)
 client.publish(campaignName, payload)
 client.publish(campaignName, payload, queryParams)
 ```
-
-#### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
-
-```javascript
-client.track(eventName, metadata, customer)
-```
-
-Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
 
 #### [List vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers)
 
@@ -1137,23 +1128,11 @@ client.listConsents()
 client.updateConsents(idOrSourceId, consents)
 ```
 
-=======
-
-#### <a name="list-promotions-tiers-client-side"></a>[List Promotion Tiers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers-client-side)
-
-```javascript
-client.publish(campaignName, payload)
-```
-
 #### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
 
 ```javascript
 client.track(eventName, metadata, customer)
 ```
-
-Check [context object](https://docs.voucherify.io/v1/reference#the-customer-object).
-
-> > > > > > > 0cdf868c331cb5eed6fb3a8b512a5274494e7a58
 
 # <a name="migration"></a>↔️ Migration
 
