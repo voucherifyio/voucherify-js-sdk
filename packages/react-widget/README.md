@@ -79,7 +79,7 @@ Each widget requires `clientApplicationId` and `clientSecretKey` to be passed as
 
 # <a name="widgets"></a>🤖 Widgets
 
-## <a name="validate"></a>Validate
+## Validate
 
 ```javascript
 import * as React from 'react'
@@ -131,7 +131,7 @@ Additional props for Validate Voucherify React Widget
 | amountPlaceholder     | `string`   | text displayed as a placeholder in the amount input field (`amount: true` is required)                      |
 | textValidate          | `string`   | a text displayed on the button (default: "Validate")                                                        |
 
-## <a name="redeem"></a>Redeem
+## Redeem
 
 ```javascript
 import * as React from 'react'
@@ -183,7 +183,7 @@ Additional props for Redeem Voucherify React Widget
 | amountPlaceholder     | `string`   | text displayed as a placeholder in the amount input field (`amount: true` is required)                      |
 | textValidate          | `string`   | a text displayed on the button (default: "Redeem")                                                          |
 
-## <a name="publish"></a>Publish
+## Publish
 
 ```javascript
 import * as React from 'react'
@@ -254,7 +254,7 @@ Additional props for Publish Voucherify React Widget
 | name     | `string`  | 'name', 'email', 'phone', 'line_1', 'line_2', 'city', 'postal_code', 'state', 'country' |
 | required | `boolean` |
 
-## <a name="subscribe"></a>Subscribe
+## Subscribe
 
 ```javascript
 import * as React from 'react'
