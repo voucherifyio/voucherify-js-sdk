@@ -1,28 +1,10 @@
+import { CodeConfig, SimpleLoyaltyVoucher, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
+import { CampaignResponse } from './Campaigns'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-import { VouchersResponse } from './Vouchers'
-
-interface LoyaltiesVoucher {
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
-	}
-	type?: string
-	is_referral_code?: boolean
-	loyalty_card?: {
-		points: number
-		balance: number
-	}
-	redemption?: {
-		quantity?: number
-	}
-}
 
 export interface LoyaltiesListParams {
 	limit?: number
@@ -51,62 +33,22 @@ export interface LoyaltiesCreateCampaign {
 			points: number
 			balance?: number
 		}
-		code_config?: {
-			length?: number
-			charset?: string
-			pattern?: string
-			prefix?: string
-			suffix?: string
-		}
+		code_config?: CodeConfig
 	}
 	metadata?: Record<string, any>
 }
 
-export interface LoyaltiesCreateCampaignResponse {
-	id: string
-	name: string
+export type LoyaltiesCreateCampaignResponse = Omit<CampaignResponse, 'campaign_type' | 'voucher'> & {
 	campaign_type?: 'LOYALTY_PROGRAM'
-	type: 'AUTO_UPDATE' | 'STATIC'
-	category?: string
-	auto_join?: boolean
-	join_once?: boolean
-	description?: string
-	start_date?: string
-	validation_rules_assignments?: {
-		data?: ValidationRulesCreateAssignmentResponse[]
-		object: 'list'
-		total: number
-		data_ref: 'data'
-	}
-	expiration_date?: string
-	activity_duration_after_publishing?: string
-	validity_timeframe?: {
-		interval?: string
-		duration?: string
-	}
-	validity_day_of_week?: number[]
-	metadata?: Record<string, any>
-	created_at: string
-	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
-	active: boolean
-	voucher?: LoyaltiesVoucher
-	referral_program?: boolean
-	use_voucher_metadata_schema?: boolean
-	protected?: boolean
-	vouchers_count?: number
-	object: 'campaign'
+	voucher?: SimpleLoyaltyVoucher
 }
 
 export type LoyaltiesGetCampaignResponse = LoyaltiesCreateCampaignResponse
 
-export interface LoyaltiesUpdateCampaign {
-	id: string
-	start_date?: string
-	expiration_date?: string
-	metadata?: Record<string, any>
-	description?: string
-	type?: 'AUTO_UPDATE' | 'STATIC'
-}
+export type LoyaltiesUpdateCampaign = Pick<
+	LoyaltiesCreateCampaignResponse,
+	'start_date' | 'expiration_date' | 'type' | 'description' | 'metadata'
+> & { id: string }
 
 export type LoyaltiesUpdateCampaignResponse = LoyaltiesCreateCampaignResponse
 

@@ -2,14 +2,17 @@ import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 
 export type VoucherType = 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+
+export interface CodeConfig {
+	length?: number
+	charset?: string
+	pattern?: string
+	prefix?: string
+	suffix?: string
+}
+
 export interface SimpleVoucher {
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
-	}
+	code_config?: CodeConfig
 	type: VoucherType
 	is_referral_code?: boolean
 	discount?: DiscountUnit | DiscountAmount | DiscountPercent
@@ -21,6 +24,11 @@ export interface SimpleVoucher {
 		quantity: number
 	}
 }
+
+export type SimpleLoyaltyVoucher = Pick<
+	SimpleVoucher,
+	'code_config' | 'is_referral_code' | 'loyalty_card' | 'redemption'
+> & { type: 'LOYALTY_CARD' }
 
 export interface DiscountUnit {
 	type?: 'UNIT'
@@ -136,13 +144,7 @@ export interface VouchersQualificationExamineResponse {
 export interface VouchersCreateParameters {
 	active?: boolean
 	code?: string
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
-	}
+	code_config?: CodeConfig
 	redemption?: {
 		quantity: number
 	}
@@ -230,13 +232,7 @@ export interface VouchersImport {
 	redemption?: {
 		quantity: number
 	}
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
-	}
+	code_config?: CodeConfig
 }
 
 export interface VouchersBulkUpdateObject {
