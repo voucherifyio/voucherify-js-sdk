@@ -4,7 +4,6 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { CampaignResponse } from './Campaigns'
 import { SimpleCustomer } from './Customers'
-import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
 export interface LoyaltiesListParams {
 	limit?: number
