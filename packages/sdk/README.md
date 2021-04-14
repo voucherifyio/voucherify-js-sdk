@@ -2,7 +2,6 @@
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
-  <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Lint/badge.svg?branch=main" alt="Lint Status"/></a>
   <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/sdk?label=SDK" alt="SDK NPM Version"/></a>
   <a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/sdk?label=SDK%20downloads" alt="SDK NPM Downloads"/></a>
 </p>
