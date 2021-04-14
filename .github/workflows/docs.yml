@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  run-linters:
-    name: Run linters
+  build-docs:
+    name: Build docs
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +26,6 @@ jobs:
       - name: Build documentation
         run: yarn docs
 
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: main
-          folder: docs
+          commit_message: Auto updated documentation
