@@ -76,23 +76,23 @@
 					<li><a href="#documentation">Documentation</a></li>
 					<li><a href="#installation">Installation</a></li>
 					<li><a href="#server-side">Server side</a><ul>
-							<li><a href="#server-side-setup%22">Setup</a></li>
+							<li><a href="#server-side-setup">Setup</a></li>
 							<li><a href="#server-side-methods">Methods</a><ul>
-									<li><a href="#vouchers-api">Vouchers</a></li>
-									<li><a href="#campaigns-api">Campaigns</a></li>
-									<li><a href="#distributions-api">Validations</a></li>
-									<li><a href="#validations-api">Distributions</a></li>
-									<li><a href="#redemptions-api">Redemptions</a></li>
-									<li><a href="#customers-api">Customers</a></li>
-									<li><a href="#consents-api">Consents</a></li>
-									<li><a href="#orders-api">Orders</a></li>
-									<li><a href="#products-api">Products</a></li>
-									<li><a href="#rewards-api">Rewards</a></li>
-									<li><a href="#loyalties-api">Loyalties</a></li>
-									<li><a href="#segments-api">Segments</a></li>
-									<li><a href="#validation-rules-api">Validation Rules</a></li>
-									<li><a href="#promotions-api">Promotions</a></li>
-									<li><a href="#events-api">Events</a></li>
+									<li><a href="#vouchers">Vouchers</a></li>
+									<li><a href="#campaigns">Campaigns</a></li>
+									<li><a href="#distributions">Distributions</a></li>
+									<li><a href="#validations">Validations</a></li>
+									<li><a href="#redemptions">Redemptions</a></li>
+									<li><a href="#customers">Customers</a></li>
+									<li><a href="#consents">Consents</a></li>
+									<li><a href="#orders">Orders</a></li>
+									<li><a href="#products">Products</a></li>
+									<li><a href="#rewards">Rewards</a></li>
+									<li><a href="#loyalties">Loyalties</a></li>
+									<li><a href="#segments">Segments</a></li>
+									<li><a href="#validation-rules">Validation Rules</a></li>
+									<li><a href="#promotions">Promotions</a></li>
+									<li><a href="#events">Events</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -372,8 +372,8 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validations</span><span style="color: #000000">.</span><span style="color: #795E26">validate</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
-				<a href="#redemption" id="redemption" style="color: inherit; text-decoration: none;">
-					<h3>Redemption</h3>
+				<a href="#redemptions" id="redemptions" style="color: inherit; text-decoration: none;">
+					<h3>Redemptions</h3>
 				</a>
 				<p>Methods are provided within <code>client.redemptions.*</code> namespace.</p>
 				<ul>
@@ -665,8 +665,8 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">listSkus</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
-				<a href="#rewards-api" id="rewards-api" style="color: inherit; text-decoration: none;">
-					<h3>Rewards API</h3>
+				<a href="#rewards" id="rewards" style="color: inherit; text-decoration: none;">
+					<h3>Rewards</h3>
 				</a>
 				<p>Methods are provided within <code>client.rewards.*</code> namespace.</p>
 				<ul>
@@ -730,8 +730,8 @@
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
-				<a href="#loyalties-api" id="loyalties-api" style="color: inherit; text-decoration: none;">
-					<h3>Loyalties API</h3>
+				<a href="#loyalties" id="loyalties" style="color: inherit; text-decoration: none;">
+					<h3>Loyalties</h3>
 				</a>
 				<p>Methods are provided within <code>client.loyalties.*</code> namespace.</p>
 				<ul>
@@ -859,8 +859,8 @@
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<p>When redeeming reward with type <code>COIN</code> you need to provide additional <code>order</code> object in the <code>params</code></p>
 				<hr>
-				<a href="#segments-api" id="segments-api" style="color: inherit; text-decoration: none;">
-					<h3>Segments API</h3>
+				<a href="#segments" id="segments" style="color: inherit; text-decoration: none;">
+					<h3>Segments</h3>
 				</a>
 				<p>Methods are provided within <code>client.segments.*</code> namespace.</p>
 				<ul>
@@ -990,7 +990,6 @@
 					<li><a href="#create-customer">Create customer</a></li>
 					<li><a href="#list-consents">List consents</a></li>
 					<li><a href="#update-consents">Update consents</a></li>
-					<li><a href="#list-promotions-tiers-client-side">List Promotion&#39;s Tiers</a></li>
 					<li><a href="#track-custom-events">Track custom events</a></li>
 				</ul>
 				<a href="#set-identity" id="set-identity" style="color: inherit; text-decoration: none;">
@@ -1014,12 +1013,6 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">)</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">, </span><span style="color: #001080">queryParams</span><span style="color: #000000">)</span>
 </code></pre>
-				<a href="#track-custom-events" id="track-custom-events" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">Track custom events</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
-</code></pre>
-				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">context object</a>.</p>
 				<a href="#list-vouchers-1" id="list-vouchers-1" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-vouchers">List vouchers</a></h4>
 				</a>
@@ -1043,33 +1036,11 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">updateConsents</span><span style="color: #000000">(</span><span style="color: #001080">idOrSourceId</span><span style="color: #000000">, </span><span style="color: #001080">consents</span><span style="color: #000000">)</span>
 </code></pre>
-				<p>=======</p>
-				<a href="#list-promotion-tiers" id="list-promotion-tiers" style="color: inherit; text-decoration: none;">
-					<h4><a name="list-promotions-tiers-client-side"></a><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-promotion-tiers-client-side">List Promotion Tiers</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">publish</span><span style="color: #000000">(</span><span style="color: #001080">campaignName</span><span style="color: #000000">, </span><span style="color: #001080">payload</span><span style="color: #000000">)</span>
-</code></pre>
-				<a href="#track-custom-events-1" id="track-custom-events-1" style="color: inherit; text-decoration: none;">
+				<a href="#track-custom-events" id="track-custom-events" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">Track custom events</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
 </code></pre>
-				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">context object</a>.</p>
-				<blockquote>
-					<blockquote>
-						<blockquote>
-							<blockquote>
-								<blockquote>
-									<blockquote>
-										<blockquote>
-											<p>0cdf868c331cb5eed6fb3a8b512a5274494e7a58</p>
-										</blockquote>
-									</blockquote>
-								</blockquote>
-							</blockquote>
-						</blockquote>
-					</blockquote>
-				</blockquote>
 				<a href="#↔️-migration" id="↔️-migration" style="color: inherit; text-decoration: none;">
 					<h1><a name="migration"></a>↔️ Migration</h1>
 				</a>
