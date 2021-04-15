@@ -16,6 +16,8 @@
 |
 <b><a href="#installation">Installation and requirements</a></b>
 |
+<b><a href="#tracking">Tracking</a></b>
+|
 <b><a href="#typescript">Typescript</a></b>
 |
 <b><a href="#error-handling">Error handling</a></b>
@@ -94,6 +96,22 @@ If you want to use Redeem or Publish Widget, remember to allow client-side redem
 
 Each widget requires `clientApplicationId` and `clientSecretKey` to be passed as type of `string`.
 
+# <a name="tracking"></a>📍 Tracking
+
+We are tracking users by a tracking_id. For that we are setting up an identity for the user during widget initialization:
+
+```javascript
+<VoucherifyValidate
+	clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
+	clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+	trackingId="gustav@purpleson.com"
+/>
+```
+
+or
+
+This method will generate a tracking_id on the server side unless you specify it on your own using `client.setIdentity` method. In both cases you will receive it in the validation response.
+
 # <a name="widgets"></a>🤖 Widgets
 
 ## Validate
@@ -120,6 +138,7 @@ const App = () => {
 			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
 			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
 			textPlaceholder="e.g. Testing7fjWdr"
+			trackingId="gustav@purpleson.com"
 			amount
 			onValidated={onValidatedResponse}
 			onError={onErrorResponse}
@@ -172,6 +191,7 @@ const App = () => {
 		<VoucherifyRedeem
 			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
 			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+			trackingId="gustav@purpleson.com"
 			textPlaceholder="e.g. Testing7fjWdr"
 			amount
 			onRedeem={onRedeemResponse}
@@ -225,6 +245,7 @@ const App = () => {
 		<VoucherifyPublish
 			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
 			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+			trackingId="gustav@purpleson.com"
 			textPublish="Get your voucher!"
 			onPublished={onPublishedResponse}
 			onError={onErrorResponse}
@@ -297,6 +318,7 @@ const App = () => {
 		<VoucherifySubscribe
 			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
 			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+			trackingId="gustav@purpleson.com"
 			textSubscribe="Subscribe now!"
 			onSubscribed={onSubscribedResponse}
 			onError={onErrorResponse}

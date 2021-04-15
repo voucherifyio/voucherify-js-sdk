@@ -1087,14 +1087,17 @@ const client = VoucherifyClientSide({
 	clientApplicationId: 'YOUR-APPLICATION-ID',
 	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
-	trackingId: 'gustav@purpleson.com', // or client.setIdentity('gustav@purpleson.com')
 	origin: 'example.com', // read more below
 })
 ```
 
 The `origin` property is required in Node.js, but when using in client-side environment (in browser) this option will be ignored.
 
-We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user. This method will generate a tracking_id on the server side unless you specify it on your own using `client.setIdentity` method. In both cases you will receive it in the validation response.
+We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user.
+
+```javascript
+client.setIdentity('gustav@purpleson.com')
+```
 
 ## <a name="client-side-methods"></a>Methods
 
