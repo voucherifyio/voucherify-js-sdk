@@ -1,9 +1,39 @@
-# Voucherify React Widget
+<p align="center" >
+  <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
+</p>
+
+<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> React Widget</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
   <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/react-widget?label=React%20widget" alt="React Widget NPM Version"/></a>
   <a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/react-widget?label=React%20widget%20downloads" alt="React Widget NPM Downloads"/></a>
+</p>
+<hr/>
+
+<p align="center">
+<b><a href="#documentation">Documentation</a></b>
+|
+<b><a href="#installation">Installation and requirements</a></b>
+|
+<b><a href="#typescript">Typescript</a></b>
+|
+<b><a href="#error-handling">Error handling</a></b>
+|
+<b><a href="#contributing">Contributing</a></b>
+|
+<b><a href="#changelog">Changelog</a></b>
+</p>
+
+<p align="center">
+Widgets:
+<a href="#validate">Validate</a>
+|
+<a href="#redeem">Redeem</a>
+|
+<a href="#publish">Publish</a>
+|
+<a href="#subscribe">Subscribe</a>
 </p>
 
 Voucherify React Widget contains several client-side Voucherify methods, which are useful in integrating your promotion logic straight to your e-commerce store.
@@ -11,20 +41,6 @@ Voucherify React Widget contains several client-side Voucherify methods, which a
 Voucherify React Widget uses Voucherify JS SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
 
 Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
-
-# 🔖 Table of contents
-
-- [Documentation](#documentation)
-- [Installation](#installation)
-- [Widgets](#widgets)
-  - [Validate](#validate)
-  - [Redeem](#redeem)
-  - [Publish](#publish)
-  - [Subscribe](#subscribe)
-- [Typescript](#typescript)
-- [Error handling](#error-handling)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
 
 # <a name="documentation"></a>📝 Documentation
 
@@ -38,12 +54,14 @@ You can also use our detailed documentation provided by our package [here](https
 
 🧪 Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
 
-# <a name="installation"></a>⚙️ Installation
+# <a name="installation"></a>⚙️ Installation and requirements
+
+React Widgets require `React` and `React-DOM` version at least `17.0.0`
 
 Local installation:
 
 ```sh
-npm install voucherify --save
+npm install @voucherify/react-widget --save
 ```
 
 CDN installation:
@@ -85,10 +103,11 @@ import * as React from 'react'
 
 import * as ReactDOM from 'react-dom'
 
-import { VoucherifyValidate } from '@voucherify/react-widgets'
+import '@voucherify/react-widget/dist/voucherify.css'
+import { VoucherifyValidate } from '@voucherify/react-widget'
 
 const App = () => {
-	const onValidateResponse = response => {
+	const onValidatedResponse = response => {
 		console.log('Do something with response: ', response)
 	}
 
@@ -98,8 +117,8 @@ const App = () => {
 
 	return (
 		<VoucherifyValidate
-			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
-			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
+			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
+			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
 			textPlaceholder="e.g. Testing7fjWdr"
 			amount
 			onValidated={onValidatedResponse}
@@ -137,7 +156,8 @@ import * as React from 'react'
 
 import * as ReactDOM from 'react-dom'
 
-import { VoucherifyRedeem } from '@voucherify/react-widgets'
+import '@voucherify/react-widget/dist/voucherify.css'
+import { VoucherifyRedeem } from '@voucherify/react-widget'
 
 const App = () => {
 	const onRedeemResponse = response => {
@@ -150,8 +170,8 @@ const App = () => {
 
 	return (
 		<VoucherifyRedeem
-			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
-			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
+			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
+			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
 			textPlaceholder="e.g. Testing7fjWdr"
 			amount
 			onRedeem={onRedeemResponse}
@@ -180,7 +200,7 @@ Additional props for Redeem Voucherify React Widget
 | amount                | `boolean`  | flag enables the amount input field                                                                         |
 | textPlaceholder       | `string`   | text displayed as a placeholder in the code input field                                                     |
 | amountPlaceholder     | `string`   | text displayed as a placeholder in the amount input field (`amount: true` is required)                      |
-| textValidate          | `string`   | a text displayed on the button (default: "Redeem")                                                          |
+| textRedeem            | `string`   | a text displayed on the button (default: "Redeem")                                                          |
 
 ## Publish
 
@@ -189,7 +209,8 @@ import * as React from 'react'
 
 import * as ReactDOM from 'react-dom'
 
-import { VoucherifyPublish } from '@voucherify/react-widgets'
+import '@voucherify/react-widget/dist/voucherify.css'
+import { VoucherifyPublish } from '@voucherify/react-widget'
 
 const App = () => {
 	const onPublishedResponse = response => {
@@ -202,9 +223,9 @@ const App = () => {
 
 	return (
 		<VoucherifyPublish
-			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
-			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
-			textPlaceholder="e.g. Testing7fjWdr"
+			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
+			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+			textPublish="Get your voucher!"
 			onPublished={onPublishedResponse}
 			onError={onErrorResponse}
 			campaignName="Test Campaign"
@@ -244,7 +265,7 @@ Additional props for Publish Voucherify React Widget
 | customerCityPlaceholder       | `string`   | Placeholder for address city input field                                                                    |
 | customerStatePlaceholder      | `string`   | Placeholder for address state input field                                                                   |
 | customerCountryPlaceholder    | `string`   | Placeholder for address country input field                                                                 |
-| textValidate                  | `string`   | a text displayed on the button (default: "Get voucher")                                                     |
+| textPublish                   | `string`   | a text displayed on the button (default: "Get voucher")                                                     |
 
 <a name="#customerFields-object"></a>customerFields object
 
@@ -260,7 +281,8 @@ import * as React from 'react'
 
 import * as ReactDOM from 'react-dom'
 
-import { VoucherifySubscribe } from '@voucherify/react-widgets'
+import '@voucherify/react-widget/dist/voucherify.css'
+import { VoucherifySubscribe } from '@voucherify/react-widget'
 
 const App = () => {
 	const onSubscribedResponse = response => {
@@ -273,9 +295,9 @@ const App = () => {
 
 	return (
 		<VoucherifySubscribe
-			clientApplicationId="011240bf-d5fc-4ef1-9e82-11eb68c43bf5"
-			clientSecretKey="9e2230c5-71fb-460a-91c6-fbee64707a20"
-			textPlaceholder="e.g. Testing7fjWdr"
+			clientApplicationId="39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99"
+			clientSecretKey="9ec904dc-7cfe-457e-89ca-e54e5aae1d1b"
+			textSubscribe="Subscribe now!"
 			onSubscribed={onSubscribedResponse}
 			onError={onErrorResponse}
 			consents={[{ id: 'cnst_Dfzhg69KrRPGHffXK9EwUaOL', required: true }, { id: 'cnst_KIcC6Gmff1HxGPR3Y0V3x8Lr' }]}

@@ -1,6 +1,7 @@
-import { RequestController } from './RequestController'
+import { assert, environment, isObject, isOptionalString, isString } from './helpers'
+
 import { ClientSide } from './ClientSide'
-import { assert, isObject, isString, isOptionalString, environment } from './helpers'
+import { RequestController } from './RequestController'
 
 export type { ClientSide }
 
@@ -39,6 +40,13 @@ export interface VoucherifyClientSideOptions {
 	 * ```
 	 */
 	clientSecretKey: string
+	/**
+	 * Set customer identity when using React Widget. In other situations, use `setIdentity` method:
+	 *
+	 * ```javascript
+	 * client.setIdentity('gustav@purpleson.com')
+	 * ```
+	 */
 	trackingId?: string
 	/**
 	 * **(Required in Node.js)** Set the origin from where the requests are made.

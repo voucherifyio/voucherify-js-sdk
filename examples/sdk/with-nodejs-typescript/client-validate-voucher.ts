@@ -2,8 +2,8 @@
 import { VoucherifyClientSide } from '@voucherify/sdk'
 
 const voucherify = VoucherifyClientSide({
-	clientApplicationId: '011240bf-d5fc-4ef1-9e82-11eb68c43bf5',
-	clientSecretKey: '9e2230c5-71fb-460a-91c6-fbee64707a20',
+	clientApplicationId: '39f0d4d7-ca5b-4e49-bd5b-730a4d9dce99',
+	clientSecretKey: '9ec904dc-7cfe-457e-89ca-e54e5aae1d1b',
 	trackingId: 'gustav@purpleson.com', // or voucherify.setIdentity('gustav@purpleson.com')
 	origin: 'localhost:5000',
 })

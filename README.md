@@ -1,4 +1,8 @@
-# Voucherify JS SDK
+<p align="center" >
+  <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
+</p>
+
+<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> JS SDK and React Widget</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
@@ -7,23 +11,36 @@
   <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/react-widget?label=React%20widget" alt="React Widget NPM Version"/></a>
   <a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/react-widget?label=React%20widget%20downloads" alt="React Widget NPM Downloads"/></a>
 </p>
+<hr/>
+
+<p align="center">
+<b><a href="#documentation">Documentation</a></b>
+|
+<b><a href="#snippet">Marketer-ready Voucherify snippet</a></b>
+|
+<b><a href="#migration">Migration</a></b>
+|
+<b><a href="#typescript">Typescript</a></b>
+|
+<b><a href="#error-handling">Error handling</a></b>
+|
+<b><a href="#legacy">Legacy SDKs</a></b>
+|
+<b><a href="#contributing">Contributing</a></b>
+|
+<b><a href="#changelog">Changelog</a></b>
+</p>
+
+<p align="center">
+Packages:
+<a href="#sdk">Voucherify JS SDK</a>
+|
+<a href="#widget">Voucherify React Widget</a>
+</p>
 
 Voucherify empowers marketers and developers with flexible building blocks to come up with, implement, and track targeted promotional campaigns.
 
 Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
-
-# 🔖 Table of contents
-
-- [Documentation](#documentation)
-- [Packages](#packages)
-  - [Voucherify JS SDK](#sdk)
-  - [Voucherify React Widget](#widget)
-- [Migration](#migration)
-- [Typescript](#typescript)
-- [Error handling](#error-handling)
-- [Legacy SDKs](#legacy)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
 
 # <a name="documentation"></a>📝 Documentation
 
@@ -50,6 +67,35 @@ Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API
 Voucherify React Widget contains several client-side Voucherify methods, which are useful in integrating your promotion logic straight to your e-commerce store.
 
 [Go here](/packages/react-widget/README.md) to learn more about Voucherify React Widget installation.
+
+# <a name="snippet"></a>🏎 Marketer-ready Voucherify snippet
+
+Go [here](./examples/sdk/with-html) for more HTML-based examples
+
+```
+<body>
+  <div id="voucher-validate"></div>
+
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherify.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.1/qs.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" crossorigin></script>
+  <script type="text/javascript" src="https://unpkg.com/@voucherify/sdk@0.0.5/dist/voucherifysdk.umd.production.min.js" crossorigin></script>
+  <script type="text/javascript" src="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherifywidget.umd.production.min.js" crossorigin></script>
+
+  <script type="text/javascript">
+    window.ReactDOM.render(
+      window.React.createElement(VoucherifyWidget.VoucherifyValidate, {
+        clientApplicationId: '011240bf-d5fc-4ef1-9e82-11eb68c43bf5',
+        clientSecretKey: '9e2230c5-71fb-460a-91c6-fbee64707a20',
+        amount: true,
+      }),
+      document.querySelector('#voucher-validate'),
+    )
+  </script>
+</body>
+```
 
 # <a name="migration"></a>↔️ Migration
 

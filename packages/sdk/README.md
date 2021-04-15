@@ -1,45 +1,81 @@
-# Voucherify JS SDK
+<p align="center" >
+  <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
+</p>
+
+<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> JS SDK</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
   <a href="#"><img src="https://img.shields.io/npm/v/@voucherify/sdk?label=SDK" alt="SDK NPM Version"/></a>
   <a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/sdk?label=SDK%20downloads" alt="SDK NPM Downloads"/></a>
 </p>
+<hr/>
+
+<p align="center">
+<b><a href="#documentation">Documentation</a></b>
+|
+<b><a href="#installation">Installation</a></b>
+|
+<b><a href="#snippet">Marketer-ready Voucherify snippet</a></b>
+|
+<b><a href="#migration">Migration</a></b>
+|
+<b><a href="#typescript">Typescript</a></b>
+|
+<b><a href="#error-handling">Error handling</a></b>
+|
+<b><a href="#contributing">Contributing</a></b>
+|
+<b><a href="#changelog">Changelog</a></b>
+</p>
+
+<p align="center">
+Server side:
+<a href="#server-side-setup">Setup</a>
+|
+<a href="#server-side-methods">Methods</a>
+|
+<a href="#vouchers">Vouchers</a>
+|
+<a href="#campaigns">Campaigns</a>
+|
+<a href="#distributions">Distributions</a>
+|
+<a href="#validations">Validations</a>
+|
+<a href="#redemptions">Redemptions</a>
+|
+<a href="#customers">Customers</a>
+|
+<a href="#consents">Consents</a>
+|
+<a href="#orders">Orders</a>
+|
+<a href="#products">Products</a>
+|
+<a href="#rewards">Rewards</a>
+|
+<a href="#loyalties">Loyalties</a>
+|
+<a href="#segments">Segments</a>
+|
+<a href="#validation-rules">Validation Rules</a>
+|
+<a href="#promotions">Promotions</a>
+|
+<a href="#events">Events</a>
+</p>
+
+<p align="center">
+Client side:
+<a href="#client-side-setup">Setup</a>
+|
+<a href="#client-side-methods">Methods</a>
+</p>
 
 Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
 
 Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
-
-# 🔖 Table of contents
-
-- [Documentation](#documentation)
-- [Installation](#installation)
-- [Server side](#server-side)
-  - [Setup](#server-side-setup)
-  - [Methods](#server-side-methods)
-    - [Vouchers](#vouchers)
-    - [Campaigns](#campaigns)
-    - [Distributions](#distributions)
-    - [Validations](#validations)
-    - [Redemptions](#redemptions)
-    - [Customers](#customers)
-    - [Consents](#consents)
-    - [Orders](#orders)
-    - [Products](#products)
-    - [Rewards](#rewards)
-    - [Loyalties](#loyalties)
-    - [Segments](#segments)
-    - [Validation Rules](#validation-rules)
-    - [Promotions](#promotions)
-    - [Events](#events)
-- [Client side](#client-side)
-  - [Setup](#client-side-setup)
-  - [Methods](#client-side-methods)
-- [Migration](#migration)
-- [Typescript](#typescript)
-- [Error handling](#error-handling)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
 
 # <a name="documentation"></a>📝 Documentation
 
@@ -58,7 +94,7 @@ You can also use our detailed documentation provided by our package [here](https
 Local installation:
 
 ```sh
-npm install voucherify --save
+npm install @voucherify/sdk --save
 ```
 
 CDN installation:
@@ -1131,6 +1167,35 @@ client.updateConsents(idOrSourceId, consents)
 
 ```javascript
 client.track(eventName, metadata, customer)
+```
+
+# <a name="snippet"></a>🏎 Marketer-ready Voucherify snippet
+
+Go [here](./examples/sdk/with-html) for more HTML-based examples
+
+```
+<body>
+  <div id="voucher-validate"></div>
+
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherify.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.1/qs.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" crossorigin></script>
+  <script type="text/javascript" src="https://unpkg.com/@voucherify/sdk@0.0.5/dist/voucherifysdk.umd.production.min.js" crossorigin></script>
+  <script type="text/javascript" src="https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherifywidget.umd.production.min.js" crossorigin></script>
+
+  <script type="text/javascript">
+    window.ReactDOM.render(
+      window.React.createElement(VoucherifyWidget.VoucherifyValidate, {
+        clientApplicationId: '011240bf-d5fc-4ef1-9e82-11eb68c43bf5',
+        clientSecretKey: '9e2230c5-71fb-460a-91c6-fbee64707a20',
+        amount: true,
+      }),
+      document.querySelector('#voucher-validate'),
+    )
+  </script>
+</body>
 ```
 
 # <a name="migration"></a>↔️ Migration
