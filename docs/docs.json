@@ -29836,6 +29836,10 @@
 					"flags": {
 						"isOptional": true
 					},
+					"comment": {
+						"shortText": "Set customer identity when using React Widget. In other situations, use `setIdentity` method:",
+						"text": "```javascript\nclient.setIdentity('gustav@purpleson.com')\n```\n"
+					},
 					"type": {
 						"type": "intrinsic",
 						"name": "string"

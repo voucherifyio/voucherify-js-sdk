@@ -58,55 +58,77 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#voucherify-js-sdk" id="voucherify-js-sdk" style="color: inherit; text-decoration: none;">
-					<h1>Voucherify JS SDK</h1>
-				</a>
+				<p align="center" >
+					<img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
+				</p>
+				<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> JS SDK</h3>
 				<p>
 					<a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
 					<a href="#"><img src="https://img.shields.io/npm/v/@voucherify/sdk?label=SDK" alt="SDK NPM Version"/></a>
 					<a href="#"><img src="https://img.shields.io/npm/dm/@voucherify/sdk?label=SDK%20downloads" alt="SDK NPM Downloads"/></a>
 				</p>
+				<hr/>
+				<p align="center">
+					<b><a href="#documentation">Documentation</a></b>
+					|
+					<b><a href="#installation">Installation</a></b>
+					|
+					<b><a href="#snippet">Marketer-ready Voucherify snippet</a></b>
+					|
+					<b><a href="#migration">Migration</a></b>
+					|
+					<b><a href="#typescript">Typescript</a></b>
+					|
+					<b><a href="#error-handling">Error handling</a></b>
+					|
+					<b><a href="#contributing">Contributing</a></b>
+					|
+					<b><a href="#changelog">Changelog</a></b>
+				</p>
+				<p align="center">
+					Server side:
+					<a href="#server-side-setup">Setup</a>
+					|
+					<a href="#server-side-methods">Methods</a>
+					|
+					<a href="#vouchers">Vouchers</a>
+					|
+					<a href="#campaigns">Campaigns</a>
+					|
+					<a href="#distributions">Distributions</a>
+					|
+					<a href="#validations">Validations</a>
+					|
+					<a href="#redemptions">Redemptions</a>
+					|
+					<a href="#customers">Customers</a>
+					|
+					<a href="#consents">Consents</a>
+					|
+					<a href="#orders">Orders</a>
+					|
+					<a href="#products">Products</a>
+					|
+					<a href="#rewards">Rewards</a>
+					|
+					<a href="#loyalties">Loyalties</a>
+					|
+					<a href="#segments">Segments</a>
+					|
+					<a href="#validation-rules">Validation Rules</a>
+					|
+					<a href="#promotions">Promotions</a>
+					|
+					<a href="#events">Events</a>
+				</p>
+				<p align="center">
+					Client side:
+					<a href="#client-side-setup">Setup</a>
+					|
+					<a href="#client-side-methods">Methods</a>
+				</p>
 				<p>Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained <a href="https://github.com/voucherifyio/voucherify-nodejs-sdk">Voucherify Node.js SDK</a> and <a href="https://github.com/rspective/voucherify.js/">Voucherify.js</a>.</p>
 				<p>Learn more about Voucherify by visiting <a href="http://voucherify.io?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq">our site</a>.</p>
-				<a href="#🔖-table-of-contents" id="🔖-table-of-contents" style="color: inherit; text-decoration: none;">
-					<h1>🔖 Table of contents</h1>
-				</a>
-				<ul>
-					<li><a href="#documentation">Documentation</a></li>
-					<li><a href="#installation">Installation</a></li>
-					<li><a href="#server-side">Server side</a><ul>
-							<li><a href="#server-side-setup">Setup</a></li>
-							<li><a href="#server-side-methods">Methods</a><ul>
-									<li><a href="#vouchers">Vouchers</a></li>
-									<li><a href="#campaigns">Campaigns</a></li>
-									<li><a href="#distributions">Distributions</a></li>
-									<li><a href="#validations">Validations</a></li>
-									<li><a href="#redemptions">Redemptions</a></li>
-									<li><a href="#customers">Customers</a></li>
-									<li><a href="#consents">Consents</a></li>
-									<li><a href="#orders">Orders</a></li>
-									<li><a href="#products">Products</a></li>
-									<li><a href="#rewards">Rewards</a></li>
-									<li><a href="#loyalties">Loyalties</a></li>
-									<li><a href="#segments">Segments</a></li>
-									<li><a href="#validation-rules">Validation Rules</a></li>
-									<li><a href="#promotions">Promotions</a></li>
-									<li><a href="#events">Events</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li><a href="#client-side">Client side</a><ul>
-							<li><a href="#client-side-setup">Setup</a></li>
-							<li><a href="#client-side-methods">Methods</a></li>
-						</ul>
-					</li>
-					<li><a href="#migration">Migration</a></li>
-					<li><a href="#typescript">Typescript</a></li>
-					<li><a href="#error-handling">Error handling</a></li>
-					<li><a href="#contributing">Contributing</a></li>
-					<li><a href="#changelog">Changelog</a></li>
-				</ul>
 				<a href="#📝-documentation" id="📝-documentation" style="color: inherit; text-decoration: none;">
 					<h1><a name="documentation"></a>📝 Documentation</h1>
 				</a>
@@ -119,7 +141,7 @@
 					<h1><a name="installation"></a>⚙️ Installation</h1>
 				</a>
 				<p>Local installation:</p>
-				<pre><code class="language-sh"><span style="color: #000000">npm install voucherify --save</span>
+				<pre><code class="language-sh"><span style="color: #000000">npm install @voucherify/sdk --save</span>
 </code></pre>
 				<p>CDN installation:</p>
 				<pre><code class="language-html"><span style="color: #800000">&lt;script</span>
@@ -970,12 +992,13 @@
 <span style="color: #000000">    </span><span style="color: #001080">clientApplicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
 <span style="color: #000000">    </span><span style="color: #001080">clientSecretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-CLIENT-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
 <span style="color: #000000">    </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
-<span style="color: #000000">    </span><span style="color: #001080">trackingId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gustav@purpleson.com&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// or client.setIdentity(&#039;gustav@purpleson.com&#039;)</span>
 <span style="color: #000000">    </span><span style="color: #001080">origin:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;example.com&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// read more below</span>
 <span style="color: #000000">})</span>
 </code></pre>
 				<p>The <code>origin</code> property is required in Node.js, but when using in client-side environment (in browser) this option will be ignored.</p>
-				<p>We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user. This method will generate a tracking_id on the server side unless you specify it on your own using <code>client.setIdentity</code> method. In both cases you will receive it in the validation response.</p>
+				<p>We are tracking users which are validating vouchers with those who consume them by a tracking_id. For that we are setting up an identity for the user.</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">setIdentity</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;gustav@purpleson.com&#039;</span><span style="color: #000000">)</span>
+</code></pre>
 				<a href="#methods-1" id="methods-1" style="color: inherit; text-decoration: none;">
 					<h2><a name="client-side-methods"></a>Methods</h2>
 				</a>
@@ -1039,6 +1062,33 @@
 					<h4><a href="https://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#track-custom-event-client-side">Track custom events</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#🏎-marketer-ready-voucherify-snippet" id="🏎-marketer-ready-voucherify-snippet" style="color: inherit; text-decoration: none;">
+					<h1><a name="snippet"></a>🏎 Marketer-ready Voucherify snippet</h1>
+				</a>
+				<p>Go <a href="./examples/sdk/with-html">here</a> for more HTML-based examples</p>
+				<pre><code><span style="color: #000000">&lt;</span><span style="color: #267F99">body</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">div</span><span style="color: #000000"> </span><span style="color: #001080">id</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;voucher-validate&quot;</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">div</span><span style="color: #000000">&gt;</span>
+
+<span style="color: #000000">  &lt;</span><span style="color: #001080">link</span><span style="color: #000000"> </span><span style="color: #001080">rel</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;stylesheet&quot;</span><span style="color: #000000"> </span><span style="color: #001080">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;text/css&quot;</span><span style="color: #000000"> </span><span style="color: #001080">href</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherify.css&quot;</span><span style="color: #000000"> /&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.1/qs.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;text/javascript&quot;</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/@voucherify/sdk@0.0.5/dist/voucherifysdk.umd.production.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;text/javascript&quot;</span><span style="color: #000000"> </span><span style="color: #001080">src</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;https://unpkg.com/@voucherify/react-widget@0.0.5/dist/voucherifywidget.umd.production.min.js&quot;</span><span style="color: #000000"> </span><span style="color: #001080">crossorigin</span><span style="color: #000000">&gt;&lt;/</span><span style="color: #267F99">script</span><span style="color: #000000">&gt;</span>
+
+<span style="color: #000000">  &lt;</span><span style="color: #001080">script</span><span style="color: #000000"> </span><span style="color: #001080">type</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;text/javascript&quot;</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">ReactDOM</span><span style="color: #000000">.</span><span style="color: #795E26">render</span><span style="color: #000000">(</span>
+<span style="color: #000000">      </span><span style="color: #001080">window</span><span style="color: #000000">.</span><span style="color: #001080">React</span><span style="color: #000000">.</span><span style="color: #795E26">createElement</span><span style="color: #000000">(</span><span style="color: #001080">VoucherifyWidget</span><span style="color: #000000">.</span><span style="color: #001080">VoucherifyValidate</span><span style="color: #000000">, {</span>
+<span style="color: #000000">        </span><span style="color: #001080">clientApplicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;CLIENT-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">clientSecretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;CLIENT-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">amount:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">      }),</span>
+<span style="color: #000000">      </span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #795E26">querySelector</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#voucher-validate&#039;</span><span style="color: #000000">),</span>
+<span style="color: #000000">    )</span>
+<span style="color: #000000">  &lt;/</span><span style="color: #001080">script</span><span style="color: #000000">&gt;</span>
+<span style="color: #000000">&lt;/</span><span style="color: #001080">body</span><span style="color: #000000">&gt;</span>
 </code></pre>
 				<a href="#↔️-migration" id="↔️-migration" style="color: inherit; text-decoration: none;">
 					<h1><a name="migration"></a>↔️ Migration</h1>
