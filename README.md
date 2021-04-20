@@ -97,6 +97,10 @@ Go [here](./examples/sdk/with-html) for more HTML-based examples
 </body>
 ```
 
+## Alternative way - iframe and jQuery
+
+In case you're looking for something plain and simple, you're used to working with iframes and jQuery on your website, and for whatever technical reason the aforementioned React-based snippet doesn't work for you, then you might want to stick with our legacy [voucherify.js](https://github.com/rspective/voucherify.js) SDK for the time being. In such case, please refer to the [widget section](https://github.com/rspective/voucherify.js#validation-widget) in the documentation.
+
 # <a name="migration"></a>↔️ Migration
 
 Check out [MIGRATION GUIDE](/packages/sdk/MIGRATION.md) to learn more about switching to the newest Voucherify JS SDK.
