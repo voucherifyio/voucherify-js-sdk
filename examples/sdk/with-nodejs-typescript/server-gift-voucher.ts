@@ -2,8 +2,8 @@
 import { VoucherifyServerSide } from '@voucherify/sdk'
 
 const voucherify = VoucherifyServerSide({
-	applicationId: 'c70a6f00-cf91-4756-9df5-47628850002b',
-	secretKey: '3266b9f8-e246-4f79-bdf0-833929b1380c',
+	applicationId: '5452e923-810c-4880-83fb-65202fab8e28',
+	secretKey: '6a0f56de-b5a8-4893-bedd-79711134108b',
 })
 
 let voucherCode
