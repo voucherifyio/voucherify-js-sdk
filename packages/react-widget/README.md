@@ -24,6 +24,8 @@
 |
 <b><a href="#contributing">Contributing</a></b>
 |
+<b><a href="#alternatives">Alternatives - iframe</a></b>
+|
 <b><a href="#changelog">Changelog</a></b>
 </p>
 
@@ -377,6 +379,10 @@ Voucherify React Widget includes TypeScript declarations.
 # <a name="error-handling"></a>😨 Error handling
 
 Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
+
+# <a name="alternatives"></a>🖼️ Alternatives - iframe
+
+In case you're looking for something plain and simple, you're used to working with iframes and jQuery on your website, and for whatever technical reason the React-based snippet doesn't work for you, then you might want to stick with our legacy [voucherify.js](https://github.com/rspective/voucherify.js) SDK for the time being. In such case, please refer to the [widget section](https://github.com/rspective/voucherify.js#validation-widget) in the documentation.
 
 # <a name="contributing"></a>🛠️ Contributing
 
