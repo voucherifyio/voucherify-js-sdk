@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
+  <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo_react.png" />
 </p>
 
 <h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> React Widget</h3>
