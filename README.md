@@ -129,6 +129,6 @@ Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING
 
 # <a name="changelog"></a>🗄️ Changelog
 
-Voucherify React Widget CHANGELOG can be found [here](/CHANGELOG.md).
+Voucherify React Widget CHANGELOG can be found [here](/packages/react-widget/CHANGELOG.md).
 
-Voucherify JS SDK CHANGELOG can be found [here](../sdk/CHANGELOG.md).
+Voucherify JS SDK CHANGELOG can be found [here](/packages/sdk/CHANGELOG.md).
