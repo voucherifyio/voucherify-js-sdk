@@ -109,7 +109,7 @@ Check out [MIGRATION GUIDE](/packages/sdk/MIGRATION.md) to learn more about swit
 
 Both Voucherify JS SDK and Voucherify React Widget support TypeScript declarations.
 
-You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs-typescript).
+You can find TS example in [examples/sdk/with-nodejs-typescript](/examples/sdk/with-nodejs-typescript).
 
 # <a name="error-handling"></a>😨 Error handling
 
