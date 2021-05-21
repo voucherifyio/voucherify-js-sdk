@@ -1,6 +1,7 @@
 import * as T from './types/ValidationRules'
 
 import { encode, omit } from './helpers'
+
 import type { RequestController } from './RequestController'
 
 export class ValidationRules {
@@ -49,7 +50,7 @@ export class ValidationRules {
 		return this.client.delete(`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`)
 	}
 
-	public validate(validationRuleId: string, params: $FixMe = {}) {
+	public validate(validationRuleId: string, params: any = {}) {
 		return this.client.post<T.ValidationRulesValidateResponse>(
 			`/validation-rules/${encode(validationRuleId)}/validation`,
 			params,

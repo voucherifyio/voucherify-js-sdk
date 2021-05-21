@@ -87,7 +87,10 @@ export interface PromotionTiersRedeemResponse {
 		customer: {
 			id: string
 			object: 'customer'
-			referrals: $FixMe[]
+			referrals: {
+				campaigns: any[]
+				total: number
+			}
 		}
 		total_discount_amount?: number
 		total_amount?: number

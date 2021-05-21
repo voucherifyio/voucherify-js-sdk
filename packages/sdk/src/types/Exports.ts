@@ -5,7 +5,7 @@ export interface ExportResource {
 		fields?: string[]
 		filters?: {
 			junction?: 'AND' | 'OR'
-			[filter_condition: string]: $FixMe
+			[filter_condition: string]: any
 		}
 	}
 }
@@ -21,7 +21,7 @@ export interface ExportsCreateResponse {
 		fields?: string[]
 		filters?: {
 			junction?: string
-			[filter_condition: string]: $FixMe
+			[filter_condition: string]: any
 		}
 	}
 	result?: {

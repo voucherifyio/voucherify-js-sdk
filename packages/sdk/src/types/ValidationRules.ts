@@ -5,7 +5,7 @@ export interface ValidationRulesCreate {
 	}
 	rules?: {
 		logic?: string
-		[rule: string]: $FixMe
+		[rule: string]: any
 	}
 }
 
@@ -17,7 +17,7 @@ export interface ValidationRulesCreateResponse {
 	}
 	rules?: {
 		logic?: string
-		[rule: string]: $FixMe
+		[rule: string]: any
 	}
 	created_at: string
 	updated_at?: string

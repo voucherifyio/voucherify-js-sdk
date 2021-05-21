@@ -107,7 +107,7 @@ Check out [MIGRATION GUIDE](/packages/sdk/MIGRATION.md) to learn more about swit
 
 # <a name="typescript"></a>🦸 TypeScript
 
-Both Voucherify JS SDK and Voucherify React Widget support TypeScript declarations.
+Both Voucherify JS SDK and Voucherify React Widget support TypeScript declarations. We recommend using TypeScript Version 4.2.
 
 You can find TS example in [examples/sdk/with-nodejs-typescript](/examples/sdk/with-nodejs-typescript).
 
