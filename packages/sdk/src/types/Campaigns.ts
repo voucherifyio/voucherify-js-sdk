@@ -155,7 +155,7 @@ export interface CampaignsListParams {
 	campaign_type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
 	filters?: {
 		junction?: string
-		[filter_condition: string]: $FixMe
+		[filter_condition: string]: any
 	}
 }
 

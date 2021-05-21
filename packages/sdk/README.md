@@ -1207,7 +1207,7 @@ Check our [MIGRATION GUIDE](./MIGRATION.md) to learn more about switching to our
 
 # <a name="typescript"></a>🦸 TypeScript
 
-Voucherify JS SDK includes TypeScript declarations for our latest API.
+Voucherify JS SDK includes TypeScript declarations for our latest API. We recommend using TypeScript Version 4.2.
 
 You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs).
 

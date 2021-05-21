@@ -3,7 +3,7 @@ export interface SegmentsCreate {
 	type: 'static' | 'auto-update'
 	filter?: {
 		junction?: 'AND' | 'OR'
-		[filter_conditions: string]: $FixMe
+		[filter_conditions: string]: any
 	}
 	customers?: string[]
 }
@@ -12,10 +12,10 @@ export interface SegmentsCreateResponse {
 	id: string
 	name: string
 	created_at: string
-	metadata?: $FixMe
+	metadata?: Record<string, any>
 	filter?: {
 		junction?: 'AND' | 'OR'
-		[filter_conditions: string]: $FixMe
+		[filter_conditions: string]: any
 	}
 	type?: string
 	object: 'segment'
