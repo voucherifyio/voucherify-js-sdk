@@ -1,5 +1,16 @@
 # @voucherify/react-widget
 
+## 1.0.1
+
+### Patch Changes
+
+- [`39276e4`](https://github.com/voucherifyio/voucherify-js-sdk/commit/39276e4e5d199fe4a15e0a64f55b07949c23be30) [#74](https://github.com/voucherifyio/voucherify-js-sdk/pull/74) Thanks [@pannga](https://github.com/pannga)! - Updated changesets/cli to the latest version
+
+* [`0d5b2c0`](https://github.com/voucherifyio/voucherify-js-sdk/commit/0d5b2c06087f15d0bfcbd67d50ee4deaf5d9883e) [#70](https://github.com/voucherifyio/voucherify-js-sdk/pull/70) Thanks [@pannga](https://github.com/pannga)! - Updated examples and documentation.
+
+* Updated dependencies [[`39276e4`](https://github.com/voucherifyio/voucherify-js-sdk/commit/39276e4e5d199fe4a15e0a64f55b07949c23be30), [`39276e4`](https://github.com/voucherifyio/voucherify-js-sdk/commit/39276e4e5d199fe4a15e0a64f55b07949c23be30), [`0d5b2c0`](https://github.com/voucherifyio/voucherify-js-sdk/commit/0d5b2c06087f15d0bfcbd67d50ee4deaf5d9883e)]:
+  - @voucherify/sdk@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
