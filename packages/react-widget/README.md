@@ -77,7 +77,7 @@ CDN installation:
 	<link
 		type="text/css"
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/rspective/voucherify.js@latest/dist/voucherify.min.css"
+		href="https://unpkg.com/@voucherify/react-widget/dist/voucherify.css"
 	/>
 </head>
 
