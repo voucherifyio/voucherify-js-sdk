@@ -1,4 +1,5 @@
 import { RequestController } from './RequestController'
+import { AsyncActions } from './AsyncActions'
 import { Campaigns } from './Campaigns'
 import { Distributions } from './Distributions'
 import { Exports } from './Exports'
@@ -139,6 +140,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
 	})
+	const asyncActions = new AsyncActions(client)
 	const balance = new Balance(client)
 	const vouchers = new Vouchers(client, balance)
 	const campaigns = new Campaigns(client)
@@ -174,5 +176,6 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		segments,
 		validationRules,
 		events,
+		asyncActions,
 	}
 }
