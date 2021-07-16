@@ -1,11 +1,8 @@
 export interface AsyncActionsResponse {
 	id: string
 	type: string
-	status: 'ENQUEUED' | 'IN_PROGRESS' | 'DONE' | 'FAILED'
-	result: {
-		message: string
-		failed: string[]
-	}
+	status: string
+	result: object
 	created_at: string
 	object: 'async_action'
 }
