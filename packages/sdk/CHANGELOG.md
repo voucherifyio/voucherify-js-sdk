@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 1.1.0
+
+### Minor Changes
+
+- [`16019cf`](https://github.com/voucherifyio/voucherify-js-sdk/commit/16019cf22b4604c609b3baac488b46a334279424) [#79](https://github.com/voucherifyio/voucherify-js-sdk/pull/79) Thanks [@mandraszyk](https://github.com/mandraszyk)! - Async Actions API support added
+
 ## 1.0.1
 
 ### Patch Changes
