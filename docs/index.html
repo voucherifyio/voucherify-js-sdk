@@ -120,6 +120,8 @@
 					<a href="#promotions">Promotions</a>
 					|
 					<a href="#events">Events</a>
+					|
+					<a href="#async-actions">Async Actions</a>
 				</p>
 				<p align="center">
 					Client side:
@@ -980,6 +982,26 @@
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">events</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, { </span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">referral</span><span style="color: #000000">, </span><span style="color: #001080">loyalty</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000"> })</span>
 </code></pre>
 				<p>Check <a href="https://docs.voucherify.io/v1/reference#the-customer-object">customer object</a>.</p>
+				<a href="#async-actions" id="async-actions" style="color: inherit; text-decoration: none;">
+					<h3>Async Actions</h3>
+				</a>
+				<p>Methods are provided within <code>client.asyncActions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#get-async-action">Get Async Action</a></li>
+					<li><a href="#list-async-actions">List Async Actions</a></li>
+				</ul>
+				<a href="#get-async-action" id="get-async-action" style="color: inherit; text-decoration: none;">
+					<h4><a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#get-async-actions-1">Get Async Action</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">asyncActions</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">asyncActionId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-async-actions" id="list-async-actions" style="color: inherit; text-decoration: none;">
+					<h4><a href="http://docs.voucherify.io/reference?utm_source=github&amp;utm_medium=sdk&amp;utm_campaign=acq#list-async-actions">List Async Actions</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">asyncActions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">asyncActions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
 				<a href="#💅-client-side" id="💅-client-side" style="color: inherit; text-decoration: none;">
 					<h1>💅 Client Side</h1>
 				</a>

@@ -29802,14 +29802,14 @@
 			]
 		},
 		{
-			"id": 2219,
+			"id": 2220,
 			"name": "VoucherifyClientSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2220,
+					"id": 2221,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29826,7 +29826,7 @@
 					}
 				},
 				{
-					"id": 2221,
+					"id": 2222,
 					"name": "clientApplicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29841,7 +29841,7 @@
 					}
 				},
 				{
-					"id": 2222,
+					"id": 2223,
 					"name": "clientSecretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29856,7 +29856,7 @@
 					}
 				},
 				{
-					"id": 2224,
+					"id": 2225,
 					"name": "origin",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29879,7 +29879,7 @@
 					}
 				},
 				{
-					"id": 2223,
+					"id": 2224,
 					"name": "trackingId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29901,24 +29901,24 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2220,
 						2221,
 						2222,
-						2224,
-						2223
+						2223,
+						2225,
+						2224
 					]
 				}
 			]
 		},
 		{
-			"id": 2209,
+			"id": 2210,
 			"name": "VoucherifyServerSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2210,
+					"id": 2211,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29935,7 +29935,7 @@
 					}
 				},
 				{
-					"id": 2213,
+					"id": 2214,
 					"name": "apiVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29952,7 +29952,7 @@
 					}
 				},
 				{
-					"id": 2211,
+					"id": 2212,
 					"name": "applicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29967,7 +29967,7 @@
 					}
 				},
 				{
-					"id": 2214,
+					"id": 2215,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29980,7 +29980,7 @@
 					}
 				},
 				{
-					"id": 2215,
+					"id": 2216,
 					"name": "dangerouslySetSecretKeyInBrowser",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29997,7 +29997,7 @@
 					}
 				},
 				{
-					"id": 2212,
+					"id": 2213,
 					"name": "secretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30017,12 +30017,12 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2210,
-						2213,
 						2211,
 						2214,
+						2212,
 						2215,
-						2212
+						2216,
+						2213
 					]
 				}
 			]
@@ -34937,28 +34937,28 @@
 			}
 		},
 		{
-			"id": 2216,
+			"id": 2217,
 			"name": "VoucherifyClientSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 2217,
+					"id": 2218,
 					"name": "VoucherifyClientSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 2218,
+							"id": 2219,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2219,
+								"id": 2220,
 								"name": "VoucherifyClientSideOptions"
 							}
 						}
@@ -34993,7 +34993,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2209,
+								"id": 2210,
 								"name": "VoucherifyServerSideOptions"
 							}
 						}
@@ -35007,6 +35007,17 @@
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
+								{
+									"id": 2209,
+									"name": "asyncActions",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "AsyncActions"
+									}
+								},
 								{
 									"id": 2195,
 									"name": "campaigns",
@@ -35193,6 +35204,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
+										2209,
 										2195,
 										2201,
 										2200,
@@ -35378,8 +35390,8 @@
 				900,
 				928,
 				1991,
-				2219,
-				2209,
+				2220,
+				2210,
 				1769,
 				1772,
 				1765,
@@ -35488,7 +35500,7 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				2216,
+				2217,
 				2190
 			]
 		}
