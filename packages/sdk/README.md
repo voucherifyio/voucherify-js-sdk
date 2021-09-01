@@ -64,6 +64,8 @@ Server side:
 <a href="#promotions">Promotions</a>
 |
 <a href="#events">Events</a>
+|
+<a href="#async-actions">Async Actions</a>
 </p>
 
 <p align="center">
@@ -1075,6 +1077,26 @@ client.events.create(eventName, { customer, referral, loyalty, metadata })
 ```
 
 Check [customer object](https://docs.voucherify.io/v1/reference#the-customer-object).
+
+
+### Async Actions
+Methods are provided within `client.asyncActions.*` namespace.
+
+- [Get Async Action](#get-async-action)
+- [List Async Actions](#list-async-actions)
+
+#### [Get Async Action](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-async-actions-1)
+```javascript
+client.asyncActions.get(asyncActionId)
+```
+
+#### [List Async Actions](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-async-actions)
+```javascript
+client.asyncActions.list()
+client.asyncActions.list(params)
+```
+
+---
 
 # 💅 Client Side
 
