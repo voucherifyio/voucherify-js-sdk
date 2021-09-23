@@ -126,7 +126,7 @@ const client = VoucherifyServerSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
-  customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
 })
 ```
 
@@ -1111,7 +1111,7 @@ const client = VoucherifyClientSide({
 	clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	origin: 'example.com', // read more below
-  customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
 })
 ```
 
