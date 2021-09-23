@@ -81,6 +81,21 @@ export interface VoucherifyServerSideOptions {
 	 * ```
 	 */
 	dangerouslySetSecretKeyInBrowser?: boolean
+	/**
+	 * You can pass additional headers to requests made by the API Client.
+	 * It can prove to be useful when debugging various scenarios.
+	 * ```javascript
+	 * const voucherify = VoucherifyServerSide({
+	 *		applicationId: 'YOUR-APPLICATION-ID',
+	 *		secretKey: 'YOUR-SECRET-KEY',
+	 *		customHeaders: {
+	 *			"DEBUG-HEADER": "my_value",
+	 *			"TEST-HEADER": "another_value"
+	 *		}
+	 * })
+	 * ```
+	 */
+	customHeaders?: Record<string, string>
 }
 interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
@@ -113,7 +128,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	assert(isOptionalString(options.apiVersion), 'VoucherifyServerSide: expected "options.apiVersion" to be a string')
 	assert(isOptionalString(options.channel), 'VoucherifyServerSide: expected "options.channel" to be a string')
 
-	const headers: VoucherifyServerSideHeaders = {
+	let headers: VoucherifyServerSideHeaders = {
 		'X-App-Id': options.applicationId,
 		'X-App-Token': options.secretKey,
 		'X-Voucherify-Channel': options.channel || `${environment()}-SDK-v${__VERSION__}`,
@@ -121,6 +136,10 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	}
 	if (options.apiVersion) {
 		headers['X-Voucherify-API-Version'] = options.apiVersion
+	}
+
+	if (isObject(options.customHeaders)) {
+		headers = Object.assign({}, headers, options.customHeaders)
 	}
 
 	/**

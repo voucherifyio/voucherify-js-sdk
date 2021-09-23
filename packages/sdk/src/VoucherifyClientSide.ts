@@ -62,6 +62,21 @@ export interface VoucherifyClientSideOptions {
 	 * @note in the browser, this option will be ignored. The `origin` header is a [forbidden header name](https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name) and it'll be automatically set by the browser for every request.
 	 */
 	origin?: string
+	/**
+	 * You can pass additional headers to requests made by the API Client.
+	 * It can prove to be useful when debugging various scenarios.
+	 * ```javascript
+	 * const voucherify = VoucherifyServerSide({
+	 *		applicationId: 'YOUR-APPLICATION-ID',
+	 *		secretKey: 'YOUR-SECRET-KEY',
+	 *		customHeaders: {
+	 *			"DEBUG-HEADER": "my_value",
+	 *			"TEST-HEADER": "another_value"
+	 *		}
+	 * })
+	 * ```
+	 */
+	customHeaders?: Record<string, string>
 }
 interface VoucherifyCustomerHeaders {
 	'X-Client-Application-Id': string
@@ -76,7 +91,7 @@ export function VoucherifyClientSide(options: VoucherifyClientSideOptions): Clie
 	assert(isOptionalString(options.apiUrl), 'VoucherifyCustomer: expected "options.baseUrl" to be a string')
 	assert(isOptionalString(options.trackingId), 'VoucherifyCustomer: expected "options.trackingId" to be a string')
 
-	const headers: VoucherifyCustomerHeaders = {
+	let headers: VoucherifyCustomerHeaders = {
 		'X-Client-Application-Id': options.clientApplicationId,
 		'X-Client-Token': options.clientSecretKey,
 		'X-Voucherify-Channel': `${environment()}-ClientSide-SDK-v${__VERSION__}`,
@@ -85,6 +100,10 @@ export function VoucherifyClientSide(options: VoucherifyClientSideOptions): Clie
 	if (environment().startsWith('Node')) {
 		assert(isString(options.origin), 'VoucherifyCustomer: "options.origin" is required in Node.js')
 		headers['origin'] = options.origin
+	}
+
+	if (isObject(options.customHeaders)) {
+		headers = Object.assign({}, headers, options.customHeaders)
 	}
 
 	const client = new RequestController({
