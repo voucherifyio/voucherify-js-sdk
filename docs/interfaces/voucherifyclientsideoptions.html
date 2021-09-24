@@ -83,6 +83,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#apiurl" class="tsd-kind-icon">api<wbr>Url</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#clientapplicationid" class="tsd-kind-icon">client<wbr>Application<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#clientsecretkey" class="tsd-kind-icon">client<wbr>Secret<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#origin" class="tsd-kind-icon">origin</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyclientsideoptions.html#trackingid" class="tsd-kind-icon">tracking<wbr>Id</a></li>
 							</ul>
@@ -142,6 +143,28 @@
 <span style="color: #000000">        </span><span style="color: #001080">clientSecretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-CLIENT-SECRET-KEY&#039;</span>
 <span style="color: #000000">})</span>
 </code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="customheaders" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom<wbr>Headers</h3>
+					<div class="tsd-signature tsd-kind-icon">custom<wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can pass additional headers to requests made by the API Client.
+							It can prove to be useful when debugging various scenarios.</p>
+							<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">clientApplicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-CLIENT-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">clientSecretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-CLIENT-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #A31515">&quot;DEBUG-HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #A31515">&quot;TEST-HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;another_value&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">})</span>
+</code></pre>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -206,6 +229,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="voucherifyclientsideoptions.html#clientsecretkey" class="tsd-kind-icon">client<wbr>Secret<wbr>Key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyclientsideoptions.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="voucherifyclientsideoptions.html#origin" class="tsd-kind-icon">origin</a>

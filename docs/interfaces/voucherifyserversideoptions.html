@@ -84,6 +84,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#applicationid" class="tsd-kind-icon">application<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#channel" class="tsd-kind-icon">channel</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#dangerouslysetsecretkeyinbrowser" class="tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voucherifyserversideoptions.html#secretkey" class="tsd-kind-icon">secret<wbr>Key</a></li>
 							</ul>
@@ -154,6 +155,28 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="customheaders" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom<wbr>Headers</h3>
+					<div class="tsd-signature tsd-kind-icon">custom<wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can pass additional headers to requests made by the API Client.
+							It can prove to be useful when debugging various scenarios.</p>
+							<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">voucherify</span><span style="color: #000000"> = </span><span style="color: #795E26">VoucherifyServerSide</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">applicationId:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-APPLICATION-ID&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">secretKey:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;YOUR-SECRET-KEY&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #A31515">&quot;DEBUG-HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #A31515">&quot;TEST-HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;another_value&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">})</span>
+</code></pre>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="dangerouslysetsecretkeyinbrowser" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</h3>
 					<div class="tsd-signature tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -217,6 +240,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="voucherifyserversideoptions.html#channel" class="tsd-kind-icon">channel</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="voucherifyserversideoptions.html#customheaders" class="tsd-kind-icon">custom<wbr>Headers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="voucherifyserversideoptions.html#dangerouslysetsecretkeyinbrowser" class="tsd-kind-icon">dangerously<wbr>Set<wbr>Secret<wbr>Key<wbr>InBrowser</a>
