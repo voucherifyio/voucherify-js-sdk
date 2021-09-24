@@ -67,8 +67,8 @@ export interface VoucherifyClientSideOptions {
 	 * It can prove to be useful when debugging various scenarios.
 	 * ```javascript
 	 * const voucherify = VoucherifyServerSide({
-	 *		applicationId: 'YOUR-APPLICATION-ID',
-	 *		secretKey: 'YOUR-SECRET-KEY',
+	 *		clientApplicationId: 'YOUR-CLIENT-APPLICATION-ID',
+	 *		clientSecretKey: 'YOUR-CLIENT-SECRET-KEY',
 	 *		customHeaders: {
 	 *			"DEBUG-HEADER": "my_value",
 	 *			"TEST-HEADER": "another_value"
