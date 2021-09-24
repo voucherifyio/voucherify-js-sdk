@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 1.2.0
+
+### Minor Changes
+
+- [`0425e2b`](https://github.com/voucherifyio/voucherify-js-sdk/commit/0425e2b27b9bead05c828af9c6b4e369e6df2b21) [#88](https://github.com/voucherifyio/voucherify-js-sdk/pull/88) Thanks [@darekg11](https://github.com/darekg11)! - Allow to pass additional headers to requests made to Voucherify API. Custom headers can be passed via 'customHeaders' option available in VoucherifyServerSideOptions and VoucherifyClientSideOptions. Such option might prove to be useful when debugging
+
 ## 1.1.0
 
 ### Minor Changes
