@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 1.3.0
+
+### Minor Changes
+
+- [`bc0b14b`](https://github.com/voucherifyio/voucherify-js-sdk/commit/bc0b14b56c3b91896e0fbf50e040cee11b24bc4e) [#91](https://github.com/voucherifyio/voucherify-js-sdk/pull/91) Thanks [@pannga](https://github.com/pannga)! - Fixed wrong Qs arrayFormat
+
 ## 1.2.0
 
 ### Minor Changes
