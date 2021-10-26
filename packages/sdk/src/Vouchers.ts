@@ -68,19 +68,19 @@ export class Vouchers {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1
 	 */
 	public import(vouchers: T.VouchersImport[]) {
-		return this.client.post('/vouchers/import', vouchers)
+		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
-		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata', params)
+		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata/async', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk
 	 */
 	public bulkUpdate(vouchers: T.VouchersBulkUpdate) {
-		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk', vouchers)
+		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk/async', vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session

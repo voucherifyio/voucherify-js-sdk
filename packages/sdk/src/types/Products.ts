@@ -40,22 +40,20 @@ export type ProductsUpdate = {
 
 export type ProductsUpdateResponse = ProductsCreateResponse
 
-export interface ProductsBulkMetadataUpdate {
+export interface ProductsBulkUpdateMetadata {
 	source_ids: string[]
 	metadata: Record<string, any>
 }
 
 export type ProductsBulkUpdate = ProductsCreate[]
 
-interface BulkUpdateResponse {
-	source_id?: string
-	found: boolean
-	updated: boolean
+export type ProductsBulkUpdateResponse = {
+	async_action_id: string
 }
 
-export type ProductsBulkUpdateResponse = BulkUpdateResponse[]
-
-export type ProductsBulkMetadataUpdateResponse = BulkUpdateResponse[]
+export type ProductsBulkUpdateMetadataResponse = {
+	async_action_id: string
+}
 
 export interface ProductsDeleteParams {
 	force?: boolean

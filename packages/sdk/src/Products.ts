@@ -30,14 +30,14 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-metadata-in-bulk
 	 */
-	public bulkMetadataUpdate(products: T.ProductsBulkMetadataUpdate) {
-		return this.client.post<T.ProductsBulkMetadataUpdateResponse>('/products/metadata', products)
+	public bulkUpdateMetadata(products: T.ProductsBulkUpdateMetadata) {
+		return this.client.post<T.ProductsBulkUpdateMetadataResponse>('/products/metadata/async', products)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-in-bulk
 	 */
 	public bulkUpdate(products: T.ProductsBulkUpdate) {
-		return this.client.post<T.ProductsBulkUpdateResponse>('/products/bulk', products)
+		return this.client.post<T.ProductsBulkUpdateResponse>('/products/bulk/async', products)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product

@@ -62,7 +62,7 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
 	 */
 	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers[]) {
-		return this.client.post(`/campaigns/${encode(campaignName)}/import`, vouchers)
+		return this.client.post<T.CampaignsVouchersImportResponse>(`/campaigns/${encode(campaignName)}/import`, vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/v2017-04-20/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-campaigns
