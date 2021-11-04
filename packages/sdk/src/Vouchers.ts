@@ -23,67 +23,67 @@ export class Vouchers {
 		this.qualifications = new VouchersQualification(this.client)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-voucher
+	 * @see https://docs.voucherify.io/reference/create-voucher
 	 */
 	public create(voucher: T.VouchersCreate) {
 		return this.client.post<T.VouchersCreateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-get
+	 * @see https://docs.voucherify.io/reference/vouchers-get
 	 */
 	public get(code: string) {
 		return this.client.get<T.VouchersGetResponse>(`/vouchers/${encode(code)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-voucher
+	 * @see https://docs.voucherify.io/reference/update-voucher
 	 */
 	public update(voucher: T.VouchersUpdate) {
 		return this.client.put<T.VouchersUpdateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-voucher
+	 * @see https://docs.voucherify.io/reference/delete-voucher
 	 */
 	public delete(code: string, params: T.VouchersDeleteParams = {}) {
 		return this.client.delete(`/vouchers/${encode(code)}`, params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
+	 * @see https://docs.voucherify.io/reference/list-vouchers
 	 */
 	public list(params: T.VouchersListParams = {}) {
 		return this.client.get<T.VouchersListResponse>('/vouchers', params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher
+	 * @see https://docs.voucherify.io/reference/enable-voucher
 	 */
 	public enable(code: string) {
 		return this.client.post<T.VouchersEnableResponse>(`/vouchers/${encode(code)}/enable`, {})
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher
+	 * @see https://docs.voucherify.io/reference/disable-voucher
 	 */
 	public disable(code: string) {
 		return this.client.post<T.VouchersDisableResponse>(`/vouchers/${encode(code)}/disable`, {})
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1
+	 * @see https://docs.voucherify.io/reference/import-vouchers-1
 	 */
 	public import(vouchers: T.VouchersImport[]) {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk
+	 * @see https://docs.voucherify.io/reference/update-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
 		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata/async', params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk
+	 * @see https://docs.voucherify.io/reference/update-vouchers-in-bulk
 	 */
 	public bulkUpdate(vouchers: T.VouchersBulkUpdate) {
 		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk/async', vouchers)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session
+	 * @see https://docs.voucherify.io/reference/release-validation-session
 	 */
 	public releaseValidationSession(code: string, sessionKey: string) {
 		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)

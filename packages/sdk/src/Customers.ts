@@ -8,19 +8,19 @@ class Customers {
 	constructor(private client: RequestController) {}
 
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
+	 * @see https://docs.voucherify.io/reference/create-customer
 	 */
 	public create(customer: T.CustomersCreateBody) {
 		return this.client.post<T.CustomersCreateResponse>('/customers', customer)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
+	 * @see https://docs.voucherify.io/reference/read-customer
 	 */
 	public get(customerId: string) {
 		return this.client.get<T.CustomersGetResponse>(`/customers/${encode(customerId)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers
+	 * @see https://docs.voucherify.io/reference/list-customers
 	 */
 	public list(params: T.CustomersListParams) {
 		return this.client.get<T.CustomersListResponse>('/customers', params)
@@ -64,7 +64,7 @@ class Customers {
 		}
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
+	 * @see https://docs.voucherify.io/reference/update-customer
 	 */
 	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
@@ -74,13 +74,13 @@ class Customers {
 		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+	 * @see https://docs.voucherify.io/reference/delete-customer
 	 */
 	public delete(customerId: string) {
 		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents
+	 * @see https://docs.voucherify.io/reference/update-customers-consents
 	 */
 	public updateConsents(idOrSourceId: string, consents: T.CustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)

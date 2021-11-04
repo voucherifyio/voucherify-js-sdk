@@ -7,19 +7,19 @@ export class Exports {
 	constructor(private client: RequestController) {}
 
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-export
+	 * @see https://docs.voucherify.io/reference/create-export
 	 */
 	public create(exportResource: T.ExportResource) {
 		return this.client.post<T.ExportsCreateResponse>('/exports', exportResource)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-export
+	 * @see https://docs.voucherify.io/reference/get-export
 	 */
 	public get(exportResourceId: string) {
 		return this.client.get<T.ExportsGetResponse>(`/exports/${encode(exportResourceId)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-export
+	 * @see https://docs.voucherify.io/reference/delete-export
 	 */
 	public delete(exportResourceId: string) {
 		return this.client.delete(`/exports/${encode(exportResourceId)}`)

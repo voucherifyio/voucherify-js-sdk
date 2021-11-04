@@ -2,8 +2,36 @@
 
 # 🔖 Table of contents
 
+- [Migration to version 2.x](#voucherify-js-sdk-2)
 - [Migration from Voucherify Node.js SDK](#voucherify-node-js)
 - [Migration from Voucherify.js](#voucherify-js)
+
+## <a name="voucherify-js-sdk-2"></a>Migration to version 2.x
+
+Core change in version 2.x was using async methods instead of sync versions.
+Sync API methods became deprecated, and will be removed in the future.
+Therefore breaking changes were introduced in this SDK, so that new API methods are used instead of the old ones.
+
+The following methods return now only the `async_action_id` field, instead of the response with the results:
+- Vouchers bulkUpdate (additional breaking change: obligatory 'metadata' field in VouchersBulkUpdateObject)
+- Vouchers bulkUpdateMetadata (additional breaking change: obligatory 'metadata' field in VouchersBulkUpdateMetadata)
+- Products bulkUpdate
+- Products bulkUpdateMetadata (additional breaking change of the method name)
+
+In order to get the final results, one needs to fetch it using [the API method for getting the async-action result](https://docs.voucherify.io/reference/get-async-actions-1).
+Using the SDK method it would look like:
+```
+voucherify.asyncActions.get(async_action_id)
+	.then(response => {
+		console.log('Status: ', response.status);
+		if (result.status === "DONE") {
+			console.log('Result: ', response.result);
+		}
+	})
+```
+
+<b>Additionally</b>, there is a breaking change in getSku method params.
+New API method is used, where ID of the product is no longer required.
 
 ## <a name="voucherify-node-js"></a>Migration from [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk)
 
@@ -62,7 +90,7 @@ client.vouchers.get('v1GiJYuuS', (error, result) => {
 </td>
     <td>
 Dropped support for callbacks, use promises instead
-    
+
 </td>
   </tr>
   <tr>
@@ -76,7 +104,7 @@ client.validationRules.validate(validationRuleId)
 </td>
     <td>
 Dropped support
-    
+
 </td>
   </tr>
   <tr>
@@ -179,8 +207,8 @@ client.validate(params).then(console.log).catch(console.log)
 
 </td>
   </tr>
-  
-  
-  
+
+
+
 </tbody>
 </table>
