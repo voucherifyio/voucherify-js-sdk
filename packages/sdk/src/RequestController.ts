@@ -47,7 +47,7 @@ export class RequestController {
 		const response = await this.request.get<T>(path, {
 			params,
 			paramsSerializer: function (params) {
-				return Qs.stringify(params, { encode: false })
+				return Qs.stringify(params)
 			},
 		})
 		return response.data
