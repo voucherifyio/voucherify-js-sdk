@@ -1,6 +1,6 @@
 import * as T from './types/Redemptions'
 
-import { encode, isObject, isString } from './helpers'
+import { encode, isObject, isString, toQueryParams } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -23,7 +23,8 @@ export class Redemptions {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
 	 */
 	public list(params: T.RedemptionsListParams = {}) {
-		return this.client.get<T.RedemptionsListResponse>('/redemptions', params)
+		const queryParams = toQueryParams(params)
+		return this.client.get<T.RedemptionsListResponse>('/redemptions', queryParams)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions

@@ -2,6 +2,7 @@ import * as T from './types/Distributions'
 
 import type { Exports } from './Exports'
 import type { RequestController } from './RequestController'
+import { toQueryParams } from './helpers'
 
 class DistributionsPublications {
 	constructor(private client: RequestController) {}
@@ -10,7 +11,8 @@ class DistributionsPublications {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications
 	 */
 	public list(params: T.DistributionsPublicationsListParams = {}) {
-		return this.client.get<T.DistributionsPublicationsListResponse>('/publications', params)
+		const queryParams = toQueryParams(params)
+		return this.client.get<T.DistributionsPublicationsListResponse>('/publications', queryParams)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-publication

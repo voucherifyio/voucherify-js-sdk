@@ -1,6 +1,6 @@
 import * as T from './types/Vouchers'
 
-import { encode } from './helpers'
+import { encode, toQueryParams } from './helpers'
 import type { RequestController } from './RequestController'
 import type { Balance } from './Balance'
 
@@ -50,7 +50,8 @@ export class Vouchers {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
 	 */
 	public list(params: T.VouchersListParams = {}) {
-		return this.client.get<T.VouchersListResponse>('/vouchers', params)
+		const queryParams = toQueryParams(params)
+		return this.client.get<T.VouchersListResponse>('/vouchers', queryParams)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher

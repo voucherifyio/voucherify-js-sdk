@@ -1,6 +1,6 @@
 import * as T from './types/Customers'
 
-import { encode, omit } from './helpers'
+import { encode, omit, toQueryParams } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -23,7 +23,8 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers
 	 */
 	public list(params: T.CustomersListParams) {
-		return this.client.get<T.CustomersListResponse>('/customers', params)
+		const queryParams = toQueryParams(params)
+		return this.client.get<T.CustomersListResponse>('/customers', queryParams)
 	}
 	/**
 	 * Standard list customers API has limitation of available pages to be shown equal to 100. To cover cases when you would like to fetch more, you must use scroll capabilities.
@@ -41,10 +42,8 @@ class Customers {
 	): AsyncGenerator<T.CustomersScrollYield, void, T.CustomersScrollYield> {
 		let startingAfter =
 			params.starting_after ?? (params.order === 'created_at' ? '1970-01-01T00:00:00Z' : '2200-01-01T00:00:00Z')
-		let response = await this.client.get<T.CustomersScrollResponse>(
-			'/customers',
-			Object.assign({}, params, { starting_after: startingAfter }),
-		)
+		let queryParams = toQueryParams(Object.assign({}, params, { starting_after: startingAfter }))
+		let response = await this.client.get<T.CustomersScrollResponse>('/customers', queryParams)
 
 		while (true) {
 			if (response.customers.length === 0) break
@@ -60,12 +59,8 @@ class Customers {
 
 			if (!response.has_more) break
 
-			response = await this.client.get(
-				'/customers',
-				Object.assign({}, params, {
-					starting_after: startingAfter,
-				}),
-			)
+			queryParams = toQueryParams(Object.assign({}, params, { starting_after: startingAfter }))
+			response = await this.client.get('/customers', queryParams)
 		}
 	}
 	/**
