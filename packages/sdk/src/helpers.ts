@@ -50,7 +50,7 @@ export function assert(condition: any, message?: string): asserts condition {
 	throw new Error(message)
 }
 
-export function toQueryParams(obj: Record<string, unknown>): Record<string, string> {
+export function toQueryParams(obj: Record<string, unknown> | any): Record<string, string> {
 	const entries: [string, string][] = []
 
 	function mapToEntries(prefix: string | null, record: Record<string, unknown> | unknown[]) {
