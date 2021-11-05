@@ -103,8 +103,8 @@ export class ClientSide {
 			event: event_name,
 			metadata: metadata ?? {},
 			customer: customer,
-			referral: referral ?? {},
-			loyalty: loyalty ?? {},
+			referral: referral ?? null,
+			loyalty: loyalty ?? null,
 		}
 
 		payload.customer.source_id = customer.source_id ?? this.trackingId
