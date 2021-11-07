@@ -60,12 +60,7 @@ class Customers {
 
 			if (!response.has_more) break
 
-			response = await this.client.get(
-				'/customers',
-				Object.assign({}, params, {
-					starting_after: startingAfter,
-				}),
-			)
+			response = await this.client.get('/customers', Object.assign({}, params, { starting_after: startingAfter }))
 		}
 	}
 	/**

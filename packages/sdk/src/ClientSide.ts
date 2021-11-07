@@ -1,6 +1,6 @@
 import * as T from './types/ClientSide'
 
-import { assert, encode, isObject, isOptionalObject, isOptionalString, isString, toQueryParams } from './helpers'
+import { assert, encode, isObject, isOptionalObject, isOptionalString, isString } from './helpers'
 
 import type { RequestController } from './RequestController'
 
@@ -30,7 +30,7 @@ export class ClientSide {
 			query.metadata = params.metadata
 			query.order = { metadata: params.orderMetadata }
 			query.customer = params.customer
-			query.tracking_id = this.trackingId
+			query.tracking_id = params.tracking_id || this.trackingId
 		}
 
 		if (!!query.code) {
@@ -41,11 +41,9 @@ export class ClientSide {
 		assert(isOptionalString(query?.customer?.source_id), 'client.validate: expected "params.customer.source_id" to be a string') // prettier-ignore
 		assert(isOptionalObject(query?.customer?.metadata), 'client.validate: expected "params.customer.metadata" to be an object') // prettier-ignore
 
-		const queryParams = toQueryParams(query)
-
 		const path = query.code ? '/validate' : '/promotions/validation'
 
-		return this.client.get<T.ClientSideValidateResponse>(path, queryParams)
+		return this.client.get<T.ClientSideValidateResponse>(path, query)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side
@@ -103,8 +101,8 @@ export class ClientSide {
 			event: event_name,
 			metadata: metadata ?? {},
 			customer: customer,
-			referral: referral ?? {},
-			loyalty: loyalty ?? {},
+			referral: referral ?? undefined,
+			loyalty: loyalty ?? undefined,
 		}
 
 		payload.customer.source_id = customer.source_id ?? this.trackingId
@@ -130,9 +128,7 @@ export class ClientSide {
 		query.created_at = params.created_at
 		query.updated_at = params.updated_at
 
-		const queryParams = toQueryParams(query)
-
-		return this.client.get<T.ClientSideListVouchersResponse>('/vouchers', queryParams)
+		return this.client.get<T.ClientSideListVouchersResponse>('/vouchers', query)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
