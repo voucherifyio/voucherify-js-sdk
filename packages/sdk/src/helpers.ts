@@ -50,33 +50,6 @@ export function assert(condition: any, message?: string): asserts condition {
 	throw new Error(message)
 }
 
-export function toQueryParams(obj: Record<string, unknown> | any): Record<string, string> {
-	const entries: [string, string][] = []
-
-	function mapToEntries(prefix: string | null, record: Record<string, unknown> | unknown[]) {
-		Object.entries(record).map(([key, val]) => {
-			if (val == null) return void 0
-
-			switch (typeof val) {
-				case 'string':
-				case 'number':
-				case 'boolean':
-				case 'bigint':
-					if (prefix) return entries.push([`${prefix}[${key}]`, encode(val.toString())])
-					return entries.push([key, encode(val.toString())])
-				case 'object':
-					if (prefix) return mapToEntries(`${prefix}[${key}]`, <Record<string, unknown>>val)
-					return mapToEntries(key, <Record<string, unknown>>val)
-				default:
-					return void 0
-			}
-		})
-	}
-	mapToEntries(null, obj)
-
-	return Object.fromEntries(entries)
-}
-
 /**
  * Return an object containing all properties of `obj` excluding the ones in `keys` array
  * e.g:
