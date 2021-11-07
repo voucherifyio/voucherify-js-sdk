@@ -1,5 +1,14 @@
 # @voucherify/react-widget
 
+## 1.3.1
+
+### Patch Changes
+
+- [`8ff9b8d`](https://github.com/voucherifyio/voucherify-js-sdk/commit/8ff9b8d6e2535b524b2d5707a69ffd3ced4b2254) [#95](https://github.com/voucherifyio/voucherify-js-sdk/pull/95) Thanks [@pannga](https://github.com/pannga)! - Version 1.3.0 enabled encoding in RequestController - it was used to fix encoding for both server side and client side SDKs. This introduced issue, as we did not notice that ClientSide get methods were explicitly encoding query params (toQueryParams function). That meant the query params were encoded twice and that lead to issues with characters such as %.
+
+- Updated dependencies [[`8ff9b8d`](https://github.com/voucherifyio/voucherify-js-sdk/commit/8ff9b8d6e2535b524b2d5707a69ffd3ced4b2254)]:
+  - @voucherify/sdk@1.3.1
+
 ## 1.3.0
 
 ### Patch Changes
