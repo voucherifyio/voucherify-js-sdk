@@ -71,13 +71,13 @@ export class Vouchers {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/update-vouchers-metadata-in-bulk
+	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
 		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata/async', params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/update-vouchers-in-bulk
+	 * @see https://docs.voucherify.io/reference/aa-update-vouchers-in-bulk
 	 */
 	public bulkUpdate(vouchers: T.VouchersBulkUpdate) {
 		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk/async', vouchers)
