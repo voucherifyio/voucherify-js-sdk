@@ -2,7 +2,7 @@
   <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo_react.png" />
 </p>
 
-<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> React Widget</h3>
+<h3 align="center">Official <a href="https://www.voucherify.io">Voucherify</a> React Widget</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
@@ -44,15 +44,15 @@ Voucherify React Widget contains several client-side Voucherify methods, which a
 
 Voucherify React Widget uses Voucherify JS SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
 
-Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+Learn more about Voucherify by visiting [our site](https://www.voucherify.io).
 
 # <a name="documentation"></a>📝 Documentation
 
-You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
+You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference). Most method headers point to more detailed descriptions of arguments you can use.
 
 You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/).
 
-📚 Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
+📚 Want to learn more? Visit our [official site](https://www.voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
 👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
 
@@ -92,7 +92,7 @@ CDN installation:
 </body>
 ```
 
-Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general) and allow client requests from your domain.
+Then, [login](https://app.voucherify.io/#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general) and allow client requests from your domain.
 
 If you want to use Redeem or Publish Widget, remember to allow client-side redemption and publication.
 
@@ -378,7 +378,7 @@ Voucherify React Widget includes TypeScript declarations.
 
 # <a name="error-handling"></a>😨 Error handling
 
-Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
+Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
 
 # <a name="alternatives"></a>🖼️ Alternatives - iframe
 

@@ -10,7 +10,8 @@ class VouchersQualification {
 	/**
 	 * The method can be used for sending a request to display all vouchers qualified to the given customer and context (e.g., order, loyalty reward). A checking logic won't run among coupons from bulk unique codes campaigns. For campaigns with multiple unique codes, you should run a dedicated function for searching for qualified campaigns.
 	 * As a sample use case, you can imagine a requirement of displaying below cart the coupons eligible to a customer. The customer can take and apply the proposed voucher.
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#push-qualification-request
+	 *
+	 * @see https://docs.voucherify.io/reference/push-qualification-request
 	 */
 	public examine(body: T.VouchersQualificationExamineBody, params: T.VouchersQualificationExamineParams = {}) {
 		return this.client.post<T.VouchersQualificationExamineResponse>('/vouchers/qualification', body, params)

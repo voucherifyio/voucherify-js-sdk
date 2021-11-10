@@ -2,7 +2,7 @@
   <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
 </p>
 
-<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> JS SDK and React Widget</h3>
+<h3 align="center">Official <a href="https://www.voucherify.io">Voucherify</a> JS SDK and React Widget</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
@@ -40,15 +40,15 @@ Packages:
 
 Voucherify empowers marketers and developers with flexible building blocks to come up with, implement, and track targeted promotional campaigns.
 
-Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+Learn more about Voucherify by visiting [our site](https://www.voucherify.io).
 
 # <a name="documentation"></a>📝 Documentation
 
-You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
+You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference). Most method headers point to more detailed descriptions of arguments you can use.
 
 You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/).
 
-📚 Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
+📚 Want to learn more? Visit our [official site](https://www.voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
 👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
 
@@ -113,7 +113,7 @@ You can find TS example in [examples/sdk/with-nodejs-typescript](/examples/sdk/w
 
 # <a name="error-handling"></a>😨 Error handling
 
-Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
+Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
 
 # <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
 

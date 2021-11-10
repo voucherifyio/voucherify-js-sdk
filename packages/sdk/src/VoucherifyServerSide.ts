@@ -34,7 +34,7 @@ export interface VoucherifyServerSideOptions {
 	 */
 	apiUrl?: string
 	/**
-	 * [Log-in](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to Voucherify web interface and obtain your `Application Keys` from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/configuration):
+	 * [Log-in](https://app.voucherify.io/#/login) to Voucherify web interface and obtain your `Application Keys` from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general):
 	 *
 	 * ```javascript
 	 * const voucherify = VoucherifyServerSide({
@@ -45,7 +45,7 @@ export interface VoucherifyServerSideOptions {
 	 */
 	applicationId: string
 	/**
-	 * [Log-in](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to Voucherify web interface and obtain your `Application Keys` from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/configuration):
+	 * [Log-in](https://app.voucherify.io/#/login) to Voucherify web interface and obtain your `Application Keys` from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general):
 	 *
 	 * ```javascript
 	 * const voucherify = VoucherifyServerSide({
@@ -56,7 +56,7 @@ export interface VoucherifyServerSideOptions {
 	 */
 	secretKey: string
 	/**
-	 * Optionally, you can add `apiVersion` to the client options if you want to use a [specific API version](http://docs.voucherify.io/docs/api-version-upgrades?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+	 * Optionally, you can add `apiVersion` to the client options if you want to use a [specific API version](https://docs.voucherify.io/docs/api-version-upgrades).
 	 *
 	 * ```javascript
 	 * const voucherify = VoucherifyServerSide({
