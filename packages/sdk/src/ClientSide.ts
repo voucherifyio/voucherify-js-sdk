@@ -11,7 +11,7 @@ export class ClientSide {
 		this.trackingId = identity
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq##vouchers-validate
+	 * @see https://docs.voucherify.io/reference/vouchers-validate
 	 */
 	public validate(params: T.ClientSideValidateParams | string) {
 		assert(
@@ -46,7 +46,7 @@ export class ClientSide {
 		return this.client.get<T.ClientSideValidateResponse>(path, query)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side
+	 * @see https://docs.voucherify.io/reference/redeem-voucher-client-side
 	 */
 	public redeem(code: string, payload: T.ClientSideRedeemPayload = {}) {
 		assert(isString(code), 'client.redeem - please provide a valid Voucher code')
@@ -59,7 +59,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideRedeemResponse>('/redeem', payload, { code })
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-publication
+	 * @see https://docs.voucherify.io/reference/create-publication
 	 */
 	public publish(
 		campaign: string,
@@ -84,7 +84,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSidePublishResponse>('/publish', preparedPayload, queryParams)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side
+	 * @see https://docs.voucherify.io/reference/track-custom-event-client-side
 	 */
 
 	public track(
@@ -115,7 +115,7 @@ export class ClientSide {
 		return this.client.post<T.ClientSideTrackResponse>('/events', payload)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
+	 * @see https://docs.voucherify.io/reference/list-vouchers
 	 */
 	public listVouchers(params: T.ClientSideListVouchersParams = {}) {
 		const query: Record<string, any> = {}
@@ -131,7 +131,7 @@ export class ClientSide {
 		return this.client.get<T.ClientSideListVouchersResponse>('/vouchers', query)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer
+	 * @see https://docs.voucherify.io/reference/create-customer
 	 */
 	public createCustomer(customer: T.ClientSideCustomersCreateParams, enableDoubleOptIn?: boolean) {
 		return this.client.post<T.ClientSideCustomersCreateResponse>(
@@ -142,13 +142,13 @@ export class ClientSide {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side
+	 * @see https://docs.voucherify.io/reference/get-consent-client-side
 	 */
 	public listConsents() {
 		return this.client.get<T.ClientSideConsentsListResponse>('/consents')
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client
+	 * @see https://docs.voucherify.io/reference/update-customers-consents-client
 	 */
 	public updateConsents(idOrSourceId: string, consents: T.ClientSideCustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)

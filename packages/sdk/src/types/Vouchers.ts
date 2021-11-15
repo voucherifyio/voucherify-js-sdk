@@ -241,28 +241,24 @@ export interface VouchersImport {
 
 export interface VouchersBulkUpdateObject {
 	code: string
-	metadata?: Record<string, any>
+	metadata: Record<string, any>
 }
 
 export type VouchersBulkUpdate = VouchersBulkUpdateObject[]
 
 export interface VouchersBulkUpdateMetadata {
 	codes: string[]
-	metadata?: Record<string, any>
+	metadata: Record<string, any>
 }
 
-export interface VouchersBulkUpdateMetadataObjectResponse {
-	code: string
-	found: boolean
-	updated: boolean
+export type VouchersImportResponse = {
+	async_action_id: string
 }
 
-export type VouchersBulkUpdateMetadataResponse = VouchersBulkUpdateMetadataObjectResponse[]
-
-export interface VouchersBulkUpdateObjectResponse {
-	code: string
-	found: boolean
-	updated: boolean
+export type VouchersBulkUpdateMetadataResponse = {
+	async_action_id: string
 }
 
-export type VouchersBulkUpdateResponse = VouchersBulkUpdateObjectResponse[]
+export type VouchersBulkUpdateResponse = {
+	async_action_id: string
+}

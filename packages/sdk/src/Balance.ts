@@ -9,7 +9,7 @@ export class Balance {
 	/**
 	 * Add Gift Voucher Balance
 	 * This method gives a possibility to add balance to an existing gift voucher.
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq##add-gift-voucher-balance
+	 * @see https://docs.voucherify.io/reference/add-gift-voucher-balance
 	 */
 	public create(code: string, params: T.BalanceCreateParams) {
 		return this.client.post<T.BalanceCreateResponse>(`/vouchers/${encode(code)}/balance`, params)

@@ -7,19 +7,19 @@ export class Products {
 	constructor(private client: RequestController) {}
 
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
+	 * @see https://docs.voucherify.io/reference/create-product
 	 */
 	public create(product: T.ProductsCreate) {
 		return this.client.post<T.ProductsCreateResponse>('/products', product)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product
+	 * @see https://docs.voucherify.io/reference/get-product
 	 */
 	public get(productId: string) {
 		return this.client.get<T.ProductsGetResponse>(`/products/${encode(productId)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-product
+	 * @see https://docs.voucherify.io/reference/update-product
 	 */
 	public update(product: T.ProductsUpdate) {
 		return this.client.put<T.ProductsUpdateResponse>(
@@ -28,43 +28,43 @@ export class Products {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-metadata-in-bulk
+	 * @see https://docs.voucherify.io/reference/async-update-products-metadata-in-bulk
 	 */
-	public bulkMetadataUpdate(products: T.ProductsBulkMetadataUpdate) {
-		return this.client.post<T.ProductsBulkMetadataUpdateResponse>('/products/metadata', products)
+	public bulkUpdateMetadata(products: T.ProductsBulkUpdateMetadata) {
+		return this.client.post<T.ProductsBulkUpdateMetadataResponse>('/products/metadata/async', products)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-in-bulk
+	 * @see https://docs.voucherify.io/reference/post-products-in-bulk
 	 */
 	public bulkUpdate(products: T.ProductsBulkUpdate) {
-		return this.client.post<T.ProductsBulkUpdateResponse>('/products/bulk', products)
+		return this.client.post<T.ProductsBulkUpdateResponse>('/products/bulk/async', products)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product
+	 * @see https://docs.voucherify.io/reference/delete-product
 	 */
 	public delete(productId: string, params?: T.ProductsDeleteParams) {
 		return this.client.delete(`/products/${encode(productId)}`, params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products
+	 * @see https://docs.voucherify.io/reference/list-products
 	 */
 	public list(params?: T.ProductsListParams) {
 		return this.client.get<T.ProductsListResponse>('/products', params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-sku
+	 * @see https://docs.voucherify.io/reference/create-sku
 	 */
 	public createSku(productId: string, sku: T.ProductsCreateSku) {
 		return this.client.post<T.ProductsCreateSkuResponse>(`/products/${encode(productId)}/skus`, sku)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-sku
+	 * @see https://docs.voucherify.io/reference/get-sku-v20210726
 	 */
-	public getSku(productId: string, skuId: string) {
-		return this.client.get<T.ProductsGetSkuResponse>(`/products/${encode(productId)}/skus/${encode(skuId)}`)
+	public getSku(skuId: string) {
+		return this.client.get<T.ProductsGetSkuResponse>(`/skus/${encode(skuId)}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-sku
+	 * @see https://docs.voucherify.io/reference/update-sku
 	 */
 	public updateSku(productId: string, sku: T.ProductsUpdateSku) {
 		return this.client.put<T.ProductsUpdateSkuResponse>(
@@ -73,13 +73,13 @@ export class Products {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-sku
+	 * @see https://docs.voucherify.io/reference/delete-sku
 	 */
 	public deleteSku(productId: string, skuId: string, params?: T.ProductsDeleteSkuParams) {
 		return this.client.delete(`/products/${encode(productId)}/skus/${encode(skuId)}`, params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus
+	 * @see https://docs.voucherify.io/reference/list-skus
 	 */
 	public listSkus(productId: string) {
 		return this.client.get<T.ProductsListSkus>(`/products/${encode(productId)}/skus`)

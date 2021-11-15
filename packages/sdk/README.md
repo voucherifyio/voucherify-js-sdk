@@ -2,7 +2,7 @@
   <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
 </p>
 
-<h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> JS SDK</h3>
+<h3 align="center">Official <a href="https://www.voucherify.io">Voucherify</a> JS SDK</h3>
 
 <p>
   <a href="#"><img src="https://github.com/voucherifyio/voucherify-js-sdk/workflows/Release/badge.svg?branch=main" alt="Build Status"/></a>
@@ -77,15 +77,15 @@ Client side:
 
 Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
 
-Learn more about Voucherify by visiting [our site](http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+Learn more about Voucherify by visiting [our site](https://www.voucherify.io).
 
 # <a name="documentation"></a>📝 Documentation
 
-You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq). Most method headers point to more detailed descriptions of arguments you can use.
+You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference). Most method headers point to more detailed descriptions of arguments you can use.
 
 You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/).
 
-📚 Want to learn more? Visit our [official site](https://voucherify.io) or our [Success Portal](https://success.voucherify.io).
+📚 Want to learn more? Visit our [official site](https://www.voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
 👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
 
@@ -109,7 +109,7 @@ CDN installation:
 ></script>
 ```
 
-Then, [login](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/core/projects/current/general).
+Then, [login](https://app.voucherify.io/#/login) to your Voucherify Dashboard and get your API keys from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general).
 
 # <a name="server-side"></a>🤖 Server Side
 
@@ -150,83 +150,83 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
 
-#### [Create Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-voucher)
+#### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
 ```javascript
 client.vouchers.create(voucher)
 ```
 
-Check [voucher object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-voucher-object).
+Check [voucher object](https://docs.voucherify.io/reference/the-voucher-object).
 
-#### [Get Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-get)
+#### [Get Voucher](https://docs.voucherify.io/reference/vouchers-get)
 
 ```javascript
 client.vouchers.get(code)
 ```
 
-#### [Update Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-voucher)
+#### [Update Voucher](https://docs.voucherify.io/reference/update-voucher)
 
 ```javascript
 client.vouchers.update(voucher)
 ```
 
-#### [Delete Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-voucher)
+#### [Delete Voucher](https://docs.voucherify.io/reference/delete-voucher)
 
 ```javascript
 client.vouchers.delete(code)
 client.vouchers.delete(code, params)
 ```
 
-#### [List Vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers)
+#### [List Vouchers](https://docs.voucherify.io/reference/list-vouchers)
 
 ```javascript
 client.vouchers.list()
 client.vouchers.list(params)
 ```
 
-#### [Enable Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher)
+#### [Enable Voucher](https://docs.voucherify.io/reference/enable-voucher)
 
 ```javascript
 client.vouchers.enable(code)
 ```
 
-#### [Disable Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher)
+#### [Disable Voucher](https://docs.voucherify.io/reference/disable-voucher)
 
 ```javascript
 client.vouchers.disable(code)
 ```
 
-#### [Add Gift Voucher Balance](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-gift-voucher-balance)
+#### [Add Gift Voucher Balance](https://docs.voucherify.io/reference/add-gift-voucher-balance)
 
 ```javascript
 client.vouchers.balance.create(code, params)
 ```
 
-#### [Import Vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1)
+#### [Import Vouchers](https://docs.voucherify.io/reference/import-vouchers-1)
 
 ```javascript
 client.vouchers.import(vouchers)
 ```
 
-#### [Examine Vouchers Qualification](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#push-qualification-request)
+#### [Examine Vouchers Qualification](https://docs.voucherify.io/reference/push-qualification-request)
 
 ```javascript
 client.vouchers.qualifications.examine(body, params)
 ```
 
-#### [Update Vouchers Metadata in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-metadata-in-bulk)
+#### [Update Vouchers Metadata in bulk](https://docs.voucherify.io/reference/update-vouchers-metadata-in-bulk)
 
 ```javascript
 client.vouchers.bulkUpdateMetadata(params)
 ```
 
-#### [Update Vouchers in bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-vouchers-in-bulk)
+#### [Update Vouchers in bulk](https://docs.voucherify.io/reference/update-vouchers-in-bulk)
 
 ```javascript
 client.vouchers.bulkUpdate(vouchers)
 ```
 
-#### [Release Validation Session](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#release-validation-session)
+#### [Release Validation Session](https://docs.voucherify.io/reference/release-validation-session)
 
 ```javascript
 client.vouchers.releaseValidationSession(code, sessionKey)
@@ -246,13 +246,13 @@ Methods are provided within `client.campaigns.*` namespace.
 - [List Campaigns](#list-campaigns)
 - [Examine Campaigns Qualification](#examine-campaigns-qualification)
 
-#### [Create Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-campaign)
+#### [Create Campaign](https://docs.voucherify.io/reference/create-campaign)
 
 ```javascript
 client.campaigns.create(campaign)
 ```
 
-#### [Update Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-campaign)
+#### [Update Campaign](https://docs.voucherify.io/reference/update-campaign)
 
 ```javascript
 client.campaigns.update(campaignId, campaign)
@@ -261,20 +261,20 @@ client.campaigns.update(campaignName, campaign)
 
 Method will update only fields passed to `campaign` argument.
 
-#### [Get Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-campaign)
+#### [Get Campaign](https://docs.voucherify.io/reference/get-campaign)
 
 ```javascript
 client.campaigns.get(name)
 ```
 
-#### [Delete Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-campaign)
+#### [Delete Campaign](https://docs.voucherify.io/reference/delete-campaign)
 
 ```javascript
 client.campaigns.delete(campaignName)
 client.campaigns.delete(campaignName, params)
 ```
 
-#### [Add Voucher to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign)
+#### [Add Voucher to Campaign](https://docs.voucherify.io/reference/add-voucher-to-campaign)
 
 ```javascript
 client.campaigns.addVoucher(campaignName)
@@ -282,27 +282,27 @@ client.campaigns.addVoucher(campaignName, body)
 client.campaigns.addVoucher(campaignName, body, params)
 ```
 
-#### [Add certain Voucher to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-with-certain-code-to-campaign)
+#### [Add certain Voucher to Campaign](https://docs.voucherify.io/reference/add-voucher-with-certain-code-to-campaign)
 
 ```javascript
 client.campaigns.addCertainVoucher(campaignName, code, codeParams)
 client.campaigns.addCertainVoucher(campaignName, code)
 ```
 
-#### [Import Vouchers to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers)
+#### [Import Vouchers to Campaign](https://docs.voucherify.io/reference/import-vouchers)
 
 ```javascript
 client.campaigns.importVouchers(campaignName, vouchers)
 ```
 
-#### [List Campaigns](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-campaigns)
+#### [List Campaigns](https://docs.voucherify.io/reference/list-campaigns)
 
 ```javascript
 client.campaigns.list()
 client.campaigns.list(params)
 ```
 
-#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-qualification-request)
+#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/create-qualification-request)
 
 ```javascript
 client.campaigns.qualifications.examine(body)
@@ -321,34 +321,34 @@ Methods are provided within `client.distributions.*` namespace.
 - [List publications](#list-publications)
 - [Create publication](#create-publication)
 
-#### [Create Export](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-export)
+#### [Create Export](https://docs.voucherify.io/reference/create-export)
 
 ```javascript
 client.distributions.exports.create(exportObject)
 ```
 
-Check [the export object](https://docs.voucherify.io/v1/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-export-object).
+Check [the export object](https://docs.voucherify.io/v1/reference/the-export-object).
 
-#### [Get Export](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-export)
+#### [Get Export](https://docs.voucherify.io/reference/get-export)
 
 ```javascript
 client.distributions.exports.get(exportId)
 ```
 
-#### [Delete Export](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-export)
+#### [Delete Export](https://docs.voucherify.io/reference/delete-export)
 
 ```javascript
 client.distributions.exports.delete(exportId)
 ```
 
-#### [List publications](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications)
+#### [List publications](https://docs.voucherify.io/reference/list-publications)
 
 ```javascript
 client.distributions.publications.list()
 client.distributions.publications.list(params)
 ```
 
-#### [Create publication](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-publication)
+#### [Create publication](https://docs.voucherify.io/reference/create-publication)
 
 ```javascript
 client.distributions.publications.create(params)
@@ -363,7 +363,7 @@ Methods are provided within `client.validations.*` or `client.promotions.*` name
 - [Validate Voucher](#validate-voucher)
 - [Validate Promotion Campaign](#validate-promotion-campaign)
 
-#### [Validate Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-voucher)
+#### [Validate Voucher](https://docs.voucherify.io/reference/validate-voucher)
 
 ```javascript
 client.validations.validateVoucher(code)
@@ -377,7 +377,7 @@ client.validations.validate(code)
 client.validations.validate(code, params)
 ```
 
-#### [Validate Promotion Campaign](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1)
+#### [Validate Promotion Campaign](https://docs.voucherify.io/reference/validate-promotions-1)
 
 ```javascript
 client.promotions.validate(params)
@@ -403,40 +403,40 @@ Methods are provided within `client.redemptions.*` namespace.
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
 - [Rollback Redemption](#rollback-redemption)
 
-#### [Redeem Voucher](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher)
+#### [Redeem Voucher](https://docs.voucherify.io/reference/redeem-voucher)
 
 ```javascript
 client.redemptions.redeem(code)
 client.redemptions.redeem(code, params)
 ```
 
-#### [Get Redemption](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-redemption)
+#### [Get Redemption](https://docs.voucherify.io/reference/get-redemption)
 
 ```javascript
 client.redemptions.get(redemptionId)
 ```
 
-#### [List Redemptions](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions)
+#### [List Redemptions](https://docs.voucherify.io/reference/list-redemptions)
 
 ```javascript
 client.redemptions.list()
 client.redemptions.list(params)
 ```
 
-#### [Get Voucher's Redemptions](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions)
+#### [Get Voucher's Redemptions](https://docs.voucherify.io/reference/vouchers-redemptions)
 
 ```javascript
 client.redemptions.getForVoucher(code)
 ```
 
-#### [Rollback Redemption](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#rollback-redemption)
+#### [Rollback Redemption](https://docs.voucherify.io/reference/rollback-redemption)
 
 ```javascript
 client.redemptions.rollback(redemptionId)
 client.redemptions.rollback(redemptionId, params)
 ```
 
-Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
+Check [redemption rollback object](https://docs.voucherify.io/reference/the-redemption-rollback-object).
 
 ---
 
@@ -455,48 +455,48 @@ Methods are provided within `client.promotions.*` namespace.
 
 Read how to [Validate Promotion Campaign](#validate-promotion-campaign) in Validations section
 
-#### [Create Promotion Campaign](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign)
+#### [Create Promotion Campaign](https://docs.voucherify.io/reference/create-promotion-campaign)
 
 ```javascript
 client.promotions.create(promotionCampaign)
 ```
 
-Check [promotion campaign object](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign).
+Check [promotion campaign object](https://docs.voucherify.io/reference/create-promotion-campaign).
 
-#### [List Promotion's Tiers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-promotions)
+#### [List Promotion's Tiers](https://docs.voucherify.io/reference/get-promotions)
 
 ```javascript
 client.promotions.tiers.list(promotionCampaignId)
 ```
 
-Check [promotion's tier object](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-promotion-object)
+Check [promotion's tier object](https://docs.voucherify.io/reference/the-promotion-object)
 
-#### [List All Promotion Tiers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-promotion-tiers)
+#### [List All Promotion Tiers](https://docs.voucherify.io/reference/list-promotion-tiers)
 
 ```javascript
 client.promotions.tiers.listAll()
 client.promotions.tiers.listAll(params})
 ```
 
-#### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-promotion-tier-to-campaign)
+#### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference/add-promotion-tier-to-campaign)
 
 ```javascript
 client.promotions.tiers.create(promotionId, params)
 ```
 
-#### [Redeem Promotion](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-promotion)
+#### [Redeem Promotion](https://docs.voucherify.io/reference/redeem-promotion)
 
 ```javascript
 client.promotions.tiers.redeem(promotionsTierId, params)
 ```
 
-#### [Update Promotion Tier](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-promotion)
+#### [Update Promotion Tier](https://docs.voucherify.io/reference/update-promotion)
 
 ```javascript
 client.promotions.tiers.update(promotionsTier)
 ```
 
-#### [Delete Promotion Tier](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-promotion)
+#### [Delete Promotion Tier](https://docs.voucherify.io/reference/delete-promotion)
 
 ```javascript
 client.promotions.tiers.delete(promotionsTierId)
@@ -515,21 +515,21 @@ Methods are provided within `client.customers.*` namespace.
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 
-#### [Create Customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer)
+#### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
 ```javascript
 client.customers.create(customer)
 ```
 
-Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
+Check [customer object](https://docs.voucherify.io/reference/the-customer-object).
 
-#### [Get Customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-customer)
+#### [Get Customer](https://docs.voucherify.io/reference/get-customer)
 
 ```javascript
 client.customers.get(customerId)
 ```
 
-#### [Update Customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer)
+#### [Update Customer](https://docs.voucherify.io/reference/update-customer)
 
 ```javascript
 client.customers.update(customer)
@@ -537,13 +537,13 @@ client.customers.update(customer)
 
 `customer` object must contain `id` or `source_id`.
 
-#### [Delete Customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer)
+#### [Delete Customer](https://docs.voucherify.io/reference/delete-customer)
 
 ```javascript
 client.customers.delete(customerId)
 ```
 
-#### [List Customers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers)
+#### [List Customers](https://docs.voucherify.io/reference/list-customers)
 
 ```javascript
 client.customers.list()
@@ -582,7 +582,7 @@ You can optionally define scrolling cursor based on customer creation date using
 
 Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.
 
-#### [Update Customer's Consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents)
+#### [Update Customer's Consents](https://docs.voucherify.io/reference/update-customers-consents)
 
 ```javascript
 client.customers.updateConsents(customer, consents)
@@ -598,7 +598,7 @@ Methods are provided within `client.consents.*` namespace.
 
 You can [update Customer's consents](#update-customers-consents) in `client.customer.*` namespace.
 
-#### [Get Consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consents)
+#### [Get Consents](https://docs.voucherify.io/reference/get-consents)
 
 ```javascript
 client.consents.list()
@@ -615,21 +615,21 @@ Methods are provided within `client.orders.*` namespace.
 - [Update Order](#update-order)
 - [List Orders](#list-orders)
 
-#### [Create Order](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-order)
+#### [Create Order](https://docs.voucherify.io/reference/create-order)
 
 ```javascript
 client.orders.create(order)
 ```
 
-Check [the order object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-order-object).
+Check [the order object](https://docs.voucherify.io/reference/the-order-object).
 
-#### [Get Order](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-order)
+#### [Get Order](https://docs.voucherify.io/reference/get-order)
 
 ```javascript
 client.orders.get(orderId)
 ```
 
-#### [Update Order](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-order)
+#### [Update Order](https://docs.voucherify.io/reference/update-order)
 
 ```javascript
 client.orders.update(order)
@@ -637,7 +637,7 @@ client.orders.update(order)
 
 `order` object must contain `id` or `source_id`.
 
-#### [List Orders](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-orders)
+#### [List Orders](https://docs.voucherify.io/reference/list-orders)
 
 ```javascript
 client.orders.list()
@@ -662,74 +662,74 @@ Methods are provided within `client.products.*` namespace.
 - [Delete SKU](#delete-sku)
 - [List all product SKUs](#list-all-product-skus)
 
-#### [Create Product](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product)
+#### [Create Product](https://docs.voucherify.io/reference/create-product)
 
 ```javascript
 client.products.create(product)
 ```
 
-Check [product object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-product-object).
+Check [product object](https://docs.voucherify.io/reference/the-product-object).
 
-#### [Get Product](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product)
+#### [Get Product](https://docs.voucherify.io/reference/get-product)
 
 ```javascript
 client.products.get(productId)
 ```
 
-#### [Update Product](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-product)
+#### [Update Product](https://docs.voucherify.io/reference/update-product)
 
 ```javascript
 client.products.update(product)
 ```
 
-#### [Delete Product](<(https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product)>)
+#### [Delete Product](<(https://docs.voucherify.io/reference/delete-product)>)
 
 ```javascript
 client.products.delete(productId)
 client.products.delete(productId, { force: true })
 ```
 
-#### [Update Products in Bulk](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-products-in-bulk)
+#### [Update Products in Bulk](https://docs.voucherify.io/reference/update-products-in-bulk)
 
 ```javascript
 client.products.bulkUpdate(products)
 ```
 
-#### [List Products](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products)
+#### [List Products](https://docs.voucherify.io/reference/list-products)
 
 ```javascript
 client.products.list()
 client.products.list(params)
 ```
 
-#### [Create SKU](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-skus)
+#### [Create SKU](https://docs.voucherify.io/reference/create-skus)
 
 ```javascript
 client.products.createSku(productId, sku)
 ```
 
-Check [SKU object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-sku-object).
+Check [SKU object](https://docs.voucherify.io/reference/the-sku-object).
 
-#### [Get SKU](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-skus)
+#### [Get SKU](https://docs.voucherify.io/reference/get-skus)
 
 ```javascript
 client.products.getSku(productId, skuId)
 ```
 
-#### [Update SKU](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-skus)
+#### [Update SKU](https://docs.voucherify.io/reference/update-skus)
 
 ```javascript
 client.products.updateSku(productId, sku)
 ```
 
-#### [Delete SKU](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-skus)
+#### [Delete SKU](https://docs.voucherify.io/reference/delete-skus)
 
 ```javascript
 client.products.deleteSku(productId, skuId)
 client.products.deleteSku(productId, skuId, { force: true })
 ```
 
-#### [List all product SKUs](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus)
+#### [List all product SKUs](https://docs.voucherify.io/reference/list-skus)
 
 ```javascript
 client.products.listSkus(productId)
@@ -751,60 +751,60 @@ Methods are provided within `client.rewards.*` namespace.
 - [Delete Reward Assignment](#delete-reward-assignment)
 - [List Reward Assignments](#list-reward-assignments)
 
-#### [Create Reward](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward)
+#### [Create Reward](https://docs.voucherify.io/reference/create-reward)
 
 ```javascript
 client.rewards.create(reward)
 ```
 
-Check [reward object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-reward-object).
+Check [reward object](https://docs.voucherify.io/reference/the-reward-object).
 
-#### [Get Reward](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-reward)
+#### [Get Reward](https://docs.voucherify.io/reference/get-reward)
 
 ```javascript
 client.rewards.get(rewardId)
 ```
 
-#### [Update Reward](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward)
+#### [Update Reward](https://docs.voucherify.io/reference/update-reward)
 
 ```javascript
 client.rewards.update(reward)
 ```
 
-#### [Delete Reward](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-reward)
+#### [Delete Reward](https://docs.voucherify.io/reference/delete-reward)
 
 ```javascript
 client.rewards.delete(rewardId)
 ```
 
-#### [List Rewards](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-rewards)
+#### [List Rewards](https://docs.voucherify.io/reference/list-rewards)
 
 ```javascript
 client.rewards.list()
 client.rewards.list(params)
 ```
 
-#### [Create Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment)
+#### [Create Reward Assignment](https://docs.voucherify.io/reference/create-reward-assignment)
 
 ```javascript
 client.rewards.createAssignment(rewardId, assignment)
 ```
 
-Check [reward assignment object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-reward-assignment-object).
+Check [reward assignment object](https://docs.voucherify.io/reference/the-reward-assignment-object).
 
-#### [Update Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment)
+#### [Update Reward Assignment](https://docs.voucherify.io/reference/update-reward-assignment)
 
 ```javascript
 client.rewards.updateAssignment(rewardId, assignment)
 ```
 
-#### [Delete Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-reward-assignment)
+#### [Delete Reward Assignment](https://docs.voucherify.io/reference/delete-reward-assignment)
 
 ```javascript
 client.rewards.deleteAssignment(rewardId, assignmentId)
 ```
 
-#### [List Reward Assignments](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments)
+#### [List Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments)
 
 ```javascript
 client.rewards.listAssignments(rewardId)
@@ -837,100 +837,100 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Add Loyalty Card Balance](#add-loyalty-card-balance)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 
-#### [Create Loyalty Program](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-loyalty-program)
+#### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
 ```javascript
 client.loyalties.create(campaign)
 ```
 
-#### [Get Loyalty Program](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-loyalty-program)
+#### [Get Loyalty Program](https://docs.voucherify.io/reference/get-loyalty-program)
 
 ```javascript
 client.loyalties.get(campaignId)
 ```
 
-#### [Update Loyalty Program](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-loyalty-program)
+#### [Update Loyalty Program](https://docs.voucherify.io/reference/update-loyalty-program)
 
 ```javascript
 client.loyalties.update(campaign)
 ```
 
-#### [Delete Loyalty Program](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-loyalty-program)
+#### [Delete Loyalty Program](https://docs.voucherify.io/reference/delete-loyalty-program)
 
 ```javascript
 client.loyalties.delete(campaignId)
 ```
 
-#### [List Loyalty Programs](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-loyalty-programs)
+#### [List Loyalty Programs](https://docs.voucherify.io/reference/list-loyalty-programs)
 
 ```javascript
 client.loyalties.list()
 client.loyalties.list(params)
 ```
 
-#### [Create Loyalty Program Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-reward-assignment-1)
+#### [Create Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/create-reward-assignment-1)
 
 ```javascript
 client.loyalties.createRewardAssignments(campaignId, assignment)
 ```
 
-#### [Update Loyalty Program Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-reward-assignment-1)
+#### [Update Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/update-reward-assignment-1)
 
 ```javascript
 client.loyalties.updateRewardAssignment(campaignId, assignment)
 ```
 
-#### [Delete Loyalty Program Reward Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-reward-assignment-1)
+#### [Delete Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/delete-reward-assignment-1)
 
 ```javascript
 client.loyalties.deleteRewardAssignment(campaignId, assignmentId)
 ```
 
-#### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-reward-assignments-1)
+#### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments-1)
 
 ```javascript
 client.loyalties.listRewardAssignments(campaignId)
 client.loyalties.listRewardAssignments(campaignId, params)
 ```
 
-#### [Create Loyalty Program Earning Rules](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-earning-rule)
+#### [Create Loyalty Program Earning Rules](https://docs.voucherify.io/reference/create-earning-rule)
 
 ```javascript
 client.loyalties.createEarningRule(campaignId, earningRules)
 ```
 
-#### [Update Loyalty Program Earning Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-earning-rule)
+#### [Update Loyalty Program Earning Rule](https://docs.voucherify.io/reference/update-earning-rule)
 
 ```javascript
 client.loyalties.updateEarningRule(campaignId, earningRule)
 ```
 
-#### [Delete Loyalty Program Earning Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-earning-rule)
+#### [Delete Loyalty Program Earning Rule](https://docs.voucherify.io/reference/delete-earning-rule)
 
 ```javascript
 client.loyalties.deleteEarningRule(campaignId, earningRuleId)
 ```
 
-#### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-earning-rules)
+#### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference/list-earning-rules)
 
 ```javascript
 client.loyalties.listEarningRules(campaignId)
 client.loyalties.listEarningRules(campaignId, params)
 ```
 
-#### [Create Loyalty Program Member](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-member)
+#### [Create Loyalty Program Member](https://docs.voucherify.io/reference/create-member)
 
 ```javascript
 client.loyalties.createMember(campaignId, member)
 ```
 
-#### [Get Loyalty Program Member](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-member)
+#### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
 
 ```javascript
 client.loyalties.getMember(campaignId, memberId)
 ```
 
-#### [List Loyalty Program Members](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-members)
+#### [List Loyalty Program Members](https://docs.voucherify.io/reference/list-members)
 
 ```javascript
 client.loyalties.listMembers(campaignId)
@@ -945,7 +945,7 @@ client.loyalties.getMemberActivities(campaignId, memberId)
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-loyalty-card-balance)
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
 
 ```javascript
 client.loyalties.addPoints(campaignId, memberId, balance)
@@ -973,21 +973,21 @@ Methods are provided within `client.segments.*` namespace.
 - [Get Segment](#get-segment)
 - [Delete Segment](#delete-segment)
 
-#### [Create Segment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment)
+#### [Create Segment](https://docs.voucherify.io/reference/create-segment)
 
 ```javascript
 client.segments.create(segment)
 ```
 
-Check [the segment object](https://docs.voucherify.io/v1/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-segment-object).
+Check [the segment object](https://docs.voucherify.io/reference/the-segment-object).
 
-#### [Get Segment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment)
+#### [Get Segment](https://docs.voucherify.io/reference/get-segment)
 
 ```javascript
 client.segments.get(segmentId)
 ```
 
-#### [Delete Segment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-segment)
+#### [Delete Segment](https://docs.voucherify.io/reference/delete-segment)
 
 ```javascript
 client.segments.delete(segmentId)
@@ -1008,52 +1008,52 @@ Methods are provided within `client.validationRules.*` namespace.
 - [List Rules](#list-validation-rules)
 - [List Rule Assignments](#list-validation-rule-assignments)
 
-#### [Create Validation Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules)
+#### [Create Validation Rule](https://docs.voucherify.io/reference/create-validation-rules)
 
 ```javascript
 client.validationRules.create(validationRule)
 ```
 
-Check [validation rule object](https://docs.voucherify.io/v1/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-validation-rule-object).
+Check [validation rule object](https://docs.voucherify.io/reference/the-validation-rule-object).
 
-#### [Get Validation Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules)
+#### [Get Validation Rule](https://docs.voucherify.io/reference/get-validation-rules)
 
 ```javascript
 client.validationRules.get(validationRuleId)
 ```
 
-#### [Update Validation Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules)
+#### [Update Validation Rule](https://docs.voucherify.io/reference/update-validation-rules)
 
 ```javascript
 client.validationRules.update(validationRule)
 ```
 
-#### [Delete Validation Rule](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules)
+#### [Delete Validation Rule](https://docs.voucherify.io/reference/delete-validation-rules)
 
 ```javascript
 client.validationRules.delete(validationRuleId)
 ```
 
-#### [Create Validation Rule Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules-assignment)
+#### [Create Validation Rule Assignment](https://docs.voucherify.io/reference/create-validation-rules-assignment)
 
 ```javascript
 client.validationRules.createAssignment(validationRuleId, assignment)
 ```
 
-#### [Delete Validation Rule Assignment](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules-assignment)
+#### [Delete Validation Rule Assignment](https://docs.voucherify.io/reference/delete-validation-rules-assignment)
 
 ```javascript
 client.validationRules.deleteAssignment(validationRuleId, assignmentId)
 ```
 
-#### [List Validation Rules](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rules)
+#### [List Validation Rules](https://docs.voucherify.io/reference/list-validation-rules)
 
 ```javascript
 client.validationRules.list()
 client.validationRules.list(params)
 ```
 
-#### [List Validation Rule Assignments](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rule-assignments)
+#### [List Validation Rule Assignments](https://docs.voucherify.io/reference/list-validation-rule-assignments)
 
 ```javascript
 client.validationRules.listAssignments(validationRuleId)
@@ -1068,7 +1068,7 @@ Methods are provided within `client.events.*` namespace.
 
 - [Create Custom Event](#create-custom-event)
 
-#### [Create Custom Event](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-custom-event-object)
+#### [Create Custom Event](https://docs.voucherify.io/reference/the-custom-event-object)
 
 ```javascript
 client.events.create(eventName, { customer })
@@ -1086,12 +1086,12 @@ Methods are provided within `client.asyncActions.*` namespace.
 - [Get Async Action](#get-async-action)
 - [List Async Actions](#list-async-actions)
 
-#### [Get Async Action](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-async-actions-1)
+#### [Get Async Action](https://docs.voucherify.io/reference/get-async-actions-1)
 ```javascript
 client.asyncActions.get(asyncActionId)
 ```
 
-#### [List Async Actions](http://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-async-actions)
+#### [List Async Actions](https://docs.voucherify.io/reference/list-async-actions)
 ```javascript
 client.asyncActions.list()
 client.asyncActions.list(params)
@@ -1143,13 +1143,13 @@ Methods are provided within `client.*` namespace.
 client.setIdentity(trackingId)
 ```
 
-#### [Validate](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-validate)
+#### [Validate](https://docs.voucherify.io/reference/vouchers-validate)
 
 ```javascript
 client.validate(params)
 ```
 
-#### [Redeem](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher-client-side)
+#### [Redeem](https://docs.voucherify.io/reference/redeem-voucher-client-side)
 
 ```javascript
 client.redeem(code, payload)
@@ -1162,14 +1162,14 @@ client.publish(campaignName, payload)
 client.publish(campaignName, payload, queryParams)
 ```
 
-#### [List vouchers](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers)
+#### [List vouchers](https://docs.voucherify.io/reference/list-vouchers)
 
 ```javascript
 client.listVouchers()
 client.listVouchers(params)
 ```
 
-#### [Create customer](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-customer)
+#### [Create customer](https://docs.voucherify.io/reference/create-customer)
 
 ```javascript
 client.createCustomer(customer)
@@ -1178,19 +1178,19 @@ client.createCustomer(customer, enableDoubleOptIn)
 
 `enableDoubleOptIn` sets request header to `{X-Voucherify-Double-Opt-In: true}`, which forces user to confirm registration / subscription.
 
-#### [List consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-consent-client-side)
+#### [List consents](https://docs.voucherify.io/reference/get-consent-client-side)
 
 ```javascript
 client.listConsents()
 ```
 
-#### [Update consents](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customers-consents-client)
+#### [Update consents](https://docs.voucherify.io/reference/update-customers-consents-client)
 
 ```javascript
 client.updateConsents(idOrSourceId, consents)
 ```
 
-#### [Track custom events](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#track-custom-event-client-side)
+#### [Track custom events](https://docs.voucherify.io/reference/track-custom-event-client-side)
 
 ```javascript
 client.track(eventName, metadata, customer)
@@ -1237,7 +1237,7 @@ You can find TS example in [examples/with-nodejs-typescript](/examples/with-node
 
 # <a name="error-handling"></a>😨 Error handling
 
-Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors).
+Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
 
 # <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
 

@@ -166,6 +166,10 @@ export interface CampaignsListResponse {
 	campaigns: CampaignResponse[]
 }
 
+export type CampaignsVouchersImportResponse = {
+	async_action_id: string
+}
+
 export type CampaignsCreateCampaignResponse = CampaignResponse
 export type CampaignsUpdateCampaignResponse = CampaignResponse
 export type CampaignsGetCampaignResponse = CampaignResponse

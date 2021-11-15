@@ -1,6 +1,7 @@
 .vscode
 .old
 .DS_Store
+*.iml
 
 # Logs
 logs

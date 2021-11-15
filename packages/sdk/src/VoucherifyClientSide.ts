@@ -19,7 +19,7 @@ export interface VoucherifyClientSideOptions {
 	 */
 	apiUrl?: string
 	/**
-	 * [Log-in](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to Voucherify web interface and obtain your `Client-side Keys` from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/configuration):
+	 * [Log-in](https://app.voucherify.io/#/login) to Voucherify web interface and obtain your `Client-side Keys` from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general):
 	 *
 	 * ```javascript
 	 * const client = VoucherifyClientSide({
@@ -30,7 +30,7 @@ export interface VoucherifyClientSideOptions {
 	 */
 	clientApplicationId: string
 	/**
-	 * [Log-in](http://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/login) to Voucherify web interface and obtain your `Client-side Keys` from [Configuration](https://app.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq#/app/configuration):
+	 * [Log-in](https://app.voucherify.io/#/login) to Voucherify web interface and obtain your `Client-side Keys` from [Configuration](https://app.voucherify.io/#/app/core/projects/current/general):
 	 *
 	 * ```javascript
 	 * const client = VoucherifyClientSide({
