@@ -1,5 +1,37 @@
 # @voucherify/sdk
 
+## 2.0.0
+
+### Major Changes
+
+- [`c5c8b97`](https://github.com/voucherifyio/voucherify-js-sdk/commit/c5c8b97ac9aa230ed77012c2782643df7caf119b) [#93](https://github.com/voucherifyio/voucherify-js-sdk/pull/93) Thanks [@awilczek](https://github.com/awilczek)! - Support new async API methods
+
+  Changes:
+
+  - Campaign vouchers import
+    - added CampaignsVouchersImportResponse
+  - Vouchers import
+    - added VouchersImportResponse
+  - Vouchers bulkUpdate
+    - using new API method
+    - **BREAKING** change of VouchersBulkUpdateResponse
+    - **BREAKING** obligatory 'metadata' field in VouchersBulkUpdateObject
+  - Vouchers bulkUpdateMetadata
+    - using new API method
+    - **BREAKING** change of VouchersBulkUpdateMetadataResponse
+    - **BREAKING** obligatory 'metadata' field in VouchersBulkUpdateMetadata
+  - Products bulkUpdate
+    - using [new API method](https://docs.voucherify.io/reference/post-products-in-bulk)
+    - **BREAKING** change of ProductsBulkUpdateResponse
+  - Products bulkUpdateMetadata
+    - using [new API method](https://docs.voucherify.io/reference/async-update-products-metadata-in-bulk)
+    - **BREAKING** change of method name
+    - **BREAKING** change of ProductsBulkUpdateMetadataResponse
+  - Products getSku
+    - using [new API method](https://docs.voucherify.io/reference/get-sku-v20210726)
+    - **BREAKING** change of method params
+    - changed in CR fixes
+
 ## 1.3.1
 
 ### Patch Changes
