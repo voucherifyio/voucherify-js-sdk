@@ -156,3 +156,23 @@ export type SimpleRollback = Pick<
 		points: number
 	}
 }
+
+export interface StackableRedemptionParams {
+	customer?: Record<string, any>
+	options?: Record<string, any>
+	redeemables: Record<string, any>[]
+	order?: Record<string, any>
+	metadata?: Record<string, any>
+	session?: {
+		type: string
+		key?: string
+		ttl?: number
+		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
+	}
+}
+
+export interface StackableRedemptionResponse {
+	redemptions?: Record<string, any>[]
+	parent_redemption?: Record<string, any>
+	order?: Record<string, any>
+}

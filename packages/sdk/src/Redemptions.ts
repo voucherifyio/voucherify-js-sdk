@@ -56,4 +56,11 @@ export class Redemptions {
 			queryParams,
 		)
 	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/redeem-stacked-discounts
+	 */
+	public redeemStackable(params: T.StackableRedemptionParams) {
+		return this.client.post<T.StackableRedemptionResponse>(`/redemptions`, params)
+	}
 }

@@ -156,3 +156,50 @@ export interface ClientSideRedeemWidgetPayload {
 export type ClientSideTrackCustomer = CustomerRequest
 
 export type ClientSideConsentsListResponse = ConsentsListResponse
+
+export interface ClientSideStackableValidationParams {
+	customer?: Record<string, any>
+	options?: Record<string, any>
+	redeemables: Record<string, any>[]
+	order?: Record<string, any>
+	metadata?: Record<string, any>
+	session?: {
+		type: string
+		key?: string
+		ttl?: number
+		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
+	}
+}
+
+export interface ClientSideStackableValidationResponse {
+	valid?: boolean
+	redeemables?: Record<string, any>[]
+	order?: Record<string, any>
+	tracking_id?: string
+	session?: {
+		type?: string
+		key?: string
+		ttl?: number
+		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
+	}
+}
+
+export interface ClientSideStackableRedemptionParams {
+	customer?: Record<string, any>
+	options?: Record<string, any>
+	redeemables: Record<string, any>[]
+	order?: Record<string, any>
+	metadata?: Record<string, any>
+	session?: {
+		type: string
+		key?: string
+		ttl?: number
+		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
+	}
+}
+
+export interface ClientSideStackableRedemptionResponse {
+	redemptions?: Record<string, any>[]
+	parent_redemption?: Record<string, any>
+	order?: Record<string, any>
+}
