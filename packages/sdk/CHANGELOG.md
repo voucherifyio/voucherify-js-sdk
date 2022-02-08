@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.1
+
+### Patch Changes
+
+- [`532e82b`](https://github.com/voucherifyio/voucherify-js-sdk/commit/532e82b2bd3a5991a0fd83af2edc226c6c98c680) [#105](https://github.com/voucherifyio/voucherify-js-sdk/pull/105) Thanks [@jfougere](https://github.com/jfougere)! - Fix missing session attributes in client side validation request
+
 ## 2.0.0
 
 ### Major Changes
