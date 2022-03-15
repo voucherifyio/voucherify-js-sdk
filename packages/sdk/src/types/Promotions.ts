@@ -72,6 +72,11 @@ export interface PromotionsValidateParams {
 	metadata?: Record<string, any>
 }
 
+export interface PromotionsValidateQueryParams {
+	audienceRulesOnly?: boolean
+	filters?: Record<string, any>
+}
+
 export interface PromotionsValidateResponse {
 	valid: boolean
 	promotions?: {
