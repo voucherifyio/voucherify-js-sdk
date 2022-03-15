@@ -58,7 +58,13 @@ export class RequestController {
 		params?: Record<string, any>,
 		headers?: Record<string, any>,
 	): Promise<T> {
-		const response = await this.request.post<T>(path, body, { params, headers })
+		const response = await this.request.post<T>(path, body, {
+			params,
+			paramsSerializer: function (params) {
+				return Qs.stringify(params)
+			},
+			headers,
+		})
 		return response.data
 	}
 	public async put<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
