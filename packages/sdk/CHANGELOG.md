@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.2
+
+### Patch Changes
+
+- [`b5f04fa`](https://github.com/voucherifyio/voucherify-js-sdk/commit/b5f04fa09db6849f514910747a5ac9a721f63891) [#112](https://github.com/voucherifyio/voucherify-js-sdk/pull/112) Thanks [@darekg11](https://github.com/darekg11)! - Query params passed to `this.client.post` method are now correctly stringified. Added possibility to pass query params to `voucherify.promotions.validate` method in order to allow developers using SDK to pass advanced filters to restrict possible range of promotion campaigns against which validation should be performed.
+
 ## 2.0.1
 
 ### Patch Changes
