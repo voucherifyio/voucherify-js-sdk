@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.3
+
+### Patch Changes
+
+- [`da9e103`](https://github.com/voucherifyio/voucherify-js-sdk/commit/da9e103a43590b55cb80d64e1743f7ede1e09946) [#117](https://github.com/voucherifyio/voucherify-js-sdk/pull/117) Thanks [@darekg11](https://github.com/darekg11)! - Added support for listing customer activities by customerId. Additionally user can pass query params allowing for better filtering. API Reference: https://docs.voucherify.io/reference/get-customer-activities
+
 ## 2.0.2
 
 ### Patch Changes
