@@ -102,6 +102,22 @@ export interface CustomersCommonListResponse {
 	has_more?: boolean
 }
 
+export interface CustomerActivitiesListQueryParams {
+	limit?: number
+	order?: 'created_at' | '-created_at'
+	starting_after?: string
+	starting_after_id?: string
+	campaign_type?: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	campaign_id?: string
+}
+
+export interface CustomerActivitiesListResponse {
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: Record<string, any>[]
+}
+
 export type CustomersCreateBody = CustomerRequest
 export type CustomersCreateResponse = CustomerObject | CustomerUnconfirmed
 

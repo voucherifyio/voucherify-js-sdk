@@ -514,6 +514,7 @@ Methods are provided within `client.customers.*` namespace.
 - [Delete Customer](#delete-customer)
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
+- [List Customer's Activities](#list-customers-activities)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
@@ -586,6 +587,13 @@ Keep in mind this operation may drain your API call limits fairly quickly - each
 
 ```javascript
 client.customers.updateConsents(customer, consents)
+```
+
+#### [List Customers Activities](https://docs.voucherify.io/reference/get-customer-activities)
+
+```javascript
+client.customers.listActivities(customerId)
+client.customers.listActivities(customerId, params)
 ```
 
 ---

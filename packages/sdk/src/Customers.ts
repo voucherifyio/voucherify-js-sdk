@@ -85,6 +85,13 @@ class Customers {
 	public updateConsents(idOrSourceId: string, consents: T.CustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/get-customer-activities
+	 */
+	public listActivities(customerId: string, params?: T.CustomerActivitiesListQueryParams) {
+		return this.client.get<T.CustomerActivitiesListResponse>(`/customers/${encode(customerId)}/activities`, params)
+	}
 }
 
 export { Customers }
