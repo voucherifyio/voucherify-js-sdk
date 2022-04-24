@@ -362,6 +362,7 @@ Methods are provided within `client.validations.*` or `client.promotions.*` name
 
 - [Validate Voucher](#validate-voucher)
 - [Validate Promotion Campaign](#validate-promotion-campaign)
+- [Validate Stackable](#validate-stackable)
 
 #### [Validate Voucher](https://docs.voucherify.io/reference/validate-voucher)
 
@@ -389,6 +390,11 @@ Other possibility
 client.validations.validate(params)
 ```
 
+#### [Validate Stackable](https://docs.voucherify.io/reference/validate-stacked-discounts-1)
+```javascript
+client.validations.validateStackable(params)
+```
+
 ---
 
 ### Redemptions
@@ -396,18 +402,25 @@ client.validations.validate(params)
 Methods are provided within `client.redemptions.*` namespace.
 
 - [Redeem Voucher](#redeem-voucher)
+- [Redeem Stackable](#redeem-stackable)
 - [Get Redemption](#get-redemption)
 - [Redeem Promotion's Tier](#redeem-promotions-tier)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Redemptions](#list-redemptions)
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
 - [Rollback Redemption](#rollback-redemption)
+- [Rollback Stackable](#rollback-stackable)
 
 #### [Redeem Voucher](https://docs.voucherify.io/reference/redeem-voucher)
 
 ```javascript
 client.redemptions.redeem(code)
 client.redemptions.redeem(code, params)
+```
+
+#### [Redeem Stackable](https://docs.voucherify.io/reference/redeem-stacked-discounts)
+```javascript
+client.redemptions.redeemStackable(params)
 ```
 
 #### [Get Redemption](https://docs.voucherify.io/reference/get-redemption)
@@ -434,6 +447,12 @@ client.redemptions.getForVoucher(code)
 ```javascript
 client.redemptions.rollback(redemptionId)
 client.redemptions.rollback(redemptionId, params)
+```
+
+#### [Rollback Stackable](https://docs.voucherify.io/reference/rollback-stackable-redemptions)
+```javascript
+client.redemptions.rollbackStackable(parentRedemptionId)
+client.redemptions.rollbackStackable(parentRedemptionId, params, queryParams)
 ```
 
 Check [redemption rollback object](https://docs.voucherify.io/reference/the-redemption-rollback-object).
@@ -1137,7 +1156,9 @@ Methods are provided within `client.*` namespace.
 
 - [Set Identity](#set-identity)
 - [Validate](#validate)
+- [Validate Stackable](#validate-stackable-client-side)
 - [Redeem](#redeem)
+- [Redeem Stackable](#redeem-stackable-client-side)
 - [Publish](#publish)
 - [List vouchers](#list-vouchers)
 - [Create customer](#create-customer)
@@ -1157,10 +1178,22 @@ client.setIdentity(trackingId)
 client.validate(params)
 ```
 
+#### [Validate Stackable Client Side](https://docs.voucherify.io/reference/validate-stackable-discounts-client-side)
+
+```javascript
+client.validateStackable(params)
+```
+
 #### [Redeem](https://docs.voucherify.io/reference/redeem-voucher-client-side)
 
 ```javascript
 client.redeem(code, payload)
+```
+
+#### [Redeem Stackable Client Side](https://docs.voucherify.io/reference/redeem-stackable-discounts-client-side)
+
+```javascript
+client.redeemStackable(params)
 ```
 
 #### Publish
