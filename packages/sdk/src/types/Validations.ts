@@ -1,6 +1,10 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
+import { CustomersCreateBody } from './Customers'
+import { StackableOptionsValidation, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
+import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
+import { ApplicableToResultList } from './ApplicableTo'
 
-import { OrdersItem } from './Orders'
+import { OrdersItem, OrdersCreate, OrdersCreateResponse } from './Orders'
 import { PromotionsValidateParams } from './Promotions'
 
 export interface ValidationsValidateVoucherParams {
@@ -25,24 +29,11 @@ export interface ValidationsValidateVoucherParams {
 	reward?: {
 		id: string
 	}
-	session?: {
-		type: 'LOCK'
-		key?: string
-		ttl?: number
-		ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
-	}
+	session?: ValidationSessionParams
 }
 
 export interface ValidationsValidateVoucherResponse {
-	applicable_to?: {
-		object: 'list'
-		total: number
-		data?: {
-			id: string
-			object: 'product'
-			source_id?: string
-		}[]
-	}
+	applicable_to?: ApplicableToResultList
 	campaign?: string
 	campaign_id?: string
 	metadata?: Record<string, any>
@@ -64,6 +55,23 @@ export interface ValidationsValidateVoucherResponse {
 		items?: OrdersItem[]
 	}
 	tracking_id: string
+}
+
+export interface ValidationsValidateStackableParams {
+	options?: StackableOptionsValidation
+	redeemables: StackableRedeemableParams[]
+	session?: ValidationSessionParams
+	order?: OrdersCreate
+	customer?: CustomersCreateBody
+	metadata?: Record<string, any>
+}
+
+export interface ValidationValidateStackableResponse {
+	valid: boolean
+	tracking_id?: string
+	session?: ValidationSessionResponse
+	order?: OrdersCreateResponse
+	redeemables?: StackableRedeemableResponse[]
 }
 
 export type ValidationsValidateCode = PromotionsValidateParams

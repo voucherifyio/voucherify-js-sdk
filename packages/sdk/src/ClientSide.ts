@@ -157,4 +157,16 @@ export class ClientSide {
 	public updateConsents(idOrSourceId: string, consents: T.ClientSideCustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/validate-stackable-discounts-client-side
+	 */
+	public validateStackable(params: T.ClientSideValidationsValidateStackableParams) {
+		return this.client.post<T.ClientSideValidationValidateStackableResponse>(`/validations`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/redeem-stackable-discounts-client-side
+	 */
+	public redeemStackable(params: T.ClientSideRedemptionsRedeemStackableParams) {
+		return this.client.post<T.ClientSideRedemptionsRedeemStackableResponse>(`/redemptions`, params)
+	}
 }

@@ -14,6 +14,12 @@ export class Redemptions {
 		return this.client.post<T.RedemptionsRedeemResponse>(`/vouchers/${encode(code)}/redemption`, body)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/redeem-stacked-discounts
+	 */
+	public redeemStackable(params: T.RedemptionsRedeemStackableParams) {
+		return this.client.post<T.RedemptionsRedeemStackableResponse>(`/redemptions`, params)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/get-redemption
 	 */
 	public get(redemptionId: string) {

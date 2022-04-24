@@ -1,23 +1,19 @@
-import { OrdersCreateResponse } from './Orders'
-import { RewardsCreateResponse } from './Rewards'
-import { SimpleCustomer } from './Customers'
+import { OrdersCreateResponse, OrdersCreate } from './Orders'
+import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
+import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
+import { GiftRedemptionParams } from './Gift'
+import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
+import { StackableOptionsRedemption, StackableRedeemableParams } from './Stackable'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
 	customer?: SimpleCustomer & { description?: string }
 	order?: Pick<Partial<OrdersCreateResponse>, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
 	metadata?: Record<string, any>
-	reward?: {
-		id?: string
-		points?: number
-	}
-	gift?: {
-		credits: number
-	}
-	session?: {
-		key: string
-	}
+	reward?: RewardRedemptionParams
+	gift?: GiftRedemptionParams
+	session?: ValidationSessionReleaseParams
 }
 
 export interface RedemptionsRedeemResponse {
@@ -155,4 +151,47 @@ export type SimpleRollback = Pick<
 	loyalty_card?: {
 		points: number
 	}
+}
+
+export interface RedemptionsRedeemStackableParams {
+	options?: StackableOptionsRedemption
+	redeemables: StackableRedeemableParams[]
+	session?: ValidationSessionParams
+	order?: OrdersCreate
+	customer?: CustomersCreateBody
+	metadata?: Record<string, any>
+}
+
+export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemResponse & {
+	redemption: string
+}
+
+export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
+	redemptions?: Record<
+		string,
+		{
+			date: string
+			related_object_type: 'redemption'
+			related_object_id: string
+			stacked: string[]
+		}
+	>
+}
+
+export interface RedemptionsRedeemStackableResponse {
+	redemptions: RedemptionsRedeemStackableRedemptionResult[]
+	parent_redemption: {
+		id: string
+		object: 'redemption'
+		date: string
+		customer_id?: string
+		tracking_id?: string
+		metadata?: Record<string, any>
+		result: 'SUCCESS' | 'FAILURE'
+		order?: RedemptionsRedeemStackableOrderResponse
+		customer?: SimpleCustomer
+		related_object_type: 'redemption'
+		related_object_id: string
+	}
+	order?: RedemptionsRedeemStackableOrderResponse
 }

@@ -1,4 +1,4 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
 
 import { OrdersItem } from './Orders'
 import { PromotionTier } from './PromotionTiers'

@@ -1,8 +1,9 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
+import { ValidationSessionReleaseParams } from './ValidateSession'
 
 export interface SimplePromotionTier {
 	tracking_id: string
@@ -72,9 +73,7 @@ export interface PromotionTiersRedeemParams {
 		metadata?: Record<string, any>
 	}
 	metadata?: Record<string, any>
-	session?: {
-		key: string
-	}
+	session?: ValidationSessionReleaseParams
 }
 
 export interface PromotionTiersRedeemResponse {

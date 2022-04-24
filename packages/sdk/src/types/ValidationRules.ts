@@ -1,3 +1,5 @@
+import { ApplicableToResultList } from './ApplicableTo'
+
 export interface ValidationRulesCreate {
 	name: string
 	error?: {
@@ -27,11 +29,7 @@ export interface ValidationRulesCreateResponse {
 export interface ValidationRulesValidateResponse {
 	valid: boolean
 	rule_id: string
-	applicable_to: {
-		data: any[]
-		object: 'list'
-		total: number
-	}
+	applicable_to: ApplicableToResultList
 }
 
 export type ValidationRulesGetResponse = ValidationRulesCreateResponse & { assignments_count?: string }

@@ -131,3 +131,9 @@ export type RewardsCreateAssignmentResponse = RewardsAssignmentObject
 export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
 
 export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
+
+export interface RewardRedemptionParams {
+	points?: number
+	assignment_id?: string
+	id?: string
+}

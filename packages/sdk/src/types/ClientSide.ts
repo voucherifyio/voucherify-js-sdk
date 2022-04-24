@@ -1,10 +1,15 @@
 import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
-import { DiscountAmount, DiscountPercent, DiscountUnit, VouchersListParams, VouchersResponse } from './Vouchers'
+import { VouchersListParams, VouchersResponse } from './Vouchers'
+import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 import { ConsentsListResponse } from './Consents'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
+import { ValidationSessionReleaseParams } from './ValidateSession'
+import { ApplicableToResultList } from './ApplicableTo'
+import { ValidationsValidateStackableParams, ValidationValidateStackableResponse } from './Validations'
+import { RedemptionsRedeemStackableParams, RedemptionsRedeemStackableResponse } from './Redemptions'
 
 type ClientSideItem = Pick<
 	OrdersItem,
@@ -50,15 +55,7 @@ export interface ClientSideValidateResponse {
 	code?: string
 	valid: boolean
 	discount?: DiscountUnit | DiscountAmount | DiscountPercent
-	applicable_to?: {
-		object: 'list'
-		total: number
-		data?: {
-			id: string
-			object: 'product'
-			source_id?: string
-		}[]
-	}
+	applicable_to?: ApplicableToResultList
 	order?: {
 		amount: number
 		discount_amount: number
@@ -86,9 +83,7 @@ export interface ClientSideRedeemPayload {
 	reward?: {
 		id: string
 	}
-	session?: {
-		key: string
-	}
+	session?: ValidationSessionReleaseParams
 }
 
 export interface ClientSideRedeemResponse {
@@ -156,3 +151,11 @@ export interface ClientSideRedeemWidgetPayload {
 export type ClientSideTrackCustomer = CustomerRequest
 
 export type ClientSideConsentsListResponse = ConsentsListResponse
+
+export type ClientSideValidationsValidateStackableParams = ValidationsValidateStackableParams
+
+export type ClientSideValidationValidateStackableResponse = ValidationValidateStackableResponse
+
+export type ClientSideRedemptionsRedeemStackableParams = RedemptionsRedeemStackableParams
+
+export type ClientSideRedemptionsRedeemStackableResponse = RedemptionsRedeemStackableResponse
