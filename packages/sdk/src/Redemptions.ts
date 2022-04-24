@@ -62,4 +62,14 @@ export class Redemptions {
 			queryParams,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/rollback-stackable-redemptions
+	 */
+	public rollbackStackable(parentRedemptionId: string, params?: any, queryParams?: any) {
+		return this.client.post<T.RedemptionsRollbackStackableResponse>(
+			`/redemptions/${encode(parentRedemptionId)}/rollbacks`,
+			params,
+			queryParams,
+		)
+	}
 }
