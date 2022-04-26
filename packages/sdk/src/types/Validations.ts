@@ -1,6 +1,6 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
 import { CustomersCreateBody } from './Customers'
-import { StackableOptionsValidation, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
+import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
 
@@ -58,7 +58,7 @@ export interface ValidationsValidateVoucherResponse {
 }
 
 export interface ValidationsValidateStackableParams {
-	options?: StackableOptionsValidation
+	options?: StackableOptions
 	redeemables: StackableRedeemableParams[]
 	session?: ValidationSessionParams
 	order?: OrdersCreate

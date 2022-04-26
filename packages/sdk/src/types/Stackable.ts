@@ -6,12 +6,10 @@ import { DiscountVouchersTypes, DiscountVouchersEffectTypes, DiscountUnitVoucher
 import { SimpleProduct, SimpleSku } from './Products'
 import { LoyaltyPointsTransfer } from './Loyalties'
 
-export interface StackableOptionsValidation {
-	expand: ['order'] | ['redeemable'] | ['order', 'redeemable']
-}
+type ExpandOption = 'order' | 'redeemable' | 'redemption'
 
-export interface StackableOptionsRedemption {
-	expand: ['order'] | ['order', 'redemption'] | ['redeemable', 'redemption'] | ['redemption']
+export interface StackableOptions {
+	expand: ExpandOption[]
 }
 
 export type StackableRedeemableObject = 'promotion_stack' | 'promotion_tier' | 'voucher'

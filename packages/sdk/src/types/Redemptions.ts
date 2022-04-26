@@ -4,7 +4,7 @@ import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
-import { StackableOptionsRedemption, StackableRedeemableParams } from './Stackable'
+import { StackableOptions, StackableRedeemableParams } from './Stackable'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
@@ -154,7 +154,7 @@ export type SimpleRollback = Pick<
 }
 
 export interface RedemptionsRedeemStackableParams {
-	options?: StackableOptionsRedemption
+	options?: StackableOptions
 	redeemables: StackableRedeemableParams[]
 	session?: ValidationSessionParams
 	order?: OrdersCreate
