@@ -14,6 +14,12 @@ export class Redemptions {
 		return this.client.post<T.RedemptionsRedeemResponse>(`/vouchers/${encode(code)}/redemption`, body)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/redeem-stacked-discounts
+	 */
+	public redeemStackable(params: T.RedemptionsRedeemStackableParams) {
+		return this.client.post<T.RedemptionsRedeemStackableResponse>(`/redemptions`, params)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/get-redemption
 	 */
 	public get(redemptionId: string) {
@@ -53,6 +59,17 @@ export class Redemptions {
 		return this.client.post<T.RedemptionsRollbackResponse>(
 			`/redemptions/${encode(redemptionId)}/rollback`,
 			payload,
+			queryParams,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/rollback-stackable-redemptions
+	 * Types of params and queryParams WILL be changed in future - please do not depend on it!
+	 */
+	public rollbackStackable(parentRedemptionId: string, params?: any, queryParams?: any) {
+		return this.client.post<T.RedemptionsRollbackStackableResponse>(
+			`/redemptions/${encode(parentRedemptionId)}/rollbacks`,
+			params,
 			queryParams,
 		)
 	}

@@ -20,8 +20,11 @@ export interface OrdersItem {
 }
 
 export interface OrdersCreate {
+	source_id?: string
+	status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
 	customer?: CustomerRequest
 	amount?: number
+	discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
 }
@@ -33,7 +36,13 @@ export interface OrdersCreateResponse {
 	updated_at?: string
 	status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
 	amount?: number
+	initial_amount?: number
 	discount_amount?: number
+	items_discount_amount?: number
+	total_discount_amount?: number
+	applied_discount_amount?: number
+	items_applied_discount_amount?: number
+	total_applied_discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
 	customer?: CustomerRequest
@@ -48,6 +57,7 @@ export interface OrdersUpdate {
 	status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
 	items?: OrdersItem[]
 	amount?: number
+	discount_amount?: number
 	metadata?: Record<string, any>
 	customer?: {
 		id: string

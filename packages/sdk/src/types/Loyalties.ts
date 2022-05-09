@@ -491,3 +491,8 @@ export interface LoyaltiesRedeemRewardResponse {
 		}
 	}
 }
+
+export interface LoyaltyPointsTransfer {
+	code: string
+	points: number
+}

@@ -1,5 +1,6 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
+import { DiscountUnit, DiscountAmount, DiscountPercent } from './DiscountVoucher'
 
 export type VoucherType = 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
@@ -20,24 +21,6 @@ export interface SimpleVoucher {
 	redemption?: {
 		quantity: number
 	}
-}
-
-export interface DiscountUnit {
-	type?: 'UNIT'
-	unit_off?: number
-	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
-	unit_type?: string
-}
-
-export interface DiscountAmount {
-	type?: 'AMOUNT'
-	amount_off?: number
-}
-
-export interface DiscountPercent {
-	type?: 'PERCENT'
-	percent_off?: number
-	amount_limit?: number
 }
 
 export interface VouchersResponse {

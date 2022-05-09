@@ -109,3 +109,15 @@ export interface ProductsListSkus {
 	total: number
 	skus: ProductsGetSkuResponse[]
 }
+
+export interface SimpleProduct {
+	id: string
+	source_id?: string
+	name?: string
+}
+
+export interface SimpleSku {
+	id: string
+	source_id?: string
+	sku?: string
+}
