@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DiscountPercent | @voucherify/sdk - v2.0.3</title>
+	<title>ValidationValidateStackableResponse | @voucherify/sdk - v2.0.3</title>
 	<meta name="description" content="Documentation for @voucherify/sdk - v2.0.3">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@voucherify/sdk - v2.0.3</a>
 				</li>
 				<li>
-					<a href="discountpercent.html">DiscountPercent</a>
+					<a href="validationvalidatestackableresponse.html">ValidationValidateStackableResponse</a>
 				</li>
 			</ul>
-			<h1>Interface DiscountPercent</h1>
+			<h1>Interface ValidationValidateStackableResponse</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DiscountPercent</span>
+						<span class="target">ValidationValidateStackableResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -80,9 +80,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="discountpercent.html#amount_limit" class="tsd-kind-icon">amount_<wbr>limit</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="discountpercent.html#percent_off" class="tsd-kind-icon">percent_<wbr>off</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="discountpercent.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="validationvalidatestackableresponse.html#order" class="tsd-kind-icon">order</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="validationvalidatestackableresponse.html#redeemables" class="tsd-kind-icon">redeemables</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="validationvalidatestackableresponse.html#session" class="tsd-kind-icon">session</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="validationvalidatestackableresponse.html#tracking_id" class="tsd-kind-icon">tracking_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="validationvalidatestackableresponse.html#valid" class="tsd-kind-icon">valid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,23 +93,37 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="amount_limit" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> amount_<wbr>limit</h3>
-					<div class="tsd-signature tsd-kind-icon">amount_<wbr>limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="order" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> order</h3>
+					<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <a href="orderscreateresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">OrdersCreateResponse</a></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="percent_off" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> percent_<wbr>off</h3>
-					<div class="tsd-signature tsd-kind-icon">percent_<wbr>off<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="redeemables" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> redeemables</h3>
+					<div class="tsd-signature tsd-kind-icon">redeemables<span class="tsd-signature-symbol">:</span> <a href="stackableredeemableresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">StackableRedeemableResponse</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/discountvoucherstypesenum.html#percent" class="tsd-signature-type" data-tsd-kind="Enumeration member">PERCENT</a></div>
+					<a name="session" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> session</h3>
+					<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <a href="validationsessionresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">ValidationSessionResponse</a></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="tracking_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tracking_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">tracking_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="valid" class="tsd-anchor"></a>
+					<h3>valid</h3>
+					<div class="tsd-signature tsd-kind-icon">valid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
@@ -126,16 +142,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="discountpercent.html" class="tsd-kind-icon">Discount<wbr>Percent</a>
+						<a href="validationvalidatestackableresponse.html" class="tsd-kind-icon">Validation<wbr>Validate<wbr>Stackable<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="discountpercent.html#amount_limit" class="tsd-kind-icon">amount_<wbr>limit</a>
+								<a href="validationvalidatestackableresponse.html#order" class="tsd-kind-icon">order</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="discountpercent.html#percent_off" class="tsd-kind-icon">percent_<wbr>off</a>
+								<a href="validationvalidatestackableresponse.html#redeemables" class="tsd-kind-icon">redeemables</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="discountpercent.html#type" class="tsd-kind-icon">type</a>
+								<a href="validationvalidatestackableresponse.html#session" class="tsd-kind-icon">session</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="validationvalidatestackableresponse.html#tracking_id" class="tsd-kind-icon">tracking_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="validationvalidatestackableresponse.html#valid" class="tsd-kind-icon">valid</a>
 							</li>
 						</ul>
 					</li>

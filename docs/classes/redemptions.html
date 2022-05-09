@@ -90,7 +90,9 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#getforvoucher" class="tsd-kind-icon">get<wbr>For<wbr>Voucher</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#list" class="tsd-kind-icon">list</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#redeem" class="tsd-kind-icon">redeem</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#redeemstackable" class="tsd-kind-icon">redeem<wbr>Stackable</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#rollback" class="tsd-kind-icon">rollback</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="redemptions.html#rollbackstackable" class="tsd-kind-icon">rollback<wbr>Stackable</a></li>
 							</ul>
 						</section>
 					</div>
@@ -233,6 +235,33 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="redeemstackable" class="tsd-anchor"></a>
+					<h3>redeem<wbr>Stackable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">redeem<wbr>Stackable<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/redemptionsredeemstackableparams.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRedeemStackableParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/redemptionsredeemstackableresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRedeemStackableResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/redeem-stacked-discounts">https://docs.voucherify.io/reference/redeem-stacked-discounts</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../interfaces/redemptionsredeemstackableparams.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRedeemStackableParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/redemptionsredeemstackableresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRedeemStackableResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="rollback" class="tsd-anchor"></a>
 					<h3>rollback</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -259,6 +288,40 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/redemptionsrollbackresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRollbackResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="rollbackstackable" class="tsd-anchor"></a>
+					<h3>rollback<wbr>Stackable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">rollback<wbr>Stackable<span class="tsd-signature-symbol">(</span>parentRedemptionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, queryParams<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/redemptionsrollbackstackableresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRollbackStackableResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/rollback-stackable-redemptions">https://docs.voucherify.io/reference/rollback-stackable-redemptions</a>
+										Types of params and queryParams WILL be changed in future - please do not depend on it!</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parentRedemptionId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> queryParams: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/redemptionsrollbackstackableresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">RedemptionsRollbackStackableResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -295,7 +358,13 @@
 								<a href="redemptions.html#redeem" class="tsd-kind-icon">redeem</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="redemptions.html#redeemstackable" class="tsd-kind-icon">redeem<wbr>Stackable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="redemptions.html#rollback" class="tsd-kind-icon">rollback</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="redemptions.html#rollbackstackable" class="tsd-kind-icon">rollback<wbr>Stackable</a>
 							</li>
 						</ul>
 					</li>
