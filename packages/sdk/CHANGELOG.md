@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.4
+
+### Patch Changes
+
+- [`f411c1a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/f411c1a56085d80560fdca634e5fdc059a556091) [#119](https://github.com/voucherifyio/voucherify-js-sdk/pull/119) Thanks [@darekg11](https://github.com/darekg11)! - Added support for stackable API methods - validation, redemptions, rollback for both Server Side and Client Side SDKs. Added some missing fields in already existing types definitions and cleaned up other definitions by reusing interfaces
+
 ## 2.0.3
 
 ### Patch Changes
