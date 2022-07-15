@@ -1126,21 +1126,21 @@ client.asyncActions.list(params)
 
 --- 
 
-### Result Headers Handler
+### Api Limits Handler
 
-Methods are provided within `client.resultHeadersHandler.*` namespace. Allows to get last result's headers by given functions.
+Methods are provided within `client.apiLimitsHandler.*` namespace.
 
 - [Get Rate Limit](#get-rate-limit)
 - [Get Rate Limit Remaining](#get-rate-limit-remaining)
 
 #### Get Rate Limit
 ```javascript
-client.resultHeadersHandler.getRateLimit()
+client.apiLimitsHandler.getRateLimit()
 ```
 
 #### Get Rate Limit Remaining
 ```javascript
-client.resultHeadersHandler.getRateLimitRemaining()
+client.apiLimitsHandler.getRateLimitRemaining()
 ```
 
 ---

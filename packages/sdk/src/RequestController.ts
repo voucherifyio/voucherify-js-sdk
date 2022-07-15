@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance } from 'axios'
 
 import Qs from 'qs'
 import { VoucherifyError } from './VoucherifyError'
-import { ResultHeaders } from './types/ResultHeaders'
+import { ApiLimits } from './types/ApiLimits'
 
 export interface RequestControllerOptions {
 	baseURL: string
@@ -18,16 +18,16 @@ export class RequestController {
 	private basePath: string
 	private headers: Record<string, any>
 	private request: AxiosInstance
-	private resultHeaders: ResultHeaders
+	private apiLimits: ApiLimits
 
 	constructor({ basePath, baseURL, headers }: RequestControllerOptions) {
 		this.basePath = basePath
 		this.baseURL = baseURL
 		this.headers = headers
-		this.resultHeaders = {
-			rateLimit: 0,
-			rateLimitRemaining: 0,
-		}
+		this.apiLimits = {
+			rateLimit: false,
+			rateLimitRemaining: false,
+		};
 
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/${this.basePath}/`,
@@ -45,19 +45,19 @@ export class RequestController {
 		})
 	}
 
-	public getResultHeaders(): ResultHeaders {
-		return this.resultHeaders
+	public getApiLimits(): ApiLimits {
+		return this.apiLimits
 	}
-	private setResultHeaders(headers: Record<string, any>) {
+	private setApiLimits(headers: Record<string, any>) {
 		const rateLimit = headers['x-rate-limit-limit'] ?? false
 		const rateLimitRemaining = headers['x-rate-limit-remaining'] ?? false
 
 		if (rateLimit) {
-			this.resultHeaders.rateLimit = parseInt(rateLimit)
+			this.apiLimits.rateLimit = parseInt(rateLimit)
 		}
 
 		if (rateLimitRemaining) {
-			this.resultHeaders.rateLimitRemaining = parseInt(rateLimitRemaining)
+			this.apiLimits.rateLimitRemaining = parseInt(rateLimitRemaining)
 		}
 	}
 	public setBaseUrl(baseURL: string) {
@@ -71,7 +71,7 @@ export class RequestController {
 				return Qs.stringify(params)
 			},
 		})
-		this.setResultHeaders(response.headers)
+		this.setApiLimits(response.headers)
 		return response.data
 	}
 	public async post<T>(
@@ -87,17 +87,17 @@ export class RequestController {
 			},
 			headers,
 		})
-		this.setResultHeaders(response.headers)
+		this.setApiLimits(response.headers)
 		return response.data
 	}
 	public async put<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
 		const response = await this.request.put<T>(path, body, { params })
-		this.setResultHeaders(response.headers)
+		this.setApiLimits(response.headers)
 		return response.data
 	}
 	public async delete<T>(path: string, params?: Record<string, any>): Promise<T> {
 		const response = await this.request.delete<T>(path, { params })
-		this.setResultHeaders(response.headers)
+		this.setApiLimits(response.headers)
 		return response.data
 	}
 }
