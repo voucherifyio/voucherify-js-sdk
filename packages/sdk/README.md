@@ -1124,6 +1124,25 @@ client.asyncActions.list()
 client.asyncActions.list(params)
 ```
 
+--- 
+
+### Result Headers Handler
+
+Methods are provided within `client.resultHeadersHandler.*` namespace. Allows to get last result's headers by given functions.
+
+- [Get Rate Limit](#get-rate-limit)
+- [Get Rate Limit Remaining](#get-rate-limit-remaining)
+
+#### Get Rate Limit
+```javascript
+client.resultHeadersHandler.getRateLimit()
+```
+
+#### [Get Rate Limit Remaining]
+```javascript
+client.resultHeadersHandler.getRateLimitRemaining()
+```
+
 ---
 
 # 💅 Client Side
