@@ -27,7 +27,7 @@ export class RequestController {
 		this.apiLimits = {
 			rateLimit: false,
 			rateLimitRemaining: false,
-		};
+		}
 
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/${this.basePath}/`,

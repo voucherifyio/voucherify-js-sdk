@@ -1,4 +1,4 @@
 export interface ApiLimits {
-	rateLimit: number | boolean,
-	rateLimitRemaining: number | boolean,
+	rateLimit: number | boolean
+	rateLimitRemaining: number | boolean
 }
