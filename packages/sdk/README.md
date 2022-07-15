@@ -1138,7 +1138,7 @@ Methods are provided within `client.resultHeadersHandler.*` namespace. Allows to
 client.resultHeadersHandler.getRateLimit()
 ```
 
-#### [Get Rate Limit Remaining]
+#### Get Rate Limit Remaining
 ```javascript
 client.resultHeadersHandler.getRateLimitRemaining()
 ```
