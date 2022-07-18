@@ -1,18 +1,35 @@
 import { RequestController } from './RequestController'
-import { ApiLimits } from './types/ApiLimits'
 
 export class ApiLimitsHandler {
 	constructor(private readonly requestController: RequestController) {}
 
-	private getApiLimitsFromController(): ApiLimits {
-		return this.requestController.getApiLimits()
+	private getLastResponseHeadersFromController(): Record<string, string> {
+		return this.requestController.getLastResponseHeaders()
+	}
+
+	private isLastResponseHeadersSet(): boolean {
+		return this.requestController.isLastReponseHeadersSet()
 	}
 
 	public getRateLimit(): number | boolean {
-		return this.getApiLimitsFromController().rateLimit
+		if (this.isLastResponseHeadersSet()) {
+			const rateLimit = this.getLastResponseHeadersFromController()['x-rate-limit-limit'] ?? false
+			if (rateLimit) {
+				return parseInt(rateLimit, 10)
+			}
+		}
+
+		return false
 	}
 
 	public getRateLimitRemaining(): number | boolean {
-		return this.getApiLimitsFromController().rateLimitRemaining
+		if (this.isLastResponseHeadersSet()) {
+			const rateLimitRemaining = this.getLastResponseHeadersFromController()['x-rate-limit-remaining'] ?? false
+			if (rateLimitRemaining) {
+				return parseInt(rateLimitRemaining, 10)
+			}
+		}
+
+		return false
 	}
 }
