@@ -19,6 +19,7 @@ import { Loyalties } from './Loyalties'
 import { ValidationRules } from './ValidationRules'
 import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
+import { ApiLimitsHandler } from './ApiLimitsHandler'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -178,6 +179,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const loyalties = new Loyalties(client)
 	const segments = new Segments(client)
 	const validationRules = new ValidationRules(client)
+	const apiLimitsHandler = new ApiLimitsHandler(client)
 
 	return {
 		vouchers,
@@ -196,5 +198,6 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		validationRules,
 		events,
 		asyncActions,
+		apiLimitsHandler,
 	}
 }

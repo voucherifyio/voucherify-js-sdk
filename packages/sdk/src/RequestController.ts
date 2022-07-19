@@ -17,11 +17,15 @@ export class RequestController {
 	private basePath: string
 	private headers: Record<string, any>
 	private request: AxiosInstance
+	private lastResponseHeaders: Record<string, string>
+	private isLastResponseHeadersSet: boolean
 
 	constructor({ basePath, baseURL, headers }: RequestControllerOptions) {
 		this.basePath = basePath
 		this.baseURL = baseURL
 		this.headers = headers
+		this.lastResponseHeaders = {}
+		this.isLastResponseHeadersSet = false
 
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/${this.basePath}/`,
@@ -38,7 +42,16 @@ export class RequestController {
 			return Promise.reject(error)
 		})
 	}
-
+	public isLastReponseHeadersSet(): boolean {
+		return this.isLastResponseHeadersSet
+	}
+	public getLastResponseHeaders(): Record<string, string> {
+		return this.lastResponseHeaders
+	}
+	private setLastResponseHeaders(headers: Record<string, string>) {
+		this.lastResponseHeaders = headers
+		this.isLastResponseHeadersSet = true
+	}
 	public setBaseUrl(baseURL: string) {
 		this.baseURL = baseURL
 		this.request.defaults.baseURL = `${baseURL}/${this.basePath}/`
@@ -50,6 +63,7 @@ export class RequestController {
 				return Qs.stringify(params)
 			},
 		})
+		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 	public async post<T>(
@@ -65,14 +79,17 @@ export class RequestController {
 			},
 			headers,
 		})
+		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 	public async put<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
 		const response = await this.request.put<T>(path, body, { params })
+		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 	public async delete<T>(path: string, params?: Record<string, any>): Promise<T> {
 		const response = await this.request.delete<T>(path, { params })
+		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 }

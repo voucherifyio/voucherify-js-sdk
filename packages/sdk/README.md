@@ -66,6 +66,8 @@ Server side:
 <a href="#events">Events</a>
 |
 <a href="#async-actions">Async Actions</a>
+|
+<a href="#api-limits-handler">Api Limits Handler</a>
 </p>
 
 <p align="center">
@@ -1122,6 +1124,37 @@ client.asyncActions.get(asyncActionId)
 ```javascript
 client.asyncActions.list()
 client.asyncActions.list(params)
+```
+
+--- 
+
+### Api Limits Handler
+
+Methods are provided within `client.apiLimitsHandler.*` namespace.
+
+- [Are Limits Available](#are-limits-available)
+- [Get Rate Limit](#get-rate-limit)
+- [Get Rate Limit Remaining](#get-rate-limit-remaining)
+
+#### Are Limits Available
+```javascript
+client.apiLimitsHandler.areLimitsAvailable()
+```
+
+This method should be called each time beforehand [Get Rate Limit](#get-rate-limit) or [Get Rate Limit Remaining](#get-rate-limit-remaining) to ensure limit data are available.
+
+#### Get Rate Limit
+```javascript
+if(client.apiLimitsHandler.areLimitsAvailable()){
+  client.apiLimitsHandler.getRateLimit()
+}
+```
+
+#### Get Rate Limit Remaining
+```javascript
+if(client.apiLimitsHandler.areLimitsAvailable()){
+  client.apiLimitsHandler.getRateLimitRemaining()
+}
 ```
 
 ---
