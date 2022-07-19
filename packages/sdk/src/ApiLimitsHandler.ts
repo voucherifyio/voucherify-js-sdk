@@ -7,29 +7,17 @@ export class ApiLimitsHandler {
 		return this.requestController.getLastResponseHeaders()
 	}
 
-	private isLastResponseHeadersSet(): boolean {
+	public areLimitsAvailable(): boolean {
 		return this.requestController.isLastReponseHeadersSet()
 	}
 
-	public getRateLimit(): number | boolean {
-		if (this.isLastResponseHeadersSet()) {
-			const rateLimit = this.getLastResponseHeadersFromController()['x-rate-limit-limit'] ?? false
-			if (rateLimit) {
-				return parseInt(rateLimit, 10)
-			}
-		}
-
-		return false
+	public getRateLimit(): number {
+		const rateLimit = this.getLastResponseHeadersFromController()['x-rate-limit-limit'] ?? 0
+		return parseInt(rateLimit, 10)
 	}
 
-	public getRateLimitRemaining(): number | boolean {
-		if (this.isLastResponseHeadersSet()) {
-			const rateLimitRemaining = this.getLastResponseHeadersFromController()['x-rate-limit-remaining'] ?? false
-			if (rateLimitRemaining) {
-				return parseInt(rateLimitRemaining, 10)
-			}
-		}
-
-		return false
+	public getRateLimitRemaining(): number {
+		const rateLimitRemaining = this.getLastResponseHeadersFromController()['x-rate-limit-remaining'] ?? 0
+		return parseInt(rateLimitRemaining, 10)
 	}
 }
