@@ -67,7 +67,7 @@ Server side:
 |
 <a href="#async-actions">Async Actions</a>
 |
-<a href="#apiLimitsHandler">Api Limits Handler</a>
+<a href="#api-limits-handler">Api Limits Handler</a>
 </p>
 
 <p align="center">
