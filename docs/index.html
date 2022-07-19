@@ -122,6 +122,8 @@
 					<a href="#events">Events</a>
 					|
 					<a href="#async-actions">Async Actions</a>
+					|
+					<a href="#api-limits-handler">Api Limits Handler</a>
 				</p>
 				<p align="center">
 					Client side:
@@ -1027,6 +1029,36 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">asyncActions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">asyncActions</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#api-limits-handler" id="api-limits-handler" style="color: inherit; text-decoration: none;">
+					<h3>Api Limits Handler</h3>
+				</a>
+				<p>Methods are provided within <code>client.apiLimitsHandler.*</code> namespace.</p>
+				<ul>
+					<li><a href="#are-limits-available">Are Limits Available</a></li>
+					<li><a href="#get-rate-limit">Get Rate Limit</a></li>
+					<li><a href="#get-rate-limit-remaining">Get Rate Limit Remaining</a></li>
+				</ul>
+				<a href="#are-limits-available" id="are-limits-available" style="color: inherit; text-decoration: none;">
+					<h4>Are Limits Available</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()</span>
+</code></pre>
+				<p>This method should be called each time beforehand <a href="#get-rate-limit">Get Rate Limit</a> or <a href="#get-rate-limit-remaining">Get Rate Limit Remaining</a> to ensure limit data are available.</p>
+				<a href="#get-rate-limit" id="get-rate-limit" style="color: inherit; text-decoration: none;">
+					<h4>Get Rate Limit</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()){</span>
+<span style="color: #000000">  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">getRateLimit</span><span style="color: #000000">()</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#get-rate-limit-remaining" id="get-rate-limit-remaining" style="color: inherit; text-decoration: none;">
+					<h4>Get Rate Limit Remaining</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()){</span>
+<span style="color: #000000">  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">getRateLimitRemaining</span><span style="color: #000000">()</span>
+<span style="color: #000000">}</span>
 </code></pre>
 				<hr>
 				<a href="#💅-client-side" id="💅-client-side" style="color: inherit; text-decoration: none;">
@@ -2089,10 +2121,11 @@
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
