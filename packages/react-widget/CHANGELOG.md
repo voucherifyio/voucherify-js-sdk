@@ -1,5 +1,14 @@
 # @voucherify/react-widget
 
+## 2.0.5
+
+### Patch Changes
+
+- [`a7811e7`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a7811e7e2939efe7a4c59c004dbc9591fcd73030) [#121](https://github.com/voucherifyio/voucherify-js-sdk/pull/121) Thanks [@jkaliszuk](https://github.com/jkaliszuk)! - Added logic that allow to storage lastResponseHeaders data and get apiLimit through ApiLimitsHandler
+
+- Updated dependencies [[`a7811e7`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a7811e7e2939efe7a4c59c004dbc9591fcd73030)]:
+  - @voucherify/sdk@2.0.5
+
 ## 2.0.4
 
 ### Patch Changes
