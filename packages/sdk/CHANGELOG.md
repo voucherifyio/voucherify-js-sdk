@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.6
+
+### Patch Changes
+
+- [`f8241b7`](https://github.com/voucherifyio/voucherify-js-sdk/commit/f8241b709097f53e29427ba4f4260073375ec91c) [#125](https://github.com/voucherifyio/voucherify-js-sdk/pull/125) Thanks [@darekg11](https://github.com/darekg11)! - Added support for metadata-schemas API. Allowing to list all metadata schemas in project or retrieve single one via get method by providing schema name
+
 ## 2.0.5
 
 ### Patch Changes
