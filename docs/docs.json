@@ -32400,14 +32400,14 @@
 			]
 		},
 		{
-			"id": 2416,
+			"id": 2417,
 			"name": "VoucherifyClientSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2417,
+					"id": 2418,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32424,7 +32424,7 @@
 					}
 				},
 				{
-					"id": 2418,
+					"id": 2419,
 					"name": "clientApplicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32439,7 +32439,7 @@
 					}
 				},
 				{
-					"id": 2419,
+					"id": 2420,
 					"name": "clientSecretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32454,7 +32454,7 @@
 					}
 				},
 				{
-					"id": 2422,
+					"id": 2423,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32480,7 +32480,7 @@
 					}
 				},
 				{
-					"id": 2421,
+					"id": 2422,
 					"name": "origin",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32503,7 +32503,7 @@
 					}
 				},
 				{
-					"id": 2420,
+					"id": 2421,
 					"name": "trackingId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32525,25 +32525,25 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2417,
 						2418,
 						2419,
+						2420,
+						2423,
 						2422,
-						2421,
-						2420
+						2421
 					]
 				}
 			]
 		},
 		{
-			"id": 2405,
+			"id": 2406,
 			"name": "VoucherifyServerSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2406,
+					"id": 2407,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32560,7 +32560,7 @@
 					}
 				},
 				{
-					"id": 2409,
+					"id": 2410,
 					"name": "apiVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32577,7 +32577,7 @@
 					}
 				},
 				{
-					"id": 2407,
+					"id": 2408,
 					"name": "applicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32592,7 +32592,7 @@
 					}
 				},
 				{
-					"id": 2410,
+					"id": 2411,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32605,7 +32605,7 @@
 					}
 				},
 				{
-					"id": 2412,
+					"id": 2413,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32631,7 +32631,7 @@
 					}
 				},
 				{
-					"id": 2411,
+					"id": 2412,
 					"name": "dangerouslySetSecretKeyInBrowser",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32648,7 +32648,7 @@
 					}
 				},
 				{
-					"id": 2408,
+					"id": 2409,
 					"name": "secretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32668,13 +32668,13 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2406,
-						2409,
 						2407,
 						2410,
-						2412,
+						2408,
 						2411,
-						2408
+						2413,
+						2412,
+						2409
 					]
 				}
 			]
@@ -38208,28 +38208,28 @@
 			}
 		},
 		{
-			"id": 2413,
+			"id": 2414,
 			"name": "VoucherifyClientSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 2414,
+					"id": 2415,
 					"name": "VoucherifyClientSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 2415,
+							"id": 2416,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2416,
+								"id": 2417,
 								"name": "VoucherifyClientSideOptions"
 							}
 						}
@@ -38264,7 +38264,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2405,
+								"id": 2406,
 								"name": "VoucherifyServerSideOptions"
 							}
 						}
@@ -38370,6 +38370,17 @@
 										"type": "reference",
 										"id": 156,
 										"name": "Loyalties"
+									}
+								},
+								{
+									"id": 2405,
+									"name": "metadataSchemas",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "MetadataSchemas"
 									}
 								},
 								{
@@ -38494,6 +38505,7 @@
 										2390,
 										2402,
 										2399,
+										2405,
 										2396,
 										2397,
 										2393,
@@ -38706,8 +38718,8 @@
 				980,
 				1003,
 				2077,
-				2416,
-				2405,
+				2417,
+				2406,
 				1844,
 				1840,
 				1768,
@@ -38833,7 +38845,7 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				2413,
+				2414,
 				2384
 			]
 		}
