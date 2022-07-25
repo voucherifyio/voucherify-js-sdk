@@ -67,6 +67,8 @@ Server side:
 |
 <a href="#async-actions">Async Actions</a>
 |
+<a href="#metadata-schemas">Metadata Schemas</a>
+|
 <a href="#api-limits-handler">Api Limits Handler</a>
 </p>
 
@@ -1110,6 +1112,7 @@ Check [customer object](https://docs.voucherify.io/v1/reference#the-customer-obj
 
 
 ### Async Actions
+
 Methods are provided within `client.asyncActions.*` namespace.
 
 - [Get Async Action](#get-async-action)
@@ -1127,6 +1130,23 @@ client.asyncActions.list(params)
 ```
 
 --- 
+
+### Metadata Schemas
+
+Methods are provided within `client.metadataSchemas.*` namespace.
+
+- [List Metadata Schemas](#list-metadata-schemas)
+- [Get Metadata Schema by schema name](#get-metadata-schema-by-schema-name)
+
+#### List Metadata Schemas
+```javascript
+client.metadataSchemas.list()
+```
+
+#### Get Metadata Schema by schema name
+```javascript
+client.metadataSchemas.get(schemaName)
+```
 
 ### Api Limits Handler
 
