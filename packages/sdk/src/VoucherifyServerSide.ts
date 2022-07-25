@@ -20,6 +20,7 @@ import { ValidationRules } from './ValidationRules'
 import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
 import { ApiLimitsHandler } from './ApiLimitsHandler'
+import { MetadataSchemas } from './MetadataSchemas'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -106,12 +107,14 @@ interface VoucherifyServerSideHeaders {
 	'Content-Type': 'application/json'
 }
 // export interface VoucherifyServerSideNamespaces {
+//  apiLimitsHandler: ApiLimitsHandler
 // 	campaigns: Campaigns
 // 	consents: Consents
 // 	customers: Customers
 // 	distributions: Distributions
 // 	events: Events
 // 	loyalties: Loyalties
+//  metadataSchemas: MetadataSchemas
 // 	orders: Orders
 // 	products: Products
 // 	promotions: Promotions
@@ -180,6 +183,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const segments = new Segments(client)
 	const validationRules = new ValidationRules(client)
 	const apiLimitsHandler = new ApiLimitsHandler(client)
+	const metadataSchemas = new MetadataSchemas(client)
 
 	return {
 		vouchers,
@@ -199,5 +203,6 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		events,
 		asyncActions,
 		apiLimitsHandler,
+		metadataSchemas,
 	}
 }
