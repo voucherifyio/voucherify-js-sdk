@@ -34,6 +34,7 @@ export interface ValidationsValidateVoucherParams {
 
 export interface ValidationsValidateVoucherResponse {
 	applicable_to?: ApplicableToResultList
+	inapplicable_to?: ApplicableToResultList
 	campaign?: string
 	campaign_id?: string
 	metadata?: Record<string, any>
@@ -54,6 +55,8 @@ export interface ValidationsValidateVoucherResponse {
 		total_amount: number
 		items?: OrdersItem[]
 	}
+	start_date?: string
+	expiration_date?: string
 	tracking_id: string
 }
 
