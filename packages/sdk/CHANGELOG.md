@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.7
+
+### Patch Changes
+
+- [`7913a06`](https://github.com/voucherifyio/voucherify-js-sdk/commit/7913a06bb3ab6c79bcbfae8ddbff0bcc8329dd73) [#127](https://github.com/voucherifyio/voucherify-js-sdk/pull/127) Thanks [@Irene350](https://github.com/Irene350)! - Improving Validate Voucher response type
+
 ## 2.0.6
 
 ### Patch Changes
