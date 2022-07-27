@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.8
+
+### Patch Changes
+
+- [`e965f61`](https://github.com/voucherifyio/voucherify-js-sdk/commit/e965f615ada65812553a0e5df4409ccf6e02dae1) [#129](https://github.com/voucherifyio/voucherify-js-sdk/pull/129) Thanks [@Irene350](https://github.com/Irene350)! - Adding missing discount amounts on order for validate voucher type response
+
 ## 2.0.7
 
 ### Patch Changes
