@@ -38,10 +38,12 @@ export interface DiscountUnit {
 export interface DiscountAmount {
 	type?: DiscountVouchersTypesEnum.AMOUNT
 	amount_off?: number
+	effect?: DiscountAmountVouchersEffectTypes
 }
 
 export interface DiscountPercent {
 	type?: DiscountVouchersTypesEnum.PERCENT
 	percent_off?: number
 	amount_limit?: number
+	effect?: DiscountPercentVouchersEffectTypes
 }

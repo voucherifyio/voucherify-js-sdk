@@ -8,6 +8,8 @@ export interface OrdersItem {
 	quantity?: number
 	price?: number
 	amount?: number
+	discount_amount?: number
+	applied_discount_amount?: number
 	product?: {
 		override?: boolean
 		name?: string
