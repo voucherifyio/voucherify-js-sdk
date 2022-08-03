@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.9
+
+### Patch Changes
+
+- [`e52b787`](https://github.com/voucherifyio/voucherify-js-sdk/commit/e52b787f48a5aa763d2aaa61b3d28a701548d3cc) [#131](https://github.com/voucherifyio/voucherify-js-sdk/pull/131) Thanks [@tomek-lochmanczyk-rspective](https://github.com/tomek-lochmanczyk-rspective)! - Add function which return "Retry-After" header from response. The purpose is to get information how long it's needed to wait until new requests can be made, when api limits are reached. This ddition is backward compatible so no changes are needed to be made in older code
+
 ## 2.0.8
 
 ### Patch Changes
