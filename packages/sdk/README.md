@@ -1155,13 +1155,14 @@ Methods are provided within `client.apiLimitsHandler.*` namespace.
 - [Are Limits Available](#are-limits-available)
 - [Get Rate Limit](#get-rate-limit)
 - [Get Rate Limit Remaining](#get-rate-limit-remaining)
+- [Get Retry After](#get-retry-after)
 
 #### Are Limits Available
 ```javascript
 client.apiLimitsHandler.areLimitsAvailable()
 ```
 
-This method should be called each time beforehand [Get Rate Limit](#get-rate-limit) or [Get Rate Limit Remaining](#get-rate-limit-remaining) to ensure limit data are available.
+This method should be called each time beforehand [Get Rate Limit](#get-rate-limit) or [Get Rate Limit Remaining](#get-rate-limit-remaining) or [Get Retry After](#get-retry-after) to ensure limit data are available.
 
 #### Get Rate Limit
 ```javascript
@@ -1174,6 +1175,13 @@ if(client.apiLimitsHandler.areLimitsAvailable()){
 ```javascript
 if(client.apiLimitsHandler.areLimitsAvailable()){
   client.apiLimitsHandler.getRateLimitRemaining()
+}
+```
+
+#### Get Retry After
+```javascript
+if(client.apiLimitsHandler.areLimitsAvailable()){
+  client.apiLimitsHandler.getRetryAfter()
 }
 ```
 
