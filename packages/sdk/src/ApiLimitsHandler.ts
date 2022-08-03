@@ -20,4 +20,9 @@ export class ApiLimitsHandler {
 		const rateLimitRemaining = this.getLastResponseHeadersFromController()['x-rate-limit-remaining'] ?? 0
 		return parseInt(rateLimitRemaining, 10)
 	}
+
+	public getRetryAfter(): number {
+		const retryAfter = this.getLastResponseHeadersFromController()['Retry-After'] ?? 0
+		return parseInt(retryAfter, 10)
+	}
 }
