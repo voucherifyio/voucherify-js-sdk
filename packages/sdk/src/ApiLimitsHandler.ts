@@ -22,7 +22,7 @@ export class ApiLimitsHandler {
 	}
 
 	public getRetryAfter(): number {
-		const retryAfter = this.getLastResponseHeadersFromController()['Retry-After'] ?? 0
+		const retryAfter = this.getLastResponseHeadersFromController()['retry-after'] ?? 0
 		return parseInt(retryAfter, 10)
 	}
 }
