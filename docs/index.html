@@ -1059,13 +1059,14 @@
 					<li><a href="#are-limits-available">Are Limits Available</a></li>
 					<li><a href="#get-rate-limit">Get Rate Limit</a></li>
 					<li><a href="#get-rate-limit-remaining">Get Rate Limit Remaining</a></li>
+					<li><a href="#get-retry-after">Get Retry After</a></li>
 				</ul>
 				<a href="#are-limits-available" id="are-limits-available" style="color: inherit; text-decoration: none;">
 					<h4>Are Limits Available</h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()</span>
 </code></pre>
-				<p>This method should be called each time beforehand <a href="#get-rate-limit">Get Rate Limit</a> or <a href="#get-rate-limit-remaining">Get Rate Limit Remaining</a> to ensure limit data are available.</p>
+				<p>This method should be called each time beforehand <a href="#get-rate-limit">Get Rate Limit</a> or <a href="#get-rate-limit-remaining">Get Rate Limit Remaining</a> or <a href="#get-retry-after">Get Retry After</a> to ensure limit data are available.</p>
 				<a href="#get-rate-limit" id="get-rate-limit" style="color: inherit; text-decoration: none;">
 					<h4>Get Rate Limit</h4>
 				</a>
@@ -1078,6 +1079,13 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()){</span>
 <span style="color: #000000">  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">getRateLimitRemaining</span><span style="color: #000000">()</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#get-retry-after" id="get-retry-after" style="color: inherit; text-decoration: none;">
+					<h4>Get Retry After</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">areLimitsAvailable</span><span style="color: #000000">()){</span>
+<span style="color: #000000">  </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">apiLimitsHandler</span><span style="color: #000000">.</span><span style="color: #795E26">getRetryAfter</span><span style="color: #000000">()</span>
 <span style="color: #000000">}</span>
 </code></pre>
 				<hr>
