@@ -24,6 +24,7 @@ export interface ProductsCreateResponse {
 	attributes?: string[]
 	created_at: string
 	image_url?: string
+	metadata?: Record<string, any>
 }
 
 export type ProductsGetResponse = ProductsCreateResponse & ProductsGetResponseSkus
