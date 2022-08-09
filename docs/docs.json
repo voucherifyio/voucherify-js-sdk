@@ -7,14 +7,14 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 2369,
+			"id": 2370,
 			"name": "DiscountVouchersTypesEnum",
 			"kind": 4,
 			"kindString": "Enumeration",
 			"flags": {},
 			"children": [
 				{
-					"id": 2370,
+					"id": 2371,
 					"name": "AMOUNT",
 					"kind": 16,
 					"kindString": "Enumeration member",
@@ -22,7 +22,7 @@
 					"defaultValue": "\"AMOUNT\""
 				},
 				{
-					"id": 2373,
+					"id": 2374,
 					"name": "FIXED",
 					"kind": 16,
 					"kindString": "Enumeration member",
@@ -30,7 +30,7 @@
 					"defaultValue": "\"FIXED\""
 				},
 				{
-					"id": 2371,
+					"id": 2372,
 					"name": "PERCENT",
 					"kind": 16,
 					"kindString": "Enumeration member",
@@ -38,7 +38,7 @@
 					"defaultValue": "\"PERCENT\""
 				},
 				{
-					"id": 2372,
+					"id": 2373,
 					"name": "UNIT",
 					"kind": 16,
 					"kindString": "Enumeration member",
@@ -51,10 +51,10 @@
 					"title": "Enumeration members",
 					"kind": 16,
 					"children": [
-						2370,
-						2373,
 						2371,
-						2372
+						2374,
+						2372,
+						2373
 					]
 				}
 			]
@@ -1188,7 +1188,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2266,
+										"id": 2267,
 										"name": "ConsentsListResponse"
 									}
 								],
@@ -1868,7 +1868,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2266,
+										"id": 2267,
 										"name": "ConsentsListResponse"
 									}
 								],
@@ -2589,7 +2589,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2279,
+										"id": 2280,
 										"name": "EventsParams"
 									}
 								}
@@ -2599,7 +2599,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2290,
+										"id": 2291,
 										"name": "EventsResponse"
 									}
 								],
@@ -2700,7 +2700,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2162,
+										"id": 2163,
 										"name": "ExportResource"
 									}
 								}
@@ -2710,7 +2710,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2173,
+										"id": 2174,
 										"name": "ExportsCreateResponse"
 									}
 								],
@@ -2809,7 +2809,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2173,
+										"id": 2174,
 										"name": "ExportsCreateResponse"
 									}
 								],
@@ -4157,7 +4157,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2211,
+										"id": 2212,
 										"name": "OrdersCreate"
 									}
 								}
@@ -4167,7 +4167,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									}
 								],
@@ -4217,7 +4217,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									}
 								],
@@ -4258,7 +4258,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2250,
+										"id": 2251,
 										"name": "OrdersListParams"
 									},
 									"defaultValue": "{}"
@@ -4269,7 +4269,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2253,
+										"id": 2254,
 										"name": "OrdersListResponse"
 									}
 								],
@@ -4310,7 +4310,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2238,
+										"id": 2239,
 										"name": "OrdersUpdate"
 									}
 								}
@@ -4320,7 +4320,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									}
 								],
@@ -4424,7 +4424,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2026,
+										"id": 2027,
 										"name": "ProductsBulkUpdate"
 									}
 								}
@@ -4434,7 +4434,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2027,
+										"id": 2028,
 										"name": "ProductsBulkUpdateResponse"
 									}
 								],
@@ -4475,7 +4475,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2023,
+										"id": 2024,
 										"name": "ProductsBulkUpdateMetadata"
 									}
 								}
@@ -4485,7 +4485,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2030,
+										"id": 2031,
 										"name": "ProductsBulkUpdateMetadataResponse"
 									}
 								],
@@ -4588,7 +4588,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2043,
+										"id": 2044,
 										"name": "ProductsCreateSku"
 									}
 								}
@@ -4598,7 +4598,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2051,
+										"id": 2052,
 										"name": "ProductsCreateSkuResponse"
 									}
 								],
@@ -4652,7 +4652,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 2033,
+										"id": 2034,
 										"name": "ProductsDeleteParams"
 									}
 								}
@@ -4726,7 +4726,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 2068,
+										"id": 2069,
 										"name": "ProductsDeleteSkuParams"
 									}
 								}
@@ -4785,7 +4785,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2012,
+										"id": 2013,
 										"name": "ProductsGetResponse"
 									}
 								],
@@ -4835,7 +4835,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2051,
+										"id": 2052,
 										"name": "ProductsCreateSkuResponse"
 									}
 								],
@@ -4878,7 +4878,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 2035,
+										"id": 2036,
 										"name": "ProductsListParams"
 									}
 								}
@@ -4888,7 +4888,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2038,
+										"id": 2039,
 										"name": "ProductsListResponse"
 									}
 								],
@@ -4938,7 +4938,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2070,
+										"id": 2071,
 										"name": "ProductsListSkus"
 									}
 								],
@@ -4979,7 +4979,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2013,
+										"id": 2014,
 										"name": "ProductsUpdate"
 									}
 								}
@@ -5041,7 +5041,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2063,
+										"id": 2064,
 										"name": "ProductsUpdateSku"
 									}
 								}
@@ -5051,7 +5051,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2051,
+										"id": 2052,
 										"name": "ProductsCreateSkuResponse"
 									}
 								],
@@ -7471,7 +7471,7 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 2131,
+										"id": 2132,
 										"name": "SegmentsCreate"
 									}
 								}
@@ -7481,7 +7481,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2140,
+										"id": 2141,
 										"name": "SegmentsCreateResponse"
 									}
 								],
@@ -7580,7 +7580,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2140,
+										"id": 2141,
 										"name": "SegmentsCreateResponse"
 									}
 								],
@@ -7630,7 +7630,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2153,
+										"id": 2154,
 										"name": "SegmentsListResponse"
 									}
 								],
@@ -9606,26 +9606,26 @@
 			]
 		},
 		{
-			"id": 2356,
+			"id": 2357,
 			"name": "ApplicableTo",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2363,
+					"id": 2364,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2355,
+						"id": 2356,
 						"name": "ApplicableToEffect"
 					}
 				},
 				{
-					"id": 2358,
+					"id": 2359,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9636,7 +9636,7 @@
 					}
 				},
 				{
-					"id": 2357,
+					"id": 2358,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9660,7 +9660,7 @@
 					}
 				},
 				{
-					"id": 2361,
+					"id": 2362,
 					"name": "price",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9673,7 +9673,7 @@
 					}
 				},
 				{
-					"id": 2362,
+					"id": 2363,
 					"name": "price_formula",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9686,7 +9686,7 @@
 					}
 				},
 				{
-					"id": 2359,
+					"id": 2360,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9699,7 +9699,7 @@
 					}
 				},
 				{
-					"id": 2360,
+					"id": 2361,
 					"name": "strict",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9715,26 +9715,26 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2363,
-						2358,
-						2357,
-						2361,
-						2362,
+						2364,
 						2359,
-						2360
+						2358,
+						2362,
+						2363,
+						2360,
+						2361
 					]
 				}
 			]
 		},
 		{
-			"id": 2364,
+			"id": 2365,
 			"name": "ApplicableToResultList",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2367,
+					"id": 2368,
 					"name": "data",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9743,13 +9743,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2356,
+							"id": 2357,
 							"name": "ApplicableTo"
 						}
 					}
 				},
 				{
-					"id": 2365,
+					"id": 2366,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9760,7 +9760,7 @@
 					}
 				},
 				{
-					"id": 2366,
+					"id": 2367,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9776,9 +9776,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2367,
-						2365,
-						2366
+						2368,
+						2366,
+						2367
 					]
 				}
 			]
@@ -10768,7 +10768,7 @@
 						"typeArguments": [
 							{
 								"type": "reference",
-								"id": 2219,
+								"id": 2220,
 								"name": "OrdersCreateResponse"
 							},
 							{
@@ -11380,7 +11380,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2353,
+						"id": 2354,
 						"name": "ValidationSessionReleaseParams"
 					}
 				},
@@ -11501,7 +11501,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2219,
+						"id": 2220,
 						"name": "OrdersCreateResponse"
 					}
 				},
@@ -11912,7 +11912,7 @@
 							"typeArguments": [
 								{
 									"type": "reference",
-									"id": 2192,
+									"id": 2193,
 									"name": "OrdersItem"
 								},
 								{
@@ -12165,7 +12165,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
@@ -12208,17 +12208,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -12372,7 +12372,7 @@
 											"typeArguments": [
 												{
 													"type": "reference",
-													"id": 2192,
+													"id": 2193,
 													"name": "OrdersItem"
 												},
 												{
@@ -12514,14 +12514,14 @@
 			]
 		},
 		{
-			"id": 2258,
+			"id": 2259,
 			"name": "Consent",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2262,
+					"id": 2263,
 					"name": "category",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12532,7 +12532,7 @@
 					}
 				},
 				{
-					"id": 2263,
+					"id": 2264,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12543,7 +12543,7 @@
 					}
 				},
 				{
-					"id": 2261,
+					"id": 2262,
 					"name": "description",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12554,7 +12554,7 @@
 					}
 				},
 				{
-					"id": 2259,
+					"id": 2260,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12565,7 +12565,7 @@
 					}
 				},
 				{
-					"id": 2260,
+					"id": 2261,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12576,7 +12576,7 @@
 					}
 				},
 				{
-					"id": 2265,
+					"id": 2266,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12587,7 +12587,7 @@
 					}
 				},
 				{
-					"id": 2264,
+					"id": 2265,
 					"name": "updated_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12605,26 +12605,26 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2262,
 						2263,
-						2261,
-						2259,
+						2264,
+						2262,
 						2260,
-						2265,
-						2264
+						2261,
+						2266,
+						2265
 					]
 				}
 			]
 		},
 		{
-			"id": 2266,
+			"id": 2267,
 			"name": "ConsentsListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2273,
+					"id": 2274,
 					"name": "consents",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12632,14 +12632,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2274,
+							"id": 2275,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2278,
+									"id": 2279,
 									"name": "data",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12648,13 +12648,13 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2258,
+											"id": 2259,
 											"name": "Consent"
 										}
 									}
 								},
 								{
-									"id": 2277,
+									"id": 2278,
 									"name": "data_ref",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12665,7 +12665,7 @@
 									}
 								},
 								{
-									"id": 2275,
+									"id": 2276,
 									"name": "object",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12676,7 +12676,7 @@
 									}
 								},
 								{
-									"id": 2276,
+									"id": 2277,
 									"name": "total",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12692,10 +12692,10 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
+										2279,
 										2278,
-										2277,
-										2275,
-										2276
+										2276,
+										2277
 									]
 								}
 							]
@@ -12703,7 +12703,7 @@
 					}
 				},
 				{
-					"id": 2267,
+					"id": 2268,
 					"name": "groups",
 					"kind": 1024,
 					"kindString": "Property",
@@ -12711,14 +12711,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2268,
+							"id": 2269,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2272,
+									"id": 2273,
 									"name": "data",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12732,7 +12732,7 @@
 									}
 								},
 								{
-									"id": 2271,
+									"id": 2272,
 									"name": "data_ref",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12743,7 +12743,7 @@
 									}
 								},
 								{
-									"id": 2269,
+									"id": 2270,
 									"name": "object",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12754,7 +12754,7 @@
 									}
 								},
 								{
-									"id": 2270,
+									"id": 2271,
 									"name": "total",
 									"kind": 1024,
 									"kindString": "Property",
@@ -12770,10 +12770,10 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
+										2273,
 										2272,
-										2271,
-										2269,
-										2270
+										2270,
+										2271
 									]
 								}
 							]
@@ -12786,8 +12786,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2273,
-						2267
+						2274,
+						2268
 					]
 				}
 			]
@@ -14156,14 +14156,14 @@
 			]
 		},
 		{
-			"id": 2384,
+			"id": 2385,
 			"name": "DiscountAmount",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2386,
+					"id": 2387,
 					"name": "amount_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14176,7 +14176,7 @@
 					}
 				},
 				{
-					"id": 2387,
+					"id": 2388,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14206,7 +14206,7 @@
 					}
 				},
 				{
-					"id": 2385,
+					"id": 2386,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14215,7 +14215,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2370,
+						"id": 2371,
 						"name": "AMOUNT"
 					}
 				}
@@ -14225,22 +14225,22 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2386,
 						2387,
-						2385
+						2388,
+						2386
 					]
 				}
 			]
 		},
 		{
-			"id": 2388,
+			"id": 2389,
 			"name": "DiscountPercent",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2391,
+					"id": 2392,
 					"name": "amount_limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14253,7 +14253,7 @@
 					}
 				},
 				{
-					"id": 2392,
+					"id": 2393,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14275,7 +14275,7 @@
 					}
 				},
 				{
-					"id": 2390,
+					"id": 2391,
 					"name": "percent_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14288,7 +14288,7 @@
 					}
 				},
 				{
-					"id": 2389,
+					"id": 2390,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14297,7 +14297,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2371,
+						"id": 2372,
 						"name": "PERCENT"
 					}
 				}
@@ -14307,23 +14307,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2391,
 						2392,
-						2390,
-						2389
+						2393,
+						2391,
+						2390
 					]
 				}
 			]
 		},
 		{
-			"id": 2379,
+			"id": 2380,
 			"name": "DiscountUnit",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2382,
+					"id": 2383,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14349,7 +14349,7 @@
 					}
 				},
 				{
-					"id": 2380,
+					"id": 2381,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14358,12 +14358,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2372,
+						"id": 2373,
 						"name": "UNIT"
 					}
 				},
 				{
-					"id": 2381,
+					"id": 2382,
 					"name": "unit_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14376,7 +14376,7 @@
 					}
 				},
 				{
-					"id": 2383,
+					"id": 2384,
 					"name": "unit_type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14394,23 +14394,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2382,
-						2380,
+						2383,
 						2381,
-						2383
+						2382,
+						2384
 					]
 				}
 			]
 		},
 		{
-			"id": 2109,
+			"id": 2110,
 			"name": "DistributionsPublicationsCreateParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2112,
+					"id": 2113,
 					"name": "campaign",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14420,14 +14420,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2113,
+							"id": 2114,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2115,
+									"id": 2116,
 									"name": "count",
 									"kind": 1024,
 									"kindString": "Property",
@@ -14440,7 +14440,7 @@
 									}
 								},
 								{
-									"id": 2114,
+									"id": 2115,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -14456,8 +14456,8 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2115,
-										2114
+										2116,
+										2115
 									]
 								}
 							]
@@ -14465,7 +14465,7 @@
 					}
 				},
 				{
-					"id": 2117,
+					"id": 2118,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14478,7 +14478,7 @@
 					}
 				},
 				{
-					"id": 2118,
+					"id": 2119,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14490,7 +14490,7 @@
 					}
 				},
 				{
-					"id": 2110,
+					"id": 2111,
 					"name": "join_once",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14503,7 +14503,7 @@
 					}
 				},
 				{
-					"id": 2111,
+					"id": 2112,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14516,7 +14516,7 @@
 					}
 				},
 				{
-					"id": 2116,
+					"id": 2117,
 					"name": "voucher",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14534,25 +14534,25 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2112,
-						2117,
+						2113,
 						2118,
-						2110,
+						2119,
 						2111,
-						2116
+						2112,
+						2117
 					]
 				}
 			]
 		},
 		{
-			"id": 2119,
+			"id": 2120,
 			"name": "DistributionsPublicationsCreateResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2126,
+					"id": 2127,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14565,7 +14565,7 @@
 					}
 				},
 				{
-					"id": 2122,
+					"id": 2123,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14576,7 +14576,7 @@
 					}
 				},
 				{
-					"id": 2129,
+					"id": 2130,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14590,7 +14590,7 @@
 					}
 				},
 				{
-					"id": 2123,
+					"id": 2124,
 					"name": "customer_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14601,7 +14601,7 @@
 					}
 				},
 				{
-					"id": 2120,
+					"id": 2121,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14612,7 +14612,7 @@
 					}
 				},
 				{
-					"id": 2125,
+					"id": 2126,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14635,7 +14635,7 @@
 					}
 				},
 				{
-					"id": 2121,
+					"id": 2122,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14646,7 +14646,7 @@
 					}
 				},
 				{
-					"id": 2128,
+					"id": 2129,
 					"name": "result",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14666,7 +14666,7 @@
 					}
 				},
 				{
-					"id": 2127,
+					"id": 2128,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14679,7 +14679,7 @@
 					}
 				},
 				{
-					"id": 2124,
+					"id": 2125,
 					"name": "tracking_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14692,7 +14692,7 @@
 					}
 				},
 				{
-					"id": 2130,
+					"id": 2131,
 					"name": "voucher",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14708,30 +14708,30 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
+						2127,
+						2123,
+						2130,
+						2124,
+						2121,
 						2126,
 						2122,
 						2129,
-						2123,
-						2120,
-						2125,
-						2121,
 						2128,
-						2127,
-						2124,
-						2130
+						2125,
+						2131
 					]
 				}
 			]
 		},
 		{
-			"id": 2089,
+			"id": 2090,
 			"name": "DistributionsPublicationsListParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2093,
+					"id": 2094,
 					"name": "campaign",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14744,7 +14744,7 @@
 					}
 				},
 				{
-					"id": 2094,
+					"id": 2095,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14757,7 +14757,7 @@
 					}
 				},
 				{
-					"id": 2099,
+					"id": 2100,
 					"name": "filters",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14767,14 +14767,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2100,
+							"id": 2101,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2101,
+									"id": 2102,
 									"name": "junction",
 									"kind": 1024,
 									"kindString": "Property",
@@ -14801,19 +14801,19 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2101
+										2102
 									]
 								}
 							],
 							"indexSignature": {
-								"id": 2102,
+								"id": 2103,
 								"name": "__index",
 								"kind": 8192,
 								"kindString": "Index signature",
 								"flags": {},
 								"parameters": [
 									{
-										"id": 2103,
+										"id": 2104,
 										"name": "filter_condition",
 										"kind": 32768,
 										"flags": {},
@@ -14832,7 +14832,7 @@
 					}
 				},
 				{
-					"id": 2098,
+					"id": 2099,
 					"name": "is_referral_code",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14845,7 +14845,7 @@
 					}
 				},
 				{
-					"id": 2090,
+					"id": 2091,
 					"name": "limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14858,7 +14858,7 @@
 					}
 				},
 				{
-					"id": 2092,
+					"id": 2093,
 					"name": "order",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14920,7 +14920,7 @@
 					}
 				},
 				{
-					"id": 2091,
+					"id": 2092,
 					"name": "page",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14933,7 +14933,7 @@
 					}
 				},
 				{
-					"id": 2096,
+					"id": 2097,
 					"name": "result",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14955,7 +14955,7 @@
 					}
 				},
 				{
-					"id": 2095,
+					"id": 2096,
 					"name": "voucher",
 					"kind": 1024,
 					"kindString": "Property",
@@ -14968,7 +14968,7 @@
 					}
 				},
 				{
-					"id": 2097,
+					"id": 2098,
 					"name": "voucher_type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15003,29 +15003,29 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2093,
 						2094,
-						2099,
-						2098,
-						2090,
-						2092,
-						2091,
-						2096,
 						2095,
-						2097
+						2100,
+						2099,
+						2091,
+						2093,
+						2092,
+						2097,
+						2096,
+						2098
 					]
 				}
 			]
 		},
 		{
-			"id": 2104,
+			"id": 2105,
 			"name": "DistributionsPublicationsListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2107,
+					"id": 2108,
 					"name": "data_ref",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15036,7 +15036,7 @@
 					}
 				},
 				{
-					"id": 2105,
+					"id": 2106,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15047,7 +15047,7 @@
 					}
 				},
 				{
-					"id": 2108,
+					"id": 2109,
 					"name": "publications",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15063,7 +15063,7 @@
 					}
 				},
 				{
-					"id": 2106,
+					"id": 2107,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15079,23 +15079,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2107,
-						2105,
 						2108,
-						2106
+						2106,
+						2109,
+						2107
 					]
 				}
 			]
 		},
 		{
-			"id": 2279,
+			"id": 2280,
 			"name": "EventsParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2281,
+					"id": 2282,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15107,7 +15107,7 @@
 					}
 				},
 				{
-					"id": 2280,
+					"id": 2281,
 					"name": "event",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15118,7 +15118,7 @@
 					}
 				},
 				{
-					"id": 2287,
+					"id": 2288,
 					"name": "loyalty",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15128,14 +15128,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2288,
+							"id": 2289,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2289,
+									"id": 2290,
 									"name": "code",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15151,7 +15151,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2289
+										2290
 									]
 								}
 							]
@@ -15159,7 +15159,7 @@
 					}
 				},
 				{
-					"id": 2282,
+					"id": 2283,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15182,7 +15182,7 @@
 					}
 				},
 				{
-					"id": 2283,
+					"id": 2284,
 					"name": "referral",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15192,14 +15192,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2284,
+							"id": 2285,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2285,
+									"id": 2286,
 									"name": "code",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15210,7 +15210,7 @@
 									}
 								},
 								{
-									"id": 2286,
+									"id": 2287,
 									"name": "referrer_id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15228,8 +15228,8 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2285,
-										2286
+										2286,
+										2287
 									]
 								}
 							]
@@ -15242,24 +15242,24 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2281,
-						2280,
-						2287,
 						2282,
-						2283
+						2281,
+						2288,
+						2283,
+						2284
 					]
 				}
 			]
 		},
 		{
-			"id": 2290,
+			"id": 2291,
 			"name": "EventsResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2291,
+					"id": 2292,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15270,7 +15270,7 @@
 					}
 				},
 				{
-					"id": 2292,
+					"id": 2293,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15286,21 +15286,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2291,
-						2292
+						2292,
+						2293
 					]
 				}
 			]
 		},
 		{
-			"id": 2162,
+			"id": 2163,
 			"name": "ExportResource",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2163,
+					"id": 2164,
 					"name": "exported_object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15328,7 +15328,7 @@
 					}
 				},
 				{
-					"id": 2164,
+					"id": 2165,
 					"name": "parameters",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15338,14 +15338,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2165,
+							"id": 2166,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2167,
+									"id": 2168,
 									"name": "fields",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15361,7 +15361,7 @@
 									}
 								},
 								{
-									"id": 2168,
+									"id": 2169,
 									"name": "filters",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15371,14 +15371,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2169,
+											"id": 2170,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 2170,
+													"id": 2171,
 													"name": "junction",
 													"kind": 1024,
 													"kindString": "Property",
@@ -15405,19 +15405,19 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														2170
+														2171
 													]
 												}
 											],
 											"indexSignature": {
-												"id": 2171,
+												"id": 2172,
 												"name": "__index",
 												"kind": 8192,
 												"kindString": "Index signature",
 												"flags": {},
 												"parameters": [
 													{
-														"id": 2172,
+														"id": 2173,
 														"name": "filter_condition",
 														"kind": 32768,
 														"flags": {},
@@ -15436,7 +15436,7 @@
 									}
 								},
 								{
-									"id": 2166,
+									"id": 2167,
 									"name": "order",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15454,9 +15454,9 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2167,
 										2168,
-										2166
+										2169,
+										2167
 									]
 								}
 							]
@@ -15469,21 +15469,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2163,
-						2164
+						2164,
+						2165
 					]
 				}
 			]
 		},
 		{
-			"id": 2173,
+			"id": 2174,
 			"name": "ExportsCreateResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2178,
+					"id": 2179,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15496,7 +15496,7 @@
 					}
 				},
 				{
-					"id": 2176,
+					"id": 2177,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15507,7 +15507,7 @@
 					}
 				},
 				{
-					"id": 2179,
+					"id": 2180,
 					"name": "exported_object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15535,7 +15535,7 @@
 					}
 				},
 				{
-					"id": 2174,
+					"id": 2175,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15546,7 +15546,7 @@
 					}
 				},
 				{
-					"id": 2175,
+					"id": 2176,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15557,7 +15557,7 @@
 					}
 				},
 				{
-					"id": 2180,
+					"id": 2181,
 					"name": "parameters",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15567,14 +15567,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2181,
+							"id": 2182,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2182,
+									"id": 2183,
 									"name": "fields",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15590,7 +15590,7 @@
 									}
 								},
 								{
-									"id": 2183,
+									"id": 2184,
 									"name": "filters",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15600,14 +15600,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 2184,
+											"id": 2185,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 2185,
+													"id": 2186,
 													"name": "junction",
 													"kind": 1024,
 													"kindString": "Property",
@@ -15625,19 +15625,19 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														2185
+														2186
 													]
 												}
 											],
 											"indexSignature": {
-												"id": 2186,
+												"id": 2187,
 												"name": "__index",
 												"kind": 8192,
 												"kindString": "Index signature",
 												"flags": {},
 												"parameters": [
 													{
-														"id": 2187,
+														"id": 2188,
 														"name": "filter_condition",
 														"kind": 32768,
 														"flags": {},
@@ -15661,8 +15661,8 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2182,
-										2183
+										2183,
+										2184
 									]
 								}
 							]
@@ -15670,7 +15670,7 @@
 					}
 				},
 				{
-					"id": 2188,
+					"id": 2189,
 					"name": "result",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15680,14 +15680,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2189,
+							"id": 2190,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2190,
+									"id": 2191,
 									"name": "url",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15703,7 +15703,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2190
+										2191
 									]
 								}
 							]
@@ -15711,7 +15711,7 @@
 					}
 				},
 				{
-					"id": 2177,
+					"id": 2178,
 					"name": "status",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15744,27 +15744,27 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2178,
-						2176,
 						2179,
-						2174,
-						2175,
+						2177,
 						2180,
-						2188,
-						2177
+						2175,
+						2176,
+						2181,
+						2189,
+						2178
 					]
 				}
 			]
 		},
 		{
-			"id": 2339,
+			"id": 2340,
 			"name": "GiftRedemptionParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2340,
+					"id": 2341,
 					"name": "credits",
 					"kind": 1024,
 					"kindString": "Property",
@@ -15782,7 +15782,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2340
+						2341
 					]
 				}
 			]
@@ -18534,7 +18534,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2192,
+											"id": 2193,
 											"name": "OrdersItem"
 										}
 									}
@@ -18734,7 +18734,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									},
 									{
@@ -20972,14 +20972,14 @@
 			]
 		},
 		{
-			"id": 2211,
+			"id": 2212,
 			"name": "OrdersCreate",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2215,
+					"id": 2216,
 					"name": "amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -20992,7 +20992,7 @@
 					}
 				},
 				{
-					"id": 2214,
+					"id": 2215,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21006,7 +21006,7 @@
 					}
 				},
 				{
-					"id": 2216,
+					"id": 2217,
 					"name": "discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21019,7 +21019,7 @@
 					}
 				},
 				{
-					"id": 2217,
+					"id": 2218,
 					"name": "items",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21030,13 +21030,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2192,
+							"id": 2193,
 							"name": "OrdersItem"
 						}
 					}
 				},
 				{
-					"id": 2218,
+					"id": 2219,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21059,7 +21059,7 @@
 					}
 				},
 				{
-					"id": 2212,
+					"id": 2213,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21072,7 +21072,7 @@
 					}
 				},
 				{
-					"id": 2213,
+					"id": 2214,
 					"name": "status",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21107,26 +21107,26 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2215,
-						2214,
 						2216,
+						2215,
 						2217,
 						2218,
-						2212,
-						2213
+						2219,
+						2213,
+						2214
 					]
 				}
 			]
 		},
 		{
-			"id": 2219,
+			"id": 2220,
 			"name": "OrdersCreateResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2225,
+					"id": 2226,
 					"name": "amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21139,7 +21139,7 @@
 					}
 				},
 				{
-					"id": 2230,
+					"id": 2231,
 					"name": "applied_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21152,7 +21152,7 @@
 					}
 				},
 				{
-					"id": 2222,
+					"id": 2223,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21163,7 +21163,7 @@
 					}
 				},
 				{
-					"id": 2235,
+					"id": 2236,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21177,7 +21177,7 @@
 					}
 				},
 				{
-					"id": 2227,
+					"id": 2228,
 					"name": "discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21190,7 +21190,7 @@
 					}
 				},
 				{
-					"id": 2220,
+					"id": 2221,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21201,7 +21201,7 @@
 					}
 				},
 				{
-					"id": 2226,
+					"id": 2227,
 					"name": "initial_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21214,7 +21214,7 @@
 					}
 				},
 				{
-					"id": 2233,
+					"id": 2234,
 					"name": "items",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21225,13 +21225,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2192,
+							"id": 2193,
 							"name": "OrdersItem"
 						}
 					}
 				},
 				{
-					"id": 2231,
+					"id": 2232,
 					"name": "items_applied_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21244,7 +21244,7 @@
 					}
 				},
 				{
-					"id": 2228,
+					"id": 2229,
 					"name": "items_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21257,7 +21257,7 @@
 					}
 				},
 				{
-					"id": 2234,
+					"id": 2235,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21280,7 +21280,7 @@
 					}
 				},
 				{
-					"id": 2236,
+					"id": 2237,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21291,7 +21291,7 @@
 					}
 				},
 				{
-					"id": 2221,
+					"id": 2222,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21304,7 +21304,7 @@
 					}
 				},
 				{
-					"id": 2224,
+					"id": 2225,
 					"name": "status",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21338,7 +21338,7 @@
 					}
 				},
 				{
-					"id": 2232,
+					"id": 2233,
 					"name": "total_applied_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21351,7 +21351,7 @@
 					}
 				},
 				{
-					"id": 2229,
+					"id": 2230,
 					"name": "total_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21364,7 +21364,7 @@
 					}
 				},
 				{
-					"id": 2223,
+					"id": 2224,
 					"name": "updated_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21382,36 +21382,36 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2225,
-						2230,
-						2222,
-						2235,
-						2227,
-						2220,
 						2226,
-						2233,
 						2231,
-						2228,
-						2234,
+						2223,
 						2236,
+						2228,
 						2221,
-						2224,
+						2227,
+						2234,
 						2232,
 						2229,
-						2223
+						2235,
+						2237,
+						2222,
+						2225,
+						2233,
+						2230,
+						2224
 					]
 				}
 			]
 		},
 		{
-			"id": 2192,
+			"id": 2193,
 			"name": "OrdersItem",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2199,
+					"id": 2200,
 					"name": "amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21424,7 +21424,7 @@
 					}
 				},
 				{
-					"id": 2201,
+					"id": 2202,
 					"name": "applied_discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21437,7 +21437,7 @@
 					}
 				},
 				{
-					"id": 2200,
+					"id": 2201,
 					"name": "discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21450,7 +21450,7 @@
 					}
 				},
 				{
-					"id": 2198,
+					"id": 2199,
 					"name": "price",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21463,7 +21463,7 @@
 					}
 				},
 				{
-					"id": 2202,
+					"id": 2203,
 					"name": "product",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21473,14 +21473,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2203,
+							"id": 2204,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2206,
+									"id": 2207,
 									"name": "metadata",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21503,7 +21503,7 @@
 									}
 								},
 								{
-									"id": 2205,
+									"id": 2206,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21516,7 +21516,7 @@
 									}
 								},
 								{
-									"id": 2204,
+									"id": 2205,
 									"name": "override",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21534,9 +21534,9 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
+										2207,
 										2206,
-										2205,
-										2204
+										2205
 									]
 								}
 							]
@@ -21544,7 +21544,7 @@
 					}
 				},
 				{
-					"id": 2194,
+					"id": 2195,
 					"name": "product_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21557,7 +21557,7 @@
 					}
 				},
 				{
-					"id": 2197,
+					"id": 2198,
 					"name": "quantity",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21570,7 +21570,7 @@
 					}
 				},
 				{
-					"id": 2195,
+					"id": 2196,
 					"name": "related_object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21592,7 +21592,7 @@
 					}
 				},
 				{
-					"id": 2207,
+					"id": 2208,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21602,14 +21602,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2208,
+							"id": 2209,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2209,
+									"id": 2210,
 									"name": "override",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21622,7 +21622,7 @@
 									}
 								},
 								{
-									"id": 2210,
+									"id": 2211,
 									"name": "sku",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21640,8 +21640,8 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2209,
-										2210
+										2210,
+										2211
 									]
 								}
 							]
@@ -21649,7 +21649,7 @@
 					}
 				},
 				{
-					"id": 2193,
+					"id": 2194,
 					"name": "sku_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21662,7 +21662,7 @@
 					}
 				},
 				{
-					"id": 2196,
+					"id": 2197,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21680,30 +21680,30 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2199,
-						2201,
 						2200,
-						2198,
 						2202,
-						2194,
-						2197,
+						2201,
+						2199,
+						2203,
 						2195,
-						2207,
-						2193,
-						2196
+						2198,
+						2196,
+						2208,
+						2194,
+						2197
 					]
 				}
 			]
 		},
 		{
-			"id": 2250,
+			"id": 2251,
 			"name": "OrdersListParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2251,
+					"id": 2252,
 					"name": "limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21716,7 +21716,7 @@
 					}
 				},
 				{
-					"id": 2252,
+					"id": 2253,
 					"name": "page",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21734,21 +21734,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2251,
-						2252
+						2252,
+						2253
 					]
 				}
 			]
 		},
 		{
-			"id": 2253,
+			"id": 2254,
 			"name": "OrdersListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2256,
+					"id": 2257,
 					"name": "data_ref",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21759,7 +21759,7 @@
 					}
 				},
 				{
-					"id": 2254,
+					"id": 2255,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21770,7 +21770,7 @@
 					}
 				},
 				{
-					"id": 2257,
+					"id": 2258,
 					"name": "orders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21779,13 +21779,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2219,
+							"id": 2220,
 							"name": "OrdersCreateResponse"
 						}
 					}
 				},
 				{
-					"id": 2255,
+					"id": 2256,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21801,23 +21801,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2256,
-						2254,
 						2257,
-						2255
+						2255,
+						2258,
+						2256
 					]
 				}
 			]
 		},
 		{
-			"id": 2238,
+			"id": 2239,
 			"name": "OrdersUpdate",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2243,
+					"id": 2244,
 					"name": "amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21830,7 +21830,7 @@
 					}
 				},
 				{
-					"id": 2246,
+					"id": 2247,
 					"name": "customer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21840,14 +21840,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2247,
+							"id": 2248,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2248,
+									"id": 2249,
 									"name": "id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -21863,7 +21863,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2248
+										2249
 									]
 								}
 							]
@@ -21871,7 +21871,7 @@
 					}
 				},
 				{
-					"id": 2244,
+					"id": 2245,
 					"name": "discount_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21884,7 +21884,7 @@
 					}
 				},
 				{
-					"id": 2239,
+					"id": 2240,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21895,7 +21895,7 @@
 					}
 				},
 				{
-					"id": 2242,
+					"id": 2243,
 					"name": "items",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21906,13 +21906,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2192,
+							"id": 2193,
 							"name": "OrdersItem"
 						}
 					}
 				},
 				{
-					"id": 2245,
+					"id": 2246,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21935,7 +21935,7 @@
 					}
 				},
 				{
-					"id": 2240,
+					"id": 2241,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21948,7 +21948,7 @@
 					}
 				},
 				{
-					"id": 2241,
+					"id": 2242,
 					"name": "status",
 					"kind": 1024,
 					"kindString": "Property",
@@ -21983,27 +21983,27 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2243,
-						2246,
 						2244,
-						2239,
-						2242,
+						2247,
 						2245,
 						2240,
-						2241
+						2243,
+						2246,
+						2241,
+						2242
 					]
 				}
 			]
 		},
 		{
-			"id": 2023,
+			"id": 2024,
 			"name": "ProductsBulkUpdateMetadata",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2025,
+					"id": 2026,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22024,7 +22024,7 @@
 					}
 				},
 				{
-					"id": 2024,
+					"id": 2025,
 					"name": "source_ids",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22043,8 +22043,8 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2025,
-						2024
+						2026,
+						2025
 					]
 				}
 			]
@@ -22222,6 +22222,29 @@
 					}
 				},
 				{
+					"id": 2012,
+					"name": "metadata",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "intrinsic",
+								"name": "any"
+							}
+						],
+						"name": "Record"
+					}
+				},
+				{
 					"id": 2007,
 					"name": "name",
 					"kind": 1024,
@@ -22281,6 +22304,7 @@
 						2010,
 						2004,
 						2011,
+						2012,
 						2007,
 						2006,
 						2008,
@@ -22290,14 +22314,14 @@
 			]
 		},
 		{
-			"id": 2043,
+			"id": 2044,
 			"name": "ProductsCreateSku",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2046,
+					"id": 2047,
 					"name": "attributes",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22320,7 +22344,7 @@
 					}
 				},
 				{
-					"id": 2050,
+					"id": 2051,
 					"name": "currency",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22333,7 +22357,7 @@
 					}
 				},
 				{
-					"id": 2049,
+					"id": 2050,
 					"name": "image_url",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22346,7 +22370,7 @@
 					}
 				},
 				{
-					"id": 2047,
+					"id": 2048,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22369,7 +22393,7 @@
 					}
 				},
 				{
-					"id": 2048,
+					"id": 2049,
 					"name": "price",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22382,7 +22406,7 @@
 					}
 				},
 				{
-					"id": 2044,
+					"id": 2045,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22393,7 +22417,7 @@
 					}
 				},
 				{
-					"id": 2045,
+					"id": 2046,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22411,26 +22435,26 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2046,
-						2050,
-						2049,
 						2047,
+						2051,
+						2050,
 						2048,
-						2044,
-						2045
+						2049,
+						2045,
+						2046
 					]
 				}
 			]
 		},
 		{
-			"id": 2051,
+			"id": 2052,
 			"name": "ProductsCreateSkuResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2056,
+					"id": 2057,
 					"name": "attributes",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22453,7 +22477,7 @@
 					}
 				},
 				{
-					"id": 2060,
+					"id": 2061,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22464,7 +22488,7 @@
 					}
 				},
 				{
-					"id": 2059,
+					"id": 2060,
 					"name": "currency",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22477,7 +22501,7 @@
 					}
 				},
 				{
-					"id": 2052,
+					"id": 2053,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22488,7 +22512,7 @@
 					}
 				},
 				{
-					"id": 2057,
+					"id": 2058,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22511,7 +22535,7 @@
 					}
 				},
 				{
-					"id": 2061,
+					"id": 2062,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22522,7 +22546,7 @@
 					}
 				},
 				{
-					"id": 2055,
+					"id": 2056,
 					"name": "price",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22535,7 +22559,7 @@
 					}
 				},
 				{
-					"id": 2054,
+					"id": 2055,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22548,7 +22572,7 @@
 					}
 				},
 				{
-					"id": 2053,
+					"id": 2054,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22561,7 +22585,7 @@
 					}
 				},
 				{
-					"id": 2058,
+					"id": 2059,
 					"name": "updated_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22579,29 +22603,29 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2056,
-						2060,
-						2059,
-						2052,
 						2057,
 						2061,
+						2060,
+						2053,
+						2058,
+						2062,
+						2056,
 						2055,
 						2054,
-						2053,
-						2058
+						2059
 					]
 				}
 			]
 		},
 		{
-			"id": 2033,
+			"id": 2034,
 			"name": "ProductsDeleteParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2034,
+					"id": 2035,
 					"name": "force",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22619,20 +22643,20 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2034
+						2035
 					]
 				}
 			]
 		},
 		{
-			"id": 2068,
+			"id": 2069,
 			"name": "ProductsDeleteSkuParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2069,
+					"id": 2070,
 					"name": "force",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22650,7 +22674,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2069
+						2070
 					]
 				}
 			]
@@ -22691,7 +22715,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2051,
+											"id": 2052,
 											"name": "ProductsCreateSkuResponse"
 										}
 									}
@@ -22745,14 +22769,14 @@
 			]
 		},
 		{
-			"id": 2035,
+			"id": 2036,
 			"name": "ProductsListParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2037,
+					"id": 2038,
 					"name": "limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22765,7 +22789,7 @@
 					}
 				},
 				{
-					"id": 2036,
+					"id": 2037,
 					"name": "page",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22783,21 +22807,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2037,
-						2036
+						2038,
+						2037
 					]
 				}
 			]
 		},
 		{
-			"id": 2038,
+			"id": 2039,
 			"name": "ProductsListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2041,
+					"id": 2042,
 					"name": "data_ref",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22808,7 +22832,7 @@
 					}
 				},
 				{
-					"id": 2039,
+					"id": 2040,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22819,7 +22843,7 @@
 					}
 				},
 				{
-					"id": 2042,
+					"id": 2043,
 					"name": "products",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22828,13 +22852,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2012,
+							"id": 2013,
 							"name": "ProductsGetResponse"
 						}
 					}
 				},
 				{
-					"id": 2040,
+					"id": 2041,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22850,23 +22874,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2041,
-						2039,
 						2042,
-						2040
+						2040,
+						2043,
+						2041
 					]
 				}
 			]
 		},
 		{
-			"id": 2070,
+			"id": 2071,
 			"name": "ProductsListSkus",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2071,
+					"id": 2072,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22877,7 +22901,7 @@
 					}
 				},
 				{
-					"id": 2073,
+					"id": 2074,
 					"name": "skus",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22886,13 +22910,13 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2051,
+							"id": 2052,
 							"name": "ProductsCreateSkuResponse"
 						}
 					}
 				},
 				{
-					"id": 2072,
+					"id": 2073,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -22908,9 +22932,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2071,
-						2073,
-						2072
+						2072,
+						2074,
+						2073
 					]
 				}
 			]
@@ -22948,17 +22972,17 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2379,
+												"id": 2380,
 												"name": "DiscountUnit"
 											},
 											{
 												"type": "reference",
-												"id": 2384,
+												"id": 2385,
 												"name": "DiscountAmount"
 											},
 											{
 												"type": "reference",
-												"id": 2388,
+												"id": 2389,
 												"name": "DiscountPercent"
 											}
 										]
@@ -23216,17 +23240,17 @@
 										"types": [
 											{
 												"type": "reference",
-												"id": 2379,
+												"id": 2380,
 												"name": "DiscountUnit"
 											},
 											{
 												"type": "reference",
-												"id": 2384,
+												"id": 2385,
 												"name": "DiscountAmount"
 											},
 											{
 												"type": "reference",
-												"id": 2388,
+												"id": 2389,
 												"name": "DiscountPercent"
 											}
 										]
@@ -23605,7 +23629,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2192,
+											"id": 2193,
 											"name": "OrdersItem"
 										}
 									}
@@ -23704,7 +23728,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2353,
+						"id": 2354,
 						"name": "ValidationSessionReleaseParams"
 					}
 				}
@@ -23789,7 +23813,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									},
 									{
@@ -24321,17 +24345,17 @@
 																			"types": [
 																				{
 																					"type": "reference",
-																					"id": 2379,
+																					"id": 2380,
 																					"name": "DiscountUnit"
 																				},
 																				{
 																					"type": "reference",
-																					"id": 2384,
+																					"id": 2385,
 																					"name": "DiscountAmount"
 																				},
 																				{
 																					"type": "reference",
-																					"id": 2388,
+																					"id": 2389,
 																					"name": "DiscountPercent"
 																				}
 																			]
@@ -25118,7 +25142,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2192,
+											"id": 2193,
 											"name": "OrdersItem"
 										}
 									}
@@ -25296,17 +25320,17 @@
 											"types": [
 												{
 													"type": "reference",
-													"id": 2379,
+													"id": 2380,
 													"name": "DiscountUnit"
 												},
 												{
 													"type": "reference",
-													"id": 2384,
+													"id": 2385,
 													"name": "DiscountAmount"
 												},
 												{
 													"type": "reference",
-													"id": 2388,
+													"id": 2389,
 													"name": "DiscountPercent"
 												}
 											]
@@ -25423,7 +25447,7 @@
 															"type": "array",
 															"elementType": {
 																"type": "reference",
-																"id": 2192,
+																"id": 2193,
 																"name": "OrdersItem"
 															}
 														}
@@ -25754,7 +25778,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									},
 									{
@@ -26478,7 +26502,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2339,
+						"id": 2340,
 						"name": "GiftRedemptionParams"
 					}
 				},
@@ -26521,7 +26545,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									}
 								],
@@ -26584,7 +26608,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2353,
+						"id": 2354,
 						"name": "ValidationSessionReleaseParams"
 					}
 				},
@@ -26828,7 +26852,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2219,
+						"id": 2220,
 						"name": "OrdersCreateResponse"
 					}
 				},
@@ -27042,7 +27066,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2293,
+						"id": 2294,
 						"name": "StackableOptions"
 					}
 				},
@@ -27056,7 +27080,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2211,
+						"id": 2212,
 						"name": "OrdersCreate"
 					}
 				},
@@ -27070,7 +27094,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2296,
+							"id": 2297,
 							"name": "StackableRedeemableParams"
 						}
 					}
@@ -27085,7 +27109,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2343,
+						"id": 2344,
 						"name": "ValidationSessionParams"
 					}
 				}
@@ -27907,7 +27931,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									}
 								},
@@ -28741,14 +28765,14 @@
 			]
 		},
 		{
-			"id": 2131,
+			"id": 2132,
 			"name": "SegmentsCreate",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2139,
+					"id": 2140,
 					"name": "customers",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28764,7 +28788,7 @@
 					}
 				},
 				{
-					"id": 2134,
+					"id": 2135,
 					"name": "filter",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28774,14 +28798,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2135,
+							"id": 2136,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2136,
+									"id": 2137,
 									"name": "junction",
 									"kind": 1024,
 									"kindString": "Property",
@@ -28808,19 +28832,19 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2136
+										2137
 									]
 								}
 							],
 							"indexSignature": {
-								"id": 2137,
+								"id": 2138,
 								"name": "__index",
 								"kind": 8192,
 								"kindString": "Index signature",
 								"flags": {},
 								"parameters": [
 									{
-										"id": 2138,
+										"id": 2139,
 										"name": "filter_conditions",
 										"kind": 32768,
 										"flags": {},
@@ -28839,7 +28863,7 @@
 					}
 				},
 				{
-					"id": 2132,
+					"id": 2133,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28850,7 +28874,7 @@
 					}
 				},
 				{
-					"id": 2133,
+					"id": 2134,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28875,23 +28899,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2139,
-						2134,
-						2132,
-						2133
+						2140,
+						2135,
+						2133,
+						2134
 					]
 				}
 			]
 		},
 		{
-			"id": 2140,
+			"id": 2141,
 			"name": "SegmentsCreateResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2143,
+					"id": 2144,
 					"name": "created_at",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28902,7 +28926,7 @@
 					}
 				},
 				{
-					"id": 2145,
+					"id": 2146,
 					"name": "filter",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28912,14 +28936,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2146,
+							"id": 2147,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2147,
+									"id": 2148,
 									"name": "junction",
 									"kind": 1024,
 									"kindString": "Property",
@@ -28946,19 +28970,19 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2147
+										2148
 									]
 								}
 							],
 							"indexSignature": {
-								"id": 2148,
+								"id": 2149,
 								"name": "__index",
 								"kind": 8192,
 								"kindString": "Index signature",
 								"flags": {},
 								"parameters": [
 									{
-										"id": 2149,
+										"id": 2150,
 										"name": "filter_conditions",
 										"kind": 32768,
 										"flags": {},
@@ -28977,7 +29001,7 @@
 					}
 				},
 				{
-					"id": 2141,
+					"id": 2142,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -28988,7 +29012,7 @@
 					}
 				},
 				{
-					"id": 2144,
+					"id": 2145,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29011,7 +29035,7 @@
 					}
 				},
 				{
-					"id": 2142,
+					"id": 2143,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29022,7 +29046,7 @@
 					}
 				},
 				{
-					"id": 2151,
+					"id": 2152,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29033,7 +29057,7 @@
 					}
 				},
 				{
-					"id": 2150,
+					"id": 2151,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29051,26 +29075,26 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2143,
-						2145,
-						2141,
 						2144,
+						2146,
 						2142,
-						2151,
-						2150
+						2145,
+						2143,
+						2152,
+						2151
 					]
 				}
 			]
 		},
 		{
-			"id": 2153,
+			"id": 2154,
 			"name": "SegmentsListResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2157,
+					"id": 2158,
 					"name": "data",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29080,14 +29104,14 @@
 						"elementType": {
 							"type": "reflection",
 							"declaration": {
-								"id": 2158,
+								"id": 2159,
 								"name": "__type",
 								"kind": 65536,
 								"kindString": "Type literal",
 								"flags": {},
 								"children": [
 									{
-										"id": 2159,
+										"id": 2160,
 										"name": "id",
 										"kind": 1024,
 										"kindString": "Property",
@@ -29098,7 +29122,7 @@
 										}
 									},
 									{
-										"id": 2160,
+										"id": 2161,
 										"name": "name",
 										"kind": 1024,
 										"kindString": "Property",
@@ -29109,7 +29133,7 @@
 										}
 									},
 									{
-										"id": 2161,
+										"id": 2162,
 										"name": "object",
 										"kind": 1024,
 										"kindString": "Property",
@@ -29125,9 +29149,9 @@
 										"title": "Properties",
 										"kind": 1024,
 										"children": [
-											2159,
 											2160,
-											2161
+											2161,
+											2162
 										]
 									}
 								]
@@ -29136,7 +29160,7 @@
 					}
 				},
 				{
-					"id": 2156,
+					"id": 2157,
 					"name": "data_ref",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29147,7 +29171,7 @@
 					}
 				},
 				{
-					"id": 2154,
+					"id": 2155,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29158,7 +29182,7 @@
 					}
 				},
 				{
-					"id": 2155,
+					"id": 2156,
 					"name": "total",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29174,10 +29198,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
+						2158,
 						2157,
-						2156,
-						2154,
-						2155
+						2155,
+						2156
 					]
 				}
 			]
@@ -29290,14 +29314,14 @@
 			]
 		},
 		{
-			"id": 2074,
+			"id": 2075,
 			"name": "SimpleProduct",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2075,
+					"id": 2076,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29308,7 +29332,7 @@
 					}
 				},
 				{
-					"id": 2077,
+					"id": 2078,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29321,7 +29345,7 @@
 					}
 				},
 				{
-					"id": 2076,
+					"id": 2077,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29339,9 +29363,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2075,
-						2077,
-						2076
+						2076,
+						2078,
+						2077
 					]
 				}
 			]
@@ -29377,17 +29401,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -29502,14 +29526,14 @@
 			]
 		},
 		{
-			"id": 2078,
+			"id": 2079,
 			"name": "SimpleSku",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2079,
+					"id": 2080,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29520,7 +29544,7 @@
 					}
 				},
 				{
-					"id": 2081,
+					"id": 2082,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29533,7 +29557,7 @@
 					}
 				},
 				{
-					"id": 2080,
+					"id": 2081,
 					"name": "source_id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29551,9 +29575,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2079,
-						2081,
-						2080
+						2080,
+						2082,
+						2081
 					]
 				}
 			]
@@ -29677,17 +29701,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -29829,14 +29853,14 @@
 			]
 		},
 		{
-			"id": 2293,
+			"id": 2294,
 			"name": "StackableOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2294,
+					"id": 2295,
 					"name": "expand",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29855,20 +29879,20 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2294
+						2295
 					]
 				}
 			]
 		},
 		{
-			"id": 2296,
+			"id": 2297,
 			"name": "StackableRedeemableParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2300,
+					"id": 2301,
 					"name": "gift",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29877,12 +29901,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2339,
+						"id": 2340,
 						"name": "GiftRedemptionParams"
 					}
 				},
 				{
-					"id": 2298,
+					"id": 2299,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29893,19 +29917,19 @@
 					}
 				},
 				{
-					"id": 2297,
+					"id": 2298,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2295,
+						"id": 2296,
 						"name": "StackableRedeemableObject"
 					}
 				},
 				{
-					"id": 2299,
+					"id": 2300,
 					"name": "reward",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29924,23 +29948,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2300,
+						2301,
+						2299,
 						2298,
-						2297,
-						2299
+						2300
 					]
 				}
 			]
 		},
 		{
-			"id": 2330,
+			"id": 2331,
 			"name": "StackableRedeemableResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2335,
+					"id": 2336,
 					"name": "applicable_to",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29949,12 +29973,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
 				{
-					"id": 2332,
+					"id": 2333,
 					"name": "id",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29965,7 +29989,7 @@
 					}
 				},
 				{
-					"id": 2336,
+					"id": 2337,
 					"name": "inapplicable_to",
 					"kind": 1024,
 					"kindString": "Property",
@@ -29974,12 +29998,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
 				{
-					"id": 2338,
+					"id": 2339,
 					"name": "metadata",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30002,19 +30026,19 @@
 					}
 				},
 				{
-					"id": 2333,
+					"id": 2334,
 					"name": "object",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2295,
+						"id": 2296,
 						"name": "StackableRedeemableObject"
 					}
 				},
 				{
-					"id": 2334,
+					"id": 2335,
 					"name": "order",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30023,12 +30047,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2219,
+						"id": 2220,
 						"name": "OrdersCreateResponse"
 					}
 				},
 				{
-					"id": 2337,
+					"id": 2338,
 					"name": "result",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30037,19 +30061,19 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2325,
+						"id": 2326,
 						"name": "StackableRedeemableResultResponse"
 					}
 				},
 				{
-					"id": 2331,
+					"id": 2332,
 					"name": "status",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2301,
+						"id": 2302,
 						"name": "StackableRedeemableResponseStatus"
 					}
 				}
@@ -30059,27 +30083,27 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2335,
-						2332,
 						2336,
-						2338,
 						2333,
-						2334,
 						2337,
-						2331
+						2339,
+						2334,
+						2335,
+						2338,
+						2332
 					]
 				}
 			]
 		},
 		{
-			"id": 2308,
+			"id": 2309,
 			"name": "StackableRedeemableResultDiscount",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2313,
+					"id": 2314,
 					"name": "amount_limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30092,7 +30116,7 @@
 					}
 				},
 				{
-					"id": 2311,
+					"id": 2312,
 					"name": "amount_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30105,19 +30129,19 @@
 					}
 				},
 				{
-					"id": 2310,
+					"id": 2311,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2374,
+						"id": 2375,
 						"name": "DiscountVouchersEffectTypes"
 					}
 				},
 				{
-					"id": 2314,
+					"id": 2315,
 					"name": "fixed_amount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30130,7 +30154,7 @@
 					}
 				},
 				{
-					"id": 2312,
+					"id": 2313,
 					"name": "percent_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30143,7 +30167,7 @@
 					}
 				},
 				{
-					"id": 2318,
+					"id": 2319,
 					"name": "product",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30152,12 +30176,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2074,
+						"id": 2075,
 						"name": "SimpleProduct"
 					}
 				},
 				{
-					"id": 2317,
+					"id": 2318,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30166,24 +30190,24 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2078,
+						"id": 2079,
 						"name": "SimpleSku"
 					}
 				},
 				{
-					"id": 2309,
+					"id": 2310,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2368,
+						"id": 2369,
 						"name": "DiscountVouchersTypes"
 					}
 				},
 				{
-					"id": 2315,
+					"id": 2316,
 					"name": "unit_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30196,7 +30220,7 @@
 					}
 				},
 				{
-					"id": 2316,
+					"id": 2317,
 					"name": "unit_type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30209,7 +30233,7 @@
 					}
 				},
 				{
-					"id": 2319,
+					"id": 2320,
 					"name": "units",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30220,7 +30244,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2302,
+							"id": 2303,
 							"name": "StackableRedeemableResultDiscountUnit"
 						}
 					}
@@ -30231,42 +30255,42 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2313,
-						2311,
-						2310,
 						2314,
 						2312,
-						2318,
-						2317,
-						2309,
+						2311,
 						2315,
+						2313,
+						2319,
+						2318,
+						2310,
 						2316,
-						2319
+						2317,
+						2320
 					]
 				}
 			]
 		},
 		{
-			"id": 2302,
+			"id": 2303,
 			"name": "StackableRedeemableResultDiscountUnit",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2303,
+					"id": 2304,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2375,
+						"id": 2376,
 						"name": "DiscountUnitVouchersEffectTypes"
 					}
 				},
 				{
-					"id": 2307,
+					"id": 2308,
 					"name": "product",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30275,12 +30299,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2074,
+						"id": 2075,
 						"name": "SimpleProduct"
 					}
 				},
 				{
-					"id": 2306,
+					"id": 2307,
 					"name": "sku",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30289,12 +30313,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2078,
+						"id": 2079,
 						"name": "SimpleSku"
 					}
 				},
 				{
-					"id": 2304,
+					"id": 2305,
 					"name": "unit_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30305,7 +30329,7 @@
 					}
 				},
 				{
-					"id": 2305,
+					"id": 2306,
 					"name": "unit_type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30321,24 +30345,24 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2303,
-						2307,
-						2306,
 						2304,
-						2305
+						2308,
+						2307,
+						2305,
+						2306
 					]
 				}
 			]
 		},
 		{
-			"id": 2320,
+			"id": 2321,
 			"name": "StackableRedeemableResultGift",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2321,
+					"id": 2322,
 					"name": "credits",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30356,20 +30380,20 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2321
+						2322
 					]
 				}
 			]
 		},
 		{
-			"id": 2322,
+			"id": 2323,
 			"name": "StackableRedeemableResultLoyaltyCard",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2323,
+					"id": 2324,
 					"name": "points",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30382,7 +30406,7 @@
 					}
 				},
 				{
-					"id": 2324,
+					"id": 2325,
 					"name": "transfers",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30404,21 +30428,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2323,
-						2324
+						2324,
+						2325
 					]
 				}
 			]
 		},
 		{
-			"id": 2325,
+			"id": 2326,
 			"name": "StackableRedeemableResultResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2326,
+					"id": 2327,
 					"name": "discount",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30427,12 +30451,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2308,
+						"id": 2309,
 						"name": "StackableRedeemableResultDiscount"
 					}
 				},
 				{
-					"id": 2329,
+					"id": 2330,
 					"name": "error",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30445,7 +30469,7 @@
 					}
 				},
 				{
-					"id": 2327,
+					"id": 2328,
 					"name": "gift",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30454,12 +30478,12 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2320,
+						"id": 2321,
 						"name": "StackableRedeemableResultGift"
 					}
 				},
 				{
-					"id": 2328,
+					"id": 2329,
 					"name": "loyalty_card",
 					"kind": 1024,
 					"kindString": "Property",
@@ -30468,7 +30492,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2322,
+						"id": 2323,
 						"name": "StackableRedeemableResultLoyaltyCard"
 					}
 				}
@@ -30478,10 +30502,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2326,
-						2329,
 						2327,
-						2328
+						2330,
+						2328,
+						2329
 					]
 				}
 			]
@@ -31225,7 +31249,7 @@
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
@@ -31265,14 +31289,14 @@
 			]
 		},
 		{
-			"id": 2343,
+			"id": 2344,
 			"name": "ValidationSessionParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2344,
+					"id": 2345,
 					"name": "key",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31285,7 +31309,7 @@
 					}
 				},
 				{
-					"id": 2346,
+					"id": 2347,
 					"name": "ttl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31298,7 +31322,7 @@
 					}
 				},
 				{
-					"id": 2347,
+					"id": 2348,
 					"name": "ttl_unit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31340,7 +31364,7 @@
 					}
 				},
 				{
-					"id": 2345,
+					"id": 2346,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31358,23 +31382,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2344,
-						2346,
+						2345,
 						2347,
-						2345
+						2348,
+						2346
 					]
 				}
 			]
 		},
 		{
-			"id": 2353,
+			"id": 2354,
 			"name": "ValidationSessionReleaseParams",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2354,
+					"id": 2355,
 					"name": "key",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31390,20 +31414,20 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2354
+						2355
 					]
 				}
 			]
 		},
 		{
-			"id": 2348,
+			"id": 2349,
 			"name": "ValidationSessionResponse",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2349,
+					"id": 2350,
 					"name": "key",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31414,7 +31438,7 @@
 					}
 				},
 				{
-					"id": 2351,
+					"id": 2352,
 					"name": "ttl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31425,19 +31449,19 @@
 					}
 				},
 				{
-					"id": 2352,
+					"id": 2353,
 					"name": "ttl_unit",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"id": 2342,
+						"id": 2343,
 						"name": "ValidationSessionTTLUnit"
 					}
 				},
 				{
-					"id": 2350,
+					"id": 2351,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -31453,10 +31477,10 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2349,
-						2351,
+						2350,
 						2352,
-						2350
+						2353,
+						2351
 					]
 				}
 			]
@@ -31478,7 +31502,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2219,
+						"id": 2220,
 						"name": "OrdersCreateResponse"
 					}
 				},
@@ -31494,7 +31518,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2330,
+							"id": 2331,
 							"name": "StackableRedeemableResponse"
 						}
 					}
@@ -31509,7 +31533,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2348,
+						"id": 2349,
 						"name": "ValidationSessionResponse"
 					}
 				},
@@ -31606,7 +31630,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2293,
+						"id": 2294,
 						"name": "StackableOptions"
 					}
 				},
@@ -31620,7 +31644,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2211,
+						"id": 2212,
 						"name": "OrdersCreate"
 					}
 				},
@@ -31634,7 +31658,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 2296,
+							"id": 2297,
 							"name": "StackableRedeemableParams"
 						}
 					}
@@ -31649,7 +31673,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2343,
+						"id": 2344,
 						"name": "ValidationSessionParams"
 					}
 				}
@@ -31895,7 +31919,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2192,
+											"id": 2193,
 											"name": "OrdersItem"
 										}
 									}
@@ -32004,7 +32028,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2343,
+						"id": 2344,
 						"name": "ValidationSessionParams"
 					}
 				}
@@ -32040,7 +32064,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
@@ -32096,17 +32120,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -32188,7 +32212,7 @@
 					},
 					"type": {
 						"type": "reference",
-						"id": 2364,
+						"id": 2365,
 						"name": "ApplicableToResultList"
 					}
 				},
@@ -32320,7 +32344,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2192,
+											"id": 2193,
 											"name": "OrdersItem"
 										}
 									}
@@ -32441,14 +32465,14 @@
 			]
 		},
 		{
-			"id": 2082,
+			"id": 2083,
 			"name": "VoucherDiscount",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2088,
+					"id": 2089,
 					"name": "amount_limit",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32461,7 +32485,7 @@
 					}
 				},
 				{
-					"id": 2086,
+					"id": 2087,
 					"name": "amount_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32474,7 +32498,7 @@
 					}
 				},
 				{
-					"id": 2085,
+					"id": 2086,
 					"name": "effect",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32487,7 +32511,7 @@
 					}
 				},
 				{
-					"id": 2087,
+					"id": 2088,
 					"name": "percent_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32500,7 +32524,7 @@
 					}
 				},
 				{
-					"id": 2083,
+					"id": 2084,
 					"name": "type",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32524,7 +32548,7 @@
 					}
 				},
 				{
-					"id": 2084,
+					"id": 2085,
 					"name": "unit_off",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32542,25 +32566,25 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2088,
-						2086,
-						2085,
+						2089,
 						2087,
-						2083,
-						2084
+						2086,
+						2088,
+						2084,
+						2085
 					]
 				}
 			]
 		},
 		{
-			"id": 2426,
+			"id": 2427,
 			"name": "VoucherifyClientSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2427,
+					"id": 2428,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32577,7 +32601,7 @@
 					}
 				},
 				{
-					"id": 2428,
+					"id": 2429,
 					"name": "clientApplicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32592,7 +32616,7 @@
 					}
 				},
 				{
-					"id": 2429,
+					"id": 2430,
 					"name": "clientSecretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32607,7 +32631,7 @@
 					}
 				},
 				{
-					"id": 2432,
+					"id": 2433,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32633,7 +32657,7 @@
 					}
 				},
 				{
-					"id": 2431,
+					"id": 2432,
 					"name": "origin",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32656,7 +32680,7 @@
 					}
 				},
 				{
-					"id": 2430,
+					"id": 2431,
 					"name": "trackingId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32678,25 +32702,25 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2427,
 						2428,
 						2429,
+						2430,
+						2433,
 						2432,
-						2431,
-						2430
+						2431
 					]
 				}
 			]
 		},
 		{
-			"id": 2415,
+			"id": 2416,
 			"name": "VoucherifyServerSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 2416,
+					"id": 2417,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32713,7 +32737,7 @@
 					}
 				},
 				{
-					"id": 2419,
+					"id": 2420,
 					"name": "apiVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32730,7 +32754,7 @@
 					}
 				},
 				{
-					"id": 2417,
+					"id": 2418,
 					"name": "applicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32745,7 +32769,7 @@
 					}
 				},
 				{
-					"id": 2420,
+					"id": 2421,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32758,7 +32782,7 @@
 					}
 				},
 				{
-					"id": 2422,
+					"id": 2423,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32784,7 +32808,7 @@
 					}
 				},
 				{
-					"id": 2421,
+					"id": 2422,
 					"name": "dangerouslySetSecretKeyInBrowser",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32801,7 +32825,7 @@
 					}
 				},
 				{
-					"id": 2418,
+					"id": 2419,
 					"name": "secretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -32821,13 +32845,13 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						2416,
-						2419,
 						2417,
 						2420,
-						2422,
+						2418,
 						2421,
-						2418
+						2423,
+						2422,
+						2419
 					]
 				}
 			]
@@ -33322,17 +33346,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -33931,7 +33955,7 @@
 						"typeArguments": [
 							{
 								"type": "reference",
-								"id": 2219,
+								"id": 2220,
 								"name": "OrdersCreateResponse"
 							},
 							{
@@ -34397,17 +34421,17 @@
 						"types": [
 							{
 								"type": "reference",
-								"id": 2379,
+								"id": 2380,
 								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
-								"id": 2384,
+								"id": 2385,
 								"name": "DiscountAmount"
 							},
 							{
 								"type": "reference",
-								"id": 2388,
+								"id": 2389,
 								"name": "DiscountPercent"
 							}
 						]
@@ -35303,7 +35327,7 @@
 			]
 		},
 		{
-			"id": 2355,
+			"id": 2356,
 			"name": "ApplicableToEffect",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -35770,7 +35794,7 @@
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2266,
+				"id": 2267,
 				"name": "ConsentsListResponse"
 			}
 		},
@@ -35845,7 +35869,7 @@
 				"types": [
 					{
 						"type": "reference",
-						"id": 2119,
+						"id": 2120,
 						"name": "DistributionsPublicationsCreateResponse"
 					},
 					{
@@ -35905,7 +35929,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 2219,
+										"id": 2220,
 										"name": "OrdersCreateResponse"
 									},
 									{
@@ -36339,7 +36363,7 @@
 			}
 		},
 		{
-			"id": 2376,
+			"id": 2377,
 			"name": "DiscountAmountVouchersEffectTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36367,7 +36391,7 @@
 			}
 		},
 		{
-			"id": 2378,
+			"id": 2379,
 			"name": "DiscountFixedVouchersEffectTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36387,7 +36411,7 @@
 			}
 		},
 		{
-			"id": 2377,
+			"id": 2378,
 			"name": "DiscountPercentVouchersEffectTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36407,7 +36431,7 @@
 			}
 		},
 		{
-			"id": 2375,
+			"id": 2376,
 			"name": "DiscountUnitVouchersEffectTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36431,7 +36455,7 @@
 			}
 		},
 		{
-			"id": 2374,
+			"id": 2375,
 			"name": "DiscountVouchersEffectTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36471,7 +36495,7 @@
 			}
 		},
 		{
-			"id": 2368,
+			"id": 2369,
 			"name": "DiscountVouchersTypes",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36499,14 +36523,14 @@
 			}
 		},
 		{
-			"id": 2191,
+			"id": 2192,
 			"name": "ExportsGetResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2173,
+				"id": 2174,
 				"name": "ExportsCreateResponse"
 			}
 		},
@@ -36595,31 +36619,31 @@
 			}
 		},
 		{
-			"id": 2237,
+			"id": 2238,
 			"name": "OrdersGetResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2219,
+				"id": 2220,
 				"name": "OrdersCreateResponse"
 			}
 		},
 		{
-			"id": 2249,
+			"id": 2250,
 			"name": "OrdersUpdateResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2237,
+				"id": 2238,
 				"name": "OrdersGetResponse"
 			}
 		},
 		{
-			"id": 2026,
+			"id": 2027,
 			"name": "ProductsBulkUpdate",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36634,7 +36658,7 @@
 			}
 		},
 		{
-			"id": 2030,
+			"id": 2031,
 			"name": "ProductsBulkUpdateMetadataResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36642,14 +36666,14 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 2031,
+					"id": 2032,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"children": [
 						{
-							"id": 2032,
+							"id": 2033,
 							"name": "async_action_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36665,7 +36689,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2032
+								2033
 							]
 						}
 					]
@@ -36673,7 +36697,7 @@
 			}
 		},
 		{
-			"id": 2027,
+			"id": 2028,
 			"name": "ProductsBulkUpdateResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36681,14 +36705,14 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 2028,
+					"id": 2029,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"children": [
 						{
-							"id": 2029,
+							"id": 2030,
 							"name": "async_action_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36704,7 +36728,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2029
+								2030
 							]
 						}
 					]
@@ -36712,7 +36736,7 @@
 			}
 		},
 		{
-			"id": 2012,
+			"id": 2013,
 			"name": "ProductsGetResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36734,19 +36758,19 @@
 			}
 		},
 		{
-			"id": 2062,
+			"id": 2063,
 			"name": "ProductsGetSkuResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2051,
+				"id": 2052,
 				"name": "ProductsCreateSkuResponse"
 			}
 		},
 		{
-			"id": 2013,
+			"id": 2014,
 			"name": "ProductsUpdate",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36754,14 +36778,14 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 2014,
+					"id": 2015,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"children": [
 						{
-							"id": 2018,
+							"id": 2019,
 							"name": "attributes",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36777,7 +36801,7 @@
 							}
 						},
 						{
-							"id": 2016,
+							"id": 2017,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36790,7 +36814,7 @@
 							}
 						},
 						{
-							"id": 2020,
+							"id": 2021,
 							"name": "image_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36803,7 +36827,7 @@
 							}
 						},
 						{
-							"id": 2021,
+							"id": 2022,
 							"name": "metadata",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36826,7 +36850,7 @@
 							}
 						},
 						{
-							"id": 2015,
+							"id": 2016,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36839,7 +36863,7 @@
 							}
 						},
 						{
-							"id": 2019,
+							"id": 2020,
 							"name": "price",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36852,7 +36876,7 @@
 							}
 						},
 						{
-							"id": 2017,
+							"id": 2018,
 							"name": "source_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36870,13 +36894,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2018,
+								2019,
+								2017,
+								2021,
+								2022,
 								2016,
 								2020,
-								2021,
-								2015,
-								2019,
-								2017
+								2018
 							]
 						}
 					]
@@ -36884,7 +36908,7 @@
 			}
 		},
 		{
-			"id": 2022,
+			"id": 2023,
 			"name": "ProductsUpdateResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36896,7 +36920,7 @@
 			}
 		},
 		{
-			"id": 2063,
+			"id": 2064,
 			"name": "ProductsUpdateSku",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -36906,20 +36930,20 @@
 				"types": [
 					{
 						"type": "reference",
-						"id": 2043,
+						"id": 2044,
 						"name": "ProductsCreateSku"
 					},
 					{
 						"type": "reflection",
 						"declaration": {
-							"id": 2064,
+							"id": 2065,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2065,
+									"id": 2066,
 									"name": "id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -36932,7 +36956,7 @@
 									}
 								},
 								{
-									"id": 2066,
+									"id": 2067,
 									"name": "source_id",
 									"kind": 1024,
 									"kindString": "Property",
@@ -36950,8 +36974,8 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2065,
-										2066
+										2066,
+										2067
 									]
 								}
 							]
@@ -36961,14 +36985,14 @@
 			}
 		},
 		{
-			"id": 2067,
+			"id": 2068,
 			"name": "ProductsUpdateSkuResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2062,
+				"id": 2063,
 				"name": "ProductsGetSkuResponse"
 			}
 		},
@@ -37068,7 +37092,7 @@
 				"types": [
 					{
 						"type": "reference",
-						"id": 2219,
+						"id": 2220,
 						"name": "OrdersCreateResponse"
 					},
 					{
@@ -37545,14 +37569,14 @@
 			}
 		},
 		{
-			"id": 2152,
+			"id": 2153,
 			"name": "SegmentsGetResponse",
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
 			"type": {
 				"type": "reference",
-				"id": 2140,
+				"id": 2141,
 				"name": "SegmentsCreateResponse"
 			}
 		},
@@ -37825,7 +37849,7 @@
 			}
 		},
 		{
-			"id": 2295,
+			"id": 2296,
 			"name": "StackableRedeemableObject",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -37849,7 +37873,7 @@
 			}
 		},
 		{
-			"id": 2301,
+			"id": 2302,
 			"name": "StackableRedeemableResponseStatus",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -37991,7 +38015,7 @@
 			}
 		},
 		{
-			"id": 2342,
+			"id": 2343,
 			"name": "ValidationSessionTTLUnit",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -38031,7 +38055,7 @@
 			}
 		},
 		{
-			"id": 2341,
+			"id": 2342,
 			"name": "ValidationSessionType",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -38361,28 +38385,28 @@
 			}
 		},
 		{
-			"id": 2423,
+			"id": 2424,
 			"name": "VoucherifyClientSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 2424,
+					"id": 2425,
 					"name": "VoucherifyClientSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 2425,
+							"id": 2426,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2426,
+								"id": 2427,
 								"name": "VoucherifyClientSideOptions"
 							}
 						}
@@ -38396,28 +38420,28 @@
 			]
 		},
 		{
-			"id": 2393,
+			"id": 2394,
 			"name": "VoucherifyServerSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 2394,
+					"id": 2395,
 					"name": "VoucherifyServerSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 2395,
+							"id": 2396,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 2415,
+								"id": 2416,
 								"name": "VoucherifyServerSideOptions"
 							}
 						}
@@ -38425,14 +38449,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 2396,
+							"id": 2397,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2413,
+									"id": 2414,
 									"name": "apiLimitsHandler",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38443,7 +38467,7 @@
 									}
 								},
 								{
-									"id": 2412,
+									"id": 2413,
 									"name": "asyncActions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38454,7 +38478,7 @@
 									}
 								},
 								{
-									"id": 2398,
+									"id": 2399,
 									"name": "campaigns",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38466,7 +38490,7 @@
 									}
 								},
 								{
-									"id": 2404,
+									"id": 2405,
 									"name": "consents",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38478,7 +38502,7 @@
 									}
 								},
 								{
-									"id": 2403,
+									"id": 2404,
 									"name": "customers",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38490,7 +38514,7 @@
 									}
 								},
 								{
-									"id": 2399,
+									"id": 2400,
 									"name": "distributions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38502,7 +38526,7 @@
 									}
 								},
 								{
-									"id": 2411,
+									"id": 2412,
 									"name": "events",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38514,7 +38538,7 @@
 									}
 								},
 								{
-									"id": 2408,
+									"id": 2409,
 									"name": "loyalties",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38526,7 +38550,7 @@
 									}
 								},
 								{
-									"id": 2414,
+									"id": 2415,
 									"name": "metadataSchemas",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38537,7 +38561,7 @@
 									}
 								},
 								{
-									"id": 2405,
+									"id": 2406,
 									"name": "orders",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38549,7 +38573,7 @@
 									}
 								},
 								{
-									"id": 2406,
+									"id": 2407,
 									"name": "products",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38561,7 +38585,7 @@
 									}
 								},
 								{
-									"id": 2402,
+									"id": 2403,
 									"name": "promotions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38573,7 +38597,7 @@
 									}
 								},
 								{
-									"id": 2401,
+									"id": 2402,
 									"name": "redemptions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38585,7 +38609,7 @@
 									}
 								},
 								{
-									"id": 2407,
+									"id": 2408,
 									"name": "rewards",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38597,7 +38621,7 @@
 									}
 								},
 								{
-									"id": 2409,
+									"id": 2410,
 									"name": "segments",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38609,7 +38633,7 @@
 									}
 								},
 								{
-									"id": 2410,
+									"id": 2411,
 									"name": "validationRules",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38621,7 +38645,7 @@
 									}
 								},
 								{
-									"id": 2400,
+									"id": 2401,
 									"name": "validations",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38633,7 +38657,7 @@
 									}
 								},
 								{
-									"id": 2397,
+									"id": 2398,
 									"name": "vouchers",
 									"kind": 1024,
 									"kindString": "Property",
@@ -38650,24 +38674,24 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										2413,
-										2412,
-										2398,
-										2404,
-										2403,
-										2399,
-										2411,
-										2408,
 										2414,
+										2413,
+										2399,
 										2405,
-										2406,
-										2402,
-										2401,
-										2407,
-										2409,
-										2410,
+										2404,
 										2400,
-										2397
+										2412,
+										2409,
+										2415,
+										2406,
+										2407,
+										2403,
+										2402,
+										2408,
+										2410,
+										2411,
+										2401,
+										2398
 									]
 								}
 							]
@@ -38682,7 +38706,7 @@
 			"title": "Enumerations",
 			"kind": 4,
 			"children": [
-				2369
+				2370
 			]
 		},
 		{
@@ -38716,8 +38740,8 @@
 			"title": "Interfaces",
 			"kind": 256,
 			"children": [
-				2356,
-				2364,
+				2357,
+				2365,
 				680,
 				682,
 				1046,
@@ -38741,26 +38765,26 @@
 				784,
 				695,
 				717,
-				2258,
-				2266,
+				2259,
+				2267,
 				657,
 				664,
 				573,
 				627,
 				643,
 				651,
-				2384,
-				2388,
-				2379,
-				2109,
-				2119,
-				2089,
-				2104,
-				2279,
-				2290,
-				2162,
-				2173,
-				2339,
+				2385,
+				2389,
+				2380,
+				2110,
+				2120,
+				2090,
+				2105,
+				2280,
+				2291,
+				2163,
+				2174,
+				2340,
 				1551,
 				1553,
 				1312,
@@ -38789,23 +38813,23 @@
 				1419,
 				1664,
 				1422,
-				2211,
-				2219,
-				2192,
-				2250,
-				2253,
-				2238,
-				2023,
+				2212,
+				2220,
+				2193,
+				2251,
+				2254,
+				2239,
+				2024,
 				1990,
 				2003,
-				2043,
-				2051,
-				2033,
-				2068,
+				2044,
+				2052,
+				2034,
+				2069,
 				1997,
-				2035,
-				2038,
-				2070,
+				2036,
+				2039,
+				2071,
 				1136,
 				1164,
 				1154,
@@ -38838,22 +38862,22 @@
 				1924,
 				1940,
 				1927,
-				2131,
-				2140,
-				2153,
+				2132,
+				2141,
+				2154,
 				566,
-				2074,
+				2075,
 				1126,
-				2078,
+				2079,
 				1668,
-				2293,
-				2296,
-				2330,
-				2308,
-				2302,
-				2320,
-				2322,
-				2325,
+				2294,
+				2297,
+				2331,
+				2309,
+				2303,
+				2321,
+				2323,
+				2326,
 				1861,
 				1896,
 				1900,
@@ -38863,16 +38887,16 @@
 				1908,
 				1911,
 				1885,
-				2343,
-				2353,
-				2348,
+				2344,
+				2354,
+				2349,
 				1038,
 				1031,
 				980,
 				1003,
-				2082,
-				2426,
-				2415,
+				2083,
+				2427,
+				2416,
 				1849,
 				1845,
 				1773,
@@ -38891,7 +38915,7 @@
 			"title": "Type aliases",
 			"kind": 4194304,
 			"children": [
-				2355,
+				2356,
 				1102,
 				1104,
 				1099,
@@ -38929,13 +38953,13 @@
 				679,
 				677,
 				678,
-				2376,
-				2378,
 				2377,
+				2379,
+				2378,
+				2376,
 				2375,
-				2374,
-				2368,
-				2191,
+				2369,
+				2192,
 				1465,
 				1538,
 				1369,
@@ -38943,17 +38967,17 @@
 				1377,
 				1475,
 				1415,
-				2237,
-				2249,
-				2026,
-				2030,
+				2238,
+				2250,
 				2027,
-				2012,
-				2062,
+				2031,
+				2028,
 				2013,
-				2022,
 				2063,
-				2067,
+				2014,
+				2023,
+				2064,
+				2068,
 				1171,
 				1163,
 				1216,
@@ -38970,15 +38994,15 @@
 				1982,
 				1985,
 				1952,
-				2152,
+				2153,
 				913,
-				2295,
-				2301,
+				2296,
+				2302,
 				1889,
 				1892,
 				1895,
+				2343,
 				2342,
-				2341,
 				1044,
 				1045,
 				1667,
@@ -38998,8 +39022,8 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				2423,
-				2393
+				2424,
+				2394
 			]
 		}
 	]
