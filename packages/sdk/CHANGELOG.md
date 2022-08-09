@@ -1,5 +1,13 @@
 # @voucherify/sdk
 
+## 2.0.10
+
+### Patch Changes
+
+- [`e03db27`](https://github.com/voucherifyio/voucherify-js-sdk/commit/e03db276226a579e7d886a8acb5db58b703a6989) [#136](https://github.com/voucherifyio/voucherify-js-sdk/pull/136) Thanks [@darekg11](https://github.com/darekg11)! - Added documentation links to MetadataSchemas API methods
+
+* [`a8557d1`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a8557d1c70f0732c6996175d3b1e917c29986cee) [#134](https://github.com/voucherifyio/voucherify-js-sdk/pull/134) Thanks [@salzhrani](https://github.com/salzhrani)! - add metadata property to ProductsCreateResponse
+
 ## 2.0.9
 
 ### Patch Changes
