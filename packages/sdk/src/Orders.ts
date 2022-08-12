@@ -34,6 +34,9 @@ export class Orders {
 		return this.client.get<T.OrdersListResponse>('/orders', params)
 	}
 
+	/**
+	 * @see https://docs.voucherify.io/reference/import-orders
+	 */
 	public import(orders: T.OrdersCreate[]) {
 		return this.client.post<AAT.AsyncActionCreateResponse>('/orders/import', orders)
 	}

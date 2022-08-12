@@ -676,7 +676,7 @@ client.orders.list()
 client.orders.list(params)
 ```
 
-#### [Import Orders]()
+#### [Import Orders](https://docs.voucherify.io/reference/import-orders)
 ```javascript
 client.orders.import(orders)
 ```
