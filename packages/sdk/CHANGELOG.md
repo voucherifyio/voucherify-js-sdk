@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.11
+
+### Patch Changes
+
+- [`ae6110b`](https://github.com/voucherifyio/voucherify-js-sdk/commit/ae6110b1ec8022c80a8f05f16e5c9de0e6cae180) [#137](https://github.com/voucherifyio/voucherify-js-sdk/pull/137) Thanks [@darekg11](https://github.com/darekg11)! - Added support for orders import API
+
 ## 2.0.10
 
 ### Patch Changes
