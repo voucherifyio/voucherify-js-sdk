@@ -677,7 +677,7 @@ client.orders.list(params)
 ```
 
 #### [Import Orders]()
-```
+```javascript
 client.orders.import(orders)
 ```
 
