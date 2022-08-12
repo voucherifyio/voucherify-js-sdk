@@ -645,6 +645,7 @@ Methods are provided within `client.orders.*` namespace.
 - [Get Order](#get-order)
 - [Update Order](#update-order)
 - [List Orders](#list-orders)
+- [Import Orders](#import-orders)
 
 #### [Create Order](https://docs.voucherify.io/reference/create-order)
 
@@ -673,6 +674,11 @@ client.orders.update(order)
 ```javascript
 client.orders.list()
 client.orders.list(params)
+```
+
+#### [Import Orders](https://docs.voucherify.io/reference/import-orders)
+```javascript
+client.orders.import(orders)
 ```
 
 ---
