@@ -1,4 +1,5 @@
 import * as T from './types/Orders'
+import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
@@ -31,5 +32,9 @@ export class Orders {
 	 */
 	public list(params: T.OrdersListParams = {}) {
 		return this.client.get<T.OrdersListResponse>('/orders', params)
+	}
+
+	public import(orders: T.OrdersCreate[]) {
+		return this.client.post<AAT.AsyncActionCreateResponse>('/orders/import', orders)
 	}
 }

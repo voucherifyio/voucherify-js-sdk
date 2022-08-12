@@ -18,4 +18,8 @@ export interface AsyncActionsListResponse {
 	async_actions: Omit<AsyncActionsResponse, 'result'>[]
 }
 
+export interface AsyncActionCreateResponse {
+	async_action_id: string
+}
+
 export type AsyncActionsGetResponse = AsyncActionsResponse
