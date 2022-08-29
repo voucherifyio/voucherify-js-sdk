@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.12
+
+### Patch Changes
+
+- [`df19c77`](https://github.com/voucherifyio/voucherify-js-sdk/commit/df19c7771be945b1d8708a8992f82e22ce098641) [#141](https://github.com/voucherifyio/voucherify-js-sdk/pull/141) Thanks [@darekg11](https://github.com/darekg11)! - Override SimpleCustomer type to make 'id' property not required in 'RedemptionsRedeemBody' interface since passing ID of customer when redeeming is not required by design
+
 ## 2.0.11
 
 ### Patch Changes
