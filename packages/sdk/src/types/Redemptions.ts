@@ -8,7 +8,7 @@ import { StackableOptions, StackableRedeemableParams } from './Stackable'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
-	customer?: SimpleCustomer & { description?: string }
+	customer?: Omit<SimpleCustomer, 'id'> & { description?: string; id?: string }
 	order?: Pick<Partial<OrdersCreateResponse>, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
 	metadata?: Record<string, any>
 	reward?: RewardRedemptionParams
