@@ -83,6 +83,9 @@ export interface PromotionsValidateResponse {
 		id: string
 		object: 'promotion_tier'
 		banner?: string
+		name: string
+		start_date?: string
+		expiration_date?: string
 		discount?: DiscountUnit | DiscountAmount | DiscountPercent
 		discount_amount?: number
 		metadata?: Record<string, any>
