@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.13
+
+### Patch Changes
+
+- [`ff07c8a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/ff07c8adb204c575e656a48beea4a927d311b89a) [#144](https://github.com/voucherifyio/voucherify-js-sdk/pull/144) Thanks [@darekg11](https://github.com/darekg11)! - Add missing 'name', 'start_date' and 'expiration_date' properties to PromotionsValidateResponse interface
+
 ## 2.0.12
 
 ### Patch Changes
