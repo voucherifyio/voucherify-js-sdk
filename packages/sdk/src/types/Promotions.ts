@@ -88,6 +88,7 @@ export interface PromotionsValidateResponse {
 		expiration_date?: string
 		discount?: DiscountUnit | DiscountAmount | DiscountPercent
 		discount_amount?: number
+		applied_discount_amount?: number
 		metadata?: Record<string, any>
 		order?: {
 			id?: string
@@ -95,7 +96,13 @@ export interface PromotionsValidateResponse {
 			amount: number
 			items?: OrdersItem[]
 			metadata?: Record<string, any>
+			discount_amount?: number
+			total_discount_amount?: number
+			total_amount?: number
+			applied_discount_amount?: number
+			total_applied_discount_amount?: number
 		}
+		hierarchy?: number
 	}[]
 	tracking_id?: string
 }
