@@ -61,7 +61,7 @@ export interface PromotionsCreate {
 }
 
 export interface PromotionsValidateParams {
-	customer?: Omit<SimpleCustomer, 'object'> & { description?: string }
+	customer?: Omit<SimpleCustomer, 'id' | 'object'> & { description?: string; id?: string }
 	order?: {
 		id?: string
 		source_id?: string
