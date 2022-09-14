@@ -94,6 +94,9 @@ export interface PromotionsValidateResponse {
 			id?: string
 			source_id?: string
 			amount: number
+			initial_amount?: number
+			items_discount_amount?: number
+			items_applied_discount_amount?: number
 			items?: OrdersItem[]
 			metadata?: Record<string, any>
 			discount_amount?: number

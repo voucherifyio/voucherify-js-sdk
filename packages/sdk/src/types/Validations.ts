@@ -56,6 +56,9 @@ export interface ValidationsValidateVoucherResponse {
 		applied_discount_amount?: number
 		total_applied_discount_amount?: number
 		items?: OrdersItem[]
+		initial_amount?: number
+		items_discount_amount?: number
+		items_applied_discount_amount?: number
 	}
 	start_date?: string
 	expiration_date?: string
