@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.14
+
+### Patch Changes
+
+- [`98629ca`](https://github.com/voucherifyio/voucherify-js-sdk/commit/98629ca596f1b475ca0ac43ece408738acfc9970) [#149](https://github.com/voucherifyio/voucherify-js-sdk/pull/149) Thanks [@darekg11](https://github.com/darekg11)! - Drop not required customer id property when running promotion validation. Add missing proeprties to promotion validation response
+
 ## 2.0.13
 
 ### Patch Changes
