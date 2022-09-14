@@ -61,7 +61,7 @@ export interface PromotionsCreate {
 }
 
 export interface PromotionsValidateParams {
-	customer?: Omit<SimpleCustomer, 'object'> & { description?: string }
+	customer?: Omit<SimpleCustomer, 'id' | 'object'> & { description?: string; id?: string }
 	order?: {
 		id?: string
 		source_id?: string
@@ -88,14 +88,24 @@ export interface PromotionsValidateResponse {
 		expiration_date?: string
 		discount?: DiscountUnit | DiscountAmount | DiscountPercent
 		discount_amount?: number
+		applied_discount_amount?: number
 		metadata?: Record<string, any>
 		order?: {
 			id?: string
 			source_id?: string
 			amount: number
+			initial_amount?: number
+			items_discount_amount?: number
+			items_applied_discount_amount?: number
 			items?: OrdersItem[]
 			metadata?: Record<string, any>
+			discount_amount?: number
+			total_discount_amount?: number
+			total_amount?: number
+			applied_discount_amount?: number
+			total_applied_discount_amount?: number
 		}
+		hierarchy?: number
 	}[]
 	tracking_id?: string
 }
