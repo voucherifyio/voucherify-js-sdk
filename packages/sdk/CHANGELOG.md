@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.15
+
+### Patch Changes
+
+- [`62525f3`](https://github.com/voucherifyio/voucherify-js-sdk/commit/62525f329bcfc8281d72bd953d8a0b5eeb9982e5) [#152](https://github.com/voucherifyio/voucherify-js-sdk/pull/152) Thanks [@darekg11](https://github.com/darekg11)! - Added missing properties to OrdersItem interface
+
 ## 2.0.14
 
 ### Patch Changes
