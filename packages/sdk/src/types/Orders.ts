@@ -5,20 +5,32 @@ export interface OrdersItem {
 	product_id?: string
 	related_object?: 'product' | 'sku'
 	source_id?: string
+	discount_quantity?: number
+	initial_quantity?: number
 	quantity?: number
 	price?: number
 	amount?: number
 	discount_amount?: number
+	initial_amount?: number
 	applied_discount_amount?: number
+	subtotal_amount?: number
 	product?: {
+		id?: string
+		source_id?: string
 		override?: boolean
 		name?: string
 		metadata?: Record<string, any>
+		price?: number
 	}
 	sku?: {
+		id?: string
+		source_id?: string
 		override?: boolean
 		sku?: string
+		price?: number
 	}
+	object?: 'order_item'
+	metadata?: Record<string, any>
 }
 
 export interface OrdersCreate {
