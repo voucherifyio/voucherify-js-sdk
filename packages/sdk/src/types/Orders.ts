@@ -56,6 +56,7 @@ export interface OrdersCreateResponse {
 	total_discount_amount?: number
 	applied_discount_amount?: number
 	items_applied_discount_amount?: number
+	total_amount?: number
 	total_applied_discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
