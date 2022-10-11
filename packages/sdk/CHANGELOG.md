@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.16
+
+### Patch Changes
+
+- [`0960598`](https://github.com/voucherifyio/voucherify-js-sdk/commit/09605985dfa33b5902ce1f4994a1cb17526a8407) [#154](https://github.com/voucherifyio/voucherify-js-sdk/pull/154) Thanks [@Davies-Owen](https://github.com/Davies-Owen)! - Add missing property to OrdersCreateResponse interface
+
 ## 2.0.15
 
 ### Patch Changes
