@@ -468,6 +468,7 @@ export interface LoyaltiesRedeemRewardResponse {
 		is_referral_code: boolean
 		referrer_id: string
 		holder_id: string
+		created_at: string
 		updated_at: string
 		holder: {
 			id: string

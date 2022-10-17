@@ -42,7 +42,7 @@ export interface ClientSideValidateParams {
 export type ClientSideListVouchersParams = VouchersListParams
 export type ClientSideVoucherListing = Pick<
 	VouchersResponse,
-	'active' | 'code' | 'metadata' | 'assets' | 'object' | 'expiration_date' | 'start_date'
+	'active' | 'code' | 'metadata' | 'assets' | 'object' | 'expiration_date' | 'start_date' | 'created_at'
 >
 
 export interface ClientSideListVouchersResponse {

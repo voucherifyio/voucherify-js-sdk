@@ -130,6 +130,7 @@ export type CampaignsAddVoucherResponse = Pick<
 	| 'object'
 	| 'campaign'
 	| 'category'
+	| 'created_at'
 	| 'type'
 	| 'discount'
 	| 'gift'

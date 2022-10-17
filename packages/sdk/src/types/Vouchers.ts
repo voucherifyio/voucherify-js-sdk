@@ -77,6 +77,7 @@ export interface VouchersResponse {
 	referrer_id?: string
 	holder_id?: string
 	updated_at?: string
+	created_at: string
 	object: 'voucher'
 	validation_rules_assignments: {
 		object: 'list'
