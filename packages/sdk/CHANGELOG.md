@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.0.17
+
+### Patch Changes
+
+- [`8bb9bb5`](https://github.com/voucherifyio/voucherify-js-sdk/commit/8bb9bb5f48ee2a9b00038c192c39431567f34309) [#156](https://github.com/voucherifyio/voucherify-js-sdk/pull/156) Thanks [@Davies-Owen](https://github.com/Davies-Owen)! - add missing created_at property to VouchersResponse, LoyaltiesRedeemRewardResponse, CampaignsAddVoucherResponse, and ClientSideVoucherListing interfaces
+
 ## 2.0.16
 
 ### Patch Changes
