@@ -15082,7 +15082,7 @@
 							},
 							{
 								"type": "literal",
-								"value": "GIFT"
+								"value": "LUCKY_DRAW"
 							},
 							{
 								"type": "literal",
@@ -15090,7 +15090,7 @@
 							},
 							{
 								"type": "literal",
-								"value": "LUCKY_DRAW"
+								"value": "GIFT"
 							}
 						]
 					}
@@ -33125,15 +33125,15 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "DISCOUNT"
-							},
-							{
-								"type": "literal",
 								"value": "UNIT"
 							},
 							{
 								"type": "literal",
 								"value": "AMOUNT"
+							},
+							{
+								"type": "literal",
+								"value": "DISCOUNT"
 							}
 						]
 					}
@@ -34056,11 +34056,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "DISCOUNT_VOUCHER"
+								"value": "GIFT_VOUCHER"
 							},
 							{
 								"type": "literal",
-								"value": "GIFT_VOUCHER"
+								"value": "DISCOUNT_VOUCHER"
 							}
 						]
 					}
@@ -35464,11 +35464,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "DISCOUNT_VOUCHER"
+								"value": "GIFT_VOUCHER"
 							},
 							{
 								"type": "literal",
-								"value": "GIFT_VOUCHER"
+								"value": "DISCOUNT_VOUCHER"
 							}
 						]
 					}
@@ -38711,11 +38711,11 @@
 				"types": [
 					{
 						"type": "literal",
-						"value": "GIFT"
+						"value": "GIFT_VOUCHER"
 					},
 					{
 						"type": "literal",
-						"value": "DISCOUNT"
+						"value": "DISCOUNT_VOUCHER"
 					},
 					{
 						"type": "literal",
