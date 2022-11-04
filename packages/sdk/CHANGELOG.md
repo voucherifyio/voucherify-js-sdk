@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.0
+
+### Minor Changes
+
+- [`eb0f4b1`](https://github.com/voucherifyio/voucherify-js-sdk/commit/eb0f4b164b056018e4e3131c6f9df81fb20098bb) [#160](https://github.com/voucherifyio/voucherify-js-sdk/pull/160) Thanks [@Irene350](https://github.com/Irene350)! - VoucherType input correct enum value DISCOUNT_VOUCHER and GIFT_VOUCHER
+
 ## 2.0.17
 
 ### Patch Changes
