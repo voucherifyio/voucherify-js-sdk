@@ -32,6 +32,7 @@ export interface VouchersResponse {
 	discount?: DiscountAmount | DiscountPercent | DiscountUnit
 	gift?: {
 		amount: number
+		balance: number
 	}
 	loyalty_card?: {
 		points: number
