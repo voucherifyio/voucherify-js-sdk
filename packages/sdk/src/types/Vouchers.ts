@@ -2,7 +2,7 @@ import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { DiscountUnit, DiscountAmount, DiscountPercent } from './DiscountVoucher'
 
-export type VoucherType = 'GIFT' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
 	code_config?: {
 		length?: number
