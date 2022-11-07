@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.1
+
+### Patch Changes
+
+- [`59d7f8a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/59d7f8aeb9fe724e3b9ed49049607c2b221e993c) [#161](https://github.com/voucherifyio/voucherify-js-sdk/pull/161) Thanks [@Davies-Owen](https://github.com/Davies-Owen)! - Add missing gift.balance property to VouchersResponse interface
+
 ## 2.1.0
 
 ### Minor Changes
