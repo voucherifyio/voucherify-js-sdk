@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.3
+
+### Patch Changes
+
+- [`4c4ccf3`](https://github.com/voucherifyio/voucherify-js-sdk/commit/4c4ccf322e2f86c9921593edda3c22691904a19b) [#173](https://github.com/voucherifyio/voucherify-js-sdk/pull/173) Thanks [@darekg11](https://github.com/darekg11)! - Bump qs dependency to 6.9.7 version to fix CVE-2022-24999 / GHSA-hrpp-h998-j3pp
+
 ## 2.1.2
 
 ### Patch Changes
