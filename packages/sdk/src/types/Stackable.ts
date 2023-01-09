@@ -5,6 +5,7 @@ import { ApplicableToResultList } from './ApplicableTo'
 import { DiscountVouchersTypes, DiscountVouchersEffectTypes, DiscountUnitVouchersEffectTypes } from './DiscountVoucher'
 import { SimpleProduct, SimpleSku } from './Products'
 import { LoyaltyPointsTransfer } from './Loyalties'
+import { ValidationError } from './ValidationError'
 
 type ExpandOption = 'order' | 'redeemable' | 'redemption'
 
@@ -58,7 +59,7 @@ export interface StackableRedeemableResultResponse {
 	discount?: StackableRedeemableResultDiscount
 	gift?: StackableRedeemableResultGift
 	loyalty_card?: StackableRedeemableResultLoyaltyCard
-	error?: any
+	error?: ValidationError
 }
 
 export interface StackableRedeemableResponse {
