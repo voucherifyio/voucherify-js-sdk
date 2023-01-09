@@ -141,6 +141,7 @@ export type CampaignsAddVoucherResponse = Pick<
 	| 'active'
 	| 'additional_info'
 	| 'metadata'
+	| 'assets'
 >
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
