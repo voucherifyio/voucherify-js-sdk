@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.4
+
+### Patch Changes
+
+- [`03fc326`](https://github.com/voucherifyio/voucherify-js-sdk/commit/03fc3261231a4263895f07a0bb578c5ffd15752a) [#179](https://github.com/voucherifyio/voucherify-js-sdk/pull/179) Thanks [@darekg11](https://github.com/darekg11)! - Add new 'ValidationError' type describing error that can be returned upon unsuccessful validation of single voucher or in case of stacked validations. Add this new interface to 'StackableRedeemableResultResponse' and 'ValidationsValidateVoucherResponse' types
+
 ## 2.1.3
 
 ### Patch Changes
