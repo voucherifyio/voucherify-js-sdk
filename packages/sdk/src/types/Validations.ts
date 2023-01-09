@@ -3,6 +3,7 @@ import { CustomersCreateBody } from './Customers'
 import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
+import { ValidationError } from './ValidationError'
 
 import { OrdersItem, OrdersCreate, OrdersCreateResponse } from './Orders'
 import { PromotionsValidateParams } from './Promotions'
@@ -63,6 +64,7 @@ export interface ValidationsValidateVoucherResponse {
 	start_date?: string
 	expiration_date?: string
 	tracking_id: string
+	error?: ValidationError
 }
 
 export interface ValidationsValidateStackableParams {
