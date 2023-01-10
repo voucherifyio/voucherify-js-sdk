@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.6
+
+### Patch Changes
+
+- [`089c0be`](https://github.com/voucherifyio/voucherify-js-sdk/commit/089c0bef7983a5cd57e1c38780168482067ac743) [#183](https://github.com/voucherifyio/voucherify-js-sdk/pull/183) Thanks [@emreler](https://github.com/emreler)! - Update 'key' field in ValidationError interface
+
 ## 2.1.5
 
 ### Patch Changes
