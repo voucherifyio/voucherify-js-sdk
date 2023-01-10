@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.5
+
+### Patch Changes
+
+- [`f87ccb7`](https://github.com/voucherifyio/voucherify-js-sdk/commit/f87ccb7049ba5fb33cf2aee01c00fd3e09c54e2a) [#181](https://github.com/voucherifyio/voucherify-js-sdk/pull/181) Thanks [@emreler](https://github.com/emreler)! - Add 'assets' from VouchersResponse to CampaignsAddVoucherResponse type
+
 ## 2.1.4
 
 ### Patch Changes
