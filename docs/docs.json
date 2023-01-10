@@ -403,6 +403,10 @@
 													{
 														"type": "literal",
 														"value": "publish"
+													},
+													{
+														"type": "literal",
+														"value": "assets"
 													}
 												]
 											}
@@ -600,6 +604,10 @@
 															{
 																"type": "literal",
 																"value": "publish"
+															},
+															{
+																"type": "literal",
+																"value": "assets"
 															}
 														]
 													}
@@ -9173,11 +9181,11 @@
 													},
 													{
 														"type": "literal",
-														"value": "loyalty_card"
+														"value": "assets"
 													},
 													{
 														"type": "literal",
-														"value": "assets"
+														"value": "loyalty_card"
 													},
 													{
 														"type": "literal",
@@ -36161,6 +36169,10 @@
 							{
 								"type": "literal",
 								"value": "metadata"
+							},
+							{
+								"type": "literal",
+								"value": "assets"
 							}
 						]
 					}
