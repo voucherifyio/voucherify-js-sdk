@@ -2,7 +2,7 @@
  * @internal
  */
 export class VoucherifyError extends Error {
-	public code: string
+	public code: number
 	public key: string
 	public details?: string
 	public request_id?: string
