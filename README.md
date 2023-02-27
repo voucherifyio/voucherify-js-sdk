@@ -122,13 +122,13 @@ If you wish to see code examples for server-side error handling, you can check i
 Structure / typing for error returned from Voucherify API can be seen here:
 - [VoucherifyError class](/packages/sdk/src/VoucherifyError.ts)
 
-If you wish to receive original `AxiosError` when `VoucherifyError` is thrown then you need to explicitly set `exposeAxiosError` property to `true` when creating instance of `VouchierfyClient`, ie:
+If you wish to receive original `AxiosError` when `VoucherifyError` is thrown then you need to explicitly set `exposeErrorCause` property to `true` when creating instance of `VouchierfyClient`, ie:
 
 ```
 const voucherify = VoucherifyServerSide({
 	applicationId: 'APPLICATION-ID',
 	secretKey: 'SECRET-KEY',
-	exposeAxiosError: true
+	exposeErrorCause: true
 })
 ```
 

@@ -103,7 +103,7 @@ export interface VoucherifyServerSideOptions {
 	 * It can prove to be useful when debugging various scenarios.
 	 * The original Axios error will be included in cause property of VoucherifyError
 	 */
-	exposeAxiosError?: boolean
+	exposeErrorCause?: boolean
 }
 interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
@@ -168,7 +168,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		basePath: 'v1',
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
-		exposeAxiosError: options.exposeAxiosError ?? false,
+		exposeErrorCause: options.exposeErrorCause ?? false,
 	})
 	const asyncActions = new AsyncActions(client)
 	const balance = new Balance(client)

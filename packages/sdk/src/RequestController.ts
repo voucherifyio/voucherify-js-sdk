@@ -7,7 +7,7 @@ export interface RequestControllerOptions {
 	baseURL: string
 	basePath: string
 	headers: Record<string, any>
-	exposeAxiosError: boolean
+	exposeErrorCause: boolean
 }
 
 /**
@@ -20,13 +20,13 @@ export class RequestController {
 	private request: AxiosInstance
 	private lastResponseHeaders: Record<string, string>
 	private isLastResponseHeadersSet: boolean
-	private exposeAxiosError: boolean
+	private exposeErrorCause: boolean
 
-	constructor({ basePath, baseURL, headers, exposeAxiosError }: RequestControllerOptions) {
+	constructor({ basePath, baseURL, headers, exposeErrorCause }: RequestControllerOptions) {
 		this.basePath = basePath
 		this.baseURL = baseURL
 		this.headers = headers
-		this.exposeAxiosError = exposeAxiosError
+		this.exposeErrorCause = exposeErrorCause
 		this.lastResponseHeaders = {}
 		this.isLastResponseHeadersSet = false
 
@@ -44,7 +44,7 @@ export class RequestController {
 					new VoucherifyError(
 						error.response.status,
 						error.response.data,
-						this.exposeAxiosError === true ? error : undefined,
+						this.exposeErrorCause === true ? error : undefined,
 					),
 				)
 			}
