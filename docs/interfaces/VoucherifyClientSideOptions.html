@@ -84,6 +84,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#clientApplicationId" class="tsd-kind-icon">client<wbr>Application<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#clientSecretKey" class="tsd-kind-icon">client<wbr>Secret<wbr>Key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#customHeaders" class="tsd-kind-icon">custom<wbr>Headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#exposeErrorCause" class="tsd-kind-icon">expose<wbr>Error<wbr>Cause</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#origin" class="tsd-kind-icon">origin</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="VoucherifyClientSideOptions.html#trackingId" class="tsd-kind-icon">tracking<wbr>Id</a></li>
 							</ul>
@@ -168,6 +169,20 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="exposeErrorCause" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> expose<wbr>Error<wbr>Cause</h3>
+					<div class="tsd-signature tsd-kind-icon">expose<wbr>Error<wbr>Cause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you wish to include original Axios error in VoucherifyError instance set this to true
+								It can prove to be useful when debugging various scenarios.
+							The original Axios error will be included in cause property of VoucherifyError</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="origin" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> origin</h3>
 					<div class="tsd-signature tsd-kind-icon">origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -232,6 +247,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="VoucherifyClientSideOptions.html#customHeaders" class="tsd-kind-icon">custom<wbr>Headers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="VoucherifyClientSideOptions.html#exposeErrorCause" class="tsd-kind-icon">expose<wbr>Error<wbr>Cause</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="VoucherifyClientSideOptions.html#origin" class="tsd-kind-icon">origin</a>
