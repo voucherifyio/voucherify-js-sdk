@@ -1347,6 +1347,13 @@ You can find TS example in [examples/with-nodejs-typescript](/examples/with-node
 
 Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
 
+If you wish to see code examples for server-side error handling, you can check it here:
+- [Error handling for Node.JS example without TypeScript](../../examples/sdk/with-nodejs/server-error-handling.js)
+- [Error handling for Node.JS example with TypeScript](../../examples/sdk//with-nodejs-typescript/server-error-handling.ts)
+
+Structure / typing for error returned from Voucherify API can be seen here:
+- [VoucherifyError class](src/VoucherifyError.ts)
+
 # <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
 
 Legacy client-side Voucherify JS SDK is available here: [voucherify.js](https://github.com/rspective/voucherify.js).
