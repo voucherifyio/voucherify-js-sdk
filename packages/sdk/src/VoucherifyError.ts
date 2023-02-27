@@ -10,6 +10,9 @@ export class VoucherifyError extends Error {
 	public request_id?: string
 	public resource_id?: string
 	public resource_type?: string
+	public related_object_ids?: string[]
+	public related_object_type?: string
+	public related_object_total?: number
 	public cause?: AxiosError
 
 	constructor(statusCode: number, body?: unknown, axiosError?: AxiosError) {
@@ -25,6 +28,9 @@ export class VoucherifyError extends Error {
 		this.request_id = (<any>body).request_id
 		this.resource_id = (<any>body).resource_id
 		this.resource_type = (<any>body).resource_type
+		this.related_object_ids = (<any>body).related_object_ids
+		this.related_object_type = (<any>body).related_object_type
+		this.related_object_total = (<any>body).related_object_total
 		this.cause = axiosError
 	}
 }
