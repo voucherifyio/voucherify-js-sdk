@@ -7,6 +7,7 @@ export interface RequestControllerOptions {
 	baseURL: string
 	basePath: string
 	headers: Record<string, any>
+	exposeAxiosError: boolean
 }
 
 /**
@@ -19,11 +20,13 @@ export class RequestController {
 	private request: AxiosInstance
 	private lastResponseHeaders: Record<string, string>
 	private isLastResponseHeadersSet: boolean
+	private exposeAxiosError: boolean
 
-	constructor({ basePath, baseURL, headers }: RequestControllerOptions) {
+	constructor({ basePath, baseURL, headers, exposeAxiosError }: RequestControllerOptions) {
 		this.basePath = basePath
 		this.baseURL = baseURL
 		this.headers = headers
+		this.exposeAxiosError = exposeAxiosError
 		this.lastResponseHeaders = {}
 		this.isLastResponseHeadersSet = false
 
@@ -37,7 +40,13 @@ export class RequestController {
 			 * Handle any HTTP response error (status code outside of 2xx) as a VoucherifyError
 			 */
 			if (error?.response?.status) {
-				return Promise.reject(new VoucherifyError(error.response.status, error.response.data))
+				return Promise.reject(
+					new VoucherifyError(
+						error.response.status,
+						error.response.data,
+						this.exposeAxiosError === true ? error : undefined,
+					),
+				)
 			}
 			return Promise.reject(error)
 		})

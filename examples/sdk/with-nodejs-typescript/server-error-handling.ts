@@ -6,6 +6,7 @@ import { AxiosError } from 'axios'
 const voucherify = VoucherifyServerSide({
 	applicationId: '5452e923-810c-4880-83fb-65202fab8e28',
 	secretKey: '6a0f56de-b5a8-4893-bedd-79711134108b',
+	// exposeAxiosError: true - if you wish to include bare Axios error in VoucherifyError
 })
 
 voucherify.customers

@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios'
+
 /**
  * @internal
  */
@@ -8,7 +10,9 @@ export class VoucherifyError extends Error {
 	public request_id?: string
 	public resource_id?: string
 	public resource_type?: string
-	constructor(statusCode: number, body?: unknown) {
+	public cause?: AxiosError
+
+	constructor(statusCode: number, body?: unknown, axiosError?: AxiosError) {
 		body = body ?? {}
 
 		const message = (<any>body)?.message || generateMessage(body, statusCode)
@@ -21,6 +25,7 @@ export class VoucherifyError extends Error {
 		this.request_id = (<any>body).request_id
 		this.resource_id = (<any>body).resource_id
 		this.resource_type = (<any>body).resource_type
+		this.cause = axiosError
 	}
 }
 
