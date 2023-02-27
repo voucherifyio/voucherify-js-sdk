@@ -1,5 +1,13 @@
 # @voucherify/sdk
 
+## 2.1.7
+
+### Patch Changes
+
+- [`92ab4fb`](https://github.com/voucherifyio/voucherify-js-sdk/commit/92ab4fb3577332b60846536204c9d3cc6955b22b) [#188](https://github.com/voucherifyio/voucherify-js-sdk/pull/188) Thanks [@darekg11](https://github.com/darekg11)! - Add explicit properties to VoucherifyError class to make it easier for TypeScript folks. Added examples of proper error handling for both classical Node.JS and for TypeScript. Examples includes different handling for networking and API errors
+
+* [`48a46b9`](https://github.com/voucherifyio/voucherify-js-sdk/commit/48a46b9c3c3b64636fa8885919ca9311f2b497e5) [#190](https://github.com/voucherifyio/voucherify-js-sdk/pull/190) Thanks [@darekg11](https://github.com/darekg11)! - Add missing 'related_object_ids', 'related_object_type' and 'related_object_total' properties to 'VoucherifyError' class. Those properties are returned fmor API in case of 'resource_in_ise' error
+
 ## 2.1.6
 
 ### Patch Changes
