@@ -115,6 +115,25 @@ You can find TS example in [examples/sdk/with-nodejs-typescript](/examples/sdk/w
 
 Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
 
+If you wish to see code examples for server-side error handling, you can check it here:
+- [Error handling for Node.JS example without TypeScript](/examples/sdk/with-nodejs/server-error-handling.js)
+- [Error handling for Node.JS example with TypeScript](/examples/sdk//with-nodejs-typescript/server-error-handling.ts)
+
+Structure / typing for error returned from Voucherify API can be seen here:
+- [VoucherifyError class](/packages/sdk/src/VoucherifyError.ts)
+
+If you wish to receive original `AxiosError` when `VoucherifyError` is thrown then you need to explicitly set `exposeErrorCause` property to `true` when creating instance of `VouchierfyClient`, ie:
+
+```
+const voucherify = VoucherifyServerSide({
+	applicationId: 'APPLICATION-ID',
+	secretKey: 'SECRET-KEY',
+	exposeErrorCause: true
+})
+```
+
+Original `AxiosError` will be available under `cause` property of `VoucherifyError`
+
 # <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
 
 Legacy client-side Voucherify JS SDK is available here: [voucherify.js](https://github.com/rspective/voucherify.js).

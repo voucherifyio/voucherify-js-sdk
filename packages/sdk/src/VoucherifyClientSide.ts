@@ -77,6 +77,12 @@ export interface VoucherifyClientSideOptions {
 	 * ```
 	 */
 	customHeaders?: Record<string, string>
+	/**
+	 * If you wish to include original Axios error in VoucherifyError instance set this to true
+	 * It can prove to be useful when debugging various scenarios.
+	 * The original Axios error will be included in cause property of VoucherifyError
+	 */
+	exposeErrorCause?: boolean
 }
 interface VoucherifyCustomerHeaders {
 	'X-Client-Application-Id': string
@@ -110,6 +116,7 @@ export function VoucherifyClientSide(options: VoucherifyClientSideOptions): Clie
 		basePath: 'client/v1',
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
+		exposeErrorCause: options.exposeErrorCause ?? false,
 	})
 
 	return new ClientSide(client, options.trackingId)
