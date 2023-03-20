@@ -34,6 +34,7 @@ export interface PromotionTier {
 	}
 	hierarchy: number
 	metadata?: Record<string, any>
+	active?: boolean
 }
 
 export interface PromotionTiersListAllParams {
@@ -104,6 +105,27 @@ export interface PromotionTiersRedeemResponse {
 				total_amount: number
 				total_discount_amount: number
 			}
+		}
+	}
+}
+
+export interface PromotionTierRedeemDetailsSimple {
+	id: string
+	name: string
+	banner?: string
+	campaign: {
+		id: string
+	}
+}
+
+export type PromotionTierRedeemDetails = PromotionTier & {
+	summary: {
+		redemptions: {
+			total_redeemed: number
+		}
+		orders: {
+			total_amount: number
+			total_discount_amount: number
 		}
 	}
 }
