@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.8
+
+### Patch Changes
+
+- [`8e7bf47`](https://github.com/voucherifyio/voucherify-js-sdk/commit/8e7bf477d969942fd59ae2fb6444b13662a260f6) [#195](https://github.com/voucherifyio/voucherify-js-sdk/pull/195) Thanks [@darekg11](https://github.com/darekg11)! - Add 'active' field to 'PromotionTier' interface. Add 'PromotionTierRedeemDetailsSimple' and 'PromotionTierRedeemDetails' types and reuse them in 'RedemptionsRedeemResponse' so that 'RedemptionsRedeemStackableRedemptionResult' can return promotion_tier property
+
 ## 2.1.7
 
 ### Patch Changes
