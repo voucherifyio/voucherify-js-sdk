@@ -5,6 +5,7 @@ import { VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
 import { StackableOptions, StackableRedeemableParams } from './Stackable'
+import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
@@ -35,6 +36,7 @@ export interface RedemptionsRedeemResponse {
 	loyalty_card?: {
 		points: number
 	}
+	promotion_tier?: PromotionTierRedeemDetailsSimple | PromotionTierRedeemDetails
 	failure_code?: string
 	failure_message?: string
 }
