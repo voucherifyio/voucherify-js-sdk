@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.1.9
+
+### Patch Changes
+
+- [`d06989b`](https://github.com/voucherifyio/voucherify-js-sdk/commit/d06989b6b3476469719425f922cba930fb8b8f9d) [#198](https://github.com/voucherifyio/voucherify-js-sdk/pull/198) Thanks [@darekg11](https://github.com/darekg11)! - Add missing 'filters' property to 'VouchersListParams' interface to allow for advanced filters for fetching resources
+
 ## 2.1.8
 
 ### Patch Changes
