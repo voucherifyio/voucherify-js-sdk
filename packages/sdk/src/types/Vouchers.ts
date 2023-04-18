@@ -189,6 +189,10 @@ export interface VouchersListParams {
 		| 'campaign'
 		| '-category'
 		| 'category'
+	filters?: {
+		junction?: string
+		[filter_condition: string]: any
+	}
 }
 
 export interface VouchersListResponse {
