@@ -68,6 +68,6 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference/list-campaigns
 	 */
 	public list(params: T.CampaignsListParams = {}) {
-		return this.client.get('/campaigns', params)
+		return this.client.get<T.CampaignsListResponse>('/campaigns', params)
 	}
 }
