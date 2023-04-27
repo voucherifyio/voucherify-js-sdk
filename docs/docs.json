@@ -923,8 +923,9 @@
 								"type": "reference",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "unknown"
+										"type": "reference",
+										"id": 1135,
+										"name": "CampaignsListResponse"
 									}
 								],
 								"name": "Promise"
