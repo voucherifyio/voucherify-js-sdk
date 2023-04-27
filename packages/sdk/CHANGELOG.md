@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.2.0
+
+### Minor Changes
+
+- [`4451288`](https://github.com/voucherifyio/voucherify-js-sdk/commit/4451288cbbef3e3c288a771ed52e767ecc7ed5ab) [#203](https://github.com/voucherifyio/voucherify-js-sdk/pull/203) Thanks [@darekg11](https://github.com/darekg11)! - Add 'CampaignsListResponse' type to return value of campaigns.list method
+
 ## 2.1.9
 
 ### Patch Changes
