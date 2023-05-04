@@ -1,4 +1,4 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
+import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 
 import { OrdersItem } from './Orders'
 import { PromotionTier } from './PromotionTiers'
@@ -53,7 +53,7 @@ export interface PromotionsCreate {
 			name: string
 			banner: string
 			action: {
-				discount: DiscountUnit | DiscountAmount | DiscountPercent
+				discount: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
 			}
 			metadata?: Record<string, any>
 		}[]
@@ -86,7 +86,7 @@ export interface PromotionsValidateResponse {
 		name: string
 		start_date?: string
 		expiration_date?: string
-		discount?: DiscountUnit | DiscountAmount | DiscountPercent
+		discount?: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
 		discount_amount?: number
 		applied_discount_amount?: number
 		metadata?: Record<string, any>

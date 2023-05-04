@@ -1,6 +1,6 @@
 import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
 import { VouchersListParams, VouchersResponse } from './Vouchers'
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
+import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 import { ConsentsListResponse } from './Consents'
@@ -54,7 +54,7 @@ export interface ClientSideListVouchersResponse {
 export interface ClientSideValidateResponse {
 	code?: string
 	valid: boolean
-	discount?: DiscountUnit | DiscountAmount | DiscountPercent
+	discount?: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
 	applicable_to?: ApplicableToResultList
 	order?: {
 		amount: number
