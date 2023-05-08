@@ -1,6 +1,6 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
-import { DiscountUnit, DiscountAmount, DiscountPercent } from './DiscountVoucher'
+import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
 
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
@@ -13,7 +13,7 @@ export interface SimpleVoucher {
 	}
 	type: VoucherType
 	is_referral_code?: boolean
-	discount?: DiscountUnit | DiscountAmount | DiscountPercent
+	discount?: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
 	loyalty_card?: {
 		points: number
 		balance: number
@@ -29,7 +29,7 @@ export interface VouchersResponse {
 	campaign?: string
 	category?: string
 	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount?: DiscountAmount | DiscountPercent | DiscountUnit
+	discount?: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
 	gift?: {
 		amount: number
 		balance: number
@@ -210,7 +210,7 @@ export interface VouchersImport {
 	code: string
 	category?: string
 	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit
+	discount: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
 	additional_info?: string
 	start_date?: string
 	expiration_date?: string

@@ -1,4 +1,4 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
+import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { CustomersCreateBody } from './Customers'
 import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
@@ -41,7 +41,7 @@ export interface ValidationsValidateVoucherResponse {
 	metadata?: Record<string, any>
 	code?: string
 	valid?: boolean
-	discount?: DiscountAmount | DiscountUnit | DiscountPercent
+	discount?: DiscountAmount | DiscountUnit | DiscountPercent | DiscountFixed
 	gift?: {
 		amount: number
 		balance: number

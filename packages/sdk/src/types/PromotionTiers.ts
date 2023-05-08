@@ -1,4 +1,4 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit } from './DiscountVoucher'
+import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 import { SimpleCustomer } from './Customers'
@@ -12,7 +12,7 @@ export interface SimplePromotionTier {
 	id: string
 	name: string
 	banner?: string
-	discount: DiscountUnit | DiscountPercent | DiscountAmount
+	discount: DiscountUnit | DiscountPercent | DiscountAmount | DiscountFixed
 	hierarchy: number
 	object: 'promotion_tier'
 }
@@ -30,7 +30,7 @@ export interface PromotionTier {
 	}
 	validation_rule_assignments: ValidationRulesListAssignmentsResponse
 	action: {
-		discount: DiscountUnit | DiscountPercent | DiscountAmount
+		discount: DiscountUnit | DiscountPercent | DiscountAmount | DiscountFixed
 	}
 	hierarchy: number
 	metadata?: Record<string, any>
@@ -56,7 +56,7 @@ export interface PromotionTiersCreateParams {
 	name?: string
 	banner?: string
 	action?: {
-		discount?: DiscountUnit | DiscountPercent | DiscountAmount
+		discount?: DiscountUnit | DiscountPercent | DiscountAmount | DiscountFixed
 	}
 	metadata?: Record<string, any>
 }

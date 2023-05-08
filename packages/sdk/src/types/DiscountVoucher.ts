@@ -61,3 +61,8 @@ export interface DiscountPercent {
 	amount_limit?: number
 	effect?: DiscountPercentVouchersEffectTypes
 }
+export interface DiscountFixed {
+	type?: DiscountVouchersTypesEnum.FIXED
+	fixed_amount?: number
+	effect?: DiscountFixedVouchersEffectTypes
+}
