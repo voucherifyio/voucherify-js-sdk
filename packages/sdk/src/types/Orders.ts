@@ -35,7 +35,7 @@ export interface OrdersItem {
 
 export interface OrdersCreate {
 	source_id?: string
-	status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
+	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	customer?: CustomerRequest
 	amount?: number
 	discount_amount?: number
@@ -69,7 +69,7 @@ export type OrdersGetResponse = OrdersCreateResponse
 export interface OrdersUpdate {
 	id: string
 	source_id?: string
-	status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
+	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	items?: OrdersItem[]
 	amount?: number
 	discount_amount?: number
