@@ -21479,7 +21479,7 @@
 							},
 							{
 								"type": "literal",
-								"value": "CANCELLED"
+								"value": "CANCELED"
 							},
 							{
 								"type": "literal",
@@ -21711,15 +21711,15 @@
 							},
 							{
 								"type": "literal",
+								"value": "CANCELED"
+							},
+							{
+								"type": "literal",
 								"value": "FULFILLED"
 							},
 							{
 								"type": "literal",
 								"value": "PROCESSING"
-							},
-							{
-								"type": "literal",
-								"value": "CANCELED"
 							}
 						]
 					}
@@ -22547,7 +22547,7 @@
 							},
 							{
 								"type": "literal",
-								"value": "CANCELLED"
+								"value": "CANCELED"
 							},
 							{
 								"type": "literal",
@@ -24389,7 +24389,7 @@
 											},
 											{
 												"type": "literal",
-												"value": "CANCELLED"
+												"value": "CANCELED"
 											},
 											{
 												"type": "literal",
