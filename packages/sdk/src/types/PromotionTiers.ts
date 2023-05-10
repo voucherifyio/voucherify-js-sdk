@@ -70,7 +70,7 @@ export interface PromotionTiersRedeemParams {
 		source_id?: string
 		amount?: number
 		items?: OrdersItem[]
-		status?: 'CREATED' | 'PAID' | 'CANCELLED' | 'FULFILLED'
+		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 		metadata?: Record<string, any>
 	}
 	metadata?: Record<string, any>
