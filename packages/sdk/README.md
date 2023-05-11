@@ -494,6 +494,14 @@ client.promotions.tiers.list(promotionCampaignId)
 
 Check [promotion's tier object](https://docs.voucherify.io/reference/the-promotion-object)
 
+#### [Get Promotion Tier](https://docs.voucherify.io/reference/get-promotion-tier)
+
+```javascript
+client.promotions.tiers.get(tierId)
+```
+
+Check [promotion's tier object](https://docs.voucherify.io/reference/the-promotion-object)
+
 #### [List All Promotion Tiers](https://docs.voucherify.io/reference/list-promotion-tiers)
 
 ```javascript
