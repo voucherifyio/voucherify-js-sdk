@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': major
+'@voucherify/sdk': patch
 ---
 
 Added support for get promotion tier endpoint
