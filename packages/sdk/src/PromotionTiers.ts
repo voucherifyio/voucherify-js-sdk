@@ -19,6 +19,12 @@ export class PromotionTiers {
 		return this.client.get<T.PromotionTiersListResponse>(`/promotions/${encode(promotionId)}/tiers`)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/get-promotion-tier
+	 */
+	public get(tierId: string) {
+		return this.client.get<T.PromotionTierGetResponse>(`/promotions/tiers/${encode(tierId)}`)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/add-promotion-tier-to-campaign
 	 */
 	public create(promotionId: string, params: T.PromotionTiersCreateParams) {

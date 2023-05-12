@@ -52,6 +52,8 @@ export interface PromotionTiersListAllResponse {
 
 export type PromotionTiersListResponse = PromotionTiersListAllResponse
 
+export type PromotionTierGetResponse = PromotionTier
+
 export interface PromotionTiersCreateParams {
 	name?: string
 	banner?: string
