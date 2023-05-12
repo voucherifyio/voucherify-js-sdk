@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.2.3
+
+### Patch Changes
+
+- [`312d4a8`](https://github.com/voucherifyio/voucherify-js-sdk/commit/312d4a891a9b5da7543aff1ae3294961043efb92) [#205](https://github.com/voucherifyio/voucherify-js-sdk/pull/205) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Added support for get promotion tier endpoint
+
 ## 2.2.2
 
 ### Patch Changes
