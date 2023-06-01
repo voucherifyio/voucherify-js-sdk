@@ -60,7 +60,9 @@ export interface ValidationsValidateVoucherResponse {
 		initial_amount?: number
 		items_discount_amount?: number
 		items_applied_discount_amount?: number
+		metadata?: Record<string, any>
 	}
+	session?: ValidationSessionParams
 	start_date?: string
 	expiration_date?: string
 	tracking_id: string
