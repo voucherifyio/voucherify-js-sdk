@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.2.4
+
+### Patch Changes
+
+- [`2899ae6`](https://github.com/voucherifyio/voucherify-js-sdk/commit/2899ae6a1044388f4a5426ef22b8b52e00b747a4) [#214](https://github.com/voucherifyio/voucherify-js-sdk/pull/214) Thanks [@darekg11](https://github.com/darekg11)! - Added 'metadata' property to 'order' object in 'ValidationsValidateVoucherResponse' inteface. Added 'session' property to 'ValidationsValidateVoucherResponse' interface
+
 ## 2.2.3
 
 ### Patch Changes
