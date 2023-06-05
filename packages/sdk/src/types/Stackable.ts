@@ -36,10 +36,14 @@ export interface StackableRedeemableResultDiscount {
 	type: DiscountVouchersTypes
 	effect: DiscountVouchersEffectTypes
 	amount_off?: number
+	amount_off_formula?: string
 	percent_off?: number
+	percent_off_formula?: string
 	amount_limit?: number
 	fixed_amount?: number
+	fixed_amount_formula?: string
 	unit_off?: number
+	unit_off_formula?: string
 	unit_type?: string
 	sku?: SimpleSku
 	product?: SimpleProduct

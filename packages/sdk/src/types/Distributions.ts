@@ -19,9 +19,12 @@ type OrderType =
 export interface VoucherDiscount {
 	type: 'UNIT' | 'AMOUNT' | 'DISCOUNT'
 	unit_off?: number
+	unit_off_formula?: string
 	effect?: string
 	amount_off?: number
+	amount_off_formula?: string
 	percent_off?: number
+	percent_off_formula?: string
 	amount_limit?: number
 }
 
