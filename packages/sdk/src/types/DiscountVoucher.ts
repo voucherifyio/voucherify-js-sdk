@@ -43,6 +43,7 @@ interface SimpleProductDiscountUnit {
 export interface DiscountUnit {
 	type?: DiscountVouchersTypesEnum.UNIT
 	unit_off?: number
+	unit_off_formula?: string
 	effect?: DiscountUnitVouchersEffectTypes
 	unit_type?: string
 	product?: SimpleProductDiscountUnit
@@ -52,17 +53,20 @@ export interface DiscountUnit {
 export interface DiscountAmount {
 	type?: DiscountVouchersTypesEnum.AMOUNT
 	amount_off?: number
+	amount_off_formula?: string
 	effect?: DiscountAmountVouchersEffectTypes
 }
 
 export interface DiscountPercent {
 	type?: DiscountVouchersTypesEnum.PERCENT
 	percent_off?: number
+	percent_off_formula?: string
 	amount_limit?: number
 	effect?: DiscountPercentVouchersEffectTypes
 }
 export interface DiscountFixed {
 	type?: DiscountVouchersTypesEnum.FIXED
 	fixed_amount?: number
+	fixed_amount_formula?: string
 	effect?: DiscountFixedVouchersEffectTypes
 }
