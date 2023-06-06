@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.2.5
+
+### Patch Changes
+
+- [`d5751ea`](https://github.com/voucherifyio/voucherify-js-sdk/commit/d5751ea57c46f32275c4630bd4d2b6d41f3506b2) [#216](https://github.com/voucherifyio/voucherify-js-sdk/pull/216) Thanks [@Davies-Owen](https://github.com/Davies-Owen)! - add amount_off_formula, percent_off_formula, unit_off_formula, and fixed_amount_formula fields to Voucher types: DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed, VoucherDiscount, and StackableRedeemableResultDiscount
+
 ## 2.2.4
 
 ### Patch Changes
