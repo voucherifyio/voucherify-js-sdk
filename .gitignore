@@ -1,4 +1,5 @@
 .vscode
+.idea/*
 .old
 .DS_Store
 *.iml
