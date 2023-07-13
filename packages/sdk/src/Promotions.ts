@@ -5,6 +5,12 @@ import type { PromotionTiers } from './PromotionTiers'
 
 export class Promotions {
 	constructor(private client: RequestController, public tiers: PromotionTiers) {}
+	// /**
+	//  * @see https://docs.voucherify.io/reference/create-promotion-campaign
+	//  */
+	// public create(promotionCampaign: T.PromotionsCreate) {
+	// 	return this.client.post<T.PromotionsCreateResponse>('/campaigns', promotionCampaign)
+	// }
 	/**
 	 * @see https://docs.voucherify.io/reference/validate-promotions-1
 	 */
