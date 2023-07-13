@@ -328,9 +328,17 @@ export type CampaignsImportVouchers = Pick<
 >
 
 export interface CampaignsListParams {
+	campaign_type?:
+		| 'DISCOUNT_COUPONS'
+		| 'PROMOTION'
+		| 'GIFT_VOUCHERS'
+		| 'REFERRAL_PROGRAM'
+		| 'LOYALTY_PROGRAM'
+		| 'LUCKY_DRAW'
+	expand?: 'category'
 	limit?: number
+	order?: '-created_at' | '-updated_at' | 'created_at' | 'updated_at'
 	page?: number
-	campaign_type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
 	filters?: {
 		junction?: string
 		[filter_condition: string]: any
