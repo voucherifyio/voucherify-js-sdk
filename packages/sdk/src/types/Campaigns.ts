@@ -1,8 +1,16 @@
-import { SimpleVoucher, VouchersImport, VouchersResponse } from './Vouchers'
+import {
+	VoucherObjectDiscountAmount,
+	VoucherObjectDiscountFixed,
+	VoucherObjectDiscountPercentage,
+	VoucherObjectDiscountShipping,
+	VoucherObjectDiscountUnitMultiple,
+	VoucherObjectDiscountUnitOne,
+	VouchersImport,
+	VouchersResponse,
+} from './Vouchers'
 
 import { CustomerRequest } from './Customers'
 import { OrdersGetResponse } from './Orders'
-import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
 interface ReferralProgramCustomEventRedemption {
 	conversion_event_type: 'custom_event'
@@ -34,38 +42,209 @@ interface ReferralProgramRedemption {
 }
 
 export interface CampaignResponse {
-	id: string
-	name: string
-	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	campaign_type:
+		| 'LUCKY_DRAW'
+		| 'LOYALTY_PROGRAM'
+		| 'PROMOTION'
+		| 'DISCOUNT_COUPONS'
+		| 'GIFT_VOUCHERS'
+		| 'REFERRAL_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	category?: string
-	auto_join?: boolean
-	join_once?: boolean
-	description?: string
-	start_date?: string
-	validation_rules_assignments: {
-		data?: ValidationRulesCreateAssignmentResponse[]
-		object: 'list'
-		total: number
-		data_ref: 'data'
+	categories: {
+		created_at: string
+		hierarchy: number
+		id: string
+		name: string
+		object: 'category'
+		updated_at: string
 	}
+	category?: string
+	category_id?: string
+	created_at: string
+	creation_status: 'DONE' | 'DRAFT' | 'FAILED' | 'IN_PROGRESS' | 'MODIFYING'
 	expiration_date?: string
+	id: string
+	join_once?: boolean
+	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	metadata?: Record<string, any>
+	name: string
+	object: 'campaign'
+	promotion: {
+		data_ref: 'tiers'
+		has_more: boolean
+		object: 'list'
+		tiers?: {
+			action: {
+				discount:
+					| VoucherObjectDiscountAmount
+					| VoucherObjectDiscountPercentage
+					| VoucherObjectDiscountFixed
+					| VoucherObjectDiscountUnitOne
+					| VoucherObjectDiscountUnitMultiple
+					| VoucherObjectDiscountShipping
+			}
+			active: boolean
+			banner: string
+			campaign: {
+				active: boolean
+				category_id: string
+				expiration_date: string
+				id: string
+				object: 'campaign'
+				start_date: string
+				validity_day_of_week: number[]
+				validity_timeframe: {
+					duration: string
+					interval: string
+				}
+			}
+			campaign_id: string
+			categories: {
+				created_at: string
+				hierarchy: number
+				id: string
+				name: string
+				object: 'category'
+				updated_at: string
+			}
+			category_id: string
+			created_at: string
+			expiration_date: string
+			hierarchy: number
+			id: string
+			metadata: Record<string, any>
+			name: string
+			object: 'promotion_tier'
+			start_date: string
+			summary: {
+				orders: {
+					total_amount: number
+					total_discount_amount: number
+				}
+				redemptions: {
+					total_redeemed: number
+				}
+			}
+			updated_at: string
+			validation_rule_assignments: {
+				data: {
+					created_at: string
+					id: string
+					object: 'validation_rules_assignment'
+					related_object_id: string
+					related_object_type:
+						| 'campaign'
+						| 'distribution'
+						| 'earning_rule'
+						| 'promotion_tier'
+						| 'reward_assignment'
+						| 'voucher'
+					rule_id: string
+				}[]
+				data_ref: 'data'
+				object: 'list'
+				total: number
+			}
+			validity_day_of_week: number[]
+			validity_timeframe: {
+				duration: string
+				interval: string
+			}
+		}[]
+		// validity_day_of_week: number[]
+		// validity_timeframe: {
+		// 	duration: string
+		// 	interval: string
+		// }
+		total: number
+	}
+	protected: boolean
+	referral_program?: {
+		conversion_event_type: 'custom_event' | 'redemption'
+		custom_event: {
+			id: string
+			name: string
+		}
+		referee_reward: {
+			type: 'GIFT_VOUCHER' | 'LOYALTY_CARD'
+			amount: string
+			related_object_parent: {
+				id: string
+				name: string
+				object: string
+			}
+		}
+	}
+	auto_join?: boolean
+	// join_once?: boolean
+	// description?: string
+	// validation_rules_assignments: {
+	// 	data?: ValidationRulesCreateAssignmentResponse[]
+	// 	object: 'list'
+	// 	total: number
+	// 	data_ref: 'data'
+	// }
 	activity_duration_after_publishing?: string
 	validity_timeframe?: {
 		interval?: string
 		duration?: string
 	}
 	validity_day_of_week?: number[]
-	metadata?: Record<string, any>
-	created_at: string
+	// created_at: string
 	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
-	voucher?: SimpleVoucher
-	referral_program?: ReferralProgramCustomEventRedemption | ReferralProgramRedemption
+	voucher?: CampaignVoucherObjectDiscount | CampaignVoucherObjectGiftCard | CampaignVoucherObjectLoyaltyCard
+	// referral_program?: ReferralProgramCustomEventRedemption | ReferralProgramRedemption
+	start_date: string
+	updated_at: string
 	use_voucher_metadata_schema?: boolean
-	protected?: boolean
+	// protected?: boolean
 	vouchers_count?: number
-	object: 'campaign'
+	// object: 'campaign'
+}
+
+interface LoyaltyTiersExpirationBalance {
+	expiration_date:
+		| LoyaltyTiersExpirationBalanceExpirationDateBalanceDrop
+		| LoyaltyTiersExpirationBalanceExpirationDateCustom
+	qualification_type: 'BALANCE'
+	start_date: {
+		type: 'IMMEDIATE'
+	}
+}
+
+interface LoyaltyTiersExpirationPointsInPeriod {
+	expiration_date: {
+		type: 'END_OF_NEXT_PERIOD' | 'END_OF_PERIOD'
+		extend: string
+	}
+	qualification_period: 'HALF_YEAR' | 'MONTH' | 'QUARTER' | 'YEAR'
+	qualification_type: 'POINTS_IN_PERIOD'
+	start_date: {
+		type: 'IMMEDIATE' | 'NEXT_PERIOD'
+	}
+}
+
+interface LoyaltyTiersExpirationBalanceExpirationDateBalanceDrop {
+	type: 'BALANCE_DROP'
+}
+interface LoyaltyTiersExpirationBalanceExpirationDateCustom {
+	type: 'CUSTOM'
+	extend: string
+	rounding:
+		| LoyaltyTiersExpirationBalanceExpirationDateRoundingDefaultOptions
+		| LoyaltyTiersExpirationBalanceExpirationDateRoundingCustom
+}
+
+interface LoyaltyTiersExpirationBalanceExpirationDateRoundingDefaultOptions {
+	type: 'HALF_YEAR' | 'MONTH' | 'QUARTER' | 'YEAR'
+	strategy: 'END'
+}
+interface LoyaltyTiersExpirationBalanceExpirationDateRoundingCustom {
+	type: 'CUSTOM'
+	strategy: 'END'
+	unit: 'MONTH'
+	value: number
 }
 
 export interface CampaignsQualificationsBody {
@@ -101,10 +280,7 @@ export type CampaignsCreateCampaign = Omit<
 	active?: boolean
 }
 
-export type CampaignsUpdateCampaign = Pick<
-	CampaignResponse,
-	'start_date' | 'expiration_date' | 'type' | 'description' | 'metadata'
->
+export type CampaignsUpdateCampaign = Pick<CampaignResponse, 'start_date'>
 
 export interface CampaignsDeleteParams {
 	force?: boolean
@@ -175,3 +351,67 @@ export type CampaignsVouchersImportResponse = {
 export type CampaignsCreateCampaignResponse = CampaignResponse
 export type CampaignsUpdateCampaignResponse = CampaignResponse
 export type CampaignsGetCampaignResponse = CampaignResponse
+
+export interface CampaignVoucherObjectDiscount {
+	type: 'DISCOUNT_VOUCHER'
+	discount:
+		| VoucherObjectDiscountAmount
+		| VoucherObjectDiscountPercentage
+		| VoucherObjectDiscountFixed
+		| VoucherObjectDiscountUnitOne
+		| VoucherObjectDiscountUnitMultiple
+		| VoucherObjectDiscountShipping
+	redemption: {
+		quantity: number
+	}
+	code_config: {
+		length: string
+		charset: string
+		prefix: string
+		postfix: string
+		pattern: string
+	}
+	is_referral_code: boolean
+}
+
+export interface CampaignVoucherObjectGiftCard {
+	type: 'GIFT_VOUCHER'
+	gift: {
+		amount: number
+		effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	}
+	redemption: {
+		quantity: number
+	}
+	code_config: {
+		length: string
+		charset: string
+		prefix: string
+		postfix: string
+		pattern: string
+	}
+	is_referral_code: boolean
+}
+
+export interface CampaignVoucherObjectLoyaltyCard {
+	type: 'LOYALTY_CARD'
+	loyalty_card: {
+		points: number
+		expiration_rules: {
+			period_type: 'MONTH'
+			period_value: number
+			rounding_type: 'END_OF_MONTH' | 'END_OF_QUARTER' | 'END_OF_HALF_YEAR' | 'END_OF_YEAR' | 'PARTICULAR_MONTH'
+		}
+	}
+	redemption: {
+		quantity: number
+	}
+	code_config: {
+		length: string
+		charset: string
+		prefix: string
+		postfix: string
+		pattern: string
+	}
+	is_referral_code: boolean
+}
