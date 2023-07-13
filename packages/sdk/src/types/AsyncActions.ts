@@ -38,7 +38,20 @@ export interface AsyncActionsResponse {
 		| AsyncActionGetResultCampaignMetadataKeyPurge
 		| AsyncActionGetResultCustomersImportCSV
 		| AsyncActionGetResultCustomersBulkUpdate
+		| AsyncActionGetResultCustomersMetadataUpdate
+		| AsyncActionGetResultProductsBulkUpdate
 		| AsyncActionGetResultCustomersMetadataKeyPurge
+		| AsyncActionGetResultProductsMetadataUpdate
+		| AsyncActionGetResultProductsImportCSV
+		| AsyncActionGetResultSkusImportCSV
+		| AsyncActionGetResultProductsMetadataKeyPurge
+		| AsyncActionGetResultVouchersImport
+		| AsyncActionGetResultVouchersImportCSV
+		| AsyncActionGetResultVouchersBulkUpdate
+		| AsyncActionGetResultVouchersMetadataUpdate
+		| AsyncActionGetResultVouchersMetadataKeyPurge
+		| AsyncActionGetResultOrdersImport
+		| AsyncActionGetResultOrdersMetadataKeyPurge
 	created_at: string
 	object: 'async_action'
 	progress: number
@@ -87,6 +100,16 @@ interface AsyncActionGetResultCustomersImportCSV {
 	failed_count: number
 	message: string
 }
+
+interface AsyncActionGetResultCustomersMetadataUpdate {
+	done_count: number
+	results: {
+		source_id: string
+		updated: boolean
+		found: boolean
+	}[]
+}
+
 interface AsyncActionGetResultCustomersBulkUpdate {
 	done_count: number
 	results: {
@@ -96,7 +119,75 @@ interface AsyncActionGetResultCustomersBulkUpdate {
 	}[]
 }
 type AsyncActionGetResultCustomersMetadataKeyPurge = AsyncActionGetResultCustomersBulkUpdate
+type AsyncActionGetResultProductsBulkUpdate = AsyncActionGetResultCampaignVouchersUpdate
+type AsyncActionGetResultProductsMetadataUpdate = AsyncActionGetResultCustomersBulkUpdate
 
+interface AsyncActionGetResultProductsImportCSV {
+	done_count: number
+	failed: {
+		reason: string
+		row: number
+	}[]
+	failed_count: number
+	message: string
+}
+
+interface AsyncActionGetResultSkusImportCSV {
+	message: string
+	failed: {
+		row: number
+		reason: string
+	}[]
+	done_count: number
+	failed_count: number
+}
+interface AsyncActionGetResultProductsMetadataKeyPurge {
+	message: string
+	done_count: number
+}
+interface AsyncActionGetResultVouchersImport {
+	message: string
+	failed: {
+		code: string
+		reason: string
+	}
+	done_count: number
+	failed_count: number
+}
+interface AsyncActionGetResultVouchersImportCSV {
+	message: string
+	failed: {
+		code: string
+		row: number
+		reason: string
+	}[]
+	done_count: number
+	failed_count: number
+}
+interface AsyncActionGetResultVouchersBulkUpdate {
+	results: {
+		code: string
+		updated: boolean
+		found: boolean
+	}[]
+	done_count: number
+}
+type AsyncActionGetResultVouchersMetadataUpdate = AsyncActionGetResultVouchersBulkUpdate
+
+type AsyncActionGetResultVouchersMetadataKeyPurge = AsyncActionGetResultCampaignVouchersUpdate
+interface AsyncActionGetResultOrdersImport {
+	done_count: number
+	failed: {
+		source_id: string
+		reason: string
+	}
+	failed_count: number
+	message: string
+}
+interface AsyncActionGetResultOrdersMetadataKeyPurge {
+	done_count: number
+	message: string
+}
 export interface AsyncActionsListParams {
 	limit?: number
 	end_date?: string
