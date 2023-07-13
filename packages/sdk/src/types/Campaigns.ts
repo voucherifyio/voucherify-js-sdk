@@ -280,7 +280,20 @@ export type CampaignsCreateCampaign = Omit<
 	active?: boolean
 }
 
-export type CampaignsUpdateCampaign = Pick<CampaignResponse, 'start_date'>
+export type CampaignsUpdateCampaign = Pick<
+	CampaignResponse,
+	| 'type'
+	| 'activity_duration_after_publishing'
+	| 'auto_join'
+	| 'category'
+	| 'category_id'
+	| 'expiration_date'
+	| 'join_once'
+	| 'metadata'
+	| 'start_date'
+	| 'validity_day_of_week'
+	| 'validity_timeframe'
+>
 
 export interface CampaignsDeleteParams {
 	force?: boolean
