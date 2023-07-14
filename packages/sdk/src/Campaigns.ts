@@ -7,7 +7,7 @@ import { CampaignsDeleteCampaignResponse } from './types/Campaigns'
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
 
-	public examine(body: T.CampaignsQualificationsBody = {}, params?: T.CampaignsQualificationsParams) {
+	public examine(body: T.CampaignsQualificationsBody, params?: T.CampaignsQualificationsParams) {
 		return this.client.post<T.CampaignsQualificationsResponse>('/campaigns/qualification', body, params)
 	}
 }
