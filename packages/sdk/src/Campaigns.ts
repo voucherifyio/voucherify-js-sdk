@@ -2,6 +2,7 @@ import * as T from './types/Campaigns'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
+import { CampaignsDeleteCampaignResponse } from './types/Campaigns'
 
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
@@ -39,7 +40,7 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference/delete-campaign
 	 */
 	public delete(name: string, params: T.CampaignsDeleteParams = {}) {
-		return this.client.delete(`/campaigns/${encode(name)}`, params)
+		return this.client.delete<T.CampaignsDeleteCampaignResponse>(`/campaigns/${encode(name)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-voucher-to-campaign
@@ -69,5 +70,17 @@ export class Campaigns {
 	 */
 	public list(params: T.CampaignsListParams = {}) {
 		return this.client.get<T.CampaignsListResponse>('/campaigns', params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/enable-campaign
+	 */
+	public enable(campaignId: string) {
+		return this.client.post<{}>(`/campaigns/${encode(campaignId)}/enable`, {})
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/disable-campaign
+	 */
+	public disable(campaignId: string) {
+		return this.client.post<{}>(`/campaigns/${encode(campaignId)}/disable`, {})
 	}
 }

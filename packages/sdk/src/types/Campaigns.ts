@@ -11,6 +11,7 @@ import {
 
 import { CustomerRequest } from './Customers'
 import { OrdersGetResponse } from './Orders'
+import { AsyncActionCreateResponse } from './AsyncActions'
 
 interface ReferralProgramCustomEventRedemption {
 	conversion_event_type: 'custom_event'
@@ -69,95 +70,7 @@ export interface CampaignResponse {
 	metadata?: Record<string, any>
 	name: string
 	object: 'campaign'
-	promotion: {
-		data_ref: 'tiers'
-		has_more: boolean
-		object: 'list'
-		tiers?: {
-			action: {
-				discount:
-					| VoucherObjectDiscountAmount
-					| VoucherObjectDiscountPercentage
-					| VoucherObjectDiscountFixed
-					| VoucherObjectDiscountUnitOne
-					| VoucherObjectDiscountUnitMultiple
-					| VoucherObjectDiscountShipping
-			}
-			active: boolean
-			banner: string
-			campaign: {
-				active: boolean
-				category_id: string
-				expiration_date: string
-				id: string
-				object: 'campaign'
-				start_date: string
-				validity_day_of_week: number[]
-				validity_timeframe: {
-					duration: string
-					interval: string
-				}
-			}
-			campaign_id: string
-			categories: {
-				created_at: string
-				hierarchy: number
-				id: string
-				name: string
-				object: 'category'
-				updated_at: string
-			}
-			category_id: string
-			created_at: string
-			expiration_date: string
-			hierarchy: number
-			id: string
-			metadata: Record<string, any>
-			name: string
-			object: 'promotion_tier'
-			start_date: string
-			summary: {
-				orders: {
-					total_amount: number
-					total_discount_amount: number
-				}
-				redemptions: {
-					total_redeemed: number
-				}
-			}
-			updated_at: string
-			validation_rule_assignments: {
-				data: {
-					created_at: string
-					id: string
-					object: 'validation_rules_assignment'
-					related_object_id: string
-					related_object_type:
-						| 'campaign'
-						| 'distribution'
-						| 'earning_rule'
-						| 'promotion_tier'
-						| 'reward_assignment'
-						| 'voucher'
-					rule_id: string
-				}[]
-				data_ref: 'data'
-				object: 'list'
-				total: number
-			}
-			validity_day_of_week: number[]
-			validity_timeframe: {
-				duration: string
-				interval: string
-			}
-		}[]
-		// validity_day_of_week: number[]
-		// validity_timeframe: {
-		// 	duration: string
-		// 	interval: string
-		// }
-		total: number
-	}
+	promotion: ListPromotionTiersFromCampaign
 	protected: boolean
 	referral_program?: {
 		conversion_event_type: 'custom_event' | 'redemption'
@@ -201,6 +114,124 @@ export interface CampaignResponse {
 	// protected?: boolean
 	vouchers_count?: number
 	// object: 'campaign'
+}
+
+interface AddPromotionTierToCampaign {
+	tiers: {
+		action: {
+			discount:
+				| VoucherObjectDiscountAmount
+				| VoucherObjectDiscountPercentage
+				| VoucherObjectDiscountFixed
+				| VoucherObjectDiscountUnitOne
+				| VoucherObjectDiscountUnitMultiple
+				| VoucherObjectDiscountShipping
+		}
+		name: string
+		banner: string
+		metadata: Record<string, any>
+		active: boolean
+		start_date: string
+		expiration_date: string
+		validity_day_of_week: number[]
+		validity_timeframe: {
+			duration: string
+			interval: string
+		}
+		validation_rules: string[]
+		category: string
+		category_id: string
+	}[]
+}
+
+interface ListPromotionTiersFromCampaign {
+	data_ref: 'tiers'
+	has_more: boolean
+	object: 'list'
+	tiers?: {
+		action: {
+			discount:
+				| VoucherObjectDiscountAmount
+				| VoucherObjectDiscountPercentage
+				| VoucherObjectDiscountFixed
+				| VoucherObjectDiscountUnitOne
+				| VoucherObjectDiscountUnitMultiple
+				| VoucherObjectDiscountShipping
+		}
+		active: boolean
+		banner: string
+		campaign: {
+			active: boolean
+			category_id: string
+			expiration_date: string
+			id: string
+			object: 'campaign'
+			start_date: string
+			validity_day_of_week: number[]
+			validity_timeframe: {
+				duration: string
+				interval: string
+			}
+		}
+		campaign_id: string
+		categories: {
+			created_at: string
+			hierarchy: number
+			id: string
+			name: string
+			object: 'category'
+			updated_at: string
+		}
+		category_id: string
+		created_at: string
+		expiration_date: string
+		hierarchy: number
+		id: string
+		metadata: Record<string, any>
+		name: string
+		object: 'promotion_tier'
+		start_date: string
+		summary: {
+			orders: {
+				total_amount: number
+				total_discount_amount: number
+			}
+			redemptions: {
+				total_redeemed: number
+			}
+		}
+		updated_at: string
+		validation_rule_assignments: {
+			data: {
+				created_at: string
+				id: string
+				object: 'validation_rules_assignment'
+				related_object_id: string
+				related_object_type:
+					| 'campaign'
+					| 'distribution'
+					| 'earning_rule'
+					| 'promotion_tier'
+					| 'reward_assignment'
+					| 'voucher'
+				rule_id: string
+			}[]
+			data_ref: 'data'
+			object: 'list'
+			total: number
+		}
+		validity_day_of_week: number[]
+		validity_timeframe: {
+			duration: string
+			interval: string
+		}
+	}[]
+	// validity_day_of_week: number[]
+	// validity_timeframe: {
+	// 	duration: string
+	// 	interval: string
+	// }
+	total: number
 }
 
 interface LoyaltyTiersExpirationBalance {
@@ -267,17 +298,165 @@ export interface CampaignsQualificationsResponse {
 	created_at?: string
 }
 
-export type CampaignsCreateCampaign = Omit<
-	CampaignResponse,
-	| 'id'
-	| 'protected'
-	| 'vouchers_generation_status'
-	| 'validation_rules_assignments'
-	| 'object'
-	| 'created_at'
-	| 'active'
-> & {
-	active?: boolean
+export type CampaignsCreateCampaign =
+	| CreateCampaignDiscountVoucher
+	| CreateCampaignLoyalty
+	| CreateCampaignGift
+	| CreateCampaignPromotion
+	| CreateCampaignReferral
+
+//{
+//             "$ref": "#/components/schemas/2_req_create_campaign_discount_voucher"
+//           },
+//           {
+//             "$ref": "#/components/schemas/2_req_create_campaign_loyalty"
+//           },
+//           {
+//             "$ref": "#/components/schemas/2_req_create_campaign_gift"
+//           },
+//           {
+//             "$ref": "#/components/schemas/2_req_create_campaign_promotion"
+//           },
+//           {
+//             "$ref": "#/components/schemas/2_req_create_campaign_referral"
+//           }
+interface CreateCampaignDiscountVoucher {
+	name: string
+	campaign_type: 'DISCOUNT_COUPONS'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	category_id: string
+	category: string
+	metadata: Record<string, any>
+	voucher: CampaignVoucherObjectDiscount
+}
+
+interface CreateCampaignLoyalty {
+	name: string
+	campaign_type: 'LOYALTY_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	auto_join: boolean
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	category_id: string
+	category: string
+	metadata: Record<string, any>
+	voucher: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
+}
+
+interface CreateCampaignGift {
+	name: string
+	campaign_type: 'GIFT_VOUCHERS'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	category_id: string
+	category: string
+	metadata: Record<string, any>
+	voucher: CampaignVoucherObjectGiftCard
+}
+
+interface CreateCampaignPromotion {
+	name: string
+	campaign_type: 'PROMOTION'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	category_id: string
+	category: string
+	metadata: Record<string, any>
+	promotion: AddPromotionTierToCampaign
+	// metadata: Record<string, any>
+	// active: boolean
+	// start_date: string
+	// expiration_date: string
+	// validity_day_of_week: number[]
+	// validity_timeframe: {
+	// 	duration: string
+	// 	interval: string
+	// }
+	// validation_rules: {
+	// 	type: string
+	// }[]
+	// category: string
+	// category_id: string
+}
+
+interface CreateCampaignReferral {
+	name: string
+	campaign_type: 'REFERRAL_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	category_id: string
+	category: string
+	metadata: Record<string, any>
+	referral_program: {
+		conversion_event_type: 'redemption' | 'custom_event'
+		custom_event: {
+			id: string
+			name: string
+		}
+		referee_reward: {
+			related_object_parent: {
+				id: string
+				name: string
+				object: 'CAMPAIGN'
+			}
+			type: 'LOYALTY_CARD' | 'GIFT_VOUCHER'
+			amount: string
+		}
+	}
+	voucher:
+		| CampaignVoucherObjectDiscount
+		| CampaignVoucherObjectGiftCard
+		| Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
 export type CampaignsUpdateCampaign = Pick<
@@ -335,10 +514,23 @@ export type CampaignsAddVoucherResponse = Pick<
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
-export type CampaignsImportVouchers = Pick<
-	VouchersImport,
-	'code' | 'redemption' | 'metadata' | 'additional_info' | 'active'
->
+export interface CampaignsImportVouchers {
+	active: boolean
+	additional_info: string
+	category: string
+	category_id: string
+	code: string
+	gift: {
+		amount: number
+	}
+	loyalty_card: {
+		points: number
+	}
+	metadata: Record<string, any>
+	redemption: {
+		quantity: number
+	}
+}
 
 export interface CampaignsListParams {
 	campaign_type?:
@@ -370,6 +562,7 @@ export type CampaignsVouchersImportResponse = {
 }
 
 export type CampaignsCreateCampaignResponse = CampaignResponse
+
 export type CampaignsUpdateCampaignResponse = CampaignResponse
 export type CampaignsGetCampaignResponse = CampaignResponse
 
@@ -436,3 +629,5 @@ export interface CampaignVoucherObjectLoyaltyCard {
 	}
 	is_referral_code: boolean
 }
+
+export type CampaignsDeleteCampaignResponse = AsyncActionCreateResponse
