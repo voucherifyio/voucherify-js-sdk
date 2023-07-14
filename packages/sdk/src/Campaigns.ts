@@ -47,7 +47,7 @@ export class Campaigns {
 	 */
 
 	public addVoucher(name: string, body: T.CampaignsAddVoucherBody = {}, params: T.CampaignsAddVoucherParams = {}) {
-		return this.client.post<T.CampaignsAddVoucherResponse | {}>(`/campaigns/${encode(name)}/vouchers`, body, params)
+		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, body, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-voucher-with-certain-code-to-campaign

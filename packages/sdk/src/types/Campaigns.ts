@@ -492,25 +492,26 @@ export type CampaignsAddCertainVoucherParams = Pick<
 	'category' | 'redemption' | 'metadata' | 'additional_info'
 >
 
-export type CampaignsAddVoucherResponse = Pick<
-	VouchersResponse,
-	| 'code'
-	| 'object'
-	| 'campaign'
-	| 'category'
-	| 'created_at'
-	| 'type'
-	| 'discount'
-	| 'gift'
-	| 'start_date'
-	| 'expiration_date'
-	| 'publish'
-	| 'redemption'
-	| 'active'
-	| 'additional_info'
-	| 'metadata'
-	| 'assets'
->
+export type CampaignsAddVoucherResponse =
+	| (Pick<
+			VouchersResponse,
+			| 'code'
+			| 'object'
+			| 'campaign'
+			| 'category'
+			| 'created_at'
+			| 'discount'
+			| 'gift'
+			| 'start_date'
+			| 'expiration_date'
+			| 'publish'
+			| 'redemption'
+			| 'active'
+			| 'additional_info'
+			| 'metadata'
+			| 'assets'
+	  > & { type: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD' })
+	| AsyncActionCreateResponse
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
