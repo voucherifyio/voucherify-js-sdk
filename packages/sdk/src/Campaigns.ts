@@ -2,7 +2,6 @@ import * as T from './types/Campaigns'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
-import { AddVouchersToCampaign } from './types/Campaigns'
 
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
