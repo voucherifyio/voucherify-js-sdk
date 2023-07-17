@@ -10,6 +10,7 @@ import { Validations } from './Validations'
 import { Redemptions } from './Redemptions'
 import { PromotionTiers } from './PromotionTiers'
 import { Promotions } from './Promotions'
+import { Categories } from './Categories'
 import { Customers } from './Customers'
 import { Consents } from './Consents'
 import { Orders } from './Orders'
@@ -179,6 +180,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const distributions = new Distributions(client, exportsNamespace)
 	const promotionTiers = new PromotionTiers(client)
 	const promotions = new Promotions(client, promotionTiers)
+	const categories = new Categories(client)
 	const validations = new Validations(client, promotions)
 	const redemptions = new Redemptions(client)
 	const customers = new Customers(client)
@@ -199,6 +201,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		validations,
 		redemptions,
 		promotions,
+		categories,
 		customers,
 		consents,
 		orders,
