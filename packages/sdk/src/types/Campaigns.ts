@@ -254,9 +254,37 @@ export interface CampaignsQualificationsResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: CampaignResponse[]
+	data: CampaignObjectCampaignsQualification[] //2_obj_campaign_object_campaigns_qualification
 	id?: string
 	created_at?: string
+	tracking_id: string
+}
+
+interface CampaignObjectCampaignsQualification {
+	id: string
+	name: string
+	description: string
+	campaign_type: 'GIFT_VOUCHERS' | 'DISCOUNT_COUPONS' | 'REFERRAL_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	voucher: []
+	auto_join: boolean
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	validity_timeframe: {
+		type: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	vouchers_count: number
+	start_date: string
+	expiration_date: string
+	active: boolean
+	metadata: Record<string, any>
+	created_at: string
+	updated_at: string
+	category: string
+	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
 }
 
 export type CampaignsCreateCampaign =
@@ -574,3 +602,5 @@ export interface CampaignVoucherObjectLoyaltyCard {
 }
 
 export type CampaignsDeleteCampaignResponse = AsyncActionCreateResponse
+
+export type CampaignVoucherObject = VoucherObject

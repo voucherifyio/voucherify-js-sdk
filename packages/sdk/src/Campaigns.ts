@@ -1,9 +1,7 @@
 import * as T from './types/Campaigns'
-import * as Tv from './types/Vouchers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
-
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
 
@@ -54,7 +52,7 @@ export class Campaigns {
 	 */
 
 	public addCertainVoucher(name: string, code: string, body: T.AddVouchersWithSpecificCodeToCampaign) {
-		return this.client.post<Tv.VoucherObject>(`/campaigns/${encode(name)}/vouchers/${encode(code)}`, body)
+		return this.client.post<T.CampaignVoucherObject>(`/campaigns/${encode(name)}/vouchers/${encode(code)}`, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers
