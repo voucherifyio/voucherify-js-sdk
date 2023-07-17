@@ -13,35 +13,6 @@ import { CustomerRequest } from './Customers'
 import { OrdersGetResponse } from './Orders'
 import { AsyncActionCreateResponse } from './AsyncActions'
 
-interface ReferralProgramCustomEventRedemption {
-	conversion_event_type: 'custom_event'
-	custom_event: {
-		id: string
-		name: string
-	}
-	referee_reward?: {
-		related_object_parent: {
-			id: string
-			name: string
-			object: 'CAMPAIGN'
-		}
-		amount: number
-		type: 'GIFT_VOUCHER' | 'LOYALTY_CARD'
-	}
-}
-interface ReferralProgramRedemption {
-	conversion_event_type: 'redemption'
-	referee_reward?: {
-		related_object_parent: {
-			id: string
-			name: string
-			object: 'CAMPAIGN'
-		}
-		amount: number
-		type: 'GIFT_VOUCHER' | 'LOYALTY_CARD'
-	}
-}
-
 export interface CampaignResponse {
 	campaign_type:
 		| 'LUCKY_DRAW'
@@ -305,21 +276,6 @@ export type CampaignsCreateCampaign =
 	| CreateCampaignPromotion
 	| CreateCampaignReferral
 
-//{
-//             "$ref": "#/components/schemas/2_req_create_campaign_discount_voucher"
-//           },
-//           {
-//             "$ref": "#/components/schemas/2_req_create_campaign_loyalty"
-//           },
-//           {
-//             "$ref": "#/components/schemas/2_req_create_campaign_gift"
-//           },
-//           {
-//             "$ref": "#/components/schemas/2_req_create_campaign_promotion"
-//           },
-//           {
-//             "$ref": "#/components/schemas/2_req_create_campaign_referral"
-//           }
 interface CreateCampaignDiscountVoucher {
 	name: string
 	campaign_type: 'DISCOUNT_COUPONS'
