@@ -1,5 +1,88 @@
 import { CustomerRequest } from './Customers'
 
+export interface ValidateVoucherOrderId {
+	id: string
+}
+export interface ValidateVoucherOrderSourceId {
+	source_id: string
+}
+
+export interface ValidateVoucherOrderId {
+	//6_req_validate_voucher_order_id
+	id: string
+}
+
+export interface ValidateVoucherOrderSourceId {
+	//6_req_validate_voucher_order_source_id
+	source_id: string
+}
+
+export interface CreateOrder {
+	//10_req_create_order
+	source_id: string
+	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
+	amount: number
+	metadata: Record<string, any>
+	customer: OrdersCustomerObject //10_req_orders_customer_object
+	referrer: OrdersCustomerObject //10_req_orders_referrer_object
+	items: OrdersItemsArray //10_req_orders_items_array
+}
+
+export interface OrdersCustomerObject {
+	//10_req_orders_customer_object
+	id: string
+	source_id: string
+	name: string
+	email: string
+	phone: string
+	address: {
+		city: string
+		state: string
+		line_1: string
+		line_2: string
+		country: string
+		postal_code: string
+	}
+	birthdate?: string
+	birthday?: string
+	metadata?: Record<string, any>
+}
+
+export type OrdersReferrerObject = OrdersCustomerObject //10_req_orders_referrer_object
+
+type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
+
+export interface OrdersOrderItem {
+	//10_req_orders_order_item
+	source_id: string
+	related_object: string
+	product_id: string
+	sku_id: string
+	quantity: number
+	price: number
+	amount: number
+	product: OrdersOrderItemProduct //10_req_orders_order_item_product
+	sku: OrdersOrderItemSku //10_req_orders_order_item_sku
+}
+
+export interface OrdersOrderItemProduct {
+	//10_req_orders_order_item_product
+	source_id: string
+	name: string
+	price: number
+	metadata: Record<string, any>
+	override: boolean
+}
+
+export interface OrdersOrderItemSku {
+	//10_req_orders_order_item_sku
+	source_id: string
+	sku: string
+	price: number
+	metadata: Record<string, any>
+	override: boolean
+}
+
 export interface OrdersItem {
 	sku_id?: string
 	product_id?: string

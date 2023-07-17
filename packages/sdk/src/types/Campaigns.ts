@@ -9,8 +9,8 @@ import {
 	VouchersImport,
 } from './Vouchers'
 
-import { CustomerRequest } from './Customers'
-import { OrdersGetResponse } from './Orders'
+import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CreateOrder, ValidateVoucherOrderId, ValidateVoucherOrderSourceId } from './Orders'
 import { AsyncActionCreateResponse } from './AsyncActions'
 
 export interface CampaignResponse {
@@ -240,13 +240,25 @@ interface LoyaltyTiersExpirationBalanceExpirationDateRoundingCustom {
 }
 
 export interface CampaignsQualificationsBody {
-	customer?: CustomerRequest
-	order?: Pick<OrdersGetResponse, 'id' | 'source_id' | 'items'>
+	customer?: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	order?: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
 }
 
 export interface CampaignsQualificationsParams {
 	audienceRulesOnly?: boolean
-	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+	order?:
+		| '-campaign'
+		| '-category'
+		| '-code'
+		| '-created_at'
+		| '-type'
+		| '-updated_at'
+		| 'campaign'
+		| 'category'
+		| 'code'
+		| 'created_at'
+		| 'type'
+		| 'updated_at'
 	limit?: number
 }
 
@@ -254,7 +266,7 @@ export interface CampaignsQualificationsResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: CampaignObjectCampaignsQualification[] //2_obj_campaign_object_campaigns_qualification
+	data: CampaignObjectCampaignsQualification[]
 	id?: string
 	created_at?: string
 	tracking_id: string
@@ -263,15 +275,14 @@ export interface CampaignsQualificationsResponse {
 interface CampaignObjectCampaignsQualification {
 	id: string
 	name: string
-	description: string
 	campaign_type: 'GIFT_VOUCHERS' | 'DISCOUNT_COUPONS' | 'REFERRAL_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	voucher: []
+	voucher: CampaignVoucherObjectDiscount | CampaignVoucherObjectGiftCard | CampaignVoucherObjectLoyaltyCard
 	auto_join: boolean
 	join_once: boolean
 	use_voucher_metadata_schema: boolean
 	validity_timeframe: {
-		type: string
+		interval: string
 		duration: string
 	}
 	validity_day_of_week: number[]
@@ -285,6 +296,51 @@ interface CampaignObjectCampaignsQualification {
 	updated_at: string
 	category: string
 	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
+	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
+	protected: boolean
+	validation_rules_assignments: {
+		data_ref: 'data'
+		data: {
+			id: string
+			rule_id: string
+			related_object_id: string
+			related_object_type: string
+			created_at: string
+			object: 'validation_rules_assignment'
+			rule: Record<string, any>
+		}[]
+		object: 'list'
+		total: number
+	}
+	category_id: string
+	categories: CategoryObject
+	object: 'campaign'
+	referral_program: {
+		conversion_event_type: 'redemption' | 'custom_event'
+		custom_event: {
+			id: string
+			name: string
+		}
+		referee_reward: {
+			related_object_parent: {
+				id: string
+				name: string
+				object: string
+			}
+			type: 'LOYALTY_CARD' | 'GIFT_VOUCHER'
+			amount: string
+		}
+	}
+}
+
+export interface CategoryObject {
+	//20_obj_category_object
+	id: string
+	name: string
+	hierarchy: number
+	created_at: string
+	updated_at: string
+	object: 'category'
 }
 
 export type CampaignsCreateCampaign =
@@ -538,6 +594,7 @@ export type CampaignsUpdateCampaignResponse = CampaignResponse
 export type CampaignsGetCampaignResponse = CampaignResponse
 
 export interface CampaignVoucherObjectDiscount {
+	//2_obj_campaign_object_voucher_object_DISCOUNT
 	type: 'DISCOUNT_VOUCHER'
 	discount:
 		| VoucherObjectDiscountAmount
@@ -560,6 +617,7 @@ export interface CampaignVoucherObjectDiscount {
 }
 
 export interface CampaignVoucherObjectGiftCard {
+	//2_obj_campaign_object_voucher_object_GIFT_CARD
 	type: 'GIFT_VOUCHER'
 	gift: {
 		amount: number
@@ -579,6 +637,7 @@ export interface CampaignVoucherObjectGiftCard {
 }
 
 export interface CampaignVoucherObjectLoyaltyCard {
+	//2_obj_campaign_object_voucher_object_LOYALTY_CARD
 	type: 'LOYALTY_CARD'
 	loyalty_card: {
 		points: number

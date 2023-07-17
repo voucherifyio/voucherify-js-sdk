@@ -66,6 +66,33 @@ export interface CustomerObject {
 export type CustomerUnconfirmed = Pick<CustomerObject, 'summary' | 'email' | 'loyalty'> & {
 	object: 'unconfirmed_customer'
 }
+
+export interface ValidateVoucherCustomerId {
+	//6_req_validate_voucher_customer_id
+	id: string
+}
+
+export interface ValidateVoucherSourceId {
+	//6_req_validate_voucher_customer_source_id
+	source_id: string
+}
+export interface CreateCustomer {
+	source_id?: string
+	name?: string
+	email?: string
+	phone?: string
+	address?: {
+		city?: string
+		state?: string
+		line_1?: string
+		line_2?: string
+		country?: string
+		postal_code?: string
+	}
+	birthdate?: string
+	birthday?: string
+	metadata?: Record<string, any>
+} //9_req_create_customer
 export interface CustomerRequest {
 	id?: string
 	source_id?: string
