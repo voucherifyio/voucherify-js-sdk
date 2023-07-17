@@ -23,6 +23,93 @@ export interface SimpleVoucher {
 	}
 }
 
+export interface VoucherObject {
+	id: string
+	code: string
+	campaign: string
+	campaign_id: string
+	category: string
+	category_id: string
+	categories: {
+		id: string
+		name: string
+		hierarchy: number
+		created_at: string
+		updated_at: string
+		object: 'category'
+	}[]
+	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	discount:
+		| VoucherObjectDiscountAmount
+		| VoucherObjectDiscountPercentage
+		| VoucherObjectDiscountFixed
+		| VoucherObjectDiscountUnitOne
+		| VoucherObjectDiscountUnitMultiple
+		| VoucherObjectDiscountShipping
+	gift: {
+		amount: number
+		balance: number
+		effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	}
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date: string
+		next_expiration_points: number
+	}
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	active: boolean
+	additional_info: string
+	metadata: Record<string, any>
+	assets: {
+		qr: {
+			id: string
+			url: string
+		}
+		barcode: {
+			id: string
+			url: string
+		}
+	}
+	is_referral_code: boolean
+	created_at: string
+	updated_at: string
+	holder_id: string
+	validation_rules_assignments: {
+		object: 'list'
+		data_ref: 'data'
+		data: {
+			id: string
+			rule_id: string
+			related_object_id: string
+			related_object_type: string
+			created_at: string
+			object: 'validation_rules_assignment'
+		}[]
+		total: number
+	}
+	redemption: {
+		quantity: number
+		redeemed_quantity: number
+		redeemed_amount: number
+		redeemed_points: number
+		object: 'list'
+		url: string
+	}
+	publish: {
+		object: 'list'
+		count: number
+		url: string
+	}
+	object: 'voucher'
+}
+
 export interface VouchersResponse {
 	id: string
 	code: string

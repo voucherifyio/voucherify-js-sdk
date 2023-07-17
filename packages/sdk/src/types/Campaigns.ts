@@ -1,4 +1,5 @@
 import {
+	VoucherObject,
 	VoucherObjectDiscountAmount,
 	VoucherObjectDiscountFixed,
 	VoucherObjectDiscountPercentage,
@@ -62,12 +63,7 @@ export interface CampaignResponse {
 	auto_join?: boolean
 	// join_once?: boolean
 	// description?: string
-	// validation_rules_assignments: {
-	// 	data?: ValidationRulesCreateAssignmentResponse[]
-	// 	object: 'list'
-	// 	total: number
-	// 	data_ref: 'data'
-	// }
+
 	activity_duration_after_publishing?: string
 	validity_timeframe?: {
 		interval?: string
@@ -197,11 +193,6 @@ interface ListPromotionTiersFromCampaign {
 			interval: string
 		}
 	}[]
-	// validity_day_of_week: number[]
-	// validity_timeframe: {
-	// 	duration: string
-	// 	interval: string
-	// }
 	total: number
 }
 
@@ -434,11 +425,6 @@ export interface CampaignsDeleteParams {
 	force?: boolean
 }
 
-export type CampaignsAddVoucherBody = Pick<
-	Partial<VouchersImport>,
-	'code_config' | 'category' | 'redemption' | 'metadata' | 'additional_info'
->
-
 export interface CampaignsAddVoucherParams {
 	vouchers_count?: number
 }
@@ -448,28 +434,28 @@ export type CampaignsAddCertainVoucherParams = Pick<
 	'category' | 'redemption' | 'metadata' | 'additional_info'
 >
 
-export type CampaignsAddVoucherResponse =
-	| (Pick<
-			VouchersResponse,
-			| 'code'
-			| 'object'
-			| 'campaign'
-			| 'category'
-			| 'created_at'
-			| 'discount'
-			| 'gift'
-			| 'start_date'
-			| 'expiration_date'
-			| 'publish'
-			| 'redemption'
-			| 'active'
-			| 'additional_info'
-			| 'metadata'
-			| 'assets'
-	  > & { type: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD' })
-	| AsyncActionCreateResponse
+export type CampaignsAddVoucherResponse = VoucherObject | AsyncActionCreateResponse
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
+
+export interface AddVouchersToCampaign {
+	category_id: string
+	start_date: string
+	expiration_date: string
+	active: boolean
+	metadata: Record<string, any>
+	redemption: {
+		quantity: number
+	}
+	additional_info: string
+	code_config: {
+		length: string
+		charset: string
+		prefix: string
+		postfix: string
+		pattern: string
+	}
+}
 
 export interface CampaignsImportVouchers {
 	active: boolean
