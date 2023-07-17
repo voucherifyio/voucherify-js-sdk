@@ -437,6 +437,7 @@ export type CampaignsAddVoucherResponse = VoucherObject | AsyncActionCreateRespo
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
+export type AddVouchersWithSpecificCodeToCampaign = Omit<AddVouchersToCampaign, 'code_config'>
 export interface AddVouchersToCampaign {
 	category_id: string
 	start_date: string

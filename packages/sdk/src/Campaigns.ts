@@ -1,4 +1,5 @@
 import * as T from './types/Campaigns'
+import * as Tv from './types/Vouchers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
@@ -52,11 +53,8 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference/add-voucher-with-certain-code-to-campaign
 	 */
 
-	public addCertainVoucher(name: string, code: string, body: T.CampaignsAddCertainVoucherParams = {}) {
-		return this.client.post<T.CampaignsAddCertainVoucherResponse>(
-			`/campaigns/${encode(name)}/vouchers/${encode(code)}`,
-			body,
-		)
+	public addCertainVoucher(name: string, code: string, body: T.AddVouchersWithSpecificCodeToCampaign) {
+		return this.client.post<Tv.VoucherObject>(`/campaigns/${encode(name)}/vouchers/${encode(code)}`, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers
