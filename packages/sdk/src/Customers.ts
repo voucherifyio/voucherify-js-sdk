@@ -23,7 +23,7 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference/list-customers
 	 */
 	public list(params: T.CustomersListParams) {
-		return this.client.get<T.CustomersListResponse>('/customers', params)
+		return this.client.get<T.ListCustomers>('/customers', params)
 	}
 	/**
 	 * Standard list customers API has limitation of available pages to be shown equal to 100. To cover cases when you would like to fetch more, you must use scroll capabilities.
