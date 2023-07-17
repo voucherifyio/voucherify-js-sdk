@@ -7,7 +7,6 @@ import {
 	VoucherObjectDiscountUnitMultiple,
 	VoucherObjectDiscountUnitOne,
 	VouchersImport,
-	VouchersResponse,
 } from './Vouchers'
 
 import { CustomerRequest } from './Customers'
