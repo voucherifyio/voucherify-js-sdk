@@ -51,13 +51,23 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward-assignment
 	 */
-	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssignment) {
+	public updateAssignment(
+		rewardId: string,
+		assignment: T.RewardsUpdateAssignment,
+		body: T.RewardsUpdateAssignmentBody,
+	) {
 		return this.client.put<T.RewardsUpdateAssignmentResponse>(
 			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
-			omit(assignment, ['id']),
+			body,
+		)
+	}
+
+	public getAssignment(rewardId: string, assignment: T.RewardsUpdateAssignment) {
+		return this.client.get<T.RewardsUpdateAssignmentResponse>(
+			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
 		)
 	}
 	public deleteAssignment(rewardId: string, assignmentId: string) {
-		return this.client.delete(`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`)
+		return this.client.delete<undefined>(`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`)
 	}
 }

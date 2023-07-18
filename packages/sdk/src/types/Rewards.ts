@@ -137,6 +137,14 @@ export type RewardsUpdateBody =
 	| Omit<RewardsTypeCoin, 'type'>
 	| Omit<RewardsTypeMaterial, 'type'>
 
+export interface RewardsUpdateAssignmentBody {
+	parameters: {
+		loyalty: {
+			points: number
+		}
+	}
+}
+
 // export type RewardsTypeResponse =
 // 	| Required<RewardsTypeCampaignResponse>
 // 	| Required<RewardsTypeCoin>
@@ -191,6 +199,8 @@ export type RewardsCreateAssignmentResponse = RewardsAssignmentObject
 export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
 
 export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
+
+export type RewardsGetAssignmentResponse = RewardsAssignmentObject
 
 export interface RewardRedemptionParams {
 	points?: number
