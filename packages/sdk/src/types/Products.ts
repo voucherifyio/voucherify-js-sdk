@@ -89,6 +89,8 @@ export interface ProductsCreateSkuResponse {
 	price?: number
 	attributes?: Record<string, string>
 	metadata?: Record<string, any>
+	product_id: string
+	image_url: string
 	updated_at?: string
 	currency?: string
 	created_at: string
