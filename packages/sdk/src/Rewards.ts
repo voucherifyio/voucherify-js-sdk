@@ -9,14 +9,14 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-rewards
 	 */
-	public list(params: T.RewardsListParams = {}) {
+	public list(params: T.RewardsListParams) {
 		return this.client.get<T.RewardsListResponse>('/rewards', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-reward
 	 */
-	public create(reward: T.RewardsCreate) {
-		return this.client.post<T.RewardsCreateResponse>('/rewards', reward)
+	public create(reward: T.RewardsCreate, body: T.RewardsCreateBody) {
+		return this.client.post<T.RewardsCreateResponse>('/rewards', reward, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-reward
