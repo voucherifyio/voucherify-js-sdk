@@ -107,17 +107,6 @@ interface RewardsTypeCampaign {
 	}
 }
 
-// interface RewardsTypeCampaignResponse {
-// 	type?: 'CAMPAIGN'
-// 	parameters: {
-// 		campaign?: {
-// 			id: string
-// 			balance?: number
-// 			type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
-// 		}
-// 	}
-// }
-
 interface RewardsTypeCoin {
 	type?: 'COIN'
 	metadata: string
@@ -130,8 +119,23 @@ interface RewardsTypeCoin {
 	}
 }
 
+// interface RewardsTypeCampaignResponse {
+// 	type?: 'CAMPAIGN'
+// 	parameters: {
+// 		campaign?: {
+// 			id: string
+// 			balance?: number
+// 			type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+// 		}
+// 	}
+// }
+
 export type RewardsType = RewardsTypeCampaign | RewardsTypeCoin | RewardsTypeMaterial
 export type RewardsCreateBody = RewardsTypeCampaign | RewardsTypeMaterial | RewardsTypeCoin
+export type RewardsUpdateBody =
+	| Omit<RewardsTypeCampaign, 'type'>
+	| Omit<RewardsTypeCoin, 'type'>
+	| Omit<RewardsTypeMaterial, 'type'>
 
 // export type RewardsTypeResponse =
 // 	| Required<RewardsTypeCampaignResponse>

@@ -27,14 +27,14 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward
 	 */
-	public update(reward: T.RewardsUpdate) {
-		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']))
+	public update(reward: T.RewardsUpdate, body: T.RewardsUpdateBody) {
+		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']), body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-reward
 	 */
 	public delete(rewardId: string) {
-		return this.client.delete(`/rewards/${encode(rewardId)}`)
+		return this.client.delete<undefined>(`/rewards/${encode(rewardId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-reward-assignments
