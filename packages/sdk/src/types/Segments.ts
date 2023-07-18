@@ -1,11 +1,15 @@
-export interface SegmentsCreate {
+export type SegmentsCreate = SegmentsCreateStatic | SegmentsCreateAutoUpdate
+
+export interface SegmentsCreateStatic {
 	name: string
-	type: 'static' | 'auto-update'
-	filter?: {
-		junction?: 'AND' | 'OR'
-		[filter_conditions: string]: any
-	}
+	type: 'static'
 	customers?: string[]
+}
+
+export interface SegmentsCreateAutoUpdate {
+	name: string
+	type: 'auto-update'
+	filter?: Record<string, any>
 }
 
 export interface SegmentsCreateResponse {
@@ -13,12 +17,10 @@ export interface SegmentsCreateResponse {
 	name: string
 	created_at: string
 	metadata?: Record<string, any>
-	filter?: {
-		junction?: 'AND' | 'OR'
-		[filter_conditions: string]: any
-	}
-	type?: string
+	filter?: null | object
+	type?: 'auto-update' | 'static'
 	object: 'segment'
+	initial_sync_status: 'DONE' | 'IN_PROGRESS'
 }
 
 export type SegmentsGetResponse = SegmentsCreateResponse
