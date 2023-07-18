@@ -22,7 +22,7 @@ export class Segments {
 	 * @see https://docs.voucherify.io/reference/delete-segment
 	 */
 	public delete(segmentId: string) {
-		return this.client.delete(`/segments/${encode(segmentId)}`)
+		return this.client.delete<undefined>(`/segments/${encode(segmentId)}`)
 	}
 
 	/**
