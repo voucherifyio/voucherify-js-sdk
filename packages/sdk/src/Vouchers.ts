@@ -79,6 +79,12 @@ export class Vouchers {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
+	 */
+	public listGiftCardTransactions(code: string, query: T.ListTransactionsQuery) {
+		return this.client.get<T.ListTransactionsResponse>(`/vouchers/${encode(code)}/transactions`, query)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
 	 */
 	public exportGiftCardTransactions(code: string, body: T.TransactionsExportBody) {

@@ -306,3 +306,140 @@ export interface TransactionsExportBody {
 		fields: ExportGiftCardTransactionsFields
 	}
 }
+
+export interface ListTransactionsResponse {
+	//1_res_vouchers_code_transactions
+	object?: 'list'
+	has_more?: boolean
+	data_ref?: 'data'
+	data?:
+		| GiftCardTransactionObjectRedemption
+		| GiftCardTransactionObjectRefund
+		| GiftCardTransactionObjectAddition
+		| GiftCardTransactionObjectRemoval
+}
+
+interface GiftCardTransactionObjectRedemption {
+	//1_obj_gift_card_transaction_object_redemption
+	id?: string
+	source_id?: string
+	voucher_id?: string
+	campaign_id?: string
+	source?: 'voucherify-web-ui' | 'API'
+	reason?: string
+	type?: 'CREDITS_REDEMPTION'
+	details?: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		redemption: {
+			id: string
+		}
+	}
+	related_transaction_id?: string
+	created_at?: string
+}
+
+interface GiftCardTransactionObjectRefund {
+	//1_obj_gift_card_transaction_object_refund
+	id?: string
+	source_id?: string
+	voucher_id?: string
+	campaign_id?: string
+	source?: 'voucherify-web-ui' | 'API'
+	reason?: string
+	type?: 'CREDITS_REFUND'
+	details?: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		redemption: {
+			id: string
+		}
+		rollback: {
+			id: string
+		}
+	}
+	related_transaction_id?: string
+	created_at?: string
+}
+
+interface GiftCardTransactionObjectAddition {
+	//1_obj_gift_card_transaction_object_addition
+	id?: string
+	source_id?: string
+	voucher_id?: string
+	campaign_id?: string
+	source?: 'voucherify-web-ui' | 'API'
+	reason?: string
+	type?: 'CREDITS_ADDITION'
+	details?: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id?: string
+	created_at?: string
+}
+interface GiftCardTransactionObjectRemoval {
+	//1_obj_gift_card_transaction_object_removal
+	id?: string
+	source_id?: string
+	voucher_id?: string
+	campaign_id?: string
+	source?: 'voucherify-web-ui' | 'API'
+	reason?: string
+	type?: 'CREDITS_REMOVAL'
+	details?: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id?: string
+	created_at?: string
+}
+
+export interface ListTransactionsQuery {
+	limit?: number
+	page?: number
+}
