@@ -106,6 +106,6 @@ export class Vouchers {
 	 * @see https://docs.voucherify.io/reference/release-validation-session
 	 */
 	public releaseValidationSession(code: string, sessionKey: string) {
-		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
+		return this.client.delete<undefined>(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
 	}
 }
