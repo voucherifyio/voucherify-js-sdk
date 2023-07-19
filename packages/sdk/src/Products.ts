@@ -64,6 +64,9 @@ export class Products {
 	public getSku(skuId: string) {
 		return this.client.get<T.ProductsGetSkuResponse>(`/skus/${encode(skuId)}`)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
+	 */
 	public importSkusCSV(body: any) {
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, body)
 	}

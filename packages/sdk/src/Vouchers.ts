@@ -72,6 +72,12 @@ export class Vouchers {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
+	 */
+	public importCSV(body: any) {
+		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', body)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
