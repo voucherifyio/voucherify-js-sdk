@@ -41,6 +41,7 @@ export interface ValidateVoucherSourceId {
 }
 
 export interface CreateCustomer {
+	//9_req_create_customer
 	source_id?: string
 	name?: string
 	email?: string
@@ -56,7 +57,7 @@ export interface CreateCustomer {
 	birthdate?: string
 	birthday?: string
 	metadata?: Record<string, any>
-} //9_req_create_customer
+}
 export interface CustomerRequest {
 	id?: string
 	source_id?: string

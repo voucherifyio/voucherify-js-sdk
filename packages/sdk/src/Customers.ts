@@ -3,7 +3,6 @@ import * as T from './types/Customers'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { UpdateCustomersMetadataBulkResponse, UpdateCustomersMetadataInBulk } from './types/Customers'
 
 class Customers {
 	constructor(private client: RequestController) {}
