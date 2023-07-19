@@ -415,7 +415,7 @@ export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
 export type CustomersUpdateResponse = CustomerObject
 
-export type CustomersUpdateConsentsBody = Record<string, boolean>
+export type CustomersUpdateConsentsBody = { q:string }[]
 
 export interface ListCustomers {
   //9_res_list_customers

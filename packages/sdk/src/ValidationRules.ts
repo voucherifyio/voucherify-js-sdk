@@ -32,7 +32,7 @@ export class ValidationRules {
 	 * @see https://docs.voucherify.io/reference/delete-validation-rules
 	 */
 	public delete(validationRuleId: string) {
-		return this.client.delete(`/validation-rules/${encode(validationRuleId)}`)
+		return this.client.delete<{}>(`/validation-rules/${encode(validationRuleId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-validation-rules-assignment

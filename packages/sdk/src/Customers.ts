@@ -91,7 +91,12 @@ class Customers {
 	public updateConsents(idOrSourceId: string, consents: T.CustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
-
+	/**
+	 * @see https://docs.voucherify.io/reference/update-customers-consents
+	 */
+	public updateCustomersInBulk(consents: T.CustomersUpdateConsentsBody) {
+		return this.client.post<undefined>(`/customers/bulk/async`, consents)
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-customer-activities
 	 */
