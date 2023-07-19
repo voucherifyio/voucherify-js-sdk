@@ -90,8 +90,8 @@ export interface CustomerActivitiesListResponse {
 	data: Record<string, any>[]
 }
 
-export type CustomersCreateBody = CustomerRequest
-export type CustomersCreateResponse = CustomerObject | CustomerUnconfirmed
+export type CustomersCreateBody = CreateCustomer
+export type CustomersCreateResponse = CustomerObject
 
 export type CustomersGetResponse = CustomerObject | CustomerUnconfirmed
 
