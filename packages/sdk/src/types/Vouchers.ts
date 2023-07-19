@@ -251,3 +251,58 @@ export type VouchersBulkUpdateMetadataResponse = {
 export type VouchersBulkUpdateResponse = {
 	async_action_id: string
 }
+
+export interface ExportTransactionsResponse {
+	id?: string
+	object?: 'export'
+	status?: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	exported_object?: 'voucher_transactions'
+	channel?: 'API'
+	created_at?: string
+	result?: {
+		url: string
+	}
+	user_id?: string
+	parameters: ExportGiftCardTransactions
+}
+type ExportGiftCardTransactionsFields =
+	| 'id'
+	| 'type'
+	| 'source_id'
+	| 'balance'
+	| 'amount'
+	| 'reason'
+	| 'created_at'
+	| 'voucher_id'
+	| 'campaign_id'
+	| 'source'
+	| 'details'
+interface ExportGiftCardTransactions {
+	//16_obj_export_gift_card_transactions
+	order?: '-created_at' | 'created_at'
+	fields?: ExportGiftCardTransactionsFields
+	//16_obj_filter_gift_card_transactions_voucher_id
+	filters?: {
+		voucher_id: {
+			conditions: {
+				$in: string[]
+				$not_in: string[]
+				$is: string
+				$is_not: string
+				$has_value: string
+				$is_unknown: string
+				$starts_with: string
+				$ends_with: string
+			}
+		}
+		junction: 'AND' | 'OR'
+	}
+}
+
+export interface TransactionsExportBody {
+	//1_req_create_gift_card_transactions_export
+	parameters?: {
+		order: '-created_at' | 'created_at'
+		fields: ExportGiftCardTransactionsFields
+	}
+}

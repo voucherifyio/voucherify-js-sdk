@@ -78,6 +78,12 @@ export class Vouchers {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
+	 */
+	public exportGiftCardTransactions(code: string, body: T.TransactionsExportBody) {
+		return this.client.post<T.ExportTransactionsResponse>(`/vouchers/${encode(code)}/transactions/export`, body)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
