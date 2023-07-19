@@ -79,6 +79,10 @@ class Customers {
 	public delete(customerId: string) {
 		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
 	}
+
+	public deletePermanently(customerId: string) {
+		return this.client.post<T.CustomerPermanentDeletion>(`/customers/${encode(customerId)}/permanent-deletion`,{})
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-consents
 	 */

@@ -1,3 +1,21 @@
+
+export interface CustomerPermanentDeletion{
+  id:string
+  created_at:string
+  related_object_id:string
+  related_object:'customer'
+  status:string
+  data_json:{
+    events:number
+    customer_events:number
+    daily_events:number
+    segments:number
+    orders:number
+    order_events:number
+    customer:number
+  }
+  object:'pernament_deletion'
+}
 export interface SimpleCustomer {
   id: string;
   name?: string;
