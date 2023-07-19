@@ -237,12 +237,7 @@ interface CustomerObjectEmailParameter {
   };
   metadata: Record<string, any>;
   system_metadata: {
-    consents: {
-      consentId: {
-        date: string
-        value: boolean
-      }
-    }
+    consents: Record<string, any>
     source: string
   };
   created_at: string;
