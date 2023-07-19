@@ -74,7 +74,8 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
 	 */
-	public importCSV() {
+	//todo body should not be empty here (file path)
+	public importVouchersUsingCSV() {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
 	}
 	/**
