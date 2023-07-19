@@ -15,8 +15,8 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-reward
 	 */
-	public create(reward: T.RewardsCreate, body: T.RewardsCreateBody) {
-		return this.client.post<T.RewardsCreateResponse>('/rewards', reward, body)
+	public create(body: T.RewardsCreateBody) {
+		return this.client.post<T.RewardsCreateResponse>('/rewards', body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-reward
@@ -27,7 +27,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward
 	 */
-	public update(reward: T.RewardsUpdate, body: T.RewardsUpdateBody) {
+	public update(reward: T.RewardsUpdateResponse, body: T.RewardsUpdateBody) {
 		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']), body)
 	}
 	/**
@@ -51,20 +51,18 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward-assignment
 	 */
-	public updateAssignment(
-		rewardId: string,
-		assignment: T.RewardsUpdateAssignment,
-		body: T.RewardsUpdateAssignmentBody,
-	) {
+	public updateAssignment(rewardId: string, assignmentId: string, assignment: T.RewardsUpdateAssignmentBody) {
 		return this.client.put<T.RewardsUpdateAssignmentResponse>(
-			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
-			body,
+			`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`,
+			assignment,
 		)
 	}
-
-	public getAssignment(rewardId: string, assignment: T.RewardsUpdateAssignment) {
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment
+	 */
+	public getAssignment(rewardId: string, assignmentId: string) {
 		return this.client.get<T.RewardsUpdateAssignmentResponse>(
-			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
+			`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`,
 		)
 	}
 	public deleteAssignment(rewardId: string, assignmentId: string) {
