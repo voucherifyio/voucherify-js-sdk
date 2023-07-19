@@ -93,7 +93,7 @@ export interface CustomerActivitiesListResponse {
 export type CustomersCreateBody = CreateCustomer
 export type CustomersCreateResponse = CustomerObject
 
-export type CustomersGetResponse = CustomerObject | CustomerUnconfirmed
+export type CustomersGetResponse = CustomerObject
 
 export interface CustomersListParams {
 	limit?: number
@@ -113,7 +113,7 @@ export type CustomersScrollYield = CustomerObject
 type IdOrSourceId = { id: string } | { source_id: string }
 export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
-export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
+export type CustomersUpdateResponse = CustomerObject
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
 
