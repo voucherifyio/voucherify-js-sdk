@@ -67,8 +67,8 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
 	 */
-	public importSkusCSV(body: any) {
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, body)
+	public importSkusCSV() {
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-sku

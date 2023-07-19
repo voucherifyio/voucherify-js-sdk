@@ -74,8 +74,8 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
 	 */
-	public importCSV(body: any) {
-		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', body)
+	public importCSV() {
+		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
