@@ -35,6 +35,7 @@ export interface CampaignResponse {
 	created_at: string
 	creation_status: 'DONE' | 'DRAFT' | 'FAILED' | 'IN_PROGRESS' | 'MODIFYING'
 	expiration_date?: string
+	description?: string
 	id: string
 	join_once?: boolean
 	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
