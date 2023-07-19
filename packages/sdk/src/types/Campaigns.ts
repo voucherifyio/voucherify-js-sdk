@@ -457,7 +457,7 @@ export interface AddVouchersToCampaign {
 	}
 }
 
-export interface CampaignsImportVouchers {
+export interface CampaignsImportVoucher {
 	active: boolean
 	additional_info: string
 	category: string
@@ -474,6 +474,7 @@ export interface CampaignsImportVouchers {
 		quantity: number
 	}
 }
+export type CampaignsImportVouchers =CampaignsImportVoucher[]
 
 export interface CampaignsListParams {
 	campaign_type?:
