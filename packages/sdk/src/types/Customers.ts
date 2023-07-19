@@ -82,6 +82,8 @@ export interface CustomerRequest {
 		postal_code?: string
 	}
 	phone?: string
+	birthday?: string
+	birthdate?: string
 }
 
 export interface CustomersCommonListRequest {

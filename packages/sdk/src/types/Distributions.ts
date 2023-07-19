@@ -16,32 +16,123 @@ type OrderType =
 	| 'channel'
 	| '-channel'
 
-export interface VoucherDiscount {
-	type: 'UNIT' | 'AMOUNT' | 'DISCOUNT'
-	unit_off?: number
-	unit_off_formula?: string
-	effect?: string
+type PublicationResponseChannel =
+	| 'Activecampaign'
+	| 'API'
+	| 'Automation'
+	| 'Braze'
+	| 'Dashboard'
+	| 'Email'
+	| 'Intercom'
+	| 'Mailchimp'
+	| 'Reward'
+	| 'Shopify'
+	| 'SMS'
+	| 'voucherify-website'
+	| 'Webhook'
+
+export type VoucherDiscount =
+	| VoucherDiscountAmount
+	| VoucherDiscountPercentage
+	| VoucherDiscountFixed
+	| VoucherDiscountUnitOne
+	| VoucherDiscountUnitMultiple
+	| VoucherDiscountShipping
+interface VoucherDiscountAmount {
+	//1_obj_voucher_object_discount_amount
+	type: 'AMOUNT'
+	effect?:
+		| 'APPLY_TO_ITEMS'
+		| 'APPLY_TO_ITEMS_BY_QUANTITY'
+		| 'APPLY_TO_ITEMS_PROPORTIONALLY'
+		| 'APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY'
+		| 'APPLY_TO_ORDER'
 	amount_off?: number
 	amount_off_formula?: string
-	percent_off?: number
-	percent_off_formula?: string
-	amount_limit?: number
 }
 
-interface DistributionsPublicationsVoucher {
+interface VoucherDiscountPercentage {
+	//1_obj_voucher_object_discount_percentage
+	type: 'PERCENT'
+	amount_limit?: string
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	percent_off?: number
+	percent_off_formula?: string
+}
+
+interface VoucherDiscountFixed {
+	//1_obj_voucher_object_discount_fixed
+	type: 'FIXED'
+	fixed_amount?: number
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	fixed_amount_formula?: string
+}
+
+interface VoucherDiscountUnitOne {
+	//1_obj_voucher_object_discount_unit_one
+	type: 'UNIT'
+	unit_off?: number
+	unit_off_formula?: string
+	unit_type?: string
+	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+}
+
+interface VoucherDiscountUnitMultiple {
+	//1_obj_voucher_object_discount_unit_multiple
+	type: 'UNIT'
+	effect?: 'ADD_MANY_ITEMS'
+	units?: {
+		effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+		unit_off?: number
+		unit_off_formula?: string
+		unit_type?: string
+	}[]
+}
+
+interface VoucherDiscountShipping {
+	//1_obj_voucher_object_discount_shipping
+	type: 'UNIT'
+	effect?: 'ADD_MISSING_ITEMS'
+	unit_off?: number
+	unit_type?: 'prod_5h1pp1ng'
+}
+
+type DistributionsPublicationsVoucher =
+	| DistributionsPublicationsVoucherDiscount
+	| DistributionsPublicationsVoucherLoyaltyCard
+	| DistributionsPublicationsVoucherGiftCard
+interface DistributionsPublicationsVoucherDiscount {
+	//5_obj_publication_object_discount
+	code?: string
+	object?: 'voucher'
+	campaign?: string
+	is_referral_code?: boolean
+	discount?: VoucherDiscount
+}
+
+interface DistributionsPublicationsVoucherLoyaltyCard {
+	//5_obj_publication_object_loyalty_card
+	code?: string
+	object?: 'voucher'
+	campaign?: string
+	loyalty_card?: {
+		points: number
+		balance: number
+	}
+	is_referral_code?: boolean
+}
+
+interface DistributionsPublicationsVoucherGiftCard {
+	//5_obj_publication_object_gift_card
 	code?: string
 	object?: 'voucher'
 	campaign?: string
 	gift?: {
 		amount: number
 		balance: number
-	}
-	loyalty_card?: {
-		amount: number
-		balance: number
+		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	is_referral_code?: boolean
-	discount?: VoucherDiscount
 }
 
 interface DistributionsPublicationsCreateResponseVoucher {
@@ -50,20 +141,48 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	campaign?: string
 	campaign_id?: string
 	category?: string
+	category_id?: string
+	categories?: {
+		created_at: string
+		hierarchy: number
+		id: string
+		name: string
+		object: 'category'
+		updated_at: string
+	}[]
 	type?: VoucherType
 	discount?: VoucherDiscount
 	gift?: {
 		amount: number
 		balance: number
+		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	loyalty_card?: {
-		amount: number
+		points: number
 		balance: number
+		next_expiration_date: string
+		next_expiration_points: number
 	}
 	start_date?: string
 	expiration_date?: string
-	validity_timeframe?: string
-	validity_day_of_week?: string
+	validity_timeframe?: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	validation_rules_assignments?: {
+		data: {
+			created_at: string
+			id: string
+			object: 'validation_rules_assignment'
+			related_object_id: string
+			related_object_type: string
+			rule_id: string
+		}[]
+		data_ref: 'data'
+		object: 'list'
+		total: number
+	}
 	active?: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
@@ -82,15 +201,18 @@ interface DistributionsPublicationsCreateResponseVoucher {
 	updated_at?: string
 	holder_id?: string
 	object: 'voucher'
+
 	publish: {
-		object: string
+		object: 'list'
 		count: number
 		url: string
 	}
 	redemption: {
-		object: string
+		object: 'list'
 		quantity: number
 		redeemed_quantity: number
+		redeemed_amount: number
+		redeemed_points: number
 		url: string
 	}
 }
@@ -104,12 +226,10 @@ export interface DistributionsPublicationsListParams {
 	customer?: string
 	voucher?: string
 	result?: 'SUCCESS' | 'FAILURE'
-	voucher_type?: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+	voucher_type?: 'discount' | 'loyalty' | 'lucky_draw'
 	is_referral_code?: boolean
-	filters?: {
-		junction?: 'OR' | 'AND'
-		[filter_condition: string]: any
-	}
+	filters?: string
+	source_id?: string
 }
 
 interface PublicationResponse {
@@ -120,16 +240,11 @@ interface PublicationResponse {
 	customer_id?: string
 	tracking_id?: string
 	metadata?: Record<string, any>
-	channel?: string
+	channel?: PublicationResponseChannel
 	result: 'SUCCESS' | 'FAILURE'
-	customer?: {
-		object?: string
-		id: string
-	}
+	customer?: SimpleCustomer
 	voucher?: DistributionsPublicationsVoucher
-	vouchers?: string[]
-	failure_code?: string
-	failure_message?: string
+	vouchers_id?: string[]
 }
 
 export interface DistributionsPublicationsListResponse {
@@ -139,16 +254,59 @@ export interface DistributionsPublicationsListResponse {
 	publications?: PublicationResponse[]
 }
 
-export interface DistributionsPublicationsCreateParams {
-	join_once?: boolean
+//5_req_create_publication
+export type DistributionsPublicationsCreateParams = CreatePublicationStandaloneVoucher | CreatePublicationFromCampaign
+
+interface CreatePublicationStandaloneVoucher {
+	//5_req_create_publication_standalone_voucher
+	metadata?: Record<string, any>
 	source_id?: string
+	campaign?: string
+	voucher?: string
+	channel?: PublicationResponseChannel
+	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+}
+
+type CreatePublicationFromCampaign =
+	| CreatePublicationFromCampaignAutoUpdate
+	| CreatePublicationFromCampaignOneSpecificVoucher
+	| CreatePublicationFromCampaignMultipleVouchers
+
+//
+interface CreatePublicationFromCampaignAutoUpdate {
+	//5_req_create_publication_from_campaign_auto_update
+	source_id?: string
+	channel?: PublicationResponseChannel
+	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	campaign?: string
+	metadata?: Record<string, any>
+}
+
+interface CreatePublicationFromCampaignOneSpecificVoucher {
+	//5_req_create_publication_from_campaign_one_specific_voucher
+	source_id?: string
+	channel?: PublicationResponseChannel
+	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	voucher?: string
+	campaign?: string
+	metadata?: Record<string, any>
+}
+
+interface CreatePublicationFromCampaignMultipleVouchers {
+	//5_req_create_publication_from_campaign_multiple_vouchers
+	source_id?: string
+	channel?: PublicationResponseChannel
+	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	voucher?: string
 	campaign?: {
 		name: string
-		count?: number
+		count: string
 	}
-	voucher?: string
-	channel?: string
-	customer: CustomerRequest
+	metadata?: Record<string, any>
+}
+
+export interface DistributionsPublicationsCreateQueryParams {
+	join_once?: boolean
 }
 
 export interface DistributionsPublicationsCreateResponse {
@@ -158,9 +316,10 @@ export interface DistributionsPublicationsCreateResponse {
 	customer_id: string
 	tracking_id?: string
 	metadata?: Record<string, any>
-	channel?: string
+	channel?: PublicationResponseChannel
 	source_id?: string
 	result: 'SUCCESS' | 'FAILURE'
 	customer?: SimpleCustomer
 	voucher: DistributionsPublicationsCreateResponseVoucher
+	vouchers_id: string[]
 }
