@@ -290,6 +290,7 @@ interface CampaignObjectCampaignsQualification {
 	activity_duration_after_publishing: string
 	vouchers_count: number
 	start_date: string
+	description: string
 	expiration_date: string
 	active: boolean
 	metadata: Record<string, any>

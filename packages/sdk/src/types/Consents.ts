@@ -1,6 +1,7 @@
 interface ConsentGroup {
 	id: string
 	name: string
+	description:string
 	consents: string[]
 	created_at: string
 	updated_at?: string
@@ -10,6 +11,7 @@ interface ConsentGroup {
 export interface Consent {
 	id: string
 	name: string
+	description:string
 	category: string
 	created_at: string
 	updated_at?: string

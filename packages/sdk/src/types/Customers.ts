@@ -7,61 +7,6 @@ export interface SimpleCustomer {
 	object: 'customer'
 }
 
-export interface CustomerObject {
-	id: string
-	source_id?: string
-	name?: string
-	email?: string
-	phone?: string
-	description?: string
-	address: {
-		city?: string
-		state?: string
-		line_1?: string
-		line_2?: string
-		country?: string
-		postal_code?: string
-	}
-	summary: {
-		redemptions: {
-			total_redeemed: number
-			total_failed: number
-			total_succeeded: number
-			total_rolled_back: number
-			total_rollback_failed: number
-			total_rollback_succeeded: number
-			gift?: {
-				redeemed_amount: number
-				amount_to_go: number
-			}
-			loyalty?: {
-				redeemed_points: number
-				points_to_go: number
-			}
-		}
-		orders: {
-			total_amount: number
-			total_count: number
-			average_amount: number
-			last_order_amount: number
-			last_order_date?: string
-		}
-	}
-	loyalty: {
-		points: number
-		referred_customers: number
-		campaigns?: Record<
-			string,
-			{
-				points: number
-				referred_customers: number
-			}
-		>
-	}
-	metadata: Record<string, any>
-	created_at: string
-	object: 'customer'
-}
 
 export type CustomerUnconfirmed = Pick<CustomerObject, 'summary' | 'email' | 'loyalty'> & {
 	object: 'unconfirmed_customer'
@@ -91,7 +36,6 @@ export interface CreateCustomer {
 	}
 	birthdate?: string
 	birthday?: string
-	description?: string
 	metadata?: Record<string, any>
 } //9_req_create_customer
 export interface CustomerRequest {
