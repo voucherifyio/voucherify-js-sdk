@@ -3,6 +3,7 @@ import * as T from './types/Customers'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { UpdateCustomersMetadataBulkResponse, UpdateCustomersMetadataInBulk } from './types/Customers'
 
 class Customers {
 	constructor(private client: RequestController) {}
@@ -83,7 +84,7 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference/delete-customer-permanently
 	 */
 	public deletePermanently(customerId: string) {
-		return this.client.post<T.CustomerPermanentDeletion>(`/customers/${encode(customerId)}/permanent-deletion`,{})
+		return this.client.post<T.CustomerPermanentDeletion>(`/customers/${encode(customerId)}/permanent-deletion`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-consents
@@ -92,10 +93,16 @@ class Customers {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/update-customers-consents
+	 * @see https://docs.voucherify.io/reference/update-customers-in-bulk
 	 */
-	public updateCustomersInBulk(consents: T.CustomersUpdateConsentsBody) {
-		return this.client.post<undefined>(`/customers/bulk/async`, consents)
+	public updateCustomersInBulk(customers: T.UpdateCustomersInBulk) {
+		return this.client.post<T.UpdateCustomersBulkResponse>(`/customers/bulk/async`, customers)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/update-customers-metadata-in-bulk
+	 */
+	public updateCustomersMetadataInBulk(sourceIdsAndMetadata: T.UpdateCustomersMetadataInBulk) {
+		return this.client.post<T.UpdateCustomersMetadataBulkResponse>(`/customers/metadata/async`, sourceIdsAndMetadata)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-customer-activities

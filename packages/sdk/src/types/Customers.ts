@@ -1,3 +1,5 @@
+import { AsyncActionCreateResponse } from './AsyncActions'
+
 export interface CustomerPermanentDeletion {
 	id: string
 	created_at: string
@@ -417,7 +419,7 @@ export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
 export type CustomersUpdateResponse = CustomerObject
 
-export type CustomersUpdateConsentsBody = { q: string }[]
+export type CustomersUpdateConsentsBody = Record<string, boolean>
 
 export interface ListCustomers {
 	//9_res_list_customers
@@ -502,4 +504,32 @@ export interface CustomerObject {
 		cockpit_url: string
 	}
 	object: 'customer'
+}
+
+export interface UpdateCustomersBulk {
+	address?: {
+		city?: string
+		state?: string
+		line_1?: string
+		line_2?: string
+		country?: string
+		postal_code?: string
+	}
+	source_id: string
+	name: string
+	birthdate: string
+	birthday: string
+	email: string
+	phone: string
+	metadata: Record<string, any>
+}
+
+export type UpdateCustomersInBulk = UpdateCustomersBulk[]
+
+export type UpdateCustomersBulkResponse = AsyncActionCreateResponse
+export type UpdateCustomersMetadataBulkResponse = AsyncActionCreateResponse
+
+export interface UpdateCustomersMetadataInBulk {
+	source_ids: string[]
+	metadata: Record<string, any>
 }
