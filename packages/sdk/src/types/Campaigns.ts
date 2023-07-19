@@ -474,7 +474,7 @@ export interface CampaignsImportVoucher {
 		quantity: number
 	}
 }
-export type CampaignsImportVouchers =CampaignsImportVoucher[]
+export type CampaignsImportVouchers = CampaignsImportVoucher[]
 
 export interface CampaignsListParams {
 	campaign_type?:
