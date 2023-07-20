@@ -24,17 +24,25 @@ export interface SimpleVoucher {
 }
 
 export interface VouchersResponse {
+	//1_obj_voucher_object
 	id: string
 	code: string
 	campaign?: string
+	campaign_id?: string
 	category?: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount?: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
+	categories?: CategoryObject[]
+	category_id?: string
+	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD'
+	discount?: VoucherDiscount
 	gift?: {
 		amount: number
 		balance: number
+		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	loyalty_card?: {
+		balance: number
+		next_expiration_date: string
+		next_expiration_points: number
 		points: number
 	}
 	start_date?: string
@@ -43,22 +51,18 @@ export interface VouchersResponse {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week?: number[]
+	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	publish?: {
 		object: 'list'
 		count: number
-		data_ref: 'entries'
-		entries: string[]
-		total: number
 		url: string
 	}
 	redemption?: {
 		object: 'list'
 		quantity?: number
 		redeemed_quantity: number
-		data_ref: 'redemption_entries'
-		redemption_entries: string[]
-		total: number
+		redeemed_amount: number
+		redeemed_points: number
 		url: string
 	}
 	active: boolean
@@ -75,7 +79,6 @@ export interface VouchersResponse {
 		}
 	}
 	is_referral_code: boolean
-	referrer_id?: string
 	holder_id?: string
 	updated_at?: string
 	created_at: string
@@ -93,6 +96,82 @@ export interface VouchersResponse {
 			object: 'validation_rules_assignment'
 		}[]
 	}
+}
+
+interface CategoryObject {
+	//20_obj_category_object
+	id?: string
+	name?: string
+	hierarchy?: number
+	created_at?: string
+	updated_at?: string
+	object?: 'category'
+}
+
+export type VoucherDiscount =
+	| VoucherDiscountAmount
+	| VoucherDiscountPercentage
+	| VoucherDiscountFixed
+	| VoucherDiscountUnitOne
+	| VoucherDiscountUnitMultiple
+	| VoucherDiscountShipping
+interface VoucherDiscountAmount {
+	//1_obj_voucher_object_discount_amount
+	type: 'AMOUNT'
+	effect?:
+		| 'APPLY_TO_ITEMS'
+		| 'APPLY_TO_ITEMS_BY_QUANTITY'
+		| 'APPLY_TO_ITEMS_PROPORTIONALLY'
+		| 'APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY'
+		| 'APPLY_TO_ORDER'
+	amount_off?: number
+	amount_off_formula?: string
+}
+
+interface VoucherDiscountPercentage {
+	//1_obj_voucher_object_discount_percentage
+	type: 'PERCENT'
+	amount_limit?: string
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	percent_off?: number
+	percent_off_formula?: string
+}
+
+interface VoucherDiscountFixed {
+	//1_obj_voucher_object_discount_fixed
+	type: 'FIXED'
+	fixed_amount?: number
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	fixed_amount_formula?: string
+}
+
+interface VoucherDiscountUnitOne {
+	//1_obj_voucher_object_discount_unit_one
+	type: 'UNIT'
+	unit_off?: number
+	unit_off_formula?: string
+	unit_type?: string
+	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+}
+
+interface VoucherDiscountUnitMultiple {
+	//1_obj_voucher_object_discount_unit_multiple
+	type: 'UNIT'
+	effect?: 'ADD_MANY_ITEMS'
+	units?: {
+		effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+		unit_off?: number
+		unit_off_formula?: string
+		unit_type?: string
+	}[]
+}
+
+interface VoucherDiscountShipping {
+	//1_obj_voucher_object_discount_shipping
+	type: 'UNIT'
+	effect?: 'ADD_MISSING_ITEMS'
+	unit_off?: number
+	unit_type?: 'prod_5h1pp1ng'
 }
 
 export interface VouchersQualificationExamineBody {
