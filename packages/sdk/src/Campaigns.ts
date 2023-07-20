@@ -38,14 +38,14 @@ export class Campaigns {
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-campaign
 	 */
-	public delete(name: string, params: T.CampaignsDeleteParams = {}) {
+	public delete(name: string, params?: T.CampaignsDeleteParams) {
 		return this.client.delete<T.CampaignsDeleteCampaignResponse>(`/campaigns/${encode(name)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-voucher-to-campaign
 	 */
 
-	public addVoucher(name: string, body: T.AddVouchersToCampaign, params: T.CampaignsAddVoucherParams) {
+	public addVoucher(name: string, body: T.AddVouchersToCampaign = {}, params: T.CampaignsAddVoucherParams) {
 		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, body, params)
 	}
 	/**

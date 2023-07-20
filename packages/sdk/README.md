@@ -313,6 +313,18 @@ client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
 
+#### [Enable Campaign](https://docs.voucherify.io/reference/enable-campaign)
+
+```javascript
+client.campaigns.enable(campaignId)
+```
+
+#### [Disable Campaign](https://docs.voucherify.io/reference/disable-campaign)
+
+```javascript
+client.campaigns.disable(campaignId)
+```
+
 ---
 
 ### Distributions

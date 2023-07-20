@@ -439,21 +439,21 @@ export type CampaignsAddVoucherResponse = VoucherObject | AsyncActionCreateRespo
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
 export interface AddVouchersToCampaign {
-	category_id: string
-	start_date: string
-	expiration_date: string
-	active: boolean
-	metadata: Record<string, any>
-	redemption: {
+	category_id?: string
+	start_date?: string
+	expiration_date?: string
+	active?: boolean
+	metadata?: Record<string, any>
+	redemption?: {
 		quantity: number
 	}
-	additional_info: string
-	code_config: {
-		length: string
-		charset: string
-		prefix: string
-		postfix: string
-		pattern: string
+	additional_info?: string
+	code_config?: {
+		length?: string
+		charset?: string
+		prefix?: string
+		postfix?: string
+		pattern?: string
 	}
 }
 
