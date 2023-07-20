@@ -27,6 +27,7 @@ interface LoyaltiesVoucher {
 export interface LoyaltiesListParams {
 	limit?: number
 	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
 export interface LoyaltiesListResponse {
