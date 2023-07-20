@@ -2,7 +2,6 @@ import * as T from './types/Exports'
 
 import { encode } from './helpers'
 import type { RequestController } from './RequestController'
-import { GetExportResponse } from './types/Exports'
 
 export class Exports {
 	constructor(private client: RequestController) {}
