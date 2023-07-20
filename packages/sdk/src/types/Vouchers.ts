@@ -115,6 +115,21 @@ export type VoucherDiscount =
 	| VoucherDiscountUnitOne
 	| VoucherDiscountUnitMultiple
 	| VoucherDiscountShipping
+
+export type VoucherDiscountPost =
+	| VoucherDiscountAmountPost
+	| VoucherDiscountPercentagePost
+	| VoucherDiscountFixedPost
+	| VoucherDiscountUnitOnePost
+	| VoucherDiscountUnitMultiplePost
+	| VoucherDiscountShippingPost
+
+export type VoucherDiscountPut =
+	| VoucherDiscountAmountPut
+	| VoucherDiscountPercentagePut
+	| VoucherDiscountFixedPut
+	| VoucherDiscountUnitOnePut
+	| VoucherDiscountUnitMultiplePut
 interface VoucherDiscountAmount {
 	//1_obj_voucher_object_discount_amount
 	type: 'AMOUNT'
@@ -174,6 +189,19 @@ interface VoucherDiscountShipping {
 	unit_type?: 'prod_5h1pp1ng'
 }
 
+type VoucherDiscountAmountPost = VoucherDiscountAmount
+type VoucherDiscountPercentagePost = Omit<VoucherDiscountPercentage, 'amount_limit'> & { amount_limit: number }
+type VoucherDiscountFixedPost = VoucherDiscountFixed
+type VoucherDiscountUnitOnePost = VoucherDiscountUnitOne
+type VoucherDiscountUnitMultiplePost = VoucherDiscountUnitMultiple
+type VoucherDiscountShippingPost = VoucherDiscountShipping
+
+type VoucherDiscountAmountPut = Omit<VoucherDiscountAmount, 'type'> & { type: string }
+type VoucherDiscountPercentagePut = Omit<VoucherDiscountPercentage, 'type' | 'amount_limit'> & { amount_limit: number }
+type VoucherDiscountFixedPut = VoucherDiscountFixed
+type VoucherDiscountUnitOnePut = VoucherDiscountUnitOne
+type VoucherDiscountUnitMultiplePut = VoucherDiscountUnitMultiple
+
 export interface VouchersQualificationExamineBody {
 	customer?: Omit<SimpleCustomer, 'object'> & { description: string }
 	order?: Pick<OrdersGetResponse, 'id' | 'source_id' | 'amount' | 'items' | 'metadata'>
@@ -212,19 +240,44 @@ export interface VouchersCreateParameters {
 	}
 }
 
-export type VouchersCreate = VouchersCreateParameters &
-	Pick<
-		VouchersResponse,
-		'type' | 'discount' | 'gift' | 'category' | 'additional_info' | 'start_date' | 'expiration_date' | 'metadata'
-	>
+//1_req_vouchers_code_POST
+export type VouchersCreateBody = Pick<
+	VouchersResponse,
+	| 'type'
+	| 'active'
+	| 'additional_info'
+	| 'campaign'
+	| 'campaign_id'
+	| 'category'
+	| 'category_id'
+	| 'expiration_date'
+	| 'metadata'
+	| 'start_date'
+	| 'validity_timeframe'
+> & {
+	discount?: VoucherDiscountPost
+	gift?: {
+		amount: number
+		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+	}
+	loyalty_card?: {
+		points: number
+	}
+	redemption?: {
+		quantity: null | number
+	}
+	validation_rules?: string[]
+	validity_day_of_week?: number[]
+}
 
-export type VouchersCreateResponse = Omit<VouchersResponse, 'validation_rules_assignments'>
+export type VouchersCreateResponse = VouchersResponse
 
 export type VouchersGetResponse = VouchersResponse
 
 export interface VouchersUpdate {
-	code: string
+	//1_req_vouchers_code_PUT
 	category?: string
+	category_id?: string
 	start_date?: string
 	expiration_date?: string
 	active?: boolean
@@ -232,13 +285,23 @@ export interface VouchersUpdate {
 	metadata?: Record<string, any>
 	gift?: {
 		amount: number
+		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+	}
+	loyalty_card?: {
+		points: number
+	}
+	discount?: VoucherDiscountPut
+	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	validity_timeframe?: {
+		interval: string
+		duration: string
 	}
 }
 
 export type VouchersUpdateResponse = VouchersResponse
 
 export interface VouchersDeleteParams {
-	force?: boolean
+	force?: string
 }
 
 export interface VouchersListParams {
