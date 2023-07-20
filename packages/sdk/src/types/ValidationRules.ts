@@ -38,19 +38,50 @@ export type ValidationRulesUpdate = Partial<ValidationRulesCreate> & { id: strin
 
 export type ValidationRulesUpdateResponse = ValidationRulesCreateResponse
 
-export interface ValidationRulesCreateAssignment {
+//13_req_create_validation_rule_assignments
+export type ValidationRulesCreateAssignment =
+	| ValidationRuleAssignmentsVoucher
+	| ValidationRuleAssignmentsCampaign
+	| ValidationRuleAssignmentsPromotionTier
+	| ValidationRuleAssignmentsEarningRule
+	| ValidationRuleAssignmentsReward
+	| ValidationRuleAssignmentsDistribution
+
+interface ValidationRuleAssignmentsVoucher {
 	voucher?: string
+}
+
+interface ValidationRuleAssignmentsCampaign {
 	campaign?: string
+}
+
+interface ValidationRuleAssignmentsPromotionTier {
 	promotion_tier?: string
+}
+interface ValidationRuleAssignmentsEarningRule {
+	earning_rule?: string
+}
+interface ValidationRuleAssignmentsReward {
+	related_object_id?: string
+	related_object_type?: 'reward_assignment'
+}
+interface ValidationRuleAssignmentsDistribution {
+	distribution?: string
 }
 
 export interface ValidationRulesCreateAssignmentResponse {
+	//13_res_validation-rules_validationRuleId_assignments
 	id: string
 	rule_id: string
 	related_object_id?: string
-	related_object_type?: string
+	related_object_type?:
+		| 'voucher'
+		| 'campaign'
+		| 'earning_rule'
+		| 'reward_assignment'
+		| 'promotion_tier'
+		| 'distribution'
 	created_at?: string
-	updated_at: string
 	object: 'validation_rules_assignment'
 }
 
@@ -69,6 +100,7 @@ export interface ValidationRulesListResponse {
 export interface ValidationRulesListAssignmentsParams {
 	limit?: number
 	page?: number
+	order?: '-created_at' | 'created_at'
 }
 
 export interface ValidationRulesListAssignmentsResponse {
