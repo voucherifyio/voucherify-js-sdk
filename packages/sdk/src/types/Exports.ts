@@ -1,3 +1,16 @@
+export interface ListExportQuery {
+	limit: number
+	order: 'created_at' | '-created_at' | 'status' | '-status'
+	page: number
+}
+
+export interface ListExport {
+	object: 'list'
+	data_ref: 'exports'
+	exports: ExportObject[]
+	total: number
+}
+
 export interface CreateExport {
 	exported_object:
 		| 'order'

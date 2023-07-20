@@ -13,6 +13,12 @@ export class Exports {
 		return this.client.post<T.ExportObject>('/exports', exportResource)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/list-exports
+	 */
+	public list(query: T.ListExportQuery) {
+		return this.client.get<T.ListExport>('/exports', query)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/get-export
 	 */
 	public get(exportResourceId: string) {
