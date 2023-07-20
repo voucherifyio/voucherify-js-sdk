@@ -124,3 +124,32 @@ export interface SimpleSku {
 	source_id?: string
 	sku?: string
 }
+
+export interface ProductObject {
+	//11_obj_product_object_truncated
+	id?: string
+	source_id?: string
+	name?: string
+	price?: number
+	attributes?: string[]
+	metadata?: Record<string, any>
+	image_url: string
+	updated_at?: string
+	created_at: string
+	object: 'product'
+}
+
+export interface SkuObject {
+	id?: string
+	source_id?: string
+	product_id?: string
+	sku?: string
+	price?: number
+	currency?: string
+	attributes?: Record<string, any>
+	metadata?: Record<string, any>
+	image_url: string
+	updated_at?: string
+	created_at: string
+	object: 'sku'
+}
