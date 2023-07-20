@@ -10,7 +10,7 @@ export class Exports {
 	 * @see https://docs.voucherify.io/reference/create-export
 	 */
 	public create(exportResource: T.ExportResource) {
-		return this.client.post<T.ExportsCreateResponse>('/exports', exportResource)
+		return this.client.post<T.ExportObject>('/exports', exportResource)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-export
