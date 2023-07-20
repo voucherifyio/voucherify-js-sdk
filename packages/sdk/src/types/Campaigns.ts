@@ -357,20 +357,20 @@ interface CreateCampaignDiscountVoucher {
 	campaign_type: 'DISCOUNT_COUPONS'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	join_once: boolean
-	use_voucher_metadata_schema: boolean
+	use_voucher_metadata_schema?: boolean
 	vouchers_count: number
 	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
+	expiration_date?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	category_id: string
-	category: string
-	metadata: Record<string, any>
-	voucher: CampaignVoucherObjectDiscount
+	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	category_id?: string
+	category?: string
+	metadata?: Record<string, any>
+	voucher?: CampaignVoucherObjectDiscount
 }
 
 interface CreateCampaignLoyalty {
@@ -379,20 +379,20 @@ interface CreateCampaignLoyalty {
 	type: 'AUTO_UPDATE' | 'STATIC'
 	auto_join: boolean
 	join_once: boolean
-	use_voucher_metadata_schema: boolean
+	use_voucher_metadata_schema?: boolean
 	vouchers_count: number
 	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
+	expiration_date?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	category_id: string
-	category: string
-	metadata: Record<string, any>
-	voucher: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
+	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	category_id?: string
+	category?: string
+	metadata?: Record<string, any>
+	voucher?: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
 interface CreateCampaignGift {
@@ -400,20 +400,20 @@ interface CreateCampaignGift {
 	campaign_type: 'GIFT_VOUCHERS'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	join_once: boolean
-	use_voucher_metadata_schema: boolean
+	use_voucher_metadata_schema?: boolean
 	vouchers_count: number
 	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	expiration_date?: string
+	validity_timeframe?: {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	category_id: string
-	category: string
-	metadata: Record<string, any>
-	voucher: CampaignVoucherObjectGiftCard
+	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	category_id?: string
+	category?: string
+	metadata?: Record<string, any>
+	voucher?: CampaignVoucherObjectGiftCard
 }
 
 interface CreateCampaignPromotion {
@@ -421,34 +421,20 @@ interface CreateCampaignPromotion {
 	campaign_type: 'PROMOTION'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	join_once: boolean
-	use_voucher_metadata_schema: boolean
+	use_voucher_metadata_schema?: boolean
 	vouchers_count: number
 	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	expiration_date?: string
+	validity_timeframe?: {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	category_id: string
-	category: string
-	metadata: Record<string, any>
-	promotion: AddPromotionTierToCampaign
-	// metadata: Record<string, any>
-	// active: boolean
-	// start_date: string
-	// expiration_date: string
-	// validity_day_of_week: number[]
-	// validity_timeframe: {
-	// 	duration: string
-	// 	interval: string
-	// }
-	// validation_rules: {
-	// 	type: string
-	// }[]
-	// category: string
-	// category_id: string
+	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	category_id?: string
+	category?: string
+	metadata?: Record<string, any>
+	promotion?: AddPromotionTierToCampaign
 }
 
 interface CreateCampaignReferral {
@@ -456,20 +442,20 @@ interface CreateCampaignReferral {
 	campaign_type: 'REFERRAL_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
 	join_once: boolean
-	use_voucher_metadata_schema: boolean
+	use_voucher_metadata_schema?: boolean
 	vouchers_count: number
 	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	expiration_date?: string
+	validity_timeframe?: {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	category_id: string
-	category: string
-	metadata: Record<string, any>
-	referral_program: {
+	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	category_id?: string
+	category?: string
+	metadata?: Record<string, any>
+	referral_program?: {
 		conversion_event_type: 'redemption' | 'custom_event'
 		custom_event: {
 			id: string
@@ -485,25 +471,27 @@ interface CreateCampaignReferral {
 			amount: string
 		}
 	}
-	voucher:
+	voucher?:
 		| CampaignVoucherObjectDiscount
 		| CampaignVoucherObjectGiftCard
 		| Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
-export type CampaignsUpdateCampaign = Pick<
-	CampaignResponse,
-	| 'type'
-	| 'activity_duration_after_publishing'
-	| 'auto_join'
-	| 'category'
-	| 'category_id'
-	| 'expiration_date'
-	| 'join_once'
-	| 'metadata'
-	| 'start_date'
-	| 'validity_day_of_week'
-	| 'validity_timeframe'
+export type CampaignsUpdateCampaign = Partial<
+	Pick<
+		CampaignResponse,
+		| 'type'
+		| 'activity_duration_after_publishing'
+		| 'auto_join'
+		| 'category'
+		| 'category_id'
+		| 'expiration_date'
+		| 'join_once'
+		| 'metadata'
+		| 'start_date'
+		| 'validity_day_of_week'
+		| 'validity_timeframe'
+	>
 >
 
 export interface CampaignsDeleteParams {
@@ -525,21 +513,21 @@ export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
 export type AddVouchersWithSpecificCodeToCampaign = Omit<AddVouchersToCampaign, 'code_config'>
 export interface AddVouchersToCampaign {
-	category_id: string
-	start_date: string
-	expiration_date: string
-	active: boolean
-	metadata: Record<string, any>
-	redemption: {
+	category_id?: string
+	start_date?: string
+	expiration_date?: string
+	active?: boolean
+	metadata?: Record<string, any>
+	redemption?: {
 		quantity: number
 	}
-	additional_info: string
-	code_config: {
-		length: string
-		charset: string
-		prefix: string
-		postfix: string
-		pattern: string
+	additional_info?: string
+	code_config?: {
+		length?: string
+		charset?: string
+		prefix?: string
+		postfix?: string
+		pattern?: string
 	}
 }
 
@@ -609,7 +597,7 @@ export interface CampaignVoucherObjectDiscount {
 	redemption: {
 		quantity: number
 	}
-	code_config: {
+	code_config?: {
 		length: string
 		charset: string
 		prefix: string
@@ -629,7 +617,7 @@ export interface CampaignVoucherObjectGiftCard {
 	redemption: {
 		quantity: number
 	}
-	code_config: {
+	code_config?: {
 		length: string
 		charset: string
 		prefix: string
@@ -653,7 +641,7 @@ export interface CampaignVoucherObjectLoyaltyCard {
 	redemption: {
 		quantity: number
 	}
-	code_config: {
+	code_config?: {
 		length: string
 		charset: string
 		prefix: string
