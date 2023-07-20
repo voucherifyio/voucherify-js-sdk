@@ -83,6 +83,8 @@ export interface CampaignResponse {
 	// object: 'campaign'
 }
 
+export type LoyaltyTiersExpiration = LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+
 interface AddPromotionTierToCampaign {
 	tiers: {
 		action: {
@@ -630,14 +632,7 @@ export interface CampaignVoucherObjectGiftCard {
 export interface CampaignVoucherObjectLoyaltyCard {
 	//2_obj_campaign_object_voucher_object_LOYALTY_CARD
 	type: 'LOYALTY_CARD'
-	loyalty_card: {
-		points: number
-		expiration_rules: {
-			period_type: 'MONTH'
-			period_value: number
-			rounding_type: 'END_OF_MONTH' | 'END_OF_QUARTER' | 'END_OF_HALF_YEAR' | 'END_OF_YEAR' | 'PARTICULAR_MONTH'
-		}
-	}
+	loyalty_card: LoyaltyCard
 	redemption: {
 		quantity: number
 	}
@@ -649,6 +644,15 @@ export interface CampaignVoucherObjectLoyaltyCard {
 		pattern: string
 	}
 	is_referral_code: boolean
+}
+
+export interface LoyaltyCard {
+	points: number
+	expiration_rules: {
+		period_type: 'MONTH'
+		period_value: number
+		rounding_type: 'END_OF_MONTH' | 'END_OF_QUARTER' | 'END_OF_HALF_YEAR' | 'END_OF_YEAR' | 'PARTICULAR_MONTH'
+	}
 }
 
 export type CampaignsDeleteCampaignResponse = AsyncActionCreateResponse

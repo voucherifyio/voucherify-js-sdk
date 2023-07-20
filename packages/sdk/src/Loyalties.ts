@@ -16,7 +16,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/create-loyalty-program
 	 */
 	public create(campaign: T.LoyaltiesCreateCampaign) {
-		return this.client.post<T.LoyaltiesCreateCampaignResponse>('/loyalties', campaign)
+		return this.client.post<T.LoyaltyCampaignObject>('/loyalties', campaign)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-loyalty-program
@@ -27,7 +27,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-loyalty-program
 	 */
-	public update(campaign: T.LoyaltiesUpdateCampaign) {
+	public update(campaign: T.LoyaltiesUpdateCampaign & { id: string }) {
 		return this.client.put<T.LoyaltiesUpdateCampaignResponse>(
 			`/loyalties/${encode(campaign.id)}`,
 			omit(campaign, ['id']),
@@ -37,7 +37,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/delete-loyalty-program
 	 */
 	public delete(campaignId: string, params?: T.LoyaltiesDeleteCampaignParams) {
-		return this.client.delete(`/loyalties/${encode(campaignId)}`, params)
+		return this.client.delete<T.DeleteLoyaltyCampaign>(`/loyalties/${encode(campaignId)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-reward-assignments-1

@@ -2,27 +2,11 @@ import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { SimpleCustomer } from './Customers'
-import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
+import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
+import { AsyncActionCreateResponse } from './AsyncActions'
 
-interface LoyaltiesVoucher {
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
-	}
-	type?: string
-	is_referral_code?: boolean
-	loyalty_card?: {
-		points: number
-		balance: number
-	}
-	redemption?: {
-		quantity?: number
-	}
-}
+export type DeleteLoyaltyCampaign = AsyncActionCreateResponse
 
 export interface LoyaltiesListParams {
 	limit?: number
@@ -32,84 +16,152 @@ export interface LoyaltiesListParams {
 
 export interface LoyaltiesListResponse {
 	object: 'list'
-	total: number
 	data_ref: 'campaigns'
-	campaigns?: LoyaltiesCreateCampaignResponse[]
+	campaigns?: CampaignObjectNoExtendedCategories[]
+	total: number
+}
+
+export interface LoyaltyCampaignObject {
+	id: string
+	name: string
+	description: string
+	campaign_type: 'LOYALTY_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	voucher: CampaignVoucherObjectLoyaltyCard
+	auto_join: boolean
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	vouchers_count: number
+	active: boolean
+	metadata: Record<string, any>
+	created_at: string
+	updated_at: string
+	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
+	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
+	protected: boolean
+	category_id: string
+	categories: CategoryObject
+	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	object: 'campaign'
+}
+
+export interface CampaignObjectNoExtendedCategories {
+	id: string
+	name: string
+	description: string
+	campaign_type: 'LOYALTY_PROGRAM'
+	type: 'AUTO_UPDATE' | 'STATIC'
+	voucher: CampaignVoucherObjectLoyaltyCard
+	auto_join: boolean
+	join_once: boolean
+	use_voucher_metadata_schema: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	activity_duration_after_publishing: string
+	vouchers_count: number
+	active: boolean
+	metadata: Record<string, any>
+	created_at: string
+	updated_at: string
+	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
+	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
+	protected: boolean
+	category_id: string
+	categories: CategoryObject[]
+	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	object: 'campaign'
+}
+interface LoyaltyTiersExpirationPointsInPeriod {
+	qualification_type: 'POINTS_IN_PERIOD'
+	qualification_period: 'MONTH' | 'QUARTER' | 'HALF_YEAR' | 'YEAR'
+	start_date: { type: 'IMMEDIATE' | 'NEXT_PERIOD' }
+	expiration_date: {
+		type: 'END_OF_PERIOD' | 'END_OF_NEXT_PERIOD'
+		extend: string
+	}
+}
+
+interface LoyaltyTiersExpirationBalance {
+	qualification_type: 'BALANCE'
+	start_date: { type: 'IMMEDIATE' }
+	expiration_date:
+		| LoyaltyTiersExpirationBalanceExpirationDateBalanceDrop
+		| LoyaltyTiersExpirationBalanceExpirationDateCustom
+}
+
+interface LoyaltyTiersExpirationBalanceExpirationDateBalanceDrop {
+	type: 'BALANCE_DROP'
+}
+
+interface LoyaltyTiersExpirationBalanceExpirationDateCustom {
+	type: 'CUSTOM'
+	extend: string
+	rounding:
+		| LoyaltyTiersExpirationExpirationDateRoundingDefaultOptions
+		| LoyaltyTiersExpirationExpirationDateRoundingCustom
+}
+
+interface LoyaltyTiersExpirationExpirationDateRoundingDefaultOptions {
+	type: 'MONTH' | 'QUARTER' | 'HALF_YEAR' | 'YEAR'
+	strategy: 'END'
+}
+
+interface LoyaltyTiersExpirationExpirationDateRoundingCustom {
+	type: 'CUSTOM'
+	strategy: 'END'
+	unit: 'MONTH'
+	value: number
 }
 
 export interface LoyaltiesCreateCampaign {
 	name: string
-	start_date?: string
-	expiration_date?: string
-	type?: 'AUTO_UPDATE' | 'STATIC'
-	vouchers_count?: number
-	voucher: {
-		type: 'LOYALTY_CARD'
-		redemption?: {
-			quantity: number
-		}
-		loyalty_card: {
-			points: number
-			balance?: number
-		}
-		code_config?: {
-			length?: number
-			charset?: string
-			pattern?: string
-			prefix?: string
-			suffix?: string
-		}
-	}
-	metadata?: Record<string, any>
-}
-
-export interface LoyaltiesCreateCampaignResponse {
-	id: string
-	name: string
-	campaign_type?: 'LOYALTY_PROGRAM'
+	description?: string
 	type: 'AUTO_UPDATE' | 'STATIC'
-	category?: string
 	auto_join?: boolean
 	join_once?: boolean
-	description?: string
+	use_voucher_metadata_schema?: boolean
+	vouchers_count?: number
 	start_date?: string
-	validation_rules_assignments?: {
-		data?: ValidationRulesCreateAssignmentResponse[]
-		object: 'list'
-		total: number
-		data_ref: 'data'
-	}
 	expiration_date?: string
-	activity_duration_after_publishing?: string
 	validity_timeframe?: {
 		interval?: string
 		duration?: string
 	}
 	validity_day_of_week?: number[]
+	activity_duration_after_publishing?: string
+	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	category_id: string
+	category?: string
 	metadata?: Record<string, any>
-	created_at: string
-	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
-	active: boolean
-	voucher?: LoyaltiesVoucher
-	referral_program?: boolean
-	use_voucher_metadata_schema?: boolean
-	protected?: boolean
-	vouchers_count?: number
-	object: 'campaign'
+	voucher?: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
-export type LoyaltiesGetCampaignResponse = LoyaltiesCreateCampaignResponse
+export type LoyaltiesGetCampaignResponse = LoyaltyCampaignObject
 
-export interface LoyaltiesUpdateCampaign {
-	id: string
-	start_date?: string
-	expiration_date?: string
-	metadata?: Record<string, any>
-	description?: string
-	type?: 'AUTO_UPDATE' | 'STATIC'
-}
+export type LoyaltiesUpdateCampaign = Partial<
+	Omit<
+		LoyaltiesCreateCampaign,
+		'use_voucher_metadata_schema' | 'name' | 'loyalty_tiers_expiration' | 'voucher' | 'vouchers_count'
+	> & {
+		loyalty_card: LoyaltyCard
+		loyalty_tiers_expiration: LoyaltyTiersExpiration
+	}
+>
 
-export type LoyaltiesUpdateCampaignResponse = LoyaltiesCreateCampaignResponse
+export type LoyaltiesUpdateCampaignResponse = LoyaltyCampaignObject
 
 export interface LoyaltiesDeleteCampaignParams {
 	force?: boolean
