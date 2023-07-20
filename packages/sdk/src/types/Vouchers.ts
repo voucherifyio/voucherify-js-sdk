@@ -245,6 +245,7 @@ export interface VouchersListParams {
 	limit?: number
 	page?: number
 	category?: string
+	campaign_id?: string
 	campaign?: string
 	customer?: string
 	created_at?: {
@@ -255,30 +256,15 @@ export interface VouchersListParams {
 		after?: string
 		before?: string
 	}
-	order?:
-		| '-created_at'
-		| 'created_at'
-		| '-updated_at'
-		| 'updated_at'
-		| '-type'
-		| 'type'
-		| '-code'
-		| 'code'
-		| '-campaign'
-		| 'campaign'
-		| '-category'
-		| 'category'
-	filters?: {
-		junction?: string
-		[filter_condition: string]: any
-	}
+	order?: '-created_at' | 'created_at' | '-updated_at' | 'updated_at' | '-code' | 'code'
 }
 
 export interface VouchersListResponse {
+	//1_res_vouchers_GET
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: VouchersResponse[]
+	vouchers: Omit<VouchersResponse[], 'validation_rules_assignments'>
 }
 
 export type VouchersEnableResponse = VouchersResponse
