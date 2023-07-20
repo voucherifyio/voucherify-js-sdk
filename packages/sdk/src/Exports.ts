@@ -2,6 +2,7 @@ import * as T from './types/Exports'
 
 import { encode } from './helpers'
 import type { RequestController } from './RequestController'
+import { GetExportResponse } from './types/Exports'
 
 export class Exports {
 	constructor(private client: RequestController) {}
@@ -10,7 +11,7 @@ export class Exports {
 	 * @see https://docs.voucherify.io/reference/create-export
 	 */
 	public create(exportResource: T.CreateExport) {
-		return this.client.post<T.ExportObject>('/exports', exportResource)
+		return this.client.post<T.CreateExportResponse>('/exports', exportResource)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-exports
@@ -22,7 +23,7 @@ export class Exports {
 	 * @see https://docs.voucherify.io/reference/get-export
 	 */
 	public get(exportResourceId: string) {
-		return this.client.get<T.ExportsGetResponse>(`/exports/${encode(exportResourceId)}`)
+		return this.client.get<T.GetExportResponse>(`/exports/${encode(exportResourceId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-export

@@ -31,6 +31,9 @@ export interface CreateExport {
 		| ExportLoyaltyCardTransactions
 }
 
+export type CreateExportResponse = ExportObject
+export type GetExportResponse = ExportObject
+
 export interface ExportObject {
 	id: string
 	object: 'export'
@@ -418,5 +421,3 @@ interface FilterOrderItemsDiscountAmount {
 	items_discount_amount?: FilterConditionsNumber //16_filter_conditions_string
 	junction?: FilterJunction //16_filter_junction
 }
-
-export type ExportsGetResponse = ExportsCreateResponse
