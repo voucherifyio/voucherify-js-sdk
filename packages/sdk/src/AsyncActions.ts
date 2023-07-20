@@ -16,7 +16,7 @@ class AsyncActions {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-async-actions
 	 */
-	public list(params: T.AsyncActionsListParams) {
+	public list(params: T.AsyncActionsListParams = {}) {
 		return this.client.get<T.AsyncActionsListResponse>('/async-actions', params)
 	}
 }
