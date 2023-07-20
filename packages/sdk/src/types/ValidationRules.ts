@@ -224,7 +224,9 @@ export interface ValidationRulesListResponse {
 export interface ValidationRulesListAssignmentsParams {
 	limit?: number
 	page?: number
-	order?: '-created_at' | 'created_at'
+	order?: string
+	related_object_id?: string
+	rule?: string
 }
 
 export interface ValidationRulesListAssignmentsResponse {
