@@ -1,30 +1,61 @@
 import { ApplicableToResultList } from './ApplicableTo'
 
-export interface ValidationRulesCreate {
-	name: string
-	error?: {
-		message?: string
+interface RulesObject {
+	1: {
+		name: string
+		property: string | null
+		conditions: {
+			$one_of_voucherify_conditions: (string | number | boolean)[]
+		}
+		rules: {
+			1: {
+				name: string
+				property: string
+				conditions: Record<string, any>
+				rules: Record<string, any>
+			}
+			logic: string
+		}
+		error: {
+			message: string
+		}
 	}
-	rules?: {
-		logic?: string
-		[rule: string]: any
+	logic: string
+}
+
+interface ApplicableToObject {
+	excluded: {
+		object: 'product' | 'sku' | 'products_collection'
+		id: string
+		source_id: string
+		strict: boolean
+		effect: 'APPLY_TO_EVERY'
+	}[]
+	included: {
+		object: 'product' | 'sku' | 'products_collection'
+		id: string
+		source_id: string
+		strict: boolean
+		effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+		quantity_limit: number
+	}[]
+	included_all: boolean
+}
+
+export interface ValidationRulesCreate {
+	//13_req_create_validation_rule
+	name: string
+	rules?: RulesObject
+	applicable_to?: ApplicableToObject
+	error?: {
+		message: string
 	}
 }
 
-export interface ValidationRulesCreateResponse {
-	id: string
-	name: string
-	error?: {
-		message?: string
-	}
-	rules?: {
-		logic?: string
-		[rule: string]: any
-	}
-	created_at: string
-	updated_at?: string
-	object: 'validation_rules'
-}
+export type ValidationRulesCreateResponse = ValidationRulesObject
+
+//13_res_list_validation_rules
+export type ValidationRulesGetResponse = ValidationRulesObject & { assignments_count?: number }
 
 export interface ValidationRulesValidateResponse {
 	valid: boolean
@@ -32,7 +63,7 @@ export interface ValidationRulesValidateResponse {
 	applicable_to: ApplicableToResultList
 }
 
-export interface ValidationRulesGetResponse {
+export interface ValidationRulesObject {
 	//13_obj_validation_rule_object
 	id?: string
 	name?: string
@@ -180,6 +211,7 @@ export interface ValidationRulesCreateAssignmentResponse {
 export interface ValidationRulesListParams {
 	limit?: number
 	page?: number
+	order?: 'created_at' | '-created_at' | '-name' | 'name' | 'updated_at' | '-updated_at'
 }
 
 export interface ValidationRulesListResponse {
