@@ -47,7 +47,9 @@ export class ValidationRules {
 	 * @see https://docs.voucherify.io/reference/delete-validation-rules-assignment
 	 */
 	public deleteAssignment(validationRuleId: string, assignmentId: string) {
-		return this.client.delete(`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`)
+		return this.client.delete<undefined>(
+			`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`,
+		)
 	}
 
 	public validate(validationRuleId: string, params: any = {}) {
