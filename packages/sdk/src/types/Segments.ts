@@ -1,25 +1,25 @@
 export type SegmentsCreate = SegmentsCreateStatic | SegmentsCreateAutoUpdate
 
 export interface SegmentsCreateStatic {
-	name: string
-	type: 'static'
+	name?: string
+	type?: 'static'
 	customers?: string[]
 }
 
 export interface SegmentsCreateAutoUpdate {
-	name: string
-	type: 'auto-update'
+	name?: string
+	type?: 'auto-update'
 	filter?: Record<string, any>
 }
 
 export interface SegmentsCreateResponse {
 	id: string
-	name: string
-	created_at: string
+	name?: string
+	created_at?: string
 	filter?: null | object
 	type?: 'auto-update' | 'static'
-	object: 'segment'
-	initial_sync_status: 'DONE' | 'IN_PROGRESS'
+	object?: 'segment'
+	initial_sync_status?: 'DONE' | 'IN_PROGRESS'
 }
 
 export type SegmentsGetResponse = SegmentsCreateResponse

@@ -35,6 +35,7 @@ type DistributionsPublicationsVoucher =
 	| DistributionsPublicationsVoucherDiscount
 	| DistributionsPublicationsVoucherLoyaltyCard
 	| DistributionsPublicationsVoucherGiftCard
+
 interface DistributionsPublicationsVoucherDiscount {
 	//5_obj_publication_object_discount
 	code?: string
@@ -50,8 +51,8 @@ interface DistributionsPublicationsVoucherLoyaltyCard {
 	object?: 'voucher'
 	campaign?: string
 	loyalty_card?: {
-		points: number
-		balance: number
+		points?: number
+		balance?: number
 	}
 	is_referral_code?: boolean
 }
@@ -62,72 +63,72 @@ interface DistributionsPublicationsVoucherGiftCard {
 	object?: 'voucher'
 	campaign?: string
 	gift?: {
-		amount: number
-		balance: number
-		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+		amount?: number
+		balance?: number
+		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	is_referral_code?: boolean
 }
 
 interface DistributionsPublicationsCreateResponseVoucher {
 	id: string
-	code: string
+	code?: string
 	campaign?: string
 	campaign_id?: string
 	category?: string
 	category_id?: string
 	categories?: {
-		created_at: string
-		hierarchy: number
-		id: string
-		name: string
-		object: 'category'
-		updated_at: string
+		created_at?: string
+		hierarchy?: number
+		id?: string
+		name?: string
+		object?: 'category'
+		updated_at?: string
 	}[]
 	type?: VoucherType
 	discount?: VoucherDiscount
 	gift?: {
-		amount: number
-		balance: number
-		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+		amount?: number
+		balance?: number
+		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	loyalty_card?: {
-		points: number
-		balance: number
-		next_expiration_date: string
-		next_expiration_points: number
+		points?: number
+		balance?: number
+		next_expiration_date?: string
+		next_expiration_points?: number
 	}
 	start_date?: string
 	expiration_date?: string
 	validity_timeframe?: {
-		duration: string
-		interval: string
+		duration?: string
+		interval?: string
 	}
 	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	validation_rules_assignments?: {
-		data: {
-			created_at: string
-			id: string
-			object: 'validation_rules_assignment'
-			related_object_id: string
-			related_object_type: string
-			rule_id: string
+		data?: {
+			created_at?: string
+			id?: string
+			object?: 'validation_rules_assignment'
+			related_object_id?: string
+			related_object_type?: string
+			rule_id?: string
 		}[]
-		data_ref: 'data'
-		object: 'list'
-		total: number
+		data_ref?: 'data'
+		object?: 'list'
+		total?: number
 	}
 	active?: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
-	assets: {
-		qr: {
-			id: string
-			url: string
+	assets?: {
+		qr?: {
+			id?: string
+			url?: string
 		}
-		barcode: {
-			id: string
-			url: string
+		barcode?: {
+			id?: string
+			url?: string
 		}
 	}
 	is_referral_code?: boolean
@@ -169,13 +170,13 @@ export interface DistributionsPublicationsListParams {
 interface PublicationResponse {
 	id: string
 	source_id?: string
-	object: 'publication'
-	created_at: string
+	object?: 'publication'
+	created_at?: string
 	customer_id?: string
 	tracking_id?: string
 	metadata?: Record<string, any>
 	channel?: PublicationResponseChannel
-	result: 'SUCCESS' | 'FAILURE'
+	result?: 'SUCCESS' | 'FAILURE'
 	customer?: SimpleCustomer
 	voucher?: DistributionsPublicationsVoucher
 	vouchers_id?: string[]
@@ -198,7 +199,7 @@ interface CreatePublicationStandaloneVoucher {
 	campaign?: string
 	voucher?: string
 	channel?: PublicationResponseChannel
-	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
 }
 
 type CreatePublicationFromCampaign =
@@ -211,7 +212,7 @@ interface CreatePublicationFromCampaignAutoUpdate {
 	//5_req_create_publication_from_campaign_auto_update
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
 	campaign?: string
 	metadata?: Record<string, any>
 }
@@ -220,7 +221,7 @@ interface CreatePublicationFromCampaignOneSpecificVoucher {
 	//5_req_create_publication_from_campaign_one_specific_voucher
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
 	voucher?: string
 	campaign?: string
 	metadata?: Record<string, any>
@@ -230,11 +231,11 @@ interface CreatePublicationFromCampaignMultipleVouchers {
 	//5_req_create_publication_from_campaign_multiple_vouchers
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
 	voucher?: string
 	campaign?: {
-		name: string
-		count: string
+		name?: string
+		count?: string
 	}
 	metadata?: Record<string, any>
 }

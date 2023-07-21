@@ -26,7 +26,7 @@ export interface SimpleVoucher {
 export interface VouchersResponse {
 	//1_obj_voucher_object
 	id: string
-	code: string
+	code?: string
 	campaign?: string
 	campaign_id?: string
 	category?: string
@@ -35,65 +35,65 @@ export interface VouchersResponse {
 	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD'
 	discount?: VoucherDiscount
 	gift?: {
-		amount: number
-		balance: number
-		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+		amount?: number
+		balance?: number
+		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	loyalty_card?: {
-		balance: number
-		next_expiration_date: string
-		next_expiration_points: number
-		points: number
+		balance?: number
+		next_expiration_date?: string
+		next_expiration_points?: number
+		points?: number
 	}
 	start_date?: string
 	expiration_date?: string
 	validity_timeframe?: {
-		interval: string
-		duration: string
+		interval?: string
+		duration?: string
 	}
 	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	publish?: {
-		object: 'list'
-		count: number
-		url: string
+		object?: 'list'
+		count?: number
+		url?: string
 	}
 	redemption?: {
-		object: 'list'
+		object?: 'list'
 		quantity?: number
-		redeemed_quantity: number
-		redeemed_amount: number
-		redeemed_points: number
-		url: string
+		redeemed_quantity?: number
+		redeemed_amount?: number
+		redeemed_points?: number
+		url?: string
 	}
-	active: boolean
+	active?: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
 	assets?: {
 		qr?: {
 			id: string
-			url: string
+			url?: string
 		}
 		barcode?: {
 			id: string
-			url: string
+			url?: string
 		}
 	}
-	is_referral_code: boolean
+	is_referral_code?: boolean
 	holder_id?: string
 	updated_at?: string
-	created_at: string
-	object: 'voucher'
-	validation_rules_assignments: {
-		object: 'list'
-		total: number
-		data_ref: 'data'
+	created_at?: string
+	object?: 'voucher'
+	validation_rules_assignments?: {
+		object?: 'list'
+		total?: number
+		data_ref?: 'data'
 		data?: {
 			id: string
 			rule_id?: string
 			related_object_id?: string
 			related_object_type?: string
-			created_at: string
-			object: 'validation_rules_assignment'
+			created_at?: string
+			object?: 'validation_rules_assignment'
 		}[]
 	}
 }
@@ -132,7 +132,7 @@ export type VoucherDiscountPut =
 	| VoucherDiscountUnitMultiplePut
 interface VoucherDiscountAmount {
 	//1_obj_voucher_object_discount_amount
-	type: 'AMOUNT'
+	type?: 'AMOUNT'
 	effect?:
 		| 'APPLY_TO_ITEMS'
 		| 'APPLY_TO_ITEMS_BY_QUANTITY'
@@ -145,7 +145,7 @@ interface VoucherDiscountAmount {
 
 interface VoucherDiscountPercentage {
 	//1_obj_voucher_object_discount_percentage
-	type: 'PERCENT'
+	type?: 'PERCENT'
 	amount_limit?: string
 	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 	percent_off?: number
@@ -154,7 +154,7 @@ interface VoucherDiscountPercentage {
 
 interface VoucherDiscountFixed {
 	//1_obj_voucher_object_discount_fixed
-	type: 'FIXED'
+	type?: 'FIXED'
 	fixed_amount?: number
 	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 	fixed_amount_formula?: string
@@ -162,7 +162,7 @@ interface VoucherDiscountFixed {
 
 interface VoucherDiscountUnitOne {
 	//1_obj_voucher_object_discount_unit_one
-	type: 'UNIT'
+	type?: 'UNIT'
 	unit_off?: number
 	unit_off_formula?: string
 	unit_type?: string
@@ -171,7 +171,7 @@ interface VoucherDiscountUnitOne {
 
 interface VoucherDiscountUnitMultiple {
 	//1_obj_voucher_object_discount_unit_multiple
-	type: 'UNIT'
+	type?: 'UNIT'
 	effect?: 'ADD_MANY_ITEMS'
 	units?: {
 		effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
@@ -183,21 +183,21 @@ interface VoucherDiscountUnitMultiple {
 
 interface VoucherDiscountShipping {
 	//1_obj_voucher_object_discount_shipping
-	type: 'UNIT'
+	type?: 'UNIT'
 	effect?: 'ADD_MISSING_ITEMS'
 	unit_off?: number
 	unit_type?: 'prod_5h1pp1ng'
 }
 
 type VoucherDiscountAmountPost = VoucherDiscountAmount
-type VoucherDiscountPercentagePost = Omit<VoucherDiscountPercentage, 'amount_limit'> & { amount_limit: number }
+type VoucherDiscountPercentagePost = Omit<VoucherDiscountPercentage, 'amount_limit'> & { amount_limit?: number }
 type VoucherDiscountFixedPost = VoucherDiscountFixed
 type VoucherDiscountUnitOnePost = VoucherDiscountUnitOne
 type VoucherDiscountUnitMultiplePost = VoucherDiscountUnitMultiple
 type VoucherDiscountShippingPost = VoucherDiscountShipping
 
-type VoucherDiscountAmountPut = Omit<VoucherDiscountAmount, 'type'> & { type: string }
-type VoucherDiscountPercentagePut = Omit<VoucherDiscountPercentage, 'type' | 'amount_limit'> & { amount_limit: number }
+type VoucherDiscountAmountPut = Omit<VoucherDiscountAmount, 'type'> & { type?: string }
+type VoucherDiscountPercentagePut = Omit<VoucherDiscountPercentage, 'type' | 'amount_limit'> & { amount_limit?: number }
 type VoucherDiscountFixedPut = VoucherDiscountFixed
 type VoucherDiscountUnitOnePut = VoucherDiscountUnitOne
 type VoucherDiscountUnitMultiplePut = VoucherDiscountUnitMultiple
@@ -284,17 +284,17 @@ export interface VouchersUpdate {
 	additional_info?: string
 	metadata?: Record<string, any>
 	gift?: {
-		amount: number
-		effect: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+		amount?: number
+		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
 	}
 	loyalty_card?: {
-		points: number
+		points?: number
 	}
 	discount?: VoucherDiscountPut
 	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	validity_timeframe?: {
-		interval: string
-		duration: string
+		interval?: string
+		duration?: string
 	}
 }
 
@@ -381,18 +381,19 @@ export type VouchersBulkUpdateResponse = {
 }
 
 export interface ExportTransactionsResponse {
-	id?: string
+	id: string
 	object?: 'export'
 	status?: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
 	exported_object?: 'voucher_transactions'
 	channel?: 'API'
 	created_at?: string
 	result?: {
-		url: string
+		url?: string
 	}
 	user_id?: string
-	parameters: ExportGiftCardTransactions
+	parameters?: ExportGiftCardTransactions
 }
+
 type ExportGiftCardTransactionsFields =
 	| 'id'
 	| 'type'
@@ -405,33 +406,34 @@ type ExportGiftCardTransactionsFields =
 	| 'campaign_id'
 	| 'source'
 	| 'details'
+
 interface ExportGiftCardTransactions {
 	//16_obj_export_gift_card_transactions
 	order?: '-created_at' | 'created_at'
 	fields?: ExportGiftCardTransactionsFields[]
 	//16_obj_filter_gift_card_transactions_voucher_id
 	filters?: {
-		voucher_id: {
-			conditions: {
-				$in: string[]
-				$not_in: string[]
-				$is: string
-				$is_not: string
-				$has_value: string
-				$is_unknown: string
-				$starts_with: string
-				$ends_with: string
+		voucher_id?: {
+			conditions?: {
+				$in?: string[]
+				$not_in?: string[]
+				$is?: string
+				$is_not?: string
+				$has_value?: string
+				$is_unknown?: string
+				$starts_with?: string
+				$ends_with?: string
 			}
 		}
-		junction: 'AND' | 'OR'
+		junction?: 'AND' | 'OR'
 	}
 }
 
 export interface TransactionsExportBody {
 	//1_req_create_gift_card_transactions_export
 	parameters?: {
-		order: '-created_at' | 'created_at'
-		fields: ExportGiftCardTransactionsFields[]
+		order?: '-created_at' | 'created_at'
+		fields?: ExportGiftCardTransactionsFields[]
 	}
 }
 
@@ -450,7 +452,7 @@ export interface ListTransactionsResponse {
 
 interface GiftCardTransactionObjectRedemption {
 	//1_obj_gift_card_transaction_object_redemption
-	id?: string
+	id: string
 	source_id?: string
 	voucher_id?: string
 	campaign_id?: string
@@ -458,20 +460,20 @@ interface GiftCardTransactionObjectRedemption {
 	reason?: string
 	type?: 'CREDITS_REDEMPTION'
 	details?: {
-		balance: {
-			type: 'gift_voucher'
-			total: number
-			amount: number
-			object: 'balance'
-			balance: number
-			related_object: {
+		balance?: {
+			type?: 'gift_voucher'
+			total?: number
+			amount?: number
+			object?: 'balance'
+			balance?: number
+			related_object?: {
 				id: string
-				type: 'voucher'
+				type?: 'voucher'
 			}
 		}
-		order: {
+		order?: {
 			id: string
-			source_id: string
+			source_id?: string
 		}
 		redemption: {
 			id: string
@@ -483,7 +485,7 @@ interface GiftCardTransactionObjectRedemption {
 
 interface GiftCardTransactionObjectRefund {
 	//1_obj_gift_card_transaction_object_refund
-	id?: string
+	id: string
 	source_id?: string
 	voucher_id?: string
 	campaign_id?: string
@@ -491,25 +493,25 @@ interface GiftCardTransactionObjectRefund {
 	reason?: string
 	type?: 'CREDITS_REFUND'
 	details?: {
-		balance: {
-			type: 'gift_voucher'
-			total: number
-			amount: number
-			object: 'balance'
-			balance: number
-			related_object: {
+		balance?: {
+			type?: 'gift_voucher'
+			total?: number
+			amount?: number
+			object?: 'balance'
+			balance?: number
+			related_object?: {
 				id: string
-				type: 'voucher'
+				type?: 'voucher'
 			}
 		}
-		order: {
+		order?: {
 			id: string
-			source_id: string
+			source_id?: string
 		}
-		redemption: {
+		redemption?: {
 			id: string
 		}
-		rollback: {
+		rollback?: {
 			id: string
 		}
 	}
@@ -527,15 +529,15 @@ interface GiftCardTransactionObjectAddition {
 	reason?: string
 	type?: 'CREDITS_ADDITION'
 	details?: {
-		balance: {
-			type: 'gift_voucher'
-			total: number
-			amount: number
-			object: 'balance'
-			balance: number
-			related_object: {
+		balance?: {
+			type?: 'gift_voucher'
+			total?: number
+			amount?: number
+			object?: 'balance'
+			balance?: number
+			related_object?: {
 				id: string
-				type: 'voucher'
+				type?: 'voucher'
 			}
 		}
 	}
@@ -544,7 +546,7 @@ interface GiftCardTransactionObjectAddition {
 }
 interface GiftCardTransactionObjectRemoval {
 	//1_obj_gift_card_transaction_object_removal
-	id?: string
+	id: string
 	source_id?: string
 	voucher_id?: string
 	campaign_id?: string
@@ -552,15 +554,15 @@ interface GiftCardTransactionObjectRemoval {
 	reason?: string
 	type?: 'CREDITS_REMOVAL'
 	details?: {
-		balance: {
-			type: 'gift_voucher'
-			total: number
-			amount: number
-			object: 'balance'
-			balance: number
-			related_object: {
+		balance?: {
+			type?: 'gift_voucher'
+			total?: number
+			amount?: number
+			object?: 'balance'
+			balance?: number
+			related_object?: {
 				id: string
-				type: 'voucher'
+				type?: 'voucher'
 			}
 		}
 	}

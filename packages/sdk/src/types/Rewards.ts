@@ -4,18 +4,17 @@ export interface RewardsListParams {
 	assignment_id?: string
 }
 
-// export type RewardsCreateResponse = RewardsResponse & RewardsTypeResponse
 export type RewardsCreateResponse = RewardObject
 
 export interface RewardObject {
-	id?: string
+	id: string
 	name?: string
 	type?: 'CAMPAIGN' | 'COIN' | 'MATERIAL'
 	stock?: number
 	redeemed?: number
 	attributes?: {
-		image_url: string
-		description: string
+		image_url?: string
+		description?: string
 	}
 	created_at?: string
 	updated_at?: string | null
@@ -35,8 +34,8 @@ interface RewardObjectParametersCampaign {
 interface RewardObjectParametersCoin {
 	//4_obj_reward_object_parameters_COIN
 	coin?: {
-		exchange_ratio: number
-		points_ratio: number
+		exchange_ratio?: number
+		points_ratio?: number
 	}
 }
 
@@ -44,39 +43,39 @@ interface RewardObjectParametersMaterial {
 	//4_obj_reward_object_parameters_MATERIAL
 	product?: {
 		id: string
-		sku_id: string | null
+		sku_id?: string | null
 	}
 }
 
 interface RewardObjectParametersCampaignDiscountCoupons {
 	//4_obj_reward_object_parameters_CAMPAIGN_DISCOUNT_COUPONS
-	id?: string
+	id: string
 	type?: 'DISCOUNT_COUPONS'
 }
 
 interface RewardObjectParametersCampaignGiftVouchers {
 	//4_obj_reward_object_parameters_CAMPAIGN_GIFT_VOUCHERS
-	id?: string
+	id: string
 	type?: 'GIFT_VOUCHERS'
 	balance?: number
 }
 
 interface RewardObjectParametersCampaignLoyaltyProgram {
 	//4_obj_reward_object_parameters_CAMPAIGN_LOYALTY_PROGRAM
-	id?: string
+	id: string
 	type?: 'LOYALTY_PROGRAM'
 	balance?: number
 }
 export interface RewardsListResponse {
-	object: 'list'
-	total: number
-	data_ref: 'data'
-	data: RewardsCreateResponse[]
+	object?: 'list'
+	total?: number
+	data_ref?: 'data'
+	data?: RewardsCreateResponse[]
 }
 
 interface RewardsTypeMaterial {
 	type?: 'MATERIAL'
-	parameters: {
+	parameters?: {
 		product?: {
 			id?: string
 			sku?: string
@@ -86,7 +85,7 @@ interface RewardsTypeMaterial {
 
 interface RewardsTypeCampaign {
 	type?: 'CAMPAIGN'
-	parameters: {
+	parameters?: {
 		campaign?: {
 			id: string
 			balance?: number
@@ -98,7 +97,7 @@ interface RewardsTypeCampaignResponse {
 	type?: 'CAMPAIGN'
 	metadata?: string
 	name?: string
-	parameters: {
+	parameters?: {
 		campaign?: {
 			id: string
 			balance?: number
@@ -109,7 +108,7 @@ interface RewardsTypeCampaignResponse {
 
 interface RewardsTypeCoin {
 	type?: 'COIN'
-	parameters: {
+	parameters?: {
 		coin?: {
 			exchange_ratio?: number
 		}
@@ -147,7 +146,7 @@ interface CreateRewardMaterial {
 	parameters?: RewardParametersMaterial
 	stock?: number
 	attributes?: {
-		image_url: string
+		image_url?: string
 	}
 	metadata?: string
 }
@@ -176,15 +175,15 @@ interface RewardParametersMaterial {
 	//4_req_reward_parameters_MATERIAL
 	product?: {
 		id: string
-		sku_id: string | null
+		sku_id?: string | null
 	}
 }
 
 interface RewardParametersCoin {
 	//4_req_reward_parameters_COIN
 	coin?: {
-		exchange_ratio: string | number
-		points_ratio: string | number
+		exchange_ratio?: string | number
+		points_ratio?: string | number
 	}
 }
 

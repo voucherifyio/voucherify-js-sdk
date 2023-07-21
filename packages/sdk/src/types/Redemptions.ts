@@ -171,7 +171,7 @@ export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemRespon
 
 interface RedemptionsRedeemStackableOrderResponse {
 	//19_obj_order_object_rollback_stacked
-	id?: string
+	id: string
 	source_id?: string
 	created_at?: string
 	updated_at?: string
@@ -228,20 +228,6 @@ interface RedemptionsRedeemStackableOrderResponse {
 		}
 	}
 }
-// export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
-// 	redemptions?: Record<
-// 		string,
-// 		{
-// 			date: string
-// 			rollback_id?: string
-// 			rollback_date?: string
-// 			related_object_type: 'redemption'
-// 			related_object_id: string
-// 			stacked: string[]
-// 			rollback_stacked?: string[]
-// 		}
-// 	>
-// }
 
 export interface RedemptionsRedeemStackableResponse {
 	redemptions: RedemptionsRedeemStackableRedemptionResult[]
@@ -263,18 +249,18 @@ export interface RedemptionsRedeemStackableResponse {
 
 export interface RedemptionsRollbackStackableResponse {
 	//19_res_redemptions_parentRedemptionId_rollbacks
-	rollbacks:
+	rollbacks?:
 		| RedemptionRollbackDiscountVoucherStacked
 		| RedemptionRollbackLoyaltyCardStacked
 		| RedemptionRollbackGiftCardStacked
 		| RedemptionRollbackPromotionTierStacked
-	parent_rollback: {
-		id?: string
+	parent_rollback?: {
+		id: string
 		date?: string
 		customer_id?: string
 		tracking_id?: string
 		order?: {
-			id?: string
+			id: string
 			source_id?: string
 			status?: 'CANCELED'
 			customer_id?: string
@@ -290,13 +276,13 @@ export interface RedemptionsRollbackStackableResponse {
 				price?: number
 				subtotal_amount?: number
 				product?: {
-					id?: string
+					id: string
 					source_id?: string
 					name?: string
 					price?: number
 				}
 				sku?: {
-					id?: string
+					id: string
 					source_id?: string
 					sku?: string
 					price?: number
@@ -314,7 +300,7 @@ export interface RedemptionsRollbackStackableResponse {
 
 interface RedemptionRollbackDiscountVoucherStacked {
 	//19_obj_redemption_rollback_object_discount_voucher_stacked
-	id?: string
+	id: string
 	customer_id?: string
 	tracking_id?: string
 	date?: string
@@ -322,25 +308,25 @@ interface RedemptionRollbackDiscountVoucherStacked {
 	customer?: {
 		id?: string
 		source_id?: string
-		metadata: Record<string, any>
-		object: 'customer'
+		metadata?: Record<string, any>
+		object?: 'customer'
 	}
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher?: {
 		id: string
-		code: string
-		discount: VoucherDiscount
-		type: 'DISCOUNT_VOUCHER'
-		campaign: string
-		campaign_id: string
-		is_referral_code: boolean
+		code?: string
+		discount?: VoucherDiscount
+		type?: 'DISCOUNT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
 	}
 	redemption?: string
 }
 
 interface RedemptionRollbackLoyaltyCardStacked {
 	//19_obj_redemption_rollback_object_loyalty_card_stacked
-	id?: string
+	id: string
 	customer_id?: string
 	tracking_id?: string
 	date?: string
@@ -355,18 +341,18 @@ interface RedemptionRollbackLoyaltyCardStacked {
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher?: {
 		id: string
-		code: string
-		discount: VoucherDiscount
-		type: 'DISCOUNT_VOUCHER'
-		campaign: string
-		campaign_id: string
-		is_referral_code: boolean
+		code?: string
+		discount?: VoucherDiscount
+		type?: 'DISCOUNT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
 	}
 	redemption?: string
 }
 interface RedemptionRollbackGiftCardStacked {
 	//19_obj_redemption_rollback_object_gift_card_stacked
-	id?: string
+	id: string
 	customer_id?: string
 	tracking_id?: string
 	date?: string
@@ -375,7 +361,7 @@ interface RedemptionRollbackGiftCardStacked {
 	customer?: SimpleCustomer
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher?: {
-		id?: string
+		id: string
 		code?: string
 		gift?: {
 			amount?: number
@@ -391,7 +377,7 @@ interface RedemptionRollbackGiftCardStacked {
 }
 interface RedemptionRollbackPromotionTierStacked {
 	//19_obj_redemption_rollback_object_promotion_tier_stacked
-	id?: string
+	id: string
 	customer_id?: string
 	tracking_id?: string
 	date?: string
@@ -400,7 +386,7 @@ interface RedemptionRollbackPromotionTierStacked {
 	customer?: SimpleCustomer
 	result?: 'SUCCESS' | 'FAILURE'
 	promotion_tier?: {
-		id?: string
+		id: string
 		name?: string
 		banner?: string
 		campaign?: {
@@ -415,15 +401,15 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToOrder {
 	amount?: number
 	total_amount?: number
 	items?: {
-		object: 'order_item'
-		product_id: string
-		sku_id: string
-		quantity: number
-		amount: number
-		price: number
+		object?: 'order_item'
+		product_id?: string
+		sku_id?: string
+		quantity?: number
+		amount?: number
+		price?: number
 	}[]
 	metadata?: Record<string, any>
-	object: 'order'
+	object?: 'order'
 }
 
 interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
@@ -433,23 +419,23 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
 	total_discount_amount?: number
 	total_amount?: number
 	items?: {
-		object: 'order_item'
-		product_id: string
-		sku_id: string
-		quantity: number
-		amount: number
-		price: number
-		subtotal_amount: number
+		object?: 'order_item'
+		product_id?: string
+		sku_id?: string
+		quantity?: number
+		amount?: number
+		price?: number
+		subtotal_amount?: number
 	}[]
 	metadata?: Record<string, any>
-	object: 'order'
+	object?: 'order'
 }
 
 interface RedemptionObjectLoyaltyCardPayWithPoints {
 	//7_obj_redemption_object_loyalty_card_pay_with_points
+	id: string
 	customer?: SimpleCustomer
 	assignment_id?: string
-	id?: string
 	object?: 'reward'
 	name?: string
 	created_at?: string
@@ -464,17 +450,17 @@ interface RedemptionObjectLoyaltyCardPayWithPoints {
 }
 interface RedemptionObjectLoyaltyCardMaterialProduct {
 	//7_obj_redemption_object_loyalty_card_material_product
+	id: string
 	customer?: SimpleCustomer
 	assignment_id?: string
 	product?: ProductObject
-	id?: string
 	object?: 'reward'
 	name?: string
 	created_at?: string
 	updated_at?: string
 	parameters?: {
 		product?: {
-			id?: string
+			id: string
 			sku_id?: null
 		}
 	}
@@ -482,11 +468,11 @@ interface RedemptionObjectLoyaltyCardMaterialProduct {
 }
 interface RedemptionObjectLoyaltyCardMaterialSku {
 	//7_obj_redemption_object_loyalty_card_material_sku
+	id: string
 	customer?: SimpleCustomer
 	assignment_id?: string
 	product?: ProductObject
 	sku?: SkuObject
-	id?: string
 	object?: 'reward'
 	name?: string
 	created_at?: string
@@ -501,10 +487,10 @@ interface RedemptionObjectLoyaltyCardMaterialSku {
 }
 interface RedemptionObjectLoyaltyCardDigital {
 	//7_obj_redemption_object_loyalty_card_digital
+	id: string
 	customer?: SimpleCustomer
 	assignment_id?: string
 	voucher?: VouchersResponse
-	id?: string
 	object?: 'reward'
 	name?: string
 	created_at?: string
@@ -520,20 +506,20 @@ interface RedemptionObjectLoyaltyCardDigital {
 
 interface RedemptionObjectLoyaltyCardDigitalDiscountVoucher {
 	//7_obj_redemption_object_loyalty_card_digital_discount_voucher
-	id?: string
+	id: string
 	type?: 'DISCOUNT_COUPONS'
 }
 
 interface RedemptionObjectLoyaltyCardDigitalGiftCardCredits {
 	//7_obj_redemption_object_loyalty_card_digital_gift_card_credits
-	id?: string
+	id: string
 	balance?: number
-	type: 'GIFT_VOUCHERS'
+	type?: 'GIFT_VOUCHERS'
 }
 
 interface RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints {
 	//7_obj_redemption_object_loyalty_card_digital_loyalty_card_points
-	id?: string
+	id: string
 	balance?: number
-	type: 'LOYALTY_PROGRAM'
+	type?: 'LOYALTY_PROGRAM'
 }

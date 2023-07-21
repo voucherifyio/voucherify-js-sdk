@@ -1,54 +1,54 @@
 import { ApplicableToResultList } from './ApplicableTo'
 
 interface RulesObject {
-	1: {
-		name: string
-		property: string | null
-		conditions: {
-			$one_of_voucherify_conditions: (string | number | boolean)[]
+	1?: {
+		name?: string
+		property?: string | null
+		conditions?: {
+			$one_of_voucherify_conditions?: (string | number | boolean)[]
 		}
-		rules: {
-			1: {
-				name: string
-				property: string
-				conditions: Record<string, any>
-				rules: Record<string, any>
+		rules?: {
+			1?: {
+				name?: string
+				property?: string
+				conditions?: Record<string, any>
+				rules?: Record<string, any>
 			}
-			logic: string
+			logic?: string
 		}
-		error: {
-			message: string
+		error?: {
+			message?: string
 		}
 	}
-	logic: string
+	logic?: string
 }
 
 interface ApplicableToObject {
-	excluded: {
-		object: 'product' | 'sku' | 'products_collection'
+	excluded?: {
+		object?: 'product' | 'sku' | 'products_collection'
 		id: string
-		source_id: string
-		strict: boolean
-		effect: 'APPLY_TO_EVERY'
+		source_id?: string
+		strict?: boolean
+		effect?: 'APPLY_TO_EVERY'
 	}[]
-	included: {
-		object: 'product' | 'sku' | 'products_collection'
+	included?: {
+		object?: 'product' | 'sku' | 'products_collection'
 		id: string
-		source_id: string
-		strict: boolean
-		effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
-		quantity_limit: number
+		source_id?: string
+		strict?: boolean
+		effect?: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+		quantity_limit?: number
 	}[]
-	included_all: boolean
+	included_all?: boolean
 }
 
 export interface ValidationRulesCreate {
 	//13_req_create_validation_rule
-	name: string
+	name?: string
 	rules?: RulesObject
 	applicable_to?: ApplicableToObject
 	error?: {
-		message: string
+		message?: string
 	}
 }
 
@@ -67,51 +67,13 @@ export interface ValidationRulesValidateResponse {
 
 export interface ValidationRulesObject {
 	//13_obj_validation_rule_object
-	id?: string
+	id: string
 	name?: string
-	rules?: {
-		1: {
-			name: string
-			property: string | null
-			conditions: {
-				$one_of_voucherify_conditions: (string | number | boolean)[]
-			}
-			rules: {
-				1: {
-					name: string
-					property: string
-					conditions: Record<string, any>
-					rules: Record<string, any>
-				}
-				logic: string
-			}
-			error: {
-				message: string
-			}
-		}
-		logic: string
-	}
+	rules?: RulesObject
 	error?: {
-		message: string
+		message?: string
 	}
-	applicable_to?: {
-		excluded: {
-			object: 'product' | 'sku' | 'products_collection'
-			id: string
-			source_id: string
-			strict: boolean
-			effect: 'APPLY_TO_EVERY'
-		}[]
-		included: {
-			object: 'product' | 'sku' | 'products_collection'
-			id: string
-			source_id: string
-			strict: boolean
-			effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
-			quantity_limit: number
-		}[]
-		included_all: boolean
-	}
+	applicable_to?: ApplicableToObject
 	created_at?: string
 	updated_at?: string
 	type?: 'basic' | 'advanced' | 'complex'
@@ -197,7 +159,7 @@ interface ValidationRuleAssignmentsDistribution {
 export interface ValidationRulesCreateAssignmentResponse {
 	//13_res_validation-rules_validationRuleId_assignments
 	id: string
-	rule_id: string
+	rule_id?: string
 	related_object_id?: string
 	related_object_type?:
 		| 'voucher'
@@ -207,7 +169,7 @@ export interface ValidationRulesCreateAssignmentResponse {
 		| 'promotion_tier'
 		| 'distribution'
 	created_at?: string
-	object: 'validation_rules_assignment'
+	object?: 'validation_rules_assignment'
 }
 
 export interface ValidationRulesListParams {

@@ -13,7 +13,7 @@ export interface BalanceCreateResponse {
 	type?: 'gift_voucher'
 	object?: 'balance'
 	related_object?: {
-		type: 'voucher'
-		id: string
+		type?: 'voucher'
+		id?: string
 	}
 }

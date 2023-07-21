@@ -127,21 +127,21 @@ export interface SimpleSku {
 
 export interface ProductObject {
 	//11_obj_product_object_truncated
-	id?: string
+	id: string
 	source_id?: string
 	name?: string
 	price?: number
 	attributes?: string[]
 	metadata?: Record<string, any>
-	image_url: string
+	image_url?: string
 	updated_at?: string
-	created_at: string
-	object: 'product'
+	created_at?: string
+	object?: 'product'
 }
 
 export interface SkuObject {
 	//11_obj_sku_object
-	id?: string
+	id: string
 	source_id?: string
 	product_id?: string
 	sku?: string
@@ -149,8 +149,8 @@ export interface SkuObject {
 	currency?: string
 	attributes?: Record<string, any>
 	metadata?: Record<string, any>
-	image_url: string
+	image_url?: string
 	updated_at?: string
 	created_at: string
-	object: 'sku'
+	object?: 'sku'
 }
