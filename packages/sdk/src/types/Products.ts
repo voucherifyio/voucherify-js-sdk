@@ -140,6 +140,7 @@ export interface ProductObject {
 }
 
 export interface SkuObject {
+	//11_obj_sku_object
 	id?: string
 	source_id?: string
 	product_id?: string

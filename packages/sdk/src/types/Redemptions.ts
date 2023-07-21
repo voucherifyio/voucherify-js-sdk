@@ -351,12 +351,7 @@ interface RedemptionRollbackLoyaltyCardStacked {
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
-	customer?: {
-		id?: string
-		source_id?: string
-		metadata: Record<string, any>
-		object: 'customer'
-	}
+	customer?: SimpleCustomer
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher?: {
 		id: string
@@ -371,9 +366,48 @@ interface RedemptionRollbackLoyaltyCardStacked {
 }
 interface RedemptionRollbackGiftCardStacked {
 	//19_obj_redemption_rollback_object_gift_card_stacked
+	id?: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	amount?: number
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	customer?: SimpleCustomer
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher?: {
+		id?: string
+		code?: string
+		gift?: {
+			amount?: number
+			balance?: number
+			effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+		}
+		type?: 'GIFT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
+	}
+	redemption?: string
 }
 interface RedemptionRollbackPromotionTierStacked {
 	//19_obj_redemption_rollback_object_promotion_tier_stacked
+	id?: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	amount?: number
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	customer?: SimpleCustomer
+	result?: 'SUCCESS' | 'FAILURE'
+	promotion_tier?: {
+		id?: string
+		name?: string
+		banner?: string
+		campaign?: {
+			id?: string
+		}
+	}
+	redemption?: string
 }
 
 interface OrderObjectRollbackStackedPerRedemptionApplyToOrder {
@@ -406,7 +440,7 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
 		amount: number
 		price: number
 		subtotal_amount: number
-	}
+	}[]
 	metadata?: Record<string, any>
 	object: 'order'
 }
@@ -475,10 +509,12 @@ interface RedemptionObjectLoyaltyCardDigital {
 	name?: string
 	created_at?: string
 	updated_at?: string
-	parameters?:
-		| RedemptionObjectLoyaltyCardDigitalDiscountVoucher
-		| RedemptionObjectLoyaltyCardDigitalGiftCardCredits
-		| RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints
+	parameters?: {
+		campaign?:
+			| RedemptionObjectLoyaltyCardDigitalDiscountVoucher
+			| RedemptionObjectLoyaltyCardDigitalGiftCardCredits
+			| RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints
+	}
 	type?: 'CAMPAIGN'
 }
 
