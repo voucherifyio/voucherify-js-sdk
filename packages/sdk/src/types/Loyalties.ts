@@ -261,17 +261,52 @@ export interface LoyaltiesListEarningRules {
 }
 
 //8_obj_earning_rule_object
-type EarningRuleObject =
+export type EarningRuleObject =
 	| EarningRuleObjectOrderPaid
 	| EarningRuleObjectCustomEvent
 	| EarningRuleObjectEnteredSegment
 	| EarningRuleObjectTier
 
 type CreateEarningRuleObject =
-	| EarningRequestRuleObjectOrderPaid
-	| EarningRequestRuleObjectCustomEvent
-	| EarningRequestRuleObjectEnteredSegment
-	| EarningRequestRuleObjectTier
+	| CreateEarningRuleObjectOrderPaid
+	| CreateEarningRuleObjectCustomEvent
+	| CreateEarningRuleObjectEnteredSegment
+	| CreateEarningRuleObjectTier
+
+export type UpdateEarningRuleObject = Partial<
+	| UpdateEarningRuleObjectOrderPaid
+	| UpdateEarningRuleObjectCustomEvent
+	| UpdateEarningRuleObjectEnteredSegment
+	| UpdateEarningRuleObjectTier
+>
+
+type UpdateEarningRuleObjectOrderPaid = Omit<
+	EarningRuleObjectOrderPaid,
+	'event' | 'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
+> & { source: { banner: string } }
+
+type UpdateEarningRuleObjectCustomEvent = Omit<
+	EarningRuleObjectCustomEvent,
+	'event' | 'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at' | 'custom_event'
+> & { source: { banner: string } }
+
+type UpdateEarningRuleObjectEnteredSegment = Omit<
+	EarningRuleObjectEnteredSegment,
+	'event' | 'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at' | 'segment'
+> & { source: { banner: string } }
+
+type UpdateEarningRuleObjectTier = Omit<
+	EarningRuleObjectTier,
+	'event' | 'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at' | 'loyalty_tier'
+> & {
+	source: { banner: string }
+	event:
+		| 'customer.loyalty.tier.joined'
+		| 'customer.loyalty.tier.left'
+		| 'customer.loyalty.tier.upgraded'
+		| 'customer.loyalty.tier.downgraded'
+		| 'customer.loyalty.tier.prolonged'
+}
 
 interface EarningRuleObjectOrderPaid {
 	//8_obj_earning_rule_object_order_paid
@@ -299,7 +334,7 @@ interface EarningRuleObjectOrderPaid {
 	metadata: Record<string, any>
 }
 
-type EarningRequestRuleObjectOrderPaid = Omit<
+type CreateEarningRuleObjectOrderPaid = Omit<
 	EarningRuleObjectOrderPaid,
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
@@ -333,7 +368,7 @@ interface EarningRuleObjectCustomEvent {
 	metadata: Record<string, any>
 }
 
-type EarningRequestRuleObjectCustomEvent = Omit<
+type CreateEarningRuleObjectCustomEvent = Omit<
 	EarningRuleObjectCustomEvent,
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
@@ -367,7 +402,7 @@ interface EarningRuleObjectEnteredSegment {
 	metadata: Record<string, any>
 }
 
-type EarningRequestRuleObjectEnteredSegment = Omit<
+type CreateEarningRuleObjectEnteredSegment = Omit<
 	EarningRuleObjectEnteredSegment,
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
@@ -406,7 +441,7 @@ interface EarningRuleObjectTier {
 	metadata: Record<string, any>
 }
 
-type EarningRequestRuleObjectTier = Omit<
+type CreateEarningRuleObjectTier = Omit<
 	EarningRuleObjectTier,
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
@@ -524,8 +559,7 @@ interface ObjectCalculatePointsProportionallyCustomerMetadata {
 	}
 }
 
-type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>
-export type LoyaltiesCreateEarningRules = LoyaltiesCreateEarningRule[]
+export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>[]
 export type LoyaltiesCreateEarningRuleResponse = EarningRuleObject[]
 
 export interface LoyaltiesUpdateEarningRule {

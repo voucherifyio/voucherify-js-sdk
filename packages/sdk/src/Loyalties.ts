@@ -78,7 +78,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-earning-rule
 	 */
-	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRules) {
+	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule) {
 		return this.client.post<T.LoyaltiesCreateEarningRuleResponse>(
 			`/loyalties/${encode(campaignId)}/earning-rules`,
 			earningRules,
@@ -87,17 +87,25 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-earning-rule
 	 */
-	public updateEarningRule(campaignId: string, earningRule: T.LoyaltiesUpdateEarningRule) {
-		return this.client.put<T.LoyaltiesUpdateEarningRuleResponse>(
+	public updateEarningRule(campaignId: string, earningRule: T.UpdateEarningRuleObject & { id: string }) {
+		return this.client.put<T.EarningRuleObject>(
 			`/loyalties/${encode(campaignId)}/earning-rules/${earningRule.id}`,
 			omit(earningRule, ['id']),
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-earning-rule
+	 */
+	public getEarningRule(campaignId: string, earningRuleId: string) {
+		return this.client.get<T.EarningRuleObject>(
+			`/loyalties/${encode(campaignId)}/earning-rules/${encode(earningRuleId)}`,
 		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-earning-rule
 	 */
 	public deleteEarningRule(campaignId: string, earningRuleId: string) {
-		return this.client.delete(`/loyalties/${encode(campaignId)}/earning-rules/${earningRuleId}`)
+		return this.client.delete<{}>(`/loyalties/${encode(campaignId)}/earning-rules/${earningRuleId}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-members
