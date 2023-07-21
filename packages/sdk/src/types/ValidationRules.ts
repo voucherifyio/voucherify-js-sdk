@@ -223,12 +223,20 @@ export interface ValidationRulesListResponse {
 	data: ValidationRulesGetResponse[]
 }
 
-export interface ValidationRulesListAssignmentsParams {
+export interface ValidationRuleListAssignmentsParams {
 	limit?: number
 	page?: number
 	order?: '-created_at' | 'created_at'
 }
 
+export interface ValidationRulesListAssignmentsParams {
+	limit?: number
+	page?: number
+	order?: string
+	rule?: string
+	related_object_id?: string
+}
+export type ValidationRuleListAssignmentsResponse = ValidationRulesListAssignmentsResponse
 export interface ValidationRulesListAssignmentsResponse {
 	object: 'list'
 	total: number
