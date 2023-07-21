@@ -408,7 +408,7 @@ type ExportGiftCardTransactionsFields =
 interface ExportGiftCardTransactions {
 	//16_obj_export_gift_card_transactions
 	order?: '-created_at' | 'created_at'
-	fields?: ExportGiftCardTransactionsFields
+	fields?: ExportGiftCardTransactionsFields[]
 	//16_obj_filter_gift_card_transactions_voucher_id
 	filters?: {
 		voucher_id: {
@@ -431,7 +431,7 @@ export interface TransactionsExportBody {
 	//1_req_create_gift_card_transactions_export
 	parameters?: {
 		order: '-created_at' | 'created_at'
-		fields: ExportGiftCardTransactionsFields
+		fields: ExportGiftCardTransactionsFields[]
 	}
 }
 
