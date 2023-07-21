@@ -440,11 +440,12 @@ export interface ListTransactionsResponse {
 	object?: 'list'
 	has_more?: boolean
 	data_ref?: 'data'
-	data?:
+	data?: (
 		| GiftCardTransactionObjectRedemption
 		| GiftCardTransactionObjectRefund
 		| GiftCardTransactionObjectAddition
 		| GiftCardTransactionObjectRemoval
+	)[]
 }
 
 interface GiftCardTransactionObjectRedemption {
