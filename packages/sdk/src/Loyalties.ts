@@ -3,6 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { GetPointsExpirationResponse } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -158,6 +159,15 @@ export class Loyalties {
 		return this.client.post<T.LoyaltiesAddPointsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/balance`,
 			balance,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-points-expiration
+	 */
+	public getPointsExpiration(campaignId: string, memberId: string, params?: T.LoyaltiesGetPointsExpirationParams) {
+		return this.client.get<T.GetPointsExpirationResponse>(
+			`/loyalties/${encode(campaignId)}/members/${memberId}/points-expiration`,
+			params,
 		)
 	}
 	/**

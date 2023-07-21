@@ -1028,7 +1028,15 @@ client.loyalties.addPoints(campaignId, memberId, balance)
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Redeem Loyalty Card]
+#### [Get Points Expiration](https://docs.voucherify.io/reference/get-points-expiration)
+
+```javascript
+client.loyalties.getPointsExpiration(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Redeem Loyalty Card](https://docs.voucherify.io/reference/redeem-reward)
 
 ```javascript
 client.loyalties.redeemReward(campaignId, memberId, params)

@@ -1,7 +1,7 @@
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
-import { SimpleCustomer } from './Customers'
+import { CreateCustomer, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
@@ -12,6 +12,63 @@ export interface LoyaltiesListParams {
 	limit?: number
 	page?: number
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+}
+
+export interface LoyaltyCardObjectNonExpandedCategories {
+	//8_obj_loyalty_card_object_non_expanded_categories
+	id: string
+	code: string
+	campaign: string
+	campaign_id: string
+	category: string
+	category_id: string
+	categories: CategoryObject[]
+	type: 'LOYALTY_CARD'
+	discount: null
+	gift: null
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date: string
+		next_expiration_points: number
+	}
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	active: boolean
+	additional_info: string
+	metadata: Record<string, any>
+	assets: {
+		qr: {
+			id: string
+			url: string
+		}
+		barcode: {
+			id: string
+			url: string
+		}
+	}
+	is_referral_code: boolean
+	created_at: string
+	updated_at: string
+	holder_id: string
+	redemption: {
+		quantity: number
+		redeemed_quantity: number
+		redeemed_points: number
+		object: 'list'
+		url: string
+	}
+	publish: {
+		object: 'list'
+		count: number
+		url: string
+	}
+	object: 'voucher'
 }
 
 export interface LoyaltiesListResponse {
@@ -578,6 +635,7 @@ export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponse
 export interface LoyaltiesListMembersParams {
 	limit?: number
 	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 	created_at?: {
 		before?: string
 		after?: string
@@ -628,26 +686,12 @@ export interface LoyaltiesListMembersResponse {
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: LoyaltiesVoucherResponse[]
-}
-
-export interface LoyaltiesCreateMember {
-	voucher?: string
-	channel?: string
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		metadata?: Record<string, any>
-		description?: string
-		source_id?: string
-	}
-	metadata?: Record<string, any>
+	vouchers: LoyaltyCardObjectNonExpandedCategories[]
 }
 
 export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
 
-export type LoyaltiesGetMemberResponse = LoyaltiesCreateMemberResponse
+export type LoyaltiesGetMemberResponse = LoyaltyCardObjectNonExpandedCategories
 
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
@@ -663,19 +707,47 @@ export interface LoyaltiesGetMemberActivitiesResponse {
 }
 
 export interface LoyaltiesAddPoints {
+	expiration_date?: string
 	points: number
+	expiration_type?: 'CUSTOM_DATE' | 'NON_EXPIRING' | 'PROGRAM_RULES'
+	reason?: string
+	source_id?: string
+}
+
+export interface LoyaltiesGetPointsExpirationParams {
+	limit?: number
+	page?: number
 }
 
 export interface LoyaltiesAddPointsResponse {
 	points: number
 	total: number
 	balance: number
-	type: string
+	type: 'loyalty_card'
 	object: 'balance'
 	related_object?: {
-		type?: string
+		type?: 'voucher'
 		id?: string
 	}
+}
+
+export interface GetPointsExpirationResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: {
+		id: string
+		voucher_id: string
+		campaign_id: string
+		bucket: {
+			total_points: number
+		}
+		created_at: string
+		status: 'ACTIVE'
+		expires_at: string
+		updated_at: string
+		object: 'loyalty_points_bucket'
+	}[]
+	total: number
 }
 
 export interface LoyaltiesRedeemRewardParams {
@@ -841,4 +913,11 @@ export interface LoyaltiesRedeemRewardResponse {
 export interface LoyaltyPointsTransfer {
 	code: string
 	points: number
+}
+
+export interface LoyaltiesCreateMember {
+	voucher?: string
+	channel?: string
+	customer: string | { id: string } | { source_id: string } | CreateCustomer
+	metadata?: Record<string, any>
 }

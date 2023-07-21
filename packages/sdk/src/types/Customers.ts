@@ -56,6 +56,7 @@ export interface CreateCustomer {
 	}
 	birthdate?: string
 	birthday?: string
+	description?: string
 	metadata?: Record<string, any>
 }
 export interface CustomerRequest {
