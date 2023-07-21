@@ -149,6 +149,7 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Enable Voucher](#enable-voucher)
 - [Disable Voucher](#disable-voucher)
 - [Import Vouchers](#import-vouchers)
+- [Import Vouchers using CSV](#import-vouchers-using-csv)
 - [Examine Vouchers Qualification](#examine-vouchers-qualification)
 - [Update Vouchers Metadata in bulk](#update-vouchers-metadata-in-bulk)
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
@@ -210,6 +211,12 @@ client.vouchers.balance.create(code, params)
 
 ```javascript
 client.vouchers.import(vouchers)
+```
+
+#### [Import Vouchers using CSV](https://docs.voucherify.io/reference/import-vouchers-using-csv)
+
+```javascript
+client.vouchers.importVouchersUsingCSV()
 ```
 
 #### [Examine Vouchers Qualification](https://docs.voucherify.io/reference/push-qualification-request)
