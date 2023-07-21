@@ -216,6 +216,7 @@ export type LoyaltiesUpdateRewardAssignmentResponse = LoyaltiesCreateRewardAssig
 
 export interface LoyaltiesListEarningRulesParams {
 	limit?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 	page?: number
 }
 
@@ -252,23 +253,280 @@ export interface LoyaltiesEarningRulesResponse {
 	object: 'earning_rule'
 	automation_id: string
 }
-export interface LoyaltiesListEarningRulesResponse {
+export interface LoyaltiesListEarningRules {
 	object: 'list'
 	total: number
-	data_ref: string
-	data: LoyaltiesEarningRulesResponse[]
+	data_ref: 'data'
+	data: EarningRuleObject[]
 }
 
-export interface LoyaltiesCreateEarningRule {
-	event: 'order.paid' | 'customer.segment.entered' | string
-	validation_rule_id?: string
-	loyalty: LoyaltyProportional | LoyaltyFixed
-	source?: { banner?: string }
-	custom_event?: { schema_id?: string }
-	segment?: { id?: string }
+//8_obj_earning_rule_object
+type EarningRuleObject =
+	| EarningRuleObjectOrderPaid
+	| EarningRuleObjectCustomEvent
+	| EarningRuleObjectEnteredSegment
+	| EarningRuleObjectTier
+
+type CreateEarningRuleObject =
+	| EarningRequestRuleObjectOrderPaid
+	| EarningRequestRuleObjectCustomEvent
+	| EarningRequestRuleObjectEnteredSegment
+	| EarningRequestRuleObjectTier
+
+interface EarningRuleObjectOrderPaid {
+	//8_obj_earning_rule_object_order_paid
+	id: string
+	created_at: string
+	updated_at: string
+	validation_rule_id: string
+	loyalty: ObjectFixed | ObjectCalculatePointsProportionallyOrderPaid
+	event: 'order.paid'
+	source: {
+		banner: string
+		object_id: string
+		object_type: 'campaign'
+	}
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: number[]
+	object: 'earning_rule'
+	automation_id: string
+	metadata: Record<string, any>
 }
 
-export type LoyaltiesCreateEarningRuleResponse = LoyaltiesEarningRulesResponse
+type EarningRequestRuleObjectOrderPaid = Omit<
+	EarningRuleObjectOrderPaid,
+	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
+> & { source: { banner: string } }
+
+interface EarningRuleObjectCustomEvent {
+	id: string
+	created_at: string
+	updated_at: string
+	validation_rule_id: string
+	loyalty:
+		| ObjectFixed
+		| ObjectCalculatePointsProportionallyCustomEventMetadata
+		| ObjectCalculatePointsProportionallyCustomerMetadata
+	custom_event: { schema_id: string }
+	event: 'custom_event_defined_in_EVENT_SCHEMA'
+	source: {
+		banner: string
+		object_id: string
+		object_type: 'campaign'
+	}
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: number[]
+	object: 'earning_rule2'
+	automation_id: string
+	metadata: Record<string, any>
+}
+
+type EarningRequestRuleObjectCustomEvent = Omit<
+	EarningRuleObjectCustomEvent,
+	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
+> & { source: { banner: string } }
+
+interface EarningRuleObjectEnteredSegment {
+	//8_obj_earning_rule_object_entered_segment
+	id: string
+	created_at: string
+	updated_at: string
+	validation_rule_id: string
+	loyalty: ObjectFixed | ObjectCalculatePointsProportionallyCustomerMetadata
+	segment: {
+		id: string
+	}
+	event: 'customer.segment.entered'
+	source: {
+		banner: string
+		object_id: string
+		object_type: 'campaign'
+	}
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: number[]
+	object: 'earning_rule3'
+	automation_id: string
+	metadata: Record<string, any>
+}
+
+type EarningRequestRuleObjectEnteredSegment = Omit<
+	EarningRuleObjectEnteredSegment,
+	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
+> & { source: { banner: string } }
+
+interface EarningRuleObjectTier {
+	//8_obj_earning_rule_object_tier
+	id: string
+	created_at: string
+	updated_at: string
+	validation_rule_id: string
+	loyalty: ObjectFixed | ObjectCalculatePointsProportionallyCustomerMetadata
+	event:
+		| 'customer.loyalty.tier.joined'
+		| 'customer.loyalty.tier.left'
+		| 'customer.loyalty.tier.upgraded'
+		| 'customer.loyalty.tier.downgraded'
+		| 'customer.loyalty.tier.prolonged'
+	loyalty_tier: {
+		id: string
+	}
+	source: {
+		banner: string
+		object_id: string
+		object_type: 'campaign'
+	}
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: number[]
+	object: 'earning_rule4'
+	automation_id: string
+	metadata: Record<string, any>
+}
+
+type EarningRequestRuleObjectTier = Omit<
+	EarningRuleObjectTier,
+	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
+> & { source: { banner: string } }
+
+interface ObjectFixed {
+	//8_obj_fixed_points
+	points: number
+	type: 'FIXED'
+}
+
+type ObjectCalculatePointsProportionallyOrderPaid =
+	//8_obj_calculate_points_proportionally_order_paid
+	| ObjectCalculatePointsProportionallyOrderAmounts
+	| ObjectCalculatePointsProportionallyOrderTotalAmounts
+	| ObjectCalculatePointsProportionallyOrderMetadata
+	| ObjectCalculatePointsProportionallyItemAmount
+	| ObjectCalculatePointsProportionallyItemsSubtotalAmount
+	| ObjectCalculatePointsProportionallyItemsQuantity
+	| ObjectCalculatePointsProportionallyCustomerMetadata
+
+interface ObjectCalculatePointsProportionallyOrderAmounts {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_AMOUNT'
+	order: {
+		amount: {
+			every: number
+			points: number
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyOrderTotalAmounts {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_TOTAL_AMOUNT'
+	order: {
+		total_amount: {
+			every: number
+			points: number
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyOrderMetadata {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_METADATA'
+	order: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyItemAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_AMOUNT'
+	order_items: {
+		amount: {
+			every: number
+			points: number
+			object: 'products_collection' | 'product' | 'sku'
+			id: string
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyItemsSubtotalAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
+	order_items: {
+		subtotal_amount: {
+			every: number
+			points: number
+			object: 'products_collection' | 'product' | 'sku'
+			id: string
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyItemsQuantity {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_QUANTITY'
+	order_items: {
+		quantity: {
+			every: number
+			points: number
+			object: 'products_collection' | 'product' | 'sku'
+			id: string
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyCustomEventMetadata {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOMER_METADATA'
+	custom_event: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+interface ObjectCalculatePointsProportionallyCustomerMetadata {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOMER_METADATA'
+	customer: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>
+export type LoyaltiesCreateEarningRules = LoyaltiesCreateEarningRule[]
+export type LoyaltiesCreateEarningRuleResponse = EarningRuleObject[]
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string

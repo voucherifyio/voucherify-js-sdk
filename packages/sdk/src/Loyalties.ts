@@ -3,6 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { LoyaltiesCreateEarningRules } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -73,16 +74,13 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/list-earning-rules
 	 */
 	public listEarningRules(campaignId: string, params: T.LoyaltiesListEarningRulesParams = {}) {
-		return this.client.get<T.LoyaltiesListEarningRulesResponse>(
-			`/loyalties/${encode(campaignId)}/earning-rules`,
-			params,
-		)
+		return this.client.get<T.LoyaltiesListEarningRules>(`/loyalties/${encode(campaignId)}/earning-rules`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-earning-rule
 	 */
-	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule[]) {
-		return this.client.post<T.LoyaltiesCreateEarningRuleResponse[]>(
+	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRules) {
+		return this.client.post<T.LoyaltiesCreateEarningRuleResponse>(
 			`/loyalties/${encode(campaignId)}/earning-rules`,
 			earningRules,
 		)
