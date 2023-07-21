@@ -703,6 +703,7 @@ Methods are provided within `client.products.*` namespace.
 - [List Products](#list-products)
 - [Create SKU](#create-sku)
 - [Get SKU](#get-sku)
+- [Import SKUs using CSV](#import-skus-using-csv)
 - [Update SKU](#update-sku)
 - [Delete SKU](#delete-sku)
 - [List all product SKUs](#list-all-product-skus)
@@ -759,6 +760,12 @@ Check [SKU object](https://docs.voucherify.io/reference/the-sku-object).
 
 ```javascript
 client.products.getSku(productId, skuId)
+```
+
+#### [Import SKUs using CSV](https://docs.voucherify.io/reference/import-skus-using-csv)
+
+```javascript
+client.products.importSkusUsingCSV()
 ```
 
 #### [Update SKU](https://docs.voucherify.io/reference/update-skus)

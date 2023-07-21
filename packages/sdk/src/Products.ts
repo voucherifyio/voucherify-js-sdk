@@ -68,7 +68,7 @@ export class Products {
 	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
 	 */
 
-	//todo: file path should be in body
+	//todo: file path should be in body (update readme)
 	public importSkusUsingCSV() {
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, {})
 	}
