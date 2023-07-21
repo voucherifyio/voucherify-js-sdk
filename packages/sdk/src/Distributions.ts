@@ -15,8 +15,8 @@ class DistributionsPublications {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-publication
 	 */
-	public create(params: T.DistributionsPublicationsCreateParams) {
-		return this.client.post<T.DistributionsPublicationsCreateResponse>('/publications', params)
+	public create(params: T.DistributionsPublicationsCreateParams, query: T.DistributionsPublicationsCreateQueryParams) {
+		return this.client.post<T.DistributionsPublicationsCreateResponse>('/publications', params, query)
 	}
 }
 

@@ -1,43 +1,81 @@
 export interface RewardsListParams {
 	page?: number
 	limit?: number
+	assignment_id?: string
 }
 
-export interface RewardsResponse {
+export type RewardsCreateResponse = RewardObject
+
+export interface RewardObject {
 	id: string
 	name?: string
+	type?: 'CAMPAIGN' | 'COIN' | 'MATERIAL'
 	stock?: number
 	redeemed?: number
 	attributes?: {
 		image_url?: string
 		description?: string
 	}
-	created_at: string
-	updated_at?: string
-	object: 'reward'
+	created_at?: string
+	updated_at?: string | null
+	metadata?: Record<string, any>
+	object?: 'reward'
+	parameters?: RewardObjectParametersCampaign | RewardObjectParametersCoin | RewardObjectParametersMaterial
 }
 
-export type RewardsCreateResponse = RewardsResponse & RewardsTypeResponse
-
-export interface RewardsListResponse {
-	object: 'list'
-	total: number
-	data_ref: 'data'
-	data: RewardsCreateResponse[]
+interface RewardObjectParametersCampaign {
+	//4_obj_reward_object_parameters_CAMPAIGN
+	campaign?:
+		| RewardObjectParametersCampaignDiscountCoupons
+		| RewardObjectParametersCampaignGiftVouchers
+		| RewardObjectParametersCampaignLoyaltyProgram
 }
 
-export interface Rewards {
-	name: string
-	stock?: number
-	attributes?: {
-		image_url?: string
-		description?: string
+interface RewardObjectParametersCoin {
+	//4_obj_reward_object_parameters_COIN
+	coin?: {
+		exchange_ratio?: number
+		points_ratio?: number
 	}
+}
+
+interface RewardObjectParametersMaterial {
+	//4_obj_reward_object_parameters_MATERIAL
+	product?: {
+		id: string
+		sku_id?: string | null
+	}
+}
+
+interface RewardObjectParametersCampaignDiscountCoupons {
+	//4_obj_reward_object_parameters_CAMPAIGN_DISCOUNT_COUPONS
+	id: string
+	type?: 'DISCOUNT_COUPONS'
+}
+
+interface RewardObjectParametersCampaignGiftVouchers {
+	//4_obj_reward_object_parameters_CAMPAIGN_GIFT_VOUCHERS
+	id: string
+	type?: 'GIFT_VOUCHERS'
+	balance?: number
+}
+
+interface RewardObjectParametersCampaignLoyaltyProgram {
+	//4_obj_reward_object_parameters_CAMPAIGN_LOYALTY_PROGRAM
+	id: string
+	type?: 'LOYALTY_PROGRAM'
+	balance?: number
+}
+export interface RewardsListResponse {
+	object?: 'list'
+	total?: number
+	data_ref?: 'data'
+	data?: RewardsCreateResponse[]
 }
 
 interface RewardsTypeMaterial {
 	type?: 'MATERIAL'
-	parameters: {
+	parameters?: {
 		product?: {
 			id?: string
 			sku?: string
@@ -47,7 +85,7 @@ interface RewardsTypeMaterial {
 
 interface RewardsTypeCampaign {
 	type?: 'CAMPAIGN'
-	parameters: {
+	parameters?: {
 		campaign?: {
 			id: string
 			balance?: number
@@ -57,7 +95,9 @@ interface RewardsTypeCampaign {
 
 interface RewardsTypeCampaignResponse {
 	type?: 'CAMPAIGN'
-	parameters: {
+	metadata?: string
+	name?: string
+	parameters?: {
 		campaign?: {
 			id: string
 			balance?: number
@@ -68,7 +108,7 @@ interface RewardsTypeCampaignResponse {
 
 interface RewardsTypeCoin {
 	type?: 'COIN'
-	parameters: {
+	parameters?: {
 		coin?: {
 			exchange_ratio?: number
 		}
@@ -77,18 +117,75 @@ interface RewardsTypeCoin {
 
 export type RewardsType = RewardsTypeCampaign | RewardsTypeCoin | RewardsTypeMaterial
 
-export type RewardsTypeResponse =
-	| Required<RewardsTypeCampaignResponse>
-	| Required<RewardsTypeCoin>
-	| Required<RewardsTypeMaterial>
+export type RewardsTypeResponse = RewardsTypeCampaignResponse | RewardsTypeCoin | RewardsTypeMaterial
 
-export type RewardsCreate = Rewards & RewardsType
+export type RewardsCreateBody = CreateRewardCampaign | CreateRewardMaterial | CreateRewardCoin
 
 export type RewardsGetResponse = RewardsCreateResponse
 
-export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
+//4_req_update_reward
+export type RewardsUpdateBody =
+	| Omit<CreateRewardCampaign, 'type'>
+	| Omit<CreateRewardCoinForUpdate, 'type'>
+	| Omit<CreateRewardMaterial, 'type'>
 
 export type RewardsUpdateResponse = RewardsCreateResponse
+
+interface CreateRewardCampaign {
+	//4_req_create_reward_CAMPAIGN
+	name?: string
+	type?: 'CAMPAIGN'
+	parameters?: RewardParametersCampaign
+	metadata?: string
+}
+
+interface CreateRewardMaterial {
+	//4_req_create_reward_MATERIAL
+	name?: string
+	type?: 'MATERIAL'
+	parameters?: RewardParametersMaterial
+	stock?: number
+	attributes?: {
+		image_url?: string
+	}
+	metadata?: string
+}
+
+type CreateRewardCoinForUpdate = Omit<CreateRewardCoin, 'attributes'>
+interface CreateRewardCoin {
+	//4_req_create_reward_COIN
+	name?: string
+	type?: 'COIN'
+	parameters?: RewardParametersCoin
+	metadata?: string
+}
+
+interface RewardParametersCampaign {
+	campaign?:
+		| RewardParametersCampaignLoyaltyProgram
+		| RewardParametersCampaignGiftVouchers
+		| RewardParametersCampaignDiscountCoupons
+}
+
+type RewardParametersCampaignLoyaltyProgram = Omit<RewardObjectParametersCampaignLoyaltyProgram, 'type'>
+type RewardParametersCampaignGiftVouchers = Omit<RewardObjectParametersCampaignGiftVouchers, 'type'>
+type RewardParametersCampaignDiscountCoupons = Omit<RewardObjectParametersCampaignDiscountCoupons, 'type'>
+
+interface RewardParametersMaterial {
+	//4_req_reward_parameters_MATERIAL
+	product?: {
+		id: string
+		sku_id?: string | null
+	}
+}
+
+interface RewardParametersCoin {
+	//4_req_reward_parameters_COIN
+	coin?: {
+		exchange_ratio?: string | number
+		points_ratio?: string | number
+	}
+}
 
 export interface RewardsAssignmentObject {
 	id: string
@@ -128,9 +225,9 @@ export interface RewardsCreateAssignment {
 
 export type RewardsCreateAssignmentResponse = RewardsAssignmentObject
 
-export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
-
 export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
+
+export type RewardsUpdateAssignmentBody = Pick<RewardsAssignmentObject, 'parameters'>
 
 export interface RewardRedemptionParams {
 	points?: number

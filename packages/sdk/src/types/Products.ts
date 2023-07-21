@@ -89,6 +89,8 @@ export interface ProductsCreateSkuResponse {
 	price?: number
 	attributes?: Record<string, string>
 	metadata?: Record<string, any>
+	product_id: string
+	image_url: string
 	updated_at?: string
 	currency?: string
 	created_at: string
@@ -121,4 +123,34 @@ export interface SimpleSku {
 	id: string
 	source_id?: string
 	sku?: string
+}
+
+export interface ProductObject {
+	//11_obj_product_object_truncated
+	id: string
+	source_id?: string
+	name?: string
+	price?: number
+	attributes?: string[]
+	metadata?: Record<string, any>
+	image_url?: string
+	updated_at?: string
+	created_at?: string
+	object?: 'product'
+}
+
+export interface SkuObject {
+	//11_obj_sku_object
+	id: string
+	source_id?: string
+	product_id?: string
+	sku?: string
+	price?: number
+	currency?: string
+	attributes?: Record<string, any>
+	metadata?: Record<string, any>
+	image_url?: string
+	updated_at?: string
+	created_at: string
+	object?: 'sku'
 }

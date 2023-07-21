@@ -149,10 +149,13 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Enable Voucher](#enable-voucher)
 - [Disable Voucher](#disable-voucher)
 - [Import Vouchers](#import-vouchers)
+- [Import Vouchers using CSV](#import-vouchers-using-csv)
 - [Examine Vouchers Qualification](#examine-vouchers-qualification)
 - [Update Vouchers Metadata in bulk](#update-vouchers-metadata-in-bulk)
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
+- [Export Gift Card Transactions](#export-gift-card-transactions)
+- [List Gift Card Transactions](#list-gift-card-transactions)
 
 #### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
@@ -212,6 +215,12 @@ client.vouchers.balance.create(code, params)
 client.vouchers.import(vouchers)
 ```
 
+#### [Import Vouchers using CSV](https://docs.voucherify.io/reference/import-vouchers-using-csv)
+
+```javascript
+client.vouchers.importVouchersUsingCSV()
+```
+
 #### [Examine Vouchers Qualification](https://docs.voucherify.io/reference/push-qualification-request)
 
 ```javascript
@@ -234,6 +243,18 @@ client.vouchers.bulkUpdate(vouchers)
 
 ```javascript
 client.vouchers.releaseValidationSession(code, sessionKey)
+```
+
+#### [Export Gift Card Transactions](https://docs.voucherify.io/reference/export-gift-card-transactions)
+
+```javascript
+client.vouchers.exportGiftCardTransactions(code, body)
+```
+
+#### [List Gift Card Transactions](https://docs.voucherify.io/reference/list-gift-card-transactions)
+
+```javascript
+client.vouchers.listGiftCardTransactions(code, query)
 ```
 
 ---
@@ -715,6 +736,7 @@ Methods are provided within `client.products.*` namespace.
 - [List Products](#list-products)
 - [Create SKU](#create-sku)
 - [Get SKU](#get-sku)
+- [Import SKUs using CSV](#import-skus-using-csv)
 - [Update SKU](#update-sku)
 - [Delete SKU](#delete-sku)
 - [List all product SKUs](#list-all-product-skus)
@@ -771,6 +793,12 @@ Check [SKU object](https://docs.voucherify.io/reference/the-sku-object).
 
 ```javascript
 client.products.getSku(productId, skuId)
+```
+
+#### [Import SKUs using CSV](https://docs.voucherify.io/reference/import-skus-using-csv)
+
+```javascript
+client.products.importSkusUsingCSV()
 ```
 
 #### [Update SKU](https://docs.voucherify.io/reference/update-skus)

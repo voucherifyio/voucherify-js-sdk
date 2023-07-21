@@ -26,8 +26,8 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-voucher
 	 */
-	public create(voucher: T.VouchersCreate) {
-		return this.client.post<T.VouchersCreateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
+	public create(voucher: T.VouchersCreateBody, code: string) {
+		return this.client.post<T.VouchersCreateResponse>(`/vouchers/${encode(code)}`, voucher)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/vouchers-get
@@ -38,14 +38,14 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-voucher
 	 */
-	public update(voucher: T.VouchersUpdate) {
-		return this.client.put<T.VouchersUpdateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
+	public update(voucher: T.VouchersUpdate, code: string) {
+		return this.client.put<T.VouchersUpdateResponse>(`/vouchers/${encode(code)}`, voucher)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-voucher
 	 */
 	public delete(code: string, params: T.VouchersDeleteParams = {}) {
-		return this.client.delete(`/vouchers/${encode(code)}`, params)
+		return this.client.delete<undefined>(`/vouchers/${encode(code)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-vouchers
@@ -72,6 +72,25 @@ export class Vouchers {
 		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
+	 */
+	//todo body should not be empty here (file path)
+	public importVouchersUsingCSV() {
+		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
+	 */
+	public listGiftCardTransactions(code: string, query: T.ListTransactionsQuery) {
+		return this.client.get<T.ListTransactionsResponse>(`/vouchers/${encode(code)}/transactions`, query)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
+	 */
+	public exportGiftCardTransactions(code: string, body: T.TransactionsExportBody) {
+		return this.client.post<T.ExportTransactionsResponse>(`/vouchers/${encode(code)}/transactions/export`, body)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
 	 */
 	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
@@ -87,6 +106,6 @@ export class Vouchers {
 	 * @see https://docs.voucherify.io/reference/release-validation-session
 	 */
 	public releaseValidationSession(code: string, sessionKey: string) {
-		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
+		return this.client.delete<undefined>(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
 	}
 }

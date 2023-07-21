@@ -1,4 +1,5 @@
 import * as T from './types/Products'
+import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
@@ -62,6 +63,14 @@ export class Products {
 	 */
 	public getSku(skuId: string) {
 		return this.client.get<T.ProductsGetSkuResponse>(`/skus/${encode(skuId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
+	 */
+
+	//todo: file path should be in body (update readme)
+	public importSkusUsingCSV() {
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-sku

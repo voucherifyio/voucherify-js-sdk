@@ -1,11 +1,12 @@
-import { OrdersCreateResponse, OrdersCreate } from './Orders'
+import { OrdersCreateResponse, OrdersCreate, OrdersItem } from './Orders'
 import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
 import { CustomersCreateBody, SimpleCustomer } from './Customers'
-import { VouchersResponse } from './Vouchers'
+import { VoucherDiscount, VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
 import { StackableOptions, StackableRedeemableParams } from './Stackable'
 import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
+import { ProductObject, SkuObject } from './Products'
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
@@ -168,19 +169,64 @@ export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemRespon
 	redemption: string
 }
 
-export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
-	redemptions?: Record<
-		string,
-		{
-			date: string
+interface RedemptionsRedeemStackableOrderResponse {
+	//19_obj_order_object_rollback_stacked
+	id: string
+	source_id?: string
+	created_at?: string
+	updated_at?: string
+	status?: 'CANCELED'
+	amount?: number
+	total_amount?: number
+	items?: Omit<
+		OrdersItem[],
+		| 'applied_discount_amount'
+		| 'discount_amount'
+		| 'discount_quantity'
+		| 'initial_amount'
+		| 'initial_quantity'
+		| 'metadata'
+		| 'product'
+		| 'related_object'
+		| 'sku'
+		| 'source_id'
+	> & {
+		product?: {
+			id?: string
+			name?: string
+			price?: number
+			source_id?: string
+		}
+		sku?: {
+			id?: string
+			price?: number
+			sku?: string
+			source_id?: string
+		}
+	}
+	metadata?: Record<string, any>
+	customer?: {
+		id?: string
+		object?: 'customer'
+	}
+	referrer?: {
+		id?: string
+		object?: 'customer'
+	}
+	customer_id?: string
+	referrer_id?: string
+	object?: 'order'
+	redemptions?: {
+		redemption_ID?: {
+			date?: string
 			rollback_id?: string
 			rollback_date?: string
-			related_object_type: 'redemption'
-			related_object_id: string
-			stacked: string[]
+			related_object_type?: 'redemption'
+			related_object_id?: string
+			stacked?: string[]
 			rollback_stacked?: string[]
 		}
-	>
+	}
 }
 
 export interface RedemptionsRedeemStackableResponse {
@@ -202,17 +248,278 @@ export interface RedemptionsRedeemStackableResponse {
 }
 
 export interface RedemptionsRollbackStackableResponse {
-	rollbacks: RedemptionsRedeemStackableRedemptionResult[]
-	parent_rollback: {
+	//19_res_redemptions_parentRedemptionId_rollbacks
+	rollbacks?:
+		| RedemptionRollbackDiscountVoucherStacked
+		| RedemptionRollbackLoyaltyCardStacked
+		| RedemptionRollbackGiftCardStacked
+		| RedemptionRollbackPromotionTierStacked
+	parent_rollback?: {
 		id: string
-		date: string
+		date?: string
 		customer_id?: string
 		tracking_id?: string
-		metadata?: Record<string, any>
-		result: 'SUCCESS' | 'FAILURE'
-		order?: OrdersCreateResponse
-		customer?: SimpleCustomer
-		redemption: string
+		order?: {
+			id: string
+			source_id?: string
+			status?: 'CANCELED'
+			customer_id?: string
+			referrer_id?: string
+			amount?: number
+			total_amount?: number
+			items?: {
+				object?: 'order_item'
+				product_id?: string
+				sku_id?: string
+				quantity?: number
+				amount?: number
+				price?: number
+				subtotal_amount?: number
+				product?: {
+					id: string
+					source_id?: string
+					name?: string
+					price?: number
+				}
+				sku?: {
+					id: string
+					source_id?: string
+					sku?: string
+					price?: number
+				}
+			}[]
+			metadata?: Record<string, any>
+			object?: 'order'
+		}
+		customer?: Omit<SimpleCustomer, 'name' | 'email'>
+		result?: 'SUCCESS'
+		redemption?: string
 	}
 	order?: RedemptionsRedeemStackableOrderResponse
+}
+
+interface RedemptionRollbackDiscountVoucherStacked {
+	//19_obj_redemption_rollback_object_discount_voucher_stacked
+	id: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	customer?: {
+		id?: string
+		source_id?: string
+		metadata?: Record<string, any>
+		object?: 'customer'
+	}
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher?: {
+		id: string
+		code?: string
+		discount?: VoucherDiscount
+		type?: 'DISCOUNT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
+	}
+	redemption?: string
+}
+
+interface RedemptionRollbackLoyaltyCardStacked {
+	//19_obj_redemption_rollback_object_loyalty_card_stacked
+	id: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	amount?: number
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	reward?:
+		| RedemptionObjectLoyaltyCardPayWithPoints
+		| RedemptionObjectLoyaltyCardMaterialProduct
+		| RedemptionObjectLoyaltyCardMaterialSku
+		| RedemptionObjectLoyaltyCardDigital
+	customer?: SimpleCustomer
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher?: {
+		id: string
+		code?: string
+		discount?: VoucherDiscount
+		type?: 'DISCOUNT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
+	}
+	redemption?: string
+}
+interface RedemptionRollbackGiftCardStacked {
+	//19_obj_redemption_rollback_object_gift_card_stacked
+	id: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	amount?: number
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	customer?: SimpleCustomer
+	result?: 'SUCCESS' | 'FAILURE'
+	voucher?: {
+		id: string
+		code?: string
+		gift?: {
+			amount?: number
+			balance?: number
+			effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+		}
+		type?: 'GIFT_VOUCHER'
+		campaign?: string
+		campaign_id?: string
+		is_referral_code?: boolean
+	}
+	redemption?: string
+}
+interface RedemptionRollbackPromotionTierStacked {
+	//19_obj_redemption_rollback_object_promotion_tier_stacked
+	id: string
+	customer_id?: string
+	tracking_id?: string
+	date?: string
+	amount?: number
+	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+	customer?: SimpleCustomer
+	result?: 'SUCCESS' | 'FAILURE'
+	promotion_tier?: {
+		id: string
+		name?: string
+		banner?: string
+		campaign?: {
+			id?: string
+		}
+	}
+	redemption?: string
+}
+
+interface OrderObjectRollbackStackedPerRedemptionApplyToOrder {
+	//19_obj_order_object_rollback_stacked_per_redemption_apply_to_order
+	amount?: number
+	total_amount?: number
+	items?: {
+		object?: 'order_item'
+		product_id?: string
+		sku_id?: string
+		quantity?: number
+		amount?: number
+		price?: number
+	}[]
+	metadata?: Record<string, any>
+	object?: 'order'
+}
+
+interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
+	//19_obj_order_object_rollback_stacked_per_redemption_apply_to_items
+	amount?: number
+	items_discount_amount?: number
+	total_discount_amount?: number
+	total_amount?: number
+	items?: {
+		object?: 'order_item'
+		product_id?: string
+		sku_id?: string
+		quantity?: number
+		amount?: number
+		price?: number
+		subtotal_amount?: number
+	}[]
+	metadata?: Record<string, any>
+	object?: 'order'
+}
+
+interface RedemptionObjectLoyaltyCardPayWithPoints {
+	//7_obj_redemption_object_loyalty_card_pay_with_points
+	id: string
+	customer?: SimpleCustomer
+	assignment_id?: string
+	object?: 'reward'
+	name?: string
+	created_at?: string
+	updated_at?: string
+	parameters?: {
+		coin?: {
+			exchange_ratio?: number
+			points_ratio?: number
+		}
+	}
+	type?: 'COIN'
+}
+interface RedemptionObjectLoyaltyCardMaterialProduct {
+	//7_obj_redemption_object_loyalty_card_material_product
+	id: string
+	customer?: SimpleCustomer
+	assignment_id?: string
+	product?: ProductObject
+	object?: 'reward'
+	name?: string
+	created_at?: string
+	updated_at?: string
+	parameters?: {
+		product?: {
+			id: string
+			sku_id?: null
+		}
+	}
+	type?: 'MATERIAL'
+}
+interface RedemptionObjectLoyaltyCardMaterialSku {
+	//7_obj_redemption_object_loyalty_card_material_sku
+	id: string
+	customer?: SimpleCustomer
+	assignment_id?: string
+	product?: ProductObject
+	sku?: SkuObject
+	object?: 'reward'
+	name?: string
+	created_at?: string
+	updated_at?: string
+	parameters?: {
+		product?: {
+			id?: string
+			sku_id?: null
+		}
+	}
+	type?: 'MATERIAL'
+}
+interface RedemptionObjectLoyaltyCardDigital {
+	//7_obj_redemption_object_loyalty_card_digital
+	id: string
+	customer?: SimpleCustomer
+	assignment_id?: string
+	voucher?: VouchersResponse
+	object?: 'reward'
+	name?: string
+	created_at?: string
+	updated_at?: string
+	parameters?: {
+		campaign?:
+			| RedemptionObjectLoyaltyCardDigitalDiscountVoucher
+			| RedemptionObjectLoyaltyCardDigitalGiftCardCredits
+			| RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints
+	}
+	type?: 'CAMPAIGN'
+}
+
+interface RedemptionObjectLoyaltyCardDigitalDiscountVoucher {
+	//7_obj_redemption_object_loyalty_card_digital_discount_voucher
+	id: string
+	type?: 'DISCOUNT_COUPONS'
+}
+
+interface RedemptionObjectLoyaltyCardDigitalGiftCardCredits {
+	//7_obj_redemption_object_loyalty_card_digital_gift_card_credits
+	id: string
+	balance?: number
+	type?: 'GIFT_VOUCHERS'
+}
+
+interface RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints {
+	//7_obj_redemption_object_loyalty_card_digital_loyalty_card_points
+	id: string
+	balance?: number
+	type?: 'LOYALTY_PROGRAM'
 }
