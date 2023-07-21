@@ -328,7 +328,7 @@ interface EarningRuleObjectCustomEvent {
 		interval: string
 	}
 	validity_day_of_week: number[]
-	object: 'earning_rule2'
+	object: 'earning_rule'
 	automation_id: string
 	metadata: Record<string, any>
 }
@@ -362,7 +362,7 @@ interface EarningRuleObjectEnteredSegment {
 		interval: string
 	}
 	validity_day_of_week: number[]
-	object: 'earning_rule3'
+	object: 'earning_rule'
 	automation_id: string
 	metadata: Record<string, any>
 }
@@ -401,7 +401,7 @@ interface EarningRuleObjectTier {
 		interval: string
 	}
 	validity_day_of_week: number[]
-	object: 'earning_rule4'
+	object: 'earning_rule'
 	automation_id: string
 	metadata: Record<string, any>
 }
