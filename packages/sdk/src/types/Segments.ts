@@ -16,7 +16,6 @@ export interface SegmentsCreateResponse {
 	id: string
 	name: string
 	created_at: string
-	metadata?: Record<string, any>
 	filter?: null | object
 	type?: 'auto-update' | 'static'
 	object: 'segment'
