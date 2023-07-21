@@ -974,6 +974,18 @@ client.loyalties.updateEarningRule(campaignId, earningRule)
 client.loyalties.deleteEarningRule(campaignId, earningRuleId)
 ```
 
+#### [Enable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/enable-earning-rule)
+
+```javascript
+client.loyalties.enableEarningRule(campaignId, earningRuleId)
+```
+
+#### [Disable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/disable-earning-rule)
+
+```javascript
+client.loyalties.disableEarningRule(campaignId, earningRuleId)
+```
+
 #### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference/list-earning-rules)
 
 ```javascript
