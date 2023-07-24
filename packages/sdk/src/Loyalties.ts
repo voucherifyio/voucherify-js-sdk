@@ -3,7 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { LoyaltyCardObjectNonExpandedCategories, ReqTransferLoyaltyPoints } from './types/Loyalties'
+import { ReqExportPointsExpirations } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -210,6 +210,13 @@ export class Loyalties {
 		return this.client.post<T.LoyaltyCardObjectNonExpandedCategories>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
 			transferLoyaltyPoints,
+		)
+	}
+
+	public createPointsExpirationExport(campaignId: string, parameters: T.ReqExportPointsExpirations) {
+		return this.client.post<T.ExportObjectPointsExpiration>(
+			`/loyalties/${encode(campaignId)}/points-expiration/export`,
+			parameters,
 		)
 	}
 }

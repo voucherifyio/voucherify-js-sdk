@@ -53,6 +53,52 @@ export interface LoyaltyCardObjectExpanded {
 	}
 }
 
+export interface ReqExportPointsExpirations {
+	order: 'expires_at' | '-expires_at'
+	fields: string[]
+	filters: FilterCampaignId | FilterVoucherId
+}
+
+interface FilterCampaignId {
+	campaign_id: FilterConditions
+	junction: FilterJunction
+}
+
+interface FilterVoucherId {
+	//8_req_filter_voucher_id
+	voucher_id: FilterConditions
+	junction: FilterJunction
+}
+
+interface FilterConditions {
+	conditions: {
+		properties?: {
+			$in?: string[]
+			$not_in?: string[]
+			$is?: string
+			$is_not?: string
+		}
+	}
+}
+
+export interface ExportObjectPointsExpiration {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	channel: 'API' | 'WEBSITE'
+	exported_object: 'points_expiration'
+	parameters: {
+		order: 'expires_at' | '-expires_at'
+		fields: string[]
+		filters: FilterCampaignId | FilterVoucherId
+	}
+	result: {
+		url: string
+	}
+	user_id: string
+}
+
 export interface LoyaltyCardObjectNonExpandedCategories {
 	//8_obj_loyalty_card_object_non_expanded_categories
 	id: string

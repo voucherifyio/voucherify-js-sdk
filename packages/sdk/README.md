@@ -1106,6 +1106,15 @@ client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
 
 ---
 
+#### [Create Points Expiration Export](https://docs.voucherify.io/reference/create-points-expiration-export)
+
+```javascript
+client.loyalties.createPointsExpirationExport(campaignId, parameters)
+```
+
+---
+
+
 ### Segments
 
 Methods are provided within `client.segments.*` namespace.
