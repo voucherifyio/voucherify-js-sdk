@@ -358,7 +358,7 @@ interface FilterConditionsBoolean {
 	}
 }
 
-interface FilterConditionsString {
+export interface FilterConditionsString {
 	conditions: {
 		$in?: string[]
 		$not_in?: string[]
@@ -371,7 +371,7 @@ interface FilterConditionsString {
 	}
 }
 
-type FilterJunction = 'AND' | 'OR'
+export type FilterJunction = 'AND' | 'OR'
 interface FilterOrderSourceId {
 	source_id?: FilterConditionsString //16_filter_conditions_string
 	junction?: FilterJunction //16_filter_junction

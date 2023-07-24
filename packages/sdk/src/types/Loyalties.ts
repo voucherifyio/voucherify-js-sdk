@@ -11,6 +11,7 @@ import {
 	RedemptionObjectLoyaltyCardMaterialSku,
 	RedemptionObjectLoyaltyCardPayWithPoints,
 } from './Redemptions'
+import { FilterConditionsString, FilterJunction } from './Exports'
 
 export type DeleteLoyaltyCampaign = AsyncActionCreateResponse
 
@@ -1022,6 +1023,63 @@ export interface LoyaltyCardTransactionObjectRemoval {
 	}
 	related_transaction_id: string
 	created_at: string
+}
+export type CreateLoyaltyCardTransactions = ExportLoyaltyCardTransactions
+
+interface ExportLoyaltyCardTransactions {
+	order: '-created_at' | 'created_at'
+	fields: (
+		| 'id'
+		| 'type'
+		| 'source_id'
+		| 'reason'
+		| 'balance'
+		| 'amount'
+		| 'created_at'
+		| 'voucher_id'
+		| 'campaign_id'
+		| 'source'
+		| 'details'
+		| 'related_transaction_id'
+	)[]
+}
+
+export interface ExportTransactionObject {
+	//8_obj_export_transactions_object
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	channel: 'API'
+	exported_object: 'voucher_transactions'
+	parameters: ExportLoyaltyCardTransactions
+	result: {
+		url: string
+	}
+	user_id: string
+}
+
+interface ExportLoyaltyCardTransactions {
+	//16_obj_export_loyalty_card_transactions
+	order: '-created_at' | 'created_at'
+	// @ts-ignore
+	fields: (
+		| 'id'
+		| 'type'
+		| 'source_id'
+		| 'reason'
+		| 'balance'
+		| 'amount'
+		| 'created_at'
+		| 'voucher_id'
+		| 'campaign_id'
+		| 'details'
+		| 'related_transaction_id'
+	)[]
+	filters?: {
+		voucher_id: FilterConditionsString
+		junction: FilterJunction
+	}
 }
 
 export interface LoyaltyCardTransactionObjectExpiration {
