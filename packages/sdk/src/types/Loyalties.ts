@@ -63,8 +63,8 @@ export interface LoyaltyCardObjectNonExpandedCategories {
 	category_id: string
 	categories: CategoryObject[]
 	type: 'LOYALTY_CARD'
-	discount: null
-	gift: null
+	discount: any
+	gift: any
 	loyalty_card: {
 		points: number
 		balance: number
@@ -1057,6 +1057,14 @@ export interface ExportTransactionObject {
 		url: string
 	}
 	user_id: string
+}
+
+export type ReqTransferLoyaltyPoints = TransferLoyaltyPoints[]
+interface TransferLoyaltyPoints {
+	code: string
+	points: number
+	reason?: string
+	source_id: string
 }
 
 interface ExportLoyaltyCardTransactions {

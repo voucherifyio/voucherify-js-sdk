@@ -1089,7 +1089,17 @@ client.loyalties.listLoyaltyCardTransactionsWithCampaignId(campaignId, memberId)
 #### [Export Loyalty Card Transactions With Campaign](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1)
 
 ```javascript
-client.loyalties.exportLoyaltyCardTransactionsWithCampaignId(campaignId, memberId,createLoyaltyCardTransactions)
+client.loyalties.exportLoyaltyCardTransactionsWithCampaignId(campaignId, memberId, createLoyaltyCardTransactions)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Transfer Points](https://docs.voucherify.io/reference/transfer-points)
+
+```javascript
+client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
 ```
 
 `memberId` referrers to Loyalty Card code.

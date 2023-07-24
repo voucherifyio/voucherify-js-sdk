@@ -3,6 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { LoyaltyCardObjectNonExpandedCategories, ReqTransferLoyaltyPoints } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -202,6 +203,13 @@ export class Loyalties {
 		return this.client.post<T.ExportTransactionObject>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions/export`,
 			createLoyaltyCardTransactions,
+		)
+	}
+
+	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.ReqTransferLoyaltyPoints) {
+		return this.client.post<T.LoyaltyCardObjectNonExpandedCategories>(
+			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
+			transferLoyaltyPoints,
 		)
 	}
 }
