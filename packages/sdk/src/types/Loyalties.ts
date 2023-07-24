@@ -314,6 +314,7 @@ export interface LoyaltiesDeleteCampaignParams {
 }
 
 export interface LoyaltiesListRewardAssignmentsParams {
+	assignment_id?: string
 	limit?: number
 	page?: number
 }

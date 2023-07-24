@@ -3,7 +3,6 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { GetRewardDetailsResponse } from './types/Loyalties'
 export class Loyalties {
 	constructor(private client: RequestController) {}
 	/**
