@@ -1119,6 +1119,12 @@ client.loyalties.getRewardAssignments(campaignId, assignmentId)
 ```
 
 
+#### [Get Reward Details](https://docs.voucherify.io/reference/get-reward-details)
+
+```javascript
+client.loyalties.getRewardDetails(campaignId, assignmentId)
+```
+
 ### Segments
 
 Methods are provided within `client.segments.*` namespace.

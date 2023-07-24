@@ -3,6 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { GetRewardDetailsResponse } from './types/Loyalties'
 export class Loyalties {
 	constructor(private client: RequestController) {}
 	/**
@@ -222,11 +223,19 @@ export class Loyalties {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
 	 */
 	public getRewardAssignments(campaignId: string, assignmentId: string) {
 		return this.client.get<T.GetRewardAssignmentsResponse>(
 			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-details
+	 */
+	public getRewardDetails(campaignId: string, assignmentId: string) {
+		return this.client.get<T.GetRewardDetailsResponse>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}/reward`,
 		)
 	}
 }

@@ -23,6 +23,7 @@ export interface RewardsListParams {
 export type RewardsCreateResponse = RewardObject
 
 export interface RewardObject {
+	//4_obj_reward_object
 	id: string
 	name?: string
 	type?: 'CAMPAIGN' | 'COIN' | 'MATERIAL'
