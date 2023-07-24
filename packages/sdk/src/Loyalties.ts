@@ -153,7 +153,13 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member
 	 */
-	public getMember(campaignId: string, memberId: string) {
+	public getMember(memberId: string) {
+		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/members/${memberId}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-member-1
+	 */
+	public getMemberWithCampaignId(campaignId: string, memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/${encode(campaignId)}/members/${memberId}`)
 	}
 	/**
