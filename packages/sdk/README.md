@@ -1036,7 +1036,13 @@ client.loyalties.createMember(campaignId, member)
 #### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
 
 ```javascript
-client.loyalties.getMember(campaignId, memberId)
+client.loyalties.getMember(memberId)
+```
+
+#### [Get Loyalty Program Member With Campaign Id](https://docs.voucherify.io/reference/get-member-1)
+
+```javascript
+client.loyalties.getMemberWithCampaignId(campaignId, memberId)
 ```
 
 #### [List Loyalty Program Members](https://docs.voucherify.io/reference/list-members)
