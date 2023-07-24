@@ -1112,7 +1112,11 @@ client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
 client.loyalties.createPointsExpirationExport(campaignId, parameters)
 ```
 
----
+#### [Get Reward Assignments](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignments(campaignId, assignmentId)
+```
 
 
 ### Segments

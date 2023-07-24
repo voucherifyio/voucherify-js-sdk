@@ -3,8 +3,6 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { ReqExportPointsExpirations } from './types/Loyalties'
-
 export class Loyalties {
 	constructor(private client: RequestController) {}
 	/**
@@ -205,18 +203,30 @@ export class Loyalties {
 			createLoyaltyCardTransactions,
 		)
 	}
-
+	/**
+	 * @see https://docs.voucherify.io/reference/transfer-points
+	 */
 	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.ReqTransferLoyaltyPoints) {
 		return this.client.post<T.LoyaltyCardObjectNonExpandedCategories>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
 			transferLoyaltyPoints,
 		)
 	}
-
+	/**
+	 * @see https://docs.voucherify.io/reference/create-points-expiration-export
+	 */
 	public createPointsExpirationExport(campaignId: string, parameters: T.ReqExportPointsExpirations) {
 		return this.client.post<T.ExportObjectPointsExpiration>(
 			`/loyalties/${encode(campaignId)}/points-expiration/export`,
 			parameters,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
+	 */
+	public getRewardAssignments(campaignId: string, assignmentId: string) {
+		return this.client.get<T.GetRewardAssignmentsResponse>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
 		)
 	}
 }

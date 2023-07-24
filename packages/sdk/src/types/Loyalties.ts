@@ -12,6 +12,7 @@ import {
 	RedemptionObjectLoyaltyCardPayWithPoints,
 } from './Redemptions'
 import { FilterConditionsString, FilterJunction } from './Exports'
+import { RewardAssignmentObject } from './Rewards'
 
 export type DeleteLoyaltyCampaign = AsyncActionCreateResponse
 
@@ -80,6 +81,8 @@ interface FilterConditions {
 		}
 	}
 }
+
+export type GetRewardAssignmentsResponse = RewardAssignmentObject
 
 export interface ExportObjectPointsExpiration {
 	id: string
