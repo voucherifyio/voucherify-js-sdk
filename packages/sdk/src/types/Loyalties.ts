@@ -752,6 +752,7 @@ export interface LoyaltiesAddPoints {
 	source_id?: string
 }
 
+export type ListLoyaltyCardTransactionsParams = LoyaltiesGetPointsExpirationParams
 export interface LoyaltiesGetPointsExpirationParams {
 	limit?: number
 	page?: number
@@ -767,6 +768,364 @@ export interface LoyaltiesAddPointsResponse {
 		type?: 'voucher'
 		id?: string
 	}
+}
+
+export interface GetLoyaltyCardTransactions {
+	//8_res_get_loyalty_card_transactions
+	object: 'list'
+	data_ref: 'data'
+	data: ObjectLoyaltyCardTransaction[] //1_obj_loyalty_card_transaction_object
+	has_more: boolean
+}
+
+export type ObjectLoyaltyCardTransaction =
+	| LoyaltyCardTransactionObjectRedemption
+	| LoyaltyCardTransactionObjectAccrual
+	| LoyaltyCardTransactionObjectAccrualCustomEvent
+	| LoyaltyCardTransactionObjectRefund
+	| LoyaltyCardTransactionObjectAddition
+	| LoyaltyCardTransactionObjectRemoval
+	| LoyaltyCardTransactionObjectExpiration
+	| LoyaltyCardTransactionObjectTransferOut
+	| LoyaltyCardTransactionObjectTransferIn
+//1_obj_loyalty_card_transaction_object
+
+//{
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_redemption"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_accrual"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_accrual_custom_event"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_refund"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_addition"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_removal"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_expiration"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_transfer_out"
+//           },
+//           {
+//             "$ref": "#/components/schemas/1_obj_loyalty_card_transaction_object_transfer_in"
+//           }
+
+export interface LoyaltyCardTransactionObjectRedemption {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: string
+	reason: string
+	type: 'POINTS_REDEMPTION'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		redemption: { id: string }
+		reward: {
+			id: string
+			name: string
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectAccrual {
+	// 1_obj_loyalty_card_transaction_object_accrual
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'Automation'
+	reason: string
+	type: 'POINTS_ACCRUAL'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		event: {
+			id: string
+			type: string
+		}
+		earning_rule: {
+			id: string
+			source: {
+				banner: string
+			}
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectAccrualCustomEvent {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'Automation'
+	reason: string
+	type: 'POINTS_ACCRUAL'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		event: {
+			id: string
+			type: string
+		}
+		earning_rule: {
+			id: string
+			source: {
+				banner: string
+			}
+		}
+		custom_event: {
+			id: string
+			type: string
+		}
+		event_schema: {
+			id: string
+			type: string
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectRefund {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: string
+	reason: string
+	type: 'POINTS_REFUND'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		redemption: {
+			id: string
+		}
+		rollback: {
+			id: string
+		}
+		reward: {
+			id: string
+			name: string
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectAddition {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'voucherify-web-ui' | 'API'
+	reason: string
+	type: 'POINTS_ADDITION'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectRemoval {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'voucherify-web-ui' | 'API'
+	reason: string
+	type: 'POINTS_REMOVAL'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectExpiration {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'Automation'
+	reason: string
+	type: 'POINTS_EXPIRATION'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectTransferOut {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'API'
+	reason: string
+	type: 'POINTS_TRANSFER_OUT'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		destination_voucher: {
+			id: string
+			code: string
+			type: 'LOYALTY_CARD'
+			campaign: string
+			campaign_id: string
+			loyalty_card: {
+				points: number
+				balance: number
+				next_expiration_date: string
+				next_expiration_points: string
+			}
+			is_referral_code: boolean
+		}
+	}
+	related_transaction_id: string
+	created_at: string
+}
+
+export interface LoyaltyCardTransactionObjectTransferIn {
+	id: string
+	source_id: string
+	voucher_id: string
+	campaign_id: string
+	source: 'API'
+	reason: string
+	type: 'POINTS_TRANSFER_IN'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		source_voucher: {
+			id: string
+			code: string
+			type: 'LOYALTY_CARD'
+			campaign: string
+			holder_id: string
+			campaign_id: string
+			loyalty_card: {
+				points: number
+				balance: number
+				next_expiration_date: string
+				next_expiration_points: string
+			}
+			is_referral_code: boolean
+		}
+	}
+	related_transaction_id: string
+	created_at: string
 }
 
 export interface GetPointsExpirationResponse {
