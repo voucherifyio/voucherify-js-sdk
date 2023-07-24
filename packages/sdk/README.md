@@ -971,6 +971,12 @@ client.loyalties.updateRewardAssignment(campaignId, assignment)
 client.loyalties.deleteRewardAssignment(campaignId, assignmentId)
 ```
 
+#### [Get Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+```
+
 #### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments-1)
 
 ```javascript

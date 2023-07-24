@@ -82,7 +82,6 @@ interface FilterConditions {
 	}
 }
 
-export type GetRewardAssignmentsResponse = RewardAssignmentObject
 export type GetRewardDetailsResponse = RewardObject
 
 export interface ExportObjectPointsExpiration {
@@ -360,6 +359,7 @@ export interface LoyaltiesUpdateRewardAssignment {
 }
 
 export type LoyaltiesUpdateRewardAssignmentResponse = LoyaltiesCreateRewardAssignmentResponse
+export type GetRewardAssignmentsResponse = RewardAssignmentObject
 
 export interface LoyaltiesListEarningRulesParams {
 	limit?: number

@@ -66,7 +66,15 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/delete-reward-assignment-1
 	 */
 	public deleteRewardAssignment(campaignId: string, assignmentId: string) {
-		return this.client.delete(`/loyalties/${encode(campaignId)}/rewards/${assignmentId}`)
+		return this.client.delete(`/loyalties/${encode(campaignId)}/rewards/${encode(assignmentId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
+	 */
+	public getRewardAssignment(campaignId: string, assignmentId: string) {
+		return this.client.get<T.GetRewardAssignmentsResponse>(
+			`/loyalties/${encode(campaignId)}/rewards/${encode(assignmentId)}`,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-earning-rules
