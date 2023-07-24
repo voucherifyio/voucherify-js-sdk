@@ -3,6 +3,7 @@ import { CustomerRequest } from './Customers'
 export interface ValidateVoucherOrderId {
 	id: string
 }
+
 export interface ValidateVoucherOrderSourceId {
 	source_id: string
 }
@@ -16,6 +17,117 @@ export interface ValidateVoucherOrderSourceId {
 	//6_req_validate_voucher_order_source_id
 	source_id: string
 }
+
+export type ObjectOrder = ObjectOrderApplyToOrder | ObjectOrderApplyToItems //7_obj_order_object
+
+export interface ObjectOrderApplyToOrder {
+	//7_obj_order_object_apply_to_order
+	id: string
+	source_id: string
+	created_at: string
+	updated_at: string
+	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	amount: number
+	discount_amount: number
+	total_discount_amount: number
+	total_amount: number
+	applied_discount_amount: number
+	total_applied_discount_amount: number
+	items: {
+		object: 'order_item'
+		product_id: string
+		sku_id: string
+		quantity: number
+		amount: number
+		price: number
+		subtotal_amount: number
+		product: {
+			id: string
+			source_id: string
+			name: string
+			price: number
+		}
+		sku: {
+			id: string
+			source_id: string
+			sku: string
+			price: number
+		}
+	}[]
+	metadata: Record<string, any>
+	customer: {
+		id: string
+		object: 'customer'
+	}
+	referrer: {
+		id: string
+		object: 'customer'
+	}
+	customer_id: string
+	referrer_id: string
+	object: 'order'
+	redemptions: OrderObjectUnstackedRedemptions[]
+}
+
+export interface ObjectOrderApplyToItems {
+	//7_obj_order_object_apply_to_items
+	id: string
+	source_id: string
+	created_at: string
+	updated_at: string
+	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	amount: number
+	items_discount_amount: number
+	total_discount_amount: number
+	total_amount: number
+	items_applied_discount_amount: number
+	total_applied_discount_amount: number
+	items: {
+		object: 'order_item'
+		product_id: string
+		sku_id: string
+		quantity: number
+		amount: number
+		price: number
+		subtotal_amount: number
+		product: {
+			id: string
+			source_id: string
+			name: string
+			price: number
+		}
+		sku: {
+			id: string
+			source_id: string
+			sku: string
+			price: number
+		}
+	}[]
+	metadata: Record<string, any>
+	customer: {
+		id: string
+		object: 'customer'
+	}
+	referrer: {
+		id: string
+		object: 'customer'
+	}
+	customer_id: string
+	referrer_id: string
+	object: 'order'
+	redemptions: OrderObjectUnstackedRedemptions[]
+}
+
+//10_obj_order_object_unstacked_redemptions
+type OrderObjectUnstackedRedemptions = Record<
+	string,
+	{
+		date: string
+		related_object_type: 'voucher' | 'promotion_tier'
+		related_object_id: string
+		related_object_parent_id: string
+	}
+>
 
 export interface CreateOrder {
 	//10_req_create_order

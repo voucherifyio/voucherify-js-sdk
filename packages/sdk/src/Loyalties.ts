@@ -3,7 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { GetPointsExpirationResponse } from './types/Loyalties'
+import { LoyaltyCardObjectExpanded } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -174,7 +174,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/redeem-loyalty-card
 	 */
 	public redeemReward(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
-		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
+		return this.client.post<T.LoyaltyCardObjectExpanded>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/redemption`,
 			params,
 		)

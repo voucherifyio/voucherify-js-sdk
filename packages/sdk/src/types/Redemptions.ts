@@ -431,7 +431,7 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
 	object?: 'order'
 }
 
-interface RedemptionObjectLoyaltyCardPayWithPoints {
+export interface RedemptionObjectLoyaltyCardPayWithPoints {
 	//7_obj_redemption_object_loyalty_card_pay_with_points
 	id: string
 	customer?: SimpleCustomer
@@ -448,7 +448,7 @@ interface RedemptionObjectLoyaltyCardPayWithPoints {
 	}
 	type?: 'COIN'
 }
-interface RedemptionObjectLoyaltyCardMaterialProduct {
+export interface RedemptionObjectLoyaltyCardMaterialProduct {
 	//7_obj_redemption_object_loyalty_card_material_product
 	id: string
 	customer?: SimpleCustomer
@@ -466,7 +466,7 @@ interface RedemptionObjectLoyaltyCardMaterialProduct {
 	}
 	type?: 'MATERIAL'
 }
-interface RedemptionObjectLoyaltyCardMaterialSku {
+export interface RedemptionObjectLoyaltyCardMaterialSku {
 	//7_obj_redemption_object_loyalty_card_material_sku
 	id: string
 	customer?: SimpleCustomer
@@ -485,7 +485,7 @@ interface RedemptionObjectLoyaltyCardMaterialSku {
 	}
 	type?: 'MATERIAL'
 }
-interface RedemptionObjectLoyaltyCardDigital {
+export interface RedemptionObjectLoyaltyCardDigital {
 	//7_obj_redemption_object_loyalty_card_digital
 	id: string
 	customer?: SimpleCustomer

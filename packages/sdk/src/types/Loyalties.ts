@@ -1,10 +1,16 @@
-import { OrdersCreateResponse, OrdersItem } from './Orders'
+import { ObjectOrder, OrdersCreateResponse, OrdersItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { CreateCustomer, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
+import {
+	RedemptionObjectLoyaltyCardDigital,
+	RedemptionObjectLoyaltyCardMaterialProduct,
+	RedemptionObjectLoyaltyCardMaterialSku,
+	RedemptionObjectLoyaltyCardPayWithPoints,
+} from './Redemptions'
 
 export type DeleteLoyaltyCampaign = AsyncActionCreateResponse
 
@@ -12,6 +18,38 @@ export interface LoyaltiesListParams {
 	limit?: number
 	page?: number
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+}
+
+export interface LoyaltyCardObjectExpanded {
+	//8_obj_redemption_object_loyalty_card_extended
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	amount: number
+	result: 'SUCCESS' | 'FAILURE'
+	order?: ObjectOrder
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	reward:
+		| RedemptionObjectLoyaltyCardPayWithPoints
+		| RedemptionObjectLoyaltyCardMaterialProduct
+		| RedemptionObjectLoyaltyCardMaterialSku
+		| RedemptionObjectLoyaltyCardDigital
+	loyalty_card: {
+		points: number
+	}
 }
 
 export interface LoyaltyCardObjectNonExpandedCategories {
@@ -689,7 +727,7 @@ export interface LoyaltiesListMembersResponse {
 	vouchers: LoyaltyCardObjectNonExpandedCategories[]
 }
 
-export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
+export type LoyaltiesCreateMemberResponse = LoyaltyCardObjectNonExpandedCategories
 
 export type LoyaltiesGetMemberResponse = LoyaltyCardObjectNonExpandedCategories
 
