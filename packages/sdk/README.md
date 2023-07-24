@@ -1131,6 +1131,24 @@ client.loyalties.getRewardAssignments(campaignId, assignmentId)
 client.loyalties.getRewardDetails(campaignId, assignmentId)
 ```
 
+#### [List Loyalty Tiers](https://docs.voucherify.io/reference/list-loyalty-tiers)
+
+```javascript
+client.loyalties.listLoyaltyTier(campaignId)
+```
+
+#### [Get Loyalty Tier](https://docs.voucherify.io/reference/get-loyalty-tier)
+
+```javascript
+client.loyalties.getLoyaltyTier(campaignId, tierId)
+```
+
+#### [List Loyalty Tier Earning Rules](https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules)
+
+```javascript
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId)
+```
+
 ### Segments
 
 Methods are provided within `client.segments.*` namespace.

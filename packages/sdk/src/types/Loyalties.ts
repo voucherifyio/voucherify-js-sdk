@@ -14,6 +14,65 @@ import {
 import { FilterConditionsString, FilterJunction } from './Exports'
 import { RewardAssignmentObject, RewardObject } from './Rewards'
 
+export interface ListLoyaltyTierEarningRulesParameters {
+	limit?: number
+	page?: number
+}
+
+export interface ListLoyaltyTierEarningRulesResponse {
+	object: string
+	data_ref: string
+	data: EarningRuleObject[]
+	total: number
+}
+
+export interface ListLoyaltyTierParameters {
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+}
+
+export interface LoyaltyTierObject {
+	id: string
+	name: string
+	campaign_id: string
+	metadata: Record<string, any>
+	created_at: string
+	updated_at: string
+	earning_rules: Record<string, MappingMultiply | MappingFixed>
+	rewards: Record<string, MappingMultiply | MappingFixed>
+	config: {
+		points: {
+			from: number
+			to: number
+		}
+	}
+	points: {
+		from: number
+		to: number
+	}
+	object: 'loyalty_tier'
+}
+
+interface MappingMultiply {
+	//8_obj_mapping_multiply
+	type: 'MULTIPLY'
+	multiplier: number
+}
+
+interface MappingFixed {
+	//8_obj_mapping_fixed
+	type: 'CUSTOM'
+	points: number
+}
+
+export interface ListLoyaltyTiers {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTierObject[]
+	total: number
+}
+
 export type DeleteLoyaltyCampaign = AsyncActionCreateResponse
 
 export interface LoyaltiesListParams {

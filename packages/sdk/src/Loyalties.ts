@@ -245,4 +245,29 @@ export class Loyalties {
 			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}/reward`,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tiers
+	 */
+	public listLoyaltyTier(campaignId: string, params?: T.ListLoyaltyTierParameters) {
+		return this.client.get<T.ListLoyaltyTiers>(`/loyalties/${encode(campaignId)}/tiers`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-loyalty-tier
+	 */
+	public getLoyaltyTier(campaignId: string, tierId: string) {
+		return this.client.get<T.LoyaltyTierObject>(`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules
+	 */
+	public listLoyaltyTierEarningRules(
+		campaignId: string,
+		tierId: string,
+		parameters?: T.ListLoyaltyTierEarningRulesParameters,
+	) {
+		return this.client.get<T.ListLoyaltyTierEarningRulesResponse>(
+			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/earning-rules`,
+			parameters,
+		)
+	}
 }
