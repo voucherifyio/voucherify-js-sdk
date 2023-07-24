@@ -1,3 +1,8 @@
+export interface LoyaltyTierRewardObject {
+	reward: RewardObject
+	assignment: RewardAssignmentObject
+	object: 'loyalty_tier_reward'
+}
 export interface RewardAssignmentObject {
 	//4_obj_reward_assignment_object
 	id: string

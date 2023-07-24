@@ -45,6 +45,12 @@ export class Loyalties {
 		return this.client.get<T.LoyaltiesListRewardAssignmentsResponse>(`/loyalties/${encode(campaignId)}/rewards`, params)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/list-reward-assignments-1
+	 */
+	public listLoyaltyTierReward(campaignId: string, tierId: string) {
+		return this.client.get<T.ListLoyaltyTierRewardResponse>(`/loyalties/${encode(campaignId)}/tiers/${tierId}/rewards`)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/create-reward-assignment-1
 	 */
 	public createRewardAssignments(campaignId: string, assignment: T.LoyaltiesCreateRewardAssignments[]) {

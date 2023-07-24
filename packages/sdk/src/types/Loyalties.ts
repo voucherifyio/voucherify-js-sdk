@@ -12,7 +12,14 @@ import {
 	RedemptionObjectLoyaltyCardPayWithPoints,
 } from './Redemptions'
 import { FilterConditionsString, FilterJunction } from './Exports'
-import { RewardAssignmentObject, RewardObject } from './Rewards'
+import { LoyaltyTierRewardObject, RewardAssignmentObject, RewardObject } from './Rewards'
+
+export interface ListLoyaltyTierRewardResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTierRewardObject[]
+	total: number
+}
 
 export interface ListLoyaltyTierEarningRulesParameters {
 	limit?: number
