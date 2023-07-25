@@ -820,6 +820,18 @@ client.products.deleteSku(productId, skuId, { force: true })
 client.products.listSkus(productId)
 ```
 
+### Product Collections
+
+Methods are provided within `client.productCollections.*` namespace.
+
+- [List Product Collections](#list-product-collections)
+
+#### [List Product Collections](https://docs.voucherify.io/reference/list-product-collections)
+
+```javascript
+client.productCollections.list()
+```
+
 ---
 
 ### Rewards

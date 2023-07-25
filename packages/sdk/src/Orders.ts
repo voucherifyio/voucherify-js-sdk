@@ -3,7 +3,6 @@ import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
-import { CreateOrderExport, CreateOrderExportResponse, ExportOrderObject } from './types/Orders'
 
 export class Orders {
 	constructor(private client: RequestController) {}
