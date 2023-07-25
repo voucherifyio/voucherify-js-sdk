@@ -20,6 +20,13 @@ export interface ValidateVoucherOrderSourceId {
 
 export type ObjectOrder = ObjectOrderApplyToOrder | ObjectOrderApplyToItems //7_obj_order_object
 
+export interface ResponseListOrders {
+	object: 'list'
+	data_ref: 'orders'
+	orders: OrderObject[]
+	total: number
+}
+
 export interface ObjectOrderApplyToOrder {
 	//7_obj_order_object_apply_to_order
 	id: string
@@ -118,6 +125,48 @@ export interface ObjectOrderApplyToItems {
 	redemptions: OrderObjectUnstackedRedemptions[]
 }
 
+export interface OrderObject {
+	id: string
+	source_id?: string
+	created_at: string
+	updated_at?: string
+	status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
+	amount?: number
+	discount_amount?: number
+	items_discount_amount?: number
+	total_discount_amount?: number
+	total_amount?: number
+	customer_id?: string
+	items?: {
+		object?: 'order_item'
+		sku_id?: string
+		product_id?: string
+		quantity?: number
+		amount?: number
+		discount_amount?: number
+		price?: number
+		subtotal_amount?: number
+		product?: {
+			id?: string
+			source_id?: string
+			name?: string
+			price?: number
+		}
+		sku?: {
+			id?: string
+			source_id?: string
+			sku?: string
+			price?: number
+		}
+	}[]
+	metadata?: Record<string, any>
+	customer?: { id: string; object: 'customer' }
+	redemptions?: OrderObjectUnstackedRedemptions | OrderObjectStackedRedemptions
+	referrer?: { id: string; object: 'customer' }
+	referrer_id?: string
+	object: 'order'
+}
+
 //10_obj_order_object_unstacked_redemptions
 type OrderObjectUnstackedRedemptions = Record<
 	string,
@@ -126,6 +175,16 @@ type OrderObjectUnstackedRedemptions = Record<
 		related_object_type: 'voucher' | 'promotion_tier'
 		related_object_id: string
 		related_object_parent_id: string
+	}
+>
+
+type OrderObjectStackedRedemptions = Record<
+	string,
+	{
+		date: string
+		related_object_type: 'voucher' | 'promotion_tier'
+		related_object_id: string
+		stacked: string[]
 	}
 >
 
@@ -280,6 +339,7 @@ export type OrdersUpdateResponse = OrdersGetResponse
 export interface OrdersListParams {
 	limit?: number
 	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
 export interface OrdersListResponse {

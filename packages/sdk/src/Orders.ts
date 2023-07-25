@@ -31,7 +31,7 @@ export class Orders {
 	 * @see https://docs.voucherify.io/reference/list-orders
 	 */
 	public list(params: T.OrdersListParams = {}) {
-		return this.client.get<T.OrdersListResponse>('/orders', params)
+		return this.client.get<T.ResponseListOrders>('/orders', params)
 	}
 
 	/**
