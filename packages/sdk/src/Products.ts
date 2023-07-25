@@ -78,7 +78,7 @@ export class Products {
 	public updateSku(productId: string, sku: T.ProductsUpdateSku) {
 		return this.client.put<T.ProductsUpdateSkuResponse>(
 			`/products/${encode(productId)}/skus/${encode(sku.id || sku.source_id)}`,
-			omit(sku, ['id']),
+			omit(sku, ['id', 'source_id']),
 		)
 	}
 	/**
