@@ -90,7 +90,7 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-skus
 	 */
-	public listSkus(productId: string) {
-		return this.client.get<T.ProductsListSkus>(`/products/${encode(productId)}/skus`)
+	public listSkus(productId: string, params: T.ListSkusParams) {
+		return this.client.get<T.ProductsListSkus>(`/products/${encode(productId)}/skus`, params)
 	}
 }

@@ -1,3 +1,9 @@
+export interface ListSkusParams {
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+}
+
 export interface ProductsCreate {
 	name?: string
 	source_id?: string
@@ -123,6 +129,7 @@ export interface ProductsDeleteSkuParams {
 }
 
 export interface ProductsListSkus {
+	data_ref: 'skus'
 	object: 'list'
 	total: number
 	skus: ProductsGetSkuResponse[]
