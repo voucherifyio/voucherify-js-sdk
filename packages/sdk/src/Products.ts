@@ -25,7 +25,7 @@ export class Products {
 	public update(product: T.ProductsUpdate) {
 		return this.client.put<T.ProductsUpdateResponse>(
 			`/products/${encode(product.id || product.source_id)}`,
-			omit(product, ['id']),
+			omit(product, ['id', 'source_id']),
 		)
 	}
 	/**

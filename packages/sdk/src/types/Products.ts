@@ -40,7 +40,7 @@ export interface ProductsGetResponse {
 	created_at: string
 	image_url?: string
 	metadata?: Record<string, any>
-	skus: { data: SkuObject[]; total: number }
+	skus: { data: SkuObject[]; data_ref: 'data'; object: 'list'; total: number }
 }
 
 export type ProductsUpdate = {
