@@ -14,6 +14,42 @@ import {
 import { FilterConditionsString, FilterJunction } from './Exports'
 import { LoyaltyTierRewardObject, RewardAssignmentObject, RewardObject } from './Rewards'
 
+export interface ListMembersLoyaltyTiersResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: {
+		id: string
+		name: string
+		campaign_id: string
+		metadata: Record<string, any>
+		created_at: string
+		updated_at: string
+		earning_rules: Record<string, MappingMultiply | MappingFixed>
+		rewards: Record<string, MappingMultiply | MappingFixed>
+		config: {
+			points: {
+				from: number
+				to: number
+			}
+		}
+		points: {
+			from: number
+			to: number
+		}
+		expiration: {
+			customer_id: string
+			campaign_id: string
+			tier_id: string
+			start_date: string
+			expiration_date: string
+			created_at: string
+			updated_at: string
+		}
+		object: 'loyalty_tier'
+	}[]
+	total: number
+}
+
 export interface ListLoyaltyTierRewardResponse {
 	object: 'list'
 	data_ref: 'data'

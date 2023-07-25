@@ -1068,6 +1068,14 @@ client.loyalties.getMemberActivitiesWithCampaignId(campaignId, memberId)
 
 `memberId` referrers to Loyalty Card code.
 
+#### [List Member's Loyalty Tiers](https://docs.voucherify.io/reference/get-member-loyalty-tier)
+
+```javascript
+client.loyalties.listMembersLoyaltyTiers(memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
 #### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance)
 
 ```javascript

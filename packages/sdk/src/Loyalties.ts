@@ -306,4 +306,10 @@ export class Loyalties {
 			parameters,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-member-loyalty-tier
+	 */
+	public listMembersLoyaltyTiers(memberId: string) {
+		return this.client.get<T.ListMembersLoyaltyTiersResponse>(`/loyalties/members/${encode(memberId)}/tiers`)
+	}
 }
