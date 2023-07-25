@@ -1,4 +1,4 @@
-import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersItem, OrdersItemsArray } from './Orders'
+import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersItemsArray } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { CreateCustomer, SimpleCustomer } from './Customers'
@@ -1327,6 +1327,17 @@ export interface GetPointsExpirationResponse {
 		updated_at: string
 		object: 'loyalty_points_bucket'
 	}[]
+	total: number
+}
+
+export interface ListMemberRewardsParams {
+	affordable_only?: boolean
+}
+
+export interface ListMemberRewardsResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: { reward: RewardObject; assignment: RewardAssignmentObject; object: 'loyalty_reward' }[]
 	total: number
 }
 

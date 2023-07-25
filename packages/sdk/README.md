@@ -1116,6 +1116,18 @@ When redeeming reward with type `COIN` you need to provide additional `order` ob
 
 ---
 
+#### [List Member Rewards](https://docs.voucherify.io/reference/list-member-rewards)
+
+```javascript
+client.loyalties.listMemberRewards(memberId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
+
+---
+
 #### [List Loyalty Card Transactions With Campaign](https://docs.voucherify.io/reference/list-loyalty-card-transactions-1)
 
 ```javascript

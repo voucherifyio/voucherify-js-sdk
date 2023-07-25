@@ -216,6 +216,12 @@ export class Loyalties {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/list-member-rewards
+	 */
+	public listMemberRewards(memberId: string, params?: T.ListMemberRewardsParams) {
+		return this.client.get<T.ListMemberRewardsResponse>(`/loyalties/members/${encode(memberId)}/rewards`, params)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
 	 */
 	public listLoyaltyCardTransactionsWithCampaignId(
