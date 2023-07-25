@@ -25,9 +25,23 @@ export interface ProductsCreateResponse {
 	created_at: string
 	image_url?: string
 	metadata?: Record<string, any>
+	skus: { data: SkuObject[]; data_ref: 'data'; object: 'list'; total: number }
+	updated_at?: string
 }
 
-export type ProductsGetResponse = ProductsCreateResponse & ProductsGetResponseSkus
+export interface ProductsGetResponse {
+	id: string
+	source_id?: string
+	updated_at?: string
+	object: 'product'
+	name?: string
+	price?: number
+	attributes?: string[]
+	created_at: string
+	image_url?: string
+	metadata?: Record<string, any>
+	skus: { data: SkuObject[]; total: number }
+}
 
 export type ProductsUpdate = {
 	name?: string
@@ -63,6 +77,7 @@ export interface ProductsDeleteParams {
 export interface ProductsListParams {
 	page?: number
 	limit?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
 export interface ProductsListResponse {
