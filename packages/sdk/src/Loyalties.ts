@@ -165,15 +165,27 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member-activities
 	 */
-	public getMemberActivities(campaignId: string, memberId: string) {
+	public getMemberActivities(memberId: string) {
+		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(`/loyalties/members/${memberId}/activities`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-member-activities-1
+	 */
+	public getMemberActivitiesWithCampaignId(campaignId: string, memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/activities`,
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/add-loyalty-card-balance
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance
 	 */
-	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+	public addOrRemovePoints(memberId: string, balance: T.LoyaltiesAddPoints) {
+		return this.client.post<T.LoyaltiesAddPointsResponse>(`/loyalties/members/${memberId}/balance`, balance)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
+	 */
+	public addOrRemovePointsWithCampaignId(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
 		return this.client.post<T.LoyaltiesAddPointsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/balance`,
 			balance,

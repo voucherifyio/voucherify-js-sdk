@@ -1055,15 +1055,31 @@ client.loyalties.listMembers(campaignId, params)
 #### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
 
 ```javascript
-client.loyalties.getMemberActivities(campaignId, memberId)
+client.loyalties.getMemberActivities(memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
+#### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities-1)
 
 ```javascript
-client.loyalties.addPoints(campaignId, memberId, balance)
+client.loyalties.getMemberActivitiesWithCampaignId(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance)
+
+```javascript
+client.loyalties.addOrRemovePoints(memberId, balance)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1)
+
+```javascript
+client.loyalties.addOrRemovePointsWithCampaignId(campaignId, memberId, balance)
 ```
 
 `memberId` referrers to Loyalty Card code.
