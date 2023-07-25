@@ -1,4 +1,4 @@
-import { ObjectOrder, OrdersCreateResponse, OrdersItem } from './Orders'
+import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersItem, OrdersItemsArray } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { CreateCustomer, SimpleCustomer } from './Customers'
@@ -1333,13 +1333,15 @@ export interface GetPointsExpirationResponse {
 export interface LoyaltiesRedeemRewardParams {
 	reward: {
 		id: string
+		points?: number
 	}
 	order?: {
-		id?: string
 		source_id?: string
+		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
 		amount: number
-		items?: OrdersItem[]
 		metadata?: Record<string, any>
+		referrer: OrdersCustomerObject
+		items?: OrdersItemsArray
 	}
 	metadata?: Record<string, any>
 }

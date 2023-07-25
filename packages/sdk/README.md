@@ -1095,7 +1095,19 @@ client.loyalties.getPointsExpiration(campaignId, memberId)
 #### [Redeem Loyalty Card](https://docs.voucherify.io/reference/redeem-reward)
 
 ```javascript
-client.loyalties.redeemReward(campaignId, memberId, params)
+client.loyalties.redeemReward(memberId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
+
+---
+
+#### [Redeem Loyalty Card With CampaignId](https://docs.voucherify.io/reference/redeem-reward-1)
+
+```javascript
+client.loyalties.redeemRewardWithCampaignId(campaignId, memberId, params)
 ```
 
 `memberId` referrers to Loyalty Card code.

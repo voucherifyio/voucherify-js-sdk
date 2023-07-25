@@ -146,6 +146,7 @@ export interface OrdersCustomerObject {
 	source_id: string
 	name: string
 	email: string
+	description?: string
 	phone: string
 	address: {
 		city: string
@@ -162,7 +163,7 @@ export interface OrdersCustomerObject {
 
 export type OrdersReferrerObject = OrdersCustomerObject //10_req_orders_referrer_object
 
-type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
+export type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
 
 export interface OrdersOrderItem {
 	//10_req_orders_order_item

@@ -201,9 +201,15 @@ export class Loyalties {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/redeem-loyalty-card
+	 * @see https://docs.voucherify.io/reference/redeem-reward
 	 */
-	public redeemReward(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
+	public redeemReward(memberId: string, params: T.LoyaltiesRedeemRewardParams) {
+		return this.client.post<T.LoyaltyCardObjectExpanded>(`/loyalties/members/${encode(memberId)}/redemption`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/redeem-reward-1
+	 */
+	public redeemRewardWithCampaignId(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
 		return this.client.post<T.LoyaltyCardObjectExpanded>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/redemption`,
 			params,
