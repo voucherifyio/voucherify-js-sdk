@@ -844,6 +844,13 @@ client.productCollections.get(productCollectionId)
 client.productCollections.delete(productCollectionId)
 ```
 
+
+#### [List Products Collection](https://docs.voucherify.io/reference/list-products-in-collection)
+
+```javascript
+client.products.listProductsCollection(productCollectionId)
+```
+
 ---
 
 ### Rewards

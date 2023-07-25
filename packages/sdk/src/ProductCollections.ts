@@ -16,14 +16,24 @@ export class ProductCollections {
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-product-collection
 	 */
-	public delete(productCollectionId?: string) {
+	public delete(productCollectionId: string) {
 		return this.client.delete<{}>(`/product-collections/${encode(productCollectionId)}`)
 	}
 
 	/**
 	 * @see https://docs.voucherify.io/reference/get-product-collection
 	 */
-	public get(productCollectionId?: string) {
+	public get(productCollectionId: string) {
 		return this.client.get<T.ProductCollectionsObject>(`/product-collections/${encode(productCollectionId)}`)
+	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/list-product-collections
+	 */
+	public listProductsCollection(productCollectionId: string, params?: T.ListProductsCollectionParameters) {
+		return this.client.get<T.ListProductsCollection>(
+			`/product-collections/${encode(productCollectionId)}/products`,
+			params,
+		)
 	}
 }
