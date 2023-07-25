@@ -241,6 +241,18 @@ export class Loyalties {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/export-loyalty-card-transactions
+	 */
+	public exportLoyaltyCardTransactions(
+		memberId: string,
+		createLoyaltyCardTransactions: T.CreateLoyaltyCardTransactions,
+	) {
+		return this.client.post<T.ExportTransactionObject>(
+			`/loyalties/members/${encode(memberId)}/transactions/export`,
+			createLoyaltyCardTransactions,
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/export-loyalty-card-transactions-1
 	 */
 	public exportLoyaltyCardTransactionsWithCampaignId(

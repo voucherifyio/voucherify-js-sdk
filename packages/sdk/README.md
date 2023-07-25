@@ -1156,6 +1156,16 @@ client.loyalties.listLoyaltyCardTransactionsWithCampaignId(campaignId, memberId)
 
 ---
 
+#### [Export Loyalty Card Transactions](https://docs.voucherify.io/reference/export-loyalty-card-transactions)
+
+```javascript
+client.loyalties.exportLoyaltyCardTransactions(memberId, createLoyaltyCardTransactions)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
 #### [Export Loyalty Card Transactions With Campaign](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1)
 
 ```javascript
