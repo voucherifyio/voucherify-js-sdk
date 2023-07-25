@@ -832,6 +832,18 @@ Methods are provided within `client.productCollections.*` namespace.
 client.productCollections.list()
 ```
 
+#### [Get Product Collection](https://docs.voucherify.io/reference/get-product-collection)
+
+```javascript
+client.productCollections.get(productCollectionId)
+```
+
+#### [Delete Product Collection](https://docs.voucherify.io/reference/delete-product-collection)
+
+```javascript
+client.productCollections.delete(productCollectionId)
+```
+
 ---
 
 ### Rewards

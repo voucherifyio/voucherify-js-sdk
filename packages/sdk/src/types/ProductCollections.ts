@@ -11,7 +11,7 @@ export interface ListProductCollections {
 	total: number
 }
 
-export type ProductCollectionsObject = (ProductCollectionsStaticObject | ProductCollectionsAutoUpdateObject)[]
+export type ProductCollectionsObject = ProductCollectionsStaticObject | ProductCollectionsAutoUpdateObject
 
 interface ProductCollectionsStaticObject {
 	id: string
