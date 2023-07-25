@@ -3,6 +3,7 @@ import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
+import { CreateOrderExport, CreateOrderExportResponse, ExportOrderObject } from './types/Orders'
 
 export class Orders {
 	constructor(private client: RequestController) {}
@@ -32,6 +33,13 @@ export class Orders {
 	 */
 	public list(params: T.OrdersListParams = {}) {
 		return this.client.get<T.ResponseListOrders>('/orders', params)
+	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/create-order-export
+	 */
+	public export(orders: T.CreateOrderExport) {
+		return this.client.post<T.CreateOrderExportResponse>('/orders/export', orders)
 	}
 
 	/**

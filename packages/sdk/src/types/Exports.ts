@@ -382,7 +382,7 @@ interface FilterOrderAmount {
 	junction?: FilterJunction //16_filter_junction
 }
 
-interface FilterConditionsNumber {
+export interface FilterConditionsNumber {
 	conditions: {
 		$in?: number[]
 		$not_in?: number[]

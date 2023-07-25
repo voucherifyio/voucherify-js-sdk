@@ -1,4 +1,83 @@
 import { CustomerRequest } from './Customers'
+import { FilterConditionsNumber, FilterConditionsString, FilterJunction } from './Exports'
+
+export type CreateOrderExport = ExportOrderObject
+
+export interface CreateOrderExportResponse {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	channel: 'API' | 'WEBSITE'
+	exported_object: 'order'
+	parameters: ExportOrderObject
+	result: {
+		url: string
+	}
+	user_id: string
+}
+
+export interface ExportOrderObject {
+	order: '-created_at' | 'created_at' | 'updated_at' | '-updated_at' | 'status' | '-status'
+	fields: (
+		| 'id'
+		| 'source_id'
+		| 'created_at'
+		| 'updated_at'
+		| 'status'
+		| 'amount'
+		| 'discount_amount'
+		| 'items_discount_amount'
+		| 'total_discount_amount'
+		| 'total_amount'
+		| 'customer_id'
+		| 'referrer_id'
+		| 'metadata'
+	)[]
+	filters:
+		| FilterOrderStatus
+		| FilterOrderSourceId
+		| FilterOrderAmount
+		| FilterOrderTotalAmount
+		| FilterOrderDiscountAmount
+		| FilterOrderTotalDiscountAmount
+		| FilterOrderItemsDiscountAmount
+}
+
+interface FilterOrderStatus {
+	status?: FilterConditionsString
+	junction?: FilterJunction
+}
+
+interface FilterOrderSourceId {
+	source_id?: FilterConditionsString
+	junction?: FilterJunction
+}
+
+interface FilterOrderAmount {
+	amount?: FilterConditionsNumber
+	junction?: FilterJunction
+}
+
+interface FilterOrderTotalAmount {
+	total_amount?: FilterConditionsNumber
+	junction?: FilterJunction
+}
+
+interface FilterOrderDiscountAmount {
+	discount_amount?: FilterConditionsNumber
+	junction?: FilterJunction
+}
+
+interface FilterOrderTotalDiscountAmount {
+	total_discount_amount?: FilterConditionsNumber
+	junction?: FilterJunction
+}
+
+interface FilterOrderItemsDiscountAmount {
+	items_discount_amount?: FilterConditionsNumber
+	junction?: FilterJunction
+}
 
 export interface ValidateVoucherOrderId {
 	id: string
@@ -291,10 +370,11 @@ export interface OrdersItem {
 export interface OrdersCreate {
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-	customer?: CustomerRequest
+	customer?: OrdersCustomerObject
+	referrer?: OrdersCustomerObject
 	amount?: number
 	discount_amount?: number
-	items?: OrdersItem[]
+	items?: OrdersItemsArray
 	metadata?: Record<string, any>
 }
 
