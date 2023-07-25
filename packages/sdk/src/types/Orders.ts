@@ -325,13 +325,14 @@ export interface OrdersUpdate {
 	id: string
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-	items?: OrdersItem[]
+	items?: OrdersOrderItem[]
 	amount?: number
 	discount_amount?: number
 	metadata?: Record<string, any>
-	customer?: {
-		id: string
-	}
+	customer?: OrdersCustomerObject
+	referrer?: OrdersCustomerObject
+	referrer_id?: string
+	customer_id?: string
 }
 
 export type OrdersUpdateResponse = OrdersGetResponse
