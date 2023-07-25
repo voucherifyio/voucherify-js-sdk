@@ -374,7 +374,7 @@ export interface OrdersCreate {
 	referrer?: OrdersCustomerObject
 	amount?: number
 	discount_amount?: number
-	items?: OrdersItemsArray
+	items?: OrdersOrderItem[]
 	metadata?: Record<string, any>
 }
 
