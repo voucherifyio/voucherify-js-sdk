@@ -224,6 +224,12 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
 	 */
+	public listLoyaltyCardTransactions(memberId: string, params?: T.ListLoyaltyCardTransactionsParams) {
+		return this.client.get<T.GetLoyaltyCardTransactions>(`/loyalties/members/${encode(memberId)}/transactions`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions-1
+	 */
 	public listLoyaltyCardTransactionsWithCampaignId(
 		campaignId: string,
 		memberId: string,
