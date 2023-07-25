@@ -17,7 +17,19 @@ interface MetadataSchemaProperty {
 
 export interface MetadataSchema {
 	id: string
-	related_object: string
+	related_object:
+		| 'campaign'
+		| 'customer'
+		| 'earning_rule'
+		| 'loyalty_tier'
+		| 'order'
+		| 'order_item'
+		| 'product'
+		| 'promotion_tier'
+		| 'publication'
+		| 'redemption'
+		| 'reward'
+		| 'voucher'
 	properties: Record<string, MetadataSchemaProperty>
 	allow_defined_only?: boolean
 	created_at: string
