@@ -28,7 +28,7 @@ import { CategoryObject } from './Categories'
 
 export type ValidatePromotionTierResponse = ValidationPromotionTierFalse | ValidationPromotionTierTrue
 
-interface ValidationPromotionTierTrue {
+export interface ValidationPromotionTierTrue {
 	//6_res_validate_promotion_tier_true
 	valid: boolean
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
