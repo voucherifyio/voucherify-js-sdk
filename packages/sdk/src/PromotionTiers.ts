@@ -44,7 +44,7 @@ export class PromotionTiers {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/redeem-promotion
+	 * @see https://docs.voucherify.io/reference/validate-promotion-tier
 	 */
 	public validate(promotionsTierId: string, params: T.ValidatePromotionTier) {
 		return this.client.post<T.ValidatePromotionTierResponse>(

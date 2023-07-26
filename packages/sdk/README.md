@@ -508,6 +508,7 @@ Methods are provided within `client.promotions.*` namespace.
 - [Redeem Promotion](#redeem-promotion)
 - [Update Promotion Tier](#update-promotions-tier)
 - [Delete Promotion Tier](#delete-promotions-tier)
+- [Validate Promotion Tier](#validate-promotions-tier)
 - [List Promotion Stacks in Campaign](#list-promotion-stacks-in-campaign)
 - [Create Promotion Stack](#create-promotion-stack)
 - [Delete Promotion Stack](#delete-promotion-stack)
@@ -581,7 +582,15 @@ client.promotions.tiers.disable(campaignId, stackId, body)
 
 ```javascript
 client.promotions.tiers.enable(campaignId, stackId, body)
+
 ```
+
+#### [Validate Promotion Tier](https://docs.voucherify.io/reference/validate-promotion-tier)
+
+```javascript
+client.promotions.tiers.validate(promotionsTierId, params)
+```
+
 #### [List Promotion Stacks in Campaign](https://docs.voucherify.io/reference/list-promotion-stacks-in-campaign)
 
 ```javascript
