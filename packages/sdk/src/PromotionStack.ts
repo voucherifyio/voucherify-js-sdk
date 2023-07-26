@@ -17,4 +17,22 @@ export class PromotionStack {
 	public createInCampaign(campaignId: string, body: T.CreatePromotionStack) {
 		return this.client.post<T.PromotionStackObject>(`/promotions/${campaignId}/stacks`, body)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/delete-promotion-stack
+	 */
+	public delete(campaignId: string, stackId: string) {
+		return this.client.delete<{}>(`/promotions/${campaignId}/stacks/${stackId}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-promotion-stack
+	 */
+	public get(campaignId: string, stackId: string) {
+		return this.client.get<T.PromotionStackObject>(`/promotions/${campaignId}/stacks/${stackId}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/update-promotion-stack
+	 */
+	public update(campaignId: string, stackId: string, body: T.UpdatePromotionStack) {
+		return this.client.put<T.PromotionStackObject>(`/promotions/${campaignId}/stacks/${stackId}`, body)
+	}
 }

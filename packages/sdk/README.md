@@ -510,6 +510,9 @@ Methods are provided within `client.promotions.*` namespace.
 - [Delete Promotion Tier](#delete-promotions-tier)
 - [List Promotion Stacks in Campaign](#list-promotion-stacks-in-campaign)
 - [Create Promotion Stack](#create-promotion-stack)
+- [Delete Promotion Stack](#delete-promotion-stack)
+- [Get Promotion Stack](#get-promotion-stack)
+- [Update Promotion Stack](#update-promotion-stack)
 
 Read how to [Validate Promotion Campaign](#validate-promotion-campaign) in Validations section
 
@@ -578,6 +581,24 @@ client.promotions.stack.listInCampaign(campaignId)
 
 ```javascript
 client.promotions.stack.createInCampaign(campaignId, body)
+```
+
+#### [Delete Promotion Stack](https://docs.voucherify.io/reference/delete-promotion-stack)
+
+```javascript
+client.promotions.stack.delete(campaignId, stackId)
+```
+
+#### [Get Promotion Stack](https://docs.voucherify.io/reference/get-promotion-stack)
+
+```javascript
+client.promotions.stack.get(campaignId, stackId)
+```
+
+#### [Update Promotion Stack](https://docs.voucherify.io/reference/update-promotion-stack)
+
+```javascript
+client.promotions.stack.update(campaignId, stackId, body)
 ```
 
 ---

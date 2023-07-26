@@ -1,5 +1,7 @@
 import { CategoryObject } from './Categories'
 
+export type UpdatePromotionStack = Partial<CreatePromotionStack>
+
 export interface CreatePromotionStack {
 	name: string
 	tiers?: {
