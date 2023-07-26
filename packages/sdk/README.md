@@ -513,6 +513,7 @@ Methods are provided within `client.promotions.*` namespace.
 - [Delete Promotion Stack](#delete-promotion-stack)
 - [Get Promotion Stack](#get-promotion-stack)
 - [Update Promotion Stack](#update-promotion-stack)
+- [List Promotion Stacks](#list-promotion-stacks)
 
 Read how to [Validate Promotion Campaign](#validate-promotion-campaign) in Validations section
 
@@ -599,6 +600,11 @@ client.promotions.stack.get(campaignId, stackId)
 
 ```javascript
 client.promotions.stack.update(campaignId, stackId, body)
+```
+#### [List Promotion Stacks](https://docs.voucherify.io/reference/list-all-promotion-stacks)
+
+```javascript
+client.promotions.stack.list(params)
 ```
 
 ---

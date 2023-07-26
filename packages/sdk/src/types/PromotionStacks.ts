@@ -1,5 +1,19 @@
 import { CategoryObject } from './Categories'
 
+export interface ListPromotionStacksParams {
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'name' | '-name'
+	created_at?: {
+		before?: string
+		after?: string
+	}
+	updated_at?: {
+		before?: string
+		after?: string
+	}
+}
+
 export type UpdatePromotionStack = Partial<CreatePromotionStack>
 
 export interface CreatePromotionStack {
