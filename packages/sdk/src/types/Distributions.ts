@@ -199,7 +199,7 @@ interface CreatePublicationStandaloneVoucher {
 	campaign?: string
 	voucher?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
 }
 
 type CreatePublicationFromCampaign =
@@ -212,7 +212,7 @@ interface CreatePublicationFromCampaignAutoUpdate {
 	//5_req_create_publication_from_campaign_auto_update
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
 	campaign?: string
 	metadata?: Record<string, any>
 }
@@ -221,7 +221,7 @@ interface CreatePublicationFromCampaignOneSpecificVoucher {
 	//5_req_create_publication_from_campaign_one_specific_voucher
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
 	voucher?: string
 	campaign?: string
 	metadata?: Record<string, any>
@@ -231,7 +231,7 @@ interface CreatePublicationFromCampaignMultipleVouchers {
 	//5_req_create_publication_from_campaign_multiple_vouchers
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'description' | 'id'>
+	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
 	voucher?: string
 	campaign?: {
 		name?: string
