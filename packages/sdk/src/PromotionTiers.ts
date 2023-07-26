@@ -15,8 +15,8 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-promotions
 	 */
-	public list(promotionId: string) {
-		return this.client.get<T.PromotionTiersListResponse>(`/promotions/${encode(promotionId)}/tiers`)
+	public list(campaignId: string) {
+		return this.client.get<T.ListPromotionTiersFromCampaign>(`/promotions/${encode(campaignId)}/tiers`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-promotion-tier
@@ -27,8 +27,12 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/add-promotion-tier-to-campaign
 	 */
-	public create(promotionId: string, params: T.PromotionTiersCreateParams) {
-		return this.client.post<T.PromotionTiersCreateResponse>(`/promotions/${encode(promotionId)}/tiers`, params)
+	public addToCampaign(campaignId: string, params: T.AddPromotionTierToCampaignBody) {
+		return this.client.post<T.PromotionTierObject>(`/promotions/${encode(campaignId)}/tiers`, params)
+	}
+	//Backward compatibility
+	public create(promotionId: string, params: T.AddPromotionTierToCampaignBody) {
+		return this.addToCampaign(promotionId, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-promotion

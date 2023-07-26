@@ -35,4 +35,10 @@ export class PromotionStack {
 	public update(campaignId: string, stackId: string, body: T.UpdatePromotionStack) {
 		return this.client.put<T.PromotionStackObject>(`/promotions/${campaignId}/stacks/${stackId}`, body)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-promotion-stack
+	 */
+	public list(campaignId: string, stackId: string) {
+		return this.client.get<T.PromotionStackObject>(`/promotions/${campaignId}/stacks/${stackId}`)
+	}
 }

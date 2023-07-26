@@ -217,7 +217,7 @@ export type VoucherDiscountPut =
 	| VoucherDiscountFixedPut
 	| VoucherDiscountUnitOnePut
 	| VoucherDiscountUnitMultiplePut
-interface VoucherDiscountAmount {
+export interface VoucherDiscountAmount {
 	//1_obj_voucher_object_discount_amount
 	type?: 'AMOUNT'
 	effect?:
@@ -230,7 +230,7 @@ interface VoucherDiscountAmount {
 	amount_off_formula?: string
 }
 
-interface VoucherDiscountPercentage {
+export interface VoucherDiscountPercentage {
 	//1_obj_voucher_object_discount_percentage
 	type?: 'PERCENT'
 	amount_limit?: string
@@ -239,7 +239,7 @@ interface VoucherDiscountPercentage {
 	percent_off_formula?: string
 }
 
-interface VoucherDiscountFixed {
+export interface VoucherDiscountFixed {
 	//1_obj_voucher_object_discount_fixed
 	type?: 'FIXED'
 	fixed_amount?: number
@@ -247,7 +247,7 @@ interface VoucherDiscountFixed {
 	fixed_amount_formula?: string
 }
 
-interface VoucherDiscountUnitOne {
+export interface VoucherDiscountUnitOne {
 	//1_obj_voucher_object_discount_unit_one
 	type?: 'UNIT'
 	unit_off?: number
@@ -256,7 +256,7 @@ interface VoucherDiscountUnitOne {
 	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
 }
 
-interface VoucherDiscountUnitMultiple {
+export interface VoucherDiscountUnitMultiple {
 	//1_obj_voucher_object_discount_unit_multiple
 	type?: 'UNIT'
 	effect?: 'ADD_MANY_ITEMS'
@@ -268,7 +268,7 @@ interface VoucherDiscountUnitMultiple {
 	}[]
 }
 
-interface VoucherDiscountShipping {
+export interface VoucherDiscountShipping {
 	//1_obj_voucher_object_discount_shipping
 	type?: 'UNIT'
 	effect?: 'ADD_MISSING_ITEMS'

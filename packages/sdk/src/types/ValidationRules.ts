@@ -156,8 +156,14 @@ interface ValidationRuleAssignmentsDistribution {
 	distribution?: string
 }
 
-export interface ValidationRulesCreateAssignmentResponse {
-	//13_res_validation-rules_validationRuleId_assignments
+export interface ValidationRulesValidationRuleIdAssignmentResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: ValidationRulesCreateAssignmentObject[]
+	total: number
+}
+
+export interface ValidationRulesCreateAssignmentObject {
 	id: string
 	rule_id?: string
 	related_object_id?: string
@@ -203,5 +209,5 @@ export interface ValidationRulesListAssignmentsResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: ValidationRulesCreateAssignmentResponse[]
+	data: ValidationRulesCreateAssignmentObject[]
 }

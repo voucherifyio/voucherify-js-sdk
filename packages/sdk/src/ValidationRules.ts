@@ -38,7 +38,7 @@ export class ValidationRules {
 	 * @see https://docs.voucherify.io/reference/create-validation-rules-assignment
 	 */
 	public createAssignment(validationRuleId: string, assignment: T.ValidationRulesCreateAssignment) {
-		return this.client.post<T.ValidationRulesCreateAssignmentResponse>(
+		return this.client.post<T.ValidationRulesCreateAssignmentObject>(
 			`/validation-rules/${encode(validationRuleId)}/assignments`,
 			assignment,
 		)
@@ -47,9 +47,7 @@ export class ValidationRules {
 	 * @see https://docs.voucherify.io/reference/delete-validation-rules-assignment
 	 */
 	public deleteAssignment(validationRuleId: string, assignmentId: string) {
-		return this.client.delete<{}>(
-			`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`,
-		)
+		return this.client.delete<{}>(`/validation-rules/${encode(validationRuleId)}/assignments/${encode(assignmentId)}`)
 	}
 
 	public validate(validationRuleId: string, params: any = {}) {
@@ -74,7 +72,7 @@ export class ValidationRules {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-validation-rule-assignments
 	 */
-	public listValidationRuleAssignments(validationRuleId: string, params: T.ValidationRuleListAssignmentsParams={}) {
+	public listValidationRuleAssignments(validationRuleId: string, params: T.ValidationRuleListAssignmentsParams = {}) {
 		return this.client.get<T.ValidationRuleListAssignmentsResponse>(
 			`/validation-rules/${encode(validationRuleId)}/assignments`,
 			params,

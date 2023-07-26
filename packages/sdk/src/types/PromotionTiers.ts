@@ -2,8 +2,141 @@ import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 
 import { SimpleCustomer } from './Customers'
-import { ValidationRulesListAssignmentsResponse } from './ValidationRules'
+import {
+	ValidationRulesListAssignmentsResponse,
+	ValidationRulesValidationRuleIdAssignmentResponse,
+} from './ValidationRules'
 import { ValidationSessionReleaseParams } from './ValidateSession'
+import {
+	VoucherDiscountAmount,
+	VoucherDiscountFixed,
+	VoucherDiscountPercentage,
+	VoucherDiscountShipping,
+	VoucherDiscountUnitMultiple,
+	VoucherDiscountUnitOne,
+} from './Vouchers'
+import { CategoryObject } from './Categories'
+
+export interface PromotionTierObject {
+	//3_obj_promotion_tier_object
+	id: string
+	created_at: string
+	updated_at: string
+	name: string
+	banner: string
+	action: {
+		discount:
+			| VoucherDiscountAmount
+			| VoucherDiscountPercentage
+			| VoucherDiscountFixed
+			| VoucherDiscountUnitOne
+			| VoucherDiscountUnitMultiple
+			| VoucherDiscountShipping
+	}
+	metadata: Record<string, any>
+	hierarchy: number
+	campaign: {
+		id: string
+		start_date: string
+		expiration_date: string
+		validity_timeframe: {
+			interval: string
+			duration: string
+		}
+		validity_day_of_week: number[]
+		active: boolean
+		category_id: string
+		object: 'campaign'
+	}
+}
+
+export interface AddPromotionTierToCampaignBody {
+	name: string
+	banner: string
+	action: {
+		discount:
+			| VoucherDiscountAmount
+			| VoucherDiscountPercentage
+			| VoucherDiscountFixed
+			| VoucherDiscountUnitOne
+			| VoucherDiscountUnitMultiple
+			| VoucherDiscountShipping
+	}
+	metadata: Record<string, any>
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	validation_rules: string[]
+	category: string
+	category_id: string
+}
+
+export interface ListPromotionTiersFromCampaign {
+	object: 'list'
+	data_ref: 'tiers'
+	tiers: PromotionTierObject[]
+	total: number
+	has_more: boolean
+}
+
+export interface PromotionTierObject {
+	id: string
+	created_at: string
+	updated_at: string
+	name: string
+	banner: string
+	action: {
+		discount:
+			| VoucherDiscountAmount
+			| VoucherDiscountPercentage
+			| VoucherDiscountFixed
+			| VoucherDiscountUnitOne
+			| VoucherDiscountUnitMultiple
+			| VoucherDiscountShipping
+	}
+	metadata: Record<string, any>
+	hierarchy: number
+	campaign: {
+		id: string
+		start_date: string
+		expiration_date: string
+		validity_timeframe: {
+			interval: string
+			duration: string
+		}
+		validity_day_of_week: number[]
+		active: boolean
+		category_id: string
+		object: 'campaign'
+	}
+	campaign_id: string
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	summary: {
+		redemptions: {
+			total_redeemed: number
+		}
+		orders: {
+			total_amount: number
+			total_discount_amount: number
+		}
+	}
+	object: 'promotion_tier'
+	validation_rule_assignments: ValidationRulesValidationRuleIdAssignmentResponse
+	category_id: string
+	categories: CategoryObject
+}
 
 export interface SimplePromotionTier {
 	tracking_id: string

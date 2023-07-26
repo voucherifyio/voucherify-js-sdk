@@ -544,13 +544,13 @@ Check [promotion's tier object](https://docs.voucherify.io/reference/the-promoti
 
 ```javascript
 client.promotions.tiers.listAll()
-client.promotions.tiers.listAll(params})
+client.promotions.tiers.listAll(params)
 ```
 
 #### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference/add-promotion-tier-to-campaign)
 
 ```javascript
-client.promotions.tiers.create(promotionId, params)
+client.promotions.tiers.addToCampaign(promotionId, params)
 ```
 
 #### [Redeem Promotion](https://docs.voucherify.io/reference/redeem-promotion)

@@ -3,7 +3,7 @@ import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './
 import { OrdersItem } from './Orders'
 import { PromotionTier } from './PromotionTiers'
 import { SimpleCustomer } from './Customers'
-import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
+import { ValidationRulesCreateAssignmentObject } from './ValidationRules'
 
 export interface PromotionsCreateResponse {
 	id: string
@@ -23,7 +23,7 @@ export interface PromotionsCreateResponse {
 	auto_join: boolean
 	join_once: boolean
 	validation_rules_assignments: {
-		data?: ValidationRulesCreateAssignmentResponse[]
+		data?: ValidationRulesCreateAssignmentObject[]
 		object: 'list'
 		total: number
 		data_ref: 'data'
