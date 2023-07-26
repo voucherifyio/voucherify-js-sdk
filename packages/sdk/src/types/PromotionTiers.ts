@@ -171,6 +171,7 @@ export interface PromotionTier {
 }
 
 export interface PromotionTiersListAllParams {
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 	is_available?: boolean
 	limit?: number
 	page?: number
@@ -179,8 +180,8 @@ export interface PromotionTiersListAllParams {
 export interface PromotionTiersListAllResponse {
 	object: 'list'
 	data_ref: 'tiers'
-	tiers: PromotionTier[]
-	has_more: boolean
+	tiers: PromotionTierObject[]
+	total: number
 }
 
 export type PromotionTiersListResponse = PromotionTiersListAllResponse
