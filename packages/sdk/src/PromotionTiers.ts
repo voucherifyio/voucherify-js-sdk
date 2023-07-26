@@ -2,7 +2,6 @@ import * as T from './types/PromotionTiers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
-import { RedeemPromotionTier, RedemptionObjectPromotionTierExtended } from './types/PromotionTiers'
 
 export class PromotionTiers {
 	constructor(private client: RequestController) {}
@@ -41,6 +40,15 @@ export class PromotionTiers {
 	public redeem(promotionsTierId: string, params: T.RedeemPromotionTier) {
 		return this.client.post<T.RedemptionObjectPromotionTierExtended>(
 			`/promotions/tiers/${encode(promotionsTierId)}/redemption`,
+			params,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/redeem-promotion
+	 */
+	public validate(promotionsTierId: string, params: T.ValidatePromotionTier) {
+		return this.client.post<T.ValidatePromotionTierResponse>(
+			`/promotions/tiers/${encode(promotionsTierId)}/validation`,
 			params,
 		)
 	}

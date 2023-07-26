@@ -3,6 +3,141 @@ import { FilterConditionsNumber, FilterConditionsString, FilterJunction } from '
 
 export type CreateOrderExport = ExportOrderObject
 
+export interface ApplicableToObjectPromotionTier {
+	//6_res_applicable_to_object
+	data: (
+		| ProductCollection
+		| ProductCollectionUnit
+		| ProductCollectionFixedAmount
+		| Product
+		| ProductUnit
+		| ProductFixedAmount
+		| Sku
+		| SkuUnit
+		| SkuFixedAmount
+	)[]
+	total: number
+	data_ref: 'data'
+	object: 'list'
+}
+
+export interface InapplicableToObjectPromotionTier {
+	//6_res_applicable_to_object
+	data: (ProductCollectionExcluded | ProductExcluded | SkuExcluded)[]
+	total: number
+	data_ref: 'data'
+	object: 'list'
+}
+interface ProductCollectionExcluded {
+	object: 'products_collection'
+	id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY'
+}
+
+interface ProductExcluded {
+	object: 'product'
+	id: string
+	source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY'
+}
+
+interface SkuExcluded {
+	object: 'sku'
+	id: string
+	source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY'
+}
+
+interface ProductCollection {
+	object: 'products_collection'
+	id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
+interface ProductCollectionUnit {
+	object: 'products_collection'
+	id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+	quantity_limit: number
+	aggregated_quantity_limit: number
+}
+
+interface ProductCollectionFixedAmount {
+	object: 'products_collection'
+	id: string
+	strict: boolean
+	price: number
+	price_formula: string
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
+interface Product {
+	object: 'product'
+	id: string
+	source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
+interface ProductUnit {
+	object: 'product'
+	id: string
+	source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+	quantity_limit: number
+	aggregated_quantity_limit: number
+}
+
+interface ProductFixedAmount {
+	object: 'product'
+	id: string
+	source_id: string
+	strict: boolean
+	price: number
+	price_formula: string
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
+interface Sku {
+	object: 'sku'
+	id: string
+	source_id: string
+	product_id: string
+	product_source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
+interface SkuUnit {
+	object: 'sku'
+	id: string
+	source_id: string
+	product_id: string
+	product_source_id: string
+	strict: boolean
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+	quantity_limit: number
+	aggregated_quantity_limit: number
+}
+
+interface SkuFixedAmount {
+	object: 'sku'
+	id: string
+	source_id: string
+	product_id: string
+	product_source_id: string
+	strict: boolean
+	price: number
+	price_formula: string
+	effect: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
+}
+
 export interface CreateOrderExportResponse {
 	id: string
 	object: 'export'

@@ -1,6 +1,8 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import {
+	ApplicableToObjectPromotionTier,
 	CreateOrder,
+	InapplicableToObjectPromotionTier,
 	ObjectOrder,
 	OrdersCreateResponse,
 	OrdersItem,
@@ -23,6 +25,80 @@ import {
 	VoucherDiscountUnitOne,
 } from './Vouchers'
 import { CategoryObject } from './Categories'
+
+export type ValidatePromotionTierResponse = ValidationPromotionTierFalse | ValidationPromotionTierTrue
+
+interface ValidationPromotionTierTrue {
+	//6_res_validate_promotion_tier_true
+	valid: boolean
+	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	tracking_id: string
+	order: ObjectOrder //6_obj_order_object
+	id: string
+	name: string
+	banner: string
+	discount:
+		| VoucherDiscountAmount
+		| VoucherDiscountPercentage
+		| VoucherDiscountFixed
+		| VoucherDiscountUnitOne
+		| VoucherDiscountUnitMultiple
+		| VoucherDiscountShipping
+	start_date: string
+	expiration_date: string
+	campaign: {
+		id: string
+		start_date: string
+		expiration_date: string
+		active: boolean
+		categories: CategoryObject
+		object: 'campaign'
+	}
+	hierarchy: number
+	discount_amount: number
+	applied_discount_amount: number
+	metadata: Record<string, any>
+	object: 'promotion_tier'
+}
+
+interface ValidationPromotionTierFalse {
+	//6_res_validate_promotion_tier_true
+	valid: boolean
+	reason: string
+	error: { message: string } | ErrorNoTranslation
+	tracking_id: string
+	id: string
+	name: string
+	banner: string
+	discount:
+		| VoucherDiscountAmount
+		| VoucherDiscountPercentage
+		| VoucherDiscountFixed
+		| VoucherDiscountUnitOne
+		| VoucherDiscountUnitMultiple
+		| VoucherDiscountShipping
+	start_date: string
+	expiration_date: string
+	campaign: {
+		id: string
+		start_date: string
+		expiration_date: string
+		active: boolean
+		object: 'campaign'
+	}
+	hierarchy: number
+	metadata: Record<string, any>
+	object: 'promotion_tier'
+}
+
+export interface ErrorNoTranslation {
+	code: number
+	key: string
+	message: string
+	details: string
+	request_id: string
+}
 
 export interface RedemptionObjectPromotionTierExtended {
 	id: string
@@ -292,6 +368,7 @@ export interface PromotionTiersCreateParams {
 
 export type PromotionTiersCreateResponse = PromotionTier
 
+export type ValidatePromotionTier = RedeemPromotionTier
 export interface RedeemPromotionTier {
 	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
 	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
