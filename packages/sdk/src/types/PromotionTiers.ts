@@ -17,6 +17,33 @@ import {
 } from './Vouchers'
 import { CategoryObject } from './Categories'
 
+export type UpdatePromotionTierRequest = Partial<UpdatePromotionTier>
+
+interface UpdatePromotionTier {
+	name: string
+	banner: string
+	action: {
+		discount:
+			| VoucherDiscountAmount
+			| VoucherDiscountPercentage
+			| VoucherDiscountFixed
+			| VoucherDiscountUnitOne
+			| VoucherDiscountUnitMultiple
+			| VoucherDiscountShipping
+	}
+	metadata: Record<string, any>
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week: number[]
+	hierarchy: number
+	category: string
+	category_id: string
+}
+
 export interface PromotionTierObject {
 	//3_obj_promotion_tier_object
 	id: string

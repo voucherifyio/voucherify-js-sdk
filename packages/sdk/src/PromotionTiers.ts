@@ -2,6 +2,7 @@ import * as T from './types/PromotionTiers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
+import { UpdatePromotionTierRequest } from './types/PromotionTiers'
 
 export class PromotionTiers {
 	constructor(private client: RequestController) {}
@@ -22,7 +23,7 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/get-promotion-tier
 	 */
 	public get(tierId: string) {
-		return this.client.get<T.PromotionTierGetResponse>(`/promotions/tiers/${encode(tierId)}`)
+		return this.client.get<T.PromotionTierObject>(`/promotions/tiers/${encode(tierId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-promotion-tier-to-campaign
@@ -46,8 +47,8 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-promotion
 	 */
-	public update(params: T.PromotionTiersUpdateParams) {
-		return this.client.put<T.PromotionTiersUpdateResponse>(`/promotions/tiers/${encode(params.id)}`, params)
+	public update(params: T.UpdatePromotionTierRequest & { id: string }) {
+		return this.client.put<T.PromotionTierObject>(`/promotions/tiers/${encode(params.id)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-promotion
