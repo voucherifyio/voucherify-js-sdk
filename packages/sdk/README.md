@@ -572,6 +572,16 @@ client.promotions.tiers.update(promotionsTier)
 client.promotions.tiers.delete(promotionsTierId)
 ```
 
+#### [Disable Promotion Tier](https://docs.voucherify.io/reference/enable-promotion-tier)
+
+```javascript
+client.promotions.tiers.disable(campaignId, stackId, body)
+```
+#### [Enable Promotion Tier](https://docs.voucherify.io/reference/enable-promotion-tier)
+
+```javascript
+client.promotions.tiers.enable(campaignId, stackId, body)
+```
 #### [List Promotion Stacks in Campaign](https://docs.voucherify.io/reference/list-promotion-stacks-in-campaign)
 
 ```javascript

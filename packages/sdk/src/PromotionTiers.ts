@@ -2,7 +2,6 @@ import * as T from './types/PromotionTiers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
-import { UpdatePromotionTierRequest } from './types/PromotionTiers'
 
 export class PromotionTiers {
 	constructor(private client: RequestController) {}
@@ -55,5 +54,17 @@ export class PromotionTiers {
 	 */
 	public delete(promotionsTierId: string) {
 		return this.client.delete(`/promotions/tiers/${encode(promotionsTierId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/disable-promotion-tier
+	 */
+	public disable(promotionsTierId: string) {
+		return this.client.post<T.PromotionTierObject>(`/promotions/tiers/${encode(promotionsTierId)}/disable`, {})
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/enable-promotion-tier
+	 */
+	public enable(promotionsTierId: string) {
+		return this.client.post<T.PromotionTierObject>(`/promotions/tiers/${encode(promotionsTierId)}/disable`, {})
 	}
 }
