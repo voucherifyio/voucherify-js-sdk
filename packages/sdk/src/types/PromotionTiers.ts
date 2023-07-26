@@ -1,7 +1,14 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
-import { OrdersCreateResponse, OrdersItem } from './Orders'
+import {
+	CreateOrder,
+	ObjectOrder,
+	OrdersCreateResponse,
+	OrdersItem,
+	ValidateVoucherOrderId,
+	ValidateVoucherOrderSourceId,
+} from './Orders'
 
-import { SimpleCustomer } from './Customers'
+import { CreateCustomer, SimpleCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import {
 	ValidationRulesListAssignmentsResponse,
 	ValidationRulesValidationRuleIdAssignmentResponse,
@@ -16,6 +23,65 @@ import {
 	VoucherDiscountUnitOne,
 } from './Vouchers'
 import { CategoryObject } from './Categories'
+
+export interface RedemptionObjectPromotionTierExtended {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id?: string
+	tracking_id?: string
+	metadata: Record<string, any>
+	result: 'SUCCESS' | 'FAILURE'
+	order: ObjectOrder
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'promotion_tier'
+	related_object_id: string
+	voucher: any
+	promotion_tier: PromotionTierObject
+}
+
+export interface PromotionTiersRedeemResponse {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id?: string
+	tracking_id?: string
+	order: Omit<OrdersCreateResponse, 'object' | 'customer'> & {
+		customer: {
+			id: string
+			object: 'customer'
+			referrals: {
+				campaigns: any[]
+				total: number
+			}
+		}
+		total_discount_amount?: number
+		total_amount?: number
+	}
+	result?: string
+	promotion_tier: PromotionTier & {
+		summary: {
+			redemptions: {
+				total_redeemed: number
+			}
+			orders: {
+				total_amount: number
+				total_discount_amount: number
+			}
+		}
+	}
+}
 
 export type UpdatePromotionTierRequest = Partial<UpdatePromotionTier>
 
@@ -226,6 +292,12 @@ export interface PromotionTiersCreateParams {
 
 export type PromotionTiersCreateResponse = PromotionTier
 
+export interface RedeemPromotionTier {
+	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
+	metadata?: Record<string, any>
+}
+
 export interface PromotionTiersRedeemParams {
 	customer?: Omit<SimpleCustomer, 'object'> & { description?: string }
 	order?: {
@@ -238,38 +310,6 @@ export interface PromotionTiersRedeemParams {
 	}
 	metadata?: Record<string, any>
 	session?: ValidationSessionReleaseParams
-}
-
-export interface PromotionTiersRedeemResponse {
-	id: string
-	object: 'redemption'
-	date: string
-	customer_id?: string
-	tracking_id?: string
-	order: Omit<OrdersCreateResponse, 'object' | 'customer'> & {
-		customer: {
-			id: string
-			object: 'customer'
-			referrals: {
-				campaigns: any[]
-				total: number
-			}
-		}
-		total_discount_amount?: number
-		total_amount?: number
-	}
-	result?: string
-	promotion_tier: PromotionTier & {
-		summary: {
-			redemptions: {
-				total_redeemed: number
-			}
-			orders: {
-				total_amount: number
-				total_discount_amount: number
-			}
-		}
-	}
 }
 
 export interface PromotionTierRedeemDetailsSimple {

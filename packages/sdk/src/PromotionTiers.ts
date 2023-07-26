@@ -2,6 +2,7 @@ import * as T from './types/PromotionTiers'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
+import { RedeemPromotionTier, RedemptionObjectPromotionTierExtended } from './types/PromotionTiers'
 
 export class PromotionTiers {
 	constructor(private client: RequestController) {}
@@ -37,8 +38,8 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-promotion
 	 */
-	public redeem(promotionsTierId: string, params: T.PromotionTiersRedeemParams) {
-		return this.client.post<T.PromotionTiersRedeemResponse>(
+	public redeem(promotionsTierId: string, params: T.RedeemPromotionTier) {
+		return this.client.post<T.RedemptionObjectPromotionTierExtended>(
 			`/promotions/tiers/${encode(promotionsTierId)}/redemption`,
 			params,
 		)
