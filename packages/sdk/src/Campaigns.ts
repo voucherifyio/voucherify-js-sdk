@@ -1,4 +1,5 @@
 import * as T from './types/Campaigns'
+import * as AAT from './types/AsyncActions'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
@@ -77,5 +78,15 @@ export class Campaigns {
 	 */
 	public disable(campaignId: string) {
 		return this.client.post<{}>(`/campaigns/${encode(campaignId)}/disable`, {})
+	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
+	 */
+
+	//todo: file path should be in body (update readme)
+	// @ts-ignore
+	public importVouchersUsingCSV(campaignId: string, filePath: string) {
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/campaigns/${campaignId}/importCSV`, {})
 	}
 }

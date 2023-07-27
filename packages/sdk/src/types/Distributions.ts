@@ -189,6 +189,35 @@ export interface DistributionsPublicationsListResponse {
 	publications?: PublicationResponse[]
 }
 
+export interface CreatePublicationViaGetRequest {
+	campaign: string | { id: string } | { name: string }
+	customer:
+		| string
+		| { id: string }
+		| { source_id: string }
+		| {
+				source_id: string
+				name: string
+				description: string
+				email: string
+				phone: string
+				birthdate: string
+				birthday: string
+				metadata: Record<string, any>
+				address: {
+					city: string
+					state: string
+					line_1: string
+					line_2: string
+					country: string
+					postal_code: string
+				}
+		  }
+	metadata: Record<string, any>
+	source_id: string
+	voucher: string
+}
+
 //5_req_create_publication
 export type DistributionsPublicationsCreateParams = CreatePublicationStandaloneVoucher | CreatePublicationFromCampaign
 

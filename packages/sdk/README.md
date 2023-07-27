@@ -357,6 +357,7 @@ Methods are provided within `client.distributions.*` namespace.
 - [Delete Export](#delete-export)
 - [List publications](#list-publications)
 - [Create publication](#create-publication)
+- [Create publication via get request](#create-publication-via-get-request)
 
 #### [Create Export](https://docs.voucherify.io/reference/create-export)
 
@@ -389,6 +390,12 @@ client.distributions.publications.list(params)
 
 ```javascript
 client.distributions.publications.create(params)
+```
+
+#### [Create publication via get request](https://docs.voucherify.io/reference/create-publication-1)
+
+```javascript
+client.distributions.publications.createGet(params)
 ```
 
 ---
