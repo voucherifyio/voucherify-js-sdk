@@ -169,6 +169,7 @@ interface CreateRewardMaterial {
 	stock?: number
 	attributes?: {
 		image_url?: string
+		description?: string
 	}
 	metadata?: string
 }
