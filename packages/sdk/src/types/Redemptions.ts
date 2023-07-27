@@ -118,21 +118,197 @@ export interface RedemptionsRollbackPayload {
 	customer?: SimpleCustomer & { description?: string }
 }
 
-export interface RedemptionsRollbackResponse {
+export type RedemptionsRollbackResponse = RollbackRedemptionObjectExtended
+
+export type RollbackRedemptionObjectExtended =
+	| RollbackRedemptionObjectDiscountVoucherExtended
+	| RollbackRedemptionObjectLoyaltyCardExtended
+	| RollbackRedemptionObjectGiftCardExtended
+	| RollbackRedemptionObjectPromotionTierExtended
+
+interface OrderObjectRollback {
+	//7_obj_order_object_rollback
+	id: string
+	source_id: string
+	created_at: string
+	updated_at: string
+	status: 'CANCELED'
+	amount: number
+	total_amount: number
+	items: {
+		object: 'order_item'
+		product_id: string
+		sku_id: string
+		quantity: number
+		amount: number
+		price: number
+		subtotal_amount: number
+		product: {
+			id: string
+			source_id: string
+			name: string
+			price: number
+		}
+		sku: {
+			id: string
+			source_id: string
+			sku: string
+			price: string
+		}
+	}[]
+	metadata: Record<string, any>
+	customer: {
+		id: string
+		object: 'customer'
+	}
+	referrer: {
+		id: string
+		object: 'customer'
+	}
+	customer_id: string
+	referrer_id: string
+	object: 'order'
+	redemptions: {
+		redemption_ID: {
+			date: string
+			rollback_id: string
+			rollback_date: string
+			related_object_type: 'voucher' | 'promotion_tier'
+			related_object_id: string
+			related_object_parent_id: string
+		}
+	}
+}
+
+interface RollbackRedemptionObjectDiscountVoucherExtended {
+	//7_obj_rollback_redemption_object_discount_voucher_extended
 	id: string
 	object: 'redemption_rollback'
-	date?: string
-	customer_id?: string
-	tracking_id?: string
-	redemption?: string
-	amount?: number
-	reason?: string
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	redemption: string
+	reason: string
 	result: 'SUCCESS' | 'FAILURE'
-	voucher?: VouchersResponse
-	customer?: SimpleCustomer
-	reward?: {
-		assignment_id: string
-		object: 'reward'
+	order: OrderObjectRollback //7_obj_order_object_rollback
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+}
+
+interface RollbackRedemptionObjectLoyaltyCardExtended {
+	//7_obj_rollback_redemption_object_loyalty_card_extended
+	id: string
+	object: 'redemption_rollback'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	amount: number
+	redemption: string
+	result: 'SUCCESS' | 'FAILURE'
+	order: OrderObjectRollback
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	reward:
+		| RedemptionObjectLoyaltyCardPayWithPoints
+		| RedemptionObjectLoyaltyCardMaterialProduct
+		| RedemptionObjectLoyaltyCardMaterialSku
+		| RedemptionObjectLoyaltyCardDigital
+	loyalty_card: {
+		points: number
+	}
+}
+
+interface RollbackRedemptionObjectGiftCardExtended {
+	//7_obj_rollback_redemption_object_gift_card_extended
+	id: string
+	object: 'redemption_rollback'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	amount: number
+	redemption: string
+	result: 'SUCCESS' | 'FAILURE'
+	order: OrderObjectRollback
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	gift: {
+		amount: number
+	}
+}
+
+interface RollbackRedemptionObjectPromotionTierExtended {
+	//7_obj_rollback_redemption_object_promotion_tier_extended
+	id: string
+	object: 'redemption_rollback'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	redemption: string
+	result: 'SUCCESS' | 'FAILURE'
+	order: OrderObjectRollback
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id: string
+		name: string
+		email: string
+		source_id: string
+		metadata: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	promotion_tier: {
+		id: string
+		campaign: {
+			id: string
+		}
 	}
 }
 
