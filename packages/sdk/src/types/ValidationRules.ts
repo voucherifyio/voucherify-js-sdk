@@ -63,7 +63,7 @@ export interface ValidationRulesCreate {
 export type ValidationRulesCreateResponse = ValidationRulesObject
 
 //13_res_list_validation_rules
-export type ValidationRulesGetResponse = ValidationRulesObject & { assignments_count?: number }
+export type ValidationRulesGetResponse = ValidationRulesObject
 
 export type ValidationRuleObjectGetResponse = ValidationRulesObject
 
