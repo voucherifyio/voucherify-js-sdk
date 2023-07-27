@@ -517,12 +517,16 @@ interface RedemptionRollbackLoyaltyCardStacked {
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher?: {
 		id: string
-		code?: string
-		discount?: VoucherDiscount
-		type?: 'DISCOUNT_VOUCHER'
+		code: string
+		loyalty_card: {
+			points: number
+			balance: number
+		}
+		type?: 'LOYALTY_CARD'
 		campaign?: string
 		campaign_id?: string
 		is_referral_code?: boolean
+		holder_id: string
 	}
 	redemption?: string
 }
