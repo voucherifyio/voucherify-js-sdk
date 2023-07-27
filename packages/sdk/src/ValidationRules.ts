@@ -78,10 +78,4 @@ export class ValidationRules {
 			params,
 		)
 	}
-	/**
-	 * @see https://docs.voucherify.io/reference/validation-rule-object
-	 */
-	public getValidationRuleObject() {
-		return this.client.get<T.ValidationRuleObjectGetResponse>(`/validation-rule-object`)
-	}
 }

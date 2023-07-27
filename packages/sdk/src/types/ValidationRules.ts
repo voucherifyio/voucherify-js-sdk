@@ -1,27 +1,35 @@
 import { ApplicableToResultList } from './ApplicableTo'
 
-interface RulesObject {
-	1?: {
+type RulesObject = RuleExternal & {
+	logic?: string
+}
+
+type RuleExternal = Record<
+	number,
+	{
 		name?: string
 		property?: string | null
 		conditions?: {
 			$one_of_voucherify_conditions?: (string | number | boolean)[]
 		}
-		rules?: {
-			1?: {
-				name?: string
-				property?: string
-				conditions?: Record<string, any>
-				rules?: Record<string, any>
-			}
+		rules?: RuleInternal & {
 			logic?: string
 		}
 		error?: {
 			message?: string
 		}
 	}
-	logic?: string
-}
+>
+
+type RuleInternal = Record<
+	number,
+	{
+		name?: string
+		property?: string
+		conditions?: Record<string, any>
+		rules?: Record<string, any>
+	}
+>
 
 interface ApplicableToObject {
 	excluded?: {
