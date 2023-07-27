@@ -1,4 +1,4 @@
-import { OrdersGetResponse } from './Orders'
+import { ApplicableToObjectPromotionTier, InapplicableToObjectPromotionTier, OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
 
@@ -290,26 +290,146 @@ type VoucherDiscountUnitOnePut = VoucherDiscountUnitOne
 type VoucherDiscountUnitMultiplePut = VoucherDiscountUnitMultiple
 
 export interface VouchersQualificationExamineBody {
-	customer?: Omit<SimpleCustomer, 'object'> & { description: string }
-	order?: Pick<OrdersGetResponse, 'id' | 'source_id' | 'amount' | 'items' | 'metadata'>
+	customer?: {
+		id: string
+		source_id: string
+		name: string
+		email: string
+		phone: string
+		birthdate: string
+		address: {
+			city: string
+			state: string
+			country: string
+			postal_code: string
+		}
+		metadata: Record<string, any>
+	}
+	order?: {
+		id: string
+		source_id: string
+		amount: number
+		items: (
+			| VouchersQualificationProductObject
+			| VouchersQualificationSkuObject
+			| VouchersQualificationProductUsingProductIdObject
+			| VouchersQualificationProductUsingSourceIdObject
+		)[]
+		customer: VouchersQualificationCustomer
+		referrer: Record<string, any>
+		metadata?: Record<string, any>
+	}
 	reward?: {
 		id: string
 		assignment_id?: string
+		points: number
 	}
 	metadata?: Record<string, any>
 }
 
+interface VouchersQualificationProductObject {
+	//1_req_obj_vouchers_qualification_product
+	source_id: string
+	product_id: string
+	amount: number
+	quantity: number
+	price: number
+	metadata?: Record<string, any>
+	related_object: 'product'
+	product: {
+		source_id: string
+		name: string
+		price: number
+		metadata: Record<string, any>
+	}
+}
+
+interface VouchersQualificationSkuObject {
+	//1_req_obj_vouchers_qualification_sku
+	source_id: string
+	sku_id: string
+	amount: number
+	quantity: number
+	related_object: 'product' | 'sku'
+	product: {
+		source_id: string
+		name: string
+		price: number
+		metadata: Record<string, any>
+	}
+	sku: {
+		source_id: string
+		sku: string
+		price: number
+		metadata: Record<string, any>
+	}
+}
+
+interface VouchersQualificationProductUsingProductIdObject {
+	//1_req_obj_vouchers_qualification_product_using_product_id
+	product_id: string
+	amount: number
+	quantity: number
+	price: number
+	metadata?: Record<string, any>
+	product: {
+		name: string
+		price: number
+		metadata: Record<string, any>
+	}
+}
+
+interface VouchersQualificationProductUsingSourceIdObject {
+	//1_req_obj_vouchers_qualification_product_using_source_id
+	source_id: string
+	amount: number
+	quantity: number
+	price: number
+	metadata?: Record<string, any>
+	related_object: 'product'
+	product: {
+		source_id: string
+		name: string
+		price: number
+		metadata: Record<string, any>
+	}
+}
+
+interface VouchersQualificationCustomer {
+	//1_req_obj_vouchers_qualification_customer
+	id: string
+	source_id: string
+	name: string
+	email: string
+	phone: string
+	address: {
+		city: string
+		country: string
+		postal_code: string
+		state: string
+	}
+	metadata: Record<string, any>
+	birthdate: string
+}
 export interface VouchersQualificationExamineParams {
 	audienceRulesOnly?: boolean
-	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'code' | '-code'
 	limit?: number
 }
 
 export interface VouchersQualificationExamineResponse {
 	object: 'list'
-	total: number
 	data_ref: 'data'
-	data?: VouchersResponse[]
+	data?: VoucherObjectExtended[]
+	total: number
+	id: string
+	created_at: string
+	tracking_id: string
+}
+
+type VoucherObjectExtended = VouchersResponse & {
+	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 }
 
 export interface VouchersCreateParameters {
@@ -421,26 +541,45 @@ export type VouchersEnableResponse = VouchersResponse
 
 export type VouchersDisableResponse = VouchersResponse
 
-export interface VouchersImport {
+export type VouchersImport = VouchersImporGiftVoucherObject | VouchersImporGiftDiscountObject
+interface VouchersImporGiftVoucherObject {
+	//1_obj_vouchers_import_gift_voucher
 	code: string
 	category?: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER'
-	discount: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
-	additional_info?: string
+	active?: boolean
+	type?: 'GIFT_VOUCHER'
+	gift?: {
+		amount: number
+	}
 	start_date?: string
 	expiration_date?: string
-	active?: boolean
-	metadata?: Record<string, any>
 	redemption?: {
 		quantity: number
 	}
-	code_config?: {
-		length?: number
-		charset?: string
-		pattern?: string
-		prefix?: string
-		suffix?: string
+	additional_info?: string
+	metadata?: Record<string, any>
+}
+
+interface VouchersImporGiftDiscountObject {
+	//1_obj_vouchers_import_discount_voucher
+	code: string
+	category?: string
+	active?: boolean
+	type?: 'DISCOUNT_VOUCHER'
+	discount?:
+		| VoucherObjectDiscountAmount
+		| VoucherObjectDiscountPercentage
+		| VoucherObjectDiscountFixed
+		| VoucherObjectDiscountUnitOne
+		| VoucherObjectDiscountUnitMultiple
+		| VoucherObjectDiscountShipping
+	start_date?: string
+	expiration_date?: string
+	redemption?: {
+		quantity: number
 	}
+	additional_info?: string
+	metadata?: Record<string, any>
 }
 
 export interface VouchersBulkUpdateObject {
