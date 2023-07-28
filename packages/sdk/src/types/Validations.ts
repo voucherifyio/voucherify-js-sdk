@@ -3,7 +3,6 @@ import { StackableOptions, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 
 import {
-	OrdersItem,
 	OrdersCreateResponse,
 	ApplicableToObjectPromotionTier,
 	InapplicableToObjectPromotionTier,
