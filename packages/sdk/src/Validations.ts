@@ -26,6 +26,6 @@ export class Validations {
 	 * @see https://docs.voucherify.io/reference/validate-stacked-discounts-1
 	 */
 	public validateStackable(params: T.ValidationsValidateStackableParams) {
-		return this.client.post<T.ValidationValidateStackableResponse>(`/validations`, params)
+		return this.client.post<T.ResponseValidations>(`/validations`, params)
 	}
 }

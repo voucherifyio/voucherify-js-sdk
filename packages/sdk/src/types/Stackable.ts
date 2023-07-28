@@ -7,7 +7,7 @@ import { SimpleProduct, SimpleSku } from './Products'
 import { LoyaltyPointsTransfer } from './Loyalties'
 import { ValidationError } from './ValidationError'
 
-type ExpandOption = 'order' | 'redeemable' | 'redemption'
+type ExpandOption = 'order' | 'redeemable' | 'redemption' | 'category'
 
 export interface StackableOptions {
 	expand: ExpandOption[]

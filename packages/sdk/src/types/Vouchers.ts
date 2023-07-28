@@ -1,5 +1,4 @@
-import { ApplicableToObjectPromotionTier, InapplicableToObjectPromotionTier, OrdersGetResponse } from './Orders'
-import { SimpleCustomer } from './Customers'
+import { ApplicableToObjectPromotionTier, InapplicableToObjectPromotionTier } from './Orders'
 import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
 
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'

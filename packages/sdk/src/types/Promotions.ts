@@ -1,16 +1,18 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 
-import { OrdersItem } from './Orders'
+import { CreateOrder, OrdersItem, ValidateVoucherOrderId, ValidateVoucherOrderSourceId } from './Orders'
 import { PromotionTier, RedeemPromotionTier, ValidationPromotionTierTrue } from './PromotionTiers'
-import { SimpleCustomer } from './Customers'
+import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import { ValidationRulesCreateAssignmentObject } from './ValidationRules'
 import { CategoryObject } from './Categories'
 
-export type ValidatePromotionRequest = RedeemPromotionTier & {
-	options: {
-		expand: string[]
+export type ValidatePromotionRequest = Partial<
+	RedeemPromotionTier & {
+		options: {
+			expand: string[]
+		}
 	}
-}
+>
 
 export interface ResponseValidatePromotion {
 	//6_res_validate_promotion
@@ -75,14 +77,8 @@ export interface PromotionsCreate {
 }
 
 export interface PromotionsValidateParams {
-	customer?: Omit<SimpleCustomer, 'id' | 'object'> & { description?: string; id?: string }
-	order?: {
-		id?: string
-		source_id?: string
-		items?: OrdersItem[]
-		amount?: number
-		metadata?: Record<string, any>
-	}
+	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
 	metadata?: Record<string, any>
 }
 
