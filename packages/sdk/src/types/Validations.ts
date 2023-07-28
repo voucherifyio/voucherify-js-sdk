@@ -25,30 +25,19 @@ import {
 } from './Vouchers'
 import { ErrorNoTranslation } from './PromotionTiers'
 
-export interface ValidationsValidateVoucherParams {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
-	order?: {
-		id?: string
-		source_id?: string
-		amount?: number
-		items?: OrdersItem[]
-		metadata?: Record<string, any>
-	}
-	gift?: {
-		credits: number
-	}
-	reward?: {
-		id: string
-	}
+export interface ReqValidateVoucherDiscountCode {
 	session?: ValidationSessionParams
-}
+	order?: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
+	customer?: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	metadata?: Record<string, any>
+} //6_req_validate_voucher_discount_code
+export type ReqValidateVoucherGiftCard = ReqValidateVoucherDiscountCode & { gift: { credits: number } } //6_req_validate_voucher_gift_card
+export type ReqValidateVoucherLoyaltyCard = ReqValidateVoucherDiscountCode & { reward: { id: string; points: number } } //6_req_validate_voucher_loyalty_card
+
+export type ValidationsValidateVoucherParams =
+	| ReqValidateVoucherDiscountCode
+	| ReqValidateVoucherGiftCard
+	| ReqValidateVoucherLoyaltyCard
 
 export type ValidationsValidateVoucherResponse =
 	| ResponseValidateVoucherDiscountCode
