@@ -1,4 +1,4 @@
-import { OrdersCreateResponse, OrdersCreate, OrdersItem } from './Orders'
+import { OrdersCreateResponse, OrdersCreate, OrdersItem, ObjectOrder } from './Orders'
 import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
 import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VoucherDiscount, VouchersResponse } from './Vouchers'
@@ -7,6 +7,102 @@ import { ValidationSessionParams, ValidationSessionReleaseParams } from './Valid
 import { StackableOptions, StackableRedeemableParams } from './Stackable'
 import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
 import { ProductObject, SkuObject } from './Products'
+
+export type ResRedeemVoucher =
+	| RedemptionObjectDiscountVoucherExtended
+	| RedemptionObjectLoyaltyCardExtended
+	| RedemptionObjectGiftCardExtended
+
+interface RedemptionObjectDiscountVoucherExtended {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	result: 'SUCCESS' | 'FAILURE'
+	order: ObjectOrder
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id?: string
+		name?: string
+		email?: string
+		source_id?: string
+		metadata?: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+}
+
+interface RedemptionObjectLoyaltyCardExtended {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	amount: number
+	result: 'SUCCESS' | 'FAILURE'
+	order: ObjectOrder
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id?: string
+		name?: string
+		email?: string
+		source_id?: string
+		metadata?: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	reward:
+		| RedemptionObjectLoyaltyCardPayWithPoints
+		| RedemptionObjectLoyaltyCardMaterialProduct
+		| RedemptionObjectLoyaltyCardMaterialSku
+		| RedemptionObjectLoyaltyCardDigital
+	loyalty_card: {
+		points: number
+	}
+}
+
+interface RedemptionObjectGiftCardExtended {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id: string
+	tracking_id: string
+	metadata: Record<string, any>
+	amount: number
+	result: 'SUCCESS' | 'FAILURE'
+	order: ObjectOrder
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API'
+	}
+	customer: {
+		id?: string
+		name?: string
+		email?: string
+		source_id?: string
+		metadata?: Record<string, any>
+		object: 'customer'
+	}
+	related_object_type: 'voucher'
+	related_object_id: string
+	voucher: VouchersResponse
+	gift: {
+		amount: number
+	}
+}
 
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
