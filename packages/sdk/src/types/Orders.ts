@@ -234,6 +234,53 @@ export interface ValidateVoucherOrderSourceId {
 
 export type ObjectOrder = ObjectOrderApplyToOrder | ObjectOrderApplyToItems //7_obj_order_object
 
+export interface ObjectOrderApplyToOrder {
+	id: string
+	source_id: string
+	created_at: string
+	updated_at: string
+	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	amount: number
+	discount_amount: number
+	total_discount_amount: number
+	total_amount: number
+	applied_discount_amount: number
+	total_applied_discount_amount: number
+	items: {
+		object: 'order_item'
+		product_id: string
+		sku_id: string
+		quantity: number
+		amount: number
+		price: number
+		subtotal_amount: number
+		product: {
+			id: string
+			source_id: string
+			name: string
+			price: number
+		}
+		sku: {
+			id: string
+			source_id: string
+			sku: string
+			price: number
+		}
+	}[]
+	metadata: Record<string, any>
+	customer: {
+		id: string
+		object: 'customer'
+	}
+	referrer: {
+		id: string
+		object: 'customer'
+	}
+	customer_id: string
+	referrer_id: string
+	object: 'order'
+}
+
 export interface ResponseListOrders {
 	object: 'list'
 	data_ref: 'orders'

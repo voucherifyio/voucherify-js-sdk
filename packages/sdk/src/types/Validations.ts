@@ -1,9 +1,8 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
-import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
+import { StackableOptions, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
-import { ValidationError } from './ValidationError'
 
 import {
 	OrdersItem,
@@ -13,6 +12,8 @@ import {
 	ValidateVoucherOrderId,
 	ValidateVoucherOrderSourceId,
 	CreateOrder,
+	ObjectOrder,
+	ObjectOrderApplyToOrder,
 } from './Orders'
 import { PromotionsValidateParams } from './Promotions'
 import { CategoryObject } from './Categories'
@@ -51,40 +52,86 @@ export interface ValidationsValidateVoucherParams {
 	session?: ValidationSessionParams
 }
 
-export interface ValidationsValidateVoucherResponse {
-	applicable_to?: ApplicableToResultList
-	inapplicable_to?: ApplicableToResultList
-	campaign?: string
-	campaign_id?: string
-	metadata?: Record<string, any>
-	code?: string
-	valid?: boolean
-	discount?: DiscountAmount | DiscountUnit | DiscountPercent | DiscountFixed
-	gift?: {
-		amount: number
-		balance: number
+export type ValidationsValidateVoucherResponse =
+	| ResponseValidateVoucherDiscountCode
+	| ResponseValidateVoucherGiftCard
+	| ResponseValidateVoucherLoyaltyCard
+	| ResponseValidateVoucherFalse
+
+export interface ResponseValidateVoucherFalse {
+	valid: false
+	reason: string
+	error: {
+		message: string
 	}
-	loyalty?: {
+	tracking_id: string
+	code: string
+	metadata?: Record<string, any>
+}
+
+interface ResponseValidateVoucherLoyaltyCard {
+	valid: boolean
+	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	tracking_id: string
+	order: ObjectOrderApplyToOrder //6_obj_order_object_apply_to_order
+	code: string
+	loyalty: {
 		points_cost: number
 	}
-	order?: {
-		amount: number
-		discount_amount: number
-		total_discount_amount: number
-		total_amount: number
-		applied_discount_amount?: number
-		total_applied_discount_amount?: number
-		items?: OrdersItem[]
-		initial_amount?: number
-		items_discount_amount?: number
-		items_applied_discount_amount?: number
-		metadata?: Record<string, any>
+	reward: {
+		id: string
+		assignment_id: string
+		points: number
 	}
-	session?: ValidationSessionParams
-	start_date?: string
-	expiration_date?: string
+	metadata: Record<string, any>
+	start_date: string
+	expiration_date: string
+	campaign: string
+	campaign_id: string
+	session: ValidationSessionParams
+}
+
+interface ResponseValidateVoucherGiftCard {
+	valid: boolean
+	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 	tracking_id: string
-	error?: ValidationError
+	order: ObjectOrder
+	code: string
+	gift: {
+		amount: number
+		balance: number
+		effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	}
+	metadata: Record<string, any>
+	start_date: string
+	expiration_date: string
+	campaign: string
+	campaign_id: string
+	session: ValidationSessionParams
+}
+
+interface ResponseValidateVoucherDiscountCode {
+	valid: boolean
+	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	tracking_id: string
+	order: ObjectOrder
+	code: string
+	discount:
+		| ValidateVoucherDiscountAmount
+		| ValidateVoucherDiscountPercent
+		| ValidateVoucherDiscountFixed
+		| ValidateVoucherDiscountUnit
+		| ValidateVoucherDiscountUnitMultiple
+		| ValidateVoucherDiscountShipping
+	metadata: Record<string, any>
+	start_date: string
+	expiration_date: string
+	campaign: string
+	campaign_id: string
+	session: ValidationSessionParams
 }
 
 export interface ValidationsValidateStackableParams {
@@ -305,6 +352,8 @@ interface VoucherObjectDiscountAmount2 {
 	is_dynamic: false
 }
 
+type ValidateVoucherDiscountAmount = Omit<VoucherObjectDiscountAmount2, 'is_dynamic'>
+
 interface VoucherObjectDiscountAmountDynamic2 {
 	type: 'AMOUNT'
 	effect:
@@ -325,6 +374,8 @@ interface VoucherObjectDiscountPercentage2 {
 	is_dynamic: false
 }
 
+type ValidateVoucherDiscountPercent = Omit<VoucherObjectDiscountPercentage2, 'is_dynamic'>
+
 interface VoucherObjectDiscountPercentageDynamic2 {
 	type: 'PERCENT'
 	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
@@ -340,10 +391,65 @@ interface VoucherObjectDiscountFixedOrder2 {
 	is_dynamic: boolean
 }
 
+interface ValidateVoucherDiscountFixed {
+	type: 'FIXED'
+	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	fixed_amount: number
+}
+
 interface VoucherObjectDiscountFixedItems2 {
 	type: 'FIXED'
 	effect: 'APPLY_TO_ITEMS'
 	is_dynamic: false
+}
+
+interface ValidateVoucherDiscountUnitMultiple {
+	type: 'UNIT'
+	effect: 'ADD_MANY_ITEMS'
+	units: ValidateVoucherDiscountUnit[]
+}
+
+type ValidateVoucherDiscountUnit = ValidateVoucherDiscountUnitProduct | ValidateVoucherDiscountUnitSku
+
+interface ValidateVoucherDiscountUnitProduct {
+	type: 'UNIT'
+	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
+	unit_off: number
+	unit_type: string
+	product: {
+		id: string
+		source_id: string
+		name: string
+	}
+}
+
+interface ValidateVoucherDiscountUnitSku {
+	type: 'UNIT'
+	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
+	unit_off: number
+	unit_type: string
+	product: {
+		id: string
+		source_id: string
+		name: string
+	}
+	sku: {
+		id: string
+		source_id: string
+		sku: string
+	}
+}
+
+interface ValidateVoucherDiscountShipping {
+	type: 'UNIT'
+	effect: 'ADD_MISSING_ITEMS'
+	unit_off: 1
+	unit_type: 'prod_5h1pp1ng'
+	product: {
+		id: 'prod_5h1pp1ng'
+		source_id: '5h1pp1ng'
+		name: 'Shipping'
+	}
 }
 
 interface VoucherObjectDiscountUnitOne2 {
