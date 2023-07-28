@@ -1,8 +1,6 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import { StackableOptions, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
-import { ApplicableToResultList } from './ApplicableTo'
 
 import {
 	OrdersItem,
