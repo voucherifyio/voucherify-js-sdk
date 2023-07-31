@@ -2,40 +2,62 @@
 '@voucherify/sdk': minor
 ---
 
-Added missing endpoints: 
+Added support for following endpoints:
+  - campaigns
+    - POST /campaigns/campaignId/enable
+    - POST /campaigns/campaignId/disable
+    - POST /campaigns/campaignId/importCSV
+  - categories
+    - GET, POST /categories
+    - GET, PUT, DELETE /categories/categoryId
+  - customers
+    - POST /customers/customerId/permanent-deletion
+    - POST /customers/bulk/async
+    - POST /customers/metadata/async
+  - exports
+    - GET /exports/exportResourceId
+  - loyalties
+    - GET /loyalties/campaignId/tiers/tierId/rewards
+    - GET /loyalties/campaignId/rewards/assignmentId
+    - GET /loyalties/campaignId/earning-rules/earningRuleId
+    - POST /loyalties/campaignId/earning-rules/earningRuleId/enable
+    - POST /loyalties/campaignId/earning-rules/earningRuleId/disable
+    - GET /loyalties/members/memberId
+    - GET /loyalties/members/memberId/activities
+    - GET /loyalties/members/memberId/points-expiration
+    - GET /loyalties/members/memberId/rewards
+    - GET /loyalties/members/memberId/transactions
+    - POST /loyalties/members/memberId/transactions/export
+    - GET /loyalties/campaignId/members/memberId/transactions
+    - POST /loyalties/campaignId/members/memberId/transactions/export
+    - POST /loyalties/campaignId/members/memberId/transfers
+    - POST /loyalties/campaignId/points-expiration/export
+    - GET /loyalties/campaignId/reward-assignments/assignmentId
+    - GET /loyalties/campaignId/reward-assignments/assignmentId/reward
+    - GET /loyalties/campaignId/tiers
+    - GET /loyalties/campaignId/tiers/tierId
+    - GET /loyalties/campaignId/tiers/tierId/earning-rules
+    - GET /loyalties/members/memberId/tiers
+  - orders
+    - POST /orders/export
+  - product-collections
+    - GET /product-collections
+    - GET DELETE /product-collections/productCollectionId
+    - GET /product-collections/productCollectionId/products
+  - products
+    - POST /skus/importCSV
+  - promotions
+    - GET, POST /promotions/campaignId/stacks
+    - GET, PUT, DELETE /promotions/campaignId/stacks/stackId
+    - GET /promotions/stacks
+    - POST /promotions/tiers/promotionsTierId/validation
+    - POST /promotions/tiers/promotionsTierId/disable
+    - POST /promotions/tiers/promotionsTierId/enable
+  - validation-rules
+    - GET /validation-rules-assignments
+  - vouchers
+    - POST /vouchers/importCSV
+    - GET /vouchers/code/transactions
+    - POST /vouchers/code/transactions/export
 
-
-
-
-- type `ClientSideValidateResponse` related to:
-    - response for GET `/validate`
-- type `SimplePromotionTier` related to:
-    - response GET `/promotions/validation`
-- type `PromotionsCreate` related to:
-    - params for POST `/campaigns`
-- type `PromotionsValidateResponse` related to:
-    - response for POST `/promotions/validation`
-- type `VouchersResponse` related to:
-    - response for POST `/redeem`
-    - response for POST `/vouchers/qualification`
-    - params for POST and PUT `/vouchers/${encode(voucher.code)}`
-    - response for GET `/vouchers/${encode(code)}`
-    - response POST `loyalties/{campaignId}/members/{memberId}/redemption`
-    - response POST `/vouchers/${encode(code)}/enable`
-    - response POST `/vouchers/${encode(code)}/disable`
-- type `VouchersImport` related to:
-    - params for POST `/vouchers/import`
-- type `PromotionTier` related to:
-    - response for GET `/promotions/tiers`
-    - response for GET `/promotions/${encode(promotionId)}/tiers`
-    - response for POST `/promotions/tiers/${encode(promotionsTierId)}/redemption`
-    - response for POST `/vouchers/${encode(code)}/redemption`
-- type `PromotionTiersCreateParams` related to:
-    - params for POST `/promotions/${encode(promotionId)}/tiers`
-- type `ValidationsValidateVoucherResponse` related to:
-    - response for POST `/vouchers/${encode(code)}/validate`
-- type `SimpleVoucher` related to:
-    - response GET/PUT/POST `/campaigns/${encode(name)}`
-    - response GET `/campaigns`
-    - params POST `/campaigns`
-    - response POST `/campaigns/qualification`
+Types of requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi

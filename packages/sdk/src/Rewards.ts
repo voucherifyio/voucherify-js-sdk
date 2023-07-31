@@ -15,8 +15,8 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-reward
 	 */
-	public create(body: T.RewardsCreateBody) {
-		return this.client.post<T.RewardsCreateResponse>('/rewards', body)
+	public create(reward: T.RewardsCreateBody) {
+		return this.client.post<T.RewardsCreateResponse>('/rewards', reward)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-reward
@@ -27,8 +27,8 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward
 	 */
-	public update(reward: T.RewardsUpdateResponse, body: T.RewardsUpdateBody) {
-		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']), body)
+	public update(reward: T.RewardsUpdateBody & { id: string }) {
+		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']))
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-reward
