@@ -675,6 +675,12 @@ client.customers.update(customer)
 client.customers.delete(customerId)
 ```
 
+#### [Delete Customer Permanently](https://docs.voucherify.io/reference/delete-customer-permanently)
+
+```javascript
+client.customers.deletePermanently(customerId)
+```
+
 #### [List Customers](https://docs.voucherify.io/reference/list-customers)
 
 ```javascript
@@ -725,6 +731,18 @@ client.customers.updateConsents(customer, consents)
 ```javascript
 client.customers.listActivities(customerId)
 client.customers.listActivities(customerId, params)
+```
+
+#### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
+
+```javascript
+client.customers.updateCustomersInBulk(customers)
+```
+
+#### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
+
+```javascript
+client.customers.updateCustomersMetadataInBulk(sourceIdsAndMetadata)
 ```
 
 ---
@@ -1421,11 +1439,17 @@ client.validationRules.list()
 client.validationRules.list(params)
 ```
 
+#### [List Validation Rules Assignments](https://docs.voucherify.io/reference/list-validation-rules-assignments)
+
+```javascript
+client.validationRules.listValidationRulesAssignments(params)
+```
+
 #### [List Validation Rule Assignments](https://docs.voucherify.io/reference/list-validation-rule-assignments)
 
 ```javascript
-client.validationRules.listAssignments(validationRuleId)
-client.validationRules.listAssignments(validationRuleId, params)
+client.validationRules.listValidationRuleAssignments(validationRuleId)
+client.validationRules.listValidationRuleAssignments(validationRuleId, params)
 ```
 
 ---

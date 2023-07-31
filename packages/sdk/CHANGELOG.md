@@ -10,7 +10,7 @@
 
 ### Patch Changes
 
-- [`2899ae6`](https://github.com/voucherifyio/voucherify-js-sdk/commit/2899ae6a1044388f4a5426ef22b8b52e00b747a4) [#214](https://github.com/voucherifyio/voucherify-js-sdk/pull/214) Thanks [@darekg11](https://github.com/darekg11)! - Added 'metadata' property to 'order' object in 'ValidationsValidateVoucherResponse' inteface. Added 'session' property to 'ValidationsValidateVoucherResponse' interface
+- [`2899ae6`](https://github.com/voucherifyio/voucherify-js-sdk/commit/2899ae6a1044388f4a5426ef22b8b52e00b747a4) [#214](https://github.com/voucherifyio/voucherify-js-sdk/pull/214) Thanks [@darekg11](https://github.com/darekg11)! - Added 'metadata' property to 'order' object in 'ValidationsValidateVoucherResponse' interface. Added 'session' property to 'ValidationsValidateVoucherResponse' interface
 
 ## 2.2.3
 
@@ -118,7 +118,7 @@
 
 - [`6886582`](https://github.com/voucherifyio/voucherify-js-sdk/commit/6886582b27be73b7f0a2cfa1ab9cc4fd4d727e8a) [#171](https://github.com/voucherifyio/voucherify-js-sdk/pull/171) Thanks [@darekg11](https://github.com/darekg11)! - Update axios to 0.21.4 in SDK package
 
-* [`3e5f2ee`](https://github.com/voucherifyio/voucherify-js-sdk/commit/3e5f2ee0bb9855e556c67049aa55f8f5a51b7fd0) [#165](https://github.com/voucherifyio/voucherify-js-sdk/pull/165) Thanks [@darekg11](https://github.com/darekg11)! - Bumping libraries to mitigiate some of HIGH and CRITICAL vulnerabilities
+* [`3e5f2ee`](https://github.com/voucherifyio/voucherify-js-sdk/commit/3e5f2ee0bb9855e556c67049aa55f8f5a51b7fd0) [#165](https://github.com/voucherifyio/voucherify-js-sdk/pull/165) Thanks [@darekg11](https://github.com/darekg11)! - Bumping libraries to mitigate some of HIGH and CRITICAL vulnerabilities
 
 ## 2.1.1
 

@@ -78,4 +78,9 @@ export class ValidationRules {
 			params,
 		)
 	}
+
+	//Backward compatibility
+	public listAssignments(validationRuleId: string, params?: T.ValidationRuleListAssignmentsParams) {
+		return this.listValidationRuleAssignments(validationRuleId, params)
+	}
 }
