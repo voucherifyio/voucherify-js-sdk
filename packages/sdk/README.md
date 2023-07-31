@@ -981,6 +981,12 @@ Check [reward assignment object](https://docs.voucherify.io/reference/the-reward
 client.rewards.updateAssignment(rewardId, assignment)
 ```
 
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment)
+
+```javascript
+client.rewards.getAssignment(rewardId, assignmentId)
+```
+
 #### [Delete Reward Assignment](https://docs.voucherify.io/reference/delete-reward-assignment)
 
 ```javascript

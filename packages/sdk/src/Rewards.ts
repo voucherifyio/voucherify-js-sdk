@@ -9,7 +9,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-rewards
 	 */
-	public list(params: T.RewardsListParams) {
+	public list(params?: T.RewardsListParams) {
 		return this.client.get<T.RewardsListResponse>('/rewards', params)
 	}
 	/**
@@ -51,10 +51,10 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward-assignment
 	 */
-	public updateAssignment(rewardId: string, assignmentId: string, assignment: T.RewardsUpdateAssignmentBody) {
+	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssignmentBody & { id: string }) {
 		return this.client.put<T.RewardsUpdateAssignmentResponse>(
-			`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`,
-			assignment,
+			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
+			omit(assignment, ['id']),
 		)
 	}
 	/**

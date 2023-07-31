@@ -6,7 +6,7 @@ import { encode } from './helpers'
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
 
-	public examine(body: T.CampaignsQualificationsBody, params?: T.CampaignsQualificationsParams) {
+	public examine(body: T.CampaignsQualificationsBody = {}, params?: T.CampaignsQualificationsParams) {
 		return this.client.post<T.CampaignsQualificationsResponse>('/campaigns/qualification', body, params)
 	}
 }
@@ -45,14 +45,14 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference/add-voucher-to-campaign
 	 */
 
-	public addVoucher(name: string, body: T.AddVouchersToCampaign = {}, params: T.CampaignsAddVoucherParams) {
+	public addVoucher(name: string, body: T.AddVouchersToCampaign = {}, params?: T.CampaignsAddVoucherParams) {
 		return this.client.post<T.CampaignsAddVoucherResponse>(`/campaigns/${encode(name)}/vouchers`, body, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-voucher-with-certain-code-to-campaign
 	 */
 
-	public addCertainVoucher(name: string, code: string, body: T.AddVouchersWithSpecificCodeToCampaign) {
+	public addCertainVoucher(name: string, code: string, body: T.AddVouchersWithSpecificCodeToCampaign = {}) {
 		return this.client.post<T.CampaignVoucherObject>(`/campaigns/${encode(name)}/vouchers/${encode(code)}`, body)
 	}
 	/**

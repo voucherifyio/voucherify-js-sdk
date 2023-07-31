@@ -22,4 +22,4 @@ export interface CreateCategory {
 }
 
 export type ResponseCreateCategory = Omit<CategoryObject, 'updated_at'>
-export type UpdateCategoriesCategoryId = CreateCategory //20_req_update_categories_categoryId
+export type UpdateCategoriesCategoryId = Partial<CreateCategory> //20_req_update_categories_categoryId
