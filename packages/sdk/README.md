@@ -218,7 +218,7 @@ client.vouchers.import(vouchers)
 #### [Import Vouchers using CSV](https://docs.voucherify.io/reference/import-vouchers-using-csv)
 
 ```javascript
-client.vouchers.importVouchersUsingCSV()
+client.vouchers.importVouchersUsingCSV(filePath)
 ```
 
 #### [Examine Vouchers Qualification](https://docs.voucherify.io/reference/push-qualification-request)
@@ -268,6 +268,7 @@ Methods are provided within `client.campaigns.*` namespace.
 - [Get Campaign](#get-campaign)
 - [Add Voucher to Campaign](#add-voucher-to-campaign)
 - [Import Vouchers to Campaign](#import-vouchers-to-campaign)
+- [Import Vouchers to Campaign by CSV](#import-vouchers-to-campaign-by-csv)
 - [List Campaigns](#list-campaigns)
 - [Examine Campaigns Qualification](#examine-campaigns-qualification)
 
@@ -318,6 +319,12 @@ client.campaigns.addCertainVoucher(campaignName, code)
 
 ```javascript
 client.campaigns.importVouchers(campaignName, vouchers)
+```
+
+#### [Import Vouchers to Campaign by CSV](https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV)
+
+```javascript
+client.campaigns.importVouchersUsingCSV(campaignId, filePath)
 ```
 
 #### [List Campaigns](https://docs.voucherify.io/reference/list-campaigns)
@@ -745,6 +752,12 @@ client.customers.updateCustomersInBulk(customers)
 client.customers.updateCustomersMetadataInBulk(sourceIdsAndMetadata)
 ```
 
+#### [Import and Update Customers using CSV](https://docs.voucherify.io/reference/import-customers-using-csv)
+
+```javascript
+client.customers.importCustomersUsingCSV(filePath)
+```
+
 ---
 
 ### Consents
@@ -884,6 +897,12 @@ client.products.getSku(productId, skuId)
 
 ```javascript
 client.products.importSkusUsingCSV()
+```
+
+#### [Import Products using CSV](https://docs.voucherify.io/reference/import-products-using-csv)
+
+```javascript
+client.products.importProductsUsingCSV()
 ```
 
 #### [Update SKU](https://docs.voucherify.io/reference/update-skus)

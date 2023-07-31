@@ -3,6 +3,8 @@ import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
+import fs from 'fs'
+import FormData from 'form-data'
 
 export class Products {
 	constructor(private client: RequestController) {}
@@ -67,10 +69,20 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
 	 */
-
-	//todo: file path should be in body (update readme)
-	public importSkusUsingCSV() {
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, {})
+	public importSkusUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, form)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-products-using-csv
+	 */
+	public importProductsUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/products/importCSV`, form)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-sku

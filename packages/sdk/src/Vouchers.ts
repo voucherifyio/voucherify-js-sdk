@@ -3,6 +3,8 @@ import * as T from './types/Vouchers'
 import { encode } from './helpers'
 import type { RequestController } from './RequestController'
 import type { Balance } from './Balance'
+import * as fs from 'fs'
+import FormData from 'form-data'
 
 class VouchersQualification {
 	constructor(private client: RequestController) {}
@@ -74,9 +76,11 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
 	 */
-	//todo body should not be empty here (file path)
-	public importVouchersUsingCSV() {
-		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', {})
+	public importVouchersUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<T.VouchersImportResponse>('/vouchers/importCSV', form)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions

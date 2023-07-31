@@ -14,6 +14,7 @@ Added support for following endpoints:
     - POST /customers/customerId/permanent-deletion
     - POST /customers/bulk/async
     - POST /customers/metadata/async
+    - POST /customers/importCSV
   - exports
     - GET /exports/exportResourceId
   - loyalties
@@ -46,6 +47,7 @@ Added support for following endpoints:
     - GET /product-collections/productCollectionId/products
   - products
     - POST /skus/importCSV
+    - POST /products/importCSV
   - promotions
     - GET, POST /promotions/campaignId/stacks
     - GET, PUT, DELETE /promotions/campaignId/stacks/stackId
