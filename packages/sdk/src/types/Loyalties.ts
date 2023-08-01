@@ -1223,7 +1223,6 @@ interface TransferLoyaltyPoints {
 interface ExportLoyaltyCardTransactions {
 	//16_obj_export_loyalty_card_transactions
 	order: '-created_at' | 'created_at'
-	// @ts-ignore
 	fields: (
 		| 'id'
 		| 'type'
@@ -1234,6 +1233,7 @@ interface ExportLoyaltyCardTransactions {
 		| 'created_at'
 		| 'voucher_id'
 		| 'campaign_id'
+		| 'source'
 		| 'details'
 		| 'related_transaction_id'
 	)[]
