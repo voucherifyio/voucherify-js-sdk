@@ -289,21 +289,7 @@ type VoucherDiscountUnitOnePut = VoucherDiscountUnitOne
 type VoucherDiscountUnitMultiplePut = VoucherDiscountUnitMultiple
 
 export interface VouchersQualificationExamineBody {
-	customer?: {
-		id: string
-		source_id: string
-		name: string
-		email: string
-		phone: string
-		birthdate: string
-		address: {
-			city: string
-			state: string
-			country: string
-			postal_code: string
-		}
-		metadata: Record<string, any>
-	}
+	customer?: VouchersQualificationCustomer
 	order?: {
 		id: string
 		source_id: string
@@ -426,7 +412,7 @@ export interface VouchersQualificationExamineResponse {
 	tracking_id: string
 }
 
-type VoucherObjectExtended = VouchersResponse & {
+type VoucherObjectExtended = VoucherObject[] & {
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 }
