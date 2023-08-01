@@ -417,7 +417,7 @@ export type CustomersListResponse = CustomersCommonListResponse
 
 export type CustomersScrollParams = CustomersCommonListRequest
 export type CustomersScrollResponse = CustomersCommonListResponse
-export type CustomersScrollYield = CustomerObject
+export type CustomersScrollYield = CustomerObject | undefined
 
 type IdOrSourceId = { id: string } | { source_id: string }
 export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
