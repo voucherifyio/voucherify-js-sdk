@@ -517,7 +517,7 @@ export interface OrdersOrderItemSku {
 }
 
 export interface OrdersItem {
-	sku_id?: string
+	sku_id?: string | null
 	product_id?: string
 	related_object?: 'product' | 'sku'
 	source_id?: string
