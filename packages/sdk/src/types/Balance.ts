@@ -7,13 +7,13 @@ export interface BalanceCreateParams {
 
 export interface BalanceCreateResponse {
 	//1_res_vouchers_code_balance
-	amount?: number
-	total?: number
-	balance?: number
-	type?: 'gift_voucher'
-	object?: 'balance'
-	related_object?: {
-		type?: 'voucher'
-		id?: string
+	amount: number
+	total: number
+	balance: number
+	type: 'gift_voucher'
+	object: 'balance'
+	related_object: {
+		type: 'voucher'
+		id: string
 	}
 }

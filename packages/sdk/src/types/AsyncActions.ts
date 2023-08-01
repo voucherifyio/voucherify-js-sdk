@@ -54,10 +54,10 @@ export interface AsyncActionsResponse {
 		| AsyncActionGetResultOrdersMetadataKeyPurge
 	created_at: string
 	object: 'async_action'
-	progress: number
+	progress?: number
 	request_id: string
 	updated_at: string
-	processing_time: number
+	processing_time?: number
 }
 
 interface AsyncActionGetResultCampaignVouchersImport {

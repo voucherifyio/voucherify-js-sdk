@@ -63,3 +63,23 @@ Added support for following endpoints:
     - POST /vouchers/code/transactions/export
 
 Types of (server side) requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi
+
+
+Types changes: 
+    - client.asyncActions.get(asyncActionId)
+        Response type:
+            - Added optional key "progress"
+            - Added optional key "processing_time"
+            - Replaced key "result" type "object" with object definitions
+            - Replaced key "status" type "string" with string options
+            - Replaced key "type" type "string" with string options
+    - client.asyncActions.list()
+        Response type:
+            - Added optional key "progress" to object async_actions
+    - client.vouchers.balance.create(code, params)
+        Request type:
+            - Added optional key "reason" to params
+            - Added optional key "source_id" to params
+        Response type:
+            - Replaced key "type" type "string" with string option
+    - 
