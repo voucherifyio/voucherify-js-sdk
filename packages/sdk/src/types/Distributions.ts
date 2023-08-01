@@ -70,9 +70,9 @@ interface DistributionsPublicationsVoucherGiftCard {
 	is_referral_code?: boolean
 }
 
-interface DistributionsPublicationsCreateResponseVoucher {
+export interface DistributionsPublicationsCreateResponseVoucher {
 	id: string
-	code?: string
+	code: string
 	campaign?: string
 	campaign_id?: string
 	category?: string
@@ -132,7 +132,7 @@ interface DistributionsPublicationsCreateResponseVoucher {
 		}
 	}
 	is_referral_code?: boolean
-	created_at: string
+	created_at?: string
 	updated_at?: string
 	holder_id?: string
 	object: 'voucher'
