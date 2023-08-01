@@ -61,26 +61,19 @@ export interface CampaignResponse {
 		}
 	}
 	auto_join?: boolean
-	// join_once?: boolean
-	// description?: string
-
 	activity_duration_after_publishing?: string
 	validity_timeframe?: {
 		interval?: string
 		duration?: string
 	}
 	validity_day_of_week?: number[]
-	// created_at: string
 	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
 	voucher?: CampaignVoucherObjectDiscount | CampaignVoucherObjectGiftCard | CampaignVoucherObjectLoyaltyCard
-	// referral_program?: ReferralProgramCustomEventRedemption | ReferralProgramRedemption
 	start_date: string
 	updated_at: string
 	use_voucher_metadata_schema?: boolean
-	// protected?: boolean
 	vouchers_count?: number
-	// object: 'campaign'
 }
 
 export type LoyaltyTiersExpiration = LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod

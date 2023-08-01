@@ -62,4 +62,4 @@ Added support for following endpoints:
     - GET /vouchers/code/transactions
     - POST /vouchers/code/transactions/export
 
-Types of requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi
+Types of (server side) requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi
