@@ -534,7 +534,7 @@ interface VouchersImporGiftVoucherObject {
 	active?: boolean
 	type?: 'GIFT_VOUCHER'
 	gift?: {
-		amount: number
+		amount: string
 	}
 	start_date?: string
 	expiration_date?: string
@@ -553,7 +553,7 @@ interface VouchersImporGiftDiscountObject {
 	type?: 'DISCOUNT_VOUCHER'
 	discount?:
 		| VoucherObjectDiscountAmount
-		| VoucherObjectDiscountPercentage
+		| VoucherDiscountPercentagePost
 		| VoucherObjectDiscountFixed
 		| VoucherObjectDiscountUnitOne
 		| VoucherObjectDiscountUnitMultiple
@@ -582,7 +582,6 @@ export interface VouchersBulkUpdateMetadata {
 export type VouchersImportResponse = {
 	async_action_id: string
 }
-
 export type VouchersBulkUpdateMetadataResponse = {
 	async_action_id: string
 }

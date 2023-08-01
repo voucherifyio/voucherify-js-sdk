@@ -6,7 +6,7 @@ import {
 	VoucherObjectDiscountShipping,
 	VoucherObjectDiscountUnitMultiple,
 	VoucherObjectDiscountUnitOne,
-	VouchersImport,
+	// VouchersImport,
 } from './Vouchers'
 
 import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
@@ -496,11 +496,11 @@ export interface CampaignsDeleteParams {
 export interface CampaignsAddVoucherParams {
 	vouchers_count?: number
 }
-
-export type CampaignsAddCertainVoucherParams = Pick<
-	Partial<VouchersImport>,
-	'category' | 'redemption' | 'metadata' | 'additional_info'
->
+//NOT USED
+// export type CampaignsAddCertainVoucherParams = Pick<
+// 	Partial<VouchersImport>,
+// 	'category' | 'redemption' | 'metadata' | 'additional_info'
+// >
 
 export type CampaignsAddVoucherResponse = VoucherObject | AsyncActionCreateResponse
 
