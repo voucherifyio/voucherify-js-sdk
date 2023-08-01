@@ -160,41 +160,40 @@ export interface CustomerActivitiesListResponse {
 	}[]
 }
 
-type CustomerActivityObjectData = //9_obj_customer_activity_object_data
-
-		| CustomerActivityObjectDataCustomerConfirmed
-		| CustomerActivityObjectDataCustomerCreated
-		| CustomerActivityObjectDataCustomerUpdated
-		| CustomerActivityObjectDataCustomerDeleted
-		| CustomerActivityObjectDataCustomerReferred
-		| CustomerActivityObjectDataCustomEvent
-		| CustomerActivityObjectDataCustomerSegmentEntered
-		| CustomerActivityObjectDataCustomerSegmentLeft
-		| CustomerActivityObjectDataCustomerSmsSent
-		| CustomerActivityObjectDataCustomerSmsFailed
-		| CustomerActivityObjectDataCustomerEmailSent
-		| CustomerActivityObjectDataCustomerEmailFailed
-		| CustomerActivityObjectDataCustomerActivecampaignSent
-		| CustomerActivityObjectDataCustomerActivecampaignFailed
-		| CustomerActivityObjectDataCustomerBrazeSent
-		| CustomerActivityObjectDataCustomerBrazeFailed
-		| CustomerActivityObjectDataCustomerMailchimpSent
-		| CustomerActivityObjectDataCustomerMailchimpFailed
-		| CustomerActivityObjectDataCustomerIntercomSent
-		| CustomerActivityObjectDataCustomerIntercomFailed
-		| CustomerActivityObjectDataCustomerRewarded
-		| CustomerActivityObjectDataCustomerRewardedLoyaltyPoints
-		| CustomerActivityObjectDataCustomerVoucherBalanceAdded
-		| CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded
-		| CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsTransferred
-		| CustomerActivityObjectDataCustomerPublicationSucceeded
-		| CustomerActivityObjectDataCustomerPublicationFailed
-		| CustomerActivityObjectDataCustomerRedemptionSucceeded
-		| CustomerActivityObjectDataCustomerRedemptionFailed
-		| CustomerActivityObjectDataCustomerRedemptionRollbackSucceeded
-		| CustomerActivityObjectDataCustomerRedemptionRollbackFailed
-		| CustomerActivityObjectDataCustomerConsentsGiven
-		| CustomerActivityObjectDataCustomerConsentsRevoked
+type CustomerActivityObjectData =  //9_obj_customer_activity_object_data
+	| CustomerActivityObjectDataCustomerConfirmed
+	| CustomerActivityObjectDataCustomerCreated
+	| CustomerActivityObjectDataCustomerUpdated
+	| CustomerActivityObjectDataCustomerDeleted
+	| CustomerActivityObjectDataCustomerReferred
+	| CustomerActivityObjectDataCustomEvent
+	| CustomerActivityObjectDataCustomerSegmentEntered
+	| CustomerActivityObjectDataCustomerSegmentLeft
+	| CustomerActivityObjectDataCustomerSmsSent
+	| CustomerActivityObjectDataCustomerSmsFailed
+	| CustomerActivityObjectDataCustomerEmailSent
+	| CustomerActivityObjectDataCustomerEmailFailed
+	| CustomerActivityObjectDataCustomerActivecampaignSent
+	| CustomerActivityObjectDataCustomerActivecampaignFailed
+	| CustomerActivityObjectDataCustomerBrazeSent
+	| CustomerActivityObjectDataCustomerBrazeFailed
+	| CustomerActivityObjectDataCustomerMailchimpSent
+	| CustomerActivityObjectDataCustomerMailchimpFailed
+	| CustomerActivityObjectDataCustomerIntercomSent
+	| CustomerActivityObjectDataCustomerIntercomFailed
+	| CustomerActivityObjectDataCustomerRewarded
+	| CustomerActivityObjectDataCustomerRewardedLoyaltyPoints
+	| CustomerActivityObjectDataCustomerVoucherBalanceAdded
+	| CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded
+	| CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsTransferred
+	| CustomerActivityObjectDataCustomerPublicationSucceeded
+	| CustomerActivityObjectDataCustomerPublicationFailed
+	| CustomerActivityObjectDataCustomerRedemptionSucceeded
+	| CustomerActivityObjectDataCustomerRedemptionFailed
+	| CustomerActivityObjectDataCustomerRedemptionRollbackSucceeded
+	| CustomerActivityObjectDataCustomerRedemptionRollbackFailed
+	| CustomerActivityObjectDataCustomerConsentsGiven
+	| CustomerActivityObjectDataCustomerConsentsRevoked
 
 interface CustomerObjectEmailParameter {
 	//9_obj_customer_object_email_parameter
@@ -352,8 +351,7 @@ interface CustomerActivityObjectDataCustomerVoucherBalanceAdded {
 	customer: Record<string, any>
 }
 
-type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded =
-	CustomerActivityObjectDataCustomerVoucherBalanceAdded
+type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded = CustomerActivityObjectDataCustomerVoucherBalanceAdded
 type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsTransferred = Record<string, any>
 
 interface CustomerActivityObjectDataCustomerPublicationSucceeded {

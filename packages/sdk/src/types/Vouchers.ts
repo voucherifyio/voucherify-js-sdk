@@ -22,6 +22,8 @@ export interface SimpleVoucher {
 	}
 }
 
+export type VouchersResponse = VoucherObject
+
 export interface VoucherObject {
 	id: string
 	code: string
@@ -29,22 +31,9 @@ export interface VoucherObject {
 	campaign_id: string
 	category: string
 	category_id: string
-	categories: {
-		id: string
-		name: string
-		hierarchy: number
-		created_at: string
-		updated_at: string
-		object: 'category'
-	}[]
+	categories: CategoryObject[]
 	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
-	discount:
-		| VoucherObjectDiscountAmount
-		| VoucherObjectDiscountPercentage
-		| VoucherObjectDiscountFixed
-		| VoucherObjectDiscountUnitOne
-		| VoucherObjectDiscountUnitMultiple
-		| VoucherObjectDiscountShipping
+	discount: VoucherDiscount
 	gift: {
 		amount: number
 		balance: number
@@ -107,81 +96,6 @@ export interface VoucherObject {
 		url: string
 	}
 	object: 'voucher'
-}
-
-export interface VouchersResponse {
-	//1_obj_voucher_object
-	id: string
-	code?: string
-	campaign?: string
-	campaign_id?: string
-	category?: string
-	categories?: CategoryObject[]
-	category_id?: string
-	type?: 'DISCOUNT_VOUCHER' | 'GIFT_VOUCHER' | 'LOYALTY_CARD'
-	discount?: VoucherDiscount
-	gift?: {
-		amount?: number
-		balance?: number
-		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
-	}
-	loyalty_card?: {
-		balance?: number
-		next_expiration_date?: string
-		next_expiration_points?: number
-		points?: number
-	}
-	start_date?: string
-	expiration_date?: string
-	validity_timeframe?: {
-		interval?: string
-		duration?: string
-	}
-	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
-	publish?: {
-		object?: 'list'
-		count?: number
-		url?: string
-	}
-	redemption?: {
-		object?: 'list'
-		quantity?: number
-		redeemed_quantity?: number
-		redeemed_amount?: number
-		redeemed_points?: number
-		url?: string
-	}
-	active?: boolean
-	additional_info?: string
-	metadata?: Record<string, any>
-	assets?: {
-		qr?: {
-			id: string
-			url?: string
-		}
-		barcode?: {
-			id: string
-			url?: string
-		}
-	}
-	is_referral_code?: boolean
-	holder_id?: string
-	updated_at?: string
-	created_at?: string
-	object?: 'voucher'
-	validation_rules_assignments?: {
-		object?: 'list'
-		total?: number
-		data_ref?: 'data'
-		data?: {
-			id: string
-			rule_id?: string
-			related_object_id?: string
-			related_object_type?: string
-			created_at?: string
-			object?: 'validation_rules_assignment'
-		}[]
-	}
 }
 
 interface CategoryObject {
@@ -466,6 +380,8 @@ export type VouchersCreateResponse = VouchersResponse
 
 export type VouchersGetResponse = VouchersResponse
 
+export type VouchersUpdateResponse = VouchersResponse
+
 export interface VouchersUpdate {
 	//1_req_vouchers_code_PUT
 	category?: string
@@ -489,8 +405,6 @@ export interface VouchersUpdate {
 		duration?: string
 	}
 }
-
-export type VouchersUpdateResponse = VouchersResponse
 
 export interface VouchersDeleteParams {
 	force?: string
@@ -522,12 +436,11 @@ export interface VouchersListResponse {
 	vouchers: Omit<VouchersResponse[], 'validation_rules_assignments'>
 }
 
-export type VouchersEnableResponse = VouchersResponse
+export type VouchersEnableResponse = VoucherObject
+export type VouchersDisableResponse = VoucherObject
 
-export type VouchersDisableResponse = VouchersResponse
-
-export type VouchersImport = VouchersImporGiftVoucherObject | VouchersImporGiftDiscountObject
-interface VouchersImporGiftVoucherObject {
+export type VouchersImport = VouchersImportGiftVoucherObject | VouchersImportGiftDiscountObject
+interface VouchersImportGiftVoucherObject {
 	//1_obj_vouchers_import_gift_voucher
 	code: string
 	category?: string
@@ -545,7 +458,7 @@ interface VouchersImporGiftVoucherObject {
 	metadata?: Record<string, any>
 }
 
-interface VouchersImporGiftDiscountObject {
+interface VouchersImportGiftDiscountObject {
 	//1_obj_vouchers_import_discount_voucher
 	code: string
 	category?: string
