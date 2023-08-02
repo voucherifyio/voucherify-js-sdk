@@ -137,13 +137,13 @@ interface RedeemablesDiscountReferralPromotionTierPromotionStack {
 interface RedeemablesGiftCard {
 	id: string
 	object: 'voucher'
-	gift: { credits: number }
+	gift?: { credits: number }
 }
 
 interface RedeemablesLoyaltyCard {
 	id: string
 	object: 'voucher'
-	reward: { id: string; points: number }
+	reward?: { id: string; points: number }
 }
 
 export type ResponseValidations = ResponseValidationsTrue | ResponseValidationsFalse
