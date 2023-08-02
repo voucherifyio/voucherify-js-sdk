@@ -497,12 +497,13 @@ export type CampaignsAddCertainVoucherParams = Pick<
 	'category' | 'redemption' | 'metadata' | 'additional_info'
 >
 
-export type CampaignsAddVoucherResponse = VoucherObject | AsyncActionCreateResponse
+export type CampaignsAddVoucherResponse = Partial<VoucherObject> | AsyncActionCreateResponse
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
 
-export type AddVouchersWithSpecificCodeToCampaign = Omit<AddVouchersToCampaign, 'code_config'>
+export type AddVouchersWithSpecificCodeToCampaign = Partial<Omit<AddVouchersToCampaign, 'code_config'>>
 export interface AddVouchersToCampaign {
+	category?: string
 	category_id?: string
 	start_date?: string
 	expiration_date?: string
@@ -522,20 +523,27 @@ export interface AddVouchersToCampaign {
 }
 
 export interface CampaignsImportVoucher {
-	active: boolean
-	additional_info: string
-	category: string
-	category_id: string
+	active?: boolean
+	additional_info?: string
+	category?: string
+	category_id?: string
 	code: string
-	gift: {
+	gift?: {
 		amount: number
 	}
-	loyalty_card: {
+	loyalty_card?: {
 		points: number
 	}
-	metadata: Record<string, any>
-	redemption: {
+	metadata?: Record<string, any>
+	redemption?: {
 		quantity: number
+	}
+	code_config?: {
+		length?: number
+		charset?: string
+		pattern?: string
+		prefix?: string
+		suffix?: string
 	}
 }
 export type CampaignsImportVouchers = CampaignsImportVoucher[]
@@ -554,15 +562,14 @@ export interface CampaignsListParams {
 	page?: number
 	filters?: {
 		junction?: string
-		[filter_condition: string]: any
-	}
+	} & Record<string, any>
 }
 
 export interface CampaignsListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'campaigns'
-	campaigns: CampaignResponse[]
+	campaigns: Partial<CampaignResponse>[]
 }
 
 export type CampaignsVouchersImportResponse = {
@@ -646,4 +653,4 @@ export interface LoyaltyCard {
 
 export type CampaignsDeleteCampaignResponse = AsyncActionCreateResponse
 
-export type CampaignVoucherObject = VoucherObject
+export type CampaignVoucherObject = Partial<VoucherObject>

@@ -60,7 +60,7 @@ export class Campaigns {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers
 	 */
-	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers[]) {
+	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers) {
 		return this.client.post<T.CampaignsVouchersImportResponse>(`/campaigns/${encode(campaignName)}/import`, vouchers)
 	}
 	/**
