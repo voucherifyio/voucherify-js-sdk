@@ -150,50 +150,50 @@ export type ResponseValidations = ResponseValidationsTrue | ResponseValidationsF
 
 export interface ResponseValidationsTrue {
 	valid: true
-	redeemables: (
+	redeemables?: (
 		| ResponseValidationsRedeemablesDiscountVoucher
 		| ResponseValidationsRedeemablesGiftCard
 		| ResponseValidationsRedeemablesLoyaltyCard
 		| ResponseValidationsRedeemablesPromotionTier
 		| ResponseValidationsRedeemablesPromotionStack
 	)[]
-	order: {
-		amount: number
-		discount_amount: number
-		items_discount_amount: number
-		total_discount_amount: number
-		total_amount: number
-		applied_discount_amount: number
-		items_applied_discount_amount: number
-		total_applied_discount_amount: number
-		items: {
-			object: 'order_item'
-			product_id: string
-			sku_id: string
-			quantity: number
-			amount: number
-			price: number
-			subtotal_amount: number
-			product: {
-				id: string
-				source_id: string
-				name: string
-				price: number
+	order?: {
+		amount?: number
+		discount_amount?: number
+		items_discount_amount?: number
+		total_discount_amount?: number
+		total_amount?: number
+		applied_discount_amount?: number
+		items_applied_discount_amount?: number
+		total_applied_discount_amount?: number
+		items?: {
+			object?: 'order_item'
+			product_id?: string
+			sku_id?: string
+			quantity?: number
+			amount?: number
+			price?: number
+			subtotal_amount?: number
+			product?: {
+				id?: string
+				source_id?: string
+				name?: string
+				price?: number
 			}
 			sku: {
-				id: string
-				source_id: string
-				sku: string
-				price: number
+				id?: string
+				source_id?: string
+				sku?: string
+				price?: number
 			}
 		}[]
-		metadata: Record<string, any>
-		customer_id: string
-		referrer_id: string
+		metadata?: Record<string, any>
+		customer_id?: string
+		referrer_id?: string
 		object: 'order'
 	} //19_obj_order_object_validation_res
-	tracking_id: string
-	session: {
+	tracking_id?: string
+	session?: {
 		type: 'LOCK'
 		key: string
 		ttl_unit: 'HOURS' | 'DAYS' | 'MINUTES' | 'SECONDS' | 'MILLISECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
@@ -202,13 +202,13 @@ export interface ResponseValidationsTrue {
 }
 interface ResponseValidationsFalse {
 	valid: false
-	redeemables: {
+	redeemables?: {
 		status: 'APPLICABLE' | 'INAPPLICABLE' | 'SKIPPED'
 		id: string
 		object: 'voucher' | 'promotion_tier' | 'promotion_stack'
-		result: ErrorNoTranslation & { error: { message: string } }
-		metadata: Record<string, any>
-		categories: CategoryObject
+		result?: ErrorNoTranslation & { error: { message: string } }
+		metadata?: Record<string, any>
+		categories?: CategoryObject
 	}[]
 }
 
@@ -227,10 +227,10 @@ interface ResponseValidationsRedeemablesPromotionTier {
 	status: 'APPLICABLE'
 	id: string
 	object: 'voucher'
-	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
-	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
-	result: {
-		discount:
+	applicable_to?: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to?: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	result?: {
+		discount?:
 			| VoucherObjectDiscountAmount
 			| VoucherObjectDiscountPercentage
 			| VoucherObjectDiscountFixed
@@ -246,34 +246,34 @@ interface ResponseValidationsRedeemablesLoyaltyCard {
 	status: 'APPLICABLE'
 	id: string
 	object: 'voucher'
-	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
-	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
-	result: { loyalty_card: { points: number } }
-	metadata: Record<string, any>
-	categories: CategoryObject
+	applicable_to?: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to?: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	result?: { loyalty_card: { points: number } }
+	metadata?: Record<string, any>
+	categories?: CategoryObject
 }
 
 interface ResponseValidationsRedeemablesGiftCard {
 	status: 'APPLICABLE'
 	id: string
 	object: 'voucher'
-	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
-	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
-	result: { gift: { credits: number } }
-	metadata: Record<string, any>
-	categories: CategoryObject
+	applicable_to?: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to?: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	result?: { gift: { credits: number } }
+	metadata?: Record<string, any>
+	categories?: CategoryObject
 }
 
 interface ResponseValidationsRedeemablesDiscountVoucher {
 	status: 'APPLICABLE'
 	id: string
 	object: 'voucher'
-	order: OrderObjectValidationResPerRedeemable //19_obj_order_object_validation_res_per_redeemable
-	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
-	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
-	result: ValidationsTrueResultVoucherCode //19_obj_validations-true_result_voucher_code
-	metadata: Record<string, any>
-	categories: CategoryObject
+	order?: OrderObjectValidationResPerRedeemable //19_obj_order_object_validation_res_per_redeemable
+	applicable_to?: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to?: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	result?: ValidationsTrueResultVoucherCode //19_obj_validations-true_result_voucher_code
+	metadata?: Record<string, any>
+	categories?: CategoryObject
 }
 
 interface OrderObjectValidationResPerRedeemable {

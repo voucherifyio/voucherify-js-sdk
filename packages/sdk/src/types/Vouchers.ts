@@ -154,37 +154,37 @@ export interface VoucherDiscountPercentage {
 
 export interface VoucherDiscountFixed {
 	//1_obj_voucher_object_discount_fixed
-	type?: 'FIXED'
+	type: 'FIXED'
 	fixed_amount?: number
-	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 	fixed_amount_formula?: string
 }
 
 export interface VoucherDiscountUnitOne {
 	//1_obj_voucher_object_discount_unit_one
-	type?: 'UNIT'
+	type: 'UNIT'
 	unit_off?: number
 	unit_off_formula?: string
 	unit_type?: string
-	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
 }
 
 export interface VoucherDiscountUnitMultiple {
 	//1_obj_voucher_object_discount_unit_multiple
-	type?: 'UNIT'
-	effect?: 'ADD_MANY_ITEMS'
+	type: 'UNIT'
+	effect: 'ADD_MANY_ITEMS'
 	units?: {
 		effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
-		unit_off?: number
+		unit_off: number
 		unit_off_formula?: string
-		unit_type?: string
+		unit_type: string
 	}[]
 }
 
 export interface VoucherDiscountShipping {
 	//1_obj_voucher_object_discount_shipping
-	type?: 'UNIT'
-	effect?: 'ADD_MISSING_ITEMS'
+	type: 'UNIT'
+	effect: 'ADD_MISSING_ITEMS'
 	unit_off?: number
 	unit_type?: 'prod_5h1pp1ng'
 }
@@ -700,8 +700,8 @@ export interface ListTransactionsQuery {
 
 export interface VoucherObjectDiscountAmount {
 	type: 'AMOUNT'
-	amount_off: number
-	amount_off_formula: string
+	amount_off?: number
+	amount_off_formula?: string
 	effect:
 		| 'APPLY_TO_ORDER'
 		| 'APPLY_TO_ITEMS'
