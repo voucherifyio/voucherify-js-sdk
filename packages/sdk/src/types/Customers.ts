@@ -1,21 +1,21 @@
 import { AsyncActionCreateResponse } from './AsyncActions'
 
 export interface CustomerPermanentDeletion {
-	id: string
-	created_at: string
-	related_object_id: string
-	related_object: 'customer'
-	status: string
-	data_json: {
-		events: number
-		customer_events: number
-		daily_events: number
-		segments: number
-		orders: number
-		order_events: number
-		customer: number
+	id?: string
+	created_at?: string
+	related_object_id?: string
+	related_object?: 'customer'
+	status?: string
+	data_json?: {
+		events?: number
+		customer_events?: number
+		daily_events?: number
+		segments?: number
+		orders?: number
+		order_events?: number
+		customer?: number
 	}
-	object: 'pernament_deletion'
+	object?: 'pernament_deletion'
 }
 export interface SimpleCustomer {
 	id: string
@@ -123,7 +123,7 @@ export interface CustomerActivitiesListResponse {
 	total: number
 	data_ref: 'data'
 	data: {
-		type:
+		type?:
 			| 'customer.confirmed'
 			| 'customer.created'
 			| 'customer.updated'
@@ -154,9 +154,9 @@ export interface CustomerActivitiesListResponse {
 			| 'customer.redemption.rollback.failed'
 			| 'customer.consents.given'
 			| 'customer.consents.revoked'
-		created_at: string
-		data: CustomerActivityObjectData
-		id: string
+		created_at?: string
+		data?: Partial<CustomerActivityObjectData>
+		id?: string
 	}[]
 }
 
@@ -400,9 +400,9 @@ interface CustomerActivityObjectDataCustomerConsentsGiven {
 type CustomerActivityObjectDataCustomerConsentsRevoked = CustomerActivityObjectDataCustomerConsentsGiven
 
 export type CustomersCreateBody = CreateCustomer
-export type CustomersCreateResponse = CustomerObject
+export type CustomersCreateResponse = Partial<CustomerObject>
 
-export type CustomersGetResponse = CustomerObject
+export type CustomersGetResponse = Partial<CustomerObject>
 
 export interface CustomersListParams {
 	limit?: number
@@ -423,7 +423,7 @@ export type CustomersScrollYield = CustomerObject | undefined
 type IdOrSourceId = { id: string } | { source_id: string }
 export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
-export type CustomersUpdateResponse = CustomerObject
+export type CustomersUpdateResponse = Partial<CustomerObject>
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
 
@@ -431,7 +431,7 @@ export interface ListCustomers {
 	//9_res_list_customers
 	object: 'list'
 	data_ref: 'customers'
-	customers: CustomerObject[] //9_obj_customer_object
+	customers: Partial<CustomerObject>[] //9_obj_customer_object
 	total: number
 }
 
@@ -512,26 +512,7 @@ export interface CustomerObject {
 	object: 'customer' | 'unconfirmed_customer'
 }
 
-export interface UpdateCustomersBulk {
-	address?: {
-		city?: string
-		state?: string
-		line_1?: string
-		line_2?: string
-		country?: string
-		postal_code?: string
-	}
-	source_id: string
-	name: string
-	description: string
-	birthdate: string
-	birthday: string
-	email: string
-	phone: string
-	metadata: Record<string, any>
-}
-
-export type UpdateCustomersInBulk = UpdateCustomersBulk[]
+export type UpdateCustomersInBulk = (CustomerRequest & IdOrSourceId)[]
 
 export type UpdateCustomersBulkResponse = AsyncActionCreateResponse
 export type UpdateCustomersMetadataBulkResponse = AsyncActionCreateResponse

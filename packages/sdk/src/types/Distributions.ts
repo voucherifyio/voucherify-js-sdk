@@ -136,7 +136,6 @@ export interface DistributionsPublicationsCreateResponseVoucher {
 	updated_at?: string
 	holder_id?: string
 	object: 'voucher'
-
 	publish: {
 		object: 'list'
 		count: number
@@ -151,7 +150,7 @@ export interface DistributionsPublicationsCreateResponseVoucher {
 		url: string
 	}
 }
-// Eddy's comment (regarding how to set up filters type) is not quite working here - as we can have multiple `conditions` inside the `filter_condition`. I did not explained it correctly
+// Eddy's comment (regarding how to set up filters type) is not quite working here - as we can have multiple `conditions` inside the `filter_condition`. I did not explain it correctly
 
 export interface DistributionsPublicationsListParams {
 	limit?: number
@@ -163,8 +162,9 @@ export interface DistributionsPublicationsListParams {
 	result?: 'SUCCESS' | 'FAILURE'
 	voucher_type?: 'discount' | 'loyalty' | 'lucky_draw'
 	is_referral_code?: boolean
-	filters?: string
-	source_id?: string
+	filters?: {
+		junction?: 'OR' | 'AND'
+	} & Record<string, any>
 }
 
 interface PublicationResponse {
@@ -177,7 +177,7 @@ interface PublicationResponse {
 	metadata?: Record<string, any>
 	channel?: PublicationResponseChannel
 	result?: 'SUCCESS' | 'FAILURE'
-	customer?: SimpleCustomer
+	customer?: Partial<SimpleCustomer>
 	voucher?: DistributionsPublicationsVoucher
 	vouchers_id?: string[]
 }
@@ -189,34 +189,8 @@ export interface DistributionsPublicationsListResponse {
 	publications?: PublicationResponse[]
 }
 
-export interface CreatePublicationViaGetRequest {
-	campaign: string | { id: string } | { name: string }
-	customer:
-		| string
-		| { id: string }
-		| { source_id: string }
-		| {
-				source_id: string
-				name: string
-				description: string
-				email: string
-				phone: string
-				birthdate: string
-				birthday: string
-				metadata: Record<string, any>
-				address: {
-					city: string
-					state: string
-					line_1: string
-					line_2: string
-					country: string
-					postal_code: string
-				}
-		  }
-	metadata: Record<string, any>
-	source_id: string
-	voucher: string
-}
+export type CreatePublicationViaGetRequest = DistributionsPublicationsCreateParams &
+	DistributionsPublicationsCreateQueryParams
 
 //5_req_create_publication
 export type DistributionsPublicationsCreateParams = CreatePublicationStandaloneVoucher | CreatePublicationFromCampaign
@@ -225,10 +199,15 @@ interface CreatePublicationStandaloneVoucher {
 	//5_req_create_publication_standalone_voucher
 	metadata?: Record<string, any>
 	source_id?: string
-	campaign?: string
+	campaign?:
+		| {
+				name: string
+				count?: number
+		  }
+		| string
 	voucher?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
+	customer?: CustomerRequest
 }
 
 type CreatePublicationFromCampaign =
@@ -284,6 +263,6 @@ export interface DistributionsPublicationsCreateResponse {
 	source_id?: string
 	result: 'SUCCESS' | 'FAILURE'
 	customer?: SimpleCustomer
-	voucher: DistributionsPublicationsCreateResponseVoucher
-	vouchers_id: string[]
+	voucher: Partial<DistributionsPublicationsCreateResponseVoucher>
+	vouchers_id?: string[]
 }

@@ -1,13 +1,13 @@
 export interface ListExportQuery {
-	limit: number
-	order: 'created_at' | '-created_at' | 'status' | '-status'
-	page: number
+	limit?: number
+	order?: 'created_at' | '-created_at' | 'status' | '-status'
+	page?: number
 }
 
 export interface ListExport {
 	object: 'list'
 	data_ref: 'exports'
-	exports: ExportObject[]
+	exports: Partial<ExportObject>[]
 	total: number
 }
 
@@ -20,7 +20,7 @@ export interface CreateExport {
 		| 'customer'
 		| 'points_expiration'
 		| 'voucher_transactions'
-	parameters:
+	parameters?:
 		| ExportOrder
 		| ExportVoucher
 		| ExportPublication
@@ -39,7 +39,7 @@ export interface ExportObject {
 	object: 'export'
 	created_at: string
 	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
-	channel: 'API' | 'WEBSITE'
+	channel?: 'API' | 'WEBSITE'
 	exported_object:
 		| 'order'
 		| 'voucher'
@@ -48,7 +48,7 @@ export interface ExportObject {
 		| 'customer'
 		| 'points_expiration'
 		| 'voucher_transactions'
-	parameters:
+	parameters?:
 		| ExportOrder
 		| ExportVoucher
 		| ExportPublication
@@ -57,10 +57,10 @@ export interface ExportObject {
 		| ExportPointsExpiration
 		| ExportGiftCardTransactions
 		| ExportLoyaltyCardTransactions
-	result: {
+	result?: {
 		url: string
 	}
-	user_id: string
+	user_id?: string
 }
 
 interface ExportOrder {

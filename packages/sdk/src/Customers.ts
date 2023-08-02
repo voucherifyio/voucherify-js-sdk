@@ -25,7 +25,7 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-customers
 	 */
-	public list(params: T.CustomersListParams) {
+	public list(params: T.CustomersListParams = {}) {
 		return this.client.get<T.ListCustomers>('/customers', params)
 	}
 	/**
@@ -72,7 +72,7 @@ class Customers {
 	public update(customer: T.CustomersUpdateParams) {
 		const id = 'id' in customer ? customer.id : customer.source_id
 
-		const customerWithoutId = omit(customer, ['id'])
+		const customerWithoutId = omit(customer, ['id', 'source_id'])
 
 		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
 	}
