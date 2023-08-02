@@ -801,10 +801,10 @@ export interface ListTransactionsQuery {
 }
 
 export interface VoucherObjectDiscountAmount {
-	type: 'AMOUNT'
-	amount_off: number
-	amount_off_formula: string
-	effect:
+	type?: 'AMOUNT'
+	amount_off?: number
+	amount_off_formula?: string
+	effect?:
 		| 'APPLY_TO_ORDER'
 		| 'APPLY_TO_ITEMS'
 		| 'APPLY_TO_ITEMS_PROPORTIONALLY'
@@ -813,41 +813,41 @@ export interface VoucherObjectDiscountAmount {
 }
 
 export interface VoucherObjectDiscountPercentage {
-	type: 'PERCENT'
-	amount_limit: string
-	percent_off: number
-	percent_off_formula: string
-	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	type?: 'PERCENT'
+	amount_limit?: string
+	percent_off?: number
+	percent_off_formula?: string
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 }
 
 export interface VoucherObjectDiscountFixed {
-	type: 'FIXED'
-	fixed_amount: number
-	fixed_amount_formula: string
-	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	type?: 'FIXED'
+	fixed_amount?: number
+	fixed_amount_formula?: string
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 }
 export interface VoucherObjectDiscountUnitOne {
-	type: 'UNIT'
-	unit_off: number
-	unit_off_formula: string
-	unit_type: string
-	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
+	type?: 'UNIT'
+	unit_off?: number
+	unit_off_formula?: string
+	unit_type?: string
+	effect?: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
 }
 
 export interface VoucherObjectDiscountUnitMultiple {
-	type: 'UNIT'
-	effect: 'ADD_MANY_ITEMS'
-	units: {
-		unit_off: number
-		unit_off_formula: string
-		unit_type: string
-		effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
+	type?: 'UNIT'
+	effect?: 'ADD_MANY_ITEMS'
+	units?: {
+		unit_off?: number
+		unit_off_formula?: string
+		unit_type?: string
+		effect?: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
 	}[]
 }
 
 export interface VoucherObjectDiscountShipping {
-	type: 'UNIT'
-	unit_off: number
-	unit_type: 'prod_5h1pp1ng'
-	effect: 'ADD_MISSING_ITEMS'
+	type?: 'UNIT'
+	unit_off?: number
+	unit_type?: 'prod_5h1pp1ng'
+	effect?: 'ADD_MISSING_ITEMS'
 }

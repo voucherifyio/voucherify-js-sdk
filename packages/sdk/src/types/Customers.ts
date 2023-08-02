@@ -352,7 +352,8 @@ interface CustomerActivityObjectDataCustomerVoucherBalanceAdded {
 	customer: Record<string, any>
 }
 
-type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded = CustomerActivityObjectDataCustomerVoucherBalanceAdded
+type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsAdded =
+	CustomerActivityObjectDataCustomerVoucherBalanceAdded
 type CustomerActivityObjectDataCustomerVoucherLoyaltyCardPointsTransferred = Record<string, any>
 
 interface CustomerActivityObjectDataCustomerPublicationSucceeded {

@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': minor
+'@voucherify/sdk': major
 ---
 
 Added support for following endpoints:
@@ -65,21 +65,33 @@ Added support for following endpoints:
 Types of (server side) requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi
 
 
-Types changes: 
+TypeScript types changes: 
     - client.asyncActions.get(asyncActionId)
-        Response type:
+        Returned value:
             - Added optional key "progress"
             - Added optional key "processing_time"
             - Replaced key "result" type "object" with object definitions
             - Replaced key "status" type "string" with string options
             - Replaced key "type" type "string" with string options
     - client.asyncActions.list()
-        Response type:
+        Returned value:
             - Added optional key "progress" to object async_actions
     - client.vouchers.balance.create(code, params)
-        Request type:
+        Request params:
             - Added optional key "reason" to params
             - Added optional key "source_id" to params
-        Response type:
+        Returned value:
             - Replaced key "type" type "string" with string option
-    - 
+    - client.campaigns.qualifications.examine(body, params)
+        Request params:
+            - Added optional keys "birthdate" and "birthday" to body object "customer"
+            - Added optional keys "source_id", "id", "items" and "referrer" to body object "order", **removed** following optional keys from same object: "created_at", 
+"updated_at", "status", "initial_amount", "discount_amount", "items_discount_amount", "total_discount_amount", "applied_discount_amount", "items_applied_discount_amount", 
+"total_amount", "total_applied_discount_amount"
+            - Added more string options for "order" key in params object such as "-campaign", "-category", "-code", "-type", "campaign", "category", "code", "type"
+        Returned value:
+            - Added optional key "tracking_id"
+            - Added optional keys "creation_status", "category_id" and "categories" to object array "data"
+    - client.campaigns.create(campaign)
+        Request params:
+            -

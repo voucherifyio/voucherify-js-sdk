@@ -457,7 +457,7 @@ export interface CreateOrder {
 	metadata: Record<string, any>
 	customer: OrdersCustomerObject //10_req_orders_customer_object
 	referrer: OrdersCustomerObject //10_req_orders_referrer_object
-	items: OrdersItemsArray //10_req_orders_items_array
+	items: OrdersOrderItem[] //10_req_orders_items_array
 }
 
 export interface OrdersCustomerObject {
