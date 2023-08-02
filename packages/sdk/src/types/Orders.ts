@@ -222,16 +222,6 @@ export interface ValidateVoucherOrderSourceId {
 	source_id: string
 }
 
-export interface ValidateVoucherOrderId {
-	//6_req_validate_voucher_order_id
-	id: string
-}
-
-export interface ValidateVoucherOrderSourceId {
-	//6_req_validate_voucher_order_source_id
-	source_id: string
-}
-
 export type ObjectOrder = ObjectOrderApplyToOrder | ObjectOrderApplyToItems //7_obj_order_object
 
 export interface ObjectOrderApplyToOrder {
@@ -451,13 +441,13 @@ type OrderObjectStackedRedemptions = Record<
 
 export interface CreateOrder {
 	//10_req_create_order
-	source_id: string
-	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
-	amount: number
-	metadata: Record<string, any>
-	customer: OrdersCustomerObject //10_req_orders_customer_object
-	referrer: OrdersCustomerObject //10_req_orders_referrer_object
-	items: OrdersItemsArray //10_req_orders_items_array
+	source_id?: string
+	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	amount?: number
+	metadata?: Record<string, any>
+	customer?: OrdersCustomerObject //10_req_orders_customer_object
+	referrer?: OrdersCustomerObject //10_req_orders_referrer_object
+	items?: OrdersItemsArray //10_req_orders_items_array
 }
 
 export interface OrdersCustomerObject {
