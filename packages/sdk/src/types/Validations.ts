@@ -193,12 +193,7 @@ export interface ResponseValidationsTrue {
 		object: 'order'
 	} //19_obj_order_object_validation_res
 	tracking_id?: string
-	session?: {
-		type: 'LOCK'
-		key: string
-		ttl_unit: 'HOURS' | 'DAYS' | 'MINUTES' | 'SECONDS' | 'MILLISECONDS' | 'MICROSECONDS' | 'NANOSECONDS'
-		ttl: number
-	}
+	session?: ValidationSessionResponse
 }
 interface ResponseValidationsFalse {
 	valid: false
