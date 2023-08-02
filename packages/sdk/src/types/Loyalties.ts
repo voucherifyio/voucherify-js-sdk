@@ -1,7 +1,7 @@
-import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersItemsArray } from './Orders'
+import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersOrderItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
-import { CreateCustomer, SimpleCustomer } from './Customers'
+import { CreateCustomer, CustomerRequest, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
@@ -13,6 +13,7 @@ import {
 } from './Redemptions'
 import { FilterConditionsString, FilterJunction } from './Exports'
 import { LoyaltyTierRewardObject, RewardAssignmentObject, RewardObject } from './Rewards'
+import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
 export interface ListMembersLoyaltyTiersResponse {
 	object: 'list'
@@ -134,23 +135,17 @@ export interface LoyaltyCardObjectExpanded {
 	metadata: Record<string, any>
 	amount: number
 	result: 'SUCCESS' | 'FAILURE'
-	order?: ObjectOrder
-	customer: {
-		id: string
-		name: string
-		email: string
-		source_id: string
-		metadata: Record<string, any>
-		object: 'customer'
-	}
+	order?: Partial<ObjectOrder>
+	customer: Partial<CustomerRequest>
 	related_object_type: 'voucher'
 	related_object_id: string
 	voucher: VouchersResponse
-	reward:
+	reward: Partial<
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
+	>
 	loyalty_card: {
 		points: number
 	}
@@ -271,65 +266,81 @@ export interface LoyaltiesListResponse {
 export interface LoyaltyCampaignObject {
 	id: string
 	name: string
-	description: string
-	campaign_type: 'LOYALTY_PROGRAM'
+	campaign_type?: 'LOYALTY_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	voucher: CampaignVoucherObjectLoyaltyCard
-	auto_join: boolean
-	join_once: boolean
-	use_voucher_metadata_schema: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
+	category?: string
+	auto_join?: boolean
+	join_once?: boolean
+	description?: string
+	start_date?: string
+	validation_rules_assignments?: {
+		data?: ValidationRulesCreateAssignmentResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	vouchers_count: number
-	active: boolean
-	metadata: Record<string, any>
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, any>
 	created_at: string
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
+	active: boolean
+	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
+	object: 'campaign'
+	voucher?: CampaignVoucherObjectLoyaltyCard
 	updated_at: string
 	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
-	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
-	protected: boolean
 	category_id: string
 	categories: CategoryObject
 	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	object: 'campaign'
 }
 
 export interface CampaignObjectNoExtendedCategories {
+	category?: string
+	start_date?: string
+	validation_rules_assignments?: {
+		data?: ValidationRulesCreateAssignmentResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
+	}
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, any>
+	created_at: string
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
+	active: boolean
+	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
+	object: 'campaign'
 	id: string
 	name: string
-	description: string
-	campaign_type: 'LOYALTY_PROGRAM'
+	description?: string
+	campaign_type?: 'LOYALTY_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	voucher: CampaignVoucherObjectLoyaltyCard
-	auto_join: boolean
-	join_once: boolean
-	use_voucher_metadata_schema: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
-	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	vouchers_count: number
-	active: boolean
-	metadata: Record<string, any>
-	created_at: string
+	voucher?: CampaignVoucherObjectLoyaltyCard
+	auto_join?: boolean
+	join_once?: boolean
 	updated_at: string
 	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
-	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
-	protected: boolean
 	category_id: string
 	categories: CategoryObject[]
 	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	object: 'campaign'
 }
 interface LoyaltyTiersExpirationPointsInPeriod {
 	qualification_type: 'POINTS_IN_PERIOD'
@@ -375,14 +386,15 @@ interface LoyaltyTiersExpirationExpirationDateRoundingCustom {
 
 export interface LoyaltiesCreateCampaign {
 	name: string
+	start_date?: string
+	expiration_date?: string
+	type?: 'AUTO_UPDATE' | 'STATIC'
+	vouchers_count?: number
+	metadata?: Record<string, any>
 	description?: string
-	type: 'AUTO_UPDATE' | 'STATIC'
 	auto_join?: boolean
 	join_once?: boolean
 	use_voucher_metadata_schema?: boolean
-	vouchers_count?: number
-	start_date?: string
-	expiration_date?: string
 	validity_timeframe?: {
 		interval?: string
 		duration?: string
@@ -392,7 +404,6 @@ export interface LoyaltiesCreateCampaign {
 	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
 	category_id: string
 	category?: string
-	metadata?: Record<string, any>
 	voucher?: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
@@ -506,7 +517,7 @@ export interface LoyaltiesListEarningRules {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: EarningRuleObject[]
+	data: Partial<EarningRuleObject>[]
 }
 
 //8_obj_earning_rule_object
@@ -809,7 +820,7 @@ interface ObjectCalculatePointsProportionallyCustomerMetadata {
 }
 
 export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>[]
-export type LoyaltiesCreateEarningRuleResponse = EarningRuleObject[]
+export type LoyaltiesCreateEarningRuleResponse = Partial<EarningRuleObject>[]
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string
@@ -878,12 +889,12 @@ export interface LoyaltiesListMembersResponse {
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: LoyaltyCardObjectNonExpandedCategories[]
+	vouchers: Partial<LoyaltyCardObjectNonExpandedCategories>[]
 }
 
-export type LoyaltiesCreateMemberResponse = LoyaltyCardObjectNonExpandedCategories
+export type LoyaltiesCreateMemberResponse = Partial<LoyaltyCardObjectNonExpandedCategories>
 
-export type LoyaltiesGetMemberResponse = LoyaltyCardObjectNonExpandedCategories
+export type LoyaltiesGetMemberResponse = Partial<LoyaltyCardObjectNonExpandedCategories>
 
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
@@ -928,7 +939,7 @@ export interface GetLoyaltyCardTransactions {
 	//8_res_get_loyalty_card_transactions
 	object: 'list'
 	data_ref: 'data'
-	data: ObjectLoyaltyCardTransaction[] //1_obj_loyalty_card_transaction_object
+	data: Partial<ObjectLoyaltyCardTransaction>[] //1_obj_loyalty_card_transaction_object
 	has_more: boolean
 }
 
@@ -1387,8 +1398,8 @@ export interface LoyaltiesRedeemRewardParams {
 		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
 		amount: number
 		metadata?: Record<string, any>
-		referrer: OrdersCustomerObject
-		items?: OrdersItemsArray
+		referrer?: Partial<OrdersCustomerObject>
+		items?: Partial<OrdersOrderItem>[]
 	}
 	metadata?: Record<string, any>
 }

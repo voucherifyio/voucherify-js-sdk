@@ -7,15 +7,15 @@ export interface RewardAssignmentObject {
 	//4_obj_reward_assignment_object
 	id: string
 	reward_id: string
-	related_object_id: string
-	related_object_type: string
-	parameters: {
+	related_object_id?: string
+	related_object_type?: string
+	parameters?: {
 		loyalty: {
 			points: number
 		}
 	}
 	created_at: string
-	updated_at: string
+	updated_at?: string
 	object: 'reward_assignment'
 }
 

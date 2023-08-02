@@ -177,6 +177,13 @@ export class Loyalties {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
+	 */
+	//backward compatibility
+	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+		return this.addOrRemovePointsWithCampaignId(campaignId, memberId, balance)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance
 	 */
 	public addOrRemovePoints(memberId: string, balance: T.LoyaltiesAddPoints) {
