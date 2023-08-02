@@ -93,11 +93,11 @@ interface ValidationPromotionTierFalse {
 }
 
 export interface ErrorNoTranslation {
-	code: number
-	key: string
+	code?: number
+	key?: string
 	message: string
-	details: string
-	request_id: string
+	details?: string
+	request_id?: string
 }
 
 export interface RedemptionObjectPromotionTierExtended {
