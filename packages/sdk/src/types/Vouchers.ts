@@ -326,7 +326,7 @@ export interface VouchersQualificationExamineResponse {
 	tracking_id: string
 }
 
-type VoucherObjectExtended = VoucherObject[] & {
+type VoucherObjectExtended = VoucherObject & {
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 }
@@ -447,7 +447,7 @@ interface VouchersImportGiftVoucherObject {
 	active?: boolean
 	type?: 'GIFT_VOUCHER'
 	gift?: {
-		amount: string
+		amount: number
 	}
 	start_date?: string
 	expiration_date?: string
