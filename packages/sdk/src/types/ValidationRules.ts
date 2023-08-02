@@ -34,14 +34,14 @@ type RuleInternal = Record<
 interface ApplicableToObject {
 	excluded?: {
 		object?: 'product' | 'sku' | 'products_collection'
-		id: string
+		id?: string
 		source_id?: string
 		strict?: boolean
 		effect?: 'APPLY_TO_EVERY'
 	}[]
 	included?: {
 		object?: 'product' | 'sku' | 'products_collection'
-		id: string
+		id?: string
 		source_id?: string
 		strict?: boolean
 		effect?: 'APPLY_TO_EVERY' | 'APPLY_TO_CHEAPEST' | 'APPLY_TO_MOST_EXPENSIVE'
@@ -52,7 +52,7 @@ interface ApplicableToObject {
 
 export interface ValidationRulesCreate {
 	//13_req_create_validation_rule
-	name?: string
+	name: string
 	rules?: RulesObject
 	applicable_to?: ApplicableToObject
 	error?: {
