@@ -180,7 +180,7 @@ export interface ResponseValidationsTrue {
 				name?: string
 				price?: number
 			}
-			sku: {
+			sku?: {
 				id?: string
 				source_id?: string
 				sku?: string
