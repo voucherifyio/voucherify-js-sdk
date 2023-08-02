@@ -441,6 +441,7 @@ type OrderObjectStackedRedemptions = Record<
 
 export interface CreateOrder {
 	//10_req_create_order
+	id?: string
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	amount?: number
@@ -452,19 +453,19 @@ export interface CreateOrder {
 
 export interface OrdersCustomerObject {
 	//10_req_orders_customer_object
-	id: string
-	source_id: string
-	name: string
-	email: string
+	id?: string
+	source_id?: string
+	name?: string
+	email?: string
 	description?: string
-	phone: string
-	address: {
-		city: string
-		state: string
-		line_1: string
-		line_2: string
-		country: string
-		postal_code: string
+	phone?: string
+	address?: {
+		city?: string
+		state?: string
+		line_1?: string
+		line_2?: string
+		country?: string
+		postal_code?: string
 	}
 	birthdate?: string
 	birthday?: string
@@ -477,33 +478,33 @@ export type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
 
 export interface OrdersOrderItem {
 	//10_req_orders_order_item
-	source_id: string
-	related_object: string
-	product_id: string
-	sku_id: string
-	quantity: number
-	price: number
-	amount: number
-	product: OrdersOrderItemProduct //10_req_orders_order_item_product
-	sku: OrdersOrderItemSku //10_req_orders_order_item_sku
+	source_id?: string
+	related_object?: string
+	product_id?: string
+	sku_id?: string
+	quantity?: number
+	price?: number
+	amount?: number
+	product?: OrdersOrderItemProduct //10_req_orders_order_item_product
+	sku?: OrdersOrderItemSku //10_req_orders_order_item_sku
 }
 
 export interface OrdersOrderItemProduct {
 	//10_req_orders_order_item_product
-	source_id: string
-	name: string
-	price: number
-	metadata: Record<string, any>
-	override: boolean
+	source_id?: string
+	name?: string
+	price?: number
+	metadata?: Record<string, any>
+	override?: boolean
 }
 
 export interface OrdersOrderItemSku {
 	//10_req_orders_order_item_sku
-	source_id: string
-	sku: string
-	price: number
-	metadata: Record<string, any>
-	override: boolean
+	source_id?: string
+	sku?: string
+	price?: number
+	metadata?: Record<string, any>
+	override?: boolean
 }
 
 export interface OrdersItem {

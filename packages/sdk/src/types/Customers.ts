@@ -42,6 +42,7 @@ export interface ValidateVoucherSourceId {
 
 export interface CreateCustomer {
 	//9_req_create_customer
+	id?: string
 	source_id?: string
 	name?: string
 	email?: string
