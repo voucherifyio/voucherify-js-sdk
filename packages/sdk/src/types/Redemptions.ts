@@ -359,7 +359,6 @@ export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemRespon
 }
 
 interface RedemptionsRedeemStackableOrderResponse {
-	//19_obj_order_object_rollback_stacked
 	id: string
 	source_id?: string
 	created_at: string
@@ -404,18 +403,19 @@ interface RedemptionsRedeemStackableOrderResponse {
 	}
 	customer_id?: string
 	referrer_id?: string
-	object?: 'order'
-	redemptions?: {
-		redemption_ID?: {
-			date?: string
+	object: 'order'
+	redemptions?: Record<
+		string,
+		{
+			date: string
 			rollback_id?: string
 			rollback_date?: string
 			related_object_type: 'redemption'
-			related_object_id?: string
-			stacked?: string[]
+			related_object_id: string
+			stacked: string[]
 			rollback_stacked?: string[]
 		}
-	}
+	>
 }
 
 export interface RedemptionsRedeemStackableResponse {
@@ -477,11 +477,11 @@ export interface RedemptionsRollbackStackableResponse {
 				}
 			}[]
 			metadata?: Record<string, any>
-			object?: 'order'
+			object: 'order'
 		}
 		customer?: Omit<SimpleCustomer, 'name' | 'email'>
-		result?: 'SUCCESS'
-		redemption?: string
+		result: 'SUCCESS' | 'FAILURE'
+		redemption: string
 	}
 	order?: RedemptionsRedeemStackableOrderResponse
 }
