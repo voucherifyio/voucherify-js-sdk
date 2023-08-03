@@ -602,3 +602,57 @@ export interface OrdersListResponse {
 	data_ref: 'orders'
 	orders: OrdersGetResponse[]
 }
+
+export interface OrderObjectRollback {
+	//7_obj_order_object_rollback
+	id: string
+	source_id?: string
+	created_at: string
+	updated_at?: string
+	status?: 'CANCELED'
+	amount?: number
+	total_amount?: number
+	items?: {
+		object?: 'order_item'
+		product_id?: string
+		sku_id?: string
+		quantity?: number
+		amount?: number
+		price?: number
+		subtotal_amount?: number
+		product?: {
+			id?: string
+			source_id?: string
+			name?: string
+			price?: number
+		}
+		sku?: {
+			id?: string
+			source_id?: string
+			sku?: string
+			price?: string
+		}
+	}[]
+	metadata?: Record<string, any>
+	customer?: {
+		id: string
+		object: 'customer'
+	}
+	referrer?: {
+		id: string
+		object: 'customer'
+	}
+	customer_id?: string
+	referrer_id?: string
+	object: 'order'
+	redemptions?: {
+		redemption_ID?: {
+			date?: string
+			rollback_id?: string
+			rollback_date?: string
+			related_object_type?: 'voucher' | 'promotion_tier'
+			related_object_id?: string
+			related_object_parent_id?: string
+		}
+	}
+}

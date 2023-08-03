@@ -1,4 +1,4 @@
-import { OrdersCreateResponse, OrdersCreate, OrdersItem, ObjectOrder } from './Orders'
+import { OrdersCreateResponse, OrdersCreate, OrdersItem, ObjectOrder, OrderObjectRollback } from './Orders'
 import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
 import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VoucherDiscount, VouchersResponse } from './Vouchers'
@@ -308,60 +308,6 @@ export type RollbackRedemptionObjectExtended =
 	| RollbackRedemptionObjectLoyaltyCardExtended
 	| RollbackRedemptionObjectGiftCardExtended
 	| RollbackRedemptionObjectPromotionTierExtended
-
-interface OrderObjectRollback {
-	//7_obj_order_object_rollback
-	id: string
-	source_id: string
-	created_at: string
-	updated_at: string
-	status: 'CANCELED'
-	amount: number
-	total_amount: number
-	items: {
-		object: 'order_item'
-		product_id: string
-		sku_id: string
-		quantity: number
-		amount: number
-		price: number
-		subtotal_amount: number
-		product: {
-			id: string
-			source_id: string
-			name: string
-			price: number
-		}
-		sku: {
-			id: string
-			source_id: string
-			sku: string
-			price: string
-		}
-	}[]
-	metadata: Record<string, any>
-	customer: {
-		id: string
-		object: 'customer'
-	}
-	referrer: {
-		id: string
-		object: 'customer'
-	}
-	customer_id: string
-	referrer_id: string
-	object: 'order'
-	redemptions: {
-		redemption_ID: {
-			date: string
-			rollback_id: string
-			rollback_date: string
-			related_object_type: 'voucher' | 'promotion_tier'
-			related_object_id: string
-			related_object_parent_id: string
-		}
-	}
-}
 
 interface RollbackRedemptionObjectDiscountVoucherExtended {
 	//7_obj_rollback_redemption_object_discount_voucher_extended
@@ -717,7 +663,7 @@ export interface RedemptionObjectLoyaltyCardPayWithPoints {
 	id: string
 	customer?: SimpleCustomer
 	assignment_id?: string
-	object?: 'reward'
+	object: 'reward'
 	name?: string
 	created_at?: string
 	updated_at?: string
@@ -729,16 +675,12 @@ export interface RedemptionObjectLoyaltyCardPayWithPoints {
 	}
 	type?: 'COIN'
 }
-export interface RedemptionObjectLoyaltyCardMaterialProduct {
-	//7_obj_redemption_object_loyalty_card_material_product
-	id: string
-	customer?: SimpleCustomer
-	assignment_id?: string
+
+type RedemptionObjectLoyaltyCardMaterialProduct = Omit<
+	RedemptionObjectLoyaltyCardPayWithPoints,
+	'parameters' | 'type'
+> & {
 	product?: ProductObject
-	object?: 'reward'
-	name?: string
-	created_at?: string
-	updated_at?: string
 	parameters?: {
 		product?: {
 			id: string
@@ -747,35 +689,12 @@ export interface RedemptionObjectLoyaltyCardMaterialProduct {
 	}
 	type?: 'MATERIAL'
 }
-export interface RedemptionObjectLoyaltyCardMaterialSku {
-	//7_obj_redemption_object_loyalty_card_material_sku
-	id: string
-	customer?: SimpleCustomer
-	assignment_id?: string
-	product?: ProductObject
+
+type RedemptionObjectLoyaltyCardMaterialSku = RedemptionObjectLoyaltyCardMaterialProduct & {
 	sku?: SkuObject
-	object?: 'reward'
-	name?: string
-	created_at?: string
-	updated_at?: string
-	parameters?: {
-		product?: {
-			id?: string
-			sku_id?: null
-		}
-	}
-	type?: 'MATERIAL'
 }
-export interface RedemptionObjectLoyaltyCardDigital {
-	//7_obj_redemption_object_loyalty_card_digital
-	id: string
-	customer?: SimpleCustomer
-	assignment_id?: string
-	voucher?: VouchersResponse
-	object?: 'reward'
-	name?: string
-	created_at?: string
-	updated_at?: string
+
+type RedemptionObjectLoyaltyCardDigital = Omit<RedemptionObjectLoyaltyCardPayWithPoints, 'parameters' | 'type'> & {
 	parameters?: {
 		campaign?:
 			| RedemptionObjectLoyaltyCardDigitalDiscountVoucher
@@ -784,7 +703,6 @@ export interface RedemptionObjectLoyaltyCardDigital {
 	}
 	type?: 'CAMPAIGN'
 }
-
 interface RedemptionObjectLoyaltyCardDigitalDiscountVoucher {
 	//7_obj_redemption_object_loyalty_card_digital_discount_voucher
 	id: string
