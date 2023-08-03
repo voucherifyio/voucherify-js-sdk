@@ -325,24 +325,17 @@ interface RedemptionRollbackObjectVoucherFail {
 interface RedemptionObjectDiscountVoucherExtended {
 	id: string
 	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
 	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
+	order?: ObjectOrder
+	channel?: {
+		channel_id?: string
+		channel_type?: 'USER' | 'API'
 	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
+	customer?: SimpleCustomer
 	related_object_type: 'voucher'
 	related_object_id: string
 	voucher: VouchersResponse
@@ -351,34 +344,27 @@ interface RedemptionObjectDiscountVoucherExtended {
 interface RedemptionObjectLoyaltyCardExtended {
 	id: string
 	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	amount?: number
 	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
+	order?: ObjectOrder
+	channel?: {
+		channel_id?: string
+		channel_type?: 'USER' | 'API'
 	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
+	customer?: SimpleCustomer
 	related_object_type: 'voucher'
 	related_object_id: string
 	voucher: VouchersResponse
-	reward:
+	reward?:
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
-	loyalty_card: {
+	loyalty_card?: {
 		points: number
 	}
 }
@@ -386,29 +372,22 @@ interface RedemptionObjectLoyaltyCardExtended {
 interface RedemptionObjectGiftCardExtended {
 	id: string
 	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	amount?: number
 	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
+	order?: ObjectOrder
+	channel?: {
+		channel_id?: string
+		channel_type?: 'USER' | 'API'
 	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
+	customer?: SimpleCustomer
 	related_object_type: 'voucher'
 	related_object_id: string
 	voucher: VouchersResponse
-	gift: {
+	gift?: {
 		amount: number
 	}
 }
@@ -496,16 +475,6 @@ export interface RedemptionsListResponse {
 	total: number
 	data_ref: 'redemptions'
 	redemptions: (Redemption | SimpleRollback)[]
-}
-
-export interface RedemptionsGetForVoucherResponse {
-	object: 'list'
-	total: number
-	data_ref: string
-	quantity: number
-	redeemed_quantity?: number
-	redeemed_amount?: number
-	redemption_entries?: (Redemption | SimpleRollback)[]
 }
 
 export interface RedemptionsRollbackParams {
