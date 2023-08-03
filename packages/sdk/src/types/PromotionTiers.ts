@@ -186,7 +186,7 @@ interface UpdatePromotionTier {
 
 export interface AddPromotionTierToCampaignBody {
 	name: string
-	banner: string
+	banner?: string
 	action: {
 		discount:
 			| VoucherDiscountAmount
@@ -196,16 +196,16 @@ export interface AddPromotionTierToCampaignBody {
 			| VoucherDiscountUnitMultiple
 			| VoucherDiscountShipping
 	}
-	metadata: Record<string, any>
-	active: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	metadata?: Record<string, any>
+	active?: boolean
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week: number[]
-	validation_rules: string[]
+	validity_day_of_week?: number[]
+	validation_rules?: string[]
 	category: string
 	category_id: string
 }
@@ -220,10 +220,10 @@ export interface ListPromotionTiersFromCampaign {
 
 export interface PromotionTierObject {
 	id: string
-	created_at: string
-	updated_at: string
+	created_at?: string
+	updated_at?: string
 	name: string
-	banner: string
+	banner?: string
 	action: {
 		discount:
 			| VoucherDiscountAmount
@@ -233,30 +233,30 @@ export interface PromotionTierObject {
 			| VoucherDiscountUnitMultiple
 			| VoucherDiscountShipping
 	}
-	metadata: Record<string, any>
+	metadata?: Record<string, any>
 	hierarchy: number
 	campaign: {
 		id: string
-		start_date: string
-		expiration_date: string
-		validity_timeframe: {
+		start_date?: string
+		expiration_date?: string
+		validity_timeframe?: {
 			interval: string
 			duration: string
 		}
-		validity_day_of_week: number[]
+		validity_day_of_week?: number[]
 		active: boolean
-		category_id: string
+		category_id?: string
 		object: 'campaign'
 	}
-	campaign_id: string
-	active: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	campaign_id?: string
+	active?: boolean
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
 		interval: string
 		duration: string
 	}
-	validity_day_of_week: number[]
+	validity_day_of_week?: number[]
 	summary: {
 		redemptions: {
 			total_redeemed: number
@@ -268,8 +268,8 @@ export interface PromotionTierObject {
 	}
 	object: 'promotion_tier'
 	validation_rule_assignments: ValidationRulesValidationRuleIdAssignmentResponse
-	category_id: string
-	categories: CategoryObject
+	category_id?: string
+	categories?: CategoryObject
 }
 
 export interface SimplePromotionTier {
