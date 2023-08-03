@@ -97,12 +97,12 @@ export interface RewardsListResponse {
 
 export type RewardsCreateBody = CreateRewardCampaign | CreateRewardMaterial | CreateRewardCoin
 
-export type RewardsGetResponse = RewardsCreateResponse
+export type RewardsGetResponse = RewardObject
 
 //4_req_update_reward
 export type RewardsUpdateBody =
 	| Omit<CreateRewardCampaign, 'type'>
-	| Omit<CreateRewardCoinForUpdate, 'type'>
+	| Omit<CreateRewardCoin, 'type'>
 	| Omit<CreateRewardMaterial, 'type'>
 
 export type RewardsUpdateResponse = RewardsCreateResponse
@@ -128,7 +128,6 @@ interface CreateRewardMaterial {
 	metadata?: string
 }
 
-type CreateRewardCoinForUpdate = Omit<CreateRewardCoin, 'attributes'>
 interface CreateRewardCoin {
 	//4_req_create_reward_COIN
 	name: string
