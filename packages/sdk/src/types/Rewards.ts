@@ -89,57 +89,11 @@ interface RewardObjectParametersCampaignLoyaltyProgram {
 	balance?: number
 }
 export interface RewardsListResponse {
-	object?: 'list'
-	total?: number
-	data_ref?: 'data'
-	data?: RewardsCreateResponse[]
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: RewardsCreateResponse[]
 }
-
-interface RewardsTypeMaterial {
-	type?: 'MATERIAL'
-	parameters?: {
-		product?: {
-			id?: string
-			sku?: string
-		}
-	}
-}
-
-interface RewardsTypeCampaign {
-	type?: 'CAMPAIGN'
-	parameters?: {
-		campaign?: {
-			id: string
-			balance?: number
-		}
-	}
-}
-
-interface RewardsTypeCampaignResponse {
-	type?: 'CAMPAIGN'
-	metadata?: string
-	name?: string
-	parameters?: {
-		campaign?: {
-			id: string
-			balance?: number
-			type?: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
-		}
-	}
-}
-
-interface RewardsTypeCoin {
-	type?: 'COIN'
-	parameters?: {
-		coin?: {
-			exchange_ratio?: number
-		}
-	}
-}
-
-export type RewardsType = RewardsTypeCampaign | RewardsTypeCoin | RewardsTypeMaterial
-
-export type RewardsTypeResponse = RewardsTypeCampaignResponse | RewardsTypeCoin | RewardsTypeMaterial
 
 export type RewardsCreateBody = CreateRewardCampaign | CreateRewardMaterial | CreateRewardCoin
 
@@ -155,9 +109,9 @@ export type RewardsUpdateResponse = RewardsCreateResponse
 
 interface CreateRewardCampaign {
 	//4_req_create_reward_CAMPAIGN
-	name?: string
+	name: string
 	type?: 'CAMPAIGN'
-	parameters?: RewardParametersCampaign
+	parameters: RewardParametersCampaign
 	metadata?: string
 }
 
@@ -177,9 +131,9 @@ interface CreateRewardMaterial {
 type CreateRewardCoinForUpdate = Omit<CreateRewardCoin, 'attributes'>
 interface CreateRewardCoin {
 	//4_req_create_reward_COIN
-	name?: string
+	name: string
 	type?: 'COIN'
-	parameters?: RewardParametersCoin
+	parameters: RewardParametersCoin
 	metadata?: string
 }
 
@@ -197,7 +151,7 @@ type RewardParametersCampaignDiscountCoupons = Omit<RewardObjectParametersCampai
 interface RewardParametersMaterial {
 	//4_req_reward_parameters_MATERIAL
 	product?: {
-		id: string
+		id?: string
 		sku_id?: string | null
 	}
 }
