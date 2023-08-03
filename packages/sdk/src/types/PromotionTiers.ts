@@ -5,17 +5,15 @@ import {
 	InapplicableToObjectPromotionTier,
 	ObjectOrder,
 	OrdersCreateResponse,
-	OrdersItem,
 	ValidateVoucherOrderId,
 	ValidateVoucherOrderSourceId,
 } from './Orders'
 
-import { CreateCustomer, SimpleCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import {
 	ValidationRulesListAssignmentsResponse,
 	ValidationRulesValidationRuleIdAssignmentResponse,
 } from './ValidationRules'
-import { ValidationSessionReleaseParams } from './ValidateSession'
 import {
 	VoucherDiscountAmount,
 	VoucherDiscountFixed,
@@ -320,10 +318,6 @@ export interface PromotionTiersListAllResponse {
 	total: number
 }
 
-export type PromotionTiersListResponse = PromotionTiersListAllResponse
-
-export type PromotionTierGetResponse = PromotionTier
-
 export interface PromotionTiersCreateParams {
 	name?: string
 	banner?: string
@@ -333,27 +327,11 @@ export interface PromotionTiersCreateParams {
 	metadata?: Record<string, any>
 }
 
-export type PromotionTiersCreateResponse = PromotionTier
-
 export type ValidatePromotionTier = RedeemPromotionTier
 export interface RedeemPromotionTier {
 	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
 	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
 	metadata?: Record<string, any>
-}
-
-export interface PromotionTiersRedeemParams {
-	customer?: Omit<SimpleCustomer, 'object'> & { description?: string }
-	order?: {
-		id?: string
-		source_id?: string
-		amount?: number
-		items?: OrdersItem[]
-		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-		metadata?: Record<string, any>
-	}
-	metadata?: Record<string, any>
-	session?: ValidationSessionReleaseParams
 }
 
 export interface PromotionTierRedeemDetailsSimple {
@@ -376,7 +354,3 @@ export type PromotionTierRedeemDetails = PromotionTier & {
 		}
 	}
 }
-
-export type PromotionTiersUpdateParams = PromotionTiersCreateParams & { id: string }
-
-export type PromotionTiersUpdateResponse = PromotionTier
