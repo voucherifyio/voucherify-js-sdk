@@ -362,7 +362,7 @@ interface RedemptionsRedeemStackableOrderResponse {
 	//19_obj_order_object_rollback_stacked
 	id: string
 	source_id?: string
-	created_at?: string
+	created_at: string
 	updated_at?: string
 	status?: 'CANCELED'
 	amount?: number
