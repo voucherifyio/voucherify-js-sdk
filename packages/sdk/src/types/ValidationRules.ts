@@ -76,13 +76,13 @@ export interface ValidationRulesValidateResponse {
 export interface ValidationRulesObject {
 	//13_obj_validation_rule_object
 	id: string
-	name?: string
+	name: string
 	rules?: RulesObject
 	error?: {
 		message?: string
 	}
 	applicable_to?: ApplicableToObject
-	created_at?: string
+	created_at: string
 	updated_at?: string
 	type?: 'basic' | 'advanced' | 'complex'
 	context_type?:
@@ -126,12 +126,12 @@ export interface ValidationRulesObject {
 		| 'distribution.custom_event'
 		| 'reward_assignment.pay_with_points'
 		| 'global'
-	object?: 'validation_rules'
+	object: 'validation_rules'
 }
 
 export type ValidationRulesUpdate = Partial<ValidationRulesCreate> & { id: string }
 
-export type ValidationRulesUpdateResponse = ValidationRulesCreateResponse
+export type ValidationRulesUpdateResponse = ValidationRulesObject
 
 //13_req_create_validation_rule_assignments
 export type ValidationRulesCreateAssignment =
@@ -173,7 +173,7 @@ export interface ValidationRulesValidationRuleIdAssignmentResponse {
 
 export interface ValidationRulesCreateAssignmentObject {
 	id: string
-	rule_id?: string
+	rule_id: string
 	related_object_id?: string
 	related_object_type?:
 		| 'voucher'
@@ -183,7 +183,7 @@ export interface ValidationRulesCreateAssignmentObject {
 		| 'promotion_tier'
 		| 'distribution'
 	created_at?: string
-	object?: 'validation_rules_assignment'
+	object: 'validation_rules_assignment'
 }
 
 export interface ValidationRulesListParams {

@@ -1467,8 +1467,8 @@ client.validationRules.listValidationRulesAssignments(params)
 #### [List Validation Rule Assignments](https://docs.voucherify.io/reference/list-validation-rule-assignments)
 
 ```javascript
-client.validationRules.listValidationRuleAssignments(validationRuleId)
-client.validationRules.listValidationRuleAssignments(validationRuleId, params)
+client.validationRules.listAssignments(validationRuleId)
+client.validationRules.listAssignments(validationRuleId, params)
 ```
 
 ---
