@@ -44,16 +44,16 @@ export interface CampaignResponse {
 	category?: string
 	category_id?: string
 	created_at: string
-	creation_status: 'DONE' | 'DRAFT' | 'FAILED' | 'IN_PROGRESS' | 'MODIFYING'
+	creation_status?: 'DONE' | 'DRAFT' | 'FAILED' | 'IN_PROGRESS' | 'MODIFYING'
 	expiration_date?: string
 	description?: string
 	id: string
 	join_once?: boolean
-	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	loyalty_tiers_expiration?: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
 	metadata?: Record<string, any>
 	name: string
 	object: 'campaign'
-	promotion: ListPromotionTiersFromCampaign
+	promotion?: ListPromotionTiersFromCampaign
 	auto_join?: boolean
 	validity_timeframe?: {
 		interval?: string
@@ -63,7 +63,7 @@ export interface CampaignResponse {
 	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
 	active: boolean
 	voucher?: CampaignVoucherObjectDiscount | CampaignVoucherObjectGiftCard | CampaignVoucherObjectLoyaltyCard
-	updated_at: string
+	updated_at?: string
 	use_voucher_metadata_schema?: boolean
 	vouchers_count?: number
 }
@@ -546,7 +546,7 @@ export interface CampaignsImportVoucher {
 		suffix?: string
 	}
 }
-export type CampaignsImportVouchers = CampaignsImportVoucher[]
+export type CampaignsImportVouchers = Omit<CampaignsImportVoucher, 'code_config'>[]
 
 export interface CampaignsListParams {
 	campaign_type?:

@@ -64,7 +64,7 @@ export interface VoucherObject {
 	}
 	validity_day_of_week: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	active: boolean
-	additional_info: string
+	additional_info?: string
 	metadata: Record<string, any>
 	assets: {
 		qr: {
@@ -93,17 +93,22 @@ export interface VoucherObject {
 		}[]
 		total: number
 	}
+	referrer_id?: string
 	redemption: {
-		quantity: number
+		quantity?: number
 		redeemed_quantity: number
 		redeemed_amount: number
 		redeemed_points: number
+		data_ref: 'redemption_entries'
 		object: 'list'
 		url: string
 	}
-	publish: {
+	publish?: {
 		object: 'list'
 		count: number
+		data_ref: 'entries'
+		entries: string[]
+		total: number
 		url: string
 	}
 	object: 'voucher'
