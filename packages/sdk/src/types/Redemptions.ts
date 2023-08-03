@@ -150,24 +150,7 @@ interface RedemptionObjectDiscountVoucherExtended {
 	voucher: VouchersResponse
 }
 
-interface RedemptionObjectLoyaltyCardExtended {
-	id: string
-	object: 'redemption'
-	date?: string
-	customer_id?: string
-	tracking_id?: string
-	metadata?: Record<string, any>
-	amount?: number
-	result: 'SUCCESS' | 'FAILURE'
-	order?: ObjectOrder
-	channel?: {
-		channel_id?: string
-		channel_type?: 'USER' | 'API'
-	}
-	customer?: SimpleCustomer
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: VouchersResponse
+type RedemptionObjectLoyaltyCardExtended = RedemptionObjectDiscountVoucherExtended & {
 	reward?:
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
@@ -178,29 +161,12 @@ interface RedemptionObjectLoyaltyCardExtended {
 	}
 }
 
-interface RedemptionObjectGiftCardExtended {
-	id: string
-	object: 'redemption'
-	date?: string
-	customer_id?: string
-	tracking_id?: string
-	metadata?: Record<string, any>
+type RedemptionObjectGiftCardExtended = RedemptionObjectDiscountVoucherExtended & {
 	amount?: number
-	result: 'SUCCESS' | 'FAILURE'
-	order?: ObjectOrder
-	channel?: {
-		channel_id?: string
-		channel_type?: 'USER' | 'API'
-	}
-	customer?: SimpleCustomer
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: VouchersResponse
 	gift?: {
 		amount: number
 	}
 }
-
 export interface RedemptionsRedeemBody {
 	tracking_id?: string
 	customer?: Omit<SimpleCustomer, 'id'> & { description?: string; id?: string }
@@ -545,71 +511,46 @@ interface RedemptionRollbackDiscountVoucherStacked {
 	redemption: string
 }
 
-interface RedemptionRollbackLoyaltyCardStacked {
-	//19_obj_redemption_rollback_object_loyalty_card_stacked
-	id: string
-	customer_id?: string
-	tracking_id?: string
-	date?: string
-	amount?: number
-	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
+type RedemptionRollbackLoyaltyCardStacked = Omit<RedemptionRollbackDiscountVoucherStacked, 'voucher'> & {
 	reward?:
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
-	customer?: SimpleCustomer
-	result?: 'SUCCESS' | 'FAILURE'
-	voucher?: {
+	voucher: {
 		id: string
 		code: string
-		loyalty_card: {
+		loyalty_card?: {
 			points: number
 			balance: number
 		}
 		type?: 'LOYALTY_CARD'
 		campaign?: string
 		campaign_id?: string
-		is_referral_code?: boolean
-		holder_id: string
+		is_referral_code: boolean
+		holder_id?: string
 	}
-	redemption?: string
 }
-interface RedemptionRollbackGiftCardStacked {
-	//19_obj_redemption_rollback_object_gift_card_stacked
-	id: string
-	customer_id?: string
-	tracking_id?: string
-	date?: string
+
+type RedemptionRollbackGiftCardStacked = Omit<RedemptionRollbackDiscountVoucherStacked, 'voucher'> & {
 	amount?: number
-	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
-	customer?: SimpleCustomer
-	result?: 'SUCCESS' | 'FAILURE'
-	voucher?: {
+	voucher: {
 		id: string
-		code?: string
+		code: string
 		gift?: {
-			amount?: number
-			balance?: number
-			effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+			amount: number
+			balance: number
+			effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 		}
 		type?: 'GIFT_VOUCHER'
 		campaign?: string
 		campaign_id?: string
-		is_referral_code?: boolean
+		is_referral_code: boolean
 	}
-	redemption?: string
 }
-interface RedemptionRollbackPromotionTierStacked {
-	//19_obj_redemption_rollback_object_promotion_tier_stacked
-	id: string
-	customer_id?: string
-	tracking_id?: string
-	date?: string
+
+type RedemptionRollbackPromotionTierStacked = Omit<RedemptionRollbackDiscountVoucherStacked, 'voucher'> & {
 	amount?: number
-	order?: OrderObjectRollbackStackedPerRedemptionApplyToOrder | OrderObjectRollbackStackedPerRedemptionApplyToItems
-	customer?: SimpleCustomer
-	result?: 'SUCCESS' | 'FAILURE'
 	promotion_tier?: {
 		id: string
 		name?: string
@@ -618,11 +559,9 @@ interface RedemptionRollbackPromotionTierStacked {
 			id?: string
 		}
 	}
-	redemption?: string
 }
 
 interface OrderObjectRollbackStackedPerRedemptionApplyToOrder {
-	//19_obj_order_object_rollback_stacked_per_redemption_apply_to_order
 	amount?: number
 	total_amount?: number
 	items?: {
@@ -700,21 +639,18 @@ type RedemptionObjectLoyaltyCardDigital = Omit<RedemptionObjectLoyaltyCardPayWit
 	type?: 'CAMPAIGN'
 }
 interface RedemptionObjectLoyaltyCardDigitalDiscountVoucher {
-	//7_obj_redemption_object_loyalty_card_digital_discount_voucher
 	id: string
 	type?: 'DISCOUNT_COUPONS'
 }
 
 interface RedemptionObjectLoyaltyCardDigitalGiftCardCredits {
-	//7_obj_redemption_object_loyalty_card_digital_gift_card_credits
 	id: string
-	balance?: number
+	balance: number
 	type?: 'GIFT_VOUCHERS'
 }
 
 interface RedemptionObjectLoyaltyCardDigitalLoyaltyCardPoints {
-	//7_obj_redemption_object_loyalty_card_digital_loyalty_card_points
 	id: string
-	balance?: number
+	balance: number
 	type?: 'LOYALTY_PROGRAM'
 }
