@@ -471,15 +471,14 @@ export interface RedemptionsRedeemStackableResponse {
 }
 
 export interface RedemptionsRollbackStackableResponse {
-	//19_res_redemptions_parentRedemptionId_rollbacks
-	rollbacks?:
+	rollbacks:
 		| RedemptionRollbackDiscountVoucherStacked
 		| RedemptionRollbackLoyaltyCardStacked
 		| RedemptionRollbackGiftCardStacked
 		| RedemptionRollbackPromotionTierStacked
-	parent_rollback?: {
+	parent_rollback: {
 		id: string
-		date?: string
+		date: string
 		customer_id?: string
 		tracking_id?: string
 		order?: {
@@ -522,7 +521,6 @@ export interface RedemptionsRollbackStackableResponse {
 }
 
 interface RedemptionRollbackDiscountVoucherStacked {
-	//19_obj_redemption_rollback_object_discount_voucher_stacked
 	id: string
 	customer_id?: string
 	tracking_id?: string
@@ -534,17 +532,17 @@ interface RedemptionRollbackDiscountVoucherStacked {
 		metadata?: Record<string, any>
 		object?: 'customer'
 	}
-	result?: 'SUCCESS' | 'FAILURE'
-	voucher?: {
+	result: 'SUCCESS' | 'FAILURE'
+	voucher: {
 		id: string
-		code?: string
+		code: string
 		discount?: VoucherDiscount
 		type?: 'DISCOUNT_VOUCHER'
 		campaign?: string
 		campaign_id?: string
-		is_referral_code?: boolean
+		is_referral_code: boolean
 	}
-	redemption?: string
+	redemption: string
 }
 
 interface RedemptionRollbackLoyaltyCardStacked {
@@ -639,12 +637,10 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToOrder {
 	object?: 'order'
 }
 
-interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
-	//19_obj_order_object_rollback_stacked_per_redemption_apply_to_items
-	amount?: number
-	items_discount_amount?: number
-	total_discount_amount?: number
-	total_amount?: number
+type OrderObjectRollbackStackedPerRedemptionApplyToItems = Omit<
+	OrderObjectRollbackStackedPerRedemptionApplyToOrder,
+	'items'
+> & {
 	items?: {
 		object?: 'order_item'
 		product_id?: string
@@ -654,8 +650,8 @@ interface OrderObjectRollbackStackedPerRedemptionApplyToItems {
 		price?: number
 		subtotal_amount?: number
 	}[]
-	metadata?: Record<string, any>
-	object?: 'order'
+	items_discount_amount?: number
+	total_discount_amount?: number
 }
 
 export interface RedemptionObjectLoyaltyCardPayWithPoints {
