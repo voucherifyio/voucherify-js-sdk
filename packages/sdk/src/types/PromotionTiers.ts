@@ -186,39 +186,6 @@ interface UpdatePromotionTier {
 	category_id: string
 }
 
-export interface PromotionTierObject {
-	//3_obj_promotion_tier_object
-	id: string
-	created_at: string
-	updated_at: string
-	name: string
-	banner: string
-	action: {
-		discount:
-			| VoucherDiscountAmount
-			| VoucherDiscountPercentage
-			| VoucherDiscountFixed
-			| VoucherDiscountUnitOne
-			| VoucherDiscountUnitMultiple
-			| VoucherDiscountShipping
-	}
-	metadata: Record<string, any>
-	hierarchy: number
-	campaign: {
-		id: string
-		start_date: string
-		expiration_date: string
-		validity_timeframe: {
-			interval: string
-			duration: string
-		}
-		validity_day_of_week: number[]
-		active: boolean
-		category_id: string
-		object: 'campaign'
-	}
-}
-
 export interface AddPromotionTierToCampaignBody {
 	name: string
 	banner: string
