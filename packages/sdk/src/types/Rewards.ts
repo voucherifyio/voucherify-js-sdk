@@ -203,6 +203,8 @@ export type RewardsCreateAssignmentResponse = RewardsAssignmentObject
 
 export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
 
+export type RewardsGetAssignmentResponse = RewardsAssignmentObject
+
 export type RewardsUpdateAssignmentBody = Pick<RewardsAssignmentObject, 'parameters'>
 
 export interface RewardRedemptionParams {

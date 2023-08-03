@@ -61,7 +61,7 @@ export class Rewards {
 	 * @see https://docs.voucherify.io/reference/get-reward-assignment
 	 */
 	public getAssignment(rewardId: string, assignmentId: string) {
-		return this.client.get<T.RewardsUpdateAssignmentResponse>(
+		return this.client.get<T.RewardsGetAssignmentResponse>(
 			`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`,
 		)
 	}
