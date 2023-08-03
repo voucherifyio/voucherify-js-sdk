@@ -35,7 +35,7 @@ export class Redemptions {
 	 * @see https://docs.voucherify.io/reference/vouchers-redemptions
 	 */
 	public getForVoucher(code: string) {
-		return this.client.get<T.ResGetVouchersRedemptions>(`/vouchers/${encode(code)}/redemption`)
+		return this.client.get<T.RedemptionsGetForVoucherResponse>(`/vouchers/${encode(code)}/redemption`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/rollback-redemption

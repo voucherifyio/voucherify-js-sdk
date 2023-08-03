@@ -13,14 +13,14 @@ export type ResRedeemVoucher =
 	| RedemptionObjectLoyaltyCardExtended
 	| RedemptionObjectGiftCardExtended
 
-export interface ResGetVouchersRedemptions {
-	quantity: number
-	redeemed_quantity: number
+export interface RedemptionsGetForVoucherResponse {
+	quantity?: number
+	redeemed_quantity?: number
 	object: 'list'
 	url: string
 	data_ref: 'redemption_entries'
 	total: number
-	redemption_entries: RedemptionObjectVoucher[] //7_obj_redemption_object_voucher
+	redemption_entries?: RedemptionObjectVoucher[] //7_obj_redemption_object_voucher
 }
 
 type RedemptionObjectVoucher =
@@ -36,292 +36,101 @@ type RedemptionObjectVoucher =
 interface RedemptionObjectVoucherDiscount {
 	id: string
 	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	redemption: string
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	redemption?: string
 	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
+	order?: ObjectOrder
 	channel: {
 		channel_id: string
 		channel_type: 'USER' | 'API'
 	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
+	customer?: SimpleCustomer
+	related_object_type?: 'voucher'
+	related_object_id?: string
+	voucher?: {
 		id: string
 		code: string
-		campaign: string
-		campaign_id: string
+		campaign?: string
+		campaign_id?: string
 	}
 }
 
-interface RedemptionObjectLoyaltyCard {
-	id: string
-	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
-	redemption: string
-	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
-	reward:
+type RedemptionObjectLoyaltyCard = RedemptionObjectVoucherDiscount & {
+	reward?:
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
-	loyalty_card: {
+	loyalty_card?: {
 		points: number
 	}
 }
 
-interface RedemptionObjectGiftCard {
-	id: string
-	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
-	redemption: string
-	result: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
-	gift: {
+type RedemptionObjectGiftCard = RedemptionObjectVoucherDiscount & {
+	amount?: number
+	gift?: {
 		amount: number
 	}
 }
 
-interface RedemptionObjectVoucherFail {
-	id: string
-	object: 'redemption'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	redemption: string
-	result: 'SUCCESS' | 'FAILURE'
-	failure_code: string
-	failure_message: string
-	order: any
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
+type RedemptionObjectVoucherFail = RedemptionObjectVoucherDiscount & {
+	failure_code?: string
+	failure_message?: string
+	order?: any
 }
 
 interface RedemptionRollbackObjectVoucherDiscount {
 	id: string
 	object: 'redemption_rollback'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	redemption: string
-	reason: string
+	date?: string
+	customer_id?: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	redemption?: string
+	reason?: string
 	result: 'SUCCESS' | 'FAILURE'
-	order: OrderObjectRollback
-	channel: {
+	order?: OrderObjectRollback
+	channel?: {
 		channel_id: string
 		channel_type: 'USER' | 'API'
 	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
+	customer?: SimpleCustomer
+	related_object_type?: 'voucher'
+	related_object_id?: string
+	voucher?: {
 		id: string
 		code: string
-		campaign: string
-		campaign_id: string
+		campaign?: string
+		campaign_id?: string
 	}
 }
 
-interface RedemptionRollbackObjectLoyaltyCard {
-	id: string
-	object: 'redemption_rollback'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
-	redemption: string
-	reason: string
-	result: 'SUCCESS' | 'FAILURE'
-	order: OrderObjectRollback
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
-	reward:
+type RedemptionRollbackObjectLoyaltyCard = RedemptionRollbackObjectVoucherDiscount & {
+	amount?: number
+	reward?:
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
-	loyalty_card: {
+	loyalty_card?: {
 		points: number
 	}
 }
 
-interface RedemptionRollbackObjectGiftCard {
-	id: string
-	object: 'redemption_rollback'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	amount: number
-	redemption: string
-	reason: string
-	result: 'SUCCESS' | 'FAILURE'
-	order: OrderObjectRollback
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
-	gift: {
+type RedemptionRollbackObjectGiftCard = RedemptionRollbackObjectVoucherDiscount & {
+	amount?: number
+	gift?: {
 		amount: number
 	}
 }
 
-interface RedemptionRollbackObjectVoucherFail {
-	id: string
-	object: 'redemption_rollback'
-	date: string
-	customer_id: string
-	tracking_id: string
-	metadata: Record<string, any>
-	redemption: string
-	result: 'SUCCESS' | 'FAILURE'
-	failure_code: string
-	failure_message: string
-	order: any
-	channel: {
-		channel_id: string
-		channel_type: 'USER' | 'API'
-	}
-	customer: {
-		id?: string
-		name?: string
-		email?: string
-		source_id?: string
-		metadata?: Record<string, any>
-		object: 'customer'
-	}
-	related_object_type: 'voucher'
-	related_object_id: string
-	voucher: {
-		id: string
-		code: string
-		campaign: string
-		campaign_id: string
-	}
+type RedemptionRollbackObjectVoucherFail = Omit<RedemptionRollbackObjectVoucherDiscount, 'reason'> & {
+	failure_code?: string
+	failure_message?: string
 }
-
 interface RedemptionObjectDiscountVoucherExtended {
 	id: string
 	object: 'redemption'
