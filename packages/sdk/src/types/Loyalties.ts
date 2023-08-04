@@ -1,7 +1,7 @@
 import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersOrderItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
-import { CustomerRequest, CustomerRequest, SimpleCustomer } from './Customers'
+import { CustomerRequest, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
