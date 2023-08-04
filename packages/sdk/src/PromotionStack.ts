@@ -12,7 +12,7 @@ export class PromotionStack {
 		return this.client.get<T.ListStacksInCampaignResponse>(`/promotions/${campaignId}/stacks`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/list-promotion-stacks-in-campaign
+	 * @see https://docs.voucherify.io/reference/create-promotion-stack
 	 */
 	public createInCampaign(campaignId: string, body: T.CreatePromotionStack) {
 		return this.client.post<T.PromotionStackObject>(`/promotions/${campaignId}/stacks`, body)
@@ -36,7 +36,7 @@ export class PromotionStack {
 		return this.client.put<T.PromotionStackObject>(`/promotions/${campaignId}/stacks/${stackId}`, body)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/list-promotion-stacks-in-campaign
+	 * @see https://docs.voucherify.io/reference/list-all-promotion-stacks
 	 */
 	public list(params?: T.ListPromotionStacksParams) {
 		return this.client.get<T.ListStacksInCampaignResponse>(`/promotions/stacks`, params)
