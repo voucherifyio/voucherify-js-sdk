@@ -441,7 +441,7 @@ type OrderObjectStackedRedemptions = Record<
 
 export interface CreateOrder {
 	//10_req_create_order
-	id?: string
+	id: string
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	amount?: number

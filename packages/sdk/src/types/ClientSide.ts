@@ -8,7 +8,7 @@ import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
 import { ValidationSessionReleaseParams } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
-import { ValidationsValidateStackableParams, ValidationValidateStackableResponse } from './Validations'
+import { ValidationsValidateStackableParams, ValidationValidateStackableResponseClientSide } from './Validations'
 import { RedemptionsRedeemStackableParams, RedemptionsRedeemStackableResponse } from './Redemptions'
 
 type ClientSideItem = Pick<
@@ -154,7 +154,7 @@ export type ClientSideConsentsListResponse = ConsentsListResponse
 
 export type ClientSideValidationsValidateStackableParams = ValidationsValidateStackableParams
 
-export type ClientSideValidationValidateStackableResponse = ValidationValidateStackableResponse
+export type ClientSideValidationValidateStackableResponse = ValidationValidateStackableResponseClientSide
 
 export type ClientSideRedemptionsRedeemStackableParams = RedemptionsRedeemStackableParams
 

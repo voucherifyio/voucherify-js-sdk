@@ -1,5 +1,10 @@
 import { CreateCustomer } from './Customers'
-import { StackableOptions, StackableRedeemableResponse } from './Stackable'
+import {
+	StackableOptions,
+	StackableRedeemableObject,
+	StackableRedeemableResponse,
+	StackableRedeemableResponseStatus
+} from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 
 import {
@@ -19,7 +24,7 @@ import {
 	VoucherObjectDiscountShipping,
 	VoucherObjectDiscountUnitMultiple,
 	VoucherObjectDiscountUnitOne,
-} from './Vouchers'
+} from './DiscountVoucher'
 import { ErrorNoTranslation } from './PromotionTiers'
 
 export interface ReqValidateVoucherDiscountCode {
@@ -144,7 +149,7 @@ interface RedeemablesLoyaltyCard {
 	reward?: { id: string; points: number }
 }
 
-export type ResponseValidations = ResponseValidationsTrue | ResponseValidationsFalse
+export type ValidationValidateStackableResponse = ResponseValidationsTrue | ResponseValidationsFalse
 
 export interface ResponseValidationsTrue {
 	valid: true
@@ -196,9 +201,9 @@ export interface ResponseValidationsTrue {
 interface ResponseValidationsFalse {
 	valid: false
 	redeemables?: {
-		status: 'APPLICABLE' | 'INAPPLICABLE' | 'SKIPPED'
+		status: StackableRedeemableResponseStatus
 		id: string
-		object: 'voucher' | 'promotion_tier' | 'promotion_stack'
+		object: StackableRedeemableObject
 		result?: ErrorNoTranslation & { error: { message: string } }
 		metadata?: Record<string, any>
 		categories?: CategoryObject
@@ -469,7 +474,7 @@ interface VoucherObjectDiscountShipping2 {
 	is_dynamic: false
 }
 
-export interface ValidationValidateStackableResponse {
+export interface ValidationValidateStackableResponseClientSide {
 	valid: boolean
 	tracking_id?: string
 	session?: ValidationSessionResponse

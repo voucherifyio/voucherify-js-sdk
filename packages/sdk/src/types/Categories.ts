@@ -8,11 +8,11 @@ export interface ListCategories {
 export interface CategoryObject {
 	//20_obj_category_object
 	id: string
-	name: string
-	hierarchy: number
-	created_at: string
-	updated_at: string
-	object: 'category'
+	name?: string
+	hierarchy?: number
+	created_at?: string
+	updated_at?: string
+	object?: 'category'
 }
 
 export interface CreateCategory {
