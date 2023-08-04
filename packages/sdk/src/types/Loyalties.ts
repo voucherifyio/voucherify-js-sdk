@@ -1,7 +1,7 @@
 import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersOrderItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
-import { CreateCustomer, CustomerRequest, SimpleCustomer } from './Customers'
+import { CustomerRequest, CustomerRequest, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
@@ -256,6 +256,7 @@ export interface LoyaltyCardObjectNonExpandedCategories {
 	object: 'voucher'
 }
 
+export type LoyaltiesCreateCampaignResponse = LoyaltyCampaignObject
 export interface LoyaltiesListResponse {
 	object: 'list'
 	data_ref: 'campaigns'
@@ -417,7 +418,7 @@ export type LoyaltiesUpdateCampaign = Partial<
 		loyalty_card: LoyaltyCard
 		loyalty_tiers_expiration: LoyaltyTiersExpiration
 	}
->
+> & { id: string }
 
 export type LoyaltiesUpdateCampaignResponse = LoyaltyCampaignObject
 
@@ -1558,6 +1559,6 @@ export interface LoyaltyPointsTransfer {
 export interface LoyaltiesCreateMember {
 	voucher?: string
 	channel?: string
-	customer: string | { id: string } | { source_id: string } | CreateCustomer
+	customer: string | { id: string } | { source_id: string } | CustomerRequest
 	metadata?: Record<string, any>
 }

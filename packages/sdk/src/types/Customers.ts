@@ -39,26 +39,6 @@ export interface ValidateVoucherSourceId {
 	//6_req_validate_voucher_customer_source_id
 	source_id: string
 }
-
-export interface CreateCustomer {
-	//9_req_create_customer
-	source_id?: string
-	name?: string
-	email?: string
-	phone?: string
-	address?: {
-		city?: string
-		state?: string
-		line_1?: string
-		line_2?: string
-		country?: string
-		postal_code?: string
-	}
-	birthdate?: string
-	birthday?: string
-	description?: string
-	metadata?: Record<string, any>
-}
 export interface CustomerRequest {
 	id?: string
 	source_id?: string
@@ -85,15 +65,17 @@ export interface CustomersCommonListRequest {
 	email?: string
 	city?: string
 	name?: string
-	order?: 'created_at' | '-created_at'
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'
 	starting_after?: Date | string
 }
 
+export type CustomersListParams = CustomersCommonListRequest
+
 export interface CustomersCommonListResponse {
 	object: 'list'
-	total: number
 	data_ref: 'customers'
-	customers: CustomerObject[]
+	customers: CustomerObject[] //9_obj_customer_object
+	total: number
 	has_more?: boolean
 }
 
@@ -399,20 +381,10 @@ interface CustomerActivityObjectDataCustomerConsentsGiven {
 
 type CustomerActivityObjectDataCustomerConsentsRevoked = CustomerActivityObjectDataCustomerConsentsGiven
 
-export type CustomersCreateBody = CreateCustomer
+export type CustomersCreateBody = CustomerRequest
 export type CustomersCreateResponse = Partial<CustomerObject>
 
 export type CustomersGetResponse = Partial<CustomerObject>
-
-export interface CustomersListParams {
-	limit?: number
-	page?: number
-	email?: string
-	city?: string
-	name?: string
-	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'
-	starting_after?: string
-}
 
 export type CustomersListResponse = CustomersCommonListResponse
 
@@ -426,14 +398,6 @@ export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 export type CustomersUpdateResponse = Partial<CustomerObject>
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
-
-export interface ListCustomers {
-	//9_res_list_customers
-	object: 'list'
-	data_ref: 'customers'
-	customers: Partial<CustomerObject>[] //9_obj_customer_object
-	total: number
-}
 
 export interface CustomerObject {
 	//9_obj_customer_object

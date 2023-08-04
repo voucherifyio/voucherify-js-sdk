@@ -10,7 +10,7 @@ import {
 	ValidateVoucherOrderSourceId,
 } from './Orders'
 
-import { CreateCustomer, SimpleCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CustomerRequest, SimpleCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import {
 	ValidationRulesListAssignmentsResponse,
 	ValidationRulesValidationRuleIdAssignmentResponse,
@@ -370,7 +370,7 @@ export type PromotionTiersCreateResponse = PromotionTier
 
 export type ValidatePromotionTier = RedeemPromotionTier
 export interface RedeemPromotionTier {
-	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CustomerRequest
 	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
 	metadata?: Record<string, any>
 }

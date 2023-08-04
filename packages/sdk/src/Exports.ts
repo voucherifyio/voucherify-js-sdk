@@ -9,8 +9,8 @@ export class Exports {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-export
 	 */
-	public create(exportResource: T.CreateExport) {
-		return this.client.post<T.CreateExportResponse>('/exports', exportResource)
+	public create(exportResource: T.ExportResource) {
+		return this.client.post<T.ExportsCreateResponse>('/exports', exportResource)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-exports
@@ -22,7 +22,7 @@ export class Exports {
 	 * @see https://docs.voucherify.io/reference/get-export
 	 */
 	public get(exportResourceId: string) {
-		return this.client.get<T.GetExportResponse>(`/exports/${encode(exportResourceId)}`)
+		return this.client.get<T.ExportsGetResponse>(`/exports/${encode(exportResourceId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-export

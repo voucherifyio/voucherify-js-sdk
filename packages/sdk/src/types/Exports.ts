@@ -11,6 +11,8 @@ export interface ListExport {
 	total: number
 }
 
+export type ExportResource = CreateExport
+
 export interface CreateExport {
 	exported_object:
 		| 'order'
@@ -31,8 +33,8 @@ export interface CreateExport {
 		| ExportLoyaltyCardTransactions
 }
 
-export type CreateExportResponse = ExportObject
-export type GetExportResponse = ExportObject
+export type ExportsCreateResponse = ExportObject
+export type ExportsGetResponse = ExportObject
 
 export interface ExportObject {
 	id: string

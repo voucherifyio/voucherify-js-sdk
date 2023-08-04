@@ -54,13 +54,13 @@ export class Campaigns {
 	 * @see https://docs.voucherify.io/reference/add-voucher-with-certain-code-to-campaign
 	 */
 
-	public addCertainVoucher(name: string, code: string, body: T.AddVouchersWithSpecificCodeToCampaign = {}) {
+	public addCertainVoucher(name: string, code: string, body: T.CampaignsAddCertainVoucherParams = {}) {
 		return this.client.post<T.CampaignVoucherObject>(`/campaigns/${encode(name)}/vouchers/${encode(code)}`, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers
 	 */
-	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers) {
+	public importVouchers(campaignName: string, vouchers: T.CampaignsImportVouchers[]) {
 		return this.client.post<T.CampaignsVouchersImportResponse>(`/campaigns/${encode(campaignName)}/import`, vouchers)
 	}
 	/**

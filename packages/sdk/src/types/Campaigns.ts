@@ -6,10 +6,9 @@ import {
 	VoucherObjectDiscountShipping,
 	VoucherObjectDiscountUnitMultiple,
 	VoucherObjectDiscountUnitOne,
-	VouchersImport,
 } from './Vouchers'
 
-import { CreateCustomer } from './Customers'
+import { CustomerRequest } from './Customers'
 import { CreateOrder } from './Orders'
 import { AsyncActionCreateResponse } from './AsyncActions'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
@@ -228,7 +227,7 @@ interface LoyaltyTiersExpirationBalanceExpirationDateRoundingCustom {
 }
 
 export interface CampaignsQualificationsBody {
-	customer?: Partial<CreateCustomer & { id: string }>
+	customer?: Partial<CustomerRequest & { id: string }>
 	order?: Partial<CreateOrder & { id: string }>
 }
 
@@ -492,16 +491,11 @@ export interface CampaignsAddVoucherParams {
 	vouchers_count?: number
 }
 
-export type CampaignsAddCertainVoucherParams = Pick<
-	Partial<VouchersImport>,
-	'category' | 'redemption' | 'metadata' | 'additional_info'
->
+export type CampaignsAddCertainVoucherParams = Partial<Omit<AddVouchersToCampaign, 'code_config'>>
 
 export type CampaignsAddVoucherResponse = Partial<VoucherObject> | AsyncActionCreateResponse
 
 export type CampaignsAddCertainVoucherResponse = CampaignsAddVoucherResponse
-
-export type AddVouchersWithSpecificCodeToCampaign = Partial<Omit<AddVouchersToCampaign, 'code_config'>>
 export interface AddVouchersToCampaign {
 	category?: string
 	category_id?: string
@@ -521,6 +515,8 @@ export interface AddVouchersToCampaign {
 		pattern?: string
 	}
 }
+
+export type CampaignsAddVoucherBody = AddVouchersToCampaign
 
 export interface CampaignsImportVoucher {
 	active?: boolean
@@ -546,7 +542,7 @@ export interface CampaignsImportVoucher {
 		suffix?: string
 	}
 }
-export type CampaignsImportVouchers = Omit<CampaignsImportVoucher, 'code_config'>[]
+export type CampaignsImportVouchers = Omit<CampaignsImportVoucher, 'code_config'>
 
 export interface CampaignsListParams {
 	campaign_type?:

@@ -2,7 +2,7 @@ import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './
 
 import { CreateOrder, OrdersItem, ValidateVoucherOrderId, ValidateVoucherOrderSourceId } from './Orders'
 import { PromotionTier, RedeemPromotionTier, ValidationPromotionTierTrue } from './PromotionTiers'
-import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CustomerRequest, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
 import { ValidationRulesCreateAssignmentObject } from './ValidationRules'
 import { CategoryObject } from './Categories'
 
@@ -77,7 +77,7 @@ export interface PromotionsCreate {
 }
 
 export interface PromotionsValidateParams {
-	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CustomerRequest
 	order: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
 	metadata?: Record<string, any>
 }

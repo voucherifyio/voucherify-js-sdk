@@ -15,7 +15,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/create-loyalty-program
 	 */
 	public create(campaign: T.LoyaltiesCreateCampaign) {
-		return this.client.post<T.LoyaltyCampaignObject>('/loyalties', campaign)
+		return this.client.post<T.LoyaltiesCreateCampaignResponse>('/loyalties', campaign)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-loyalty-program
@@ -26,7 +26,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-loyalty-program
 	 */
-	public update(campaign: T.LoyaltiesUpdateCampaign & { id: string }) {
+	public update(campaign: T.LoyaltiesUpdateCampaign) {
 		return this.client.put<T.LoyaltiesUpdateCampaignResponse>(
 			`/loyalties/${encode(campaign.id)}`,
 			omit(campaign, ['id']),
