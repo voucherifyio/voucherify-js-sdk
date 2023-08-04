@@ -30,16 +30,6 @@ export type CustomerUnconfirmed = Pick<CustomerObject, 'summary' | 'email' | 'lo
 	object: 'unconfirmed_customer'
 }
 
-export interface ValidateVoucherCustomerId {
-	//6_req_validate_voucher_customer_id
-	id: string
-}
-
-export interface ValidateVoucherSourceId {
-	//6_req_validate_voucher_customer_source_id
-	source_id: string
-}
-
 export interface CreateCustomer {
 	//9_req_create_customer
 	id?: string
