@@ -472,8 +472,6 @@ export interface OrdersCustomerObject {
 	metadata?: Record<string, any>
 }
 
-export type OrdersReferrerObject = OrdersCustomerObject //10_req_orders_referrer_object
-
 export type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
 
 export interface OrdersOrderItem {
