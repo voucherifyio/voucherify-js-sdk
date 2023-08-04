@@ -1,8 +1,8 @@
-import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CreateCustomer } from './Customers'
 
 export interface EventsParams {
 	event: string
-	customer: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	customer: CreateCustomer
 	metadata?: Record<string, any>
 	referral?: {
 		code: string

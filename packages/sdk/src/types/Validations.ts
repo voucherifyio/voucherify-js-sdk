@@ -1,4 +1,4 @@
-import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
+import { CreateCustomer } from './Customers'
 import { StackableOptions, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 
@@ -6,8 +6,6 @@ import {
 	OrdersCreateResponse,
 	ApplicableToObjectPromotionTier,
 	InapplicableToObjectPromotionTier,
-	ValidateVoucherOrderId,
-	ValidateVoucherOrderSourceId,
 	CreateOrder,
 	ObjectOrder,
 	ObjectOrderApplyToOrder,
@@ -26,8 +24,8 @@ import { ErrorNoTranslation } from './PromotionTiers'
 
 export interface ReqValidateVoucherDiscountCode {
 	session?: ValidationSessionParams
-	order?: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
-	customer?: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	order?: CreateOrder
+	customer?: CreateCustomer
 	metadata?: Record<string, any>
 } //6_req_validate_voucher_discount_code
 export type ReqValidateVoucherGiftCard = ReqValidateVoucherDiscountCode & { gift: { credits: number } } //6_req_validate_voucher_gift_card
@@ -124,8 +122,8 @@ export interface ValidationsValidateStackableParams {
 	options?: StackableOptions
 	redeemables: (RedeemablesDiscountReferralPromotionTierPromotionStack | RedeemablesGiftCard | RedeemablesLoyaltyCard)[]
 	session?: ValidationSessionParams
-	order?: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
-	customer?: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
+	order?: CreateOrder
+	customer?: CreateCustomer
 	metadata?: Record<string, any>
 }
 

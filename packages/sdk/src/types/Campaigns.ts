@@ -8,8 +8,8 @@ import {
 	VoucherObjectDiscountUnitOne,
 } from './Vouchers'
 
-import { CreateCustomer, ValidateVoucherCustomerId, ValidateVoucherSourceId } from './Customers'
-import { CreateOrder, ValidateVoucherOrderId, ValidateVoucherOrderSourceId } from './Orders'
+import { CreateCustomer } from './Customers'
+import { CreateOrder } from './Orders'
 import { AsyncActionCreateResponse } from './AsyncActions'
 
 export interface CampaignResponse {
@@ -235,8 +235,8 @@ interface LoyaltyTiersExpirationBalanceExpirationDateRoundingCustom {
 }
 
 export interface CampaignsQualificationsBody {
-	customer?: ValidateVoucherCustomerId | ValidateVoucherSourceId | CreateCustomer
-	order?: ValidateVoucherOrderId | ValidateVoucherOrderSourceId | CreateOrder
+	customer?: CreateCustomer
+	order?: CreateOrder
 }
 
 export interface CampaignsQualificationsParams {
