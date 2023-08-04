@@ -22,6 +22,14 @@ export interface SimpleVoucher {
 	}
 }
 
+export type VoucherObjectDiscountTypes =
+	| VoucherObjectDiscountAmount
+	| VoucherObjectDiscountPercentage
+	| VoucherObjectDiscountFixed
+	| VoucherObjectDiscountUnitOne
+	| VoucherObjectDiscountUnitMultiple
+	| VoucherObjectDiscountShipping
+
 export interface VoucherObject {
 	id: string
 	code: string
@@ -38,13 +46,7 @@ export interface VoucherObject {
 		object: 'category'
 	}[]
 	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
-	discount:
-		| VoucherObjectDiscountAmount
-		| VoucherObjectDiscountPercentage
-		| VoucherObjectDiscountFixed
-		| VoucherObjectDiscountUnitOne
-		| VoucherObjectDiscountUnitMultiple
-		| VoucherObjectDiscountShipping
+	discount: VoucherObjectDiscountTypes
 	gift: {
 		amount: number
 		balance: number

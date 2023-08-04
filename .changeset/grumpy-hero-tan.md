@@ -68,62 +68,64 @@ Types of (server side) requests and responses were aligned with https://github.c
 **TypeScript types changes:**
 
 - client.asyncActions.get(asyncActionId)
-  - Returned value:
+  - Returned value object `AsyncActionsGetResponse`:
     - Added optional key "progress"
     - Added optional key "processing_time"
-    - Value of key `result` ... `object` with `AsyncActionGetResult`
-    - Replaced key "status" type "string" with string options
-    - Replaced key "type" type "string" with string options
+    - Value of key `result` has been clarified, `object` -> `AsyncActionGetResult`
+    - Value of key `type` has been clarified, `string` -> AsyncActionsResponseTypes
+    - Replaced key `type` has been clarified, `string` -> AsyncActionsResponseStatuses
 - client.asyncActions.list()
-  - Returned value:
-    - Added optional key "progress" to object async_actions
+  - Returned value object `AsyncActionsListResponse`:
+    - Added optional key `progress` to object `async_actions`
 - client.vouchers.balance.create(code, params)
-  - Request params:
-    - Added optional key "reason" to params
-    - Added optional key "source_id" to params
-  - Returned value:
-    - Replaced key "type" type "string" with string option
+  - Request parameter `params`: `BalanceCreateParams`:
+    - Added optional key `reason`
+    - Added optional key `source_id`
+  - Returned value object `BalanceCreateResponse`:
+    - Value of key `type` has been clarified, `string` -> `gift_voucher`
 - client.campaigns.qualifications.examine(body, params)
-  - Request params:
-    - Added optional keys `birthdate` and `birthday` to body object `customer`
-    - Added optional keys `source_id`, `id`, `items` and `referrer` to body object "order", **removed** following optional keys from same object: "created_at"," updated_at", "status", "initial_amount", "discount_amount", "items_discount_amount", `total_discount_amount`, "applied_discount_amount", "items_applied_discount_amount", "total_amount", "total_applied_discount_amount"
-    - Added more string options for "order" key in params object such as "-campaign", "-category", "-code", "-type", "campaign", "category", "code", "type"
-  - Returned value:
-    - Added optional key "tracking_id"
-    - Added optional keys "creation_status", "category_id" and "categories" to object array "data"
+  - Request parameter `body`: `CampaignsQualificationsBody`:
+    - Added optional keys `birthdate` and `birthday` to `customer` object
+    - Added optional keys `source_id`, `id`, `items` and `referrer` to object `order`
+    - **Removed** following optional keys from object `order`: `created_at`, `updated_at`, `status`, `initial_amount`, `discount_amount`, `items_discount_amount`, `total_discount_amount`, `applied_discount_amount`, `items_applied_discount_amount`, `total_amount`, `total_applied_discount_amount`
+  - Request parameter `params`: `CampaignsQualificationsParams`:
+    - Added more string options for `order` value: `-campaign`, `-category`, `-code`, `-type`, `campaign`, `category`, `code`, `type`
+  - Returned value object `CampaignsQualificationsResponse`:
+    - Added optional key `tracking_id`
+    - Added optional keys `creation_status`, `category_id` and `categories` to object array `data`
 - client.campaigns.create(campaign)
-  - Request params:
-    - Request type object was replaced with 5 *options* of object such as `CreateCampaignLoyalty` or `CreateCampaignGift`
-  - Returned value:
-    - Added optional object keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+  - Request parameter `campaign`: `CampaignsCreateCampaign`:
+    - Type object has been clarified, campaign must be one of `CreateCampaignDiscountVoucher`, `CreateCampaignLoyalty`, `CreateCampaignGift`, `CreateCampaignPromotion`, `CreateCampaignReferral`
+  - Returned value object `CampaignsCreateCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
 - client.campaigns.update(nameOrId, campaign)
-  - Request params:
-    - Added optional object keys: `activity_duration_after_publishing`, `auto_join`, `category`, `category_id`, `join_once`, `validity_day_of_week`, `validity_timeframe`
-  - Returned value:
-    - Added optional object keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+  - Request parameter `campaign`: `CampaignsUpdateCampaign`:
+    - Added optional keys: `activity_duration_after_publishing`, `auto_join`, `category`, `category_id`, `join_once`, `validity_day_of_week`, `validity_timeframe`
+  - Returned value object `CampaignsUpdateCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
 - client.campaigns.get(name)
-  - Returned value:
-    - Added optional object keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+  - Returned value object `CampaignsGetCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
 - client.campaigns.addVoucher(name, body, params)
-  - Request params:
-    - Added optional object keys to body: `category_id`, `start_date`, `expiration_date`, `active`
-  - Returned value:
+  - Request parameter `body`: `AddVouchersToCampaign`:
+    - Added optional keys: `category_id`, `start_date`, `expiration_date`, `active`
+  - Returned value `CampaignsAddVoucherResponse`:
     - Possible response with `AsyncActionCreateResponse` object
-    - Added optional object keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
-    - Number and specification options type of `discount` was changed. Added support for free shipping voucher type or unit multiple.
+    - Added optional keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
+    - Value of key `discount` has been clarified, `DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed` -> `VoucherObjectDiscountTypes`
 - client.campaigns.addCertainVoucher(name, code, body)
-  - Request params:
-    - Added optional object keys to body: `category_id`, `start_date`, `expiration_date`, `active`
-  - Returned value:
-    - Added optional object keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
-    - Number and specification options type of `discount` was changed. Added support for free shipping voucher type or unit multiple.
+  - Request parameter `body`: `CampaignsAddCertainVoucherParams`:
+    - Added optional keys: `category_id`, `start_date`, `expiration_date`, `active`
+  - Returned value object `CampaignsAddVoucherResponse`:
+    - Added optional keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
+    - Value of key `discount` has been clarified, `DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed` -> `VoucherObjectDiscountTypes`
 - client.campaigns.importVouchers(campaignName, vouchers)
-  - Request params:
-    - `vouchers` type object[], added optional object keys: `category`, `category_id`, `gift`, `loyalty_card`
+  - Request parameter `vouchers`: `CampaignsImportVouchers`:
+    - Added optional keys: `category`, `category_id`, `gift`, `loyalty_card`
 - client.campaigns.list(params)
-  - Request params:
+  - Request parameter `params`: `CampaignsListParams`:
     - Added optional key: `order`
-    - Added 2 options to object key `campaign_type` 
-  - Request params:
-    - Added optional `categories`, `loyalty_tiers_expiration`, `promotion`, `updated_at` to object key `campaigns` type **object**[]
+    - Value of key `campaign_type` has been clarified, `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'` -> `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM' | 'LOYALTY_PROGRAM' | 'LUCKY_DRAW'`
+  - Returned value object `CampaignsListResponse`:
+    - Added optional keys: `categories`, `loyalty_tiers_expiration`, `promotion`, `updated_at` to object key `campaigns` type **object**[]
 - 
