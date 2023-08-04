@@ -32,75 +32,73 @@ export interface SimpleVoucher {
 	}
 }
 
-export type VouchersResponse = VoucherObject
-
 export interface VoucherObject {
 	id: string
 	code: string
-	campaign: string
-	campaign_id: string
-	category: string
-	category_id: string
-	categories: CategoryObject[]
-	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
-	discount: VoucherDiscount
-	gift: {
+	campaign?: string
+	campaign_id?: string
+	category?: string
+	category_id?: string
+	categories?: CategoryObject[]
+	type?: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	discount?: VoucherDiscount
+	gift?: {
 		amount: number
 		balance: number
 		effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 	}
-	loyalty_card: {
+	loyalty_card?: {
 		points: number
 		balance: number
 		next_expiration_date: string
 		next_expiration_points: number
 	}
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
 		duration: string
 		interval: string
 	}
-	validity_day_of_week: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
 	active: boolean
-	additional_info: string
-	metadata: Record<string, any>
-	assets: {
-		qr: {
+	additional_info?: string
+	metadata?: Record<string, any>
+	assets?: {
+		qr?: {
 			id: string
 			url: string
 		}
-		barcode: {
+		barcode?: {
 			id: string
 			url: string
 		}
 	}
 	is_referral_code: boolean
 	created_at: string
-	updated_at: string
-	holder_id: string
+	updated_at?: string
+	holder_id?: string
 	validation_rules_assignments: {
 		object: 'list'
+		total: number
 		data_ref: 'data'
-		data: {
+		data?: {
 			id: string
-			rule_id: string
-			related_object_id: string
-			related_object_type: string
+			rule_id?: string
+			related_object_id?: string
+			related_object_type?: string
 			created_at: string
 			object: 'validation_rules_assignment'
 		}[]
-		total: number
 	}
-	redemption: {
-		quantity: number
+	redemption?: {
+		quantity?: number
 		redeemed_quantity: number
 		redeemed_amount: number
 		redeemed_points: number
 		object: 'list'
 		url: string
 	}
-	publish: {
+	publish?: {
 		object: 'list'
 		count: number
 		url: string
@@ -446,8 +444,10 @@ export interface VouchersListResponse {
 	vouchers: Omit<VouchersResponse[], 'validation_rules_assignments'>
 }
 
-export type VouchersEnableResponse = VoucherObject
-export type VouchersDisableResponse = VoucherObject
+export type VouchersEnableResponse = VouchersResponse
+export type VouchersDisableResponse = VouchersResponse
+
+export type VouchersResponse = VoucherObject
 
 export type VouchersImport = VouchersImportGiftVoucherObject | VouchersImportGiftDiscountObject
 interface VouchersImportGiftVoucherObject {
@@ -505,6 +505,7 @@ export interface VouchersBulkUpdateMetadata {
 export type VouchersImportResponse = {
 	async_action_id: string
 }
+
 export type VouchersBulkUpdateMetadataResponse = {
 	async_action_id: string
 }

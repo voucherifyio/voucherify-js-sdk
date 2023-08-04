@@ -1,16 +1,16 @@
+import { VoucherObject } from './Vouchers'
+
+import { CreateCustomer } from './Customers'
+import { CreateOrder } from './Orders'
+import { AsyncActionCreateResponse } from './AsyncActions'
 import {
-	VoucherObject,
 	VoucherObjectDiscountAmount,
 	VoucherObjectDiscountFixed,
 	VoucherObjectDiscountPercentage,
 	VoucherObjectDiscountShipping,
 	VoucherObjectDiscountUnitMultiple,
 	VoucherObjectDiscountUnitOne,
-} from './Vouchers'
-
-import { CreateCustomer } from './Customers'
-import { CreateOrder } from './Orders'
-import { AsyncActionCreateResponse } from './AsyncActions'
+} from './DiscountVoucher'
 
 export interface CampaignResponse {
 	campaign_type:
