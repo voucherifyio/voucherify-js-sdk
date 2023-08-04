@@ -611,7 +611,7 @@ export interface RedemptionObjectLoyaltyCardPayWithPoints {
 	type?: 'COIN'
 }
 
-type RedemptionObjectLoyaltyCardMaterialProduct = Omit<
+export type RedemptionObjectLoyaltyCardMaterialProduct = Omit<
 	RedemptionObjectLoyaltyCardPayWithPoints,
 	'parameters' | 'type'
 > & {
@@ -625,11 +625,14 @@ type RedemptionObjectLoyaltyCardMaterialProduct = Omit<
 	type?: 'MATERIAL'
 }
 
-type RedemptionObjectLoyaltyCardMaterialSku = RedemptionObjectLoyaltyCardMaterialProduct & {
+export type RedemptionObjectLoyaltyCardMaterialSku = RedemptionObjectLoyaltyCardMaterialProduct & {
 	sku?: SkuObject
 }
 
-type RedemptionObjectLoyaltyCardDigital = Omit<RedemptionObjectLoyaltyCardPayWithPoints, 'parameters' | 'type'> & {
+export type RedemptionObjectLoyaltyCardDigital = Omit<
+	RedemptionObjectLoyaltyCardPayWithPoints,
+	'parameters' | 'type'
+> & {
 	parameters?: {
 		campaign?:
 			| RedemptionObjectLoyaltyCardDigitalDiscountVoucher
