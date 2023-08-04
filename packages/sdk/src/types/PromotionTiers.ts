@@ -24,20 +24,20 @@ export interface ValidationPromotionTierTrue {
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 	tracking_id: string
-	order: ObjectOrder //6_obj_order_object
+	order?: ObjectOrder //6_obj_order_object
 	id: string
 	name: string
-	banner: string
-	discount:
+	banner?: string
+	discount?:
 		| VoucherDiscountAmount
 		| VoucherDiscountPercentage
 		| VoucherDiscountFixed
 		| VoucherDiscountUnitOne
 		| VoucherDiscountUnitMultiple
 		| VoucherDiscountShipping
-	start_date: string
-	expiration_date: string
-	campaign: {
+	start_date?: string
+	expiration_date?: string
+	campaign?: {
 		id: string
 		start_date: string
 		expiration_date: string
@@ -45,10 +45,10 @@ export interface ValidationPromotionTierTrue {
 		categories: CategoryObject
 		object: 'campaign'
 	}
-	hierarchy: number
-	discount_amount: number
-	applied_discount_amount: number
-	metadata: Record<string, any>
+	hierarchy?: number
+	discount_amount?: number
+	applied_discount_amount?: number
+	metadata?: Record<string, any>
 	object: 'promotion_tier'
 }
 
