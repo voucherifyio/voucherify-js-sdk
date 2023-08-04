@@ -29,29 +29,7 @@ export interface AsyncActionsResponse {
 		| 'VOUCHERS.METADATA_UPDATE'
 		| 'VOUCHERS.METADATA_KEY_PURGE'
 	status: 'DONE' | 'ENQUEUED' | 'FAILED' | 'IN_PROGRESS'
-	result:
-		| AsyncActionGetResultCampaignVouchersImport
-		| AsyncActionGetResultCampaignVouchersImportCSV
-		| AsyncActionGetResultCampaignVouchersUpdate
-		| AsyncActionGetResultCampaignVouchersDelete
-		| AsyncActionGetResultCampaignVouchersGenerate
-		| AsyncActionGetResultCampaignMetadataKeyPurge
-		| AsyncActionGetResultCustomersImportCSV
-		| AsyncActionGetResultCustomersBulkUpdate
-		| AsyncActionGetResultCustomersMetadataUpdate
-		| AsyncActionGetResultProductsBulkUpdate
-		| AsyncActionGetResultCustomersMetadataKeyPurge
-		| AsyncActionGetResultProductsMetadataUpdate
-		| AsyncActionGetResultProductsImportCSV
-		| AsyncActionGetResultSkusImportCSV
-		| AsyncActionGetResultProductsMetadataKeyPurge
-		| AsyncActionGetResultVouchersImport
-		| AsyncActionGetResultVouchersImportCSV
-		| AsyncActionGetResultVouchersBulkUpdate
-		| AsyncActionGetResultVouchersMetadataUpdate
-		| AsyncActionGetResultVouchersMetadataKeyPurge
-		| AsyncActionGetResultOrdersImport
-		| AsyncActionGetResultOrdersMetadataKeyPurge
+	result: AsyncActionGetResult
 	created_at: string
 	object: 'async_action'
 	progress?: number
@@ -59,6 +37,30 @@ export interface AsyncActionsResponse {
 	updated_at: string
 	processing_time?: number
 }
+
+export type AsyncActionGetResult =
+	| AsyncActionGetResultCampaignVouchersImport
+	| AsyncActionGetResultCampaignVouchersImportCSV
+	| AsyncActionGetResultCampaignVouchersUpdate
+	| AsyncActionGetResultCampaignVouchersDelete
+	| AsyncActionGetResultCampaignVouchersGenerate
+	| AsyncActionGetResultCampaignMetadataKeyPurge
+	| AsyncActionGetResultCustomersImportCSV
+	| AsyncActionGetResultCustomersBulkUpdate
+	| AsyncActionGetResultCustomersMetadataUpdate
+	| AsyncActionGetResultProductsBulkUpdate
+	| AsyncActionGetResultCustomersMetadataKeyPurge
+	| AsyncActionGetResultProductsMetadataUpdate
+	| AsyncActionGetResultProductsImportCSV
+	| AsyncActionGetResultSkusImportCSV
+	| AsyncActionGetResultProductsMetadataKeyPurge
+	| AsyncActionGetResultVouchersImport
+	| AsyncActionGetResultVouchersImportCSV
+	| AsyncActionGetResultVouchersBulkUpdate
+	| AsyncActionGetResultVouchersMetadataUpdate
+	| AsyncActionGetResultVouchersMetadataKeyPurge
+	| AsyncActionGetResultOrdersImport
+	| AsyncActionGetResultOrdersMetadataKeyPurge
 
 interface AsyncActionGetResultCampaignVouchersImport {
 	done_count: number

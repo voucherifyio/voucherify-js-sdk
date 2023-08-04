@@ -71,7 +71,7 @@ Types of (server side) requests and responses were aligned with https://github.c
   - Returned value:
     - Added optional key "progress"
     - Added optional key "processing_time"
-    - Replaced key "result" type "object" with object definitions
+    - Value of key `result` ... `object` with `AsyncActionGetResult`
     - Replaced key "status" type "string" with string options
     - Replaced key "type" type "string" with string options
 - client.asyncActions.list()
@@ -85,8 +85,8 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Replaced key "type" type "string" with string option
 - client.campaigns.qualifications.examine(body, params)
   - Request params:
-    - Added optional keys "birthdate" and "birthday" to body object "customer"
-    - Added optional keys "source_id", "id", "items" and "referrer" to body object "order", **removed** following optional keys from same object: "created_at"," updated_at", "status", "initial_amount", "discount_amount", "items_discount_amount", "total_discount_amount", "applied_discount_amount", "items_applied_discount_amount", "total_amount", "total_applied_discount_amount"
+    - Added optional keys `birthdate` and `birthday` to body object `customer`
+    - Added optional keys `source_id`, `id`, `items` and `referrer` to body object "order", **removed** following optional keys from same object: "created_at"," updated_at", "status", "initial_amount", "discount_amount", "items_discount_amount", `total_discount_amount`, "applied_discount_amount", "items_applied_discount_amount", "total_amount", "total_applied_discount_amount"
     - Added more string options for "order" key in params object such as "-campaign", "-category", "-code", "-type", "campaign", "category", "code", "type"
   - Returned value:
     - Added optional key "tracking_id"
@@ -126,3 +126,4 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Added 2 options to object key `campaign_type` 
   - Request params:
     - Added optional `categories`, `loyalty_tiers_expiration`, `promotion`, `updated_at` to object key `campaigns` type **object**[]
+- 
