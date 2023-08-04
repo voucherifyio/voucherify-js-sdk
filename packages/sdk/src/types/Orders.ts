@@ -281,6 +281,8 @@ export interface ObjectOrderApplyToOrder {
 	object: 'order'
 }
 
+export type OrdersListResponse = ResponseListOrders
+
 export interface ResponseListOrders {
 	object: 'list'
 	data_ref: 'orders'
@@ -596,11 +598,4 @@ export interface OrdersListParams {
 	limit?: number
 	page?: number
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
-}
-
-export interface OrdersListResponse {
-	object: 'list'
-	total: number
-	data_ref: 'orders'
-	orders: OrdersGetResponse[]
 }

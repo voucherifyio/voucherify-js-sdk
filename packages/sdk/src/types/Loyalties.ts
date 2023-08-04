@@ -125,7 +125,7 @@ export interface LoyaltiesListParams {
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
-export interface LoyaltyCardObjectExpanded {
+export interface LoyaltiesRedeemRewardResponse {
 	//8_obj_redemption_object_loyalty_card_extended
 	id: string
 	object: 'redemption'
@@ -514,6 +514,8 @@ export interface LoyaltiesEarningRulesResponse {
 	object: 'earning_rule'
 	automation_id: string
 }
+
+export type LoyaltiesListEarningRulesResponse = LoyaltiesListEarningRules
 export interface LoyaltiesListEarningRules {
 	object: 'list'
 	total: number
@@ -528,7 +530,7 @@ export type EarningRuleObject =
 	| EarningRuleObjectEnteredSegment
 	| EarningRuleObjectTier
 
-type CreateEarningRuleObject =
+export type CreateEarningRuleObject =
 	| CreateEarningRuleObjectOrderPaid
 	| CreateEarningRuleObjectCustomEvent
 	| CreateEarningRuleObjectEnteredSegment
@@ -539,7 +541,7 @@ export type UpdateEarningRuleObject = Partial<
 	| UpdateEarningRuleObjectCustomEvent
 	| UpdateEarningRuleObjectEnteredSegment
 	| UpdateEarningRuleObjectTier
->
+> & { id: string }
 
 type UpdateEarningRuleObjectOrderPaid = Omit<
 	EarningRuleObjectOrderPaid,
@@ -569,7 +571,7 @@ type UpdateEarningRuleObjectTier = Omit<
 		| 'customer.loyalty.tier.prolonged'
 }
 
-interface EarningRuleObjectOrderPaid {
+export interface EarningRuleObjectOrderPaid {
 	//8_obj_earning_rule_object_order_paid
 	id: string
 	created_at: string
@@ -600,7 +602,7 @@ type CreateEarningRuleObjectOrderPaid = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectCustomEvent {
+export interface EarningRuleObjectCustomEvent {
 	id: string
 	created_at: string
 	updated_at: string
@@ -634,7 +636,7 @@ type CreateEarningRuleObjectCustomEvent = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectEnteredSegment {
+export interface EarningRuleObjectEnteredSegment {
 	//8_obj_earning_rule_object_entered_segment
 	id: string
 	created_at: string
@@ -668,7 +670,7 @@ type CreateEarningRuleObjectEnteredSegment = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectTier {
+export interface EarningRuleObjectTier {
 	//8_obj_earning_rule_object_tier
 	id: string
 	created_at: string
@@ -820,8 +822,8 @@ interface ObjectCalculatePointsProportionallyCustomerMetadata {
 	}
 }
 
-export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>[]
-export type LoyaltiesCreateEarningRuleResponse = Partial<EarningRuleObject>[]
+export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>
+export type LoyaltiesCreateEarningRuleResponse = Partial<EarningRuleObject>
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string
@@ -834,7 +836,7 @@ export interface LoyaltiesUpdateEarningRule {
 	}
 }
 
-export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponse
+export type LoyaltiesUpdateEarningRuleResponse = EarningRuleObject
 
 export interface LoyaltiesListMembersParams {
 	limit?: number
@@ -1459,7 +1461,7 @@ interface CampaignReward {
 	object: 'reward'
 }
 
-export interface LoyaltiesRedeemRewardResponse {
+export interface LoyaltiesRedeemRewardResponse2 {
 	id: string
 	object: 'redemption'
 	date: string
