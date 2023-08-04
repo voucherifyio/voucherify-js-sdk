@@ -28,7 +28,7 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-voucher
 	 */
-	public create(voucher: T.VouchersCreateBody, code: string) {
+	public create(voucher: T.VouchersCreate, code: string) {
 		return this.client.post<T.VouchersCreateResponse>(`/vouchers/${encode(code)}`, voucher)
 	}
 	/**

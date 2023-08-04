@@ -325,8 +325,8 @@ export interface VouchersQualificationExamineResponse {
 }
 
 type VoucherObjectExtended = VoucherObject & {
-	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
-	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
+	applicable_to?: ApplicableToObjectPromotionTier //6_res_applicable_to_object
+	inapplicable_to?: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
 }
 
 export interface VouchersCreateParameters {
@@ -345,7 +345,7 @@ export interface VouchersCreateParameters {
 }
 
 //1_req_vouchers_code_POST
-export type VouchersCreateBody = Pick<
+export type VouchersCreate = Pick<
 	VouchersResponse,
 	| 'type'
 	| 'active'
