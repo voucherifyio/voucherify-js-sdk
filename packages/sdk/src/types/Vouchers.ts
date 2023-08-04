@@ -1,5 +1,15 @@
 import { ApplicableToObjectPromotionTier, InapplicableToObjectPromotionTier } from './Orders'
-import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
+import {
+	DiscountUnit,
+	DiscountAmount,
+	DiscountPercent,
+	DiscountFixed,
+	VoucherObjectDiscountAmount,
+	VoucherObjectDiscountFixed,
+	VoucherObjectDiscountUnitOne,
+	VoucherObjectDiscountUnitMultiple,
+	VoucherObjectDiscountShipping,
+} from './DiscountVoucher'
 
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
 export interface SimpleVoucher {
@@ -464,7 +474,7 @@ interface VouchersImportGiftDiscountObject {
 	category?: string
 	active?: boolean
 	type?: 'DISCOUNT_VOUCHER'
-	discount?:
+	discount:
 		| VoucherObjectDiscountAmount
 		| VoucherDiscountPercentagePost
 		| VoucherObjectDiscountFixed
@@ -696,56 +706,4 @@ interface GiftCardTransactionObjectRemoval {
 export interface ListTransactionsQuery {
 	limit?: number
 	page?: number
-}
-
-export interface VoucherObjectDiscountAmount {
-	type: 'AMOUNT'
-	amount_off?: number
-	amount_off_formula?: string
-	effect:
-		| 'APPLY_TO_ORDER'
-		| 'APPLY_TO_ITEMS'
-		| 'APPLY_TO_ITEMS_PROPORTIONALLY'
-		| 'APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY'
-		| 'APPLY_TO_ITEMS_BY_QUANTITY'
-}
-
-export interface VoucherObjectDiscountPercentage {
-	type: 'PERCENT'
-	amount_limit: string
-	percent_off: number
-	percent_off_formula: string
-	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
-}
-
-export interface VoucherObjectDiscountFixed {
-	type: 'FIXED'
-	fixed_amount: number
-	fixed_amount_formula: string
-	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
-}
-export interface VoucherObjectDiscountUnitOne {
-	type: 'UNIT'
-	unit_off: number
-	unit_off_formula: string
-	unit_type: string
-	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
-}
-
-export interface VoucherObjectDiscountUnitMultiple {
-	type: 'UNIT'
-	effect: 'ADD_MANY_ITEMS'
-	units: {
-		unit_off: number
-		unit_off_formula: string
-		unit_type: string
-		effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
-	}[]
-}
-
-export interface VoucherObjectDiscountShipping {
-	type: 'UNIT'
-	unit_off: number
-	unit_type: 'prod_5h1pp1ng'
-	effect: 'ADD_MISSING_ITEMS'
 }
