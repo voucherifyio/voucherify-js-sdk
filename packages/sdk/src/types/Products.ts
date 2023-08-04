@@ -13,14 +13,6 @@ export interface ProductsCreate {
 	image_url?: string
 }
 
-export interface ProductsGetResponseSkus {
-	skus?: {
-		object: 'list'
-		total: number
-		data?: ProductsGetSkuResponse[]
-	}
-}
-
 export interface ProductsCreateResponse {
 	id: string
 	source_id?: string
@@ -31,23 +23,11 @@ export interface ProductsCreateResponse {
 	created_at: string
 	image_url?: string
 	metadata?: Record<string, any>
-	skus: { data: SkuObject[]; data_ref: 'data'; object: 'list'; total: number }
+	skus?: { data?: SkuObject[]; data_ref: 'data'; object: 'list'; total: number }
 	updated_at?: string
 }
 
-export interface ProductsGetResponse {
-	id: string
-	source_id?: string
-	updated_at?: string
-	object: 'product'
-	name?: string
-	price?: number
-	attributes?: string[]
-	created_at: string
-	image_url?: string
-	metadata?: Record<string, any>
-	skus: { data: SkuObject[]; data_ref: 'data'; object: 'list'; total: number }
-}
+export type ProductsGetResponse = ProductsCreateResponse
 
 export type ProductsUpdate = {
 	name?: string
@@ -110,8 +90,8 @@ export interface ProductsCreateSkuResponse {
 	price?: number
 	attributes?: Record<string, string>
 	metadata?: Record<string, any>
-	product_id: string
-	image_url: string
+	product_id?: string
+	image_url?: string
 	updated_at?: string
 	currency?: string
 	created_at: string
