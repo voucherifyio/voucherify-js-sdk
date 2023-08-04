@@ -214,16 +214,16 @@ export interface VouchersQualificationExamineBody {
 	customer?: VouchersQualificationCustomer
 	order?: {
 		id: string
-		source_id: string
-		amount: number
-		items: (
+		source_id?: string
+		amount?: number
+		items?: (
 			| VouchersQualificationProductObject
 			| VouchersQualificationSkuObject
 			| VouchersQualificationProductUsingProductIdObject
 			| VouchersQualificationProductUsingSourceIdObject
 		)[]
-		customer: VouchersQualificationCustomer
-		referrer: Record<string, any>
+		customer?: VouchersQualificationCustomer
+		referrer?: Record<string, any>
 		metadata?: Record<string, any>
 	}
 	reward?: {
@@ -236,84 +236,74 @@ export interface VouchersQualificationExamineBody {
 
 interface VouchersQualificationProductObject {
 	//1_req_obj_vouchers_qualification_product
-	source_id: string
-	product_id: string
-	amount: number
-	quantity: number
-	price: number
+	source_id?: string
+	product_id?: string
+	amount?: number
+	quantity?: number
+	price?: number
 	metadata?: Record<string, any>
-	related_object: 'product'
-	product: {
-		source_id: string
-		name: string
-		price: number
-		metadata: Record<string, any>
+	related_object?: 'product'
+	product?: {
+		source_id?: string
+		name?: string
+		price?: number
+		metadata?: Record<string, any>
 	}
 }
 
-interface VouchersQualificationSkuObject {
-	//1_req_obj_vouchers_qualification_sku
-	source_id: string
-	sku_id: string
-	amount: number
-	quantity: number
-	related_object: 'product' | 'sku'
-	product: {
-		source_id: string
-		name: string
-		price: number
-		metadata: Record<string, any>
-	}
-	sku: {
-		source_id: string
-		sku: string
-		price: number
-		metadata: Record<string, any>
+type VouchersQualificationSkuObject = Omit<VouchersQualificationProductObject, 'related_object'|  'price' | 'metadata'> & {
+	sku_id?: string
+	related_object?: 'product' | 'sku'
+	sku?: {
+		source_id?: string
+		sku?: string
+		price?: number
+		metadata?: Record<string, any>
 	}
 }
 
 interface VouchersQualificationProductUsingProductIdObject {
 	//1_req_obj_vouchers_qualification_product_using_product_id
-	product_id: string
-	amount: number
-	quantity: number
-	price: number
+	product_id?: string
+	amount?: number
+	quantity?: number
+	price?: number
 	metadata?: Record<string, any>
-	product: {
-		name: string
-		price: number
-		metadata: Record<string, any>
+	product?: {
+		name?: string
+		price?: number
+		metadata?: Record<string, any>
 	}
 }
 
 interface VouchersQualificationProductUsingSourceIdObject {
 	//1_req_obj_vouchers_qualification_product_using_source_id
-	source_id: string
-	amount: number
-	quantity: number
-	price: number
+	source_id?: string
+	amount?: number
+	quantity?: number
+	price?: number
 	metadata?: Record<string, any>
-	related_object: 'product'
-	product: {
-		source_id: string
-		name: string
-		price: number
-		metadata: Record<string, any>
+	related_object?: 'product'
+	product?: {
+		source_id?: string
+		name?: string
+		price?: number
+		metadata?: Record<string, any>
 	}
 }
 
 interface VouchersQualificationCustomer {
 	//1_req_obj_vouchers_qualification_customer
 	id: string
-	source_id: string
-	name: string
-	email: string
-	phone: string
+	source_id?: string
+	name?: string
+	email?: string
+	phone?: string
 	address: {
-		city: string
-		country: string
-		postal_code: string
-		state: string
+		city?: string
+		country?: string
+		postal_code?: string
+		state?: string
 	}
 	metadata: Record<string, any>
 	birthdate: string
