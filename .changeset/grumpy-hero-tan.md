@@ -128,4 +128,26 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Value of key `campaign_type` has been clarified, `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'` -> `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM' | 'LOYALTY_PROGRAM' | 'LUCKY_DRAW'`
   - Returned value object `CampaignsListResponse`:
     - Added optional keys: `categories`, `loyalty_tiers_expiration`, `promotion`, `updated_at` to object key `campaigns` type **object**[]
-- 
+- client.customers.create(customer)
+  - Request parameter `customer`: `CustomersCreateBody`:
+    - Added optional keys: `birthday` and `birthdate`
+  - Returned value object `CustomersCreateResponse`:
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.get(customerId)
+  - Returned value object `CustomersCreateResponse`:
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.list(params)
+  - Request parameter `params`: `CustomersListParams`:
+    - Value of key `order` has been clarified, `'created_at' | '-created_at'` -> `'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'`
+  - Returned value object `CustomersCommonListResponse`:
+    - Added optional keys: `referrals`, `system_metadata`, `updated_at`, `assets` to object key `customers` type **object**[]
+- client.customers.update(customer)
+  - Request parameter `customer`: `CustomersUpdateParams`:
+    - Added optional keys: `birthday` and `birthdate`
+  - Returned value object `CustomersUpdateResponse`
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.listActivities(customerId, params)
+  - Request parameter `params`: `CustomerActivitiesListQueryParams`:
+    - Value of key `order` has been clarified, `'created_at' | '-created_at'` -> `'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'type' | '-type' | 'code' | '-code' | 'campaign' | '-campaign' | 'category' | '-category'`
+  - Returned value object `CustomerActivitiesListResponse`
+    - Value of key `data` has been clarified, `Record<string, any>[]` -> `CustomerActivitiesListResponseData[]`

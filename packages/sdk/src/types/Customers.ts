@@ -100,46 +100,48 @@ export interface CustomerActivitiesListQueryParams {
 	campaign_id?: string
 }
 
+export interface CustomerActivitiesListResponseData {
+	type?:
+		| 'customer.confirmed'
+		| 'customer.created'
+		| 'customer.updated'
+		| 'customer.deleted'
+		| 'customer.referred'
+		| 'customer.custom_event'
+		| 'customer.segment_entered'
+		| 'customer.segment.left'
+		| 'customer.sms.sent'
+		| 'customer.sms.failed'
+		| 'customer.email.sent'
+		| 'customer.email.failed'
+		| 'customer.activecampaign.sent'
+		| 'customer.braze.sent'
+		| 'customer.mailchimp.sent'
+		| 'customer.intercom.sent'
+		| 'customer.intercom.failed'
+		| 'customer.rewarded'
+		| 'customer.rewarded.loyalty_points'
+		| 'customer.voucher.gift.balance_added'
+		| 'customer.voucher.loyalty_card.points_added'
+		| 'customer.voucher.loyalty_card.points_transferred'
+		| 'customer.publication.succeeded'
+		| 'customer.publication.failed'
+		| 'customer.redemption.succeeded'
+		| 'customer.redemption.failed'
+		| 'customer.redemption.rollback.succeeded'
+		| 'customer.redemption.rollback.failed'
+		| 'customer.consents.given'
+		| 'customer.consents.revoked'
+	created_at?: string
+	data?: Partial<CustomerActivityObjectData>
+	id?: string
+}
+
 export interface CustomerActivitiesListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: {
-		type?:
-			| 'customer.confirmed'
-			| 'customer.created'
-			| 'customer.updated'
-			| 'customer.deleted'
-			| 'customer.referred'
-			| 'customer.custom_event'
-			| 'customer.segment_entered'
-			| 'customer.segment.left'
-			| 'customer.sms.sent'
-			| 'customer.sms.failed'
-			| 'customer.email.sent'
-			| 'customer.email.failed'
-			| 'customer.activecampaign.sent'
-			| 'customer.braze.sent'
-			| 'customer.mailchimp.sent'
-			| 'customer.intercom.sent'
-			| 'customer.intercom.failed'
-			| 'customer.rewarded'
-			| 'customer.rewarded.loyalty_points'
-			| 'customer.voucher.gift.balance_added'
-			| 'customer.voucher.loyalty_card.points_added'
-			| 'customer.voucher.loyalty_card.points_transferred'
-			| 'customer.publication.succeeded'
-			| 'customer.publication.failed'
-			| 'customer.redemption.succeeded'
-			| 'customer.redemption.failed'
-			| 'customer.redemption.rollback.succeeded'
-			| 'customer.redemption.rollback.failed'
-			| 'customer.consents.given'
-			| 'customer.consents.revoked'
-		created_at?: string
-		data?: Partial<CustomerActivityObjectData>
-		id?: string
-	}[]
+	data: CustomerActivitiesListResponseData[]
 }
 
 type CustomerActivityObjectData =
