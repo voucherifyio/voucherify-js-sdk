@@ -72,7 +72,7 @@ export interface DiscountFixed {
 }
 
 export interface VoucherObjectDiscountAmount {
-	type: DiscountVouchersTypesEnum.AMOUNT
+	type?: DiscountVouchersTypesEnum.AMOUNT
 	amount_off?: number
 	amount_off_formula?: string
 	effect?:
@@ -84,11 +84,11 @@ export interface VoucherObjectDiscountAmount {
 }
 
 export interface VoucherObjectDiscountPercentage {
-	type: 'PERCENT'
-	amount_limit: string
-	percent_off: number
-	percent_off_formula: string
-	effect: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
+	type?: 'PERCENT'
+	amount_limit?: string
+	percent_off?: number
+	percent_off_formula?: string
+	effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 }
 
 export interface VoucherObjectDiscountFixed {
