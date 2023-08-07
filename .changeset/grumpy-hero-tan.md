@@ -151,3 +151,33 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Value of key `order` has been clarified, `'created_at' | '-created_at'` -> `'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'type' | '-type' | 'code' | '-code' | 'campaign' | '-campaign' | 'category' | '-category'`
   - Returned value object `CustomerActivitiesListResponse`
     - Value of key `data` has been clarified, `Record<string, any>[]` -> `CustomerActivitiesListResponseData[]`
+- client.distributions.publications.list(params)
+  - Returned value object `DistributionsPublicationsListResponse`:
+    - Value of key `publications` type object[] has been clarified:
+      - Value of key `customer` has been clarified, `object id(string) & object(string)` -> `Partial<SimpleCustomer>`
+      - Value of key `channel` has been clarified, `string` -> `PublicationResponseChannel`
+      - Value of key `voucher` has been clarified, `DistributionsPublicationsVoucher` -> `DistributionsPublicationsVoucherDiscount | DistributionsPublicationsVoucherLoyaltyCard | DistributionsPublicationsVoucherGiftCard`
+- client.distributions.publications.create(params,query)
+  - Request parameter `params`: `DistributionsPublicationsCreateParams`:
+    - Value of key `channel` has been clarified `string` -> `PublicationResponseChannel`:
+    - Value of key `customer` has been clarified:
+      - Added optional keys: `birthday`, `birthdate`,
+  - Returned value object `DistributionsPublicationsCreateResponse`
+    - Value of key `channel` has been clarified `string` -> `PublicationResponseChannel`:
+    - Value of key `voucher` has been clarified:
+      - Added optional keys: `category_id`, `categories`, `validation_rules_assignments`
+- client.events.create(eventName, params)
+  - Request parameter `params`: `EventsParams`:
+    - Value of key `customer` has been clarified:
+      - Added optional keys: `birthday`, `birthdate`,
+- client.distributions.exports.create(exportObject)
+  - Request parameter `exportObject`: `ExportResource`:
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+  - Returned value object `ExportsCreateResponse`
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+- client.distributions.exports.get(exportResourceId)
+  - Returned value object `ExportsGetResponse`
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`

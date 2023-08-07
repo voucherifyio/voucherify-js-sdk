@@ -50,20 +50,22 @@ export interface ExportObject {
 		| 'customer'
 		| 'points_expiration'
 		| 'voucher_transactions'
-	parameters?:
-		| ExportOrder
-		| ExportVoucher
-		| ExportPublication
-		| ExportRedemption
-		| ExportCustomer
-		| ExportPointsExpiration
-		| ExportGiftCardTransactions
-		| ExportLoyaltyCardTransactions
+	parameters?: ExportParameters
 	result?: {
 		url: string
 	}
 	user_id?: string
 }
+
+export type ExportParameters =
+	| ExportOrder
+	| ExportVoucher
+	| ExportPublication
+	| ExportRedemption
+	| ExportCustomer
+	| ExportPointsExpiration
+	| ExportGiftCardTransactions
+	| ExportLoyaltyCardTransactions
 
 interface ExportOrder {
 	order: '-created_at' | 'created_at' | 'updated_at' | '-updated_at' | 'status' | '-status'
