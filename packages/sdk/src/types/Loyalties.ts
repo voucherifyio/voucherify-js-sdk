@@ -256,7 +256,7 @@ export interface LoyaltyCardObjectNonExpandedCategories {
 	object: 'voucher'
 }
 
-export type LoyaltiesCreateCampaignResponse = LoyaltyCampaignObject
+export type LoyaltiesCreateCampaignResponse = CampaignObjectNoExtendedCategories
 export interface LoyaltiesListResponse {
 	object: 'list'
 	data_ref: 'campaigns'
@@ -337,11 +337,11 @@ export interface CampaignObjectNoExtendedCategories {
 	voucher?: CampaignVoucherObjectLoyaltyCard
 	auto_join?: boolean
 	join_once?: boolean
-	updated_at: string
-	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
-	category_id: string
-	categories: CategoryObject[]
-	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	updated_at?: string
+	creation_status?: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
+	category_id?: string
+	categories?: CategoryObject[]
+	loyalty_tiers_expiration?: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
 }
 interface LoyaltyTiersExpirationPointsInPeriod {
 	qualification_type: 'POINTS_IN_PERIOD'
@@ -402,8 +402,8 @@ export interface LoyaltiesCreateCampaign {
 	}
 	validity_day_of_week?: number[]
 	activity_duration_after_publishing?: string
-	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	category_id: string
+	loyalty_tiers_expiration?: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	category_id?: string
 	category?: string
 	voucher?: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }

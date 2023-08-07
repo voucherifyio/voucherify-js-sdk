@@ -181,3 +181,32 @@ Types of (server side) requests and responses were aligned with https://github.c
   - Returned value object `ExportsGetResponse`
     - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
     - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+- client.loyalties.list(params)
+  - Request parameter `params`: `LoyaltiesListParams`:
+    - Added optional key: `order`
+  - Returned value object `LoyaltiesListResponse`
+    - Added optional keys: `updated_at`, `creation_status`, `category_id`, `categories`, `loyalty_tiers_expiration`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`
+- client.loyalties.create(campaign)
+  - Request parameter `campaign`: `LoyaltiesCreateCampaign`:
+    - Value of ket `campaigns` type object[] has been clarified:
+      - Added optional keys: `description`, `auto_join`, `join_once`, `use_voucher_metadata_schema`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `loyalty_tiers_expiration`, `category_id`, `category`
+      - Value of key `voucher` has been clarified:
+        - Value of key `loyalty_card` has been clarified:
+          - Added optional key: `expiration_rules`
+  - Returned value object `LoyaltiesCreateCampaignResponse`
+    - Added optional keys: `description`, `auto_join`, `join_once`, `use_voucher_metadata_schema`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `loyalty_tiers_expiration`, `category_id`, `category`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`
+- client.loyalties.get(campaignId)
+  - Returned value object `LoyaltiesGetCampaignResponse`
+    - Added optional keys: `updated_at`, `creation_status`, `category_id`, `categories`, `loyalty_tiers_expiration`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`

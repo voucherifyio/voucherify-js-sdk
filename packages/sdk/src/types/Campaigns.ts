@@ -639,7 +639,7 @@ export interface CampaignVoucherObjectLoyaltyCard {
 
 export interface LoyaltyCard {
 	points: number
-	balance?: number
+	balance: number
 	expiration_rules?: {
 		period_type?: string
 		period_value?: number
