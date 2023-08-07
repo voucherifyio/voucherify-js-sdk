@@ -72,8 +72,8 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Added optional key "progress"
     - Added optional key "processing_time"
     - Value of key `result` has been clarified, `object` -> `AsyncActionGetResult`
-    - Value of key `type` has been clarified, `string` -> AsyncActionsResponseTypes
-    - Replaced key `type` has been clarified, `string` -> AsyncActionsResponseStatuses
+    - Value of key `type` has been clarified, `string` -> `AsyncActionsResponseTypes`
+    - Replaced key `type` has been clarified, `string` -> `AsyncActionsResponseStatuses`
 - client.asyncActions.list()
   - Returned value object `AsyncActionsListResponse`:
     - Added optional key `progress` to object `async_actions`
@@ -249,7 +249,28 @@ Types of (server side) requests and responses were aligned with https://github.c
 - client.loyalties.getMember(campaignId, memberId)
   - Returned value object `LoyaltiesGetMemberResponse`
     - Added optional keys: `category_id`, `categories`, `discount`, `gift`, `assets`, `created_at`, `object`
-////////////////////////////////////////////////////////
+- client.loyalties.addPoints(campaignId, memberId, balance)
+  - Request parameter `balance`: `LoyaltiesAddPoints`
+    - Added optional keys: `expiration_date`, `expiration_type`, `reason`, `source_id`
+  - Returned value object `LoyaltiesAddPointsResponse`
+    - Value of key `type` has been clarified, `string` -> `'loyalty_card'`
+    - Value of key `related_object` has been clarified:
+      - Value of key `type` has been clarified, `string` -> `'voucher'`
+- client.loyalties.redeemReward(campaignId, memberId, params)
+  - Request parameter `params`: `LoyaltiesRedeemRewardParams`
+    - Value of key `reward` has been clarified:
+      - Added optional key: `points`
+    - Value of key `order` has been clarified:
+      - Added optional keys: `status`, `referrer`
+- client.metadataSchemas.list()
+  - Returned value object `MetadataSchemasListResponse`
+    - Value of key `schemas` type object[] has been clarified:
+      - Value of key `related_object` has been clarified, `string` -> `'campaign' | 'customer' | 'earning_rule' | 'loyalty_tier' | 'order' | 'order_item' | 'product' | 'promotion_tier' | 'publication' | 'redemption' | 'reward' | 'voucher'`
+- client.metadataSchemas.get(schemaName)
+  - Returned value object `MetadataSchemasGetResponse`
+    - Value of key `related_object` has been clarified, `string` -> `'campaign' | 'customer' | 'earning_rule' | 'loyalty_tier' | 'order' | 'order_item' | 'product' | 'promotion_tier' | 'publication' | 'redemption' | 'reward' | 'voucher'`
+- 
+        ////////////////////////////////////////////////////////
 
 - client.vouchers.import(vouchers)
     - Request (body) params:

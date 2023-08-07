@@ -1393,6 +1393,7 @@ export interface LoyaltiesRedeemRewardParams {
 		points?: number
 	}
 	order?: {
+		id?: string
 		source_id?: string
 		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
 		amount: number
