@@ -211,7 +211,44 @@ Types of (server side) requests and responses were aligned with https://github.c
       - Value of key `loyalty_card` has been clarified:
         - Added optional key: `expiration_rules`
 
+/////
 
+- client.loyalties.update(campaign)
+  - Request parameter `campaign`: `LoyaltiesUpdateCampaign`:
+    - Added optional keys: `loyalty_card`, `loyalty_tiers_expiration`, `auto_join`, `join_once`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `category_id`, `category`, `voucher`
+  - Returned value object `LoyaltiesUpdateCampaignResponse`
+    - Added optional keys: `updated_at`, `creation_status`, `category_id`, `categories`, `loyalty_tiers_expiration`
+- client.loyalties.listRewardAssignments(campaignId, params)
+  - Request parameter `params`: `LoyaltiesListRewardAssignmentsParams`:
+    - Added optional key `assignment_id`
+- client.loyalties.createEarningRule(campaignId, earningRules)
+  - Request parameter `earningRules`: `LoyaltiesCreateEarningRule[]`:
+    - Object has changed to `Partial<EarningRuleObject>` for example:
+      - Added optional keys: `active`, `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `object`, `automation_id`, `metadata`
+  - Returned value object `LoyaltiesCreateEarningRuleResponse[]`
+    - Response object has changed to Partial<EarningRuleObject> for example: 
+      - Added optional keys: `active`, `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `metadata`
+- client.loyalties.updateEarningRule(campaignId, earningRule)
+  - Request parameter `earningRule`: `LoyaltiesUpdateEarningRule`:
+    - Object has been changed to `Partial<UpdateEarningRuleObjectOrderPaid | UpdateEarningRuleObjectCustomEvent | UpdateEarningRuleObjectEnteredSegment | UpdateEarningRuleObjectTier> & { id: string }` for example:
+      - Added optional keys: `active`, `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `metadata`
+  - Returned value object `LoyaltiesUpdateEarningRuleResponse`
+    - Response object has changed to `EarningRuleObject` for example:
+      - Added optional keys: `active`, `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `metadata`
+- client.loyalties.listMembers(campaignId, params)
+  - Request parameter `params`: `LoyaltiesListMembersParams`
+    - Added optional key: `order`
+  - Returned value object `LoyaltiesListMembersResponse`
+    - Value of key `vouchers` type `object[]` has been clarified:
+      - Added optional keys: `category_id`, `categories`, `discount`, `gift`, `assets`, `created_at`, `object`
+- client.loyalties.createMember(campaignId, member)
+  - Request parameter `member`: `LoyaltiesCreateMember`
+    - Value of key `customer` been clarified:
+      - Can be a `string`
+      - Added optional keys: `address`, `phone`, `birthday`, `birthdate`
+- client.loyalties.getMember(campaignId, memberId)
+  - Returned value object `LoyaltiesGetMemberResponse`
+    - Added optional keys: `category_id`, `categories`, `discount`, `gift`, `assets`, `created_at`, `object`
 ////////////////////////////////////////////////////////
 
 - client.vouchers.import(vouchers)

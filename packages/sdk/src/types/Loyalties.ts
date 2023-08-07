@@ -3,7 +3,7 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { CustomerRequest, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
-import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
+import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
 import {
 	RedemptionObjectLoyaltyCardDigital,
@@ -411,12 +411,8 @@ export interface LoyaltiesCreateCampaign {
 export type LoyaltiesGetCampaignResponse = LoyaltyCampaignObject
 
 export type LoyaltiesUpdateCampaign = Partial<
-	Omit<
-		LoyaltiesCreateCampaign,
-		'use_voucher_metadata_schema' | 'name' | 'loyalty_tiers_expiration' | 'voucher' | 'vouchers_count'
-	> & {
+	Omit<LoyaltiesCreateCampaign, 'use_voucher_metadata_schema' | 'name' | 'voucher' | 'vouchers_count'> & {
 		loyalty_card: LoyaltyCard
-		loyalty_tiers_expiration: LoyaltyTiersExpiration
 	}
 > & { id: string }
 
@@ -581,8 +577,8 @@ export interface EarningRuleObjectOrderPaid {
 	event: 'order.paid'
 	source: {
 		banner: string
-		object_id: string
-		object_type: 'campaign'
+		object_id?: string
+		object_type?: 'campaign'
 	}
 	active: boolean
 	start_date: string
@@ -615,8 +611,8 @@ export interface EarningRuleObjectCustomEvent {
 	event: 'custom_event_defined_in_EVENT_SCHEMA'
 	source: {
 		banner: string
-		object_id: string
-		object_type: 'campaign'
+		object_id?: string
+		object_type?: 'campaign'
 	}
 	active: boolean
 	start_date: string
@@ -649,8 +645,8 @@ export interface EarningRuleObjectEnteredSegment {
 	event: 'customer.segment.entered'
 	source: {
 		banner: string
-		object_id: string
-		object_type: 'campaign'
+		object_id?: string
+		object_type?: 'campaign'
 	}
 	active: boolean
 	start_date: string
@@ -688,8 +684,8 @@ export interface EarningRuleObjectTier {
 	}
 	source: {
 		banner: string
-		object_id: string
-		object_type: 'campaign'
+		object_id?: string
+		object_type?: 'campaign'
 	}
 	active: boolean
 	start_date: string
@@ -1561,6 +1557,6 @@ export interface LoyaltyPointsTransfer {
 export interface LoyaltiesCreateMember {
 	voucher?: string
 	channel?: string
-	customer: string | { id: string } | { source_id: string } | CustomerRequest
+	customer: string | CustomerRequest
 	metadata?: Record<string, any>
 }

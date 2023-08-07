@@ -1193,18 +1193,18 @@ client.loyalties.listMembers(campaignId)
 client.loyalties.listMembers(campaignId, params)
 ```
 
-#### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
+#### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities-1)
 
 ```javascript
-client.loyalties.getMemberActivities(memberId)
+client.loyalties.getMemberActivities(campaignId, memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities-1)
+#### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
 
 ```javascript
-client.loyalties.getMemberActivitiesWithCampaignId(campaignId, memberId)
+client.loyalties.getMemberActivitiesWithoutCampaignId(memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
