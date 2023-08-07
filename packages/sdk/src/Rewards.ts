@@ -27,7 +27,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward
 	 */
-	public update(reward: T.RewardsUpdateBody & { id: string }) {
+	public update(reward: T.RewardsUpdate & { id: string }) {
 		return this.client.put<T.RewardsUpdateResponse>(`/rewards/${encode(reward.id)}`, omit(reward, ['id']))
 	}
 	/**

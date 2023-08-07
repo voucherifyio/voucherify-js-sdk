@@ -28,7 +28,7 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/add-promotion-tier-to-campaign
 	 */
 	public addToCampaign(campaignId: string, params: T.AddPromotionTierToCampaignBody) {
-		return this.client.post<T.PromotionTierObject>(`/promotions/${encode(campaignId)}/tiers`, params)
+		return this.client.post<T.PromotionTiersCreateResponse>(`/promotions/${encode(campaignId)}/tiers`, params)
 	}
 	//Backward compatibility
 	public create(promotionId: string, params: T.AddPromotionTierToCampaignBody) {
@@ -55,7 +55,7 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-promotion
 	 */
-	public update(params: T.UpdatePromotionTierRequest & { id: string }) {
+	public update(params: T.PromotionTiersUpdateParams) {
 		return this.client.put<T.PromotionTierUpdateResponse>(`/promotions/tiers/${encode(params.id)}`, params)
 	}
 	/**
@@ -68,12 +68,12 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/disable-promotion-tier
 	 */
 	public disable(promotionsTierId: string) {
-		return this.client.post<T.PromotionTierObject>(`/promotions/tiers/${encode(promotionsTierId)}/disable`, {})
+		return this.client.post<T.PromotionTiersDisableResponse>(`/promotions/tiers/${encode(promotionsTierId)}/disable`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/enable-promotion-tier
 	 */
 	public enable(promotionsTierId: string) {
-		return this.client.post<T.PromotionTierObject>(`/promotions/tiers/${encode(promotionsTierId)}/enable`, {})
+		return this.client.post<T.PromotionTiersEnableResponse>(`/promotions/tiers/${encode(promotionsTierId)}/enable`, {})
 	}
 }
