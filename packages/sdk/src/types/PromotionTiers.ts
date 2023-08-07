@@ -117,7 +117,7 @@ export interface PromotionTiersRedeemResponse {
 	promotion_tier: PromotionTierObject
 }
 
-export type PromotionTiersUpdateParams = Partial<UpdatePromotionTier> & {  id: string }
+export type PromotionTiersUpdateParams = Partial<UpdatePromotionTier> & { id: string }
 
 interface UpdatePromotionTier {
 	name: string

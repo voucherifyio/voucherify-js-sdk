@@ -1,64 +1,70 @@
 export interface AsyncActionsResponse {
 	id: string
-	type:
-		| 'CAMPAIGN.UPDATE'
-		| 'CAMPAIGN.VOUCHERS_IMPORT'
-		| 'CAMPAIGN.VOUCHERS_IMPORT_CSV'
-		| 'CAMPAIGN.VOUCHERS_UPDATE'
-		| 'CAMPAIGN.VOUCHERS_DELETE'
-		| 'CAMPAIGN.VOUCHERS_GENERATE'
-		| 'CAMPAIGN.LOYALTY_TIERS_EXPIRATION_REFRESH'
-		| 'CAMPAIGNS.METADATA_KEY_PURGE'
-		| 'CUSTOMERS.IMPORT_CSV'
-		| 'CUSTOMERS.BULK_UPDATE'
-		| 'CUSTOMERS.METADATA_UPDATE'
-		| 'CUSTOMERS.METADATA_KEY_PURGE'
-		| 'LOYALTY_TIERS.METADATA_KEY_PURGE'
-		| 'ORDER_ITEMS.METADATA_KEY_PURGE'
-		| 'ORDERS.METADATA_KEY_PURGE'
-		| 'ORDERS.IMPORT'
-		| 'PRODUCTS.BULK_UPDATE'
-		| 'PRODUCTS.METADATA_UPDATE'
-		| 'PRODUCTS.METADATA_KEY_PURGE'
-		| 'PRODUCTS.IMPORT_CSV'
-		| 'SKUS.IMPORT_CSV'
-		| 'PROMOTION_TIERS.METADATA_KEY_PURGE'
-		| 'VOUCHERS.IMPORT'
-		| 'VOUCHERS.IMPORT_CSV'
-		| 'VOUCHERS.BULK_UPDATE'
-		| 'VOUCHERS.METADATA_UPDATE'
-		| 'VOUCHERS.METADATA_KEY_PURGE'
-	status: 'DONE' | 'ENQUEUED' | 'FAILED' | 'IN_PROGRESS'
-	result:
-		| AsyncActionGetResultCampaignVouchersImport
-		| AsyncActionGetResultCampaignVouchersImportCSV
-		| AsyncActionGetResultCampaignVouchersUpdate
-		| AsyncActionGetResultCampaignVouchersDelete
-		| AsyncActionGetResultCampaignVouchersGenerate
-		| AsyncActionGetResultCampaignMetadataKeyPurge
-		| AsyncActionGetResultCustomersImportCSV
-		| AsyncActionGetResultCustomersBulkUpdate
-		| AsyncActionGetResultCustomersMetadataUpdate
-		| AsyncActionGetResultProductsBulkUpdate
-		| AsyncActionGetResultCustomersMetadataKeyPurge
-		| AsyncActionGetResultProductsMetadataUpdate
-		| AsyncActionGetResultProductsImportCSV
-		| AsyncActionGetResultSkusImportCSV
-		| AsyncActionGetResultProductsMetadataKeyPurge
-		| AsyncActionGetResultVouchersImport
-		| AsyncActionGetResultVouchersImportCSV
-		| AsyncActionGetResultVouchersBulkUpdate
-		| AsyncActionGetResultVouchersMetadataUpdate
-		| AsyncActionGetResultVouchersMetadataKeyPurge
-		| AsyncActionGetResultOrdersImport
-		| AsyncActionGetResultOrdersMetadataKeyPurge
+	type: AsyncActionsResponseTypes
+	status: AsyncActionsResponseStatuses
+	result: AsyncActionGetResult
 	created_at: string
 	object: 'async_action'
-	progress: number
+	progress?: number
 	request_id: string
 	updated_at: string
-	processing_time: number
+	processing_time?: number
 }
+
+export type AsyncActionsResponseStatuses = 'DONE' | 'ENQUEUED' | 'FAILED' | 'IN_PROGRESS'
+
+export type AsyncActionsResponseTypes =
+	| 'CAMPAIGN.UPDATE'
+	| 'CAMPAIGN.VOUCHERS_IMPORT'
+	| 'CAMPAIGN.VOUCHERS_IMPORT_CSV'
+	| 'CAMPAIGN.VOUCHERS_UPDATE'
+	| 'CAMPAIGN.VOUCHERS_DELETE'
+	| 'CAMPAIGN.VOUCHERS_GENERATE'
+	| 'CAMPAIGN.LOYALTY_TIERS_EXPIRATION_REFRESH'
+	| 'CAMPAIGNS.METADATA_KEY_PURGE'
+	| 'CUSTOMERS.IMPORT_CSV'
+	| 'CUSTOMERS.BULK_UPDATE'
+	| 'CUSTOMERS.METADATA_UPDATE'
+	| 'CUSTOMERS.METADATA_KEY_PURGE'
+	| 'LOYALTY_TIERS.METADATA_KEY_PURGE'
+	| 'ORDER_ITEMS.METADATA_KEY_PURGE'
+	| 'ORDERS.METADATA_KEY_PURGE'
+	| 'ORDERS.IMPORT'
+	| 'PRODUCTS.BULK_UPDATE'
+	| 'PRODUCTS.METADATA_UPDATE'
+	| 'PRODUCTS.METADATA_KEY_PURGE'
+	| 'PRODUCTS.IMPORT_CSV'
+	| 'SKUS.IMPORT_CSV'
+	| 'PROMOTION_TIERS.METADATA_KEY_PURGE'
+	| 'VOUCHERS.IMPORT'
+	| 'VOUCHERS.IMPORT_CSV'
+	| 'VOUCHERS.BULK_UPDATE'
+	| 'VOUCHERS.METADATA_UPDATE'
+	| 'VOUCHERS.METADATA_KEY_PURGE'
+
+export type AsyncActionGetResult =
+	| AsyncActionGetResultCampaignVouchersImport
+	| AsyncActionGetResultCampaignVouchersImportCSV
+	| AsyncActionGetResultCampaignVouchersUpdate
+	| AsyncActionGetResultCampaignVouchersDelete
+	| AsyncActionGetResultCampaignVouchersGenerate
+	| AsyncActionGetResultCampaignMetadataKeyPurge
+	| AsyncActionGetResultCustomersImportCSV
+	| AsyncActionGetResultCustomersBulkUpdate
+	| AsyncActionGetResultCustomersMetadataUpdate
+	| AsyncActionGetResultProductsBulkUpdate
+	| AsyncActionGetResultCustomersMetadataKeyPurge
+	| AsyncActionGetResultProductsMetadataUpdate
+	| AsyncActionGetResultProductsImportCSV
+	| AsyncActionGetResultSkusImportCSV
+	| AsyncActionGetResultProductsMetadataKeyPurge
+	| AsyncActionGetResultVouchersImport
+	| AsyncActionGetResultVouchersImportCSV
+	| AsyncActionGetResultVouchersBulkUpdate
+	| AsyncActionGetResultVouchersMetadataUpdate
+	| AsyncActionGetResultVouchersMetadataKeyPurge
+	| AsyncActionGetResultOrdersImport
+	| AsyncActionGetResultOrdersMetadataKeyPurge
 
 interface AsyncActionGetResultCampaignVouchersImport {
 	done_count: number

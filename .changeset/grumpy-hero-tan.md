@@ -64,7 +64,155 @@ Added support for following endpoints:
 
 Types of (server side) requests and responses were aligned with https://github.com/voucherifyio/voucherify-openapi
 
-TypeScript types changes:
+
+**TypeScript types changes:**
+
+- client.asyncActions.get(asyncActionId)
+  - Returned value object `AsyncActionsGetResponse`:
+    - Added optional key "progress"
+    - Added optional key "processing_time"
+    - Value of key `result` has been clarified, `object` -> `AsyncActionGetResult`
+    - Value of key `type` has been clarified, `string` -> AsyncActionsResponseTypes
+    - Replaced key `type` has been clarified, `string` -> AsyncActionsResponseStatuses
+- client.asyncActions.list()
+  - Returned value object `AsyncActionsListResponse`:
+    - Added optional key `progress` to object `async_actions`
+- client.vouchers.balance.create(code, params)
+  - Request parameter `params`: `BalanceCreateParams`:
+    - Added optional key `reason`
+    - Added optional key `source_id`
+  - Returned value object `BalanceCreateResponse`:
+    - Value of key `type` has been clarified, `string` -> `gift_voucher`
+- client.campaigns.qualifications.examine(body, params)
+  - Request parameter `body`: `CampaignsQualificationsBody`:
+    - Added optional keys `birthdate` and `birthday` to `customer` object
+    - Added optional keys `source_id`, `id`, `items` and `referrer` to object `order`
+    - **Removed** following optional keys from object `order`: `created_at`, `updated_at`, `status`, `initial_amount`, `discount_amount`, `items_discount_amount`, `total_discount_amount`, `applied_discount_amount`, `items_applied_discount_amount`, `total_amount`, `total_applied_discount_amount`
+  - Request parameter `params`: `CampaignsQualificationsParams`:
+    - Added more string options for `order` value: `-campaign`, `-category`, `-code`, `-type`, `campaign`, `category`, `code`, `type`
+  - Returned value object `CampaignsQualificationsResponse`:
+    - Added optional key `tracking_id`
+    - Added optional keys `creation_status`, `category_id` and `categories` to object array `data`
+- client.campaigns.create(campaign)
+  - Request parameter `campaign`: `CampaignsCreateCampaign`:
+    - Type object has been clarified, campaign must be one of `CreateCampaignDiscountVoucher`, `CreateCampaignLoyalty`, `CreateCampaignGift`, `CreateCampaignPromotion`, `CreateCampaignReferral`
+  - Returned value object `CampaignsCreateCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+- client.campaigns.update(nameOrId, campaign)
+  - Request parameter `campaign`: `CampaignsUpdateCampaign`:
+    - Added optional keys: `activity_duration_after_publishing`, `auto_join`, `category`, `category_id`, `join_once`, `validity_day_of_week`, `validity_timeframe`
+  - Returned value object `CampaignsUpdateCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+- client.campaigns.get(name)
+  - Returned value object `CampaignsGetCampaignResponse`:
+    - Added optional keys: `categories`, `category_id`, `creation_status`, `loyalty_tiers_expiration`, `promotion`, `updated_at`
+- client.campaigns.addVoucher(name, body, params)
+  - Request parameter `body`: `AddVouchersToCampaign`:
+    - Added optional keys: `category_id`, `start_date`, `expiration_date`, `active`
+  - Returned value `CampaignsAddVoucherResponse`:
+    - Possible response with `AsyncActionCreateResponse` object
+    - Added optional keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
+    - Value of key `discount` has been clarified, `DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed` -> `VoucherObjectDiscountTypes`
+- client.campaigns.addCertainVoucher(name, code, body)
+  - Request parameter `body`: `CampaignsAddCertainVoucherParams`:
+    - Added optional keys: `category_id`, `start_date`, `expiration_date`, `active`
+  - Returned value object `CampaignsAddVoucherResponse`:
+    - Added optional keys: `id`, `campaign_id`, `categories`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `is_referral_code`, `updated_at`, `holder_id`, `validation_rules_assignments`
+    - Value of key `discount` has been clarified, `DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed` -> `VoucherObjectDiscountTypes`
+- client.campaigns.importVouchers(campaignName, vouchers)
+  - Request parameter `vouchers`: `CampaignsImportVouchers`:
+    - Added optional keys: `category`, `category_id`, `gift`, `loyalty_card`
+- client.campaigns.list(params)
+  - Request parameter `params`: `CampaignsListParams`:
+    - Added optional key: `order`
+    - Value of key `campaign_type` has been clarified, `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'` -> `'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM' | 'LOYALTY_PROGRAM' | 'LUCKY_DRAW'`
+  - Returned value object `CampaignsListResponse`:
+    - Added optional keys: `categories`, `loyalty_tiers_expiration`, `promotion`, `updated_at` to object key `campaigns` type **object**[]
+- client.customers.create(customer)
+  - Request parameter `customer`: `CustomersCreateBody`:
+    - Added optional keys: `birthday` and `birthdate`
+  - Returned value object `CustomersCreateResponse`:
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.get(customerId)
+  - Returned value object `CustomersCreateResponse`:
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.list(params)
+  - Request parameter `params`: `CustomersListParams`:
+    - Value of key `order` has been clarified, `'created_at' | '-created_at'` -> `'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'`
+  - Returned value object `CustomersCommonListResponse`:
+    - Added optional keys: `referrals`, `system_metadata`, `updated_at`, `assets` to object key `customers` type **object**[]
+- client.customers.update(customer)
+  - Request parameter `customer`: `CustomersUpdateParams`:
+    - Added optional keys: `birthday` and `birthdate`
+  - Returned value object `CustomersUpdateResponse`
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+- client.customers.listActivities(customerId, params)
+  - Request parameter `params`: `CustomerActivitiesListQueryParams`:
+    - Value of key `order` has been clarified, `'created_at' | '-created_at'` -> `'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'type' | '-type' | 'code' | '-code' | 'campaign' | '-campaign' | 'category' | '-category'`
+  - Returned value object `CustomerActivitiesListResponse`
+    - Value of key `data` has been clarified, `Record<string, any>[]` -> `CustomerActivitiesListResponseData[]`
+- client.distributions.publications.list(params)
+  - Returned value object `DistributionsPublicationsListResponse`:
+    - Value of key `publications` type object[] has been clarified:
+      - Value of key `customer` has been clarified, `object id(string) & object(string)` -> `Partial<SimpleCustomer>`
+      - Value of key `channel` has been clarified, `string` -> `PublicationResponseChannel`
+      - Value of key `voucher` has been clarified, `DistributionsPublicationsVoucher` -> `DistributionsPublicationsVoucherDiscount | DistributionsPublicationsVoucherLoyaltyCard | DistributionsPublicationsVoucherGiftCard`
+- client.distributions.publications.create(params,query)
+  - Request parameter `params`: `DistributionsPublicationsCreateParams`:
+    - Value of key `channel` has been clarified `string` -> `PublicationResponseChannel`:
+    - Value of key `customer` has been clarified:
+      - Added optional keys: `birthday`, `birthdate`,
+  - Returned value object `DistributionsPublicationsCreateResponse`
+    - Value of key `channel` has been clarified `string` -> `PublicationResponseChannel`:
+    - Value of key `voucher` has been clarified:
+      - Added optional keys: `category_id`, `categories`, `validation_rules_assignments`
+- client.events.create(eventName, params)
+  - Request parameter `params`: `EventsParams`:
+    - Value of key `customer` has been clarified:
+      - Added optional keys: `birthday`, `birthdate`,
+- client.distributions.exports.create(exportObject)
+  - Request parameter `exportObject`: `ExportResource`:
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+  - Returned value object `ExportsCreateResponse`
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+- client.distributions.exports.get(exportResourceId)
+  - Returned value object `ExportsGetResponse`
+    - Value of key `exported_object` has been clarified `'voucher' | 'redemption' | 'publication' | 'customer'` -> `'order' | 'voucher' | 'publication' | 'redemption' | 'customer' | 'points_expiration' | 'voucher_transactions'`
+    - Value of key `parameters` has been clarified `defined object` -> `ExportParameters`
+- client.loyalties.list(params)
+  - Request parameter `params`: `LoyaltiesListParams`:
+    - Added optional key: `order`
+  - Returned value object `LoyaltiesListResponse`
+    - Added optional keys: `updated_at`, `creation_status`, `category_id`, `categories`, `loyalty_tiers_expiration`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`
+- client.loyalties.create(campaign)
+  - Request parameter `campaign`: `LoyaltiesCreateCampaign`:
+    - Value of ket `campaigns` type object[] has been clarified:
+      - Added optional keys: `description`, `auto_join`, `join_once`, `use_voucher_metadata_schema`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `loyalty_tiers_expiration`, `category_id`, `category`
+      - Value of key `voucher` has been clarified:
+        - Value of key `loyalty_card` has been clarified:
+          - Added optional key: `expiration_rules`
+  - Returned value object `LoyaltiesCreateCampaignResponse`
+    - Added optional keys: `description`, `auto_join`, `join_once`, `use_voucher_metadata_schema`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `loyalty_tiers_expiration`, `category_id`, `category`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`
+- client.loyalties.get(campaignId)
+  - Returned value object `LoyaltiesGetCampaignResponse`
+    - Added optional keys: `updated_at`, `creation_status`, `category_id`, `categories`, `loyalty_tiers_expiration`
+    - Value of key `voucher` has been clarified:
+      - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
+      - Value of key `loyalty_card` has been clarified:
+        - Added optional key: `expiration_rules`
+
+
+////////////////////////////////////////////////////////
 
 - client.vouchers.import(vouchers)
     - Request (body) params:

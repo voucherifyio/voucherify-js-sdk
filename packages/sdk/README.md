@@ -1177,7 +1177,7 @@ client.loyalties.createMember(campaignId, member)
 #### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
 
 ```javascript
-client.loyalties.getMember(memberId)
+client.loyalties.getMemberWithoutCampaignId(memberId)
 ```
 
 #### [Get Loyalty Program Member With Campaign Id](https://docs.voucherify.io/reference/get-member-1)
@@ -1244,7 +1244,7 @@ client.loyalties.getPointsExpiration(campaignId, memberId)
 #### [Redeem Loyalty Card](https://docs.voucherify.io/reference/redeem-reward)
 
 ```javascript
-client.loyalties.redeemReward(memberId, params)
+client.loyalties.redeemRewardWithoutCampaignId(memberId, params)
 ```
 
 `memberId` referrers to Loyalty Card code.

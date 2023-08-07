@@ -8,17 +8,17 @@ export interface ListCategories {
 export interface CategoryObject {
 	//20_obj_category_object
 	id: string
-	name?: string
+	name: string
 	hierarchy?: number
-	created_at?: string
+	created_at: string
 	updated_at?: string
-	object?: 'category'
+	object: 'category'
 }
 
 export interface CreateCategory {
 	//20_req_create_category
 	name: string
-	hierarchy: number
+	hierarchy?: number
 }
 
 export type ResponseCreateCategory = Omit<CategoryObject, 'updated_at'>

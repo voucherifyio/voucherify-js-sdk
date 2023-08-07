@@ -15,7 +15,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/create-loyalty-program
 	 */
 	public create(campaign: T.LoyaltiesCreateCampaign) {
-		return this.client.post<T.LoyaltyCampaignObject>('/loyalties', campaign)
+		return this.client.post<T.LoyaltiesCreateCampaignResponse>('/loyalties', campaign)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-loyalty-program
@@ -26,7 +26,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-loyalty-program
 	 */
-	public update(campaign: T.LoyaltiesUpdateCampaign & { id: string }) {
+	public update(campaign: T.LoyaltiesUpdateCampaign) {
 		return this.client.put<T.LoyaltiesUpdateCampaignResponse>(
 			`/loyalties/${encode(campaign.id)}`,
 			omit(campaign, ['id']),
@@ -91,8 +91,8 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-earning-rule
 	 */
-	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule) {
-		return this.client.post<T.LoyaltiesCreateEarningRuleResponse>(
+	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule[]) {
+		return this.client.post<T.LoyaltiesCreateEarningRuleResponse[]>(
 			`/loyalties/${encode(campaignId)}/earning-rules`,
 			earningRules,
 		)
@@ -100,8 +100,8 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-earning-rule
 	 */
-	public updateEarningRule(campaignId: string, earningRule: T.UpdateEarningRuleObject & { id: string }) {
-		return this.client.put<T.EarningRuleObject>(
+	public updateEarningRule(campaignId: string, earningRule: T.UpdateEarningRuleObject) {
+		return this.client.put<T.LoyaltiesUpdateEarningRuleResponse>(
 			`/loyalties/${encode(campaignId)}/earning-rules/${earningRule.id}`,
 			omit(earningRule, ['id']),
 		)
@@ -153,7 +153,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member
 	 */
-	public getMember(memberId: string) {
+	public getMemberWithoutCampaignId(memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/members/${memberId}`)
 	}
 	/**
@@ -161,6 +161,10 @@ export class Loyalties {
 	 */
 	public getMemberWithCampaignId(campaignId: string, memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/${encode(campaignId)}/members/${memberId}`)
+	}
+	//backward compatibility
+	public getMember(campaignId: string, memberId: string) {
+		return this.getMemberWithCampaignId(campaignId, memberId)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member-activities
@@ -175,6 +179,13 @@ export class Loyalties {
 		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/activities`,
 		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
+	 */
+	//backward compatibility
+	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+		return this.addOrRemovePointsWithCampaignId(campaignId, memberId, balance)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance
@@ -203,17 +214,24 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-reward
 	 */
-	public redeemReward(memberId: string, params: T.LoyaltiesRedeemRewardParams) {
-		return this.client.post<T.LoyaltyCardObjectExpanded>(`/loyalties/members/${encode(memberId)}/redemption`, params)
+	public redeemRewardWithoutCampaignId(memberId: string, params: T.LoyaltiesRedeemRewardParams) {
+		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
+			`/loyalties/members/${encode(memberId)}/redemption`,
+			params,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-reward-1
 	 */
 	public redeemRewardWithCampaignId(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
-		return this.client.post<T.LoyaltyCardObjectExpanded>(
+		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/redemption`,
 			params,
 		)
+	}
+	//backward compatibility
+	public redeemReward(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
+		return this.redeemRewardWithCampaignId(campaignId, memberId, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-member-rewards

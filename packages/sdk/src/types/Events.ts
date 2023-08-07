@@ -1,8 +1,8 @@
-import { CreateCustomer } from './Customers'
+import { CustomerRequest } from './Customers'
 
 export interface EventsParams {
 	event: string
-	customer: CreateCustomer
+	customer: CustomerRequest
 	metadata?: Record<string, any>
 	referral?: {
 		code: string
@@ -13,10 +13,7 @@ export interface EventsParams {
 	}
 }
 
-export interface EventsResponse {
+export type EventsResponse = {
 	object: 'event'
 	type: string
-	customer?: Record<string, any>
-	loyalty?: Record<string, any>
-	referral?: Record<string, any>
-}
+} & Record<string, any>

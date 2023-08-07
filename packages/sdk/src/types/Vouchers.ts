@@ -90,17 +90,22 @@ export interface VoucherObject {
 			object: 'validation_rules_assignment'
 		}[]
 	}
-	redemption?: {
+	referrer_id?: string
+	redemption: {
 		quantity?: number
 		redeemed_quantity: number
 		redeemed_amount: number
 		redeemed_points: number
+		data_ref: 'redemption_entries'
 		object: 'list'
 		url: string
 	}
 	publish?: {
 		object: 'list'
 		count: number
+		data_ref: 'entries'
+		entries: string[]
+		total: number
 		url: string
 	}
 	object: 'voucher'
@@ -435,6 +440,7 @@ export interface VouchersListResponse {
 }
 
 export type VouchersEnableResponse = VouchersResponse
+
 export type VouchersDisableResponse = VouchersResponse
 
 export type VouchersResponse = VoucherObject

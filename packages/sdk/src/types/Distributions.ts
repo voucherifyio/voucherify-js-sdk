@@ -1,6 +1,6 @@
 import { CustomerRequest, SimpleCustomer } from './Customers'
 
-import { VoucherDiscount, VoucherObject } from './Vouchers'
+import { VoucherDiscount, VoucherType } from './Vouchers'
 
 type OrderType =
 	| 'id'
@@ -16,7 +16,7 @@ type OrderType =
 	| 'channel'
 	| '-channel'
 
-type PublicationResponseChannel =
+export type PublicationResponseChannel =
 	| 'Activecampaign'
 	| 'API'
 	| 'Automation'
@@ -31,7 +31,7 @@ type PublicationResponseChannel =
 	| 'voucherify-website'
 	| 'Webhook'
 
-type DistributionsPublicationsVoucher =
+export type DistributionsPublicationsVoucher =
 	| DistributionsPublicationsVoucherDiscount
 	| DistributionsPublicationsVoucherLoyaltyCard
 	| DistributionsPublicationsVoucherGiftCard
@@ -70,6 +70,88 @@ interface DistributionsPublicationsVoucherGiftCard {
 	is_referral_code?: boolean
 }
 
+export interface DistributionsPublicationsCreateResponseVoucher {
+	id: string
+	code: string
+	campaign?: string
+	campaign_id?: string
+	category?: string
+	category_id?: string
+	categories?: {
+		created_at?: string
+		hierarchy?: number
+		id?: string
+		name?: string
+		object?: 'category'
+		updated_at?: string
+	}[]
+	type?: VoucherType
+	discount?: VoucherDiscount
+	gift?: {
+		amount?: number
+		balance?: number
+		effect?: 'APPLY_TO_ITEMS' | 'APPLY_TO_ORDER'
+	}
+	loyalty_card?: {
+		points?: number
+		balance?: number
+		next_expiration_date?: string
+		next_expiration_points?: number
+	}
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		duration?: string
+		interval?: string
+	}
+	validity_day_of_week?: (0 | 1 | 2 | 3 | 4 | 5 | 6)[]
+	validation_rules_assignments?: {
+		data?: {
+			created_at?: string
+			id?: string
+			object?: 'validation_rules_assignment'
+			related_object_id?: string
+			related_object_type?: string
+			rule_id?: string
+		}[]
+		data_ref?: 'data'
+		object?: 'list'
+		total?: number
+	}
+	active?: boolean
+	additional_info?: string
+	metadata?: Record<string, any>
+	assets?: {
+		qr?: {
+			id?: string
+			url?: string
+		}
+		barcode?: {
+			id?: string
+			url?: string
+		}
+	}
+	is_referral_code?: boolean
+	created_at?: string
+	updated_at?: string
+	holder_id?: string
+	object: 'voucher'
+	publish: {
+		object: 'list'
+		count: number
+		url: string
+	}
+	redemption: {
+		object: 'list'
+		quantity: number
+		redeemed_quantity: number
+		redeemed_amount?: number
+		redeemed_points?: number
+		url?: string
+	}
+}
+// Eddy's comment (regarding how to set up filters type) is not quite working here - as we can have multiple `conditions` inside the `filter_condition`. I did not explain it correctly
+
 export interface DistributionsPublicationsListParams {
 	limit?: number
 	page?: number
@@ -78,10 +160,11 @@ export interface DistributionsPublicationsListParams {
 	customer?: string
 	voucher?: string
 	result?: 'SUCCESS' | 'FAILURE'
-	voucher_type?: 'discount' | 'loyalty' | 'lucky_draw'
+	voucher_type?: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 	is_referral_code?: boolean
-	filters?: string
-	source_id?: string
+	filters?: {
+		junction?: 'OR' | 'AND'
+	} & Record<string, any>
 }
 
 interface PublicationResponse {
@@ -94,9 +177,12 @@ interface PublicationResponse {
 	metadata?: Record<string, any>
 	channel?: PublicationResponseChannel
 	result?: 'SUCCESS' | 'FAILURE'
-	customer?: SimpleCustomer
+	customer?: Partial<SimpleCustomer>
 	voucher?: DistributionsPublicationsVoucher
 	vouchers_id?: string[]
+	vouchers?: string[]
+	failure_code?: string
+	failure_message?: string
 }
 
 export interface DistributionsPublicationsListResponse {
@@ -106,49 +192,31 @@ export interface DistributionsPublicationsListResponse {
 	publications?: PublicationResponse[]
 }
 
-export interface CreatePublicationViaGetRequest {
-	campaign: string | { id: string } | { name: string }
-	customer:
-		| string
-		| { id: string }
-		| { source_id: string }
-		| {
-				source_id: string
-				name: string
-				description: string
-				email: string
-				phone: string
-				birthdate: string
-				birthday: string
-				metadata: Record<string, any>
-				address: {
-					city: string
-					state: string
-					line_1: string
-					line_2: string
-					country: string
-					postal_code: string
-				}
-		  }
-	metadata: Record<string, any>
-	source_id: string
-	voucher: string
-}
+export type CreatePublicationViaGetRequest = DistributionsPublicationsCreateParams &
+	DistributionsPublicationsCreateQueryParams
 
 //5_req_create_publication
-export type DistributionsPublicationsCreateParams = CreatePublicationStandaloneVoucher | CreatePublicationFromCampaign
+export type DistributionsPublicationsCreateParams = (
+	| CreatePublicationStandaloneVoucher
+	| CreatePublicationFromCampaign
+) & { join_once?: boolean }
 
-interface CreatePublicationStandaloneVoucher {
+export interface CreatePublicationStandaloneVoucher {
 	//5_req_create_publication_standalone_voucher
 	metadata?: Record<string, any>
 	source_id?: string
-	campaign?: string
+	campaign?:
+		| {
+				name: string
+				count?: number
+		  }
+		| string
 	voucher?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
+	customer?: CustomerRequest
 }
 
-type CreatePublicationFromCampaign =
+export type CreatePublicationFromCampaign =
 	| CreatePublicationFromCampaignAutoUpdate
 	| CreatePublicationFromCampaignOneSpecificVoucher
 	| CreatePublicationFromCampaignMultipleVouchers
@@ -158,7 +226,7 @@ interface CreatePublicationFromCampaignAutoUpdate {
 	//5_req_create_publication_from_campaign_auto_update
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
+	customer?: CustomerRequest
 	campaign?: string
 	metadata?: Record<string, any>
 }
@@ -167,7 +235,7 @@ interface CreatePublicationFromCampaignOneSpecificVoucher {
 	//5_req_create_publication_from_campaign_one_specific_voucher
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
+	customer?: CustomerRequest
 	voucher?: string
 	campaign?: string
 	metadata?: Record<string, any>
@@ -177,7 +245,7 @@ interface CreatePublicationFromCampaignMultipleVouchers {
 	//5_req_create_publication_from_campaign_multiple_vouchers
 	source_id?: string
 	channel?: PublicationResponseChannel
-	customer?: { id: string } | { source_id: string } | Omit<CustomerRequest, 'id'>
+	customer?: CustomerRequest
 	voucher?: string
 	campaign?: {
 		name?: string
@@ -190,4 +258,17 @@ export interface DistributionsPublicationsCreateQueryParams {
 	join_once?: boolean
 }
 
-export type DistributionsPublicationsCreateResponse = VoucherObject
+export interface DistributionsPublicationsCreateResponse {
+	id: string
+	object: 'publication'
+	created_at: string
+	customer_id: string
+	tracking_id?: string
+	metadata?: Record<string, any>
+	channel?: PublicationResponseChannel
+	source_id?: string
+	result: 'SUCCESS' | 'FAILURE'
+	customer?: SimpleCustomer
+	voucher: DistributionsPublicationsCreateResponseVoucher
+	vouchers_id?: string[]
+}

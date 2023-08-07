@@ -1,4 +1,4 @@
-import { ProductObject } from '@voucherify/sdk'
+import { ProductObject } from './Products'
 
 export interface ListProductCollectionsParameters {
 	limit?: number

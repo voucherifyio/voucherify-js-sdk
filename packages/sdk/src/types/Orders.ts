@@ -1,7 +1,7 @@
 import { CustomerRequest } from './Customers'
 import { FilterConditionsNumber, FilterConditionsString, FilterJunction } from './Exports'
 
-export type CreateOrderExport = ExportOrderObject
+export type CreateOrderExport = Partial<ExportOrderObject>
 
 export interface ApplicableToObjectPromotionTier {
 	//6_res_applicable_to_object
@@ -145,7 +145,7 @@ export interface CreateOrderExportResponse {
 	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
 	channel: 'API' | 'WEBSITE'
 	exported_object: 'order'
-	parameters: ExportOrderObject
+	parameters: Partial<ExportOrderObject>
 	result: {
 		url: string
 	}
@@ -271,6 +271,8 @@ export interface ObjectOrderApplyToOrder {
 	object: 'order'
 }
 
+export type OrdersListResponse = ResponseListOrders
+
 export interface ResponseListOrders {
 	object: 'list'
 	data_ref: 'orders'
@@ -383,37 +385,20 @@ export interface OrderObject {
 	updated_at?: string
 	status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
 	amount?: number
+	initial_amount?: number
 	discount_amount?: number
 	items_discount_amount?: number
 	total_discount_amount?: number
+	applied_discount_amount?: number
+	items_applied_discount_amount?: number
 	total_amount?: number
-	customer_id?: string
-	items?: {
-		object?: 'order_item'
-		sku_id?: string
-		product_id?: string
-		quantity?: number
-		amount?: number
-		discount_amount?: number
-		price?: number
-		subtotal_amount?: number
-		product?: {
-			id?: string
-			source_id?: string
-			name?: string
-			price?: number
-		}
-		sku?: {
-			id?: string
-			source_id?: string
-			sku?: string
-			price?: number
-		}
-	}[]
+	total_applied_discount_amount?: number
+	items?: OrdersOrderItem[]
 	metadata?: Record<string, any>
-	customer?: { id: string; object: 'customer' }
-	redemptions?: OrderObjectUnstackedRedemptions | OrderObjectStackedRedemptions
-	referrer?: { id: string; object: 'customer' }
+	customer?: CustomerRequest
+	customer_id?: string
+	redemptions?: Partial<OrderObjectUnstackedRedemptions | OrderObjectStackedRedemptions>
+	referrer?: CustomerRequest
 	referrer_id?: string
 	object: 'order'
 }
@@ -441,14 +426,13 @@ type OrderObjectStackedRedemptions = Record<
 
 export interface CreateOrder {
 	//10_req_create_order
-	id?: string
-	source_id?: string
-	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-	amount?: number
-	metadata?: Record<string, any>
-	customer?: OrdersCustomerObject //10_req_orders_customer_object
-	referrer?: OrdersCustomerObject //10_req_orders_referrer_object
-	items?: OrdersItemsArray //10_req_orders_items_array
+	source_id: string
+	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	amount: number
+	metadata: Record<string, any>
+	customer: OrdersCustomerObject //10_req_orders_customer_object
+	referrer: OrdersCustomerObject //10_req_orders_referrer_object
+	items: OrdersOrderItem[] //10_req_orders_items_array
 }
 
 export interface OrdersCustomerObject {
@@ -476,37 +460,47 @@ export type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
 
 export interface OrdersOrderItem {
 	//10_req_orders_order_item
-	source_id?: string
-	related_object?: string
-	product_id?: string
 	sku_id?: string
+	product_id?: string
+	related_object?: 'product' | 'sku'
+	source_id?: string
+	discount_quantity?: number
+	initial_quantity?: number
 	quantity?: number
 	price?: number
 	amount?: number
-	product?: OrdersOrderItemProduct //10_req_orders_order_item_product
-	sku?: OrdersOrderItemSku //10_req_orders_order_item_sku
+	discount_amount?: number
+	initial_amount?: number
+	applied_discount_amount?: number
+	subtotal_amount?: number
+	product?: Partial<OrdersOrderItemProduct> //10_req_orders_order_item_product
+	sku?: Partial<OrdersOrderItemSku> //10_req_orders_order_item_sku
+	object?: 'order_item'
+	metadata?: Record<string, any>
 }
 
 export interface OrdersOrderItemProduct {
 	//10_req_orders_order_item_product
-	source_id?: string
-	name?: string
-	price?: number
-	metadata?: Record<string, any>
-	override?: boolean
+	id: string
+	source_id: string
+	name: string
+	price: number
+	metadata: Record<string, any>
+	override: boolean
 }
 
 export interface OrdersOrderItemSku {
 	//10_req_orders_order_item_sku
-	source_id?: string
-	sku?: string
-	price?: number
-	metadata?: Record<string, any>
-	override?: boolean
+	id: string
+	source_id: string
+	sku: string
+	price: number
+	metadata: Record<string, any>
+	override: boolean
 }
 
 export interface OrdersItem {
-	sku_id?: string
+	sku_id?: string | null
 	product_id?: string
 	related_object?: 'product' | 'sku'
 	source_id?: string
@@ -564,7 +558,7 @@ export interface OrdersCreateResponse {
 	items_applied_discount_amount?: number
 	total_amount?: number
 	total_applied_discount_amount?: number
-	items?: OrdersItem[]
+	items?: Partial<OrdersItem>[]
 	metadata?: Record<string, any>
 	customer?: CustomerRequest
 	object: 'order'
@@ -580,8 +574,8 @@ export interface OrdersUpdate {
 	amount?: number
 	discount_amount?: number
 	metadata?: Record<string, any>
-	customer?: OrdersCustomerObject
-	referrer?: OrdersCustomerObject
+	customer?: CustomerRequest
+	referrer?: CustomerRequest
 	referrer_id?: string
 	customer_id?: string
 }
@@ -594,12 +588,6 @@ export interface OrdersListParams {
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
-export interface OrdersListResponse {
-	object: 'list'
-	total: number
-	data_ref: 'orders'
-	orders: OrdersGetResponse[]
-}
 
 export interface OrderObjectRollback {
 	//7_obj_order_object_rollback

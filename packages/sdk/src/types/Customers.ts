@@ -1,21 +1,21 @@
 import { AsyncActionCreateResponse } from './AsyncActions'
 
 export interface CustomerPermanentDeletion {
-	id: string
-	created_at: string
-	related_object_id: string
-	related_object: 'customer'
-	status: string
-	data_json: {
-		events: number
-		customer_events: number
-		daily_events: number
-		segments: number
-		orders: number
-		order_events: number
-		customer: number
+	id?: string
+	created_at?: string
+	related_object_id?: string
+	related_object?: 'customer'
+	status?: string
+	data_json?: {
+		events?: number
+		customer_events?: number
+		daily_events?: number
+		segments?: number
+		orders?: number
+		order_events?: number
+		customer?: number
 	}
-	object: 'pernament_deletion'
+	object?: 'pernament_deletion'
 }
 export interface SimpleCustomer {
 	id: string
@@ -50,6 +50,15 @@ export interface CreateCustomer {
 	description?: string
 	metadata?: Record<string, any>
 }
+export interface ValidateVoucherCustomerId {
+	//6_req_validate_voucher_customer_id
+	id: string
+}
+
+export interface ValidateVoucherSourceId {
+	//6_req_validate_voucher_customer_source_id
+	source_id: string
+}
 export interface CustomerRequest {
 	id?: string
 	source_id?: string
@@ -76,15 +85,17 @@ export interface CustomersCommonListRequest {
 	email?: string
 	city?: string
 	name?: string
-	order?: 'created_at' | '-created_at'
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'
 	starting_after?: Date | string
 }
 
+export type CustomersListParams = CustomersCommonListRequest
+
 export interface CustomersCommonListResponse {
 	object: 'list'
-	total: number
 	data_ref: 'customers'
-	customers: CustomerObject[]
+	customers: CustomerObject[] //9_obj_customer_object
+	total: number
 	has_more?: boolean
 }
 
@@ -109,49 +120,51 @@ export interface CustomerActivitiesListQueryParams {
 	campaign_id?: string
 }
 
+export interface CustomerActivitiesListResponseData {
+	type?:
+		| 'customer.confirmed'
+		| 'customer.created'
+		| 'customer.updated'
+		| 'customer.deleted'
+		| 'customer.referred'
+		| 'customer.custom_event'
+		| 'customer.segment_entered'
+		| 'customer.segment.left'
+		| 'customer.sms.sent'
+		| 'customer.sms.failed'
+		| 'customer.email.sent'
+		| 'customer.email.failed'
+		| 'customer.activecampaign.sent'
+		| 'customer.braze.sent'
+		| 'customer.mailchimp.sent'
+		| 'customer.intercom.sent'
+		| 'customer.intercom.failed'
+		| 'customer.rewarded'
+		| 'customer.rewarded.loyalty_points'
+		| 'customer.voucher.gift.balance_added'
+		| 'customer.voucher.loyalty_card.points_added'
+		| 'customer.voucher.loyalty_card.points_transferred'
+		| 'customer.publication.succeeded'
+		| 'customer.publication.failed'
+		| 'customer.redemption.succeeded'
+		| 'customer.redemption.failed'
+		| 'customer.redemption.rollback.succeeded'
+		| 'customer.redemption.rollback.failed'
+		| 'customer.consents.given'
+		| 'customer.consents.revoked'
+	created_at?: string
+	data?: Partial<CustomerActivityObjectData>
+	id?: string
+}
+
 export interface CustomerActivitiesListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: {
-		type:
-			| 'customer.confirmed'
-			| 'customer.created'
-			| 'customer.updated'
-			| 'customer.deleted'
-			| 'customer.referred'
-			| 'customer.custom_event'
-			| 'customer.segment_entered'
-			| 'customer.segment.left'
-			| 'customer.sms.sent'
-			| 'customer.sms.failed'
-			| 'customer.email.sent'
-			| 'customer.email.failed'
-			| 'customer.activecampaign.sent'
-			| 'customer.braze.sent'
-			| 'customer.mailchimp.sent'
-			| 'customer.intercom.sent'
-			| 'customer.intercom.failed'
-			| 'customer.rewarded'
-			| 'customer.rewarded.loyalty_points'
-			| 'customer.voucher.gift.balance_added'
-			| 'customer.voucher.loyalty_card.points_added'
-			| 'customer.voucher.loyalty_card.points_transferred'
-			| 'customer.publication.succeeded'
-			| 'customer.publication.failed'
-			| 'customer.redemption.succeeded'
-			| 'customer.redemption.failed'
-			| 'customer.redemption.rollback.succeeded'
-			| 'customer.redemption.rollback.failed'
-			| 'customer.consents.given'
-			| 'customer.consents.revoked'
-		created_at: string
-		data: CustomerActivityObjectData
-		id: string
-	}[]
+	data: CustomerActivitiesListResponseData[]
 }
 
-type CustomerActivityObjectData =  //9_obj_customer_activity_object_data
+type CustomerActivityObjectData =
 	| CustomerActivityObjectDataCustomerConfirmed
 	| CustomerActivityObjectDataCustomerCreated
 	| CustomerActivityObjectDataCustomerUpdated
@@ -185,6 +198,7 @@ type CustomerActivityObjectData =  //9_obj_customer_activity_object_data
 	| CustomerActivityObjectDataCustomerRedemptionRollbackFailed
 	| CustomerActivityObjectDataCustomerConsentsGiven
 	| CustomerActivityObjectDataCustomerConsentsRevoked
+//9_obj_customer_activity_object_data
 
 interface CustomerObjectEmailParameter {
 	//9_obj_customer_object_email_parameter
@@ -388,41 +402,23 @@ interface CustomerActivityObjectDataCustomerConsentsGiven {
 
 type CustomerActivityObjectDataCustomerConsentsRevoked = CustomerActivityObjectDataCustomerConsentsGiven
 
-export type CustomersCreateBody = CreateCustomer
-export type CustomersCreateResponse = CustomerObject
+export type CustomersCreateBody = CustomerRequest
+export type CustomersCreateResponse = Partial<CustomerObject>
 
-export type CustomersGetResponse = CustomerObject
-
-export interface CustomersListParams {
-	limit?: number
-	page?: number
-	email?: string
-	city?: string
-	name?: string
-	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at' | 'source_id' | '-source_id'
-	starting_after?: string
-}
+export type CustomersGetResponse = Partial<CustomerObject>
 
 export type CustomersListResponse = CustomersCommonListResponse
 
 export type CustomersScrollParams = CustomersCommonListRequest
 export type CustomersScrollResponse = CustomersCommonListResponse
-export type CustomersScrollYield = CustomerObject
+export type CustomersScrollYield = CustomerObject | undefined
 
 type IdOrSourceId = { id: string } | { source_id: string }
 export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 
-export type CustomersUpdateResponse = CustomerObject
+export type CustomersUpdateResponse = Partial<CustomerObject>
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
-
-export interface ListCustomers {
-	//9_res_list_customers
-	object: 'list'
-	data_ref: 'customers'
-	customers: CustomerObject[] //9_obj_customer_object
-	total: number
-}
 
 export interface CustomerObject {
 	//9_obj_customer_object
@@ -498,29 +494,10 @@ export interface CustomerObject {
 	assets: {
 		cockpit_url: string
 	}
-	object: 'customer'
+	object: 'customer' | 'unconfirmed_customer'
 }
 
-export interface UpdateCustomersBulk {
-	address?: {
-		city?: string
-		state?: string
-		line_1?: string
-		line_2?: string
-		country?: string
-		postal_code?: string
-	}
-	source_id: string
-	name: string
-	description: string
-	birthdate: string
-	birthday: string
-	email: string
-	phone: string
-	metadata: Record<string, any>
-}
-
-export type UpdateCustomersInBulk = UpdateCustomersBulk[]
+export type UpdateCustomersInBulk = (CustomerRequest & IdOrSourceId)[]
 
 export type UpdateCustomersBulkResponse = AsyncActionCreateResponse
 export type UpdateCustomersMetadataBulkResponse = AsyncActionCreateResponse

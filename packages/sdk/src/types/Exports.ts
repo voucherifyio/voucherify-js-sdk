@@ -1,15 +1,17 @@
 export interface ListExportQuery {
-	limit: number
-	order: 'created_at' | '-created_at' | 'status' | '-status'
-	page: number
+	limit?: number
+	order?: 'created_at' | '-created_at' | 'status' | '-status'
+	page?: number
 }
 
 export interface ListExport {
 	object: 'list'
 	data_ref: 'exports'
-	exports: ExportObject[]
+	exports: Partial<ExportObject>[]
 	total: number
 }
+
+export type ExportResource = CreateExport
 
 export interface CreateExport {
 	exported_object:
@@ -20,7 +22,7 @@ export interface CreateExport {
 		| 'customer'
 		| 'points_expiration'
 		| 'voucher_transactions'
-	parameters:
+	parameters?:
 		| ExportOrder
 		| ExportVoucher
 		| ExportPublication
@@ -31,15 +33,15 @@ export interface CreateExport {
 		| ExportLoyaltyCardTransactions
 }
 
-export type CreateExportResponse = ExportObject
-export type GetExportResponse = ExportObject
+export type ExportsCreateResponse = ExportObject
+export type ExportsGetResponse = ExportObject
 
 export interface ExportObject {
 	id: string
 	object: 'export'
 	created_at: string
 	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
-	channel: 'API' | 'WEBSITE'
+	channel?: 'API' | 'WEBSITE'
 	exported_object:
 		| 'order'
 		| 'voucher'
@@ -48,20 +50,22 @@ export interface ExportObject {
 		| 'customer'
 		| 'points_expiration'
 		| 'voucher_transactions'
-	parameters:
-		| ExportOrder
-		| ExportVoucher
-		| ExportPublication
-		| ExportRedemption
-		| ExportCustomer
-		| ExportPointsExpiration
-		| ExportGiftCardTransactions
-		| ExportLoyaltyCardTransactions
-	result: {
+	parameters?: ExportParameters
+	result?: {
 		url: string
 	}
-	user_id: string
+	user_id?: string
 }
+
+export type ExportParameters =
+	| ExportOrder
+	| ExportVoucher
+	| ExportPublication
+	| ExportRedemption
+	| ExportCustomer
+	| ExportPointsExpiration
+	| ExportGiftCardTransactions
+	| ExportLoyaltyCardTransactions
 
 interface ExportOrder {
 	order: '-created_at' | 'created_at' | 'updated_at' | '-updated_at' | 'status' | '-status'

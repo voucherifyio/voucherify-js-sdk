@@ -1,7 +1,7 @@
-import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersItemsArray } from './Orders'
+import { ObjectOrder, OrdersCreateResponse, OrdersCustomerObject, OrdersOrderItem } from './Orders'
 import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
-import { CreateCustomer, SimpleCustomer } from './Customers'
+import { CustomerRequest, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { CampaignVoucherObjectLoyaltyCard, CategoryObject, LoyaltyCard, LoyaltyTiersExpiration } from './Campaigns'
 import { AsyncActionCreateResponse } from './AsyncActions'
@@ -13,6 +13,7 @@ import {
 } from './Redemptions'
 import { FilterConditionsString, FilterJunction } from './Exports'
 import { LoyaltyTierRewardObject, RewardAssignmentObject, RewardObject } from './Rewards'
+import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 
 export interface ListMembersLoyaltyTiersResponse {
 	object: 'list'
@@ -124,7 +125,7 @@ export interface LoyaltiesListParams {
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
 
-export interface LoyaltyCardObjectExpanded {
+export interface LoyaltiesRedeemRewardResponse {
 	//8_obj_redemption_object_loyalty_card_extended
 	id: string
 	object: 'redemption'
@@ -134,23 +135,17 @@ export interface LoyaltyCardObjectExpanded {
 	metadata: Record<string, any>
 	amount: number
 	result: 'SUCCESS' | 'FAILURE'
-	order?: ObjectOrder
-	customer: {
-		id: string
-		name: string
-		email: string
-		source_id: string
-		metadata: Record<string, any>
-		object: 'customer'
-	}
+	order?: Partial<ObjectOrder>
+	customer: Partial<CustomerRequest>
 	related_object_type: 'voucher'
 	related_object_id: string
 	voucher: VouchersResponse
-	reward:
+	reward: Partial<
 		| RedemptionObjectLoyaltyCardPayWithPoints
 		| RedemptionObjectLoyaltyCardMaterialProduct
 		| RedemptionObjectLoyaltyCardMaterialSku
 		| RedemptionObjectLoyaltyCardDigital
+	>
 	loyalty_card: {
 		points: number
 	}
@@ -261,6 +256,7 @@ export interface LoyaltyCardObjectNonExpandedCategories {
 	object: 'voucher'
 }
 
+export type LoyaltiesCreateCampaignResponse = CampaignObjectNoExtendedCategories
 export interface LoyaltiesListResponse {
 	object: 'list'
 	data_ref: 'campaigns'
@@ -271,65 +267,81 @@ export interface LoyaltiesListResponse {
 export interface LoyaltyCampaignObject {
 	id: string
 	name: string
-	description: string
-	campaign_type: 'LOYALTY_PROGRAM'
+	campaign_type?: 'LOYALTY_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	voucher: CampaignVoucherObjectLoyaltyCard
-	auto_join: boolean
-	join_once: boolean
-	use_voucher_metadata_schema: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
+	category?: string
+	auto_join?: boolean
+	join_once?: boolean
+	description?: string
+	start_date?: string
+	validation_rules_assignments?: {
+		data?: ValidationRulesCreateAssignmentResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
 	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	vouchers_count: number
-	active: boolean
-	metadata: Record<string, any>
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, any>
 	created_at: string
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
+	active: boolean
+	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
+	object: 'campaign'
+	voucher?: CampaignVoucherObjectLoyaltyCard
 	updated_at: string
 	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
-	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
-	protected: boolean
 	category_id: string
 	categories: CategoryObject
 	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	object: 'campaign'
 }
 
 export interface CampaignObjectNoExtendedCategories {
+	category?: string
+	start_date?: string
+	validation_rules_assignments?: {
+		data?: ValidationRulesCreateAssignmentResponse[]
+		object: 'list'
+		total: number
+		data_ref: 'data'
+	}
+	expiration_date?: string
+	activity_duration_after_publishing?: string
+	validity_timeframe?: {
+		interval?: string
+		duration?: string
+	}
+	validity_day_of_week?: number[]
+	metadata?: Record<string, any>
+	created_at: string
+	vouchers_generation_status: 'IN_PROGRESS' | 'DONE' | 'FAILED' | 'DRAFT'
+	active: boolean
+	referral_program?: boolean
+	use_voucher_metadata_schema?: boolean
+	protected?: boolean
+	vouchers_count?: number
+	object: 'campaign'
 	id: string
 	name: string
-	description: string
-	campaign_type: 'LOYALTY_PROGRAM'
+	description?: string
+	campaign_type?: 'LOYALTY_PROGRAM'
 	type: 'AUTO_UPDATE' | 'STATIC'
-	voucher: CampaignVoucherObjectLoyaltyCard
-	auto_join: boolean
-	join_once: boolean
-	use_voucher_metadata_schema: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
-		interval: string
-		duration: string
-	}
-	validity_day_of_week: number[]
-	activity_duration_after_publishing: string
-	vouchers_count: number
-	active: boolean
-	metadata: Record<string, any>
-	created_at: string
-	updated_at: string
-	creation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
-	vouchers_generation_status: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT'
-	protected: boolean
-	category_id: string
-	categories: CategoryObject[]
-	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	object: 'campaign'
+	voucher?: CampaignVoucherObjectLoyaltyCard
+	auto_join?: boolean
+	join_once?: boolean
+	updated_at?: string
+	creation_status?: 'DONE' | 'IN_PROGRESS' | 'FAILED' | 'DRAFT' | 'MODIFYING'
+	category_id?: string
+	categories?: CategoryObject[]
+	loyalty_tiers_expiration?: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
 }
 interface LoyaltyTiersExpirationPointsInPeriod {
 	qualification_type: 'POINTS_IN_PERIOD'
@@ -375,24 +387,24 @@ interface LoyaltyTiersExpirationExpirationDateRoundingCustom {
 
 export interface LoyaltiesCreateCampaign {
 	name: string
+	start_date?: string
+	expiration_date?: string
+	type?: 'AUTO_UPDATE' | 'STATIC'
+	vouchers_count?: number
+	metadata?: Record<string, any>
 	description?: string
-	type: 'AUTO_UPDATE' | 'STATIC'
 	auto_join?: boolean
 	join_once?: boolean
 	use_voucher_metadata_schema?: boolean
-	vouchers_count?: number
-	start_date?: string
-	expiration_date?: string
 	validity_timeframe?: {
 		interval?: string
 		duration?: string
 	}
 	validity_day_of_week?: number[]
 	activity_duration_after_publishing?: string
-	loyalty_tiers_expiration: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
-	category_id: string
+	loyalty_tiers_expiration?: LoyaltyTiersExpirationBalance | LoyaltyTiersExpirationPointsInPeriod
+	category_id?: string
 	category?: string
-	metadata?: Record<string, any>
 	voucher?: Omit<CampaignVoucherObjectLoyaltyCard, 'is_referral_code'>
 }
 
@@ -406,7 +418,7 @@ export type LoyaltiesUpdateCampaign = Partial<
 		loyalty_card: LoyaltyCard
 		loyalty_tiers_expiration: LoyaltyTiersExpiration
 	}
->
+> & { id: string }
 
 export type LoyaltiesUpdateCampaignResponse = LoyaltyCampaignObject
 
@@ -502,11 +514,13 @@ export interface LoyaltiesEarningRulesResponse {
 	object: 'earning_rule'
 	automation_id: string
 }
+
+export type LoyaltiesListEarningRulesResponse = LoyaltiesListEarningRules
 export interface LoyaltiesListEarningRules {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: EarningRuleObject[]
+	data: Partial<EarningRuleObject>[]
 }
 
 //8_obj_earning_rule_object
@@ -516,7 +530,7 @@ export type EarningRuleObject =
 	| EarningRuleObjectEnteredSegment
 	| EarningRuleObjectTier
 
-type CreateEarningRuleObject =
+export type CreateEarningRuleObject =
 	| CreateEarningRuleObjectOrderPaid
 	| CreateEarningRuleObjectCustomEvent
 	| CreateEarningRuleObjectEnteredSegment
@@ -527,7 +541,7 @@ export type UpdateEarningRuleObject = Partial<
 	| UpdateEarningRuleObjectCustomEvent
 	| UpdateEarningRuleObjectEnteredSegment
 	| UpdateEarningRuleObjectTier
->
+> & { id: string }
 
 type UpdateEarningRuleObjectOrderPaid = Omit<
 	EarningRuleObjectOrderPaid,
@@ -557,7 +571,7 @@ type UpdateEarningRuleObjectTier = Omit<
 		| 'customer.loyalty.tier.prolonged'
 }
 
-interface EarningRuleObjectOrderPaid {
+export interface EarningRuleObjectOrderPaid {
 	//8_obj_earning_rule_object_order_paid
 	id: string
 	created_at: string
@@ -588,7 +602,7 @@ type CreateEarningRuleObjectOrderPaid = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectCustomEvent {
+export interface EarningRuleObjectCustomEvent {
 	id: string
 	created_at: string
 	updated_at: string
@@ -622,7 +636,7 @@ type CreateEarningRuleObjectCustomEvent = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectEnteredSegment {
+export interface EarningRuleObjectEnteredSegment {
 	//8_obj_earning_rule_object_entered_segment
 	id: string
 	created_at: string
@@ -656,7 +670,7 @@ type CreateEarningRuleObjectEnteredSegment = Omit<
 	'automation_id' | 'created_at' | 'id' | 'object' | 'source' | 'updated_at'
 > & { source: { banner: string } }
 
-interface EarningRuleObjectTier {
+export interface EarningRuleObjectTier {
 	//8_obj_earning_rule_object_tier
 	id: string
 	created_at: string
@@ -808,8 +822,8 @@ interface ObjectCalculatePointsProportionallyCustomerMetadata {
 	}
 }
 
-export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>[]
-export type LoyaltiesCreateEarningRuleResponse = EarningRuleObject[]
+export type LoyaltiesCreateEarningRule = Partial<CreateEarningRuleObject>
+export type LoyaltiesCreateEarningRuleResponse = Partial<EarningRuleObject>
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string
@@ -822,7 +836,7 @@ export interface LoyaltiesUpdateEarningRule {
 	}
 }
 
-export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponse
+export type LoyaltiesUpdateEarningRuleResponse = EarningRuleObject
 
 export interface LoyaltiesListMembersParams {
 	limit?: number
@@ -878,12 +892,12 @@ export interface LoyaltiesListMembersResponse {
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: LoyaltyCardObjectNonExpandedCategories[]
+	vouchers: Partial<LoyaltyCardObjectNonExpandedCategories>[]
 }
 
-export type LoyaltiesCreateMemberResponse = LoyaltyCardObjectNonExpandedCategories
+export type LoyaltiesCreateMemberResponse = Partial<LoyaltyCardObjectNonExpandedCategories>
 
-export type LoyaltiesGetMemberResponse = LoyaltyCardObjectNonExpandedCategories
+export type LoyaltiesGetMemberResponse = Partial<LoyaltyCardObjectNonExpandedCategories>
 
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
@@ -928,7 +942,7 @@ export interface GetLoyaltyCardTransactions {
 	//8_res_get_loyalty_card_transactions
 	object: 'list'
 	data_ref: 'data'
-	data: ObjectLoyaltyCardTransaction[] //1_obj_loyalty_card_transaction_object
+	data: Partial<ObjectLoyaltyCardTransaction>[] //1_obj_loyalty_card_transaction_object
 	has_more: boolean
 }
 
@@ -1223,7 +1237,6 @@ interface TransferLoyaltyPoints {
 interface ExportLoyaltyCardTransactions {
 	//16_obj_export_loyalty_card_transactions
 	order: '-created_at' | 'created_at'
-	// @ts-ignore
 	fields: (
 		| 'id'
 		| 'type'
@@ -1234,6 +1247,7 @@ interface ExportLoyaltyCardTransactions {
 		| 'created_at'
 		| 'voucher_id'
 		| 'campaign_id'
+		| 'source'
 		| 'details'
 		| 'related_transaction_id'
 	)[]
@@ -1387,8 +1401,8 @@ export interface LoyaltiesRedeemRewardParams {
 		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULLFILLED'
 		amount: number
 		metadata?: Record<string, any>
-		referrer: OrdersCustomerObject
-		items?: OrdersItemsArray
+		referrer?: Partial<OrdersCustomerObject>
+		items?: Partial<OrdersOrderItem>[]
 	}
 	metadata?: Record<string, any>
 }
@@ -1447,7 +1461,7 @@ interface CampaignReward {
 	object: 'reward'
 }
 
-export interface LoyaltiesRedeemRewardResponse {
+export interface LoyaltiesRedeemRewardResponse2 {
 	id: string
 	object: 'redemption'
 	date: string
@@ -1547,6 +1561,6 @@ export interface LoyaltyPointsTransfer {
 export interface LoyaltiesCreateMember {
 	voucher?: string
 	channel?: string
-	customer: string | { id: string } | { source_id: string } | CreateCustomer
+	customer: string | { id: string } | { source_id: string } | CustomerRequest
 	metadata?: Record<string, any>
 }

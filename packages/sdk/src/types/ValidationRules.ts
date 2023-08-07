@@ -31,6 +31,26 @@ type RuleInternal = Record<
 	}
 >
 
+export interface ValidationRulesCreateAssignmentResponse {
+	id: string
+	rule_id: string
+	related_object_id?: string
+	related_object_type?: string
+	created_at?: string
+	updated_at: string
+	object: 'validation_rules_assignment'
+}
+
+export interface ValidationRulesCreateAssignmentResponse {
+	id: string
+	rule_id: string
+	related_object_id?: string
+	related_object_type?: string
+	created_at?: string
+	updated_at: string
+	object: 'validation_rules_assignment'
+}
+
 interface ApplicableToObject {
 	excluded?: {
 		object?: 'product' | 'sku' | 'products_collection'
