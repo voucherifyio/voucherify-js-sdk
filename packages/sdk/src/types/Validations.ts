@@ -482,6 +482,6 @@ export interface ValidationValidateStackableResponseClientSide {
 	redeemables?: StackableRedeemableResponse[]
 }
 
-export type ValidationsValidateCode = PromotionsValidationParams
+export type ValidationsValidateCode = Partial<PromotionsValidationParams>
 
 export type ValidationsValidateContext = ValidationsValidateVoucherParams

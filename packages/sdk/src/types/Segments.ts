@@ -9,14 +9,21 @@ export interface SegmentsCreateStatic {
 export interface SegmentsCreateAutoUpdate {
 	name: string
 	type: 'auto-update'
-	filter?: Record<string, any>
+	filter?: {
+		junction?: 'AND' | 'OR'
+		[filter_conditions: string]: any
+	}
 }
 
 export interface SegmentsCreateResponse {
 	id: string
 	name: string
 	created_at: string
-	filter?: null | object
+	metadata?: Record<string, any>
+	filter?: {
+		junction?: 'AND' | 'OR'
+		[filter_conditions: string]: any
+	}
 	type?: 'auto-update' | 'static'
 	object: 'segment'
 	initial_sync_status?: 'DONE' | 'IN_PROGRESS'

@@ -50,7 +50,7 @@ interface RedemptionObjectVoucherDiscount {
 	customer?: SimpleCustomer
 	related_object_type: 'voucher'
 	related_object_id?: string
-	voucher?: {
+	voucher: {
 		id: string
 		code: string
 		campaign?: string
@@ -229,7 +229,7 @@ export interface Redemption {
 	failure_code?: string
 	failure_message?: string
 	customer?: SimpleCustomer
-	related_object_type: 'string'
+	related_object_type?: 'string'
 	voucher?: {
 		code: string
 		campaign?: string
@@ -329,8 +329,8 @@ export type SimpleRollback = Pick<
 	RedemptionsRollbackResponse,
 	'id' | 'object' | 'date' | 'customer_id' | 'tracking_id' | 'redemption' | 'result' | 'customer'
 > & {
-	related_object_type: 'voucher'
-	voucher: {
+	related_object_type?: 'voucher'
+	voucher?: {
 		id: string
 		object: 'voucher'
 		code: string

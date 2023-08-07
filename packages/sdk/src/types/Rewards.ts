@@ -42,7 +42,7 @@ export interface RewardObject {
 	updated_at?: string | null
 	metadata?: Record<string, any>
 	object: 'reward'
-	parameters?: RewardObjectParametersCampaign | RewardObjectParametersCoin | RewardObjectParametersMaterial
+	parameters: RewardObjectParametersCampaign | RewardObjectParametersCoin | RewardObjectParametersMaterial
 }
 
 interface RewardObjectParametersCampaign {
