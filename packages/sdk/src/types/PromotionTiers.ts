@@ -98,7 +98,7 @@ export interface PromotionTiersRedeemResponse {
 	tracking_id?: string
 	metadata?: Record<string, any>
 	result?: 'SUCCESS' | 'FAILURE'
-	order: ObjectOrder
+	order: Partial<ObjectOrder>
 	channel?: {
 		channel_id: string
 		channel_type: 'USER' | 'API'
@@ -145,10 +145,10 @@ interface UpdatePromotionTier {
 }
 
 export interface AddPromotionTierToCampaignBody {
-	name: string
+	name?: string
 	banner?: string
-	action: {
-		discount:
+	action?: {
+		discount?:
 			| VoucherDiscountAmount
 			| VoucherDiscountPercentage
 			| VoucherDiscountFixed
@@ -166,8 +166,8 @@ export interface AddPromotionTierToCampaignBody {
 	}
 	validity_day_of_week?: number[]
 	validation_rules?: string[]
-	category: string
-	category_id: string
+	category?: string
+	category_id?: string
 }
 
 export interface PromotionTiersListResponse {
@@ -296,7 +296,7 @@ export interface PromotionTiersCreateParams {
 export type ValidatePromotionTier = PromotionTiersRedeemParams
 export interface PromotionTiersRedeemParams {
 	customer?: CreateCustomer
-	order?: CreateOrder
+	order?: Partial<CreateOrder> & { id?: string }
 	metadata?: Record<string, any>
 }
 
