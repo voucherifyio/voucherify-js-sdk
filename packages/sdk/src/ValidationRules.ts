@@ -72,10 +72,15 @@ export class ValidationRules {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-validation-rule-assignments
 	 */
-	public listAssignments(validationRuleId: string, params: T.ValidationRuleListAssignmentsParams = {}) {
+	public listValidationRuleAssignments(validationRuleId: string, params: T.ValidationRuleListAssignmentsParams = {}) {
 		return this.client.get<T.ValidationRulesListAssignmentsResponse>(
 			`/validation-rules/${encode(validationRuleId)}/assignments`,
 			params,
 		)
+	}
+
+	//Backward compatibility
+	public listAssignments(validationRuleId: string, params?: T.ValidationRuleListAssignmentsParams) {
+		return this.listValidationRuleAssignments(validationRuleId, params)
 	}
 }
