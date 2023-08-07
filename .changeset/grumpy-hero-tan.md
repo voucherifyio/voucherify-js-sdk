@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': minor
+'@voucherify/sdk': major
 ---
 
 Added support for following endpoints:
