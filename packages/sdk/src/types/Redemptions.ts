@@ -8,7 +8,7 @@ import { StackableOptions, StackableRedeemableParams } from './Stackable'
 import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
 import { ProductObject, SkuObject } from './Products'
 
-export type RedeemResponse =
+export type RedemptionsRedeemResponse =
 	| RedemptionObjectDiscountVoucherExtended
 	| RedemptionObjectLoyaltyCardExtended
 	| RedemptionObjectGiftCardExtended
@@ -177,7 +177,7 @@ export interface RedemptionsRedeemBody {
 	session?: ValidationSessionReleaseParams
 }
 
-export interface RedemptionsRedeemResponse {
+export interface RedemptionsRedeemResult {
 	id: string
 	object: 'redemption'
 	date?: string
@@ -354,7 +354,7 @@ export interface RedemptionsRedeemStackableParams {
 	metadata?: Record<string, any>
 }
 
-export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemResponse & {
+export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemResult & {
 	redemption: string
 }
 

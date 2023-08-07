@@ -11,7 +11,7 @@ export class Redemptions {
 	 * @see https://docs.voucherify.io/reference/redeem-voucher
 	 */
 	public redeem(code: string, body: T.RedemptionsRedeemBody = {}) {
-		return this.client.post<T.RedeemResponse>(`/vouchers/${encode(code)}/redemption`, body)
+		return this.client.post<T.RedemptionsRedeemResponse>(`/vouchers/${encode(code)}/redemption`, body)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-stacked-discounts

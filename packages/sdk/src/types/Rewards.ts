@@ -100,7 +100,7 @@ export type RewardsCreate = CreateRewardCampaign | CreateRewardMaterial | Create
 export type RewardsGetResponse = RewardObject
 
 //4_req_update_reward
-export type RewardsUpdateBody =
+export type RewardsUpdate =
 	| Omit<CreateRewardCampaign, 'type'>
 	| Omit<CreateRewardCoin, 'type'>
 	| Omit<CreateRewardMaterial, 'type'>
