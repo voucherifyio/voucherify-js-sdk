@@ -210,9 +210,6 @@ Types of (server side) requests and responses were aligned with https://github.c
       - Value of key `type` has been clarified `string` -> `'LOYALTY_CARD'`
       - Value of key `loyalty_card` has been clarified:
         - Added optional key: `expiration_rules`
-
-/////
-
 - client.loyalties.update(campaign)
   - Request parameter `campaign`: `LoyaltiesUpdateCampaign`:
     - Added optional keys: `loyalty_card`, `loyalty_tiers_expiration`, `auto_join`, `join_once`, `validity_timeframe`, `validity_day_of_week`, `activity_duration_after_publishing`, `category_id`, `category`, `voucher`
@@ -269,8 +266,20 @@ Types of (server side) requests and responses were aligned with https://github.c
 - client.metadataSchemas.get(schemaName)
   - Returned value object `MetadataSchemasGetResponse`
     - Value of key `related_object` has been clarified, `string` -> `'campaign' | 'customer' | 'earning_rule' | 'loyalty_tier' | 'order' | 'order_item' | 'product' | 'promotion_tier' | 'publication' | 'redemption' | 'reward' | 'voucher'`
-- 
-        ////////////////////////////////////////////////////////
+- client.orders.create(order)
+  - Request parameter `order`: `OrdersCreate`
+    - Added optional key: `referrer`
+- client.orders.update(order)
+  - Request parameter `order`: `OrdersUpdate`
+    - Added optional keys: `referrer`, `referrer_id`, `customer_id`
+- client.orders.list(params)
+  - Request parameter `params`: `OrdersListParams`
+    - Added optional key: `order`
+- client.orders.import(orders)
+  - Request parameter `orders`: `OrdersCreate`(array)
+    - Added optional key: `referrer`
+
+////////////////////////////////////////////////////////
 
 - client.vouchers.import(vouchers)
     - Request (body) params:
