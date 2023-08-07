@@ -680,7 +680,6 @@ Types of (server side) requests and responses were aligned with https://github.c
     - `ProductsCreateSkuResponse`:
       - Added optional `product_id`, `image_url` keys.
 
-
 - client.products.listSkus(productId)
   - New query params: `ListSkusParams`
   - Returned value:
