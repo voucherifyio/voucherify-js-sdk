@@ -381,20 +381,20 @@ Types of (server side) requests and responses were aligned with https://github.c
     - Added optional key: `validation_rules_assignments`
 
 - client.vouchers.qualifications.examine(body, params)
-- Request (body) params:
-  - `VouchersQualificationExamineBody`:
-    - Optional `customer` key:
-      - Added optional keys:  `birthdate`, `phone`, `address` object
-      - Removed optional `description` key``
-    - Optional `order` key has 4 options: VouchersQualificationProductObject, VouchersQualificationSkuObject, VouchersQualificationProductUsingProductIdObject, VouchersQualificationProductUsingSourceIdObject
-- Query params:
-  - `VouchersQualificationExamineParams`:
-    - Updated optional `order` key - added new predefined values: `code`, `-code`
-- Returned value:
-  - `VouchersQualificationExamineResponse`:
-    - Added keys: `id`, `created_at`, `tracking_id`
-    - Updated optional `data` (array ob objects)
-      - Added optional properties: `applicable_to`, `inapplicable_to`
+  - Request (body) params:
+    - `VouchersQualificationExamineBody`:
+      - Optional `customer` key:
+        - Added optional keys:  `birthdate`, `phone`, `address` object
+        - Removed optional `description` key``
+      - Optional `order` key has 4 options: VouchersQualificationProductObject, VouchersQualificationSkuObject, VouchersQualificationProductUsingProductIdObject, VouchersQualificationProductUsingSourceIdObject
+  - Query params:
+    - `VouchersQualificationExamineParams`:
+      - Updated optional `order` key - added new predefined values: `code`, `-code`
+  - Returned value:
+    - `VouchersQualificationExamineResponse`:
+      - Added keys: `id`, `created_at`, `tracking_id`
+      - Updated optional `data` (array ob objects)
+        - Added optional properties: `applicable_to`, `inapplicable_to`
 
 - client.validations.validateVoucher(code, params)
   - Request (body) params:
@@ -468,232 +468,224 @@ Types of (server side) requests and responses were aligned with https://github.c
   - Body params type:
     - All parameters from ValidationRulesCreate (optional) and required `id` property
 
-client.validationRules.createAssignment(validationRuleId, assignment)
-- Request (body) params:
-  - The ValidationRulesCreateAssignment that previously contained 3 properties: voucher, campaign, promotion_tier now has 6 options:
-    - `ValidationRuleAssignmentsVoucher` (property: `voucher`)
-    - `ValidationRuleAssignmentsCampaign` (property: `campaign`)
-    - `ValidationRuleAssignmentsPromotionTier` (property: `promotion_tier`)
-    - `ValidationRuleAssignmentsEarningRule` (property: `earning_rule`)
-    - `ValidationRuleAssignmentsReward` (properties: `related_object_id`, `related_object_type`)
-    - `ValidationRuleAssignmentsDistribution` (property: `distribution`)
-- Returned value:
-  - `ValidationRulesCreateAssignmentObject`
-    - Updated optional `related_object_type` key with 6 predefined values
-    - Deleted `updated_at` key.
+- client.validationRules.createAssignment(validationRuleId, assignment)
+  - Request (body) params:
+    - The ValidationRulesCreateAssignment that previously contained 3 properties: voucher, campaign, promotion_tier now has 6 options:
+      - `ValidationRuleAssignmentsVoucher` (property: `voucher`)
+      - `ValidationRuleAssignmentsCampaign` (property: `campaign`)
+      - `ValidationRuleAssignmentsPromotionTier` (property: `promotion_tier`)
+      - `ValidationRuleAssignmentsEarningRule` (property: `earning_rule`)
+      - `ValidationRuleAssignmentsReward` (properties: `related_object_id`, `related_object_type`)
+      - `ValidationRuleAssignmentsDistribution` (property: `distribution`)
+  - Returned value:
+    - `ValidationRulesCreateAssignmentObject`
+      - Updated optional `related_object_type` key with 6 predefined values
+      - Deleted `updated_at` key.
 
-client.validationRules.list()
-client.validationRules.list(params)
-- Query params:
-  - Added optional `order` key  with 6 predefined values: 'created_at' | '-created_at' | '-name' | 'name' | 'updated_at' | '-updated_at'
-- Returned value:
-  - `ValidationRulesListResponse`
-    - `data` key is `ValidationRulesObject`
-      - Added optional `applicable_to`, `type`, `context_type` keys.
-      - Deleted optional `assignments_count` key.
+- client.validationRules.list(params)
+  - Query params:
+    - Added optional `order` key  with 6 predefined values: 'created_at' | '-created_at' | '-name' | 'name' | 'updated_at' | '-updated_at'
+  - Returned value:
+    - `ValidationRulesListResponse`
+      - `data` key is `ValidationRulesObject`
+        - Added optional `applicable_to`, `type`, `context_type` keys.
+        - Deleted optional `assignments_count` key.
 
-
-client.validationRules.listAssignments(validationRuleId)
-client.validationRules.listAssignments(validationRuleId, params)
-- Query params:
-  - `ValidationRulesListAssignmentsParams`:
-    - Added optional `order` key with 2 predefined values: '-created_at' | 'created_at'
-  - new property: order ('-created_at' | 'created_at')
-- Returned value:
-  - `ValidationRulesCreateAssignmentObject`
-    - Updated optional `related_object_type` key with 6 predefined values
-    - Deleted `updated_at` key.
+  
+- client.validationRules.listAssignments(validationRuleId, params)
+  - Query params:
+    - `ValidationRulesListAssignmentsParams`:
+      - Added optional `order` key with 2 predefined values: '-created_at' | 'created_at'
+    - new property: order ('-created_at' | 'created_at')
+  - Returned value:
+    - `ValidationRulesCreateAssignmentObject`
+      - Updated optional `related_object_type` key with 6 predefined values
+      - Deleted `updated_at` key.
 
 
-client.segments.create(segment)
-- Request (body) params:
-  - `SegmentsCreate` has 2 options: `SegmentsCreateStatic` or `SegmentsCreateAutoUpdate`
-- Returned value:
-  - `SegmentsCreateResponse`:
-    - Updated optional `filter`, `type` keys
-    - Added optional `initial_sync_status` key with 2 predefined values: 'DONE' | 'IN_PROGRESS'
-    - Removed optional `metadata` key
+- client.segments.create(segment)
+  - Request (body) params:
+    - `SegmentsCreate` has 2 options: `SegmentsCreateStatic` or `SegmentsCreateAutoUpdate`
+  - Returned value:
+    - `SegmentsCreateResponse`:
+      - Updated optional `filter`, `type` keys
+      - Added optional `initial_sync_status` key with 2 predefined values: 'DONE' | 'IN_PROGRESS'
+      - Removed optional `metadata` key
 
-client.segments.get(segmentId)
-- Returned value:
-  - `SegmentsCreateResponse`:
-    - Updated optional `filter`, `type` keys
-    - Added optional `initial_sync_status` key with 2 predefined values: 'DONE' | 'IN_PROGRESS'
-    - Removed optional `metadata` key
+- client.segments.get(segmentId)
+  - Returned value:
+    - `SegmentsCreateResponse`:
+      - Updated optional `filter`, `type` keys
+      - Added optional `initial_sync_status` key with 2 predefined values: 'DONE' | 'IN_PROGRESS'
+      - Removed optional `metadata` key
 
-client.rewards.list()
-client.rewards.list(params)
-- Query params:
-  - `RewardsListParams`:
-  -  Added optional `assignment_id` key
-- Returned value:
-  - `RewardsListResponse`
-    - Replaced `RewardsResponse` and `RewardsTypeResponse` with a `RewardObject`.
+- client.rewards.list(params)
+  - Query params:
+    - `RewardsListParams`:
+    -  Added optional `assignment_id` key
+  - Returned value:
+    - `RewardsListResponse`
+      - Replaced `RewardsResponse` and `RewardsTypeResponse` with a `RewardObject`.
 
-client.rewards.create(reward)
-- Request (body) params:
-  - `RewardsCreate` has 3 options: `CreateRewardCampaign`, `CreateRewardMaterial`, `CreateRewardCoin`
-    -  `CreateRewardCampaign`:
-    - Added `name`, `parameters` keys.
-    - Added optional `type`, `metadata` keys.
-    - `parameters` key - it has one optional property: `campaign`. `campaign` has 3 options: `RewardParametersCampaignLoyaltyProgram`, `RewardParametersCampaignGiftVouchers`, `RewardParametersCampaignDiscountCoupons`
-    - `CreateRewardMaterial`:
-      - Added optional `name`, `type`, `parameters`, `stock`, `attributes` (with optional `image_url`, `description`) and `metadata` keys.
-      - `parameters` object - it has one optional property: `product`. `product` has 2 optional properties: `id` and `sku_id`.
-    - `CreateRewardCoin`:
+- client.rewards.create(reward)
+  - Request (body) params:
+    - `RewardsCreate` has 3 options: `CreateRewardCampaign`, `CreateRewardMaterial`, `CreateRewardCoin`
+      -  `CreateRewardCampaign`:
       - Added `name`, `parameters` keys.
-      - Added optional `type`, `metadata` keys
-      - `parameters` key - it has one optional property: `coin`. `coin` has two optional properties: `exchange_ratio` and `points_ratio`.
-- Returned value:
-  - `RewardObject`
-    - Added optional `metadata` key
+      - Added optional `type`, `metadata` keys.
+      - `parameters` key - it has one optional property: `campaign`. `campaign` has 3 options: `RewardParametersCampaignLoyaltyProgram`, `RewardParametersCampaignGiftVouchers`, `RewardParametersCampaignDiscountCoupons`
+      - `CreateRewardMaterial`:
+        - Added optional `name`, `type`, `parameters`, `stock`, `attributes` (with optional `image_url`, `description`) and `metadata` keys.
+        - `parameters` object - it has one optional property: `product`. `product` has 2 optional properties: `id` and `sku_id`.
+      - `CreateRewardCoin`:
+        - Added `name`, `parameters` keys.
+        - Added optional `type`, `metadata` keys
+        - `parameters` key - it has one optional property: `coin`. `coin` has two optional properties: `exchange_ratio` and `points_ratio`.
+  - Returned value:
+    - `RewardObject`
+      - Added optional `metadata` key
 
-client.rewards.get(rewardId)
-- Returned value:
-  - `RewardObject`:
-    - Added optional `metadata` key
+- client.rewards.get(rewardId)
+  - Returned value:
+    - `RewardObject`:
+      - Added optional `metadata` key
 
 
-client.rewards.update(reward)
-- Request (body) params:
-  - `RewardsUpdateBody` has 3 options:
-    - `CreateRewardCampaign` without `type` property
-    - `CreateRewardCoin` without `type` property
-    - `CreateRewardMaterial` without `type` property
-- Returned value:
-  - `RewardObject`:
-    - Added optional `metadata` key
+- client.rewards.update(reward)
+  - Request (body) params:
+    - `RewardsUpdateBody` has 3 options:
+      - `CreateRewardCampaign` without `type` property
+      - `CreateRewardCoin` without `type` property
+      - `CreateRewardMaterial` without `type` property
+  - Returned value:
+    - `RewardObject`:
+      - Added optional `metadata` key
 
-client.rewards.updateAssignment(rewardId, assignment)
-- Request (body) params:
-  - `RewardsUpdateAssignment`:
-    -  Added optional `parameters` key (with optional `loyalty` object that includes `points` property)
+- client.rewards.updateAssignment(rewardId, assignment)
+  - Request (body) params:
+    - `RewardsUpdateAssignment`:
+      -  Added optional `parameters` key (with optional `loyalty` object that includes `points` property)
 
-client.redemptions.redeem(code)
-client.redemptions.redeem(code, params)
-- Returned value:
-  - `RedeemResponse` has 3 options: `RedemptionObjectDiscountVoucherExtended`, `RedemptionObjectLoyaltyCardExtended`, `RedemptionObjectGiftCardExtended`
-    - Added optional `channel` key which includes 2 optional properties: `channel_id`, `channel_type`
+- client.redemptions.redeem(code, params)
+  - Returned value:
+    - `RedeemResponse` has 3 options: `RedemptionObjectDiscountVoucherExtended`, `RedemptionObjectLoyaltyCardExtended`, `RedemptionObjectGiftCardExtended`
+      - Added optional `channel` key which includes 2 optional properties: `channel_id`, `channel_type`
 
-client.redemptions.getForVoucher(code)
-- Returned value:
-  - `RedemptionsGetForVoucherResponse`:
-    -  Updated `data_ref` key - changed from string to default value: 'redemption_entries'
-    - Removed optional `redeemed_amount`
-  - `redemption_entries` has 8 options:
-    - `RedemptionObjectVoucherDiscount`
-    - `RedemptionObjectLoyaltyCard`
-    - `RedemptionObjectGiftCard`
-    - `RedemptionObjectVoucherFail`
-    - `RedemptionRollbackObjectVoucherDiscount`
-    - `RedemptionRollbackObjectGiftCard`
-    - `RedemptionRollbackObjectLoyaltyCard`
-    - `RedemptionRollbackObjectVoucherFail`
+- client.redemptions.getForVoucher(code)
+  - Returned value:
+    - `RedemptionsGetForVoucherResponse`:
+      -  Updated `data_ref` key - changed from string to default value: 'redemption_entries'
+      - Removed optional `redeemed_amount`
+    - `redemption_entries` has 8 options:
+      - `RedemptionObjectVoucherDiscount`
+      - `RedemptionObjectLoyaltyCard`
+      - `RedemptionObjectGiftCard`
+      - `RedemptionObjectVoucherFail`
+      - `RedemptionRollbackObjectVoucherDiscount`
+      - `RedemptionRollbackObjectGiftCard`
+      - `RedemptionRollbackObjectLoyaltyCard`
+      - `RedemptionRollbackObjectVoucherFail`
 
-client.redemptions.rollback(redemptionId)
-client.redemptions.rollback(redemptionId, params)
-- Returned value:
-  - `RedemptionsRollbackResponse` has 4 options: `RollbackRedemptionObjectDiscountVoucherExtended`, `RollbackRedemptionObjectLoyaltyCardExtended`, `RollbackRedemptionObjectGiftCardExtended`, `RollbackRedemptionObjectPromotionTierExtended`
-    - Added optional `channel` key, which includes 2 optional properties: `channel_id`, `channel_type`.
-    - Added `related_object_type`, `related_object_id` keys.
+- client.redemptions.rollback(redemptionId, params)
+  - Returned value:
+    - `RedemptionsRollbackResponse` has 4 options: `RollbackRedemptionObjectDiscountVoucherExtended`, `RollbackRedemptionObjectLoyaltyCardExtended`, `RollbackRedemptionObjectGiftCardExtended`, `RollbackRedemptionObjectPromotionTierExtended`
+      - Added optional `channel` key, which includes 2 optional properties: `channel_id`, `channel_type`.
+      - Added `related_object_type`, `related_object_id` keys.
 
-client.redemptions.rollbackStackable(parentRedemptionId)
-client.redemptions.rollbackStackable(parentRedemptionId, params, queryParams)
-- Returned value:
-  - `RedemptionsRollbackStackableResponse`:
-    - `rollbacks` property has 4 options:
-    - `RedemptionRollbackDiscountVoucherStacked`,
-    - `RedemptionRollbackLoyaltyCardStacked`,
-    - `RedemptionRollbackGiftCardStacked`,
-    - `RedemptionRollbackPromotionTierStacked`
-    - `parent_rollback` property was updated:
-      - Added `object` key
-      - Updated optional `order` object
+- client.redemptions.rollbackStackable(parentRedemptionId, params, queryParams)
+  - Returned value:
+    - `RedemptionsRollbackStackableResponse`:
+      - `rollbacks` property has 4 options:
+      - `RedemptionRollbackDiscountVoucherStacked`,
+      - `RedemptionRollbackLoyaltyCardStacked`,
+      - `RedemptionRollbackGiftCardStacked`,
+      - `RedemptionRollbackPromotionTierStacked`
+      - `parent_rollback` property was updated:
+        - Added `object` key
+        - Updated optional `order` object
 
-client.promotions.tiers.listAll()
-client.promotions.tiers.listAll(params)
-- Query params:
-  - `PromotionTiersListAllParams`:
-    - Added optional `order` key with 4 predefined values: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
-- Returned value:
-  - Added `total` key
-  - Removed `has_more` key.
-  - Updated `tiers` key.
-    - Added `created_at`, `summary` keys.
-    - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
-
-client.promotions.tiers.list(promotionCampaignId)
-- Returned value:
-  - `PromotionTiersListResponse`:
-    - Added `total` key.
+- client.promotions.tiers.listAll(params)
+  - Query params:
+    - `PromotionTiersListAllParams`:
+      - Added optional `order` key with 4 predefined values: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+  - Returned value:
+    - Added `total` key
+    - Removed `has_more` key.
     - Updated `tiers` key.
       - Added `created_at`, `summary` keys.
       - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
 
-client.promotions.tiers.get(tierId)
-- Returned value:
-  - `PromotionTierGetResponse`:
-    - Added `created_at`, `summary` keys.
-    - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
+- client.promotions.tiers.list(promotionCampaignId)
+  - Returned value:
+    - `PromotionTiersListResponse`:
+      - Added `total` key.
+      - Updated `tiers` key.
+        - Added `created_at`, `summary` keys.
+        - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
 
-client.promotions.tiers.redeem(promotionsTierId, params)
-- Request (body) params:
-  - `PromotionTiersRedeemParams`:
-    - Removed optional `session` key
-    - Updated optional `customer`, `order` keys.
-- Returned value:
-  - `PromotionTiersRedeemResponse`:
-    - Updated optional `result` key - has 2 predefined values.
-    - Added optional `customer`, `channel` keys.
-    - Added `related_object_type`, `related_object_id`, `voucher` keys.
-    - Updated `order`, `promotion_tier` keys.
+- client.promotions.tiers.get(tierId)
+  - Returned value:
+    - `PromotionTierGetResponse`:
+      - Added `created_at`, `summary` keys.
+      - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
 
-client.promotions.tiers.update(promotionsTier)
-- Request (body) params:
-  - `UpdatePromotionTierRequest`:
-  - Added optional `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `hierarchy`, `category`, `category_id` keys.
-- Returned value:
-  - `PromotionTierUpdateResponse`:
-    - Added `created_at`, `summary` keys.
-    - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
+- client.promotions.tiers.redeem(promotionsTierId, params)
+  - Request (body) params:
+    - `PromotionTiersRedeemParams`:
+      - Removed optional `session` key
+      - Updated optional `customer`, `order` keys.
+  - Returned value:
+    - `PromotionTiersRedeemResponse`:
+      - Updated optional `result` key - has 2 predefined values.
+      - Added optional `customer`, `channel` keys.
+      - Added `related_object_type`, `related_object_id`, `voucher` keys.
+      - Updated `order`, `promotion_tier` keys.
 
-client.promotions.validate(params)
-- Request (body) params:
-  - `PromotionsValidateParams`:
-    - Added `options` key (which includes `expand` property)
-    - Updated `customer`, `order` keys.
-- Returned value:
-  - `PromotionsValidateResponse`:
-    - Added optional `category_id`, `category` keys
+- client.promotions.tiers.update(promotionsTier)
+  - Request (body) params:
+    - `UpdatePromotionTierRequest`:
+    - Added optional `start_date`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `hierarchy`, `category`, `category_id` keys.
+  - Returned value:
+    - `PromotionTierUpdateResponse`:
+      - Added `created_at`, `summary` keys.
+      - Added optional `start_date`, `updated_at`, `campaign_id`, `expiration_date`, `validity_timeframe`, `validity_day_of_week`, `category_id`, `categories` keys.
 
-client.products.create(product)
-- Returned value:
-  - `ProductsCreateResponse`:
-    - Added optional `skus`, `updated_at` keys
+- client.promotions.validate(params)
+  - Request (body) params:
+    - `PromotionsValidateParams`:
+      - Added `options` key (which includes `expand` property)
+      - Updated `customer`, `order` keys.
+  - Returned value:
+    - `PromotionsValidateResponse`:
+      - Added optional `category_id`, `category` keys
 
-client.products.get(productId)
-- Returned value:
-  `ProductsCreateResponse`:
-  - Updated optional `skus` property - added `data_ref` key.
-  - Added optional `updated_at` key.
+- client.products.create(product)
+  - Returned value:
+    - `ProductsCreateResponse`:
+      - Added optional `skus`, `updated_at` keys
 
-client.products.list()
-client.products.list(params)
-- Query params:
-  - `ProductsListParams`:
-    - Added optional `order` key with 4 predefined values: 'created_at', '-created_at', 'updated_at', '-updated_at'
+- client.products.get(productId)
+  - Returned value:
+    `ProductsCreateResponse`:
+    - Updated optional `skus` property - added `data_ref` key.
+    - Added optional `updated_at` key.
 
-client.products.createSku(productId, sku)
-- Returned value:
-  - `ProductsCreateSkuResponse`:
-    - Added optional `product_id`, `image_url` keys.
+- client.products.list(params)
+  - Query params:
+    - `ProductsListParams`:
+      - Added optional `order` key with 4 predefined values: 'created_at', '-created_at', 'updated_at', '-updated_at'
 
-
-client.products.listSkus(productId)
-- New query params: `ListSkusParams`
-- Returned value:
-  - `ProductsListSkus`:
-    - Added `data_ref` key.
-    - Updated `skus` key:
+- client.products.createSku(productId, sku)
+  - Returned value:
+    - `ProductsCreateSkuResponse`:
       - Added optional `product_id`, `image_url` keys.
+
+
+- client.products.listSkus(productId)
+  - New query params: `ListSkusParams`
+  - Returned value:
+    - `ProductsListSkus`:
+      - Added `data_ref` key.
+      - Updated `skus` key:
+        - Added optional `product_id`, `image_url` keys.
 
