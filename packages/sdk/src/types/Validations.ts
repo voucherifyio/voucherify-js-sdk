@@ -3,10 +3,9 @@ import {
 	StackableOptions,
 	StackableRedeemableObject,
 	StackableRedeemableResponse,
-	StackableRedeemableResponseStatus
+	StackableRedeemableResponseStatus,
 } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
-
 import {
 	OrdersCreateResponse,
 	ApplicableToObjectPromotionTier,
@@ -15,7 +14,7 @@ import {
 	ObjectOrder,
 	ObjectOrderApplyToOrder,
 } from './Orders'
-import { PromotionsValidationParams} from './Promotions'
+import { PromotionsValidationParams } from './Promotions'
 import { CategoryObject } from './Categories'
 import {
 	VoucherObjectDiscountAmount,

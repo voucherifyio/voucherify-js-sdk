@@ -68,7 +68,10 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/disable-promotion-tier
 	 */
 	public disable(promotionsTierId: string) {
-		return this.client.post<T.PromotionTiersDisableResponse>(`/promotions/tiers/${encode(promotionsTierId)}/disable`, {})
+		return this.client.post<T.PromotionTiersDisableResponse>(
+			`/promotions/tiers/${encode(promotionsTierId)}/disable`,
+			{},
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/enable-promotion-tier

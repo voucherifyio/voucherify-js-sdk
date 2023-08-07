@@ -112,7 +112,8 @@ export interface ValidationRulesObject {
 
 type ValidationRulesObjectType = 'basic' | 'advanced' | 'complex'
 
-type ValidationRulesObjectContextType = | 'earning_rule.order.paid'
+type ValidationRulesObjectContextType =
+	| 'earning_rule.order.paid'
 	| 'earning_rule.custom_event'
 	| 'earning_rule.customer.segment.entered'
 	| 'campaign.discount_coupons'

@@ -256,7 +256,10 @@ interface VouchersQualificationProductObject {
 	}
 }
 
-type VouchersQualificationSkuObject = Omit<VouchersQualificationProductObject, 'related_object'|  'price' | 'metadata'> & {
+type VouchersQualificationSkuObject = Omit<
+	VouchersQualificationProductObject,
+	'related_object' | 'price' | 'metadata'
+> & {
 	sku_id?: string
 	related_object?: 'product' | 'sku'
 	sku?: {
@@ -376,8 +379,7 @@ export type VouchersCreate = Pick<
 	}
 	validation_rules?: string[]
 	validity_day_of_week?: number[]
-	active? : boolean
-
+	active?: boolean
 }
 
 export type VouchersCreateResponse = VouchersResponse
