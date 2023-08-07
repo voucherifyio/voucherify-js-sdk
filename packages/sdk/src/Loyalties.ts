@@ -169,8 +169,12 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member-activities
 	 */
-	public getMemberActivities(memberId: string) {
+	public getMemberActivitiesWithoutCampaignId(memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(`/loyalties/members/${memberId}/activities`)
+	}
+	//backward compatibility
+	public getMemberActivities(campaignId: string, memberId: string) {
+		return this.getMemberActivitiesWithCampaignId(campaignId, memberId)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member-activities-1
