@@ -38,10 +38,10 @@ export interface RewardObject {
 		image_url?: string
 		description?: string
 	}
-	created_at?: string
+	created_at: string
 	updated_at?: string | null
 	metadata?: Record<string, any>
-	object?: 'reward'
+	object: 'reward'
 	parameters?: RewardObjectParametersCampaign | RewardObjectParametersCoin | RewardObjectParametersMaterial
 }
 
@@ -95,7 +95,7 @@ export interface RewardsListResponse {
 	data: RewardsCreateResponse[]
 }
 
-export type RewardsCreateBody = CreateRewardCampaign | CreateRewardMaterial | CreateRewardCoin
+export type RewardsCreate = CreateRewardCampaign | CreateRewardMaterial | CreateRewardCoin
 
 export type RewardsGetResponse = RewardObject
 
@@ -205,7 +205,7 @@ export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
 
 export type RewardsGetAssignmentResponse = RewardsAssignmentObject
 
-export type RewardsUpdateAssignmentBody = Pick<RewardsAssignmentObject, 'parameters'>
+export type RewardsUpdateAssignment = Pick<RewardsAssignmentObject, 'parameters'>
 
 export interface RewardRedemptionParams {
 	points?: number

@@ -16,13 +16,13 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/get-promotions
 	 */
 	public list(campaignId: string) {
-		return this.client.get<T.ListPromotionTiersFromCampaign>(`/promotions/${encode(campaignId)}/tiers`)
+		return this.client.get<T.PromotionTiersListResponse>(`/promotions/${encode(campaignId)}/tiers`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-promotion-tier
 	 */
 	public get(tierId: string) {
-		return this.client.get<T.PromotionTierObject>(`/promotions/tiers/${encode(tierId)}`)
+		return this.client.get<T.PromotionTierGetResponse>(`/promotions/tiers/${encode(tierId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-promotion-tier-to-campaign
@@ -37,8 +37,8 @@ export class PromotionTiers {
 	/**
 	 * @see https://docs.voucherify.io/reference/redeem-promotion
 	 */
-	public redeem(promotionsTierId: string, params: T.RedeemPromotionTier) {
-		return this.client.post<T.RedemptionObjectPromotionTierExtended>(
+	public redeem(promotionsTierId: string, params: T.PromotionTiersRedeemParams) {
+		return this.client.post<T.PromotionTiersRedeemResponse>(
 			`/promotions/tiers/${encode(promotionsTierId)}/redemption`,
 			params,
 		)
@@ -56,7 +56,7 @@ export class PromotionTiers {
 	 * @see https://docs.voucherify.io/reference/update-promotion
 	 */
 	public update(params: T.UpdatePromotionTierRequest & { id: string }) {
-		return this.client.put<T.PromotionTierObject>(`/promotions/tiers/${encode(params.id)}`, params)
+		return this.client.put<T.PromotionTierUpdateResponse>(`/promotions/tiers/${encode(params.id)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-promotion

@@ -8,7 +8,7 @@ import { StackableOptions, StackableRedeemableParams } from './Stackable'
 import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
 import { ProductObject, SkuObject } from './Products'
 
-export type ResRedeemVoucher =
+export type RedeemResponse =
 	| RedemptionObjectDiscountVoucherExtended
 	| RedemptionObjectLoyaltyCardExtended
 	| RedemptionObjectGiftCardExtended

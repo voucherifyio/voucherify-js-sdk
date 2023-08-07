@@ -15,7 +15,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-reward
 	 */
-	public create(reward: T.RewardsCreateBody) {
+	public create(reward: T.RewardsCreate) {
 		return this.client.post<T.RewardsCreateResponse>('/rewards', reward)
 	}
 	/**
@@ -51,7 +51,7 @@ export class Rewards {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-reward-assignment
 	 */
-	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssignmentBody & { id: string }) {
+	public updateAssignment(rewardId: string, assignment: T.RewardsUpdateAssignment & { id: string }) {
 		return this.client.put<T.RewardsUpdateAssignmentResponse>(
 			`/rewards/${encode(rewardId)}/assignments/${encode(assignment.id)}`,
 			omit(assignment, ['id']),

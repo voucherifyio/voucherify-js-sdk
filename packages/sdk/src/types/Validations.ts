@@ -15,7 +15,7 @@ import {
 	ObjectOrder,
 	ObjectOrderApplyToOrder,
 } from './Orders'
-import { PromotionsValidateParams } from './Promotions'
+import { PromotionsValidationParams} from './Promotions'
 import { CategoryObject } from './Categories'
 import {
 	VoucherObjectDiscountAmount,
@@ -482,6 +482,6 @@ export interface ValidationValidateStackableResponseClientSide {
 	redeemables?: StackableRedeemableResponse[]
 }
 
-export type ValidationsValidateCode = PromotionsValidateParams
+export type ValidationsValidateCode = PromotionsValidationParams
 
 export type ValidationsValidateContext = ValidationsValidateVoucherParams

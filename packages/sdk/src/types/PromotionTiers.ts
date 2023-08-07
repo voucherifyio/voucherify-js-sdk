@@ -90,7 +90,7 @@ export interface ErrorNoTranslation {
 	request_id?: string
 }
 
-export interface RedemptionObjectPromotionTierExtended {
+export interface PromotionTiersRedeemResponse {
 	id: string
 	object: 'redemption'
 	date: string
@@ -170,7 +170,7 @@ export interface AddPromotionTierToCampaignBody {
 	category_id: string
 }
 
-export interface ListPromotionTiersFromCampaign {
+export interface PromotionTiersListResponse {
 	object: 'list'
 	data_ref: 'tiers'
 	tiers: PromotionTierObject[]
@@ -178,9 +178,13 @@ export interface ListPromotionTiersFromCampaign {
 	has_more: boolean
 }
 
+export type PromotionTierGetResponse = PromotionTierObject
+
+export type PromotionTierUpdateResponse = PromotionTierObject
+
 export interface PromotionTierObject {
 	id: string
-	created_at?: string
+	created_at: string
 	updated_at?: string
 	name: string
 	banner?: string
@@ -287,8 +291,8 @@ export interface PromotionTiersCreateParams {
 	metadata?: Record<string, any>
 }
 
-export type ValidatePromotionTier = RedeemPromotionTier
-export interface RedeemPromotionTier {
+export type ValidatePromotionTier = PromotionTiersRedeemParams
+export interface PromotionTiersRedeemParams {
 	customer?: CreateCustomer
 	order?: CreateOrder
 	metadata?: Record<string, any>

@@ -1,22 +1,22 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 
 import { CreateOrder } from './Orders'
-import { PromotionTier, RedeemPromotionTier, ValidationPromotionTierTrue } from './PromotionTiers'
+import { PromotionTier, PromotionTiersRedeemParams, ValidationPromotionTierTrue } from './PromotionTiers'
 import { CreateCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentObject } from './ValidationRules'
 import { CategoryObject } from './Categories'
 
-export type ValidatePromotionRequest = Partial<
-	RedeemPromotionTier & {
+export type PromotionsValidateParams = Partial<
+	PromotionTiersRedeemParams & {
 		options: {
 			expand: string[]
 		}
 	}
 >
 
-export interface ResponseValidatePromotion {
+export interface PromotionsValidateResponse {
 	valid: boolean
-	tracking_id: string
+	tracking_id?: string
 	promotions?: ValidationPromotionTierTrue & { category_id?: string; categories?: CategoryObject }
 }
 
@@ -75,7 +75,7 @@ export interface PromotionsCreate {
 	}
 }
 
-export interface PromotionsValidateParams {
+export interface PromotionsValidationParams {
 	customer: CreateCustomer
 	order: CreateOrder
 	metadata?: Record<string, any>

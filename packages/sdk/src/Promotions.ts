@@ -15,7 +15,7 @@ export class Promotions {
 	/**
 	 * @see https://docs.voucherify.io/reference/validate-promotions-1
 	 */
-	public validate(body: T.ValidatePromotionRequest, params?: T.PromotionsValidateQueryParams) {
-		return this.client.post<T.ResponseValidatePromotion>('/promotions/validation', body, params)
+	public validate(body: T.PromotionsValidateParams, params?: T.PromotionsValidateQueryParams) {
+		return this.client.post<T.PromotionsValidateResponse>('/promotions/validation', body, params)
 	}
 }
