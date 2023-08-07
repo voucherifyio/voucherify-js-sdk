@@ -353,7 +353,6 @@ export interface VouchersCreateParameters {
 export type VouchersCreate = Pick<
 	VouchersResponse,
 	| 'type'
-	| 'active'
 	| 'additional_info'
 	| 'campaign'
 	| 'campaign_id'
@@ -377,6 +376,8 @@ export type VouchersCreate = Pick<
 	}
 	validation_rules?: string[]
 	validity_day_of_week?: number[]
+	active? : boolean
+
 }
 
 export type VouchersCreateResponse = VouchersResponse
@@ -429,6 +430,10 @@ export interface VouchersListParams {
 		before?: string
 	}
 	order?: '-created_at' | 'created_at' | '-updated_at' | 'updated_at' | '-code' | 'code'
+	filters?: {
+		junction?: string
+		[filter_condition: string]: any
+	}
 }
 
 export interface VouchersListResponse {
