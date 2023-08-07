@@ -456,29 +456,6 @@ export interface OrdersCustomerObject {
 	metadata?: Record<string, any>
 }
 
-export type OrdersItemsArray = OrdersOrderItem[] //10_req_orders_items_array
-
-export interface OrdersOrderItem {
-	//10_req_orders_order_item
-	sku_id?: string
-	product_id?: string
-	related_object?: 'product' | 'sku'
-	source_id?: string
-	discount_quantity?: number
-	initial_quantity?: number
-	quantity?: number
-	price?: number
-	amount?: number
-	discount_amount?: number
-	initial_amount?: number
-	applied_discount_amount?: number
-	subtotal_amount?: number
-	product?: Partial<OrdersOrderItemProduct> //10_req_orders_order_item_product
-	sku?: Partial<OrdersOrderItemSku> //10_req_orders_order_item_sku
-	object?: 'order_item'
-	metadata?: Record<string, any>
-}
-
 export interface OrdersOrderItemProduct {
 	//10_req_orders_order_item_product
 	id: string
@@ -499,8 +476,11 @@ export interface OrdersOrderItemSku {
 	override: boolean
 }
 
-export interface OrdersItem {
-	sku_id?: string | null
+export type OrdersItem = OrdersOrderItem
+
+export interface OrdersOrderItem {
+	//10_req_orders_order_item
+	sku_id?: string
 	product_id?: string
 	related_object?: 'product' | 'sku'
 	source_id?: string
@@ -513,21 +493,8 @@ export interface OrdersItem {
 	initial_amount?: number
 	applied_discount_amount?: number
 	subtotal_amount?: number
-	product?: {
-		id?: string
-		source_id?: string
-		override?: boolean
-		name?: string
-		metadata?: Record<string, any>
-		price?: number
-	}
-	sku?: {
-		id?: string
-		source_id?: string
-		override?: boolean
-		sku?: string
-		price?: number
-	}
+	product?: Partial<OrdersOrderItemProduct> //10_req_orders_order_item_product
+	sku?: Partial<OrdersOrderItemSku> //10_req_orders_order_item_sku
 	object?: 'order_item'
 	metadata?: Record<string, any>
 }
@@ -587,7 +554,6 @@ export interface OrdersListParams {
 	page?: number
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
-
 
 export interface OrderObjectRollback {
 	//7_obj_order_object_rollback
