@@ -39,7 +39,7 @@ export type ProductsUpdate = {
 	metadata?: Record<string, any>
 }
 
-export type ProductsUpdateResponse = ProductsCreateResponse
+export type ProductsUpdateResponse = Omit<ProductsCreateResponse, `skus`>
 
 export interface ProductsBulkUpdateMetadata {
 	source_ids: string[]
@@ -154,5 +154,5 @@ export interface SkuObject {
 	image_url?: string
 	updated_at?: string
 	created_at: string
-	object?: 'sku'
+	object: 'sku'
 }
