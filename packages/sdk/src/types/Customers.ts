@@ -403,7 +403,7 @@ interface CustomerActivityObjectDataCustomerConsentsGiven {
 type CustomerActivityObjectDataCustomerConsentsRevoked = CustomerActivityObjectDataCustomerConsentsGiven
 
 export type CustomersCreateBody = CustomerRequest
-export type CustomersCreateResponse = Partial<CustomerObject>
+export type CustomersCreateResponse = Partial<CustomerObject> & { id: string }
 
 export type CustomersGetResponse = Partial<CustomerObject>
 

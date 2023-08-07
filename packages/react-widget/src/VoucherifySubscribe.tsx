@@ -343,7 +343,7 @@ export function VoucherifySubscribe({
 							voucherifySubscribeStatus: textSubscribeSuccess,
 						}))
 
-						if (loadedConsents.length !== 0) {
+						if (loadedConsents.length !== 0 && _response.id) {
 							const createdCustomerId = _response.id
 							const {
 								name,
