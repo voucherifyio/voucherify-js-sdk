@@ -2,6 +2,8 @@
 '@voucherify/sdk': major
 ---
 
+# SERVER SIDE
+
 Added support for following endpoints:
   - campaigns
     - POST /campaigns/campaignId/enable
@@ -695,3 +697,22 @@ Types of (server side) requests and responses were aligned with https://github.c
   - Returned value:
     - `ClientSideTrackResponse`:
       - Added `Record<string, any>` as a representation of returned data - `referral`, `loyalty` and `customer`.
+
+
+
+# CLIENT SIDE
+
+Added support for following endpoint:
+- GET /client/promotions/tiers
+
+**TypeScript types changes:**
+
+- client.validate(params)
+  - Request parameter `params`: `ClientSideValidateParams`:
+    - Value of key `items` type object[] has been clarified:
+      - Added optional key `price`
+  - Returned value:
+    - Response object has changed to `ResponseValidateVoucherDiscountCode | ResponseValidateVoucherGiftCard | ResponseValidateVoucherLoyaltyCard | ResponseValidateVoucherFalse | PromotionsValidateResponse` for example:
+      - Value of key discount has been clarified
+      - Added optional keys such as `applicable_to`, `inapplicable_to` `campaign`, `reward` and `error`
+

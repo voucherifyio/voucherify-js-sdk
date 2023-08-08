@@ -1,5 +1,5 @@
 import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
-import { VouchersListParams, VouchersListResponse, VouchersResponse } from "./Vouchers";
+import { VouchersListParams, VouchersListResponse, VouchersResponse } from './Vouchers'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ConsentsListResponse } from './Consents'
 import { DistributionsPublicationsCreateParams, DistributionsPublicationsCreateResponse } from './Distributions'
