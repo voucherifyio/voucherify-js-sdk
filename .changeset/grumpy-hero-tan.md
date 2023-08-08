@@ -698,8 +698,6 @@ Types of (server side) requests and responses were aligned with https://github.c
     - `ClientSideTrackResponse`:
       - Added `Record<string, any>` as a representation of returned data - `referral`, `loyalty` and `customer`.
 
-
-
 # CLIENT SIDE
 
 Added support for following endpoint:
