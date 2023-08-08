@@ -6,10 +6,16 @@ import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ConsentsListResponse } from './Consents'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
 import { SimplePromotionTier } from './PromotionTiers'
-import { ValidationSessionReleaseParams } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
 import { ValidationsValidateStackableParams, ValidationValidateStackableResponseClientSide } from './Validations'
-import { RedemptionsRedeemStackableParams, RedemptionsRedeemStackableResponse } from './Redemptions'
+import {
+	RedemptionsRedeemResponse,
+	RedemptionsRedeemStackableParams,
+	RedemptionsRedeemStackableResponse,
+} from './Redemptions'
+import { RewardRedemptionParams } from './Rewards'
+import { GiftRedemptionParams } from './Gift'
+import { ValidationSessionReleaseParams } from './ValidateSession'
 
 type ClientSideItem = Pick<
 	OrdersItem,
@@ -78,25 +84,18 @@ export interface ClientSideValidateResponse {
 export interface ClientSideRedeemPayload {
 	tracking_id?: string
 	customer?: CustomerRequest
-	order?: ClientSideRedeemOrder
+	order?: Pick<Partial<OrdersCreateResponse>, 'id' | 'source_id' | 'amount' | 'items' | 'status' | 'metadata'>
 	metadata?: Record<string, any>
-	reward?: {
-		id: string
-	}
+	reward?: RewardRedemptionParams
+	gift?: GiftRedemptionParams
 	session?: ValidationSessionReleaseParams
 }
 
-export interface ClientSideRedeemResponse {
-	id: string
-	object: 'redemption'
-	date?: string
-	customer_id?: string
-	tracking_id?: string
-	order?: OrdersCreateResponse
-	metadata?: Record<string, any>
-	result: 'SUCCESS' | 'FAILURE'
-	voucher?: VouchersResponse
+export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 'source_id' | 'metadata' | 'amount'>> & {
+	items?: ClientSideItem[]
 }
+
+export type ClientSideRedeemResponse = RedemptionsRedeemResponse
 
 export interface ClientSidePublishPayload {
 	source_id?: string
@@ -137,10 +136,6 @@ export interface ClientSideTrackPayload {
 export interface ClientSideTrackResponse {
 	object: 'event'
 	type: string
-}
-
-export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 'source_id' | 'metadata' | 'amount'>> & {
-	items?: ClientSideItem[]
 }
 
 export interface ClientSideRedeemWidgetPayload {
