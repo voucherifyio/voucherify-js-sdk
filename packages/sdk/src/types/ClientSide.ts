@@ -13,7 +13,7 @@ import { RedemptionsRedeemStackableParams, RedemptionsRedeemStackableResponse } 
 
 type ClientSideItem = Pick<
 	OrdersItem,
-	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount'
+	'source_id' | 'sku_id' | 'product_id' | 'sku' | 'quantity' | 'related_object' | 'amount' | 'price'
 >
 
 export type ClientSideCustomersUpdateConsentsBody = CustomersUpdateConsentsBody
@@ -26,17 +26,17 @@ export interface ClientSideValidateParams {
 	code?: string
 	tracking_id?: string
 	amount?: number
+	session_key?: string
+	session_ttl?: number
+	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
+	metadata?: Record<string, any>
 	items?: ClientSideItem[]
 	orderMetadata?: Record<string, any>
+	session_type?: 'LOCK'
 	customer?: Pick<CustomerRequest, 'source_id' | 'metadata'>
 	reward?: {
 		id: string
 	}
-	metadata?: Record<string, any>
-	session_type?: 'LOCK'
-	session_key?: string
-	session_ttl?: number
-	session_ttl_unit?: 'MILLISECONDS' | 'SECONDS' | 'MINUTES' | 'HOURS' | 'DAYS'
 }
 
 export type ClientSideListVouchersParams = VouchersListParams

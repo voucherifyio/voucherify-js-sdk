@@ -1,4 +1,5 @@
 import * as T from './types/ClientSide'
+import * as PT from './types/PromotionTiers'
 
 import { assert, encode, isObject, isOptionalObject, isOptionalString, isString } from './helpers'
 
@@ -9,6 +10,12 @@ export class ClientSide {
 
 	public setIdentity(identity?: string) {
 		this.trackingId = identity
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-promotion-tiers-client-side
+	 */
+	public listPromotionTiers(params: PT.PromotionTiersListAllParams = {}) {
+		return this.client.get<PT.PromotionTiersListAllResponse>('/promotions/tiers', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/vouchers-validate

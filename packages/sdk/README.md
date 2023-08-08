@@ -1613,7 +1613,13 @@ Methods are provided within `client.*` namespace.
 client.setIdentity(trackingId)
 ```
 
-#### [Validate](https://docs.voucherify.io/reference/vouchers-validate)
+#### [List Promotion Tiers](https://docs.voucherify.io/reference/list-promotion-tiers-client-side)
+
+```javascript
+client.listPromotionTiers(params)
+```
+
+#### [Validate](https://docs.voucherify.io/reference/validate-voucher-client-side)
 
 ```javascript
 client.validate(params)
