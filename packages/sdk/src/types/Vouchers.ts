@@ -443,7 +443,7 @@ export interface VouchersListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: Omit<VouchersResponse[], 'validation_rules_assignments'>
+	vouchers: Omit<VouchersResponse, 'validation_rules_assignments'>[]
 }
 
 export type VouchersEnableResponse = VouchersResponse
