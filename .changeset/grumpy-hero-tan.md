@@ -782,5 +782,3 @@ Added support for following endpoint:
         - Removed optional `order`, `applicable_to`, `inapplicable_to` key
         - Updated optional `result` key: removed optional keys: `discount`, `gift`, `loyalty_card`
         - Added optional `category` key (CategoryObject)
-
-- client.redeemStackable(params)
