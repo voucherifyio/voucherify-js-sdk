@@ -688,3 +688,10 @@ Types of (server side) requests and responses were aligned with https://github.c
       - Updated `skus` key:
         - Added optional `product_id`, `image_url` keys.
 
+- client.track(eventName, metadata, customer)
+  - Request (body) params:
+    - Updated optional property `referral` 
+      - Added optional `referrer_id` key to object.
+  - Returned value:
+    - `ClientSideTrackResponse`:
+      - Added `Record<string, any>` as a representation of returned data - `referral`, `loyalty` and `customer`.

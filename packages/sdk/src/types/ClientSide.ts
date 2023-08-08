@@ -111,6 +111,7 @@ export interface ClientSideTrackLoyalty {
 }
 export interface ClientSideTrackReferral {
 	code?: string
+	referrer_id?: string
 }
 
 export interface ClientSideTrackPayload {
@@ -121,10 +122,10 @@ export interface ClientSideTrackPayload {
 	referral?: ClientSideTrackReferral
 }
 
-export interface ClientSideTrackResponse {
+export type ClientSideTrackResponse = {
 	object: 'event'
 	type: string
-}
+} & Record<string, any>
 
 export interface ClientSideRedeemWidgetPayload {
 	order?: {
