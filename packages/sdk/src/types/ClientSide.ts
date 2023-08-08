@@ -1,13 +1,16 @@
 import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
 import { VouchersListParams, VouchersResponse } from './Vouchers'
-import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { OrdersCreateResponse, OrdersItem } from './Orders'
-
 import { ConsentsListResponse } from './Consents'
 import { DistributionsPublicationsCreateResponse } from './Distributions'
-import { SimplePromotionTier } from './PromotionTiers'
-import { ApplicableToResultList } from './ApplicableTo'
-import { ValidationsValidateStackableParams, ValidationValidateStackableResponseClientSide } from './Validations'
+import {
+	ResponseValidateVoucherDiscountCode,
+	ResponseValidateVoucherFalse,
+	ResponseValidateVoucherGiftCard,
+	ResponseValidateVoucherLoyaltyCard,
+	ValidationsValidateStackableParams,
+	ValidationValidateStackableResponseClientSide,
+} from './Validations'
 import {
 	RedemptionsRedeemResponse,
 	RedemptionsRedeemStackableParams,
@@ -16,6 +19,7 @@ import {
 import { RewardRedemptionParams } from './Rewards'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionReleaseParams } from './ValidateSession'
+import { PromotionsValidateResponse } from './Promotions'
 
 type ClientSideItem = Pick<
 	OrdersItem,
@@ -57,29 +61,13 @@ export interface ClientSideListVouchersResponse {
 	data_ref: 'vouchers'
 	vouchers: ClientSideVoucherListing[]
 }
-export interface ClientSideValidateResponse {
-	code?: string
-	valid: boolean
-	discount?: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
-	applicable_to?: ApplicableToResultList
-	order?: {
-		amount: number
-		discount_amount: number
-		total_discount_amount: number
-		total_amount: number
-		items?: ClientSideItem[]
-	}
-	tracking_id?: string
-	campaign_id?: string
-	loyalty?: {
-		points_cost: number
-	}
-	gift?: {
-		amount: number
-		balance: number
-	}
-	promotions?: SimplePromotionTier[]
-}
+
+export type ClientSideValidateResponse =
+	| ResponseValidateVoucherDiscountCode
+	| ResponseValidateVoucherGiftCard
+	| ResponseValidateVoucherLoyaltyCard
+	| ResponseValidateVoucherFalse
+	| PromotionsValidateResponse
 
 export interface ClientSideRedeemPayload {
 	tracking_id?: string
