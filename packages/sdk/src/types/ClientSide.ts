@@ -1,8 +1,8 @@
 import { CustomerRequest, CustomersCreateBody, CustomersCreateResponse, CustomersUpdateConsentsBody } from './Customers'
-import { VouchersListParams, VouchersResponse } from './Vouchers'
+import { VouchersListParams, VouchersListResponse, VouchersResponse } from "./Vouchers";
 import { OrdersCreateResponse, OrdersItem } from './Orders'
 import { ConsentsListResponse } from './Consents'
-import { DistributionsPublicationsCreateResponse } from './Distributions'
+import { DistributionsPublicationsCreateParams, DistributionsPublicationsCreateResponse } from './Distributions'
 import {
 	ResponseValidateVoucherDiscountCode,
 	ResponseValidateVoucherFalse,
@@ -55,12 +55,7 @@ export type ClientSideVoucherListing = Pick<
 	'active' | 'code' | 'metadata' | 'assets' | 'object' | 'expiration_date' | 'start_date' | 'created_at'
 >
 
-export interface ClientSideListVouchersResponse {
-	object: 'list'
-	total: number
-	data_ref: 'vouchers'
-	vouchers: ClientSideVoucherListing[]
-}
+export type ClientSideListVouchersResponse = VouchersListResponse
 
 export type ClientSideValidateResponse =
 	| ResponseValidateVoucherDiscountCode
@@ -85,13 +80,7 @@ export type ClientSideRedeemOrder = Partial<Pick<OrdersCreateResponse, 'id' | 's
 
 export type ClientSideRedeemResponse = RedemptionsRedeemResponse
 
-export interface ClientSidePublishPayload {
-	source_id?: string
-	channel?: 'Voucherify.js' | string
-	customer?: CustomerRequest
-	voucher?: string
-	metadata?: Record<string, any>
-}
+export type ClientSidePublishPayload = DistributionsPublicationsCreateParams
 
 export type ClientSidePublishPreparedPayload = ClientSidePublishPayload
 
@@ -105,7 +94,7 @@ export interface ClientSidePublishCampaign {
 	count?: number
 }
 
-export type ClientSidePublishResponse = DistributionsPublicationsCreateResponse & { vouchers_id?: string[] }
+export type ClientSidePublishResponse = DistributionsPublicationsCreateResponse
 export interface ClientSideTrackLoyalty {
 	code?: string
 }
