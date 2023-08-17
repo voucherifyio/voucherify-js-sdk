@@ -2,6 +2,8 @@
 '@voucherify/sdk': major
 ---
 
+# SERVER SIDE
+
 Added support for following endpoints:
   - campaigns
     - POST /campaigns/campaignId/enable
@@ -688,3 +690,93 @@ Types of (server side) requests and responses were aligned with https://github.c
       - Updated `skus` key:
         - Added optional `product_id`, `image_url` keys.
 
+- client.track(eventName, metadata, customer)
+  - Request (body) params:
+    - Updated optional property `referral` 
+      - Added optional `referrer_id` key to object.
+  - Returned value:
+    - `ClientSideTrackResponse`:
+      - Added `Record<string, any>` as a representation of returned data - `referral`, `loyalty` and `customer`.
+
+# CLIENT SIDE
+
+Added support for following endpoint:
+- GET /client/promotions/tiers
+
+**TypeScript types changes:**
+
+- client.validate(params)
+  - Request parameter `params`: `ClientSideValidateParams`:
+    - Value of key `items` type object[] has been clarified:
+      - Added optional key `price`
+  - Returned value:
+    - Response object has changed to `ResponseValidateVoucherDiscountCode | ResponseValidateVoucherGiftCard | ResponseValidateVoucherLoyaltyCard | ResponseValidateVoucherFalse | PromotionsValidateResponse` for example:
+      - Value of key `discount` has been clarified
+      - Added optional keys such as `applicable_to`, `inapplicable_to` `campaign`, `reward` and `error`
+
+- client.redeem(code, payload)
+  - Request parameter `payload`: `ClientSideRedeemPayload`:
+    - Added optional key: `gift`
+    - Value of key `reward` has been clarified
+      - Added optional keys: `points` and `assignment_id`
+    - Value of key `customer` has been clarified
+      - Added optional  keys: `birthday` and `birthdate`
+    - Value of key `order` has been clarified
+      - Added optional key: `status`
+  - Returned value:
+    - Response object has changed to `RedemptionObjectDiscountVoucherExtended | RedemptionObjectLoyaltyCardExtended | RedemptionObjectGiftCardExtended` for example:
+      - Added optional keys: `channel`, `customer`, `related_object_type` and `related_object_id`
+
+- client.publish(campaign, payload, queryParams)
+  - Request parameter `payload`: `ClientSidePublishPayload`:
+    - Possible response with `CreatePublicationFromCampaign & { join_once?: boolean }` 
+    - Value of key `channel` was clarified, `'Voucherify.js' | string` -> `PublicationResponseChannel`
+    - Added optional key `campaign`
+  - Returned value:
+    - Value of key `channel` was clarified, `'Voucherify.js' | string` -> `PublicationResponseChannel`
+
+- client.listVouchers(params)
+  - Request parameter `params`: `ClientSideListVouchersParams`:
+    - Added optional key `campaign_id`
+  - Returned value:
+    - Value of key `vouchers` type object[] was clarified,
+      - Added optional keys: `id`, `campaign`, `campaign_id`, `category`, `category_id`, `categories`, `type`, `discount`, `gift`, `loyalty_card`, `validity_timeframe`, `validity_day_of_week`, `additional_info`, `is_referral_code`, `updated_at`, `holder_id`, `referrer_id`, `redemption`, `publish`,
+
+- client.createCustomer(customer, enableDoubleOptIn)
+  - Request parameter `customer`: `ClientSideCustomersCreateParams`:
+    - Added optional keys: `birthday` and `birthdate`
+  - Return value:
+    - Added optional keys: `birthday`, `birthdate`, `referrals`, `system_metadata`, `updated_at`, `assets`
+
+- client.validateStackable(params)
+  - Request (body) params:
+    - `ClientSideValidationsValidateStackableParams`:
+      - Updated `redeemables` array - has 3 options: `RedeemablesDiscountReferralPromotionTierPromotionStack`, `RedeemablesGiftCard`, `RedeemablesLoyaltyCard`
+      - Updated `order` key -  new property: `id`, optional property: `referrer`
+      - Updated `customer` key - new properties: `birthday` and `birthdate`
+  - Returned value:
+    - `ValidationValidateStackableResponse` has 2 options: `ResponseValidationsTrue` or `ResponseValidationsFalse`
+      - `ResponseValidationsTrue`:
+        - Updated default value of `valid` key: `true`
+        - Updated optional `redeemables` key - it has 5 options:
+          - `ResponseValidationsRedeemablesDiscountVoucher`,
+          - `ResponseValidationsRedeemablesGiftCard`,
+          - `ResponseValidationsRedeemablesLoyaltyCard`,
+          - `ResponseValidationsRedeemablesPromotionTier`,
+          - `ResponseValidationsRedeemablesPromotionStack`
+      - Updated optional `order` key:
+        - Removed property `id`, `created_at`,
+        - Removed optional properties: `source_id`, `updated_at`, `status`, `initial_amount`, `customer`
+        - Added optional properties: `customer_id`, `referrer_id`
+      - `ResponseValidationsFalse`:
+        - Updated default value of `valid` key: `false`
+        - Updated optional `redeemables` key - it has 5 options:
+          - `ResponseValidationsRedeemablesDiscountVoucher`,
+          - `ResponseValidationsRedeemablesGiftCard`,
+          - `ResponseValidationsRedeemablesLoyaltyCard`,
+          - `ResponseValidationsRedeemablesPromotionTier`,
+          - `ResponseValidationsRedeemablesPromotionStack`
+      - Updated optional `redeemables` key:
+        - Removed optional `order`, `applicable_to`, `inapplicable_to` key
+        - Updated optional `result` key: removed optional keys: `discount`, `gift`, `loyalty_card`
+        - Added optional `category` key (CategoryObject)

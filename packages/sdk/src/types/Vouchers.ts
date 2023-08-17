@@ -431,11 +431,22 @@ export interface VouchersListParams {
 		after?: string
 		before?: string
 	}
-	order?: '-created_at' | 'created_at' | '-updated_at' | 'updated_at' | '-code' | 'code'
+	order?:
+		| '-created_at'
+		| 'created_at'
+		| '-updated_at'
+		| 'updated_at'
+		| '-type'
+		| 'type'
+		| '-code'
+		| 'code'
+		| '-campaign'
+		| 'campaign'
+		| '-category'
+		| 'category'
 	filters?: {
 		junction?: string
-		[filter_condition: string]: any
-	}
+	} & Record<string, any>
 }
 
 export interface VouchersListResponse {
@@ -443,7 +454,7 @@ export interface VouchersListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'vouchers'
-	vouchers: Omit<VouchersResponse[], 'validation_rules_assignments'>
+	vouchers: Omit<VouchersResponse, 'validation_rules_assignments'>[]
 }
 
 export type VouchersEnableResponse = VouchersResponse

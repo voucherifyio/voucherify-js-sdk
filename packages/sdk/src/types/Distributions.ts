@@ -30,6 +30,7 @@ export type PublicationResponseChannel =
 	| 'SMS'
 	| 'voucherify-website'
 	| 'Webhook'
+	| 'Voucherify.js' //hard-coded channel from V% js SDK
 
 export type DistributionsPublicationsVoucher =
 	| DistributionsPublicationsVoucherDiscount

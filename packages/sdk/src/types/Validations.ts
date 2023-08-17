@@ -57,7 +57,7 @@ export interface ResponseValidateVoucherFalse {
 	metadata?: Record<string, any>
 }
 
-interface ResponseValidateVoucherLoyaltyCard {
+export interface ResponseValidateVoucherLoyaltyCard {
 	valid: boolean
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
@@ -80,7 +80,7 @@ interface ResponseValidateVoucherLoyaltyCard {
 	session: ValidationSessionParams
 }
 
-interface ResponseValidateVoucherGiftCard {
+export interface ResponseValidateVoucherGiftCard {
 	valid: boolean
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
@@ -100,7 +100,7 @@ interface ResponseValidateVoucherGiftCard {
 	session: ValidationSessionParams
 }
 
-interface ResponseValidateVoucherDiscountCode {
+export interface ResponseValidateVoucherDiscountCode {
 	valid: boolean
 	applicable_to: ApplicableToObjectPromotionTier //6_res_applicable_to_object
 	inapplicable_to: InapplicableToObjectPromotionTier //6_res_inapplicable_to_object
