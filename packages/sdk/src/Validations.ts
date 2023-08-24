@@ -1,6 +1,6 @@
 import * as T from './types/Validations'
 
-import { encode, isObject } from './helpers'
+import { encode } from './helpers'
 import type { RequestController } from './RequestController'
 import type { Promotions } from './Promotions'
 
@@ -15,11 +15,10 @@ export class Validations {
 	}
 
 	public validate(code: string | T.ValidationsValidateCode, context: T.ValidationsValidateContext = {}) {
-		if (isObject(code)) {
-			return this.promotions.validate(code)
+		if (typeof code === 'string') {
+			return this.validateVoucher(code, context)
 		}
-
-		return this.validateVoucher(code, context)
+		return this.promotions.validate(code)
 	}
 
 	/**
