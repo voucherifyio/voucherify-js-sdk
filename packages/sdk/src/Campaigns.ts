@@ -1,7 +1,10 @@
 import * as T from './types/Campaigns'
+import * as AAT from './types/AsyncActions'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
+import * as fs from 'fs'
+import FormData from 'form-data'
 
 class CampaignsQualifications {
 	constructor(private client: RequestController) {}
@@ -69,5 +72,14 @@ export class Campaigns {
 	 */
 	public list(params: T.CampaignsListParams = {}) {
 		return this.client.get<T.CampaignsListResponse>('/campaigns', params)
+	}
+	/**
+	 * @see https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV
+	 */
+	public importVouchersUsingCSV(campaignId: string, filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/campaigns/${campaignId}/importCSV`, form)
 	}
 }
