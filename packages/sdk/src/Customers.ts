@@ -1,8 +1,11 @@
 import * as T from './types/Customers'
+import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import * as fs from 'fs'
+import FormData from 'form-data'
 
 class Customers {
 	constructor(private client: RequestController) {}
@@ -91,6 +94,15 @@ class Customers {
 	 */
 	public listActivities(customerId: string, params?: T.CustomerActivitiesListQueryParams) {
 		return this.client.get<T.CustomerActivitiesListResponse>(`/customers/${encode(customerId)}/activities`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-customers-using-csv
+	 */
+	public importCustomersUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/importCSV`, form)
 	}
 }
 

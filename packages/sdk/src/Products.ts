@@ -1,7 +1,10 @@
 import * as T from './types/Products'
+import * as AAT from './types/AsyncActions'
 
 import { encode, omit } from './helpers'
 import type { RequestController } from './RequestController'
+import * as fs from 'fs'
+import FormData from 'form-data'
 
 export class Products {
 	constructor(private client: RequestController) {}
@@ -83,5 +86,23 @@ export class Products {
 	 */
 	public listSkus(productId: string) {
 		return this.client.get<T.ProductsListSkus>(`/products/${encode(productId)}/skus`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
+	 */
+	public importSkusUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, form)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-products-using-csv
+	 */
+	public importProductsUsingCSV(filePath: string) {
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/products/importCSV`, form)
 	}
 }
