@@ -2,7 +2,6 @@ import * as T from './types/Categories'
 
 import type { RequestController } from './RequestController'
 import { encode } from './helpers'
-import { ResponseUpdateCategory, UpdateCategory } from './types/Categories'
 
 export class Categories {
 	constructor(private client: RequestController) {}
