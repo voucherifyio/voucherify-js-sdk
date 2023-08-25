@@ -35,7 +35,11 @@ export const generateCustomerCSV = async (sourceId: string) => {
 			'Metadata_2_value',
 		],
 	]
-	const path = __dirname.split('/').slice(0, -1).join('/') + '/csv/customers.csv'
+	const baseTestPath = __dirname.split('/').slice(0, -1).join('/')
+	if (!fs.existsSync(baseTestPath + '/csv')) {
+		fs.mkdirSync(baseTestPath + '/csv')
+	}
+	const path = baseTestPath + '/csv/customers.csv'
 	return new Promise<void>((resolve, reject) => {
 		csv.stringify(data, (error, output) => {
 			if (error) {
