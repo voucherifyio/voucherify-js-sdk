@@ -46,7 +46,7 @@ export interface DiscountUnitMultiple {
 	units: DiscountUnitMultipleOneUnit[]
 }
 
-interface DiscountUnitMultipleOneUnit {
+export interface DiscountUnitMultipleOneUnit {
 	type: DiscountVouchersTypesEnum.UNIT
 	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
 	unit_off: number

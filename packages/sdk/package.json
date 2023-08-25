@@ -27,8 +27,8 @@
 	"scripts": {
 		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node --name VoucherifySDK --format esm,umd",
 		"build": "tsdx build --tsconfig tsconfig.build.json --target node --name VoucherifySDK --format esm,umd",
-		"test": "npm run build;tsdx test",
-		"test:without-build": "tsdx test",
+		"build-and-test": "npm run build;tsdx test",
+		"test": "tsdx test",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
 		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
