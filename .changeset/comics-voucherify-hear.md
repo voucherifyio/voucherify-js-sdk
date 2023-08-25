@@ -15,3 +15,18 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
   - POST /customers/importCSV
 - campaigns
   - POST /campaigns/campaignId/importCSV
+
+**New methods**
+- client.vouchers.importVouchersUsingCSV(filePath)
+- client.campaigns.importVouchersUsingCSV(campaignId, filePath)
+- client.customers.importCustomersUsingCSV(filePath)
+- client.products.importSkusUsingCSV(filePath)
+- client.products.importProductsUsingCSV(filePath)
+
+**Example**
+```js
+await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
+```
+
+**New dependencies**
+- "form-data": "4.0.0"

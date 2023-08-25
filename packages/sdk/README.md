@@ -153,6 +153,7 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Update Vouchers Metadata in bulk](#update-vouchers-metadata-in-bulk)
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
+- [Import Vouchers using CSV](#import-vouchers-using-csv)
 
 #### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
@@ -236,6 +237,12 @@ client.vouchers.bulkUpdate(vouchers)
 client.vouchers.releaseValidationSession(code, sessionKey)
 ```
 
+#### [Import Vouchers using CSV](https://docs.voucherify.io/reference/import-vouchers-using-csv)
+
+```javascript
+client.vouchers.importVouchersUsingCSV(filePath)
+```
+
 ---
 
 ### Campaigns
@@ -248,6 +255,7 @@ Methods are provided within `client.campaigns.*` namespace.
 - [Add Voucher to Campaign](#add-voucher-to-campaign)
 - [Import Vouchers to Campaign](#import-vouchers-to-campaign)
 - [List Campaigns](#list-campaigns)
+- [Import Vouchers using CSV](#import-vouchers-using-csv)
 - [Examine Campaigns Qualification](#examine-campaigns-qualification)
 
 #### [Create Campaign](https://docs.voucherify.io/reference/create-campaign)
@@ -304,6 +312,12 @@ client.campaigns.importVouchers(campaignName, vouchers)
 ```javascript
 client.campaigns.list()
 client.campaigns.list(params)
+```
+
+#### [Import Vouchers to Campaign by CSV](https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV)
+
+```javascript
+client.campaigns.importVouchersUsingCSV(campaignId, filePath)
 ```
 
 #### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/create-qualification-request)
@@ -546,6 +560,7 @@ Methods are provided within `client.customers.*` namespace.
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 - [List Customer's Activities](#list-customers-activities)
+- [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
@@ -627,6 +642,12 @@ client.customers.listActivities(customerId)
 client.customers.listActivities(customerId, params)
 ```
 
+#### [Import and Update Customers using CSV](https://docs.voucherify.io/reference/import-customers-using-csv)
+
+```javascript
+client.customers.importCustomersUsingCSV(filePath)
+```
+
 ---
 
 ### Consents
@@ -706,6 +727,8 @@ Methods are provided within `client.products.*` namespace.
 - [Update SKU](#update-sku)
 - [Delete SKU](#delete-sku)
 - [List all product SKUs](#list-all-product-skus)
+- [Import SKUs using CSV](#import-skus-using-csv)
+- [Import Products using CSV](#import-products-using-csv)
 
 #### [Create Product](https://docs.voucherify.io/reference/create-product)
 
@@ -778,6 +801,18 @@ client.products.deleteSku(productId, skuId, { force: true })
 
 ```javascript
 client.products.listSkus(productId)
+```
+
+#### [Import SKUs using CSV](https://docs.voucherify.io/reference/import-skus-using-csv)
+
+```javascript
+client.products.importSkusUsingCSV()
+```
+
+#### [Import Products using CSV](https://docs.voucherify.io/reference/import-products-using-csv)
+
+```javascript
+client.products.importProductsUsingCSV()
 ```
 
 ---
