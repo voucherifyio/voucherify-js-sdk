@@ -3,7 +3,7 @@
 	"private": true,
 	"engineStrict": true,
 	"engines": {
-		"node": "16.20"
+		"node": "16.x"
 	},
 	"repository": {
 		"type": "git",

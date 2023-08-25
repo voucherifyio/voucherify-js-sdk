@@ -11,7 +11,7 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
 
 **Breaking changes:**
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
-- Required version of node was changed from `14.15` to `16.20`.
+- Required version of node was changed from `14.15` to `16.x`.
 
 **Example of usage (related to breaking changes):**
 ```js
