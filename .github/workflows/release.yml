@@ -17,10 +17,10 @@ jobs:
           # - Adjust this value if necessary once we have stable releases
           fetch-depth: 100
 
-      - name: Setup Node.js 14.15 And npm Org
+      - name: Setup Node.js 16.20 And npm Org
         uses: actions/setup-node@v2
         with:
-          node-version: 14.15
+          node-version: 16.20
           registry-url: "https://registry.npmjs.org"
           scope: "@voucherify"
 
