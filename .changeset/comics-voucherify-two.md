@@ -9,3 +9,6 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
 - campaigns
   - POST /campaigns/campaignId/enable
   - POST /campaigns/campaignId/disable
+- categories
+  - GET, POST /categories
+  - GET, PUT, DELETE /categories/id

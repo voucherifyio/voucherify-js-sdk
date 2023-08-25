@@ -21,6 +21,7 @@ import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
 import { ApiLimitsHandler } from './ApiLimitsHandler'
 import { MetadataSchemas } from './MetadataSchemas'
+import { Categories } from './Categories'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -174,6 +175,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const balance = new Balance(client)
 	const vouchers = new Vouchers(client, balance)
 	const campaigns = new Campaigns(client)
+	const categories = new Categories(client)
 	const exportsNamespace = new Exports(client)
 	const events = new Events(client)
 	const distributions = new Distributions(client, exportsNamespace)
@@ -195,6 +197,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	return {
 		vouchers,
 		campaigns,
+		categories,
 		distributions,
 		validations,
 		redemptions,

@@ -257,6 +257,8 @@ Methods are provided within `client.campaigns.*` namespace.
 - [List Campaigns](#list-campaigns)
 - [Import Vouchers using CSV](#import-vouchers-using-csv)
 - [Examine Campaigns Qualification](#examine-campaigns-qualification)
+- [Enable campaign](#enable-campaign)
+- [Disable campaign](#disable-campaign)
 
 #### [Create Campaign](https://docs.voucherify.io/reference/create-campaign)
 
@@ -320,7 +322,19 @@ client.campaigns.list(params)
 client.campaigns.importVouchersUsingCSV(campaignId, filePath)
 ```
 
-#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/create-qualification-request)
+#### [Enable campaign](https://docs.voucherify.io/reference/enable-campaign)
+
+```javascript
+client.campaigns.enable(campaignId)
+```
+
+#### [Disable campaign](https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV)
+
+```javascript
+client.campaigns.disable(campaignId)
+```
+
+#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/disable-campaign)
 
 ```javascript
 client.campaigns.qualifications.examine(body)
