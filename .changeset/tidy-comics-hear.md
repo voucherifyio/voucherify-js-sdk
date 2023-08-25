@@ -5,13 +5,21 @@
 To run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
 Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
 
+**New exported types/interfaces**
+- ResponseValidateVoucherTrue
+- ResponseValidateVoucherFalse
+- DiscountUnitMultiple
+- DiscountUnitMultipleOneUnit
+- OrderObjectRedemptions
+
 **Scripts changes:**
-- npm run test (build sdk and run tests)
-- npm run test:without-build (run tests)
+- npm run build-and-test (build sdk and run tests)
+
+**Workflow changes**
+- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK.
 
 **Breaking changes:**
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
-- Required version of node was changed from `14.15` to `16.x`.
 
 **Example of usage (related to breaking changes):**
 ```js
