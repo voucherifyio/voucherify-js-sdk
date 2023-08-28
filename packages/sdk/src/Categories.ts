@@ -14,25 +14,25 @@ export class Categories {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-promotion-campaign
 	 */
-	public create(promotionCampaign: T.CreateCategory) {
-		return this.client.post<T.ResponseCreateCategory>('/categories', promotionCampaign)
+	public create(createCategory: T.CreateCategory) {
+		return this.client.post<T.ResponseCreateCategory>('/categories', createCategory)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/validate-promotions-1
 	 */
-	public get(id: string) {
-		return this.client.get<T.CategoryObject>(`/categories/${encode(id)}`)
+	public get(categoryId: string) {
+		return this.client.get<T.CategoryObject>(`/categories/${encode(categoryId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/validate-promotions-1
 	 */
-	public delete(id: string) {
-		return this.client.delete<{}>(`/categories/${encode(id)}`)
+	public delete(categoryId: string) {
+		return this.client.delete<{}>(`/categories/${encode(categoryId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/validate-promotions-1
 	 */
-	public update(id: string, body: T.UpdateCategory) {
-		return this.client.put<T.ResponseUpdateCategory>(`/categories/${encode(id)}`, body)
+	public update(categoryId: string, updateCategory: T.UpdateCategory) {
+		return this.client.put<T.ResponseUpdateCategory>(`/categories/${encode(categoryId)}`, updateCategory)
 	}
 }
