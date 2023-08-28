@@ -5,13 +5,8 @@ export interface ListCategories {
 	total: number
 }
 
-export interface CategoryObject {
-	id: string
-	name: string
-	hierarchy: number
-	created_at: string
+export type CategoryObject = ResponseCreateCategory & {
 	updated_at?: string
-	object: 'category'
 }
 
 export interface CreateCategory {
@@ -19,6 +14,12 @@ export interface CreateCategory {
 	hierarchy: number
 }
 
-export type ResponseCreateCategory = Omit<CategoryObject, 'updated_at'>
+export interface ResponseCreateCategory {
+	id: string
+	name: string
+	hierarchy: number
+	created_at: string
+	object: 'category'
+}
 export type ResponseUpdateCategory = Required<CategoryObject>
-export type UpdateCategory = CreateCategory & { categoryId: string }
+export type UpdateCategoryRequest = CreateCategory & { categoryId: string }
