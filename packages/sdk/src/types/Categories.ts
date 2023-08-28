@@ -21,5 +21,9 @@ export interface ResponseCreateCategory {
 	created_at: string
 	object: 'category'
 }
-export type ResponseUpdateCategory = Required<CategoryObject>
+
+export type ResponseUpdateCategory = ResponseCreateCategory & {
+	updated_at: string
+}
+
 export type UpdateCategoryRequest = CreateCategory & { categoryId: string }
