@@ -7,7 +7,7 @@ export interface CustomerPermanentDeletion {
 	data_json: {
 		events: number
 		customer_events: number
-		daily_event?: number
+		daily_event: number
 		segments: number
 		orders: number
 		order_events: number
