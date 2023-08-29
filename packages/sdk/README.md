@@ -543,9 +543,12 @@ Methods are provided within `client.customers.*` namespace.
 - [Get Customer](#get-customer)
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
+- [Delete Customer Permanently](#delete-customer-permanently)
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 - [List Customer's Activities](#list-customers-activities)
+- [Update Customers in bulk](#update-customers-in-bulk)
+- [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
@@ -573,6 +576,12 @@ client.customers.update(customer)
 
 ```javascript
 client.customers.delete(customerId)
+```
+
+#### [Delete Customer Permanently](https://docs.voucherify.io/reference/delete-customer-permanently)
+
+```javascript
+client.customers.deletePermanently(customerId)
 ```
 
 #### [List Customers](https://docs.voucherify.io/reference/list-customers)
@@ -625,6 +634,18 @@ client.customers.updateConsents(customer, consents)
 ```javascript
 client.customers.listActivities(customerId)
 client.customers.listActivities(customerId, params)
+```
+
+#### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
+
+```javascript
+client.customers.updateCustomersInBulk(customers)
+```
+
+#### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
+
+```javascript
+client.customers.updateCustomersMetadataInBulk(sourceIdsAndMetadata)
 ```
 
 ---
