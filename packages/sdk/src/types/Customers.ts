@@ -1,3 +1,21 @@
+export interface CustomerPermanentDeletion {
+	id: string
+	created_at: string
+	related_object_id: string
+	related_object: 'customer'
+	status: string
+	data_json: {
+		events: number
+		customer_events: number
+		daily_event?: number
+		segments: number
+		orders: number
+		order_events: number
+		customer: 1
+	}
+	object: 'pernament_deletion'
+}
+
 export interface SimpleCustomer {
 	id: string
 	name?: string
@@ -85,6 +103,10 @@ export interface CustomerRequest {
 	birthdate?: string
 }
 
+export type CustomerBasicData = Omit<CustomerRequest, 'id' | 'source_id'>
+
+export type UpdateCustomersInBulk = (CustomerBasicData & { source_id: string })[]
+
 export interface CustomersCommonListRequest {
 	limit?: number
 	page?: number
@@ -137,3 +159,8 @@ export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
+
+export interface UpdateCustomersMetadataInBulk {
+	source_ids: string[]
+	metadata: Record<string, any>
+}
