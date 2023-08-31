@@ -512,15 +512,6 @@ export interface LoyaltyTierRewardObject {
 	object: 'loyalty_tier_reward'
 }
 
-export interface RewardsCreateAssignment {
-	campaign: string
-	parameters: {
-		loyalty: {
-			points?: number
-		}
-	}
-}
-
 export type LoyaltyTierRewardRewardObject = LoyaltyTierRewardObjectCommon &
 	(LoyaltyTierRewardRewardCampaignObject | LoyaltyTierRewardRewardCoinObject | LoyaltyTierRewardRewardMaterialObject)
 
