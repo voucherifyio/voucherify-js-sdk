@@ -881,6 +881,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
 - [Add Loyalty Card Balance](#add-loyalty-card-balance)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
+- [List Loyalty Tier Rewards](#list-loyalty-tier-rewards)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1009,6 +1010,12 @@ client.loyalties.redeemReward(campaignId, memberId, params)
 When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
 
 ---
+
+#### [List Loyalty Tier Rewards](https://docs.voucherify.io/reference/list-loyalty-tier-rewards)
+
+```javascript
+client.loyalties.listLoyaltyTierReward(campaignId, tierId)
+```
 
 ### Segments
 

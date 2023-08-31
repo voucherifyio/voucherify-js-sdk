@@ -519,6 +519,7 @@ export interface LoyaltyTierRewardRewardObjectCommon {
 	id: string
 	name: string | null
 	redeemed: number | null
+	stock: number | null
 	attributes?: {
 		image_url?: string
 		description?: string
