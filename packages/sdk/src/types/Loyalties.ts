@@ -512,10 +512,10 @@ export interface LoyaltyTierRewardObject {
 	object: 'loyalty_tier_reward'
 }
 
-export type LoyaltyTierRewardRewardObject = LoyaltyTierRewardObjectCommon &
+export type LoyaltyTierRewardRewardObject = LoyaltyTierRewardRewardObjectCommon &
 	(LoyaltyTierRewardRewardCampaignObject | LoyaltyTierRewardRewardCoinObject | LoyaltyTierRewardRewardMaterialObject)
 
-export interface LoyaltyTierRewardObjectCommon {
+export interface LoyaltyTierRewardRewardObjectCommon {
 	id: string
 	name: string | null
 	redeemed: number | null
