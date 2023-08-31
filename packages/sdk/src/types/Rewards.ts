@@ -1,3 +1,5 @@
+import { RewardAssignmentObjectCommon } from './Loyalties'
+
 export interface RewardsListParams {
 	page?: number
 	limit?: number
@@ -90,19 +92,22 @@ export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
 
 export type RewardsUpdateResponse = RewardsCreateResponse
 
-export interface RewardsAssignmentObject {
+export interface RewardsAssignmentObjectCommon {
 	id: string
 	reward_id: string
-	related_object_id?: string
-	related_object_type?: string
-	parameters?: {
-		loyalty?: {
-			points: number
+	related_object_id: string
+	related_object_type: 'campaign'
+	parameters: {
+		loyalty: {
+			points?: number
 		}
 	}
 	created_at: string
-	updated_at?: string
 	object: 'reward_assignment'
+}
+
+export interface RewardsAssignmentObject extends RewardsAssignmentObjectCommon {
+	updated_at: string | null
 }
 
 export interface RewardsListAssignmentsParams {
@@ -118,19 +123,19 @@ export interface RewardsListAssignmentsResponse {
 }
 
 export interface RewardsCreateAssignment {
-	campaign?: string
-	parameters?: {
-		loyalty?: {
-			points: number
+	campaign: string
+	parameters: {
+		loyalty: {
+			points?: number
 		}
 	}
 }
 
-export type RewardsCreateAssignmentResponse = RewardsAssignmentObject
+export type RewardsCreateAssignmentResponse = RewardAssignmentObjectCommon & { updated_at: null }
 
 export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
 
-export type RewardsUpdateAssignmentResponse = RewardsAssignmentObject
+export type RewardsUpdateAssignmentResponse = RewardAssignmentObjectCommon & { updated_at: string }
 
 export interface RewardRedemptionParams {
 	points?: number

@@ -146,4 +146,10 @@ export class Loyalties {
 			params,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-rewards
+	 */
+	public listLoyaltyTierReward(campaignId: string, tierId: string) {
+		return this.client.get<T.ListLoyaltyTierRewardResponse>(`/loyalties/${encode(campaignId)}/tiers/${tierId}/rewards`)
+	}
 }
