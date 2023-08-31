@@ -131,7 +131,7 @@ export interface RewardsCreateAssignment {
 
 export type RewardsCreateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: null }
 
-export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
+export type RewardsUpdateAssignment = Partial<RewardsCreateAssignment> & { id: string }
 
 export type RewardsUpdateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: string }
 
