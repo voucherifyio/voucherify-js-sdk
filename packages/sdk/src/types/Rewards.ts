@@ -1,5 +1,3 @@
-import { RewardAssignmentObjectCommon } from './Loyalties'
-
 export interface RewardsListParams {
 	page?: number
 	limit?: number
@@ -131,11 +129,11 @@ export interface RewardsCreateAssignment {
 	}
 }
 
-export type RewardsCreateAssignmentResponse = RewardAssignmentObjectCommon & { updated_at: null }
+export type RewardsCreateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: null }
 
 export type RewardsUpdateAssignment = RewardsCreateAssignment & { id: string }
 
-export type RewardsUpdateAssignmentResponse = RewardAssignmentObjectCommon & { updated_at: string }
+export type RewardsUpdateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: string }
 
 export interface RewardRedemptionParams {
 	points?: number

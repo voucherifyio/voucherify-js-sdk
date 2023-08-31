@@ -512,26 +512,6 @@ export interface LoyaltyTierRewardObject {
 	object: 'loyalty_tier_reward'
 }
 
-export interface RewardAssignmentObjectCommon {
-	id: string
-	reward_id: string
-	related_object_id: string
-	related_object_type: 'campaign'
-	parameters: {
-		loyalty: {
-			points?: number
-		}
-	}
-	created_at: string
-	object: 'reward_assignment'
-}
-
-export interface RewardAssignmentObject extends RewardAssignmentObjectCommon {
-	updated_at: string | null
-}
-
-export type RewardsCreateAssignmentResponse = RewardAssignmentObjectCommon & { updated_at: null }
-
 export interface RewardsCreateAssignment {
 	campaign: string
 	parameters: {
