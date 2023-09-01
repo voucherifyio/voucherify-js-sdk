@@ -499,6 +499,8 @@ export interface LoyaltyPointsTransfer {
 	points: number
 }
 
+export type GetRewardAssignmentsResponse = RewardsAssignmentObject
+
 export interface ListLoyaltyTierRewardResponse {
 	object: 'list'
 	data_ref: 'data'
