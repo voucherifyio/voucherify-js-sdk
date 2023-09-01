@@ -171,37 +171,50 @@ export interface LoyaltyFixed {
 	points: number
 }
 
-export interface LoyaltyProportional {
+export interface LoyaltyProportionalOrder {
 	type: 'PROPORTIONAL'
-	calculation_type?: 'CUSTOMER_METADATA'
-	order?: {
-		amount?: {
-			every: number
-			points: number
-		}
-		total_amount?: {
-			every: number
-			points: number
-		}
-		metadata: {
-			every: number
-			points: number
-			property: string
-		}
-	}
-	order_items?: {
-		amount?: { every: number; points: number; object: string; id: string }
-		subtotal_amount?: { every: number; points: number; object: string; id: string }
-		quantity?: { every: number; points: number; object: string; id: string }
-	}
-	customer?: {
-		metadata: {
-			every: number
-			points: number
-			property: string
-		}
-	}
-	custom_event?: {
+	calculation_type: 'ORDER_AMOUNT' | 'ORDER_TOTAL_AMOUNT' | 'ORDER_METADATA'
+	customer:
+		| {
+				amount: {
+					every: number
+					points: number
+				}
+		  }
+		| {
+				total_amount: {
+					every: number
+					points: number
+				}
+		  }
+		| {
+				metadata: {
+					every: number
+					points: number
+					property: string
+				}
+		  }
+}
+
+export interface LoyaltyProportionalOrderItems {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_QUANTITY' | 'ORDER_ITEMS_AMOUNT' | 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
+	order_items:
+		| {
+				amount: { every: number; points: number; object: string; id: string }
+		  }
+		| {
+				subtotal_amount: { every: number; points: number; object: string; id: string }
+		  }
+		| {
+				quantity: { every: number; points: number; object: string; id: string }
+		  }
+}
+
+export interface LoyaltyProportionalCustomer {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOMER_METADATA'
+	customer: {
 		metadata: {
 			every: number
 			points: number
@@ -209,6 +222,24 @@ export interface LoyaltyProportional {
 		}
 	}
 }
+
+export interface LoyaltyProportionalCustomEvent {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOM_EVENT_METADATA'
+	custom_event: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+export type LoyaltyProportional =
+	| LoyaltyProportionalOrder
+	| LoyaltyProportionalOrderItems
+	| LoyaltyProportionalCustomer
+	| LoyaltyProportionalCustomEvent
 
 export interface LoyaltiesEarningRulesResponseCommon {
 	id: string
