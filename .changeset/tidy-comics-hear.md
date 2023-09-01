@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': minor
+'@voucherify/sdk': major
 ---
 
 To run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
@@ -16,7 +16,7 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
 - npm run build-and-test (build sdk and run tests)
 
 **Workflow changes**
-- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK
+- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK 
 
 **Breaking changes:**
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
@@ -33,3 +33,4 @@ if (response.valid) {
 //ResponseValidateVoucherFalse
 return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
 ```
+
