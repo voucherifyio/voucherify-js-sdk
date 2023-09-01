@@ -870,6 +870,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Reward Assignment](#create-loyalty-program-reward-assignment)
 - [Update Loyalty Program Reward Assignment](#update-loyalty-program-reward-assignment)
 - [Delete Loyalty Program Reward Assignment](#delete-loyalty-program-reward-assignment)
+- [Get Loyalty Program Reward Assignment](#get-loyalty-program-reward-assignment)
 - [List Loyalty Program Reward Assignments](#list-loyalty-program-reward-assignments)
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
@@ -930,6 +931,12 @@ client.loyalties.updateRewardAssignment(campaignId, assignment)
 
 ```javascript
 client.loyalties.deleteRewardAssignment(campaignId, assignmentId)
+```
+
+#### [Get Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
 ```
 
 #### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments-1)
