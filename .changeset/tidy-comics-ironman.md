@@ -5,6 +5,12 @@
 To run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
 Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
 
+**New methods**
+```js
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+client.loyalties.listLoyaltyTierReward(campaignId, tierId)
+```
+
 **New exported types/interfaces**
 - Loyalties.ts
   - ListLoyaltyTierRewardResponse
@@ -17,6 +23,7 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
   - RewardParametersCampaign
   - RewardParametersCoin
   - RewardParametersProduct
+  - GetRewardAssignmentsResponse
 - Rewards.ts
   - RewardsAssignmentObjectCommon
 
