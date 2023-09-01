@@ -81,7 +81,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-earning-rule
 	 */
-	public createEarningRule(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule[]) {
+	public createEarningRules(campaignId: string, earningRules: T.LoyaltiesCreateEarningRule[]) {
 		return this.client.post<T.LoyaltiesCreateEarningRuleResponse[]>(
 			`/loyalties/${encode(campaignId)}/earning-rules`,
 			earningRules,

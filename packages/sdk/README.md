@@ -944,7 +944,7 @@ client.loyalties.listRewardAssignments(campaignId, params)
 #### [Create Loyalty Program Earning Rules](https://docs.voucherify.io/reference/create-earning-rule)
 
 ```javascript
-client.loyalties.createEarningRule(campaignId, earningRules)
+client.loyalties.createEarningRules(campaignId, earningRules)
 ```
 
 #### [Update Loyalty Program Earning Rule](https://docs.voucherify.io/reference/update-earning-rule)

@@ -174,7 +174,7 @@ export interface LoyaltyFixed {
 export interface LoyaltyProportionalOrder {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_AMOUNT' | 'ORDER_TOTAL_AMOUNT' | 'ORDER_METADATA'
-	customer:
+	order:
 		| {
 				amount: {
 					every: number
@@ -308,15 +308,15 @@ export interface LoyaltiesCreateEarningRule {
 	source?: { banner?: string }
 	custom_event?: { schema_id?: string }
 	segment?: { id?: string }
-	active: boolean
-	start_date: string
-	expiration_date: string
-	validity_timeframe: {
+	active?: boolean
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
 		duration: string
 		interval: string
 	}
-	validity_day_of_week: number[]
-	metadata: Record<string, any>
+	validity_day_of_week?: number[]
+	metadata?: Record<string, any>
 }
 
 export interface LoyaltiesUpdateEarningRule {

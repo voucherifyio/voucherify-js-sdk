@@ -14,14 +14,9 @@
 - LoyaltiesUpdateEarningRuleResponse
 - LoyaltiesCreateEarningRuleResponse
 
-**Scripts changes:**
-- npm run build-and-test (build sdk and run tests)
-
-**Workflow changes**
-- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK
-
 **Breaking changes:**
 - Interface `LoyaltyProportional` was replaced with type of Union of interfaces `LoyaltyProportionalOrder | LoyaltyProportionalOrderItems | LoyaltyProportionalCustomer | LoyaltyProportionalCustomEvent`
+- Method name `client.loyalties.createEarningRule` has changed to `client.loyalties.createEarningRules` - notice `s` as this method requires array of earning rules.
 
 **Example of usage (related to breaking changes):**
 ```js
