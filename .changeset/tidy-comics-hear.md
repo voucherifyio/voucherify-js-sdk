@@ -1,27 +1,25 @@
 ---
-'@voucherify/sdk': major
+'@voucherify/sdk': minor
 ---
 
+To run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
+Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
+
 **New exported types/interfaces**
-- LoyaltyProportionalOrder
-- LoyaltyProportionalOrderItems
-- LoyaltyProportionalCustomer
-- LoyaltyProportionalCustomEvent
-- LoyaltiesEarningRulesResponseCommon
-- LoyaltiesEarningRulesResponse
-- LoyaltiesEnableEarningRulesResponse
-- LoyaltiesDisableEarningRulesResponse
-- LoyaltiesUpdateEarningRuleResponse
-- LoyaltiesCreateEarningRuleResponse
+- ResponseValidateVoucherTrue
+  - DiscountUnitMultiple
+  - DiscountUnitMultipleOneUnit
+  - OrderObjectRedemptions
+- ResponseValidateVoucherFalse
 
 **Scripts changes:**
 - npm run build-and-test (build sdk and run tests)
 
 **Workflow changes**
-- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK 
+- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK
 
 **Breaking changes:**
-- Interface `LoyaltyProportional` was replaced with type of Union of interfaces `LoyaltyProportionalOrder | LoyaltyProportionalOrderItems | LoyaltyProportionalCustomer | LoyaltyProportionalCustomEvent`
+- Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
 
 **Example of usage (related to breaking changes):**
 ```js
@@ -35,4 +33,3 @@ if (response.valid) {
 //ResponseValidateVoucherFalse
 return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
 ```
-
