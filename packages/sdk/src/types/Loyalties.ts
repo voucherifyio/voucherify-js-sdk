@@ -173,31 +173,95 @@ export interface LoyaltyFixed {
 
 export interface LoyaltyProportional {
 	type: 'PROPORTIONAL'
+	calculation_type?: 'CUSTOMER_METADATA'
 	order?: {
-		amount: {
+		amount?: {
 			every: number
 			points: number
+		}
+		total_amount?: {
+			every: number
+			points: number
+		}
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+	order_items?: {
+		amount?: { every: number; points: number; object: string; id: string }
+		subtotal_amount?: { every: number; points: number; object: string; id: string }
+		quantity?: { every: number; points: number; object: string; id: string }
+	}
+	customer?: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+	custom_event?: {
+		metadata: {
+			every: number
+			points: number
+			property: string
 		}
 	}
 }
 
-export interface LoyaltiesEarningRulesResponse {
+export interface LoyaltiesEarningRulesResponseCommon {
 	id: string
 	created_at: string
-	updated_at?: string
-	validation_rule_id?: string
+	validation_rule_id: string | null
 	loyalty: LoyaltyFixed | LoyaltyProportional
+	event: 'customer.segment.entered' | 'order.paid' | string
 	segment?: {
 		id: string
 	}
-	event: 'customer.segment.entered' | 'order.paid' | string
-	source?: {
+	source: {
 		banner?: string
-		object_id?: string
-		object_type?: string
+		object_id: string
+		object_type: string
+	}
+	loyalty_tier?: {
+		id: string
 	}
 	object: 'earning_rule'
 	automation_id: string
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week?: number[]
+	metadata: Record<string, any>
+}
+
+export interface LoyaltiesEarningRulesResponse extends LoyaltiesEarningRulesResponseCommon {
+	updated_at: string | null
+	active: boolean
+}
+
+export interface LoyaltiesEnableEarningRulesResponse extends LoyaltiesEarningRulesResponseCommon {
+	updated_at: string | null
+	active: true
+}
+
+export interface LoyaltiesDisableEarningRulesResponse extends LoyaltiesEarningRulesResponseCommon {
+	updated_at: string | null
+	active: false
+}
+
+export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponseCommon & {
+	updated_at: string
+	active: boolean
+}
+
+export type LoyaltiesCreateEarningRuleResponse = LoyaltiesEarningRulesResponseCommon & {
+	updated_at: null
+	active: boolean
 }
 export interface LoyaltiesListEarningRulesResponse {
 	object: 'list'
@@ -213,9 +277,16 @@ export interface LoyaltiesCreateEarningRule {
 	source?: { banner?: string }
 	custom_event?: { schema_id?: string }
 	segment?: { id?: string }
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week: number[]
+	metadata: Record<string, any>
 }
-
-export type LoyaltiesCreateEarningRuleResponse = LoyaltiesEarningRulesResponse
 
 export interface LoyaltiesUpdateEarningRule {
 	id: string
@@ -223,12 +294,17 @@ export interface LoyaltiesUpdateEarningRule {
 	source?: {
 		banner: string
 	}
-	loyalty?: {
-		points: number
+	loyalty?: LoyaltyFixed | LoyaltyProportional
+	active: boolean
+	start_date: string
+	expiration_date: string
+	validity_timeframe: {
+		duration: string
+		interval: string
 	}
+	validity_day_of_week: number[]
+	metadata: Record<string, any>
 }
-
-export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponse
 
 export interface LoyaltiesListMembersParams {
 	limit?: number
