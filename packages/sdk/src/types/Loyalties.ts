@@ -269,20 +269,22 @@ export type LoyaltyProportional =
 	| LoyaltyProportionalCustomer
 	| LoyaltyProportionalCustomEvent
 
+export type LoyaltiesEarningRulesEvent =
+	| 'order.paid'
+	| 'customer.segment.entered'
+	| 'custom_event'
+	| 'customer.loyalty.tier.upgraded'
+	| 'customer.loyalty.tier.downgraded'
+	| 'customer.loyalty.tier.prolonged'
+	| 'customer.loyalty.tier.joined'
+	| 'customer.loyalty.tier.left'
+
 export interface LoyaltiesEarningRulesResponseCommon {
 	id: string
 	created_at: string
 	validation_rule_id: string | null
 	loyalty: LoyaltyFixed | LoyaltyProportional
-	event?:
-		| 'order.paid'
-		| 'customer.segment.entered'
-		| 'custom_event'
-		| 'customer.loyalty.tier.upgraded'
-		| 'customer.loyalty.tier.downgraded'
-		| 'customer.loyalty.tier.prolonged'
-		| 'customer.loyalty.tier.joined'
-		| 'customer.loyalty.tier.left'
+	event?: LoyaltiesEarningRulesEvent
 	custom_event?: {
 		schema_id: string
 	}
@@ -341,11 +343,16 @@ export interface LoyaltiesListEarningRulesResponse {
 }
 
 export interface LoyaltiesCreateEarningRule {
-	event: 'order.paid' | 'customer.segment.entered' | string
+	event?: LoyaltiesEarningRulesEvent
+	custom_event?: {
+		schema_id: string
+	}
 	validation_rule_id?: string
-	loyalty: LoyaltyProportional | LoyaltyFixed
+	loyalty: LoyaltyFixed | LoyaltyProportional
 	source?: { banner?: string }
-	custom_event?: { schema_id?: string }
+	loyalty_tier?: {
+		id: string
+	}
 	segment?: { id?: string }
 	active?: boolean
 	start_date?: string
