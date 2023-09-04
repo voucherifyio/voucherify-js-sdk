@@ -131,6 +131,7 @@ const client = VoucherifyServerSide({
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
 	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+  timeoutMs: 10000 // optional
 })
 ```
 
@@ -1214,6 +1215,7 @@ const client = VoucherifyClientSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	origin: 'example.com', // read more below
 	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+  timeoutMs: 10000 // optional
 })
 ```
 
