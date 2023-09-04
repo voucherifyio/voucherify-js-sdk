@@ -246,7 +246,18 @@ export interface LoyaltiesEarningRulesResponseCommon {
 	created_at: string
 	validation_rule_id: string | null
 	loyalty: LoyaltyFixed | LoyaltyProportional
-	event: 'customer.segment.entered' | 'order.paid' | string
+	event?:
+		| 'order.paid'
+		| 'customer.segment.entered'
+		| 'custom_event'
+		| 'customer.loyalty.tier.upgraded'
+		| 'customer.loyalty.tier.downgraded'
+		| 'customer.loyalty.tier.prolonged'
+		| 'customer.loyalty.tier.joined'
+		| 'customer.loyalty.tier.left'
+	custom_event?: {
+		schema_id: string
+	}
 	segment?: {
 		id: string
 	}
