@@ -171,44 +171,72 @@ export interface LoyaltyFixed {
 	points: number
 }
 
-export interface LoyaltyProportionalOrder {
+export type LoyaltyProportionalOrder =
+	| LoyaltyProportionalOrderAmount
+	| LoyaltyProportionalOrderTotalAmount
+	| LoyaltyProportionalOrderMetadata
+
+export interface LoyaltyProportionalOrderAmount {
 	type: 'PROPORTIONAL'
-	calculation_type: 'ORDER_AMOUNT' | 'ORDER_TOTAL_AMOUNT' | 'ORDER_METADATA'
-	order:
-		| {
-				amount: {
-					every: number
-					points: number
-				}
-		  }
-		| {
-				total_amount: {
-					every: number
-					points: number
-				}
-		  }
-		| {
-				metadata: {
-					every: number
-					points: number
-					property: string
-				}
-		  }
+	calculation_type: 'ORDER_AMOUNT'
+	order: {
+		amount: {
+			every: number
+			points: number
+		}
+	}
 }
 
-export interface LoyaltyProportionalOrderItems {
+export interface LoyaltyProportionalOrderTotalAmount {
 	type: 'PROPORTIONAL'
-	calculation_type: 'ORDER_ITEMS_QUANTITY' | 'ORDER_ITEMS_AMOUNT' | 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
-	order_items:
-		| {
-				amount: { every: number; points: number; object: string; id: string }
-		  }
-		| {
-				subtotal_amount: { every: number; points: number; object: string; id: string }
-		  }
-		| {
-				quantity: { every: number; points: number; object: string; id: string }
-		  }
+	calculation_type: 'ORDER_TOTAL_AMOUNT'
+	order: {
+		total_amount: {
+			every: number
+			points: number
+		}
+	}
+}
+
+export interface LoyaltyProportionalOrderMetadata {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_METADATA'
+	order: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+export type LoyaltyProportionalOrderItems =
+	| LoyaltyProportionalOrderItemsQuantity
+	| LoyaltyProportionalOrderItemsAmount
+	| LoyaltyProportionalOrderItemsSubtotalAmount
+
+export interface LoyaltyProportionalOrderItemsQuantity {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_QUANTITY'
+	order_items: {
+		quantity: { every: number; points: number; object: string; id: string }
+	}
+}
+
+export interface LoyaltyProportionalOrderItemsAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_AMOUNT'
+	order_items: {
+		amount: { every: number; points: number; object: string; id: string }
+	}
+}
+
+export interface LoyaltyProportionalOrderItemsSubtotalAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
+	order_items: {
+		subtotal_amount: { every: number; points: number; object: string; id: string }
+	}
 }
 
 export interface LoyaltyProportionalCustomer {

@@ -42,16 +42,16 @@ describe('Loyalties API', () => {
 			},
 		])
 		for (const earningRule of earningRules) {
-			if ('order' in earningRule.loyalty) {
-				if ('amount' in earningRule.loyalty.order) {
+			if (earningRule.loyalty.type === 'PROPORTIONAL') {
+				if (earningRule.loyalty.calculation_type === 'ORDER_AMOUNT') {
 					expect(typeof earningRule.loyalty.order.amount.every).toBe('number')
 					expect(typeof earningRule.loyalty.order.amount.points).toBe('number')
 				}
-				if ('total_amount' in earningRule.loyalty.order) {
+				if (earningRule.loyalty.calculation_type === 'ORDER_TOTAL_AMOUNT') {
 					expect(typeof earningRule.loyalty.order.total_amount.every).toBe('number')
 					expect(typeof earningRule.loyalty.order.total_amount.points).toBe('number')
 				}
-				if ('metadata' in earningRule.loyalty.order) {
+				if (earningRule.loyalty.calculation_type === 'ORDER_METADATA') {
 					expect(typeof earningRule.loyalty.order.metadata.every).toBe('number')
 					expect(typeof earningRule.loyalty.order.metadata.points).toBe('number')
 					expect(typeof earningRule.loyalty.order.metadata.property).toBe('string')
