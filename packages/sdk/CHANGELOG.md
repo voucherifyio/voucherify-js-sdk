@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.2.6
+
+### Patch Changes
+
+- [`a266c2a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a266c2a9a4a1942e2b6d8ef54021e04d36ddb02c) [#223](https://github.com/voucherifyio/voucherify-js-sdk/pull/223) Thanks [@darekg11](https://github.com/darekg11)! - Add optional timeoutMs option to VoucherifyServerSide and VoucherifyClientSide classes defiing timeout in miliseconds after which Axios is going to abort the request. By default this is equal to 0 meaining that there is no timeout beside default Voucherify's Load balancer timeout which is set to 3 minutes
+
 ## 2.2.5
 
 ### Patch Changes
