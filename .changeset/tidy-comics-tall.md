@@ -27,37 +27,21 @@ if(earningRule.loyalty.type === "FIXED"){
   console.log(earningRule.loyalty.points)
   return
 }
-//loyalty.type === "PROPORTIONAL"
-//Here we must check if earningRule.loyalty contains `order`, `order_items`, `customer` or `custom_event`
-if ('order' in earningRule.loyalty) {
-  //Here we must check if earningRule.loyalty.order contains `amount`, `total_amount` or `metadata`
-  if ('amount' in earningRule.loyalty.order) {
-    console.log(earningRule.loyalty.order.amount.every)
-    console.log(earningRule.loyalty.order.amount.points)
-  }
-  if ('total_amount' in earningRule.loyalty.order) {
-    console.log(earningRule.loyalty.order.total_amount.every)
-    console.log(earningRule.loyalty.order.total_amount.points)
-  }
-  if ('metadata' in earningRule.loyalty.order) {
-    console.log(earningRule.loyalty.order.metadata.every)
-    console.log(earningRule.loyalty.order.metadata.points)
-    console.log(earningRule.loyalty.order.metadata.property)
-  }
-  return
+//Now simply check the calculation_type
+if (earningRule.loyalty.calculation_type === 'ORDER_AMOUNT') {
+  console.log(earningRule.loyalty.order.amount.every)
+  console.log(earningRule.loyalty.order.amount.points)
 }
-if ('order_items' in earningRule.loyalty) {
-  //...
-  return
+if (earningRule.loyalty.calculation_type === 'ORDER_TOTAL_AMOUNT') {
+  console.log(earningRule.loyalty.order.total_amount.every)
+  console.log(earningRule.loyalty.order.total_amount.points)
 }
-if ('customer' in earningRule.loyalty) {
-  //...
-  return
+if (earningRule.loyalty.calculation_type === 'ORDER_METADATA') {
+  console.log(earningRule.loyalty.order.metadata.every)
+  console.log(earningRule.loyalty.order.metadata.points)
+  console.log(earningRule.loyalty.order.metadata.property)
 }
-if ('custom_event' in earningRule.loyalty) {
-  //...
-  return
-}
+return
 ```
 
 
