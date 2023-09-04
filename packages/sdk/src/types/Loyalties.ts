@@ -349,11 +349,11 @@ export interface LoyaltiesCreateEarningRule {
 	}
 	validation_rule_id?: string
 	loyalty: LoyaltyFixed | LoyaltyProportional
-	source?: { banner?: string }
+	source?: { banner: string }
 	loyalty_tier?: {
 		id: string
 	}
-	segment?: { id?: string }
+	segment?: { id: string }
 	active?: boolean
 	start_date?: string
 	expiration_date?: string
