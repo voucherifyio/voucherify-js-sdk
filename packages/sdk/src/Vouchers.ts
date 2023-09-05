@@ -89,4 +89,10 @@ export class Vouchers {
 	public releaseValidationSession(code: string, sessionKey: string) {
 		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
+	 */
+	public listGiftCardTransactions(code: string, query?: T.ListGiftCardTransactionsQuery) {
+		return this.client.get<T.ListGiftCardTransactionsResponse>(`/vouchers/${encode(code)}/transactions`, query)
+	}
 }

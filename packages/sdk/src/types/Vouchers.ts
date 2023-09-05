@@ -251,3 +251,58 @@ export type VouchersBulkUpdateMetadataResponse = {
 export type VouchersBulkUpdateResponse = {
 	async_action_id: string
 }
+
+export interface ListGiftCardTransactionsQuery {
+	limit?: number
+	page?: number
+}
+
+export interface ListGiftCardTransactionsResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: ListGiftCardTransactionsTypeDataObject[] | []
+	total?: number
+	has_more?: boolean
+}
+
+export type ListGiftCardTransactionsType =
+	| 'CREDITS_REDEMPTION'
+	| 'CREDITS_REFUND'
+	| 'CREDITS_ADDITION'
+	| 'CREDITS_REMOVAL'
+
+export interface ListGiftCardTransactionsTypeDataObject {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	source: string | null
+	reason: string | null
+	type: ListGiftCardTransactionsType
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			operation_type?: 'MANUAL'
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order?: {
+			id: string
+			source_id: string | null
+		}
+		redemption?: {
+			id: string
+		}
+		rollback?: {
+			id: string
+		}
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
