@@ -282,7 +282,6 @@ export type LoyaltiesEarningRulesEvent =
 export interface LoyaltiesEarningRulesResponseCommon {
 	id: string
 	created_at: string
-	validation_rule_id: string | null
 	loyalty: LoyaltyFixed | LoyaltyProportional
 	event?: LoyaltiesEarningRulesEvent
 	custom_event?: {
@@ -312,6 +311,7 @@ export interface LoyaltiesEarningRulesResponseCommon {
 }
 
 export interface LoyaltiesEarningRulesResponse extends LoyaltiesEarningRulesResponseCommon {
+	validation_rule_id: string | null
 	updated_at: string | null
 	active: boolean
 }
@@ -327,11 +327,13 @@ export interface LoyaltiesDisableEarningRulesResponse extends LoyaltiesEarningRu
 }
 
 export type LoyaltiesUpdateEarningRuleResponse = LoyaltiesEarningRulesResponseCommon & {
+	validation_rule_id: string | null
 	updated_at: string
 	active: boolean
 }
 
 export type LoyaltiesCreateEarningRuleResponse = LoyaltiesEarningRulesResponseCommon & {
+	validation_rule_id: string | null
 	updated_at: null
 	active: boolean
 }
