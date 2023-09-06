@@ -10,6 +10,7 @@
 - ExportGiftCardTransactionsResponse
 - ExportGiftCardTransactionsParams
 - ExportGiftCardTransactionsFields
+- ExportGiftCardTransactionsParamsFilters
 
 Added support for following endpoints:
 
