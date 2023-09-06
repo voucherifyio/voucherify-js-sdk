@@ -276,7 +276,7 @@ export interface ListGiftCardTransactionsTypeDataObject {
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string | null
-	source: string | null
+	source: 'voucherify-web-ui' | 'API' | null
 	reason: string | null
 	type: ListGiftCardTransactionsType
 	details: {
