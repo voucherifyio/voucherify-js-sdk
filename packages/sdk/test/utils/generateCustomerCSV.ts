@@ -1,5 +1,6 @@
 import fs from 'fs'
 import csv from 'csv-stringify'
+import * as path from 'path'
 export const generateCustomerCSV = async (sourceId: string) => {
 	const data = [
 		[
@@ -35,19 +36,18 @@ export const generateCustomerCSV = async (sourceId: string) => {
 			'Metadata_2_value',
 		],
 	]
-	const baseTestPath = __dirname.split('/').slice(0, -1).join('/')
+	const baseTestPath = path.join(__dirname, '..')
 	if (!fs.existsSync(baseTestPath + '/csv')) {
 		fs.mkdirSync(baseTestPath + '/csv')
 	}
-	const path = baseTestPath + '/csv/customers.csv'
-	return new Promise<void>((resolve, reject) => {
+	const filepath = baseTestPath + '/csv/customers.csv'
+	return new Promise<void>((resolve) => {
 		csv.stringify(data, (error, output) => {
 			if (error) {
-				console.log(error)
-				reject(error)
+				throw error
 			}
 			if (output) {
-				fs.writeFileSync(path, output)
+				fs.writeFileSync(filepath, output)
 				resolve()
 			}
 		})
