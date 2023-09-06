@@ -319,7 +319,7 @@ export interface ExportGiftCardTransactionsResponse {
 	object: 'export'
 	created_at: string
 	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
-	channel: string
+	channel: 'API'
 	exported_object: string
 	parameters: ExportGiftCardTransactionsParams
 	result: string | null
@@ -329,21 +329,23 @@ export interface ExportGiftCardTransactionsResponse {
 export interface ExportGiftCardTransactionsParams {
 	order?: '-created_at' | 'created_at'
 	fields?: ExportGiftCardTransactionsFields[]
-	filters: {
-		voucher_id: {
-			conditions: {
-				$in: string[]
-				$not_in?: string[]
-				$is?: string
-				$is_not?: string
-				$has_value?: string
-				$is_unknown?: string
-				$starts_with?: string
-				$ends_with?: string
-			}
+	filters: ExportGiftCardTransactionsParamsFilters
+}
+
+export interface ExportGiftCardTransactionsParamsFilters {
+	voucher_id: {
+		conditions: {
+			$in: string[]
+			$not_in?: string[]
+			$is?: string
+			$is_not?: string
+			$has_value?: string
+			$is_unknown?: string
+			$starts_with?: string
+			$ends_with?: string
 		}
-		junction?: 'AND' | 'OR'
 	}
+	junction?: 'AND' | 'OR'
 }
 
 export type ExportGiftCardTransactionsFields =
