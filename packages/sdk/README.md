@@ -154,6 +154,7 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
 - [List Gift Card Transactions](#list-gift-card-transactions)
+- [Export Gift Card Transactions](#export-gift-card-transactions)
 
 #### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
@@ -241,6 +242,12 @@ client.vouchers.releaseValidationSession(code, sessionKey)
 
 ```javascript
 client.vouchers.listGiftCardTransactions(code, query)
+```
+
+#### [Export Gift Card Transactions](https://docs.voucherify.io/reference/export-gift-card-transactions)
+
+```javascript
+client.vouchers.exportGiftCardTransactions(code, body)
 ```
 
 ---

@@ -306,3 +306,55 @@ export interface ListGiftCardTransactionsTypeDataObject {
 	related_transaction_id: string | null
 	created_at: string
 }
+
+export interface ExportGiftCardTransactionsBody {
+	parameters?: {
+		order?: '-created_at' | 'created_at'
+		fields?: ExportGiftCardTransactionsFields[]
+	}
+}
+
+export interface ExportGiftCardTransactionsResponse {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	channel: string
+	exported_object: string
+	parameters: ExportGiftCardTransactionsParams
+	result: string | null
+	user_id: string | null
+}
+
+export interface ExportGiftCardTransactionsParams {
+	order?: '-created_at' | 'created_at'
+	fields?: ExportGiftCardTransactionsFields[]
+	filters: {
+		voucher_id: {
+			conditions: {
+				$in: string[]
+				$not_in?: string[]
+				$is?: string
+				$is_not?: string
+				$has_value?: string
+				$is_unknown?: string
+				$starts_with?: string
+				$ends_with?: string
+			}
+		}
+		junction?: 'AND' | 'OR'
+	}
+}
+
+export type ExportGiftCardTransactionsFields =
+	| 'id'
+	| 'type'
+	| 'source_id'
+	| 'balance'
+	| 'amount'
+	| 'reason'
+	| 'created_at'
+	| 'voucher_id'
+	| 'campaign_id'
+	| 'source'
+	| 'details'
