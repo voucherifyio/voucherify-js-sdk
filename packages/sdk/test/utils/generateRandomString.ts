@@ -1,4 +1,4 @@
-export const generateRandomString = (length: number) => {
+export const generateRandomString = (length = 40) => {
 	if (!length) {
 		throw new Error('length must be greater than zero')
 	}

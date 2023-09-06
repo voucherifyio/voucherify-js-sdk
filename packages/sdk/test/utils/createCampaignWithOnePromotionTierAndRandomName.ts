@@ -1,7 +1,8 @@
 import { voucherifyClient as client } from '../client'
 import { generateRandomString } from './generateRandomString'
+import { DiscountVouchersTypesEnum } from '../../src'
 
-export const generateCampaignWithOnePromotionTier = async () => {
+export const createCampaignWithOnePromotionTierAndRandomName = async () => {
 	return await client.promotions.create({
 		name: generateRandomString(),
 		campaign_type: 'PROMOTION',
@@ -11,8 +12,7 @@ export const generateCampaignWithOnePromotionTier = async () => {
 					name: generateRandomString(60),
 					action: {
 						discount: {
-							// @ts-ignore
-							type: 'AMOUNT',
+							type: DiscountVouchersTypesEnum.AMOUNT,
 							amount_off: 1000,
 						},
 					},

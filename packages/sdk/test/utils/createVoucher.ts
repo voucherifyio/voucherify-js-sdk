@@ -1,7 +1,7 @@
 import { voucherifyClient as client } from '../client'
-import { DiscountVouchersTypesEnum } from '@voucherify/sdk'
+import { DiscountVouchersTypesEnum } from '../../src'
 
-export const generateVoucher = async () =>
+export const createVoucher = async () =>
 	await client.vouchers.create({
 		type: 'DISCOUNT_VOUCHER',
 		discount: {
