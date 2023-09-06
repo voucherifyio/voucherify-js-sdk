@@ -9,6 +9,36 @@
   - OrderObjectRedemptions
 - ResponseValidateVoucherFalse
 
+**Interfaces changes**
+- `PromotionsCreate`
+  - property: `promotion`
+    - property: `tier`
+      - changed:
+        - value of `banner` is not required
+- `ApplicableTo`
+  - added:
+    - product_id?: string
+    - product_source_id?: string
+    - quantity_limit?: number
+    - aggregated_quantity_limit?: number
+- `CustomerRequest`
+  - added:
+    - birthdate?: string
+- `ValidationsValidateVoucherParams`
+  - property: `customer`
+    - added:
+      - address
+      - phone
+      - birthdate
+  - property: `order`
+    - added:
+      - status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+      - customer?: CustomerRequest
+      - referrer?: CustomerRequest
+  - property: `reward`
+    - added
+      - points?: number
+
 **Breaking changes:**
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
 
@@ -28,7 +58,7 @@ if (response.valid) {
 return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
 ```
 
-#### FOR DEVELOPERS WORKING ON SDK IMPROVEMENTS:
+**FOR DEVELOPERS WORKING ON SDK IMPROVEMENTS:**
 
 **IMPORTANT NOTE**
 In order to run **sdk tests** you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
