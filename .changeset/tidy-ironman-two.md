@@ -7,14 +7,16 @@
 - CustomerRequestBasicData
 - UpdateCustomersMetadataInBulk
 
-Added support for following endpoints:
+**Interfaces changed**
+- `CustomerRequest`
+  - extended by
+    - `CustomerRequestBasicData`
 
+**Added support for following endpoints:**
 - customers
   - POST /customers/{customerId}/permanent-deletion
+    - method: `client.categories.deletePermanently(customerId)`
   - POST /customers/bulk/async
+    - method: `client.categories.updateCustomersInBulk(customers)`
   - POST /customers/metadata/async
-
-- New methods
-  - client.categories.deletePermanently(customerId)
-  - client.categories.updateCustomersInBulk(customers)
-  - client.categories.updateCustomersMetadataInBulk(sourceIdsAndMetadata)
+    - method: `client.categories.updateCustomersMetadataInBulk(sourceIdsAndMetadata)`
