@@ -1,6 +1,7 @@
 import { voucherifyClient as client } from './client'
-import { generateVoucher } from './utils/generateVoucher'
 import { generateRandomString } from './utils/generateRandomString'
+import { generateVoucher } from './utils/generateVoucher'
+import { generateGiftVoucher } from './utils/generateGiftVoucher'
 
 describe('Vouchers API', () => {
 	describe('List Gift Card Transactions', () => {
@@ -33,6 +34,38 @@ describe('Vouchers API', () => {
 				hasError = true
 			}
 			expect(hasError).toBeFalsy()
+		})
+	})
+	describe('List Gift Card Transactions Export', () => {
+		it('should throw error when code does not exist', async () => {
+			try {
+				await client.vouchers.exportGiftCardTransactions(generateRandomString(55), {
+					parameters: {
+						order: '-created_at',
+						fields: ['id', 'type'],
+					},
+				})
+			} catch (error) {
+				expect(error?.message).toBe('Resource not found')
+				expect(error?.key).toBe('not_found')
+				expect(error?.code).toBe(404)
+			}
+		})
+		it('should return all the required fields, the `filters` object and should not return `order` and `fields` if they were not passed in request body', async () => {
+			const code = (await generateGiftVoucher()).code
+			const response = await client.vouchers.exportGiftCardTransactions(code, { parameters: {} })
+			expect(typeof response.parameters.filters).toBe('object')
+			expect(response.parameters).not.toContain('order')
+			expect(response.parameters).not.toContain('fields')
+			expect(response).toHaveProperty('id')
+			expect(response).toHaveProperty('object')
+			expect(response).toHaveProperty('created_at')
+			expect(response).toHaveProperty('status')
+			expect(response).toHaveProperty('channel')
+			expect(response).toHaveProperty('exported_object')
+			expect(response).toHaveProperty('parameters')
+			expect(response).toHaveProperty('result')
+			expect(response).toHaveProperty('user_id')
 		})
 	})
 })
