@@ -51,7 +51,7 @@ export interface PromotionsCreate {
 	promotion?: {
 		tiers: {
 			name: string
-			banner: string
+			banner?: string
 			action: {
 				discount: DiscountUnit | DiscountAmount | DiscountPercent | DiscountFixed
 			}
