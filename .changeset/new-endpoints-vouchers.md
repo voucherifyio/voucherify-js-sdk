@@ -14,9 +14,6 @@
 Added support for following endpoints:
 
 - vouchers
-    - GET /vouchers/{code}/transactions
-    - POST /vouchers/{code}/transactions/export
+    - GET /vouchers/{code}/transactions (client.vouchers.listGiftCardTransactions(code, query))
+    - POST /vouchers/{code}/transactions/export (client.vouchers.exportGiftCardTransactions(code, body))
 
-- New methods
-    - client.vouchers.listGiftCardTransactions(code, query)
-    - client.vouchers.exportGiftCardTransactions(code, body)
