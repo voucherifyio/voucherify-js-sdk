@@ -3,7 +3,7 @@
 	"private": true,
 	"engineStrict": true,
 	"engines": {
-		"node": ">=14 <16"
+		"node": "^14 || ^16"
 	},
 	"repository": {
 		"type": "git",
