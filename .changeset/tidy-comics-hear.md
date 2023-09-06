@@ -37,4 +37,4 @@ In order to run tests you need to copy packages/sdk/.env.example to packages/sdk
 Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.****
 
 **Workflow changes**
-- Required version of node in `package.json` was changed from `14.15` to `16.x`. - This is not related to SDK usage, but rather to further contribution to the SDK. SDK 
+- Required version of node in `package.json` (root folder) was changed from `14.15` to `^14.15 || ^16`. - This is not related to SDK usage, but rather to further contribution to the SDK.
