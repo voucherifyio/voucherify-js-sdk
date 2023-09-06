@@ -30,11 +30,9 @@ return { success: false, reason: validation.reason || validation.error?.message 
 
 #### FOR DEVELOPERS WORKING ON SDK IMPROVEMENTS:
 
-**SDK Scripts changes (available from packages/sdk folder):**
-- npm run build-and-test (build sdk and run tests)
-
-In order to run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
-Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.****
+**IMPORTANT NOTE**
+In order to run **sdk tests** you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
+Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
 
 **Workflow changes**
 - Required version of node in `package.json` (root folder) was changed from `14.15` to `^14.15 || ^16`. - This is not related to SDK usage, but rather to further contribution to the SDK.
