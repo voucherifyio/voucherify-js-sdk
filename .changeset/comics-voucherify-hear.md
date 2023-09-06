@@ -8,20 +8,18 @@ Tests uses REAL calls to Voucherify. You may reach the limit of your account if 
 **Added support for following endpoints:**
 - products
   - POST /skus/importCSV
+    - method: `client.products.importSkusUsingCSV(filePath)`
   - POST /products/importCSV
+    - method: `client.products.importProductsUsingCSV(filePath)`
 - vouchers
   - POST /vouchers/importCSV
+    - method: `client.vouchers.importVouchersUsingCSV(filePath)`
 - customers
   - POST /customers/importCSV
+    - method: `client.customers.importCustomersUsingCSV(filePath)`
 - campaigns
   - POST /campaigns/campaignId/importCSV
-
-**New methods**
-- client.vouchers.importVouchersUsingCSV(filePath)
-- client.campaigns.importVouchersUsingCSV(campaignId, filePath)
-- client.customers.importCustomersUsingCSV(filePath)
-- client.products.importSkusUsingCSV(filePath)
-- client.products.importProductsUsingCSV(filePath)
+    - method: `client.campaigns.importVouchersUsingCSV(campaignId, filePath)`
 
 **Example**
 ```js
