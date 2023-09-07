@@ -1,13 +1,4 @@
----
-'@voucherify/sdk': major
----
-
-**New exported types/interfaces**
-- ResponseValidateVoucherTrue
-    - DiscountUnitMultiple
-    - DiscountUnitMultipleOneUnit
-    - OrderObjectRedemptions
-- ResponseValidateVoucherFalse
+## This is an example of changeset
 
 **Interfaces changes**
 - `PromotionsCreate`
@@ -17,19 +8,26 @@
 - `ApplicableTo`
   - added optional: `product_id`, `product_source_id`, `quantity_limit`, `aggregated_quantity_limit`
 - `CustomerRequest`
-  - added optional: `birthdate`
+  - added required: `birthdate`
 - `ValidationsValidateVoucherParams`
   - property: `customer`
     - added optional: `address`, `phone`, `birthdate`
     - property: `order`
-      - added optional: `status`, `customer`, `referrer`
+      - values of `banner`, `work`, `home` are not required
     - property: `reward`
       - added optional: `number`
 
-**Breaking changes:**
-- Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
+#### Added support for following endpoints:
+- products
+  - POST /skus/importCSV
+    - method: `client.products.importSkusUsingCSV(filePath)`
+  - POST /skus/importCSV
+    - method: `client.products.importSkusUsingCSV(filePath)`
 
-**Example of usage (related to breaking changes):**
+#### Example of usage:
+```js
+await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
+```
 ```js
 const response = await client.validations.validateVoucher('test')
 
@@ -44,3 +42,7 @@ if (response.valid) {
 // import { ResponseValidateVoucherFalse } from '@voucherify/sdk';
 return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
 ```
+
+#### Dependencies:
+`Axios` version was updated from `0.21.4` to `0.27.2`.
+Added `"dotenv": "16.3.1"` to `devDependencies`.
