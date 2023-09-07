@@ -21,8 +21,11 @@
 - products
   - POST /skus/importCSV
     - method: `client.products.importSkusUsingCSV(filePath)`
-  - POST /skus/importCSV
-    - method: `client.products.importSkusUsingCSV(filePath)`
+- categories
+  - GET, POST /categories
+    - methods:
+      - `client.categories.list()`
+      - `client.categories.create(createCategory)`
 
 #### Example of usage:
 ```js
