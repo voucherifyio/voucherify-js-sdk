@@ -17,6 +17,10 @@
     - property: `reward`
       - added optional: `number`
 
+#### New exported types/interfaces
+- Loyalties.ts
+  - ListLoyaltyTierRewardResponse
+
 #### Added support for following endpoints:
 - products
   - POST /skus/importCSV
