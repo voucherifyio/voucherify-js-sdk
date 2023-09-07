@@ -17,3 +17,12 @@
       - `client.categories.get(categoryId)`
       - `client.categories.update(categoryId, updateCategory)`
       - `client.categories.delete(categoryId)`
+
+#### New exported types/interfaces
+- Categories.ts
+  - ListCategories
+  - CategoryObject
+  - CreateCategory
+  - ResponseCreateCategory
+  - ResponseUpdateCategory
+  - UpdateCategoryRequest
