@@ -18,10 +18,10 @@
   - POST /campaigns/campaignId/importCSV
     - method: `client.campaigns.importVouchersUsingCSV(campaignId, filePath)`
 
-#### Example of usage
+#### Example of usage:
 ```js
 await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
 ```
 
-#### New dependencies
-- "form-data": "4.0.0"
+#### Dependencies:
+Added `"form-data": "4.0.0"`
