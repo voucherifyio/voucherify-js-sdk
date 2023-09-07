@@ -318,7 +318,7 @@ export interface ExportGiftCardTransactionsResponse {
 	id: string
 	object: 'export'
 	created_at: string
-	status: 'SCHEDULED' | 'IN_PROGRESS' | 'DONE' | 'ERROR'
+	status: 'SCHEDULED'
 	channel: 'API'
 	exported_object: string
 	parameters: ExportGiftCardTransactionsParams
