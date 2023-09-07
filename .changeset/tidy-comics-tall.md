@@ -2,7 +2,7 @@
 '@voucherify/sdk': major
 ---
 
-**New exported types/interfaces**
+#### New exported types/interfaces
 - LoyaltyProportionalOrder
 - LoyaltyProportionalOrderItems
 - LoyaltyProportionalCustomer
@@ -14,11 +14,11 @@
 - LoyaltiesUpdateEarningRuleResponse
 - LoyaltiesCreateEarningRuleResponse
 
-**Breaking changes:**
+#### Breaking changes:
 - Interface `LoyaltyProportional` was replaced with type of Union of interfaces `LoyaltyProportionalOrder | LoyaltyProportionalOrderItems | LoyaltyProportionalCustomer | LoyaltyProportionalCustomEvent`
 - Method name `client.loyalties.createEarningRule` has changed to `client.loyalties.createEarningRules` - notice `s` as this method requires array of earning rules.
 
-**Example of usage (related to breaking changes):**
+#### Example of usage (related to breaking changes):
 ```js
 const earningRule = await client.loyalties.getEarningRule(campaignId, earningRuleId)
 //If we want to know structure of earningRule's loyalty key, we will need to do some checkings to know which union type will apply
