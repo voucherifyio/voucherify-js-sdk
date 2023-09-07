@@ -2,16 +2,14 @@
 '@voucherify/sdk': major
 ---
 
-To run tests you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
-Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
+#### Added support for following endpoints:
+- loyalties
+  - GET /loyalties/{campaignId}/rewards/{assignmentId}
+    - method: `client.loyalties.getRewardAssignment(campaignId, assignmentId)`
+  - GET `/loyalties/${campaignId}/tiers/{tierId}/rewards`
+    - method: `client.loyalties.listLoyaltyTierReward(campaignId, tierId)`
 
-**New methods**
-```js
-client.loyalties.getRewardAssignment(campaignId, assignmentId)
-client.loyalties.listLoyaltyTierReward(campaignId, tierId)
-```
-
-**New exported types/interfaces**
+#### New exported types/interfaces
 - Loyalties.ts
   - ListLoyaltyTierRewardResponse
   - LoyaltyTierRewardObject
@@ -27,7 +25,7 @@ client.loyalties.listLoyaltyTierReward(campaignId, tierId)
 - Rewards.ts
   - RewardsAssignmentObjectCommon
 
-**Breaking changes in types/interfaces**
+#### Breaking changes in types/interfaces
 - RewardsAssignmentObject
   - related_object_id - required
   - related_object_type - required, value always: `campaign`
@@ -45,7 +43,7 @@ client.loyalties.listLoyaltyTierReward(campaignId, tierId)
 - RewardsUpdateAssignmentResponse
   - updated_at - required, value always: `string`
 
-**Note**
+#### Note
 - RewardsCreateAssignment
   - This type was defined incorrectly, if you have tried before to `createAssignment` without parameters as they were not required, you would fail every time. So change in types shall not hurt you if your script already worked properly.
 
