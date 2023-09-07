@@ -21,6 +21,7 @@ import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
 import { ApiLimitsHandler } from './ApiLimitsHandler'
 import { MetadataSchemas } from './MetadataSchemas'
+import { ProductCollections } from "./ProductCollections";
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -185,6 +186,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const consents = new Consents(client)
 	const orders = new Orders(client)
 	const products = new Products(client)
+	const productCollections = new ProductCollections(client)
 	const rewards = new Rewards(client)
 	const loyalties = new Loyalties(client)
 	const segments = new Segments(client)
@@ -203,6 +205,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		consents,
 		orders,
 		products,
+		productCollections,
 		rewards,
 		loyalties,
 		segments,
