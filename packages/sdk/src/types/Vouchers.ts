@@ -281,7 +281,7 @@ export interface ListGiftCardTransactionsTypeDataObject {
 	type: ListGiftCardTransactionsType
 	details: {
 		balance: {
-			type: 'gift_voucher'
+			type: 'gift_voucher' | 'loyalty_card'
 			total: number
 			amount: number
 			object: 'balance'
