@@ -2,14 +2,14 @@
 '@voucherify/sdk': major
 ---
 
-#### New exported types/interfaces
+**New exported types/interfaces**
 - ResponseValidateVoucherTrue
   - DiscountUnitMultiple
   - DiscountUnitMultipleOneUnit
   - OrderObjectRedemptions
 - ResponseValidateVoucherFalse
 
-#### Interfaces changes
+**Interfaces changes**
 - `PromotionsCreate`
   - property: `promotion`
     - property: `tier`
@@ -39,10 +39,10 @@
     - added
       - points?: number
 
-#### Breaking changes:
+**Breaking changes:**
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
 
-#### Example of usage (related to breaking changes):
+**Example of usage (related to breaking changes):**
 ```js
 const validation = await client.validations.validateVoucher('test')
 
@@ -57,3 +57,12 @@ if (response.valid) {
 // import { ResponseValidateVoucherFalse } from '@voucherify/sdk';
 return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
 ```
+
+**FOR DEVELOPERS WORKING ON SDK IMPROVEMENTS:**
+
+**IMPORTANT NOTE**
+In order to run **sdk tests** you need to copy packages/sdk/.env.example to packages/sdk/.env and fill the file with your credentials.
+Tests uses REAL calls to Voucherify. You may reach the limit of your account if you are using sandbox account.
+
+**Workflow changes**
+- Required version of node in `package.json` (root folder) was changed from `14.15` to `^14.15 || ^16`. - This is not related to SDK usage, but rather to further contribution to the SDK.
