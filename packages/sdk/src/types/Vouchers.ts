@@ -260,7 +260,7 @@ export interface ListGiftCardTransactionsQuery {
 export interface ListGiftCardTransactionsResponse {
 	object: 'list'
 	data_ref: 'data'
-	data: ListGiftCardTransactionsTypeDataObject[] | []
+	data: ListGiftCardTransactionsTypeDataObject[]
 	total?: number
 	has_more?: boolean
 }
