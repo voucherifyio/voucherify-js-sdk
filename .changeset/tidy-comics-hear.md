@@ -38,9 +38,9 @@ const response = await client.validations.validateVoucher('test')
 if (response.valid) {
   // We have narrowed down the `ValidationsValidateVoucherResponse` type to `ResponseValidateVoucherTrue` so now we can access attributes specific for this type like `order`
   // import { ResponseValidateVoucherTrue } from '@voucherify/sdk';
-  return { success: true, order: validation.order }
+  return { success: true, order: response.order }
 }
 // We have narrowed down the `ValidationsValidateVoucherResponse` type to `ResponseValidateVoucherFalse` so now we can access attributes specific for this type like `reason` or `error`
 // import { ResponseValidateVoucherFalse } from '@voucherify/sdk';
-return { success: false, reason: validation.reason || validation.error?.message || 'Unknown error' }
+return { success: false, reason: response.reason || response.error?.message || 'Unknown error' }
 ```
