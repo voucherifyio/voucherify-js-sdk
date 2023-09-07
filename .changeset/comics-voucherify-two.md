@@ -1,7 +1,7 @@
  ---
 '@voucherify/sdk': minor
 ---
-**Added support for following endpoints:**
+#### Added support for following endpoints:
 - campaigns
   - POST /campaigns/campaignId/enable
     - method: `client.campaigns.enable(campaignId)`
