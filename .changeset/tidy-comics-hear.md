@@ -13,18 +13,31 @@
 - `PromotionsCreate`
   - property: `promotion`
     - property: `tier`
-      - value of `banner` is not required
+      - changed:
+        - value of `banner` is not required
 - `ApplicableTo`
-  - added optional: `product_id`, `product_source_id`, `quantity_limit`, `aggregated_quantity_limit`
+  - added:
+    - product_id?: string
+    - product_source_id?: string
+    - quantity_limit?: number
+    - aggregated_quantity_limit?: number
 - `CustomerRequest`
-  - added optional: `birthdate`
+  - added:
+    - birthdate?: string
 - `ValidationsValidateVoucherParams`
   - property: `customer`
-    - added optional: `address`, `phone`, `birthdate`
+    - added:
+      - address
+      - phone
+      - birthdate
   - property: `order`
-    - added optional: `status`, `customer`, `referrer`
+    - added:
+      - status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+      - customer?: CustomerRequest
+      - referrer?: CustomerRequest
   - property: `reward`
-    - added optional: `points`
+    - added
+      - points?: number
 
 #### Breaking changes:
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
