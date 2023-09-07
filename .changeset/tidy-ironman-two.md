@@ -2,17 +2,16 @@
 '@voucherify/sdk': minor
 ---
 
-**New exported types/interfaces**
+#### New exported types/interfaces
 - CustomerPermanentDeletion
 - CustomerRequestBasicData
 - UpdateCustomersMetadataInBulk
 
-**Interfaces changed**
+#### Interfaces changed
 - `CustomerRequest`
-  - extended by
-    - `CustomerRequestBasicData`
+  - extended by: `CustomerRequestBasicData`
 
-**Added support for following endpoints:**
+#### Added support for following endpoints:
 - customers
   - POST /customers/{customerId}/permanent-deletion
     - method: `client.categories.deletePermanently(customerId)`
