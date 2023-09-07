@@ -2,7 +2,7 @@
 '@voucherify/sdk': minor
 ---
 
-**Added support for following endpoints:**
+#### Added support for following endpoints:
 - products
   - POST /skus/importCSV
     - method: `client.products.importSkusUsingCSV(filePath)`
@@ -18,10 +18,10 @@
   - POST /campaigns/campaignId/importCSV
     - method: `client.campaigns.importVouchersUsingCSV(campaignId, filePath)`
 
-**Example**
+#### Example of use
 ```js
 await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
 ```
 
-**New dependencies**
+#### New dependencies
 - "form-data": "4.0.0"
