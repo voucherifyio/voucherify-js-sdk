@@ -2,14 +2,14 @@
 '@voucherify/sdk': major
 ---
 
-**New exported types/interfaces**
+#### New exported types/interfaces
 - ResponseValidateVoucherTrue
-    - DiscountUnitMultiple
-    - DiscountUnitMultipleOneUnit
-    - OrderObjectRedemptions
+  - DiscountUnitMultiple
+  - DiscountUnitMultipleOneUnit
+  - OrderObjectRedemptions
 - ResponseValidateVoucherFalse
 
-**Interfaces changes**
+#### Interfaces changes
 - `PromotionsCreate`
   - property: `promotion`
   - property: `tier`
@@ -26,10 +26,10 @@
     - property: `reward`
       - added optional: `number`
 
-**Breaking changes:**
+#### Breaking changes:
 - Interface `ValidationsValidateVoucherResponse` was replaced with type of Union of interfaces `ResponseValidateVoucherTrue | ResponseValidateVoucherFalse`
 
-**Example of usage (related to breaking changes):**
+#### Example of usage (related to breaking changes):
 ```js
 const response = await client.validations.validateVoucher('test')
 
