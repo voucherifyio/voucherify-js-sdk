@@ -1,27 +1,22 @@
-import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
-import { CustomersCreateBody } from './Customers'
+import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed, DiscountUnitMultiple } from './DiscountVoucher'
+import { CustomerRequest, CustomersCreateBody } from './Customers'
 import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
-import { ValidationError } from './ValidationError'
 
 import { OrdersItem, OrdersCreate, OrdersCreateResponse } from './Orders'
 import { PromotionsValidateParams } from './Promotions'
 
 export interface ValidationsValidateVoucherParams {
-	customer?: {
-		id?: string
-		source_id?: string
-		name?: string
-		email?: string
-		description?: string
-		metadata?: Record<string, any>
-	}
+	customer?: CustomerRequest
 	order?: {
 		id?: string
 		source_id?: string
+		status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 		amount?: number
 		items?: OrdersItem[]
+		customer?: CustomerRequest
+		referrer?: CustomerRequest
 		metadata?: Record<string, any>
 	}
 	gift?: {
@@ -29,45 +24,92 @@ export interface ValidationsValidateVoucherParams {
 	}
 	reward?: {
 		id: string
+		points?: number
 	}
 	session?: ValidationSessionParams
 }
 
-export interface ValidationsValidateVoucherResponse {
-	applicable_to?: ApplicableToResultList
-	inapplicable_to?: ApplicableToResultList
+export type ValidationsValidateVoucherResponse = ResponseValidateVoucherTrue | ResponseValidateVoucherFalse
+
+export interface ResponseValidateVoucherTrue {
+	valid: true
+	code: string
+	applicable_to: ApplicableToResultList
+	inapplicable_to: ApplicableToResultList
 	campaign?: string
 	campaign_id?: string
-	metadata?: Record<string, any>
-	code?: string
-	valid?: boolean
-	discount?: DiscountAmount | DiscountUnit | DiscountPercent | DiscountFixed
+	metadata: Record<string, any>
+	discount?: DiscountAmount | DiscountUnit | DiscountUnitMultiple | DiscountPercent | DiscountFixed
 	gift?: {
 		amount: number
 		balance: number
+		effect?: 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 	}
 	loyalty?: {
 		points_cost: number
 	}
+	reward?: {
+		id: string
+		assignment_id: string
+		points: number
+	}
 	order?: {
+		id?: string
+		source_id?: string
+		created_at?: string
+		updated_at?: string
+		status?: 'CREATED' | 'PAID' | 'PROCESSING' | 'CANCELED' | 'FULFILLED'
 		amount: number
+		initial_amount?: number
 		discount_amount: number
-		total_discount_amount: number
-		total_amount: number
 		applied_discount_amount?: number
+		items_discount_amount?: number
+		total_discount_amount?: number
+		total_amount: number
+		items_applied_discount_amount?: number
 		total_applied_discount_amount?: number
 		items?: OrdersItem[]
-		initial_amount?: number
-		items_discount_amount?: number
-		items_applied_discount_amount?: number
 		metadata?: Record<string, any>
+		customer?: CustomerRequest
+		customer_id?: string
+		referrer_id: string | null
+		object: 'order'
+		redemptions?: OrderObjectRedemptions
 	}
 	session?: ValidationSessionParams
 	start_date?: string
 	expiration_date?: string
 	tracking_id: string
-	error?: ValidationError
 }
+
+export interface ResponseValidateVoucherFalse {
+	valid: false
+	code: string
+	error?: {
+		code: number
+		key: string
+		message: string
+		details: string
+		request_id?: string
+		resource_id?: string
+		resource_type?: string
+	}
+	tracking_id?: string
+	customer_id?: string
+	metadata?: Record<string, any>
+	reason?: string
+}
+
+export type OrderObjectRedemptions = Record<
+	string,
+	{
+		date?: string
+		related_object_type?: 'voucher' | 'promotion_tier'
+		related_object_id?: string
+		related_object_parent_id?: string
+		stacked?: string[]
+	}
+>
 
 export interface ValidationsValidateStackableParams {
 	options?: StackableOptions
