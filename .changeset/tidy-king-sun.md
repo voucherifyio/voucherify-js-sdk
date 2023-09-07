@@ -2,7 +2,7 @@
 '@voucherify/sdk': major
 ---
 
-**New exported types/interfaces**
+#### New exported types/interfaces
 - CreateExportResource
 - ExportResourceResponseCommon
 - ExportResourceResponse
@@ -57,7 +57,7 @@
 - ExportVoucherTransactionsFields
 - ExportVoucherTransactionsOrder
 
-**Breaking changes:**
+#### Breaking changes:
 - method voucherify.distributions.exports.create:
   - request parameter
     - `ExportResource` was replaced with `CreateExportResource`
@@ -69,7 +69,7 @@
     - `ExportsGetResponse` was replaced by `ExportResourceResponse`
     - Now response is made out of `ExportResourceResponseCommon` and union of types, such as `ExportsCreateResponseVoucher`, so if you need get into `parameters` you will need to first narrow down types by checking `exported_object` for example: `if(response.exported_object === 'voucher'){...some logic here}`
 
-**Example of usage (related to breaking changes):**
+#### Example of usage (related to breaking changes):
 ```js
 const request = {
   exported_object: 'voucher',
