@@ -40,7 +40,8 @@
 		"qs": "6.9.7"
 	},
 	"devDependencies": {
-		"@types/qs": "6.9.7"
+		"@types/qs": "6.9.7",
+		"utility-types": "3.10.0"
 	},
 	"publishConfig": {
 		"access": "public"

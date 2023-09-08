@@ -91,3 +91,5 @@ switch (result.exported_object) {
 }
 ```
 
+#### Dependencies:
+Added `"utility-types": "3.10.0"` to `devDependencies`.
