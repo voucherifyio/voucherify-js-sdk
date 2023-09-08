@@ -22,7 +22,7 @@ export interface CreateProductCollectionAutoUpdate {
 	name: string
 	filter: {
 		junction: Junction
-	} & Record<string, Record<FiltersCondition, any>>
+	} & Record<string, { conditions: Record<FiltersCondition, any> }>
 }
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
@@ -60,16 +60,16 @@ export type ProductCollectionsObject = CreateProductCollection & {
 }
 
 export interface ListProductCollectionsParameters {
-	limit: number
-	page: number
-	order: 'created_at' | '-created_at'
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at'
 }
 
 export interface ListProductCollections {
-	object?: 'list'
-	data_ref?: 'data'
-	data?: ProductCollectionsObject[]
-	total?: number
+	object: 'list'
+	data_ref: 'data'
+	data: ProductCollectionsObject[]
+	total: number
 }
 
 export interface ListProductsInCollectionParameters {
@@ -88,7 +88,7 @@ export interface ProductInCollectionSku {
 	id: string //skuId
 	source_id: string | null
 	product_id: string
-	sku: string
+	sku: string | null
 	price: number | null
 	currency: string | null
 	attributes: Record<string, any>
@@ -104,7 +104,7 @@ export interface ProductInCollectionSkuProduct {
 	id: string
 	source_id: string | null
 	name: string | null
-	price: number
+	price: number | null
 	attributes: string[]
 	metadata: Record<string, any>
 	object: 'product'
@@ -114,7 +114,7 @@ export interface ProductInCollectionProduct {
 	id: string
 	source_id: string | null
 	name: string | null
-	price: number
+	price: number | null
 	attributes: string[]
 	metadata: Record<string, any>
 	image_url: string | null
