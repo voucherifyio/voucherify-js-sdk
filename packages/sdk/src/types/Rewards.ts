@@ -18,6 +18,7 @@ export interface RewardsResponse {
 }
 
 export type RewardsCreateResponse = RewardsResponse & RewardsTypeResponse
+export type RewardsGetResponse = RewardsResponse & RewardsTypeResponse
 
 export interface RewardsListResponse {
 	object: 'list'
@@ -83,8 +84,6 @@ export type RewardsTypeResponse =
 	| Required<RewardsTypeMaterial>
 
 export type RewardsCreate = Rewards & RewardsType
-
-export type RewardsGetResponse = RewardsCreateResponse
 
 export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
 

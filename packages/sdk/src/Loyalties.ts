@@ -3,6 +3,7 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { GetPointsExpirationParams, LoyaltiesCreateMemberResponse } from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -147,19 +148,22 @@ export class Loyalties {
 		return this.client.get<T.ListMemberRewardsResponse>(`/loyalties/members/${encode(memberId)}/rewards`, params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/add-loyalty-card-balance
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
 	 */
-	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+	public addOrRemoveLoyaltyCardBalance(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
 		return this.client.post<T.LoyaltiesAddPointsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/balance`,
 			balance,
 		)
 	}
+	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+		return this.addOrRemoveLoyaltyCardBalance(campaignId, memberId, balance)
+	}
 	/**
 	 * @see https://docs.voucherify.io/reference/transfer-points
 	 */
-	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.ReqTransferLoyaltyPoints) {
-		return this.client.post<T.LoyaltyCardObjectNonExpandedCategories>(
+	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.LoyaltiesTransferPoints[]) {
+		return this.client.post<T.LoyaltiesCreateMemberResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
 			transferLoyaltyPoints,
 		)
@@ -167,7 +171,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-points-expiration
 	 */
-	public getPointsExpiration(campaignId: string, memberId: string, params?: T.LoyaltiesGetPointsExpirationParams) {
+	public getPointsExpiration(campaignId: string, memberId: string, params?: T.GetPointsExpirationParams) {
 		return this.client.get<T.GetPointsExpirationResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/points-expiration`,
 			params,

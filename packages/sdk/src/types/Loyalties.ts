@@ -4,6 +4,7 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
+import { RewardsAssignmentObject, RewardsGetResponse } from './Rewards'
 
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -325,12 +326,13 @@ export interface LoyaltiesAddPointsResponse {
 	points: number
 	total: number
 	balance: number
-	type: string
+	type: string // LOYALTY_CARD | GIFT_VOUCHER
 	object: 'balance'
 	related_object?: {
-		type?: string
+		type?: string // always "voucher"
 		id?: string
 	}
+	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
 }
 
 export interface LoyaltiesRedeemRewardParams {
@@ -496,4 +498,29 @@ export interface LoyaltiesRedeemRewardResponse {
 export interface LoyaltyPointsTransfer {
 	code: string
 	points: number
+}
+
+export interface ListMemberRewardsParams {
+	affordable_only?: boolean
+	limit?: number
+	page?: number
+}
+
+export interface ListMemberRewardsResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: { reward: RewardsGetResponse; assignment: RewardsAssignmentObject; object: 'loyalty_reward' }[]
+	total: number
+}
+
+export interface LoyaltiesTransferPoints {
+	code: string
+	points: number
+	reason?: string
+	source_id: string
+}
+
+export interface GetPointsExpirationParams {
+	limit?: number
+	page?: number
 }
