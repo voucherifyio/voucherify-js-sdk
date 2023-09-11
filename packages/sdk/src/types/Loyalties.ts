@@ -506,7 +506,7 @@ export interface ListMemberRewardsParams {
 	page?: number
 }
 
-export interface ListMemberRewardsResponse {
+export interface LoyaltiesListMemberRewardsResponse {
 	object: 'list'
 	data_ref: 'data'
 	data: { reward: RewardsGetResponse; assignment: RewardsAssignmentObject; object: 'loyalty_reward' }[]
@@ -523,4 +523,80 @@ export interface LoyaltiesTransferPoints {
 export interface GetPointsExpirationParams {
 	limit?: number
 	page?: number
+}
+
+export interface LoyaltiesGetPointsExpirationResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: {
+		id: string
+		voucher_id: string
+		campaign_id: string
+		bucket: {
+			total_points: number
+		}
+		created_at: string
+		status: string
+		expires_at: string
+		updated_at?: string
+		object: 'loyalty_points_bucket'
+	}[]
+	total: number
+}
+
+export interface ListLoyaltyCardTransactionsParams {
+	limit?: number
+	page?: number
+}
+
+export interface LoyaltiesListLoyaltyCardTransactions {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyCardTransactions[] //1_obj_loyalty_card_transaction_object
+	has_more: boolean
+}
+
+export type LoyaltyCardTransactionsType =
+	| 'POINTS_ACCRUAL'
+	| 'POINTS_CANCELLATION'
+	| 'POINTS_REDEMPTION'
+	| 'POINTS_REFUND'
+	| 'POINTS_ADDITION'
+	| 'POINTS_REMOVAL'
+	| 'POINTS_EXPIRATION'
+	| 'POINTS_TRANSFER_IN'
+	| 'POINTS_TRANSFER_OUT'
+
+export interface LoyaltyCardTransactions {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string
+	source: string | null
+	reason: string | null
+	type: 'POINTS_REDEMPTION'
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string
+		}
+		redemption: { id: string }
+		reward: {
+			id: string
+			name: string
+		}
+	}
+	related_transaction_id: string
+	created_at: string
 }

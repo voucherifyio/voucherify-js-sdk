@@ -145,7 +145,10 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/list-member-rewards
 	 */
 	public listMemberRewards(memberId: string, params?: T.ListMemberRewardsParams) {
-		return this.client.get<T.ListMemberRewardsResponse>(`/loyalties/members/${encode(memberId)}/rewards`, params)
+		return this.client.get<T.LoyaltiesListMemberRewardsResponse>(
+			`/loyalties/members/${encode(memberId)}/rewards`,
+			params,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
@@ -172,7 +175,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/get-points-expiration
 	 */
 	public getPointsExpiration(campaignId: string, memberId: string, params?: T.GetPointsExpirationParams) {
-		return this.client.get<T.GetPointsExpirationResponse>(
+		return this.client.get<T.LoyaltiesGetPointsExpirationResponse>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/points-expiration`,
 			params,
 		)
