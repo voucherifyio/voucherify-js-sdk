@@ -2,48 +2,11 @@
 '@voucherify/sdk': major
 ---
 
-#### Added support for following endpoints:
-- loyalties
-  - GET /loyalties/{campaignId}/rewards/{assignmentId}
-    - method: `client.loyalties.getRewardAssignment(campaignId, assignmentId)`
-  - GET `/loyalties/${campaignId}/tiers/{tierId}/rewards`
-    - method: `client.loyalties.listLoyaltyTierReward(campaignId, tierId)`
-
-#### New exported types/interfaces
-- Loyalties.ts
-  - ListLoyaltyTierRewardResponse
-  - LoyaltyTierRewardObject
-  - LoyaltyTierRewardRewardObject
-  - LoyaltyTierRewardRewardObjectCommon
-  - LoyaltyTierRewardRewardCampaignObject
-  - LoyaltyTierRewardRewardCoinObject
-  - LoyaltyTierRewardRewardMaterialObject
-  - RewardParametersCampaign
-  - RewardParametersCoin
-  - RewardParametersProduct
-  - GetRewardAssignmentsResponse
-- Rewards.ts
-  - RewardsAssignmentObjectCommon
-
-#### Breaking changes in types/interfaces
-- RewardsAssignmentObject
-  - related_object_id - required
-  - related_object_type - required, value always: `campaign`
-  - parameters - required
-    - loyalty - required
-      - points - not required
-  - updated_at - required `string` or `null`
-- RewardsCreateAssignment
-  - campaign - required
-  - parameters - required
-    - loyalty - required
-      - points - not required
-- RewardsCreateAssignmentResponse
-  - updated_at - required, value always: `null`
-- RewardsUpdateAssignmentResponse
-  - updated_at - required, value always: `string`
-
-#### Note
-- RewardsCreateAssignment
-  - This type was defined incorrectly, if you have tried before to `createAssignment` without parameters as they were not required, you would fail every time. So change in types shall not hurt you if your script already worked properly.
-
+Added support for new endpoints and adding missing types in rewards api.
+- Added support for new endpoints: `/loyalties/{campaignId}/rewards/{assignmentId}` and `/loyalties/${campaignId}/tiers/{tierId}/rewards` [(example available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+- New exported types/interfaces in `Loyalties.ts`: `ListLoyaltyTierRewardResponse`, `LoyaltyTierRewardObject`, `LoyaltyTierRewardRewardObject`, `LoyaltyTierRewardRewardObjectCommon`, `LoyaltyTierRewardRewardCampaignObject`, `LoyaltyTierRewardRewardCoinObject`, `LoyaltyTierRewardRewardMaterialObject`, `RewardParametersCampaign`, `RewardParametersCoin`, `RewardParametersProduct` and `GetRewardAssignmentsResponse`
+- New exported types/interfaces in `Rewards.ts`: `RewardsAssignmentObjectCommon`
+- **(BREAKING CHANGE)** Interface `RewardsAssignmentObject` was changed. Few values are now required, uses union type.
+- **(BREAKING CHANGE)** Interface `RewardsCreateAssignment` was changed. Few values are now required. **If previously you send data without required parameters, you failed anyway.**
+- **(BREAKING CHANGE)** Interface `RewardsCreateAssignmentResponse` was changed. Type of value `updated_at` is always `null`.
+- **(BREAKING CHANGE)** Interface `RewardsUpdateAssignmentResponse` was changed. Type of value `updated_at` is always `string`.
