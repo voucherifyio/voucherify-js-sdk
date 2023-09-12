@@ -573,8 +573,8 @@ export interface SimpleLoyaltyVoucher {
 	loyalty_card: {
 		points: number
 		balance: number
-		next_expiration_date: string
-		next_expiration_points: string
+		next_expiration_date?: string
+		next_expiration_points?: string
 	}
 	type: 'LOYALTY_CARD'
 	campaign: string
@@ -638,11 +638,11 @@ export interface LoyaltyCardTransactionsResponse {
 			id: string
 			name: string
 		}
-		custom_event: {
+		custom_event?: {
 			id: string
 			type: string
 		}
-		event_schema: {
+		event_schema?: {
 			id: string
 			name: string
 		}
@@ -668,8 +668,8 @@ export type LoyaltyCardTransactionsFields =
 	| 'details'
 
 export interface LoyaltiesExportLoyaltyCardTransactionsParams {
-	order: 'created_at' | '-created_at'
-	fields: LoyaltyCardTransactionsFields[]
+	order?: 'created_at' | '-created_at'
+	fields?: LoyaltyCardTransactionsFields[]
 }
 
 export interface LoyaltiesExportLoyaltyCardTransactionsResponse {
