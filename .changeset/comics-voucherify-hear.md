@@ -2,26 +2,6 @@
 '@voucherify/sdk': minor
 ---
 
-#### Added support for following endpoints:
-- products
-  - POST /skus/importCSV
-    - method: `client.products.importSkusUsingCSV(filePath)`
-  - POST /products/importCSV
-    - method: `client.products.importProductsUsingCSV(filePath)`
-- vouchers
-  - POST /vouchers/importCSV
-    - method: `client.vouchers.importVouchersUsingCSV(filePath)`
-- customers
-  - POST /customers/importCSV
-    - method: `client.customers.importCustomersUsingCSV(filePath)`
-- campaigns
-  - POST /campaigns/campaignId/importCSV
-    - method: `client.campaigns.importVouchersUsingCSV(campaignId, filePath)`
-
-#### Example of usage:
-```js
-await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
-```
-
-#### Dependencies:
-Added `"form-data": "4.0.0"`
+Added support for following endpoints that import data via CSV files.
+- Added support for new endpoints: `/skus/importCSV`, `/products/importCSV`, `/vouchers/importCSV`, `/customers/importCSV` and `/campaigns/campaignId/importCSV` [(examples of usage available in readme.md)](packages%2Fsdk%2FREADME.md)
+- Added form-data `4.0.0` to SDK package
