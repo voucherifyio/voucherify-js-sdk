@@ -2,46 +2,10 @@
 '@voucherify/sdk': major
 ---
 
-#### New exported types/interfaces
-- LoyaltyProportionalOrder
-- LoyaltyProportionalOrderItems
-- LoyaltyProportionalCustomer
-- LoyaltyProportionalCustomEvent
-- LoyaltiesEarningRulesResponseCommon
-- LoyaltiesEarningRulesResponse
-- LoyaltiesEnableEarningRulesResponse
-- LoyaltiesDisableEarningRulesResponse
-- LoyaltiesUpdateEarningRuleResponse
-- LoyaltiesCreateEarningRuleResponse
-
-#### Breaking changes:
-- Interface `LoyaltyProportional` was replaced with type of Union of interfaces `LoyaltyProportionalOrder | LoyaltyProportionalOrderItems | LoyaltyProportionalCustomer | LoyaltyProportionalCustomEvent`
-- Method name `client.loyalties.createEarningRule` has changed to `client.loyalties.createEarningRules` - notice `s` as this method requires array of earning rules.
-
-#### Example of usage (related to breaking changes):
-```js
-const earningRule = await client.loyalties.getEarningRule(campaignId, earningRuleId)
-//If we want to know structure of earningRule's loyalty key, we will need to do some checkings to know which union type will apply
-//We need to  check first if this is `FIXED` or `PROPORTIONAL`
-if(earningRule.loyalty.type === "FIXED"){
-  console.log(earningRule.loyalty.points)
-  return
-}
-//Now simply check the calculation_type
-if (earningRule.loyalty.calculation_type === 'ORDER_AMOUNT') {
-  console.log(earningRule.loyalty.order.amount.every)
-  console.log(earningRule.loyalty.order.amount.points)
-}
-if (earningRule.loyalty.calculation_type === 'ORDER_TOTAL_AMOUNT') {
-  console.log(earningRule.loyalty.order.total_amount.every)
-  console.log(earningRule.loyalty.order.total_amount.points)
-}
-if (earningRule.loyalty.calculation_type === 'ORDER_METADATA') {
-  console.log(earningRule.loyalty.order.metadata.every)
-  console.log(earningRule.loyalty.order.metadata.points)
-  console.log(earningRule.loyalty.order.metadata.property)
-}
-return
-```
+Add support for 3 missing endpoints in loyalties api. Corrected a typo in one of loyalties api method.
+- Added support for new endpoints: `/loyalties/{campaignId}/earning-rules/{earningRuleId}`, `/loyalties/{campaignId}/earning-rules/{earningRuleId}/enable` and `/loyalties/{campaignId}/earning-rules/{earningRuleId}/disable` [(examples available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+- Corrected a typo in `*.loyalties.createEarningRule` method, new name: `*.loyalties.createEarningRules` as this endpoint requires array of earning rules objects.
+- New exported types/interfaces: `LoyaltyProportionalOrder`, `LoyaltyProportionalOrderItems`, `LoyaltyProportionalCustomer`, `LoyaltyProportionalCustomEvent`, `LoyaltiesEarningRulesResponseCommon`, `LoyaltiesEarningRulesResponse`, `LoyaltiesEnableEarningRulesResponse`, `LoyaltiesDisableEarningRulesResponse`, `LoyaltiesUpdateEarningRuleResponse`, `LoyaltiesCreateEarningRuleResponse`
+- **(BREAKING CHANGE)** Interface `LoyaltyProportional` was replaced with type of Union of interfaces `LoyaltyProportionalOrder | LoyaltyProportionalOrderItems | LoyaltyProportionalCustomer | LoyaltyProportionalCustomEven` [(example of usage)](..%2F..%2Fexamples%2Fsdk%2Fwith-nodejs-typescript%2Fserver-loyalties-get-earning-rule.ts)
 
 
