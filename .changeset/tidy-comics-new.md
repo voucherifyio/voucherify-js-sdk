@@ -2,32 +2,6 @@
 '@voucherify/sdk': minor
 ---
 
-#### New exported types/interfaces
-- ProductCollections.ts
-  - CreateProductCollection
-  - CreateProductCollectionStaticProduct
-  - CreateProductCollectionAutoUpdate
-  - Junction
-  - FiltersCondition
-  - ProductCollectionsObject
-  - ListProductCollectionsParameters
-  - ListProductCollections
-  - ListProductsInCollectionParameters
-  - ListProductsInCollection
-  - ProductInCollectionSku
-  - ProductInCollectionSkuProduct
-  - ProductInCollectionProduct
-
-#### Added support for following endpoints:
-- productCollections
-  - POST GET /product-collections
-    - methods:
-      - `client.productCollections.create(productCollection)`
-      - `client.productCollections.list()`
-  - GET DELETE /product-collections/{productCollectionId}
-    - methods:
-      - `client.productCollections.get(productCollectionId)`
-      - `client.productCollections.delete(productCollectionId)`
-  - GET /product-collections/${productCollectionId}/products
-    - method: `client.productCollections.listProductsInCollection(productCollectionId)`
-
+Add missing methods covering Product Collections API.
+-  Added support for new endpoints: `/product-collections`, `/product-collections/{productCollectionId}` and `/product-collections/${productCollectionId}/products` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+- New exported types/interfaces in `ProductCollections.ts`: `CreateProductCollection`, `CreateProductCollectionStaticProduct`, `CreateProductCollectionAutoUpdate`, `Junction`, `FiltersCondition`, `ProductCollectionsObject`, `ListProductCollectionsParameters`, `ListProductCollections`, `ListProductsInCollectionParameters`, `ListProductsInCollection`, `ProductInCollectionSku`, `ProductInCollectionSkuProduct` and `ProductInCollectionProduct`
