@@ -876,10 +876,17 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
-- [List Loyalty Program Members](#list-loyalty-members)
+- [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
-- [Add Loyalty Card Balance](#add-loyalty-card-balance)
+- [Get Loyalty Program Member Activities Without CampaignId](#get-loyalty-program-member-activities-without-campaignid)
+- [Add Or Remove Loyalty Card Balance](#add-or-remove-loyalty-card-balance)
+- [Transfer Loyalty Points](#transfer-loyalty-points)
+- [Get Loyalty Points Expiration](#get-loyalty-points-expiration)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
+- [List Loyalty Card Transactions](#list-loyalty-card-transactions)
+- [List Loyalty Card Transactions With CampaignId](#list-loyalty-card-transactions-with-campaignid)
+- [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
+- [Export Loyalty Card Transactions With CampaignId](#export-loyalty-card-transactions-with-campaignid)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -989,13 +996,51 @@ client.loyalties.getMemberActivities(campaignId, memberId)
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
+#### [Get Loyalty Program Member Activities Without CampaignId](https://docs.voucherify.io/reference#get-member-activities)
 
 ```javascript
-client.loyalties.addPoints(campaignId, memberId, balance)
+client.loyalties.getMemberActivitiesWithoutCampaignId(memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
+
+#### [List Member Rewards](https://docs.voucherify.io/reference/list-member-rewards)
+
+```javascript
+client.loyalties.listMemberRewards(memberId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Add Or Remove Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1)
+
+```javascript
+client.loyalties.addOrRemoveLoyaltyCardBalance(campaignId, memberId, balance)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Transfer Loyalty Points](https://docs.voucherify.io/reference/transfer-points)
+
+```javascript
+client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Get Loyalty Points Expiration](https://docs.voucherify.io/reference/get-points-expiration)
+
+```javascript
+client.loyalties.getPointsExpiration(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
 
 #### [Redeem Loyalty Card]
 
@@ -1006,6 +1051,46 @@ client.loyalties.redeemReward(campaignId, memberId, params)
 `memberId` referrers to Loyalty Card code.
 
 When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
+
+---
+
+#### [List Loyalty Card Transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions)
+
+```javascript
+client.loyalties.listLoyaltyCardTransactions(memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [List Loyalty Card Transactions With CampaignId](https://docs.voucherify.io/reference/list-loyalty-card-transactions-1)
+
+```javascript
+client.loyalties.listLoyaltyCardTransactionsWithCampaignId(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Export Loyalty Card Transactions](https://docs.voucherify.io/reference/export-loyalty-card-transactions)
+
+```javascript
+client.loyalties.exportLoyaltyCardTransactions(memberId, exportLoyaltyCardTransactionsParams)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Export Loyalty Card Transactions With CampaignId](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1)
+
+```javascript
+client.loyalties.exportLoyaltyCardTransactionsWithCampaignId(campaignId, memberId, exportLoyaltyCardTransactionsParams)
+```
+
+`memberId` referrers to Loyalty Card code.
 
 ---
 

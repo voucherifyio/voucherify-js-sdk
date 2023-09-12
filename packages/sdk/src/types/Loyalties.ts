@@ -652,3 +652,44 @@ export interface LoyaltyCardTransactionsResponse {
 	related_transaction_id: string
 	created_at: string
 }
+
+export type LoyaltyCardTransactionsFields =
+	| 'id'
+	| 'campaign_id'
+	| 'voucher_id'
+	| 'type'
+	| 'source_id'
+	| 'reason'
+	| 'source'
+	| 'balance'
+	| 'amount'
+	| 'related_transaction_id'
+	| 'created_at'
+	| 'details'
+
+export interface LoyaltiesExportLoyaltyCardTransactionsParams {
+	order: 'created_at' | '-created_at'
+	fields: LoyaltyCardTransactionsFields[]
+}
+
+export interface LoyaltiesExportLoyaltyCardTransactionsResponse {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED'
+	channel: string
+	exported_object: 'voucher_transactions'
+	parameters: {
+		order?: string
+		fields?: LoyaltyCardTransactionsFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string] //memberId
+				}
+			}
+		}
+	}
+	result: null
+	user_id: null | string
+}

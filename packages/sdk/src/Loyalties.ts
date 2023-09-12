@@ -3,11 +3,6 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import {
-	GetPointsExpirationParams,
-	LoyaltiesCreateMemberResponse,
-	LoyaltiesListLoyaltyCardTransactionsResponse,
-} from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -220,11 +215,11 @@ export class Loyalties {
 	 */
 	public exportLoyaltyCardTransactions(
 		memberId: string,
-		createLoyaltyCardTransactions: T.CreateLoyaltyCardTransactions,
+		exportLoyaltyCardTransactionsParams: T.LoyaltiesExportLoyaltyCardTransactionsParams,
 	) {
-		return this.client.post<T.ExportTransactionObject>(
+		return this.client.post<T.LoyaltiesExportLoyaltyCardTransactionsResponse>(
 			`/loyalties/members/${encode(memberId)}/transactions/export`,
-			createLoyaltyCardTransactions,
+			exportLoyaltyCardTransactionsParams,
 		)
 	}
 	/**
@@ -233,11 +228,11 @@ export class Loyalties {
 	public exportLoyaltyCardTransactionsWithCampaignId(
 		campaignId: string,
 		memberId: string,
-		createLoyaltyCardTransactions: T.CreateLoyaltyCardTransactions,
+		exportLoyaltyCardTransactionsParams: T.LoyaltiesExportLoyaltyCardTransactionsParams,
 	) {
-		return this.client.post<T.ExportTransactionObject>(
+		return this.client.post<T.LoyaltiesExportLoyaltyCardTransactionsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions/export`,
-			createLoyaltyCardTransactions,
+			exportLoyaltyCardTransactionsParams,
 		)
 	}
 }
