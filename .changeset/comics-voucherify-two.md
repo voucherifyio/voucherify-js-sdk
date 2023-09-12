@@ -1,28 +1,7 @@
  ---
 '@voucherify/sdk': minor
 ---
-#### Added support for following endpoints:
-- campaigns
-  - POST /campaigns/campaignId/enable
-    - method: `client.campaigns.enable(campaignId)`
-  - POST /campaigns/campaignId/disable
-    - method: `client.campaigns.disable(campaignId)`
-- categories
-  - GET, POST /categories
-    - methods:
-      - `client.categories.list()`
-      - `client.categories.create(createCategory)`
-  - GET, PUT, DELETE /categories/id
-    - methods:
-      - `client.categories.get(categoryId)`
-      - `client.categories.update(categoryId, updateCategory)`
-      - `client.categories.delete(categoryId)`
-
-#### New exported types/interfaces
-- Categories.ts
-  - ListCategories
-  - CategoryObject
-  - CreateCategory
-  - ResponseCreateCategory
-  - ResponseUpdateCategory
-  - UpdateCategoryRequest
+Added support for few missing endpoints:
+  - Added support for new endpoints: `/campaigns/campaignId/enable`,`/campaigns/campaignId/disable`, `/categories` and `/categories/id` [(examples of usage available in readme.md)](packages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces in `Categories.ts`:
+    - `ListCategories`, `CategoryObject`, `CreateCategory`, `ResponseCreateCategory`, `ResponseUpdateCategory`, `UpdateCategoryRequest`
