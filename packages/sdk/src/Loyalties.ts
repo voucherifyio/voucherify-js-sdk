@@ -3,7 +3,11 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import { GetPointsExpirationParams, LoyaltiesCreateMemberResponse } from './types/Loyalties'
+import {
+	GetPointsExpirationParams,
+	LoyaltiesCreateMemberResponse,
+	LoyaltiesListLoyaltyCardTransactionsResponse,
+} from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -193,7 +197,10 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
 	 */
 	public listLoyaltyCardTransactions(memberId: string, params?: T.ListLoyaltyCardTransactionsParams) {
-		return this.client.get<T.GetLoyaltyCardTransactions>(`/loyalties/members/${encode(memberId)}/transactions`, params)
+		return this.client.get<T.LoyaltiesListLoyaltyCardTransactionsResponse>(
+			`/loyalties/members/${encode(memberId)}/transactions`,
+			params,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions-1
@@ -203,7 +210,7 @@ export class Loyalties {
 		memberId: string,
 		params?: T.ListLoyaltyCardTransactionsParams,
 	) {
-		return this.client.get<T.GetLoyaltyCardTransactions>(
+		return this.client.get<T.LoyaltiesListLoyaltyCardTransactionsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions`,
 			params,
 		)

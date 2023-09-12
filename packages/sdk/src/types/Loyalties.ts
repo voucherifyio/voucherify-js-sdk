@@ -549,10 +549,10 @@ export interface ListLoyaltyCardTransactionsParams {
 	page?: number
 }
 
-export interface LoyaltiesListLoyaltyCardTransactions {
+export interface LoyaltiesListLoyaltyCardTransactionsResponse {
 	object: 'list'
 	data_ref: 'data'
-	data: LoyaltyCardTransactions[] //1_obj_loyalty_card_transaction_object
+	data: LoyaltyCardTransactionsResponse[] //1_obj_loyalty_card_transaction_object
 	has_more: boolean
 }
 
@@ -567,14 +567,33 @@ export type LoyaltyCardTransactionsType =
 	| 'POINTS_TRANSFER_IN'
 	| 'POINTS_TRANSFER_OUT'
 
-export interface LoyaltyCardTransactions {
+export interface SimpleLoyaltyVoucher {
+	id: string
+	code: string
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date: string
+		next_expiration_points: string
+	}
+	type: 'LOYALTY_CARD'
+	campaign: string
+	campaign_id: string
+	is_referral_code?: boolean
+	holder_id?: string
+	referrer_id?: string
+	created_at?: string
+	object: 'voucher'
+}
+
+export interface LoyaltyCardTransactionsResponse {
 	id: string
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string
 	source: string | null
 	reason: string | null
-	type: 'POINTS_REDEMPTION'
+	type: LoyaltyCardTransactionsType
 	details: {
 		balance: {
 			type: 'loyalty_card'
@@ -587,15 +606,48 @@ export interface LoyaltyCardTransactions {
 				type: 'voucher'
 			}
 		}
-		order: {
+		order?: {
 			id: string
 			source_id: string
 		}
-		redemption: { id: string }
-		reward: {
+		event?: {
+			id: string
+			type: string
+		}
+		earning_rule?: {
+			id: string
+			source: {
+				banner: string
+			}
+		}
+		segment?: {
 			id: string
 			name: string
 		}
+		loyalty_tier?: {
+			id: string
+			name: string
+		}
+		redemption?: {
+			id: string
+		}
+		rollback?: {
+			id: string
+		}
+		reward?: {
+			id: string
+			name: string
+		}
+		custom_event: {
+			id: string
+			type: string
+		}
+		event_schema: {
+			id: string
+			name: string
+		}
+		source_voucher?: SimpleLoyaltyVoucher
+		destination_voucher?: SimpleLoyaltyVoucher
 	}
 	related_transaction_id: string
 	created_at: string
