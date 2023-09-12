@@ -552,7 +552,7 @@ export interface ListLoyaltyCardTransactionsParams {
 export interface LoyaltiesListLoyaltyCardTransactionsResponse {
 	object: 'list'
 	data_ref: 'data'
-	data: LoyaltyCardTransactionsResponse[] //1_obj_loyalty_card_transaction_object
+	data: LoyaltyCardTransactionsResponse[]
 	has_more: boolean
 }
 
