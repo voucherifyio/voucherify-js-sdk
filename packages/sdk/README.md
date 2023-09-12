@@ -319,6 +319,7 @@ client.campaigns.qualifications.examine(body, params)
 Methods are provided within `client.distributions.*` namespace.
 
 - [Create Export](#create-export)
+- [List Exports](#list-exports)
 - [Get Export](#get-export)
 - [Delete Export](#delete-export)
 - [List publications](#list-publications)
@@ -331,6 +332,12 @@ client.distributions.exports.create(exportObject)
 ```
 
 Check [the export object](https://docs.voucherify.io/v1/reference/the-export-object).
+
+#### [List Exports](https://docs.voucherify.io/reference/list-exports)
+
+```javascript
+client.distributions.exports.list()
+```
 
 #### [Get Export](https://docs.voucherify.io/reference/get-export)
 
