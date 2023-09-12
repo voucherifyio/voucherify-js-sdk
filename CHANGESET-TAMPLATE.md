@@ -1,5 +1,5 @@
 [//]: # (This is an example of changeset)
-[//]: # (Note `..%2F..%2F` in paths, this changelog will be in packages/sdk)
+[//]: # (Note `..%2F..%2F` in paths, this changelog text will be in packages/sdk/CHANGELOG.md)
 
 Add missing methods covering Qualification API.
   - Added support for new endpoints: `/skus/importCSV` and `/categories` [(example available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
