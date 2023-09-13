@@ -2,8 +2,7 @@ import * as T from './types/Campaigns'
 import * as AAT from './types/AsyncActions'
 
 import type { RequestController } from './RequestController'
-import { encode } from './helpers'
-import * as fs from 'fs'
+import { assert, encode, environment } from './helpers'
 import FormData from 'form-data'
 
 class CampaignsQualifications {
@@ -76,7 +75,12 @@ export class Campaigns {
 	/**
 	 * @see https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV
 	 */
-	public importVouchersUsingCSV(campaignId: string, filePath: string) {
+	public async importVouchersCSV(campaignId: string, filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.campaigns.importVouchersCSV(campaignId, filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)

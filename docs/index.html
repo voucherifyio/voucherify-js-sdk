@@ -197,7 +197,6 @@
 					<li><a href="#update-vouchers-metadata-in-bulk">Update Vouchers Metadata in bulk</a></li>
 					<li><a href="#update-vouchers-in-bulk">Update Vouchers in bulk</a></li>
 					<li><a href="#release-validation-session">Release Validation Session</a></li>
-					<li><a href="#import-vouchers-using-csv">Import Vouchers using CSV</a></li>
 				</ul>
 				<a href="#create-voucher" id="create-voucher" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-voucher">Create Voucher</a></h4>
@@ -267,11 +266,6 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">releaseValidationSession</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">sessionKey</span><span style="color: #000000">)</span>
 </code></pre>
-				<a href="#import-vouchers-using-csv" id="import-vouchers-using-csv" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/import-vouchers-using-csv">Import Vouchers using CSV</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">importVouchersUsingCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
-</code></pre>
 				<hr>
 				<a href="#campaigns" id="campaigns" style="color: inherit; text-decoration: none;">
 					<h3>Campaigns</h3>
@@ -284,7 +278,6 @@
 					<li><a href="#add-voucher-to-campaign">Add Voucher to Campaign</a></li>
 					<li><a href="#import-vouchers-to-campaign">Import Vouchers to Campaign</a></li>
 					<li><a href="#list-campaigns">List Campaigns</a></li>
-					<li><a href="#import-vouchers-using-csv">Import Vouchers using CSV</a></li>
 					<li><a href="#examine-campaigns-qualification">Examine Campaigns Qualification</a></li>
 				</ul>
 				<a href="#create-campaign" id="create-campaign" style="color: inherit; text-decoration: none;">
@@ -333,11 +326,6 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
-</code></pre>
-				<a href="#import-vouchers-to-campaign-by-csv" id="import-vouchers-to-campaign-by-csv" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://api.voucherify.io/v1/campaigns/%7BcampaignId%7D/importCSV">Import Vouchers to Campaign by CSV</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">campaigns</span><span style="color: #000000">.</span><span style="color: #795E26">importVouchersUsingCSV</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#examine-campaigns-qualification" id="examine-campaigns-qualification" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-qualification-request">Examine Campaigns Qualification</a></h4>
@@ -546,7 +534,6 @@
 					<li><a href="#list-customers">List Customers</a></li>
 					<li><a href="#update-customers-consents">Update Customer&#39;s Consents</a></li>
 					<li><a href="#list-customers-activities">List Customer&#39;s Activities</a></li>
-					<li><a href="#import-and-update-customers-using-csv">Import and Update Customers using CSV</a></li>
 				</ul>
 				<a href="#create-customer" id="create-customer" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-customer">Create Customer</a></h4>
@@ -610,11 +597,6 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listActivities</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listActivities</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
-</code></pre>
-				<a href="#import-and-update-customers-using-csv" id="import-and-update-customers-using-csv" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/import-customers-using-csv">Import and Update Customers using CSV</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">importCustomersUsingCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
 				<a href="#consents" id="consents" style="color: inherit; text-decoration: none;">
@@ -687,8 +669,6 @@
 					<li><a href="#update-sku">Update SKU</a></li>
 					<li><a href="#delete-sku">Delete SKU</a></li>
 					<li><a href="#list-all-product-skus">List all product SKUs</a></li>
-					<li><a href="#import-skus-using-csv">Import SKUs using CSV</a></li>
-					<li><a href="#import-products-using-csv">Import Products using CSV</a></li>
 				</ul>
 				<a href="#create-product" id="create-product" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-product">Create Product</a></h4>
@@ -749,16 +729,6 @@
 					<h4><a href="https://docs.voucherify.io/reference/list-skus">List all product SKUs</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">listSkus</span><span style="color: #000000">(</span><span style="color: #001080">productId</span><span style="color: #000000">)</span>
-</code></pre>
-				<a href="#import-skus-using-csv" id="import-skus-using-csv" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/import-skus-using-csv">Import SKUs using CSV</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">importSkusUsingCSV</span><span style="color: #000000">()</span>
-</code></pre>
-				<a href="#import-products-using-csv" id="import-products-using-csv" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/import-products-using-csv">Import Products using CSV</a></h4>
-				</a>
-				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">importProductsUsingCSV</span><span style="color: #000000">()</span>
 </code></pre>
 				<hr>
 				<a href="#rewards" id="rewards" style="color: inherit; text-decoration: none;">
@@ -1489,12 +1459,6 @@
 						<a href="interfaces/DiscountUnit.html" class="tsd-kind-icon">Discount<wbr>Unit</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/DiscountUnitMultiple.html" class="tsd-kind-icon">Discount<wbr>Unit<wbr>Multiple</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DiscountUnitMultipleOneUnit.html" class="tsd-kind-icon">Discount<wbr>Unit<wbr>Multiple<wbr>One<wbr>Unit</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/DistributionsPublicationsCreateParams.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>Create<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1732,12 +1696,6 @@
 						<a href="interfaces/RedemptionsRollbackStackableResponse.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Stackable<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ResponseValidateVoucherFalse.html" class="tsd-kind-icon">Response<wbr>Validate<wbr>Voucher<wbr>False</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ResponseValidateVoucherTrue.html" class="tsd-kind-icon">Response<wbr>Validate<wbr>Voucher<wbr>True</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardRedemptionParams.html" class="tsd-kind-icon">Reward<wbr>Redemption<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1853,6 +1811,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ValidationsValidateVoucherParams.html" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Voucher<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ValidationsValidateVoucherResponse.html" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Voucher<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/VoucherDiscount.html" class="tsd-kind-icon">Voucher<wbr>Discount</a>
@@ -2056,9 +2017,6 @@
 						<a href="modules.html#LoyaltiesUpdateRewardAssignmentResponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Reward<wbr>Assignment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#OrderObjectRedemptions" class="tsd-kind-icon">Order<wbr>Object<wbr>Redemptions</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersGetResponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2177,9 +2135,6 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationsValidateContext" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#ValidationsValidateVoucherResponse" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Voucher<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#VoucherType" class="tsd-kind-icon">Voucher<wbr>Type</a>

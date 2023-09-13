@@ -1,7 +1,7 @@
-import fs from 'fs'
 import csv from 'csv-stringify'
 import * as path from 'path'
 export const generateCustomerCSV = async (sourceId: string) => {
+	const fs = (await import('fs')).default
 	const data = [
 		[
 			'Name',
@@ -41,7 +41,7 @@ export const generateCustomerCSV = async (sourceId: string) => {
 		fs.mkdirSync(baseTestPath + '/csv')
 	}
 	const filepath = baseTestPath + '/csv/customers.csv'
-	return new Promise<void>((resolve) => {
+	return new Promise<void>(resolve => {
 		csv.stringify(data, (error, output) => {
 			if (error) {
 				throw error

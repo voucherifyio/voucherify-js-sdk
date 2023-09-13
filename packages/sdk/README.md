@@ -240,7 +240,7 @@ client.vouchers.releaseValidationSession(code, sessionKey)
 #### [Import Vouchers using CSV](https://docs.voucherify.io/reference/import-vouchers-using-csv)
 
 ```javascript
-client.vouchers.importVouchersUsingCSV(filePath)
+client.vouchers.importCSV(filePath)
 ```
 
 ---
@@ -316,10 +316,10 @@ client.campaigns.list()
 client.campaigns.list(params)
 ```
 
-#### [Import Vouchers to Campaign by CSV](https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV)
+#### [Import Vouchers to Campaign by CSV](https://docs.voucherify.io/reference/import-vouchers-to-campaign-using-csv)
 
 ```javascript
-client.campaigns.importVouchersUsingCSV(campaignId, filePath)
+client.campaigns.importVouchersCSV(campaignId, filePath)
 ```
 
 #### [Enable campaign](https://docs.voucherify.io/reference/enable-campaign)
@@ -340,7 +340,6 @@ client.campaigns.disable(campaignId)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
-
 ---
 
 ### Distributions
@@ -699,7 +698,7 @@ client.customers.listActivities(customerId, params)
 #### [Import and Update Customers using CSV](https://docs.voucherify.io/reference/import-customers-using-csv)
 
 ```javascript
-client.customers.importCustomersUsingCSV(filePath)
+client.customers.importCSV(filePath)
 ```
 
 ---
@@ -860,13 +859,13 @@ client.products.listSkus(productId)
 #### [Import SKUs using CSV](https://docs.voucherify.io/reference/import-skus-using-csv)
 
 ```javascript
-client.products.importSkusUsingCSV()
+client.products.importSkusCSV(filePath)
 ```
 
 #### [Import Products using CSV](https://docs.voucherify.io/reference/import-products-using-csv)
 
 ```javascript
-client.products.importProductsUsingCSV()
+client.products.importCSV(filePath)
 ```
 
 ---
