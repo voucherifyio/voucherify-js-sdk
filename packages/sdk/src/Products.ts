@@ -1,9 +1,8 @@
 import * as T from './types/Products'
 import * as AAT from './types/AsyncActions'
 
-import { encode, omit } from './helpers'
+import { assert, encode, environment, omit } from './helpers'
 import type { RequestController } from './RequestController'
-import * as fs from 'fs'
 import FormData from 'form-data'
 
 export class Products {
@@ -90,7 +89,12 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
 	 */
-	public importSkusCSV(filePath: string) {
+	public async importSkusCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.products.importSkusCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
@@ -99,7 +103,12 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-products-using-csv
 	 */
-	public importCSV(filePath: string) {
+	public async importCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.products.importCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)

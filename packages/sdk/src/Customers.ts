@@ -1,10 +1,9 @@
 import * as T from './types/Customers'
 import * as AAT from './types/AsyncActions'
 
-import { encode, omit } from './helpers'
+import { assert, encode, environment, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import * as fs from 'fs'
 import FormData from 'form-data'
 
 class Customers {
@@ -98,7 +97,12 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-customers-using-csv
 	 */
-	public importCSV(filePath: string) {
+	public async importCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.customers.importCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
