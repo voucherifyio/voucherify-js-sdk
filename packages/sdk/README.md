@@ -876,6 +876,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
+- [Get Loyalty Program Member Without CampaignId](#get-loyalty-program-member-without-campaignid)
 - [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
 - [Get Loyalty Program Member Activities Without CampaignId](#get-loyalty-program-member-activities-without-campaignid)
@@ -981,6 +982,12 @@ client.loyalties.createMember(campaignId, member)
 client.loyalties.getMember(campaignId, memberId)
 ```
 
+#### [Get Loyalty Program Member Without CampaignId](https://docs.voucherify.io/reference/get-member-1)
+
+```javascript
+client.loyalties.getMemberWithoutCampaignId(campaignId, memberId)
+```
+
 #### [List Loyalty Program Members](https://docs.voucherify.io/reference/list-members)
 
 ```javascript
@@ -1017,7 +1024,7 @@ client.loyalties.listMemberRewards(memberId, params)
 #### [Add Or Remove Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1)
 
 ```javascript
-client.loyalties.addOrRemoveLoyaltyCardBalance(campaignId, memberId, balance)
+client.loyalties.addOrRemoveLoyaltyCardBalance(memberId, balance, campaignId)
 ```
 
 `memberId` referrers to Loyalty Card code.

@@ -305,6 +305,8 @@ export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
 
 export type LoyaltiesGetMemberResponse = LoyaltiesCreateMemberResponse
 
+export type LoyaltiesTransferPointsResponse = LoyaltiesVoucherResponse
+
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
 	data_ref: 'activities'

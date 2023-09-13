@@ -152,20 +152,24 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
 	 */
-	public addOrRemoveLoyaltyCardBalance(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
+	public addOrRemoveLoyaltyCardBalance(memberId: string, balance: T.LoyaltiesAddPoints, campaignId?: string) {
 		return this.client.post<T.LoyaltiesAddPointsResponse>(
-			`/loyalties/${encode(campaignId)}/members/${memberId}/balance`,
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${memberId}/balance`
+				: `/loyalties/members/${memberId}/balance`,
 			balance,
 		)
 	}
+
+	// Backward compatibility only. This method is not mentioned in readme anymore.
 	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
-		return this.addOrRemoveLoyaltyCardBalance(campaignId, memberId, balance)
+		return this.addOrRemoveLoyaltyCardBalance(memberId, balance, campaignId)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/transfer-points
 	 */
 	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.LoyaltiesTransferPoints[]) {
-		return this.client.post<T.LoyaltiesCreateMemberResponse>(
+		return this.client.post<T.LoyaltiesTransferPointsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
 			transferLoyaltyPoints,
 		)
