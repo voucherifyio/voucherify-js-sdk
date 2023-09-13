@@ -90,7 +90,7 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
 	 */
-	public importSkusUsingCSV(filePath: string) {
+	public importSkusCSV(filePath: string) {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
@@ -99,7 +99,7 @@ export class Products {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-products-using-csv
 	 */
-	public importProductsUsingCSV(filePath: string) {
+	public importCSV(filePath: string) {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)

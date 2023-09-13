@@ -76,7 +76,7 @@ export class Campaigns {
 	/**
 	 * @see https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV
 	 */
-	public importVouchersUsingCSV(campaignId: string, filePath: string) {
+	public importVouchersCSV(campaignId: string, filePath: string) {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)

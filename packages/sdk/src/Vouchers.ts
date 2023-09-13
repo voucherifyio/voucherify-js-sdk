@@ -95,7 +95,7 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
 	 */
-	public importVouchersUsingCSV(filePath: string) {
+	public importCSV(filePath: string) {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)

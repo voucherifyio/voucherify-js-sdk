@@ -6,7 +6,7 @@ describe('Customers API', () => {
 	it('should import customer via csv file', async () => {
 		const customerSourceId = generateRandomString()
 		await generateCustomerCSV(customerSourceId)
-		const response = await client.customers.importCustomersUsingCSV(__dirname + '/csv/customers.csv')
+		const response = await client.customers.importCSV(__dirname + '/csv/customers.csv')
 		expect(response.async_action_id).toEqual(expect.stringMatching(/^aa_.*/))
 		while ((await client.asyncActions.get(response.async_action_id)).status === 'IN_PROGRESS') {
 			await new Promise(r => setTimeout(r, 1000))

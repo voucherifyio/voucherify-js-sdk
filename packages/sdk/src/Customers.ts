@@ -98,7 +98,7 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference/import-customers-using-csv
 	 */
-	public importCustomersUsingCSV(filePath: string) {
+	public importCSV(filePath: string) {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
