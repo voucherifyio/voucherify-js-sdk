@@ -326,7 +326,6 @@ client.campaigns.importVouchersUsingCSV(campaignId, filePath)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
-
 ---
 
 ### Distributions

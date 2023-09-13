@@ -151,3 +151,14 @@ Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING
 Voucherify React Widget CHANGELOG can be found [here](/packages/react-widget/CHANGELOG.md).
 
 Voucherify JS SDK CHANGELOG can be found [here](/packages/sdk/CHANGELOG.md).
+
+# <a name="tests"></a>🧪 SDK Tests
+
+**Sdk** tests are located in `packages/sdk/tests` and uses **real** calls to voucherify API via `client.ts`.
+```js
+// add this in your test
+import { voucherifyClient as client } from './client'
+```
+In order to run **sdk tests** you need to copy `packages/sdk/.env.example` to `packages/sdk/.env` and fill the file with your credentials.
+
+In order **to run** sdk tests please go to `packages/sdk` folder and run `yarn test`
