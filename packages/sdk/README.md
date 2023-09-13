@@ -394,13 +394,7 @@ Methods are provided within `client.categories.*` namespace.
 - [Update Category](#update-category)
 - [Get Category](#get-category)
 - [Delete Category](#delete-category)
-- [Add Voucher to Campaign](#add-voucher-to-campaign)
-- [Import Vouchers to Campaign](#import-vouchers-to-campaign)
-- [List Campaigns](#list-campaigns)
-- [Import Vouchers using CSV](#import-vouchers-using-csv)
-- [Examine Campaigns Qualification](#examine-campaigns-qualification)
-- [Enable campaign](#enable-campaign)
-- [Disable campaign](#disable-campaign)
+- [List Categories](#list-categories)
 
 #### [Create Category](https://docs.voucherify.io/reference/create-category)
 
