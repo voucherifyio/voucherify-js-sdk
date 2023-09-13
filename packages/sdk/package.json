@@ -47,5 +47,10 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"browser": {
+		"fs": false,
+		"os": false,
+		"path": false
 	}
 }
