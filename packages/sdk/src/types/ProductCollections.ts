@@ -22,7 +22,7 @@ export interface CreateProductCollectionAutoUpdate {
 	name: string
 	filter: {
 		junction: Junction
-	} & Record<string, { conditions: Record<FiltersCondition, any> }>
+	} & Record<string, { conditions: Partial<Record<FiltersCondition, any>> }>
 }
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
