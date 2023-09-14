@@ -1,7 +1,7 @@
 import csv from 'csv-stringify'
 import * as path from 'path'
+import * as fs from 'fs'
 export const generateCustomerCSV = async (sourceId: string) => {
-	const fs = (await import('fs')).default
 	const data = [
 		[
 			'Name',
