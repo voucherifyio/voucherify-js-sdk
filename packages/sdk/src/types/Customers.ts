@@ -3,7 +3,7 @@ export interface CustomerPermanentDeletion {
 	created_at: string
 	related_object_id: string
 	related_object: 'customer'
-	status: string
+	status: 'DONE'
 	data_json: {
 		events: number
 		customer_events: number
