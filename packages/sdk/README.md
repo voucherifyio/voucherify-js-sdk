@@ -313,7 +313,6 @@ client.campaigns.list(params)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
-
 ---
 
 ### Distributions

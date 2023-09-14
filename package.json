@@ -3,7 +3,7 @@
 	"private": true,
 	"engineStrict": true,
 	"engines": {
-		"node": "14.15"
+		"node": "^14.15 || ^16"
 	},
 	"repository": {
 		"type": "git",
