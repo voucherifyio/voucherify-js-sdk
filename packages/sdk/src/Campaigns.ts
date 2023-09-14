@@ -86,4 +86,16 @@ export class Campaigns {
 		form.append('file', fileStream)
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/campaigns/${campaignId}/importCSV`, form)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/enable-campaign
+	 */
+	public enable(campaignId: string) {
+		return this.client.post<{}>(`/campaigns/${encode(campaignId)}/enable`, {})
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/disable-campaign
+	 */
+	public disable(campaignId: string) {
+		return this.client.post<{}>(`/campaigns/${encode(campaignId)}/disable`, {})
+	}
 }

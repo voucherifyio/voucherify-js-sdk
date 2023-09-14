@@ -258,6 +258,8 @@ Methods are provided within `client.campaigns.*` namespace.
 - [List Campaigns](#list-campaigns)
 - [Import Vouchers using CSV](#import-vouchers-using-csv)
 - [Examine Campaigns Qualification](#examine-campaigns-qualification)
+- [Enable campaign](#enable-campaign)
+- [Disable campaign](#disable-campaign)
 
 #### [Create Campaign](https://docs.voucherify.io/reference/create-campaign)
 
@@ -321,6 +323,18 @@ client.campaigns.list(params)
 client.campaigns.importVouchersCSV(campaignId, filePath)
 ```
 
+#### [Enable campaign](https://docs.voucherify.io/reference/enable-campaign)
+
+```javascript
+client.campaigns.enable(campaignId)
+```
+
+#### [Disable campaign](https://docs.voucherify.io/reference/disable-campaign)
+
+```javascript
+client.campaigns.disable(campaignId)
+```
+
 #### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/create-qualification-request)
 
 ```javascript
@@ -370,6 +384,46 @@ client.distributions.publications.list(params)
 
 ```javascript
 client.distributions.publications.create(params)
+```
+
+### Categories
+
+Methods are provided within `client.categories.*` namespace.
+
+- [Create Category](#create-category)
+- [Update Category](#update-category)
+- [Get Category](#get-category)
+- [Delete Category](#delete-category)
+- [List Categories](#list-categories)
+
+#### [Create Category](https://docs.voucherify.io/reference/create-category)
+
+```javascript
+client.categories.create(params)
+```
+
+#### [Update Category](https://docs.voucherify.io/reference/update-category)
+
+```javascript
+client.categories.update(categoryId, params)
+```
+
+#### [Get Category](https://docs.voucherify.io/reference/get-category)
+
+```javascript
+client.categories.get(categoryId)
+```
+
+#### [Delete Category](https://docs.voucherify.io/reference/delete-category)
+
+```javascript
+client.categories.delete(categoryId)
+```
+
+#### [List Categories](https://docs.voucherify.io/reference/list-categories)
+
+```javascript
+client.categories.list()
 ```
 
 ---
