@@ -4,6 +4,7 @@ import * as AAT from './types/AsyncActions'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import { CustomerPermanentDeletionResponse } from './types/Customers'
 
 class Customers {
 	constructor(private client: RequestController) {}
@@ -96,7 +97,10 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference/delete-customer-permanently
 	 */
 	public deletePermanently(customerId: string) {
-		return this.client.post<T.CustomerPermanentDeletion>(`/customers/${encode(customerId)}/permanent-deletion`, {})
+		return this.client.post<T.CustomerPermanentDeletionResponse>(
+			`/customers/${encode(customerId)}/permanent-deletion`,
+			{},
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-consents

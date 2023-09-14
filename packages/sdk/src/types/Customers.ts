@@ -1,4 +1,4 @@
-export interface CustomerPermanentDeletion {
+export interface CustomerPermanentDeletionResponse {
 	id: string
 	created_at: string
 	related_object_id: string
