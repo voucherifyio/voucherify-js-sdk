@@ -8705,6 +8705,10 @@
 										"typeArguments": [
 											{
 												"type": "intrinsic",
+												"name": "unknown"
+											},
+											{
+												"type": "intrinsic",
 												"name": "any"
 											}
 										],
@@ -8740,6 +8744,10 @@
 					"type": {
 						"type": "reference",
 						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "unknown"
+							},
 							{
 								"type": "intrinsic",
 								"name": "any"
