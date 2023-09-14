@@ -131,6 +131,7 @@ const client = VoucherifyServerSide({
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
 	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	timeoutMs: 10000 // optional
 })
 ```
 
@@ -328,13 +329,13 @@ client.campaigns.importVouchersCSV(campaignId, filePath)
 client.campaigns.enable(campaignId)
 ```
 
-#### [Disable campaign](https://api.voucherify.io/v1/campaigns/{campaignId}/importCSV)
+#### [Disable campaign](https://docs.voucherify.io/reference/disable-campaign)
 
 ```javascript
 client.campaigns.disable(campaignId)
 ```
 
-#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/disable-campaign)
+#### [Examine Campaigns Qualification](https://docs.voucherify.io/reference/create-qualification-request)
 
 ```javascript
 client.campaigns.qualifications.examine(body)
@@ -1302,6 +1303,7 @@ const client = VoucherifyClientSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	origin: 'example.com', // read more below
 	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	timeoutMs: 10000 // optional
 })
 ```
 

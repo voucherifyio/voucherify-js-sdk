@@ -105,6 +105,10 @@ export interface VoucherifyServerSideOptions {
 	 * The original Axios error will be included in cause property of VoucherifyError
 	 */
 	exposeErrorCause?: boolean
+	/**
+	 * Optionally, you can set timeout in miliseconds. After this time request will be aborted. By default Voucherify's API has timeout value of 3 minutes.
+	 */
+	timeoutMs?: number
 }
 interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
@@ -170,6 +174,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
 		exposeErrorCause: options.exposeErrorCause ?? false,
+		timeoutMs: options.timeoutMs ?? 0,
 	})
 	const asyncActions = new AsyncActions(client)
 	const balance = new Balance(client)

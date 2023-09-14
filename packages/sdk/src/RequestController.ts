@@ -8,6 +8,7 @@ export interface RequestControllerOptions {
 	basePath: string
 	headers: Record<string, any>
 	exposeErrorCause: boolean
+	timeoutMs: number
 }
 
 /**
@@ -21,14 +22,16 @@ export class RequestController {
 	private lastResponseHeaders: Record<string, string>
 	private isLastResponseHeadersSet: boolean
 	private exposeErrorCause: boolean
+	private timeoutMs: number
 
-	constructor({ basePath, baseURL, headers, exposeErrorCause }: RequestControllerOptions) {
+	constructor({ basePath, baseURL, headers, exposeErrorCause, timeoutMs }: RequestControllerOptions) {
 		this.basePath = basePath
 		this.baseURL = baseURL
 		this.headers = headers
 		this.exposeErrorCause = exposeErrorCause
 		this.lastResponseHeaders = {}
 		this.isLastResponseHeadersSet = false
+		this.timeoutMs = timeoutMs
 
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/${this.basePath}/`,
@@ -71,6 +74,7 @@ export class RequestController {
 			paramsSerializer: function (params) {
 				return Qs.stringify(params)
 			},
+			timeout: this.timeoutMs,
 		})
 		this.setLastResponseHeaders(response.headers)
 		return response.data
@@ -87,17 +91,18 @@ export class RequestController {
 				return Qs.stringify(params)
 			},
 			headers,
+			timeout: this.timeoutMs,
 		})
 		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 	public async put<T>(path: string, body: Record<string, any>, params?: Record<string, any>): Promise<T> {
-		const response = await this.request.put<T>(path, body, { params })
+		const response = await this.request.put<T>(path, body, { params, timeout: this.timeoutMs })
 		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
 	public async delete<T>(path: string, params?: Record<string, any>): Promise<T> {
-		const response = await this.request.delete<T>(path, { params })
+		const response = await this.request.delete<T>(path, { params, timeout: this.timeoutMs })
 		this.setLastResponseHeaders(response.headers)
 		return response.data
 	}
