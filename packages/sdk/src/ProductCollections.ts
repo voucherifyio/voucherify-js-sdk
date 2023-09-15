@@ -9,7 +9,13 @@ export class ProductCollections {
 	 * @see https://docs.voucherify.io/reference/create-product-collection
 	 */
 	public create(productCollection: T.CreateProductCollection) {
-		return this.client.post<T.ProductCollectionsObject>(`/product-collections`, productCollection)
+		if (productCollection.type === 'STATIC') {
+			return this.client.post<T.ProductCollectionsObject>(`/product-collections`, productCollection)
+		}
+		return this.client.post<T.ProductCollectionsObject>(`/product-collections`, {
+			...productCollection,
+			filter: { ...(productCollection.filter || {}), junction: productCollection.filter_junction },
+		})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-product-collections

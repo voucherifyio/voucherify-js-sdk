@@ -135,8 +135,8 @@ describe('Product Collections API', () => {
 		const newCollection = await client.productCollections.create({
 			type: 'AUTO_UPDATE',
 			name: generateRandomString(),
+			filter_junction: 'and',
 			filter: {
-				junction: 'and',
 				price: {
 					conditions: {
 						$is: [100],
