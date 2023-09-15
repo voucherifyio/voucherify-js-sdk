@@ -36,15 +36,22 @@
 		"prepublish": "yarn build"
 	},
 	"dependencies": {
+		"form-data": "4.0.0",
 		"axios": "0.27.2",
 		"qs": "6.9.7"
 	},
 	"devDependencies": {
-		"@types/qs": "6.9.7",
 		"utility-types": "3.10.0",
-		"dotenv": "16.3.1"
+		"dotenv": "16.3.1",
+		"csv-stringify": "6.4.0",
+		"@types/qs": "6.9.7"
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"browser": {
+		"fs": false,
+		"os": false,
+		"path": false
 	}
 }
