@@ -21,6 +21,7 @@ import { Segments } from './Segments'
 import { assert, isString, isObject, isOptionalString, environment } from './helpers'
 import { ApiLimitsHandler } from './ApiLimitsHandler'
 import { MetadataSchemas } from './MetadataSchemas'
+import { Categories } from './Categories'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -104,6 +105,10 @@ export interface VoucherifyServerSideOptions {
 	 * The original Axios error will be included in cause property of VoucherifyError
 	 */
 	exposeErrorCause?: boolean
+	/**
+	 * Optionally, you can set timeout in miliseconds. After this time request will be aborted. By default Voucherify's API has timeout value of 3 minutes.
+	 */
+	timeoutMs?: number
 }
 interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
@@ -169,11 +174,13 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
 		exposeErrorCause: options.exposeErrorCause ?? false,
+		timeoutMs: options.timeoutMs ?? 0,
 	})
 	const asyncActions = new AsyncActions(client)
 	const balance = new Balance(client)
 	const vouchers = new Vouchers(client, balance)
 	const campaigns = new Campaigns(client)
+	const categories = new Categories(client)
 	const exportsNamespace = new Exports(client)
 	const events = new Events(client)
 	const distributions = new Distributions(client, exportsNamespace)
@@ -195,6 +202,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	return {
 		vouchers,
 		campaigns,
+		categories,
 		distributions,
 		validations,
 		redemptions,

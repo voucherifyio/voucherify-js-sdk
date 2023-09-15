@@ -1,8 +1,10 @@
 import * as T from './types/Vouchers'
+import * as AAT from './types/AsyncActions'
 
-import { encode } from './helpers'
+import { assert, encode, environment } from './helpers'
 import type { RequestController } from './RequestController'
 import type { Balance } from './Balance'
+import FormData from 'form-data'
 
 class VouchersQualification {
 	constructor(private client: RequestController) {}
@@ -88,5 +90,19 @@ export class Vouchers {
 	 */
 	public releaseValidationSession(code: string, sessionKey: string) {
 		return this.client.delete(`/vouchers/${encode(code)}/sessions/${encode(sessionKey)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-vouchers-using-csv
+	 */
+	public async importCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.vouchers.importCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>('/vouchers/importCSV', form)
 	}
 }
