@@ -651,7 +651,7 @@ export interface LoyaltyCardTransactionsResponse {
 		source_voucher?: SimpleLoyaltyVoucher
 		destination_voucher?: SimpleLoyaltyVoucher
 	}
-	related_transaction_id: string
+	related_transaction_id: string | null
 	created_at: string
 }
 
