@@ -1,5 +1,42 @@
 # @voucherify/sdk
 
+## 2.3.0
+
+### Minor Changes
+
+- [`644aa84`](https://github.com/voucherifyio/voucherify-js-sdk/commit/644aa8479843b8625192aa295eb07aa19ba651d7) [#227](https://github.com/voucherifyio/voucherify-js-sdk/pull/227) Thanks [@marcin-slezak](https://github.com/marcin-slezak)! - Added support for missing CSV import endpoints ([(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)):
+  - `POST /skus/importCSV`
+  - `POST /products/importCSV`
+  - `POST /vouchers/importCSV`
+  - `POST /customers/importCSV`
+  - `POST /campaigns/campaignId/importCSV`
+  - Added form-data `4.0.0` to SDK package
+
+* [`7720e31`](https://github.com/voucherifyio/voucherify-js-sdk/commit/7720e31baea0db19a7543ae12661fab77176e5ff) [#228](https://github.com/voucherifyio/voucherify-js-sdk/pull/228) Thanks [@marcin-slezak](https://github.com/marcin-slezak)! - Add missing methods covering Categories and Campaigns API.
+  - Added support for new endpoints [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md):
+    - `POST /campaigns/campaignId/enable`,
+    - `POST /campaigns/campaignId/disable`,
+    - `GET, POST DELETE /categories`,
+    - `GET PUT /categories/id`.
+  - New exported types/interfaces in `Categories.ts`:
+    - `ListCategories`,
+    - `CategoryObject`,
+    - `CreateCategory`,
+    - `ResponseCreateCategory`,
+    - `ResponseUpdateCategory`,
+    - `UpdateCategoryRequest`.
+
+- [`52e7f5e`](https://github.com/voucherifyio/voucherify-js-sdk/commit/52e7f5e8d4ea6be4ba1b9d0550cba3ec3d893672) [#221](https://github.com/voucherifyio/voucherify-js-sdk/pull/221) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Implementing the following changes:
+  - Update axios from `0.21.4` to `0.27.2` in SDK package
+  - Added dotenv `16.3.1` to SDK package dev dependencies.
+  - Added frame for integration tests [(more info available in README.md, section "🧪 SDK Tests")](..%2F..%2FREADME.md)
+
+## 2.2.6
+
+### Patch Changes
+
+- [`a266c2a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a266c2a9a4a1942e2b6d8ef54021e04d36ddb02c) [#223](https://github.com/voucherifyio/voucherify-js-sdk/pull/223) Thanks [@darekg11](https://github.com/darekg11)! - Add optional timeoutMs option to VoucherifyServerSide and VoucherifyClientSide classes defiing timeout in miliseconds after which Axios is going to abort the request. By default this is equal to 0 meaining that there is no timeout beside default Voucherify's Load balancer timeout which is set to 3 minutes
+
 ## 2.2.5
 
 ### Patch Changes
