@@ -959,6 +959,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Reward Assignment](#create-loyalty-program-reward-assignment)
 - [Update Loyalty Program Reward Assignment](#update-loyalty-program-reward-assignment)
 - [Delete Loyalty Program Reward Assignment](#delete-loyalty-program-reward-assignment)
+- [Get Loyalty Program Reward Assignment](#get-loyalty-program-reward-assignment)
 - [List Loyalty Program Reward Assignments](#list-loyalty-program-reward-assignments)
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
@@ -966,10 +967,11 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
-- [List Loyalty Program Members](#list-loyalty-members)
+- [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
 - [Add Loyalty Card Balance](#add-loyalty-card-balance)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
+- [List Loyalty Tier Rewards](#list-loyalty-tier-rewards)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1019,6 +1021,13 @@ client.loyalties.updateRewardAssignment(campaignId, assignment)
 ```javascript
 client.loyalties.deleteRewardAssignment(campaignId, assignmentId)
 ```
+
+#### [Get Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+```
+
 
 #### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments-1)
 
@@ -1096,6 +1105,12 @@ client.loyalties.redeemReward(campaignId, memberId, params)
 `memberId` referrers to Loyalty Card code.
 
 When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
+
+#### [List Loyalty Tier Rewards](https://docs.voucherify.io/reference/list-loyalty-tier-rewards)
+
+```javascript
+client.loyalties.listLoyaltyTierReward(campaignId, tierId)
+```
 
 ---
 
