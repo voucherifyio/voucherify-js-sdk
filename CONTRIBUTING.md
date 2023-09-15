@@ -30,6 +30,8 @@
 
 See [here](https://github.com/atlassian/changesets/blob/master/docs/adding-a-changeset.md#i-am-in-a-multi-package-repository-a-mono-repo) for more information about adding a changeset in a monorepo.
 
+**[See changeset template in CHANGESET-TEMPLATE.md](CHANGESET-TEMPLATE.md)**
+
 ## About changesets (for maintainers)
 
 1. Review [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork)
