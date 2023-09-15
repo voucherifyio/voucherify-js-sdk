@@ -1,7 +1,9 @@
 import * as T from './types/Products'
+import * as AAT from './types/AsyncActions'
 
-import { encode, omit } from './helpers'
+import { assert, encode, environment, omit } from './helpers'
 import type { RequestController } from './RequestController'
+import FormData from 'form-data'
 
 export class Products {
 	constructor(private client: RequestController) {}
@@ -83,5 +85,33 @@ export class Products {
 	 */
 	public listSkus(productId: string) {
 		return this.client.get<T.ProductsListSkus>(`/products/${encode(productId)}/skus`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-skus-using-csv
+	 */
+	public async importSkusCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.products.importSkusCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, form)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/import-products-using-csv
+	 */
+	public async importCSV(filePath: string) {
+		assert(
+			environment().startsWith('Node'),
+			`Method "client.products.importCSV(filePath)" is only for Node environment`,
+		)
+		const fs = (await import('fs')).default
+		const fileStream = fs.createReadStream(filePath)
+		const form = new FormData()
+		form.append('file', fileStream)
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/products/importCSV`, form)
 	}
 }

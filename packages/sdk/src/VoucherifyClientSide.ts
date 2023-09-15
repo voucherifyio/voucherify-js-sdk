@@ -83,6 +83,10 @@ export interface VoucherifyClientSideOptions {
 	 * The original Axios error will be included in cause property of VoucherifyError
 	 */
 	exposeErrorCause?: boolean
+	/**
+	 * Optionally, you can set timeout in miliseconds. After this time request will be aborted. By default Voucherify's API has timeout value of 3 minutes.
+	 */
+	timeoutMs?: number
 }
 interface VoucherifyCustomerHeaders {
 	'X-Client-Application-Id': string
@@ -117,6 +121,7 @@ export function VoucherifyClientSide(options: VoucherifyClientSideOptions): Clie
 		baseURL: options.apiUrl ?? 'https://api.voucherify.io',
 		headers,
 		exposeErrorCause: options.exposeErrorCause ?? false,
+		timeoutMs: options.timeoutMs ?? 0,
 	})
 
 	return new ClientSide(client, options.trackingId)
