@@ -99,7 +99,6 @@ export interface CustomerRequestBasicData {
 		postal_code?: string
 	}
 	phone?: string
-	birthdate?: string
 }
 
 export interface CustomerRequest extends CustomerRequestBasicData {

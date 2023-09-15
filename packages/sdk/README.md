@@ -341,7 +341,6 @@ client.campaigns.disable(campaignId)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
-
 ---
 
 ### Distributions

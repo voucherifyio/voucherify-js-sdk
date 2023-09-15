@@ -40,21 +40,6 @@ interface SimpleProductDiscountUnit {
 	name: string
 }
 
-export interface DiscountUnitMultiple {
-	type: DiscountVouchersTypesEnum.UNIT
-	effect: 'ADD_MANY_ITEMS'
-	units: DiscountUnitMultipleOneUnit[]
-}
-
-export interface DiscountUnitMultipleOneUnit {
-	type: DiscountVouchersTypesEnum.UNIT
-	effect: 'ADD_NEW_ITEMS' | 'ADD_MISSING_ITEMS'
-	unit_off: number
-	unit_type?: string
-	product?: SimpleProductDiscountUnit
-	sku?: SimpleSkuDiscountUnit
-}
-
 export interface DiscountUnit {
 	type?: DiscountVouchersTypesEnum.UNIT
 	unit_off?: number
