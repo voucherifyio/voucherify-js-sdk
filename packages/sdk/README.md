@@ -697,6 +697,13 @@ client.customers.listActivities(customerId)
 client.customers.listActivities(customerId, params)
 ```
 
+#### [Import and Update Customers using CSV](https://docs.voucherify.io/reference/import-customers-using-csv)
+
+```javascript
+client.customers.importCSV(filePath)
+```
+
+
 ---
 
 ### Consents

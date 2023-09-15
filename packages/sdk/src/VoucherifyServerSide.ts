@@ -22,7 +22,7 @@ import { assert, isString, isObject, isOptionalString, environment } from './hel
 import { ApiLimitsHandler } from './ApiLimitsHandler'
 import { MetadataSchemas } from './MetadataSchemas'
 import { Categories } from './Categories'
-import { ProductCollections } from "./ProductCollections";
+import { ProductCollections } from './ProductCollections'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -106,6 +106,10 @@ export interface VoucherifyServerSideOptions {
 	 * The original Axios error will be included in cause property of VoucherifyError
 	 */
 	exposeErrorCause?: boolean
+	/**
+	 * Optionally, you can set timeout in miliseconds. After this time request will be aborted. By default Voucherify's API has timeout value of 3 minutes.
+	 */
+	timeoutMs?: number
 }
 interface VoucherifyServerSideHeaders {
 	'X-App-Id': string
