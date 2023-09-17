@@ -502,7 +502,7 @@ export interface LoyaltyPointsTransfer {
 
 export type GetRewardAssignmentsResponse = RewardsAssignmentObject
 
-export interface ListLoyaltyTierRewardResponse {
+export interface ListLoyaltyTierRewardsResponse {
 	object: 'list'
 	data_ref: 'data'
 	data: LoyaltyTierRewardObject[]

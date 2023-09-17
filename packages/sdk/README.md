@@ -1109,7 +1109,7 @@ When redeeming reward with type `COIN` you need to provide additional `order` ob
 #### [List Loyalty Tier Rewards](https://docs.voucherify.io/reference/list-loyalty-tier-rewards)
 
 ```javascript
-client.loyalties.listLoyaltyTierReward(campaignId, tierId)
+client.loyalties.listLoyaltyTierRewards(campaignId, tierId)
 ```
 
 ---
