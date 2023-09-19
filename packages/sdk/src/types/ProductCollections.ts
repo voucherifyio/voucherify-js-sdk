@@ -17,11 +17,23 @@ export interface CreateProductCollectionStatic {
 	products: CreateProductCollectionStaticProduct[]
 }
 
+export type AllowedFilters =
+	| 'name'
+	| 'attributes'
+	| 'source_id'
+	| 'price'
+	| 'image_url'
+	| 'product_id'
+	| 'sku'
+	| 'created_at'
+	| 'updated_at'
+
 export interface CreateProductCollectionAutoUpdate {
 	type: 'AUTO_UPDATE'
 	name: string
-	filter_junction: Junction
-	filter: Partial<Record<string, { conditions: Partial<Record<FiltersCondition, any>> }>>
+	filter: {
+		junction: Junction
+	} & Partial<Record<AllowedFilters, { conditions: Partial<Record<FiltersCondition, any>> }>>
 }
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
