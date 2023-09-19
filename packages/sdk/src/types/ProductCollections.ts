@@ -17,7 +17,7 @@ export interface CreateProductCollectionStatic {
 	products: CreateProductCollectionStaticProduct[]
 }
 
-export type AllowedFilters =
+export type AllowedFiltersKeys =
 	| 'name'
 	| 'attributes'
 	| 'source_id'
@@ -27,13 +27,14 @@ export type AllowedFilters =
 	| 'sku'
 	| 'created_at'
 	| 'updated_at'
+	| `metadata.${string}`
 
 export interface CreateProductCollectionAutoUpdate {
 	type: 'AUTO_UPDATE'
 	name: string
 	filter: {
 		junction: Junction
-	} & Partial<Record<AllowedFilters, { conditions: Partial<Record<FiltersCondition, any>> }>>
+	} & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, any>> }>>
 }
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
