@@ -34,6 +34,11 @@ export interface CategoriesUpdateRequestBody {
 	hierarchy: number
 }
 
-export interface CategoriesUpdateResponseBody extends Category {
+export interface CategoriesUpdateResponseBody {
+	id: string
+	name: string
+	hierarchy: number
+	created_at: string
+	object: 'category'
 	updated_at: string
 }
