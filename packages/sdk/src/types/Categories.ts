@@ -1,4 +1,4 @@
-export interface CategoryObject {
+export interface Category {
 	id: string
 	name: string
 	hierarchy: number
@@ -10,7 +10,7 @@ export interface CategoryObject {
 export interface CategoriesListResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: CategoryObject[]
+	data: Category[]
 	total: number
 }
 
@@ -27,13 +27,13 @@ export interface CategoriesCreateResponseBody {
 	object: 'category'
 }
 
-export type CategoriesGetResponseBody = CategoryObject
+export type CategoriesGetResponseBody = Category
 
 export interface CategoriesUpdateRequestBody {
 	name: string
 	hierarchy: number
 }
 
-export interface CategoriesUpdateResponseBody extends CategoryObject {
+export interface CategoriesUpdateResponseBody extends Category {
 	updated_at: string
 }
