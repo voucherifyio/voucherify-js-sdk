@@ -1,20 +1,25 @@
-export interface ListCategories {
+export interface CategoryObject {
+	id: string
+	name: string
+	hierarchy: number
+	created_at: string
+	object: 'category'
+	updated_at?: string
+}
+
+export interface CategoriesListResponseBody {
 	object: 'list'
 	data_ref: 'data'
 	data: CategoryObject[]
 	total: number
 }
 
-export type CategoryObject = ResponseCreateCategory & {
-	updated_at?: string
-}
-
-export interface CreateCategory {
+export interface CategoriesCreateRequestBody {
 	name: string
 	hierarchy: number
 }
 
-export interface ResponseCreateCategory {
+export interface CategoriesCreateResponseBody {
 	id: string
 	name: string
 	hierarchy: number
@@ -22,8 +27,13 @@ export interface ResponseCreateCategory {
 	object: 'category'
 }
 
-export type ResponseUpdateCategory = ResponseCreateCategory & {
-	updated_at: string
+export type CategoriesGetResponseBody = CategoryObject
+
+export interface CategoriesUpdateRequestBody {
+	name: string
+	hierarchy: number
 }
 
-export type UpdateCategoryRequest = CreateCategory
+export interface CategoriesUpdateResponseBody extends CategoryObject {
+	updated_at: string
+}

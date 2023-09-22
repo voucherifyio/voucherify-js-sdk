@@ -9,19 +9,19 @@ export class Categories {
 	 * @see https://docs.voucherify.io/reference/list-categories
 	 */
 	public list() {
-		return this.client.get<T.ListCategories>('/categories')
+		return this.client.get<T.CategoriesListResponseBody>('/categories')
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-category
 	 */
-	public create(createCategory: T.CreateCategory) {
-		return this.client.post<T.ResponseCreateCategory>('/categories', createCategory)
+	public create(createCategory: T.CategoriesCreateRequestBody) {
+		return this.client.post<T.CategoriesCreateResponseBody>('/categories', createCategory)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-category
 	 */
 	public get(categoryId: string) {
-		return this.client.get<T.CategoryObject>(`/categories/${encode(categoryId)}`)
+		return this.client.get<T.CategoriesGetResponseBody>(`/categories/${encode(categoryId)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-category
@@ -32,7 +32,7 @@ export class Categories {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-category
 	 */
-	public update(categoryId: string, updateCategory: T.UpdateCategoryRequest) {
-		return this.client.put<T.ResponseUpdateCategory>(`/categories/${encode(categoryId)}`, updateCategory)
+	public update(categoryId: string, updateCategory: T.CategoriesUpdateRequestBody) {
+		return this.client.put<T.CategoriesUpdateResponseBody>(`/categories/${encode(categoryId)}`, updateCategory)
 	}
 }
