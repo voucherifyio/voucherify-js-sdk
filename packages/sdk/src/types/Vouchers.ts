@@ -252,33 +252,33 @@ export type VouchersBulkUpdateResponse = {
 	async_action_id: string
 }
 
-export interface ListGiftCardTransactionsQuery {
+export interface VouchersListGiftCardTransactionsParams {
 	limit?: number
 	page?: number
 }
 
-export interface ListGiftCardTransactionsResponse {
+export interface VouchersListGiftCardTransactionsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: ListGiftCardTransactionsTypeDataObject[]
+	data: VouchersListGiftCardTransactionsData[]
 	total?: number
 	has_more?: boolean
 }
 
-export type ListGiftCardTransactionsType =
+export type VouchersListGiftCardTransactionsType =
 	| 'CREDITS_REDEMPTION'
 	| 'CREDITS_REFUND'
 	| 'CREDITS_ADDITION'
 	| 'CREDITS_REMOVAL'
 
-export interface ListGiftCardTransactionsTypeDataObject {
+export interface VouchersListGiftCardTransactionsData {
 	id: string
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string | null
 	source: 'voucherify-web-ui' | 'API' | null
 	reason: string | null
-	type: ListGiftCardTransactionsType
+	type: VouchersListGiftCardTransactionsType
 	details: {
 		balance: {
 			type: 'gift_voucher' | 'loyalty_card'
@@ -307,32 +307,32 @@ export interface ListGiftCardTransactionsTypeDataObject {
 	created_at: string
 }
 
-export interface ExportGiftCardTransactionsBody {
+export interface VouchersExportGiftCardTransactionsRequestBody {
 	parameters?: {
 		order?: '-created_at' | 'created_at'
-		fields?: ExportGiftCardTransactionsFields[]
+		fields?: VouchersExportGiftCardTransactionsFields[]
 	}
 }
 
-export interface ExportGiftCardTransactionsResponse {
+export interface VouchersExportGiftCardTransactionsResponseBody {
 	id: string
 	object: 'export'
 	created_at: string
 	status: 'SCHEDULED'
 	channel: 'API'
 	exported_object: string
-	parameters: ExportGiftCardTransactionsParams
+	parameters: VouchersExportGiftCardTransactionsParams
 	result: string | null
 	user_id: string | null
 }
 
-export interface ExportGiftCardTransactionsParams {
+export interface VouchersExportGiftCardTransactionsParams {
 	order?: '-created_at' | 'created_at'
-	fields?: ExportGiftCardTransactionsFields[]
-	filters: ExportGiftCardTransactionsParamsFilters
+	fields?: VouchersExportGiftCardTransactionsFields[]
+	filters: VouchersExportGiftCardTransactionsParamsFilters
 }
 
-export interface ExportGiftCardTransactionsParamsFilters {
+export interface VouchersExportGiftCardTransactionsParamsFilters {
 	voucher_id: {
 		conditions: {
 			$in: string[]
@@ -348,7 +348,7 @@ export interface ExportGiftCardTransactionsParamsFilters {
 	junction?: 'AND' | 'OR'
 }
 
-export type ExportGiftCardTransactionsFields =
+export type VouchersExportGiftCardTransactionsFields =
 	| 'id'
 	| 'type'
 	| 'source_id'

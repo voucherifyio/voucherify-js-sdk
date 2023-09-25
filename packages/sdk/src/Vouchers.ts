@@ -92,13 +92,19 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
 	 */
-	public listGiftCardTransactions(code: string, query?: T.ListGiftCardTransactionsQuery) {
-		return this.client.get<T.ListGiftCardTransactionsResponse>(`/vouchers/${encode(code)}/transactions`, query)
+	public listGiftCardTransactions(code: string, params?: T.VouchersListGiftCardTransactionsParams) {
+		return this.client.get<T.VouchersListGiftCardTransactionsResponseBody>(
+			`/vouchers/${encode(code)}/transactions`,
+			params,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
 	 */
-	public exportGiftCardTransactions(code: string, body: T.ExportGiftCardTransactionsBody) {
-		return this.client.post<T.ExportGiftCardTransactionsResponse>(`/vouchers/${encode(code)}/transactions/export`, body)
+	public exportGiftCardTransactions(code: string, body: T.VouchersExportGiftCardTransactionsRequestBody) {
+		return this.client.post<T.VouchersExportGiftCardTransactionsResponseBody>(
+			`/vouchers/${encode(code)}/transactions/export`,
+			body,
+		)
 	}
 }
