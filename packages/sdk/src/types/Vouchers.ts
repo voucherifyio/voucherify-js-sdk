@@ -260,47 +260,129 @@ export interface VouchersListGiftCardTransactionsParams {
 export interface VouchersListGiftCardTransactionsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: VouchersListGiftCardTransactionsData[]
-	total?: number
-	has_more?: boolean
+	data: GiftCardTransaction[]
+	has_more: boolean
 }
 
-export type VouchersListGiftCardTransactionsType =
-	| 'CREDITS_REDEMPTION'
-	| 'CREDITS_REFUND'
-	| 'CREDITS_ADDITION'
-	| 'CREDITS_REMOVAL'
+export type GiftCardTransaction =
+	| GiftCardTransactionRedemption
+	| GiftCardTransactionRefund
+	| GiftCardTransactionAddition
+	| GiftCardTransactionRemoval
 
-export interface VouchersListGiftCardTransactionsData {
+export interface GiftCardTransactionRedemption {
 	id: string
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string | null
 	source: 'voucherify-web-ui' | 'API' | null
 	reason: string | null
-	type: VouchersListGiftCardTransactionsType
+	type: 'CREDITS_REDEMPTION'
 	details: {
 		balance: {
-			type: 'gift_voucher' | 'loyalty_card'
+			type: 'gift_voucher'
 			total: number
 			amount: number
 			object: 'balance'
 			balance: number
-			operation_type?: 'MANUAL'
 			related_object: {
 				id: string
 				type: 'voucher'
 			}
 		}
-		order?: {
+		order: {
 			id: string
 			source_id: string | null
 		}
-		redemption?: {
+		redemption: {
 			id: string
 		}
-		rollback?: {
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
+
+export interface GiftCardTransactionRefund {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	source: 'voucherify-web-ui' | 'API' | null
+	reason: string | null
+	type: 'CREDITS_REFUND'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
 			id: string
+			source_id: string | null
+		}
+		redemption: {
+			id: string
+		}
+		rollback: {
+			id: string
+		}
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
+
+export interface GiftCardTransactionAddition {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	source: 'voucherify-web-ui' | 'API'
+	reason: string | null
+	type: 'CREDITS_ADDITION'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			operation_type: 'MANUAL' | 'AUTOMATIC'
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
+
+export interface GiftCardTransactionRemoval {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	source: 'voucherify-web-ui' | 'API'
+	reason: string | null
+	type: 'CREDITS_ADDITION'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			operation_type: 'MANUAL' | 'AUTOMATIC'
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
 		}
 	}
 	related_transaction_id: string | null
