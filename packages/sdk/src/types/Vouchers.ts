@@ -275,7 +275,7 @@ export interface GiftCardTransactionRedemption {
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string | null
-	source: 'voucherify-web-ui' | 'API' | null
+	source: null
 	reason: string | null
 	type: 'CREDITS_REDEMPTION'
 	details: {
@@ -307,7 +307,7 @@ export interface GiftCardTransactionRefund {
 	source_id: string | null
 	voucher_id: string
 	campaign_id: string | null
-	source: 'voucherify-web-ui' | 'API' | null
+	source: null
 	reason: string | null
 	type: 'CREDITS_REFUND'
 	details: {
@@ -370,7 +370,7 @@ export interface GiftCardTransactionRemoval {
 	campaign_id: string | null
 	source: 'voucherify-web-ui' | 'API'
 	reason: string | null
-	type: 'CREDITS_ADDITION'
+	type: 'CREDITS_REMOVAL'
 	details: {
 		balance: {
 			type: 'gift_voucher'
@@ -390,10 +390,12 @@ export interface GiftCardTransactionRemoval {
 }
 
 export interface VouchersExportGiftCardTransactionsRequestBody {
-	parameters?: {
-		order?: '-created_at' | 'created_at'
-		fields?: VouchersExportGiftCardTransactionsFields[]
-	}
+	parameters?: GiftCardTransactionsExport
+}
+
+export interface GiftCardTransactionsExport {
+	order?: '-created_at' | 'created_at'
+	fields?: VouchersExportGiftCardTransactionsFields[]
 }
 
 export interface VouchersExportGiftCardTransactionsResponseBody {
@@ -403,18 +405,12 @@ export interface VouchersExportGiftCardTransactionsResponseBody {
 	status: 'SCHEDULED'
 	channel: 'API'
 	exported_object: string
-	parameters: VouchersExportGiftCardTransactionsParams
-	result: string | null
+	parameters: GiftCardTransactionsExport & { filters: GiftCardTransactionsFilters }
+	result: null
 	user_id: string | null
 }
 
-export interface VouchersExportGiftCardTransactionsParams {
-	order?: '-created_at' | 'created_at'
-	fields?: VouchersExportGiftCardTransactionsFields[]
-	filters: VouchersExportGiftCardTransactionsParamsFilters
-}
-
-export interface VouchersExportGiftCardTransactionsParamsFilters {
+export interface GiftCardTransactionsFilters {
 	voucher_id: {
 		conditions: {
 			$in: string[]
