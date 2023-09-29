@@ -97,7 +97,7 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference/delete-customer-permanently
 	 */
 	public deletePermanently(customerId: string) {
-		return this.client.post<T.CustomerPermanentDeletionResponse>(
+		return this.client.post<T.CustomersDeletePermanentlyResponseBody>(
 			`/customers/${encode(customerId)}/permanent-deletion`,
 			{},
 		)
