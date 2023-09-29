@@ -106,7 +106,7 @@ export interface CustomerRequest extends CustomerRequestBasicData {
 	source_id?: string
 }
 
-export type UpdateCustomersInBulk = (CustomerRequestBasicData & { source_id: string })[]
+export type CustomersUpdateCustomersInBulkRequestBody = (CustomerRequestBasicData & { source_id: string })[]
 
 export interface CustomersCommonListRequest {
 	limit?: number
@@ -161,7 +161,7 @@ export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
 
-export interface UpdateCustomersMetadataInBulk {
+export interface CustomersUpdateCustomersMetadataInBulkRequestBody {
 	source_ids: string[]
 	metadata: Record<string, any>
 }

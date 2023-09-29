@@ -78,13 +78,13 @@ class Customers {
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-in-bulk
 	 */
-	public updateCustomersInBulk(customers: T.UpdateCustomersInBulk) {
+	public updateCustomersInBulk(customers: T.CustomersUpdateCustomersInBulkRequestBody) {
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/bulk/async`, customers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-metadata-in-bulk
 	 */
-	public updateCustomersMetadataInBulk(sourceIdsAndMetadata: T.UpdateCustomersMetadataInBulk) {
+	public updateCustomersMetadataInBulk(sourceIdsAndMetadata: T.CustomersUpdateCustomersMetadataInBulkRequestBody) {
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/metadata/async`, sourceIdsAndMetadata)
 	}
 	/**
