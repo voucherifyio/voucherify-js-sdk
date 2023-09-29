@@ -7,7 +7,7 @@ export interface CustomersDeletePermanentlyResponseBody {
 	data_json: {
 		events: number
 		customer_events: number
-		daily_event: number
+		daily_events: number
 		segments: number
 		orders: number
 		order_events: number
