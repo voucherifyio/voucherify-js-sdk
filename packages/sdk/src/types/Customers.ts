@@ -13,7 +13,7 @@ export interface CustomersDeletePermanentlyResponseBody {
 		order_events: number
 		customer: 1
 	}
-	object: 'pernament_deletion'
+	object: 'permanent_deletion'
 }
 
 export interface SimpleCustomer {
