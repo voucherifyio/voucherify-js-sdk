@@ -106,7 +106,10 @@ export interface CustomerRequest extends CustomerRequestBasicData {
 	source_id?: string
 }
 
-export type CustomersUpdateCustomersInBulkRequestBody = (CustomerRequestBasicData & { source_id: string })[]
+export type CustomersUpdateCustomersInBulkRequestBody = (CustomerRequestBasicData & {
+	source_id: string
+	birthdate?: string
+})[]
 
 export interface CustomersCommonListRequest {
 	limit?: number
