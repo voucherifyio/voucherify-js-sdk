@@ -67,8 +67,9 @@ export interface CustomerObject {
 export type CustomerUnconfirmed = Pick<CustomerObject, 'summary' | 'email' | 'loyalty'> & {
 	object: 'unconfirmed_customer'
 }
-
-export interface CustomerRequestBasicData {
+export interface CustomerRequest {
+	id?: string
+	source_id?: string
 	name?: string
 	email?: string
 	metadata?: Record<string, any>
@@ -82,11 +83,6 @@ export interface CustomerRequestBasicData {
 		postal_code?: string
 	}
 	phone?: string
-}
-
-export interface CustomerRequest extends CustomerRequestBasicData {
-	id?: string
-	source_id?: string
 }
 
 export interface CustomersCommonListRequest {
