@@ -83,7 +83,7 @@ type CustomerBase = {
 	email?: string
 	phone?: string
 	description?: string
-	birthdate? : string
+	birthdate?: string
 	metadata?: Record<string, any>
 }
 
@@ -97,7 +97,7 @@ type CustomerUnconfirmed =  CustomerLoyalty
 // Can we use it as pattern in other places?
 type CustomerIdentity = {
 	id?: string
-	source_id?:string
+	source_id? :string
 }
 
 

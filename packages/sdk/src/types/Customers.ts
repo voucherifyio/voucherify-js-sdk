@@ -89,11 +89,6 @@ export interface CustomerRequest extends CustomerRequestBasicData {
 	source_id?: string
 }
 
-export type CustomersUpdateInBulkRequestBody = (CustomerRequestBasicData & {
-	source_id: string
-	birthdate?: string
-})[]
-
 export interface CustomersCommonListRequest {
 	limit?: number
 	page?: number
@@ -151,7 +146,31 @@ export type CustomersUpdateConsentsBody = Record<string, boolean>
 
 // 0-level types
 
-// todo remove customer word from the middle
+type CustomerBase = {
+	name?: string
+	description?: string
+	email?: string
+	phone?: string
+	birthdate?: string
+	metadata?: Record<string, any>
+}
+
+type CustomerAddress = {
+	address?: {
+		city?: string | null
+		state?: string | null
+		line_1?: string | null
+		line_2?: string | null
+		country?: string | null
+		postal_code?: string | null
+	} | null
+}
+
+export type CustomersUpdateInBulkRequestBody = CustomerBase &
+	CustomerAddress & {
+		source_id: string
+	}
+
 export interface CustomersUpdateMetadataInBulkRequestBody {
 	source_ids: string[]
 	metadata: Record<string, any>
