@@ -1,21 +1,4 @@
-export interface CustomersDeletePermanentlyResponseBody {
-	id: string
-	created_at: string
-	related_object_id: string
-	related_object: 'customer'
-	status: 'DONE'
-	data_json: {
-		events: number
-		customer_events: number
-		daily_events: number
-		segments: number
-		orders: number
-		order_events: number
-		customer: 1
-	}
-	object: 'pernament_deletion'
-}
-
+// Legacy code
 export interface SimpleCustomer {
 	id: string
 	name?: string
@@ -164,7 +147,30 @@ export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
 
+// New types following guideline
+
+
+// 0-level types
+
+// todo remove customer word from the middle
 export interface CustomersUpdateCustomersMetadataInBulkRequestBody {
 	source_ids: string[]
 	metadata: Record<string, any>
+}
+export interface CustomersDeletePermanentlyResponseBody {
+	id: string
+	created_at: string
+	related_object_id: string
+	related_object: 'customer'
+	status: 'DONE'
+	data_json: {
+		events: number
+		customer_events: number
+		daily_events: number
+		segments: number
+		orders: number
+		order_events: number
+		customer: 1
+	}
+	object: 'pernament_deletion'
 }
