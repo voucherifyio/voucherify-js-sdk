@@ -163,9 +163,10 @@ type CustomerAddress = {
 }
 
 export type CustomersUpdateInBulkRequestBody = CustomerBase &
-	CustomerAddress & {
+	CustomerAddress &
+	{
 		source_id: string
-	}
+	}[]
 
 export interface CustomersUpdateMetadataInBulkRequestBody {
 	source_ids: string[]
