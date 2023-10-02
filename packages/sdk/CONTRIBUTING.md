@@ -62,9 +62,7 @@ Domain Types:
 > [!WARNING] This example shows how we can structure the types, it's not Voucherify specification
 
 ```ts
-// Uility types 👇
-
-// @TODO Required nested utility type
+// Utility types 👇
 
 // Mark specific property as required
 type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
@@ -74,6 +72,9 @@ type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
 type WithNonNullableProperty<Type, Key extends keyof Type> = Type & {
   [Property in Key]: Exclude<Type[Property], null> ;
 };
+
+// Mark all nested properties as required
+// Use DeepRequired<> from `utility-types` - https://www.npmjs.com/package/utility-types#deeprequiredt
 
 // Domain types 👇
 
