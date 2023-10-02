@@ -714,13 +714,13 @@ client.customers.importCSV(filePath)
 #### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
 
 ```javascript
-client.customers.updateCustomersInBulk(customers)
+client.customers.updateInBulk(customers)
 ```
 
 #### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
 
 ```javascript
-client.customers.updateCustomersMetadataInBulk(sourceIdsAndMetadata)
+client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
 ```
 
 ---

@@ -89,7 +89,7 @@ export interface CustomerRequest extends CustomerRequestBasicData {
 	source_id?: string
 }
 
-export type CustomersUpdateCustomersInBulkRequestBody = (CustomerRequestBasicData & {
+export type CustomersUpdateInBulkRequestBody = (CustomerRequestBasicData & {
 	source_id: string
 	birthdate?: string
 })[]
@@ -149,11 +149,10 @@ export type CustomersUpdateConsentsBody = Record<string, boolean>
 
 // New types following guideline
 
-
 // 0-level types
 
 // todo remove customer word from the middle
-export interface CustomersUpdateCustomersMetadataInBulkRequestBody {
+export interface CustomersUpdateMetadataInBulkRequestBody {
 	source_ids: string[]
 	metadata: Record<string, any>
 }

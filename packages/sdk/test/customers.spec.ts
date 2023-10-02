@@ -53,7 +53,7 @@ describe('Customers API', () => {
 		}
 		const phone = '+0700',
 			metadata = { test: 123 }
-		const updateResponse = await client.customers.updateCustomersInBulk([
+		const updateResponse = await client.customers.updateInBulk([
 			{ source_id: createdCustomer.source_id, phone, metadata },
 		])
 		while ((await client.asyncActions.get(updateResponse.async_action_id)).status !== 'DONE') {
@@ -73,7 +73,7 @@ describe('Customers API', () => {
 			return
 		}
 		const metadata = { test: 123 }
-		const updateResponse = await client.customers.updateCustomersMetadataInBulk({
+		const updateResponse = await client.customers.updateMetadataInBulk({
 			source_ids: [createdCustomer.source_id],
 			metadata,
 		})
