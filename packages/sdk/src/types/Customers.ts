@@ -140,7 +140,7 @@ export type CustomersUpdateConsentsBody = Record<string, boolean>
 
 // New types following guideline
 
-// 0-level types
+// Domain types
 
 type CustomerBase = {
 	name?: string
@@ -162,11 +162,12 @@ type CustomerAddress = {
 	} | null
 }
 
-export type CustomersUpdateInBulkRequestBody = CustomerBase &
-	CustomerAddress &
-	{
+// 0-level types
+
+export type CustomersUpdateInBulkRequestBody = (CustomerBase &
+	CustomerAddress & {
 		source_id: string
-	}[]
+	})[]
 
 export interface CustomersUpdateMetadataInBulkRequestBody {
 	source_ids: string[]
