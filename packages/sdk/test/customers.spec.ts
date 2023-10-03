@@ -33,12 +33,6 @@ describe('Customers API', () => {
 			related_object: 'customer',
 			status: 'DONE',
 			data_json: {
-				events: 0,
-				customer_events: 0,
-				daily_events: 0,
-				segments: 0,
-				orders: 0,
-				order_events: 1,
 				customer: 1,
 			},
 			object: 'pernament_deletion',
@@ -117,7 +111,6 @@ describe('Customers API', () => {
 		}
 		expect(createdCustomer).not.toHaveProperty('metadata')
 	})
-
 	it('Should update address in bulk properly', async () => {
 		const createdCustomer = await client.customers.create({ source_id: generateRandomString() })
 		const secondCreatedCustomer = await client.customers.create({ source_id: generateRandomString() })
