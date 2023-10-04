@@ -966,10 +966,8 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
-- [Get Loyalty Program Member By Id](#get-loyalty-program-member-by-id)
 - [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
-- [Get Loyalty Program Member Activities Without CampaignId](#get-loyalty-program-member-activities-without-campaignid)
 - [Add Or Remove Loyalty Card Balance](#add-or-remove-loyalty-card-balance)
 - [[Deprecated] Add Loyalty Card Balance](#add-loyalty-card-balance)
 - [Transfer Loyalty Points](#transfer-loyalty-points)
@@ -1080,6 +1078,7 @@ client.loyalties.listMembers(campaignId, params)
 ```
 
 #### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
+#### [Get Loyalty Program Member Activities 2](https://docs.voucherify.io/reference#get-member-activities-1)
 
 ```javascript
 client.loyalties.getMemberActivities(campaignId, memberId)
