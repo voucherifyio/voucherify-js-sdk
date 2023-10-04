@@ -29,14 +29,14 @@ export class ProductCollections {
 	 * @see https://docs.voucherify.io/reference/get-product-collection
 	 */
 	public get(productCollectionId: string) {
-		return this.client.get<T.ProductCollectionsObject>(`/product-collections/${encode(productCollectionId)}`)
+		return this.client.get<T.ProductCollectionsGetResponseBody>(`/product-collections/${encode(productCollectionId)}`)
 	}
 
 	/**
 	 * @see https://docs.voucherify.io/reference/list-products-in-collection
 	 */
-	public listProductsInCollection(productCollectionId: string, params?: T.ListProductsInCollectionParameters) {
-		return this.client.get<T.ListProductsInCollection>(
+	public listProducts(productCollectionId: string, params?: T.ProductCollectionsListProductsRequestQuery) {
+		return this.client.get<T.ProductCollectionsListProductsResponseBody>(
 			`/product-collections/${encode(productCollectionId)}/products`,
 			params,
 		)

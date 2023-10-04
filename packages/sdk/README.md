@@ -905,7 +905,7 @@ client.productCollections.delete(productCollectionId)
 #### [List Products Collection](https://docs.voucherify.io/reference/list-products-in-collection)
 
 ```javascript
-client.productCollections.listProductsInCollection(productCollectionId)
+client.productCollections.listProducts(productCollectionId)
 ```
 
 ---
