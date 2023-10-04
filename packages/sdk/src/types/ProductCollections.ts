@@ -9,13 +9,11 @@ type WithRequiredProperty<Type, Key extends keyof Type> = Type &
 
 export interface ProductIdentity {
 	id?: string
-	object?: 'product'
 }
 
 export interface SkuIdentity {
 	id?: string
 	product_id?: string
-	object?: 'sku'
 }
 
 export interface ProductBase {
@@ -34,37 +32,42 @@ export interface SkuBase {
 	image_url?: string | null
 }
 
-export interface ProductResponseData {
+export interface ProductSaved {
 	created_at?: string
 	updated_at?: string | null
 	image_url?: string | null
+	object?: 'product'
 }
 
-export interface SkuResponseData {
+export interface SkuSaved {
 	created_at?: string
 	updated_at?: string | null
 	image_url?: string | null
+	object?: 'sku'
 }
 
 export type Product = Required<SkuIdentity> | Required<ProductIdentity>
 
 export type ProductInCollection = Required<ProductIdentity> &
-	Required<ProductResponseData> &
+	Required<ProductSaved> &
 	Required<ProductBase> & { source_id: string | null }
 
-export type SkuInCollection = Required<SkuIdentity> & Required<SkuBase> & SkuResponseData & { source_id: string | null }
+export type SkuInCollection = Required<SkuIdentity> &
+	Required<SkuSaved> &
+	Required<SkuBase> & { source_id: string | null }
 
-export type ProductInCollectionItem = Required<ProductIdentity> & Required<ProductBase> & { source_id: string | null }
+export type ProductInCollectionItem = Required<ProductIdentity> &
+	Required<ProductBase> & { source_id: string | null; object: 'product' }
 
 // Product Collection
 
 export interface ProductCollectionIdentity {
 	id?: string
-	object?: 'products_collection'
 }
 
-export interface ProductCollectionResponseData {
+export interface ProductCollectionSaved {
 	created_at?: string
+	object?: 'products_collection'
 }
 
 export type ProductCollectionBase = Required<StaticProductCollectionBase> | Required<DynamicProductCollectionBase>
@@ -136,7 +139,7 @@ export type ProductCollectionsCreateRequestBody =
 
 export type ProductCollectionsCreateResponseBody = ProductCollectionBase &
 	Required<ProductCollectionIdentity> &
-	Required<ProductCollectionResponseData>
+	Required<ProductCollectionSaved>
 
 // list
 export interface ProductCollectionsListRequestQuery {
@@ -148,9 +151,7 @@ export interface ProductCollectionsListRequestQuery {
 export interface ProductCollectionsListResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: (Required<ProductCollectionBase> &
-		Required<ProductCollectionIdentity> &
-		Required<ProductCollectionResponseData>)[]
+	data: (Required<ProductCollectionBase> & Required<ProductCollectionIdentity> & Required<ProductCollectionSaved>)[]
 	total: number
 }
 
@@ -158,7 +159,7 @@ export interface ProductCollectionsListResponseBody {
 
 export type ProductCollectionsGetResponseBody = ProductCollectionBase &
 	Required<ProductCollectionIdentity> &
-	Required<ProductCollectionResponseData>
+	Required<ProductCollectionSaved>
 
 // list products
 export interface ProductCollectionsListProductsRequestQuery {

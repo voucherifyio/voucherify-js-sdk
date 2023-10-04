@@ -1,10 +1,6 @@
 import { voucherifyClient as client } from './client'
-// import { asyncMap } from './utils/asyncMap'
-// import { CreateProductCollectionStaticProduct } from '../src/types/ProductCollections'
 import { generateRandomString } from './utils/generateRandomString'
 import { isoRegex } from './utils/isoRegex'
-// import { isoRegex } from './utils/isoRegex'
-// import { generateRandomString } from './utils/generateRandomString'
 
 describe('Product Collections API', () => {
 	it('should create 3 products and create STATIC collection of those products, then delete it', async () => {
