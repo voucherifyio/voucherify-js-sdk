@@ -3,6 +3,12 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
+import {
+	LoyaltiesAddOrRemoveCardBalanceResponseBody,
+	LoyaltiesAddPoints,
+	LoyaltiesTransferPoints,
+	LoyaltiesTransferPointsRequestBody,
+} from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -137,8 +143,8 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-member-rewards
 	 */
-	public listMemberRewards(memberId: string, params?: T.ListMemberRewardsParams) {
-		return this.client.get<T.LoyaltiesListMemberRewardsResponse>(
+	public listMemberRewards(memberId: string, params?: T.LoyaltiesListMemberRewardsRequestQuery) {
+		return this.client.get<T.LoyaltiesListMemberRewardsResponseBody>(
 			`/loyalties/members/${encode(memberId)}/rewards`,
 			params,
 		)
@@ -147,33 +153,49 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance
 	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
 	 */
-	public addOrRemoveCardBalance(memberId: string, balance: T.LoyaltiesAddPoints, campaignId?: string) {
-		return this.client.post<T.LoyaltiesAddPointsResponse>(
+	public addOrRemoveCardBalance(
+		memberId: string,
+		balance: T.LoyaltiesAddOrRemoveCardBalanceRequestBody,
+		campaignId?: string,
+	) {
+		return this.client.post<T.LoyaltiesAddOrRemoveCardBalanceResponseBody>(
 			campaignId
 				? `/loyalties/${encode(campaignId)}/members/${memberId}/balance`
 				: `/loyalties/members/${memberId}/balance`,
 			balance,
 		)
 	}
-
-	// Backward compatibility only. This method is not mentioned in readme anymore.
+	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
+	 */
 	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
-		return this.addOrRemoveCardBalance(memberId, balance, campaignId)
+		return this.client.post<T.LoyaltiesAddPointsResponse>(
+			`/loyalties/${encode(campaignId)}/members/${memberId}/balance`,
+			balance,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/transfer-points
 	 */
-	public transferPoints(campaignId: string, memberId: string, transferLoyaltyPoints: T.LoyaltiesTransferPoints[]) {
+	public transferPoints(
+		campaignId: string,
+		memberId: string,
+		loyaltiesTransferPoints: T.LoyaltiesTransferPointsRequestBody,
+	) {
 		return this.client.post<T.LoyaltiesTransferPointsResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
-			transferLoyaltyPoints,
+			loyaltiesTransferPoints,
 		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-points-expiration
 	 */
-	public getPointsExpiration(campaignId: string, memberId: string, params?: T.GetPointsExpirationParams) {
-		return this.client.get<T.LoyaltiesGetPointsExpirationResponse>(
+	public getPointsExpiration(
+		campaignId: string,
+		memberId: string,
+		params?: T.LoyaltiesGetPointsExpirationRequestQuery,
+	) {
+		return this.client.get<T.LoyaltiesGetPointsExpirationResponseBody>(
 			`/loyalties/${encode(campaignId)}/members/${memberId}/points-expiration`,
 			params,
 		)
@@ -194,9 +216,9 @@ export class Loyalties {
 	public listCardTransactions(
 		memberId: string,
 		campaignId: string | null,
-		params?: T.ListLoyaltyCardTransactionsParams,
+		params?: T.LoyaltiesListCardTransactionsRequestQuery,
 	) {
-		return this.client.get<T.LoyaltiesListLoyaltyCardTransactionsResponse>(
+		return this.client.get<T.LoyaltiesListCardTransactionsResponseBody>(
 			campaignId
 				? `/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions`
 				: `/loyalties/members/${encode(memberId)}/transactions`,
@@ -210,13 +232,13 @@ export class Loyalties {
 	public exportCardTransactions(
 		memberId: string,
 		campaignId: string | null,
-		exportLoyaltyCardTransactionsParams: T.LoyaltiesExportLoyaltyCardTransactionsParams = {},
+		params: T.LoyaltiesExportCardTransactionsRequestQuery = {},
 	) {
-		return this.client.post<T.LoyaltiesExportLoyaltyCardTransactionsResponse>(
+		return this.client.post<T.LoyaltiesExportCardTransactionsResponseBody>(
 			campaignId
 				? `/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions/export`
 				: `/loyalties/members/${encode(memberId)}/transactions/export`,
-			exportLoyaltyCardTransactionsParams,
+			params,
 		)
 	}
 }

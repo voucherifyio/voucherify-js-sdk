@@ -4,7 +4,7 @@ import {
 	LoyaltiesCreateCampaignResponse,
 	LoyaltiesCreateMemberResponse,
 	LoyaltiesAddPointsResponse,
-	LoyaltiesListLoyaltyCardTransactionsResponse,
+	LoyaltiesListCardTransactionsResponseBody,
 } from '@voucherify/sdk'
 import { isoRegex } from './utils/isoRegex'
 
@@ -77,6 +77,6 @@ describe('Loyalties API', () => {
 			],
 			has_more: false,
 			// use as `type` for typescript check
-		} as LoyaltiesListLoyaltyCardTransactionsResponse)
+		} as LoyaltiesListCardTransactionsResponseBody)
 	})
 })

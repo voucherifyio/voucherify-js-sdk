@@ -1065,7 +1065,8 @@ client.loyalties.listEarningRules(campaignId, params)
 client.loyalties.createMember(campaignId, member)
 ```
 
-#### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member-1)
+#### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
+#### [Get Loyalty Program Member 2](https://docs.voucherify.io/reference/get-member-1)
 
 ```javascript
 client.loyalties.getMember(campaignId, memberId)
@@ -1086,13 +1087,6 @@ client.loyalties.getMemberActivities(campaignId, memberId)
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Get Loyalty Program Member Activities Without CampaignId](https://docs.voucherify.io/reference#get-member-activities)
-
-```javascript
-client.loyalties.getMemberActivitiesWithoutCampaignId(memberId)
-```
-
-`memberId` referrers to Loyalty Card code.
 
 #### [List Member Rewards](https://docs.voucherify.io/reference/list-member-rewards)
 
@@ -1168,7 +1162,7 @@ client.loyalties.listCardTransactions(memberId, campaignId, params)
 #### [Export Loyalty Card Transactions 2](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1)
 
 ```javascript
-client.loyalties.exportLoyaltyCardTransactions(memberId, campaignId, exportLoyaltyCardTransactionsParams)
+client.loyalties.exportCardTransactions(memberId, campaignId, params)
 ```
 
 `memberId` referrers to Loyalty Card code.

@@ -6,6 +6,7 @@ import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
 import { RewardsAssignmentObject, RewardsGetResponse } from './Rewards'
 
+// Legacy code
 interface LoyaltiesVoucher {
 	code_config?: {
 		length?: number
@@ -328,13 +329,12 @@ export interface LoyaltiesAddPointsResponse {
 	points: number
 	total: number
 	balance: number
-	type: string // LOYALTY_CARD | GIFT_VOUCHER
+	type: string
 	object: 'balance'
 	related_object?: {
-		type?: string // always "voucher"
+		type?: string
 		id?: string
 	}
-	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
 }
 
 export interface LoyaltiesRedeemRewardParams {
@@ -502,32 +502,29 @@ export interface LoyaltyPointsTransfer {
 	points: number
 }
 
-export interface ListMemberRewardsParams {
+// 0-level types
+
+export type LoyaltiesTransferPointsRequestBody = LoyaltiesTransferPoints[]
+
+export interface LoyaltiesListMemberRewardsRequestQuery {
 	affordable_only?: boolean
 	limit?: number
 	page?: number
 }
 
-export interface LoyaltiesListMemberRewardsResponse {
+export interface LoyaltiesListMemberRewardsResponseBody {
 	object: 'list'
 	data_ref: 'data'
 	data: { reward: RewardsGetResponse; assignment: RewardsAssignmentObject; object: 'loyalty_reward' }[]
 	total: number
 }
 
-export interface LoyaltiesTransferPoints {
-	code: string
-	points: number
-	reason?: string
-	source_id: string
-}
-
-export interface GetPointsExpirationParams {
+export interface LoyaltiesGetPointsExpirationRequestQuery {
 	limit?: number
 	page?: number
 }
 
-export interface LoyaltiesGetPointsExpirationResponse {
+export interface LoyaltiesGetPointsExpirationResponseBody {
 	object: 'list'
 	data_ref: 'data'
 	data: {
@@ -546,46 +543,16 @@ export interface LoyaltiesGetPointsExpirationResponse {
 	total: number
 }
 
-export interface ListLoyaltyCardTransactionsParams {
+export interface LoyaltiesListCardTransactionsRequestQuery {
 	limit?: number
 	page?: number
 }
 
-export interface LoyaltiesListLoyaltyCardTransactionsResponse {
+export interface LoyaltiesListCardTransactionsResponseBody {
 	object: 'list'
 	data_ref: 'data'
 	data: LoyaltyCardTransactionsResponse[]
 	has_more: boolean
-}
-
-export type LoyaltyCardTransactionsType =
-	| 'POINTS_ACCRUAL'
-	| 'POINTS_CANCELLATION'
-	| 'POINTS_REDEMPTION'
-	| 'POINTS_REFUND'
-	| 'POINTS_ADDITION'
-	| 'POINTS_REMOVAL'
-	| 'POINTS_EXPIRATION'
-	| 'POINTS_TRANSFER_IN'
-	| 'POINTS_TRANSFER_OUT'
-
-export interface SimpleLoyaltyVoucher {
-	id: string
-	code: string
-	loyalty_card: {
-		points: number
-		balance: number
-		next_expiration_date?: string
-		next_expiration_points?: string
-	}
-	type: 'LOYALTY_CARD'
-	campaign: string
-	campaign_id: string
-	is_referral_code?: boolean
-	holder_id?: string
-	referrer_id?: string
-	created_at?: string
-	object: 'voucher'
 }
 
 export interface LoyaltyCardTransactionsResponse {
@@ -655,26 +622,12 @@ export interface LoyaltyCardTransactionsResponse {
 	created_at: string
 }
 
-export type LoyaltyCardTransactionsFields =
-	| 'id'
-	| 'campaign_id'
-	| 'voucher_id'
-	| 'type'
-	| 'source_id'
-	| 'reason'
-	| 'source'
-	| 'balance'
-	| 'amount'
-	| 'related_transaction_id'
-	| 'created_at'
-	| 'details'
-
-export interface LoyaltiesExportLoyaltyCardTransactionsParams {
+export interface LoyaltiesExportCardTransactionsRequestQuery {
 	order?: 'created_at' | '-created_at'
 	fields?: LoyaltyCardTransactionsFields[]
 }
 
-export interface LoyaltiesExportLoyaltyCardTransactionsResponse {
+export interface LoyaltiesExportCardTransactionsResponseBody {
 	id: string
 	object: 'export'
 	created_at: string
@@ -695,3 +648,73 @@ export interface LoyaltiesExportLoyaltyCardTransactionsResponse {
 	result: null
 	user_id: null | string
 }
+
+export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
+	points: number
+}
+
+export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
+	points: number
+	total: number
+	balance: number
+	type: string // LOYALTY_CARD | GIFT_VOUCHER
+	object: 'balance'
+	related_object?: {
+		type?: string // always "voucher"
+		id?: string
+	}
+	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
+}
+
+// domain types
+
+export interface SimpleLoyaltyVoucher {
+	id: string
+	code: string
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: string
+	}
+	type: 'LOYALTY_CARD'
+	campaign: string
+	campaign_id: string
+	is_referral_code?: boolean
+	holder_id?: string
+	referrer_id?: string
+	created_at?: string
+	object: 'voucher'
+}
+
+export interface LoyaltiesTransferPoints {
+	code: string
+	points: number
+	reason?: string
+	source_id: string
+}
+
+export type LoyaltyCardTransactionsFields =
+	| 'id'
+	| 'campaign_id'
+	| 'voucher_id'
+	| 'type'
+	| 'source_id'
+	| 'reason'
+	| 'source'
+	| 'balance'
+	| 'amount'
+	| 'related_transaction_id'
+	| 'created_at'
+	| 'details'
+
+export type LoyaltyCardTransactionsType =
+	| 'POINTS_ACCRUAL'
+	| 'POINTS_CANCELLATION'
+	| 'POINTS_REDEMPTION'
+	| 'POINTS_REFUND'
+	| 'POINTS_ADDITION'
+	| 'POINTS_REMOVAL'
+	| 'POINTS_EXPIRATION'
+	| 'POINTS_TRANSFER_IN'
+	| 'POINTS_TRANSFER_OUT'
