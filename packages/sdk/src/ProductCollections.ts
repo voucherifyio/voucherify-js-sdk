@@ -8,14 +8,14 @@ export class ProductCollections {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-product-collection
 	 */
-	public create(productCollection: T.CreateProductCollection) {
-		return this.client.post<T.ProductCollectionsObject>(`/product-collections`, productCollection)
+	public create(productCollection: T.ProductCollectionsCreateRequestBody) {
+		return this.client.post<T.ProductCollectionsCreateResponseBody>(`/product-collections`, productCollection)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-product-collections
 	 */
-	public list(params?: T.ListProductCollectionsParameters) {
-		return this.client.get<T.ListProductCollections>(`/product-collections`, params)
+	public list(params?: T.ProductCollectionsListRequestQuery) {
+		return this.client.get<T.ProductCollectionsListResponseBody>(`/product-collections`, params)
 	}
 
 	/**
