@@ -963,6 +963,9 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
 - [Delete Loyalty Program Earning Rule](#delete-loyalty-program-earning-rule)
+- [Get Loyalty Program Earning Rule](#get-loyalty-program-earning-rule)
+- [Enable Loyalty Program Earning Rule](#enable-loyalty-program-earning-rule)
+- [Disable Loyalty Program Earning Rule](#disable-loyalty-program-earning-rule)
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
@@ -1043,6 +1046,24 @@ client.loyalties.updateEarningRule(campaignId, earningRule)
 
 ```javascript
 client.loyalties.deleteEarningRule(campaignId, earningRuleId)
+```
+
+#### [Get Loyalty Program Earning Rule](https://docs.voucherify.io/reference/get-earning-rule)
+
+```javascript
+client.loyalties.getEarningRule(campaignId, earningRuleId)
+```
+
+#### [Enable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/enable-earning-rule)
+
+```javascript
+client.loyalties.enableEarningRule(campaignId, earningRuleId)
+```
+
+#### [Disable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/disable-earning-rule)
+
+```javascript
+client.loyalties.disableEarningRule(campaignId, earningRuleId)
 ```
 
 #### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference/list-earning-rules)

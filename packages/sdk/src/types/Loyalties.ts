@@ -497,3 +497,166 @@ export interface LoyaltyPointsTransfer {
 	code: string
 	points: number
 }
+
+// 0 Level types
+
+export type LoyaltiesGetEarningRuleResponseBody = EarningRuleBase & {
+	validation_rule_id: string | null
+	updated_at: string | null
+	active: boolean
+}
+
+export type LoyaltiesEnableEarningRulesResponseBody = EarningRuleBase & {
+	updated_at: string | null
+	active: true
+}
+
+export type LoyaltiesDisableEarningRulesResponseBody = EarningRuleBase & {
+	updated_at: string | null
+	active: false
+}
+
+// Domain types
+
+export type EarningRuleEvent =
+	| 'order.paid'
+	| 'customer.segment.entered'
+	| 'custom_event'
+	| 'customer.loyalty.tier.upgraded'
+	| 'customer.loyalty.tier.downgraded'
+	| 'customer.loyalty.tier.prolonged'
+	| 'customer.loyalty.tier.joined'
+	| 'customer.loyalty.tier.left'
+export interface EarningRuleBase {
+	id: string
+	created_at: string
+	loyalty: EarningRuleLoyaltyFixed | EarningRuleLoyaltyProportional
+	event?: EarningRuleEvent
+	custom_event?: {
+		schema_id: string
+	}
+	segment?: {
+		id: string
+	}
+	source: {
+		banner?: string
+		object_id: string
+		object_type: string
+	}
+	loyalty_tier?: {
+		id: string
+	}
+	object: 'earning_rule'
+	automation_id: string
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		duration: string
+		interval: string
+	}
+	validity_day_of_week?: number[]
+	metadata: Record<string, any>
+}
+
+export interface EarningRuleLoyaltyFixed {
+	type: 'FIXED'
+	points: number
+}
+
+export type EarningRuleLoyaltyProportionalOrder =
+	| EarningRuleLoyaltyProportionalOrderAmount
+	| EarningRuleLoyaltyProportionalOrderTotalAmount
+	| EarningRuleLoyaltyProportionalOrderMetadata
+
+export interface EarningRuleLoyaltyProportionalOrderAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_AMOUNT'
+	order: {
+		amount: {
+			every: number
+			points: number
+		}
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalOrderTotalAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_TOTAL_AMOUNT'
+	order: {
+		total_amount: {
+			every: number
+			points: number
+		}
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalOrderMetadata {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_METADATA'
+	order: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+export type EarningRuleLoyaltyProportionalOrderItems =
+	| EarningRuleLoyaltyProportionalOrderItemsQuantity
+	| EarningRuleLoyaltyProportionalOrderItemsAmount
+	| EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount
+
+export interface EarningRuleLoyaltyProportionalOrderItemsQuantity {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_QUANTITY'
+	order_items: {
+		quantity: { every: number; points: number; object: string; id: string }
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalOrderItemsAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_AMOUNT'
+	order_items: {
+		amount: { every: number; points: number; object: string; id: string }
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount {
+	type: 'PROPORTIONAL'
+	calculation_type: 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
+	order_items: {
+		subtotal_amount: { every: number; points: number; object: string; id: string }
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalCustomer {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOMER_METADATA'
+	customer: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+export interface EarningRuleLoyaltyProportionalCustomEvent {
+	type: 'PROPORTIONAL'
+	calculation_type: 'CUSTOM_EVENT_METADATA'
+	custom_event: {
+		metadata: {
+			every: number
+			points: number
+			property: string
+		}
+	}
+}
+
+export type EarningRuleLoyaltyProportional =
+	| EarningRuleLoyaltyProportionalOrder
+	| EarningRuleLoyaltyProportionalOrderItems
+	| EarningRuleLoyaltyProportionalCustomer
+	| EarningRuleLoyaltyProportionalCustomEvent

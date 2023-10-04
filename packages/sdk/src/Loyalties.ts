@@ -103,6 +103,32 @@ export class Loyalties {
 		return this.client.delete(`/loyalties/${encode(campaignId)}/earning-rules/${earningRuleId}`)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/get-earning-rule
+	 */
+	public getEarningRule(campaignId: string, earningRuleId: string) {
+		return this.client.get<T.LoyaltiesGetEarningRuleResponseBody>(
+			`/loyalties/${encode(campaignId)}/earning-rules/${encode(earningRuleId)}`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/disable-earning-rule
+	 */
+	public enableEarningRule(campaignId: string, earningRuleId: string) {
+		return this.client.post<T.LoyaltiesEnableEarningRulesResponseBody>(
+			`/loyalties/${encode(campaignId)}/earning-rules/${earningRuleId}/enable`,
+			{},
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/disable-earning-rule
+	 */
+	public disableEarningRule(campaignId: string, earningRuleId: string) {
+		return this.client.post<T.LoyaltiesDisableEarningRulesResponseBody>(
+			`/loyalties/${encode(campaignId)}/earning-rules/${earningRuleId}/disable`,
+			{},
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/list-members
 	 */
 	public listMembers(campaignId: string, params?: T.LoyaltiesListMembersParams) {
