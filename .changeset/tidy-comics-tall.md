@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': major
+'@voucherify/sdk': minor
 ---
 
 Add support for 3 missing endpoints in loyalties api. Corrected a typo in one of loyalties api method.
