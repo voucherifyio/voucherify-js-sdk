@@ -48,7 +48,7 @@ describe('Loyalties API', () => {
 	})
 
 	it('Should list members activities', async () => {
-		const memberCardTransactions = await client.loyalties.listLoyaltyCardTransactions(loyaltiesMember.code)
+		const memberCardTransactions = await client.loyalties.listCardTransactions(loyaltiesMember.code, null)
 		expect(memberCardTransactions).toEqual({
 			object: 'list',
 			data_ref: 'data',
