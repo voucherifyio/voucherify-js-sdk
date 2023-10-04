@@ -30,7 +30,7 @@ describe('Loyalties API', () => {
 	})
 
 	it('Should add loyalties points to a member previously added', async () => {
-		const response = await client.loyalties.addOrRemoveLoyaltyCardBalance(
+		const response = await client.loyalties.addOrRemoveCardBalance(
 			loyaltiesMember.code,
 			{ points: addPoints },
 			loyaltyCampaign.id,

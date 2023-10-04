@@ -966,18 +966,17 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
-- [Get Loyalty Program Member Without CampaignId](#get-loyalty-program-member-without-campaignid)
+- [Get Loyalty Program Member By Id](#get-loyalty-program-member-by-id)
 - [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
 - [Get Loyalty Program Member Activities Without CampaignId](#get-loyalty-program-member-activities-without-campaignid)
 - [Add Or Remove Loyalty Card Balance](#add-or-remove-loyalty-card-balance)
+- [[Deprecated] Add Loyalty Card Balance](#add-loyalty-card-balance)
 - [Transfer Loyalty Points](#transfer-loyalty-points)
 - [Get Loyalty Points Expiration](#get-loyalty-points-expiration)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Loyalty Card Transactions](#list-loyalty-card-transactions)
-- [List Loyalty Card Transactions With CampaignId](#list-loyalty-card-transactions-with-campaignid)
 - [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
-- [Export Loyalty Card Transactions With CampaignId](#export-loyalty-card-transactions-with-campaignid)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1066,16 +1065,16 @@ client.loyalties.listEarningRules(campaignId, params)
 client.loyalties.createMember(campaignId, member)
 ```
 
-#### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
+#### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member-1)
 
 ```javascript
 client.loyalties.getMember(campaignId, memberId)
 ```
 
-#### [Get Loyalty Program Member Without CampaignId](https://docs.voucherify.io/reference/get-member-1)
+#### [Get Loyalty Program Member By Id](https://docs.voucherify.io/reference/get-member)
 
 ```javascript
-client.loyalties.getMemberWithoutCampaignId(campaignId, memberId)
+client.loyalties.getMemberById(campaignId, memberId)
 ```
 
 #### [List Loyalty Program Members](https://docs.voucherify.io/reference/list-members)
@@ -1114,7 +1113,15 @@ client.loyalties.listMemberRewards(memberId, params)
 #### [Add Or Remove Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1)
 
 ```javascript
-client.loyalties.addOrRemoveLoyaltyCardBalance(memberId, balance, campaignId)
+client.loyalties.addOrRemoveCardBalance(memberId, balance, campaignId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
+
+```javascript
+client.loyalties.addPoints(campaignId, memberId, balance)
 ```
 
 `memberId` referrers to Loyalty Card code.
