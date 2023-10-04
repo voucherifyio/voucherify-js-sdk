@@ -517,16 +517,6 @@ export type LoyaltiesDisableEarningRulesResponseBody = EarningRuleBase & {
 }
 
 // Domain types
-
-export type EarningRuleEvent =
-	| 'order.paid'
-	| 'customer.segment.entered'
-	| 'custom_event'
-	| 'customer.loyalty.tier.upgraded'
-	| 'customer.loyalty.tier.downgraded'
-	| 'customer.loyalty.tier.prolonged'
-	| 'customer.loyalty.tier.joined'
-	| 'customer.loyalty.tier.left'
 export interface EarningRuleBase {
 	id: string
 	created_at: string
@@ -557,6 +547,16 @@ export interface EarningRuleBase {
 	validity_day_of_week?: number[]
 	metadata: Record<string, any>
 }
+
+export type EarningRuleEvent =
+	| 'order.paid'
+	| 'customer.segment.entered'
+	| 'custom_event'
+	| 'customer.loyalty.tier.upgraded'
+	| 'customer.loyalty.tier.downgraded'
+	| 'customer.loyalty.tier.prolonged'
+	| 'customer.loyalty.tier.joined'
+	| 'customer.loyalty.tier.left'
 
 export interface EarningRuleLoyaltyFixed {
 	type: 'FIXED'
