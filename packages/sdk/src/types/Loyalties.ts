@@ -306,8 +306,6 @@ export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
 
 export type LoyaltiesGetMemberResponse = LoyaltiesCreateMemberResponse
 
-export type LoyaltiesTransferPointsResponse = LoyaltiesVoucherResponse
-
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
 	data_ref: 'activities'
@@ -504,6 +502,8 @@ export interface LoyaltyPointsTransfer {
 
 // 0-level types
 
+export type LoyaltiesTransferPointsResponseBody = LoyaltiesVoucherResponse
+
 export type LoyaltiesTransferPointsRequestBody = LoyaltiesTransferPoints[]
 
 export interface LoyaltiesListMemberRewardsRequestQuery {
@@ -551,11 +551,57 @@ export interface LoyaltiesListCardTransactionsRequestQuery {
 export interface LoyaltiesListCardTransactionsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: LoyaltyCardTransactionsResponse[]
+	data: LoyaltyCardTransaction[]
 	has_more: boolean
 }
 
-export interface LoyaltyCardTransactionsResponse {
+export interface LoyaltiesExportCardTransactionsRequestQuery {
+	order?: 'created_at' | '-created_at'
+	fields?: LoyaltyCardTransactionsFields[]
+}
+
+export interface LoyaltiesExportCardTransactionsResponseBody {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED'
+	channel: string
+	exported_object: 'voucher_transactions'
+	parameters: {
+		order?: string
+		fields?: LoyaltyCardTransactionsFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string] //memberId
+				}
+			}
+		}
+	}
+	result: null
+	user_id: null | string
+}
+
+export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
+	points: number
+}
+
+export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
+	points: number
+	total: number
+	balance: number
+	type: string // LOYALTY_CARD | GIFT_VOUCHER
+	object: 'balance'
+	related_object?: {
+		type?: string // always "voucher"
+		id?: string
+	}
+	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
+}
+
+// domain types
+
+export interface LoyaltyCardTransaction {
 	id: string
 	source_id: string | null
 	voucher_id: string
@@ -621,52 +667,6 @@ export interface LoyaltyCardTransactionsResponse {
 	related_transaction_id: string | null
 	created_at: string
 }
-
-export interface LoyaltiesExportCardTransactionsRequestQuery {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
-
-export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
-	points: number
-}
-
-export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
-	points: number
-	total: number
-	balance: number
-	type: string // LOYALTY_CARD | GIFT_VOUCHER
-	object: 'balance'
-	related_object?: {
-		type?: string // always "voucher"
-		id?: string
-	}
-	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
-}
-
-// domain types
 
 export interface SimpleLoyaltyVoucher {
 	id: string

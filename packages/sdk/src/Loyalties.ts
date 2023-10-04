@@ -3,12 +3,6 @@ import * as T from './types/Loyalties'
 import { encode, omit } from './helpers'
 
 import type { RequestController } from './RequestController'
-import {
-	LoyaltiesAddOrRemoveCardBalanceResponseBody,
-	LoyaltiesAddPoints,
-	LoyaltiesTransferPoints,
-	LoyaltiesTransferPointsRequestBody,
-} from './types/Loyalties'
 
 export class Loyalties {
 	constructor(private client: RequestController) {}
@@ -182,7 +176,7 @@ export class Loyalties {
 		memberId: string,
 		loyaltiesTransferPoints: T.LoyaltiesTransferPointsRequestBody,
 	) {
-		return this.client.post<T.LoyaltiesTransferPointsResponse>(
+		return this.client.post<T.LoyaltiesTransferPointsResponseBody>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
 			loyaltiesTransferPoints,
 		)
