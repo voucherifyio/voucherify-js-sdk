@@ -145,6 +145,6 @@ describe('Product Collections API', () => {
 			},
 		})
 		console.log(newCollection)
-		console.log(await client.productCollections.listProductsInCollection(newCollection.id))
+		console.log(await client.productCollections.listProducts(newCollection.id))
 	})
 })
