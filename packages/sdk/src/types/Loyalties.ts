@@ -173,6 +173,15 @@ export interface LoyaltyFixed {
 
 export interface LoyaltyProportional {
 	type: 'PROPORTIONAL'
+	calculation_type?:
+		| 'ORDER_AMOUNT'
+		| 'ORDER_TOTAL_AMOUNT'
+		| 'ORDER_METADATA'
+		| 'ORDER_ITEMS_QUANTITY'
+		| 'ORDER_ITEMS_AMOUNT'
+		| 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
+		| 'CUSTOMER_METADATA'
+		| 'CUSTOM_EVENT_METADATA'
 	order?: {
 		amount: {
 			every: number
