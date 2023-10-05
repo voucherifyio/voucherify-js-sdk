@@ -540,7 +540,7 @@ export interface EarningRuleBase {
 	source: {
 		banner?: string
 		object_id: string
-		object_type: string
+		object_type: 'campaign'
 	}
 	loyalty_tier?: {
 		id: string
@@ -614,7 +614,7 @@ export interface EarningRuleProportionalOrderMetadata {
 export type EarningRuleProportional =
 	| EarningRuleProportionalOrder
 	| EarningRuleProportionalOrderItems
-	| EarningRuleProportionalCustomer
+	| EarningRuleProportionalCustomerMetadata
 	| EarningRuleProportionalCustomEvent
 
 export type EarningRuleProportionalOrderItems =
@@ -626,7 +626,7 @@ export interface EarningRuleProportionalOrderItemsQuantity {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_QUANTITY'
 	order_items: {
-		quantity: { every: number; points: number; object: string; id: string }
+		quantity: { every: number; points: number; object: `products_collection` | `product` | `sku`; id: string }
 	}
 }
 
@@ -634,7 +634,7 @@ export interface EarningRuleProportionalOrderItemsAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_AMOUNT'
 	order_items: {
-		amount: { every: number; points: number; object: string; id: string }
+		amount: { every: number; points: number; object: `products_collection` | `product` | `sku`; id: string }
 	}
 }
 
@@ -642,11 +642,11 @@ export interface EarningRuleProportionalOrderItemsSubtotalAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
 	order_items: {
-		subtotal_amount: { every: number; points: number; object: string; id: string }
+		subtotal_amount: { every: number; points: number; object: `products_collection` | `product` | `sku`; id: string }
 	}
 }
 
-export interface EarningRuleProportionalCustomer {
+export interface EarningRuleProportionalCustomerMetadata {
 	type: 'PROPORTIONAL'
 	calculation_type: 'CUSTOMER_METADATA'
 	customer: {
