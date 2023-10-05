@@ -529,7 +529,7 @@ export type LoyaltiesDisableEarningRulesResponseBody = EarningRuleBase & {
 export interface EarningRuleBase {
 	id: string
 	created_at: string
-	loyalty: EarningRuleLoyaltyFixed | EarningRuleLoyaltyProportional
+	loyalty: EarningRuleFixed | EarningRuleProportional
 	event?: EarningRuleEvent
 	custom_event?: {
 		schema_id: string
@@ -567,17 +567,17 @@ export type EarningRuleEvent =
 	| 'customer.loyalty.tier.joined'
 	| 'customer.loyalty.tier.left'
 
-export interface EarningRuleLoyaltyFixed {
+export interface EarningRuleFixed {
 	type: 'FIXED'
 	points: number
 }
 
-export type EarningRuleLoyaltyProportionalOrder =
-	| EarningRuleLoyaltyProportionalOrderAmount
-	| EarningRuleLoyaltyProportionalOrderTotalAmount
-	| EarningRuleLoyaltyProportionalOrderMetadata
+export type EarningRuleProportionalOrder =
+	| EarningRuleProportionalOrderAmount
+	| EarningRuleProportionalOrderTotalAmount
+	| EarningRuleProportionalOrderMetadata
 
-export interface EarningRuleLoyaltyProportionalOrderAmount {
+export interface EarningRuleProportionalOrderAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_AMOUNT'
 	order: {
@@ -588,7 +588,7 @@ export interface EarningRuleLoyaltyProportionalOrderAmount {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalOrderTotalAmount {
+export interface EarningRuleProportionalOrderTotalAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_TOTAL_AMOUNT'
 	order: {
@@ -599,7 +599,7 @@ export interface EarningRuleLoyaltyProportionalOrderTotalAmount {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalOrderMetadata {
+export interface EarningRuleProportionalOrderMetadata {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_METADATA'
 	order: {
@@ -611,12 +611,18 @@ export interface EarningRuleLoyaltyProportionalOrderMetadata {
 	}
 }
 
-export type EarningRuleLoyaltyProportionalOrderItems =
-	| EarningRuleLoyaltyProportionalOrderItemsQuantity
-	| EarningRuleLoyaltyProportionalOrderItemsAmount
-	| EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount
+export type EarningRuleProportional =
+	| EarningRuleProportionalOrder
+	| EarningRuleProportionalOrderItems
+	| EarningRuleProportionalCustomer
+	| EarningRuleProportionalCustomEvent
 
-export interface EarningRuleLoyaltyProportionalOrderItemsQuantity {
+export type EarningRuleProportionalOrderItems =
+	| EarningRuleProportionalOrderItemsQuantity
+	| EarningRuleProportionalOrderItemsAmount
+	| EarningRuleProportionalOrderItemsSubtotalAmount
+
+export interface EarningRuleProportionalOrderItemsQuantity {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_QUANTITY'
 	order_items: {
@@ -624,7 +630,7 @@ export interface EarningRuleLoyaltyProportionalOrderItemsQuantity {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalOrderItemsAmount {
+export interface EarningRuleProportionalOrderItemsAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_AMOUNT'
 	order_items: {
@@ -632,7 +638,7 @@ export interface EarningRuleLoyaltyProportionalOrderItemsAmount {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount {
+export interface EarningRuleProportionalOrderItemsSubtotalAmount {
 	type: 'PROPORTIONAL'
 	calculation_type: 'ORDER_ITEMS_SUBTOTAL_AMOUNT'
 	order_items: {
@@ -640,7 +646,7 @@ export interface EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalCustomer {
+export interface EarningRuleProportionalCustomer {
 	type: 'PROPORTIONAL'
 	calculation_type: 'CUSTOMER_METADATA'
 	customer: {
@@ -652,7 +658,7 @@ export interface EarningRuleLoyaltyProportionalCustomer {
 	}
 }
 
-export interface EarningRuleLoyaltyProportionalCustomEvent {
+export interface EarningRuleProportionalCustomEvent {
 	type: 'PROPORTIONAL'
 	calculation_type: 'CUSTOM_EVENT_METADATA'
 	custom_event: {
@@ -663,9 +669,3 @@ export interface EarningRuleLoyaltyProportionalCustomEvent {
 		}
 	}
 }
-
-export type EarningRuleLoyaltyProportional =
-	| EarningRuleLoyaltyProportionalOrder
-	| EarningRuleLoyaltyProportionalOrderItems
-	| EarningRuleLoyaltyProportionalCustomer
-	| EarningRuleLoyaltyProportionalCustomEvent
