@@ -153,7 +153,7 @@ export type Reward = {
 	object: 'reward'
 } & RewardType
 
-interface RewardTypeCampaign {
+export interface RewardTypeCampaign {
 	type: 'CAMPAIGN'
 	parameters: {
 		campaign: {
@@ -164,7 +164,7 @@ interface RewardTypeCampaign {
 	}
 }
 
-interface RewardTypeCoin {
+export interface RewardTypeCoin {
 	type: 'COIN'
 	parameters: {
 		coin: {
@@ -174,7 +174,7 @@ interface RewardTypeCoin {
 	}
 }
 
-interface RewardTypeMaterial {
+export interface RewardTypeMaterial {
 	type: 'MATERIAL'
 	parameters: {
 		product: {
