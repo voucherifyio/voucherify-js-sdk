@@ -136,3 +136,67 @@ export interface RewardRedemptionParams {
 	assignment_id?: string
 	id?: string
 }
+
+// domain types
+
+export type Reward = {
+	id: string
+	name?: string
+	stock?: string
+	redeemed?: string
+	attributes?: {
+		image_url?: string
+		description?: string
+	}
+	created_at: string
+	updated_at?: string
+	object: 'reward'
+} & RewardType
+
+interface RewardTypeCampaign {
+	type: 'CAMPAIGN'
+	parameters: {
+		campaign: {
+			id: string
+			balance?: number
+			type: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+		}
+	}
+}
+
+interface RewardTypeCoin {
+	type: 'COIN'
+	parameters: {
+		coin: {
+			exchange_ratio: number
+			points_ratio?: number
+		}
+	}
+}
+
+interface RewardTypeMaterial {
+	type: 'MATERIAL'
+	parameters: {
+		product: {
+			id: string
+			sku: string | null
+		}
+	}
+}
+
+export type RewardType = RewardTypeCampaign | RewardTypeCoin | RewardTypeMaterial
+
+export interface RewardAssignment {
+	id: string
+	reward_id: string
+	related_object_id?: string
+	related_object_type?: string
+	parameters?: {
+		loyalty?: {
+			points: number
+		}
+	}
+	created_at: string
+	updated_at?: string
+	object: 'reward_assignment'
+}

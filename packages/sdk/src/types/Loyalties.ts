@@ -4,7 +4,7 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
-import { RewardsAssignmentObject, RewardsGetResponse } from './Rewards'
+import { Reward, RewardAssignment } from './Rewards'
 
 // Legacy code
 interface LoyaltiesVoucher {
@@ -502,7 +502,47 @@ export interface LoyaltyPointsTransfer {
 
 // 0-level types
 
-export type LoyaltiesTransferPointsResponseBody = LoyaltiesVoucherResponse
+export type LoyaltiesTransferPointsResponseBody = {
+	id: string
+	code: string
+	campaign: string
+	campaign_id: string
+	category: string | null
+	category_id: string | null
+	type: 'LOYALTY_CARD'
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: number
+	}
+	start_date: string | null
+	expiration_date: string | null
+	validity_timeframe: {
+		interval?: string
+		duration?: string
+	} | null
+	validity_day_of_week: number[] | null
+	publish?: {
+		object: 'list'
+		count?: number
+		entries?: string[]
+	}
+	redemption?: {
+		quantity: number | null
+		redeemed_points?: number
+		redeemed_quantity?: number
+		redemption_entries?: string[]
+		object?: 'list'
+		url?: string
+	}
+	active: boolean
+	additional_info: string | null
+	metadata: Record<string, any>
+	is_referral_code: boolean
+	holder_id?: string
+	updated_at?: string
+}
 
 export type LoyaltiesTransferPointsRequestBody = LoyaltiesTransferPoints[]
 
@@ -515,7 +555,7 @@ export interface LoyaltiesListMemberRewardsRequestQuery {
 export interface LoyaltiesListMemberRewardsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: { reward: RewardsGetResponse; assignment: RewardsAssignmentObject; object: 'loyalty_reward' }[]
+	data: { reward: Reward; assignment: RewardAssignment; object: 'loyalty_reward' }[]
 	total: number
 }
 
