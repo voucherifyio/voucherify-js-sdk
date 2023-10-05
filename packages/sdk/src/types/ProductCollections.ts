@@ -1,3 +1,5 @@
+import { WithRequiredProperty } from './UtilityTypes'
+
 // Domain types
 // Product
 export interface ProductIdentity {
