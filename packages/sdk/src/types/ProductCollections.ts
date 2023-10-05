@@ -1,6 +1,5 @@
 // Domain types
 // Product
-
 export interface ProductIdentity {
 	id?: string
 }
@@ -77,7 +76,6 @@ export interface DynamicProductCollectionBase {
 	filter?: Filter
 }
 
-// Filter - consider creating a new file: Filters.ts
 export type Filter = {
 	junction: Junction
 } & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, any>> }>>

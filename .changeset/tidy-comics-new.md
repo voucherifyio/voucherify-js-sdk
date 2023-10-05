@@ -2,7 +2,7 @@
 '@voucherify/sdk': minor
 ---
 
-Add missing methods covering Product Collections API.
+Added missing methods covering Product Collections API.
 -  Added support for new endpoints: 
   - `GET POST /product-collections`, 
   - `GET DELETE /product-collections/{productCollectionId}`,
