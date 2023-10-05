@@ -111,7 +111,7 @@ export class Loyalties {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/disable-earning-rule
+	 * @see https://docs.voucherify.io/reference/enable-earning-rule
 	 */
 	public enableEarningRule(campaignId: string, earningRuleId: string) {
 		return this.client.post<T.LoyaltiesEnableEarningRulesResponseBody>(
