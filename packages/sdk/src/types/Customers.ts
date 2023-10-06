@@ -148,7 +148,7 @@ type CustomerBase = {
 	email?: string | null
 	phone?: string | null
 	birthdate?: string | null
-	metadata?: Record<string, any> | null
+	metadata?: Record<string, unknown> | null
 }
 
 type CustomerAddress = {
@@ -171,7 +171,7 @@ export type CustomersUpdateInBulkRequestBody = (CustomerBase &
 
 export interface CustomersUpdateMetadataInBulkRequestBody {
 	source_ids: string[]
-	metadata: Record<string, any>
+	metadata: Record<string, unknown>
 }
 export interface CustomersDeletePermanentlyResponseBody {
 	id: string
