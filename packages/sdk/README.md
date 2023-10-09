@@ -130,7 +130,7 @@ const client = VoucherifyServerSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
-	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	customHeaders: { "MY_CUSTOM_HEADER": "my_value" }, // optional
 	timeoutMs: 10000 // optional
 })
 ```
@@ -575,7 +575,7 @@ Check [promotion's tier object](https://docs.voucherify.io/reference/the-promoti
 
 ```javascript
 client.promotions.tiers.listAll()
-client.promotions.tiers.listAll(params})
+client.promotions.tiers.listAll(params)
 ```
 
 #### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference/add-promotion-tier-to-campaign)
@@ -612,9 +612,12 @@ Methods are provided within `client.customers.*` namespace.
 - [Get Customer](#get-customer)
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
+- [Delete Customer Permanently](#delete-customer-permanently)
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 - [List Customer's Activities](#list-customers-activities)
+- [Update Customers in bulk](#update-customers-in-bulk)
+- [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 - [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
@@ -643,6 +646,12 @@ client.customers.update(customer)
 
 ```javascript
 client.customers.delete(customerId)
+```
+
+#### [Delete Customer Permanently](https://docs.voucherify.io/reference/delete-customer-permanently)
+
+```javascript
+client.customers.deletePermanently(customerId)
 ```
 
 #### [List Customers](https://docs.voucherify.io/reference/list-customers)
@@ -1006,6 +1015,9 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
 - [Delete Loyalty Program Earning Rule](#delete-loyalty-program-earning-rule)
+- [Get Loyalty Program Earning Rule](#get-loyalty-program-earning-rule)
+- [Enable Loyalty Program Earning Rule](#enable-loyalty-program-earning-rule)
+- [Disable Loyalty Program Earning Rule](#disable-loyalty-program-earning-rule)
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
@@ -1086,6 +1098,24 @@ client.loyalties.updateEarningRule(campaignId, earningRule)
 
 ```javascript
 client.loyalties.deleteEarningRule(campaignId, earningRuleId)
+```
+
+#### [Get Loyalty Program Earning Rule](https://docs.voucherify.io/reference/get-earning-rule)
+
+```javascript
+client.loyalties.getEarningRule(campaignId, earningRuleId)
+```
+
+#### [Enable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/enable-earning-rule)
+
+```javascript
+client.loyalties.enableEarningRule(campaignId, earningRuleId)
+```
+
+#### [Disable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/disable-earning-rule)
+
+```javascript
+client.loyalties.disableEarningRule(campaignId, earningRuleId)
 ```
 
 #### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference/list-earning-rules)
