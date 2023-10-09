@@ -538,7 +538,7 @@ export type LoyaltiesTransferPointsResponseBody = {
 	}
 	active: boolean
 	additional_info: string | null
-	metadata: Record<string, any>
+	metadata: Record<string, unknown>
 	is_referral_code: boolean
 	holder_id?: string
 	updated_at?: string
