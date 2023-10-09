@@ -173,8 +173,8 @@
 <span style="color: #000000">    </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">    </span><span style="color: #001080">apiVersion:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;v2018-08-01&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">    </span><span style="color: #001080">channel:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;e-commerce&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
-<span style="color: #000000">    </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> { </span><span style="color: #A31515">&quot;MY_CUSTOM_HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000"> } </span><span style="color: #008000">// optional</span>
-<span style="color: #000000">    </span><span style="color: #001080">timeoutMs</span><span style="color: #000000">: </span><span style="color: #098658">10000</span><span style="color: #000000"> </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> { </span><span style="color: #A31515">&quot;MY_CUSTOM_HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000"> }, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">timeoutMs:</span><span style="color: #000000"> </span><span style="color: #098658">10000</span><span style="color: #000000"> </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">})</span>
 </code></pre>
 				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
@@ -560,7 +560,7 @@
 					<h4><a href="https://docs.voucherify.io/reference/list-promotion-tiers">List All Promotion Tiers</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">()</span>
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">})</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#add-promotion-tier-to-campaign" id="add-promotion-tier-to-campaign" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/add-promotion-tier-to-campaign">Add Promotion Tier to Campaign</a></h4>
@@ -592,9 +592,12 @@
 					<li><a href="#get-customer">Get Customer</a></li>
 					<li><a href="#update-customer">Update Customer</a></li>
 					<li><a href="#delete-customer">Delete Customer</a></li>
+					<li><a href="#delete-customer-permanently">Delete Customer Permanently</a></li>
 					<li><a href="#list-customers">List Customers</a></li>
 					<li><a href="#update-customers-consents">Update Customer&#39;s Consents</a></li>
 					<li><a href="#list-customers-activities">List Customer&#39;s Activities</a></li>
+					<li><a href="#update-customers-in-bulk">Update Customers in bulk</a></li>
+					<li><a href="#update-customers-metadata-in-bulk">Update Customers&#39; Metadata in bulk</a></li>
 					<li><a href="#import-and-update-customers-using-csv">Import and Update Customers using CSV</a></li>
 				</ul>
 				<a href="#create-customer" id="create-customer" style="color: inherit; text-decoration: none;">
@@ -618,6 +621,11 @@
 					<h4><a href="https://docs.voucherify.io/reference/delete-customer">Delete Customer</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-customer-permanently" id="delete-customer-permanently" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/delete-customer-permanently">Delete Customer Permanently</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">deletePermanently</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-customers" id="list-customers" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-customers">List Customers</a></h4>
@@ -664,6 +672,16 @@
 					<h4><a href="https://docs.voucherify.io/reference/import-customers-using-csv">Import and Update Customers using CSV</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">importCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-customers-in-bulk" id="update-customers-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/update-customers-in-bulk">Update Customers in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateInBulk</span><span style="color: #000000">(</span><span style="color: #001080">customers</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-customers39-metadata-in-bulk" id="update-customers39-metadata-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/update-customers-metadata-in-bulk">Update Customers&#39; Metadata in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateMetadataInBulk</span><span style="color: #000000">(</span><span style="color: #001080">sourceIdsAndMetadata</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
 				<a href="#consents" id="consents" style="color: inherit; text-decoration: none;">
@@ -1527,6 +1545,12 @@
 						<a href="interfaces/CustomersCommonListResponse.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomersDeletePermanentlyResponseBody.html" class="tsd-kind-icon">Customers<wbr>Delete<wbr>Permanently<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomersUpdateMetadataInBulkRequestBody.html" class="tsd-kind-icon">Customers<wbr>Update<wbr>Metadata<wbr>InBulk<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/DiscountAmount.html" class="tsd-kind-icon">Discount<wbr>Amount</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2047,6 +2071,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#CustomersUpdateConsentsBody" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomersUpdateInBulkRequestBody" class="tsd-kind-icon">Customers<wbr>Update<wbr>InBulk<wbr>Request<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#CustomersUpdateParams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Params</a>
