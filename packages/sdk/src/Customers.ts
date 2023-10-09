@@ -76,10 +76,31 @@ class Customers {
 		return this.client.put<T.CustomersUpdateResponse>(`/customers/${encode(id)}`, customerWithoutId)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/update-customers-in-bulk
+	 */
+	public updateInBulk(customers: T.CustomersUpdateInBulkRequestBody) {
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/bulk/async`, customers)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/update-customers-metadata-in-bulk
+	 */
+	public updateMetadataInBulk(sourceIdsAndMetadata: T.CustomersUpdateMetadataInBulkRequestBody) {
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/metadata/async`, sourceIdsAndMetadata)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/delete-customer
 	 */
 	public delete(customerId: string) {
 		return this.client.delete<undefined>(`/customers/${encode(customerId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/delete-customer-permanently
+	 */
+	public deletePermanently(customerId: string) {
+		return this.client.post<T.CustomersDeletePermanentlyResponseBody>(
+			`/customers/${encode(customerId)}/permanent-deletion`,
+			{},
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-customers-consents
