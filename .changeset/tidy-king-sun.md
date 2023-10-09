@@ -1,5 +1,5 @@
 ---
-'@voucherify/sdk': major
+'@voucherify/sdk': minor
 ---
 
 Add support for endpoint `GET /exports`.
