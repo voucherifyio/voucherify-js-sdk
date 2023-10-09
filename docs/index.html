@@ -910,6 +910,9 @@
 					<li><a href="#create-loyalty-program-earning-rules">Create Loyalty Program Earning Rules</a></li>
 					<li><a href="#update-loyalty-program-earning-rule">Update Loyalty Program Earning Rule</a></li>
 					<li><a href="#delete-loyalty-program-earning-rule">Delete Loyalty Program Earning Rule</a></li>
+					<li><a href="#get-loyalty-program-earning-rule">Get Loyalty Program Earning Rule</a></li>
+					<li><a href="#enable-loyalty-program-earning-rule">Enable Loyalty Program Earning Rule</a></li>
+					<li><a href="#disable-loyalty-program-earning-rule">Disable Loyalty Program Earning Rule</a></li>
 					<li><a href="#list-loyalty-program-earning-rules">List Loyalty Program Earning Rules</a></li>
 					<li><a href="#create-loyalty-program-member">Create Loyalty Program Member</a></li>
 					<li><a href="#get-loyalty-program-member">Get Loyalty Program Member</a></li>
@@ -979,6 +982,21 @@
 					<h4><a href="https://docs.voucherify.io/reference/delete-earning-rule">Delete Loyalty Program Earning Rule</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">deleteEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-loyalty-program-earning-rule" id="get-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-earning-rule">Get Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#enable-loyalty-program-earning-rule" id="enable-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/enable-earning-rule">Enable Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">enableEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#disable-loyalty-program-earning-rule" id="disable-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/disable-earning-rule">Disable Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">disableEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-loyalty-program-earning-rules" id="list-loyalty-program-earning-rules" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-earning-rules">List Loyalty Program Earning Rules</a></h4>
@@ -1575,6 +1593,36 @@
 						<a href="interfaces/DistributionsPublicationsListResponse.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleBase.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleFixed.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Fixed</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalCustomEvent.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Custom<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalCustomerMetadata.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Customer<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsQuantity.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsSubtotalAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Subtotal<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderMetadata.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderTotalAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Total<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/EventsParams.html" class="tsd-kind-icon">Events<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2100,6 +2148,18 @@
 						<a href="modules.html#DiscountVouchersTypes" class="tsd-kind-icon">Discount<wbr>Vouchers<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleEvent" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportional" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportionalOrder" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportionalOrderItems" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ExportsGetResponse" class="tsd-kind-icon">Exports<wbr>Get<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2109,7 +2169,16 @@
 						<a href="modules.html#LoyaltiesCreateMemberResponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Member<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesDisableEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>Disable<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesEnableEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>Enable<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesGetCampaignResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Campaign<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesGetEarningRuleResponseBody" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Earning<wbr>Rule<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesGetMemberResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Response</a>
