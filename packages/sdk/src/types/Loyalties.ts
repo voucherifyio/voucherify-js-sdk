@@ -624,22 +624,29 @@ export interface LoyaltiesExportCardTransactionsResponseBody {
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
+	expiration_date?: string //ISO-8601
+	expiration_type?: PointsExpirationTypes
+	reason?: string
+	source_id?: string
 }
 
 export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
-	points: number
+	points?: number
+	amount?: number
 	total: number
 	balance: number
 	type: string // LOYALTY_CARD | GIFT_VOUCHER
 	object: 'balance'
-	related_object?: {
-		type?: string // always "voucher"
-		id?: string
+	related_object: {
+		type: 'voucher'
+		id: string
 	}
 	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
 }
 
 // domain types
+
+export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
 
 export interface LoyaltyCardTransaction {
 	id: string
