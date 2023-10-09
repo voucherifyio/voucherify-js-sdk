@@ -4,11 +4,13 @@ import { WithRequiredProperty } from './UtilityTypes'
 // Product
 export interface ProductIdentity {
 	id?: string
+	object?: 'product'
 }
 
 export interface SkuIdentity {
 	id?: string
 	product_id?: string
+	object?: 'sku'
 }
 
 export interface ProductBase {
