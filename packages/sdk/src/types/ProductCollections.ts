@@ -17,14 +17,14 @@ export interface ProductBase {
 	name?: string | null
 	price?: number | null
 	attributes?: string[]
-	metadata?: Record<string, any>
+	metadata?: Record<string, unknown>
 }
 
 export interface SkuBase {
 	sku?: string | null
 	price?: number | null
-	attributes?: Record<string, any>
-	metadata?: Record<string, any>
+	attributes?: Record<string, unknown>
+	metadata?: Record<string, unknown>
 	product?: ProductInCollectionItem
 	image_url?: string | null
 }
@@ -82,7 +82,7 @@ export interface DynamicProductCollectionBase {
 
 export type Filter = {
 	junction: Junction
-} & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, any>> }>>
+} & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, unknown>> }>>
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
 
