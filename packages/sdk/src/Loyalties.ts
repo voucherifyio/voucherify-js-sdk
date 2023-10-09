@@ -226,7 +226,7 @@ export class Loyalties {
 	public exportCardTransactions(
 		memberId: string,
 		campaignId: string | null,
-		params: T.LoyaltiesExportCardTransactionsRequestQuery = {},
+		params: T.LoyaltiesExportCardTransactionsRequestBody = {},
 	) {
 		return this.client.post<T.LoyaltiesExportCardTransactionsResponseBody>(
 			campaignId

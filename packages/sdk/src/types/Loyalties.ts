@@ -595,7 +595,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestQuery {
+export interface LoyaltiesExportCardTransactionsRequestBody {
 	order?: 'created_at' | '-created_at'
 	fields?: LoyaltyCardTransactionsFields[]
 }
