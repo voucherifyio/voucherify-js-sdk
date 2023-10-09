@@ -876,6 +876,10 @@ client.products.importCSV(filePath)
 Methods are provided within `client.productCollections.*` namespace.
 
 - [List Product Collections](#list-product-collections)
+- [Create Product Collections](#create-product-collection)
+- [Get Product Collection](#get-product-collection)
+- [Delete Product Collection](#delete-product-collection)
+- [List Products in Collection](#list-products-in-collection)
 
 #### [List Product Collections](https://docs.voucherify.io/reference/list-product-collections)
 
@@ -902,7 +906,7 @@ client.productCollections.delete(productCollectionId)
 ```
 
 
-#### [List Products Collection](https://docs.voucherify.io/reference/list-products-in-collection)
+#### [List Products in Collection](https://docs.voucherify.io/reference/list-products-in-collection)
 
 ```javascript
 client.productCollections.listProducts(productCollectionId)
