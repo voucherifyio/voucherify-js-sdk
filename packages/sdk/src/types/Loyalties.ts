@@ -554,7 +554,7 @@ export interface EarningRuleBase {
 		interval: string
 	}
 	validity_day_of_week?: number[]
-	metadata: Record<string, any>
+	metadata: Record<string, unknown>
 }
 
 export type EarningRuleEvent =
