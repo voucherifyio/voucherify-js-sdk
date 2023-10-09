@@ -130,7 +130,7 @@ const client = VoucherifyServerSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
-	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	customHeaders: { "MY_CUSTOM_HEADER": "my_value" }, // optional
 	timeoutMs: 10000 // optional
 })
 ```
@@ -574,7 +574,7 @@ Check [promotion's tier object](https://docs.voucherify.io/reference/the-promoti
 
 ```javascript
 client.promotions.tiers.listAll()
-client.promotions.tiers.listAll(params})
+client.promotions.tiers.listAll(params)
 ```
 
 #### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference/add-promotion-tier-to-campaign)
@@ -611,9 +611,12 @@ Methods are provided within `client.customers.*` namespace.
 - [Get Customer](#get-customer)
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
+- [Delete Customer Permanently](#delete-customer-permanently)
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 - [List Customer's Activities](#list-customers-activities)
+- [Update Customers in bulk](#update-customers-in-bulk)
+- [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 - [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
@@ -642,6 +645,12 @@ client.customers.update(customer)
 
 ```javascript
 client.customers.delete(customerId)
+```
+
+#### [Delete Customer Permanently](https://docs.voucherify.io/reference/delete-customer-permanently)
+
+```javascript
+client.customers.deletePermanently(customerId)
 ```
 
 #### [List Customers](https://docs.voucherify.io/reference/list-customers)
@@ -700,6 +709,18 @@ client.customers.listActivities(customerId, params)
 
 ```javascript
 client.customers.importCSV(filePath)
+```
+
+#### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
+
+```javascript
+client.customers.updateInBulk(customers)
+```
+
+#### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
+
+```javascript
+client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
 ```
 
 ---
