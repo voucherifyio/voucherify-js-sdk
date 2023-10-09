@@ -1,3 +1,5 @@
+import { DeepReadonly } from 'utility-types'
+
 export interface ExportResource {
 	exported_object: 'voucher' | 'redemption' | 'publication' | 'customer'
 	parameters?: {
@@ -30,3 +32,10 @@ export interface ExportsCreateResponse {
 }
 
 export type ExportsGetResponse = ExportsCreateResponse
+
+// 0-level types
+
+export type ExportsListRequestQuery = {}
+export type ExportsListResponseBody = {}
+
+// domain types
