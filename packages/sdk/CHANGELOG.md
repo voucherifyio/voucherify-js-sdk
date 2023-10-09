@@ -1,5 +1,27 @@
 # @voucherify/sdk
 
+## 2.4.0
+
+### Minor Changes
+
+- [`b11ce2c`](https://github.com/voucherifyio/voucherify-js-sdk/commit/b11ce2c6410c7441bd48fbbf33377b98c77af072) [#241](https://github.com/voucherifyio/voucherify-js-sdk/pull/241) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Add support for 3 missing endpoints in loyalties api. Corrected a typo in one of loyalties api method.
+  - Added support for new endpoints: `GET /loyalties/{campaignId}/earning-rules/{earningRuleId}`, `POST /loyalties/{campaignId}/earning-rules/{earningRuleId}/enable` and `POST /loyalties/{campaignId}/earning-rules/{earningRuleId}/disable` [(examples available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces: `LoyaltiesGetEarningRuleResponseBody`, `LoyaltiesEnableEarningRulesResponseBody`, `LoyaltiesDisableEarningRulesResponseBody`, `EarningRuleEvent`, `EarningRuleBase`, `EarningRuleLoyaltyFixed`, `EarningRuleLoyaltyProportionalOrder`, `EarningRuleLoyaltyProportionalOrderAmount`, `EarningRuleLoyaltyProportionalOrderTotalAmount`, `EarningRuleLoyaltyProportionalOrderMetadata`, `EarningRuleLoyaltyProportionalOrderItems`, `EarningRuleLoyaltyProportionalOrderItemsQuantity`, `EarningRuleLoyaltyProportionalOrderItemsAmount`, `EarningRuleLoyaltyProportionalOrderItemsSubtotalAmount`, `EarningRuleLoyaltyProportionalCustomerMetadata`, `EarningRuleLoyaltyProportionalCustomEvent`, `EarningRuleLoyaltyProportional`
+  - Added optional parameter `calculation_type` to `LoyaltyProportional`
+
+* [`5bb69da`](https://github.com/voucherifyio/voucherify-js-sdk/commit/5bb69daf95c1e16c48eb5070149b88f11bfe1a30) [#229](https://github.com/voucherifyio/voucherify-js-sdk/pull/229) Thanks [@marcin-slezak](https://github.com/marcin-slezak)! - Add missing methods covering Customers API.
+  - Added support for new endpoints:
+    - `POST /customers/{customerId}/permanent-deletion`,
+    - `POST /customers/bulk/async`,
+    - `POST /customers/metadata/async` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New domain types:
+    - `CustomerBase`
+    - `CustomerAddress`
+  - New exported types/interfaces:
+    - `CustomersUpdateInBulkRequestBody`,
+    - `CustomersUpdateMetadataInBulkRequestBody`,
+    - `CustomersDeletePermanentlyResponseBody`
+
 ## 2.3.0
 
 ### Minor Changes
