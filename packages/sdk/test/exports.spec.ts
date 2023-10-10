@@ -47,7 +47,7 @@ describe('Exports API', () => {
 		if (!justExported.parameters.filters) {
 			return
 		}
-		expect(justExported as ExportResourceResponse).toMatchObject({
+		expect(justExported).toMatchObject({
 			id: expect.stringMatching(/^exp-*/),
 			object: 'export',
 			created_at: expect.stringMatching(isoRegex),
