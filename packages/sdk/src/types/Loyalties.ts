@@ -5,7 +5,12 @@ import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
 
-import { RewardsAssignmentObject } from './Rewards'
+import {
+	RewardAssignment,
+	RewardAssignmentBase,
+	RewardAssignmentIdentity,
+	RewardAssignmentResponseData,
+} from './Rewards'
 
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -500,72 +505,86 @@ export interface LoyaltyPointsTransfer {
 	points: number
 }
 
-export type GetRewardAssignmentsResponse = RewardsAssignmentObject
-
-export interface ListLoyaltyTierRewardsResponse {
-	object: 'list'
-	data_ref: 'data'
-	data: LoyaltyTierRewardObject[]
-	total: number
+//Domain types
+// Loyalty Tier Reward
+export interface LoyaltyTierReward {
+	reward?: LoyaltyTierRewardItem
+	assignment?: RewardAssignment
+	object?: 'loyalty_tier_reward'
 }
 
-export interface LoyaltyTierRewardObject {
-	reward: LoyaltyTierRewardRewardObject
-	assignment: RewardsAssignmentObject
-	object: 'loyalty_tier_reward'
+// Reward Item
+export interface LoyaltyTierRewardItemIdentity {
+	id?: string
 }
 
-export type LoyaltyTierRewardRewardObject = LoyaltyTierRewardRewardObjectCommon &
-	(LoyaltyTierRewardRewardCampaignObject | LoyaltyTierRewardRewardCoinObject | LoyaltyTierRewardRewardMaterialObject)
-
-export interface LoyaltyTierRewardRewardObjectCommon {
-	id: string
-	name: string | null
-	redeemed: number | null
-	stock: number | null
+export interface LoyaltyTierRewardItemBase {
+	name?: string
+	stock?: number | null
+	redeemed?: number | null
 	attributes?: {
 		image_url?: string
 		description?: string
 	}
-	created_at: string
-	updated_at: string | null
-	metadata: Record<string, any>
-	object: 'reward'
+	metadata?: Record<string, undefined>
 }
 
-export interface LoyaltyTierRewardRewardCampaignObject {
-	type: 'CAMPAIGN'
-	parameters: {
-		campaign: RewardParametersCampaign
+export interface LoyaltyTierRewardItemResponseData {
+	created_at?: string
+	updated_at?: string | null
+	object?: 'reward'
+}
+
+export type LoyaltyTierRewardItem = LoyaltyTierRewardItemParameters &
+	Required<LoyaltyTierRewardItemIdentity> &
+	Required<LoyaltyTierRewardItemResponseData> &
+	Required<LoyaltyTierRewardItemBase>
+
+export type LoyaltyTierRewardItemParameters =
+	| Required<LoyaltyTierRewardItemCampaignParameters>
+	| Required<LoyaltyTierRewardItemCoinParameters>
+	| Required<LoyaltyTierRewardItemMaterialParameters>
+
+export interface LoyaltyTierRewardItemCampaignParameters {
+	type?: 'CAMPAIGN'
+	parameters?: {
+		campaign: {
+			id: string
+			balance?: number
+			type: string
+		}
 	}
 }
 
-export interface LoyaltyTierRewardRewardCoinObject {
-	type: 'COIN'
-	parameters: {
-		coin: RewardParametersCoin
+export interface LoyaltyTierRewardItemCoinParameters {
+	type?: 'COIN'
+	parameters?: {
+		coin: {
+			exchange_ratio: number
+			points_ratio: number
+		}
 	}
 }
 
-export interface LoyaltyTierRewardRewardMaterialObject {
-	type: 'MATERIAL'
-	parameters: {
-		product: RewardParametersProduct
+export interface LoyaltyTierRewardItemMaterialParameters {
+	type?: 'MATERIAL'
+	parameters?: {
+		product: {
+			id?: string
+			sku_id?: string
+		}
 	}
 }
 
-export interface RewardParametersCampaign {
-	id: string
-	balance?: number
-	type: string
-}
+//0-level types
 
-export interface RewardParametersCoin {
-	exchange_ratio: number
-	points_ratio: number
-}
+export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardAssignmentIdentity> &
+	Required<RewardAssignmentBase> &
+	Required<RewardAssignmentResponseData>
 
-export interface RewardParametersProduct {
-	id?: string
-	sku_id?: string
+export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: LoyaltyTierReward[]
 }

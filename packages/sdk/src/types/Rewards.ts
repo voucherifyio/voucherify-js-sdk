@@ -140,3 +140,29 @@ export interface RewardRedemptionParams {
 	assignment_id?: string
 	id?: string
 }
+
+//Domain types
+// Reward assignment
+export interface RewardAssignmentIdentity {
+	id?: string
+	reward_id?: string
+}
+export interface RewardAssignmentBase {
+	related_object_id?: string
+	related_object_type?: 'campaign'
+	parameters?: {
+		loyalty?: {
+			points?: number
+		}
+	}
+}
+
+export interface RewardAssignmentResponseData {
+	created_at?: string
+	updated_at?: string | null
+	object?: 'reward-assignment'
+}
+
+export type RewardAssignment = Required<RewardAssignmentIdentity> &
+	Required<RewardAssignmentBase> &
+	Required<RewardAssignmentResponseData>

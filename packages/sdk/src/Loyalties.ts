@@ -73,7 +73,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
 	 */
 	public getRewardAssignment(campaignId: string, assignmentId: string) {
-		return this.client.get<T.GetRewardAssignmentsResponse>(
+		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
 			`/loyalties/${encode(campaignId)}/rewards/${encode(assignmentId)}`,
 		)
 	}
@@ -158,7 +158,7 @@ export class Loyalties {
 	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-rewards
 	 */
 	public listLoyaltyTierRewards(campaignId: string, tierId: string) {
-		return this.client.get<T.ListLoyaltyTierRewardsResponse>(
+		return this.client.get<T.LoyaltiesListLoyaltyTierRewardsResponseBody>(
 			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/rewards`,
 		)
 	}
