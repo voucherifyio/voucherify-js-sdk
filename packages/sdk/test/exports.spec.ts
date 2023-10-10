@@ -1,6 +1,5 @@
 import { voucherifyClient as client } from './client'
 import { isoRegex } from './utils/isoRegex'
-import { ExportResourceResponse } from '@voucherify/sdk'
 
 describe('Exports API', () => {
 	it('Should create export, with no parameters', async () => {
