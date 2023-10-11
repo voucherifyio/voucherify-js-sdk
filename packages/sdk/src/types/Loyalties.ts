@@ -536,6 +536,7 @@ export type LoyaltiesTransferPointsResponseBody = {
 		object: 'list'
 		count?: number
 		entries?: string[]
+		url?: string
 	}
 	redemption?: {
 		quantity: number | null
