@@ -25,7 +25,7 @@ export interface SkuBase {
 	price?: number | null
 	attributes?: Record<string, unknown>
 	metadata?: Record<string, unknown>
-	product?: ProductInCollectionItem
+	product?: Required<ProductIdentity> & Required<ProductBase> & { source_id: string | null; object: 'product' }
 	image_url?: string | null
 }
 
@@ -43,21 +43,9 @@ export interface SkuSaved {
 	object?: 'sku'
 }
 
-export type Product = Required<SkuIdentity> | Required<ProductIdentity>
-
-export type ProductInCollection = Required<ProductIdentity> &
-	Required<ProductSaved> &
-	Required<ProductBase> & { source_id: string | null }
-
-export type SkuInCollection = Required<SkuIdentity> &
-	Required<SkuSaved> &
-	Required<SkuBase> & { source_id: string | null }
-
-export type ProductInCollectionItem = Required<ProductIdentity> &
-	Required<ProductBase> & { source_id: string | null; object: 'product' }
+export type ProductOrSkuIdentity = Required<SkuIdentity> | Required<ProductIdentity>
 
 // Product Collection
-
 export interface ProductCollectionIdentity {
 	id?: string
 }
@@ -71,7 +59,7 @@ export type ProductCollectionBase = Required<StaticProductCollectionBase> | Requ
 export interface StaticProductCollectionBase {
 	name?: string
 	type?: 'STATIC'
-	products?: Product[]
+	products?: ProductOrSkuIdentity[]
 }
 
 export interface DynamicProductCollectionBase {
@@ -166,6 +154,9 @@ export interface ProductCollectionsListProductsRequestQuery {
 export interface ProductCollectionsListProductsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: (SkuInCollection | ProductInCollection)[]
+	data: (
+		| (Required<SkuIdentity> & Required<SkuSaved> & Required<SkuBase> & { source_id: string | null })
+		| (Required<ProductIdentity> & Required<ProductSaved> & Required<ProductBase> & { source_id: string | null })
+	)[]
 	total: number
 }
