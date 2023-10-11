@@ -1,3 +1,5 @@
+import { WithRequiredProperty } from './UtilityTypes'
+
 export interface RewardsListParams {
 	page?: number
 	limit?: number
@@ -151,8 +153,8 @@ export interface RewardAssignmentBase {
 	related_object_id?: string
 	related_object_type?: 'campaign'
 	parameters?: {
-		loyalty?: {
-			points?: number
+		loyalty: {
+			points: number
 		}
 	}
 }
@@ -164,5 +166,5 @@ export interface RewardAssignmentResponseData {
 }
 
 export type RewardAssignment = Required<RewardAssignmentIdentity> &
-	Required<RewardAssignmentBase> &
+	WithRequiredProperty<RewardAssignmentBase, 'related_object_id' | 'related_object_type'> &
 	Required<RewardAssignmentResponseData>

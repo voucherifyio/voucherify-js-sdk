@@ -11,6 +11,7 @@ import {
 	RewardAssignmentIdentity,
 	RewardAssignmentResponseData,
 } from './Rewards'
+import { WithRequiredProperty } from './UtilityTypes'
 
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -508,8 +509,8 @@ export interface LoyaltyPointsTransfer {
 //Domain types
 // Loyalty Tier Reward
 export interface LoyaltyTierReward {
-	reward?: LoyaltyTierRewardItem
-	assignment?: RewardAssignment
+	reward?: Required<LoyaltyTierRewardItem>
+	assignment?: Required<RewardAssignment>
 	object?: 'loyalty_tier_reward'
 }
 
@@ -548,11 +549,9 @@ export type LoyaltyTierRewardItemParameters =
 export interface LoyaltyTierRewardItemCampaignParameters {
 	type?: 'CAMPAIGN'
 	parameters?: {
-		campaign: {
-			id: string
-			balance?: number
-			type: string
-		}
+		campaign:
+			| Required<LoyaltyTierRewardItemCampaignDiscountCoupons>
+			| Required<LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram>
 	}
 }
 
@@ -570,16 +569,27 @@ export interface LoyaltyTierRewardItemMaterialParameters {
 	type?: 'MATERIAL'
 	parameters?: {
 		product: {
-			id?: string
-			sku_id?: string
+			id: string
+			sku_id: string | null
 		}
 	}
+}
+
+export interface LoyaltyTierRewardItemCampaignDiscountCoupons {
+	id?: string
+	type?: string
+}
+
+export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
+	id?: string
+	balance?: number
+	type?: string
 }
 
 //0-level types
 
 export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardAssignmentIdentity> &
-	Required<RewardAssignmentBase> &
+	WithRequiredProperty<RewardAssignmentBase, 'related_object_id' | 'related_object_type'> &
 	Required<RewardAssignmentResponseData>
 
 export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
