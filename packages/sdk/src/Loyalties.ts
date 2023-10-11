@@ -261,4 +261,55 @@ export class Loyalties {
 			params,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
+	 */
+	public getRewardAssignments(campaignId: string, assignmentId: string) {
+		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-details
+	 */
+	public getRewardDetails(campaignId: string, assignmentId: string) {
+		return this.client.get<T.LoyaltiesGetRewardDetailsResponseBody>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}/reward`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tiers
+	 */
+	public listLoyaltyTiers(campaignId: string, params?: T.LoyaltiesListLoyaltyTiersRequestQuery) {
+		return this.client.get<T.LoyaltiesListLoyaltyTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-loyalty-tier
+	 */
+	public getLoyaltyTier(campaignId: string, tierId: string) {
+		return this.client.get<T.LoyaltiesGetLoyaltyTierResponseBody>(
+			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules
+	 */
+	public listLoyaltyTierEarningRules(
+		campaignId: string,
+		tierId: string,
+		parameters?: T.LoyaltiesListLoyaltyTierEarningRulesRequestQuery,
+	) {
+		return this.client.get<T.LoyaltiesListLoyaltyTierEarningRulesResponseBody>(
+			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/earning-rules`,
+			parameters,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-member-loyalty-tier
+	 */
+	public listMemberLoyaltyTiers(memberId: string) {
+		return this.client.get<T.LoyaltiesListMemberLoyaltyTiersResponseBody>(
+			`/loyalties/members/${encode(memberId)}/tiers`,
+		)
+	}
 }

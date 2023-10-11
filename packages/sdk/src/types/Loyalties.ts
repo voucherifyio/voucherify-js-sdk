@@ -512,6 +512,37 @@ export interface LoyaltyPointsTransfer {
 
 // 0-level types
 
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
+
+export type LoyaltiesGetRewardDetailsResponseBody = Reward
+
+export interface LoyaltiesListLoyaltyTiersRequestQuery {
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
+}
+
+export interface LoyaltiesListLoyaltyTierEarningRulesRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export type LoyaltiesGetLoyaltyTierResponseBody = LoyaltyTier
+
+export interface LoyaltiesListLoyaltyTiersResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTier[]
+	total: number
+}
+
+export interface LoyaltiesListMemberLoyaltyTiersResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTier[]
+	total: number
+}
+
 export type LoyaltiesTransferPointsResponseBody = {
 	id: string
 	code: string
@@ -657,11 +688,7 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
 
-export type LoyaltiesGetEarningRuleResponseBody = EarningRuleBase & {
-	validation_rule_id: string | null
-	updated_at: string | null
-	active: boolean
-}
+export type LoyaltiesGetEarningRuleResponseBody = EarningRule
 
 export type LoyaltiesEnableEarningRulesResponseBody = EarningRuleBase & {
 	updated_at: string | null
@@ -673,7 +700,55 @@ export type LoyaltiesDisableEarningRulesResponseBody = EarningRuleBase & {
 	active: false
 }
 
+export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
+	object: 'list'
+	data_ref: 'data'
+	data: EarningRule[]
+	total: number
+}
+
 // domain types
+
+export interface LoyaltyTier {
+	id: string
+	name?: string
+	campaign_id: string
+	metadata: Record<string, unknown>
+	created_at: string
+	updated_at?: string
+	earning_rules?: Record<string, MappingMultiply | MappingFixed>
+	rewards?: Record<string, MappingMultiply | MappingFixed>
+	config?: {
+		points: {
+			from: number
+			to: number
+		}
+	}
+	points?: {
+		from: number
+		to: number
+	}
+	expiration?: {
+		customer_id: string
+		campaign_id: string
+		tier_id: string
+		start_date?: string
+		expiration_date?: string
+		created_at: string
+		updated_at?: string
+	}
+	object: 'loyalty_tier'
+}
+
+interface MappingMultiply {
+	type: 'MULTIPLY'
+	multiplier: number
+}
+
+interface MappingFixed {
+	type: 'CUSTOM'
+	points: number
+}
 
 export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
 
@@ -795,6 +870,11 @@ export type LoyaltyCardTransactionsType =
 	| 'POINTS_TRANSFER_IN'
 	| 'POINTS_TRANSFER_OUT'
 
+export type EarningRule = EarningRuleBase & {
+	validation_rule_id: string | null
+	updated_at: string | null
+	active: boolean
+}
 export interface EarningRuleBase {
 	id: string
 	created_at: string
