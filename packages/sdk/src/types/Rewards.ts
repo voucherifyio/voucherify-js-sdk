@@ -1,5 +1,6 @@
 import { WithRequiredProperty } from './UtilityTypes'
 
+// Legacy types
 export interface RewardsListParams {
 	page?: number
 	limit?: number
@@ -97,8 +98,8 @@ export interface RewardRedemptionParams {
 	assignment_id?: string
 	id?: string
 }
-
-//Domain types
+// New types - rewards assignments
+// Domain types
 // Reward assignment
 export interface RewardAssignmentIdentity {
 	id?: string
