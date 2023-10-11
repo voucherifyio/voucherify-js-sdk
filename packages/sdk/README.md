@@ -712,6 +712,17 @@ client.customers.listActivities(customerId, params)
 client.customers.importCSV(filePath)
 ```
 
+#### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
+
+```javascript
+client.customers.updateInBulk(customers)
+```
+
+#### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
+
+```javascript
+client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
+```
 
 ---
 
