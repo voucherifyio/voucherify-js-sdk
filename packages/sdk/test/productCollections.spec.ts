@@ -1,6 +1,7 @@
 import { voucherifyClient as client } from './client'
 import { generateRandomString } from './utils/generateRandomString'
 import { isoRegex } from './utils/isoRegex'
+import { ProductCollectionsCreateResponseBody } from '../src/types/ProductCollections'
 
 describe('Product Collections API', () => {
 	it('should create 3 products and create STATIC collection of those products, then delete it', async () => {
@@ -29,7 +30,7 @@ describe('Product Collections API', () => {
 				],
 				created_at: expect.stringMatching(isoRegex),
 				object: 'products_collection',
-			}),
+			} as ProductCollectionsCreateResponseBody),
 		)
 		//ts-check
 		if (newCollection.type === 'STATIC') {
@@ -41,7 +42,7 @@ describe('Product Collections API', () => {
 	})
 
 	let staticCollectionId: string
-	it('should create 3 skus and create STATIC collection of those skus', async () => {
+	it('should create 3 SKUs and create STATIC collection of those SKUs', async () => {
 		const product = await client.products.create({})
 		const skus = await Promise.all([
 			client.products.createSku(product.id, { sku: generateRandomString() }),
@@ -82,7 +83,7 @@ describe('Product Collections API', () => {
 				],
 				created_at: expect.stringMatching(isoRegex),
 				object: 'products_collection',
-			}),
+			} as ProductCollectionsCreateResponseBody),
 		)
 		//ts-check
 		if (newCollection.type === 'STATIC') {
@@ -121,14 +122,14 @@ describe('Product Collections API', () => {
 		}
 	})
 
-	it('should create 3 skus and create STATIC collection of those skus', async () => {
+	it('should create 3 SKUs and create AUTO_UPDATE collection of those SKUs', async () => {
 		const product = await client.products.create({})
 		await Promise.all([
 			client.products.createSku(product.id, { sku: generateRandomString(), price: 100 }),
 			client.products.createSku(product.id, { sku: generateRandomString(), price: 101 }),
 			client.products.createSku(product.id, { sku: generateRandomString(), price: 102 }),
 		])
-		const newCollection = await client.productCollections.create({
+		const newAutoUpdateCollection = await client.productCollections.create({
 			type: 'AUTO_UPDATE',
 			name: generateRandomString(),
 			filter: {
@@ -140,7 +141,22 @@ describe('Product Collections API', () => {
 				},
 			},
 		})
-		console.log(newCollection)
-		console.log(await client.productCollections.listProducts(newCollection.id))
+		expect(newAutoUpdateCollection).toEqual(
+			expect.objectContaining({
+				id: expect.stringMatching(/^pc_.*/),
+				name: expect.stringMatching(/[\s\S]*/),
+				type: 'AUTO_UPDATE',
+				filter: {
+					junction: 'and',
+					price: {
+						conditions: {
+							$is: [100],
+						},
+					},
+				},
+				created_at: expect.stringMatching(isoRegex),
+				object: 'products_collection',
+			} as ProductCollectionsCreateResponseBody),
+		)
 	})
 })
