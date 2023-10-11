@@ -92,51 +92,6 @@ export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
 
 export type RewardsUpdateResponse = RewardsCreateResponse
 
-export interface RewardsAssignmentObjectCommon {
-	id: string
-	reward_id: string
-	related_object_id: string
-	related_object_type: 'campaign'
-	parameters: {
-		loyalty: {
-			points?: number
-		}
-	}
-	created_at: string
-	object: 'reward_assignment'
-}
-
-export interface RewardsAssignmentObject extends RewardsAssignmentObjectCommon {
-	updated_at: string | null
-}
-
-export interface RewardsListAssignmentsParams {
-	limit?: number
-	page?: number
-}
-
-export interface RewardsListAssignmentsResponse {
-	total: number
-	data: RewardsAssignmentObject[]
-	object: 'list'
-	data_ref: 'data'
-}
-
-export interface RewardsCreateAssignment {
-	campaign: string
-	parameters: {
-		loyalty: {
-			points?: number
-		}
-	}
-}
-
-export type RewardsCreateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: null }
-
-export type RewardsUpdateAssignment = Partial<RewardsCreateAssignment> & { id: string }
-
-export type RewardsUpdateAssignmentResponse = RewardsAssignmentObjectCommon & { updated_at: string }
-
 export interface RewardRedemptionParams {
 	points?: number
 	assignment_id?: string
@@ -168,3 +123,49 @@ export interface RewardAssignmentResponseData {
 export type RewardAssignment = Required<RewardAssignmentIdentity> &
 	WithRequiredProperty<RewardAssignmentBase, 'related_object_id' | 'related_object_type'> &
 	Required<RewardAssignmentResponseData>
+
+// 0-level types
+// List assignments
+export interface RewardsListAssignmentsRequestQuery {
+	limit?: number
+	page?: number
+}
+export interface RewardsListAssignmentsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: RewardAssignment[]
+	total: number
+}
+
+// Create assignment
+
+export type RewardsCreateAssignmentRequestBody =
+	| RewardsCreateAssignmentCoinRequestBody
+	| RewardsCreateAssignmentMainRequestBody
+
+export type RewardsCreateAssignmentCoinRequestBody = WithRequiredProperty<
+	RewardsCreateAssignmentMainRequestBody,
+	'campaign'
+>
+export interface RewardsCreateAssignmentMainRequestBody {
+	campaign: string
+	parameters: {
+		loyalty: {
+			points?: number
+		}
+	}
+}
+
+export type RewardsCreateAssignmentResponseBody = Required<RewardAssignment>
+
+// Update assignments
+export interface RewardsUpdateAssignmentRequestBody {
+	parameters?: {
+		loyalty?: {
+			points?: number
+		}
+	}
+	id: string
+}
+
+export type RewardsUpdateAssignmentResponseBody = Required<RewardAssignment>
