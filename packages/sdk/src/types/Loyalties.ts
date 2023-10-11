@@ -5,6 +5,7 @@ import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
+import { Category } from './Categories'
 
 // Legacy code
 interface LoyaltiesVoucher {
@@ -518,6 +519,7 @@ export type LoyaltiesTransferPointsResponseBody = {
 	campaign_id: string
 	category: string | null
 	category_id: string | null
+	categories: Category[]
 	type: 'LOYALTY_CARD'
 	loyalty_card: {
 		points: number
@@ -552,6 +554,7 @@ export type LoyaltiesTransferPointsResponseBody = {
 	is_referral_code: boolean
 	holder_id?: string
 	updated_at?: string
+	created_at: string
 }
 
 export type LoyaltiesTransferPointsRequestBody = LoyaltiesTransferPoints[]
