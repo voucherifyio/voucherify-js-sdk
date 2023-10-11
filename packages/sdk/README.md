@@ -999,6 +999,13 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Loyalty Card Transactions](#list-loyalty-card-transactions)
 - [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
+- [Get Reward Assignment](#get-reward-assignment)
+- [Get Reward Details](#get-reward-details)
+- [List Loyalty Tiers](#list-loyalty-tiers)
+- [Get Loyalty Tier](#get-loyalty-tier)
+- [Create Loyalty Tiers](#create-loyalty-tiers)
+- [List Loyalty Tier Earning Rules](#list-loyalty-tier-earning-rules)
+- [List Member Loyalty Tiers](#list-member-loyalty-tiers)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1215,10 +1222,10 @@ client.loyalties.exportCardTransactions(memberId, campaignId, params)
 
 ---
 
-#### [Get Reward Assignments](https://docs.voucherify.io/reference/get-reward-assignment-1)
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
 
 ```javascript
-client.loyalties.getRewardAssignments(campaignId, assignmentId)
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
 ```
 
 ---

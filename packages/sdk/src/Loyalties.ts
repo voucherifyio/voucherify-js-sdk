@@ -264,7 +264,7 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
 	 */
-	public getRewardAssignments(campaignId: string, assignmentId: string) {
+	public getRewardAssignment(campaignId: string, assignmentId: string) {
 		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
 			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
 		)
