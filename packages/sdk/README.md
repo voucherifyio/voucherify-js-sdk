@@ -1215,6 +1215,58 @@ client.loyalties.exportCardTransactions(memberId, campaignId, params)
 
 ---
 
+#### [Get Reward Assignments](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignments(campaignId, assignmentId)
+```
+
+---
+
+#### [Get Reward Details](https://docs.voucherify.io/reference/get-reward-details)
+
+```javascript
+client.loyalties.getRewardDetails(campaignId, assignmentId)
+```
+
+---
+
+#### [List Loyalty Tiers](https://docs.voucherify.io/reference/list-loyalty-tiers)
+
+```javascript
+client.loyalties.listLoyaltyTiers(campaignId, params)
+client.loyalties.listLoyaltyTiers(campaignId)
+```
+
+---
+
+#### [Get Loyalty Tier](https://docs.voucherify.io/reference/get-loyalty-tier)
+
+```javascript
+client.loyalties.getLoyaltyTier(campaignId, tierId)
+```
+
+---
+
+#### [List Loyalty Tier Earning Rules](https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules)
+
+```javascript
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId, params)
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId)
+```
+
+---
+
+#### [List Member Loyalty Tiers](https://docs.voucherify.io/reference/get-member-loyalty-tier)
+
+```javascript
+client.loyalties.listMemberLoyaltyTiers(memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
 ### Segments
 
 Methods are provided within `client.segments.*` namespace.

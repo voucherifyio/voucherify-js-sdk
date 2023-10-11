@@ -297,11 +297,11 @@ export class Loyalties {
 	public listLoyaltyTierEarningRules(
 		campaignId: string,
 		tierId: string,
-		parameters?: T.LoyaltiesListLoyaltyTierEarningRulesRequestQuery,
+		params?: T.LoyaltiesListLoyaltyTierEarningRulesRequestQuery,
 	) {
 		return this.client.get<T.LoyaltiesListLoyaltyTierEarningRulesResponseBody>(
 			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/earning-rules`,
-			parameters,
+			params,
 		)
 	}
 	/**
