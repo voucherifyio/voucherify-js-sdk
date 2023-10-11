@@ -280,16 +280,20 @@ export class Loyalties {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-tiers
 	 */
-	public listLoyaltyTiers(campaignId: string, params?: T.LoyaltiesListLoyaltyTiersRequestQuery) {
-		return this.client.get<T.LoyaltiesListLoyaltyTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, params)
+	public listTiers(campaignId: string, params?: T.LoyaltiesListTiersRequestQuery) {
+		return this.client.get<T.LoyaltiesListTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-loyalty-tier
 	 */
-	public getLoyaltyTier(campaignId: string, tierId: string) {
-		return this.client.get<T.LoyaltiesGetLoyaltyTierResponseBody>(
-			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}`,
-		)
+	public getTier(campaignId: string, tierId: string) {
+		return this.client.get<T.LoyaltiesGetTierResponseBody>(`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/create-loyalty-tiers
+	 */
+	public createTiers(campaignId: string, tiers: T.LoyaltiesCreateTiersRequestBody) {
+		return this.client.post<T.LoyaltiesCreateTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, tiers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules

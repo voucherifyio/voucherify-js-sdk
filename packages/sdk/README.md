@@ -1234,8 +1234,8 @@ client.loyalties.getRewardDetails(campaignId, assignmentId)
 #### [List Loyalty Tiers](https://docs.voucherify.io/reference/list-loyalty-tiers)
 
 ```javascript
-client.loyalties.listLoyaltyTiers(campaignId, params)
-client.loyalties.listLoyaltyTiers(campaignId)
+client.loyalties.listTiers(campaignId, params)
+client.loyalties.listTiers(campaignId)
 ```
 
 ---
@@ -1243,7 +1243,15 @@ client.loyalties.listLoyaltyTiers(campaignId)
 #### [Get Loyalty Tier](https://docs.voucherify.io/reference/get-loyalty-tier)
 
 ```javascript
-client.loyalties.getLoyaltyTier(campaignId, tierId)
+client.loyalties.getTier(campaignId, tierId)
+```
+
+---
+
+#### [Create Loyalty Tiers](https://docs.voucherify.io/reference/create-loyalty-tiers)
+
+```javascript
+client.loyalties.createTiers(campaignId, tiers)
 ```
 
 ---

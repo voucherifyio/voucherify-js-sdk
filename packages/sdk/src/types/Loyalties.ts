@@ -512,11 +512,15 @@ export interface LoyaltyPointsTransfer {
 
 // 0-level types
 
+export type LoyaltiesCreateTiersRequestBody = CreateLoyaltyTier[]
+
+export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
+
 export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
 
 export type LoyaltiesGetRewardDetailsResponseBody = Reward
 
-export interface LoyaltiesListLoyaltyTiersRequestQuery {
+export interface LoyaltiesListTiersRequestQuery {
 	limit?: number
 	page?: number
 	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
@@ -527,9 +531,9 @@ export interface LoyaltiesListLoyaltyTierEarningRulesRequestQuery {
 	page?: number
 }
 
-export type LoyaltiesGetLoyaltyTierResponseBody = LoyaltyTier
+export type LoyaltiesGetTierResponseBody = LoyaltyTier
 
-export interface LoyaltiesListLoyaltyTiersResponseBody {
+export interface LoyaltiesListTiersResponseBody {
 	object: 'list'
 	data_ref: 'data'
 	data: LoyaltyTier[]
@@ -709,24 +713,35 @@ export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
 
 // domain types
 
-export interface LoyaltyTier {
-	id: string
-	name?: string
-	campaign_id: string
-	metadata: Record<string, unknown>
-	created_at: string
-	updated_at?: string
+export interface CreateLoyaltyTier {
+	name: string
+	metadata?: Record<string, any>
 	earning_rules?: Record<string, MappingMultiply | MappingFixed>
 	rewards?: Record<string, MappingMultiply | MappingFixed>
-	config?: {
+	points: {
+		from?: number
+		to?: number
+	}
+}
+
+export interface LoyaltyTier {
+	id: string
+	name: string
+	campaign_id: string
+	metadata: Record<string, unknown> | null
+	created_at: string
+	updated_at?: string | null
+	earning_rules?: Record<string, MappingMultiply | MappingFixed>
+	rewards?: Record<string, MappingMultiply | MappingFixed>
+	config: {
 		points: {
-			from: number
-			to: number
+			from?: number
+			to?: number
 		}
 	}
-	points?: {
-		from: number
-		to: number
+	points: {
+		from?: number
+		to?: number
 	}
 	expiration?: {
 		customer_id: string
