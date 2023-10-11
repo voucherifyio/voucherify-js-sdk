@@ -644,13 +644,13 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	amount?: number
 	total: number
 	balance: number
-	type: string // LOYALTY_CARD | GIFT_VOUCHER
+	type: 'LOYALTY_CARD' | 'GIFT_VOUCHER'
 	object: 'balance'
 	related_object: {
 		type: 'voucher'
 		id: string
 	}
-	operation_type?: 'MANUAL' | 'AUTOMATIC' //always
+	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
 
 export type LoyaltiesGetEarningRuleResponseBody = EarningRuleBase & {
