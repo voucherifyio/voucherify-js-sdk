@@ -15,10 +15,7 @@ Added missing methods covering Product Collections API.
     - SkuBase
     - ProductSaved
     - SkuSaved
-    - Product
-    - ProductInCollection
-    - SkuInCollection
-    - ProductInCollectionItem
+    - ProductOrSkuIdentity
     - ProductCollectionIdentity
     - ProductCollectionSaved
     - ProductCollectionBase
