@@ -2,9 +2,10 @@ import * as T from './types/Promotions'
 
 import type { RequestController } from './RequestController'
 import type { PromotionTiers } from './PromotionTiers'
+import { PromotionStack } from './PromotionStack'
 
 export class Promotions {
-	constructor(private client: RequestController, public tiers: PromotionTiers) {}
+	constructor(private client: RequestController, public tiers: PromotionTiers, public stack: PromotionStack) {}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-promotion-campaign
 	 */
