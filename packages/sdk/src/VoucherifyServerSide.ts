@@ -22,6 +22,7 @@ import { assert, isString, isObject, isOptionalString, environment } from './hel
 import { ApiLimitsHandler } from './ApiLimitsHandler'
 import { MetadataSchemas } from './MetadataSchemas'
 import { Categories } from './Categories'
+import { PromotionStacks } from './types/PromotionStacks'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -185,7 +186,8 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const events = new Events(client)
 	const distributions = new Distributions(client, exportsNamespace)
 	const promotionTiers = new PromotionTiers(client)
-	const promotions = new Promotions(client, promotionTiers)
+	const promotionStack = new PromotionStacks(client)
+	const promotions = new Promotions(client, promotionTiers, promotionStack)
 	const validations = new Validations(client, promotions)
 	const redemptions = new Redemptions(client)
 	const customers = new Customers(client)
