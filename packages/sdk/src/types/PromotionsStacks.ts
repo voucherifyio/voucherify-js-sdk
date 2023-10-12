@@ -37,7 +37,7 @@ export type PromotionsStacksUpdateRequestBody = DeepPartial<PromotionStackBase> 
 export type PromotionsStacksUpdateResponseBody = Required<PromotionStack, 'updated_at'>
 
 export type PromotionsStacksCreateInCampaignRequestBody = PromotionStackBase & { category_id?: string }
-export type PromotionsStacksCreateInCampaignResponseBody = PromotionStack
+export type PromotionsStacksCreateInCampaignResponseBody = Omit<PromotionStack, 'updated_at'>
 
 // domain types
 export interface PromotionStackBase {
