@@ -365,6 +365,7 @@
 				<p>Methods are provided within <code>client.distributions.*</code> namespace.</p>
 				<ul>
 					<li><a href="#create-export">Create Export</a></li>
+					<li><a href="#list-exports">List Exports</a></li>
 					<li><a href="#get-export">Get Export</a></li>
 					<li><a href="#delete-export">Delete Export</a></li>
 					<li><a href="#list-publications">List publications</a></li>
@@ -376,6 +377,11 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">exportObject</span><span style="color: #000000">)</span>
 </code></pre>
 				<p>Check <a href="https://docs.voucherify.io/v1/reference/the-export-object">the export object</a>.</p>
+				<a href="#list-exports" id="list-exports" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-exports">List Exports</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+</code></pre>
 				<a href="#get-export" id="get-export" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-export">Get Export</a></h4>
 				</a>
@@ -916,10 +922,15 @@
 					<li><a href="#list-loyalty-program-earning-rules">List Loyalty Program Earning Rules</a></li>
 					<li><a href="#create-loyalty-program-member">Create Loyalty Program Member</a></li>
 					<li><a href="#get-loyalty-program-member">Get Loyalty Program Member</a></li>
-					<li><a href="#list-loyalty-members">List Loyalty Program Members</a></li>
+					<li><a href="#list-loyalty-program-members">List Loyalty Program Members</a></li>
 					<li><a href="#get-loyalty-program-member-activities">Get Loyalty Program Member Activities</a></li>
-					<li><a href="#add-loyalty-card-balance">Add Loyalty Card Balance</a></li>
+					<li><a href="#add-or-remove-loyalty-card-balance">Add Or Remove Loyalty Card Balance</a></li>
+					<li><a href="#add-loyalty-card-balance">[Deprecated] Add Loyalty Card Balance</a></li>
+					<li><a href="#transfer-loyalty-points">Transfer Loyalty Points</a></li>
+					<li><a href="#get-loyalty-points-expiration">Get Loyalty Points Expiration</a></li>
 					<li><a href="#redeem-loyalty-card">Redeem Loyalty Card</a></li>
+					<li><a href="#list-loyalty-card-transactions">List Loyalty Card Transactions</a></li>
+					<li>[<a href="#export-loyalty-card-transactions">Export Loyalty Card Transactions</a></li>
 				</ul>
 				<a href="#create-loyalty-program" id="create-loyalty-program" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-loyalty-program">Create Loyalty Program</a></h4>
@@ -1012,6 +1023,7 @@
 				<a href="#get-loyalty-program-member" id="get-loyalty-program-member" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-member">Get Loyalty Program Member</a></h4>
 				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/get-member">v1/loyalties/members/{memberId}</a> or <a href="https://docs.voucherify.io/reference/get-member-1">v1/loyalties/{campaignId}/members/{memberId}</a> API endpoint</p>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMember</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-loyalty-program-members" id="list-loyalty-program-members" style="color: inherit; text-decoration: none;">
@@ -1023,15 +1035,44 @@
 				<a href="#get-loyalty-program-member-activities" id="get-loyalty-program-member-activities" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference#get-member-activities">Get Loyalty Program Member Activities</a></h4>
 				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/get-member-activities">v1/loyalties/members/{memberId}/activities</a> or <a href="https://docs.voucherify.io/reference/get-member-activities-1">v1/loyalties/{campaignId}/members/{memberId}/activities</a> API endpoint</p>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMemberActivities</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#list-member-rewards" id="list-member-rewards" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-member-rewards">List Member Rewards</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listMemberRewards</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#add-or-remove-loyalty-card-balance" id="add-or-remove-loyalty-card-balance" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance">Add Or Remove Loyalty Card Balance</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance">v1/loyalties/members/{memberId}/balance</a> or <a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1">v1/loyalties/{campaignId}/members/{memberId}/balance</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">addOrRemoveCardBalance</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">balance</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<a href="#add-loyalty-card-balance" id="add-loyalty-card-balance" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/add-loyalty-card-balance">Add Loyalty Card Balance</a></h4>
+					<h4><a href="https://docs.voucherify.io/reference/add-loyalty-card-balance-1">Add Loyalty Card Balance</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">addPoints</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">balance</span><span style="color: #000000">)</span>
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#transfer-loyalty-points" id="transfer-loyalty-points" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/transfer-points">Transfer Loyalty Points</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">transferPoints</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">transferLoyaltyPoints</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#get-loyalty-points-expiration" id="get-loyalty-points-expiration" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-points-expiration">Get Loyalty Points Expiration</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getPointsExpiration</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
 				<a href="#redeem-loyalty-card" id="redeem-loyalty-card" style="color: inherit; text-decoration: none;">
 					<h4>[Redeem Loyalty Card]</h4>
 				</a>
@@ -1039,6 +1080,22 @@
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<p>When redeeming reward with type <code>COIN</code> you need to provide additional <code>order</code> object in the <code>params</code></p>
+				<hr>
+				<a href="#list-loyalty-card-transactions" id="list-loyalty-card-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions">List Loyalty Card Transactions</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions">v1/loyalties/members/{memberId}/transactions</a> or <a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions-1">v1/loyalties/{campaignId}/members/{memberId}/transactions</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listCardTransactions</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#export-loyalty-card-transactions" id="export-loyalty-card-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions">Export Loyalty Card Transactions</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions">v1/loyalties/members/{memberId}/transactions/export</a> or <a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions-1">v1/loyalties/{campaignId}/members/{memberId}/transactions/export</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">exportCardTransactions</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<hr>
 				<a href="#segments" id="segments" style="color: inherit; text-decoration: none;">
 					<h3>Segments</h3>
@@ -1629,13 +1686,49 @@
 						<a href="interfaces/EventsResponse.html" class="tsd-kind-icon">Events<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportBase.html" class="tsd-kind-icon">Export<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportCustomer.html" class="tsd-kind-icon">Export<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportOrder.html" class="tsd-kind-icon">Export<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPointsExpiration.html" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPublication.html" class="tsd-kind-icon">Export<wbr>Publication</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportRedemption.html" class="tsd-kind-icon">Export<wbr>Redemption</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportResource.html" class="tsd-kind-icon">Export<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucher.html" class="tsd-kind-icon">Export<wbr>Voucher</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucherTransactionsExpiration.html" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Expiration</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportsCreateResponse.html" class="tsd-kind-icon">Exports<wbr>Create<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListRequestQuery.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListResponseBody.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/GiftRedemptionParams.html" class="tsd-kind-icon">Gift<wbr>Redemption<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesAddOrRemoveCardBalanceRequestBody.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>OrRemove<wbr>Card<wbr>Balance<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesAddOrRemoveCardBalanceResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>OrRemove<wbr>Card<wbr>Balance<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesAddPoints.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>Points</a>
@@ -1668,13 +1761,37 @@
 						<a href="interfaces/LoyaltiesEarningRulesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Earning<wbr>Rules<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesExportCardTransactionsRequestBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesExportCardTransactionsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesGetMemberActivitiesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Activities<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesGetPointsExpirationRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Points<wbr>Expiration<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesGetPointsExpirationResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Points<wbr>Expiration<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListCardTransactionsRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Card<wbr>Transactions<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListCardTransactionsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListEarningRulesParams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListEarningRulesResponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListMemberRewardsRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Rewards<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListMemberRewardsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Rewards<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListMembersParams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Members<wbr>Params</a>
@@ -1701,6 +1818,9 @@
 						<a href="interfaces/LoyaltiesRedeemRewardResponse.html" class="tsd-kind-icon">Loyalties<wbr>Redeem<wbr>Reward<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesTransferPoints.html" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesUpdateCampaign.html" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1711,6 +1831,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesVoucherResponse.html" class="tsd-kind-icon">Loyalties<wbr>Voucher<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyCardTransaction.html" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transaction</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltyFixed.html" class="tsd-kind-icon">Loyalty<wbr>Fixed</a>
@@ -1848,7 +1971,19 @@
 						<a href="interfaces/RedemptionsRollbackStackableResponse.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Stackable<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardAssignment.html" class="tsd-kind-icon">Reward<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardRedemptionParams.html" class="tsd-kind-icon">Reward<wbr>Redemption<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeCampaign.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeCoin.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Coin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeMaterial.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsAssignmentObject.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Object</a>
@@ -1882,6 +2017,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/SimpleCustomer.html" class="tsd-kind-icon">Simple<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/SimpleLoyaltyVoucher.html" class="tsd-kind-icon">Simple<wbr>Loyalty<wbr>Voucher</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/SimpleProduct.html" class="tsd-kind-icon">Simple<wbr>Product</a>
@@ -2160,7 +2298,82 @@
 						<a href="modules.html#EarningRuleProportionalOrderItems" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Export" class="tsd-kind-icon">Export</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFields" class="tsd-kind-icon">Export<wbr>Customer<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFilters" class="tsd-kind-icon">Export<wbr>Customer<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerOrder" class="tsd-kind-icon">Export<wbr>Customer<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFields" class="tsd-kind-icon">Export<wbr>Order<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFilters" class="tsd-kind-icon">Export<wbr>Order<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderOrder" class="tsd-kind-icon">Export<wbr>Order<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFields" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFilters" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationOrder" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFields" class="tsd-kind-icon">Export<wbr>Publication<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFilters" class="tsd-kind-icon">Export<wbr>Publication<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationOrder" class="tsd-kind-icon">Export<wbr>Publication<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFields" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFilters" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionOrder" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ExportsGetResponse" class="tsd-kind-icon">Exports<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FieldConditions" class="tsd-kind-icon">Field<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FiltersCondition" class="tsd-kind-icon">Filters<wbr>Condition</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Junction" class="tsd-kind-icon">Junction</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesCreateEarningRuleResponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Earning<wbr>Rule<wbr>Response</a>
@@ -2184,6 +2397,12 @@
 						<a href="modules.html#LoyaltiesGetMemberResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesTransferPointsRequestBody" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesTransferPointsResponseBody" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesUpdateCampaignResponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2193,10 +2412,19 @@
 						<a href="modules.html#LoyaltiesUpdateRewardAssignmentResponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Reward<wbr>Assignment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyCardTransactionsFields" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transactions<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyCardTransactionsType" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transactions<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersGetResponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersUpdateResponse" class="tsd-kind-icon">Orders<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#PointsExpirationTypes" class="tsd-kind-icon">Points<wbr>Expiration<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ProductsBulkUpdate" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Update</a>
@@ -2248,6 +2476,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RedemptionsRedeemStackableRedemptionResult" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Stackable<wbr>Redemption<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Reward" class="tsd-kind-icon">Reward</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardType" class="tsd-kind-icon">Reward<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsCreate" class="tsd-kind-icon">Rewards<wbr>Create</a>
