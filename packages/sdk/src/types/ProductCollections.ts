@@ -55,7 +55,7 @@ export interface ProductCollectionSaved {
 	object?: 'products_collection'
 }
 
-export type ProductCollectionBase = Required<StaticProductCollectionBase> | Required<DynamicProductCollectionBase>
+export type ProductCollectionBase = StaticProductCollectionBase | DynamicProductCollectionBase
 export interface StaticProductCollectionBase {
 	name?: string
 	type?: 'STATIC'
@@ -68,6 +68,8 @@ export interface DynamicProductCollectionBase {
 	filter?: Filter
 }
 
+export type ProductCollection = ProductCollectionBase & ProductCollectionIdentity & ProductCollectionSaved
+
 export type Filter = {
 	junction: Junction
 } & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, unknown>> }>>
@@ -75,15 +77,17 @@ export type Filter = {
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
 
 export type AllowedFiltersKeys =
+	| 'id'
 	| 'name'
 	| 'attributes'
 	| 'source_id'
 	| 'price'
 	| 'image_url'
 	| 'product_id'
-	| 'sku'
+	| 'skus'
 	| 'created_at'
 	| 'updated_at'
+	| 'object'
 	| `metadata.${string}`
 
 export declare type FiltersCondition =
@@ -121,7 +125,7 @@ export type ProductCollectionsCreateRequestBody =
 	| WithRequiredProperty<StaticProductCollectionBase, 'name' | 'type'>
 	| Required<DynamicProductCollectionBase>
 
-export type ProductCollectionsCreateResponseBody = ProductCollectionBase &
+export type ProductCollectionsCreateResponseBody = Required<ProductCollectionBase> &
 	Required<ProductCollectionIdentity> &
 	Required<ProductCollectionSaved>
 
@@ -135,15 +139,13 @@ export interface ProductCollectionsListRequestQuery {
 export interface ProductCollectionsListResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: (Required<ProductCollectionBase> & Required<ProductCollectionIdentity> & Required<ProductCollectionSaved>)[]
+	data: Required<ProductCollection>[]
 	total: number
 }
 
 // get
 
-export type ProductCollectionsGetResponseBody = ProductCollectionBase &
-	Required<ProductCollectionIdentity> &
-	Required<ProductCollectionSaved>
+export type ProductCollectionsGetResponseBody = Required<ProductCollection>
 
 // list products
 export interface ProductCollectionsListProductsRequestQuery {
