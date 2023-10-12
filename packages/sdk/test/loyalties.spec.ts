@@ -1,12 +1,12 @@
 import { voucherifyClient as client } from './client'
 import { generateRandomString } from './utils/generateRandomString'
+import { isoRegex } from './utils/isoRegex'
 import {
 	LoyaltiesCreateCampaignResponse,
 	LoyaltiesCreateMemberResponse,
 	LoyaltiesAddPointsResponse,
 	LoyaltiesListCardTransactionsResponseBody,
 } from '@voucherify/sdk'
-import { isoRegex } from './utils/isoRegex'
 
 describe('Loyalties API', () => {
 	it('Create loyalty campaign, create earning rule and validate it', async () => {
@@ -135,5 +135,45 @@ describe('Loyalties API', () => {
 			has_more: false,
 			// use as `type` for typescript check
 		} as LoyaltiesListCardTransactionsResponseBody)
+	})
+
+	it('Should generate and update campaign stack', async () => {
+		const campaign = await client.campaigns.create({
+			campaign_type: 'PROMOTION',
+			type: 'STATIC',
+			name: generateRandomString(),
+		})
+		const campaignTier1 = await client.promotions.tiers.create(campaign.id, { name: generateRandomString() })
+		const campaignTier2 = await client.promotions.tiers.create(campaign.id, { name: generateRandomString() })
+		const category = await client.categories.create({ name: generateRandomString(), hierarchy: 1 })
+		const campaignStack = await client.promotions.stack.createInCampaign(campaign.id, {
+			name: generateRandomString(),
+			tiers: { ids: [campaignTier1.id, campaignTier2.id] },
+			category_id: category.id,
+		})
+		expect(campaignStack).toEqual({
+			id: expect.stringMatching(/^stack_.*/),
+			name: expect.stringMatching(/^.*/),
+			created_at: expect.stringMatching(isoRegex),
+			campaign_id: expect.stringMatching(/^camp_.*/),
+			object: 'promotion_stack',
+			tiers: {
+				ids: [expect.stringMatching(/^promo_.*/), expect.stringMatching(/^promo_.*/)],
+			},
+			category_id: expect.stringMatching(/^cat_.*/),
+			categories: [
+				{
+					id: expect.stringMatching(/^cat_.*/),
+					name: expect.stringMatching(/^.*/),
+					hierarchy: 1,
+					created_at: expect.stringMatching(isoRegex),
+					object: 'category',
+				},
+			],
+		})
+		const newStackName = generateRandomString()
+		expect((await client.promotions.stack.update(campaign.id, campaignStack.id, { name: newStackName })).name).toEqual(
+			newStackName,
+		)
 	})
 })
