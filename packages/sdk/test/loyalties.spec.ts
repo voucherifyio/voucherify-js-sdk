@@ -5,10 +5,65 @@ import {
 	LoyaltiesCreateMemberResponse,
 	LoyaltiesAddPointsResponse,
 	LoyaltiesListCardTransactionsResponseBody,
+	LoyaltyTier,
 } from '@voucherify/sdk'
 import { isoRegex } from './utils/isoRegex'
 
 describe('Loyalties API', () => {
+	it('Create loyalty campaign, add 2 loyalty tiers', async () => {
+		const campaign = await client.loyalties.create({
+			name: generateRandomString(),
+			vouchers_count: 10,
+			voucher: {
+				type: 'LOYALTY_CARD',
+				loyalty_card: {
+					points: 100,
+				},
+				redemption: {
+					quantity: 100,
+				},
+				code_config: {
+					pattern: 'TC2-PROMO-#######',
+				},
+			},
+			type: 'AUTO_UPDATE',
+			metadata: {
+				campaign: true,
+			},
+		})
+		const tiersToCreate = [
+			{
+				name: generateRandomString(),
+				points: {
+					from: 10,
+					to: 100,
+				},
+			},
+			{
+				name: generateRandomString(),
+				earning_rules: {},
+				points: {},
+			},
+		]
+		const tiers = await client.loyalties.createTiers(campaign.id, tiersToCreate)
+		tiers.forEach(tier => {
+			const findTier = (tier: LoyaltyTier) => tiersToCreate.find(tierToCreate => tierToCreate.name === tier.name)
+			if (!findTier(tier)) {
+				throw new Error('Could not find tier that should be created')
+			}
+			expect(tier).toEqual(expect.objectContaining(findTier(tier)))
+			expect(typeof tier.name === 'string').toBeTruthy()
+			expect(typeof tier.id === 'string').toBeTruthy()
+			expect(typeof tier.points === 'object').toBeTruthy()
+			if (tier.points?.from) {
+				expect(typeof tier.points.from === 'number').toBeTruthy()
+			}
+			if (tier.points?.to) {
+				expect(typeof tier.points.to === 'number').toBeTruthy()
+			}
+		})
+	})
+
 	it('Create loyalty campaign, create earning rule and validate it', async () => {
 		const campaign = await client.loyalties.create({
 			name: generateRandomString(),

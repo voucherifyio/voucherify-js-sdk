@@ -1006,6 +1006,13 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Loyalty Card Transactions](#list-loyalty-card-transactions)
 - [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
+- [Get Reward Assignment](#get-reward-assignment)
+- [Get Reward Details](#get-reward-details)
+- [List Loyalty Tiers](#list-loyalty-tiers)
+- [Get Loyalty Tier](#get-loyalty-tier)
+- [Create Loyalty Tiers](#create-loyalty-tiers)
+- [List Loyalty Tier Earning Rules](#list-loyalty-tier-earning-rules)
+- [List Member Loyalty Tiers](#list-member-loyalty-tiers)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1216,6 +1223,66 @@ Depending on the parameters, this method sends requests to [v1/loyalties/members
 
 ```javascript
 client.loyalties.exportCardTransactions(memberId, campaignId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+```
+
+---
+
+#### [Get Reward Details](https://docs.voucherify.io/reference/get-reward-details)
+
+```javascript
+client.loyalties.getRewardDetails(campaignId, assignmentId)
+```
+
+---
+
+#### [List Loyalty Tiers](https://docs.voucherify.io/reference/list-loyalty-tiers)
+
+```javascript
+client.loyalties.listTiers(campaignId, params)
+client.loyalties.listTiers(campaignId)
+```
+
+---
+
+#### [Get Loyalty Tier](https://docs.voucherify.io/reference/get-loyalty-tier)
+
+```javascript
+client.loyalties.getTier(campaignId, tierId)
+```
+
+---
+
+#### [Create Loyalty Tiers](https://docs.voucherify.io/reference/create-loyalty-tiers)
+
+```javascript
+client.loyalties.createTiers(campaignId, tiers)
+```
+
+---
+
+#### [List Loyalty Tier Earning Rules](https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules)
+
+```javascript
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId, params)
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId)
+```
+
+---
+
+#### [List Member Loyalty Tiers](https://docs.voucherify.io/reference/get-member-loyalty-tier)
+
+```javascript
+client.loyalties.listMemberLoyaltyTiers(memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.

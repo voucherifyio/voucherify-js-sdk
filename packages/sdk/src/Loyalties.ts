@@ -261,4 +261,59 @@ export class Loyalties {
 			params,
 		)
 	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
+	 */
+	public getRewardAssignment(campaignId: string, assignmentId: string) {
+		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-details
+	 */
+	public getRewardDetails(campaignId: string, assignmentId: string) {
+		return this.client.get<T.LoyaltiesGetRewardDetailsResponseBody>(
+			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}/reward`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tiers
+	 */
+	public listTiers(campaignId: string, params?: T.LoyaltiesListTiersRequestQuery) {
+		return this.client.get<T.LoyaltiesListTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-loyalty-tier
+	 */
+	public getTier(campaignId: string, tierId: string) {
+		return this.client.get<T.LoyaltiesGetTierResponseBody>(`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}`)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/create-loyalty-tiers
+	 */
+	public createTiers(campaignId: string, tiers: T.LoyaltiesCreateTiersRequestBody) {
+		return this.client.post<T.LoyaltiesCreateTiersResponseBody>(`/loyalties/${encode(campaignId)}/tiers`, tiers)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules
+	 */
+	public listLoyaltyTierEarningRules(
+		campaignId: string,
+		tierId: string,
+		params?: T.LoyaltiesListLoyaltyTierEarningRulesRequestQuery,
+	) {
+		return this.client.get<T.LoyaltiesListLoyaltyTierEarningRulesResponseBody>(
+			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/earning-rules`,
+			params,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-member-loyalty-tier
+	 */
+	public listMemberLoyaltyTiers(memberId: string) {
+		return this.client.get<T.LoyaltiesListMemberLoyaltyTiersResponseBody>(
+			`/loyalties/members/${encode(memberId)}/tiers`,
+		)
+	}
 }
