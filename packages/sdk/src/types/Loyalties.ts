@@ -656,12 +656,142 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	}
 	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
+// 0-level types
 
-export type LoyaltiesGetEarningRuleResponseBody = EarningRuleBase & {
-	validation_rule_id: string | null
-	updated_at: string | null
-	active: boolean
+export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
+
+export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
+
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
+
+export type LoyaltiesGetRewardDetailsResponseBody = Reward
+
+export interface LoyaltiesListTiersRequestQuery {
+	limit?: number
+	page?: number
+	order?: 'created_at' | '-created_at' | 'updated_at' | '-updated_at'
 }
+
+export interface LoyaltiesListLoyaltyTierEarningRulesRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export type LoyaltiesGetTierResponseBody = LoyaltyTier
+
+export interface LoyaltiesListTiersResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTier[]
+	total: number
+}
+
+export interface LoyaltiesListMemberLoyaltyTiersResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyTier[]
+	total: number
+}
+
+export interface LoyaltiesListMemberRewardsRequestQuery {
+	affordable_only?: boolean
+	limit?: number
+	page?: number
+}
+
+export interface LoyaltiesListMemberRewardsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: { reward: Reward; assignment: RewardAssignment; object: 'loyalty_reward' }[]
+	total: number
+}
+
+export interface LoyaltiesGetPointsExpirationRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export interface LoyaltiesGetPointsExpirationResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: {
+		id: string
+		voucher_id: string
+		campaign_id: string
+		bucket: {
+			total_points: number
+		}
+		created_at: string
+		status: string
+		expires_at: string
+		updated_at?: string
+		object: 'loyalty_points_bucket'
+	}[]
+	total: number
+}
+
+export interface LoyaltiesListCardTransactionsRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export interface LoyaltiesListCardTransactionsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: LoyaltyCardTransaction[]
+	has_more: boolean
+}
+
+export interface LoyaltiesExportCardTransactionsRequestBody {
+	order?: 'created_at' | '-created_at'
+	fields?: LoyaltyCardTransactionsFields[]
+}
+
+export interface LoyaltiesExportCardTransactionsResponseBody {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED'
+	channel: string
+	exported_object: 'voucher_transactions'
+	parameters: {
+		order?: string
+		fields?: LoyaltyCardTransactionsFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string] //memberId
+				}
+			}
+		}
+	}
+	result: null
+	user_id: null | string
+}
+
+export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
+	points: number
+	expiration_date?: string //ISO-8601
+	expiration_type?: PointsExpirationTypes
+	reason?: string
+	source_id?: string
+}
+
+export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
+	points?: number
+	amount?: number
+	total: number
+	balance: number
+	type: 'LOYALTY_CARD' | 'GIFT_VOUCHER'
+	object: 'balance'
+	related_object: {
+		type: 'voucher'
+		id: string
+	}
+	operation_type?: 'MANUAL' | 'AUTOMATIC'
+}
+
+export type LoyaltiesGetEarningRuleResponseBody = EarningRule
 
 export type LoyaltiesEnableEarningRulesResponseBody = EarningRuleBase & {
 	updated_at: string | null
@@ -673,9 +803,58 @@ export type LoyaltiesDisableEarningRulesResponseBody = EarningRuleBase & {
 	active: false
 }
 
+export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
+	object: 'list'
+	data_ref: 'data'
+	data: EarningRule[]
+	total: number
+}
+
 // domain types
 
-export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
+export interface LoyaltyTierBase {
+	name: string
+	earning_rules?: Record<string, MappingMultiply | MappingFixed>
+	rewards?: Record<string, MappingMultiply | MappingFixed>
+	points: {
+		from?: number
+		to?: number
+	}
+}
+
+export type LoyaltyTier = LoyaltyTierBase & {
+	id: string
+	campaign_id: string
+	metadata: Record<string, unknown> | null
+	created_at: string
+	updated_at?: string | null
+	config: {
+		points: {
+			from?: number
+			to?: number
+		}
+	}
+	expiration?: {
+		customer_id: string
+		campaign_id: string
+		tier_id: string
+		start_date?: string
+		expiration_date?: string
+		created_at: string
+		updated_at?: string
+	}
+	object: 'loyalty_tier'
+}
+
+interface MappingMultiply {
+	type: 'MULTIPLY'
+	multiplier: number
+}
+
+interface MappingFixed {
+	type: 'CUSTOM'
+	points: number
+}
 
 export interface LoyaltyCardTransaction {
 	id: string
@@ -794,6 +973,108 @@ export type LoyaltyCardTransactionsType =
 	| 'POINTS_EXPIRATION'
 	| 'POINTS_TRANSFER_IN'
 	| 'POINTS_TRANSFER_OUT'
+
+export type EarningRule = EarningRuleBase & {
+	validation_rule_id: string | null
+	updated_at: string | null
+	active: boolean
+}
+// domain types
+
+export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
+
+export interface LoyaltyCardTransaction {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string
+	source: string | null
+	reason: string | null
+	type: LoyaltyCardTransactionsType
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order?: {
+			id: string
+			source_id: string
+		}
+		event?: {
+			id: string
+			type: string
+		}
+		earning_rule?: {
+			id: string
+			source: {
+				banner: string
+			}
+		}
+		segment?: {
+			id: string
+			name: string
+		}
+		loyalty_tier?: {
+			id: string
+			name: string
+		}
+		redemption?: {
+			id: string
+		}
+		rollback?: {
+			id: string
+		}
+		reward?: {
+			id: string
+			name: string
+		}
+		custom_event?: {
+			id: string
+			type: string
+		}
+		event_schema?: {
+			id: string
+			name: string
+		}
+		source_voucher?: SimpleLoyaltyVoucher
+		destination_voucher?: SimpleLoyaltyVoucher
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
+
+export interface SimpleLoyaltyVoucher {
+	id: string
+	code: string
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: string
+	}
+	type: 'LOYALTY_CARD'
+	campaign: string
+	campaign_id: string
+	is_referral_code?: boolean
+	holder_id?: string
+	referrer_id?: string
+	created_at?: string
+	object: 'voucher'
+}
+
+export interface LoyaltiesTransferPoints {
+	code: string
+	points: number
+	reason?: string
+	source_id: string
+}
 
 export interface EarningRuleBase {
 	id: string

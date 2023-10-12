@@ -1,7 +1,0 @@
----
-'@voucherify/sdk': minor
----
-
-Add support for few endpoints of Loyalties API.
-- Added support for new endpoints: `GET /loyalties/members/{memberId}`, `GET /loyalties/members/{memberId}/activities`, `GET /loyalties/members/{memberId}/rewards`, `POST /loyalties/{campaignId}/members/{memberId}/transfers`, `GET /loyalties/{campaignId}/members/{memberId}/points-expiration`, `GET /loyalties/members/{memberId}/transactions`, `GET /loyalties/{campaignId}/members/{memberId}/transactions`, `POST /loyalties/members/{memberId}/transactions/export` and `POST /loyalties/{campaignId}/members/{memberId}/transactions/export` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
-- New exported types/interfaces: `LoyaltiesTransferPointsResponseBody`, `LoyaltiesTransferPointsRequestBody`, `LoyaltiesListMemberRewardsRequestQuery`, `LoyaltiesListMemberRewardsResponseBody`, `LoyaltiesGetPointsExpirationRequestQuery`, `LoyaltiesGetPointsExpirationResponseBody`, `LoyaltiesListCardTransactionsRequestQuery`, `LoyaltiesListCardTransactionsResponseBody`, `LoyaltiesExportCardTransactionsRequestBody`, `LoyaltiesExportCardTransactionsResponseBody`, `LoyaltiesAddOrRemoveCardBalanceRequestBody`, `LoyaltiesAddOrRemoveCardBalanceResponseBody`, `LoyaltyCardTransaction`, `SimpleLoyaltyVoucher`, `LoyaltiesTransferPoints`, `LoyaltyCardTransactionsFields`, `LoyaltyCardTransactionsType`, `Reward`, `RewardTypeCampaign`, `RewardTypeCoin`, `RewardTypeMaterial`, `RewardType`, `RewardAssignment`
