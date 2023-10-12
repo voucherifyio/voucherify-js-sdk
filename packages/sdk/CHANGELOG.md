@@ -1,5 +1,52 @@
 # @voucherify/sdk
 
+## 2.5.0
+
+### Minor Changes
+
+- [`c33499d`](https://github.com/voucherifyio/voucherify-js-sdk/commit/c33499d1a75a882c2528c873f260633969eecbdd) [#246](https://github.com/voucherifyio/voucherify-js-sdk/pull/246) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Add support for few endpoints of Loyalties API.
+  - Added support for new endpoints: `GET /loyalties/{campaignId}/reward-assignments/{assignmentId}`, `GET /loyalties/{campaignId}/reward-assignments/{assignmentId}/reward`, `GET /loyalties/{campaignId}/tiers`, `GET /loyalties/{campaignId}/tiers/{tierId}`, `POST /loyalties/{campaignId}/tiers`, `GET /loyalties/{campaignId}/tiers/{tierId}/earning-rules`, `GET /loyalties/members/{memberId}/tiers` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces: `LoyaltiesGetRewardAssignmentResponseBody`, `LoyaltiesGetRewardDetailsResponseBody`, `LoyaltiesListTiersRequestQuery`, `LoyaltiesListLoyaltyTierEarningRulesRequestQuery`, `LoyaltiesGetTierResponseBody`, `LoyaltiesCreateTiersRequestBody`, `LoyaltiesCreateTiersResponseBody`,`LoyaltiesListTiersResponseBody`, `LoyaltiesListMemberLoyaltyTiersResponseBody`, `LoyaltiesListLoyaltyTierEarningRulesResponseBody`, `EarningRule`, `LoyaltyTier`, `CreateLoyaltyTier`, MappingMultiply`,`MappingFixed`
+
+* [`2d5b050`](https://github.com/voucherifyio/voucherify-js-sdk/commit/2d5b050a5f8c2df1e710b647b3a13a29d857a8e2) [#238](https://github.com/voucherifyio/voucherify-js-sdk/pull/238) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Add support for few endpoints of Loyalties API.
+  - Added support for new endpoints: `GET /loyalties/members/{memberId}`, `GET /loyalties/members/{memberId}/activities`, `GET /loyalties/members/{memberId}/rewards`, `POST /loyalties/{campaignId}/members/{memberId}/transfers`, `GET /loyalties/{campaignId}/members/{memberId}/points-expiration`, `GET /loyalties/members/{memberId}/transactions`, `GET /loyalties/{campaignId}/members/{memberId}/transactions`, `POST /loyalties/members/{memberId}/transactions/export` and `POST /loyalties/{campaignId}/members/{memberId}/transactions/export` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces: `LoyaltiesTransferPointsResponseBody`, `LoyaltiesTransferPointsRequestBody`, `LoyaltiesListMemberRewardsRequestQuery`, `LoyaltiesListMemberRewardsResponseBody`, `LoyaltiesGetPointsExpirationRequestQuery`, `LoyaltiesGetPointsExpirationResponseBody`, `LoyaltiesListCardTransactionsRequestQuery`, `LoyaltiesListCardTransactionsResponseBody`, `LoyaltiesExportCardTransactionsRequestBody`, `LoyaltiesExportCardTransactionsResponseBody`, `LoyaltiesAddOrRemoveCardBalanceRequestBody`, `LoyaltiesAddOrRemoveCardBalanceResponseBody`, `LoyaltyCardTransaction`, `SimpleLoyaltyVoucher`, `LoyaltiesTransferPoints`, `LoyaltyCardTransactionsFields`, `LoyaltyCardTransactionsType`, `Reward`, `RewardTypeCampaign`, `RewardTypeCoin`, `RewardTypeMaterial`, `RewardType`, `RewardAssignment`
+
+- [`e135b17`](https://github.com/voucherifyio/voucherify-js-sdk/commit/e135b1766ef73bb272629e2ce93a9878e3ec90fd) [#242](https://github.com/voucherifyio/voucherify-js-sdk/pull/242) Thanks [@weronika-kurczyna](https://github.com/weronika-kurczyna)! - Added missing methods covering Product Collections API.
+  - Added support for new endpoints:
+  - `GET POST /product-collections`,
+  - `GET DELETE /product-collections/{productCollectionId}`,
+  - `GET /product-collections/${productCollectionId}/products` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces in `ProductCollections.ts`:
+    - Domain types:
+      - ProductIdentity
+      - SkuIdentity
+      - ProductBase
+      - SkuBase
+      - ProductSaved
+      - SkuSaved
+      - ProductOrSkuIdentity
+      - ProductCollectionIdentity
+      - ProductCollectionSaved
+      - ProductCollectionBase
+      - StaticProductCollectionBase
+      - DynamicProductCollectionBase
+      - Filter
+      - Junction
+      - AllowedFiltersKeys
+      - FiltersCondition
+    - 0-level types:
+      - ProductCollectionsCreateRequestBody
+      - ProductCollectionsCreateResponseBody
+      - ProductCollectionsListRequestQuery
+      - ProductCollectionsListResponseBody
+      - ProductCollectionsGetResponseBody
+      - ProductCollectionsListProductsRequestQuery
+      - ProductCollectionsListProductsResponseBody
+
+* [`841b6d5`](https://github.com/voucherifyio/voucherify-js-sdk/commit/841b6d57f33ff288666fde79c46a6945ed565659) [#244](https://github.com/voucherifyio/voucherify-js-sdk/pull/244) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Add support for endpoint `GET /exports`.
+  - New exported types/interfaces: `ExportsListRequestQuery`, `ExportsListResponseBody`, `ExportBase`, `ExportResourceResponse`, `FieldConditions`, `ExportVoucher`, `ExportVoucherFilters`, `ExportRedemption`, `ExportRedemptionFilters`, `ExportCustomer`, `ExportCustomerFilters`, `ExportPublication`, `ExportPublicationFilters`, `ExportOrder`, `ExportOrderFilters`, `ExportPointsExpiration`, `ExportPointsExpirationFilters`, `ExportVoucherTransactionsExpiration`, `ExportVoucherTransactionsFilters`, `Junction`, `FiltersCondition`, `ExportCustomerFields`, `ExportCustomerOrder`, `ExportPublicationFields`, `ExportPublicationOrder`, `ExportRedemptionFields`, `ExportRedemptionOrder`, `ExportVoucherFields`, `ExportVoucherOrder`, `ExportOrderFields`, `ExportOrderOrder`, `ExportPointsExpirationFields`, `ExportPointsExpirationOrder`, `ExportVoucherTransactionsFields`, `ExportVoucherTransactionsOrder`
+
 ## 2.4.0
 
 ### Minor Changes
