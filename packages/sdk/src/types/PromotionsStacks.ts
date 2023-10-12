@@ -38,8 +38,8 @@ export type PromotionsStacksUpdateResponseBody = Required<PromotionStack, 'updat
 
 export type PromotionsStacksCreateInCampaignRequestBody = (PromotionStackBase & { category_id?: string })[]
 export type PromotionsStacksCreateInCampaignResponseBody = PromotionStack[]
-// domain
 
+// domain types
 export interface PromotionStackBase {
 	name: string
 	tiers: {
