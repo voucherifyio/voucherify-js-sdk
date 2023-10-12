@@ -365,6 +365,7 @@
 				<p>Methods are provided within <code>client.distributions.*</code> namespace.</p>
 				<ul>
 					<li><a href="#create-export">Create Export</a></li>
+					<li><a href="#list-exports">List Exports</a></li>
 					<li><a href="#get-export">Get Export</a></li>
 					<li><a href="#delete-export">Delete Export</a></li>
 					<li><a href="#list-publications">List publications</a></li>
@@ -376,6 +377,11 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">exportObject</span><span style="color: #000000">)</span>
 </code></pre>
 				<p>Check <a href="https://docs.voucherify.io/v1/reference/the-export-object">the export object</a>.</p>
+				<a href="#list-exports" id="list-exports" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-exports">List Exports</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+</code></pre>
 				<a href="#get-export" id="get-export" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-export">Get Export</a></h4>
 				</a>
@@ -1680,10 +1686,40 @@
 						<a href="interfaces/EventsResponse.html" class="tsd-kind-icon">Events<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportBase.html" class="tsd-kind-icon">Export<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportCustomer.html" class="tsd-kind-icon">Export<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportOrder.html" class="tsd-kind-icon">Export<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPointsExpiration.html" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPublication.html" class="tsd-kind-icon">Export<wbr>Publication</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportRedemption.html" class="tsd-kind-icon">Export<wbr>Redemption</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportResource.html" class="tsd-kind-icon">Export<wbr>Resource</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucher.html" class="tsd-kind-icon">Export<wbr>Voucher</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucherTransactionsExpiration.html" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Expiration</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportsCreateResponse.html" class="tsd-kind-icon">Exports<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListRequestQuery.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListResponseBody.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/GiftRedemptionParams.html" class="tsd-kind-icon">Gift<wbr>Redemption<wbr>Params</a>
@@ -2262,7 +2298,82 @@
 						<a href="modules.html#EarningRuleProportionalOrderItems" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Export" class="tsd-kind-icon">Export</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFields" class="tsd-kind-icon">Export<wbr>Customer<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFilters" class="tsd-kind-icon">Export<wbr>Customer<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerOrder" class="tsd-kind-icon">Export<wbr>Customer<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFields" class="tsd-kind-icon">Export<wbr>Order<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFilters" class="tsd-kind-icon">Export<wbr>Order<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderOrder" class="tsd-kind-icon">Export<wbr>Order<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFields" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFilters" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationOrder" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFields" class="tsd-kind-icon">Export<wbr>Publication<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFilters" class="tsd-kind-icon">Export<wbr>Publication<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationOrder" class="tsd-kind-icon">Export<wbr>Publication<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFields" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFilters" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionOrder" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ExportsGetResponse" class="tsd-kind-icon">Exports<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FieldConditions" class="tsd-kind-icon">Field<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FiltersCondition" class="tsd-kind-icon">Filters<wbr>Condition</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Junction" class="tsd-kind-icon">Junction</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesCreateEarningRuleResponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Earning<wbr>Rule<wbr>Response</a>
