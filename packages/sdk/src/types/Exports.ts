@@ -42,7 +42,7 @@ export interface ExportsListRequestQuery {
 export interface ExportsListResponseBody {
 	object: 'list'
 	data_ref: 'exports'
-	exports: ExportResourceResponse[]
+	exports: Export[]
 	total: number
 }
 
@@ -60,7 +60,7 @@ export interface ExportBase {
 	user_id: string | null
 }
 
-export type ExportResourceResponse = ExportBase &
+export type Export = ExportBase &
 	(
 		| ExportVoucher
 		| ExportRedemption
