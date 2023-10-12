@@ -42841,14 +42841,14 @@
 			]
 		},
 		{
-			"id": 3226,
+			"id": 3227,
 			"name": "VoucherifyClientSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 3227,
+					"id": 3228,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42865,7 +42865,7 @@
 					}
 				},
 				{
-					"id": 3228,
+					"id": 3229,
 					"name": "clientApplicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42880,7 +42880,7 @@
 					}
 				},
 				{
-					"id": 3229,
+					"id": 3230,
 					"name": "clientSecretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42895,7 +42895,7 @@
 					}
 				},
 				{
-					"id": 3232,
+					"id": 3233,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42921,7 +42921,7 @@
 					}
 				},
 				{
-					"id": 3233,
+					"id": 3234,
 					"name": "exposeErrorCause",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42937,7 +42937,7 @@
 					}
 				},
 				{
-					"id": 3231,
+					"id": 3232,
 					"name": "origin",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42960,7 +42960,7 @@
 					}
 				},
 				{
-					"id": 3234,
+					"id": 3235,
 					"name": "timeoutMs",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42976,7 +42976,7 @@
 					}
 				},
 				{
-					"id": 3230,
+					"id": 3231,
 					"name": "trackingId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -42998,27 +42998,27 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						3227,
 						3228,
 						3229,
-						3232,
+						3230,
 						3233,
-						3231,
 						3234,
-						3230
+						3232,
+						3235,
+						3231
 					]
 				}
 			]
 		},
 		{
-			"id": 3213,
+			"id": 3214,
 			"name": "VoucherifyServerSideOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 3214,
+					"id": 3215,
 					"name": "apiUrl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43035,7 +43035,7 @@
 					}
 				},
 				{
-					"id": 3217,
+					"id": 3218,
 					"name": "apiVersion",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43052,7 +43052,7 @@
 					}
 				},
 				{
-					"id": 3215,
+					"id": 3216,
 					"name": "applicationId",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43067,7 +43067,7 @@
 					}
 				},
 				{
-					"id": 3218,
+					"id": 3219,
 					"name": "channel",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43080,7 +43080,7 @@
 					}
 				},
 				{
-					"id": 3220,
+					"id": 3221,
 					"name": "customHeaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43106,7 +43106,7 @@
 					}
 				},
 				{
-					"id": 3219,
+					"id": 3220,
 					"name": "dangerouslySetSecretKeyInBrowser",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43123,7 +43123,7 @@
 					}
 				},
 				{
-					"id": 3221,
+					"id": 3222,
 					"name": "exposeErrorCause",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43139,7 +43139,7 @@
 					}
 				},
 				{
-					"id": 3216,
+					"id": 3217,
 					"name": "secretKey",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43154,7 +43154,7 @@
 					}
 				},
 				{
-					"id": 3222,
+					"id": 3223,
 					"name": "timeoutMs",
 					"kind": 1024,
 					"kindString": "Property",
@@ -43175,15 +43175,15 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						3214,
-						3217,
 						3215,
 						3218,
-						3220,
+						3216,
 						3219,
 						3221,
-						3216,
-						3222
+						3220,
+						3222,
+						3217,
+						3223
 					]
 				}
 			]
@@ -52886,28 +52886,28 @@
 			}
 		},
 		{
-			"id": 3223,
+			"id": 3224,
 			"name": "VoucherifyClientSide",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 3224,
+					"id": 3225,
 					"name": "VoucherifyClientSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 3225,
+							"id": 3226,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 3226,
+								"id": 3227,
 								"name": "VoucherifyClientSideOptions"
 							}
 						}
@@ -52942,7 +52942,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 3213,
+								"id": 3214,
 								"name": "VoucherifyServerSideOptions"
 							}
 						}
@@ -52957,7 +52957,7 @@
 							"flags": {},
 							"children": [
 								{
-									"id": 3211,
+									"id": 3212,
 									"name": "apiLimitsHandler",
 									"kind": 1024,
 									"kindString": "Property",
@@ -52968,7 +52968,7 @@
 									}
 								},
 								{
-									"id": 3210,
+									"id": 3211,
 									"name": "asyncActions",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53038,7 +53038,7 @@
 									}
 								},
 								{
-									"id": 3209,
+									"id": 3210,
 									"name": "events",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53050,7 +53050,7 @@
 									}
 								},
 								{
-									"id": 3206,
+									"id": 3207,
 									"name": "loyalties",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53062,7 +53062,7 @@
 									}
 								},
 								{
-									"id": 3212,
+									"id": 3213,
 									"name": "metadataSchemas",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53082,6 +53082,17 @@
 										"type": "reference",
 										"id": 330,
 										"name": "Orders"
+									}
+								},
+								{
+									"id": 3205,
+									"name": "productCollections",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ProductCollections"
 									}
 								},
 								{
@@ -53121,7 +53132,7 @@
 									}
 								},
 								{
-									"id": 3205,
+									"id": 3206,
 									"name": "rewards",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53133,7 +53144,7 @@
 									}
 								},
 								{
-									"id": 3207,
+									"id": 3208,
 									"name": "segments",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53145,7 +53156,7 @@
 									}
 								},
 								{
-									"id": 3208,
+									"id": 3209,
 									"name": "validationRules",
 									"kind": 1024,
 									"kindString": "Property",
@@ -53186,23 +53197,24 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
+										3212,
 										3211,
-										3210,
 										3195,
 										3196,
 										3202,
 										3201,
 										3197,
-										3209,
-										3206,
-										3212,
+										3210,
+										3207,
+										3213,
 										3203,
+										3205,
 										3204,
 										3200,
 										3199,
-										3205,
-										3207,
+										3206,
 										3208,
+										3209,
 										3198,
 										3194
 									]
@@ -53454,8 +53466,8 @@
 				1127,
 				1150,
 				2740,
-				3226,
-				3213,
+				3227,
+				3214,
 				2454,
 				2450,
 				2373,
@@ -53631,7 +53643,7 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				3223,
+				3224,
 				3190
 			]
 		}
