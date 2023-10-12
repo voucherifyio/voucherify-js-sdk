@@ -341,6 +341,7 @@ client.campaigns.disable(campaignId)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
+
 ---
 
 ### Distributions
@@ -895,6 +896,47 @@ client.products.importSkusCSV(filePath)
 
 ```javascript
 client.products.importCSV(filePath)
+```
+
+### Product Collections
+
+Methods are provided within `client.productCollections.*` namespace.
+
+- [List Product Collections](#list-product-collections)
+- [Create Product Collections](#create-product-collection)
+- [Get Product Collection](#get-product-collection)
+- [Delete Product Collection](#delete-product-collection)
+- [List Products in Collection](#list-products-in-collection)
+
+#### [List Product Collections](https://docs.voucherify.io/reference/list-product-collections)
+
+```javascript
+client.productCollections.list()
+```
+
+#### [Create Product Collection](https://docs.voucherify.io/reference/create-product-collection)
+
+```javascript
+client.productCollections.create(productCollection)
+```
+
+#### [Get Product Collection](https://docs.voucherify.io/reference/get-product-collection)
+
+```javascript
+client.productCollections.get(productCollectionId)
+```
+
+#### [Delete Product Collection](https://docs.voucherify.io/reference/delete-product-collection)
+
+```javascript
+client.productCollections.delete(productCollectionId)
+```
+
+
+#### [List Products in Collection](https://docs.voucherify.io/reference/list-products-in-collection)
+
+```javascript
+client.productCollections.listProducts(productCollectionId)
 ```
 
 ---
