@@ -660,7 +660,7 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 
 export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
 
-export type LoyaltiesCreateTiersResponseBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
+export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
 
 export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
 
