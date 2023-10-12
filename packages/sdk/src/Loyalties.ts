@@ -142,20 +142,51 @@ export class Loyalties {
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/get-member
+	 * @see https://docs.voucherify.io/reference/get-member-1
 	 */
-	public getMember(campaignId: string, memberId: string) {
-		return this.client.get<T.LoyaltiesGetMemberResponse>(`/loyalties/${encode(campaignId)}/members/${memberId}`)
-	}
-	/**
-	 * @see https://docs.voucherify.io/reference/get-member-activities
-	 */
-	public getMemberActivities(campaignId: string, memberId: string) {
-		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(
-			`/loyalties/${encode(campaignId)}/members/${memberId}/activities`,
+	public getMember(campaignId: string | null, memberId: string) {
+		return this.client.get<T.LoyaltiesGetMemberResponse>(
+			campaignId ? `/loyalties/${encode(campaignId)}/members/${memberId}` : `/loyalties/members/${memberId}`,
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/add-loyalty-card-balance
+	 * @see https://docs.voucherify.io/reference/get-member-activities
+	 * @see https://docs.voucherify.io/reference/get-member-activities-1
+	 */
+	public getMemberActivities(campaignId: string | null, memberId: string) {
+		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${memberId}/activities`
+				: `/loyalties/members/${memberId}/activities`,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-member-rewards
+	 */
+	public listMemberRewards(memberId: string, params?: T.LoyaltiesListMemberRewardsRequestQuery) {
+		return this.client.get<T.LoyaltiesListMemberRewardsResponseBody>(
+			`/loyalties/members/${encode(memberId)}/rewards`,
+			params,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
+	 */
+	public addOrRemoveCardBalance(
+		memberId: string,
+		balance: T.LoyaltiesAddOrRemoveCardBalanceRequestBody,
+		campaignId?: string,
+	) {
+		return this.client.post<T.LoyaltiesAddOrRemoveCardBalanceResponseBody>(
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${memberId}/balance`
+				: `/loyalties/members/${memberId}/balance`,
+			balance,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1
 	 */
 	public addPoints(campaignId: string, memberId: string, balance: T.LoyaltiesAddPoints) {
 		return this.client.post<T.LoyaltiesAddPointsResponse>(
@@ -164,11 +195,69 @@ export class Loyalties {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/transfer-points
+	 */
+	public transferPoints(
+		campaignId: string,
+		memberId: string,
+		loyaltiesTransferPoints: T.LoyaltiesTransferPointsRequestBody,
+	) {
+		return this.client.post<T.LoyaltiesTransferPointsResponseBody>(
+			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transfers`,
+			loyaltiesTransferPoints,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/get-points-expiration
+	 */
+	public getPointsExpiration(
+		campaignId: string,
+		memberId: string,
+		params?: T.LoyaltiesGetPointsExpirationRequestQuery,
+	) {
+		return this.client.get<T.LoyaltiesGetPointsExpirationResponseBody>(
+			`/loyalties/${encode(campaignId)}/members/${memberId}/points-expiration`,
+			params,
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/redeem-loyalty-card
 	 */
 	public redeemReward(campaignId: string, memberId: string, params: T.LoyaltiesRedeemRewardParams) {
 		return this.client.post<T.LoyaltiesRedeemRewardResponse>(
 			`/loyalties/${encode(campaignId)}/members/${encode(memberId)}/redemption`,
+			params,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
+	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions-1
+	 */
+	public listCardTransactions(
+		memberId: string,
+		campaignId: string | null,
+		params?: T.LoyaltiesListCardTransactionsRequestQuery,
+	) {
+		return this.client.get<T.LoyaltiesListCardTransactionsResponseBody>(
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions`
+				: `/loyalties/members/${encode(memberId)}/transactions`,
+			params,
+		)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/export-loyalty-card-transactions
+	 * @see https://docs.voucherify.io/reference/export-loyalty-card-transactions-1
+	 */
+	public exportCardTransactions(
+		memberId: string,
+		campaignId: string | null,
+		params: T.LoyaltiesExportCardTransactionsRequestBody = {},
+	) {
+		return this.client.post<T.LoyaltiesExportCardTransactionsResponseBody>(
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions/export`
+				: `/loyalties/members/${encode(memberId)}/transactions/export`,
 			params,
 		)
 	}

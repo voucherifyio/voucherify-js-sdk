@@ -990,10 +990,15 @@ Methods are provided within `client.loyalties.*` namespace.
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
-- [List Loyalty Program Members](#list-loyalty-members)
+- [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
-- [Add Loyalty Card Balance](#add-loyalty-card-balance)
+- [Add Or Remove Loyalty Card Balance](#add-or-remove-loyalty-card-balance)
+- [[Deprecated] Add Loyalty Card Balance](#add-loyalty-card-balance)
+- [Transfer Loyalty Points](#transfer-loyalty-points)
+- [Get Loyalty Points Expiration](#get-loyalty-points-expiration)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
+- [List Loyalty Card Transactions](#list-loyalty-card-transactions)
+- [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1102,6 +1107,8 @@ client.loyalties.createMember(campaignId, member)
 
 #### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
 
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}](https://docs.voucherify.io/reference/get-member) or [v1/loyalties/{campaignId}/members/{memberId}](https://docs.voucherify.io/reference/get-member-1) API endpoint
+
 ```javascript
 client.loyalties.getMember(campaignId, memberId)
 ```
@@ -1115,19 +1122,62 @@ client.loyalties.listMembers(campaignId, params)
 
 #### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
 
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/activities](https://docs.voucherify.io/reference/get-member-activities) or [v1/loyalties/{campaignId}/members/{memberId}/activities](https://docs.voucherify.io/reference/get-member-activities-1) API endpoint
+
 ```javascript
 client.loyalties.getMemberActivities(campaignId, memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
+
+#### [List Member Rewards](https://docs.voucherify.io/reference/list-member-rewards)
+
+```javascript
+client.loyalties.listMemberRewards(memberId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Add Or Remove Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance) or [v1/loyalties/{campaignId}/members/{memberId}/balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1) API endpoint
+
+```javascript
+client.loyalties.addOrRemoveCardBalance(memberId, balance, campaignId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance-1)
 
 ```javascript
 client.loyalties.addPoints(campaignId, memberId, balance)
 ```
 
 `memberId` referrers to Loyalty Card code.
+
+#### [Transfer Loyalty Points](https://docs.voucherify.io/reference/transfer-points)
+
+```javascript
+client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Get Loyalty Points Expiration](https://docs.voucherify.io/reference/get-points-expiration)
+
+```javascript
+client.loyalties.getPointsExpiration(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
 
 #### [Redeem Loyalty Card]
 
@@ -1138,6 +1188,30 @@ client.loyalties.redeemReward(campaignId, memberId, params)
 `memberId` referrers to Loyalty Card code.
 
 When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
+
+---
+
+#### [List Loyalty Card Transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions) or [v1/loyalties/{campaignId}/members/{memberId}/transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions-1) API endpoint
+
+```javascript
+client.loyalties.listCardTransactions(memberId, campaignId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Export Loyalty Card Transactions](https://docs.voucherify.io/reference/export-loyalty-card-transactions)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/transactions/export](https://docs.voucherify.io/reference/export-loyalty-card-transactions) or [v1/loyalties/{campaignId}/members/{memberId}/transactions/export](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1) API endpoint
+
+```javascript
+client.loyalties.exportCardTransactions(memberId, campaignId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
 
 ---
 
