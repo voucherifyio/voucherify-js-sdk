@@ -670,8 +670,6 @@ export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Re
 
 export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
 
-export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
-
 export type LoyaltiesGetRewardDetailsResponseBody = Reward
 
 export interface LoyaltiesListTiersRequestQuery {
