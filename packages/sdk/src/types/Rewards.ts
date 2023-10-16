@@ -138,6 +138,10 @@ export interface RewardsListAssignmentsResponseBody {
 	total: number
 }
 
+// Get assignment
+
+export type RewardsGetAssignmentResponseBody = RewardAssignment
+
 // Create assignment
 
 export type RewardsCreateAssignmentRequestBody =

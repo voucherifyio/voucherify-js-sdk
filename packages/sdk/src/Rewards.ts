@@ -37,6 +37,14 @@ export class Rewards {
 		return this.client.delete(`/rewards/${encode(rewardId)}`)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment
+	 */
+	public getAssignment(rewardId: string, assignmentId: string) {
+		return this.client.get<T.RewardsGetAssignmentResponseBody>(
+			`/rewards/${encode(rewardId)}/assignments/${encode(assignmentId)}`,
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/list-reward-assignments
 	 */
 	public listAssignments(rewardId: string, params: T.RewardsListAssignmentsRequestQuery = {}) {

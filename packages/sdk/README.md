@@ -880,6 +880,7 @@ Methods are provided within `client.rewards.*` namespace.
 - [Update Reward](#update-reward)
 - [Delete Reward](#delete-reward)
 - [List Rewards](#list-rewards)
+- [Get Assignment](#get-reward-assignment)
 - [Create Reward Assignment](#create-reward-assignment)
 - [Update Reward Assignment](#update-reward-assignment)
 - [Delete Reward Assignment](#delete-reward-assignment)
@@ -918,13 +919,19 @@ client.rewards.list()
 client.rewards.list(params)
 ```
 
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment)
+
+```javascript
+client.rewards.getAssignment(rewardId, assignment)
+```
+
 #### [Create Reward Assignment](https://docs.voucherify.io/reference/create-reward-assignment)
 
 ```javascript
 client.rewards.createAssignment(rewardId, assignment)
 ```
 
-Check [reward assignment object](https://docs.voucherify.io/reference/the-reward-assignment-object).
+Check [reward assignment object](https://docs.voucherify.io/reference/reward-assignment-object).
 
 #### [Update Reward Assignment](https://docs.voucherify.io/reference/update-reward-assignment)
 
