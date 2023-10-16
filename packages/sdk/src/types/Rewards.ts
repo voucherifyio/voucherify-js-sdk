@@ -202,10 +202,10 @@ export interface RewardAssignment {
 	object: 'reward_assignment'
 }
 
-
 // New types - rewards assignments
 // Domain types
 // Reward assignment
+
 export interface RewardAssignmentIdentity {
 	id?: string
 	reward_id?: string
@@ -232,6 +232,7 @@ export type RewardsAssignment = Required<RewardAssignmentIdentity> &
 
 // 0-level types
 // List assignments
+
 export interface RewardsListAssignmentsRequestQuery {
 	limit?: number
 	page?: number
@@ -269,6 +270,7 @@ export interface RewardsCreateAssignmentMainRequestBody {
 export type RewardsCreateAssignmentResponseBody = Required<RewardsAssignment>
 
 // Update assignments
+
 export interface RewardsUpdateAssignmentRequestBody {
 	parameters?: {
 		loyalty?: {
