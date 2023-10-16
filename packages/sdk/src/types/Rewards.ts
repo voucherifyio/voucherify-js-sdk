@@ -202,6 +202,7 @@ export interface RewardAssignment {
 	object: 'reward_assignment'
 }
 
+
 // New types - rewards assignments
 // Domain types
 // Reward assignment

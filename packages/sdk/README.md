@@ -130,7 +130,7 @@ const client = VoucherifyServerSide({
 	apiUrl: 'https://<region>.api.voucherify.io', // optional
 	apiVersion: 'v2018-08-01', // optional
 	channel: 'e-commerce', // optional
-	customHeaders: { "MY_CUSTOM_HEADER": "my_value" } // optional
+	customHeaders: { "MY_CUSTOM_HEADER": "my_value" }, // optional
 	timeoutMs: 10000 // optional
 })
 ```
@@ -341,6 +341,7 @@ client.campaigns.disable(campaignId)
 client.campaigns.qualifications.examine(body)
 client.campaigns.qualifications.examine(body, params)
 ```
+
 ---
 
 ### Distributions
@@ -348,6 +349,7 @@ client.campaigns.qualifications.examine(body, params)
 Methods are provided within `client.distributions.*` namespace.
 
 - [Create Export](#create-export)
+- [List Exports](#list-exports)
 - [Get Export](#get-export)
 - [Delete Export](#delete-export)
 - [List publications](#list-publications)
@@ -360,6 +362,12 @@ client.distributions.exports.create(exportObject)
 ```
 
 Check [the export object](https://docs.voucherify.io/v1/reference/the-export-object).
+
+#### [List Exports](https://docs.voucherify.io/reference/list-exports)
+
+```javascript
+client.distributions.exports.list()
+```
 
 #### [Get Export](https://docs.voucherify.io/reference/get-export)
 
@@ -574,7 +582,7 @@ Check [promotion's tier object](https://docs.voucherify.io/reference/the-promoti
 
 ```javascript
 client.promotions.tiers.listAll()
-client.promotions.tiers.listAll(params})
+client.promotions.tiers.listAll(params)
 ```
 
 #### [Add Promotion Tier to Campaign](https://docs.voucherify.io/reference/add-promotion-tier-to-campaign)
@@ -611,9 +619,12 @@ Methods are provided within `client.customers.*` namespace.
 - [Get Customer](#get-customer)
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
+- [Delete Customer Permanently](#delete-customer-permanently)
 - [List Customers](#list-customers)
 - [Update Customer's Consents](#update-customers-consents)
 - [List Customer's Activities](#list-customers-activities)
+- [Update Customers in bulk](#update-customers-in-bulk)
+- [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 - [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
@@ -642,6 +653,12 @@ client.customers.update(customer)
 
 ```javascript
 client.customers.delete(customerId)
+```
+
+#### [Delete Customer Permanently](https://docs.voucherify.io/reference/delete-customer-permanently)
+
+```javascript
+client.customers.deletePermanently(customerId)
 ```
 
 #### [List Customers](https://docs.voucherify.io/reference/list-customers)
@@ -700,6 +717,18 @@ client.customers.listActivities(customerId, params)
 
 ```javascript
 client.customers.importCSV(filePath)
+```
+
+#### [Update Customers in bulk](https://docs.voucherify.io/reference/update-customers-in-bulk)
+
+```javascript
+client.customers.updateInBulk(customers)
+```
+
+#### [Update Customers' Metadata in bulk](https://docs.voucherify.io/reference/update-customers-metadata-in-bulk)
+
+```javascript
+client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
 ```
 
 ---
@@ -869,6 +898,47 @@ client.products.importSkusCSV(filePath)
 client.products.importCSV(filePath)
 ```
 
+### Product Collections
+
+Methods are provided within `client.productCollections.*` namespace.
+
+- [List Product Collections](#list-product-collections)
+- [Create Product Collections](#create-product-collection)
+- [Get Product Collection](#get-product-collection)
+- [Delete Product Collection](#delete-product-collection)
+- [List Products in Collection](#list-products-in-collection)
+
+#### [List Product Collections](https://docs.voucherify.io/reference/list-product-collections)
+
+```javascript
+client.productCollections.list()
+```
+
+#### [Create Product Collection](https://docs.voucherify.io/reference/create-product-collection)
+
+```javascript
+client.productCollections.create(productCollection)
+```
+
+#### [Get Product Collection](https://docs.voucherify.io/reference/get-product-collection)
+
+```javascript
+client.productCollections.get(productCollectionId)
+```
+
+#### [Delete Product Collection](https://docs.voucherify.io/reference/delete-product-collection)
+
+```javascript
+client.productCollections.delete(productCollectionId)
+```
+
+
+#### [List Products in Collection](https://docs.voucherify.io/reference/list-products-in-collection)
+
+```javascript
+client.productCollections.listProducts(productCollectionId)
+```
+
 ---
 
 ### Rewards
@@ -971,14 +1041,29 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
 - [Delete Loyalty Program Earning Rule](#delete-loyalty-program-earning-rule)
+- [Get Loyalty Program Earning Rule](#get-loyalty-program-earning-rule)
+- [Enable Loyalty Program Earning Rule](#enable-loyalty-program-earning-rule)
+- [Disable Loyalty Program Earning Rule](#disable-loyalty-program-earning-rule)
 - [List Loyalty Program Earning Rules](#list-loyalty-program-earning-rules)
 - [Create Loyalty Program Member](#create-loyalty-program-member)
 - [Get Loyalty Program Member](#get-loyalty-program-member)
 - [List Loyalty Program Members](#list-loyalty-program-members)
 - [Get Loyalty Program Member Activities](#get-loyalty-program-member-activities)
-- [Add Loyalty Card Balance](#add-loyalty-card-balance)
+- [Add Or Remove Loyalty Card Balance](#add-or-remove-loyalty-card-balance)
+- [[Deprecated] Add Loyalty Card Balance](#add-loyalty-card-balance)
+- [Transfer Loyalty Points](#transfer-loyalty-points)
+- [Get Loyalty Points Expiration](#get-loyalty-points-expiration)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
 - [List Loyalty Tier Rewards](#list-loyalty-tier-rewards)
+- [List Loyalty Card Transactions](#list-loyalty-card-transactions)
+- [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
+- [Get Reward Assignment](#get-reward-assignment)
+- [Get Reward Details](#get-reward-details)
+- [List Loyalty Tiers](#list-loyalty-tiers)
+- [Get Loyalty Tier](#get-loyalty-tier)
+- [Create Loyalty Tiers](#create-loyalty-tiers)
+- [List Loyalty Tier Earning Rules](#list-loyalty-tier-earning-rules)
+- [List Member Loyalty Tiers](#list-member-loyalty-tiers)
 
 #### [Create Loyalty Program](https://docs.voucherify.io/reference/create-loyalty-program)
 
@@ -1061,6 +1146,24 @@ client.loyalties.updateEarningRule(campaignId, earningRule)
 client.loyalties.deleteEarningRule(campaignId, earningRuleId)
 ```
 
+#### [Get Loyalty Program Earning Rule](https://docs.voucherify.io/reference/get-earning-rule)
+
+```javascript
+client.loyalties.getEarningRule(campaignId, earningRuleId)
+```
+
+#### [Enable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/enable-earning-rule)
+
+```javascript
+client.loyalties.enableEarningRule(campaignId, earningRuleId)
+```
+
+#### [Disable Loyalty Program Earning Rule](https://docs.voucherify.io/reference/disable-earning-rule)
+
+```javascript
+client.loyalties.disableEarningRule(campaignId, earningRuleId)
+```
+
 #### [List Loyalty Program Earning Rules](https://docs.voucherify.io/reference/list-earning-rules)
 
 ```javascript
@@ -1076,6 +1179,8 @@ client.loyalties.createMember(campaignId, member)
 
 #### [Get Loyalty Program Member](https://docs.voucherify.io/reference/get-member)
 
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}](https://docs.voucherify.io/reference/get-member) or [v1/loyalties/{campaignId}/members/{memberId}](https://docs.voucherify.io/reference/get-member-1) API endpoint
+
 ```javascript
 client.loyalties.getMember(campaignId, memberId)
 ```
@@ -1089,19 +1194,62 @@ client.loyalties.listMembers(campaignId, params)
 
 #### [Get Loyalty Program Member Activities](https://docs.voucherify.io/reference#get-member-activities)
 
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/activities](https://docs.voucherify.io/reference/get-member-activities) or [v1/loyalties/{campaignId}/members/{memberId}/activities](https://docs.voucherify.io/reference/get-member-activities-1) API endpoint
+
 ```javascript
 client.loyalties.getMemberActivities(campaignId, memberId)
 ```
 
 `memberId` referrers to Loyalty Card code.
 
-#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance)
+
+#### [List Member Rewards](https://docs.voucherify.io/reference/list-member-rewards)
+
+```javascript
+client.loyalties.listMemberRewards(memberId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Add Or Remove Loyalty Card Balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance) or [v1/loyalties/{campaignId}/members/{memberId}/balance](https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1) API endpoint
+
+```javascript
+client.loyalties.addOrRemoveCardBalance(memberId, balance, campaignId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+#### [Add Loyalty Card Balance](https://docs.voucherify.io/reference/add-loyalty-card-balance-1)
 
 ```javascript
 client.loyalties.addPoints(campaignId, memberId, balance)
 ```
 
 `memberId` referrers to Loyalty Card code.
+
+#### [Transfer Loyalty Points](https://docs.voucherify.io/reference/transfer-points)
+
+```javascript
+client.loyalties.transferPoints(campaignId, memberId, transferLoyaltyPoints)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Get Loyalty Points Expiration](https://docs.voucherify.io/reference/get-points-expiration)
+
+```javascript
+client.loyalties.getPointsExpiration(campaignId, memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
 
 #### [Redeem Loyalty Card]
 
@@ -1118,6 +1266,90 @@ When redeeming reward with type `COIN` you need to provide additional `order` ob
 ```javascript
 client.loyalties.listLoyaltyTierRewards(campaignId, tierId)
 ```
+
+---
+
+#### [List Loyalty Card Transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions) or [v1/loyalties/{campaignId}/members/{memberId}/transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions-1) API endpoint
+
+```javascript
+client.loyalties.listCardTransactions(memberId, campaignId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Export Loyalty Card Transactions](https://docs.voucherify.io/reference/export-loyalty-card-transactions)
+
+Depending on the parameters, this method sends requests to [v1/loyalties/members/{memberId}/transactions/export](https://docs.voucherify.io/reference/export-loyalty-card-transactions) or [v1/loyalties/{campaignId}/members/{memberId}/transactions/export](https://docs.voucherify.io/reference/export-loyalty-card-transactions-1) API endpoint
+
+```javascript
+client.loyalties.exportCardTransactions(memberId, campaignId, params)
+```
+
+`memberId` referrers to Loyalty Card code.
+
+---
+
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-1)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+```
+
+---
+
+#### [Get Reward Details](https://docs.voucherify.io/reference/get-reward-details)
+
+```javascript
+client.loyalties.getRewardDetails(campaignId, assignmentId)
+```
+
+---
+
+#### [List Loyalty Tiers](https://docs.voucherify.io/reference/list-loyalty-tiers)
+
+```javascript
+client.loyalties.listTiers(campaignId, params)
+client.loyalties.listTiers(campaignId)
+```
+
+---
+
+#### [Get Loyalty Tier](https://docs.voucherify.io/reference/get-loyalty-tier)
+
+```javascript
+client.loyalties.getTier(campaignId, tierId)
+```
+
+---
+
+#### [Create Loyalty Tiers](https://docs.voucherify.io/reference/create-loyalty-tiers)
+
+```javascript
+client.loyalties.createTiers(campaignId, tiers)
+```
+
+---
+
+#### [List Loyalty Tier Earning Rules](https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules)
+
+```javascript
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId, params)
+client.loyalties.listLoyaltyTierEarningRules(campaignId, tierId)
+```
+
+---
+
+#### [List Member Loyalty Tiers](https://docs.voucherify.io/reference/get-member-loyalty-tier)
+
+```javascript
+client.loyalties.listMemberLoyaltyTiers(memberId)
+```
+
+`memberId` referrers to Loyalty Card code.
 
 ---
 

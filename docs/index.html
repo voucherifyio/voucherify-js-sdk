@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@voucherify/sdk - v2.3.0</title>
-	<meta name="description" content="Documentation for @voucherify/sdk - v2.3.0">
+	<title>@voucherify/sdk - v2.5.0</title>
+	<meta name="description" content="Documentation for @voucherify/sdk - v2.5.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@voucherify/sdk - v2.3.0</a>
+					<a href="index.html" class="title">@voucherify/sdk - v2.5.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>@voucherify/sdk - v2.3.0</h1>
+			<h1>@voucherify/sdk - v2.5.0</h1>
 		</div>
 	</div>
 </header>
@@ -173,8 +173,8 @@
 <span style="color: #000000">    </span><span style="color: #001080">apiUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://&lt;region&gt;.api.voucherify.io&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">    </span><span style="color: #001080">apiVersion:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;v2018-08-01&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">    </span><span style="color: #001080">channel:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;e-commerce&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// optional</span>
-<span style="color: #000000">    </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> { </span><span style="color: #A31515">&quot;MY_CUSTOM_HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000"> } </span><span style="color: #008000">// optional</span>
-<span style="color: #000000">    </span><span style="color: #001080">timeoutMs</span><span style="color: #000000">: </span><span style="color: #098658">10000</span><span style="color: #000000"> </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">customHeaders:</span><span style="color: #000000"> { </span><span style="color: #A31515">&quot;MY_CUSTOM_HEADER&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;my_value&quot;</span><span style="color: #000000"> }, </span><span style="color: #008000">// optional</span>
+<span style="color: #000000">    </span><span style="color: #001080">timeoutMs:</span><span style="color: #000000"> </span><span style="color: #098658">10000</span><span style="color: #000000"> </span><span style="color: #008000">// optional</span>
 <span style="color: #000000">})</span>
 </code></pre>
 				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
@@ -365,6 +365,7 @@
 				<p>Methods are provided within <code>client.distributions.*</code> namespace.</p>
 				<ul>
 					<li><a href="#create-export">Create Export</a></li>
+					<li><a href="#list-exports">List Exports</a></li>
 					<li><a href="#get-export">Get Export</a></li>
 					<li><a href="#delete-export">Delete Export</a></li>
 					<li><a href="#list-publications">List publications</a></li>
@@ -376,6 +377,11 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">exportObject</span><span style="color: #000000">)</span>
 </code></pre>
 				<p>Check <a href="https://docs.voucherify.io/v1/reference/the-export-object">the export object</a>.</p>
+				<a href="#list-exports" id="list-exports" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-exports">List Exports</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">distributions</span><span style="color: #000000">.</span><span style="color: #001080">exports</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+</code></pre>
 				<a href="#get-export" id="get-export" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-export">Get Export</a></h4>
 				</a>
@@ -560,7 +566,7 @@
 					<h4><a href="https://docs.voucherify.io/reference/list-promotion-tiers">List All Promotion Tiers</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">()</span>
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">})</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">promotions</span><span style="color: #000000">.</span><span style="color: #001080">tiers</span><span style="color: #000000">.</span><span style="color: #795E26">listAll</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#add-promotion-tier-to-campaign" id="add-promotion-tier-to-campaign" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/add-promotion-tier-to-campaign">Add Promotion Tier to Campaign</a></h4>
@@ -592,9 +598,12 @@
 					<li><a href="#get-customer">Get Customer</a></li>
 					<li><a href="#update-customer">Update Customer</a></li>
 					<li><a href="#delete-customer">Delete Customer</a></li>
+					<li><a href="#delete-customer-permanently">Delete Customer Permanently</a></li>
 					<li><a href="#list-customers">List Customers</a></li>
 					<li><a href="#update-customers-consents">Update Customer&#39;s Consents</a></li>
 					<li><a href="#list-customers-activities">List Customer&#39;s Activities</a></li>
+					<li><a href="#update-customers-in-bulk">Update Customers in bulk</a></li>
+					<li><a href="#update-customers-metadata-in-bulk">Update Customers&#39; Metadata in bulk</a></li>
 					<li><a href="#import-and-update-customers-using-csv">Import and Update Customers using CSV</a></li>
 				</ul>
 				<a href="#create-customer" id="create-customer" style="color: inherit; text-decoration: none;">
@@ -618,6 +627,11 @@
 					<h4><a href="https://docs.voucherify.io/reference/delete-customer">Delete Customer</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-customer-permanently" id="delete-customer-permanently" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/delete-customer-permanently">Delete Customer Permanently</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">deletePermanently</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-customers" id="list-customers" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-customers">List Customers</a></h4>
@@ -664,6 +678,16 @@
 					<h4><a href="https://docs.voucherify.io/reference/import-customers-using-csv">Import and Update Customers using CSV</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">importCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-customers-in-bulk" id="update-customers-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/update-customers-in-bulk">Update Customers in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateInBulk</span><span style="color: #000000">(</span><span style="color: #001080">customers</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#update-customers39-metadata-in-bulk" id="update-customers39-metadata-in-bulk" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/update-customers-metadata-in-bulk">Update Customers&#39; Metadata in bulk</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateMetadataInBulk</span><span style="color: #000000">(</span><span style="color: #001080">sourceIdsAndMetadata</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
 				<a href="#consents" id="consents" style="color: inherit; text-decoration: none;">
@@ -809,6 +833,42 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">products</span><span style="color: #000000">.</span><span style="color: #795E26">importCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
 </code></pre>
+				<a href="#product-collections" id="product-collections" style="color: inherit; text-decoration: none;">
+					<h3>Product Collections</h3>
+				</a>
+				<p>Methods are provided within <code>client.productCollections.*</code> namespace.</p>
+				<ul>
+					<li><a href="#list-product-collections">List Product Collections</a></li>
+					<li><a href="#create-product-collection">Create Product Collections</a></li>
+					<li><a href="#get-product-collection">Get Product Collection</a></li>
+					<li><a href="#delete-product-collection">Delete Product Collection</a></li>
+					<li><a href="#list-products-in-collection">List Products in Collection</a></li>
+				</ul>
+				<a href="#list-product-collections" id="list-product-collections" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-product-collections">List Product Collections</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">productCollections</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
+</code></pre>
+				<a href="#create-product-collection" id="create-product-collection" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/create-product-collection">Create Product Collection</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">productCollections</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">(</span><span style="color: #001080">productCollection</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-product-collection" id="get-product-collection" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-product-collection">Get Product Collection</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">productCollections</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">productCollectionId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#delete-product-collection" id="delete-product-collection" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/delete-product-collection">Delete Product Collection</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">productCollections</span><span style="color: #000000">.</span><span style="color: #795E26">delete</span><span style="color: #000000">(</span><span style="color: #001080">productCollectionId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-products-in-collection" id="list-products-in-collection" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-products-in-collection">List Products in Collection</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">productCollections</span><span style="color: #000000">.</span><span style="color: #795E26">listProducts</span><span style="color: #000000">(</span><span style="color: #001080">productCollectionId</span><span style="color: #000000">)</span>
+</code></pre>
 				<hr>
 				<a href="#rewards" id="rewards" style="color: inherit; text-decoration: none;">
 					<h3>Rewards</h3>
@@ -892,13 +952,28 @@
 					<li><a href="#create-loyalty-program-earning-rules">Create Loyalty Program Earning Rules</a></li>
 					<li><a href="#update-loyalty-program-earning-rule">Update Loyalty Program Earning Rule</a></li>
 					<li><a href="#delete-loyalty-program-earning-rule">Delete Loyalty Program Earning Rule</a></li>
+					<li><a href="#get-loyalty-program-earning-rule">Get Loyalty Program Earning Rule</a></li>
+					<li><a href="#enable-loyalty-program-earning-rule">Enable Loyalty Program Earning Rule</a></li>
+					<li><a href="#disable-loyalty-program-earning-rule">Disable Loyalty Program Earning Rule</a></li>
 					<li><a href="#list-loyalty-program-earning-rules">List Loyalty Program Earning Rules</a></li>
 					<li><a href="#create-loyalty-program-member">Create Loyalty Program Member</a></li>
 					<li><a href="#get-loyalty-program-member">Get Loyalty Program Member</a></li>
-					<li><a href="#list-loyalty-members">List Loyalty Program Members</a></li>
+					<li><a href="#list-loyalty-program-members">List Loyalty Program Members</a></li>
 					<li><a href="#get-loyalty-program-member-activities">Get Loyalty Program Member Activities</a></li>
-					<li><a href="#add-loyalty-card-balance">Add Loyalty Card Balance</a></li>
+					<li><a href="#add-or-remove-loyalty-card-balance">Add Or Remove Loyalty Card Balance</a></li>
+					<li><a href="#add-loyalty-card-balance">[Deprecated] Add Loyalty Card Balance</a></li>
+					<li><a href="#transfer-loyalty-points">Transfer Loyalty Points</a></li>
+					<li><a href="#get-loyalty-points-expiration">Get Loyalty Points Expiration</a></li>
 					<li><a href="#redeem-loyalty-card">Redeem Loyalty Card</a></li>
+					<li><a href="#list-loyalty-card-transactions">List Loyalty Card Transactions</a></li>
+					<li>[<a href="#export-loyalty-card-transactions">Export Loyalty Card Transactions</a></li>
+					<li><a href="#get-reward-assignment">Get Reward Assignment</a></li>
+					<li><a href="#get-reward-details">Get Reward Details</a></li>
+					<li><a href="#list-loyalty-tiers">List Loyalty Tiers</a></li>
+					<li><a href="#get-loyalty-tier">Get Loyalty Tier</a></li>
+					<li><a href="#create-loyalty-tiers">Create Loyalty Tiers</a></li>
+					<li><a href="#list-loyalty-tier-earning-rules">List Loyalty Tier Earning Rules</a></li>
+					<li><a href="#list-member-loyalty-tiers">List Member Loyalty Tiers</a></li>
 				</ul>
 				<a href="#create-loyalty-program" id="create-loyalty-program" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-loyalty-program">Create Loyalty Program</a></h4>
@@ -962,6 +1037,21 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">deleteEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
 </code></pre>
+				<a href="#get-loyalty-program-earning-rule" id="get-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-earning-rule">Get Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#enable-loyalty-program-earning-rule" id="enable-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/enable-earning-rule">Enable Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">enableEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#disable-loyalty-program-earning-rule" id="disable-loyalty-program-earning-rule" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/disable-earning-rule">Disable Loyalty Program Earning Rule</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">disableEarningRule</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">earningRuleId</span><span style="color: #000000">)</span>
+</code></pre>
 				<a href="#list-loyalty-program-earning-rules" id="list-loyalty-program-earning-rules" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-earning-rules">List Loyalty Program Earning Rules</a></h4>
 				</a>
@@ -976,6 +1066,7 @@
 				<a href="#get-loyalty-program-member" id="get-loyalty-program-member" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-member">Get Loyalty Program Member</a></h4>
 				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/get-member">v1/loyalties/members/{memberId}</a> or <a href="https://docs.voucherify.io/reference/get-member-1">v1/loyalties/{campaignId}/members/{memberId}</a> API endpoint</p>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMember</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-loyalty-program-members" id="list-loyalty-program-members" style="color: inherit; text-decoration: none;">
@@ -987,15 +1078,44 @@
 				<a href="#get-loyalty-program-member-activities" id="get-loyalty-program-member-activities" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference#get-member-activities">Get Loyalty Program Member Activities</a></h4>
 				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/get-member-activities">v1/loyalties/members/{memberId}/activities</a> or <a href="https://docs.voucherify.io/reference/get-member-activities-1">v1/loyalties/{campaignId}/members/{memberId}/activities</a> API endpoint</p>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getMemberActivities</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#list-member-rewards" id="list-member-rewards" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-member-rewards">List Member Rewards</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listMemberRewards</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#add-or-remove-loyalty-card-balance" id="add-or-remove-loyalty-card-balance" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance">Add Or Remove Loyalty Card Balance</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance">v1/loyalties/members/{memberId}/balance</a> or <a href="https://docs.voucherify.io/reference/add-remove-loyalty-card-balance-1">v1/loyalties/{campaignId}/members/{memberId}/balance</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">addOrRemoveCardBalance</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">balance</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<a href="#add-loyalty-card-balance" id="add-loyalty-card-balance" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/add-loyalty-card-balance">Add Loyalty Card Balance</a></h4>
+					<h4><a href="https://docs.voucherify.io/reference/add-loyalty-card-balance-1">Add Loyalty Card Balance</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">addPoints</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">balance</span><span style="color: #000000">)</span>
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<a href="#transfer-loyalty-points" id="transfer-loyalty-points" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/transfer-points">Transfer Loyalty Points</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">transferPoints</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">transferLoyaltyPoints</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#get-loyalty-points-expiration" id="get-loyalty-points-expiration" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-points-expiration">Get Loyalty Points Expiration</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getPointsExpiration</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
 				<a href="#redeem-loyalty-card" id="redeem-loyalty-card" style="color: inherit; text-decoration: none;">
 					<h4>[Redeem Loyalty Card]</h4>
 				</a>
@@ -1003,6 +1123,67 @@
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<p>When redeeming reward with type <code>COIN</code> you need to provide additional <code>order</code> object in the <code>params</code></p>
+				<hr>
+				<a href="#list-loyalty-card-transactions" id="list-loyalty-card-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions">List Loyalty Card Transactions</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions">v1/loyalties/members/{memberId}/transactions</a> or <a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions-1">v1/loyalties/{campaignId}/members/{memberId}/transactions</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listCardTransactions</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#export-loyalty-card-transactions" id="export-loyalty-card-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions">Export Loyalty Card Transactions</a></h4>
+				</a>
+				<p>Depending on the parameters, this method sends requests to <a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions">v1/loyalties/members/{memberId}/transactions/export</a> or <a href="https://docs.voucherify.io/reference/export-loyalty-card-transactions-1">v1/loyalties/{campaignId}/members/{memberId}/transactions/export</a> API endpoint</p>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">exportCardTransactions</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">, </span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
+				<hr>
+				<a href="#get-reward-assignment" id="get-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-reward-assignment-1">Get Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#get-reward-details" id="get-reward-details" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-reward-details">Get Reward Details</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getRewardDetails</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#list-loyalty-tiers" id="list-loyalty-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-tiers">List Loyalty Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listTiers</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listTiers</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#get-loyalty-tier" id="get-loyalty-tier" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-loyalty-tier">Get Loyalty Tier</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getTier</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">tierId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#create-loyalty-tiers" id="create-loyalty-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/create-loyalty-tiers">Create Loyalty Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">createTiers</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">tiers</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#list-loyalty-tier-earning-rules" id="list-loyalty-tier-earning-rules" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-tier-earning-rules">List Loyalty Tier Earning Rules</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listLoyaltyTierEarningRules</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">tierId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listLoyaltyTierEarningRules</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">tierId</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
+				<a href="#list-member-loyalty-tiers" id="list-member-loyalty-tiers" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-member-loyalty-tier">List Member Loyalty Tiers</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listMemberLoyaltyTiers</span><span style="color: #000000">(</span><span style="color: #001080">memberId</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<hr>
 				<a href="#segments" id="segments" style="color: inherit; text-decoration: none;">
 					<h3>Segments</h3>
@@ -1527,6 +1708,12 @@
 						<a href="interfaces/CustomersCommonListResponse.html" class="tsd-kind-icon">Customers<wbr>Common<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomersDeletePermanentlyResponseBody.html" class="tsd-kind-icon">Customers<wbr>Delete<wbr>Permanently<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomersUpdateMetadataInBulkRequestBody.html" class="tsd-kind-icon">Customers<wbr>Update<wbr>Metadata<wbr>InBulk<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/DiscountAmount.html" class="tsd-kind-icon">Discount<wbr>Amount</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1551,19 +1738,85 @@
 						<a href="interfaces/DistributionsPublicationsListResponse.html" class="tsd-kind-icon">Distributions<wbr>Publications<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleBase.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleFixed.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Fixed</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalCustomEvent.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Custom<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalCustomerMetadata.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Customer<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsQuantity.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderItemsSubtotalAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items<wbr>Subtotal<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderMetadata.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EarningRuleProportionalOrderTotalAmount.html" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Total<wbr>Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/EventsParams.html" class="tsd-kind-icon">Events<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/EventsResponse.html" class="tsd-kind-icon">Events<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportBase.html" class="tsd-kind-icon">Export<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportCustomer.html" class="tsd-kind-icon">Export<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportOrder.html" class="tsd-kind-icon">Export<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPointsExpiration.html" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportPublication.html" class="tsd-kind-icon">Export<wbr>Publication</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportRedemption.html" class="tsd-kind-icon">Export<wbr>Redemption</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportResource.html" class="tsd-kind-icon">Export<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucher.html" class="tsd-kind-icon">Export<wbr>Voucher</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportVoucherTransactionsExpiration.html" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Expiration</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ExportsCreateResponse.html" class="tsd-kind-icon">Exports<wbr>Create<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListRequestQuery.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExportsListResponseBody.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/GiftRedemptionParams.html" class="tsd-kind-icon">Gift<wbr>Redemption<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesAddOrRemoveCardBalanceRequestBody.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>OrRemove<wbr>Card<wbr>Balance<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesAddOrRemoveCardBalanceResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>OrRemove<wbr>Card<wbr>Balance<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesAddPoints.html" class="tsd-kind-icon">Loyalties<wbr>Add<wbr>Points</a>
@@ -1596,13 +1849,43 @@
 						<a href="interfaces/LoyaltiesEarningRulesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Earning<wbr>Rules<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesExportCardTransactionsRequestBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesExportCardTransactionsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesGetMemberActivitiesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Activities<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesGetPointsExpirationRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Points<wbr>Expiration<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesGetPointsExpirationResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Points<wbr>Expiration<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListCardTransactionsRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Card<wbr>Transactions<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListCardTransactionsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListEarningRulesParams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListEarningRulesResponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Earning<wbr>Rules<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListLoyaltyTierEarningRulesRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Loyalty<wbr>Tier<wbr>Earning<wbr>Rules<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListMemberLoyaltyTiersResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Loyalty<wbr>Tiers<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListMemberRewardsRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Rewards<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListMemberRewardsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Rewards<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListMembersParams.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Members<wbr>Params</a>
@@ -1623,10 +1906,19 @@
 						<a href="interfaces/LoyaltiesListRewardAssignmentsResponse.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Reward<wbr>Assignments<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListTiersRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Tiers<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListTiersResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Tiers<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesRedeemRewardParams.html" class="tsd-kind-icon">Loyalties<wbr>Redeem<wbr>Reward<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesRedeemRewardResponse.html" class="tsd-kind-icon">Loyalties<wbr>Redeem<wbr>Reward<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesTransferPoints.html" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesUpdateCampaign.html" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign</a>
@@ -1641,6 +1933,9 @@
 						<a href="interfaces/LoyaltiesVoucherResponse.html" class="tsd-kind-icon">Loyalties<wbr>Voucher<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyCardTransaction.html" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transaction</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltyFixed.html" class="tsd-kind-icon">Loyalty<wbr>Fixed</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1648,6 +1943,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltyProportional.html" class="tsd-kind-icon">Loyalty<wbr>Proportional</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierBase.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/OrdersCreate.html" class="tsd-kind-icon">Orders<wbr>Create</a>
@@ -1776,7 +2074,19 @@
 						<a href="interfaces/RedemptionsRollbackStackableResponse.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Stackable<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardAssignment.html" class="tsd-kind-icon">Reward<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardRedemptionParams.html" class="tsd-kind-icon">Reward<wbr>Redemption<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeCampaign.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Campaign</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeCoin.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Coin</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardTypeMaterial.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsAssignmentObject.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Object</a>
@@ -1810,6 +2120,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/SimpleCustomer.html" class="tsd-kind-icon">Simple<wbr>Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/SimpleLoyaltyVoucher.html" class="tsd-kind-icon">Simple<wbr>Loyalty<wbr>Voucher</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/SimpleProduct.html" class="tsd-kind-icon">Simple<wbr>Product</a>
@@ -2049,6 +2362,9 @@
 						<a href="modules.html#CustomersUpdateConsentsBody" class="tsd-kind-icon">Customers<wbr>Update<wbr>Consents<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomersUpdateInBulkRequestBody" class="tsd-kind-icon">Customers<wbr>Update<wbr>InBulk<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#CustomersUpdateParams" class="tsd-kind-icon">Customers<wbr>Update<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2073,7 +2389,97 @@
 						<a href="modules.html#DiscountVouchersTypes" class="tsd-kind-icon">Discount<wbr>Vouchers<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRule" class="tsd-kind-icon">Earning<wbr>Rule</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleEvent" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportional" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportionalOrder" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#EarningRuleProportionalOrderItems" class="tsd-kind-icon">Earning<wbr>Rule<wbr>Proportional<wbr>Order<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Export" class="tsd-kind-icon">Export</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFields" class="tsd-kind-icon">Export<wbr>Customer<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerFilters" class="tsd-kind-icon">Export<wbr>Customer<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportCustomerOrder" class="tsd-kind-icon">Export<wbr>Customer<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFields" class="tsd-kind-icon">Export<wbr>Order<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderFilters" class="tsd-kind-icon">Export<wbr>Order<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportOrderOrder" class="tsd-kind-icon">Export<wbr>Order<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFields" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationFilters" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPointsExpirationOrder" class="tsd-kind-icon">Export<wbr>Points<wbr>Expiration<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFields" class="tsd-kind-icon">Export<wbr>Publication<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationFilters" class="tsd-kind-icon">Export<wbr>Publication<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportPublicationOrder" class="tsd-kind-icon">Export<wbr>Publication<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFields" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionFilters" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportRedemptionOrder" class="tsd-kind-icon">Export<wbr>Redemption<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFields" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsFilters" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ExportVoucherTransactionsOrder" class="tsd-kind-icon">Export<wbr>Voucher<wbr>Transactions<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ExportsGetResponse" class="tsd-kind-icon">Exports<wbr>Get<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FieldConditions" class="tsd-kind-icon">Field<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#FiltersCondition" class="tsd-kind-icon">Filters<wbr>Condition</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Junction" class="tsd-kind-icon">Junction</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesCreateEarningRuleResponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Earning<wbr>Rule<wbr>Response</a>
@@ -2082,10 +2488,43 @@
 						<a href="modules.html#LoyaltiesCreateMemberResponse" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Member<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesCreateTiersRequestBody" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Tiers<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesCreateTiersResponseBody" class="tsd-kind-icon">Loyalties<wbr>Create<wbr>Tiers<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesDisableEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>Disable<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesEnableEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>Enable<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesGetCampaignResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Campaign<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesGetEarningRuleResponseBody" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Earning<wbr>Rule<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesGetMemberResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesGetRewardAssignmentResponseBody" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Reward<wbr>Assignment<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesGetRewardDetailsResponseBody" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Reward<wbr>Details<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesGetTierResponseBody" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Tier<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesListLoyaltyTierEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Loyalty<wbr>Tier<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesTransferPointsRequestBody" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesTransferPointsResponseBody" class="tsd-kind-icon">Loyalties<wbr>Transfer<wbr>Points<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesUpdateCampaignResponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Campaign<wbr>Response</a>
@@ -2097,10 +2536,22 @@
 						<a href="modules.html#LoyaltiesUpdateRewardAssignmentResponse" class="tsd-kind-icon">Loyalties<wbr>Update<wbr>Reward<wbr>Assignment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyCardTransactionsFields" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transactions<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyCardTransactionsType" class="tsd-kind-icon">Loyalty<wbr>Card<wbr>Transactions<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyTier" class="tsd-kind-icon">Loyalty<wbr>Tier</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersGetResponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersUpdateResponse" class="tsd-kind-icon">Orders<wbr>Update<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#PointsExpirationTypes" class="tsd-kind-icon">Points<wbr>Expiration<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ProductsBulkUpdate" class="tsd-kind-icon">Products<wbr>Bulk<wbr>Update</a>
@@ -2152,6 +2603,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RedemptionsRedeemStackableRedemptionResult" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Stackable<wbr>Redemption<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Reward" class="tsd-kind-icon">Reward</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardType" class="tsd-kind-icon">Reward<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsCreate" class="tsd-kind-icon">Rewards<wbr>Create</a>
