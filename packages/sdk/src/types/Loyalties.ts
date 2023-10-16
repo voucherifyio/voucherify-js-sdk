@@ -6,7 +6,7 @@ import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
 import { VouchersResponse } from './Vouchers'
 
 import {
-	RewardAssignment,
+	RewardsAssignment,
 	RewardAssignmentBase,
 	RewardAssignmentIdentity,
 	RewardAssignmentResponseData,
@@ -510,7 +510,7 @@ export interface LoyaltyPointsTransfer {
 // Loyalty Tier Reward
 export interface LoyaltyTierReward {
 	reward?: Required<LoyaltyTierRewardItem>
-	assignment?: Required<RewardAssignment>
+	assignment?: Required<RewardsAssignment>
 	object?: 'loyalty_tier_reward'
 }
 
