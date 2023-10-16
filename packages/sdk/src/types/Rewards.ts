@@ -18,6 +18,7 @@ export interface RewardsResponse {
 }
 
 export type RewardsCreateResponse = RewardsResponse & RewardsTypeResponse
+export type RewardsGetResponse = RewardsResponse & RewardsTypeResponse
 
 export interface RewardsListResponse {
 	object: 'list'
@@ -84,8 +85,6 @@ export type RewardsTypeResponse =
 
 export type RewardsCreate = Rewards & RewardsType
 
-export type RewardsGetResponse = RewardsCreateResponse
-
 export type RewardsUpdate = Omit<RewardsCreate, 'type'> & { id: string }
 
 export type RewardsUpdateResponse = RewardsCreateResponse
@@ -136,4 +135,68 @@ export interface RewardRedemptionParams {
 	points?: number
 	assignment_id?: string
 	id?: string
+}
+
+// domain types
+
+export type Reward = {
+	id: string
+	name?: string
+	stock?: string
+	redeemed?: string
+	attributes?: {
+		image_url?: string
+		description?: string
+	}
+	created_at: string
+	updated_at?: string
+	object: 'reward'
+} & RewardType
+
+export interface RewardTypeCampaign {
+	type: 'CAMPAIGN'
+	parameters: {
+		campaign: {
+			id: string
+			balance?: number
+			type: 'DISCOUNT_COUPONS' | 'PROMOTION' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+		}
+	}
+}
+
+export interface RewardTypeCoin {
+	type: 'COIN'
+	parameters: {
+		coin: {
+			exchange_ratio: number
+			points_ratio?: number
+		}
+	}
+}
+
+export interface RewardTypeMaterial {
+	type: 'MATERIAL'
+	parameters: {
+		product: {
+			id: string
+			sku: string | null
+		}
+	}
+}
+
+export type RewardType = RewardTypeCampaign | RewardTypeCoin | RewardTypeMaterial
+
+export interface RewardAssignment {
+	id: string
+	reward_id: string
+	related_object_id?: string
+	related_object_type?: string
+	parameters?: {
+		loyalty?: {
+			points: number
+		}
+	}
+	created_at: string
+	updated_at?: string
+	object: 'reward_assignment'
 }

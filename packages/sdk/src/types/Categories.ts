@@ -27,3 +27,14 @@ export type ResponseUpdateCategory = ResponseCreateCategory & {
 }
 
 export type UpdateCategoryRequest = CreateCategory
+
+// domain types
+
+export type Category = {
+	id: string
+	name: string
+	hierarchy: number
+	created_at: string
+	updated_at?: string
+	object: 'category'
+}

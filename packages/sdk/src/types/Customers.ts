@@ -1,3 +1,4 @@
+// Legacy code
 export interface SimpleCustomer {
 	id: string
 	name?: string
@@ -137,3 +138,56 @@ export type CustomersUpdateParams = CustomerRequest & IdOrSourceId
 export type CustomersUpdateResponse = CustomerObject | CustomerUnconfirmed
 
 export type CustomersUpdateConsentsBody = Record<string, boolean>
+
+// New types following guideline
+
+// Domain types
+
+type CustomerBase = {
+	name?: string | null
+	description?: string | null
+	email?: string | null
+	phone?: string | null
+	birthdate?: string | null
+	metadata?: Record<string, unknown> | null
+}
+
+type CustomerAddress = {
+	address?: {
+		city?: string | null
+		state?: string | null
+		line_1?: string | null
+		line_2?: string | null
+		country?: string | null
+		postal_code?: string | null
+	} | null
+}
+
+// 0-level types
+
+export type CustomersUpdateInBulkRequestBody = (CustomerBase &
+	CustomerAddress & {
+		source_id: string | null
+	})[]
+
+export interface CustomersUpdateMetadataInBulkRequestBody {
+	source_ids: string[]
+	metadata: Record<string, unknown>
+}
+export interface CustomersDeletePermanentlyResponseBody {
+	id: string
+	created_at: string
+	related_object_id: string
+	related_object: 'customer'
+	status: 'DONE'
+	data_json: {
+		events: number
+		customer_events: number
+		daily_events: number
+		segments: number
+		orders: number
+		order_events: number
+		customer: 1
+	}
+	object: 'pernament_deletion'
+}
