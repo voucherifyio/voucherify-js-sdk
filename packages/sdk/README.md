@@ -246,10 +246,10 @@ client.vouchers.releaseValidationSession(code, sessionKey)
 client.vouchers.importCSV(filePath)
 ```
 
-#### [List Gift Card Transactions](https://docs.voucherify.io/reference/list-gift-card-transactions)
+#### [List Transactions](https://docs.voucherify.io/reference/list-transactions)
 
 ```javascript
-client.vouchers.listGiftCardTransactions(code, query)
+client.vouchers.listTransactions(code, query)
 ```
 
 #### [Export Gift Card Transactions](https://docs.voucherify.io/reference/export-gift-card-transactions)

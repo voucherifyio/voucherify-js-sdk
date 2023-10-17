@@ -11,14 +11,14 @@ describe('Vouchers API', () => {
 				limit: 20,
 				page: 1,
 			}
-			const response = await client.vouchers.listGiftCardTransactions(code, query)
+			const response = await client.vouchers.listTransactions(code, query)
 			expect(typeof response.data).toBe('object')
 			expect(typeof response.data_ref).toBe('string')
 			expect(typeof response.object).toBe('string')
 		})
 		it('should throw error when code does not exist', async () => {
 			try {
-				await client.vouchers.listGiftCardTransactions(generateRandomString(55))
+				await client.vouchers.listTransactions(generateRandomString(55))
 			} catch (error) {
 				expect(error?.message).toBe('Resource not found')
 				expect(error?.key).toBe('not_found')
@@ -29,7 +29,7 @@ describe('Vouchers API', () => {
 			const code = (await generateVoucher()).code
 			let hasError = false
 			try {
-				await client.vouchers.listGiftCardTransactions(code)
+				await client.vouchers.listTransactions(code)
 			} catch (error) {
 				hasError = true
 			}

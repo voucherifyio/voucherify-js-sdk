@@ -108,11 +108,8 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
 	 */
-	public listGiftCardTransactions(code: string, params?: T.VouchersListGiftCardTransactionsParams) {
-		return this.client.get<T.VouchersListGiftCardTransactionsResponseBody>(
-			`/vouchers/${encode(code)}/transactions`,
-			params,
-		)
+	public listTransactions(code: string, params?: T.VouchersListTransactionsRequestQuery) {
+		return this.client.get<T.VouchersListTransactionsResponseBody>(`/vouchers/${encode(code)}/transactions`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions

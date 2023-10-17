@@ -1,7 +1,9 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
+import { LoyaltyCardTransaction } from './Loyalties'
 
+// Legacy types
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
 	code_config?: {
@@ -252,17 +254,9 @@ export type VouchersBulkUpdateResponse = {
 	async_action_id: string
 }
 
-export interface VouchersListGiftCardTransactionsParams {
-	limit?: number
-	page?: number
-}
+// Domain types
 
-export interface VouchersListGiftCardTransactionsResponseBody {
-	object: 'list'
-	data_ref: 'data'
-	data: GiftCardTransaction[]
-	has_more: boolean
-}
+export type VoucherTransaction = GiftCardTransaction | LoyaltyCardTransaction
 
 export type GiftCardTransaction =
 	| GiftCardTransactionRedemption
@@ -389,28 +383,14 @@ export interface GiftCardTransactionRemoval {
 	created_at: string
 }
 
-export interface VouchersExportGiftCardTransactionsRequestBody {
-	parameters?: GiftCardTransactionsExport
-}
+// Export
 
 export interface GiftCardTransactionsExport {
 	order?: '-created_at' | 'created_at'
-	fields?: VouchersExportGiftCardTransactionsFields[]
+	fields?: GiftCardTransactionsExportFields[]
 }
 
-export interface VouchersExportGiftCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: 'API'
-	exported_object: string
-	parameters: GiftCardTransactionsExport & { filters: GiftCardTransactionsFilters }
-	result: null
-	user_id: string | null
-}
-
-export interface GiftCardTransactionsFilters {
+export interface GiftCardTransactionsExportFilters {
 	voucher_id: {
 		conditions: {
 			$in: string[]
@@ -426,7 +406,7 @@ export interface GiftCardTransactionsFilters {
 	junction?: 'AND' | 'OR'
 }
 
-export type VouchersExportGiftCardTransactionsFields =
+export type GiftCardTransactionsExportFields =
 	| 'id'
 	| 'type'
 	| 'source_id'
@@ -438,3 +418,33 @@ export type VouchersExportGiftCardTransactionsFields =
 	| 'campaign_id'
 	| 'source'
 	| 'details'
+
+// 0-level types
+// List transactions
+export interface VouchersListTransactionsRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export interface VouchersListTransactionsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: VoucherTransaction[]
+	has_more: boolean
+}
+
+export interface VouchersExportGiftCardTransactionsRequestBody {
+	parameters?: GiftCardTransactionsExport
+}
+
+export interface VouchersExportGiftCardTransactionsResponseBody {
+	id: string
+	object: 'export'
+	created_at: string
+	status: 'SCHEDULED'
+	channel: 'API'
+	exported_object: string
+	parameters: GiftCardTransactionsExport & { filters: GiftCardTransactionsExportFilters }
+	result: null
+	user_id: string | null
+}
