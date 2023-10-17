@@ -3,7 +3,11 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-import { VouchersResponse } from './Vouchers'
+import {
+	VouchersExportTransactionsRequestBody,
+	VouchersExportTransactionsResponseBody,
+	VouchersResponse,
+} from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
 import { Category } from './Categories'
 
@@ -608,32 +612,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsRequestBody = VouchersExportTransactionsRequestBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
@@ -742,32 +721,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number

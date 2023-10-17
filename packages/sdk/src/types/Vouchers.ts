@@ -385,38 +385,23 @@ export interface GiftCardTransactionRemoval {
 
 // Export
 
-export interface GiftCardTransactionsExport {
+export interface VoucherTransactionsExport {
 	order?: '-created_at' | 'created_at'
-	fields?: GiftCardTransactionsExportFields[]
+	fields?: VoucherTransactionsExportFields[]
 }
 
-export interface GiftCardTransactionsExportFilters {
-	voucher_id: {
-		conditions: {
-			$in: string[]
-			$not_in?: string[]
-			$is?: string
-			$is_not?: string
-			$has_value?: string
-			$is_unknown?: string
-			$starts_with?: string
-			$ends_with?: string
-		}
-	}
-	junction?: 'AND' | 'OR'
-}
-
-export type GiftCardTransactionsExportFields =
+export type VoucherTransactionsExportFields =
 	| 'id'
+	| 'campaign_id'
+	| 'voucher_id'
 	| 'type'
 	| 'source_id'
+	| 'reason'
+	| 'source'
 	| 'balance'
 	| 'amount'
-	| 'reason'
+	| 'related_transaction_id'
 	| 'created_at'
-	| 'voucher_id'
-	| 'campaign_id'
-	| 'source'
 	| 'details'
 
 // 0-level types
@@ -433,18 +418,30 @@ export interface VouchersListTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface VouchersExportGiftCardTransactionsRequestBody {
-	parameters?: GiftCardTransactionsExport
+// Export transactions
+
+export interface VouchersExportTransactionsRequestBody {
+	parameters?: VoucherTransactionsExport
 }
 
-export interface VouchersExportGiftCardTransactionsResponseBody {
+export interface VouchersExportTransactionsResponseBody {
 	id: string
 	object: 'export'
 	created_at: string
 	status: 'SCHEDULED'
-	channel: 'API'
-	exported_object: string
-	parameters: GiftCardTransactionsExport & { filters: GiftCardTransactionsExportFilters }
+	channel: string
+	exported_object: 'voucher_transactions'
+	parameters: {
+		order?: string
+		fields?: VoucherTransactionsExportFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string]
+				}
+			}
+		}
+	}
 	result: null
 	user_id: string | null
 }

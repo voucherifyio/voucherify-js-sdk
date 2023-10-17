@@ -114,8 +114,8 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
 	 */
-	public exportGiftCardTransactions(code: string, body: T.VouchersExportGiftCardTransactionsRequestBody) {
-		return this.client.post<T.VouchersExportGiftCardTransactionsResponseBody>(
+	public exportTransactions(code: string, body: T.VouchersExportTransactionsRequestBody) {
+		return this.client.post<T.VouchersExportTransactionsResponseBody>(
 			`/vouchers/${encode(code)}/transactions/export`,
 			body,
 		)

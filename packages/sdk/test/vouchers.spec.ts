@@ -39,7 +39,7 @@ describe('Vouchers API', () => {
 	describe('List Gift Card Transactions Export', () => {
 		it('should throw error when code does not exist', async () => {
 			try {
-				await client.vouchers.exportGiftCardTransactions(generateRandomString(55), {
+				await client.vouchers.exportTransactions(generateRandomString(55), {
 					parameters: {
 						order: '-created_at',
 						fields: ['id', 'type'],
@@ -53,7 +53,7 @@ describe('Vouchers API', () => {
 		})
 		it('should return all the required fields, the `filters` object and should not return `order` and `fields` if they were not passed in request body', async () => {
 			const code = (await generateGiftVoucher()).code
-			const response = await client.vouchers.exportGiftCardTransactions(code, { parameters: {} })
+			const response = await client.vouchers.exportTransactions(code, { parameters: {} })
 			expect(typeof response.parameters.filters).toBe('object')
 			expect(response.parameters).not.toContain('order')
 			expect(response.parameters).not.toContain('fields')
