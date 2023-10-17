@@ -26,7 +26,7 @@ Domain types:
 
 0-level types:
 - VouchersListTransactionsRequestQuery
-- VouchersListTransactionsResponseBody -
+- VouchersListTransactionsResponseBody 
 - VouchersExportTransactionsRequestBody
 - VouchersExportTransactionsResponseBody
 
