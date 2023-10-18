@@ -7,13 +7,7 @@ import { VouchersResponse } from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
 import { Category } from './Categories'
 
-import {
-	RewardsAssignment,
-	RewardAssignmentBase,
-	RewardAssignmentIdentity,
-	RewardAssignmentResponseData,
-} from './Rewards'
-import { WithRequiredProperty } from './UtilityTypes'
+import { RewardsAssignment } from './Rewards'
 
 // Legacy code
 interface LoyaltiesVoucher {
@@ -1308,9 +1302,7 @@ export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
 
 //0-level types
 
-export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardAssignmentIdentity> &
-	WithRequiredProperty<RewardAssignmentBase, 'related_object_id' | 'related_object_type'> &
-	Required<RewardAssignmentResponseData>
+export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardsAssignment>
 
 export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
 	object: 'list'
