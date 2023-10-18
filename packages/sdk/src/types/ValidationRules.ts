@@ -1,5 +1,4 @@
 import { ApplicableToResultList } from './ApplicableTo'
-import { WithRequiredProperty } from './UtilityTypes'
 
 export interface ValidationRulesCreate {
 	name: string
@@ -83,7 +82,7 @@ export interface ValidationRulesListAssignmentsResponse {
 
 export type ValidationRulesAssignment = Required<ValidationRulesAssignmentIdentity> &
 	Required<ValidationRulesAssignmentBase> &
-	WithRequiredProperty<ValidationRulesAssignmentResponseData, 'object' | 'created_at'>
+	Required<ValidationRulesAssignmentResponseData>
 export interface ValidationRulesAssignmentIdentity {
 	id?: string
 }
