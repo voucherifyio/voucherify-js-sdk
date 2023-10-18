@@ -17,7 +17,13 @@ Domain types:
 
 New exported types/interfaces in Rewards.ts: 
 Domain types:
-- RewardAssignment (old `RewardsAssignmentObject`), RewardAssignmentIdentity, RewardAssignmentBase, RewardAssignmentResponseData
+- RewardAssignment (old `RewardsAssignmentObject`), 
+- RewardsAssignmentCampaignAndMaterialReward,
+- RewardsAssignmentCoinReward
+- RewardAssignmentIdentity, 
+- RewardAssignmentBase,
+- RewardAssignmentResponseData
+- 
 0-level types:
 - RewardsListAssignmentsRequestQuery (old `RewardsListAssignmentsParams`),
 - RewardsListAssignmentsResponseBody (old `RewardsListAssignmentsResponse`), 

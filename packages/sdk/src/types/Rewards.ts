@@ -1,5 +1,3 @@
-import { WithRequiredProperty } from './UtilityTypes'
-
 // Legacy types
 export interface RewardsListParams {
 	page?: number
@@ -213,6 +211,9 @@ export interface RewardAssignmentIdentity {
 export interface RewardAssignmentBase {
 	related_object_id?: string
 	related_object_type?: 'campaign'
+}
+
+export interface RewardAssignmentCampaignAndMaterialRewardParameters {
 	parameters?: {
 		loyalty: {
 			points: number
@@ -226,9 +227,16 @@ export interface RewardAssignmentResponseData {
 	object?: 'reward-assignment'
 }
 
-export type RewardsAssignment = Required<RewardAssignmentIdentity> &
-	WithRequiredProperty<RewardAssignmentBase, 'related_object_id' | 'related_object_type'> &
+export type RewardsAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignAndMaterialReward
+
+export type RewardsAssignmentCoinReward = Required<RewardAssignmentIdentity> &
+	Required<RewardAssignmentBase> &
 	Required<RewardAssignmentResponseData>
+
+export type RewardsAssignmentCampaignAndMaterialReward = Required<RewardAssignmentIdentity> &
+	Required<RewardAssignmentBase> &
+	Required<RewardAssignmentResponseData> &
+	Required<RewardAssignmentCampaignAndMaterialRewardParameters>
 
 // 0-level types
 // List assignments
