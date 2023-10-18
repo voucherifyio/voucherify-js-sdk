@@ -1,4 +1,5 @@
 import { ApplicableToResultList } from './ApplicableTo'
+import { WithRequiredProperty } from './UtilityTypes'
 
 export interface ValidationRulesCreate {
 	name: string
@@ -76,4 +77,43 @@ export interface ValidationRulesListAssignmentsResponse {
 	total: number
 	data_ref: 'data'
 	data: ValidationRulesCreateAssignmentResponse[]
+}
+// Domain types
+// Validation Rules Assignment
+
+export type ValidationRulesAssignment = Required<ValidationRulesAssignmentIdentity> &
+	Required<ValidationRulesAssignmentBase> &
+	WithRequiredProperty<ValidationRulesAssignmentResponseData, 'object' | 'created_at'>
+export interface ValidationRulesAssignmentIdentity {
+	id?: string
+}
+
+export interface ValidationRulesAssignmentBase {
+	rule_id?: string
+	related_object_id?: string
+	related_object_type?: string
+}
+
+export interface ValidationRulesAssignmentResponseData {
+	created_at?: string
+	object?: 'validation_rules_assignment'
+}
+
+// 0-level types
+
+// list rules assignments
+
+export interface ValidationRulesListRulesAssignmentsRequestQuery {
+	related_object_id?: string
+	rule?: string
+	page?: number
+	limit?: number
+	order?: 'created_at' | '-created_at'
+}
+
+export interface ValidationRulesListRulesAssignmentsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: ValidationRulesAssignment[]
 }

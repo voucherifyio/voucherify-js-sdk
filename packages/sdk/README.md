@@ -1387,6 +1387,7 @@ Methods are provided within `client.validationRules.*` namespace.
 - [Delete Rule Assignment](#delete-validation-rule-assignment)
 - [List Rules](#list-validation-rules)
 - [List Rule Assignments](#list-validation-rule-assignments)
+- [List Rules Assignments](#list-validation-rules-assignments)
 
 #### [Create Validation Rule](https://docs.voucherify.io/reference/create-validation-rules)
 
@@ -1436,8 +1437,15 @@ client.validationRules.list(params)
 #### [List Validation Rule Assignments](https://docs.voucherify.io/reference/list-validation-rule-assignments)
 
 ```javascript
-client.validationRules.listAssignments(validationRuleId)
-client.validationRules.listAssignments(validationRuleId, params)
+client.validationRules.listRuleAssignments(validationRuleId)
+client.validationRules.listRuleAssignments(validationRuleId, params)
+```
+
+#### [List Validation Rules Assignments](https://docs.voucherify.io/reference/list-validation-rules-assignments)
+
+```javascript
+client.validationRules.listRulesAssignments(validationRuleId)
+client.validationRules.listRulesAssignments(validationRuleId, params)
 ```
 
 ---
