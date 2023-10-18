@@ -22,8 +22,8 @@ Domain types:
 - RewardsListAssignmentsRequestQuery (old `RewardsListAssignmentsParams`),
 - RewardsListAssignmentsResponseBody (old `RewardsListAssignmentsResponse`), 
 - RewardsCreateAssignmentRequestBody (old `RewardsCreateAssignment`), 
-- RewardsCreateAssignmentCoinRequestBody, 
-- RewardsCreateAssignmentMainRequestBody,
+- RewardsCreateAssignmentCoinRewardRequestBody, 
+- RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody,
 - RewardsCreateAssignmentResponseBody (old `RewardsCreateAssignmentResponse`), 
 - RewardsUpdateAssignmentRequestBody (old `RewardsUpdateAssignment`), 
 - RewardsUpdateAssignmentResponseBody (old `RewardsUpdateAssignmentResponse`)
