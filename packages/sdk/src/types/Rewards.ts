@@ -251,20 +251,21 @@ export type RewardsGetAssignmentResponseBody = RewardsAssignment
 // Create assignment
 
 export type RewardsCreateAssignmentRequestBody =
-	| RewardsCreateAssignmentCoinRequestBody
-	| RewardsCreateAssignmentMainRequestBody
+	| RewardsCreateAssignmentCoinRewardRequestBody
+	| RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody
 
-export type RewardsCreateAssignmentCoinRequestBody = WithRequiredProperty<
-	RewardsCreateAssignmentMainRequestBody,
-	'campaign'
->
-export interface RewardsCreateAssignmentMainRequestBody {
+export interface RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody {
 	campaign: string
 	parameters: {
 		loyalty: {
 			points?: number
 		}
 	}
+}
+
+export interface RewardsCreateAssignmentCoinRewardRequestBody {
+	campaign: string
+	validation_rules?: string[]
 }
 
 export type RewardsCreateAssignmentResponseBody = Required<RewardsAssignment>
