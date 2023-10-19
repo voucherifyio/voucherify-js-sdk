@@ -3,6 +3,7 @@ import { CustomerRequest, CustomersCreateBody } from './Customers'
 import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
+import { ValidationError } from './ValidationError'
 
 import { OrdersItem, OrdersCreate, OrdersCreateResponse } from './Orders'
 import { PromotionsValidateParams } from './Promotions'
@@ -29,16 +30,14 @@ export interface ValidationsValidateVoucherParams {
 	session?: ValidationSessionParams
 }
 
-export type ValidationsValidateVoucherResponse = ResponseValidateVoucherTrue | ResponseValidateVoucherFalse
-
-export interface ResponseValidateVoucherTrue {
-	valid: true
-	code: string
+export interface ValidationsValidateVoucherResponse {
 	applicable_to: ApplicableToResultList
 	inapplicable_to: ApplicableToResultList
 	campaign?: string
 	campaign_id?: string
 	metadata: Record<string, any>
+	code: string
+	valid?: boolean
 	discount?: DiscountAmount | DiscountUnit | DiscountUnitMultiple | DiscountPercent | DiscountFixed
 	gift?: {
 		amount: number
@@ -80,24 +79,7 @@ export interface ResponseValidateVoucherTrue {
 	start_date?: string
 	expiration_date?: string
 	tracking_id: string
-}
-
-export interface ResponseValidateVoucherFalse {
-	valid: false
-	code: string
-	error?: {
-		code: number
-		key: string
-		message: string
-		details: string
-		request_id?: string
-		resource_id?: string
-		resource_type?: string
-	}
-	tracking_id?: string
-	customer_id?: string
-	metadata?: Record<string, any>
-	reason?: string
+	error?: ValidationError
 }
 
 type OrderObjectRedemptions = Record<
