@@ -207,7 +207,7 @@ export interface RewardAssignmentCampaignAndMaterialRewardParameters {
 	}
 }
 
-export interface RewardAssignmentResponseData {
+export interface RewardAssignmentCreated {
 	created_at?: string
 	updated_at?: string | null
 	object?: 'reward-assignment'
@@ -217,11 +217,11 @@ export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCa
 
 export type RewardsAssignmentCoinReward = Required<RewardAssignmentIdentity> &
 	Required<RewardAssignmentBase> &
-	Required<RewardAssignmentResponseData>
+	Required<RewardAssignmentCreated>
 
 export type RewardsAssignmentCampaignAndMaterialReward = Required<RewardAssignmentIdentity> &
 	Required<RewardAssignmentBase> &
-	Required<RewardAssignmentResponseData> &
+	Required<RewardAssignmentCreated> &
 	Required<RewardAssignmentCampaignAndMaterialRewardParameters>
 
 // 0-level types
