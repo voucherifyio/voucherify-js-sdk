@@ -100,7 +100,7 @@ export interface ResponseValidateVoucherFalse {
 	reason?: string
 }
 
-export type OrderObjectRedemptions = Record<
+type OrderObjectRedemptions = Record<
 	string,
 	{
 		date?: string
