@@ -138,6 +138,9 @@ export interface RewardRedemptionParams {
 	id?: string
 }
 
+// Domain types
+// Reward
+
 export type Reward = {
 	id: string
 	name?: string
@@ -185,23 +188,6 @@ export interface RewardTypeMaterial {
 
 export type RewardType = RewardTypeCampaign | RewardTypeCoin | RewardTypeMaterial
 
-export interface RewardAssignment {
-	id: string
-	reward_id: string
-	related_object_id?: string
-	related_object_type?: string
-	parameters?: {
-		loyalty?: {
-			points: number
-		}
-	}
-	created_at: string
-	updated_at?: string
-	object: 'reward_assignment'
-}
-
-// New types - rewards assignments
-// Domain types
 // Reward assignment
 
 export interface RewardAssignmentIdentity {
@@ -227,7 +213,7 @@ export interface RewardAssignmentResponseData {
 	object?: 'reward-assignment'
 }
 
-export type RewardsAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignAndMaterialReward
+export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignAndMaterialReward
 
 export type RewardsAssignmentCoinReward = Required<RewardAssignmentIdentity> &
 	Required<RewardAssignmentBase> &
@@ -248,13 +234,13 @@ export interface RewardsListAssignmentsRequestQuery {
 export interface RewardsListAssignmentsResponseBody {
 	object: 'list'
 	data_ref: 'data'
-	data: RewardsAssignment[]
+	data: RewardAssignment[]
 	total: number
 }
 
 // Get assignment
 
-export type RewardsGetAssignmentResponseBody = RewardsAssignment
+export type RewardsGetAssignmentResponseBody = RewardAssignment
 
 // Create assignment
 
@@ -276,7 +262,7 @@ export interface RewardsCreateAssignmentCoinRewardRequestBody {
 	validation_rules?: string[]
 }
 
-export type RewardsCreateAssignmentResponseBody = Required<RewardsAssignment>
+export type RewardsCreateAssignmentResponseBody = Required<RewardAssignment>
 
 // Update assignments
 
@@ -289,4 +275,4 @@ export interface RewardsUpdateAssignmentRequestBody {
 	id: string
 }
 
-export type RewardsUpdateAssignmentResponseBody = Required<RewardsAssignment>
+export type RewardsUpdateAssignmentResponseBody = Required<RewardAssignment>

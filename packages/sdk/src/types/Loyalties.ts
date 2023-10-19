@@ -7,8 +7,6 @@ import { VouchersResponse } from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
 import { Category } from './Categories'
 
-import { RewardsAssignment } from './Rewards'
-
 // Legacy code
 interface LoyaltiesVoucher {
 	code_config?: {
@@ -1224,7 +1222,7 @@ export interface EarningRuleProportionalCustomEvent {
 // Loyalty Tier Reward
 export interface LoyaltyTierReward {
 	reward?: Required<LoyaltyTierRewardItem>
-	assignment?: Required<RewardsAssignment>
+	assignment?: Required<RewardAssignment>
 	object?: 'loyalty_tier_reward'
 }
 
@@ -1302,7 +1300,7 @@ export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
 
 //0-level types
 
-export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardsAssignment>
+export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardAssignment>
 
 export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
 	object: 'list'
