@@ -258,7 +258,7 @@ export type VouchersBulkUpdateResponse = {
 
 export type GiftCardTransaction = Required<GiftCardTransactionIdentity> &
 	Required<GiftCardTransactionBase> &
-	Required<GiftCardTransactionResponseData> &
+	Required<GiftCardTransactionCreated> &
 	GiftCardTransactionDetails
 export interface GiftCardTransactionIdentity {
 	id?: string
@@ -272,7 +272,7 @@ export interface GiftCardTransactionBase {
 	reason?: string | null
 }
 
-export interface GiftCardTransactionResponseData {
+export interface GiftCardTransactionCreated {
 	created_at?: string
 }
 
@@ -379,7 +379,7 @@ export type VoucherTransaction = GiftCardTransaction | LoyaltyCardTransaction
 
 export type VoucherTransactionsExport = Required<VoucherTransactionExportIdentity> &
 	Required<VoucherTransactionExportBase> &
-	Required<VoucherTransactionExportResponseData>
+	Required<VoucherTransactionExportCreated>
 export interface VoucherTransactionExportIdentity {
 	id?: string
 }
@@ -401,7 +401,7 @@ export interface VoucherTransactionExportBase {
 	user_id?: string | null
 	exported_object?: 'voucher_transactions'
 }
-export interface VoucherTransactionExportResponseData {
+export interface VoucherTransactionExportCreated {
 	object?: 'export'
 	created_at?: string
 }

@@ -12,7 +12,7 @@ Domain types:
 - GiftCardTransaction
 - GiftCardTransactionIdentity
 - GiftCardTransactionBase
-- GiftCardTransactionResponseData
+- GiftCardTransactionCreated
   GiftCardTransactionDetails
 - GiftCardTransactionRedemptionDetails
 - GiftCardTransactionRefundDetails
@@ -22,12 +22,12 @@ Domain types:
 - VoucherTransactionsExport
 - VoucherTransactionExportIdentity
 - VoucherTransactionExportBase
-- VoucherTransactionExportResponseData
+- VoucherTransactionExportCreated
 - VoucherTransactionsExportFields
 - ValidationRulesAssignment
 - ValidationRulesAssignmentIdentity
 - ValidationRulesAssignmentBase
-- ValidationRulesAssignmentResponseData
+- ValidationRulesAssignmentCreated
 
 0-level types:
 - VouchersListTransactionsRequestQuery

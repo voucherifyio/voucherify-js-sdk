@@ -82,7 +82,7 @@ export interface ValidationRulesListAssignmentsResponse {
 
 export type ValidationRulesAssignment = Required<ValidationRulesAssignmentIdentity> &
 	Required<ValidationRulesAssignmentBase> &
-	Required<ValidationRulesAssignmentResponseData>
+	Required<ValidationRulesAssignmentCreated>
 export interface ValidationRulesAssignmentIdentity {
 	id?: string
 }
@@ -93,7 +93,7 @@ export interface ValidationRulesAssignmentBase {
 	related_object_type?: string
 }
 
-export interface ValidationRulesAssignmentResponseData {
+export interface ValidationRulesAssignmentCreated {
 	created_at?: string
 	object?: 'validation_rules_assignment'
 }
