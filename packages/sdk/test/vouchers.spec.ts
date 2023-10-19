@@ -1,12 +1,12 @@
 import { voucherifyClient as client } from './client'
 import { generateRandomString } from './utils/generateRandomString'
-import { generateVoucher } from './utils/generateVoucher'
+import { generateDiscountVoucher } from './utils/generateDiscountVoucher'
 import { generateGiftVoucher } from './utils/generateGiftVoucher'
 
 describe('Vouchers API', () => {
-	describe('List Gift Card Transactions', () => {
+	describe('List Voucher Transactions', () => {
 		it('should return required properties', async () => {
-			const code = (await generateVoucher()).code
+			const code = (await generateDiscountVoucher()).code
 			const query = {
 				limit: 20,
 				page: 1,
@@ -26,7 +26,7 @@ describe('Vouchers API', () => {
 			}
 		})
 		it('should not throw error if query params were not specified', async () => {
-			const code = (await generateVoucher()).code
+			const code = (await generateDiscountVoucher()).code
 			let hasError = false
 			try {
 				await client.vouchers.listTransactions(code)
@@ -36,7 +36,7 @@ describe('Vouchers API', () => {
 			expect(hasError).toBeFalsy()
 		})
 	})
-	describe('List Gift Card Transactions Export', () => {
+	describe('Export Voucher Transactions', () => {
 		it('should throw error when code does not exist', async () => {
 			try {
 				await client.vouchers.exportTransactions(generateRandomString(55), {
