@@ -70,7 +70,7 @@ export class Loyalties {
 		return this.client.delete(`/loyalties/${encode(campaignId)}/rewards/${assignmentId}`)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-2
 	 */
 	public getRewardAssignment(campaignId: string, assignmentId: string) {
 		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
