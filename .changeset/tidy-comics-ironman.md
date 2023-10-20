@@ -6,8 +6,8 @@ Added support for new endpoints and adding missing types in Rewards API.
 
 Added support for new endpoints: 
 - `/loyalties/{campaignId}/rewards/{assignmentId}`,
-- `/loyalties/{campaignId}/tiers/{tierId}/rewards` (example available in readme.md)
-- `rewards/{rewardId}/assignments/{assignmentId}`
+- `/loyalties/{campaignId}/tiers/{tierId}/rewards`,
+- `/rewards/{rewardId}/assignments/{assignmentId}` (example available in readme.md)
 
 New exported types/interfaces in Loyalties.ts: 
 Domain types:
