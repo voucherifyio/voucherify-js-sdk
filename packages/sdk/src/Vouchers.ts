@@ -106,13 +106,13 @@ export class Vouchers {
 		return this.client.post<AAT.AsyncActionCreateResponse>('/vouchers/importCSV', form)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/list-gift-card-transactions
+	 * @see https://docs.voucherify.io/reference/list-voucher-transactions
 	 */
 	public listTransactions(code: string, params?: T.VouchersListTransactionsRequestQuery) {
 		return this.client.get<T.VouchersListTransactionsResponseBody>(`/vouchers/${encode(code)}/transactions`, params)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/export-gift-card-transactions
+	 * @see https://docs.voucherify.io/reference/export-voucher-transactions
 	 */
 	public exportTransactions(code: string, body: T.VouchersExportTransactionsRequestBody) {
 		return this.client.post<T.VouchersExportTransactionsResponseBody>(
