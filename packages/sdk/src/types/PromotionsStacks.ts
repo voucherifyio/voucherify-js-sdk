@@ -1,4 +1,5 @@
 import { Category } from './Categories'
+import { DeepPartial, Required } from 'utility-types'
 
 // 0 level
 export interface PromotionsStacksListInCampaignResponseBody {
@@ -31,61 +32,24 @@ export interface PromotionsStacksListRequestQuery {
 
 export type PromotionsStacksGetResponseBody = PromotionStack
 
-export type PromotionsStacksUpdateRequestBody = {
-	name?: string
-	tiers: {
-		ids?: string[] // min 1
-		hierarchy_mode?: 'MANUAL'
-	}
-	category_id?: string
-}
+export type PromotionsStacksUpdateRequestBody = DeepPartial<PromotionStackBase> & { category_id?: string }
 
-export type PromotionsStacksUpdateResponseBody = {
-	id: string
-	name: string
-	tiers: {
-		ids: string[] // min 1
-		hierarchy_mode?: 'MANUAL'
-	}
-	created_at: string
-	updated_at: string
-	campaign_id: string
-	object: 'promotion_stack'
-	category_id: string | null
-	categories: Category[]
-}
+export type PromotionsStacksUpdateResponseBody = Required<PromotionStack, 'updated_at'>
 
-export type PromotionsStacksCreateInCampaignRequestBody = {
-	name: string
-	tiers: {
-		ids: string[] // min 1
-		hierarchy_mode?: 'MANUAL'
-	}
-	category_id?: string
-}
-export type PromotionsStacksCreateInCampaignResponseBody = {
-	id: string
-	name: string
-	tiers: {
-		ids: string[] // min 1
-		hierarchy_mode?: 'MANUAL'
-	}
-	created_at: string
-	campaign_id: string
-	object: 'promotion_stack'
-	category_id: string | null
-	categories: Category[]
-}
+export type PromotionsStacksCreateInCampaignRequestBody = PromotionStackBase & { category_id?: string }
+export type PromotionsStacksCreateInCampaignResponseBody = Omit<PromotionStack, 'updated_at'>
 
 // domain types
-
-export type PromotionStack = {
-	id: string
+export interface PromotionStackBase {
 	name: string
 	tiers: {
 		ids: string[] // min 1
 		hierarchy_mode?: 'MANUAL'
 	}
+}
+
+export type PromotionStack = PromotionStackBase & {
+	id: string
 	created_at: string
 	updated_at?: string
 	campaign_id: string
