@@ -656,7 +656,6 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	}
 	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
-// 0-level types
 
 export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
 
@@ -977,7 +976,6 @@ export type EarningRule = EarningRuleBase & {
 	updated_at: string | null
 	active: boolean
 }
-// domain types
 
 export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
 
@@ -1218,58 +1216,47 @@ export interface EarningRuleProportionalCustomEvent {
 	}
 }
 
-//Domain types
 // Loyalty Tier Reward
 export interface LoyaltyTierReward {
-	reward?: Required<LoyaltyTierRewardItem>
-	assignment?: Required<RewardAssignment>
+	reward?: LoyaltyTierRewardItem
+	assignment?: RewardAssignment
 	object?: 'loyalty_tier_reward'
 }
 
 // Reward Item
-export interface LoyaltyTierRewardItemIdentity {
-	id?: string
-}
 
 export interface LoyaltyTierRewardItemBase {
-	name?: string
-	stock?: number | null
-	redeemed?: number | null
-	attributes?: {
-		image_url?: string
-		description?: string
+	id: string
+	name: string
+	stock: number | null
+	redeemed: number | null
+	attributes: {
+		image_url: string
+		description: string
 	}
-	metadata?: Record<string, undefined>
+	metadata: Record<string, undefined>
+	created_at: string
+	updated_at: string | null
+	object: 'reward'
 }
 
-export interface LoyaltyTierRewardItemResponseData {
-	created_at?: string
-	updated_at?: string | null
-	object?: 'reward'
-}
-
-export type LoyaltyTierRewardItem = LoyaltyTierRewardItemParameters &
-	Required<LoyaltyTierRewardItemIdentity> &
-	Required<LoyaltyTierRewardItemResponseData> &
-	Required<LoyaltyTierRewardItemBase>
+export type LoyaltyTierRewardItem = LoyaltyTierRewardItemBase & LoyaltyTierRewardItemParameters
 
 export type LoyaltyTierRewardItemParameters =
-	| Required<LoyaltyTierRewardItemCampaignParameters>
-	| Required<LoyaltyTierRewardItemCoinParameters>
-	| Required<LoyaltyTierRewardItemMaterialParameters>
+	| LoyaltyTierRewardItemCampaignParameters
+	| LoyaltyTierRewardItemCoinParameters
+	| LoyaltyTierRewardItemMaterialParameters
 
 export interface LoyaltyTierRewardItemCampaignParameters {
-	type?: 'CAMPAIGN'
-	parameters?: {
-		campaign:
-			| Required<LoyaltyTierRewardItemCampaignDiscountCoupons>
-			| Required<LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram>
+	type: 'CAMPAIGN'
+	parameters: {
+		campaign: LoyaltyTierRewardItemCampaignDiscountCoupons | LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram
 	}
 }
 
 export interface LoyaltyTierRewardItemCoinParameters {
-	type?: 'COIN'
-	parameters?: {
+	type: 'COIN'
+	parameters: {
 		coin: {
 			exchange_ratio: number
 			points_ratio: number
@@ -1278,8 +1265,8 @@ export interface LoyaltyTierRewardItemCoinParameters {
 }
 
 export interface LoyaltyTierRewardItemMaterialParameters {
-	type?: 'MATERIAL'
-	parameters?: {
+	type: 'MATERIAL'
+	parameters: {
 		product: {
 			id: string
 			sku_id: string | null
@@ -1288,19 +1275,17 @@ export interface LoyaltyTierRewardItemMaterialParameters {
 }
 
 export interface LoyaltyTierRewardItemCampaignDiscountCoupons {
-	id?: string
-	type?: string
+	id: string
+	type: string
 }
 
 export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
-	id?: string
-	balance?: number
-	type?: string
+	id: string
+	balance: number
+	type: string
 }
 
-//0-level types
-
-export type LoyaltiesGetRewardAssignmentResponseBody = Required<RewardAssignment>
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
 
 export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
 	object: 'list'

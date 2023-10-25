@@ -190,41 +190,36 @@ export type RewardType = RewardTypeCampaign | RewardTypeCoin | RewardTypeMateria
 
 // Reward assignment
 
-export interface RewardAssignmentIdentity {
-	id?: string
-	reward_id?: string
-}
 export interface RewardAssignmentBase {
-	related_object_id?: string
-	related_object_type?: 'campaign'
+	id: string
+	reward_id: string
+	related_object_id: string
+	related_object_type: 'campaign'
+	created_at: string
+	updated_at: string | null
+	object: 'reward-assignment'
 }
 
 export interface RewardAssignmentCampaignAndMaterialRewardParameters {
-	parameters?: {
+	parameters: {
 		loyalty: {
-			points: number
+			points?: number
 		}
 	}
 }
 
-export interface RewardAssignmentCreated {
-	created_at?: string
-	updated_at?: string | null
-	object?: 'reward-assignment'
-}
+export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignOrMaterialReward
 
-export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignAndMaterialReward
+export type RewardsAssignmentCoinReward = RewardAssignmentBase
 
-export type RewardsAssignmentCoinReward = Required<RewardAssignmentIdentity> &
-	Required<RewardAssignmentBase> &
-	Required<RewardAssignmentCreated>
-
-export type RewardsAssignmentCampaignAndMaterialReward = Required<RewardAssignmentIdentity> &
-	Required<RewardAssignmentBase> &
-	Required<RewardAssignmentCreated> &
-	Required<RewardAssignmentCampaignAndMaterialRewardParameters>
+export type RewardsAssignmentCampaignOrMaterialReward = RewardAssignmentBase &
+	RewardAssignmentCampaignAndMaterialRewardParameters
 
 // 0-level types
+// Get assignment
+
+export type RewardsGetAssignmentResponseBody = RewardAssignment
+
 // List assignments
 
 export interface RewardsListAssignmentsRequestQuery {
@@ -237,10 +232,6 @@ export interface RewardsListAssignmentsResponseBody {
 	data: RewardAssignment[]
 	total: number
 }
-
-// Get assignment
-
-export type RewardsGetAssignmentResponseBody = RewardAssignment
 
 // Create assignment
 
@@ -262,7 +253,7 @@ export interface RewardsCreateAssignmentCoinRewardRequestBody {
 	validation_rules?: string[]
 }
 
-export type RewardsCreateAssignmentResponseBody = Required<RewardAssignment>
+export type RewardsCreateAssignmentResponseBody = RewardAssignment
 
 // Update assignments
 
@@ -275,4 +266,4 @@ export interface RewardsUpdateAssignmentRequestBody {
 	id: string
 }
 
-export type RewardsUpdateAssignmentResponseBody = Required<RewardAssignment>
+export type RewardsUpdateAssignmentResponseBody = RewardAssignment
