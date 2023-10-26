@@ -80,22 +80,13 @@ export interface ValidationRulesListAssignmentsResponse {
 // Domain types
 // Validation Rules Assignment
 
-export type ValidationRulesAssignment = Required<ValidationRulesAssignmentIdentity> &
-	Required<ValidationRulesAssignmentBase> &
-	Required<ValidationRulesAssignmentCreated>
-export interface ValidationRulesAssignmentIdentity {
-	id?: string
-}
-
-export interface ValidationRulesAssignmentBase {
-	rule_id?: string
-	related_object_id?: string
-	related_object_type?: string
-}
-
-export interface ValidationRulesAssignmentCreated {
-	created_at?: string
-	object?: 'validation_rules_assignment'
+export interface ValidationRulesAssignment {
+	id: string
+	rule_id: string
+	related_object_id: string
+	related_object_type: string
+	created_at: string
+	object: 'validation_rules_assignment'
 }
 
 // 0-level types
