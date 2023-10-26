@@ -20,6 +20,7 @@ We can recognise following types in SDK:
 - **0-level Types**, used in SDK methods, directly describe the parameters and returned values. 
 - **Subtypes of 0-level Types**, used in situations where a 0-level type can have different forms, e.g. when you need to use Union types or create a type that will be the basis of an array.
 - **Domain Types**, describing fundamental domain building blocks used in Voucherify.
+- **Subtypes of Domain Types**, if a Domain Type is used in many places and can take two different forms, you can create subtypes of domain types for readability.
 
 ## 0-level Types
 
@@ -69,7 +70,7 @@ Domain Types:
 
 ## Examples
 > [!WARNING] These examples show how we can structure the types, it's not Voucherify specification
-
+### Categories
 ```ts
 // 0-level types
 
@@ -116,7 +117,7 @@ categories.get(categoryId: string): CategoriesGetResponseBody {}
 categories.create(createCategory: CategoriesCreateRequestBody): CategoriesCreateResponseBody {}
 
 ```
-
+### Reward Assignments
 ```ts
 // 0-level types
 
@@ -156,7 +157,7 @@ export interface RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody {
 }
 
 // Domain types 
-// Based on above 0-level types, only one domain type can be defined
+// Based on above 0-level types, only one domain type and two subtypes of domain type can be defined
 
 // Basic reward assignment properties, common for most of the 0-level endpoints
 // Exists because:
@@ -190,10 +191,9 @@ interface RewardsAssignmentCampaignOrMaterialReward {
   }
 }
 
-rewards.list(): CategoriesListResponseBody {}
-categories.get(categoryId: string): CategoriesGetResponseBody {}
-categories.create(createCategory: CategoriesCreateRequestBody): CategoriesCreateResponseBody {}
-
+rewards.getAssignment(rewardId: string, assignmentId: string): RewardsGetAssignmentResponseBody {}
+rewards.listAssignments(rewardId: string, params: RewardsListAssignmentsRequestQuery): RewardsListAssignmentsResponseBody {}
+rewards.createAssignment(rewardId: string, assignment: RewardsCreateAssignmentRequestBody): RewardsCreateAssignmentResponseBody {}
 ```
 
 
