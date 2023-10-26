@@ -807,6 +807,19 @@ export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
 	total: number
 }
 
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
+
+export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: {
+		reward: LoyaltyTierRewardItem
+		assignment: RewardAssignment
+		object: 'loyalty_tier_reward'
+	}[]
+}
+
 // domain types
 
 export interface LoyaltyTierBase {
@@ -1216,13 +1229,6 @@ export interface EarningRuleProportionalCustomEvent {
 	}
 }
 
-// Loyalty Tier Reward
-export interface LoyaltyTierReward {
-	reward?: LoyaltyTierRewardItem
-	assignment?: RewardAssignment
-	object?: 'loyalty_tier_reward'
-}
-
 // Reward Item
 
 export interface LoyaltyTierRewardItemBase {
@@ -1283,13 +1289,4 @@ export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
 	id: string
 	balance: number
 	type: string
-}
-
-export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
-
-export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
-	object: 'list'
-	data_ref: 'data'
-	total: number
-	data: LoyaltyTierReward[]
 }
