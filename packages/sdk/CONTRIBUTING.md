@@ -18,9 +18,9 @@ This document describes good practices and patterns we should use in developing 
 
 We can recognise following types in SDK:
 - **0-level Types**, used in SDK methods, directly describe the parameters and returned values. 
-- **Subtypes of 0-level Types**, used in situations where a 0-level type can have different forms, e.g. when you need to use Union types or create a type that will be the basis of an array.
+  - **Subtypes of 0-level Types**, used in situations where a 0-level type can have different forms, e.g. when you need to use Union types or create a type that will be the basis of an array.
 - **Domain Types**, describing fundamental domain building blocks used in Voucherify.
-- **Subtypes of Domain Types**, if a Domain Type is used in many places and can take two different forms, you can create subtypes of domain types for readability.
+  - **Subtypes of Domain Types**, if a Domain Type is used in many places and can take two different forms, you can create subtypes of domain types for readability.
 
 ## 0-level Types
 
