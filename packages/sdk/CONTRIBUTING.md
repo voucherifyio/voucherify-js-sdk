@@ -196,8 +196,6 @@ rewards.listAssignments(rewardId: string, params: RewardsListAssignmentsRequestQ
 rewards.createAssignment(rewardId: string, assignment: RewardsCreateAssignmentRequestBody): RewardsCreateAssignmentResponseBody {}
 ```
 
-
-
 ## Legacy
 
 The existing SDK doesn't have one consistent structure for types in the context of naming or structure. Working on SDK, we could adjust all legacy code to the new guideline, but it will generate many non-backwards compatible changes that we want to avoid as long as possible because it will require SDK users to adjust their existing integrations. On the other hand, we can not be blocked to improve SDK at the end. We will split the work into two phases:
