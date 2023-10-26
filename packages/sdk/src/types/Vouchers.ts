@@ -256,36 +256,28 @@ export type VouchersBulkUpdateResponse = {
 
 // Domain types
 
-export type GiftCardTransaction = Required<GiftCardTransactionIdentity> &
-	Required<GiftCardTransactionBase> &
-	Required<GiftCardTransactionCreated> &
-	GiftCardTransactionDetails
-export interface GiftCardTransactionIdentity {
-	id?: string
-	source_id?: string | null
-}
+export type GiftCardTransaction = GiftCardTransactionBase & GiftCardTransactionDetails
 
 export interface GiftCardTransactionBase {
-	voucher_id?: string
-	campaign_id?: string | null
-	related_transaction_id?: string | null
-	reason?: string | null
-}
-
-export interface GiftCardTransactionCreated {
-	created_at?: string
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	related_transaction_id: string | null
+	reason: string | null
+	created_at: string
 }
 
 export type GiftCardTransactionDetails =
-	| Required<GiftCardTransactionRedemptionDetails>
-	| Required<GiftCardTransactionRefundDetails>
-	| Required<GiftCardTransactionAdditionDetails>
-	| Required<GiftCardTransactionRemovalDetails>
+	| GiftCardTransactionRedemptionDetails
+	| GiftCardTransactionRefundDetails
+	| GiftCardTransactionAdditionDetails
+	| GiftCardTransactionRemovalDetails
 
 export interface GiftCardTransactionRedemptionDetails {
-	source?: null
-	type?: 'CREDITS_REDEMPTION'
-	details?: {
+	source: null
+	type: 'CREDITS_REDEMPTION'
+	details: {
 		balance: {
 			type: 'gift_voucher'
 			total: number
@@ -308,9 +300,9 @@ export interface GiftCardTransactionRedemptionDetails {
 }
 
 export interface GiftCardTransactionRefundDetails {
-	source?: null
-	type?: 'CREDITS_REFUND'
-	details?: {
+	source: null
+	type: 'CREDITS_REFUND'
+	details: {
 		balance: {
 			type: 'gift_voucher'
 			total: number
@@ -377,35 +369,6 @@ export type VoucherTransaction = GiftCardTransaction | LoyaltyCardTransaction
 
 // Export
 
-export type VoucherTransactionsExport = Required<VoucherTransactionExportIdentity> &
-	Required<VoucherTransactionExportBase> &
-	Required<VoucherTransactionExportCreated>
-export interface VoucherTransactionExportIdentity {
-	id?: string
-}
-export interface VoucherTransactionExportBase {
-	status?: 'SCHEDULED'
-	channel?: string
-	parameters?: {
-		order?: string
-		fields?: VoucherTransactionsExportFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string]
-				}
-			}
-		}
-	}
-	result?: null
-	user_id?: string | null
-	exported_object?: 'voucher_transactions'
-}
-export interface VoucherTransactionExportCreated {
-	object?: 'export'
-	created_at?: string
-}
-
 export type VoucherTransactionsExportFields =
 	| 'id'
 	| 'campaign_id'
@@ -443,4 +406,24 @@ export interface VouchersExportTransactionsRequestBody {
 	}
 }
 
-export type VouchersExportTransactionsResponseBody = VoucherTransactionsExport
+export interface VouchersExportTransactionsResponseBody {
+	id: string
+	status: 'SCHEDULED'
+	channel: string
+	parameters: {
+		order?: string
+		fields?: VoucherTransactionsExportFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string]
+				}
+			}
+		}
+	}
+	result: null
+	user_id: string | null
+	exported_object: 'voucher_transactions'
+	object: 'export'
+	created_at: string
+}
