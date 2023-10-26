@@ -10,24 +10,15 @@ Added support for following endpoints:
 **New exported types/interfaces**
 Domain types:
 - GiftCardTransaction
-- GiftCardTransactionIdentity
 - GiftCardTransactionBase
-- GiftCardTransactionCreated
   GiftCardTransactionDetails
 - GiftCardTransactionRedemptionDetails
 - GiftCardTransactionRefundDetails
 - GiftCardTransactionAdditionDetails
 - GiftCardTransactionRemovalDetails
 - VoucherTransaction
-- VoucherTransactionsExport
-- VoucherTransactionExportIdentity
-- VoucherTransactionExportBase
-- VoucherTransactionExportCreated
 - VoucherTransactionsExportFields
 - ValidationRulesAssignment
-- ValidationRulesAssignmentIdentity
-- ValidationRulesAssignmentBase
-- ValidationRulesAssignmentCreated
 
 0-level types:
 - VouchersListTransactionsRequestQuery
