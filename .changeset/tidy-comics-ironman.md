@@ -9,20 +9,26 @@ Added support for new endpoints:
 - `/loyalties/{campaignId}/tiers/{tierId}/rewards`,
 - `/rewards/{rewardId}/assignments/{assignmentId}` (example available in readme.md)
 
-New exported types/interfaces in Loyalties.ts: 
+New exported types/interfaces in `Loyalties.ts`: 
 Domain types:
-- LoyaltyTierReward, LoyaltyTierRewardItem, LoyaltyTierRewardItemIdentity, LoyaltyTierRewardItemBase, LoyaltyTierRewardItemResponseData, LoyaltyTierRewardItemParameters, LoyaltyTierRewardItemCampaignParameters, LoyaltyTierRewardItemCoinParameters, LoyaltyTierRewardItemMaterialParameters, LoyaltyTierRewardItemCampaignDiscountCoupons, LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram
-0-level types:
-- LoyaltiesGetRewardAssignmentResponseBody, LoyaltiesListLoyaltyTierRewardsResponseBody
+- LoyaltyTierRewardItem,
+- LoyaltyTierRewardItemBase, 
+- LoyaltyTierRewardItemParameters, 
+- LoyaltyTierRewardItemCampaignParameters, 
+- LoyaltyTierRewardItemCoinParameters, 
+- LoyaltyTierRewardItemMaterialParameters, 
+- LoyaltyTierRewardItemCampaignDiscountCoupons, 
+- LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram
 
-New exported types/interfaces in Rewards.ts: 
+0-level types:
+- LoyaltiesGetRewardAssignmentResponseBody,
+- LoyaltiesListLoyaltyTierRewardsResponseBody
+
+New exported types/interfaces in `Rewards.ts`: 
 Domain types:
 - RewardAssignment (old `RewardsAssignmentObject`), 
-- RewardsAssignmentCampaignAndMaterialReward,
+- RewardsAssignmentCampaignOrMaterialReward,
 - RewardsAssignmentCoinReward
-- RewardAssignmentIdentity, 
-- RewardAssignmentBase,
-- RewardAssignmentResponseData
 - 
 0-level types:
 - RewardsListAssignmentsRequestQuery (old `RewardsListAssignmentsParams`),
