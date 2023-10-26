@@ -1,4 +1,3 @@
-// Legacy types
 export interface RewardsListParams {
 	page?: number
 	limit?: number
@@ -190,7 +189,9 @@ export type RewardType = RewardTypeCampaign | RewardTypeCoin | RewardTypeMateria
 
 // Reward assignment
 
-export interface RewardAssignmentBase {
+export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignOrMaterialReward
+
+export interface RewardsAssignmentCoinReward {
 	id: string
 	reward_id: string
 	related_object_id: string
@@ -200,20 +201,20 @@ export interface RewardAssignmentBase {
 	object: 'reward-assignment'
 }
 
-export interface RewardAssignmentCampaignAndMaterialRewardParameters {
+export interface RewardsAssignmentCampaignOrMaterialReward {
+	id: string
+	reward_id: string
+	related_object_id: string
+	related_object_type: 'campaign'
+	created_at: string
+	updated_at: string | null
+	object: 'reward-assignment'
 	parameters: {
 		loyalty: {
 			points?: number
 		}
 	}
 }
-
-export type RewardAssignment = RewardsAssignmentCoinReward | RewardsAssignmentCampaignOrMaterialReward
-
-export type RewardsAssignmentCoinReward = RewardAssignmentBase
-
-export type RewardsAssignmentCampaignOrMaterialReward = RewardAssignmentBase &
-	RewardAssignmentCampaignAndMaterialRewardParameters
 
 // 0-level types
 // Get assignment
@@ -239,6 +240,11 @@ export type RewardsCreateAssignmentRequestBody =
 	| RewardsCreateAssignmentCoinRewardRequestBody
 	| RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody
 
+export interface RewardsCreateAssignmentCoinRewardRequestBody {
+	campaign: string
+	validation_rules?: string[]
+}
+
 export interface RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody {
 	campaign: string
 	parameters: {
@@ -246,11 +252,6 @@ export interface RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody {
 			points?: number
 		}
 	}
-}
-
-export interface RewardsCreateAssignmentCoinRewardRequestBody {
-	campaign: string
-	validation_rules?: string[]
 }
 
 export type RewardsCreateAssignmentResponseBody = RewardAssignment
