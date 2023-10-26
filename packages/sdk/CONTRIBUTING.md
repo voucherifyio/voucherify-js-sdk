@@ -1,8 +1,8 @@
 
 ## Introduction
 
-By its nature, SDK should help software developers integrate with Voucherify REST API. In most cases, Voucherify SDK methods are just wrappers for HTTP clients, so the SDK values that can help a software developer are:
-- types for requests and responses
+By its nature, the SDK should help software developers integrate with Voucherify REST API. In most cases, Voucherify SDK methods are just wrappers for HTTP clients, so the SDK values that can help a software developer are:
+- types of requests and responses
 - examples of use
 - documentation describing the endpoints
 
@@ -16,7 +16,7 @@ This document describes good practices and patterns we should use in developing 
 
 ## Types structure
 
-We can recognise following types in SDK:
+We can recognise the following types in SDK:
 - **0-level Types**, used in SDK methods, directly describe the parameters and returned values. 
   - **Subtypes of 0-level Types**, used in situations where a 0-level type can have different forms, e.g. when you need to use Union types or create a type that will be the basis of an array.
 - **Domain Types**, describing fundamental domain building blocks used in Voucherify.
