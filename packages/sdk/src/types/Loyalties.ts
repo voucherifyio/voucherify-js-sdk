@@ -814,7 +814,20 @@ export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
 	data_ref: 'data'
 	total: number
 	data: {
-		reward: LoyaltyTierRewardItem
+		reward: {
+			id: string
+			name: string
+			stock: number | null
+			redeemed: number | null
+			attributes?: {
+				image_url?: string
+				description?: string
+			}
+			metadata: Record<string, undefined>
+			created_at: string
+			updated_at: string | null
+			object: 'reward'
+		} & LoyaltyTierRewardItemParameters
 		assignment: RewardAssignment
 		object: 'loyalty_tier_reward'
 	}[]
@@ -1228,25 +1241,6 @@ export interface EarningRuleProportionalCustomEvent {
 		}
 	}
 }
-
-// Reward Item
-
-export interface LoyaltyTierRewardItemBase {
-	id: string
-	name: string
-	stock: number | null
-	redeemed: number | null
-	attributes: {
-		image_url: string
-		description: string
-	}
-	metadata: Record<string, undefined>
-	created_at: string
-	updated_at: string | null
-	object: 'reward'
-}
-
-export type LoyaltyTierRewardItem = LoyaltyTierRewardItemBase & LoyaltyTierRewardItemParameters
 
 export type LoyaltyTierRewardItemParameters =
 	| LoyaltyTierRewardItemCampaignParameters

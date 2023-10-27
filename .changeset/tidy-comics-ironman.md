@@ -11,8 +11,6 @@ Added support for new endpoints:
 
 New exported types/interfaces in `Loyalties.ts`: 
 Domain types:
-- LoyaltyTierRewardItem,
-- LoyaltyTierRewardItemBase, 
 - LoyaltyTierRewardItemParameters, 
 - LoyaltyTierRewardItemCampaignParameters, 
 - LoyaltyTierRewardItemCoinParameters, 
