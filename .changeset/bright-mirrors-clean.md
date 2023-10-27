@@ -30,5 +30,5 @@ Domain types:
 
 **Other changes**
 - Use `VouchersExportTransactionsRequestBody` as `LoyaltiesExportCardTransactionsRequestBody` (these types are identical, both related to the export of loyalty card transactions)
-- Use `VouchersExportTransactionsResponseBody` as `LoyaltiesExportCardTransactionsResponseBody` ((these types are identical, both related to the export of loyalty card transactions))
+- Use `VouchersExportTransactionsResponseBody` as `LoyaltiesExportCardTransactionsResponseBody` (these types are identical, both related to the export of loyalty card transactions)
 

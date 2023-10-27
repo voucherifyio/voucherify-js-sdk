@@ -90,7 +90,6 @@ export interface ValidationRulesAssignment {
 }
 
 // 0-level types
-
 // list rules assignments
 
 export interface ValidationRulesListRulesAssignmentsRequestQuery {
