@@ -8,8 +8,8 @@ export class Categories {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-categories
 	 */
-	public list() {
-		return this.client.get<T.ListCategories>('/categories')
+	public list(params: T.CategoriesListRequestQuery = {}) {
+		return this.client.get<T.ListCategories>('/categories', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/create-category
