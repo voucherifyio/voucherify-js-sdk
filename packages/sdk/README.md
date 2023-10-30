@@ -155,6 +155,8 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
 - [Import Vouchers using CSV](#import-vouchers-using-csv)
+- [List Voucher Transactions](#list-voucher-transactions)
+- [Export Voucher Transactions](#export-voucher-transactions)
 
 #### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
@@ -242,6 +244,18 @@ client.vouchers.releaseValidationSession(code, sessionKey)
 
 ```javascript
 client.vouchers.importCSV(filePath)
+```
+
+#### [List Voucher Transactions](https://docs.voucherify.io/reference/list-voucher-transactions)
+
+```javascript
+client.vouchers.listTransactions(code, query)
+```
+
+#### [Export Voucher Transactions](https://docs.voucherify.io/reference/export-voucher-transactions)
+
+```javascript
+client.vouchers.exportTransactions(code, body)
 ```
 
 ---
@@ -1372,7 +1386,8 @@ Methods are provided within `client.validationRules.*` namespace.
 - [Create Rule Assignment](#create-validation-rule-assignment)
 - [Delete Rule Assignment](#delete-validation-rule-assignment)
 - [List Rules](#list-validation-rules)
-- [List Rule Assignments](#list-validation-rule-assignments)
+- [List Validation Rule Assignments](#list-validation-rule-assignments)
+- [List Validation Rules Assignments](#list-validation-rules-assignments)
 
 #### [Create Validation Rule](https://docs.voucherify.io/reference/create-validation-rules)
 
@@ -1424,6 +1439,13 @@ client.validationRules.list(params)
 ```javascript
 client.validationRules.listAssignments(validationRuleId)
 client.validationRules.listAssignments(validationRuleId, params)
+```
+
+#### [List Validation Rules Assignments](https://docs.voucherify.io/reference/list-validation-rules-assignments)
+
+```javascript
+client.validationRules.listRulesAssignments(validationRuleId)
+client.validationRules.listRulesAssignments(validationRuleId, params)
 ```
 
 ---

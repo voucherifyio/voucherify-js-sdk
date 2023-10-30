@@ -3,7 +3,11 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-import { VouchersResponse } from './Vouchers'
+import {
+	VouchersExportTransactionsRequestBody,
+	VouchersExportTransactionsResponseBody,
+	VouchersResponse,
+} from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
 import { Category } from './Categories'
 
@@ -608,32 +612,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsRequestBody = VouchersExportTransactionsRequestBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
@@ -742,32 +721,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
@@ -854,73 +808,6 @@ interface MappingMultiply {
 interface MappingFixed {
 	type: 'CUSTOM'
 	points: number
-}
-
-export interface LoyaltyCardTransaction {
-	id: string
-	source_id: string | null
-	voucher_id: string
-	campaign_id: string
-	source: string | null
-	reason: string | null
-	type: LoyaltyCardTransactionsType
-	details: {
-		balance: {
-			type: 'loyalty_card'
-			total: number
-			object: 'balance'
-			points: number
-			balance: number
-			related_object: {
-				id: string
-				type: 'voucher'
-			}
-		}
-		order?: {
-			id: string
-			source_id: string
-		}
-		event?: {
-			id: string
-			type: string
-		}
-		earning_rule?: {
-			id: string
-			source: {
-				banner: string
-			}
-		}
-		segment?: {
-			id: string
-			name: string
-		}
-		loyalty_tier?: {
-			id: string
-			name: string
-		}
-		redemption?: {
-			id: string
-		}
-		rollback?: {
-			id: string
-		}
-		reward?: {
-			id: string
-			name: string
-		}
-		custom_event?: {
-			id: string
-			type: string
-		}
-		event_schema?: {
-			id: string
-			name: string
-		}
-		source_voucher?: SimpleLoyaltyVoucher
-		destination_voucher?: SimpleLoyaltyVoucher
-	}
-	related_transaction_id: string | null
-	created_at: string
 }
 
 export interface SimpleLoyaltyVoucher {
