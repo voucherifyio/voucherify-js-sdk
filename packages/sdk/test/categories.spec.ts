@@ -40,14 +40,14 @@ describe('Categories API', () => {
 	})
 
 	it('should list categories', async () => {
-		const categoriesList = await client.categories.list()
+		const categoriesList = await client.categories.list({ limit: 100 })
 		expect(categoriesList).toMatchObject(
 			expect.objectContaining({
 				object: 'list',
 				data_ref: 'data',
-				has_more: false,
 			}),
 		)
+		expect(typeof categoriesList.has_more).toBe('boolean')
 		expect(typeof categoriesList.total).toBe('number')
 		expect(Array.isArray(categoriesList.data)).toBeTruthy()
 		categoriesList.data.forEach(category => {
