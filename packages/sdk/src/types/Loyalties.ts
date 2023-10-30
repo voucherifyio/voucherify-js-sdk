@@ -635,13 +635,10 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	}
 	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
-// 0-level types
 
 export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
 
 export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
-
-export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
 
 export type LoyaltiesGetRewardDetailsResponseBody = Reward
 
@@ -764,6 +761,32 @@ export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
 	total: number
 }
 
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
+
+export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: {
+		reward: {
+			id: string
+			name: string
+			stock: number | null
+			redeemed: number | null
+			attributes?: {
+				image_url?: string
+				description?: string
+			}
+			metadata: Record<string, undefined>
+			created_at: string
+			updated_at: string | null
+			object: 'reward'
+		} & LoyaltyTierRewardItemParameters
+		assignment: RewardAssignment
+		object: 'loyalty_tier_reward'
+	}[]
+}
+
 // domain types
 
 export interface LoyaltyTierBase {
@@ -866,7 +889,6 @@ export type EarningRule = EarningRuleBase & {
 	updated_at: string | null
 	active: boolean
 }
-// domain types
 
 export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
 
@@ -1105,4 +1127,47 @@ export interface EarningRuleProportionalCustomEvent {
 			property: string
 		}
 	}
+}
+
+export type LoyaltyTierRewardItemParameters =
+	| LoyaltyTierRewardItemCampaignParameters
+	| LoyaltyTierRewardItemCoinParameters
+	| LoyaltyTierRewardItemMaterialParameters
+
+export interface LoyaltyTierRewardItemCampaignParameters {
+	type: 'CAMPAIGN'
+	parameters: {
+		campaign: LoyaltyTierRewardItemCampaignDiscountCoupons | LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram
+	}
+}
+
+export interface LoyaltyTierRewardItemCoinParameters {
+	type: 'COIN'
+	parameters: {
+		coin: {
+			exchange_ratio: number
+			points_ratio: number
+		}
+	}
+}
+
+export interface LoyaltyTierRewardItemMaterialParameters {
+	type: 'MATERIAL'
+	parameters: {
+		product: {
+			id: string
+			sku_id: string | null
+		}
+	}
+}
+
+export interface LoyaltyTierRewardItemCampaignDiscountCoupons {
+	id: string
+	type: string
+}
+
+export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
+	id: string
+	balance: number
+	type: string
 }
