@@ -70,6 +70,14 @@ export class Loyalties {
 		return this.client.delete(`/loyalties/${encode(campaignId)}/rewards/${assignmentId}`)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/get-reward-assignment-2
+	 */
+	public getRewardAssignment(campaignId: string, assignmentId: string) {
+		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
+			`/loyalties/${encode(campaignId)}/rewards/${encode(assignmentId)}`,
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/list-earning-rules
 	 */
 	public listEarningRules(campaignId: string, params: T.LoyaltiesListEarningRulesParams = {}) {
@@ -230,6 +238,14 @@ export class Loyalties {
 		)
 	}
 	/**
+	 * @see https://docs.voucherify.io/reference/list-loyalty-tier-rewards
+	 */
+	public listLoyaltyTierRewards(campaignId: string, tierId: string) {
+		return this.client.get<T.LoyaltiesListLoyaltyTierRewardsResponseBody>(
+			`/loyalties/${encode(campaignId)}/tiers/${encode(tierId)}/rewards`,
+		)
+	}
+	/**
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions
 	 * @see https://docs.voucherify.io/reference/list-loyalty-card-transactions-1
 	 */
@@ -259,14 +275,6 @@ export class Loyalties {
 				? `/loyalties/${encode(campaignId)}/members/${encode(memberId)}/transactions/export`
 				: `/loyalties/members/${encode(memberId)}/transactions/export`,
 			params,
-		)
-	}
-	/**
-	 * @see https://docs.voucherify.io/reference/get-reward-assignment-1
-	 */
-	public getRewardAssignment(campaignId: string, assignmentId: string) {
-		return this.client.get<T.LoyaltiesGetRewardAssignmentResponseBody>(
-			`/loyalties/${encode(campaignId)}/reward-assignments/${encode(assignmentId)}`,
 		)
 	}
 	/**

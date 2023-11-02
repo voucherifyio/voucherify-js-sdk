@@ -77,3 +77,32 @@ export interface ValidationRulesListAssignmentsResponse {
 	data_ref: 'data'
 	data: ValidationRulesCreateAssignmentResponse[]
 }
+// Domain types
+// Validation Rules Assignment
+
+export interface ValidationRulesAssignment {
+	id: string
+	rule_id: string
+	related_object_id: string
+	related_object_type: string
+	created_at: string
+	object: 'validation_rules_assignment'
+}
+
+// 0-level types
+// list rules assignments
+
+export interface ValidationRulesListRulesAssignmentsRequestQuery {
+	related_object_id?: string
+	rule?: string
+	page?: number
+	limit?: number
+	order?: 'created_at' | '-created_at'
+}
+
+export interface ValidationRulesListRulesAssignmentsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: ValidationRulesAssignment[]
+}
