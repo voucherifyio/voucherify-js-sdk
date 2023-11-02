@@ -111,6 +111,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listCardTransactions" class="tsd-kind-icon">list<wbr>Card<wbr>Transactions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listEarningRules" class="tsd-kind-icon">list<wbr>Earning<wbr>Rules</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listLoyaltyTierEarningRules" class="tsd-kind-icon">list<wbr>Loyalty<wbr>Tier<wbr>Earning<wbr>Rules</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listLoyaltyTierRewards" class="tsd-kind-icon">list<wbr>Loyalty<wbr>Tier<wbr>Rewards</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listMemberLoyaltyTiers" class="tsd-kind-icon">list<wbr>Member<wbr>Loyalty<wbr>Tiers</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listMemberRewards" class="tsd-kind-icon">list<wbr>Member<wbr>Rewards</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Loyalties.html#listMembers" class="tsd-kind-icon">list<wbr>Members</a></li>
@@ -521,7 +522,7 @@
 					<a name="exportCardTransactions" class="tsd-anchor"></a>
 					<h3>export<wbr>Card<wbr>Transactions</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">export<wbr>Card<wbr>Transactions<span class="tsd-signature-symbol">(</span>memberId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/LoyaltiesExportCardTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesExportCardTransactionsRequestBody</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/LoyaltiesExportCardTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesExportCardTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">export<wbr>Card<wbr>Transactions<span class="tsd-signature-symbol">(</span>memberId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/VouchersExportTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsRequestBody</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersExportTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -546,10 +547,10 @@
 									<h5>campaignId: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>params: <a href="../interfaces/LoyaltiesExportCardTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesExportCardTransactionsRequestBody</a><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5>params: <a href="../interfaces/VouchersExportTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsRequestBody</a><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/LoyaltiesExportCardTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesExportCardTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersExportTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -713,7 +714,7 @@
 					<a name="getRewardAssignment" class="tsd-anchor"></a>
 					<h3>get<wbr>Reward<wbr>Assignment</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Reward<wbr>Assignment<span class="tsd-signature-symbol">(</span>campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, assignmentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/RewardAssignment.html" class="tsd-signature-type" data-tsd-kind="Interface">RewardAssignment</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Reward<wbr>Assignment<span class="tsd-signature-symbol">(</span>campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, assignmentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#RewardAssignment" class="tsd-signature-type" data-tsd-kind="Type alias">RewardAssignment</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -722,7 +723,7 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference/get-reward-assignment-1">https://docs.voucherify.io/reference/get-reward-assignment-1</a></p>
+									<dd><p><a href="https://docs.voucherify.io/reference/get-reward-assignment-2">https://docs.voucherify.io/reference/get-reward-assignment-2</a></p>
 									</dd>
 								</dl>
 							</div>
@@ -735,7 +736,7 @@
 									<h5>assignmentId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/RewardAssignment.html" class="tsd-signature-type" data-tsd-kind="Interface">RewardAssignment</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#RewardAssignment" class="tsd-signature-type" data-tsd-kind="Type alias">RewardAssignment</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -922,6 +923,36 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#LoyaltiesListLoyaltyTierEarningRulesResponseBody" class="tsd-signature-type" data-tsd-kind="Type alias">LoyaltiesListLoyaltyTierEarningRulesResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listLoyaltyTierRewards" class="tsd-anchor"></a>
+					<h3>list<wbr>Loyalty<wbr>Tier<wbr>Rewards</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Loyalty<wbr>Tier<wbr>Rewards<span class="tsd-signature-symbol">(</span>campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tierId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/LoyaltiesListLoyaltyTierRewardsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesListLoyaltyTierRewardsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/list-loyalty-tier-rewards">https://docs.voucherify.io/reference/list-loyalty-tier-rewards</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>campaignId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>tierId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/LoyaltiesListLoyaltyTierRewardsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">LoyaltiesListLoyaltyTierRewardsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1319,6 +1350,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Loyalties.html#listLoyaltyTierEarningRules" class="tsd-kind-icon">list<wbr>Loyalty<wbr>Tier<wbr>Earning<wbr>Rules</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="Loyalties.html#listLoyaltyTierRewards" class="tsd-kind-icon">list<wbr>Loyalty<wbr>Tier<wbr>Rewards</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Loyalties.html#listMemberLoyaltyTiers" class="tsd-kind-icon">list<wbr>Member<wbr>Loyalty<wbr>Tiers</a>

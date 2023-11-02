@@ -99,10 +99,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#delete" class="tsd-kind-icon">delete</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#enable" class="tsd-kind-icon">enable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#exportTransactions" class="tsd-kind-icon">export<wbr>Transactions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#import" class="tsd-kind-icon">import</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#importCSV" class="tsd-kind-icon">importCSV</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#listTransactions" class="tsd-kind-icon">list<wbr>Transactions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#releaseValidationSession" class="tsd-kind-icon">release<wbr>Validation<wbr>Session</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Vouchers.html#update" class="tsd-kind-icon">update</a></li>
 							</ul>
@@ -321,6 +323,36 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="exportTransactions" class="tsd-anchor"></a>
+					<h3>export<wbr>Transactions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">export<wbr>Transactions<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, body<span class="tsd-signature-symbol">: </span><a href="../interfaces/VouchersExportTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsRequestBody</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersExportTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/export-voucher-transactions">https://docs.voucherify.io/reference/export-voucher-transactions</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>body: <a href="../interfaces/VouchersExportTransactionsRequestBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsRequestBody</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersExportTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersExportTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -429,6 +461,36 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listTransactions" class="tsd-anchor"></a>
+					<h3>list<wbr>Transactions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Transactions<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/VouchersListTransactionsRequestQuery.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListTransactionsRequestQuery</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersListTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/list-voucher-transactions">https://docs.voucherify.io/reference/list-voucher-transactions</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/VouchersListTransactionsRequestQuery.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListTransactionsRequestQuery</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/VouchersListTransactionsResponseBody.html" class="tsd-signature-type" data-tsd-kind="Interface">VouchersListTransactionsResponseBody</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="releaseValidationSession" class="tsd-anchor"></a>
 					<h3>release<wbr>Validation<wbr>Session</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -530,6 +592,9 @@
 								<a href="Vouchers.html#enable" class="tsd-kind-icon">enable</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="Vouchers.html#exportTransactions" class="tsd-kind-icon">export<wbr>Transactions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Vouchers.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -540,6 +605,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Vouchers.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="Vouchers.html#listTransactions" class="tsd-kind-icon">list<wbr>Transactions</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Vouchers.html#releaseValidationSession" class="tsd-kind-icon">release<wbr>Validation<wbr>Session</a>
