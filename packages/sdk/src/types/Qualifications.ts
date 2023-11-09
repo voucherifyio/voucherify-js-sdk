@@ -1,7 +1,13 @@
 import { CustomerRequest } from './Customers'
 import { Junction } from './Exports'
 import { OrderRequest, OrderResponse } from './Orders'
-import { ApplicableTo, ApplicableToResultList, InapplicableToResultList } from '@voucherify/sdk'
+import {
+	ApplicableToResultList,
+	Discount,
+	InapplicableToResultList,
+	LoyaltiesTransferPoints,
+	ValidationRulesAssignmentsList,
+} from '@voucherify/sdk'
 import { Category } from './Categories'
 
 export type QualificationsCheckEligibilityRequestBody = {
@@ -67,9 +73,13 @@ export type QualificationsStackingRulesResponse = {
 	exclusive_categories: string[]
 }
 
+export type QualificationsRedeemableSingleResponse = QualificationsRedeemableSingleResponseBase & {
+	redeemables: QualificationsRedeemableSingleResponseBase[]
+}
+
 export type QualificationsRedeemableSingleResponseBase = {
-	id: string
-	object: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
+	id?: string
+	object?: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
 	created_at?: string
 	result?: RedeemableSingleResultResponse
 	order?: OrderResponse
@@ -78,9 +88,25 @@ export type QualificationsRedeemableSingleResponseBase = {
 	inapplicable_to?: InapplicableToResultList
 	metadata?: Record<string, unknown>
 	categories?: Category[]
-	banner: string
-	name: string
-	campaign_name: string
-	campaign_id: string
-	validation_rules_assignments: ValidationRulesAssignments
+	banner?: string
+	name?: string
+	campaign_name?: string
+	campaign_id?: string
+	validation_rules_assignments?: ValidationRulesAssignmentsList
+}
+
+export type RedeemableSingleResultResponse = {
+	discount?: Discount
+	gift?: {
+		balance: number
+		credits: number
+	}
+	loyalty_card?: {
+		points?: number
+		balance?: number
+		exchange_ratio?: number
+		points_ratio?: number
+		transfers?: LoyaltiesTransferPoints[]
+	}
+	error?: Error
 }

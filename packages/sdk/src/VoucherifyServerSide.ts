@@ -24,6 +24,7 @@ import { MetadataSchemas } from './MetadataSchemas'
 import { Categories } from './Categories'
 import { PromotionsStacks } from './PromotionsStacks'
 import { ProductCollections } from './ProductCollections'
+import { Qualifications } from './Qualifications'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -191,6 +192,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const promotions = new Promotions(client, promotionTiers, promotionStack)
 	const validations = new Validations(client, promotions)
 	const redemptions = new Redemptions(client)
+	const qualifications = new Qualifications(client)
 	const customers = new Customers(client)
 	const consents = new Consents(client)
 	const orders = new Orders(client)
@@ -216,6 +218,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		orders,
 		products,
 		productCollections,
+		qualifications,
 		rewards,
 		loyalties,
 		segments,

@@ -70,3 +70,47 @@ export interface DiscountFixed {
 	fixed_amount_formula?: string
 	effect?: DiscountFixedVouchersEffectTypes
 }
+
+// domain types
+
+export type Discount = DiscountAmount_ | DiscountUnit_ | DiscountUnitMultiple_ | DiscountPercent_ | DiscountFixed_
+
+export type DiscountAmount_ = {
+	type: 'AMOUNT'
+	amount_off?: number
+	amount_off_formula?: string
+	effect: DiscountAmountVouchersEffectTypes
+}
+
+export type DiscountUnit_ = { type: 'UNIT' } & DiscountUnitBase_
+
+export type DiscountUnitBase_ = {
+	unit_off?: number
+	unit_off_formula?: string
+	effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	unit_type: string
+	product?: SimpleProductDiscountUnit
+	sku?: SimpleSkuDiscountUnit
+}
+
+export type DiscountUnitMultiple_ = {
+	type: 'UNIT'
+	effect: 'ADD_MANY_ITEMS'
+	units: DiscountUnitBase_[]
+}
+
+export type DiscountPercent_ = {
+	type: 'PERCENT'
+	percent_off?: number
+	percent_off_formula?: string
+	amount_limit?: number
+	effect: DiscountPercentVouchersEffectTypes
+	is_dynamic?: boolean
+}
+
+export type DiscountFixed_ = {
+	type: 'FIXED'
+	fixed_amount?: number
+	fixed_amount_formula?: string
+	effect: DiscountFixedVouchersEffectTypes
+}

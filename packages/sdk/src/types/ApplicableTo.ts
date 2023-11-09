@@ -9,9 +9,12 @@ export interface ApplicableTo {
 	strict: boolean
 	price?: number
 	price_formula?: number
+	effect: ApplicableToEffect
 	quantity_limit?: number
 	aggregated_quantity_limit?: number
-	effect: ApplicableToEffect
+	amount_limit?: number
+	aggregated_amount_limit?: number
+	order_item_indices?: number[]
 }
 
 export interface ApplicableToResultList {
