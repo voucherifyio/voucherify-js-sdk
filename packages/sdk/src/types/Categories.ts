@@ -3,6 +3,7 @@ export interface ListCategories {
 	data_ref: 'data'
 	data: CategoryObject[]
 	total: number
+	has_more: boolean
 }
 
 export type CategoryObject = ResponseCreateCategory & {
@@ -37,4 +38,11 @@ export type Category = {
 	created_at: string
 	updated_at?: string
 	object: 'category'
+}
+
+// 0-level types
+
+export type CategoriesListRequestQuery = {
+	limit?: number
+	starting_after_id?: number
 }

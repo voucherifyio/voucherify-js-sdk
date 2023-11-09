@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@voucherify/sdk - v2.5.0</title>
-	<meta name="description" content="Documentation for @voucherify/sdk - v2.5.0">
+	<title>@voucherify/sdk - v2.6.0</title>
+	<meta name="description" content="Documentation for @voucherify/sdk - v2.6.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@voucherify/sdk - v2.5.0</a>
+					<a href="index.html" class="title">@voucherify/sdk - v2.6.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>@voucherify/sdk - v2.5.0</h1>
+			<h1>@voucherify/sdk - v2.6.0</h1>
 		</div>
 	</div>
 </header>
@@ -199,6 +199,8 @@
 					<li><a href="#update-vouchers-in-bulk">Update Vouchers in bulk</a></li>
 					<li><a href="#release-validation-session">Release Validation Session</a></li>
 					<li><a href="#import-vouchers-using-csv">Import Vouchers using CSV</a></li>
+					<li><a href="#list-voucher-transactions">List Voucher Transactions</a></li>
+					<li><a href="#export-voucher-transactions">Export Voucher Transactions</a></li>
 				</ul>
 				<a href="#create-voucher" id="create-voucher" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-voucher">Create Voucher</a></h4>
@@ -272,6 +274,16 @@
 					<h4><a href="https://docs.voucherify.io/reference/import-vouchers-using-csv">Import Vouchers using CSV</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">importCSV</span><span style="color: #000000">(</span><span style="color: #001080">filePath</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-voucher-transactions" id="list-voucher-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-voucher-transactions">List Voucher Transactions</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">listTransactions</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">query</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#export-voucher-transactions" id="export-voucher-transactions" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/export-voucher-transactions">Export Voucher Transactions</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">vouchers</span><span style="color: #000000">.</span><span style="color: #795E26">exportTransactions</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">, </span><span style="color: #001080">body</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
 				<a href="#campaigns" id="campaigns" style="color: inherit; text-decoration: none;">
@@ -880,6 +892,7 @@
 					<li><a href="#update-reward">Update Reward</a></li>
 					<li><a href="#delete-reward">Delete Reward</a></li>
 					<li><a href="#list-rewards">List Rewards</a></li>
+					<li><a href="#get-reward-assignment">Get Assignment</a></li>
 					<li><a href="#create-reward-assignment">Create Reward Assignment</a></li>
 					<li><a href="#update-reward-assignment">Update Reward Assignment</a></li>
 					<li><a href="#delete-reward-assignment">Delete Reward Assignment</a></li>
@@ -912,12 +925,17 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">(</span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
+				<a href="#get-reward-assignment" id="get-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-reward-assignment">Get Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">getAssignment</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
+</code></pre>
 				<a href="#create-reward-assignment" id="create-reward-assignment" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-reward-assignment">Create Reward Assignment</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">rewards</span><span style="color: #000000">.</span><span style="color: #795E26">createAssignment</span><span style="color: #000000">(</span><span style="color: #001080">rewardId</span><span style="color: #000000">, </span><span style="color: #001080">assignment</span><span style="color: #000000">)</span>
 </code></pre>
-				<p>Check <a href="https://docs.voucherify.io/reference/the-reward-assignment-object">reward assignment object</a>.</p>
+				<p>Check <a href="https://docs.voucherify.io/reference/reward-assignment-object">reward assignment object</a>.</p>
 				<a href="#update-reward-assignment" id="update-reward-assignment" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/update-reward-assignment">Update Reward Assignment</a></h4>
 				</a>
@@ -948,6 +966,7 @@
 					<li><a href="#create-loyalty-program-reward-assignment">Create Loyalty Program Reward Assignment</a></li>
 					<li><a href="#update-loyalty-program-reward-assignment">Update Loyalty Program Reward Assignment</a></li>
 					<li><a href="#delete-loyalty-program-reward-assignment">Delete Loyalty Program Reward Assignment</a></li>
+					<li><a href="#get-loyalty-program-reward-assignment">Get Loyalty Program Reward Assignment</a></li>
 					<li><a href="#list-loyalty-program-reward-assignments">List Loyalty Program Reward Assignments</a></li>
 					<li><a href="#create-loyalty-program-earning-rules">Create Loyalty Program Earning Rules</a></li>
 					<li><a href="#update-loyalty-program-earning-rule">Update Loyalty Program Earning Rule</a></li>
@@ -965,6 +984,7 @@
 					<li><a href="#transfer-loyalty-points">Transfer Loyalty Points</a></li>
 					<li><a href="#get-loyalty-points-expiration">Get Loyalty Points Expiration</a></li>
 					<li><a href="#redeem-loyalty-card">Redeem Loyalty Card</a></li>
+					<li><a href="#list-loyalty-tier-rewards">List Loyalty Tier Rewards</a></li>
 					<li><a href="#list-loyalty-card-transactions">List Loyalty Card Transactions</a></li>
 					<li>[<a href="#export-loyalty-card-transactions">Export Loyalty Card Transactions</a></li>
 					<li><a href="#get-reward-assignment">Get Reward Assignment</a></li>
@@ -1015,6 +1035,11 @@
 					<h4><a href="https://docs.voucherify.io/reference/delete-reward-assignment-1">Delete Loyalty Program Reward Assignment</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">deleteRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#get-loyalty-program-reward-assignment" id="get-loyalty-program-reward-assignment" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/get-reward-assignment-2">Get Loyalty Program Reward Assignment</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#list-loyalty-program-reward-assignments" id="list-loyalty-program-reward-assignments" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-reward-assignments-1">List Loyalty Program Reward Assignments</a></h4>
@@ -1123,6 +1148,11 @@
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<p>When redeeming reward with type <code>COIN</code> you need to provide additional <code>order</code> object in the <code>params</code></p>
+				<a href="#list-loyalty-tier-rewards" id="list-loyalty-tier-rewards" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-tier-rewards">List Loyalty Tier Rewards</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">listLoyaltyTierRewards</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">tierId</span><span style="color: #000000">)</span>
+</code></pre>
 				<hr>
 				<a href="#list-loyalty-card-transactions" id="list-loyalty-card-transactions" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/list-loyalty-card-transactions">List Loyalty Card Transactions</a></h4>
@@ -1140,7 +1170,7 @@
 </code></pre>
 				<p><code>memberId</code> referrers to Loyalty Card code.</p>
 				<hr>
-				<a href="#get-reward-assignment" id="get-reward-assignment" style="color: inherit; text-decoration: none;">
+				<a href="#get-reward-assignment-1" id="get-reward-assignment-1" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/get-reward-assignment-1">Get Reward Assignment</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">loyalties</span><span style="color: #000000">.</span><span style="color: #795E26">getRewardAssignment</span><span style="color: #000000">(</span><span style="color: #001080">campaignId</span><span style="color: #000000">, </span><span style="color: #001080">assignmentId</span><span style="color: #000000">)</span>
@@ -1223,7 +1253,8 @@
 					<li><a href="#create-validation-rule-assignment">Create Rule Assignment</a></li>
 					<li><a href="#delete-validation-rule-assignment">Delete Rule Assignment</a></li>
 					<li><a href="#list-validation-rules">List Rules</a></li>
-					<li><a href="#list-validation-rule-assignments">List Rule Assignments</a></li>
+					<li><a href="#list-validation-rule-assignments">List Validation Rule Assignments</a></li>
+					<li><a href="#list-validation-rules-assignments">List Validation Rules Assignments</a></li>
 				</ul>
 				<a href="#create-validation-rule" id="create-validation-rule" style="color: inherit; text-decoration: none;">
 					<h4><a href="https://docs.voucherify.io/reference/create-validation-rules">Create Validation Rule</a></h4>
@@ -1267,6 +1298,12 @@
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">)</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-validation-rules-assignments" id="list-validation-rules-assignments" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-validation-rules-assignments">List Validation Rules Assignments</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listRulesAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">)</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">validationRules</span><span style="color: #000000">.</span><span style="color: #795E26">listRulesAssignments</span><span style="color: #000000">(</span><span style="color: #001080">validationRuleId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
 				<a href="#events" id="events" style="color: inherit; text-decoration: none;">
@@ -1810,6 +1847,21 @@
 						<a href="interfaces/ExportsListResponseBody.html" class="tsd-kind-icon">Exports<wbr>List<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/GiftCardTransactionAdditionDetails.html" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Addition<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GiftCardTransactionBase.html" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GiftCardTransactionRedemptionDetails.html" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Redemption<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GiftCardTransactionRefundDetails.html" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Refund<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GiftCardTransactionRemovalDetails.html" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Removal<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/GiftRedemptionParams.html" class="tsd-kind-icon">Gift<wbr>Redemption<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1849,12 +1901,6 @@
 						<a href="interfaces/LoyaltiesEarningRulesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Earning<wbr>Rules<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/LoyaltiesExportCardTransactionsRequestBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Request<wbr>Body</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/LoyaltiesExportCardTransactionsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesGetMemberActivitiesResponse.html" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Member<wbr>Activities<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1877,6 +1923,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListLoyaltyTierEarningRulesRequestQuery.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Loyalty<wbr>Tier<wbr>Earning<wbr>Rules<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltiesListLoyaltyTierRewardsResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Loyalty<wbr>Tier<wbr>Rewards<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltiesListMemberLoyaltyTiersResponseBody.html" class="tsd-kind-icon">Loyalties<wbr>List<wbr>Member<wbr>Loyalty<wbr>Tiers<wbr>Response<wbr>Body</a>
@@ -1946,6 +1995,21 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/LoyaltyTierBase.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierRewardItemCampaignDiscountCoupons.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Campaign<wbr>Discount<wbr>Coupons</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Campaign<wbr>Gift<wbr>Vouchers<wbr>And<wbr>Loyalty<wbr>Program</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierRewardItemCampaignParameters.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Campaign<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierRewardItemCoinParameters.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Coin<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/LoyaltyTierRewardItemMaterialParameters.html" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Material<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/OrdersCreate.html" class="tsd-kind-icon">Orders<wbr>Create</a>
@@ -2074,9 +2138,6 @@
 						<a href="interfaces/RedemptionsRollbackStackableResponse.html" class="tsd-kind-icon">Redemptions<wbr>Rollback<wbr>Stackable<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/RewardAssignment.html" class="tsd-kind-icon">Reward<wbr>Assignment</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardRedemptionParams.html" class="tsd-kind-icon">Reward<wbr>Redemption<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2089,16 +2150,34 @@
 						<a href="interfaces/RewardTypeMaterial.html" class="tsd-kind-icon">Reward<wbr>Type<wbr>Material</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsAssignmentCampaignOrMaterialReward.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Campaign<wbr>OrMaterial<wbr>Reward</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsAssignmentCoinReward.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Coin<wbr>Reward</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsAssignmentObject.html" class="tsd-kind-icon">Rewards<wbr>Assignment<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsCreateAssignment.html" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsCreateAssignmentCampaignOrMaterialRewardRequestBody.html" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Campaign<wbr>OrMaterial<wbr>Reward<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsCreateAssignmentCoinRewardRequestBody.html" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Coin<wbr>Reward<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsListAssignmentsParams.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsListAssignmentsRequestQuery.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsListAssignmentsResponse.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsListAssignmentsResponseBody.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Assignments<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsListParams.html" class="tsd-kind-icon">Rewards<wbr>List<wbr>Params</a>
@@ -2108,6 +2187,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/RewardsResponse.html" class="tsd-kind-icon">Rewards<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RewardsUpdateAssignmentRequestBody.html" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Assignment<wbr>Request<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/SegmentsCreate.html" class="tsd-kind-icon">Segments<wbr>Create</a>
@@ -2161,6 +2243,9 @@
 						<a href="interfaces/StackableRedeemableResultResponse.html" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Result<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ValidationRulesAssignment.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/ValidationRulesCreate.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Create</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2183,6 +2268,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ValidationRulesListResponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ValidationRulesListRulesAssignmentsRequestQuery.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Rules<wbr>Assignments<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ValidationRulesListRulesAssignmentsResponseBody.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>List<wbr>Rules<wbr>Assignments<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ValidationRulesValidateResponse.html" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Validate<wbr>Response</a>
@@ -2230,6 +2321,12 @@
 						<a href="interfaces/VouchersDeleteParams.html" class="tsd-kind-icon">Vouchers<wbr>Delete<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/VouchersExportTransactionsRequestBody.html" class="tsd-kind-icon">Vouchers<wbr>Export<wbr>Transactions<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/VouchersExportTransactionsResponseBody.html" class="tsd-kind-icon">Vouchers<wbr>Export<wbr>Transactions<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/VouchersImport.html" class="tsd-kind-icon">Vouchers<wbr>Import</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2237,6 +2334,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/VouchersListResponse.html" class="tsd-kind-icon">Vouchers<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/VouchersListTransactionsRequestQuery.html" class="tsd-kind-icon">Vouchers<wbr>List<wbr>Transactions<wbr>Request<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/VouchersListTransactionsResponseBody.html" class="tsd-kind-icon">Vouchers<wbr>List<wbr>Transactions<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/VouchersQualificationExamineBody.html" class="tsd-kind-icon">Vouchers<wbr>Qualification<wbr>Examine<wbr>Body</a>
@@ -2479,6 +2582,12 @@
 						<a href="modules.html#FiltersCondition" class="tsd-kind-icon">Filters<wbr>Condition</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#GiftCardTransaction" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#GiftCardTransactionDetails" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#Junction" class="tsd-kind-icon">Junction</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2498,6 +2607,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesEnableEarningRulesResponseBody" class="tsd-kind-icon">Loyalties<wbr>Enable<wbr>Earning<wbr>Rules<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesExportCardTransactionsRequestBody" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltiesExportCardTransactionsResponseBody" class="tsd-kind-icon">Loyalties<wbr>Export<wbr>Card<wbr>Transactions<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltiesGetCampaignResponse" class="tsd-kind-icon">Loyalties<wbr>Get<wbr>Campaign<wbr>Response</a>
@@ -2543,6 +2658,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#LoyaltyTier" class="tsd-kind-icon">Loyalty<wbr>Tier</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LoyaltyTierRewardItemParameters" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersGetResponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
@@ -2608,16 +2726,28 @@
 						<a href="modules.html#Reward" class="tsd-kind-icon">Reward</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardAssignment" class="tsd-kind-icon">Reward<wbr>Assignment</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardType" class="tsd-kind-icon">Reward<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsCreate" class="tsd-kind-icon">Rewards<wbr>Create</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardsCreateAssignmentRequestBody" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsCreateAssignmentResponse" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardsCreateAssignmentResponseBody" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Assignment<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsCreateResponse" class="tsd-kind-icon">Rewards<wbr>Create<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardsGetAssignmentResponseBody" class="tsd-kind-icon">Rewards<wbr>Get<wbr>Assignment<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsGetResponse" class="tsd-kind-icon">Rewards<wbr>Get<wbr>Response</a>
@@ -2636,6 +2766,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsUpdateAssignmentResponse" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Assignment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RewardsUpdateAssignmentResponseBody" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Assignment<wbr>Response<wbr>Body</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RewardsUpdateResponse" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Response</a>
@@ -2672,6 +2805,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationsValidateContext" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#VoucherTransaction" class="tsd-kind-icon">Voucher<wbr>Transaction</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#VoucherTransactionsExportFields" class="tsd-kind-icon">Voucher<wbr>Transactions<wbr>Export<wbr>Fields</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#VoucherType" class="tsd-kind-icon">Voucher<wbr>Type</a>

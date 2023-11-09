@@ -155,6 +155,8 @@ Methods are provided within `client.vouchers.*` namespace.
 - [Update Vouchers in bulk](#update-vouchers-in-bulk)
 - [Release Validation Session](#release-validation-session)
 - [Import Vouchers using CSV](#import-vouchers-using-csv)
+- [List Voucher Transactions](#list-voucher-transactions)
+- [Export Voucher Transactions](#export-voucher-transactions)
 
 #### [Create Voucher](https://docs.voucherify.io/reference/create-voucher)
 
@@ -242,6 +244,18 @@ client.vouchers.releaseValidationSession(code, sessionKey)
 
 ```javascript
 client.vouchers.importCSV(filePath)
+```
+
+#### [List Voucher Transactions](https://docs.voucherify.io/reference/list-voucher-transactions)
+
+```javascript
+client.vouchers.listTransactions(code, query)
+```
+
+#### [Export Voucher Transactions](https://docs.voucherify.io/reference/export-voucher-transactions)
+
+```javascript
+client.vouchers.exportTransactions(code, body)
 ```
 
 ---
@@ -950,6 +964,7 @@ Methods are provided within `client.rewards.*` namespace.
 - [Update Reward](#update-reward)
 - [Delete Reward](#delete-reward)
 - [List Rewards](#list-rewards)
+- [Get Assignment](#get-reward-assignment)
 - [Create Reward Assignment](#create-reward-assignment)
 - [Update Reward Assignment](#update-reward-assignment)
 - [Delete Reward Assignment](#delete-reward-assignment)
@@ -988,13 +1003,19 @@ client.rewards.list()
 client.rewards.list(params)
 ```
 
+#### [Get Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment)
+
+```javascript
+client.rewards.getAssignment(rewardId, assignment)
+```
+
 #### [Create Reward Assignment](https://docs.voucherify.io/reference/create-reward-assignment)
 
 ```javascript
 client.rewards.createAssignment(rewardId, assignment)
 ```
 
-Check [reward assignment object](https://docs.voucherify.io/reference/the-reward-assignment-object).
+Check [reward assignment object](https://docs.voucherify.io/reference/reward-assignment-object).
 
 #### [Update Reward Assignment](https://docs.voucherify.io/reference/update-reward-assignment)
 
@@ -1029,6 +1050,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Create Loyalty Program Reward Assignment](#create-loyalty-program-reward-assignment)
 - [Update Loyalty Program Reward Assignment](#update-loyalty-program-reward-assignment)
 - [Delete Loyalty Program Reward Assignment](#delete-loyalty-program-reward-assignment)
+- [Get Loyalty Program Reward Assignment](#get-loyalty-program-reward-assignment)
 - [List Loyalty Program Reward Assignments](#list-loyalty-program-reward-assignments)
 - [Create Loyalty Program Earning Rules](#create-loyalty-program-earning-rules)
 - [Update Loyalty Program Earning Rule](#update-loyalty-program-earning-rule)
@@ -1046,6 +1068,7 @@ Methods are provided within `client.loyalties.*` namespace.
 - [Transfer Loyalty Points](#transfer-loyalty-points)
 - [Get Loyalty Points Expiration](#get-loyalty-points-expiration)
 - [Redeem Loyalty Card](#redeem-loyalty-card)
+- [List Loyalty Tier Rewards](#list-loyalty-tier-rewards)
 - [List Loyalty Card Transactions](#list-loyalty-card-transactions)
 - [[Export Loyalty Card Transactions](#export-loyalty-card-transactions)
 - [Get Reward Assignment](#get-reward-assignment)
@@ -1104,6 +1127,13 @@ client.loyalties.updateRewardAssignment(campaignId, assignment)
 ```javascript
 client.loyalties.deleteRewardAssignment(campaignId, assignmentId)
 ```
+
+#### [Get Loyalty Program Reward Assignment](https://docs.voucherify.io/reference/get-reward-assignment-2)
+
+```javascript
+client.loyalties.getRewardAssignment(campaignId, assignmentId)
+```
+
 
 #### [List Loyalty Program Reward Assignments](https://docs.voucherify.io/reference/list-reward-assignments-1)
 
@@ -1245,6 +1275,12 @@ client.loyalties.redeemReward(campaignId, memberId, params)
 
 When redeeming reward with type `COIN` you need to provide additional `order` object in the `params`
 
+#### [List Loyalty Tier Rewards](https://docs.voucherify.io/reference/list-loyalty-tier-rewards)
+
+```javascript
+client.loyalties.listLoyaltyTierRewards(campaignId, tierId)
+```
+
 ---
 
 #### [List Loyalty Card Transactions](https://docs.voucherify.io/reference/list-loyalty-card-transactions)
@@ -1372,7 +1408,8 @@ Methods are provided within `client.validationRules.*` namespace.
 - [Create Rule Assignment](#create-validation-rule-assignment)
 - [Delete Rule Assignment](#delete-validation-rule-assignment)
 - [List Rules](#list-validation-rules)
-- [List Rule Assignments](#list-validation-rule-assignments)
+- [List Validation Rule Assignments](#list-validation-rule-assignments)
+- [List Validation Rules Assignments](#list-validation-rules-assignments)
 
 #### [Create Validation Rule](https://docs.voucherify.io/reference/create-validation-rules)
 
@@ -1424,6 +1461,13 @@ client.validationRules.list(params)
 ```javascript
 client.validationRules.listAssignments(validationRuleId)
 client.validationRules.listAssignments(validationRuleId, params)
+```
+
+#### [List Validation Rules Assignments](https://docs.voucherify.io/reference/list-validation-rules-assignments)
+
+```javascript
+client.validationRules.listRulesAssignments(validationRuleId)
+client.validationRules.listRulesAssignments(validationRuleId, params)
 ```
 
 ---

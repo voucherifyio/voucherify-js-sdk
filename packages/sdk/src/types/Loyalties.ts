@@ -3,7 +3,11 @@ import { ProductsCreateResponse, ProductsCreateSkuResponse } from './Products'
 
 import { SimpleCustomer } from './Customers'
 import { ValidationRulesCreateAssignmentResponse } from './ValidationRules'
-import { VouchersResponse } from './Vouchers'
+import {
+	VouchersExportTransactionsRequestBody,
+	VouchersExportTransactionsResponseBody,
+	VouchersResponse,
+} from './Vouchers'
 import { Reward, RewardAssignment } from './Rewards'
 import { Category } from './Categories'
 
@@ -608,32 +612,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsRequestBody = VouchersExportTransactionsRequestBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
@@ -656,13 +635,10 @@ export interface LoyaltiesAddOrRemoveCardBalanceResponseBody {
 	}
 	operation_type?: 'MANUAL' | 'AUTOMATIC'
 }
-// 0-level types
 
 export type LoyaltiesCreateTiersRequestBody = (LoyaltyTierBase & { metadata?: Record<string, unknown> })[]
 
 export type LoyaltiesCreateTiersResponseBody = LoyaltyTier[]
-
-export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
 
 export type LoyaltiesGetRewardDetailsResponseBody = Reward
 
@@ -742,32 +718,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	has_more: boolean
 }
 
-export interface LoyaltiesExportCardTransactionsRequestBody {
-	order?: 'created_at' | '-created_at'
-	fields?: LoyaltyCardTransactionsFields[]
-}
-
-export interface LoyaltiesExportCardTransactionsResponseBody {
-	id: string
-	object: 'export'
-	created_at: string
-	status: 'SCHEDULED'
-	channel: string
-	exported_object: 'voucher_transactions'
-	parameters: {
-		order?: string
-		fields?: LoyaltyCardTransactionsFields[]
-		filters: {
-			voucher_id: {
-				conditions: {
-					$in: [string] //memberId
-				}
-			}
-		}
-	}
-	result: null
-	user_id: null | string
-}
+export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
 	points: number
@@ -808,6 +759,32 @@ export type LoyaltiesListLoyaltyTierEarningRulesResponseBody = {
 	data_ref: 'data'
 	data: EarningRule[]
 	total: number
+}
+
+export type LoyaltiesGetRewardAssignmentResponseBody = RewardAssignment
+
+export interface LoyaltiesListLoyaltyTierRewardsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	total: number
+	data: {
+		reward: {
+			id: string
+			name: string
+			stock: number | null
+			redeemed: number | null
+			attributes?: {
+				image_url?: string
+				description?: string
+			}
+			metadata: Record<string, undefined>
+			created_at: string
+			updated_at: string | null
+			object: 'reward'
+		} & LoyaltyTierRewardItemParameters
+		assignment: RewardAssignment
+		object: 'loyalty_tier_reward'
+	}[]
 }
 
 // domain types
@@ -854,73 +831,6 @@ interface MappingMultiply {
 interface MappingFixed {
 	type: 'CUSTOM'
 	points: number
-}
-
-export interface LoyaltyCardTransaction {
-	id: string
-	source_id: string | null
-	voucher_id: string
-	campaign_id: string
-	source: string | null
-	reason: string | null
-	type: LoyaltyCardTransactionsType
-	details: {
-		balance: {
-			type: 'loyalty_card'
-			total: number
-			object: 'balance'
-			points: number
-			balance: number
-			related_object: {
-				id: string
-				type: 'voucher'
-			}
-		}
-		order?: {
-			id: string
-			source_id: string
-		}
-		event?: {
-			id: string
-			type: string
-		}
-		earning_rule?: {
-			id: string
-			source: {
-				banner: string
-			}
-		}
-		segment?: {
-			id: string
-			name: string
-		}
-		loyalty_tier?: {
-			id: string
-			name: string
-		}
-		redemption?: {
-			id: string
-		}
-		rollback?: {
-			id: string
-		}
-		reward?: {
-			id: string
-			name: string
-		}
-		custom_event?: {
-			id: string
-			type: string
-		}
-		event_schema?: {
-			id: string
-			name: string
-		}
-		source_voucher?: SimpleLoyaltyVoucher
-		destination_voucher?: SimpleLoyaltyVoucher
-	}
-	related_transaction_id: string | null
-	created_at: string
 }
 
 export interface SimpleLoyaltyVoucher {
@@ -979,7 +889,6 @@ export type EarningRule = EarningRuleBase & {
 	updated_at: string | null
 	active: boolean
 }
-// domain types
 
 export type PointsExpirationTypes = 'PROGRAM_RULES' | 'CUSTOM_DATE' | 'NON_EXPIRING'
 
@@ -1218,4 +1127,47 @@ export interface EarningRuleProportionalCustomEvent {
 			property: string
 		}
 	}
+}
+
+export type LoyaltyTierRewardItemParameters =
+	| LoyaltyTierRewardItemCampaignParameters
+	| LoyaltyTierRewardItemCoinParameters
+	| LoyaltyTierRewardItemMaterialParameters
+
+export interface LoyaltyTierRewardItemCampaignParameters {
+	type: 'CAMPAIGN'
+	parameters: {
+		campaign: LoyaltyTierRewardItemCampaignDiscountCoupons | LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram
+	}
+}
+
+export interface LoyaltyTierRewardItemCoinParameters {
+	type: 'COIN'
+	parameters: {
+		coin: {
+			exchange_ratio: number
+			points_ratio: number
+		}
+	}
+}
+
+export interface LoyaltyTierRewardItemMaterialParameters {
+	type: 'MATERIAL'
+	parameters: {
+		product: {
+			id: string
+			sku_id: string | null
+		}
+	}
+}
+
+export interface LoyaltyTierRewardItemCampaignDiscountCoupons {
+	id: string
+	type: string
+}
+
+export interface LoyaltyTierRewardItemCampaignGiftVouchersAndLoyaltyProgram {
+	id: string
+	balance: number
+	type: string
 }

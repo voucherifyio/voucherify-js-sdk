@@ -1,7 +1,9 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
+import { LoyaltyCardTransaction } from './Loyalties'
 
+// Legacy types
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
 export interface SimpleVoucher {
 	code_config?: {
@@ -250,4 +252,178 @@ export type VouchersBulkUpdateMetadataResponse = {
 
 export type VouchersBulkUpdateResponse = {
 	async_action_id: string
+}
+
+// Domain types
+
+export type GiftCardTransaction = GiftCardTransactionBase & GiftCardTransactionDetails
+
+export interface GiftCardTransactionBase {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string | null
+	related_transaction_id: string | null
+	reason: string | null
+	created_at: string
+}
+
+export type GiftCardTransactionDetails =
+	| GiftCardTransactionRedemptionDetails
+	| GiftCardTransactionRefundDetails
+	| GiftCardTransactionAdditionDetails
+	| GiftCardTransactionRemovalDetails
+
+export interface GiftCardTransactionRedemptionDetails {
+	source: null
+	type: 'CREDITS_REDEMPTION'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string | null
+		}
+		redemption: {
+			id: string
+		}
+	}
+}
+
+export interface GiftCardTransactionRefundDetails {
+	source: null
+	type: 'CREDITS_REFUND'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order: {
+			id: string
+			source_id: string | null
+		}
+		redemption: {
+			id: string
+		}
+		rollback: {
+			id: string
+		}
+	}
+}
+
+export interface GiftCardTransactionAdditionDetails {
+	source: 'voucherify-web-ui' | 'API'
+	type: 'CREDITS_ADDITION'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			operation_type: 'MANUAL' | 'AUTOMATIC'
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+}
+
+export interface GiftCardTransactionRemovalDetails {
+	source: 'voucherify-web-ui' | 'API'
+	type: 'CREDITS_REMOVAL'
+	details: {
+		balance: {
+			type: 'gift_voucher'
+			total: number
+			amount: number
+			object: 'balance'
+			balance: number
+			operation_type: 'MANUAL' | 'AUTOMATIC'
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+	}
+}
+
+export type VoucherTransaction = GiftCardTransaction | LoyaltyCardTransaction
+
+// Export
+
+export type VoucherTransactionsExportFields =
+	| 'id'
+	| 'campaign_id'
+	| 'voucher_id'
+	| 'type'
+	| 'source_id'
+	| 'reason'
+	| 'source'
+	| 'balance'
+	| 'amount'
+	| 'related_transaction_id'
+	| 'created_at'
+	| 'details'
+
+// 0-level types
+// List transactions
+export interface VouchersListTransactionsRequestQuery {
+	limit?: number
+	page?: number
+}
+
+export interface VouchersListTransactionsResponseBody {
+	object: 'list'
+	data_ref: 'data'
+	data: VoucherTransaction[]
+	has_more: boolean
+}
+
+// Export transactions
+
+export interface VouchersExportTransactionsRequestBody {
+	parameters?: {
+		order?: '-created_at' | 'created_at'
+		fields?: VoucherTransactionsExportFields[]
+	}
+}
+
+export interface VouchersExportTransactionsResponseBody {
+	id: string
+	status: 'SCHEDULED'
+	channel: string
+	parameters: {
+		order?: string
+		fields?: VoucherTransactionsExportFields[]
+		filters: {
+			voucher_id: {
+				conditions: {
+					$in: [string]
+				}
+			}
+		}
+	}
+	result: null
+	user_id: string | null
+	exported_object: 'voucher_transactions'
+	object: 'export'
+	created_at: string
 }
