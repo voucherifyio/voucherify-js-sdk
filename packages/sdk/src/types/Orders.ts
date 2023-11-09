@@ -141,10 +141,10 @@ export type OrderItemRequest = {
 
 export type OrderResponse = {
 	id?: string
-	source_id: string | null
-	created_at: string
-	updated_at: string | null
-	status: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
+	source_id?: string | null
+	created_at?: string
+	updated_at?: string | null
+	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	amount?: number
 	initial_amount?: number
 	discount_amount?: number
@@ -155,7 +155,7 @@ export type OrderResponse = {
 	items_applied_discount_amount?: number
 	total_applied_discount_amount?: number
 	items?: OrderItemResponse[]
-	metadata?: Record<string, unknown>
+	metadata: Record<string, unknown>
 	customer?: CustomerResponse
 	customer_id: string | null
 	referrer?: ReferrerResponse

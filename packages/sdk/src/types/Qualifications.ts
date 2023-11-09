@@ -37,10 +37,10 @@ export type QualificationsCheckEligibilityRequestBody = {
 }
 
 export type QualificationsCheckEligibilityResponseBody = {
-	redeemables?: QualificationsRedeemablesResponse
+	redeemables: QualificationsRedeemablesResponse
 	tracking_id?: string
 	order?: OrderResponse
-	stacking_rules?: QualificationsStackingRulesResponse
+	stacking_rules: QualificationsStackingRulesResponse
 }
 
 //domain type
@@ -54,7 +54,7 @@ export type QualificationsFiltersFields =
 
 export type QualificationsFiltersCondition = '$in' | '$not_in' | '$is' | '$is_not' | '$has_value' | '$is_unknown'
 
-export type QualificationsFieldConditions = { conditions?: Partial<Record<QualificationsFiltersCondition, unknown>> }
+export type QualificationsFieldConditions = { conditions?: Partial<Record<QualificationsFiltersCondition, any>> }
 
 export type QualificationsRedeemablesResponse = {
 	object: 'list'
@@ -63,7 +63,6 @@ export type QualificationsRedeemablesResponse = {
 	total: number
 	has_more: boolean
 	more_starting_after?: string
-	joint_categories: string[]
 }
 
 export type QualificationsStackingRulesResponse = {
@@ -71,23 +70,24 @@ export type QualificationsStackingRulesResponse = {
 	applicable_redeemables_limit: number
 	applicable_exclusive_redeemables_limit: number
 	exclusive_categories: string[]
+	joint_categories: string[]
 }
 
 export type QualificationsRedeemableSingleResponse = QualificationsRedeemableSingleResponseBase & {
-	redeemables: QualificationsRedeemableSingleResponseBase[]
+	redeemables?: QualificationsRedeemableSingleResponseBase[]
 }
 
 export type QualificationsRedeemableSingleResponseBase = {
-	id?: string
-	object?: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
-	created_at?: string
-	result?: RedeemableSingleResultResponse
+	id: string
+	object: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
+	created_at: string
+	result: RedeemableSingleResultResponse
 	order?: OrderResponse
 	validation_rule_id?: string
-	applicable_to?: ApplicableToResultList
-	inapplicable_to?: InapplicableToResultList
-	metadata?: Record<string, unknown>
-	categories?: Category[]
+	applicable_to: ApplicableToResultList
+	inapplicable_to: InapplicableToResultList
+	metadata: Record<string, unknown> | null
+	categories: Category[]
 	banner?: string
 	name?: string
 	campaign_name?: string
