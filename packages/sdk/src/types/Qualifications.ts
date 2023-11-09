@@ -23,7 +23,7 @@ export type QualificationsCheckEligibilityRequestBody = {
 		| 'PRODUCTS_DISCOUNT'
 		| 'PROMOTION_STACKS'
 		| 'PRODUCTS_BY_CUSTOMER'
-		| 'PRODUCTS_DISCOUNT_BY_CUSTOMER'
+		| 'PRODUCTS_DISCOUNT_BY_CUSTOMER' // default ALL
 	options?: {
 		limit?: number //max 100
 		starting_after?: string
