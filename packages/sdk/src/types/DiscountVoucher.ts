@@ -90,10 +90,11 @@ export type DiscountUnit_ = { type: 'UNIT' } & DiscountUnitBase_
 export type DiscountUnitBase_ = {
 	unit_off?: number
 	unit_off_formula?: string
-	effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
 	unit_type: string
 	product?: SimpleProductDiscountUnit
 	sku?: SimpleSkuDiscountUnit
+	effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	is_dynamic?: boolean
 }
 
 export type DiscountUnitMultiple_ = {
