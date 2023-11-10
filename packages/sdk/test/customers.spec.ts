@@ -2,6 +2,8 @@ import { voucherifyClient as client } from './client'
 import { generateRandomString } from './utils/generateRandomString'
 import { generateCustomerCSV } from './utils/generateCustomerCSV'
 
+jest.setTimeout(15000)
+
 describe('Customers API', () => {
 	it('should import customer via csv file', async () => {
 		const customerSourceId = generateRandomString()

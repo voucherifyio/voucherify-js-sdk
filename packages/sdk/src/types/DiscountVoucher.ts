@@ -79,7 +79,10 @@ export type DiscountAmount_ = {
 	type: 'AMOUNT'
 	amount_off?: number
 	amount_off_formula?: string
+	amount_limit?: number
+	aggregated_amount_limit?: number
 	effect: DiscountAmountVouchersEffectTypes
+	is_dynamic?: boolean
 }
 
 export type DiscountUnit_ = { type: 'UNIT' } & DiscountUnitBase_
@@ -104,6 +107,7 @@ export type DiscountPercent_ = {
 	percent_off?: number
 	percent_off_formula?: string
 	amount_limit?: number
+	aggregated_amount_limit?: number
 	effect: DiscountPercentVouchersEffectTypes
 	is_dynamic?: boolean
 }
@@ -112,5 +116,8 @@ export type DiscountFixed_ = {
 	type: 'FIXED'
 	fixed_amount?: number
 	fixed_amount_formula?: string
+	amount_limit?: number
+	aggregated_amount_limit?: number
 	effect: DiscountFixedVouchersEffectTypes
+	is_dynamic?: boolean
 }

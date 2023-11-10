@@ -3,6 +3,8 @@ import { generateDiscountVoucher } from './utils/generateDiscountVoucher'
 import { isoRegex } from './utils/isoRegex'
 import { QualificationsRedeemablesResponse } from '@voucherify/sdk'
 
+jest.setTimeout(15000)
+
 describe('Qualifications API', () => {
 	describe('List ALL scenario qualification', () => {
 		it('Should return qualifications list with "ALL" scenario', async () => {
@@ -88,7 +90,7 @@ describe('Qualifications API', () => {
 								object: 'voucher',
 								created_at: expect.stringMatching(isoRegex),
 								result: {
-									discount: expect.objectContaining({ type: 'AMOUNT', effect: 'APPLY_TO_ORDER', amount_off: 2000 }),
+									discount: { type: 'AMOUNT', effect: 'APPLY_TO_ORDER', amount_off: 2000, is_dynamic: false },
 								},
 								order: { metadata: {}, customer_id: null, referrer_id: null, object: 'order' },
 								applicable_to: { data: [], total: 0, data_ref: 'data', object: 'list' },
