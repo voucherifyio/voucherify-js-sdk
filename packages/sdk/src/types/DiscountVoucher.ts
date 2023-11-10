@@ -15,6 +15,7 @@ export type DiscountVouchersEffectTypes =
 	| 'APPLY_TO_ITEMS'
 	| 'APPLY_TO_ITEMS_PROPORTIONALLY'
 	| 'APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY'
+	| 'APPLY_TO_ITEMS_BY_QUANTITY'
 
 export type DiscountUnitVouchersEffectTypes = 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS' | 'ADD_MANY_ITEMS'
 
@@ -23,6 +24,7 @@ export type DiscountAmountVouchersEffectTypes =
 	| 'APPLY_TO_ITEMS'
 	| 'APPLY_TO_ITEMS_PROPORTIONALLY'
 	| 'APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY'
+	| 'APPLY_TO_ITEMS_BY_QUANTITY'
 
 export type DiscountPercentVouchersEffectTypes = 'APPLY_TO_ORDER' | 'APPLY_TO_ITEMS'
 
@@ -80,6 +82,7 @@ export type DiscountAmount_ = {
 	type: 'AMOUNT'
 	amount_off?: number
 	amount_off_formula?: string
+	aggregated_amount_limit?: number
 	effect: DiscountAmountVouchersEffectTypes
 	is_dynamic?: boolean
 }
