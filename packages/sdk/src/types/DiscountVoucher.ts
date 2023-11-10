@@ -73,6 +73,7 @@ export interface DiscountFixed {
 
 // domain types
 
+// didn't want to make major changes
 export type Discount = DiscountAmount_ | DiscountUnit_ | DiscountUnitMultiple_ | DiscountPercent_ | DiscountFixed_
 
 export type DiscountAmount_ = {
