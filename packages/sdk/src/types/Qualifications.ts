@@ -1,14 +1,11 @@
 import { CustomerRequest } from './Customers'
 import { Junction } from './Exports'
 import { OrderRequest, OrderResponse } from './Orders'
-import {
-	ApplicableToResultList,
-	Discount,
-	InapplicableToResultList,
-	LoyaltiesTransferPoints,
-	ValidationRulesAssignmentsList,
-} from '@voucherify/sdk'
+import { ApplicableToResultList, InapplicableToResultList } from './ApplicableTo'
 import { Category } from './Categories'
+import { Discount } from './DiscountVoucher'
+import { LoyaltiesTransferPoints } from './Loyalties'
+import { ValidationRulesAssignmentsList } from './ValidationRules'
 
 export type QualificationsCheckEligibilityRequestBody = {
 	customer?: CustomerRequest
