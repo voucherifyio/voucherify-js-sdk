@@ -185,7 +185,7 @@ export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
 
 export interface RedemptionsRedeemStackableResponse {
 	redemptions: RedemptionsRedeemStackableRedemptionResult[]
-	parent_redemption: {
+	parent_redemption?: {
 		id: string
 		object: 'redemption'
 		date: string
