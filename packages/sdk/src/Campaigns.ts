@@ -84,7 +84,14 @@ export class Campaigns {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/campaigns/${campaignId}/importCSV`, form)
+		const headers = { 'Content-Type': 'multipart/form-data' }
+
+		return this.client.post<AAT.AsyncActionCreateResponse>(
+			`/campaigns/${campaignId}/importCSV`,
+			form,
+			undefined,
+			headers,
+		)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/enable-campaign

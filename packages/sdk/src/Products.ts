@@ -98,7 +98,9 @@ export class Products {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, form)
+		const headers = { 'Content-Type': 'multipart/form-data' }
+
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/skus/importCSV`, form, undefined, headers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/import-products-using-csv
@@ -112,6 +114,8 @@ export class Products {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/products/importCSV`, form)
+		const headers = { 'Content-Type': 'multipart/form-data' }
+
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/products/importCSV`, form, undefined, headers)
 	}
 }

@@ -103,7 +103,9 @@ export class Vouchers {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
-		return this.client.post<AAT.AsyncActionCreateResponse>('/vouchers/importCSV', form)
+		const headers = { 'Content-Type': 'multipart/form-data' }
+
+		return this.client.post<AAT.AsyncActionCreateResponse>('/vouchers/importCSV', form, undefined, headers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-voucher-transactions

@@ -127,7 +127,9 @@ class Customers {
 		const fileStream = fs.createReadStream(filePath)
 		const form = new FormData()
 		form.append('file', fileStream)
-		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/importCSV`, form)
+		const headers = { 'Content-Type': 'multipart/form-data' }
+
+		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/importCSV`, form, undefined, headers)
 	}
 }
 
