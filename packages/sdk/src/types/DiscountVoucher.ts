@@ -83,7 +83,7 @@ export type DiscountAmount_ = {
 	amount_off?: number
 	amount_off_formula?: string
 	aggregated_amount_limit?: number
-	effect: DiscountAmountVouchersEffectTypes
+	effect?: DiscountAmountVouchersEffectTypes
 	is_dynamic?: boolean
 }
 
@@ -95,7 +95,7 @@ export type DiscountUnitBase_ = {
 	unit_type: string
 	product?: SimpleProductDiscountUnit
 	sku?: SimpleSkuDiscountUnit
-	effect: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
+	effect?: 'ADD_MISSING_ITEMS' | 'ADD_NEW_ITEMS'
 	is_dynamic?: boolean
 }
 
@@ -111,7 +111,7 @@ export type DiscountPercent_ = {
 	percent_off_formula?: string
 	amount_limit?: number
 	aggregated_amount_limit?: number
-	effect: DiscountPercentVouchersEffectTypes
+	effect?: DiscountPercentVouchersEffectTypes
 	is_dynamic?: boolean
 }
 
@@ -119,6 +119,6 @@ export type DiscountFixed_ = {
 	type: 'FIXED'
 	fixed_amount?: number
 	fixed_amount_formula?: string
-	effect: DiscountFixedVouchersEffectTypes
+	effect?: DiscountFixedVouchersEffectTypes
 	is_dynamic?: boolean
 }
