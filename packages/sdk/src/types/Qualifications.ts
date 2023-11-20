@@ -56,7 +56,7 @@ export type QualificationsFieldConditions = { conditions?: Partial<Record<Qualif
 export type QualificationsRedeemablesResponse = {
 	object: 'list'
 	data_ref: 'data'
-	data: QualificationsRedeemableSingleResponse[]
+	data: QualificationsRedeemable[]
 	total: number
 	has_more: boolean
 	more_starting_after?: string
@@ -70,11 +70,11 @@ export type QualificationsStackingRulesResponse = {
 	joint_categories: string[]
 }
 
-export type QualificationsRedeemableSingleResponse = QualificationsRedeemableSingleResponseBase & {
-	redeemables?: QualificationsRedeemableSingleResponseBase[]
+export type QualificationsRedeemable = QualificationsRedeemableBase & {
+	redeemables?: QualificationsRedeemableBase[]
 }
 
-export type QualificationsRedeemableSingleResponseBase = {
+export type QualificationsRedeemableBase = {
 	id: string
 	object: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
 	created_at: string
