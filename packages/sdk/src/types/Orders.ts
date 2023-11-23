@@ -1,5 +1,6 @@
 import {
 	Customer,
+	CustomerRequest,
 	CustomerWithSummaryLoyaltyReferrals,
 	Referrer,
 	ReferrerWithSummaryLoyaltyReferrals,
@@ -41,7 +42,7 @@ export interface OrdersItem {
 export interface OrdersCreate {
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-	customer?: Customer
+	customer?: CustomerRequest
 	amount?: number
 	discount_amount?: number
 	items?: OrdersItem[]
@@ -65,7 +66,7 @@ export interface OrdersCreateResponse {
 	total_applied_discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
-	customer?: Customer
+	customer?: CustomerRequest
 	object: 'order'
 }
 
