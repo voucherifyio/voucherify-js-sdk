@@ -87,8 +87,6 @@ export interface CustomerRequest {
 	metadata?: Record<string, any>
 }
 
-export type ReferrerRequest = CustomerRequest
-
 export interface CustomersCommonListRequest {
 	limit?: number
 	page?: number
@@ -166,9 +164,12 @@ type CustomerAddress = {
 	} | null
 }
 
-export type ReferrerResponse = CustomerResponse
+export type Referrer = CustomerRequest
+export type Customer = CustomerRequest
 
-export type CustomerResponse = {
+export type ReferrerWithSummaryLoyaltyReferrals = CustomerWithSummaryLoyaltyReferrals
+
+export type CustomerWithSummaryLoyaltyReferrals = {
 	id?: string
 	source_id?: string
 	name?: string

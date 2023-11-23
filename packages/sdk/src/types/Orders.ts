@@ -1,4 +1,9 @@
-import { CustomerRequest, CustomerResponse, ReferrerRequest, ReferrerResponse } from './Customers'
+import {
+	Customer,
+	CustomerWithSummaryLoyaltyReferrals,
+	Referrer,
+	ReferrerWithSummaryLoyaltyReferrals,
+} from './Customers'
 
 export interface OrdersItem {
 	sku_id?: string
@@ -36,7 +41,7 @@ export interface OrdersItem {
 export interface OrdersCreate {
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
-	customer?: CustomerRequest
+	customer?: Customer
 	amount?: number
 	discount_amount?: number
 	items?: OrdersItem[]
@@ -60,7 +65,7 @@ export interface OrdersCreateResponse {
 	total_applied_discount_amount?: number
 	items?: OrdersItem[]
 	metadata?: Record<string, any>
-	customer?: CustomerRequest
+	customer?: Customer
 	object: 'order'
 }
 
@@ -94,22 +99,22 @@ export interface OrdersListResponse {
 }
 
 //domain types
-export type OrderRequest = {
+export type Order = {
 	id?: string
 	source_id?: string
 	status?: 'CREATED' | 'PAID' | 'CANCELED' | 'FULFILLED'
 	amount?: number
 	discount_amount?: number
 	initial_amount?: number
-	items?: OrderItemRequest[]
-	customer?: CustomerRequest
+	items?: OrderItem[]
+	customer?: Customer
 	customer_id?: string
-	referrer?: ReferrerRequest
+	referrer?: Referrer
 	referrer_id?: string
 	metadata?: Record<string, any>
 }
 
-export type OrderItemRequest = {
+export type OrderItem = {
 	sku_id?: string
 	product_id?: string
 	related_object?: 'product' | 'sku'
@@ -139,7 +144,7 @@ export type OrderItemRequest = {
 	metadata?: Record<string, any>
 }
 
-export type OrderResponse = {
+export type OrderCalculated = {
 	id?: string
 	source_id?: string | null
 	created_at?: string
@@ -154,11 +159,11 @@ export type OrderResponse = {
 	applied_discount_amount?: number
 	items_applied_discount_amount?: number
 	total_applied_discount_amount?: number
-	items?: OrderItemResponse[]
+	items?: OrderItemCalculated[]
 	metadata: Record<string, unknown>
-	customer?: CustomerResponse
+	customer?: CustomerWithSummaryLoyaltyReferrals
 	customer_id: string | null
-	referrer?: ReferrerResponse
+	referrer?: ReferrerWithSummaryLoyaltyReferrals
 	referrer_id: string | null
 	object: 'order'
 	redemptions?: OrderRedemptions
@@ -175,7 +180,7 @@ export type OrderRedemptions = {
 	rollback_stacked?: string[]
 }
 
-export type OrderItemResponse = {
+export type OrderItemCalculated = {
 	sku_id?: string
 	product_id?: string
 	related_object?: 'product' | 'sku'

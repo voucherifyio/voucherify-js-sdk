@@ -1,6 +1,6 @@
 import { CustomerRequest } from './Customers'
 import { Junction } from './Exports'
-import { OrderRequest, OrderResponse } from './Orders'
+import { Order, OrderCalculated } from './Orders'
 import { ApplicableToResultList, InapplicableToResultList } from './ApplicableTo'
 import { Category } from './Categories'
 import { Discount } from './DiscountVoucher'
@@ -9,7 +9,7 @@ import { ValidationRulesAssignmentsList } from './ValidationRules'
 
 export type QualificationsCheckEligibilityRequestBody = {
 	customer?: CustomerRequest
-	order?: OrderRequest
+	order?: Order
 	mode?: 'BASIC' | 'ADVANCED'
 	tracking_id?: string
 	scenario?:
@@ -34,10 +34,10 @@ export type QualificationsCheckEligibilityRequestBody = {
 }
 
 export type QualificationsCheckEligibilityResponseBody = {
-	redeemables: QualificationsRedeemablesResponse
+	redeemables: QualificationsRedeemableList
 	tracking_id?: string
-	order?: OrderResponse
-	stacking_rules: QualificationsStackingRulesResponse
+	order?: OrderCalculated
+	stacking_rules: QualificationsStackingRules
 }
 
 //domain type
@@ -53,7 +53,7 @@ export type QualificationsFiltersCondition = '$in' | '$not_in' | '$is' | '$is_no
 
 export type QualificationsFieldConditions = { conditions?: Partial<Record<QualificationsFiltersCondition, any>> }
 
-export type QualificationsRedeemablesResponse = {
+export type QualificationsRedeemableList = {
 	object: 'list'
 	data_ref: 'data'
 	data: QualificationsRedeemable[]
@@ -62,7 +62,7 @@ export type QualificationsRedeemablesResponse = {
 	more_starting_after?: string
 }
 
-export type QualificationsStackingRulesResponse = {
+export type QualificationsStackingRules = {
 	redeemables_limit: number
 	applicable_redeemables_limit: number
 	applicable_exclusive_redeemables_limit: number
@@ -79,7 +79,7 @@ export type QualificationsRedeemableBase = {
 	object: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
 	created_at: string
 	result: RedeemableSingleResultResponse
-	order?: OrderResponse
+	order?: OrderCalculated
 	validation_rule_id?: string
 	applicable_to: ApplicableToResultList
 	inapplicable_to: InapplicableToResultList

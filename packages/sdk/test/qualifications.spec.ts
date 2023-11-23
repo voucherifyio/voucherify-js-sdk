@@ -1,7 +1,7 @@
 import { voucherifyClient as client } from './client'
 import { generateDiscountVoucher } from './utils/generateDiscountVoucher'
 import { isoRegex } from './utils/isoRegex'
-import { QualificationsRedeemablesResponse } from '@voucherify/sdk'
+import { QualificationsRedeemableList } from '@voucherify/sdk'
 
 jest.setTimeout(15000)
 
@@ -101,7 +101,7 @@ describe('Qualifications API', () => {
 						],
 						total: 1,
 						has_more: false,
-					} as QualificationsRedeemablesResponse),
+					} as QualificationsRedeemableList),
 				)
 
 			let checkNumber = 0
