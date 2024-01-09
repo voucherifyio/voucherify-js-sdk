@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance } from 'axios'
+import axios, { AxiosError, AxiosInstance, RawAxiosResponseHeaders } from 'axios'
 
 import Qs from 'qs'
 import { VoucherifyError } from './VoucherifyError'
@@ -60,8 +60,13 @@ export class RequestController {
 	public getLastResponseHeaders(): Record<string, string> {
 		return this.lastResponseHeaders
 	}
-	private setLastResponseHeaders(headers: Record<string, string>) {
-		this.lastResponseHeaders = headers
+	private setLastResponseHeaders(headers: RawAxiosResponseHeaders) {
+		const result: Record<string, string> = {}
+		for (const key in headers) {
+			result[key] = String(headers[key])
+		}
+
+		this.lastResponseHeaders = result
 		this.isLastResponseHeadersSet = true
 	}
 	public setBaseUrl(baseURL: string) {
