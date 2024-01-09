@@ -1,5 +1,18 @@
 # @voucherify/sdk
 
+## 2.7.0
+
+### Minor Changes
+
+- [`32fa44a`](https://github.com/voucherifyio/voucherify-js-sdk/commit/32fa44ab17b21bda9daf953eaf4969d528c2d707) [#255](https://github.com/voucherifyio/voucherify-js-sdk/pull/255) Thanks [@awilczek](https://github.com/awilczek)! - Update axios to 1.6.5 in SDK package
+
+* [`8df2fed`](https://github.com/voucherifyio/voucherify-js-sdk/commit/8df2fed2b4319f681d0ff17b9bb15e6bbf80dd7c) [#254](https://github.com/voucherifyio/voucherify-js-sdk/pull/254) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Add support for few endpoints of Loyalties API.
+  - Added support for new endpoints: `POST /v1/qualifications`, `POST /client/v1/qualifications` [(examples of usage available in readme.md)](..%2F..%2Fpackages%2Fsdk%2FREADME.md)
+  - New exported types/interfaces: `InapplicableTo`, `Referrer`, `ReferrerWithSummaryLoyaltyReferrals`, `Customer`, `CustomerWithSummaryLoyaltyReferrals`, `CustomerSummary`, `CustomerSummaryRedemptions`, `CustomerSummaryOrders`, `CustomerLoyalty`, `CustomerReferrals`, `Discount`, `DiscountAmount_`, `DiscountUnit_`, `DiscountUnitBase_`, `DiscountUnitMultiple_`, `DiscountPercent_`, `DiscountFixed_`, `Order`, `OrderItem`, `OrderCalculated`, `OrderRedemptions`, `OrderItemCalculated`, `QualificationsCheckEligibilityRequestBody`, `QualificationsCheckEligibilityResponseBody`, `QualificationsFiltersFields`, `QualificationsFiltersCondition`, `QualificationsFieldConditions`, `QualificationsRedeemablesResponse`, `QualificationsStackingRulesResponse`, `QualificationsRedeemable`, `QualificationsRedeemableBase`, `RedeemableSingleResultResponse`, `ValidationRulesAssignmentsList`,
+  - Added optional properties to `ApplicableTo`: `product_id`, `product_source_id`, `quantity_limit`, `aggregated_quantity_limit`, `amount_limit`, `aggregated_amount_limit`, `order_item_indices`
+  - Added required property: `data_ref: 'data'` to `ApplicableToResultList` // NOTE: as this type is only used in responses, this is not a breaking change.
+  - Added optional properties to `CustomerRequest`: `birthday` and `birthdate`
+
 ## 2.6.0
 
 ### Minor Changes
