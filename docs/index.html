@@ -452,6 +452,19 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">categories</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
 </code></pre>
 				<hr>
+				<a href="#qualifications" id="qualifications" style="color: inherit; text-decoration: none;">
+					<h3>Qualifications</h3>
+				</a>
+				<p>Methods are provided within <code>client.qualifications.*</code> or <code>client.promotions.*</code> namespace.</p>
+				<ul>
+					<li><a href="#Check-Eligibility">Check Eligibility</a></li>
+				</ul>
+				<a href="#check-eligibility" id="check-eligibility" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/check-eligibility">Check Eligibility</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">qualifications</span><span style="color: #000000">.</span><span style="color: #795E26">checkEligibility</span><span style="color: #000000">(</span><span style="color: #001080">body</span><span style="color: #000000">)</span>
+</code></pre>
+				<hr>
 				<a href="#validations" id="validations" style="color: inherit; text-decoration: none;">
 					<h3>Validations</h3>
 				</a>
@@ -1435,6 +1448,7 @@
 					<li><a href="#list-consents">List consents</a></li>
 					<li><a href="#update-consents">Update consents</a></li>
 					<li><a href="#track-custom-events">Track custom events</a></li>
+					<li><a href="#Qualifications">Qualifications</a></li>
 				</ul>
 				<a href="#set-identity" id="set-identity" style="color: inherit; text-decoration: none;">
 					<h4>Set Identity</h4>
@@ -1494,6 +1508,11 @@
 					<h4><a href="https://docs.voucherify.io/reference/track-custom-event-client-side">Track custom events</a></h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">track</span><span style="color: #000000">(</span><span style="color: #001080">eventName</span><span style="color: #000000">, </span><span style="color: #001080">metadata</span><span style="color: #000000">, </span><span style="color: #001080">customer</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#qualifications-1" id="qualifications-1" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/check-eligibility-client-side">Qualifications</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">qualifications</span><span style="color: #000000">(</span><span style="color: #001080">body</span><span style="color: #000000">)</span>
 </code></pre>
 				<a href="#🏎-marketer-ready-voucherify-snippet" id="🏎-marketer-ready-voucherify-snippet" style="color: inherit; text-decoration: none;">
 					<h1><a name="snippet"></a>🏎 Marketer-ready Voucherify snippet</h1>
@@ -1620,6 +1639,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/Promotions.html" class="tsd-kind-icon">Promotions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Qualifications.html" class="tsd-kind-icon">Qualifications</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/Redemptions.html" class="tsd-kind-icon">Redemptions</a>
@@ -2435,7 +2457,31 @@
 						<a href="modules.html#ClientSideVoucherListing" class="tsd-kind-icon">Client<wbr>Side<wbr>Voucher<wbr>Listing</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Customer" class="tsd-kind-icon">Customer</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerId" class="tsd-kind-icon">Customer<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerLoyalty" class="tsd-kind-icon">Customer<wbr>Loyalty</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerReferrals" class="tsd-kind-icon">Customer<wbr>Referrals</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerSummary" class="tsd-kind-icon">Customer<wbr>Summary</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerSummaryOrders" class="tsd-kind-icon">Customer<wbr>Summary<wbr>Orders</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerSummaryRedemptions" class="tsd-kind-icon">Customer<wbr>Summary<wbr>Redemptions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#CustomerUnconfirmed" class="tsd-kind-icon">Customer<wbr>Unconfirmed</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#CustomerWithSummaryLoyaltyReferrals" class="tsd-kind-icon">Customer<wbr>With<wbr>Summary<wbr>Loyalty<wbr>Referrals</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#CustomersCreateBody" class="tsd-kind-icon">Customers<wbr>Create<wbr>Body</a>
@@ -2474,16 +2520,37 @@
 						<a href="modules.html#CustomersUpdateResponse" class="tsd-kind-icon">Customers<wbr>Update<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Discount" class="tsd-kind-icon">Discount</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#DiscountAmountVouchersEffectTypes" class="tsd-kind-icon">Discount<wbr>Amount<wbr>Vouchers<wbr>Effect<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountAmount_" class="tsd-kind-icon">Discount<wbr>Amount_</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#DiscountFixedVouchersEffectTypes" class="tsd-kind-icon">Discount<wbr>Fixed<wbr>Vouchers<wbr>Effect<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountFixed_" class="tsd-kind-icon">Discount<wbr>Fixed_</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#DiscountPercentVouchersEffectTypes" class="tsd-kind-icon">Discount<wbr>Percent<wbr>Vouchers<wbr>Effect<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountPercent_" class="tsd-kind-icon">Discount<wbr>Percent_</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountUnitBase_" class="tsd-kind-icon">Discount<wbr>Unit<wbr>Base_</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountUnitMultiple_" class="tsd-kind-icon">Discount<wbr>Unit<wbr>Multiple_</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#DiscountUnitVouchersEffectTypes" class="tsd-kind-icon">Discount<wbr>Unit<wbr>Vouchers<wbr>Effect<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#DiscountUnit_" class="tsd-kind-icon">Discount<wbr>Unit_</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#DiscountVouchersEffectTypes" class="tsd-kind-icon">Discount<wbr>Vouchers<wbr>Effect<wbr>Types</a>
@@ -2588,6 +2655,12 @@
 						<a href="modules.html#GiftCardTransactionDetails" class="tsd-kind-icon">Gift<wbr>Card<wbr>Transaction<wbr>Details</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#InapplicableTo" class="tsd-kind-icon">Inapplicable<wbr>To</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#InapplicableToResultList" class="tsd-kind-icon">Inapplicable<wbr>ToResult<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#Junction" class="tsd-kind-icon">Junction</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2663,6 +2736,21 @@
 						<a href="modules.html#LoyaltyTierRewardItemParameters" class="tsd-kind-icon">Loyalty<wbr>Tier<wbr>Reward<wbr>Item<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Order" class="tsd-kind-icon">Order</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#OrderCalculated" class="tsd-kind-icon">Order<wbr>Calculated</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#OrderItem" class="tsd-kind-icon">Order<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#OrderItemCalculated" class="tsd-kind-icon">Order<wbr>Item<wbr>Calculated</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#OrderRedemptions" class="tsd-kind-icon">Order<wbr>Redemptions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#OrdersGetResponse" class="tsd-kind-icon">Orders<wbr>Get<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -2717,10 +2805,49 @@
 						<a href="modules.html#PromotionTiersUpdateResponse" class="tsd-kind-icon">Promotion<wbr>Tiers<wbr>Update<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsCheckEligibilityRequestBody" class="tsd-kind-icon">Qualifications<wbr>Check<wbr>Eligibility<wbr>Request<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsCheckEligibilityResponseBody" class="tsd-kind-icon">Qualifications<wbr>Check<wbr>Eligibility<wbr>Response<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsFieldConditions" class="tsd-kind-icon">Qualifications<wbr>Field<wbr>Conditions</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsFiltersCondition" class="tsd-kind-icon">Qualifications<wbr>Filters<wbr>Condition</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsFiltersFields" class="tsd-kind-icon">Qualifications<wbr>Filters<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsRedeemable" class="tsd-kind-icon">Qualifications<wbr>Redeemable</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsRedeemableBase" class="tsd-kind-icon">Qualifications<wbr>Redeemable<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsRedeemableList" class="tsd-kind-icon">Qualifications<wbr>Redeemable<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#QualificationsStackingRules" class="tsd-kind-icon">Qualifications<wbr>Stacking<wbr>Rules</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#RedeemableResult" class="tsd-kind-icon">Redeemable<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RedemptionsRedeemStackableOrderResponse" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Stackable<wbr>Order<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#RedemptionsRedeemStackableRedemptionResult" class="tsd-kind-icon">Redemptions<wbr>Redeem<wbr>Stackable<wbr>Redemption<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Referrer" class="tsd-kind-icon">Referrer</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ReferrerId" class="tsd-kind-icon">Referrer<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ReferrerWithSummaryLoyaltyReferrals" class="tsd-kind-icon">Referrer<wbr>With<wbr>Summary<wbr>Loyalty<wbr>Referrals</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#Reward" class="tsd-kind-icon">Reward</a>
@@ -2784,6 +2911,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#StackableRedeemableResponseStatus" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Response<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ValidationRulesAssignmentsList" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Assignments<wbr>List</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationRulesGetResponse" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Get<wbr>Response</a>
