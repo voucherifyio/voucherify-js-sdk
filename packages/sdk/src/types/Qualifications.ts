@@ -78,7 +78,7 @@ export type QualificationsRedeemableBase = {
 	id: string
 	object: 'campaign' | 'promotion_tier' | 'promotion_stack' | 'voucher'
 	created_at: string
-	result: RedeemableSingleResultResponse
+	result: RedeemableResult
 	order?: OrderCalculated
 	validation_rule_id?: string
 	applicable_to: ApplicableToResultList
@@ -92,7 +92,7 @@ export type QualificationsRedeemableBase = {
 	validation_rules_assignments?: ValidationRulesAssignmentsList
 }
 
-export type RedeemableSingleResultResponse = {
+export type RedeemableResult = {
 	discount?: Discount
 	gift?: {
 		balance: number

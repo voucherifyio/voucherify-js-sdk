@@ -1,8 +1,10 @@
 import {
 	Customer,
+	CustomerId,
 	CustomerRequest,
 	CustomerWithSummaryLoyaltyReferrals,
 	Referrer,
+	ReferrerId,
 	ReferrerWithSummaryLoyaltyReferrals,
 } from './Customers'
 
@@ -162,12 +164,12 @@ export type OrderCalculated = {
 	total_applied_discount_amount?: number
 	items?: OrderItemCalculated[]
 	metadata: Record<string, unknown>
-	customer?: CustomerWithSummaryLoyaltyReferrals
+	customer?: CustomerId | CustomerWithSummaryLoyaltyReferrals
 	customer_id: string | null
-	referrer?: ReferrerWithSummaryLoyaltyReferrals
+	referrer?: ReferrerId | ReferrerWithSummaryLoyaltyReferrals
 	referrer_id: string | null
 	object: 'order'
-	redemptions?: OrderRedemptions
+	redemptions?: Record<string, OrderRedemptions>
 }
 
 export type OrderRedemptions = {

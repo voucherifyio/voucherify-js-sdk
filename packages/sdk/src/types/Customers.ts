@@ -169,6 +169,13 @@ export type Customer = CustomerRequest
 
 export type ReferrerWithSummaryLoyaltyReferrals = CustomerWithSummaryLoyaltyReferrals
 
+export type CustomerId = {
+	id: string
+	object: 'customer'
+}
+
+export type ReferrerId = CustomerId
+
 export type CustomerWithSummaryLoyaltyReferrals = {
 	id?: string
 	source_id?: string
