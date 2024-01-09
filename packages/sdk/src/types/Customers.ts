@@ -71,9 +71,11 @@ export interface CustomerRequest {
 	id?: string
 	source_id?: string
 	name?: string
-	email?: string
-	metadata?: Record<string, any>
 	description?: string
+	email?: string
+	phone?: string
+	birthday?: string
+	birthdate?: string
 	address?: {
 		city?: string
 		state?: string
@@ -82,7 +84,7 @@ export interface CustomerRequest {
 		country?: string
 		postal_code?: string
 	}
-	phone?: string
+	metadata?: Record<string, any>
 }
 
 export interface CustomersCommonListRequest {
@@ -160,6 +162,95 @@ type CustomerAddress = {
 		country?: string | null
 		postal_code?: string | null
 	} | null
+}
+
+export type Referrer = CustomerRequest
+export type Customer = CustomerRequest
+
+export type ReferrerWithSummaryLoyaltyReferrals = CustomerWithSummaryLoyaltyReferrals
+
+export type CustomerId = {
+	id: string
+	object: 'customer'
+}
+
+export type ReferrerId = CustomerId
+
+export type CustomerWithSummaryLoyaltyReferrals = {
+	id?: string
+	source_id?: string
+	name?: string
+	description?: string
+	email?: string
+	phone?: string
+	birthday?: string
+	birthdate?: string
+	address: {
+		city?: string
+		state?: string
+		line_1?: string
+		line_2?: string
+		country?: string
+		postal_code?: string
+	} | null
+	metadata?: Record<string, any>
+	summary: CustomerSummary
+	loyalty: CustomerLoyalty
+	referrals: CustomerReferrals
+	system_metadata: Record<string, unknown>
+	created_at: string
+	updated_at?: string
+	assets?: {
+		cockpit_url?: string
+	}
+	object: 'customer'
+}
+
+export type CustomerSummary = {
+	redemptions: CustomerSummaryRedemptions
+	orders: CustomerSummaryOrders
+}
+
+export type CustomerSummaryRedemptions = {
+	total_redeemed: number
+	total_failed: number
+	total_succeeded: number
+	total_rolled_back: number
+	total_rollback_failed: number
+	total_rollback_succeeded: number
+	gift: {
+		redeemed_amount: number
+		amount_to_go: number
+	}
+	loyalty_card: {
+		redeemed_points: number
+		points_to_go: number
+	}
+}
+
+export type CustomerSummaryOrders = {
+	total_amount: number
+	total_count: number
+	average_amount: number
+	last_order_amount: number
+	last_order_date: string
+}
+
+export type CustomerLoyalty = {
+	points: number
+	referred_customers: number
+	campaigns: Record<string, { points: number; loyalty_tier: string; referred_customers: number }>
+}
+
+export type CustomerReferrals = {
+	total: number
+	campaigns: {
+		campaign_id: string
+		referrer_id: string
+		related_object_id: string
+		related_object_type: string
+		date: string
+	}[]
 }
 
 // 0-level types

@@ -1,4 +1,5 @@
 import * as T from './types/ClientSide'
+import * as TQ from './types/Qualifications'
 
 import { assert, encode, isObject, isOptionalObject, isOptionalString, isString } from './helpers'
 
@@ -168,5 +169,11 @@ export class ClientSide {
 	 */
 	public redeemStackable(params: T.ClientSideRedemptionsRedeemStackableParams) {
 		return this.client.post<T.ClientSideRedemptionsRedeemStackableResponse>(`/redemptions`, params)
+	}
+	/**
+	 * @see https://docs.voucherify.io/reference/check-eligibility
+	 */
+	public qualifications(body: TQ.QualificationsCheckEligibilityRequestBody) {
+		return this.client.post<TQ.QualificationsCheckEligibilityResponseBody>('/qualifications', body)
 	}
 }

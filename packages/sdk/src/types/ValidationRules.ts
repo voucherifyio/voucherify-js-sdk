@@ -80,6 +80,8 @@ export interface ValidationRulesListAssignmentsResponse {
 // Domain types
 // Validation Rules Assignment
 
+export type ValidationRulesAssignmentsList = ValidationRulesListResponse
+
 export interface ValidationRulesAssignment {
 	id: string
 	rule_id: string

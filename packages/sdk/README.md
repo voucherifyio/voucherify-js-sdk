@@ -450,6 +450,20 @@ client.categories.list()
 
 ---
 
+### Qualifications
+
+Methods are provided within `client.qualifications.*` or `client.promotions.*` namespace.
+
+- [Check Eligibility](#Check-Eligibility)
+
+#### [Check Eligibility](https://docs.voucherify.io/reference/check-eligibility)
+
+```javascript
+client.qualifications.checkEligibility(body)
+```
+
+---
+
 ### Validations
 
 Methods are provided within `client.validations.*` or `client.promotions.*` namespace.
@@ -1606,6 +1620,7 @@ Methods are provided within `client.*` namespace.
 - [List consents](#list-consents)
 - [Update consents](#update-consents)
 - [Track custom events](#track-custom-events)
+- [Qualifications](#Qualifications)
 
 #### Set Identity
 
@@ -1676,6 +1691,12 @@ client.updateConsents(idOrSourceId, consents)
 
 ```javascript
 client.track(eventName, metadata, customer)
+```
+
+#### [Qualifications](https://docs.voucherify.io/reference/check-eligibility-client-side)
+
+```javascript
+client.qualifications(body)
 ```
 
 # <a name="snippet"></a>🏎 Marketer-ready Voucherify snippet
