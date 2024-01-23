@@ -13,6 +13,7 @@ export class VoucherifyError extends Error {
 	public related_object_ids?: string[]
 	public related_object_type?: string
 	public related_object_total?: number
+	public error?: { message: string }
 	public cause?: AxiosError
 
 	constructor(statusCode: number, body?: unknown, axiosError?: AxiosError) {
@@ -31,6 +32,7 @@ export class VoucherifyError extends Error {
 		this.related_object_ids = (<any>body).related_object_ids
 		this.related_object_type = (<any>body).related_object_type
 		this.related_object_total = (<any>body).related_object_total
+		this.error = (<any>body).error
 		this.cause = axiosError
 	}
 }

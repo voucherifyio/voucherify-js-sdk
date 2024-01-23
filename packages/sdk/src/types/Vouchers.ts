@@ -133,6 +133,7 @@ export interface VouchersCreateParameters {
 	redemption?: {
 		quantity: number
 	}
+	validation_rules?: string[]
 }
 
 export type VouchersCreate = VouchersCreateParameters &
