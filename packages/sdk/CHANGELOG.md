@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.7.1
+
+### Patch Changes
+
+- [`25c3f13`](https://github.com/voucherifyio/voucherify-js-sdk/commit/25c3f13d10cd8ed4a6eee50082f302efd18e1268) [#260](https://github.com/voucherifyio/voucherify-js-sdk/pull/260) Thanks [@jkaliszuk](https://github.com/jkaliszuk)! - Added `error` object in `VoucherifyError`. Added `validation_rules` in VouchersCreateParameters.
+
 ## 2.7.0
 
 ### Minor Changes
