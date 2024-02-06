@@ -58,7 +58,7 @@ You can also use our detailed documentation provided by our package [here](https
 
 ## <a name="sdk"></a> Voucherify JS SDK
 
-Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
+Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support.
 
 [Go here](/packages/sdk/README.md) to learn more about Voucherify JS SDK installation.
 
