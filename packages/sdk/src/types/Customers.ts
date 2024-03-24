@@ -1,5 +1,5 @@
 // Legacy code
-import {VouchersResponse} from "./Vouchers";
+import { VouchersResponse } from './Vouchers'
 
 export interface SimpleCustomer {
 	id: string
@@ -127,7 +127,7 @@ export interface CustomerRedeemablesListQueryParams {
 	limit?: number
 	page?: number
 	order?: 'created_at' | '-created_at' | 'id' | '-id'
-	starting_after_id?: string,
+	starting_after_id?: string
 	filters?: Record<string, any>
 }
 
