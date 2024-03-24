@@ -25,6 +25,7 @@ import { Categories } from './Categories'
 import { PromotionsStacks } from './PromotionsStacks'
 import { ProductCollections } from './ProductCollections'
 import { Qualifications } from './Qualifications'
+import { Referrals } from './Referrals'
 
 export interface VoucherifyServerSideOptions {
 	/**
@@ -204,6 +205,7 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 	const validationRules = new ValidationRules(client)
 	const apiLimitsHandler = new ApiLimitsHandler(client)
 	const metadataSchemas = new MetadataSchemas(client)
+	const referrals = new Referrals(client)
 
 	return {
 		vouchers,
@@ -227,5 +229,6 @@ export function VoucherifyServerSide(options: VoucherifyServerSideOptions) {
 		asyncActions,
 		apiLimitsHandler,
 		metadataSchemas,
+		referrals,
 	}
 }
