@@ -1548,6 +1548,22 @@ client.metadataSchemas.list()
 client.metadataSchemas.get(schemaName)
 ```
 
+---
+
+### Referrals
+
+Methods are provided within `client.referrals.*` namespace.
+
+#### [Get Referrals Redeemable Holders](https://docs.voucherify.io/reference/get-member)
+
+Depending on the parameters, this method sends requests to [v1/referrals/{id}/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders) or [v1/referrals/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders-1) API endpoint
+
+```javascript
+client.referrals.getMember(campaignId, memberId)
+```
+
+---
+
 ### Api Limits Handler
 
 Methods are provided within `client.apiLimitsHandler.*` namespace.
