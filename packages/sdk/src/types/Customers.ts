@@ -1,4 +1,6 @@
 // Legacy code
+import {VouchersResponse} from "./Vouchers";
+
 export interface SimpleCustomer {
 	id: string
 	name?: string
@@ -119,6 +121,38 @@ export interface CustomerActivitiesListResponse {
 	total: number
 	data_ref: 'data'
 	data: Record<string, any>[]
+}
+
+export interface CustomerRedeemablesListQueryParams {
+	limit?: number
+	order?: 'created_at' | '-created_at'
+	starting_after?: string
+}
+
+export interface CustomerRedeemablesListResponse {
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: Record<string, CustomerRedeemable>[]
+}
+
+export interface CustomerRedeemable {
+	id: string
+	created_at: string
+	redeemable_id: string
+	redeemable_object: string
+	customer_id: string
+	holder_role: 'OWNER' | 'REFERRER' | 'REFEREE'
+	campaign_id: string
+	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	voucher_type: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+	redeemable: Redeemable
+}
+
+export interface Redeemable {
+	type: string
+	voucher: VouchersResponse
+	status: string
 }
 
 export type CustomersCreateBody = CustomerRequest

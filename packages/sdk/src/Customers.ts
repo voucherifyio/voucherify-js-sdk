@@ -131,6 +131,13 @@ class Customers {
 
 		return this.client.post<AAT.AsyncActionCreateResponse>(`/customers/importCSV`, form, undefined, headers)
 	}
+
+	/**
+	 * @see https://docs.voucherify.io/reference/list-customer-redeemables
+	 */
+	public listRedeemables(id: string, params?: T.CustomerRedeemablesListQueryParams) {
+		return this.client.get<T.CustomerRedeemablesListResponse>(`/redeemables/${encode(id)}/redeemables`, params)
+	}
 }
 
 export { Customers }
