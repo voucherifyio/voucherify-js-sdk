@@ -6,8 +6,8 @@ class Referrals {
 	constructor(private client: RequestController) {}
 
 	/**
+	 * @see https://docs.voucherify.io/reference/referrals-member-holders
 	 * @see https://docs.voucherify.io/reference/referrals-member-holders-1
-	 * @see https://docs.voucherify.io/reference/referrals-member-holders-2
 	 */
 	public getMember(campaignId: string | null, memberId: string, params?: T.RedeemableHoldersListQueryParams) {
 		return this.client.get<T.RedeemableHoldersListResponse>(
