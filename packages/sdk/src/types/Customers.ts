@@ -154,7 +154,7 @@ export interface CustomerRedeemable {
 export interface Redeemable {
 	type: string
 	voucher: VouchersResponse
-	status: string
+	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE' | 'EXPIRED' | 'NO_BALANCE'
 }
 
 export type CustomersCreateBody = CustomerRequest
