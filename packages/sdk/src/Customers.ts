@@ -136,7 +136,7 @@ class Customers {
 	 * @see https://docs.voucherify.io/reference/list-customer-redeemables
 	 */
 	public listRedeemables(id: string, params?: T.CustomerRedeemablesListQueryParams) {
-		return this.client.get<T.CustomerRedeemablesListResponse>(`/redeemables/${encode(id)}/redeemables`, params)
+		return this.client.get<T.CustomerRedeemablesListResponse>(`/customers/${encode(id)}/redeemables`, params)
 	}
 }
 
