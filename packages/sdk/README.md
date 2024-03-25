@@ -1559,7 +1559,7 @@ Methods are provided within `client.referrals.*` namespace.
 Depending on the parameters, this method sends requests to [v1/referrals/{id}/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders) or [v1/referrals/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders-1) API endpoint
 
 ```javascript
-client.referrals.getMember(campaignId, memberId)
+client.referrals.listHolders(campaignId, memberId)
 ```
 
 ---
