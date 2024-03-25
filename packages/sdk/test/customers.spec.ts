@@ -1,6 +1,7 @@
 import { voucherifyClient as client } from './client'
 import { generateRandomString } from './utils/generateRandomString'
 import { generateCustomerCSV } from './utils/generateCustomerCSV'
+import { CustomerRequest, DiscountVouchersTypesEnum, DistributionsPublicationsCreateParams } from '@voucherify/sdk'
 
 jest.setTimeout(15000)
 
@@ -172,5 +173,35 @@ describe('Customers API', () => {
 			return
 		}
 		expect(updatedCustomerWithNoAddress.address).toEqual(removedAddress)
+	})
+
+	it('Should return redeemable for customer', async () => {
+		const createdCustomer: CustomerRequest = await client.customers.create({ source_id: generateRandomString() })
+
+		const discountCampaign = await client.campaigns.create({
+			campaign_type: 'DISCOUNT_COUPONS',
+			name: generateRandomString(),
+			type: 'AUTO_UPDATE',
+			voucher: {
+				code_config: {
+					length: 3,
+				},
+				type: 'DISCOUNT_VOUCHER',
+				discount: {
+					amount_off: 0,
+					type: DiscountVouchersTypesEnum.AMOUNT,
+				},
+			},
+		})
+
+		const distributionsPublicationsCreateParams: DistributionsPublicationsCreateParams = {
+			customer: createdCustomer,
+			campaign: discountCampaign,
+		}
+
+		await client.distributions.publications.create(distributionsPublicationsCreateParams)
+
+		const redeemables = await client.customers.listRedeemables(createdCustomer.id as string)
+		expect(redeemables.data).toBeDefined()
 	})
 })

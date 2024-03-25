@@ -654,6 +654,7 @@ Methods are provided within `client.customers.*` namespace.
 - [Update Customers in bulk](#update-customers-in-bulk)
 - [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 - [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
+- [List Redeemables](#list-redeemables)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
@@ -757,6 +758,12 @@ client.customers.updateInBulk(customers)
 
 ```javascript
 client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
+```
+
+#### [List Redeemables](https://docs.voucherify.io/reference/list-customer-redeemables)
+
+```javascript
+client.customers.listRedeemables(id, params)
 ```
 
 ---
@@ -1540,6 +1547,22 @@ client.metadataSchemas.list()
 ```javascript
 client.metadataSchemas.get(schemaName)
 ```
+
+---
+
+### Referrals
+
+Methods are provided within `client.referrals.*` namespace.
+
+#### [Get Referrals Redeemable Holders](https://docs.voucherify.io/reference/get-member)
+
+Depending on the parameters, this method sends requests to [v1/referrals/{id}/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders) or [v1/referrals/members/{memberId}/holders](https://docs.voucherify.io/reference/referrals-member-holders-1) API endpoint
+
+```javascript
+client.referrals.listHolders(campaignId, memberId)
+```
+
+---
 
 ### Api Limits Handler
 
