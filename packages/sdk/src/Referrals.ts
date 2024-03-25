@@ -9,7 +9,7 @@ class Referrals {
 	 * @see https://docs.voucherify.io/reference/referrals-member-holders
 	 * @see https://docs.voucherify.io/reference/referrals-member-holders-1
 	 */
-	public getMember(campaignId: string | null, memberId: string, params?: T.RedeemableHoldersListQueryParams) {
+	public listHolders(campaignId: string | null, memberId: string, params?: T.RedeemableHoldersListQueryParams) {
 		return this.client.get<T.RedeemableHoldersListResponse>(
 			campaignId
 				? `/referrals/${encode(campaignId)}/members/${memberId}/holders`
