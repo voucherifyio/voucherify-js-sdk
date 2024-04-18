@@ -135,6 +135,8 @@ export interface CustomerRedeemablesListResponse {
 	total: number
 	data_ref: 'data'
 	data: CustomerRedeemable[]
+	has_more: boolean
+	more_starting_after?: string
 }
 
 export interface CustomerRedeemable {
