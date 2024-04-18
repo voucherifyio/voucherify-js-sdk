@@ -1,5 +1,5 @@
 // Legacy code
-import { VouchersResponse } from './Vouchers'
+import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
 
 export interface SimpleCustomer {
 	id: string
@@ -146,13 +146,56 @@ export interface CustomerRedeemable {
 	holder_role: 'OWNER' | 'REFERRER' | 'REFEREE'
 	campaign_id: string
 	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
-	voucher_type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW_DRAW'
-	redeemable: Redeemable
+	voucher_type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	redeemable: RedeemableContainer
 }
 
-export interface Redeemable {
+export interface RedeemableContainerVoucher {
+	id: string
+	code: string
+	campaign?: string
+	camapign_id?: string
+	category_id?: string
+	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	discount?: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
+	gift?: {
+		amount: number
+		balance: number
+	}
+	loyalty_card?: {
+		points: number
+		balance: number
+	}
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week?: number[]
+	active: boolean
+	additional_info?: string
+	metadata?: Record<string, any>
+	assets: {
+		qr: {
+			id: string
+			url: string
+		}
+		barcode: {
+			id: string
+			url: string
+		}
+	}
+	is_referral_code: boolean
+	holder_id?: string
+	updated_at?: string
+	created_at: string
+	object: 'voucher'
+}
+
+export interface RedeemableContainer {
 	type: 'voucher'
-	voucher: VouchersResponse
+	voucher?: RedeemableContainerVoucher
 	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE' | 'EXPIRED' | 'NO_BALANCE'
 }
 
