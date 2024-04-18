@@ -125,7 +125,6 @@ export interface CustomerActivitiesListResponse {
 
 export interface CustomerRedeemablesListQueryParams {
 	limit?: number
-	page?: number
 	order?: 'created_at' | '-created_at' | 'id' | '-id'
 	starting_after_id?: string
 	filters?: Record<string, any>
