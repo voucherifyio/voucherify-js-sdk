@@ -146,7 +146,7 @@ export interface CustomerRedeemable {
 	holder_role: 'OWNER' | 'REFERRER' | 'REFEREE'
 	campaign_id: string
 	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
-	voucher_type: 'GIFT' | 'DISCOUNT' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
+	voucher_type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW_DRAW'
 	redeemable: Redeemable
 }
 
