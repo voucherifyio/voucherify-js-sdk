@@ -134,7 +134,7 @@ export interface CustomerRedeemablesListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: Record<string, CustomerRedeemable>[]
+	data: CustomerRedeemable[]
 }
 
 export interface CustomerRedeemable {
@@ -173,6 +173,17 @@ export interface RedeemableContainerVoucher {
 		duration: string
 	}
 	validity_day_of_week?: number[]
+	publish?: {
+		object: 'list'
+		count: number
+		url: string
+	}
+	redemption?: {
+		object: 'list'
+		quantity?: number
+		redeemed_quantity: number
+		url: string
+	}
 	active: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
