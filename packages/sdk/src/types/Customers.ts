@@ -151,7 +151,7 @@ export interface CustomerRedeemable {
 }
 
 export interface Redeemable {
-	type: string
+	type: 'voucher'
 	voucher: VouchersResponse
 	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE' | 'EXPIRED' | 'NO_BALANCE'
 }
