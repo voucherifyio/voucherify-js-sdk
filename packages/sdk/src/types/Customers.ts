@@ -134,12 +134,12 @@ export interface CustomerRedeemablesListResponse {
 	object: 'list'
 	total: number
 	data_ref: 'data'
-	data: CustomerRedeemable[]
+	data: CustomerRedeemablesListItemResponse[]
 	has_more: boolean
 	more_starting_after?: string
 }
 
-export interface CustomerRedeemable {
+export interface CustomerRedeemablesListItemResponse {
 	id: string
 	created_at: string
 	redeemable_id: string
@@ -149,10 +149,10 @@ export interface CustomerRedeemable {
 	campaign_id: string
 	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
 	voucher_type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
-	redeemable: RedeemableContainer
+	redeemable: CustomerRedeemablesListItemContainerResponse
 }
 
-export interface RedeemableContainerVoucher {
+export interface CustomerRedeemablesListItemContainerVoucherResponse {
 	id: string
 	code: string
 	campaign?: string
@@ -163,10 +163,13 @@ export interface RedeemableContainerVoucher {
 	gift?: {
 		amount: number
 		balance: number
+		effect: string
 	}
 	loyalty_card?: {
 		points: number
 		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: number
 	}
 	start_date?: string
 	expiration_date?: string
@@ -185,8 +188,9 @@ export interface RedeemableContainerVoucher {
 		quantity?: number
 		redeemed_quantity: number
 		url: string
+		redeemed_points?: number
 	}
-	active: boolean
+	active?: boolean
 	additional_info?: string
 	metadata?: Record<string, any>
 	assets: {
@@ -206,9 +210,9 @@ export interface RedeemableContainerVoucher {
 	object: 'voucher'
 }
 
-export interface RedeemableContainer {
+export interface CustomerRedeemablesListItemContainerResponse {
 	type: 'voucher'
-	voucher?: RedeemableContainerVoucher
+	voucher?: CustomerRedeemablesListItemContainerVoucherResponse
 	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE' | 'EXPIRED' | 'NO_BALANCE'
 }
 
