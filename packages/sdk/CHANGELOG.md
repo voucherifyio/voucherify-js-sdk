@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.7.2
+
+### Patch Changes
+
+- [`3d23881`](https://github.com/voucherifyio/voucherify-js-sdk/commit/3d23881738f317903dae3373642cc7151159ca26) [#268](https://github.com/voucherifyio/voucherify-js-sdk/pull/268) Thanks [@darekg11](https://github.com/darekg11)! - New endpoint support - `customer-redeemable`
+
 ## 2.7.1
 
 ### Patch Changes
