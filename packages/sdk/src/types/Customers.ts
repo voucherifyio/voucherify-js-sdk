@@ -213,7 +213,7 @@ export interface CustomerRedeemablesListItemContainerVoucherResponse {
 export interface CustomerRedeemablesListItemContainerResponse {
 	type: 'voucher'
 	voucher?: CustomerRedeemablesListItemContainerVoucherResponse
-	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE' | 'EXPIRED' | 'NO_BALANCE'
+	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE_YET' | 'EXPIRED' | 'NO_BALANCE'
 }
 
 export type CustomersCreateBody = CustomerRequest
