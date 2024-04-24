@@ -654,6 +654,7 @@ Methods are provided within `client.customers.*` namespace.
 - [Update Customers in bulk](#update-customers-in-bulk)
 - [Update Customers' Metadata in bulk](#update-customers-metadata-in-bulk)
 - [Import and Update Customers using CSV](#import-and-update-customers-using-csv)
+- [List Redeemables](#list-redeemables)
 
 #### [Create Customer](https://docs.voucherify.io/reference/create-customer)
 
@@ -757,6 +758,12 @@ client.customers.updateInBulk(customers)
 
 ```javascript
 client.customers.updateMetadataInBulk(sourceIdsAndMetadata)
+```
+
+#### [List Redeemables](https://docs.voucherify.io/reference/list-customer-redeemables)
+
+```javascript
+client.customers.listRedeemables(id, params)
 ```
 
 ---

@@ -1,4 +1,6 @@
 // Legacy code
+import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
+
 export interface SimpleCustomer {
 	id: string
 	name?: string
@@ -119,6 +121,99 @@ export interface CustomerActivitiesListResponse {
 	total: number
 	data_ref: 'data'
 	data: Record<string, any>[]
+}
+
+export interface CustomerRedeemablesListQueryParams {
+	limit?: number
+	order?: 'created_at' | '-created_at' | 'id' | '-id'
+	starting_after_id?: string
+	filters?: Record<string, any>
+}
+
+export interface CustomerRedeemablesListResponse {
+	object: 'list'
+	total: number
+	data_ref: 'data'
+	data: CustomerRedeemablesListItemResponse[]
+	has_more: boolean
+	more_starting_after?: string
+}
+
+export interface CustomerRedeemablesListItemResponse {
+	id: string
+	created_at: string
+	redeemable_id: string
+	redeemable_object: string
+	customer_id: string
+	holder_role: 'OWNER' | 'REFERRER' | 'REFEREE'
+	campaign_id: string
+	campaign_type: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	voucher_type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	redeemable: CustomerRedeemablesListItemContainerResponse
+}
+
+export interface CustomerRedeemablesListItemContainerVoucherResponse {
+	id: string
+	code: string
+	campaign?: string
+	camapign_id?: string
+	category_id?: string
+	type: 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD'
+	discount?: DiscountAmount | DiscountPercent | DiscountUnit | DiscountFixed
+	gift?: {
+		amount: number
+		balance: number
+		effect: string
+	}
+	loyalty_card?: {
+		points: number
+		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: number
+	}
+	start_date?: string
+	expiration_date?: string
+	validity_timeframe?: {
+		interval: string
+		duration: string
+	}
+	validity_day_of_week?: number[]
+	publish?: {
+		object: 'list'
+		count: number
+		url: string
+	}
+	redemption?: {
+		object: 'list'
+		quantity?: number
+		redeemed_quantity: number
+		url: string
+		redeemed_points?: number
+	}
+	active?: boolean
+	additional_info?: string
+	metadata?: Record<string, any>
+	assets: {
+		qr: {
+			id: string
+			url: string
+		}
+		barcode: {
+			id: string
+			url: string
+		}
+	}
+	is_referral_code: boolean
+	holder_id?: string
+	updated_at?: string
+	created_at: string
+	object: 'voucher'
+}
+
+export interface CustomerRedeemablesListItemContainerResponse {
+	type: 'voucher'
+	voucher?: CustomerRedeemablesListItemContainerVoucherResponse
+	status: 'ACTIVE' | 'USED' | 'DISABLED' | 'NOT_ACTIVE_YET' | 'EXPIRED' | 'NO_BALANCE'
 }
 
 export type CustomersCreateBody = CustomerRequest
