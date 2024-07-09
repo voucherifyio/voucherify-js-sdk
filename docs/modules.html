@@ -520,14 +520,17 @@
 								<li class="tsd-kind-type-alias"><a href="modules.html#RewardsUpdateResponse" class="tsd-kind-icon">Rewards<wbr>Update<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#SegmentsGetResponse" class="tsd-kind-icon">Segments<wbr>Get<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#SimpleRollback" class="tsd-kind-icon">Simple<wbr>Rollback</a></li>
+								<li class="tsd-kind-type-alias"><a href="modules.html#StackableRedeemableInapplicableResponse" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Inapplicable<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#StackableRedeemableObject" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Object</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#StackableRedeemableResponseStatus" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Response<wbr>Status</a></li>
+								<li class="tsd-kind-type-alias"><a href="modules.html#StackableRedeemableSkippedResponse" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Skipped<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationRulesAssignmentsList" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Assignments<wbr>List</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationRulesGetResponse" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Get<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationRulesUpdate" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Update</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationRulesUpdateResponse" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Update<wbr>Response</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationSessionTTLUnit" class="tsd-kind-icon">Validation<wbr>SessionTTLUnit</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationSessionType" class="tsd-kind-icon">Validation<wbr>Session<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationsStackingRules" class="tsd-kind-icon">Validations<wbr>Stacking<wbr>Rules</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationsValidateCode" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Code</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#ValidationsValidateContext" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Context</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#VoucherTransaction" class="tsd-kind-icon">Voucher<wbr>Transaction</a></li>
@@ -2807,6 +2810,52 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="StackableRedeemableInapplicableResponse" class="tsd-anchor"></a>
+					<h3>Stackable<wbr>Redeemable<wbr>Inapplicable<wbr>Response</h3>
+					<div class="tsd-signature tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Inapplicable<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>categories<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Category</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>metadata<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;voucher&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;promotion_tier&quot;</span><span class="tsd-signature-symbol">; </span>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ValidationError</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>status<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;INAPPLICABLE&quot;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> categories<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Category</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> metadata<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;voucher&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;promotion_tier&quot;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ValidationError</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ValidationError</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>status<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;INAPPLICABLE&quot;</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="StackableRedeemableObject" class="tsd-anchor"></a>
 					<h3>Stackable<wbr>Redeemable<wbr>Object</h3>
 					<div class="tsd-signature tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;promotion_stack&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;promotion_tier&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;voucher&quot;</span></div>
@@ -2819,6 +2868,49 @@
 					<div class="tsd-signature tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Response<wbr>Status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;APPLICABLE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;INAPPLICABLE&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;SKIPPED&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="StackableRedeemableSkippedResponse" class="tsd-anchor"></a>
+					<h3>Stackable<wbr>Redeemable<wbr>Skipped<wbr>Response</h3>
+					<div class="tsd-signature tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Skipped<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>categories<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Category</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>metadata<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;voucher&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;promotion_tier&quot;</span><span class="tsd-signature-symbol">; </span>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>status<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;SKIPPED&quot;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> categories<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Category</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> metadata<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;voucher&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;promotion_tier&quot;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>status<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;SKIPPED&quot;</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="ValidationRulesAssignmentsList" class="tsd-anchor"></a>
@@ -2861,6 +2953,45 @@
 					<div class="tsd-signature tsd-kind-icon">Validation<wbr>Session<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;LOCK&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="ValidationsStackingRules" class="tsd-anchor"></a>
+					<h3>Validations<wbr>Stacking<wbr>Rules</h3>
+					<div class="tsd-signature tsd-kind-icon">Validations<wbr>Stacking<wbr>Rules<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>applicable_exclusive_redeemables_limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>applicable_exclusive_redeemables_per_category_limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>applicable_redeemables_limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>applicable_redeemables_per_category_limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>exclusive_categories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>joint_categories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>redeemables_application_mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;ALL&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PARTIAL&quot;</span><span class="tsd-signature-symbol">; </span>redeemables_limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>redeemables_sorting_rule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;CATEGORY_HIERARCHY&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;REQUESTED_ORDER&quot;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>applicable_<wbr>exclusive_<wbr>redeemables_<wbr>limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> applicable_<wbr>exclusive_<wbr>redeemables_<wbr>per_<wbr>category_<wbr>limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>applicable_<wbr>redeemables_<wbr>limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> applicable_<wbr>redeemables_<wbr>per_<wbr>category_<wbr>limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>exclusive_<wbr>categories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>joint_<wbr>categories<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>redeemables_<wbr>application_<wbr>mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;ALL&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;PARTIAL&quot;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>redeemables_<wbr>limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>redeemables_<wbr>sorting_<wbr>rule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;CATEGORY_HIERARCHY&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;REQUESTED_ORDER&quot;</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="ValidationsValidateCode" class="tsd-anchor"></a>
@@ -4435,10 +4566,16 @@
 						<a href="modules.html#SimpleRollback" class="tsd-kind-icon">Simple<wbr>Rollback</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#StackableRedeemableInapplicableResponse" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Inapplicable<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#StackableRedeemableObject" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#StackableRedeemableResponseStatus" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Response<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#StackableRedeemableSkippedResponse" class="tsd-kind-icon">Stackable<wbr>Redeemable<wbr>Skipped<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationRulesAssignmentsList" class="tsd-kind-icon">Validation<wbr>Rules<wbr>Assignments<wbr>List</a>
@@ -4457,6 +4594,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationSessionType" class="tsd-kind-icon">Validation<wbr>Session<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ValidationsStackingRules" class="tsd-kind-icon">Validations<wbr>Stacking<wbr>Rules</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#ValidationsValidateCode" class="tsd-kind-icon">Validations<wbr>Validate<wbr>Code</a>
