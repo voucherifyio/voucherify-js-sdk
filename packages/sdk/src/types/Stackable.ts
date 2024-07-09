@@ -6,6 +6,7 @@ import { DiscountVouchersTypes, DiscountVouchersEffectTypes, DiscountUnitVoucher
 import { SimpleProduct, SimpleSku } from './Products'
 import { LoyaltyPointsTransfer } from './Loyalties'
 import { ValidationError } from './ValidationError'
+import { Category } from './Categories'
 
 type ExpandOption = 'order' | 'redeemable' | 'redemption'
 
@@ -64,6 +65,10 @@ export interface StackableRedeemableResultResponse {
 	gift?: StackableRedeemableResultGift
 	loyalty_card?: StackableRedeemableResultLoyaltyCard
 	error?: ValidationError
+	details?: {
+		key?: string
+		message?: string
+	}
 }
 
 export interface StackableRedeemableResponse {
@@ -75,4 +80,34 @@ export interface StackableRedeemableResponse {
 	inapplicable_to?: ApplicableToResultList
 	result?: StackableRedeemableResultResponse
 	metadata?: Record<string, any>
+	categories?: Category[]
+}
+
+export type StackableRedeemableInapplicableResponse = {
+	status: 'INAPPLICABLE'
+	id: string
+	object: 'voucher' | 'promotion_tier'
+	result: {
+		error?: ValidationError
+		details?: {
+			key?: string
+			message?: string
+		}
+	}
+	metadata?: Record<string, unknown>
+	categories?: Category[]
+}
+
+export type StackableRedeemableSkippedResponse = {
+	status: 'SKIPPED'
+	id: string
+	object: 'voucher' | 'promotion_tier'
+	result: {
+		details?: {
+			key?: string
+			message?: string
+		}
+	}
+	metadata?: Record<string, unknown>
+	categories?: Category[]
 }

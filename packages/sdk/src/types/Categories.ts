@@ -38,6 +38,7 @@ export type Category = {
 	created_at: string
 	updated_at?: string
 	object: 'category'
+	stacking_rules_type?: 'JOINT' | 'EXCLUSIVE'
 }
 
 // 0-level types
