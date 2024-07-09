@@ -1,6 +1,12 @@
 import { DiscountAmount, DiscountPercent, DiscountUnit, DiscountFixed } from './DiscountVoucher'
 import { CustomersCreateBody } from './Customers'
-import { StackableOptions, StackableRedeemableParams, StackableRedeemableResponse } from './Stackable'
+import {
+	StackableOptions,
+	StackableRedeemableInapplicableResponse,
+	StackableRedeemableParams,
+	StackableRedeemableResponse,
+	StackableRedeemableSkippedResponse,
+} from './Stackable'
 import { ValidationSessionParams, ValidationSessionResponse } from './ValidateSession'
 import { ApplicableToResultList } from './ApplicableTo'
 import { ValidationError } from './ValidationError'
@@ -84,6 +90,21 @@ export interface ValidationValidateStackableResponse {
 	session?: ValidationSessionResponse
 	order?: OrdersCreateResponse
 	redeemables?: StackableRedeemableResponse[]
+	skipped_redeemables?: StackableRedeemableSkippedResponse
+	inapplicable_redeemables?: StackableRedeemableInapplicableResponse
+	stacking_rules: ValidationsStackingRules
+}
+
+export type ValidationsStackingRules = {
+	redeemables_limit: number
+	applicable_redeemables_limit: number
+	applicable_redeemables_per_category_limit?: number
+	applicable_exclusive_redeemables_limit: number
+	applicable_exclusive_redeemables_per_category_limit?: number
+	exclusive_categories: string[]
+	joint_categories: string[]
+	redeemables_application_mode: 'ALL' | 'PARTIAL'
+	redeemables_sorting_rule: 'CATEGORY_HIERARCHY' | 'REQUESTED_ORDER'
 }
 
 export type ValidationsValidateCode = PromotionsValidateParams

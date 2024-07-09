@@ -4,7 +4,12 @@ import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
-import { StackableOptions, StackableRedeemableParams } from './Stackable'
+import {
+	StackableOptions,
+	StackableRedeemableInapplicableResponse,
+	StackableRedeemableParams,
+	StackableRedeemableSkippedResponse,
+} from './Stackable'
 import { PromotionTierRedeemDetailsSimple, PromotionTierRedeemDetails } from './PromotionTiers'
 
 export interface RedemptionsRedeemBody {
@@ -199,6 +204,8 @@ export interface RedemptionsRedeemStackableResponse {
 		related_object_id: string
 	}
 	order?: RedemptionsRedeemStackableOrderResponse
+	skipped_redeemables?: StackableRedeemableSkippedResponse
+	inapplicable_redeemables?: StackableRedeemableInapplicableResponse
 }
 
 export interface RedemptionsRollbackStackableResponse {
