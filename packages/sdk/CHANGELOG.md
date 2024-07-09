@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.7.3
+
+### Patch Changes
+
+- [`d532cc4`](https://github.com/voucherifyio/voucherify-js-sdk/commit/d532cc4dd6ccc1ea6cab120b8a3cec7d86598ffd) [#270](https://github.com/voucherifyio/voucherify-js-sdk/pull/270) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Type support for partial redemptions. General update to responses of /validations and /redemptions endpoints.
+
 ## 2.7.2
 
 ### Patch Changes
