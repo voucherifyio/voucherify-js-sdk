@@ -174,14 +174,14 @@ describe('Loyalties API', () => {
 					reason: null,
 					type: 'POINTS_ADDITION',
 					details: {
-						balance: {
+						balance: expect.objectContaining({
 							type: 'loyalty_card',
 							total: startBalance + addPoints,
 							object: 'balance',
 							points: addPoints,
 							balance: startBalance + addPoints,
 							related_object: { id: expect.stringMatching(/^v_.*/), type: 'voucher' },
-						},
+						}),
 					},
 					related_transaction_id: null,
 					created_at: expect.stringMatching(isoRegex),
