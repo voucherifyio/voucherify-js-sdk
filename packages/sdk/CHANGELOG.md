@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.7.4
+
+### Patch Changes
+
+- [`871bafb`](https://github.com/voucherifyio/voucherify-js-sdk/commit/871bafb6d16b345fc8230d3fd6aecf55f291fdf2) [#272](https://github.com/voucherifyio/voucherify-js-sdk/pull/272) Thanks [@awilczek](https://github.com/awilczek)! - Upgrade axios to 1.7.5 (CVE-2024-39338)
+
 ## 2.7.3
 
 ### Patch Changes
