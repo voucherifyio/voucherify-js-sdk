@@ -67,7 +67,7 @@ You can also use the detailed [JS SDK documentation](https://voucherifyio.github
 
 Voucherify JS SDK is a JavaScript SDK and it is fully consistent with the restful API Voucherify provides and it has a fully integrated TypeScript support. It also combines together the previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk "Deprecated Voucherify Node.js SDK") and [Voucherify.js SDK](https://github.com/rspective/voucherify.js/ "Deprecated Voucherify JS SDK").
 
-Learn more about Voucherify JS SDK [installation](/packages/sdk/README.md#installation "JS SDK installation guide").
+Learn more about Voucherify [JS SDK installation](/packages/sdk/README.md#installation "JS SDK installation guide").
 
 ## <a name="widget"></a> Voucherify React Widget
 
