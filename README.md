@@ -2,6 +2,15 @@
   <img src="https://vf-asset.s3-eu-west-1.amazonaws.com/voucherify-js-sdk/logo.png" />
 </p>
 
+```diff
+- ! THIS IS README OF THE MONOREPO ! -
+```
+
+### link to [JS SDK](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/sdk/) package readme
+### link to [React Widget](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/react-widget) package readme
+
+------------------
+
 <h3 align="center">Official <a href="https://www.voucherify.io">Voucherify</a> JS SDK and React Widget</h3>
 
 <p>
