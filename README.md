@@ -6,8 +6,8 @@
 - ! THIS IS README OF THE MONOREPO ! -
 ```
 
-### link to [JS SDK](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/sdk/) package readme
-### link to [React Widget](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/react-widget) package readme
+### Link to [JS SDK](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/sdk/) package readme
+### Link to [React Widget](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/react-widget) package readme
 
 ------------------
 
