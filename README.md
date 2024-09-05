@@ -3,11 +3,11 @@
 </p>
 
 ```diff
-- ! THIS IS README OF THE MONOREPO ! -
+- ! THIS IS THE README OF THE MONOREPO ! -
 ```
 
-### Link to [JS SDK](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/sdk/) package readme
-### Link to [React Widget](https://github.com/voucherifyio/voucherify-js-sdk/tree/main/packages/react-widget) package readme
+### [Go to JS SDK package readme](/packages/sdk/README.md "JS SDK package readme") 
+### [Go to React Widget readme](/packages/react-widget/README.md "React widget readme")
 
 ------------------
 
@@ -49,39 +49,37 @@ Packages:
 
 Voucherify empowers marketers and developers with flexible building blocks to come up with, implement, and track targeted promotional campaigns.
 
-Learn more about Voucherify by visiting [our site](https://www.voucherify.io).
+Visit [Voucherify](https://www.voucherify.io) to learn more.
 
 # <a name="documentation"></a>📝 Documentation
 
-You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference). Most method headers point to more detailed descriptions of arguments you can use.
+Find detailed description and example responses at [Voucherify developer documentation](https://docs.voucherify.io/reference "Voucherify API documentation"). Most method headers point to more detailed descriptions of arguments you can use.
 
-You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/).
+You can also use the detailed [JS SDK documentation](https://voucherifyio.github.io/voucherify-js-sdk/ "JS SDK documentation").
 
-📚 Want to learn more? Visit our [official site](https://www.voucherify.io) or our [Success Portal](https://success.voucherify.io).
+📚 Want to learn more? Visit [Voucherify official site](https://www.voucherify.io "Voucherify home page") or [Success Portal](https://success.voucherify.io "Voucherify success portal").
 
-👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
-
-🧪 Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
+👽 Having troubles? Check out [the Help center](https://support.voucherify.io/ "Voucherify support center").
 
 # <a name="installation"></a>⚙️ Installation
 
 ## <a name="sdk"></a> Voucherify JS SDK
 
-Voucherify JS SDK is a JavaScript SDK which is fully consistent with restful API Voucherify provides and has fully integrated TypeScript support. It also combines together our previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk) and [Voucherify.js](https://github.com/rspective/voucherify.js/).
+Voucherify JS SDK is a JavaScript SDK and it is fully consistent with the restful API Voucherify provides and it has a fully integrated TypeScript support. It also combines together the previously maintained [Voucherify Node.js SDK](https://github.com/voucherifyio/voucherify-nodejs-sdk "Deprecated Voucherify Node.js SDK") and [Voucherify.js SDK](https://github.com/rspective/voucherify.js/ "Deprecated Voucherify JS SDK").
 
-[Go here](/packages/sdk/README.md) to learn more about Voucherify JS SDK installation.
+Learn more about Voucherify JS SDK [installation](/packages/sdk/README.md#installation "JS SDK installation guide").
 
 ## <a name="widget"></a> Voucherify React Widget
 
 Voucherify React Widget contains several client-side Voucherify methods, which are useful in integrating your promotion logic straight to your e-commerce store.
 
-[Go here](/packages/react-widget/README.md) to learn more about Voucherify React Widget installation.
+Learn more about Voucherify [React Widget installation](/packages/react-widget/README.md#installation "React Widget installation guide").
 
 # <a name="snippet"></a>🏎 Marketer-ready Voucherify snippet
 
-Go [here](./examples/sdk/with-html) for more HTML-based examples
+[More HTML-based examples](./examples/sdk/with-html "HTML-based examples")
 
-```
+```html
 <body>
   <div id="voucher-validate"></div>
 
@@ -106,34 +104,34 @@ Go [here](./examples/sdk/with-html) for more HTML-based examples
 </body>
 ```
 
-## Alternative way - iframe and jQuery
+## Alternative Ways – iframe and jQuery
 
-In case you're looking for something plain and simple, you're used to working with iframes and jQuery on your website, and for whatever technical reason the aforementioned React-based snippet doesn't work for you, then you might want to stick with our legacy [voucherify.js](https://github.com/rspective/voucherify.js) SDK for the time being. In such case, please refer to the [widget section](https://github.com/rspective/voucherify.js#validation-widget) in the documentation.
+If you're looking for something plain and simple, you're used to working with iframe and jQuery on your website, and for whatever technical reason the React-based snippet doesn't work for you, you may want to stick with the legacy [voucherify.js](https://github.com/rspective/voucherify.js "Deprecated Voucherify JS SDK") SDK for the time being. In this case, refer to the [widget section](https://github.com/rspective/voucherify.js#validation-widget "Deprecated validation widget documentation") in the documentation.
 
 # <a name="migration"></a>↔️ Migration
 
-Check out [MIGRATION GUIDE](/packages/sdk/MIGRATION.md) to learn more about switching to the newest Voucherify JS SDK.
+Check out the [MIGRATION GUIDE](/packages/sdk/MIGRATION.md "Voucherify migration guide") to learn more about switching to the newest Voucherify JS SDK.
 
 # <a name="typescript"></a>🦸 TypeScript
 
-Both Voucherify JS SDK and Voucherify React Widget support TypeScript declarations. We recommend using TypeScript Version 4.2.
+Both the Voucherify JS SDK and Voucherify React Widget support TypeScript declarations. It's recommended to use TypeScript Version 4.2.
 
-You can find TS example in [examples/sdk/with-nodejs-typescript](/examples/sdk/with-nodejs-typescript).
+Explore also [Voucherify TS examples](/examples/sdk/with-nodejs-typescript "TypeScript examples").
 
-# <a name="error-handling"></a>😨 Error handling
+# <a name="error-handling"></a>😨 Error Handling
 
-Voucherify `error` object always has consistent structure, described in details in our [API reference](https://docs.voucherify.io/reference/errors).
+A Voucherify `error` object always has a consistent structure, described in details in [the API reference](https://docs.voucherify.io/reference/errors "API error objects").
 
-If you wish to see code examples for server-side error handling, you can check it here:
-- [Error handling for Node.JS example without TypeScript](/examples/sdk/with-nodejs/server-error-handling.js)
-- [Error handling for Node.JS example with TypeScript](/examples/sdk//with-nodejs-typescript/server-error-handling.ts)
+Check out code examples for server-side error handling:
+- [Error handling for Node.JS example without TypeScript](/examples/sdk/with-nodejs/server-error-handling.js "Server error handling without TypeScript")
+- [Error handling for Node.JS example with TypeScript](/examples/sdk//with-nodejs-typescript/server-error-handling.ts "Server error handling with TypeScript")
 
-Structure / typing for error returned from Voucherify API can be seen here:
+Also, see the structure / typing for error returned from Voucherify API:
 - [VoucherifyError class](/packages/sdk/src/VoucherifyError.ts)
 
-If you wish to receive original `AxiosError` when `VoucherifyError` is thrown then you need to explicitly set `exposeErrorCause` property to `true` when creating instance of `VouchierfyClient`, ie:
+If you want to receive an original `AxiosError` when a `VoucherifyError` is thrown, you need to explicitly set the `exposeErrorCause` property to `true` when creating the instance of `VouchierfyClient`:
 
-```
+```javascript
 const voucherify = VoucherifyServerSide({
 	applicationId: 'APPLICATION-ID',
 	secretKey: 'SECRET-KEY',
@@ -141,33 +139,34 @@ const voucherify = VoucherifyServerSide({
 })
 ```
 
-Original `AxiosError` will be available under `cause` property of `VoucherifyError`
+The original `AxiosError` will be available under `cause` property of `VoucherifyError`.
 
 # <a name="legacy"></a>👴 Legacy Voucherify JS SDKs
 
-Legacy client-side Voucherify JS SDK is available here: [voucherify.js](https://github.com/rspective/voucherify.js).
-
-Legacy server-side Voucherify JS SDK is available here: [voucherify-nodejs-sdk](https://github.com/voucherifyio/voucherify-nodejs-sdk).
+You can always visit legacy Voucherify JS SDKs:
+- Client-side Voucherify JS SDK: [voucherify.js](https://github.com/rspective/voucherify.js "Deprecated client-side Voucherify JS SDK").
+- Server-side Voucherify JS SDK: [voucherify-nodejs-sdk](https://github.com/voucherifyio/voucherify-nodejs-sdk "Deprecated server-side Voucherify JS SDK").
 
 # <a name="contributing"></a>🛠️ Contributing
 
-Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-nodejs-sdk/issues).
+Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/voucherify-js-sdk/issues "Add issue to Voucherify JS SDK").
 
-Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/CONTRIBUTING.md)
+Read more about how to Contribute to Voucherify JS SDK by visiting [CONTRIBUTING.md](/CONTRIBUTING.md "Learn how to contribute").
 
 # <a name="changelog"></a>🗄️ Changelog
 
-Voucherify React Widget CHANGELOG can be found [here](/packages/react-widget/CHANGELOG.md).
+[Voucherify JS SDK CHANGELOG](/packages/sdk/CHANGELOG.md "Voucherify JS SDK Changelog").
 
-Voucherify JS SDK CHANGELOG can be found [here](/packages/sdk/CHANGELOG.md).
+[Voucherify React Widget CHANGELOG](/packages/react-widget/CHANGELOG.md "Voucherify React Widget CHANGELOG").
 
 # <a name="tests"></a>🧪 SDK Tests
 
-**Sdk** tests are located in `packages/sdk/tests` and uses **real** calls to voucherify API via `client.ts`.
-```js
-// add this in your test
+**SDK** tests are located in [a test folder](/packages/sdk/test/) and use **real** calls to Voucherify API via `client.ts`.
+```javascript
+// add this to your test
 import { voucherifyClient as client } from './client'
 ```
-In order to run **sdk tests** you need to copy `packages/sdk/.env.example` to `packages/sdk/.env` and fill the file with your credentials.
 
-In order **to run** sdk tests please go to `packages/sdk` folder and run `yarn test`
+In order to run **SDK tests**, you need to copy `packages/sdk/.env.example` to `packages/sdk/.env` and fill the file with your credentials.
+
+In order **to run** SDK tests, go to the `packages/sdk` folder and run `yarn test`.
