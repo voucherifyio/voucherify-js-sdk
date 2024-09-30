@@ -689,13 +689,18 @@
 				<p><code>params</code> argument is consistent with <code>client.customers.list()</code> method.</p>
 				<p>You can optionally define scrolling cursor based on customer creation date using property <code>starting_after</code>. By default returned customers are in descending order, if you want to change it to ascending define <code>order</code> equal to <code>created_at</code>.</p>
 				<p>Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.</p>
-				<a href="#update-customer39s-consents" id="update-customer39s-consents" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/update-customers-consents">Update Customer&#39;s Consents</a></h4>
+				<a href="#update-customer39s-consents---deprecated" id="update-customer39s-consents---deprecated" style="color: inherit; text-decoration: none;">
+					<h4>Update Customer&#39;s Consents - Deprecated</h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">updateConsents</span><span style="color: #000000">(</span><span style="color: #001080">customer</span><span style="color: #000000">, </span><span style="color: #001080">consents</span><span style="color: #000000">)</span>
 </code></pre>
-				<a href="#list-customers-activities" id="list-customers-activities" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/get-customer-activities">List Customers Activities</a></h4>
+				<a href="#list-customer39s-activity" id="list-customer39s-activity" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://docs.voucherify.io/reference/list-customer-activity">List Customer&#39;s Activity</a></h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listActivity</span><span style="color: #000000">(</span><span style="color: #001080">customerIdOrSourceId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#list-customers-activities---deprecated---use-listactivity" id="list-customers-activities---deprecated---use-listactivity" style="color: inherit; text-decoration: none;">
+					<h4>List Customers Activities - Deprecated - use listActivity</h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listActivities</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">)</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listActivities</span><span style="color: #000000">(</span><span style="color: #001080">customerId</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
@@ -721,16 +726,12 @@
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">customers</span><span style="color: #000000">.</span><span style="color: #795E26">listRedeemables</span><span style="color: #000000">(</span><span style="color: #001080">id</span><span style="color: #000000">, </span><span style="color: #001080">params</span><span style="color: #000000">)</span>
 </code></pre>
 				<hr>
-				<a href="#consents" id="consents" style="color: inherit; text-decoration: none;">
-					<h3>Consents</h3>
+				<a href="#consents---deprecated" id="consents---deprecated" style="color: inherit; text-decoration: none;">
+					<h3>Consents - Deprecated</h3>
 				</a>
 				<p>Methods are provided within <code>client.consents.*</code> namespace.</p>
-				<ul>
-					<li><a href="#get-consents">Get Consents</a></li>
-				</ul>
-				<p>You can <a href="#update-customers-consents">update Customer&#39;s consents</a> in <code>client.customer.*</code> namespace.</p>
-				<a href="#get-consents" id="get-consents" style="color: inherit; text-decoration: none;">
-					<h4><a href="https://docs.voucherify.io/reference/get-consents">Get Consents</a></h4>
+				<a href="#get-consents---deprecated" id="get-consents---deprecated" style="color: inherit; text-decoration: none;">
+					<h4>Get Consents - Deprecated</h4>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">consents</span><span style="color: #000000">.</span><span style="color: #795E26">list</span><span style="color: #000000">()</span>
 </code></pre>
@@ -1759,6 +1760,12 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/CustomerActivitiesListResponse.html" class="tsd-kind-icon">Customer<wbr>Activities<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomerActivityListQueryParams.html" class="tsd-kind-icon">Customer<wbr>Activity<wbr>List<wbr>Query<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/CustomerActivityListResponse.html" class="tsd-kind-icon">Customer<wbr>Activity<wbr>List<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/CustomerObject.html" class="tsd-kind-icon">Customer<wbr>Object</a>

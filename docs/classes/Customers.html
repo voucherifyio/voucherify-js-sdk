@@ -93,6 +93,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#importCSV" class="tsd-kind-icon">importCSV</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#list" class="tsd-kind-icon">list</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#listActivities" class="tsd-kind-icon">list<wbr>Activities</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#listActivity" class="tsd-kind-icon">list<wbr>Activity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#listRedeemables" class="tsd-kind-icon">list<wbr>Redeemables</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#scroll" class="tsd-kind-icon">scroll</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="Customers.html#update" class="tsd-kind-icon">update</a></li>
@@ -303,8 +304,8 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference/get-customer-activities">https://docs.voucherify.io/reference/get-customer-activities</a></p>
+									<dt>deprecated</dt>
+									<dd><p>This method is deprecated in favor of the <code>listActivity</code> method. We’re removing this method in next major version.</p>
 									</dd>
 								</dl>
 							</div>
@@ -318,6 +319,36 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/CustomerActivitiesListResponse.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerActivitiesListResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listActivity" class="tsd-anchor"></a>
+					<h3>list<wbr>Activity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Activity<span class="tsd-signature-symbol">(</span>customerIdOrSourceId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/CustomerActivityListQueryParams.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerActivityListQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/CustomerActivityListResponse.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerActivityListResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://docs.voucherify.io/reference/list-customer-activity">https://docs.voucherify.io/reference/list-customer-activity</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>customerIdOrSourceId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/CustomerActivityListQueryParams.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerActivityListQueryParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/CustomerActivityListResponse.html" class="tsd-signature-type" data-tsd-kind="Interface">CustomerActivityListResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -421,8 +452,8 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="https://docs.voucherify.io/reference/update-customers-consents">https://docs.voucherify.io/reference/update-customers-consents</a></p>
+									<dt>deprecated</dt>
+									<dd><p>This method is deprecated. We’re removing this method in next major version.</p>
 									</dd>
 								</dl>
 							</div>
@@ -533,6 +564,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Customers.html#listActivities" class="tsd-kind-icon">list<wbr>Activities</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="Customers.html#listActivity" class="tsd-kind-icon">list<wbr>Activity</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="Customers.html#listRedeemables" class="tsd-kind-icon">list<wbr>Redeemables</a>
