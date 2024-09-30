@@ -729,13 +729,19 @@ You can optionally define scrolling cursor based on customer creation date using
 
 Keep in mind this operation may drain your API call limits fairly quickly - each api call fetches 100 customers. So if you have 100.000 customers, you will use 1000 API calls.
 
-#### [Update Customer's Consents](https://docs.voucherify.io/reference/update-customers-consents)
+#### Update Customer's Consents - Deprecated
 
 ```javascript
 client.customers.updateConsents(customer, consents)
 ```
 
-#### [List Customers Activities](https://docs.voucherify.io/reference/get-customer-activities)
+#### [List Customer's Activity](https://docs.voucherify.io/reference/list-customer-activity)
+
+```javascript
+client.customers.listActivity(customerIdOrSourceId, params)
+```
+
+#### List Customers Activities - Deprecated - use listActivity
 
 ```javascript
 client.customers.listActivities(customerId)
@@ -768,15 +774,11 @@ client.customers.listRedeemables(id, params)
 
 ---
 
-### Consents
+### Consents - Deprecated
 
 Methods are provided within `client.consents.*` namespace.
 
-- [Get Consents](#get-consents)
-
-You can [update Customer's consents](#update-customers-consents) in `client.customer.*` namespace.
-
-#### [Get Consents](https://docs.voucherify.io/reference/get-consents)
+#### Get Consents - Deprecated
 
 ```javascript
 client.consents.list()

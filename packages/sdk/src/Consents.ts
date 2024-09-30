@@ -6,7 +6,7 @@ export class Consents {
 	constructor(private client: RequestController) {}
 
 	/**
-	 * @see https://docs.voucherify.io/reference/get-consents
+	 * @deprecated This method is deprecated. We’re removing this method in next major version.
 	 */
 	public list() {
 		return this.client.get<T.ConsentsListResponse>('/consents')
