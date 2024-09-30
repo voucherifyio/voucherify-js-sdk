@@ -103,14 +103,22 @@ class Customers {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/update-customers-consents
+	 * @see https://docs.voucherify.io/reference/list-customer-activity
+	 */
+	public listActivity(customerIdOrSourceId: string, params?: T.CustomerActivityListQueryParams) {
+		return this.client.get<T.CustomerActivityListResponse>(
+			`/customers/${encode(customerIdOrSourceId)}/activity`,
+			params,
+		)
+	}
+	/**
+	 * @deprecated This method is deprecated. We’re removing this method in next major version.
 	 */
 	public updateConsents(idOrSourceId: string, consents: T.CustomersUpdateConsentsBody) {
 		return this.client.put<undefined>(`/customers/${encode(idOrSourceId)}/consents`, consents)
 	}
-
 	/**
-	 * @see https://docs.voucherify.io/reference/get-customer-activities
+	 * @deprecated This method is deprecated in favor of the `listActivity` method. We’re removing this method in next major version.
 	 */
 	public listActivities(customerId: string, params?: T.CustomerActivitiesListQueryParams) {
 		return this.client.get<T.CustomerActivitiesListResponse>(`/customers/${encode(customerId)}/activities`, params)

@@ -6,6 +6,26 @@ import { CustomerRequest, DiscountVouchersTypesEnum, DistributionsPublicationsCr
 jest.setTimeout(15000)
 
 describe('Customers API', () => {
+	it('should list customer activity of newly created and updated user', async () => {
+		const customerSourceId = generateRandomString()
+		await client.customers.create({ source_id: customerSourceId }) //'customer.created' event
+		await client.customers.update({ source_id: customerSourceId, name: generateRandomString(), metadata: { xxx: 1 } }) //'customer.updated' event
+		let moreStartingAfterId: string | undefined
+		do {
+			const result = await client.customers.listActivity(customerSourceId, {
+				limit: 1,
+				starting_after_id: moreStartingAfterId,
+			})
+			result.data.forEach(data => expect(data.data).toBeDefined())
+			moreStartingAfterId = result.more_starting_after
+			if (result.has_more) {
+				expect(moreStartingAfterId).not.toEqual(undefined)
+			} else {
+				expect(moreStartingAfterId).toEqual(undefined)
+			}
+		} while (moreStartingAfterId)
+	})
+
 	it('should import customer via csv file', async () => {
 		const customerSourceId = generateRandomString()
 		await generateCustomerCSV(customerSourceId)

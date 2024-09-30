@@ -107,6 +107,26 @@ export interface CustomersCommonListResponse {
 	has_more?: boolean
 }
 
+export interface CustomerActivityListQueryParams {
+	limit?: number //min 1, max 100
+	order?: 'created_at' | '-created_at'
+	starting_after_id?: string
+	campaign_type?: 'LOYALTY_PROGRAM' | 'PROMOTION' | 'DISCOUNT_COUPONS' | 'GIFT_VOUCHERS' | 'REFERRAL_PROGRAM'
+	campaign_id?: string
+	category?: 'ACTION' | 'EFFECT'
+	type?: string
+	start_date?: string //ISO format date
+	end_date?: string //ISO format date
+}
+
+export interface CustomerActivityListResponse {
+	object: 'list'
+	data_ref: 'data'
+	data: Record<string, unknown>[]
+	has_more: boolean
+	more_starting_after?: string
+}
+
 export interface CustomerActivitiesListQueryParams {
 	limit?: number
 	order?: 'created_at' | '-created_at'

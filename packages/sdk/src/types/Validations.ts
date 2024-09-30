@@ -90,8 +90,8 @@ export interface ValidationValidateStackableResponse {
 	session?: ValidationSessionResponse
 	order?: OrdersCreateResponse
 	redeemables?: StackableRedeemableResponse[]
-	skipped_redeemables?: StackableRedeemableSkippedResponse
-	inapplicable_redeemables?: StackableRedeemableInapplicableResponse
+	skipped_redeemables?: StackableRedeemableSkippedResponse[]
+	inapplicable_redeemables?: StackableRedeemableInapplicableResponse[]
 	stacking_rules: ValidationsStackingRules
 }
 
