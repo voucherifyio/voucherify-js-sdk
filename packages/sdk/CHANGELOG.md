@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.8.0
+
+### Minor Changes
+
+- [`2ddd6ec`](https://github.com/voucherifyio/voucherify-js-sdk/commit/2ddd6ec688f3dbc35b301e05f0fa5f6d20bdc410) [#277](https://github.com/voucherifyio/voucherify-js-sdk/pull/277) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Added support for `v1/customers/{customerId}/activity` (method `listActivity`) and fix type `ValidationValidateStackableResponse`
+
 ## 2.7.4
 
 ### Patch Changes
