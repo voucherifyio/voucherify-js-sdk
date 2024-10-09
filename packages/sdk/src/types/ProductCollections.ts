@@ -70,12 +70,18 @@ export interface DynamicProductCollectionBase {
 
 export type ProductCollection = ProductCollectionBase & ProductCollectionIdentity & ProductCollectionSaved
 
-export type Filter = {
-	junction: Junction
-} & Partial<Record<AllowedFiltersKeys, { conditions: Partial<Record<FiltersCondition, unknown>> }>>
+export type Filter = Partial<
+	Record<string, Junction | { conditions: Partial<Record<FiltersCondition, unknown>> }>
+> /*
+junction: Junction;
+'id'| 'name'| 'attributes'| 'source_id'| 'price'| 'image_url'| 'product_id'| 'skus'| 'created_at'| 'updated_at'| 'object' | `metadata.${string}`: { conditions: Partial<Record<FiltersCondition, unknown>> }
+*/
 
 export declare type Junction = 'and' | 'AND' | 'or' | 'OR'
 
+/**
+ * @deprecated
+ */
 export type AllowedFiltersKeys =
 	| 'id'
 	| 'name'

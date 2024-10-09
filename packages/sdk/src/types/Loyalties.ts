@@ -602,6 +602,11 @@ export interface LoyaltiesGetPointsExpirationResponseBody {
 
 export interface LoyaltiesListCardTransactionsRequestQuery {
 	limit?: number
+	starting_after_id?: string
+	order?: 'id' | '-id' // default -id
+	/**
+	 * @deprecated Use starting_after_id
+	 */
 	page?: number
 }
 
@@ -610,6 +615,7 @@ export interface LoyaltiesListCardTransactionsResponseBody {
 	data_ref: 'data'
 	data: LoyaltyCardTransaction[]
 	has_more: boolean
+	more_starting_after?: string
 }
 
 export type LoyaltiesExportCardTransactionsRequestBody = VouchersExportTransactionsRequestBody
@@ -709,13 +715,6 @@ export interface LoyaltiesGetPointsExpirationResponseBody {
 export interface LoyaltiesListCardTransactionsRequestQuery {
 	limit?: number
 	page?: number
-}
-
-export interface LoyaltiesListCardTransactionsResponseBody {
-	object: 'list'
-	data_ref: 'data'
-	data: LoyaltyCardTransaction[]
-	has_more: boolean
 }
 
 export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody

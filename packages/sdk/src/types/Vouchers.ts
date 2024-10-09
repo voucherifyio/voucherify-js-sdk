@@ -388,6 +388,11 @@ export type VoucherTransactionsExportFields =
 // List transactions
 export interface VouchersListTransactionsRequestQuery {
 	limit?: number
+	starting_after_id?: string
+	order?: 'id' | '-id' // default -id
+	/**
+	 * @deprecated Use starting_after_id
+	 */
 	page?: number
 }
 
@@ -396,6 +401,7 @@ export interface VouchersListTransactionsResponseBody {
 	data_ref: 'data'
 	data: VoucherTransaction[]
 	has_more: boolean
+	more_starting_after?: string
 }
 
 // Export transactions
