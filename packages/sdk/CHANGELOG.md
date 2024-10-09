@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.8.1
+
+### Patch Changes
+
+- [`a9ba013`](https://github.com/voucherifyio/voucherify-js-sdk/commit/a9ba013062c560a3a663b1f219f2dcb7ae9a8a7e) [#280](https://github.com/voucherifyio/voucherify-js-sdk/pull/280) Thanks [@p-zielinski](https://github.com/p-zielinski)! - TS fixes (VouchersListTransactionsRequestQuery, LoyaltiesListCardTransactionsRequestQuery, ProductCollectionsCreateRequestBody) - backwards compatible
+
 ## 2.8.0
 
 ### Minor Changes
