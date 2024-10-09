@@ -159,4 +159,12 @@ describe('Product Collections API', () => {
 			} as ProductCollectionsCreateResponseBody),
 		)
 	})
+
+	it('should create AUTO_UPDATE collection based on product metadata', async () => {
+		await client.productCollections.create({
+			name: 'xxx',
+			type: 'AUTO_UPDATE',
+			filter: { junction: 'AND', 'metadata.isAwesome': { conditions: { $is: [true] } } },
+		})
+	})
 })
