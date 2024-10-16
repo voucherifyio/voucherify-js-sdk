@@ -52,7 +52,7 @@ describe('Vouchers API', () => {
 			}
 		})
 		it('should return all the required fields, the `filters` object and should not return `order` and `fields` if they were not passed in request body', async () => {
-			const code = (await generateGiftVoucher()).code
+			const { code } = await generateGiftVoucher()
 			const response = await client.vouchers.exportTransactions(code, { parameters: {} })
 			expect(typeof response.parameters.filters).toBe('object')
 			expect(response.parameters).not.toContain('order')

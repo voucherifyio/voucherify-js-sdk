@@ -158,8 +158,19 @@ export class Loyalties {
 		)
 	}
 	/**
-	 * @see https://docs.voucherify.io/reference/get-member-activities
-	 * @see https://docs.voucherify.io/reference/get-member-activities-1
+	 * @see https://docs.voucherify.io/reference/list-member-activity
+	 * @see https://docs.voucherify.io/reference/list-member-activity-1
+	 */
+	public listMemberActivity(campaignId: string | null, memberId: string, params?: T.LoyaltiesListMemberActivityParams) {
+		return this.client.get<T.LoyaltiesListMemberActivityResponse>(
+			campaignId
+				? `/loyalties/${encode(campaignId)}/members/${memberId}/activity`
+				: `/loyalties/members/${memberId}/activity`,
+			params,
+		)
+	}
+	/**
+	 * @deprecated This method is deprecated in favor of the `listMemberActivity` method. We’re removing this method in next major version.
 	 */
 	public getMemberActivities(campaignId: string | null, memberId: string) {
 		return this.client.get<T.LoyaltiesGetMemberActivitiesResponse>(
