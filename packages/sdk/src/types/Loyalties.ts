@@ -320,6 +320,26 @@ export type LoyaltiesCreateMemberResponse = LoyaltiesVoucherResponse
 
 export type LoyaltiesGetMemberResponse = LoyaltiesCreateMemberResponse
 
+export type LoyaltiesListMemberActivityParams = {
+	order?: 'created_at' | '-created_at'
+	starting_after_id?: string
+	limit?: number //max 100
+}
+
+export type LoyaltiesListMemberActivityResponse = {
+	object: 'list'
+	data_ref: 'data'
+	data: {
+		id: string
+		type: string
+		data: any
+		created_at: string
+		group_id: string
+	}[]
+	has_more: boolean
+	more_starting_after?: string
+}
+
 export interface LoyaltiesGetMemberActivitiesResponse {
 	object: 'list'
 	data_ref: 'activities'
@@ -712,11 +732,6 @@ export interface LoyaltiesGetPointsExpirationResponseBody {
 	total: number
 }
 
-export interface LoyaltiesListCardTransactionsRequestQuery {
-	limit?: number
-	page?: number
-}
-
 export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {
@@ -904,6 +919,7 @@ export interface LoyaltyCardTransaction {
 			type: 'loyalty_card'
 			total: number
 			object: 'balance'
+			operation_type: 'MANUAL' | 'AUTOMATIC'
 			points: number
 			balance: number
 			related_object: {

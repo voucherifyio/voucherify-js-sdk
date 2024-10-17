@@ -159,7 +159,7 @@ describe('Loyalties API', () => {
 		} as LoyaltiesAddPointsResponse)
 	})
 
-	it('Should list members activities', async () => {
+	it('Should list member transactions', async () => {
 		const memberCardTransactions = await client.loyalties.listCardTransactions(loyaltiesMember.code, null)
 		expect(memberCardTransactions).toEqual({
 			object: 'list',
@@ -174,14 +174,15 @@ describe('Loyalties API', () => {
 					reason: null,
 					type: 'POINTS_ADDITION',
 					details: {
-						balance: expect.objectContaining({
+						balance: {
 							type: 'loyalty_card',
 							total: startBalance + addPoints,
+							operation_type: 'MANUAL',
 							object: 'balance',
 							points: addPoints,
 							balance: startBalance + addPoints,
 							related_object: { id: expect.stringMatching(/^v_.*/), type: 'voucher' },
-						}),
+						},
 					},
 					related_transaction_id: null,
 					created_at: expect.stringMatching(isoRegex),
@@ -190,6 +191,22 @@ describe('Loyalties API', () => {
 			has_more: false,
 			// use as `type` for typescript check
 		} as LoyaltiesListCardTransactionsResponseBody)
+	})
+
+	it('Should list member activity', async () => {
+		const listMemberActivityResponse = await client.loyalties.listMemberActivity(null, loyaltiesMember.code, {
+			limit: 1,
+		})
+		expect(listMemberActivityResponse).toEqual(
+			expect.objectContaining({
+				object: 'list',
+				data_ref: 'data',
+				has_more: true,
+				more_starting_after: expect.stringMatching(/.*/),
+			}),
+		)
+		expect(listMemberActivityResponse.data.length).toEqual(1)
+		expect(typeof listMemberActivityResponse.data[0].type).toEqual('string')
 	})
 
 	it('Should generate and update campaign stack', async () => {
