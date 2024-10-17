@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.9.0
+
+### Minor Changes
+
+- [`deb0b79`](https://github.com/voucherifyio/voucherify-js-sdk/commit/deb0b79b0e3da2ec5ad9457ba505ec2818f06347) [#282](https://github.com/voucherifyio/voucherify-js-sdk/pull/282) Thanks [@p-zielinski](https://github.com/p-zielinski)! - Support for new endpoints: List Member Activity
+
 ## 2.8.1
 
 ### Patch Changes
