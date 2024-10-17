@@ -732,13 +732,6 @@ export interface LoyaltiesGetPointsExpirationResponseBody {
 	total: number
 }
 
-export interface LoyaltiesListCardTransactionsResponseBody {
-	object: 'list'
-	data_ref: 'data'
-	data: LoyaltyCardTransaction[]
-	has_more: boolean
-}
-
 export type LoyaltiesExportCardTransactionsResponseBody = VouchersExportTransactionsResponseBody
 
 export interface LoyaltiesAddOrRemoveCardBalanceRequestBody {

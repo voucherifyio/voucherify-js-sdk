@@ -194,8 +194,18 @@ describe('Loyalties API', () => {
 	})
 
 	it('Should list member activity', async () => {
-		const listMemberActivityResponse = await client.loyalties.listMemberActivity(null, loyaltiesMember.code)
-		expect(listMemberActivityResponse.data.length).toBeGreaterThan(0)
+		const listMemberActivityResponse = await client.loyalties.listMemberActivity(null, loyaltiesMember.code, {
+			limit: 1,
+		})
+		expect(listMemberActivityResponse).toEqual(
+			expect.objectContaining({
+				object: 'list',
+				data_ref: 'data',
+				has_more: true,
+				more_starting_after: expect.stringMatching(/.*/),
+			}),
+		)
+		expect(listMemberActivityResponse.data.length).toEqual(1)
 		expect(typeof listMemberActivityResponse.data[0].type).toEqual('string')
 	})
 
