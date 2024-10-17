@@ -26,6 +26,7 @@ export function useVoucherifyValidateInputs() {
 	const [inputState, setInputState] = useState(getEmptyInputState)
 
 	const onInputChange = useCallback(function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+		event.persist()
 		const name = event.target.name as keyof VoucherifyValidateInputs
 		setInput(prev => ({ ...prev, [name]: event.target.value }))
 	}, [])
