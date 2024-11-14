@@ -1,6 +1,6 @@
 import { OrdersCreateResponse, OrdersCreate } from './Orders'
 import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
-import { CustomerObject, CustomersCreateBody, SimpleCustomer } from './Customers'
+import { CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
