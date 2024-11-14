@@ -1,6 +1,6 @@
 import { OrdersCreateResponse, OrdersCreate } from './Orders'
 import { RewardsCreateResponse, RewardRedemptionParams } from './Rewards'
-import { CustomersCreateBody, SimpleCustomer } from './Customers'
+import { CustomerObject, CustomersCreateBody, SimpleCustomer } from './Customers'
 import { VouchersResponse } from './Vouchers'
 import { GiftRedemptionParams } from './Gift'
 import { ValidationSessionParams, ValidationSessionReleaseParams } from './ValidateSession'
@@ -169,8 +169,48 @@ export interface RedemptionsRedeemStackableParams {
 	metadata?: Record<string, any>
 }
 
-export type RedemptionsRedeemStackableRedemptionResult = RedemptionsRedeemResponse & {
-	redemption: string
+export type RelatedRedemptionObject = {
+	rollbacks: {
+		id: string
+		date: string
+	}[]
+	redemptions: {
+		id: string
+		date: string
+	}[]
+}
+
+export type RedemptionsRedeemStackableRedemptionResult = {
+	id: string
+	object: 'redemption'
+	date: string
+	customer_id?: string
+	tracking_id?: string
+	order?: OrdersCreateResponse
+	metadata?: Record<string, any>
+	result: 'SUCCESS' | 'FAILURE'
+	voucher?: VouchersResponse
+	customer?: SimpleCustomer
+	redemption?: string
+	reward?: RewardsCreateResponse
+	related_object_type: 'voucher' | 'promotion_tier' | 'redemption'
+	related_object_id: string
+	amount: number
+	channel: {
+		channel_id: string
+		channel_type: 'USER' | 'API' | 'AUTO_REDEEM'
+	}
+	gift?: {
+		amount: number
+	}
+	loyalty_card?: {
+		points: number
+	}
+	status: 'SUCCEEDED' | 'FAILED' | 'ROLLED_BACK'
+	promotion_tier?: PromotionTierRedeemDetailsSimple | PromotionTierRedeemDetails
+	failure_code?: string
+	failure_message?: string
+	related_redemptions: RelatedRedemptionObject
 }
 
 export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
@@ -209,7 +249,7 @@ export interface RedemptionsRedeemStackableResponse {
 }
 
 export interface RedemptionsRollbackStackableResponse {
-	rollbacks: RedemptionsRedeemStackableRedemptionResult[]
+	rollbacks: (RedemptionsRedeemStackableRedemptionResult & { reason: string })[]
 	parent_rollback: {
 		id: string
 		date: string
