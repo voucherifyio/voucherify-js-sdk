@@ -171,7 +171,7 @@ export interface RedemptionsRedeemStackableParams {
 
 export type RedemptionsRedeemStackableRedemptionResult = {
 	id: string
-	object: 'redemption'
+	object: 'redemption' | 'redemption_rollback'
 	date: string
 	customer_id?: string
 	tracking_id?: string
@@ -194,16 +194,20 @@ export type RedemptionsRedeemStackableRedemptionResult = {
 	failure_message?: string
 }
 
-export type RedemptionsRedeemStackableOrderResponse = OrdersCreateResponse & {
+export type RedemptionsRedeemStackableOrderResponse = Omit<OrdersCreateResponse, 'source_id'> & {
+	source_id: string | null
+	customer_id: string | null
+	referrer_id: string | null
 	redemptions?: Record<
 		string,
 		{
 			date: string
 			rollback_id?: string
 			rollback_date?: string
-			related_object_type: 'redemption'
+			related_object_type: 'redemption' | 'voucher' | 'promotion_tier'
 			related_object_id: string
-			stacked: string[]
+			related_object_parent_id?: string
+			stacked?: string[]
 			rollback_stacked?: string[]
 		}
 	>
@@ -217,15 +221,15 @@ export interface RedemptionsRedeemStackableResponse {
 		date: string
 		customer_id?: string
 		tracking_id?: string
-		metadata?: Record<string, any>
+		metadata?: Record<string, any> | null
 		result: 'SUCCESS' | 'FAILURE'
 		order?: RedemptionsRedeemStackableOrderResponse
 		customer?: SimpleCustomer
 		status: 'SUCCEEDED' | 'FAILED'
 	}
 	order?: RedemptionsRedeemStackableOrderResponse
-	skipped_redeemables?: StackableRedeemableSkippedResponse
-	inapplicable_redeemables?: StackableRedeemableInapplicableResponse
+	skipped_redeemables?: StackableRedeemableSkippedResponse[]
+	inapplicable_redeemables?: StackableRedeemableInapplicableResponse[]
 }
 
 export interface RedemptionsRollbackStackableResponse {
