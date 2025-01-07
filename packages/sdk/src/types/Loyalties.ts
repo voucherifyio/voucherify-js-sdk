@@ -269,6 +269,8 @@ export interface LoyaltiesVoucherResponse {
 	loyalty_card: {
 		points: number
 		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: number
 	}
 	start_date?: string
 	expiration_date?: string
