@@ -1745,7 +1745,7 @@ Check our [MIGRATION GUIDE](./MIGRATION.md) to learn more about switching to our
 
 Voucherify JS SDK includes TypeScript declarations for our latest API. We recommend using TypeScript Version 4.2.
 
-You can find TS example in [examples/with-nodejs-typescript](/examples/with-nodejs).
+Explore also [Voucherify TS examples](../../examples/sdk/with-nodejs-typescript "TypeScript examples").
 
 # <a name="error-handling"></a>😨 Error handling
 
