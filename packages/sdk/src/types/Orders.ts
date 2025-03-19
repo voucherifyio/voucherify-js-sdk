@@ -163,7 +163,7 @@ export type OrderCalculated = {
 	items_applied_discount_amount?: number
 	total_applied_discount_amount?: number
 	items?: OrderItemCalculated[]
-	metadata: Record<string, unknown>
+	metadata?: Record<string, unknown>
 	customer?: CustomerId | CustomerWithSummaryLoyaltyReferrals
 	customer_id: string | null
 	referrer?: ReferrerId | ReferrerWithSummaryLoyaltyReferrals

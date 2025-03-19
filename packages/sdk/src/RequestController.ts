@@ -35,6 +35,7 @@ export class RequestController {
 
 		this.request = axios.create({
 			baseURL: `${this.baseURL}/${this.basePath}/`,
+			allowAbsoluteUrls: false,
 			headers: this.headers,
 			responseType: 'json',
 		})
