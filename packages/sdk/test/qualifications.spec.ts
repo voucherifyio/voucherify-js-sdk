@@ -92,7 +92,7 @@ describe('Qualifications API', () => {
 								result: {
 									discount: { type: 'AMOUNT', effect: 'APPLY_TO_ORDER', amount_off: 2000, is_dynamic: false },
 								},
-								order: { metadata: {}, customer_id: null, referrer_id: null, object: 'order' },
+								order: { customer_id: null, referrer_id: null, object: 'order' },
 								applicable_to: { data: [], total: 0, data_ref: 'data', object: 'list' },
 								inapplicable_to: { data: [], total: 0, data_ref: 'data', object: 'list' },
 								metadata: {},
