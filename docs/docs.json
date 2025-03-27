@@ -59505,7 +59505,9 @@
 							"name": "metadata",
 							"kind": 1024,
 							"kindString": "Property",
-							"flags": {},
+							"flags": {
+								"isOptional": true
+							},
 							"type": {
 								"type": "reference",
 								"typeArguments": [
