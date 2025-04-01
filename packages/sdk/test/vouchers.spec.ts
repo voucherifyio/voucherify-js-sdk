@@ -4,6 +4,17 @@ import { generateDiscountVoucher } from './utils/generateDiscountVoucher'
 import { generateGiftVoucher } from './utils/generateGiftVoucher'
 
 describe('Vouchers API', () => {
+	describe('Add voucher balance', () => {
+		it('should accept sourde_id and reason as a parameters', async () => {
+			const code = (await generateGiftVoucher()).code
+			const response = await client.vouchers.balance.create(code, {
+				amount: 1000,
+				reason: 'Test reason',
+				source_id: '123',
+			})
+			expect(response).not.toBeNull()
+		})
+	})
 	describe('List Voucher Transactions', () => {
 		it('should return required properties', async () => {
 			const code = (await generateDiscountVoucher()).code
