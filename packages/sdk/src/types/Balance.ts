@@ -1,5 +1,7 @@
 export interface BalanceCreateParams {
 	amount: number
+	source_id?: string
+	reason?: string
 }
 
 export interface BalanceCreateResponse {
