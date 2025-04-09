@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.9.2
+
+### Patch Changes
+
+- [`fe14c58`](https://github.com/voucherifyio/voucherify-js-sdk/commit/fe14c5857f6db5d8b7ebc1f48ffbc07ed5902122) [#291](https://github.com/voucherifyio/voucherify-js-sdk/pull/291) Thanks [@patryksmolarz](https://github.com/patryksmolarz)! - Missing parameters in Add voucher balance endpoint.
+
 ## 2.9.1
 
 ### Patch Changes

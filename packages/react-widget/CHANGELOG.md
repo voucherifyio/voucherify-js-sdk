@@ -1,5 +1,12 @@
 # @voucherify/react-widget
 
+## 2.9.2
+
+### Patch Changes
+
+- Updated dependencies [[`fe14c58`](https://github.com/voucherifyio/voucherify-js-sdk/commit/fe14c5857f6db5d8b7ebc1f48ffbc07ed5902122)]:
+  - @voucherify/sdk@2.9.2
+
 ## 2.9.1
 
 ### Patch Changes
