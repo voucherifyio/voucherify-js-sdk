@@ -194,6 +194,9 @@ describe('Loyalties API', () => {
 	})
 
 	it('Should list member activity', async () => {
+		// Pause to ensure all events are processed
+		await new Promise(resolve => setTimeout(resolve, 2000))
+
 		const listMemberActivityResponse = await client.loyalties.listMemberActivity(null, loyaltiesMember.code, {
 			limit: 1,
 		})
