@@ -291,41 +291,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"id": 2771,
-														"name": "VouchersImport"
-													}
-												],
-												"name": "Partial"
-											},
-											{
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "category"
-													},
-													{
-														"type": "literal",
-														"value": "metadata"
-													},
-													{
-														"type": "literal",
-														"value": "redemption"
-													},
-													{
-														"type": "literal",
-														"value": "additional_info"
-													}
-												]
-											}
-										],
-										"name": "Pick"
+										"id": 1512,
+										"name": "CampaignsAddCertainVoucherParams"
 									},
 									"defaultValue": "{}"
 								}
@@ -335,83 +302,8 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"id": 2621,
-												"name": "VouchersResponse"
-											},
-											{
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "object"
-													},
-													{
-														"type": "literal",
-														"value": "created_at"
-													},
-													{
-														"type": "literal",
-														"value": "active"
-													},
-													{
-														"type": "literal",
-														"value": "type"
-													},
-													{
-														"type": "literal",
-														"value": "category"
-													},
-													{
-														"type": "literal",
-														"value": "start_date"
-													},
-													{
-														"type": "literal",
-														"value": "expiration_date"
-													},
-													{
-														"type": "literal",
-														"value": "metadata"
-													},
-													{
-														"type": "literal",
-														"value": "redemption"
-													},
-													{
-														"type": "literal",
-														"value": "additional_info"
-													},
-													{
-														"type": "literal",
-														"value": "code"
-													},
-													{
-														"type": "literal",
-														"value": "campaign"
-													},
-													{
-														"type": "literal",
-														"value": "discount"
-													},
-													{
-														"type": "literal",
-														"value": "gift"
-													},
-													{
-														"type": "literal",
-														"value": "publish"
-													},
-													{
-														"type": "literal",
-														"value": "assets"
-													}
-												]
-											}
-										],
-										"name": "Pick"
+										"id": 1513,
+										"name": "CampaignsAddVoucherResponse"
 									}
 								],
 								"name": "Promise"
@@ -462,45 +354,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"id": 2771,
-														"name": "VouchersImport"
-													}
-												],
-												"name": "Partial"
-											},
-											{
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "category"
-													},
-													{
-														"type": "literal",
-														"value": "metadata"
-													},
-													{
-														"type": "literal",
-														"value": "code_config"
-													},
-													{
-														"type": "literal",
-														"value": "redemption"
-													},
-													{
-														"type": "literal",
-														"value": "additional_info"
-													}
-												]
-											}
-										],
-										"name": "Pick"
+										"id": 1509,
+										"name": "CampaignsAddVoucherBody"
 									},
 									"defaultValue": "{}"
 								},
@@ -536,83 +391,8 @@
 											},
 											{
 												"type": "reference",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"id": 2621,
-														"name": "VouchersResponse"
-													},
-													{
-														"type": "union",
-														"types": [
-															{
-																"type": "literal",
-																"value": "object"
-															},
-															{
-																"type": "literal",
-																"value": "created_at"
-															},
-															{
-																"type": "literal",
-																"value": "active"
-															},
-															{
-																"type": "literal",
-																"value": "type"
-															},
-															{
-																"type": "literal",
-																"value": "category"
-															},
-															{
-																"type": "literal",
-																"value": "start_date"
-															},
-															{
-																"type": "literal",
-																"value": "expiration_date"
-															},
-															{
-																"type": "literal",
-																"value": "metadata"
-															},
-															{
-																"type": "literal",
-																"value": "redemption"
-															},
-															{
-																"type": "literal",
-																"value": "additional_info"
-															},
-															{
-																"type": "literal",
-																"value": "code"
-															},
-															{
-																"type": "literal",
-																"value": "campaign"
-															},
-															{
-																"type": "literal",
-																"value": "discount"
-															},
-															{
-																"type": "literal",
-																"value": "gift"
-															},
-															{
-																"type": "literal",
-																"value": "publish"
-															},
-															{
-																"type": "literal",
-																"value": "assets"
-															}
-														]
-													}
-												],
-												"name": "Pick"
+												"id": 1513,
+												"name": "CampaignsAddVoucherResponse"
 											}
 										]
 									}
@@ -940,39 +720,8 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"typeArguments": [
-												{
-													"type": "reference",
-													"id": 2771,
-													"name": "VouchersImport"
-												},
-												{
-													"type": "union",
-													"types": [
-														{
-															"type": "literal",
-															"value": "active"
-														},
-														{
-															"type": "literal",
-															"value": "metadata"
-														},
-														{
-															"type": "literal",
-															"value": "redemption"
-														},
-														{
-															"type": "literal",
-															"value": "additional_info"
-														},
-														{
-															"type": "literal",
-															"value": "code"
-														}
-													]
-												}
-											],
-											"name": "Pick"
+											"id": 1515,
+											"name": "CampaignsImportVouchers"
 										}
 									}
 								}
@@ -1146,39 +895,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"id": 1456,
-												"name": "CampaignResponse"
-											},
-											{
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "type"
-													},
-													{
-														"type": "literal",
-														"value": "description"
-													},
-													{
-														"type": "literal",
-														"value": "start_date"
-													},
-													{
-														"type": "literal",
-														"value": "expiration_date"
-													},
-													{
-														"type": "literal",
-														"value": "metadata"
-													}
-												]
-											}
-										],
-										"name": "Pick"
+										"id": 1506,
+										"name": "CampaignsUpdateCampaign"
 									}
 								}
 							],
@@ -1873,17 +1591,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "string"
-											},
-											{
-												"type": "intrinsic",
-												"name": "boolean"
-											}
-										],
-										"name": "Record"
+										"id": 958,
+										"name": "CustomersUpdateConsentsBody"
 									}
 								}
 							],
@@ -2370,8 +2079,8 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 949,
-										"name": "CustomersCreateResponse"
+										"id": 950,
+										"name": "CustomersGetResponse"
 									}
 								],
 								"name": "Promise"
@@ -2769,8 +2478,8 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 949,
-										"name": "CustomersCreateResponse"
+										"id": 957,
+										"name": "CustomersUpdateResponse"
 									}
 								],
 								"name": "Promise"
@@ -2821,17 +2530,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "string"
-											},
-											{
-												"type": "intrinsic",
-												"name": "boolean"
-											}
-										],
-										"name": "Record"
+										"id": 958,
+										"name": "CustomersUpdateConsentsBody"
 									}
 								}
 							],
@@ -9064,35 +8764,35 @@
 															"flags": {},
 															"children": [
 																{
-																	"id": 514,
+																	"id": 515,
 																	"name": "Cache-Control",
 																	"kind": 2048,
 																	"kindString": "Method",
 																	"flags": {}
 																},
 																{
-																	"id": 515,
+																	"id": 512,
 																	"name": "Content-Encoding",
 																	"kind": 2048,
 																	"kindString": "Method",
 																	"flags": {}
 																},
 																{
-																	"id": 513,
+																	"id": 511,
 																	"name": "Content-Length",
 																	"kind": 2048,
 																	"kindString": "Method",
 																	"flags": {}
 																},
 																{
-																	"id": 512,
+																	"id": 514,
 																	"name": "Content-Type",
 																	"kind": 2048,
 																	"kindString": "Method",
 																	"flags": {}
 																},
 																{
-																	"id": 511,
+																	"id": 513,
 																	"name": "Server",
 																	"kind": 2048,
 																	"kindString": "Method",
@@ -9104,11 +8804,11 @@
 																	"title": "Methods",
 																	"kind": 2048,
 																	"children": [
-																		514,
 																		515,
-																		513,
 																		512,
-																		511
+																		511,
+																		514,
+																		513
 																	]
 																}
 															]
@@ -9501,8 +9201,8 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 3035,
-										"name": "RewardsCreateResponse"
+										"id": 3036,
+										"name": "RewardsGetResponse"
 									}
 								],
 								"name": "Promise"
@@ -11086,6 +10786,10 @@
 							}
 						],
 						"name": "AxiosError"
+					},
+					"overwrites": {
+						"type": "reference",
+						"name": "Error.cause"
 					}
 				},
 				{
@@ -11737,115 +11441,8 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"id": 2621,
-												"name": "VouchersResponse"
-											},
-											{
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "object"
-													},
-													{
-														"type": "literal",
-														"value": "id"
-													},
-													{
-														"type": "literal",
-														"value": "created_at"
-													},
-													{
-														"type": "literal",
-														"value": "active"
-													},
-													{
-														"type": "literal",
-														"value": "type"
-													},
-													{
-														"type": "literal",
-														"value": "category"
-													},
-													{
-														"type": "literal",
-														"value": "start_date"
-													},
-													{
-														"type": "literal",
-														"value": "expiration_date"
-													},
-													{
-														"type": "literal",
-														"value": "validity_timeframe"
-													},
-													{
-														"type": "literal",
-														"value": "validity_day_of_week"
-													},
-													{
-														"type": "literal",
-														"value": "metadata"
-													},
-													{
-														"type": "literal",
-														"value": "redemption"
-													},
-													{
-														"type": "literal",
-														"value": "additional_info"
-													},
-													{
-														"type": "literal",
-														"value": "code"
-													},
-													{
-														"type": "literal",
-														"value": "campaign"
-													},
-													{
-														"type": "literal",
-														"value": "discount"
-													},
-													{
-														"type": "literal",
-														"value": "gift"
-													},
-													{
-														"type": "literal",
-														"value": "publish"
-													},
-													{
-														"type": "literal",
-														"value": "assets"
-													},
-													{
-														"type": "literal",
-														"value": "loyalty_card"
-													},
-													{
-														"type": "literal",
-														"value": "is_referral_code"
-													},
-													{
-														"type": "literal",
-														"value": "referrer_id"
-													},
-													{
-														"type": "literal",
-														"value": "holder_id"
-													},
-													{
-														"type": "literal",
-														"value": "updated_at"
-													}
-												]
-											}
-										],
-										"name": "Pick"
+										"id": 2728,
+										"name": "VouchersCreateResponse"
 									}
 								],
 								"name": "Promise"
@@ -12576,15 +12173,15 @@
 						"types": [
 							{
 								"type": "literal",
+								"value": "product"
+							},
+							{
+								"type": "literal",
 								"value": "sku"
 							},
 							{
 								"type": "literal",
 								"value": "products_collection"
-							},
-							{
-								"type": "literal",
-								"value": "product"
 							}
 						]
 					}
@@ -13886,11 +13483,11 @@
 							},
 							{
 								"type": "literal",
-								"value": "updated_at"
+								"value": "-created_at"
 							},
 							{
 								"type": "literal",
-								"value": "-created_at"
+								"value": "updated_at"
 							},
 							{
 								"type": "literal",
@@ -14059,51 +13656,8 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"typeArguments": [
-								{
-									"type": "reference",
-									"id": 2621,
-									"name": "VouchersResponse"
-								},
-								{
-									"type": "union",
-									"types": [
-										{
-											"type": "literal",
-											"value": "object"
-										},
-										{
-											"type": "literal",
-											"value": "created_at"
-										},
-										{
-											"type": "literal",
-											"value": "active"
-										},
-										{
-											"type": "literal",
-											"value": "start_date"
-										},
-										{
-											"type": "literal",
-											"value": "expiration_date"
-										},
-										{
-											"type": "literal",
-											"value": "metadata"
-										},
-										{
-											"type": "literal",
-											"value": "code"
-										},
-										{
-											"type": "literal",
-											"value": "assets"
-										}
-									]
-								}
-							],
-							"name": "Pick"
+							"id": 1097,
+							"name": "ClientSideVoucherListing"
 						}
 					}
 				}
@@ -14921,11 +14475,11 @@
 								"types": [
 									{
 										"type": "literal",
-										"value": "metadata"
+										"value": "source_id"
 									},
 									{
 										"type": "literal",
-										"value": "source_id"
+										"value": "metadata"
 									}
 								]
 							}
@@ -14945,47 +14499,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"typeArguments": [
-								{
-									"type": "reference",
-									"id": 3491,
-									"name": "OrdersItem"
-								},
-								{
-									"type": "union",
-									"types": [
-										{
-											"type": "literal",
-											"value": "source_id"
-										},
-										{
-											"type": "literal",
-											"value": "amount"
-										},
-										{
-											"type": "literal",
-											"value": "sku"
-										},
-										{
-											"type": "literal",
-											"value": "sku_id"
-										},
-										{
-											"type": "literal",
-											"value": "product_id"
-										},
-										{
-											"type": "literal",
-											"value": "quantity"
-										},
-										{
-											"type": "literal",
-											"value": "related_object"
-										}
-									]
-								}
-							],
-							"name": "Pick"
+							"name": "ClientSideItem"
 						}
 					}
 				},
@@ -15115,15 +14629,7 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "MILLISECONDS"
-							},
-							{
-								"type": "literal",
-								"value": "SECONDS"
-							},
-							{
-								"type": "literal",
-								"value": "MINUTES"
+								"value": "DAYS"
 							},
 							{
 								"type": "literal",
@@ -15131,7 +14637,15 @@
 							},
 							{
 								"type": "literal",
-								"value": "DAYS"
+								"value": "MILLISECONDS"
+							},
+							{
+								"type": "literal",
+								"value": "MINUTES"
+							},
+							{
+								"type": "literal",
+								"value": "SECONDS"
 							}
 						]
 					}
@@ -15244,6 +14758,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -15251,11 +14770,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -15410,47 +14924,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"typeArguments": [
-												{
-													"type": "reference",
-													"id": 3491,
-													"name": "OrdersItem"
-												},
-												{
-													"type": "union",
-													"types": [
-														{
-															"type": "literal",
-															"value": "source_id"
-														},
-														{
-															"type": "literal",
-															"value": "amount"
-														},
-														{
-															"type": "literal",
-															"value": "sku"
-														},
-														{
-															"type": "literal",
-															"value": "sku_id"
-														},
-														{
-															"type": "literal",
-															"value": "product_id"
-														},
-														{
-															"type": "literal",
-															"value": "quantity"
-														},
-														{
-															"type": "literal",
-															"value": "related_object"
-														}
-													]
-												}
-											],
-											"name": "Pick"
+											"name": "ClientSideItem"
 										}
 									}
 								},
@@ -17334,6 +16808,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -17341,11 +16820,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -19054,29 +18528,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ORDER"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS_PROPORTIONALLY"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS_BY_QUANTITY"
-							}
-						]
+						"type": "reference",
+						"id": 3848,
+						"name": "DiscountAmountVouchersEffectTypes"
 					}
 				},
 				{
@@ -19123,17 +18577,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ORDER"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS"
-							}
-						]
+						"type": "reference",
+						"id": 3850,
+						"name": "DiscountFixedVouchersEffectTypes"
 					}
 				},
 				{
@@ -19219,17 +18665,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ORDER"
-							},
-							{
-								"type": "literal",
-								"value": "APPLY_TO_ITEMS"
-							}
-						]
+						"type": "reference",
+						"id": 3849,
+						"name": "DiscountPercentVouchersEffectTypes"
 					}
 				},
 				{
@@ -19303,21 +18741,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "ADD_MISSING_ITEMS"
-							},
-							{
-								"type": "literal",
-								"value": "ADD_NEW_ITEMS"
-							},
-							{
-								"type": "literal",
-								"value": "ADD_MANY_ITEMS"
-							}
-						]
+						"type": "reference",
+						"id": 3847,
+						"name": "DiscountUnitVouchersEffectTypes"
 					}
 				},
 				{
@@ -19880,57 +19306,8 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "id"
-							},
-							{
-								"type": "literal",
-								"value": "created_at"
-							},
-							{
-								"type": "literal",
-								"value": "-created_at"
-							},
-							{
-								"type": "literal",
-								"value": "-id"
-							},
-							{
-								"type": "literal",
-								"value": "customer_id"
-							},
-							{
-								"type": "literal",
-								"value": "tracking_id"
-							},
-							{
-								"type": "literal",
-								"value": "voucher_code"
-							},
-							{
-								"type": "literal",
-								"value": "-voucher_code"
-							},
-							{
-								"type": "literal",
-								"value": "-tracking_id"
-							},
-							{
-								"type": "literal",
-								"value": "-customer_id"
-							},
-							{
-								"type": "literal",
-								"value": "channel"
-							},
-							{
-								"type": "literal",
-								"value": "-channel"
-							}
-						]
+						"type": "reference",
+						"name": "OrderType"
 					}
 				},
 				{
@@ -20180,41 +19557,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "customer.segment.entered"
-							},
-							{
-								"type": "literal",
-								"value": "order.paid"
-							},
-							{
-								"type": "literal",
-								"value": "custom_event"
-							},
-							{
-								"type": "literal",
-								"value": "customer.loyalty.tier.upgraded"
-							},
-							{
-								"type": "literal",
-								"value": "customer.loyalty.tier.downgraded"
-							},
-							{
-								"type": "literal",
-								"value": "customer.loyalty.tier.prolonged"
-							},
-							{
-								"type": "literal",
-								"value": "customer.loyalty.tier.joined"
-							},
-							{
-								"type": "literal",
-								"value": "customer.loyalty.tier.left"
-							}
-						]
+						"type": "reference",
+						"id": 2485,
+						"name": "EarningRuleEvent"
 					}
 				},
 				{
@@ -20257,43 +19602,8 @@
 							},
 							{
 								"type": "reference",
-								"id": 2490,
-								"name": "EarningRuleProportionalOrderAmount"
-							},
-							{
-								"type": "reference",
-								"id": 2499,
-								"name": "EarningRuleProportionalOrderTotalAmount"
-							},
-							{
-								"type": "reference",
-								"id": 2508,
-								"name": "EarningRuleProportionalOrderMetadata"
-							},
-							{
-								"type": "reference",
-								"id": 2520,
-								"name": "EarningRuleProportionalOrderItemsQuantity"
-							},
-							{
-								"type": "reference",
-								"id": 2531,
-								"name": "EarningRuleProportionalOrderItemsAmount"
-							},
-							{
-								"type": "reference",
-								"id": 2542,
-								"name": "EarningRuleProportionalOrderItemsSubtotalAmount"
-							},
-							{
-								"type": "reference",
-								"id": 2553,
-								"name": "EarningRuleProportionalCustomerMetadata"
-							},
-							{
-								"type": "reference",
-								"id": 2563,
-								"name": "EarningRuleProportionalCustomEvent"
+								"id": 2518,
+								"name": "EarningRuleProportional"
 							}
 						]
 					}
@@ -21093,15 +20403,15 @@
 														"types": [
 															{
 																"type": "literal",
+																"value": "product"
+															},
+															{
+																"type": "literal",
 																"value": "sku"
 															},
 															{
 																"type": "literal",
 																"value": "products_collection"
-															},
-															{
-																"type": "literal",
-																"value": "product"
 															}
 														]
 													}
@@ -21251,15 +20561,15 @@
 														"types": [
 															{
 																"type": "literal",
+																"value": "product"
+															},
+															{
+																"type": "literal",
 																"value": "sku"
 															},
 															{
 																"type": "literal",
 																"value": "products_collection"
-															},
-															{
-																"type": "literal",
-																"value": "product"
 															}
 														]
 													}
@@ -21409,15 +20719,15 @@
 														"types": [
 															{
 																"type": "literal",
+																"value": "product"
+															},
+															{
+																"type": "literal",
 																"value": "sku"
 															},
 															{
 																"type": "literal",
 																"value": "products_collection"
-															},
-															{
-																"type": "literal",
-																"value": "product"
 															}
 														]
 													}
@@ -22184,249 +21494,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "name"
-											},
-											{
-												"type": "literal",
-												"value": "description"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "email"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "phone"
-											},
-											{
-												"type": "literal",
-												"value": "birthday"
-											},
-											{
-												"type": "literal",
-												"value": "birthdate"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-created_at"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "-updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-metadata"
-											},
-											{
-												"type": "literal",
-												"value": "loyalty_points"
-											},
-											{
-												"type": "literal",
-												"value": "-loyalty_points"
-											},
-											{
-												"type": "literal",
-												"value": "address_city"
-											},
-											{
-												"type": "literal",
-												"value": "address_state"
-											},
-											{
-												"type": "literal",
-												"value": "address_line_1"
-											},
-											{
-												"type": "literal",
-												"value": "address_line_2"
-											},
-											{
-												"type": "literal",
-												"value": "address_country"
-											},
-											{
-												"type": "literal",
-												"value": "address_postal_code"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_redeemed"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_failed"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_succeeded"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_rolled_back"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_rollback_failed"
-											},
-											{
-												"type": "literal",
-												"value": "redemptions_total_rollback_succeeded"
-											},
-											{
-												"type": "literal",
-												"value": "orders_total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "orders_total_count"
-											},
-											{
-												"type": "literal",
-												"value": "orders_average_amount"
-											},
-											{
-												"type": "literal",
-												"value": "orders_last_order_amount"
-											},
-											{
-												"type": "literal",
-												"value": "orders_last_order_date"
-											},
-											{
-												"type": "literal",
-												"value": "loyalty_referred_customers"
-											},
-											{
-												"type": "literal",
-												"value": "-name"
-											},
-											{
-												"type": "literal",
-												"value": "-description"
-											},
-											{
-												"type": "literal",
-												"value": "-email"
-											},
-											{
-												"type": "literal",
-												"value": "-source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-address_city"
-											},
-											{
-												"type": "literal",
-												"value": "-address_state"
-											},
-											{
-												"type": "literal",
-												"value": "-address_line_1"
-											},
-											{
-												"type": "literal",
-												"value": "-address_line_2"
-											},
-											{
-												"type": "literal",
-												"value": "-address_country"
-											},
-											{
-												"type": "literal",
-												"value": "-address_postal_code"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_redeemed"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_failed"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_succeeded"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_rolled_back"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_rollback_failed"
-											},
-											{
-												"type": "literal",
-												"value": "-redemptions_total_rollback_succeeded"
-											},
-											{
-												"type": "literal",
-												"value": "-orders_total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-orders_total_count"
-											},
-											{
-												"type": "literal",
-												"value": "-orders_average_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-orders_last_order_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-orders_last_order_date"
-											},
-											{
-												"type": "literal",
-												"value": "-loyalty_referred_customers"
-											},
-											{
-												"type": "literal",
-												"value": "-phone"
-											},
-											{
-												"type": "literal",
-												"value": "-birthday"
-											},
-											{
-												"type": "literal",
-												"value": "-birthdate"
-											}
-										]
+										"type": "reference",
+										"id": 3478,
+										"name": "ExportCustomerOrder"
 									}
 								}
 							],
@@ -22529,113 +21599,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "status"
-											},
-											{
-												"type": "literal",
-												"value": "amount"
-											},
-											{
-												"type": "literal",
-												"value": "discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "referrer_id"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-created_at"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "items_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "-updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "-status"
-											},
-											{
-												"type": "literal",
-												"value": "-metadata"
-											},
-											{
-												"type": "literal",
-												"value": "-source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-amount"
-											},
-											{
-												"type": "literal",
-												"value": "-discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-items_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-total_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-referrer_id"
-											}
-										]
+										"type": "reference",
+										"id": 3486,
+										"name": "ExportOrderOrder"
 									}
 								}
 							],
@@ -22738,57 +21704,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "status"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "voucher_id"
-											},
-											{
-												"type": "literal",
-												"value": "-status"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "points"
-											},
-											{
-												"type": "literal",
-												"value": "expires_at"
-											},
-											{
-												"type": "literal",
-												"value": "-voucher_id"
-											},
-											{
-												"type": "literal",
-												"value": "-points"
-											},
-											{
-												"type": "literal",
-												"value": "-expires_at"
-											}
-										]
+										"type": "reference",
+										"id": 3488,
+										"name": "ExportPointsExpirationOrder"
 									}
 								}
 							],
@@ -22891,73 +21809,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "campaign"
-											},
-											{
-												"type": "literal",
-												"value": "date"
-											},
-											{
-												"type": "literal",
-												"value": "customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign"
-											},
-											{
-												"type": "literal",
-												"value": "voucher_code"
-											},
-											{
-												"type": "literal",
-												"value": "-voucher_code"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "channel"
-											},
-											{
-												"type": "literal",
-												"value": "-channel"
-											},
-											{
-												"type": "literal",
-												"value": "customer_source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-metadata"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-date"
-											},
-											{
-												"type": "literal",
-												"value": "is_winner"
-											},
-											{
-												"type": "literal",
-												"value": "-is_winner"
-											}
-										]
+										"type": "reference",
+										"id": 3480,
+										"name": "ExportPublicationOrder"
 									}
 								}
 							],
@@ -23060,145 +21914,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "object"
-											},
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "campaign"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "date"
-											},
-											{
-												"type": "literal",
-												"value": "customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "tracking_id"
-											},
-											{
-												"type": "literal",
-												"value": "result"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign"
-											},
-											{
-												"type": "literal",
-												"value": "voucher_code"
-											},
-											{
-												"type": "literal",
-												"value": "-voucher_code"
-											},
-											{
-												"type": "literal",
-												"value": "-tracking_id"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "customer_source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-metadata"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_source_id"
-											},
-											{
-												"type": "literal",
-												"value": "promotion_tier_id"
-											},
-											{
-												"type": "literal",
-												"value": "customer_name"
-											},
-											{
-												"type": "literal",
-												"value": "order_amount"
-											},
-											{
-												"type": "literal",
-												"value": "gift_amount"
-											},
-											{
-												"type": "literal",
-												"value": "loyalty_points"
-											},
-											{
-												"type": "literal",
-												"value": "failure_code"
-											},
-											{
-												"type": "literal",
-												"value": "failure_message"
-											},
-											{
-												"type": "literal",
-												"value": "-object"
-											},
-											{
-												"type": "literal",
-												"value": "-date"
-											},
-											{
-												"type": "literal",
-												"value": "-promotion_tier_id"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_name"
-											},
-											{
-												"type": "literal",
-												"value": "-order_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-gift_amount"
-											},
-											{
-												"type": "literal",
-												"value": "-loyalty_points"
-											},
-											{
-												"type": "literal",
-												"value": "-result"
-											},
-											{
-												"type": "literal",
-												"value": "-failure_code"
-											},
-											{
-												"type": "literal",
-												"value": "-failure_message"
-											}
-										]
+										"type": "reference",
+										"id": 3482,
+										"name": "ExportRedemptionOrder"
 									}
 								}
 							],
@@ -23246,15 +21964,15 @@
 						"types": [
 							{
 								"type": "literal",
+								"value": "customer"
+							},
+							{
+								"type": "literal",
 								"value": "voucher"
 							},
 							{
 								"type": "literal",
 								"value": "redemption"
-							},
-							{
-								"type": "literal",
-								"value": "customer"
 							},
 							{
 								"type": "literal",
@@ -23484,249 +22202,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "active"
-											},
-											{
-												"type": "literal",
-												"value": "category"
-											},
-											{
-												"type": "literal",
-												"value": "start_date"
-											},
-											{
-												"type": "literal",
-												"value": "expiration_date"
-											},
-											{
-												"type": "literal",
-												"value": "validity_day_of_week"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "additional_info"
-											},
-											{
-												"type": "literal",
-												"value": "code"
-											},
-											{
-												"type": "literal",
-												"value": "campaign"
-											},
-											{
-												"type": "literal",
-												"value": "is_referral_code"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-created_at"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "-updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "-code"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign"
-											},
-											{
-												"type": "literal",
-												"value": "-category"
-											},
-											{
-												"type": "literal",
-												"value": "campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_id"
-											},
-											{
-												"type": "literal",
-												"value": "voucher_type"
-											},
-											{
-												"type": "literal",
-												"value": "value"
-											},
-											{
-												"type": "literal",
-												"value": "discount_type"
-											},
-											{
-												"type": "literal",
-												"value": "gift_balance"
-											},
-											{
-												"type": "literal",
-												"value": "loyalty_balance"
-											},
-											{
-												"type": "literal",
-												"value": "redemption_quantity"
-											},
-											{
-												"type": "literal",
-												"value": "redemption_count"
-											},
-											{
-												"type": "literal",
-												"value": "qr_code"
-											},
-											{
-												"type": "literal",
-												"value": "bar_code"
-											},
-											{
-												"type": "literal",
-												"value": "validity_timeframe_interval"
-											},
-											{
-												"type": "literal",
-												"value": "validity_timeframe_duration"
-											},
-											{
-												"type": "literal",
-												"value": "discount_amount_limit"
-											},
-											{
-												"type": "literal",
-												"value": "discount_unit_type"
-											},
-											{
-												"type": "literal",
-												"value": "discount_unit_effect"
-											},
-											{
-												"type": "literal",
-												"value": "customer_source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-voucher_type"
-											},
-											{
-												"type": "literal",
-												"value": "-value"
-											},
-											{
-												"type": "literal",
-												"value": "-discount_type"
-											},
-											{
-												"type": "literal",
-												"value": "-start_date"
-											},
-											{
-												"type": "literal",
-												"value": "-expiration_date"
-											},
-											{
-												"type": "literal",
-												"value": "-gift_balance"
-											},
-											{
-												"type": "literal",
-												"value": "-loyalty_balance"
-											},
-											{
-												"type": "literal",
-												"value": "-redemption_quantity"
-											},
-											{
-												"type": "literal",
-												"value": "-redemption_count"
-											},
-											{
-												"type": "literal",
-												"value": "-active"
-											},
-											{
-												"type": "literal",
-												"value": "-qr_code"
-											},
-											{
-												"type": "literal",
-												"value": "-bar_code"
-											},
-											{
-												"type": "literal",
-												"value": "-metadata"
-											},
-											{
-												"type": "literal",
-												"value": "-is_referral_code"
-											},
-											{
-												"type": "literal",
-												"value": "-validity_timeframe_interval"
-											},
-											{
-												"type": "literal",
-												"value": "-validity_timeframe_duration"
-											},
-											{
-												"type": "literal",
-												"value": "-validity_day_of_week"
-											},
-											{
-												"type": "literal",
-												"value": "-discount_amount_limit"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "-additional_info"
-											},
-											{
-												"type": "literal",
-												"value": "-discount_unit_type"
-											},
-											{
-												"type": "literal",
-												"value": "-discount_unit_effect"
-											},
-											{
-												"type": "literal",
-												"value": "-customer_source_id"
-											}
-										]
+										"type": "reference",
+										"id": 3484,
+										"name": "ExportVoucherOrder"
 									}
 								}
 							],
@@ -23801,8 +22279,8 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 2901,
-											"name": "VoucherTransactionsExportFields"
+											"id": 3489,
+											"name": "ExportVoucherTransactionsFields"
 										}
 									}
 								},
@@ -23829,105 +22307,9 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "type"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "source"
-											},
-											{
-												"type": "literal",
-												"value": "amount"
-											},
-											{
-												"type": "literal",
-												"value": "-created_at"
-											},
-											{
-												"type": "literal",
-												"value": "-id"
-											},
-											{
-												"type": "literal",
-												"value": "balance"
-											},
-											{
-												"type": "literal",
-												"value": "-type"
-											},
-											{
-												"type": "literal",
-												"value": "campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "voucher_id"
-											},
-											{
-												"type": "literal",
-												"value": "reason"
-											},
-											{
-												"type": "literal",
-												"value": "related_transaction_id"
-											},
-											{
-												"type": "literal",
-												"value": "details"
-											},
-											{
-												"type": "literal",
-												"value": "-campaign_id"
-											},
-											{
-												"type": "literal",
-												"value": "-source_id"
-											},
-											{
-												"type": "literal",
-												"value": "-amount"
-											},
-											{
-												"type": "literal",
-												"value": "-voucher_id"
-											},
-											{
-												"type": "literal",
-												"value": "-reason"
-											},
-											{
-												"type": "literal",
-												"value": "-source"
-											},
-											{
-												"type": "literal",
-												"value": "-balance"
-											},
-											{
-												"type": "literal",
-												"value": "-related_transaction_id"
-											},
-											{
-												"type": "literal",
-												"value": "-details"
-											}
-										]
+										"type": "reference",
+										"id": 3490,
+										"name": "ExportVoucherTransactionsOrder"
 									}
 								}
 							],
@@ -23999,15 +22381,15 @@
 						"types": [
 							{
 								"type": "literal",
+								"value": "customer"
+							},
+							{
+								"type": "literal",
 								"value": "voucher"
 							},
 							{
 								"type": "literal",
 								"value": "redemption"
-							},
-							{
-								"type": "literal",
-								"value": "customer"
 							},
 							{
 								"type": "literal",
@@ -24271,11 +22653,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "created_at"
+								"value": "status"
 							},
 							{
 								"type": "literal",
-								"value": "status"
+								"value": "created_at"
 							},
 							{
 								"type": "literal",
@@ -25718,21 +24100,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "PROGRAM_RULES"
-							},
-							{
-								"type": "literal",
-								"value": "CUSTOM_DATE"
-							},
-							{
-								"type": "literal",
-								"value": "NON_EXPIRING"
-							}
-						]
+						"type": "reference",
+						"id": 2389,
+						"name": "PointsExpirationTypes"
 					}
 				},
 				{
@@ -28707,7 +27077,7 @@
 										"kindString": "Property",
 										"flags": {},
 										"type": {
-											"type": "union",
+											"type": "intersection",
 											"types": [
 												{
 													"type": "intersection",
@@ -30185,11 +28555,11 @@
 							},
 							{
 								"type": "literal",
-								"value": "updated_at"
+								"value": "-created_at"
 							},
 							{
 								"type": "literal",
-								"value": "-created_at"
+								"value": "updated_at"
 							},
 							{
 								"type": "literal",
@@ -30580,80 +28950,11 @@
 										"name": "OrdersCreateResponse"
 									},
 									{
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "object"
-											},
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "status"
-											},
-											{
-												"type": "literal",
-												"value": "items"
-											},
-											{
-												"type": "literal",
-												"value": "amount"
-											},
-											{
-												"type": "literal",
-												"value": "discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "initial_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_applied_discount_amount"
-											}
-										]
+										"type": "literal",
+										"value": "customer"
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -30840,15 +29141,15 @@
 						"types": [
 							{
 								"type": "reference",
+								"name": "CoinReward"
+							},
+							{
+								"type": "reference",
 								"name": "MaterialReward"
 							},
 							{
 								"type": "reference",
 								"name": "CampaignReward"
-							},
-							{
-								"type": "reference",
-								"name": "CoinReward"
 							}
 						]
 					}
@@ -35190,11 +33491,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "sku"
+								"value": "product"
 							},
 							{
 								"type": "literal",
-								"value": "product"
+								"value": "sku"
 							}
 						]
 					}
@@ -36641,6 +34942,11 @@
 										"types": [
 											{
 												"type": "reference",
+												"id": 3851,
+												"name": "DiscountUnit"
+											},
+											{
+												"type": "reference",
 												"id": 3859,
 												"name": "DiscountAmount"
 											},
@@ -36648,11 +34954,6 @@
 												"type": "reference",
 												"id": 3864,
 												"name": "DiscountPercent"
-											},
-											{
-												"type": "reference",
-												"id": 3851,
-												"name": "DiscountUnit"
 											},
 											{
 												"type": "reference",
@@ -37023,6 +35324,11 @@
 										"types": [
 											{
 												"type": "reference",
+												"id": 3851,
+												"name": "DiscountUnit"
+											},
+											{
+												"type": "reference",
 												"id": 3859,
 												"name": "DiscountAmount"
 											},
@@ -37030,11 +35336,6 @@
 												"type": "reference",
 												"id": 3864,
 												"name": "DiscountPercent"
-											},
-											{
-												"type": "reference",
-												"id": 3851,
-												"name": "DiscountUnit"
 											},
 											{
 												"type": "reference",
@@ -37275,32 +35576,11 @@
 										"name": "SimpleCustomer"
 									},
 									{
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "name"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "email"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											}
-										]
+										"type": "literal",
+										"value": "object"
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -37609,72 +35889,16 @@
 										"types": [
 											{
 												"type": "literal",
-												"value": "id"
+												"value": "object"
 											},
 											{
 												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "status"
-											},
-											{
-												"type": "literal",
-												"value": "items"
-											},
-											{
-												"type": "literal",
-												"value": "amount"
-											},
-											{
-												"type": "literal",
-												"value": "discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "initial_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_applied_discount_amount"
+												"value": "customer"
 											}
 										]
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -38137,6 +36361,11 @@
 																			"types": [
 																				{
 																					"type": "reference",
+																					"id": 3851,
+																					"name": "DiscountUnit"
+																				},
+																				{
+																					"type": "reference",
 																					"id": 3859,
 																					"name": "DiscountAmount"
 																				},
@@ -38144,11 +36373,6 @@
 																					"type": "reference",
 																					"id": 3864,
 																					"name": "DiscountPercent"
-																				},
-																				{
-																					"type": "reference",
-																					"id": 3851,
-																					"name": "DiscountUnit"
 																				},
 																				{
 																					"type": "reference",
@@ -38801,24 +37025,16 @@
 										"types": [
 											{
 												"type": "literal",
-												"value": "name"
+												"value": "object"
 											},
 											{
 												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "email"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
+												"value": "id"
 											}
 										]
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -39140,6 +37356,11 @@
 											"types": [
 												{
 													"type": "reference",
+													"id": 3851,
+													"name": "DiscountUnit"
+												},
+												{
+													"type": "reference",
 													"id": 3859,
 													"name": "DiscountAmount"
 												},
@@ -39147,11 +37368,6 @@
 													"type": "reference",
 													"id": 3864,
 													"name": "DiscountPercent"
-												},
-												{
-													"type": "reference",
-													"id": 3851,
-													"name": "DiscountUnit"
 												},
 												{
 													"type": "reference",
@@ -39774,80 +37990,11 @@
 										"name": "OrdersCreateResponse"
 									},
 									{
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "created_at"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											},
-											{
-												"type": "literal",
-												"value": "status"
-											},
-											{
-												"type": "literal",
-												"value": "items"
-											},
-											{
-												"type": "literal",
-												"value": "amount"
-											},
-											{
-												"type": "literal",
-												"value": "discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "customer"
-											},
-											{
-												"type": "literal",
-												"value": "updated_at"
-											},
-											{
-												"type": "literal",
-												"value": "initial_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "items_applied_discount_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_amount"
-											},
-											{
-												"type": "literal",
-												"value": "total_applied_discount_amount"
-											}
-										]
+										"type": "literal",
+										"value": "object"
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -40455,32 +38602,11 @@
 										"name": "SimpleCustomer"
 									},
 									{
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "object"
-											},
-											{
-												"type": "literal",
-												"value": "name"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "email"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											}
-										]
+										"type": "literal",
+										"value": "id"
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -40597,11 +38723,11 @@
 								"types": [
 									{
 										"type": "literal",
-										"value": "id"
+										"value": "status"
 									},
 									{
 										"type": "literal",
-										"value": "metadata"
+										"value": "id"
 									},
 									{
 										"type": "literal",
@@ -40609,15 +38735,15 @@
 									},
 									{
 										"type": "literal",
-										"value": "status"
-									},
-									{
-										"type": "literal",
-										"value": "items"
+										"value": "metadata"
 									},
 									{
 										"type": "literal",
 										"value": "amount"
+									},
+									{
+										"type": "literal",
+										"value": "items"
 									}
 								]
 							}
@@ -40961,69 +39087,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reference",
-										"id": 3023,
-										"name": "RewardsResponse"
-									},
-									{
-										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"name": "RewardsTypeCampaignResponse"
-											}
-										],
-										"name": "Required"
-									}
-								]
-							},
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reference",
-										"id": 3023,
-										"name": "RewardsResponse"
-									},
-									{
-										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"name": "RewardsTypeCoin"
-											}
-										],
-										"name": "Required"
-									}
-								]
-							},
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reference",
-										"id": 3023,
-										"name": "RewardsResponse"
-									},
-									{
-										"type": "reference",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"name": "RewardsTypeMaterial"
-											}
-										],
-										"name": "Required"
-									}
-								]
-							}
-						]
+						"type": "reference",
+						"id": 3035,
+						"name": "RewardsCreateResponse"
 					}
 				},
 				{
@@ -44743,6 +42809,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -44750,11 +42821,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -45048,6 +43114,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -45055,11 +43126,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -47067,37 +45133,9 @@
 						"isOptional": true
 					},
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "literal",
-								"value": "MILLISECONDS"
-							},
-							{
-								"type": "literal",
-								"value": "SECONDS"
-							},
-							{
-								"type": "literal",
-								"value": "MINUTES"
-							},
-							{
-								"type": "literal",
-								"value": "HOURS"
-							},
-							{
-								"type": "literal",
-								"value": "DAYS"
-							},
-							{
-								"type": "literal",
-								"value": "MICROSECONDS"
-							},
-							{
-								"type": "literal",
-								"value": "NANOSECONDS"
-							}
-						]
+						"type": "reference",
+						"id": 3799,
+						"name": "ValidationSessionTTLUnit"
 					}
 				},
 				{
@@ -47906,6 +45944,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -47913,11 +45956,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -48446,11 +46484,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "UNIT"
+								"value": "AMOUNT"
 							},
 							{
 								"type": "literal",
-								"value": "AMOUNT"
+								"value": "UNIT"
 							},
 							{
 								"type": "literal",
@@ -49730,6 +47768,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -49737,11 +47780,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
@@ -50079,27 +48117,11 @@
 						"types": [
 							{
 								"type": "literal",
-								"value": "created_at"
-							},
-							{
-								"type": "literal",
 								"value": "type"
 							},
 							{
 								"type": "literal",
-								"value": "category"
-							},
-							{
-								"type": "literal",
-								"value": "code"
-							},
-							{
-								"type": "literal",
-								"value": "campaign"
-							},
-							{
-								"type": "literal",
-								"value": "updated_at"
+								"value": "created_at"
 							},
 							{
 								"type": "literal",
@@ -50107,7 +48129,23 @@
 							},
 							{
 								"type": "literal",
+								"value": "campaign"
+							},
+							{
+								"type": "literal",
+								"value": "category"
+							},
+							{
+								"type": "literal",
+								"value": "updated_at"
+							},
+							{
+								"type": "literal",
 								"value": "-updated_at"
+							},
+							{
+								"type": "literal",
+								"value": "code"
 							},
 							{
 								"type": "literal",
@@ -50486,32 +48524,11 @@
 										"name": "SimpleCustomer"
 									},
 									{
-										"type": "union",
-										"types": [
-											{
-												"type": "literal",
-												"value": "id"
-											},
-											{
-												"type": "literal",
-												"value": "name"
-											},
-											{
-												"type": "literal",
-												"value": "metadata"
-											},
-											{
-												"type": "literal",
-												"value": "email"
-											},
-											{
-												"type": "literal",
-												"value": "source_id"
-											}
-										]
+										"type": "literal",
+										"value": "object"
 									}
 								],
-								"name": "Pick"
+								"name": "Omit"
 							},
 							{
 								"type": "reflection",
@@ -50596,19 +48613,19 @@
 									},
 									{
 										"type": "literal",
-										"value": "metadata"
-									},
-									{
-										"type": "literal",
 										"value": "source_id"
 									},
 									{
 										"type": "literal",
-										"value": "items"
+										"value": "metadata"
 									},
 									{
 										"type": "literal",
 										"value": "amount"
+									},
+									{
+										"type": "literal",
+										"value": "items"
 									}
 								]
 							}
@@ -50735,11 +48752,11 @@
 							},
 							{
 								"type": "literal",
-								"value": "updated_at"
+								"value": "-created_at"
 							},
 							{
 								"type": "literal",
-								"value": "-created_at"
+								"value": "updated_at"
 							},
 							{
 								"type": "literal",
@@ -51061,6 +49078,11 @@
 						"types": [
 							{
 								"type": "reference",
+								"id": 3851,
+								"name": "DiscountUnit"
+							},
+							{
+								"type": "reference",
 								"id": 3859,
 								"name": "DiscountAmount"
 							},
@@ -51068,11 +49090,6 @@
 								"type": "reference",
 								"id": 3864,
 								"name": "DiscountPercent"
-							},
-							{
-								"type": "reference",
-								"id": 3851,
-								"name": "DiscountUnit"
 							},
 							{
 								"type": "reference",
