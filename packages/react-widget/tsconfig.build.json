@@ -2,6 +2,9 @@
 	"extends": "../../tsconfig.build.json",
 	"compilerOptions": {
 		"jsx": "react",
+        "paths": {
+          "@voucherify/sdk": ["../sdk/src/index.ts"]
+        }
 	},
 	"include": [
 		"./src",
