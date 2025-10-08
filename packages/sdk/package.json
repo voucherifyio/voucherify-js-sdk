@@ -25,9 +25,9 @@
 		"dist"
 	],
 	"scripts": {
-		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target node --name VoucherifySDK --format esm,umd",
-		"build": "tsdx build --tsconfig tsconfig.build.json --target node --name VoucherifySDK --format esm,umd",
-		"test": "tsdx test",
+		"start": "tsup --watch",
+		"build": "tsup",
+		"test": "jest",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
 		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
@@ -36,14 +36,18 @@
 		"prepublish": "yarn build"
 	},
 	"dependencies": {
-		"form-data": "4.0.0",
-		"axios": "1.8.3",
+		"axios": "1.12.2",
+		"form-data": "4.0.4",
 		"qs": "6.9.7"
 	},
 	"devDependencies": {
-		"dotenv": "16.3.1",
+		"@types/jest": "30.0.0",
+		"@types/qs": "6.9.7",
 		"csv-stringify": "6.4.0",
-		"@types/qs": "6.9.7"
+		"dotenv": "16.3.1",
+		"jest": "26.6.3",
+		"jest-watch-typeahead": "3.0.1",
+		"ts-jest": "26.4.4"
 	},
 	"publishConfig": {
 		"access": "public"

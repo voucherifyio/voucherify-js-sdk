@@ -17,17 +17,16 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-	"main": "dist/voucherifywidget.umd.production.min.js",
-	"module": "dist/voucherifywidget.esm.js",
+    "main": "dist/voucherifywidget.esm.js",
+    "module": "dist/voucherifywidget.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",
 		"dist"
 	],
 	"scripts": {
-		"start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean --target browser --name VoucherifyWidget --format esm,umd",
-		"build": "tsdx build --tsconfig tsconfig.build.json --target browser --name VoucherifyWidget --format esm,umd",
-		"test": "tsdx test",
+        "start": "tsup --watch",
+        "build": "tsup",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
 		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",

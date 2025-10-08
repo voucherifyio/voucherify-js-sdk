@@ -7,10 +7,11 @@ describe('Vouchers API', () => {
 	describe('Add voucher balance', () => {
 		it('should accept source_id and reason as a parameters', async () => {
 			const code = (await generateGiftVoucher()).code
+			const sourceId = generateRandomString(55)
 			const response = await client.vouchers.balance.create(code, {
 				amount: 1000,
 				reason: 'Test reason',
-				source_id: '123',
+				source_id: sourceId,
 			})
 			expect(response).not.toBeNull()
 		})

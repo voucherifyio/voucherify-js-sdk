@@ -143,6 +143,7 @@ export function VoucherifySubscribe({
 
 	const onRender = React.useCallback(
 		function _onRender() {
+			//@ts-expect-error
 			if (!enableDoubleOptIn && consents !== [] && consents !== undefined) {
 				client
 					.listConsents()
