@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.9.3
+
+### Patch Changes
+
+- [`41308c7`](https://github.com/voucherifyio/voucherify-js-sdk/commit/41308c74bb0d5f21cfe4c70d03728e5cde35918c) [#294](https://github.com/voucherifyio/voucherify-js-sdk/pull/294) Thanks [@mandraszyk](https://github.com/mandraszyk)! - bump 'form-data' package version
+
 ## 2.9.2
 
 ### Patch Changes

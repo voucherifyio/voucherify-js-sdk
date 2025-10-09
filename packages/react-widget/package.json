@@ -1,6 +1,6 @@
 {
 	"name": "@voucherify/react-widget",
-	"version": "2.9.2",
+	"version": "2.9.3",
 	"description": "Official Voucherify React Widget",
 	"author": "Voucherify",
 	"license": "MIT",
@@ -17,16 +17,16 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-    "main": "dist/voucherifywidget.esm.js",
-    "module": "dist/voucherifywidget.esm.js",
+	"main": "dist/voucherifywidget.esm.js",
+	"module": "dist/voucherifywidget.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",
 		"dist"
 	],
 	"scripts": {
-        "start": "tsup --watch",
-        "build": "tsup",
+		"start": "tsup --watch",
+		"build": "tsup",
 		"lint": "yarn lint:ts && yarn lint:eslint",
 		"lint:ts": "tsc --noEmit -p ./tsconfig.build.json",
 		"lint:eslint": "eslint './src/**/*.{ts,tsx,js,d.ts}'",
@@ -38,7 +38,7 @@
 		"react-dom": "^17.0.0"
 	},
 	"dependencies": {
-		"@voucherify/sdk": "2.9.2"
+		"@voucherify/sdk": "2.9.3"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.0",
