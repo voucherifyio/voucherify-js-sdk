@@ -50,8 +50,9 @@ export default class CategoriesApi {
     /**
      * Create Category
      * Create category with a specific name and hierarchy.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CategoriesCreateRequestBody} [categoriesCreateRequestBody] Specify the details of the category that you would like to create.
+     * @param {{
+        categoriesCreateRequestBody?: module:model/CategoriesCreateRequestBody
+     }} opts Parameters
      * @param {module:api/CategoriesApi~createCategoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CategoriesCreateResponseBody}
      */
@@ -213,8 +214,11 @@ export default class CategoriesApi {
      * Update Category
      * Update a category using the category ID.
      * @param {String} categoryId Unique category ID assigned by Voucherify.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CategoriesUpdateRequestBody} [categoriesUpdateRequestBody] Specify the details of the category that you would like to update.
+     * @param {{
+        categoryId: String
+     
+        categoriesUpdateRequestBody?: module:model/CategoriesUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/CategoriesApi~updateCategoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CategoriesUpdateResponseBody}
      */

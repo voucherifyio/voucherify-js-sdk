@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## createCampaign
 
-> CampaignsCreateResponseBody createCampaign(opts)
+> CampaignsCreateResponseBody createCampaign(campaignsCreateRequestBody)
 
 Create Campaign
 
@@ -179,10 +179,8 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.CampaignsApi();
-let opts = {
-  'campaignsCreateRequestBody': {"name":"Discount Campaign 4","campaign_type":"DISCOUNT_COUPONS","join_once":true,"type":"AUTO_UPDATE","start_date":"2020-08-16T00:00:00Z","expiration_date":"2023-12-26T00:00:00Z","vouchers_count":3,"voucher":{"type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT"},"redemption":{"quantity":10},"code_config":{"pattern":"10OFF-#######"}},"validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[0,1,2],"activity_duration_after_publishing":"P24D","use_voucher_metadata_schema":false,"metadata":{"region":"AMER"}} // CampaignsCreateRequestBody | Specify the details of the campaign that you would like to create.
-};
-apiInstance.createCampaign(opts, (error, data, response) => {
+let campaignsCreateRequestBody = {"name":"Discount Campaign 4","campaign_type":"DISCOUNT_COUPONS","join_once":true,"type":"AUTO_UPDATE","start_date":"2020-08-16T00:00:00Z","expiration_date":"2023-12-26T00:00:00Z","vouchers_count":3,"voucher":{"type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT"},"redemption":{"quantity":10},"code_config":{"pattern":"10OFF-#######"}},"validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[0,1,2],"activity_duration_after_publishing":"P24D","use_voucher_metadata_schema":false,"metadata":{"region":"AMER"}}; // CampaignsCreateRequestBody | Specify the details of the campaign that you would like to create.
+apiInstance.createCampaign(campaignsCreateRequestBody, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -196,7 +194,7 @@ apiInstance.createCampaign(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignsCreateRequestBody** | [**CampaignsCreateRequestBody**](CampaignsCreateRequestBody.md)| Specify the details of the campaign that you would like to create. | [optional] 
+ **campaignsCreateRequestBody** | [**CampaignsCreateRequestBody**](CampaignsCreateRequestBody.md)| Specify the details of the campaign that you would like to create. | 
 
 ### Return type
 

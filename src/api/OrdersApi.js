@@ -55,8 +55,9 @@ export default class OrdersApi {
     /**
      * Create Order
      * Creates an order object and triggers an order creation event.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the order database, Voucherify will return a related order object with updated fields.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/OrdersCreateRequestBody} [ordersCreateRequestBody] Specify the order parameters.
+     * @param {{
+        ordersCreateRequestBody?: module:model/OrdersCreateRequestBody
+     }} opts Parameters
      * @param {module:api/OrdersApi~createOrderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrdersCreateResponseBody}
      */
@@ -95,8 +96,9 @@ export default class OrdersApi {
     /**
      * Create Orders Export
      * Creates a downloadable CSV file containing a list of orders. The parameters listed in the payload resembles headers in the CSV file. To include a parameter to the file, add it to the parameters.fields object in the request body. The available filters are all [order object](/api-reference/orders/order-calculated-object) attributes. Additionally, any metadata defined in the metadata schema can be exported. Passing an empty JSON will generate a file containing three default fields: id, source_id, and status. The fields array is an array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:    
-     * @param {Object} opts Optional parameters
-     * @param {module:model/OrdersExportCreateRequestBody} [ordersExportCreateRequestBody] Specify which order parameters you would like to export.
+     * @param {{
+        ordersExportCreateRequestBody?: module:model/OrdersExportCreateRequestBody
+     }} opts Parameters
      * @param {module:api/OrdersApi~createOrderExportCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrdersExportCreateResponseBody}
      */
@@ -178,8 +180,9 @@ export default class OrdersApi {
     /**
      * Import Orders
      *   🚧 Historical orders  This endpoint should only be used to import historical orders into Voucherify. For on-going synchronization, the [update order](/api-reference/orders/update-order) endpoints should be used. This is critical because this endpoint does not store events or launch distributions. # Limitations ## Import volume There can be only a single on-going order import per tenant per project at a given time. The user can schedule more imports but those extra imports will be scheduled to run in sequence one by one.   ## Maximum count of orders in single import There is a 2000 limit but we might decide to change it to a lower / higher value at any given time depending if we find this value is too high or too low with time. # Notifications There are no notifications on the Dashboard because this import is launched via the API. # Triggered actions    If you import orders with customers, then a logic will be scheduled responsible for placing these customers into segments and refreshing the segments summary. Consequently, this update will trigger  - **customers entering into segments**  - **distributions** based on any rules tied to customer entering segment(s) - **earning rules** based on the customer entering segment(s) # What is not triggered 1. No webhooks are triggered during the import of orders - for both orders and upserted products / SKUs.   2. Distributions based on Order Update, Order Paid, Order Created and Order Cancelled. In other words if you have a distribution based on Order Paid and you import an order with a PAID status, the distribution is not going to be triggered.     3. No events are created during the import of orders - for both orders and upserted products / SKUs. In other words you wont see any events in the Activity tab in the Dashboard such as Order created or Order paid. If you are additionally upserting products / SKUs, then you wont see the Product created events listed, etc.    4. Earning rules based on Order Paid wont be triggered. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request with [GET Async Action](/api-reference/async-actions/get-async-action) endpoint.
-     * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/OrdersImportCreateRequestBodyItem>} [ordersImportCreateRequestBodyItem] The request body is sent in the form of an array of order objects.
+     * @param {{
+        ordersImportCreateRequestBodyItem?: Array.<module:model/OrdersImportCreateRequestBodyItem>
+     }} opts Parameters
      * @param {module:api/OrdersApi~importOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrdersImportCreateResponseBody}
      */
@@ -218,10 +221,13 @@ export default class OrdersApi {
     /**
      * List Orders
      * Returns a list of orders. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListOrders} [order] This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListOrders
+     }} opts Parameters
      * @param {module:api/OrdersApi~listOrdersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrdersListResponseBody}
      */
@@ -264,8 +270,11 @@ export default class OrdersApi {
      * Update Order
      * Updates the specified order by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged.
      * @param {String} orderId Unique Voucherify order ID or order source ID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/OrdersUpdateRequestBody} [ordersUpdateRequestBody] Specify the parameters of the order that are to be updated.
+     * @param {{
+        orderId: String
+     
+        ordersUpdateRequestBody?: module:model/OrdersUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/OrdersApi~updateOrderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrdersUpdateResponseBody}
      */

@@ -54,8 +54,9 @@ export default class ClientSideApi {
     /**
      * Check Eligibility (client-side)
      * Generate a list of redeemables that are applicable in the context of the customer and order. The new qualifications method is an improved version of [Campaign Qualifications](/api-reference/campaigns/examine-campaign-qualification), [Voucher Qualifications](/api-reference/vouchers/examine-voucher-qualification) API requests. The new qualification method introduces the following improvements: - Qualification results are returned faster - No limit on the number of returned redeemables - Introduces new qualification scenarios, not available in the previous version  👍 Scenario Guide  Read our dedicated guide to learn about some use cases this endpoint can cover [here](/guides/checking-eligibility). # Paging  The Voucherify Qualifications API request will return to you all of the redeemables available for the customer in batches of up to 50 redeemables per page. To get the next batch of redeemables, you need to use the starting_after cursor. To process of paging the redeemables works in the following manner: - You send the first API request for Qualifications without the starting_after parameter. - The response will contain a parameter named has_more. If the parameters value is set to true, then more redeemables are available. - Get the value of the created_at parameter of the last returned redeemable. The value of this parameter will be used as a cursor to retrieve the next page of redeemables. - Send another API request for Qualification with the starting_after parameter set to the value taken from the created_at parameter from the last returned redeemable. - Voucherify will return the next page of redeemables. - If the has_more parameter is set to true, apply steps 3-5 to get the next page of redeemables.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClientQualificationsCheckEligibilityRequestBody} [clientQualificationsCheckEligibilityRequestBody] Define order and customer context.
+     * @param {{
+        clientQualificationsCheckEligibilityRequestBody?: module:model/ClientQualificationsCheckEligibilityRequestBody
+     }} opts Parameters
      * @param {module:api/ClientSideApi~checkEligibilityClientSideCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ClientQualificationsCheckEligibilityResponseBody}
      */
@@ -95,11 +96,17 @@ export default class ClientSideApi {
      * List Promotion Tiers (client-side)
      * This method enables you to list promotion tiers.
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} [isAvailable] This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions.
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListPromotionTiersClientSide} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        origin: String
+     
+        isAvailable?: Boolean
+     
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListPromotionTiersClientSide
+     }} opts Parameters
      * @param {module:api/ClientSideApi~listPromotionTiersClientSideCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ClientPromotionsTiersListResponseBody}
      */
@@ -148,8 +155,11 @@ export default class ClientSideApi {
      * Redeem Stackable Discounts (client-side)
      * This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications. # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:    📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClientRedemptionsRedeemRequestBody} [clientRedemptionsRedeemRequestBody] 
+     * @param {{
+        origin: String
+     
+        clientRedemptionsRedeemRequestBody?: module:model/ClientRedemptionsRedeemRequestBody
+     }} opts Parameters
      * @param {module:api/ClientSideApi~redeemStackedDiscountsClientSideCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ClientRedemptionsRedeemResponseBody}
      */
@@ -194,8 +204,11 @@ export default class ClientSideApi {
      * Track Custom Event (client-side)
      * To track a custom event, you create an event object.   The event object must be linked to the customer who performs the action. If a customer doesnt exist in Voucherify, the customer will be created.
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClientEventsCreateRequestBody} [clientEventsCreateRequestBody] Specify the details of the custom event.
+     * @param {{
+        origin: String
+     
+        clientEventsCreateRequestBody?: module:model/ClientEventsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ClientSideApi~trackCustomEventClientSideCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ClientEventsCreateResponseBody}
      */
@@ -240,8 +253,11 @@ export default class ClientSideApi {
      * Validate Stackable Discounts (client-side)
      * Verify redeemables provided in the request. This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications.
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ClientValidationsValidateRequestBody} [clientValidationsValidateRequestBody] 
+     * @param {{
+        origin: String
+     
+        clientValidationsValidateRequestBody?: module:model/ClientValidationsValidateRequestBody
+     }} opts Parameters
      * @param {module:api/ClientSideApi~validateStackedDiscountsClientSideCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ClientValidationsValidateResponseBody}
      */

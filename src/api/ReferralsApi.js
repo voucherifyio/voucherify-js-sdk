@@ -50,8 +50,11 @@ export default class ReferralsApi {
      * Add Referral Code Holders
      * Adds new holders to a referral code as **referees**. The data sent in the request is upserted into the customer data. If the request returns an error even for one customer, you have to resend the whole request. Customer data is upserted if the data for all customers is correct. To use this endpoint, you must have the following permissions: - Create and modify Customers and Segments (customers.modify) - Publish Voucher (vouchers.publish)  👍 To add a holder as a referrer, use the [Create Publication](/api-reference/publications/create-publication) endpoint.  📘 Alternative endpoint This endpoint is an alternative to the [Add Referral Code Holders endpoint](/api-reference/referrals/add-referral-code-holders-with-campaign-id). The URL was re-designed to retrieve the referral member holders without providing the campaignId as a path paremeter.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} [referralsMembersHoldersCreateInBulkRequestBody] Specify the customer data to be upserted as redeemable holders.
+     * @param {{
+        memberId: String
+     
+        referralsMembersHoldersCreateInBulkRequestBody?: module:model/ReferralsMembersHoldersCreateInBulkRequestBody
+     }} opts Parameters
      * @param {module:api/ReferralsApi~referralsAddHoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReferralsMembersHoldersCreateInBulkResponseBody}
      */
@@ -97,8 +100,13 @@ export default class ReferralsApi {
      * Adds new holders to a referral code as **referees**. The data sent in the request is upserted into the customer data. If the request returns an error even for one customer, you have to resend the whole request. Customer data is upserted if the data for all customers is correct. To use this endpoint, you must have the following permissions: - Create and modify Customers and Segments (customers.modify) - Publish Voucher (vouchers.publish)  👍 To add a holder as a referrer, use the [Create Publication](/api-reference/publications/create-publication) endpoint.
      * @param {String} campaignId Unique identifier of a referral program campaign.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} [referralsMembersHoldersCreateInBulkRequestBody] Specify the customer data to be upserted as redeemable holders.
+     * @param {{
+        campaignId: String
+     
+        memberId: String
+     
+        referralsMembersHoldersCreateInBulkRequestBody?: module:model/ReferralsMembersHoldersCreateInBulkRequestBody
+     }} opts Parameters
      * @param {module:api/ReferralsApi~referralsAddHolders1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReferralsMembersHoldersCreateInBulkResponseBody}
      */
@@ -149,11 +157,19 @@ export default class ReferralsApi {
      * Retrieves all the redeemables that have been assigned to the customer. To use this endpoint, you must have the following permissions: - Read Customers (customers.details.read)
      * @param {String} campaignId Unique identifier of a referral program campaign.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {module:model/ParameterOrderListRedeemables} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {String} [startingAfterId] A cursor for pagination. It retrieves the events starting after an event with the given ID.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHolders} [filters] Filters for listing customer redeemables.
+     * @param {{
+        campaignId: String
+     
+        memberId: String
+     
+        limit?: Number
+     
+        order?: module:model/ParameterOrderListRedeemables
+     
+        startingAfterId?: String
+     
+        filters?: module:model/ParameterFiltersListReferralsRedeemableHolders
+     }} opts Parameters
      * @param {module:api/ReferralsApi~referralsCodeHoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReferralsMembersHoldersListResponseBody}
      */
@@ -207,11 +223,17 @@ export default class ReferralsApi {
      * List Referral Code Holders
      * Retrieves the holders of the referral code from a referral campaign. To use this endpoint, you must have the following permissions: - Read Customers (customers.details.read)  📘 Alternative endpoint This endpoint is an alternative to the [List Member Holders endpoint](/api-reference/referrals/list-referral-code-holders-with-campaign-id). The URL was re-designed to retrieve the referral member holders without providing the campaignId as a path paremeter.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {module:model/ParameterOrderListRedeemables} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {String} [startingAfterId] A cursor for pagination. It retrieves the events starting after an event with the given ID.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHolders} [filters] Filters for listing customer redeemables.
+     * @param {{
+        memberId: String
+     
+        limit?: Number
+     
+        order?: module:model/ParameterOrderListRedeemables
+     
+        startingAfterId?: String
+     
+        filters?: module:model/ParameterFiltersListReferralsRedeemableHolders
+     }} opts Parameters
      * @param {module:api/ReferralsApi~referralsCodeHolders1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReferralsMembersHoldersListResponseBody}
      */

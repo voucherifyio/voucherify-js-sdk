@@ -56,9 +56,13 @@ export default class ValidationRulesApi {
      * Create Validation Rules Assignments
      * Assign validation rule to either one of the following objects: voucher, campaign, promotion tier, earning rule, reward, distribution.
      * @param {String} validationRuleId Unique validation rule ID.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} [force] If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added.
-     * @param {module:model/ValidationRulesAssignmentsCreateRequestBody} [validationRulesAssignmentsCreateRequestBody] Specify the resource that you would like to assign the validation rule to.
+     * @param {{
+        validationRuleId: String
+     
+        force?: Boolean
+     
+        validationRulesAssignmentsCreateRequestBody?: module:model/ValidationRulesAssignmentsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~createValidationRuleAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsCreateResponseBody}
      */
@@ -103,8 +107,9 @@ export default class ValidationRulesApi {
     /**
      * Create Validation Rules
      * Create a validation rule.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ValidationRulesCreateRequestBody} [validationRulesCreateRequestBody] Specify the validation rules parameters.
+     * @param {{
+        validationRulesCreateRequestBody?: module:model/ValidationRulesCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~createValidationRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesCreateResponseBody}
      */
@@ -277,10 +282,15 @@ export default class ValidationRulesApi {
      * List Validation Rule Assignments
      * Retrieve validation rule assignments for a specific validation rule.
      * @param {String} validationRuleId Unique validation rule ID.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListValidationRuleAssignments} [order] This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        validationRuleId: String
+     
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListValidationRuleAssignments
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~listValidationRuleAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
      */
@@ -327,12 +337,17 @@ export default class ValidationRulesApi {
     /**
      * List Validation Rules
      * Retrieve validation rules.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListValidationRules} [order] This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {Date} [startDate] Timestamp representing the date and time which results must start on. Represented in ISO 8601 format.
-     * @param {Date} [endDate] Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListValidationRules
+     
+        startDate?: Date
+     
+        endDate?: Date
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~listValidationRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesListResponseBody}
      */
@@ -376,12 +391,17 @@ export default class ValidationRulesApi {
     /**
      * List Validation Rules' Assignment(s)
      * List all validation rules assignments or filter the results using the related object ID or the validation rule ID query parameters.
-     * @param {Object} opts Optional parameters
-     * @param {String} [relatedObjectId] The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution.
-     * @param {String} [rule] Validation rule ID.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {String} [order] Sorts the results using one of the filtering options: -created_at, created_at, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        relatedObjectId?: String
+     
+        rule?: String
+     
+        page?: Number
+     
+        limit?: Number
+     
+        order?: String
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~listValidationRulesAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
      */
@@ -426,8 +446,11 @@ export default class ValidationRulesApi {
      * Update Validation Rule
      * Update validation rule parameters.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
      * @param {String} validationRuleId A unique validation rule ID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ValidationRulesUpdateRequestBody} [validationRulesUpdateRequestBody] Specify the parameters to be updated.
+     * @param {{
+        validationRuleId: String
+     
+        validationRulesUpdateRequestBody?: module:model/ValidationRulesUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ValidationRulesApi~updateValidationRuleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesUpdateResponseBody}
      */

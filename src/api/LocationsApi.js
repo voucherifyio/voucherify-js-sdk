@@ -91,11 +91,15 @@ export default class LocationsApi {
     /**
      * List Locations
      * Returns a list of your locations.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {module:model/ParameterOrderListLocations} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {module:model/ParameterFiltersListLocations} [filters] Filter the locations using one of the available filters.
-     * @param {Date} [endDate] A filter on the list based on the end date. This will filter out all locations whose end date falls before the specified date and time. A date value must be presented in the ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16).
+     * @param {{
+        limit?: Number
+     
+        order?: module:model/ParameterOrderListLocations
+     
+        filters?: module:model/ParameterFiltersListLocations
+     
+        endDate?: Date
+     }} opts Parameters
      * @param {module:api/LocationsApi~listLocationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LocationsListResponseBody}
      */

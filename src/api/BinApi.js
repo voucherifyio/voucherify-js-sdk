@@ -89,11 +89,15 @@ export default class BinApi {
     /**
      * List Bin Entries
      * Retrieves a list of resources moved to the bin. The following resources can be moved to the bin: - campaigns - vouchers - products - SKUs To use this endpoint, you must have the following permissions: - vouchers.read - campaigns.read - products.read
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {module:model/ParameterOrderListBin} [order] Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order.
-     * @param {String} [startingAfterId] A cursor for pagination. It retrieves the results starting after a result with the given ID.
-     * @param {module:model/ParameterFiltersListBin} [filters] Filters for listing bin entries.
+     * @param {{
+        limit?: Number
+     
+        order?: module:model/ParameterOrderListBin
+     
+        startingAfterId?: String
+     
+        filters?: module:model/ParameterFiltersListBin
+     }} opts Parameters
      * @param {module:api/BinApi~listBinEntriesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TrashBinListResponseBody}
      */

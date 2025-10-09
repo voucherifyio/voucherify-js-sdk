@@ -93,8 +93,11 @@ export default class ManagementApi {
      * Assign User
      * Assigns a user to a given project. The user must be an existing user in Voucherify.  🚧 Correct Use of Data To avoid errors, use the role key with either id or login keys.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsUsersAssignRequestBody} [managementProjectsUsersAssignRequestBody] Defines the user details.
+     * @param {{
+        projectId: String
+     
+        managementProjectsUsersAssignRequestBody?: module:model/ManagementProjectsUsersAssignRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~assignUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsUsersAssignResponseBody}
      */
@@ -139,8 +142,11 @@ export default class ManagementApi {
      * Create Brand
      * Creates a new brand configuration. You can have only one brand configured for a project.  📘 White Labelling  The white labelling settings which can be found in Project Settings > Brand Details and which are available only for Enterprise clients as a separate service can be configured only in the user interface.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsBrandingCreateRequestBody} [managementProjectsBrandingCreateRequestBody] Defines a brand configuration.
+     * @param {{
+        projectId: String
+     
+        managementProjectsBrandingCreateRequestBody?: module:model/ManagementProjectsBrandingCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsBrandingCreateResponseBody}
      */
@@ -185,8 +191,11 @@ export default class ManagementApi {
      * Create Custom Event Schema
      * Creates a custom event schema. The properties object is required, but it can be empty, however. This object is for optional custom properties (metadata).  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsCustomEventSchemasCreateRequestBody} [managementProjectsCustomEventSchemasCreateRequestBody] Defines the custom event schema.
+     * @param {{
+        projectId: String
+     
+        managementProjectsCustomEventSchemasCreateRequestBody?: module:model/ManagementProjectsCustomEventSchemasCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createCustomEventSchemaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasCreateResponseBody}
      */
@@ -231,8 +240,11 @@ export default class ManagementApi {
      * Create Metadata Schema
      * Creates a new metadata (custom attribute) schema for a given resource. The schema consists of a set of key-value pairs to customize Voucherify resources.  You can nest your object within a standard metadata schema, e.g. within a campaign or customer schema. However, your nested object cant include another nested object. The standard metadata schemas are: - Campaign - Voucher - Publication - Redemption - Product - Customer - Order - Order line item - Loyalty Tier - Promotion Tier - Earning rule - Reward Use this endpoint to define a metadata schema of a given resource for the first time. Once you configure a metadata schema for a given related_object, use the PUT [Update metadata schema](/api-reference/management/update-metadata-schema) endpoint to either update or add new metadata key-value pairs. For example, use this endpoint to define a metadata schema for related_object: campaign for the first time. If you want define a new metadata property for campaign, use the [PUT Update metadata schema](/api-reference/management/update-metadata-schema) endpoint.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsMetadataSchemasCreateRequestBody} [managementProjectsMetadataSchemasCreateRequestBody] Defines the metadata schema.
+     * @param {{
+        projectId: String
+     
+        managementProjectsMetadataSchemasCreateRequestBody?: module:model/ManagementProjectsMetadataSchemasCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createMetadataSchemaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsMetadataSchemasCreateResponseBody}
      */
@@ -276,8 +288,9 @@ export default class ManagementApi {
     /**
      * Create Project
      * Creates a new project. You can add users, specify the cluster, timezone, currency, and other details. All owners are added to the project by default.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsCreateRequestBody} [managementProjectsCreateRequestBody] Define project details.
+     * @param {{
+        managementProjectsCreateRequestBody?: module:model/ManagementProjectsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsCreateResponseBody}
      */
@@ -317,8 +330,11 @@ export default class ManagementApi {
      * Create Stacking Rules
      * Overwrites the default stacking rules. If new stacking rules have been created for the project earlier (e.g. in the user interface), it returns an error. Use [Update stacking rules](/api-reference/management/update-stacking-rules) endpoint to change the rules.  📘 Stacking rules documentation  Read [the Stacking rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsStackingRulesCreateRequestBody} [managementProjectsStackingRulesCreateRequestBody] Defines the stacking rule parameters.
+     * @param {{
+        projectId: String
+     
+        managementProjectsStackingRulesCreateRequestBody?: module:model/ManagementProjectsStackingRulesCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createStackingRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsStackingRulesCreateResponseBody}
      */
@@ -363,8 +379,11 @@ export default class ManagementApi {
      * Create Webhook
      * Creates a new webhook configuration.  📘 Webhook Documentation  Read [Webhooks v2024-01-01](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsWebhooksCreateRequestBody} [managementProjectsWebhooksCreateRequestBody] Defines a webhook configuration.
+     * @param {{
+        projectId: String
+     
+        managementProjectsWebhooksCreateRequestBody?: module:model/ManagementProjectsWebhooksCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~createWebhookCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsWebhooksCreateResponseBody}
      */
@@ -1027,8 +1046,9 @@ export default class ManagementApi {
     /**
      * Invite a New User
      * Sends an invitation to an email address that has not been used yet as a Voucherify user login. You can specify the projects to which the invited user will be assigned and define their roles.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsUsersInviteCreateRequestBody} [managementProjectsUsersInviteCreateRequestBody] Defines the details of the invitation, the project, and roles to which the user will be assigned.
+     * @param {{
+        managementProjectsUsersInviteCreateRequestBody?: module:model/ManagementProjectsUsersInviteCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~inviteUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
     inviteUser(opts, callback) {
@@ -1363,8 +1383,13 @@ export default class ManagementApi {
      * Copies a campaign template to another project. The resources, like validation rules or products, will not be copied to the destination project yet. When the template is used to create a new campaign or add a new promotion tier, the resources will be created in the destination project.  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} campaignTemplateId Provide the unique identifier of the campaign template.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} [managementProjectsTemplatesCampaignsCopyCreateRequestBody] Determines the details about the template in the destination project as well as the destination project itself.
+     * @param {{
+        projectId: String
+     
+        campaignTemplateId: String
+     
+        managementProjectsTemplatesCampaignsCopyCreateRequestBody?: module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~managementCopyCampaignTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody}
      */
@@ -1414,12 +1439,19 @@ export default class ManagementApi {
      * List Campaign Templates
      * Lists all campaign templates available in the project.  👍 List Campaign Templates  This endpoint works in the same way as the [List Campaign Templates endpoint](/api-reference/templates/list-campaign-templates).  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {String} [startingAfterId] A cursor for pagination. It retrieves the campaign templates created after a template with the given ID.
-     * @param {module:model/ParameterTemplatesList} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {Boolean} [includeTotal] If set to true, the response returns the number of all campaign templates, regardless of the applied filters or limits. Set to false by default.
-     * @param {module:model/ParameterFiltersListTemplates} [filters] Filters for listing templates.
+     * @param {{
+        projectId: String
+     
+        limit?: Number
+     
+        startingAfterId?: String
+     
+        order?: module:model/ParameterTemplatesList
+     
+        includeTotal?: Boolean
+     
+        filters?: module:model/ParameterFiltersListTemplates
+     }} opts Parameters
      * @param {module:api/ManagementApi~managementListCampaignTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsTemplatesCampaignsListResponseBody}
      */
@@ -1518,8 +1550,13 @@ export default class ManagementApi {
      * Updates a brand configuration. Only the fields sent in the request will be updated. The fields omitted in the request will remain unchanged.  📘 White Labelling  The white labelling settings which can be found in Project Settings > Brand Details and which are available only for Enterprise clients as a separate service can be configured only in the user interface.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} brandingId Provide the unique identifier of the brand configuration.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsBrandingUpdateRequestBody} [managementProjectsBrandingUpdateRequestBody] Defines the brand configuration to be updated.
+     * @param {{
+        projectId: String
+     
+        brandingId: String
+     
+        managementProjectsBrandingUpdateRequestBody?: module:model/ManagementProjectsBrandingUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsBrandingUpdateResponseBody}
      */
@@ -1570,8 +1607,13 @@ export default class ManagementApi {
      * Updates a custom event schema. With this request, you can: - Add a nonexistent property to a custom event schema. - Update an existing property. In the request, you can provide only those properties you want to add or update. Definitions omitted in the request remain unchanged.  👍 Additional Notes - You can change the type of an existing property, e.g. from string to number. - You can remove a custom property with this endpoint by providing deleted: true in the request. However, you cannot permanently remove an event definition or its property with this endpoint.  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} customEventSchemaId Provide the unique identifier of the custom event schema.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody} [managementProjectsCustomEventSchemasUpdateRequestBody] Defines the custom event schema to be updated.
+     * @param {{
+        projectId: String
+     
+        customEventSchemaId: String
+     
+        managementProjectsCustomEventSchemasUpdateRequestBody?: module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateCustomEventSchemaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasUpdateResponseBody}
      */
@@ -1622,8 +1664,13 @@ export default class ManagementApi {
      * Updates a metadata schema. With this request, you can: - Add a nonexistent attribute definition to the metadata schema. - Update an existing attribute definition by overwriting its current values. In the request, you can provide only those definitions you want to add or update. Definitions omitted in the request remain unchanged. However, if you want to update a definition, you will have to add all its current key-value pairs as well. Only the pairs sent in the request are saved for this definition. This means that the key-value pairs that are not sent in a request are restored to default values. For example, if your definition has an array with values and it is not sent in an update request, the array values will be deleted.  👍 Additional Notes - You cannot change the type of an existing schema, e.g. from string to number. - You can remove a definition with this endpoint by providing deleted: true in the request. It will be moved to the Removed definitions section in the user interface. However, you cannot permanently remove a definition with this endpoint.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} metadataSchemaId Provide the unique identifier of the metadata schema.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsMetadataSchemasUpdateRequestBody} [managementProjectsMetadataSchemasUpdateRequestBody] Defines the metadata schema to be updated.
+     * @param {{
+        projectId: String
+     
+        metadataSchemaId: String
+     
+        managementProjectsMetadataSchemasUpdateRequestBody?: module:model/ManagementProjectsMetadataSchemasUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateMetadataSchemaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsMetadataSchemasUpdateResponseBody}
      */
@@ -1673,8 +1720,11 @@ export default class ManagementApi {
      * Update Project
      * Updates an existing project. You can add or modify settings for timezone, currency, notifications, and other details. Only the fields sent in the request will be updated.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsUpdateRequestBody} [managementProjectsUpdateRequestBody] Define the project details to be updated.
+     * @param {{
+        projectId: String
+     
+        managementProjectsUpdateRequestBody?: module:model/ManagementProjectsUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsUpdateResponseBody}
      */
@@ -1720,8 +1770,13 @@ export default class ManagementApi {
      * Updates the stacking rules. Only the provided fields will be updated. However, if you update an array, the content of the array is overwritten. This means that if you want to add new values to an array and retain existing ones, you need to provide both the existing and new values in the request.  📘 Stacking Rules Documentation  Read [the Stacking Rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} stackingRulesId Provide the unique identifier of the stacking rules.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsStackingRulesUpdateRequestBody} [managementProjectsStackingRulesUpdateRequestBody] Defines the stacking rules to be updated.
+     * @param {{
+        projectId: String
+     
+        stackingRulesId: String
+     
+        managementProjectsStackingRulesUpdateRequestBody?: module:model/ManagementProjectsStackingRulesUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateStackingRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsStackingRulesUpdateResponseBody}
      */
@@ -1772,8 +1827,13 @@ export default class ManagementApi {
      * Updates the users role.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} userId Provide the unique identifier of the user. Alternatively, provide the users login.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsUsersUpdateRoleRequestBody} [managementProjectsUsersUpdateRoleRequestBody] Defines the users new role.
+     * @param {{
+        projectId: String
+     
+        userId: String
+     
+        managementProjectsUsersUpdateRoleRequestBody?: module:model/ManagementProjectsUsersUpdateRoleRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsUsersUpdateRoleResponseBody}
      */
@@ -1824,8 +1884,13 @@ export default class ManagementApi {
      * Updates a webhook configuration. The events listed in the request are overwritten. If you want to add more events, provide also the events that are already in the webhook configuration.  📘 Webhook Documentation  Read [Introduction to webhooks](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} webhookId Provide the unique identifier of the webhook configuration.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ManagementProjectsWebhooksUpdateRequestBody} [managementProjectsWebhooksUpdateRequestBody] Defines the webhook configuration to be updated.
+     * @param {{
+        projectId: String
+     
+        webhookId: String
+     
+        managementProjectsWebhooksUpdateRequestBody?: module:model/ManagementProjectsWebhooksUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/ManagementApi~updateWebhookCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ManagementProjectsWebhooksUpdateResponseBody}
      */

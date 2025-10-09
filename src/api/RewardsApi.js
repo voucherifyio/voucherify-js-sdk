@@ -56,8 +56,9 @@ export default class RewardsApi {
     /**
      * Create Reward
      * Create a new reward.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RewardsCreateRequestBody} [rewardsCreateRequestBody] Define parameters of the new reward.
+     * @param {{
+        rewardsCreateRequestBody?: module:model/RewardsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/RewardsApi~createRewardCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsCreateResponseBody}
      */
@@ -97,8 +98,11 @@ export default class RewardsApi {
      * Create Reward Assignment
      * Assigns a reward to a specified loyalty campaign.
      * @param {String} rewardId A unique reward ID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RewardsAssignmentsCreateRequestBody} [rewardsAssignmentsCreateRequestBody] Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
+     * @param {{
+        rewardId: String
+     
+        rewardsAssignmentsCreateRequestBody?: module:model/RewardsAssignmentsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/RewardsApi~createRewardAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsCreateResponseBody}
      */
@@ -325,9 +329,13 @@ export default class RewardsApi {
      * List Reward Assignments
      * Retrieve reward assignments by the reward ID.
      * @param {String} rewardId A unique reward ID.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
+     * @param {{
+        rewardId: String
+     
+        limit?: Number
+     
+        page?: Number
+     }} opts Parameters
      * @param {module:api/RewardsApi~listRewardAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsListResponseBody}
      */
@@ -373,10 +381,13 @@ export default class RewardsApi {
     /**
      * List Rewards
      * Retrieve rewards.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {String} [assignmentId] A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        assignmentId?: String
+     }} opts Parameters
      * @param {module:api/RewardsApi~listRewardsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsListResponseBody}
      */
@@ -419,8 +430,11 @@ export default class RewardsApi {
      * Update Reward
      * Update the details of a reward.
      * @param {String} rewardId A unique reward ID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RewardsUpdateRequestBody} [rewardsUpdateRequestBody] Define the parameters to be updated for the reward.
+     * @param {{
+        rewardId: String
+     
+        rewardsUpdateRequestBody?: module:model/RewardsUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/RewardsApi~updateRewardCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsUpdateResponseBody}
      */
@@ -466,8 +480,13 @@ export default class RewardsApi {
      * Update the number of points needed to successfully redeem the reward.
      * @param {String} rewardId A unique reward ID.
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/RewardsAssignmentsUpdateRequestBody} [rewardsAssignmentsUpdateRequestBody] Define the number of points required to exchange for the reward.
+     * @param {{
+        rewardId: String
+     
+        assignmentId: String
+     
+        rewardsAssignmentsUpdateRequestBody?: module:model/RewardsAssignmentsUpdateRequestBody
+     }} opts Parameters
      * @param {module:api/RewardsApi~updateRewardAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsUpdateResponseBody}
      */

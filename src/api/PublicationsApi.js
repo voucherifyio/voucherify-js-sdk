@@ -53,9 +53,11 @@ export default class PublicationsApi {
     /**
      * Create Publication
      * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish.    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} [joinOnce] Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
-     * @param {module:model/PublicationsCreateRequestBody} [publicationsCreateRequestBody] Specify the publication parameters.
+     * @param {{
+        joinOnce?: Boolean
+     
+        publicationsCreateRequestBody?: module:model/PublicationsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/PublicationsApi~createPublicationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PublicationsCreateResponseBody}
      */
@@ -96,12 +98,19 @@ export default class PublicationsApi {
      * Create Publication with GET
      * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.  ❗️ Limited access  Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &rarr; **Project Settings** &rarr; **General** &rarr; **Integration Keys** to set up a pair of API keys and use them to send the request.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication).    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.   # Example Request      ❗️ Required    Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped.
      * @param {module:model/Customer} customer Contains information about the customer to whom the publication was directed.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} [joinOnce] Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
-     * @param {String} [voucher] Code of voucher being published.
-     * @param {module:model/CreatePublicationCampaign} [campaign] Create publication with campaign.
-     * @param {String} [sourceId] The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request.
-     * @param {Object.<String, Object>} [metadata] The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
+     * @param {{
+        customer: module:model/Customer
+     
+        joinOnce?: Boolean
+     
+        voucher?: String
+     
+        campaign?: module:model/CreatePublicationCampaign
+     
+        sourceId?: String
+     
+        metadata?: Object.<String, Object>
+     }} opts Parameters
      * @param {module:api/PublicationsApi~createPublication1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PublicationsCreateResponseBody}
      */
@@ -150,18 +159,29 @@ export default class PublicationsApi {
     /**
      * List Publications
      * Retrieve a list of publications. To return a **particular** publication, you can use the source_id query parameter and provide the source_id of the publication you are looking for specifically. # Pagination  🚧 Important!  If you want to scroll through a huge set of records, it is recommended to use the [Exports API](/api-reference/exports/create-export). This API will return an error page_over_limit if you reach a page above 1000. # Filter Query The filters query parameter allows for joining multiple parameters with logical operators. The syntax looks as follows:  ## Examples  
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListPublications} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {String} [campaign] Filters by a given campaign name.
-     * @param {String} [customer] Filters by a unique customer ID.
-     * @param {String} [voucher] Filters by a given voucher code.
-     * @param {module:model/ParameterResultListPublications} [result] Filters by a publication result.
-     * @param {module:model/ParameterVoucherTypeListPublications} [voucherType] Filters by a voucher type.
-     * @param {Boolean} [isReferralCode] This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. 
-     * @param {module:model/ParameterFiltersListPublications} [filters] Filters for listing publications.
-     * @param {String} [sourceId] Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListPublications
+     
+        campaign?: String
+     
+        customer?: String
+     
+        voucher?: String
+     
+        result?: module:model/ParameterResultListPublications
+     
+        voucherType?: module:model/ParameterVoucherTypeListPublications
+     
+        isReferralCode?: Boolean
+     
+        filters?: module:model/ParameterFiltersListPublications
+     
+        sourceId?: String
+     }} opts Parameters
      * @param {module:api/PublicationsApi~listPublicationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PublicationsListResponseBody}
      */

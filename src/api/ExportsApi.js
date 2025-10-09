@@ -49,8 +49,9 @@ export default class ExportsApi {
     /**
      * Create Export
      * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:    📘 Date and time in the export API  The exported date and times are always provided in the UTC time zone. # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ExportsCreateRequestBody} [exportsCreateRequestBody] Specify the details of the export that you would like to create.
+     * @param {{
+        exportsCreateRequestBody?: module:model/ExportsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ExportsApi~createExportCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExportsCreateResponseBody}
      */
@@ -132,8 +133,11 @@ export default class ExportsApi {
      * Download Export
      * Download the contents of the exported CSV file.   📘 Important notes  **Base URL:**   - https://download.voucherify.io (Europe)   - https://us1.download.voucherify.io (US)   - https://as1.download.voucherify.io (Asia)   **Token:** Can be found within the result parameter of the [Get Export](/api-reference/exports/get-export) method response.
      * @param {String} exportId Unique export object ID.
-     * @param {Object} opts Optional parameters
-     * @param {String} [token] Token that was issued to the export, to get this token, get the export first
+     * @param {{
+        exportId: String
+     
+        token?: String
+     }} opts Parameters
      * @param {module:api/ExportsApi~downloadExportCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link String}
      */
@@ -221,10 +225,13 @@ export default class ExportsApi {
     /**
      * List Exports
      * List all exports. 
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrderListExports} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrderListExports
+     }} opts Parameters
      * @param {module:api/ExportsApi~listExportsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExportsListResponseBody}
      */

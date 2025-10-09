@@ -46,8 +46,9 @@ export default class EventsApi {
     /**
      * Track Custom Event
      * To track a custom event, you create an event object.   The event object must be linked to the customer who performs the action. If a customer doesnt exist in Voucherify, the customer will be created.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/EventsCreateRequestBody} [eventsCreateRequestBody] Specify the details of the custom event.
+     * @param {{
+        eventsCreateRequestBody?: module:model/EventsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/EventsApi~trackCustomEventCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EventsCreateResponseBody}
      */

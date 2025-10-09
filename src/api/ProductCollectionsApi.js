@@ -50,8 +50,9 @@ export default class ProductCollectionsApi {
     /**
      * Create Product Collection
      * This method creates a new product collection.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ProductCollectionsCreateRequestBody} [productCollectionsCreateRequestBody] 
+     * @param {{
+        productCollectionsCreateRequestBody?: module:model/ProductCollectionsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/ProductCollectionsApi~createProductCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsCreateResponseBody}
      */
@@ -175,10 +176,13 @@ export default class ProductCollectionsApi {
     /**
      * List Product Collections
      * This method returns a list of product collections.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrder} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+     * @param {{
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrder
+     }} opts Parameters
      * @param {module:api/ProductCollectionsApi~listProductCollectionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsListResponseBody}
      */
@@ -221,11 +225,17 @@ export default class ProductCollectionsApi {
      * List Products in Collection
      * Retrieves list of products from a product collection; works for both dynamic and static product collections.
      * @param {String} productCollectionId Unique product collection ID.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit] Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-     * @param {Number} [page] Which page of results to return. The lowest value is 1.
-     * @param {module:model/ParameterOrder} [order] Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-     * @param {Date} [startingAfter] Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
+     * @param {{
+        productCollectionId: String
+     
+        limit?: Number
+     
+        page?: Number
+     
+        order?: module:model/ParameterOrder
+     
+        startingAfter?: Date
+     }} opts Parameters
      * @param {module:api/ProductCollectionsApi~listProductsInCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsProductsListResponseBody}
      */

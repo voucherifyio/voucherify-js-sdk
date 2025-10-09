@@ -47,8 +47,9 @@ export default class SegmentsApi {
     /**
      * Create Segment
      * Create a customer segment.  🚧 Limit on static segments  There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment.  🚧 Limit on Active and Passive segments  You can create a maximum of 100 passive and active segments.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SegmentsCreateRequestBody} [segmentsCreateRequestBody] Specify the boundary conditions for the customer segment.
+     * @param {{
+        segmentsCreateRequestBody?: module:model/SegmentsCreateRequestBody
+     }} opts Parameters
      * @param {module:api/SegmentsApi~createSegmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SegmentsCreateResponseBody}
      */
