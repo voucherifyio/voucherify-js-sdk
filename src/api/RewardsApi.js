@@ -57,8 +57,8 @@ export default class RewardsApi {
      * Create Reward
      * Create a new reward.
      * @param {{
-        rewardsCreateRequestBody?: module:model/RewardsCreateRequestBody
-     }} opts Parameters
+        rewardsCreateRequestBody?: module:model/RewardsCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~createRewardCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsCreateResponseBody}
      */
@@ -99,10 +99,8 @@ export default class RewardsApi {
      * Assigns a reward to a specified loyalty campaign.
      * @param {String} rewardId A unique reward ID.
      * @param {{
-        rewardId: String
-     
-        rewardsAssignmentsCreateRequestBody?: module:model/RewardsAssignmentsCreateRequestBody
-     }} opts Parameters
+        rewardsAssignmentsCreateRequestBody?: module:model/RewardsAssignmentsCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~createRewardAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsCreateResponseBody}
      */
@@ -330,12 +328,9 @@ export default class RewardsApi {
      * Retrieve reward assignments by the reward ID.
      * @param {String} rewardId A unique reward ID.
      * @param {{
-        rewardId: String
-     
-        limit?: Number
-     
-        page?: Number
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~listRewardAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsListResponseBody}
      */
@@ -382,12 +377,10 @@ export default class RewardsApi {
      * List Rewards
      * Retrieve rewards.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        assignmentId?: String
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        assignmentId?: String,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~listRewardsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsListResponseBody}
      */
@@ -431,10 +424,8 @@ export default class RewardsApi {
      * Update the details of a reward.
      * @param {String} rewardId A unique reward ID.
      * @param {{
-        rewardId: String
-     
-        rewardsUpdateRequestBody?: module:model/RewardsUpdateRequestBody
-     }} opts Parameters
+        rewardsUpdateRequestBody?: module:model/RewardsUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~updateRewardCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsUpdateResponseBody}
      */
@@ -481,12 +472,8 @@ export default class RewardsApi {
      * @param {String} rewardId A unique reward ID.
      * @param {String} assignmentId A unique reward assignment ID.
      * @param {{
-        rewardId: String
-     
-        assignmentId: String
-     
-        rewardsAssignmentsUpdateRequestBody?: module:model/RewardsAssignmentsUpdateRequestBody
-     }} opts Parameters
+        rewardsAssignmentsUpdateRequestBody?: module:model/RewardsAssignmentsUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RewardsApi~updateRewardAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RewardsAssignmentsUpdateResponseBody}
      */

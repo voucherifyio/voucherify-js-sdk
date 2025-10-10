@@ -47,10 +47,9 @@ export default class OAuthApi {
      * Generate OAuth 2.0 Token
      * Generate an OAuth 2.0 token for an API client. The token can be used to authorize access to the Voucherify API. The token inherits the permissions and IP whitelists of the API key that is used to generate the OAuth token. You can define the scope that limits its usage. You can generate up to 1000 OAuth tokens per project. The token expires in 900 seconds (15 minutes). If the API key that is used to generate the OAuth token is deleted or blocked, you cannot generate new OAuth tokens and the existing ones will stop working within one minute. If the API key used to generate an OAuth token is regenerated, the OAuth token can still be used. 🚧 Format of scope values Separate the values of the scope property with spaces.
      * @param {{
-        grantType?: module:model/String
-     
-        scope?: String
-     }} opts Parameters
+        grantType?: module:model/String,
+        scope?: String,
+     }} [opts] Optional parameters
      * @param {module:api/OAuthApi~generateOauthTokenCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OAuthTokenGenerateResponseBody}
      */
@@ -92,8 +91,8 @@ export default class OAuthApi {
      * Introspect OAuth 2.0 Token
      * Introspect an OAuth 2.0 token for an API client.
      * @param {{
-        accessToken?: String
-     }} opts Parameters
+        accessToken?: String,
+     }} [opts] Optional parameters
      * @param {module:api/OAuthApi~introspectOauthTokenCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OAuthTokenIntrospectResponseBody}
      */
@@ -134,8 +133,8 @@ export default class OAuthApi {
      * Revoke OAuth 2.0 Token
      * Revoke an OAuth 2.0 token for an API client. Once revoked, the token cannot be used anymore.
      * @param {{
-        accessToken?: String
-     }} opts Parameters
+        accessToken?: String,
+     }} [opts] Optional parameters
      * @param {module:api/OAuthApi~revokeOauthTokenCallback} callback The callback function, accepting three arguments: error, data, response
      */
     revokeOauthToken(opts, callback) {

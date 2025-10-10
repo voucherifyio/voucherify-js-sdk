@@ -73,12 +73,8 @@ export default class CampaignsApi {
      * @param {String} campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {String} code A custom **code** that identifies the voucher.
      * @param {{
-        campaignId: String
-     
-        code: String
-     
-        campaignsVouchersCreateRequestBody?: module:model/CampaignsVouchersCreateRequestBody
-     }} opts Parameters
+        campaignsVouchersCreateRequestBody?: module:model/CampaignsVouchersCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~addVoucherWithSpecificCodeToCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsVouchersCreateResponseBody}
      */
@@ -129,12 +125,9 @@ export default class CampaignsApi {
      * This method gives the possibility to push new vouchers to an existing campaign. New vouchers will inherit properties from the campaign profile. However, it is possible to overwrite some of them in the request body. If you provide an optional code_config parameter with a voucher code configuration, then it will be used to generate new voucher codes. Otherwise, the voucher code configuration from the campaign will be used. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        vouchersCount?: Number
-     
-        campaignsVouchersCreateInBulkRequestBody?: module:model/CampaignsVouchersCreateInBulkRequestBody
-     }} opts Parameters
+        vouchersCount?: Number,
+        campaignsVouchersCreateInBulkRequestBody?: module:model/CampaignsVouchersCreateInBulkRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~addVouchersToCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsVouchersCreateCombinedResponseBody}
      */
@@ -223,10 +216,8 @@ export default class CampaignsApi {
      * Deletes a campaign and all related vouchers. This action cannot be undone. Also, this method immediately removes any redemptions on the voucher. If the force parameter is set to false or not set at all, the campaign and all related vouchers will be moved to [the bin](/api-reference/bin/list-bin-entries). This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        force?: Boolean
-     }} opts Parameters
+        force?: Boolean,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~deleteCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsDeleteResponseBody}
      */
@@ -359,10 +350,8 @@ export default class CampaignsApi {
      * Export transactions is an asynchronous process that generates a CSV file with the data about credit movements on all gift cards or point movements on all loyalty cards in a given campaign. To export transactions: 1. In the export request, use parameters to select which fields will be exported, in what order, and which data will be filtered. 2. Use the returned id to track the export status with the [GET Export](/api-reference/exports/get-export) method. 3. In the GET Export method, when the returned status field has the DONE value, the export file has been generated. 4. Use the URL in the result property to download the file. You must be logged to your Voucherify account on a given cluster in the browser to be able to download the file. An export request will almost always result in a single file being generated by the system. However, when the data volume is large, the system may split the results into multiple files. An example export file can look as follows:    👍 Export Loyalty Campaign Transactions  For loyalty campaigns, this method works in the same way the [POST Export Loyalty Campaign Transactions](/api-reference/loyalties/export-loyalty-campaign-transactions) does.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        campaignsTransactionsExportCreateRequestBody?: module:model/CampaignsTransactionsExportCreateRequestBody
-     }} opts Parameters
+        campaignsTransactionsExportCreateRequestBody?: module:model/CampaignsTransactionsExportCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~exportCampaignTransactionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsTransactionsExportCreateResponseBody}
      */
@@ -451,12 +440,9 @@ export default class CampaignsApi {
      * Returns data for campaign analytics, covering validations, redemptions, publications, and other details specific to a given campaign type. Use start_date and end_date to narrow down the data to specific periods. 🚧 Campaigns created before v20250602 version This endpoint returns analytics data for campaigns that were created after the [v20250602 version](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20250602) was released on 17 June 2025. Older campaigns return empty data.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        startDate?: Date
-     
-        endDate?: Date
-     }} opts Parameters
+        startDate?: Date,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~getCampaignSummaryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsSummaryGetResponseBody}
      */
@@ -504,10 +490,8 @@ export default class CampaignsApi {
      * Imports vouchers to an **existing** campaign. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        campaignsImportVoucherItem?: Array.<module:model/CampaignsImportVoucherItem>
-     }} opts Parameters
+        campaignsImportVoucherItem?: Array.<module:model/CampaignsImportVoucherItem>,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~importVouchersToCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsImportCreateResponseBody}
      */
@@ -553,10 +537,8 @@ export default class CampaignsApi {
      * Imports vouchers to an **existing** campaign.   The CSV file has to include headers in the first line.  This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        file?: File
-     }} opts Parameters
+        file?: File,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~importVouchersToCampaignUsingCsvCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsImportCsvCreateResponseBody}
      */
@@ -603,16 +585,11 @@ export default class CampaignsApi {
      * Retrieves all transactions for the campaign with the given campaign ID or campaign name. The id filter denotes the unique transaction identifier.  🚧  The endpoint works only for gift card and loyalty campaigns.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        limit?: Number
-     
-        order?: module:model/ParameterOrderListTransactions
-     
-        startingAfterId?: String
-     
-        filters?: module:model/ParametersFiltersListCampaignTransactions
-     }} opts Parameters
+        limit?: Number,
+        order?: module:model/ParameterOrderListTransactions,
+        startingAfterId?: String,
+        filters?: module:model/ParametersFiltersListCampaignTransactions,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~listCampaignTransactionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsTransactionsListResponseBody}
      */
@@ -661,24 +638,16 @@ export default class CampaignsApi {
      * List Campaigns
      * Retrieve a list of campaigns in a project.  The campaigns are returned sorted by creation date, with the most recent campaigns appearing first.   When you get a list of campaigns, you can optionally specify query parameters to customize the amount of campaigns returned per call using limit, which page of campaigns to return using page, sort the campaigns using the order query parameter and filter the results by the campaign_type. This method will return an error when trying to return a limit of more than 100 campaigns.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        campaignType?: module:model/ParameterCampaignType
-     
-        expand?: module:model/ParameterExpandListCampaigns
-     
-        campaignStatus?: module:model/ParameterCampaignStatusListCampaigns
-     
-        isReferralCode?: Boolean
-     
-        order?: module:model/ParameterOrderListCampaigns
-     
-        filters?: module:model/ParameterFiltersListCampaigns
-     
-        accessSettings?: module:model/ParameterCampaignsAccessSetttings
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        campaignType?: module:model/ParameterCampaignType,
+        expand?: module:model/ParameterExpandListCampaigns,
+        campaignStatus?: module:model/ParameterCampaignStatusListCampaigns,
+        isReferralCode?: Boolean,
+        order?: module:model/ParameterOrderListCampaigns,
+        filters?: module:model/ParameterFiltersListCampaigns,
+        accessSettings?: module:model/ParameterCampaignsAccessSetttings,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~listCampaignsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsListResponseBody}
      */
@@ -728,10 +697,8 @@ export default class CampaignsApi {
      * Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.  Fields other than the ones listed in the request body wont be modified. Even if provided, they will be silently skipped.     🚧 Vouchers will be affected  This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
-        campaignId: String
-     
-        campaignsUpdateRequestBody?: module:model/CampaignsUpdateRequestBody
-     }} opts Parameters
+        campaignsUpdateRequestBody?: module:model/CampaignsUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CampaignsApi~updateCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CampaignsUpdateResponseBody}
      */

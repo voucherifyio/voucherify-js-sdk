@@ -90,10 +90,9 @@ export default class AsyncActionsApi {
      * List Async Actions
      * Track asynchronous operations scheduled in your project.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action. If you would like to learn more about importing data into Voucherify, read more [here](https://support.voucherify.io/article/574-data-import).       
      * @param {{
-        limit?: Number
-     
-        endDate?: Date
-     }} opts Parameters
+        limit?: Number,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/AsyncActionsApi~listAsyncActionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AsyncActionsListResponseBody}
      */

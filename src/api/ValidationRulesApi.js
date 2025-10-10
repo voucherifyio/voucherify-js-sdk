@@ -57,12 +57,9 @@ export default class ValidationRulesApi {
      * Assign validation rule to either one of the following objects: voucher, campaign, promotion tier, earning rule, reward, distribution.
      * @param {String} validationRuleId Unique validation rule ID.
      * @param {{
-        validationRuleId: String
-     
-        force?: Boolean
-     
-        validationRulesAssignmentsCreateRequestBody?: module:model/ValidationRulesAssignmentsCreateRequestBody
-     }} opts Parameters
+        force?: Boolean,
+        validationRulesAssignmentsCreateRequestBody?: module:model/ValidationRulesAssignmentsCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~createValidationRuleAssignmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsCreateResponseBody}
      */
@@ -108,8 +105,8 @@ export default class ValidationRulesApi {
      * Create Validation Rules
      * Create a validation rule.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
      * @param {{
-        validationRulesCreateRequestBody?: module:model/ValidationRulesCreateRequestBody
-     }} opts Parameters
+        validationRulesCreateRequestBody?: module:model/ValidationRulesCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~createValidationRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesCreateResponseBody}
      */
@@ -283,14 +280,10 @@ export default class ValidationRulesApi {
      * Retrieve validation rule assignments for a specific validation rule.
      * @param {String} validationRuleId Unique validation rule ID.
      * @param {{
-        validationRuleId: String
-     
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrderListValidationRuleAssignments
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrderListValidationRuleAssignments,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~listValidationRuleAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
      */
@@ -338,16 +331,12 @@ export default class ValidationRulesApi {
      * List Validation Rules
      * Retrieve validation rules.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrderListValidationRules
-     
-        startDate?: Date
-     
-        endDate?: Date
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrderListValidationRules,
+        startDate?: Date,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~listValidationRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesListResponseBody}
      */
@@ -392,16 +381,12 @@ export default class ValidationRulesApi {
      * List Validation Rules' Assignment(s)
      * List all validation rules assignments or filter the results using the related object ID or the validation rule ID query parameters.
      * @param {{
-        relatedObjectId?: String
-     
-        rule?: String
-     
-        page?: Number
-     
-        limit?: Number
-     
-        order?: String
-     }} opts Parameters
+        relatedObjectId?: String,
+        rule?: String,
+        page?: Number,
+        limit?: Number,
+        order?: String,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~listValidationRulesAssignmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
      */
@@ -447,10 +432,8 @@ export default class ValidationRulesApi {
      * Update validation rule parameters.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
      * @param {String} validationRuleId A unique validation rule ID.
      * @param {{
-        validationRuleId: String
-     
-        validationRulesUpdateRequestBody?: module:model/ValidationRulesUpdateRequestBody
-     }} opts Parameters
+        validationRulesUpdateRequestBody?: module:model/ValidationRulesUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationRulesApi~updateValidationRuleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationRulesUpdateResponseBody}
      */

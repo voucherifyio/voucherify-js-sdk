@@ -92,14 +92,11 @@ export default class LocationsApi {
      * List Locations
      * Returns a list of your locations.
      * @param {{
-        limit?: Number
-     
-        order?: module:model/ParameterOrderListLocations
-     
-        filters?: module:model/ParameterFiltersListLocations
-     
-        endDate?: Date
-     }} opts Parameters
+        limit?: Number,
+        order?: module:model/ParameterOrderListLocations,
+        filters?: module:model/ParameterFiltersListLocations,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/LocationsApi~listLocationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LocationsListResponseBody}
      */

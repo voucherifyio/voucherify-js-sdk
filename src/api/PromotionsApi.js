@@ -64,10 +64,8 @@ export default class PromotionsApi {
      * This method allows you to add a new promotion tier to an existing campaign. The tier hierarchy will be set as the next consequtive integer following the lowest ranking tier.
      * @param {String} campaignId Unique campaign ID assigned by Voucherify.
      * @param {{
-        campaignId: String
-     
-        promotionsTiersCreateRequestBody?: module:model/PromotionsTiersCreateRequestBody
-     }} opts Parameters
+        promotionsTiersCreateRequestBody?: module:model/PromotionsTiersCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~addPromotionTierToCampaignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsTiersCreateResponseBody}
      */
@@ -113,10 +111,8 @@ export default class PromotionsApi {
      * This method creates one promotion stack. The sequence of promotion tier IDs will determine the promotion stacking order.
      * @param {String} campaignId Unique campaign ID.
      * @param {{
-        campaignId: String
-     
-        promotionsStacksCreateRequestBody?: module:model/PromotionsStacksCreateRequestBody
-     }} opts Parameters
+        promotionsStacksCreateRequestBody?: module:model/PromotionsStacksCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~createPromotionStackCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsStacksCreateResponseBody}
      */
@@ -429,16 +425,12 @@ export default class PromotionsApi {
      * List Promotion Stacks
      * This method enables you to list promotion stacks irrespective of the campaign they are associated with.  You can use filters in the query parameters to specify the stacks to be returned in the response. # Advanced filters for fetching promotion stacks  
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrderListAllPromotionStacks
-     
-        createdAt?: module:model/ParameterCreatedBeforeAfter
-     
-        updatedAt?: module:model/ParameterUpdatedBeforeAfter
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrderListAllPromotionStacks,
+        createdAt?: module:model/ParameterCreatedBeforeAfter,
+        updatedAt?: module:model/ParameterUpdatedBeforeAfter,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~listAllPromotionStacksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsStacksListResponseBody}
      */
@@ -526,14 +518,11 @@ export default class PromotionsApi {
      * List Promotion Tiers
      * This method enables you to list promotion tiers.
      * @param {{
-        isAvailable?: Boolean
-     
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrderListPromotionTiers
-     }} opts Parameters
+        isAvailable?: Boolean,
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrderListPromotionTiers,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~listPromotionTiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsTiersListResponseBody}
      */
@@ -622,12 +611,8 @@ export default class PromotionsApi {
      * @param {String} campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
      * @param {String} stackId Promotion stack ID.
      * @param {{
-        campaignId: String
-     
-        stackId: String
-     
-        promotionsStacksUpdateRequestBody?: module:model/PromotionsStacksUpdateRequestBody
-     }} opts Parameters
+        promotionsStacksUpdateRequestBody?: module:model/PromotionsStacksUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~updatePromotionStackCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsStacksUpdateResponseBody}
      */
@@ -678,10 +663,8 @@ export default class PromotionsApi {
      * This method updates a promotion tier.
      * @param {String} promotionTierId Unique promotion tier ID.
      * @param {{
-        promotionTierId: String
-     
-        promotionsTiersUpdateRequestBody?: module:model/PromotionsTiersUpdateRequestBody
-     }} opts Parameters
+        promotionsTiersUpdateRequestBody?: module:model/PromotionsTiersUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/PromotionsApi~updatePromotionTierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PromotionsTiersUpdateResponseBody}
      */

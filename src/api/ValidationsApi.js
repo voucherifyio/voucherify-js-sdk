@@ -47,8 +47,8 @@ export default class ValidationsApi {
      * Validate Stackable Discounts
      * Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys. API keys with a Merchant role cant use this endpoint.
      * @param {{
-        validationsValidateRequestBody?: module:model/ValidationsValidateRequestBody
-     }} opts Parameters
+        validationsValidateRequestBody?: module:model/ValidationsValidateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ValidationsApi~validateStackedDiscountsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ValidationsValidateResponseBody}
      */

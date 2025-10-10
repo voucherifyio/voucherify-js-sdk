@@ -51,8 +51,8 @@ export default class ProductCollectionsApi {
      * Create Product Collection
      * This method creates a new product collection.
      * @param {{
-        productCollectionsCreateRequestBody?: module:model/ProductCollectionsCreateRequestBody
-     }} opts Parameters
+        productCollectionsCreateRequestBody?: module:model/ProductCollectionsCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductCollectionsApi~createProductCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsCreateResponseBody}
      */
@@ -177,12 +177,10 @@ export default class ProductCollectionsApi {
      * List Product Collections
      * This method returns a list of product collections.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrder
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrder,
+     }} [opts] Optional parameters
      * @param {module:api/ProductCollectionsApi~listProductCollectionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsListResponseBody}
      */
@@ -226,16 +224,11 @@ export default class ProductCollectionsApi {
      * Retrieves list of products from a product collection; works for both dynamic and static product collections.
      * @param {String} productCollectionId Unique product collection ID.
      * @param {{
-        productCollectionId: String
-     
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrder
-     
-        startingAfter?: Date
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrder,
+        startingAfter?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/ProductCollectionsApi~listProductsInCollectionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCollectionsProductsListResponseBody}
      */

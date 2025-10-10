@@ -67,8 +67,8 @@ export default class CustomersApi {
      * Create Customer
      * Creates a customer object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields.
      * @param {{
-        customersCreateRequestBody?: module:model/CustomersCreateRequestBody
-     }} opts Parameters
+        customersCreateRequestBody?: module:model/CustomersCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~createCustomerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersCreateResponseBody}
      */
@@ -236,8 +236,8 @@ export default class CustomersApi {
      * Import and Update Customers using CSV
      * This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.   # Request Example # CSV File Format The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  📘 Standard customer fields mapping  **No spaces allowed in field names**    Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2 # Update Customers using CSV If you would like to update customers data, you can do it using the CSV file with new data. However, remember to include a source_id in your CSV file to manage the update successfully. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {{
-        file?: File
-     }} opts Parameters
+        file?: File,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~importCustomersUsingCsvCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersImportCsvCreateResponseBody}
      */
@@ -279,26 +279,16 @@ export default class CustomersApi {
      * Retrieves activity details of a given customer by customers id or source_id.
      * @param {String} customerId A Voucherify customers id or source ID of the customer who performed the activities.
      * @param {{
-        customerId: String
-     
-        limit?: Number
-     
-        order?: module:model/ParameterOrderCreatedAt
-     
-        startingAfterId?: String
-     
-        startDate?: Date
-     
-        endDate?: Date
-     
-        campaignId?: String
-     
-        campaignType?: module:model/ParameterCampaignType
-     
-        category?: module:model/ParameterActivityCategory
-     
-        type?: module:model/ParameterCustomerEvent
-     }} opts Parameters
+        limit?: Number,
+        order?: module:model/ParameterOrderCreatedAt,
+        startingAfterId?: String,
+        startDate?: Date,
+        endDate?: Date,
+        campaignId?: String,
+        campaignType?: module:model/ParameterCampaignType,
+        category?: module:model/ParameterActivityCategory,
+        type?: module:model/ParameterCustomerEvent,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~listCustomerActivityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersActivityListResponseBody}
      */
@@ -353,16 +343,11 @@ export default class CustomersApi {
      * Retrieves all the redeemables that have been assigned to the customer. To use this endpoint, you must have the following permissions: - Read Customers (customers.details.read)
      * @param {String} customerId Unique identifier of a customer represented by an internal customer ID or customer source ID.
      * @param {{
-        customerId: String
-     
-        limit?: Number
-     
-        order?: module:model/ParameterOrderListRedeemables
-     
-        startingAfterId?: String
-     
-        filters?: module:model/ParameterFiltersListCustomerRedeemables
-     }} opts Parameters
+        limit?: Number,
+        order?: module:model/ParameterOrderListRedeemables,
+        startingAfterId?: String,
+        filters?: module:model/ParameterFiltersListCustomerRedeemables,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~listCustomerRedeemablesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersRedeemablesListResponseBody}
      */
@@ -454,30 +439,19 @@ export default class CustomersApi {
      * List Customers
      * Returns a list of customers.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        email?: String
-     
-        city?: String
-     
-        name?: String
-     
-        segmentId?: String
-     
-        createdAtBefore?: Date
-     
-        createdAtAfter?: Date
-     
-        updatedAtBefore?: Date
-     
-        updatedAtAfter?: Date
-     
-        order?: module:model/ParameterOrderListCustomers
-     
-        startingAfter?: Date
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        email?: String,
+        city?: String,
+        name?: String,
+        segmentId?: String,
+        createdAtBefore?: Date,
+        createdAtAfter?: Date,
+        updatedAtBefore?: Date,
+        updatedAtAfter?: Date,
+        order?: module:model/ParameterOrderListCustomers,
+        startingAfter?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~listCustomersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersListResponseBody}
      */
@@ -530,10 +504,8 @@ export default class CustomersApi {
      * Updates the specified customer by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
      * @param {String} customerId A Voucherify customers id or source_id.
      * @param {{
-        customerId: String
-     
-        customersUpdateRequestBody?: module:model/CustomersUpdateRequestBody
-     }} opts Parameters
+        customersUpdateRequestBody?: module:model/CustomersUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~updateCustomerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersUpdateResponseBody}
      */
@@ -578,8 +550,8 @@ export default class CustomersApi {
      * Update Customers in Bulk
      * Updates customers in one asynchronous operation. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a customer object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
      * @param {{
-        customersUpdateInBulkRequestBody?: Array.<module:model/CustomersUpdateInBulkRequestBody>
-     }} opts Parameters
+        customersUpdateInBulkRequestBody?: Array.<module:model/CustomersUpdateInBulkRequestBody>,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~updateCustomersInBulkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersUpdateInBulkResponseBody}
      */
@@ -619,8 +591,8 @@ export default class CustomersApi {
      * Update Customers' Metadata in Bulk
      * Updates metadata parameters for a list of customers. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
      * @param {{
-        customersMetadataUpdateInBulkRequestBody?: module:model/CustomersMetadataUpdateInBulkRequestBody
-     }} opts Parameters
+        customersMetadataUpdateInBulkRequestBody?: module:model/CustomersMetadataUpdateInBulkRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/CustomersApi~updateCustomersMetadataInBulkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomersMetadataUpdateInBulkResponseBody}
      */

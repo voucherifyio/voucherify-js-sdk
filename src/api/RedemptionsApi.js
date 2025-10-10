@@ -143,22 +143,15 @@ export default class RedemptionsApi {
      * List Redemptions
      * Returns a list of redemptions previously created. The redemptions are returned in a sorted order, with the most recent redemptions appearing first. The response returns a list of redemptions of all vouchers.  # Filtering results The result can be narrowed according to specified (or default) filters, for example, you can sort redemptions by date: https://api.voucherify.io/v1/redemptions?limit 3&[created_at][before] 2017-09-08T13:52:18.227Z. A filter based on the object created_at field narrows down the results and lists redemptions done before or after a particular date time. You can use the following options: [created_at][after], [created_at][before]. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z. # Failed Redemptions A redemption may fail for various reasons. You can figure out an exact reason from the failure_code: - resource_not_found - voucher with given code does not exist - voucher_not_active - voucher is not active yet (before start date) - voucher_expired - voucher has already expired (after expiration date) - voucher_disabled -  voucher has been disabled (active: false) - quantity_exceeded - vouchers redemptions limit has been exceeded - gift_amount_exceeded - gift amount has been exceeded - customer_rules_violated - customer did not match the segment - order_rules_violated - order did not match validation rules - invalid_order - order was specified incorrectly - invalid_amount - order amount was specified incorrectly - missing_amount - order amount was not specified - missing_order_items - order items were not specified - missing_customer - customer was not specified
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        result?: String
-     
-        campaign?: String
-     
-        customer?: String
-     
-        order?: module:model/ParameterOrderListRedemptions
-     
-        createdAt?: module:model/ParameterCreatedBeforeAfter
-     
-        filters?: module:model/ParameterFiltersListRedemptions
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        result?: String,
+        campaign?: String,
+        customer?: String,
+        order?: module:model/ParameterOrderListRedemptions,
+        createdAt?: module:model/ParameterCreatedBeforeAfter,
+        filters?: module:model/ParameterFiltersListRedemptions,
+     }} [opts] Optional parameters
      * @param {module:api/RedemptionsApi~listRedemptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RedemptionsListResponseBody}
      */
@@ -206,8 +199,8 @@ export default class RedemptionsApi {
      * Redeem Stackable Discounts
      * # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint.  📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).      📘 Also available on client-side  This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more.  - Use X-Client-Application-Id as the application ID header.  - Use X-Client-Token as the appliction secret key header.  - Use client-side base URL.  - Use an origin header for your custom domain.
      * @param {{
-        redemptionsRedeemRequestBody?: module:model/RedemptionsRedeemRequestBody
-     }} opts Parameters
+        redemptionsRedeemRequestBody?: module:model/RedemptionsRedeemRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RedemptionsApi~redeemStackedDiscountsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RedemptionsRedeemResponseBody}
      */
@@ -248,14 +241,10 @@ export default class RedemptionsApi {
      * Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint. This endpoint rolls back only single redemptions, meaning those that are not stacked. Stacked redemptions belong to a parent redemption. To roll back a parent redemption, including all of its individual redemptions, use the [POST Rollback Stackable Redemptions](/api-reference/redemptions/rollback-stackable-redemptions)  🚧  You can roll back a redemption up to 3 months back.   # Effect  The operation  - creates a rollback entry in vouchers redemption history (redemption.redemption_entries) and  - gives 1 redemption back to the pool (decreases redeemed_quantity by 1).  # Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
      * @param {String} redemptionId The original redemption ID to be rolled back (undone).
      * @param {{
-        redemptionId: String
-     
-        reason?: String
-     
-        trackingId?: String
-     
-        redemptionsRollbackCreateRequestBody?: module:model/RedemptionsRollbackCreateRequestBody
-     }} opts Parameters
+        reason?: String,
+        trackingId?: String,
+        redemptionsRollbackCreateRequestBody?: module:model/RedemptionsRollbackCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RedemptionsApi~rollbackRedemptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RedemptionsRollbackCreateResponseBody}
      */
@@ -303,14 +292,10 @@ export default class RedemptionsApi {
      * Rollback a stackable redemption. When you roll back a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter. However, you can use this endpoint to roll back a single redemption that does not have a parent, similarly to [POST Rollback redemption](/api-reference/redemptions/rollback-redemption). 🚧   You can roll back a redemption up to 3 months back.
      * @param {String} parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm.
      * @param {{
-        parentRedemptionId: String
-     
-        reason?: String
-     
-        trackingId?: String
-     
-        redemptionsRollbacksCreateRequestBody?: module:model/RedemptionsRollbacksCreateRequestBody
-     }} opts Parameters
+        reason?: String,
+        trackingId?: String,
+        redemptionsRollbacksCreateRequestBody?: module:model/RedemptionsRollbacksCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/RedemptionsApi~rollbackStackedRedemptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RedemptionsRollbacksCreateResponseBody}
      */

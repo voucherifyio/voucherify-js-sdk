@@ -64,8 +64,8 @@ export default class ProductsApi {
      * Create Product
      * Creates a product object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the product database, Voucherify will return a related product object with updated fields.
      * @param {{
-        productsCreateRequestBody?: module:model/ProductsCreateRequestBody
-     }} opts Parameters
+        productsCreateRequestBody?: module:model/ProductsCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~createProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsCreateResponseBody}
      */
@@ -106,10 +106,8 @@ export default class ProductsApi {
      * This method adds product variants to a [created product](/api-reference/products/create-product).   📘 Upsert Mode  If you pass an id or a source_id that already exists in the sku database, Voucherify will return a related sku object with updated fields.
      * @param {String} productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID.
      * @param {{
-        productId: String
-     
-        productsSkusCreateRequestBody?: module:model/ProductsSkusCreateRequestBody
-     }} opts Parameters
+        productsSkusCreateRequestBody?: module:model/ProductsSkusCreateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~createSkuCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsSkusCreateResponseBody}
      */
@@ -155,10 +153,8 @@ export default class ProductsApi {
      * Deletes a product and all related SKUs. This operation cannot be undone.  If the force parameter is set to false or not set at all, the product and all related SKUs will be moved to [the bin](/api-reference/bin/list-bin-entries).
      * @param {String} productId A Voucherify product ID or source ID.
      * @param {{
-        productId: String
-     
-        force?: Boolean
-     }} opts Parameters
+        force?: Boolean,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~deleteProductCallback} callback The callback function, accepting three arguments: error, data, response
      */
     deleteProduct(productId, opts, callback) {
@@ -205,12 +201,8 @@ export default class ProductsApi {
      * @param {String} productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID.
      * @param {String} skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID.
      * @param {{
-        productId: String
-     
-        skuId: String
-     
-        force?: Boolean
-     }} opts Parameters
+        force?: Boolean,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~deleteSkuCallback} callback The callback function, accepting three arguments: error, data, response
      */
     deleteSku(productId, skuId, opts, callback) {
@@ -346,8 +338,8 @@ export default class ProductsApi {
      * Import Products using CSV
      * Import products into the repository using a CSV file. The CSV file has to include headers in the first line.  📘 Standard product fields mapping  - Create a **comma separated value (CSV) file** or download our CSV import template. You can find an example template [here](https://s3.amazonaws.com/helpscout.net/docs/assets/5902f1c12c7d3a057f88a36d/attachments/627b82ed68d51e779443f550/Import_products_template.csv).  - Supported CSV file headers: name,source_id,price,attributes,image_url,Metadata_property_name  - **Name** is a **required** field. The remaining fields in the CSV template are optional.  - Override/Update products **names** in Voucherify using this method. Data will be updated for each product included in the CSV file whose **source_id** matches a source ID in Voucherify. No other data can be updated other than the product name.  - Note that dates and date-time attributes need to be provided in compliance with the **ISO 8601 norms**. For example, 2022-03-11T09:00:00.000Z or 2022-03-11     - YYYY-MM-DD     - YYYY-MM-DDTHH     - YYYY-MM-DDTHH:mm     - YYYY-MM-DDTHH:mm:ss     - YYYY-MM-DDTHH:mm:ssZ     - YYYY-MM-DDTHH:mm:ssZ     - YYYY-MM-DDTHH:mm:ss.SSSZ  - Columns that cannot be mapped to standard fields, will be mapped to **Custom attributes** and added as **products metadata**. There is no limit on the number of custom attributes that you can import as metadata.   - To provide the proper data type, you need to add all custom attributes to the metadata schema **before importing the file**. Read more [here](https://support.voucherify.io/article/99-schema-validation-metadata#add-metadata).  - **Product attributes** (not custom attributes) need to be separated by a comma and enclosed in double quotes, i.e attribute1,attribute2.  - Headers with metadata names **cant contain white-space characters**.  - If you import metadata defined in the schema as **arrays (multiple)**, you need to separate each value using a comma, for example:       - array of strings: subscribed,premium       - array of numbers: 123,234.      - array of dates: 2000-01-01,2000-01-02 This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {{
-        file?: File
-     }} opts Parameters
+        file?: File,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~importProductsUsingCsvCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsImportCsvCreateResponseBody}
      */
@@ -388,8 +380,8 @@ export default class ProductsApi {
      * Import SKUs using CSV
      * Import SKUs into the repository using a CSV file. The CSV file has to include headers in the first line. All properties which cannot be mapped to standard SKU fields will be added to the metadata object. You can find an example template [here](https://s3.amazonaws.com/helpscout.net/docs/assets/5902f1c12c7d3a057f88a36d/attachments/627b98d08c9b585083488a4c/Import_SKUS_template.csv).   🚧 Import sequence  First import products using the [dedicated endpoint](/api-reference/products/import-products-using-csv), then import SKUs using this endpoint to properly match SKUs to products.  📘 Standard SKU fields mapping  - **Required** fields are source_id and product_id.  - Supported CSV file headers: product_id,sku,source_id,price,image_url,attributes  - SKU **source_id** must be unique in the entire product catalog, no duplicates are allowed.  - SKU attributes need to be in the form of a stringy-fied json, i.e.{color:blue}. These attributes must be defined in the **product** beforehand so you can import them to the SKU.  - You can use this method to update the following parameters in bulk: **sku** and the sku **price**.  - Columns that cannot be mapped to standard fields will be mapped to Custom attributes and added as product metadata. There is no limit on the number of custom attributes that you can import as metadata. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {{
-        file?: File
-     }} opts Parameters
+        file?: File,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~importSKUsUsingCsvCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SkusImportCsvCreateResponseBody}
      */
@@ -430,16 +422,12 @@ export default class ProductsApi {
      * List Products
      * Retrieve a list of products.
      * @param {{
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrder
-     
-        startDate?: Date
-     
-        endDate?: Date
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrder,
+        startDate?: Date,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~listProductsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsListResponseBody}
      */
@@ -485,18 +473,12 @@ export default class ProductsApi {
      * Retrieve all SKUs for a given product.
      * @param {String} productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID.
      * @param {{
-        productId: String
-     
-        limit?: Number
-     
-        page?: Number
-     
-        order?: module:model/ParameterOrder
-     
-        startDate?: Date
-     
-        endDate?: Date
-     }} opts Parameters
+        limit?: Number,
+        page?: Number,
+        order?: module:model/ParameterOrder,
+        startDate?: Date,
+        endDate?: Date,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~listSKUsInProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsSkusListResponseBody}
      */
@@ -547,10 +529,8 @@ export default class ProductsApi {
      * Updates the specified product by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
      * @param {String} productId A Voucherify product ID or source ID.
      * @param {{
-        productId: String
-     
-        productsUpdateRequestBody?: module:model/ProductsUpdateRequestBody
-     }} opts Parameters
+        productsUpdateRequestBody?: module:model/ProductsUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~updateProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsUpdateResponseBody}
      */
@@ -595,8 +575,8 @@ export default class ProductsApi {
      * Update Products in Bulk
      * Update products in one asynchronous operation. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
      * @param {{
-        productsUpdateInBulkRequestBody?: Array.<module:model/ProductsUpdateInBulkRequestBody>
-     }} opts Parameters
+        productsUpdateInBulkRequestBody?: Array.<module:model/ProductsUpdateInBulkRequestBody>,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~updateProductsInBulkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsUpdateInBulkResponseBody}
      */
@@ -636,8 +616,8 @@ export default class ProductsApi {
      * Update Products' Metadata in Bulk
      * Updates metadata parameters for a list of products. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
      * @param {{
-        productsMetadataUpdateInBulkRequestBody?: module:model/ProductsMetadataUpdateInBulkRequestBody
-     }} opts Parameters
+        productsMetadataUpdateInBulkRequestBody?: module:model/ProductsMetadataUpdateInBulkRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~updateProductsMetadataInBulkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsMetadataUpdateInBulkResponseBody}
      */
@@ -679,12 +659,8 @@ export default class ProductsApi {
      * @param {String} productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID.
      * @param {String} skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID.
      * @param {{
-        productId: String
-     
-        skuId: String
-     
-        productsSkusUpdateRequestBody?: module:model/ProductsSkusUpdateRequestBody
-     }} opts Parameters
+        productsSkusUpdateRequestBody?: module:model/ProductsSkusUpdateRequestBody,
+     }} [opts] Optional parameters
      * @param {module:api/ProductsApi~updateSkuCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductsSkusUpdateResponseBody}
      */
