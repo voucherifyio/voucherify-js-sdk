@@ -17,7 +17,7 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-	"main": "dist/voucherifysdk.umd.production.min.js",
+	"main": "dist/voucherifysdk.cjs",
 	"module": "dist/voucherifysdk.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [

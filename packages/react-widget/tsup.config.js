@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 const pkg = JSON.parse(readFileSync(resolve(__dirname, 'package.json'), 'utf8'))
 
-// Bundle these modules instead of keeping them external (matches old BUNDLE_MODULES)
+// Bundle these modules instead of keeping them external
 const BUNDLE_MODULES = ['clsx']
 
 // Make all deps external except ones we explicitly bundle
@@ -20,44 +20,70 @@ function copyAssets() {
 	copyFileSync(src, dest)
 }
 
-export default defineConfig({
-	entry: {
-		voucherifywidget: 'src/index.tsx',
+export default defineConfig([
+	// Configuration for bundled JavaScript files
+	{
+		entry: {
+			voucherifywidget: 'src/index.tsx',
+		},
+		outDir: 'dist',
+		dts: false,
+		sourcemap: true,
+		clean: true,
+
+		// Build both CJS and ESM like in SDK
+		format: ['cjs', 'esm'],
+		globalName: 'VoucherifyWidget',
+
+		esbuildOptions(options) {
+			options.banner = options.banner || {}
+			options.footer = options.footer || {}
+			// Keep code readable like in SDK
+			options.minify = false
+			options.minifyIdentifiers = false
+			options.minifySyntax = false
+			options.minifyWhitespace = false
+		},
+
+		// Inject __VERSION__
+		define: {
+			__VERSION__: JSON.stringify(pkg.version),
+		},
+
+		external,
+
+		// File copying after each successful build
+		onSuccess: copyAssets,
+
+		minify: false, // Changed to false like in SDK
+
+		outExtension({ format }) {
+			if (format === 'esm') return { js: '.esm.js' }
+			if (format === 'cjs') return { js: '.cjs' }
+			return { js: '.js' }
+		},
+
+		target: ['es2019'],
+		splitting: false,
+		platform: 'browser',
+		bundle: true,
+		keepNames: true,
 	},
-	outDir: 'dist',
-	dts: true,
-	sourcemap: true,
-	clean: true,
 
-	// Build only ESM to avoid esbuild UMD error
-	format: ['esm'],
-	globalName: 'VoucherifyWidget',
+	// TypeScript declaration files
+	{
+		entry: ['src/**/*.ts', 'src/**/*.tsx'],
+		outDir: 'dist',
+		dts: {
+			only: true,
+		},
+		format: ['cjs'], // Generate .d.ts instead of .d.mts
+		external,
+		target: ['es2019'],
+		bundle: false,
 
-	// Define UMD globals (Rollup's output.globals equivalent)
-	// Here we expose '@voucherify/sdk' as global VoucherifySDK in UMD builds.
-	esbuildOptions(options) {
-		options.banner = options.banner || {}
-		options.footer = options.footer || {}
+		onSuccess: async () => {
+			console.log('✅ Declaration files generated')
+		},
 	},
-
-	// Inject __VERSION__
-	define: {
-		__VERSION__: JSON.stringify(pkg.version),
-	},
-
-	external,
-
-	// File copying after each successful build
-	onSuccess: copyAssets,
-
-	minify: true,
-
-	outExtension({ format }) {
-		if (format === 'esm') return { js: '.esm.js' }
-		return { js: '.js' }
-	},
-
-	target: ['es2019'],
-	splitting: false,
-	platform: 'browser',
-})
+])

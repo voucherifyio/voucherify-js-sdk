@@ -1,4 +1,4 @@
-import * as T from './types/Vouchers'
+import * as VT from './types/Vouchers'
 import * as AAT from './types/AsyncActions'
 
 import { assert, encode, environment } from './helpers'
@@ -15,8 +15,8 @@ class VouchersQualification {
 	 *
 	 * @see https://docs.voucherify.io/reference/push-qualification-request
 	 */
-	public examine(body: T.VouchersQualificationExamineBody, params: T.VouchersQualificationExamineParams = {}) {
-		return this.client.post<T.VouchersQualificationExamineResponse>('/vouchers/qualification', body, params)
+	public examine(body: VT.VouchersQualificationExamineBody, params: VT.VouchersQualificationExamineParams = {}) {
+		return this.client.post<VT.VouchersQualificationExamineResponse>('/vouchers/qualification', body, params)
 	}
 }
 export class Vouchers {
@@ -28,62 +28,62 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/create-voucher
 	 */
-	public create(voucher: T.VouchersCreate) {
-		return this.client.post<T.VouchersCreateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
+	public create(voucher: VT.VouchersCreate) {
+		return this.client.post<VT.VouchersCreateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/vouchers-get
 	 */
 	public get(code: string) {
-		return this.client.get<T.VouchersGetResponse>(`/vouchers/${encode(code)}`)
+		return this.client.get<VT.VouchersGetResponse>(`/vouchers/${encode(code)}`)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/update-voucher
 	 */
-	public update(voucher: T.VouchersUpdate) {
-		return this.client.put<T.VouchersUpdateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
+	public update(voucher: VT.VouchersUpdate) {
+		return this.client.put<VT.VouchersUpdateResponse>(`/vouchers/${encode(voucher.code)}`, voucher)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/delete-voucher
 	 */
-	public delete(code: string, params: T.VouchersDeleteParams = {}) {
+	public delete(code: string, params: VT.VouchersDeleteParams = {}) {
 		return this.client.delete(`/vouchers/${encode(code)}`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/list-vouchers
 	 */
-	public list(params: T.VouchersListParams = {}) {
-		return this.client.get<T.VouchersListResponse>('/vouchers', params)
+	public list(params: VT.VouchersListParams = {}) {
+		return this.client.get<VT.VouchersListResponse>('/vouchers', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/enable-voucher
 	 */
 	public enable(code: string) {
-		return this.client.post<T.VouchersEnableResponse>(`/vouchers/${encode(code)}/enable`, {})
+		return this.client.post<VT.VouchersEnableResponse>(`/vouchers/${encode(code)}/enable`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/disable-voucher
 	 */
 	public disable(code: string) {
-		return this.client.post<T.VouchersDisableResponse>(`/vouchers/${encode(code)}/disable`, {})
+		return this.client.post<VT.VouchersDisableResponse>(`/vouchers/${encode(code)}/disable`, {})
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/import-vouchers-1
 	 */
-	public import(vouchers: T.VouchersImport[]) {
-		return this.client.post<T.VouchersImportResponse>('/vouchers/import', vouchers)
+	public import(vouchers: VT.VouchersImport[]) {
+		return this.client.post<VT.VouchersImportResponse>('/vouchers/import', vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/aaupdate-vouchers-metadata-in-bulk
 	 */
-	public bulkUpdateMetadata(params: T.VouchersBulkUpdateMetadata) {
-		return this.client.post<T.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata/async', params)
+	public bulkUpdateMetadata(params: VT.VouchersBulkUpdateMetadata) {
+		return this.client.post<VT.VouchersBulkUpdateMetadataResponse>('/vouchers/metadata/async', params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/aa-update-vouchers-in-bulk
 	 */
-	public bulkUpdate(vouchers: T.VouchersBulkUpdate) {
-		return this.client.post<T.VouchersBulkUpdateResponse>('/vouchers/bulk/async', vouchers)
+	public bulkUpdate(vouchers: VT.VouchersBulkUpdate) {
+		return this.client.post<VT.VouchersBulkUpdateResponse>('/vouchers/bulk/async', vouchers)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/release-validation-session
@@ -110,14 +110,14 @@ export class Vouchers {
 	/**
 	 * @see https://docs.voucherify.io/reference/list-voucher-transactions
 	 */
-	public listTransactions(code: string, params?: T.VouchersListTransactionsRequestQuery) {
-		return this.client.get<T.VouchersListTransactionsResponseBody>(`/vouchers/${encode(code)}/transactions`, params)
+	public listTransactions(code: string, params?: VT.VouchersListTransactionsRequestQuery) {
+		return this.client.get<VT.VouchersListTransactionsResponseBody>(`/vouchers/${encode(code)}/transactions`, params)
 	}
 	/**
 	 * @see https://docs.voucherify.io/reference/export-voucher-transactions
 	 */
-	public exportTransactions(code: string, body: T.VouchersExportTransactionsRequestBody) {
-		return this.client.post<T.VouchersExportTransactionsResponseBody>(
+	public exportTransactions(code: string, body: VT.VouchersExportTransactionsRequestBody) {
+		return this.client.post<VT.VouchersExportTransactionsResponseBody>(
 			`/vouchers/${encode(code)}/transactions/export`,
 			body,
 		)

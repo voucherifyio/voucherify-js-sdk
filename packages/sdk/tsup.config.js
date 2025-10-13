@@ -11,38 +11,69 @@ const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.pee
 	dep => !BUNDLE_MODULES.includes(dep),
 )
 
-export default defineConfig({
-	entry: {
-		voucherifysdk: 'src/index.ts',
+export default defineConfig([
+	// Configuration for bundled JavaScript files
+	{
+		entry: {
+			voucherifysdk: 'src/index.ts',
+		},
+		outDir: 'dist',
+		dts: false,
+		sourcemap: true,
+		clean: true,
+
+		// Only Node.js formats since you use 'fs' module
+		format: ['cjs', 'esm'],
+
+		define: {
+			__VERSION__: JSON.stringify(pkg.version),
+		},
+
+		external,
+
+		esbuildOptions(options) {
+			options.banner = options.banner || {}
+			options.footer = options.footer || {}
+			// Keep code readable
+			options.minify = false
+			options.minifyIdentifiers = false
+			options.minifySyntax = false
+			options.minifyWhitespace = false
+		},
+
+		minify: false,
+
+		outExtension({ format }) {
+			if (format === 'esm') return { js: '.esm.js' }
+			if (format === 'cjs') return { js: '.cjs' }
+			return { js: '.js' }
+		},
+
+		target: ['es2019'],
+		splitting: false,
+		platform: 'node',
+		bundle: true,
+		keepNames: true,
+
+		onSuccess: async () => {
+			console.log('✅ Build completed')
+		},
 	},
-	outDir: 'dist',
-	dts: true,
-	sourcemap: true,
-	clean: true,
 
-	// Build only Node-targeted formats; remove UMD to avoid esbuild error
-	format: ['cjs', 'esm'],
+	// TypeScript declaration files
+	{
+		entry: ['src/**/*.ts'],
+		outDir: 'dist',
+		dts: {
+			only: true,
+		},
+		format: ['cjs'], // Changed back to 'cjs' to generate .d.ts instead of .d.mts
+		external,
+		target: ['es2019'],
+		bundle: false,
 
-	define: {
-		__VERSION__: JSON.stringify(pkg.version),
+		onSuccess: async () => {
+			console.log('✅ Declaration files generated')
+		},
 	},
-
-	external,
-
-	esbuildOptions(options) {
-		options.banner = options.banner || {}
-		options.footer = options.footer || {}
-	},
-
-	minify: true,
-
-	outExtension({ format }) {
-		if (format === 'esm') return { js: '.esm.js' }
-		if (format === 'cjs') return { js: '.cjs' }
-		return { js: '.js' }
-	},
-
-	target: ['es2019'],
-	splitting: false,
-	platform: 'node',
-})
+])
