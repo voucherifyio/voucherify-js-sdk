@@ -1,5 +1,11 @@
 # @voucherify/sdk
 
+## 2.9.4
+
+### Patch Changes
+
+- [`cc42f29`](https://github.com/voucherifyio/voucherify-js-sdk/commit/cc42f299028769b2dff0817e804e802a7c5ee311) [#298](https://github.com/voucherifyio/voucherify-js-sdk/pull/298) Thanks [@p-zielinski](https://github.com/p-zielinski)! - fix bundle building - to ensure backward compatibility
+
 ## 2.9.3
 
 ### Patch Changes
