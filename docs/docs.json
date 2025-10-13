@@ -21371,11 +21371,11 @@
 							},
 							{
 								"type": "literal",
-								"value": "IN_PROGRESS"
+								"value": "SCHEDULED"
 							},
 							{
 								"type": "literal",
-								"value": "SCHEDULED"
+								"value": "IN_PROGRESS"
 							},
 							{
 								"type": "literal",
@@ -22589,11 +22589,11 @@
 							},
 							{
 								"type": "literal",
-								"value": "IN_PROGRESS"
+								"value": "SCHEDULED"
 							},
 							{
 								"type": "literal",
-								"value": "SCHEDULED"
+								"value": "IN_PROGRESS"
 							},
 							{
 								"type": "literal",
@@ -48129,14 +48129,6 @@
 							},
 							{
 								"type": "literal",
-								"value": "campaign"
-							},
-							{
-								"type": "literal",
-								"value": "category"
-							},
-							{
-								"type": "literal",
 								"value": "updated_at"
 							},
 							{
@@ -48145,7 +48137,15 @@
 							},
 							{
 								"type": "literal",
+								"value": "category"
+							},
+							{
+								"type": "literal",
 								"value": "code"
+							},
+							{
+								"type": "literal",
+								"value": "campaign"
 							},
 							{
 								"type": "literal",
@@ -62758,7 +62758,6 @@
 					},
 					{
 						"type": "reference",
-						"id": 2390,
 						"name": "LoyaltyCardTransaction"
 					}
 				]
