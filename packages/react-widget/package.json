@@ -17,8 +17,8 @@
 		"Voucherify"
 	],
 	"sideEffects": false,
-	"main": "dist/voucherifywidget.esm.js",
-	"module": "dist/voucherifywidget.esm.js",
+    "main": "dist/voucherifywidget.cjs",
+    "module": "dist/voucherifywidget.esm.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"README.md",

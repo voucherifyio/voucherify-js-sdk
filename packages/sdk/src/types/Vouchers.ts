@@ -1,7 +1,107 @@
 import { OrdersGetResponse } from './Orders'
 import { SimpleCustomer } from './Customers'
 import { DiscountUnit, DiscountAmount, DiscountPercent, DiscountFixed } from './DiscountVoucher'
-import { LoyaltyCardTransaction } from './Loyalties'
+
+// A copy from Loyalties type to avoid circular dependencies
+interface LoyaltyCardTransaction {
+	id: string
+	source_id: string | null
+	voucher_id: string
+	campaign_id: string
+	source: string | null
+	reason: string | null
+	type: LoyaltyCardTransactionsType
+	details: {
+		balance: {
+			type: 'loyalty_card'
+			total: number
+			object: 'balance'
+			operation_type: 'MANUAL' | 'AUTOMATIC'
+			points: number
+			balance: number
+			related_object: {
+				id: string
+				type: 'voucher'
+			}
+		}
+		order?: {
+			id: string
+			source_id: string
+		}
+		event?: {
+			id: string
+			type: string
+		}
+		earning_rule?: {
+			id: string
+			source: {
+				banner: string
+			}
+		}
+		segment?: {
+			id: string
+			name: string
+		}
+		loyalty_tier?: {
+			id: string
+			name: string
+		}
+		redemption?: {
+			id: string
+		}
+		rollback?: {
+			id: string
+		}
+		reward?: {
+			id: string
+			name: string
+		}
+		custom_event?: {
+			id: string
+			type: string
+		}
+		event_schema?: {
+			id: string
+			name: string
+		}
+		source_voucher?: SimpleLoyaltyVoucher
+		destination_voucher?: SimpleLoyaltyVoucher
+	}
+	related_transaction_id: string | null
+	created_at: string
+}
+
+// A copy from Loyalties type to avoid circular dependencies
+type LoyaltyCardTransactionsType =
+	| 'POINTS_ACCRUAL'
+	| 'POINTS_CANCELLATION'
+	| 'POINTS_REDEMPTION'
+	| 'POINTS_REFUND'
+	| 'POINTS_ADDITION'
+	| 'POINTS_REMOVAL'
+	| 'POINTS_EXPIRATION'
+	| 'POINTS_TRANSFER_IN'
+	| 'POINTS_TRANSFER_OUT'
+
+// A copy from Loyalties type to avoid circular dependencies
+interface SimpleLoyaltyVoucher {
+	id: string
+	code: string
+	loyalty_card: {
+		points: number
+		balance: number
+		next_expiration_date?: string
+		next_expiration_points?: string
+	}
+	type: 'LOYALTY_CARD'
+	campaign: string
+	campaign_id: string
+	is_referral_code?: boolean
+	holder_id?: string
+	referrer_id?: string
+	created_at?: string
+	object: 'voucher'
+}
 
 // Legacy types
 export type VoucherType = 'GIFT_VOUCHER' | 'DISCOUNT_VOUCHER' | 'LOYALTY_CARD' | 'LUCKY_DRAW'
