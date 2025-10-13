@@ -1,6 +1,6 @@
 {
 	"name": "@voucherify/sdk",
-	"version": "2.9.3",
+	"version": "2.9.4",
 	"description": "Official Voucherify JS SDK",
 	"author": "Voucherify",
 	"license": "MIT",
