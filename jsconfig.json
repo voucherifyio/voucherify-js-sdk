@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "maxNodeModuleJsDepth": 2,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules"]
+}
