@@ -138,7 +138,7 @@ This SDK is auto-generated (except for tests), so changes made here will be over
 
 *Changelog for previous versions can be found in the [DEPRECATED_CHANGELOG.md file](./DEPRECATED_CHANGELOG.md)*
 
-## Authorization
+## 🔐 Authorization
 
 Authentication schemes defined for the API
 
@@ -227,7 +227,7 @@ Authentication schemes defined for the API
   - `trash-bin`: Gives access to all endpoints and methods starting with `/v1/trash-bin`.
   - `templates`: Gives access to all endpoints and methods starting with `/v1/templates`.
 
-## Documentation of API endpoints
+## 🌐 Documentation of API endpoints
 
 All URIs are relative to *https://{cluster}.voucherify.io*
 
@@ -479,7 +479,7 @@ All URIs are relative to *https://{cluster}.voucherify.io*
 | *Voucherify.VouchersApi*           | [**updateVouchersMetadataInBulk**](docs/VouchersApi.md#updateVouchersMetadataInBulk)                  | **POST** /v1/vouchers/metadata/async                                                       | Update Vouchers&#39; Metadata in Bulk             |
 
 
-## Documentation of models
+## 📚 Documentation of models
 
  - [Voucherify.AccessSettings](docs/AccessSettings.md)
  - [Voucherify.AccessSettingsAssign](docs/AccessSettingsAssign.md)
