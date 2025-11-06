@@ -121,7 +121,7 @@ This SDK is auto-generated (except for tests), so changes made here will be over
 
 ## 📅 Changelog
 
-- **2024-09-05** - `3.0.0` - The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
+- **2025-11-05** - `3.0.0` - The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
 
 *Previous versions of the SDK are no longer supported. We highly recommend upgrading to version 3.0.0, which is now designated as Long-Term Support (LTS).*
 
