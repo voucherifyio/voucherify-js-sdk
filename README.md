@@ -35,11 +35,11 @@ If needed, visit the [legacy JS SDK](https://github.com/voucherifyio/voucherify-
 ## 👍 Grab some links
 
 Here are some useful places to visit:
-- 📘 [API docs](https://docs.voucherify.io/api-reference/introduction-api "Voucherify API documentaion")
-- 🧑‍🍳 [Promotion cookbook](https://www.voucherify.io/promotion-examples "Explore promotion examples")
-- 💬 [Help center](https://support.voucherify.io "Voucherify dashboard documentation")
+- 📘 [API docs](https://docs.voucherify.io/api-reference/introduction-api "Voucherify API documentaion").
+- 🧑‍🍳 [Promotion cookbook](https://www.voucherify.io/promotion-examples "Explore promotion examples").
+- 💬 [Help center](https://support.voucherify.io "Voucherify dashboard documentation").
 - 🐛 Caught a bug? [Add an issue](https://github.com/voucherifyio/voucherify-js-sdk/issues "Visit issues in Voucherify JS SDK")!
-- 🧑‍💻 Need more help? [Contact support](https://www.voucherify.io/contact-support "Visit contact support page")
+- 🧑‍💻 Need more help? [Contact support](https://www.voucherify.io/contact-support "Visit contact support page").
 
 ## ⚙️ Install the SDK
 
@@ -98,7 +98,18 @@ api.listCampaigns(undefined, callback);
 
 🛡️ This code just lists campaigns, so it won't affect your Voucherify data.
 
-🔒 Fill in your Voucherify keys for valid authorization and set the basePath (cluster) to match your server URL.
+🔒 Fill in your Voucherify keys for valid authorization and set the basePath (cluster) to match your server URL. To find this info:
+1. In Voucherify dashboard, go to **Project settings**.
+2. In **Application information**, find your basePath (cluster) address. For shared clusters:
+   - Europe (default): `https://api.voucherify.io`
+   - United States: `https://us1.api.voucherify.io`
+   - Asia (Singapore): `https://as1.api.voucherify.io`
+3. Scroll down to **Application Keys** to grab your Application ID and Secret key.
+
+Once set up, check the following methods to give Voucherify a more interesting spin:
+- [Validations](docs/ValidationsApi.md#validateStackedDiscounts)
+- [Redemptions](docs/RedemptionsApi.md#redeemStackedDiscounts)
+- [Publications](docs/PublicationsApi.md#createPublication)
 
 ## 🐳 Running local tests with docker
 
