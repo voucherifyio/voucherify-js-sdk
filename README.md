@@ -55,7 +55,17 @@ If you’re still using the previous SDK (v2.x.x), you can install the new versi
 npm install @voucherify/newsdk@npm:@voucherify/sdk@^3.0.0
 ```
 
-### 🚀 Run code
+## 🔒 Get your keys and address
+
+Get your Voucherify keys for valid authorization and setting the basePath (cluster) to match your server URL:
+1. In Voucherify dashboard, go to **Project settings**.
+2. In **Application information**, find your basePath (cluster) address. For shared clusters:
+   - Europe (default): `https://api.voucherify.io`
+   - United States: `https://us1.api.voucherify.io`
+   - Asia (Singapore): `https://as1.api.voucherify.io`
+3. Scroll down to **Application Keys** to grab your Application ID and Secret key.
+
+## 🚀 Run code
 
 Once installed, run the following code:
 
@@ -94,15 +104,9 @@ api.listCampaigns(undefined, callback);
 
 ```
 
-🛡️ This code just lists campaigns, so it won't affect your Voucherify data.
-
-🔒 Fill in your Voucherify keys for valid authorization and set the basePath (cluster) to match your server URL. To find this info:
-1. In Voucherify dashboard, go to **Project settings**.
-2. In **Application information**, find your basePath (cluster) address. For shared clusters:
-   - Europe (default): `https://api.voucherify.io`
-   - United States: `https://us1.api.voucherify.io`
-   - Asia (Singapore): `https://as1.api.voucherify.io`
-3. Scroll down to **Application Keys** to grab your Application ID and Secret key.
+> [!NOTE]
+>
+> This code just lists campaigns, so it won't affect your Voucherify data.
 
 Once set up, check the following methods to give Voucherify a more interesting spin:
 - [Validations](docs/ValidationsApi.md#validateStackedDiscounts)
