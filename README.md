@@ -139,7 +139,7 @@ Once set up, check the following methods to give Voucherify a more interesting s
 - [Publications](docs/PublicationsApi.md#createPublication)
 
 > [!TIP]
-> 
+>
 > Check the test implementation in the [Test folder](./test/).
 
 ## 🐳 Run local tests with docker
@@ -163,9 +163,10 @@ This SDK is auto-generated (except for tests), so changes made here will be over
 
 ## 🔐 Authorization
 
-Authorization schemes defined for the API.
 
+Authorization schemes defined for the API.
 ### X-App-Id
+
 
 - **Type**: API key
 - **API key parameter name**: X-App-Id
@@ -173,11 +174,13 @@ Authorization schemes defined for the API.
 
 ### X-App-Token
 
+
 - **Type**: API key
 - **API key parameter name**: X-App-Token
 - **Location**: HTTP header
 
 ### X-Client-Token
+
 
 - **Type**: API key
 - **API key parameter name**: X-Client-Token
@@ -185,11 +188,13 @@ Authorization schemes defined for the API.
 
 ### X-Client-Application-Id
 
+
 - **Type**: API key
 - **API key parameter name**: X-Client-Application-Id
 - **Location**: HTTP header
 
 ### X-Management-Id
+
 
 - **Type**: API key
 - **API key parameter name**: X-Management-Id
@@ -197,58 +202,61 @@ Authorization schemes defined for the API.
 
 ### X-Management-Token
 
+
 - **Type**: API key
 - **API key parameter name**: X-Management-Token
 - **Location**: HTTP header
 
 ### X-Voucherify-OAuth
 
+
 - **Type**: OAuth
 - **Flow**: implicit
 - **Authorization URL**: https://api.voucherify.io/v1/oauth/token
 - **Scopes**: 
-  - `api`: Gives access to whole server-side API.
-  - `vouchers`: Gives access to all endpoints and methods starting with `v1/vouchers`.
-  - `client_api`: Gives access to whole client-side API.
-  - `client_vouchers`: Gives access to all endpoints and methods starting with `/client/v1/vouchers`.
-  - `promotions`: Gives access to all endpoints and methods starting with `/v1/promotions`.
-  - `client_promotions`: Gives access to all endpoints and methods starting with `/client/v1/promotions`
-  - `campaigns`: Gives access to all endpoints and methods starting with `v1/campaigns`.
-  - `client_publish`: Gives access to all endpoints and methods starting with `/client/v1/publish`.
-  - `exports`: Gives access to all endpoints and methods starting with `/v1/exports`.
-  - `publications`: Gives access to all endpoints and methods starting with `/v1/publications`.
-  - `client_validate`: Gives access to all endpoints and methods starting with `/client/v1/validate`.
-  - `validations`: Gives access to all endpoints and methods starting with `/v1/validations`.
-  - `client_validations`: Gives access to all endpoints and methods starting with `/client/v1/validations`.
-  - `qualifications`: Gives access to all endpoints and methods starting with `/v1/qualifications`.
-  - `client_qualifications`: Gives access to all endpoints and methods starting with `/client/v1/qualifications`.
-  - `client_redeem`: Gives access to all endpoints and methods starting with `/client/v1/redeem
-  - `redemptions`: Gives access to all endpoints and methods starting with `/v1/redemptions`.
-  - `client_redemptions`: Gives access to all endpoints and methods starting with `/client/v1/redemptions`
-  - `customers`: Gives access to all endpoints and methods starting with `/v1/customers`.
-  - `client_customers`: Gives access to all endpoints and methods starting with `/client/v1/customers`.
-  - `orders`: Gives access to all endpoints and methods starting with `/v1/orders`.
-  - `products`: Gives access to all endpoints and methods starting with `/v1/products`.
-  - `skus`: Gives access to all endpoints and methods starting with `/v1/SKUs`.
-  - `validation-rules`: Gives access to all endpoints and methods starting with `/v1/validation-rules`.
-  - `validation-rules-assignments`: Gives access to all endpoints and methods starting with `/v1/validation-rules-assignments
-  - `segments`: Gives access to all endpoints and methods starting with `/v1/segments`.
-  - `events`: Gives access to all endpoints and methods starting with `/v1/events`.
-  - `client_events`: Gives access to all endpoints and methods starting with `client/v1/events`.
-  - `rewards`: Gives access to all endpoints and methods starting with `/v1/rewards`.
-  - `assets`: Gives access to all endpoints and methods starting with `/v1/assets`.
-  - `task-results`: Gives access to all endpoints and methods starting with `/v1/task-results`.
-  - `loyalties`: Gives access to all endpoints and methods starting with `/v1/loyalties`.
-  - `client_consents`: Gives access to all endpoints and methods starting with `client/v1/consents`.
-  - `consents`: Gives access to all endpoints and methods starting with `/v1/consents`.
-  - `async-actions`: Gives access to all endpoints and methods starting with `/v1/async-actions`.
-  - `product-collections`: Gives access to all endpoints and methods starting with `/v1/product-collections`.
-  - `categories`: Gives access to all endpoints and methods starting with `/v1/categories`.
-  - `metadata-schemas`: Gives access to all endpoints and methods starting with `/v1/metadata-schemas`.
-  - `locations`: Gives access to all endpoints and methods starting with `/v1/locations`.
-  - `referrals`: Gives access to all endpoints and methods starting with `/v1/referrals`.
-  - `trash-bin`: Gives access to all endpoints and methods starting with `/v1/trash-bin`.
-  - `templates`: Gives access to all endpoints and methods starting with `/v1/templates`.
+  - api: Gives access to whole server-side API.
+  - vouchers: Gives access to all endpoints and methods starting with &#x60;v1/vouchers&#x60;.
+  - client_api: Gives access to whole client-side API.
+  - client_vouchers: Gives access to all endpoints and methods starting with &#x60;/client/v1/vouchers&#x60;.
+  - promotions: Gives access to all endpoints and methods starting with &#x60;/v1/promotions&#x60;.
+  - client_promotions: Gives access to all endpoints and methods starting with &#x60;/client/v1/promotions&#x60;
+  - campaigns: Gives access to all endpoints and methods starting with &#x60;v1/campaigns&#x60;.
+  - client_publish: Gives access to all endpoints and methods starting with &#x60;/client/v1/publish&#x60;.
+  - exports: Gives access to all endpoints and methods starting with &#x60;/v1/exports&#x60;.
+  - publications: Gives access to all endpoints and methods starting with &#x60;/v1/publications&#x60;.
+  - client_validate: Gives access to all endpoints and methods starting with &#x60;/client/v1/validate&#x60;.
+  - validations: Gives access to all endpoints and methods starting with &#x60;/v1/validations&#x60;.
+  - client_validations: Gives access to all endpoints and methods starting with &#x60;/client/v1/validations&#x60;.
+  - qualifications: Gives access to all endpoints and methods starting with &#x60;/v1/qualifications&#x60;.
+  - client_qualifications: Gives access to all endpoints and methods starting with &#x60;/client/v1/qualifications&#x60;.
+  - client_redeem: Gives access to all endpoints and methods starting with &#x60;/client/v1/redeem
+  - redemptions: Gives access to all endpoints and methods starting with &#x60;/v1/redemptions&#x60;.
+  - client_redemptions: Gives access to all endpoints and methods starting with &#x60;/client/v1/redemptions&#x60;
+  - customers: Gives access to all endpoints and methods starting with &#x60;/v1/customers&#x60;.
+  - client_customers: Gives access to all endpoints and methods starting with &#x60;/client/v1/customers&#x60;.
+  - orders: Gives access to all endpoints and methods starting with &#x60;/v1/orders&#x60;.
+  - products: Gives access to all endpoints and methods starting with &#x60;/v1/products&#x60;.
+  - skus: Gives access to all endpoints and methods starting with &#x60;/v1/SKUs&#x60;.
+  - validation-rules: Gives access to all endpoints and methods starting with &#x60;/v1/validation-rules&#x60;.
+  - validation-rules-assignments: Gives access to all endpoints and methods starting with &#x60;/v1/validation-rules-assignments
+  - segments: Gives access to all endpoints and methods starting with &#x60;/v1/segments&#x60;.
+  - events: Gives access to all endpoints and methods starting with &#x60;/v1/events&#x60;.
+  - client_events: Gives access to all endpoints and methods starting with &#x60;client/v1/events&#x60;.
+  - rewards: Gives access to all endpoints and methods starting with &#x60;/v1/rewards&#x60;.
+  - assets: Gives access to all endpoints and methods starting with &#x60;/v1/assets&#x60;.
+  - task-results: Gives access to all endpoints and methods starting with &#x60;/v1/task-results&#x60;.
+  - loyalties: Gives access to all endpoints and methods starting with &#x60;/v1/loyalties&#x60;.
+  - client_consents: Gives access to all endpoints and methods starting with &#x60;client/v1/consents&#x60;.
+  - consents: Gives access to all endpoints and methods starting with &#x60;/v1/consents&#x60;.
+  - async-actions: Gives access to all endpoints and methods starting with &#x60;/v1/async-actions&#x60;.
+  - product-collections: Gives access to all endpoints and methods starting with &#x60;/v1/product-collections&#x60;.
+  - categories: Gives access to all endpoints and methods starting with &#x60;/v1/categories&#x60;.
+  - metadata-schemas: Gives access to all endpoints and methods starting with &#x60;/v1/metadata-schemas&#x60;.
+  - locations: Gives access to all endpoints and methods starting with &#x60;/v1/locations&#x60;.
+  - referrals: Gives access to all endpoints and methods starting with &#x60;/v1/referrals&#x60;.
+  - trash-bin: Gives access to all endpoints and methods starting with &#x60;/v1/trash-bin&#x60;.
+  - templates: Gives access to all endpoints and methods starting with &#x60;/v1/templates&#x60;.
+
 
 ## 📅 Changelog
 
@@ -260,254 +268,254 @@ Authorization schemes defined for the API.
 
 ## 🌐 Documentation of API endpoints
 
-All URIs are relative to `https://api.voucherify.io`.
+All URIs are relative to *https://{cluster}.api.voucherify.io*
 
-| Class                              | Method                                                                                                | HTTP request                                                                               | Description                                       |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| *Voucherify.AsyncActionsApi*       | [**getAsyncAction**](docs/AsyncActionsApi.md#getAsyncAction)                                          | **GET** /v1/async-actions/{asyncActionId}                                                  | Get Async Action                                  |
-| *Voucherify.AsyncActionsApi*       | [**listAsyncActions**](docs/AsyncActionsApi.md#listAsyncActions)                                      | **GET** /v1/async-actions                                                                  | List Async Actions                                |
-| *Voucherify.BinApi*                | [**deleteBinEntry**](docs/BinApi.md#deleteBinEntry)                                                   | **DELETE** /v1/trash-bin/{binEntryId}                                                      | Delete Bin Entry                                  |
-| *Voucherify.BinApi*                | [**listBinEntries**](docs/BinApi.md#listBinEntries)                                                   | **GET** /v1/trash-bin                                                                      | List Bin Entries                                  |
-| *Voucherify.CampaignsApi*          | [**addVoucherWithSpecificCodeToCampaign**](docs/CampaignsApi.md#addVoucherWithSpecificCodeToCampaign) | **POST** /v1/campaigns/{campaignId}/vouchers/{code}                                        | Add Voucher with Specific Code to Campaign        |
-| *Voucherify.CampaignsApi*          | [**addVouchersToCampaign**](docs/CampaignsApi.md#addVouchersToCampaign)                               | **POST** /v1/campaigns/{campaignId}/vouchers                                               | Add Vouchers to Campaign                          |
-| *Voucherify.CampaignsApi*          | [**createCampaign**](docs/CampaignsApi.md#createCampaign)                                             | **POST** /v1/campaigns                                                                     | Create Campaign                                   |
-| *Voucherify.CampaignsApi*          | [**deleteCampaign**](docs/CampaignsApi.md#deleteCampaign)                                             | **DELETE** /v1/campaigns/{campaignId}                                                      | Delete Campaign                                   |
-| *Voucherify.CampaignsApi*          | [**disableCampaign**](docs/CampaignsApi.md#disableCampaign)                                           | **POST** /v1/campaigns/{campaignId}/disable                                                | Disable Campaign                                  |
-| *Voucherify.CampaignsApi*          | [**enableCampaign**](docs/CampaignsApi.md#enableCampaign)                                             | **POST** /v1/campaigns/{campaignId}/enable                                                 | Enable Campaign                                   |
-| *Voucherify.CampaignsApi*          | [**exportCampaignTransactions**](docs/CampaignsApi.md#exportCampaignTransactions)                     | **POST** /v1/campaigns/{campaignId}/transactions/export                                    | Export Campaign Transactions                      |
-| *Voucherify.CampaignsApi*          | [**getCampaign**](docs/CampaignsApi.md#getCampaign)                                                   | **GET** /v1/campaigns/{campaignId}                                                         | Get Campaign                                      |
-| *Voucherify.CampaignsApi*          | [**getCampaignSummary**](docs/CampaignsApi.md#getCampaignSummary)                                     | **GET** /v1/campaigns/{campaignId}/summary                                                 | Get Campaign Summary                              |
-| *Voucherify.CampaignsApi*          | [**importVouchersToCampaign**](docs/CampaignsApi.md#importVouchersToCampaign)                         | **POST** /v1/campaigns/{campaignId}/import                                                 | Import Vouchers to Campaign                       |
-| *Voucherify.CampaignsApi*          | [**importVouchersToCampaignUsingCsv**](docs/CampaignsApi.md#importVouchersToCampaignUsingCsv)         | **POST** /v1/campaigns/{campaignId}/importCSV                                              | Import Vouchers to Campaign by CSV                |
-| *Voucherify.CampaignsApi*          | [**listCampaignTransactions**](docs/CampaignsApi.md#listCampaignTransactions)                         | **GET** /v1/campaigns/{campaignId}/transactions                                            | List Campaign Transactions                        |
-| *Voucherify.CampaignsApi*          | [**listCampaigns**](docs/CampaignsApi.md#listCampaigns)                                               | **GET** /v1/campaigns                                                                      | List Campaigns                                    |
-| *Voucherify.CampaignsApi*          | [**updateCampaign**](docs/CampaignsApi.md#updateCampaign)                                             | **PUT** /v1/campaigns/{campaignId}                                                         | Update Campaign                                   |
-| *Voucherify.CategoriesApi*         | [**createCategory**](docs/CategoriesApi.md#createCategory)                                            | **POST** /v1/categories                                                                    | Create Category                                   |
-| *Voucherify.CategoriesApi*         | [**deleteCategory**](docs/CategoriesApi.md#deleteCategory)                                            | **DELETE** /v1/categories/{categoryId}                                                     | Delete Category                                   |
-| *Voucherify.CategoriesApi*         | [**getCategory**](docs/CategoriesApi.md#getCategory)                                                  | **GET** /v1/categories/{categoryId}                                                        | Get Category                                      |
-| *Voucherify.CategoriesApi*         | [**listCategories**](docs/CategoriesApi.md#listCategories)                                            | **GET** /v1/categories                                                                     | List Categories                                   |
-| *Voucherify.CategoriesApi*         | [**updateCategory**](docs/CategoriesApi.md#updateCategory)                                            | **PUT** /v1/categories/{categoryId}                                                        | Update Category                                   |
-| *Voucherify.ClientSideApi*         | [**checkEligibilityClientSide**](docs/ClientSideApi.md#checkEligibilityClientSide)                    | **POST** /client/v1/qualifications                                                         | Check Eligibility (client-side)                   |
-| *Voucherify.ClientSideApi*         | [**listPromotionTiersClientSide**](docs/ClientSideApi.md#listPromotionTiersClientSide)                | **GET** /client/v1/promotions/tiers                                                        | List Promotion Tiers (client-side)                |
-| *Voucherify.ClientSideApi*         | [**redeemStackedDiscountsClientSide**](docs/ClientSideApi.md#redeemStackedDiscountsClientSide)        | **POST** /client/v1/redemptions                                                            | Redeem Stackable Discounts (client-side)          |
-| *Voucherify.ClientSideApi*         | [**trackCustomEventClientSide**](docs/ClientSideApi.md#trackCustomEventClientSide)                    | **POST** /client/v1/events                                                                 | Track Custom Event (client-side)                  |
-| *Voucherify.ClientSideApi*         | [**validateStackedDiscountsClientSide**](docs/ClientSideApi.md#validateStackedDiscountsClientSide)    | **POST** /client/v1/validations                                                            | Validate Stackable Discounts (client-side)        |
-| *Voucherify.CustomersApi*          | [**createCustomer**](docs/CustomersApi.md#createCustomer)                                             | **POST** /v1/customers                                                                     | Create Customer                                   |
-| *Voucherify.CustomersApi*          | [**customerPermanentlyDeletion**](docs/CustomersApi.md#customerPermanentlyDeletion)                   | **POST** /v1/customers/{customerId}/permanent-deletion                                     | Delete Customer Permanently                       |
-| *Voucherify.CustomersApi*          | [**deleteCustomer**](docs/CustomersApi.md#deleteCustomer)                                             | **DELETE** /v1/customers/{customerId}                                                      | Delete Customer                                   |
-| *Voucherify.CustomersApi*          | [**getCustomer**](docs/CustomersApi.md#getCustomer)                                                   | **GET** /v1/customers/{customerId}                                                         | Get Customer                                      |
-| *Voucherify.CustomersApi*          | [**importCustomersUsingCsv**](docs/CustomersApi.md#importCustomersUsingCsv)                           | **POST** /v1/customers/importCSV                                                           | Import and Update Customers using CSV             |
-| *Voucherify.CustomersApi*          | [**listCustomerActivity**](docs/CustomersApi.md#listCustomerActivity)                                 | **GET** /v1/customers/{customerId}/activity                                                | List Customer Activity                            |
-| *Voucherify.CustomersApi*          | [**listCustomerRedeemables**](docs/CustomersApi.md#listCustomerRedeemables)                           | **GET** /v1/customers/{customerId}/redeemables                                             | List Customer&#39;s Redeemables                   |
-| *Voucherify.CustomersApi*          | [**listCustomerSegments**](docs/CustomersApi.md#listCustomerSegments)                                 | **GET** /v1/customers/{customerId}/segments                                                | List Customer&#39;s Segments                      |
-| *Voucherify.CustomersApi*          | [**listCustomers**](docs/CustomersApi.md#listCustomers)                                               | **GET** /v1/customers                                                                      | List Customers                                    |
-| *Voucherify.CustomersApi*          | [**updateCustomer**](docs/CustomersApi.md#updateCustomer)                                             | **PUT** /v1/customers/{customerId}                                                         | Update Customer                                   |
-| *Voucherify.CustomersApi*          | [**updateCustomersInBulk**](docs/CustomersApi.md#updateCustomersInBulk)                               | **POST** /v1/customers/bulk/async                                                          | Update Customers in Bulk                          |
-| *Voucherify.CustomersApi*          | [**updateCustomersMetadataInBulk**](docs/CustomersApi.md#updateCustomersMetadataInBulk)               | **POST** /v1/customers/metadata/async                                                      | Update Customers&#39; Metadata in Bulk            |
-| *Voucherify.EventsApi*             | [**trackCustomEvent**](docs/EventsApi.md#trackCustomEvent)                                            | **POST** /v1/events                                                                        | Track Custom Event                                |
-| *Voucherify.ExportsApi*            | [**createExport**](docs/ExportsApi.md#createExport)                                                   | **POST** /v1/exports                                                                       | Create Export                                     |
-| *Voucherify.ExportsApi*            | [**deleteExport**](docs/ExportsApi.md#deleteExport)                                                   | **DELETE** /v1/exports/{exportId}                                                          | Delete Export                                     |
-| *Voucherify.ExportsApi*            | [**downloadExport**](docs/ExportsApi.md#downloadExport)                                               | **GET** /v1/exports/{export_Id}                                                            | Download Export                                   |
-| *Voucherify.ExportsApi*            | [**getExport**](docs/ExportsApi.md#getExport)                                                         | **GET** /v1/exports/{exportId}                                                             | Get Export                                        |
-| *Voucherify.ExportsApi*            | [**listExports**](docs/ExportsApi.md#listExports)                                                     | **GET** /v1/exports                                                                        | List Exports                                      |
-| *Voucherify.LocationsApi*          | [**getLocation**](docs/LocationsApi.md#getLocation)                                                   | **GET** /v1/locations/{locationId}                                                         | Get Location                                      |
-| *Voucherify.LocationsApi*          | [**listLocations**](docs/LocationsApi.md#listLocations)                                               | **GET** /v1/locations                                                                      | List Locations                                    |
-| *Voucherify.LoyaltiesApi*          | [**activateMemberPendingPoints**](docs/LoyaltiesApi.md#activateMemberPendingPoints)                   | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/activate        | Activate Member Pending Points                    |
-| *Voucherify.LoyaltiesApi*          | [**addMember**](docs/LoyaltiesApi.md#addMember)                                                       | **POST** /v1/loyalties/{campaignId}/members                                                | Add Member                                        |
-| *Voucherify.LoyaltiesApi*          | [**adjustMemberPendingPoints**](docs/LoyaltiesApi.md#adjustMemberPendingPoints)                       | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance         | Adjust Member Pending Points                      |
-| *Voucherify.LoyaltiesApi*          | [**cancelMemberPendingPoints**](docs/LoyaltiesApi.md#cancelMemberPendingPoints)                       | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/cancel          | Cancel Member Pending Points                      |
-| *Voucherify.LoyaltiesApi*          | [**createEarningRule**](docs/LoyaltiesApi.md#createEarningRule)                                       | **POST** /v1/loyalties/{campaignId}/earning-rules                                          | Create Earning Rule                               |
-| *Voucherify.LoyaltiesApi*          | [**createInBulkLoyaltyTiers**](docs/LoyaltiesApi.md#createInBulkLoyaltyTiers)                         | **POST** /v1/loyalties/{campaignId}/tiers                                                  | Create loyalty tiers                              |
-| *Voucherify.LoyaltiesApi*          | [**createLoyaltyProgram**](docs/LoyaltiesApi.md#createLoyaltyProgram)                                 | **POST** /v1/loyalties                                                                     | Create Loyalty Campaign                           |
-| *Voucherify.LoyaltiesApi*          | [**createPointsExpirationExport**](docs/LoyaltiesApi.md#createPointsExpirationExport)                 | **POST** /v1/loyalties/{campaignId}/points-expiration/export                               | Export Loyalty Campaign Point Expiration          |
-| *Voucherify.LoyaltiesApi*          | [**createRewardAssignment1**](docs/LoyaltiesApi.md#createRewardAssignment1)                           | **POST** /v1/loyalties/{campaignId}/rewards                                                | Create Loyalty Campaign Reward Assignment         |
-| *Voucherify.LoyaltiesApi*          | [**deleteEarningRule**](docs/LoyaltiesApi.md#deleteEarningRule)                                       | **DELETE** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                        | Delete Earning Rule                               |
-| *Voucherify.LoyaltiesApi*          | [**deleteLoyaltyProgram**](docs/LoyaltiesApi.md#deleteLoyaltyProgram)                                 | **DELETE** /v1/loyalties/{campaignId}                                                      | Delete Loyalty Campaign                           |
-| *Voucherify.LoyaltiesApi*          | [**deleteRewardAssignment1**](docs/LoyaltiesApi.md#deleteRewardAssignment1)                           | **DELETE** /v1/loyalties/{campaignId}/rewards/{assignmentId}                               | Delete Campaign Reward Assignment                 |
-| *Voucherify.LoyaltiesApi*          | [**disableEarningRule**](docs/LoyaltiesApi.md#disableEarningRule)                                     | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/disable                  | Disable Earning Rule                              |
-| *Voucherify.LoyaltiesApi*          | [**enableEarningRule**](docs/LoyaltiesApi.md#enableEarningRule)                                       | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/enable                   | Enable Earning Rule                               |
-| *Voucherify.LoyaltiesApi*          | [**exportLoyaltyCampaignTransactions**](docs/LoyaltiesApi.md#exportLoyaltyCampaignTransactions)       | **POST** /v1/loyalties/{campaignId}/transactions/export                                    | Export Loyalty Campaign Transactions              |
-| *Voucherify.LoyaltiesApi*          | [**exportLoyaltyCardTransactions**](docs/LoyaltiesApi.md#exportLoyaltyCardTransactions)               | **POST** /v1/loyalties/members/{memberId}/transactions/export                              | Export Loyalty Card Transactions                  |
-| *Voucherify.LoyaltiesApi*          | [**exportLoyaltyCardTransactions1**](docs/LoyaltiesApi.md#exportLoyaltyCardTransactions1)             | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transactions/export                 | Export Loyalty Card Transactions with campaign ID |
-| *Voucherify.LoyaltiesApi*          | [**getEarningRule**](docs/LoyaltiesApi.md#getEarningRule)                                             | **GET** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                           | Get Earning Rule                                  |
-| *Voucherify.LoyaltiesApi*          | [**getLoyaltyProgram**](docs/LoyaltiesApi.md#getLoyaltyProgram)                                       | **GET** /v1/loyalties/{campaignId}                                                         | Get Loyalty Campaign                              |
-| *Voucherify.LoyaltiesApi*          | [**getLoyaltyTier**](docs/LoyaltiesApi.md#getLoyaltyTier)                                             | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}                                   | Get Loyalty Tier                                  |
-| *Voucherify.LoyaltiesApi*          | [**getMember**](docs/LoyaltiesApi.md#getMember)                                                       | **GET** /v1/loyalties/members/{memberId}                                                   | Get Member                                        |
-| *Voucherify.LoyaltiesApi*          | [**getMember1**](docs/LoyaltiesApi.md#getMember1)                                                     | **GET** /v1/loyalties/{campaignId}/members/{memberId}                                      | Get Member with campaign ID                       |
-| *Voucherify.LoyaltiesApi*          | [**getRewardAssignment1**](docs/LoyaltiesApi.md#getRewardAssignment1)                                 | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}                       | Get Campaign Reward Assignments                   |
-| *Voucherify.LoyaltiesApi*          | [**getRewardAssignment2**](docs/LoyaltiesApi.md#getRewardAssignment2)                                 | **GET** /v1/loyalties/{campaignId}/rewards/{assignmentId}                                  | Get Campaign Reward Assignment                    |
-| *Voucherify.LoyaltiesApi*          | [**getRewardDetails**](docs/LoyaltiesApi.md#getRewardDetails)                                         | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}/reward                | Get Reward Details                                |
-| *Voucherify.LoyaltiesApi*          | [**listCampaignPendingPoints**](docs/LoyaltiesApi.md#listCampaignPendingPoints)                       | **GET** /v1/loyalties/{campaignId}/pending-points                                          | List Campaign Pending Points                      |
-| *Voucherify.LoyaltiesApi*          | [**listEarningRules**](docs/LoyaltiesApi.md#listEarningRules)                                         | **GET** /v1/loyalties/{campaignId}/earning-rules                                           | List Earning Rules                                |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyCampaignTransactions**](docs/LoyaltiesApi.md#listLoyaltyCampaignTransactions)           | **GET** /v1/loyalties/{campaignId}/transactions                                            | List Loyalty Campaign Transactions                |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyCardTransactions**](docs/LoyaltiesApi.md#listLoyaltyCardTransactions)                   | **GET** /v1/loyalties/members/{memberId}/transactions                                      | List Loyalty Card Transactions                    |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyCardTransactions1**](docs/LoyaltiesApi.md#listLoyaltyCardTransactions1)                 | **GET** /v1/loyalties/{campaignId}/members/{memberId}/transactions                         | List Loyalty Card Transactions with campaign ID   |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyPrograms**](docs/LoyaltiesApi.md#listLoyaltyPrograms)                                   | **GET** /v1/loyalties                                                                      | List Loyalty Campaigns                            |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyTierEarningRules**](docs/LoyaltiesApi.md#listLoyaltyTierEarningRules)                   | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/earning-rules                     | List Loyalty Tier Earning Rules                   |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyTierRewards**](docs/LoyaltiesApi.md#listLoyaltyTierRewards)                             | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/rewards                           | List Loyalty Tier Rewards                         |
-| *Voucherify.LoyaltiesApi*          | [**listLoyaltyTiers**](docs/LoyaltiesApi.md#listLoyaltyTiers)                                         | **GET** /v1/loyalties/{campaignId}/tiers                                                   | List Loyalty Tiers                                |
-| *Voucherify.LoyaltiesApi*          | [**listMemberActivity**](docs/LoyaltiesApi.md#listMemberActivity)                                     | **GET** /v1/loyalties/members/{memberId}/activity                                          | List Member Activity                              |
-| *Voucherify.LoyaltiesApi*          | [**listMemberActivity1**](docs/LoyaltiesApi.md#listMemberActivity1)                                   | **GET** /v1/loyalties/{campaignId}/members/{memberId}/activity                             | List Member Activity with campaign ID             |
-| *Voucherify.LoyaltiesApi*          | [**listMemberLoyaltyTier**](docs/LoyaltiesApi.md#listMemberLoyaltyTier)                               | **GET** /v1/loyalties/members/{memberId}/tiers                                             | List Member&#39;s Loyalty Tiers                   |
-| *Voucherify.LoyaltiesApi*          | [**listMemberPendingPoints**](docs/LoyaltiesApi.md#listMemberPendingPoints)                           | **GET** /v1/loyalties/members/{memberId}/pending-points                                    | List Member Pending Points                        |
-| *Voucherify.LoyaltiesApi*          | [**listMemberPendingPoints1**](docs/LoyaltiesApi.md#listMemberPendingPoints1)                         | **GET** /v1/loyalties/{campaignId}/members/{memberId}/pending-points                       | List Member Pending Points with campaign ID       |
-| *Voucherify.LoyaltiesApi*          | [**listMemberRewards**](docs/LoyaltiesApi.md#listMemberRewards)                                       | **GET** /v1/loyalties/members/{memberId}/rewards                                           | List Member Rewards                               |
-| *Voucherify.LoyaltiesApi*          | [**listMembers**](docs/LoyaltiesApi.md#listMembers)                                                   | **GET** /v1/loyalties/{campaignId}/members                                                 | List Members                                      |
-| *Voucherify.LoyaltiesApi*          | [**listPointsExpiration**](docs/LoyaltiesApi.md#listPointsExpiration)                                 | **GET** /v1/loyalties/{campaignId}/members/{memberId}/points-expiration                    | List Loyalty Card Point Expiration                |
-| *Voucherify.LoyaltiesApi*          | [**listRewardAssignments1**](docs/LoyaltiesApi.md#listRewardAssignments1)                             | **GET** /v1/loyalties/{campaignId}/reward-assignments                                      | List Reward Assignments with campaign ID          |
-| *Voucherify.LoyaltiesApi*          | [**listRewardAssignments2**](docs/LoyaltiesApi.md#listRewardAssignments2)                             | **GET** /v1/loyalties/{campaignId}/rewards                                                 | List Campaign Rewards                             |
-| *Voucherify.LoyaltiesApi*          | [**redeemReward**](docs/LoyaltiesApi.md#redeemReward)                                                 | **POST** /v1/loyalties/members/{memberId}/redemption                                       | Redeem Reward                                     |
-| *Voucherify.LoyaltiesApi*          | [**redeemReward1**](docs/LoyaltiesApi.md#redeemReward1)                                               | **POST** /v1/loyalties/{campaignId}/members/{memberId}/redemption                          | Redeem Reward with campaign ID                    |
-| *Voucherify.LoyaltiesApi*          | [**transferPoints**](docs/LoyaltiesApi.md#transferPoints)                                             | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transfers                           | Transfer Loyalty Points                           |
-| *Voucherify.LoyaltiesApi*          | [**updateEarningRule**](docs/LoyaltiesApi.md#updateEarningRule)                                       | **PUT** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                           | Update Earning Rule                               |
-| *Voucherify.LoyaltiesApi*          | [**updateLoyaltyCardBalance**](docs/LoyaltiesApi.md#updateLoyaltyCardBalance)                         | **POST** /v1/loyalties/members/{memberId}/balance                                          | Adjust Loyalty Card Balance                       |
-| *Voucherify.LoyaltiesApi*          | [**updateLoyaltyCardBalance1**](docs/LoyaltiesApi.md#updateLoyaltyCardBalance1)                       | **POST** /v1/loyalties/{campaignId}/members/{memberId}/balance                             | Adjust Loyalty Card Balance with campaign ID      |
-| *Voucherify.LoyaltiesApi*          | [**updateLoyaltyProgram**](docs/LoyaltiesApi.md#updateLoyaltyProgram)                                 | **PUT** /v1/loyalties/{campaignId}                                                         | Update Loyalty Campaign                           |
-| *Voucherify.LoyaltiesApi*          | [**updateRewardAssignment1**](docs/LoyaltiesApi.md#updateRewardAssignment1)                           | **PUT** /v1/loyalties/{campaignId}/rewards/{assignmentId}                                  | Update Campaign Reward Assignment                 |
-| *Voucherify.ManagementApi*         | [**assignUser**](docs/ManagementApi.md#assignUser)                                                    | **POST** /management/v1/projects/{projectId}/users                                         | Assign User                                       |
-| *Voucherify.ManagementApi*         | [**createBrand**](docs/ManagementApi.md#createBrand)                                                  | **POST** /management/v1/projects/{projectId}/branding                                      | Create Brand                                      |
-| *Voucherify.ManagementApi*         | [**createCustomEventSchema**](docs/ManagementApi.md#createCustomEventSchema)                          | **POST** /management/v1/projects/{projectId}/custom-event-schemas                          | Create Custom Event Schema                        |
-| *Voucherify.ManagementApi*         | [**createMetadataSchema**](docs/ManagementApi.md#createMetadataSchema)                                | **POST** /management/v1/projects/{projectId}/metadata-schemas                              | Create Metadata Schema                            |
-| *Voucherify.ManagementApi*         | [**createProject**](docs/ManagementApi.md#createProject)                                              | **POST** /management/v1/projects                                                           | Create Project                                    |
-| *Voucherify.ManagementApi*         | [**createStackingRules**](docs/ManagementApi.md#createStackingRules)                                  | **POST** /management/v1/projects/{projectId}/stacking-rules                                | Create Stacking Rules                             |
-| *Voucherify.ManagementApi*         | [**createWebhook**](docs/ManagementApi.md#createWebhook)                                              | **POST** /management/v1/projects/{projectId}/webhooks                                      | Create Webhook                                    |
-| *Voucherify.ManagementApi*         | [**deleteBrand**](docs/ManagementApi.md#deleteBrand)                                                  | **DELETE** /management/v1/projects/{projectId}/branding/{brandingId}                       | Delete Brand                                      |
-| *Voucherify.ManagementApi*         | [**deleteCustomEventSchema**](docs/ManagementApi.md#deleteCustomEventSchema)                          | **DELETE** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}  | Delete Custom Event Schema                        |
-| *Voucherify.ManagementApi*         | [**deleteMetadataSchema**](docs/ManagementApi.md#deleteMetadataSchema)                                | **DELETE** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}         | Delete Metadata Schema                            |
-| *Voucherify.ManagementApi*         | [**deleteProject**](docs/ManagementApi.md#deleteProject)                                              | **DELETE** /management/v1/projects/{projectId}                                             | Delete Project                                    |
-| *Voucherify.ManagementApi*         | [**deleteStackingRules**](docs/ManagementApi.md#deleteStackingRules)                                  | **DELETE** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}            | Delete Stacking Rules                             |
-| *Voucherify.ManagementApi*         | [**deleteWebhook**](docs/ManagementApi.md#deleteWebhook)                                              | **DELETE** /management/v1/projects/{projectId}/webhooks/{webhookId}                        | Delete Webhook                                    |
-| *Voucherify.ManagementApi*         | [**getBrand**](docs/ManagementApi.md#getBrand)                                                        | **GET** /management/v1/projects/{projectId}/branding/{brandingId}                          | Get Brand                                         |
-| *Voucherify.ManagementApi*         | [**getCustomEventSchema**](docs/ManagementApi.md#getCustomEventSchema)                                | **GET** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}     | Get Custom Event Schema                           |
-| *Voucherify.ManagementApi*         | [**getMetadataSchema1**](docs/ManagementApi.md#getMetadataSchema1)                                    | **GET** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}            | Get Metadata Schema                               |
-| *Voucherify.ManagementApi*         | [**getProject**](docs/ManagementApi.md#getProject)                                                    | **GET** /management/v1/projects/{projectId}                                                | Get Project                                       |
-| *Voucherify.ManagementApi*         | [**getStackingRules**](docs/ManagementApi.md#getStackingRules)                                        | **GET** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}               | Get Stacking Rules                                |
-| *Voucherify.ManagementApi*         | [**getUser**](docs/ManagementApi.md#getUser)                                                          | **GET** /management/v1/projects/{projectId}/users/{userId}                                 | Get User                                          |
-| *Voucherify.ManagementApi*         | [**getWebhook**](docs/ManagementApi.md#getWebhook)                                                    | **GET** /management/v1/projects/{projectId}/webhooks/{webhookId}                           | Get Webhook                                       |
-| *Voucherify.ManagementApi*         | [**inviteUser**](docs/ManagementApi.md#inviteUser)                                                    | **POST** /management/v1/projects/users/invite                                              | Invite a New User                                 |
-| *Voucherify.ManagementApi*         | [**listBrands**](docs/ManagementApi.md#listBrands)                                                    | **GET** /management/v1/projects/{projectId}/branding                                       | List Brands                                       |
-| *Voucherify.ManagementApi*         | [**listCustomEventSchemas**](docs/ManagementApi.md#listCustomEventSchemas)                            | **GET** /management/v1/projects/{projectId}/custom-event-schemas                           | List Custom Event Schemas                         |
-| *Voucherify.ManagementApi*         | [**listMetadataSchemas1**](docs/ManagementApi.md#listMetadataSchemas1)                                | **GET** /management/v1/projects/{projectId}/metadata-schemas                               | List Metadata Schemas                             |
-| *Voucherify.ManagementApi*         | [**listProjects**](docs/ManagementApi.md#listProjects)                                                | **GET** /management/v1/projects                                                            | List Projects                                     |
-| *Voucherify.ManagementApi*         | [**listStackingRules**](docs/ManagementApi.md#listStackingRules)                                      | **GET** /management/v1/projects/{projectId}/stacking-rules                                 | List Stacking Rules                               |
-| *Voucherify.ManagementApi*         | [**listUsers**](docs/ManagementApi.md#listUsers)                                                      | **GET** /management/v1/projects/{projectId}/users                                          | List Users                                        |
-| *Voucherify.ManagementApi*         | [**listWebhooks**](docs/ManagementApi.md#listWebhooks)                                                | **GET** /management/v1/projects/{projectId}/webhooks                                       | List Webhooks                                     |
-| *Voucherify.ManagementApi*         | [**managementCopyCampaignTemplate**](docs/ManagementApi.md#managementCopyCampaignTemplate)            | **POST** /management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy | Copy Campaign Template to a Project               |
-| *Voucherify.ManagementApi*         | [**managementListCampaignTemplates**](docs/ManagementApi.md#managementListCampaignTemplates)          | **GET** /management/v1/projects/{projectId}/templates/campaigns                            | List Campaign Templates                           |
-| *Voucherify.ManagementApi*         | [**unassignUser**](docs/ManagementApi.md#unassignUser)                                                | **DELETE** /management/v1/projects/{projectId}/users/{userId}                              | Unassign User                                     |
-| *Voucherify.ManagementApi*         | [**updateBrand**](docs/ManagementApi.md#updateBrand)                                                  | **PUT** /management/v1/projects/{projectId}/branding/{brandingId}                          | Update Brand                                      |
-| *Voucherify.ManagementApi*         | [**updateCustomEventSchema**](docs/ManagementApi.md#updateCustomEventSchema)                          | **PUT** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}     | Update Custom Event Schema                        |
-| *Voucherify.ManagementApi*         | [**updateMetadataSchema**](docs/ManagementApi.md#updateMetadataSchema)                                | **PUT** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}            | Update Metadata Schema                            |
-| *Voucherify.ManagementApi*         | [**updateProject**](docs/ManagementApi.md#updateProject)                                              | **PUT** /management/v1/projects/{projectId}                                                | Update Project                                    |
-| *Voucherify.ManagementApi*         | [**updateStackingRules**](docs/ManagementApi.md#updateStackingRules)                                  | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}               | Update Stacking Rules                             |
-| *Voucherify.ManagementApi*         | [**updateUser**](docs/ManagementApi.md#updateUser)                                                    | **PUT** /management/v1/projects/{projectId}/users/{userId}                                 | Update User                                       |
-| *Voucherify.ManagementApi*         | [**updateWebhook**](docs/ManagementApi.md#updateWebhook)                                              | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId}                           | Update Webhook                                    |
-| *Voucherify.MetadataSchemasApi*    | [**getMetadataSchema**](docs/MetadataSchemasApi.md#getMetadataSchema)                                 | **GET** /v1/metadata-schemas/{resource}                                                    | Get Metadata Schema                               |
-| *Voucherify.MetadataSchemasApi*    | [**listMetadataSchemas**](docs/MetadataSchemasApi.md#listMetadataSchemas)                             | **GET** /v1/metadata-schemas                                                               | List Metadata Schema Definitions                  |
-| *Voucherify.OAuthApi*              | [**generateOauthToken**](docs/OAuthApi.md#generateOauthToken)                                         | **POST** /v1/oauth/token                                                                   | Generate OAuth 2.0 Token                          |
-| *Voucherify.OAuthApi*              | [**introspectOauthToken**](docs/OAuthApi.md#introspectOauthToken)                                     | **POST** /v1/oauth/introspect                                                              | Introspect OAuth 2.0 Token                        |
-| *Voucherify.OAuthApi*              | [**revokeOauthToken**](docs/OAuthApi.md#revokeOauthToken)                                             | **POST** /v1/oauth/token/revoke                                                            | Revoke OAuth 2.0 Token                            |
-| *Voucherify.OrdersApi*             | [**createOrder**](docs/OrdersApi.md#createOrder)                                                      | **POST** /v1/orders                                                                        | Create Order                                      |
-| *Voucherify.OrdersApi*             | [**createOrderExport**](docs/OrdersApi.md#createOrderExport)                                          | **POST** /v1/orders/export                                                                 | Create Orders Export                              |
-| *Voucherify.OrdersApi*             | [**getOrder**](docs/OrdersApi.md#getOrder)                                                            | **GET** /v1/orders/{orderId}                                                               | Get Order                                         |
-| *Voucherify.OrdersApi*             | [**importOrders**](docs/OrdersApi.md#importOrders)                                                    | **POST** /v1/orders/import                                                                 | Import Orders                                     |
-| *Voucherify.OrdersApi*             | [**listOrders**](docs/OrdersApi.md#listOrders)                                                        | **GET** /v1/orders                                                                         | List Orders                                       |
-| *Voucherify.OrdersApi*             | [**updateOrder**](docs/OrdersApi.md#updateOrder)                                                      | **PUT** /v1/orders/{orderId}                                                               | Update Order                                      |
-| *Voucherify.ProductCollectionsApi* | [**createProductCollection**](docs/ProductCollectionsApi.md#createProductCollection)                  | **POST** /v1/product-collections                                                           | Create Product Collection                         |
-| *Voucherify.ProductCollectionsApi* | [**deleteProductCollection**](docs/ProductCollectionsApi.md#deleteProductCollection)                  | **DELETE** /v1/product-collections/{productCollectionId}                                   | Delete Product Collection                         |
-| *Voucherify.ProductCollectionsApi* | [**getProductCollection**](docs/ProductCollectionsApi.md#getProductCollection)                        | **GET** /v1/product-collections/{productCollectionId}                                      | Get Product Collection                            |
-| *Voucherify.ProductCollectionsApi* | [**listProductCollections**](docs/ProductCollectionsApi.md#listProductCollections)                    | **GET** /v1/product-collections                                                            | List Product Collections                          |
-| *Voucherify.ProductCollectionsApi* | [**listProductsInCollection**](docs/ProductCollectionsApi.md#listProductsInCollection)                | **GET** /v1/product-collections/{productCollectionId}/products                             | List Products in Collection                       |
-| *Voucherify.ProductsApi*           | [**createProduct**](docs/ProductsApi.md#createProduct)                                                | **POST** /v1/products                                                                      | Create Product                                    |
-| *Voucherify.ProductsApi*           | [**createSku**](docs/ProductsApi.md#createSku)                                                        | **POST** /v1/products/{productId}/skus                                                     | Create SKU                                        |
-| *Voucherify.ProductsApi*           | [**deleteProduct**](docs/ProductsApi.md#deleteProduct)                                                | **DELETE** /v1/products/{productId}                                                        | Delete Product                                    |
-| *Voucherify.ProductsApi*           | [**deleteSku**](docs/ProductsApi.md#deleteSku)                                                        | **DELETE** /v1/products/{productId}/skus/{skuId}                                           | Delete SKU                                        |
-| *Voucherify.ProductsApi*           | [**getProduct**](docs/ProductsApi.md#getProduct)                                                      | **GET** /v1/products/{productId}                                                           | Get Product                                       |
-| *Voucherify.ProductsApi*           | [**getSku**](docs/ProductsApi.md#getSku)                                                              | **GET** /v1/skus/{skuId}                                                                   | Get SKU                                           |
-| *Voucherify.ProductsApi*           | [**importProductsUsingCsv**](docs/ProductsApi.md#importProductsUsingCsv)                              | **POST** /v1/products/importCSV                                                            | Import Products using CSV                         |
-| *Voucherify.ProductsApi*           | [**importSKUsUsingCsv**](docs/ProductsApi.md#importSKUsUsingCsv)                                      | **POST** /v1/skus/importCSV                                                                | Import SKUs using CSV                             |
-| *Voucherify.ProductsApi*           | [**listProducts**](docs/ProductsApi.md#listProducts)                                                  | **GET** /v1/products                                                                       | List Products                                     |
-| *Voucherify.ProductsApi*           | [**listSKUsInProduct**](docs/ProductsApi.md#listSKUsInProduct)                                        | **GET** /v1/products/{productId}/skus                                                      | List SKUs in Product                              |
-| *Voucherify.ProductsApi*           | [**updateProduct**](docs/ProductsApi.md#updateProduct)                                                | **PUT** /v1/products/{productId}                                                           | Update Product                                    |
-| *Voucherify.ProductsApi*           | [**updateProductsInBulk**](docs/ProductsApi.md#updateProductsInBulk)                                  | **POST** /v1/products/bulk/async                                                           | Update Products in Bulk                           |
-| *Voucherify.ProductsApi*           | [**updateProductsMetadataInBulk**](docs/ProductsApi.md#updateProductsMetadataInBulk)                  | **POST** /v1/products/metadata/async                                                       | Update Products&#39; Metadata in Bulk             |
-| *Voucherify.ProductsApi*           | [**updateSku**](docs/ProductsApi.md#updateSku)                                                        | **PUT** /v1/products/{productId}/skus/{skuId}                                              | Update SKU                                        |
-| *Voucherify.PromotionsApi*         | [**addPromotionTierToCampaign**](docs/PromotionsApi.md#addPromotionTierToCampaign)                    | **POST** /v1/promotions/{campaignId}/tiers                                                 | Add Promotion Tier to Campaign                    |
-| *Voucherify.PromotionsApi*         | [**createPromotionStack**](docs/PromotionsApi.md#createPromotionStack)                                | **POST** /v1/promotions/{campaignId}/stacks                                                | Create Promotion Stack                            |
-| *Voucherify.PromotionsApi*         | [**deletePromotionStack**](docs/PromotionsApi.md#deletePromotionStack)                                | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId}                                    | Delete Promotion Stack                            |
-| *Voucherify.PromotionsApi*         | [**deletePromotionTier**](docs/PromotionsApi.md#deletePromotionTier)                                  | **DELETE** /v1/promotions/tiers/{promotionTierId}                                          | Delete Promotion Tier                             |
-| *Voucherify.PromotionsApi*         | [**disablePromotionTier**](docs/PromotionsApi.md#disablePromotionTier)                                | **POST** /v1/promotions/tiers/{promotionTierId}/disable                                    | Disable Promotion Tier                            |
-| *Voucherify.PromotionsApi*         | [**enablePromotionTier**](docs/PromotionsApi.md#enablePromotionTier)                                  | **POST** /v1/promotions/tiers/{promotionTierId}/enable                                     | Enable Promotion Tier                             |
-| *Voucherify.PromotionsApi*         | [**getPromotionStack**](docs/PromotionsApi.md#getPromotionStack)                                      | **GET** /v1/promotions/{campaignId}/stacks/{stackId}                                       | Get Promotion Stack                               |
-| *Voucherify.PromotionsApi*         | [**getPromotionTier**](docs/PromotionsApi.md#getPromotionTier)                                        | **GET** /v1/promotions/tiers/{promotionTierId}                                             | Get Promotion Tier                                |
-| *Voucherify.PromotionsApi*         | [**listAllPromotionStacks**](docs/PromotionsApi.md#listAllPromotionStacks)                            | **GET** /v1/promotions/stacks                                                              | List Promotion Stacks                             |
-| *Voucherify.PromotionsApi*         | [**listPromotionStacksInCampaign**](docs/PromotionsApi.md#listPromotionStacksInCampaign)              | **GET** /v1/promotions/{campaignId}/stacks                                                 | List Promotion Stacks in Campaign                 |
-| *Voucherify.PromotionsApi*         | [**listPromotionTiers**](docs/PromotionsApi.md#listPromotionTiers)                                    | **GET** /v1/promotions/tiers                                                               | List Promotion Tiers                              |
-| *Voucherify.PromotionsApi*         | [**listPromotionTiersFromCampaign**](docs/PromotionsApi.md#listPromotionTiersFromCampaign)            | **GET** /v1/promotions/{campaignId}/tiers                                                  | List Promotion Tiers from Campaign                |
-| *Voucherify.PromotionsApi*         | [**updatePromotionStack**](docs/PromotionsApi.md#updatePromotionStack)                                | **PUT** /v1/promotions/{campaignId}/stacks/{stackId}                                       | Update Promotion Stack                            |
-| *Voucherify.PromotionsApi*         | [**updatePromotionTier**](docs/PromotionsApi.md#updatePromotionTier)                                  | **PUT** /v1/promotions/tiers/{promotionTierId}                                             | Update Promotion Tier                             |
-| *Voucherify.PublicationsApi*       | [**createPublication**](docs/PublicationsApi.md#createPublication)                                    | **POST** /v1/publications                                                                  | Create Publication                                |
-| *Voucherify.PublicationsApi*       | [**createPublication1**](docs/PublicationsApi.md#createPublication1)                                  | **GET** /v1/publications/create                                                            | Create Publication with GET                       |
-| *Voucherify.PublicationsApi*       | [**listPublications**](docs/PublicationsApi.md#listPublications)                                      | **GET** /v1/publications                                                                   | List Publications                                 |
-| *Voucherify.QualificationsApi*     | [**checkEligibility**](docs/QualificationsApi.md#checkEligibility)                                    | **POST** /v1/qualifications                                                                | Check Eligibility                                 |
-| *Voucherify.RedemptionsApi*        | [**getRedemption**](docs/RedemptionsApi.md#getRedemption)                                             | **GET** /v1/redemptions/{redemptionId}                                                     | Get Redemption                                    |
-| *Voucherify.RedemptionsApi*        | [**getVoucherRedemptions**](docs/RedemptionsApi.md#getVoucherRedemptions)                             | **GET** /v1/vouchers/{code}/redemption                                                     | Get Voucher&#39;s Redemptions                     |
-| *Voucherify.RedemptionsApi*        | [**listRedemptions**](docs/RedemptionsApi.md#listRedemptions)                                         | **GET** /v1/redemptions                                                                    | List Redemptions                                  |
-| *Voucherify.RedemptionsApi*        | [**redeemStackedDiscounts**](docs/RedemptionsApi.md#redeemStackedDiscounts)                           | **POST** /v1/redemptions                                                                   | Redeem Stackable Discounts                        |
-| *Voucherify.RedemptionsApi*        | [**rollbackRedemption**](docs/RedemptionsApi.md#rollbackRedemption)                                   | **POST** /v1/redemptions/{redemptionId}/rollback                                           | Rollback Redemption                               |
-| *Voucherify.RedemptionsApi*        | [**rollbackStackedRedemptions**](docs/RedemptionsApi.md#rollbackStackedRedemptions)                   | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks                                    | Rollback Stackable Redemptions                    |
-| *Voucherify.ReferralsApi*          | [**referralsAddHolders**](docs/ReferralsApi.md#referralsAddHolders)                                   | **POST** /v1/referrals/members/{memberId}/holders                                          | Add Referral Code Holders                         |
-| *Voucherify.ReferralsApi*          | [**referralsAddHolders1**](docs/ReferralsApi.md#referralsAddHolders1)                                 | **POST** /v1/referrals/{campaignId}/members/{memberId}/holders                             | Add Referral Code Holders with Campaign ID        |
-| *Voucherify.ReferralsApi*          | [**referralsCodeHolders**](docs/ReferralsApi.md#referralsCodeHolders)                                 | **GET** /v1/referrals/{campaignId}/members/{memberId}/holders                              | List Referral Code Holders with campaign ID       |
-| *Voucherify.ReferralsApi*          | [**referralsCodeHolders1**](docs/ReferralsApi.md#referralsCodeHolders1)                               | **GET** /v1/referrals/members/{memberId}/holders                                           | List Referral Code Holders                        |
-| *Voucherify.ReferralsApi*          | [**referralsRemoveHolder**](docs/ReferralsApi.md#referralsRemoveHolder)                               | **DELETE** /v1/referrals/members/{memberId}/holders/{holderId}                             | Remove Referral Card Holder                       |
-| *Voucherify.ReferralsApi*          | [**referralsRemoveHolder1**](docs/ReferralsApi.md#referralsRemoveHolder1)                             | **DELETE** /v1/referrals/{campaignId}/members/{memberId}/holders/{holderId}                | Remove Referral Card Holder with campaign ID      |
-| *Voucherify.RewardsApi*            | [**createReward**](docs/RewardsApi.md#createReward)                                                   | **POST** /v1/rewards                                                                       | Create Reward                                     |
-| *Voucherify.RewardsApi*            | [**createRewardAssignment**](docs/RewardsApi.md#createRewardAssignment)                               | **POST** /v1/rewards/{rewardId}/assignments                                                | Create Reward Assignment                          |
-| *Voucherify.RewardsApi*            | [**deleteReward**](docs/RewardsApi.md#deleteReward)                                                   | **DELETE** /v1/rewards/{rewardId}                                                          | Delete Reward                                     |
-| *Voucherify.RewardsApi*            | [**deleteRewardAssignment**](docs/RewardsApi.md#deleteRewardAssignment)                               | **DELETE** /v1/rewards/{rewardId}/assignments/{assignmentId}                               | Delete Reward Assignment                          |
-| *Voucherify.RewardsApi*            | [**getReward**](docs/RewardsApi.md#getReward)                                                         | **GET** /v1/rewards/{rewardId}                                                             | Get Reward                                        |
-| *Voucherify.RewardsApi*            | [**getRewardAssignment**](docs/RewardsApi.md#getRewardAssignment)                                     | **GET** /v1/rewards/{rewardId}/assignments/{assignmentId}                                  | Get Reward Assignment                             |
-| *Voucherify.RewardsApi*            | [**listRewardAssignments**](docs/RewardsApi.md#listRewardAssignments)                                 | **GET** /v1/rewards/{rewardId}/assignments                                                 | List Reward Assignments                           |
-| *Voucherify.RewardsApi*            | [**listRewards**](docs/RewardsApi.md#listRewards)                                                     | **GET** /v1/rewards                                                                        | List Rewards                                      |
-| *Voucherify.RewardsApi*            | [**updateReward**](docs/RewardsApi.md#updateReward)                                                   | **PUT** /v1/rewards/{rewardId}                                                             | Update Reward                                     |
-| *Voucherify.RewardsApi*            | [**updateRewardAssignment**](docs/RewardsApi.md#updateRewardAssignment)                               | **PUT** /v1/rewards/{rewardId}/assignments/{assignmentId}                                  | Update Reward Assignment                          |
-| *Voucherify.SegmentsApi*           | [**createSegment**](docs/SegmentsApi.md#createSegment)                                                | **POST** /v1/segments                                                                      | Create Segment                                    |
-| *Voucherify.SegmentsApi*           | [**deleteSegment**](docs/SegmentsApi.md#deleteSegment)                                                | **DELETE** /v1/segments/{segmentId}                                                        | Delete Segment                                    |
-| *Voucherify.SegmentsApi*           | [**getSegment**](docs/SegmentsApi.md#getSegment)                                                      | **GET** /v1/segments/{segmentId}                                                           | Get Segment                                       |
-| *Voucherify.TemplatesApi*          | [**addTierFromTemplate**](docs/TemplatesApi.md#addTierFromTemplate)                                   | **POST** /v1/templates/campaigns/{campaignTemplateId}/tier-setup                           | Add Promotion Tier From Template                  |
-| *Voucherify.TemplatesApi*          | [**createCampaignFromTemplate**](docs/TemplatesApi.md#createCampaignFromTemplate)                     | **POST** /v1/templates/campaigns/{campaignTemplateId}/campaign-setup                       | Create Campaign From Template                     |
-| *Voucherify.TemplatesApi*          | [**createCampaignTemplate**](docs/TemplatesApi.md#createCampaignTemplate)                             | **POST** /v1/templates/campaigns                                                           | Create Campaign Template                          |
-| *Voucherify.TemplatesApi*          | [**deleteCampaignTemplate**](docs/TemplatesApi.md#deleteCampaignTemplate)                             | **DELETE** /v1/templates/campaigns/{campaignTemplateId}                                    | Delete Campaign Template                          |
-| *Voucherify.TemplatesApi*          | [**getCampaignTemplate**](docs/TemplatesApi.md#getCampaignTemplate)                                   | **GET** /v1/templates/campaigns/{campaignTemplateId}                                       | Get Campaign Template                             |
-| *Voucherify.TemplatesApi*          | [**listCampaignTemplates**](docs/TemplatesApi.md#listCampaignTemplates)                               | **GET** /v1/templates/campaigns                                                            | List Campaign Templates                           |
-| *Voucherify.TemplatesApi*          | [**updateCampaignTemplate**](docs/TemplatesApi.md#updateCampaignTemplate)                             | **PUT** /v1/templates/campaigns/{campaignTemplateId}                                       | Update Campaign Template                          |
-| *Voucherify.ValidationRulesApi*    | [**createValidationRuleAssignment**](docs/ValidationRulesApi.md#createValidationRuleAssignment)       | **POST** /v1/validation-rules/{validationRuleId}/assignments                               | Create Validation Rules Assignments               |
-| *Voucherify.ValidationRulesApi*    | [**createValidationRules**](docs/ValidationRulesApi.md#createValidationRules)                         | **POST** /v1/validation-rules                                                              | Create Validation Rules                           |
-| *Voucherify.ValidationRulesApi*    | [**deleteValidationRuleAssignment**](docs/ValidationRulesApi.md#deleteValidationRuleAssignment)       | **DELETE** /v1/validation-rules/{validationRuleId}/assignments/{assignmentId}              | Delete Validation Rule Assignment                 |
-| *Voucherify.ValidationRulesApi*    | [**deleteValidationRules**](docs/ValidationRulesApi.md#deleteValidationRules)                         | **DELETE** /v1/validation-rules/{validationRuleId}                                         | Delete Validation Rule                            |
-| *Voucherify.ValidationRulesApi*    | [**getValidationRule**](docs/ValidationRulesApi.md#getValidationRule)                                 | **GET** /v1/validation-rules/{validationRuleId}                                            | Get Validation Rule                               |
-| *Voucherify.ValidationRulesApi*    | [**listValidationRuleAssignments**](docs/ValidationRulesApi.md#listValidationRuleAssignments)         | **GET** /v1/validation-rules/{validationRuleId}/assignments                                | List Validation Rule Assignments                  |
-| *Voucherify.ValidationRulesApi*    | [**listValidationRules**](docs/ValidationRulesApi.md#listValidationRules)                             | **GET** /v1/validation-rules                                                               | List Validation Rules                             |
-| *Voucherify.ValidationRulesApi*    | [**listValidationRulesAssignments**](docs/ValidationRulesApi.md#listValidationRulesAssignments)       | **GET** /v1/validation-rules-assignments                                                   | List Validation Rules&#39; Assignment(s)          |
-| *Voucherify.ValidationRulesApi*    | [**updateValidationRule**](docs/ValidationRulesApi.md#updateValidationRule)                           | **PUT** /v1/validation-rules/{validationRuleId}                                            | Update Validation Rule                            |
-| *Voucherify.ValidationsApi*        | [**validateStackedDiscounts**](docs/ValidationsApi.md#validateStackedDiscounts)                       | **POST** /v1/validations                                                                   | Validate Stackable Discounts                      |
-| *Voucherify.VouchersApi*           | [**createVoucher**](docs/VouchersApi.md#createVoucher)                                                | **POST** /v1/vouchers/{code}                                                               | Create Voucher                                    |
-| *Voucherify.VouchersApi*           | [**deleteVoucher**](docs/VouchersApi.md#deleteVoucher)                                                | **DELETE** /v1/vouchers/{code}                                                             | Delete Voucher                                    |
-| *Voucherify.VouchersApi*           | [**disableVoucher**](docs/VouchersApi.md#disableVoucher)                                              | **POST** /v1/vouchers/{code}/disable                                                       | Disable Voucher                                   |
-| *Voucherify.VouchersApi*           | [**enableVoucher**](docs/VouchersApi.md#enableVoucher)                                                | **POST** /v1/vouchers/{code}/enable                                                        | Enable Voucher                                    |
-| *Voucherify.VouchersApi*           | [**exportVoucherTransactions**](docs/VouchersApi.md#exportVoucherTransactions)                        | **POST** /v1/vouchers/{code}/transactions/export                                           | Export Voucher Transactions                       |
-| *Voucherify.VouchersApi*           | [**generateRandomCode**](docs/VouchersApi.md#generateRandomCode)                                      | **POST** /v1/vouchers                                                                      | Generate Random Code                              |
-| *Voucherify.VouchersApi*           | [**getVoucher**](docs/VouchersApi.md#getVoucher)                                                      | **GET** /v1/vouchers/{code}                                                                | Get Voucher                                       |
-| *Voucherify.VouchersApi*           | [**importVouchers**](docs/VouchersApi.md#importVouchers)                                              | **POST** /v1/vouchers/import                                                               | Import Vouchers                                   |
-| *Voucherify.VouchersApi*           | [**importVouchersUsingCsv**](docs/VouchersApi.md#importVouchersUsingCsv)                              | **POST** /v1/vouchers/importCSV                                                            | Import Vouchers using CSV                         |
-| *Voucherify.VouchersApi*           | [**listVoucherTransactions**](docs/VouchersApi.md#listVoucherTransactions)                            | **GET** /v1/vouchers/{code}/transactions                                                   | List Voucher Transactions                         |
-| *Voucherify.VouchersApi*           | [**listVouchers**](docs/VouchersApi.md#listVouchers)                                                  | **GET** /v1/vouchers                                                                       | List Vouchers                                     |
-| *Voucherify.VouchersApi*           | [**releaseValidationSession**](docs/VouchersApi.md#releaseValidationSession)                          | **DELETE** /v1/vouchers/{code}/sessions/{sessionKey}                                       | Release Validation Session                        |
-| *Voucherify.VouchersApi*           | [**updateVoucher**](docs/VouchersApi.md#updateVoucher)                                                | **PUT** /v1/vouchers/{code}                                                                | Update Voucher                                    |
-| *Voucherify.VouchersApi*           | [**updateVoucherBalance**](docs/VouchersApi.md#updateVoucherBalance)                                  | **POST** /v1/vouchers/{code}/balance                                                       | Adjust Voucher Balance                            |
-| *Voucherify.VouchersApi*           | [**updateVouchersInBulk**](docs/VouchersApi.md#updateVouchersInBulk)                                  | **POST** /v1/vouchers/bulk/async                                                           | Update Vouchers in Bulk                           |
-| *Voucherify.VouchersApi*           | [**updateVouchersMetadataInBulk**](docs/VouchersApi.md#updateVouchersMetadataInBulk)                  | **POST** /v1/vouchers/metadata/async                                                       | Update Vouchers&#39; Metadata in Bulk             |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*Voucherify.AsyncActionsApi* | [**getAsyncAction**](docs/AsyncActionsApi.md#getAsyncAction) | **GET** /v1/async-actions/{asyncActionId} | Get Async Action
+*Voucherify.AsyncActionsApi* | [**listAsyncActions**](docs/AsyncActionsApi.md#listAsyncActions) | **GET** /v1/async-actions | List Async Actions
+*Voucherify.BinApi* | [**deleteBinEntry**](docs/BinApi.md#deleteBinEntry) | **DELETE** /v1/trash-bin/{binEntryId} | Delete Bin Entry
+*Voucherify.BinApi* | [**listBinEntries**](docs/BinApi.md#listBinEntries) | **GET** /v1/trash-bin | List Bin Entries
+*Voucherify.CampaignsApi* | [**addVoucherWithSpecificCodeToCampaign**](docs/CampaignsApi.md#addVoucherWithSpecificCodeToCampaign) | **POST** /v1/campaigns/{campaignId}/vouchers/{code} | Add Voucher with Specific Code to Campaign
+*Voucherify.CampaignsApi* | [**addVouchersToCampaign**](docs/CampaignsApi.md#addVouchersToCampaign) | **POST** /v1/campaigns/{campaignId}/vouchers | Add Vouchers to Campaign
+*Voucherify.CampaignsApi* | [**createCampaign**](docs/CampaignsApi.md#createCampaign) | **POST** /v1/campaigns | Create Campaign
+*Voucherify.CampaignsApi* | [**deleteCampaign**](docs/CampaignsApi.md#deleteCampaign) | **DELETE** /v1/campaigns/{campaignId} | Delete Campaign
+*Voucherify.CampaignsApi* | [**disableCampaign**](docs/CampaignsApi.md#disableCampaign) | **POST** /v1/campaigns/{campaignId}/disable | Disable Campaign
+*Voucherify.CampaignsApi* | [**enableCampaign**](docs/CampaignsApi.md#enableCampaign) | **POST** /v1/campaigns/{campaignId}/enable | Enable Campaign
+*Voucherify.CampaignsApi* | [**exportCampaignTransactions**](docs/CampaignsApi.md#exportCampaignTransactions) | **POST** /v1/campaigns/{campaignId}/transactions/export | Export Campaign Transactions
+*Voucherify.CampaignsApi* | [**getCampaign**](docs/CampaignsApi.md#getCampaign) | **GET** /v1/campaigns/{campaignId} | Get Campaign
+*Voucherify.CampaignsApi* | [**getCampaignSummary**](docs/CampaignsApi.md#getCampaignSummary) | **GET** /v1/campaigns/{campaignId}/summary | Get Campaign Summary
+*Voucherify.CampaignsApi* | [**importVouchersToCampaign**](docs/CampaignsApi.md#importVouchersToCampaign) | **POST** /v1/campaigns/{campaignId}/import | Import Vouchers to Campaign
+*Voucherify.CampaignsApi* | [**importVouchersToCampaignUsingCsv**](docs/CampaignsApi.md#importVouchersToCampaignUsingCsv) | **POST** /v1/campaigns/{campaignId}/importCSV | Import Vouchers to Campaign by CSV
+*Voucherify.CampaignsApi* | [**listCampaignTransactions**](docs/CampaignsApi.md#listCampaignTransactions) | **GET** /v1/campaigns/{campaignId}/transactions | List Campaign Transactions
+*Voucherify.CampaignsApi* | [**listCampaigns**](docs/CampaignsApi.md#listCampaigns) | **GET** /v1/campaigns | List Campaigns
+*Voucherify.CampaignsApi* | [**updateCampaign**](docs/CampaignsApi.md#updateCampaign) | **PUT** /v1/campaigns/{campaignId} | Update Campaign
+*Voucherify.CategoriesApi* | [**createCategory**](docs/CategoriesApi.md#createCategory) | **POST** /v1/categories | Create Category
+*Voucherify.CategoriesApi* | [**deleteCategory**](docs/CategoriesApi.md#deleteCategory) | **DELETE** /v1/categories/{categoryId} | Delete Category
+*Voucherify.CategoriesApi* | [**getCategory**](docs/CategoriesApi.md#getCategory) | **GET** /v1/categories/{categoryId} | Get Category
+*Voucherify.CategoriesApi* | [**listCategories**](docs/CategoriesApi.md#listCategories) | **GET** /v1/categories | List Categories
+*Voucherify.CategoriesApi* | [**updateCategory**](docs/CategoriesApi.md#updateCategory) | **PUT** /v1/categories/{categoryId} | Update Category
+*Voucherify.ClientSideApi* | [**checkEligibilityClientSide**](docs/ClientSideApi.md#checkEligibilityClientSide) | **POST** /client/v1/qualifications | Check Eligibility (client-side)
+*Voucherify.ClientSideApi* | [**listPromotionTiersClientSide**](docs/ClientSideApi.md#listPromotionTiersClientSide) | **GET** /client/v1/promotions/tiers | List Promotion Tiers (client-side)
+*Voucherify.ClientSideApi* | [**redeemStackedDiscountsClientSide**](docs/ClientSideApi.md#redeemStackedDiscountsClientSide) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side)
+*Voucherify.ClientSideApi* | [**trackCustomEventClientSide**](docs/ClientSideApi.md#trackCustomEventClientSide) | **POST** /client/v1/events | Track Custom Event (client-side)
+*Voucherify.ClientSideApi* | [**validateStackedDiscountsClientSide**](docs/ClientSideApi.md#validateStackedDiscountsClientSide) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side)
+*Voucherify.CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createCustomer) | **POST** /v1/customers | Create Customer
+*Voucherify.CustomersApi* | [**customerPermanentlyDeletion**](docs/CustomersApi.md#customerPermanentlyDeletion) | **POST** /v1/customers/{customerId}/permanent-deletion | Delete Customer Permanently
+*Voucherify.CustomersApi* | [**deleteCustomer**](docs/CustomersApi.md#deleteCustomer) | **DELETE** /v1/customers/{customerId} | Delete Customer
+*Voucherify.CustomersApi* | [**getCustomer**](docs/CustomersApi.md#getCustomer) | **GET** /v1/customers/{customerId} | Get Customer
+*Voucherify.CustomersApi* | [**importCustomersUsingCsv**](docs/CustomersApi.md#importCustomersUsingCsv) | **POST** /v1/customers/importCSV | Import and Update Customers using CSV
+*Voucherify.CustomersApi* | [**listCustomerActivity**](docs/CustomersApi.md#listCustomerActivity) | **GET** /v1/customers/{customerId}/activity | List Customer Activity
+*Voucherify.CustomersApi* | [**listCustomerRedeemables**](docs/CustomersApi.md#listCustomerRedeemables) | **GET** /v1/customers/{customerId}/redeemables | List Customer&#39;s Redeemables
+*Voucherify.CustomersApi* | [**listCustomerSegments**](docs/CustomersApi.md#listCustomerSegments) | **GET** /v1/customers/{customerId}/segments | List Customer&#39;s Segments
+*Voucherify.CustomersApi* | [**listCustomers**](docs/CustomersApi.md#listCustomers) | **GET** /v1/customers | List Customers
+*Voucherify.CustomersApi* | [**updateCustomer**](docs/CustomersApi.md#updateCustomer) | **PUT** /v1/customers/{customerId} | Update Customer
+*Voucherify.CustomersApi* | [**updateCustomersInBulk**](docs/CustomersApi.md#updateCustomersInBulk) | **POST** /v1/customers/bulk/async | Update Customers in Bulk
+*Voucherify.CustomersApi* | [**updateCustomersMetadataInBulk**](docs/CustomersApi.md#updateCustomersMetadataInBulk) | **POST** /v1/customers/metadata/async | Update Customers&#39; Metadata in Bulk
+*Voucherify.EventsApi* | [**trackCustomEvent**](docs/EventsApi.md#trackCustomEvent) | **POST** /v1/events | Track Custom Event
+*Voucherify.ExportsApi* | [**createExport**](docs/ExportsApi.md#createExport) | **POST** /v1/exports | Create Export
+*Voucherify.ExportsApi* | [**deleteExport**](docs/ExportsApi.md#deleteExport) | **DELETE** /v1/exports/{exportId} | Delete Export
+*Voucherify.ExportsApi* | [**downloadExport**](docs/ExportsApi.md#downloadExport) | **GET** /v1/exports/{export_Id} | Download Export
+*Voucherify.ExportsApi* | [**getExport**](docs/ExportsApi.md#getExport) | **GET** /v1/exports/{exportId} | Get Export
+*Voucherify.ExportsApi* | [**listExports**](docs/ExportsApi.md#listExports) | **GET** /v1/exports | List Exports
+*Voucherify.LocationsApi* | [**getLocation**](docs/LocationsApi.md#getLocation) | **GET** /v1/locations/{locationId} | Get Location
+*Voucherify.LocationsApi* | [**listLocations**](docs/LocationsApi.md#listLocations) | **GET** /v1/locations | List Locations
+*Voucherify.LoyaltiesApi* | [**activateMemberPendingPoints**](docs/LoyaltiesApi.md#activateMemberPendingPoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/activate | Activate Member Pending Points
+*Voucherify.LoyaltiesApi* | [**addMember**](docs/LoyaltiesApi.md#addMember) | **POST** /v1/loyalties/{campaignId}/members | Add Member
+*Voucherify.LoyaltiesApi* | [**adjustMemberPendingPoints**](docs/LoyaltiesApi.md#adjustMemberPendingPoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance | Adjust Member Pending Points
+*Voucherify.LoyaltiesApi* | [**cancelMemberPendingPoints**](docs/LoyaltiesApi.md#cancelMemberPendingPoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/cancel | Cancel Member Pending Points
+*Voucherify.LoyaltiesApi* | [**createEarningRule**](docs/LoyaltiesApi.md#createEarningRule) | **POST** /v1/loyalties/{campaignId}/earning-rules | Create Earning Rule
+*Voucherify.LoyaltiesApi* | [**createInBulkLoyaltyTiers**](docs/LoyaltiesApi.md#createInBulkLoyaltyTiers) | **POST** /v1/loyalties/{campaignId}/tiers | Create loyalty tiers
+*Voucherify.LoyaltiesApi* | [**createLoyaltyProgram**](docs/LoyaltiesApi.md#createLoyaltyProgram) | **POST** /v1/loyalties | Create Loyalty Campaign
+*Voucherify.LoyaltiesApi* | [**createPointsExpirationExport**](docs/LoyaltiesApi.md#createPointsExpirationExport) | **POST** /v1/loyalties/{campaignId}/points-expiration/export | Export Loyalty Campaign Point Expiration
+*Voucherify.LoyaltiesApi* | [**createRewardAssignment1**](docs/LoyaltiesApi.md#createRewardAssignment1) | **POST** /v1/loyalties/{campaignId}/rewards | Create Loyalty Campaign Reward Assignment
+*Voucherify.LoyaltiesApi* | [**deleteEarningRule**](docs/LoyaltiesApi.md#deleteEarningRule) | **DELETE** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Delete Earning Rule
+*Voucherify.LoyaltiesApi* | [**deleteLoyaltyProgram**](docs/LoyaltiesApi.md#deleteLoyaltyProgram) | **DELETE** /v1/loyalties/{campaignId} | Delete Loyalty Campaign
+*Voucherify.LoyaltiesApi* | [**deleteRewardAssignment1**](docs/LoyaltiesApi.md#deleteRewardAssignment1) | **DELETE** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Delete Campaign Reward Assignment
+*Voucherify.LoyaltiesApi* | [**disableEarningRule**](docs/LoyaltiesApi.md#disableEarningRule) | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/disable | Disable Earning Rule
+*Voucherify.LoyaltiesApi* | [**enableEarningRule**](docs/LoyaltiesApi.md#enableEarningRule) | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/enable | Enable Earning Rule
+*Voucherify.LoyaltiesApi* | [**exportLoyaltyCampaignTransactions**](docs/LoyaltiesApi.md#exportLoyaltyCampaignTransactions) | **POST** /v1/loyalties/{campaignId}/transactions/export | Export Loyalty Campaign Transactions
+*Voucherify.LoyaltiesApi* | [**exportLoyaltyCardTransactions**](docs/LoyaltiesApi.md#exportLoyaltyCardTransactions) | **POST** /v1/loyalties/members/{memberId}/transactions/export | Export Loyalty Card Transactions
+*Voucherify.LoyaltiesApi* | [**exportLoyaltyCardTransactions1**](docs/LoyaltiesApi.md#exportLoyaltyCardTransactions1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transactions/export | Export Loyalty Card Transactions with campaign ID
+*Voucherify.LoyaltiesApi* | [**getEarningRule**](docs/LoyaltiesApi.md#getEarningRule) | **GET** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Get Earning Rule
+*Voucherify.LoyaltiesApi* | [**getLoyaltyProgram**](docs/LoyaltiesApi.md#getLoyaltyProgram) | **GET** /v1/loyalties/{campaignId} | Get Loyalty Campaign
+*Voucherify.LoyaltiesApi* | [**getLoyaltyTier**](docs/LoyaltiesApi.md#getLoyaltyTier) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId} | Get Loyalty Tier
+*Voucherify.LoyaltiesApi* | [**getMember**](docs/LoyaltiesApi.md#getMember) | **GET** /v1/loyalties/members/{memberId} | Get Member
+*Voucherify.LoyaltiesApi* | [**getMember1**](docs/LoyaltiesApi.md#getMember1) | **GET** /v1/loyalties/{campaignId}/members/{memberId} | Get Member with campaign ID
+*Voucherify.LoyaltiesApi* | [**getRewardAssignment1**](docs/LoyaltiesApi.md#getRewardAssignment1) | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId} | Get Campaign Reward Assignments
+*Voucherify.LoyaltiesApi* | [**getRewardAssignment2**](docs/LoyaltiesApi.md#getRewardAssignment2) | **GET** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Get Campaign Reward Assignment
+*Voucherify.LoyaltiesApi* | [**getRewardDetails**](docs/LoyaltiesApi.md#getRewardDetails) | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}/reward | Get Reward Details
+*Voucherify.LoyaltiesApi* | [**listCampaignPendingPoints**](docs/LoyaltiesApi.md#listCampaignPendingPoints) | **GET** /v1/loyalties/{campaignId}/pending-points | List Campaign Pending Points
+*Voucherify.LoyaltiesApi* | [**listEarningRules**](docs/LoyaltiesApi.md#listEarningRules) | **GET** /v1/loyalties/{campaignId}/earning-rules | List Earning Rules
+*Voucherify.LoyaltiesApi* | [**listLoyaltyCampaignTransactions**](docs/LoyaltiesApi.md#listLoyaltyCampaignTransactions) | **GET** /v1/loyalties/{campaignId}/transactions | List Loyalty Campaign Transactions
+*Voucherify.LoyaltiesApi* | [**listLoyaltyCardTransactions**](docs/LoyaltiesApi.md#listLoyaltyCardTransactions) | **GET** /v1/loyalties/members/{memberId}/transactions | List Loyalty Card Transactions
+*Voucherify.LoyaltiesApi* | [**listLoyaltyCardTransactions1**](docs/LoyaltiesApi.md#listLoyaltyCardTransactions1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/transactions | List Loyalty Card Transactions with campaign ID
+*Voucherify.LoyaltiesApi* | [**listLoyaltyPrograms**](docs/LoyaltiesApi.md#listLoyaltyPrograms) | **GET** /v1/loyalties | List Loyalty Campaigns
+*Voucherify.LoyaltiesApi* | [**listLoyaltyTierEarningRules**](docs/LoyaltiesApi.md#listLoyaltyTierEarningRules) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/earning-rules | List Loyalty Tier Earning Rules
+*Voucherify.LoyaltiesApi* | [**listLoyaltyTierRewards**](docs/LoyaltiesApi.md#listLoyaltyTierRewards) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/rewards | List Loyalty Tier Rewards
+*Voucherify.LoyaltiesApi* | [**listLoyaltyTiers**](docs/LoyaltiesApi.md#listLoyaltyTiers) | **GET** /v1/loyalties/{campaignId}/tiers | List Loyalty Tiers
+*Voucherify.LoyaltiesApi* | [**listMemberActivity**](docs/LoyaltiesApi.md#listMemberActivity) | **GET** /v1/loyalties/members/{memberId}/activity | List Member Activity
+*Voucherify.LoyaltiesApi* | [**listMemberActivity1**](docs/LoyaltiesApi.md#listMemberActivity1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/activity | List Member Activity with campaign ID
+*Voucherify.LoyaltiesApi* | [**listMemberLoyaltyTier**](docs/LoyaltiesApi.md#listMemberLoyaltyTier) | **GET** /v1/loyalties/members/{memberId}/tiers | List Member&#39;s Loyalty Tiers
+*Voucherify.LoyaltiesApi* | [**listMemberPendingPoints**](docs/LoyaltiesApi.md#listMemberPendingPoints) | **GET** /v1/loyalties/members/{memberId}/pending-points | List Member Pending Points
+*Voucherify.LoyaltiesApi* | [**listMemberPendingPoints1**](docs/LoyaltiesApi.md#listMemberPendingPoints1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/pending-points | List Member Pending Points with campaign ID
+*Voucherify.LoyaltiesApi* | [**listMemberRewards**](docs/LoyaltiesApi.md#listMemberRewards) | **GET** /v1/loyalties/members/{memberId}/rewards | List Member Rewards
+*Voucherify.LoyaltiesApi* | [**listMembers**](docs/LoyaltiesApi.md#listMembers) | **GET** /v1/loyalties/{campaignId}/members | List Members
+*Voucherify.LoyaltiesApi* | [**listPointsExpiration**](docs/LoyaltiesApi.md#listPointsExpiration) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/points-expiration | List Loyalty Card Point Expiration
+*Voucherify.LoyaltiesApi* | [**listRewardAssignments1**](docs/LoyaltiesApi.md#listRewardAssignments1) | **GET** /v1/loyalties/{campaignId}/reward-assignments | List Reward Assignments with campaign ID
+*Voucherify.LoyaltiesApi* | [**listRewardAssignments2**](docs/LoyaltiesApi.md#listRewardAssignments2) | **GET** /v1/loyalties/{campaignId}/rewards | List Campaign Rewards
+*Voucherify.LoyaltiesApi* | [**redeemReward**](docs/LoyaltiesApi.md#redeemReward) | **POST** /v1/loyalties/members/{memberId}/redemption | Redeem Reward
+*Voucherify.LoyaltiesApi* | [**redeemReward1**](docs/LoyaltiesApi.md#redeemReward1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/redemption | Redeem Reward with campaign ID
+*Voucherify.LoyaltiesApi* | [**transferPoints**](docs/LoyaltiesApi.md#transferPoints) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transfers | Transfer Loyalty Points
+*Voucherify.LoyaltiesApi* | [**updateEarningRule**](docs/LoyaltiesApi.md#updateEarningRule) | **PUT** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Update Earning Rule
+*Voucherify.LoyaltiesApi* | [**updateLoyaltyCardBalance**](docs/LoyaltiesApi.md#updateLoyaltyCardBalance) | **POST** /v1/loyalties/members/{memberId}/balance | Adjust Loyalty Card Balance
+*Voucherify.LoyaltiesApi* | [**updateLoyaltyCardBalance1**](docs/LoyaltiesApi.md#updateLoyaltyCardBalance1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/balance | Adjust Loyalty Card Balance with campaign ID
+*Voucherify.LoyaltiesApi* | [**updateLoyaltyProgram**](docs/LoyaltiesApi.md#updateLoyaltyProgram) | **PUT** /v1/loyalties/{campaignId} | Update Loyalty Campaign
+*Voucherify.LoyaltiesApi* | [**updateRewardAssignment1**](docs/LoyaltiesApi.md#updateRewardAssignment1) | **PUT** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Update Campaign Reward Assignment
+*Voucherify.ManagementApi* | [**assignUser**](docs/ManagementApi.md#assignUser) | **POST** /management/v1/projects/{projectId}/users | Assign User
+*Voucherify.ManagementApi* | [**createBrand**](docs/ManagementApi.md#createBrand) | **POST** /management/v1/projects/{projectId}/branding | Create Brand
+*Voucherify.ManagementApi* | [**createCustomEventSchema**](docs/ManagementApi.md#createCustomEventSchema) | **POST** /management/v1/projects/{projectId}/custom-event-schemas | Create Custom Event Schema
+*Voucherify.ManagementApi* | [**createMetadataSchema**](docs/ManagementApi.md#createMetadataSchema) | **POST** /management/v1/projects/{projectId}/metadata-schemas | Create Metadata Schema
+*Voucherify.ManagementApi* | [**createProject**](docs/ManagementApi.md#createProject) | **POST** /management/v1/projects | Create Project
+*Voucherify.ManagementApi* | [**createStackingRules**](docs/ManagementApi.md#createStackingRules) | **POST** /management/v1/projects/{projectId}/stacking-rules | Create Stacking Rules
+*Voucherify.ManagementApi* | [**createWebhook**](docs/ManagementApi.md#createWebhook) | **POST** /management/v1/projects/{projectId}/webhooks | Create Webhook
+*Voucherify.ManagementApi* | [**deleteBrand**](docs/ManagementApi.md#deleteBrand) | **DELETE** /management/v1/projects/{projectId}/branding/{brandingId} | Delete Brand
+*Voucherify.ManagementApi* | [**deleteCustomEventSchema**](docs/ManagementApi.md#deleteCustomEventSchema) | **DELETE** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Delete Custom Event Schema
+*Voucherify.ManagementApi* | [**deleteMetadataSchema**](docs/ManagementApi.md#deleteMetadataSchema) | **DELETE** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Delete Metadata Schema
+*Voucherify.ManagementApi* | [**deleteProject**](docs/ManagementApi.md#deleteProject) | **DELETE** /management/v1/projects/{projectId} | Delete Project
+*Voucherify.ManagementApi* | [**deleteStackingRules**](docs/ManagementApi.md#deleteStackingRules) | **DELETE** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Delete Stacking Rules
+*Voucherify.ManagementApi* | [**deleteWebhook**](docs/ManagementApi.md#deleteWebhook) | **DELETE** /management/v1/projects/{projectId}/webhooks/{webhookId} | Delete Webhook
+*Voucherify.ManagementApi* | [**getBrand**](docs/ManagementApi.md#getBrand) | **GET** /management/v1/projects/{projectId}/branding/{brandingId} | Get Brand
+*Voucherify.ManagementApi* | [**getCustomEventSchema**](docs/ManagementApi.md#getCustomEventSchema) | **GET** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Get Custom Event Schema
+*Voucherify.ManagementApi* | [**getMetadataSchema1**](docs/ManagementApi.md#getMetadataSchema1) | **GET** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Get Metadata Schema
+*Voucherify.ManagementApi* | [**getProject**](docs/ManagementApi.md#getProject) | **GET** /management/v1/projects/{projectId} | Get Project
+*Voucherify.ManagementApi* | [**getStackingRules**](docs/ManagementApi.md#getStackingRules) | **GET** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Get Stacking Rules
+*Voucherify.ManagementApi* | [**getUser**](docs/ManagementApi.md#getUser) | **GET** /management/v1/projects/{projectId}/users/{userId} | Get User
+*Voucherify.ManagementApi* | [**getWebhook**](docs/ManagementApi.md#getWebhook) | **GET** /management/v1/projects/{projectId}/webhooks/{webhookId} | Get Webhook
+*Voucherify.ManagementApi* | [**inviteUser**](docs/ManagementApi.md#inviteUser) | **POST** /management/v1/projects/users/invite | Invite a New User
+*Voucherify.ManagementApi* | [**listBrands**](docs/ManagementApi.md#listBrands) | **GET** /management/v1/projects/{projectId}/branding | List Brands
+*Voucherify.ManagementApi* | [**listCustomEventSchemas**](docs/ManagementApi.md#listCustomEventSchemas) | **GET** /management/v1/projects/{projectId}/custom-event-schemas | List Custom Event Schemas
+*Voucherify.ManagementApi* | [**listMetadataSchemas1**](docs/ManagementApi.md#listMetadataSchemas1) | **GET** /management/v1/projects/{projectId}/metadata-schemas | List Metadata Schemas
+*Voucherify.ManagementApi* | [**listProjects**](docs/ManagementApi.md#listProjects) | **GET** /management/v1/projects | List Projects
+*Voucherify.ManagementApi* | [**listStackingRules**](docs/ManagementApi.md#listStackingRules) | **GET** /management/v1/projects/{projectId}/stacking-rules | List Stacking Rules
+*Voucherify.ManagementApi* | [**listUsers**](docs/ManagementApi.md#listUsers) | **GET** /management/v1/projects/{projectId}/users | List Users
+*Voucherify.ManagementApi* | [**listWebhooks**](docs/ManagementApi.md#listWebhooks) | **GET** /management/v1/projects/{projectId}/webhooks | List Webhooks
+*Voucherify.ManagementApi* | [**managementCopyCampaignTemplate**](docs/ManagementApi.md#managementCopyCampaignTemplate) | **POST** /management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy | Copy Campaign Template to a Project
+*Voucherify.ManagementApi* | [**managementListCampaignTemplates**](docs/ManagementApi.md#managementListCampaignTemplates) | **GET** /management/v1/projects/{projectId}/templates/campaigns | List Campaign Templates
+*Voucherify.ManagementApi* | [**unassignUser**](docs/ManagementApi.md#unassignUser) | **DELETE** /management/v1/projects/{projectId}/users/{userId} | Unassign User
+*Voucherify.ManagementApi* | [**updateBrand**](docs/ManagementApi.md#updateBrand) | **PUT** /management/v1/projects/{projectId}/branding/{brandingId} | Update Brand
+*Voucherify.ManagementApi* | [**updateCustomEventSchema**](docs/ManagementApi.md#updateCustomEventSchema) | **PUT** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Update Custom Event Schema
+*Voucherify.ManagementApi* | [**updateMetadataSchema**](docs/ManagementApi.md#updateMetadataSchema) | **PUT** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Update Metadata Schema
+*Voucherify.ManagementApi* | [**updateProject**](docs/ManagementApi.md#updateProject) | **PUT** /management/v1/projects/{projectId} | Update Project
+*Voucherify.ManagementApi* | [**updateStackingRules**](docs/ManagementApi.md#updateStackingRules) | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Update Stacking Rules
+*Voucherify.ManagementApi* | [**updateUser**](docs/ManagementApi.md#updateUser) | **PUT** /management/v1/projects/{projectId}/users/{userId} | Update User
+*Voucherify.ManagementApi* | [**updateWebhook**](docs/ManagementApi.md#updateWebhook) | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId} | Update Webhook
+*Voucherify.MetadataSchemasApi* | [**getMetadataSchema**](docs/MetadataSchemasApi.md#getMetadataSchema) | **GET** /v1/metadata-schemas/{resource} | Get Metadata Schema
+*Voucherify.MetadataSchemasApi* | [**listMetadataSchemas**](docs/MetadataSchemasApi.md#listMetadataSchemas) | **GET** /v1/metadata-schemas | List Metadata Schema Definitions
+*Voucherify.OAuthApi* | [**generateOauthToken**](docs/OAuthApi.md#generateOauthToken) | **POST** /v1/oauth/token | Generate OAuth 2.0 Token
+*Voucherify.OAuthApi* | [**introspectOauthToken**](docs/OAuthApi.md#introspectOauthToken) | **POST** /v1/oauth/introspect | Introspect OAuth 2.0 Token
+*Voucherify.OAuthApi* | [**revokeOauthToken**](docs/OAuthApi.md#revokeOauthToken) | **POST** /v1/oauth/token/revoke | Revoke OAuth 2.0 Token
+*Voucherify.OrdersApi* | [**createOrder**](docs/OrdersApi.md#createOrder) | **POST** /v1/orders | Create Order
+*Voucherify.OrdersApi* | [**createOrderExport**](docs/OrdersApi.md#createOrderExport) | **POST** /v1/orders/export | Create Orders Export
+*Voucherify.OrdersApi* | [**getOrder**](docs/OrdersApi.md#getOrder) | **GET** /v1/orders/{orderId} | Get Order
+*Voucherify.OrdersApi* | [**importOrders**](docs/OrdersApi.md#importOrders) | **POST** /v1/orders/import | Import Orders
+*Voucherify.OrdersApi* | [**listOrders**](docs/OrdersApi.md#listOrders) | **GET** /v1/orders | List Orders
+*Voucherify.OrdersApi* | [**updateOrder**](docs/OrdersApi.md#updateOrder) | **PUT** /v1/orders/{orderId} | Update Order
+*Voucherify.ProductCollectionsApi* | [**createProductCollection**](docs/ProductCollectionsApi.md#createProductCollection) | **POST** /v1/product-collections | Create Product Collection
+*Voucherify.ProductCollectionsApi* | [**deleteProductCollection**](docs/ProductCollectionsApi.md#deleteProductCollection) | **DELETE** /v1/product-collections/{productCollectionId} | Delete Product Collection
+*Voucherify.ProductCollectionsApi* | [**getProductCollection**](docs/ProductCollectionsApi.md#getProductCollection) | **GET** /v1/product-collections/{productCollectionId} | Get Product Collection
+*Voucherify.ProductCollectionsApi* | [**listProductCollections**](docs/ProductCollectionsApi.md#listProductCollections) | **GET** /v1/product-collections | List Product Collections
+*Voucherify.ProductCollectionsApi* | [**listProductsInCollection**](docs/ProductCollectionsApi.md#listProductsInCollection) | **GET** /v1/product-collections/{productCollectionId}/products | List Products in Collection
+*Voucherify.ProductsApi* | [**createProduct**](docs/ProductsApi.md#createProduct) | **POST** /v1/products | Create Product
+*Voucherify.ProductsApi* | [**createSku**](docs/ProductsApi.md#createSku) | **POST** /v1/products/{productId}/skus | Create SKU
+*Voucherify.ProductsApi* | [**deleteProduct**](docs/ProductsApi.md#deleteProduct) | **DELETE** /v1/products/{productId} | Delete Product
+*Voucherify.ProductsApi* | [**deleteSku**](docs/ProductsApi.md#deleteSku) | **DELETE** /v1/products/{productId}/skus/{skuId} | Delete SKU
+*Voucherify.ProductsApi* | [**getProduct**](docs/ProductsApi.md#getProduct) | **GET** /v1/products/{productId} | Get Product
+*Voucherify.ProductsApi* | [**getSku**](docs/ProductsApi.md#getSku) | **GET** /v1/skus/{skuId} | Get SKU
+*Voucherify.ProductsApi* | [**importProductsUsingCsv**](docs/ProductsApi.md#importProductsUsingCsv) | **POST** /v1/products/importCSV | Import Products using CSV
+*Voucherify.ProductsApi* | [**importSKUsUsingCsv**](docs/ProductsApi.md#importSKUsUsingCsv) | **POST** /v1/skus/importCSV | Import SKUs using CSV
+*Voucherify.ProductsApi* | [**listProducts**](docs/ProductsApi.md#listProducts) | **GET** /v1/products | List Products
+*Voucherify.ProductsApi* | [**listSKUsInProduct**](docs/ProductsApi.md#listSKUsInProduct) | **GET** /v1/products/{productId}/skus | List SKUs in Product
+*Voucherify.ProductsApi* | [**updateProduct**](docs/ProductsApi.md#updateProduct) | **PUT** /v1/products/{productId} | Update Product
+*Voucherify.ProductsApi* | [**updateProductsInBulk**](docs/ProductsApi.md#updateProductsInBulk) | **POST** /v1/products/bulk/async | Update Products in Bulk
+*Voucherify.ProductsApi* | [**updateProductsMetadataInBulk**](docs/ProductsApi.md#updateProductsMetadataInBulk) | **POST** /v1/products/metadata/async | Update Products&#39; Metadata in Bulk
+*Voucherify.ProductsApi* | [**updateSku**](docs/ProductsApi.md#updateSku) | **PUT** /v1/products/{productId}/skus/{skuId} | Update SKU
+*Voucherify.PromotionsApi* | [**addPromotionTierToCampaign**](docs/PromotionsApi.md#addPromotionTierToCampaign) | **POST** /v1/promotions/{campaignId}/tiers | Add Promotion Tier to Campaign
+*Voucherify.PromotionsApi* | [**createPromotionStack**](docs/PromotionsApi.md#createPromotionStack) | **POST** /v1/promotions/{campaignId}/stacks | Create Promotion Stack
+*Voucherify.PromotionsApi* | [**deletePromotionStack**](docs/PromotionsApi.md#deletePromotionStack) | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId} | Delete Promotion Stack
+*Voucherify.PromotionsApi* | [**deletePromotionTier**](docs/PromotionsApi.md#deletePromotionTier) | **DELETE** /v1/promotions/tiers/{promotionTierId} | Delete Promotion Tier
+*Voucherify.PromotionsApi* | [**disablePromotionTier**](docs/PromotionsApi.md#disablePromotionTier) | **POST** /v1/promotions/tiers/{promotionTierId}/disable | Disable Promotion Tier
+*Voucherify.PromotionsApi* | [**enablePromotionTier**](docs/PromotionsApi.md#enablePromotionTier) | **POST** /v1/promotions/tiers/{promotionTierId}/enable | Enable Promotion Tier
+*Voucherify.PromotionsApi* | [**getPromotionStack**](docs/PromotionsApi.md#getPromotionStack) | **GET** /v1/promotions/{campaignId}/stacks/{stackId} | Get Promotion Stack
+*Voucherify.PromotionsApi* | [**getPromotionTier**](docs/PromotionsApi.md#getPromotionTier) | **GET** /v1/promotions/tiers/{promotionTierId} | Get Promotion Tier
+*Voucherify.PromotionsApi* | [**listAllPromotionStacks**](docs/PromotionsApi.md#listAllPromotionStacks) | **GET** /v1/promotions/stacks | List Promotion Stacks
+*Voucherify.PromotionsApi* | [**listPromotionStacksInCampaign**](docs/PromotionsApi.md#listPromotionStacksInCampaign) | **GET** /v1/promotions/{campaignId}/stacks | List Promotion Stacks in Campaign
+*Voucherify.PromotionsApi* | [**listPromotionTiers**](docs/PromotionsApi.md#listPromotionTiers) | **GET** /v1/promotions/tiers | List Promotion Tiers
+*Voucherify.PromotionsApi* | [**listPromotionTiersFromCampaign**](docs/PromotionsApi.md#listPromotionTiersFromCampaign) | **GET** /v1/promotions/{campaignId}/tiers | List Promotion Tiers from Campaign
+*Voucherify.PromotionsApi* | [**updatePromotionStack**](docs/PromotionsApi.md#updatePromotionStack) | **PUT** /v1/promotions/{campaignId}/stacks/{stackId} | Update Promotion Stack
+*Voucherify.PromotionsApi* | [**updatePromotionTier**](docs/PromotionsApi.md#updatePromotionTier) | **PUT** /v1/promotions/tiers/{promotionTierId} | Update Promotion Tier
+*Voucherify.PublicationsApi* | [**createPublication**](docs/PublicationsApi.md#createPublication) | **POST** /v1/publications | Create Publication
+*Voucherify.PublicationsApi* | [**createPublication1**](docs/PublicationsApi.md#createPublication1) | **GET** /v1/publications/create | Create Publication with GET
+*Voucherify.PublicationsApi* | [**listPublications**](docs/PublicationsApi.md#listPublications) | **GET** /v1/publications | List Publications
+*Voucherify.QualificationsApi* | [**checkEligibility**](docs/QualificationsApi.md#checkEligibility) | **POST** /v1/qualifications | Check Eligibility
+*Voucherify.RedemptionsApi* | [**getRedemption**](docs/RedemptionsApi.md#getRedemption) | **GET** /v1/redemptions/{redemptionId} | Get Redemption
+*Voucherify.RedemptionsApi* | [**getVoucherRedemptions**](docs/RedemptionsApi.md#getVoucherRedemptions) | **GET** /v1/vouchers/{code}/redemption | Get Voucher&#39;s Redemptions
+*Voucherify.RedemptionsApi* | [**listRedemptions**](docs/RedemptionsApi.md#listRedemptions) | **GET** /v1/redemptions | List Redemptions
+*Voucherify.RedemptionsApi* | [**redeemStackedDiscounts**](docs/RedemptionsApi.md#redeemStackedDiscounts) | **POST** /v1/redemptions | Redeem Stackable Discounts
+*Voucherify.RedemptionsApi* | [**rollbackRedemption**](docs/RedemptionsApi.md#rollbackRedemption) | **POST** /v1/redemptions/{redemptionId}/rollback | Rollback Redemption
+*Voucherify.RedemptionsApi* | [**rollbackStackedRedemptions**](docs/RedemptionsApi.md#rollbackStackedRedemptions) | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks | Rollback Stackable Redemptions
+*Voucherify.ReferralsApi* | [**referralsAddHolders**](docs/ReferralsApi.md#referralsAddHolders) | **POST** /v1/referrals/members/{memberId}/holders | Add Referral Code Holders
+*Voucherify.ReferralsApi* | [**referralsAddHolders1**](docs/ReferralsApi.md#referralsAddHolders1) | **POST** /v1/referrals/{campaignId}/members/{memberId}/holders | Add Referral Code Holders with Campaign ID
+*Voucherify.ReferralsApi* | [**referralsCodeHolders**](docs/ReferralsApi.md#referralsCodeHolders) | **GET** /v1/referrals/{campaignId}/members/{memberId}/holders | List Referral Code Holders with campaign ID
+*Voucherify.ReferralsApi* | [**referralsCodeHolders1**](docs/ReferralsApi.md#referralsCodeHolders1) | **GET** /v1/referrals/members/{memberId}/holders | List Referral Code Holders
+*Voucherify.ReferralsApi* | [**referralsRemoveHolder**](docs/ReferralsApi.md#referralsRemoveHolder) | **DELETE** /v1/referrals/members/{memberId}/holders/{holderId} | Remove Referral Card Holder
+*Voucherify.ReferralsApi* | [**referralsRemoveHolder1**](docs/ReferralsApi.md#referralsRemoveHolder1) | **DELETE** /v1/referrals/{campaignId}/members/{memberId}/holders/{holderId} | Remove Referral Card Holder with campaign ID
+*Voucherify.RewardsApi* | [**createReward**](docs/RewardsApi.md#createReward) | **POST** /v1/rewards | Create Reward
+*Voucherify.RewardsApi* | [**createRewardAssignment**](docs/RewardsApi.md#createRewardAssignment) | **POST** /v1/rewards/{rewardId}/assignments | Create Reward Assignment
+*Voucherify.RewardsApi* | [**deleteReward**](docs/RewardsApi.md#deleteReward) | **DELETE** /v1/rewards/{rewardId} | Delete Reward
+*Voucherify.RewardsApi* | [**deleteRewardAssignment**](docs/RewardsApi.md#deleteRewardAssignment) | **DELETE** /v1/rewards/{rewardId}/assignments/{assignmentId} | Delete Reward Assignment
+*Voucherify.RewardsApi* | [**getReward**](docs/RewardsApi.md#getReward) | **GET** /v1/rewards/{rewardId} | Get Reward
+*Voucherify.RewardsApi* | [**getRewardAssignment**](docs/RewardsApi.md#getRewardAssignment) | **GET** /v1/rewards/{rewardId}/assignments/{assignmentId} | Get Reward Assignment
+*Voucherify.RewardsApi* | [**listRewardAssignments**](docs/RewardsApi.md#listRewardAssignments) | **GET** /v1/rewards/{rewardId}/assignments | List Reward Assignments
+*Voucherify.RewardsApi* | [**listRewards**](docs/RewardsApi.md#listRewards) | **GET** /v1/rewards | List Rewards
+*Voucherify.RewardsApi* | [**updateReward**](docs/RewardsApi.md#updateReward) | **PUT** /v1/rewards/{rewardId} | Update Reward
+*Voucherify.RewardsApi* | [**updateRewardAssignment**](docs/RewardsApi.md#updateRewardAssignment) | **PUT** /v1/rewards/{rewardId}/assignments/{assignmentId} | Update Reward Assignment
+*Voucherify.SegmentsApi* | [**createSegment**](docs/SegmentsApi.md#createSegment) | **POST** /v1/segments | Create Segment
+*Voucherify.SegmentsApi* | [**deleteSegment**](docs/SegmentsApi.md#deleteSegment) | **DELETE** /v1/segments/{segmentId} | Delete Segment
+*Voucherify.SegmentsApi* | [**getSegment**](docs/SegmentsApi.md#getSegment) | **GET** /v1/segments/{segmentId} | Get Segment
+*Voucherify.TemplatesApi* | [**addTierFromTemplate**](docs/TemplatesApi.md#addTierFromTemplate) | **POST** /v1/templates/campaigns/{campaignTemplateId}/tier-setup | Add Promotion Tier From Template
+*Voucherify.TemplatesApi* | [**createCampaignFromTemplate**](docs/TemplatesApi.md#createCampaignFromTemplate) | **POST** /v1/templates/campaigns/{campaignTemplateId}/campaign-setup | Create Campaign From Template
+*Voucherify.TemplatesApi* | [**createCampaignTemplate**](docs/TemplatesApi.md#createCampaignTemplate) | **POST** /v1/templates/campaigns | Create Campaign Template
+*Voucherify.TemplatesApi* | [**deleteCampaignTemplate**](docs/TemplatesApi.md#deleteCampaignTemplate) | **DELETE** /v1/templates/campaigns/{campaignTemplateId} | Delete Campaign Template
+*Voucherify.TemplatesApi* | [**getCampaignTemplate**](docs/TemplatesApi.md#getCampaignTemplate) | **GET** /v1/templates/campaigns/{campaignTemplateId} | Get Campaign Template
+*Voucherify.TemplatesApi* | [**listCampaignTemplates**](docs/TemplatesApi.md#listCampaignTemplates) | **GET** /v1/templates/campaigns | List Campaign Templates
+*Voucherify.TemplatesApi* | [**updateCampaignTemplate**](docs/TemplatesApi.md#updateCampaignTemplate) | **PUT** /v1/templates/campaigns/{campaignTemplateId} | Update Campaign Template
+*Voucherify.ValidationRulesApi* | [**createValidationRuleAssignment**](docs/ValidationRulesApi.md#createValidationRuleAssignment) | **POST** /v1/validation-rules/{validationRuleId}/assignments | Create Validation Rules Assignments
+*Voucherify.ValidationRulesApi* | [**createValidationRules**](docs/ValidationRulesApi.md#createValidationRules) | **POST** /v1/validation-rules | Create Validation Rules
+*Voucherify.ValidationRulesApi* | [**deleteValidationRuleAssignment**](docs/ValidationRulesApi.md#deleteValidationRuleAssignment) | **DELETE** /v1/validation-rules/{validationRuleId}/assignments/{assignmentId} | Delete Validation Rule Assignment
+*Voucherify.ValidationRulesApi* | [**deleteValidationRules**](docs/ValidationRulesApi.md#deleteValidationRules) | **DELETE** /v1/validation-rules/{validationRuleId} | Delete Validation Rule
+*Voucherify.ValidationRulesApi* | [**getValidationRule**](docs/ValidationRulesApi.md#getValidationRule) | **GET** /v1/validation-rules/{validationRuleId} | Get Validation Rule
+*Voucherify.ValidationRulesApi* | [**listValidationRuleAssignments**](docs/ValidationRulesApi.md#listValidationRuleAssignments) | **GET** /v1/validation-rules/{validationRuleId}/assignments | List Validation Rule Assignments
+*Voucherify.ValidationRulesApi* | [**listValidationRules**](docs/ValidationRulesApi.md#listValidationRules) | **GET** /v1/validation-rules | List Validation Rules
+*Voucherify.ValidationRulesApi* | [**listValidationRulesAssignments**](docs/ValidationRulesApi.md#listValidationRulesAssignments) | **GET** /v1/validation-rules-assignments | List Validation Rules&#39; Assignment(s)
+*Voucherify.ValidationRulesApi* | [**updateValidationRule**](docs/ValidationRulesApi.md#updateValidationRule) | **PUT** /v1/validation-rules/{validationRuleId} | Update Validation Rule
+*Voucherify.ValidationsApi* | [**validateStackedDiscounts**](docs/ValidationsApi.md#validateStackedDiscounts) | **POST** /v1/validations | Validate Stackable Discounts
+*Voucherify.VouchersApi* | [**createVoucher**](docs/VouchersApi.md#createVoucher) | **POST** /v1/vouchers/{code} | Create Voucher
+*Voucherify.VouchersApi* | [**deleteVoucher**](docs/VouchersApi.md#deleteVoucher) | **DELETE** /v1/vouchers/{code} | Delete Voucher
+*Voucherify.VouchersApi* | [**disableVoucher**](docs/VouchersApi.md#disableVoucher) | **POST** /v1/vouchers/{code}/disable | Disable Voucher
+*Voucherify.VouchersApi* | [**enableVoucher**](docs/VouchersApi.md#enableVoucher) | **POST** /v1/vouchers/{code}/enable | Enable Voucher
+*Voucherify.VouchersApi* | [**exportVoucherTransactions**](docs/VouchersApi.md#exportVoucherTransactions) | **POST** /v1/vouchers/{code}/transactions/export | Export Voucher Transactions
+*Voucherify.VouchersApi* | [**generateRandomCode**](docs/VouchersApi.md#generateRandomCode) | **POST** /v1/vouchers | Generate Random Code
+*Voucherify.VouchersApi* | [**getVoucher**](docs/VouchersApi.md#getVoucher) | **GET** /v1/vouchers/{code} | Get Voucher
+*Voucherify.VouchersApi* | [**importVouchers**](docs/VouchersApi.md#importVouchers) | **POST** /v1/vouchers/import | Import Vouchers
+*Voucherify.VouchersApi* | [**importVouchersUsingCsv**](docs/VouchersApi.md#importVouchersUsingCsv) | **POST** /v1/vouchers/importCSV | Import Vouchers using CSV
+*Voucherify.VouchersApi* | [**listVoucherTransactions**](docs/VouchersApi.md#listVoucherTransactions) | **GET** /v1/vouchers/{code}/transactions | List Voucher Transactions
+*Voucherify.VouchersApi* | [**listVouchers**](docs/VouchersApi.md#listVouchers) | **GET** /v1/vouchers | List Vouchers
+*Voucherify.VouchersApi* | [**releaseValidationSession**](docs/VouchersApi.md#releaseValidationSession) | **DELETE** /v1/vouchers/{code}/sessions/{sessionKey} | Release Validation Session
+*Voucherify.VouchersApi* | [**updateVoucher**](docs/VouchersApi.md#updateVoucher) | **PUT** /v1/vouchers/{code} | Update Voucher
+*Voucherify.VouchersApi* | [**updateVoucherBalance**](docs/VouchersApi.md#updateVoucherBalance) | **POST** /v1/vouchers/{code}/balance | Adjust Voucher Balance
+*Voucherify.VouchersApi* | [**updateVouchersInBulk**](docs/VouchersApi.md#updateVouchersInBulk) | **POST** /v1/vouchers/bulk/async | Update Vouchers in Bulk
+*Voucherify.VouchersApi* | [**updateVouchersMetadataInBulk**](docs/VouchersApi.md#updateVouchersMetadataInBulk) | **POST** /v1/vouchers/metadata/async | Update Vouchers&#39; Metadata in Bulk
 
 
 ## 📚 Documentation of models
@@ -1872,3 +1880,4 @@ All URIs are relative to `https://api.voucherify.io`.
  - [Voucherify.VouchersUpdateResponseBodyLoyaltyCard](docs/VouchersUpdateResponseBodyLoyaltyCard.md)
  - [Voucherify.VouchersUpdateResponseBodyPublish](docs/VouchersUpdateResponseBodyPublish.md)
  - [Voucherify.VouchersUpdateResponseBodyRedemption](docs/VouchersUpdateResponseBodyRedemption.md)
+
