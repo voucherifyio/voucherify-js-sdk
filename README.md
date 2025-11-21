@@ -40,6 +40,28 @@ For more info, visit those places:
 - 🐛 Caught a bug? [Add an issue](https://github.com/voucherifyio/voucherify-js-sdk/issues "Visit issues in Voucherify JS SDK")!
 - 🧑‍💻 Need help? [Contact support](https://www.voucherify.io/contact-support "Visit contact support page").
 
+## 🔄 V2 vs V3
+
+- Language and generation:
+    - V2: hand-written in TypeScript.
+    - V3: auto-generated from the OpenAPI definition and written in JavaScript.
+- Types:
+    - V2: built-in TypeScript types.
+    - V3: no native TypeScript support; all functions and models include JSDoc. Each generated model/class exposes a `validateJSON` method to verify data shape/types at runtime. If you need TypeScript, add your own type declarations (e.g., a .d.ts file) based on JSDoc/OpenAPI.
+- Client creation and auth:
+    - V2: different client initialization and API key handling.
+    - V3: a new way to configure the API client and provide API keys (see “Get your keys and address” and “Run code” below).
+- API coverage:
+    - V2: limited and historically maintained.
+    - V3: supports all non-deprecated endpoints. We strongly recommend using v3.
+
+## 🧭 Quick migration guide
+
+- Install: you can install v3 under an alias to migrate gradually (see Install section).
+- Initialization: update client creation and key/basePath setup as shown in “Run code”.
+- Types: if your project requires TypeScript, add custom type definitions (e.g., from the OpenAPI spec or derived from JSDoc) and use the models’ `validateJSON` methods for runtime validation.
+- Endpoints: review [ENDPOINTS-COVERAGE.md](./ENDPOINTS-COVERAGE.md) and switch calls to their v3 equivalents. Avoid deprecated endpoints — v3 covers active ones only.
+
 ## ⚙️ Install
 
 Use any of the following methods to install the SDK.
