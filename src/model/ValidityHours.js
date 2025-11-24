@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ValidityHoursDailyItem from './ValidityHoursDailyItem';
-
 /**
  * The ValidityHours model module.
  * @module model/ValidityHours
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidityHours {
     /**
      * Constructs a new <code>ValidityHours</code>.
      * Determines the hours of validity, e.g. to create a happy hours scenario.
-     * @alias module:model/ValidityHours
+     * @alias ValidityHours
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ValidityHours {
     /**
      * Constructs a <code>ValidityHours</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidityHours} obj Optional instance to populate.
-     * @returns {module:model/ValidityHours} The populated <code>ValidityHours</code> instance.
+     * @param {Partial<ValidityHours>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidityHours} [obj] Optional instance to populate.
+     * @returns {ValidityHours} The populated <code>ValidityHours</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ValidityHours {
 
     /**
      * Validates the JSON data with respect to <code>ValidityHours</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidityHours>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidityHours</code>.
      */
     static validateJSON(data) {
@@ -82,9 +81,9 @@ class ValidityHours {
 
 
 /**
- * Defines the reccuring period(s) when the resource is active. The periods should not overlap.
- * @member {Array.<module:model/ValidityHoursDailyItem>} 
- */
+    * Defines the reccuring period(s) when the resource is active. The periods should not overlap.
+    * @type {Array.<ValidityHoursDailyItem> | undefined}
+    */
 ValidityHours.prototype['daily'] = undefined;
 
 

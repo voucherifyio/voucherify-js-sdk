@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import RedemptionRelatedRedemptionsRedemptionsItem from './RedemptionRelatedRedemptionsRedemptionsItem';
 import RedemptionRelatedRedemptionsRollbacksItem from './RedemptionRelatedRedemptionsRollbacksItem';
-
 /**
  * The RedemptionRelatedRedemptions model module.
  * @module model/RedemptionRelatedRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRelatedRedemptions {
     /**
      * Constructs a new <code>RedemptionRelatedRedemptions</code>.
-     * @alias module:model/RedemptionRelatedRedemptions
+     * @alias RedemptionRelatedRedemptions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RedemptionRelatedRedemptions {
     /**
      * Constructs a <code>RedemptionRelatedRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRelatedRedemptions} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRelatedRedemptions} The populated <code>RedemptionRelatedRedemptions</code> instance.
+     * @param {Partial<RedemptionRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRelatedRedemptions} [obj] Optional instance to populate.
+     * @returns {RedemptionRelatedRedemptions} The populated <code>RedemptionRelatedRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class RedemptionRelatedRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRelatedRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRelatedRedemptions</code>.
      */
     static validateJSON(data) {
@@ -95,13 +94,13 @@ class RedemptionRelatedRedemptions {
 
 
 /**
- * @member {Array.<module:model/RedemptionRelatedRedemptionsRollbacksItem>} 
- */
+    * @type {Array.<RedemptionRelatedRedemptionsRollbacksItem> | undefined}
+    */
 RedemptionRelatedRedemptions.prototype['rollbacks'] = undefined;
 
 /**
- * @member {Array.<module:model/RedemptionRelatedRedemptionsRedemptionsItem>} 
- */
+    * @type {Array.<RedemptionRelatedRedemptionsRedemptionsItem> | undefined}
+    */
 RedemptionRelatedRedemptions.prototype['redemptions'] = undefined;
 
 

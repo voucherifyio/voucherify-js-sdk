@@ -16,16 +16,15 @@ import MemberActivityDataRedemptionOrderCustomer from './MemberActivityDataRedem
 import MemberActivityDataRedemptionOrderItemsItem from './MemberActivityDataRedemptionOrderItemsItem';
 import MemberActivityDataRedemptionOrderReferrer from './MemberActivityDataRedemptionOrderReferrer';
 import OrderRedemptionsEntry from './OrderRedemptionsEntry';
-
 /**
  * The MemberActivityDataRedemptionOrder model module.
  * @module model/MemberActivityDataRedemptionOrder
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionOrder {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionOrder</code>.
-     * @alias module:model/MemberActivityDataRedemptionOrder
+     * @alias MemberActivityDataRedemptionOrder
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class MemberActivityDataRedemptionOrder {
     /**
      * Constructs a <code>MemberActivityDataRedemptionOrder</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionOrder} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionOrder} The populated <code>MemberActivityDataRedemptionOrder</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionOrder>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionOrder} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionOrder} The populated <code>MemberActivityDataRedemptionOrder</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -124,7 +123,7 @@ class MemberActivityDataRedemptionOrder {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionOrder</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionOrder>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionOrder</code>.
      */
     static validateJSON(data) {
@@ -180,182 +179,182 @@ class MemberActivityDataRedemptionOrder {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['source_id'] = undefined;
 
 /**
- * The order status.
- * @member {module:model/MemberActivityDataRedemptionOrder.StatusEnum} 
- */
+    * The order status.
+    * @type {(keyof typeof MemberActivityDataRedemptionOrder.StatusEnum) | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['status'] = undefined;
 
 /**
- * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['customer_id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['referrer_id'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts. and This is the sum of the order items' amounts. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts. and This is the sum of the order items' amounts. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['discount_amount'] = undefined;
 
 /**
- * This field shows the order-level discount applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * This field shows the order-level discount applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Sum of all product-specific discounts applied to the order.  It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00). and Sum of all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all product-specific discounts applied to the order.  It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00). and Sum of all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['items_discount_amount'] = undefined;
 
 /**
- * Sum of all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `sum(items, i => i.applied_discount_amount)`
- * @member {Number} 
- */
+    * Sum of all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `sum(items, i => i.applied_discount_amount)`
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['items_applied_discount_amount'] = undefined;
 
 /**
- * Sum of all order-level AND all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level AND all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['total_discount_amount'] = undefined;
 
 /**
- * Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00). `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` and Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
- * @member {Number} 
- */
+    * Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00). `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` and Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['total_applied_discount_amount'] = undefined;
 
 /**
- * Order amount after undoing all the discounts through the rollback redemption. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Order amount after undoing all the discounts through the rollback redemption. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['total_amount'] = undefined;
 
 /**
- * Array of items applied to the order. It can include up to 500 items.
- * @member {Array.<module:model/MemberActivityDataRedemptionOrderItemsItem>} 
- */
+    * Array of items applied to the order. It can include up to 500 items.
+    * @type {Array.<MemberActivityDataRedemptionOrderItemsItem> | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['items'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/MemberActivityDataRedemptionOrder.ObjectEnum} 
- * @default 'order'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof MemberActivityDataRedemptionOrder.ObjectEnum) | undefined}
+    * @default 'order'
+    */
 MemberActivityDataRedemptionOrder.prototype['object'] = 'order';
 
 /**
- * This is the sum of the order items' amounts before any discount or other effect (e.g. add missing units) is applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * This is the sum of the order items' amounts before any discount or other effect (e.g. add missing units) is applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['initial_amount'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionOrderCustomer} 
- */
+    * @type {MemberActivityDataRedemptionOrderCustomer | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionOrderReferrer} 
- */
+    * @type {MemberActivityDataRedemptionOrderReferrer | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['referrer'] = undefined;
 
 /**
- * @member {Object.<String, module:model/OrderRedemptionsEntry>} 
- */
+    * @type {Object.<String, OrderRedemptionsEntry> | undefined}
+    */
 MemberActivityDataRedemptionOrder.prototype['redemptions'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionOrder['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataRedemptionOrder['StatusEnum'] = {
+    
+        /**
+         * value: "CREATED"
+         * @constant
+         */
+        "CREATED": "CREATED",
+    
+        /**
+         * value: "PAID"
+         * @constant
+         */
+        "PAID": "PAID",
+    
+        /**
+         * value: "CANCELED"
+         * @constant
+         */
+        "CANCELED": "CANCELED",
+    
+        /**
+         * value: "FULFILLED"
+         * @constant
+         */
+        "FULFILLED": "FULFILLED"    
+    };
+
 
     /**
-     * value: "CREATED"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREATED": "CREATED",
-
-    /**
-     * value: "PAID"
-     * @constant
-     */
-    "PAID": "PAID",
-
-    /**
-     * value: "CANCELED"
-     * @constant
-     */
-    "CANCELED": "CANCELED",
-
-    /**
-     * value: "FULFILLED"
-     * @constant
-     */
-    "FULFILLED": "FULFILLED"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionOrder['ObjectEnum'] = {
-
-    /**
-     * value: "order"
-     * @constant
-     */
-    "order": "order"
-};
+    MemberActivityDataRedemptionOrder['ObjectEnum'] = {
+    
+        /**
+         * value: "order"
+         * @constant
+         */
+        "order": "order"    
+    };
 
 
 

@@ -17,17 +17,16 @@ import Discount from './Discount';
 import Error from './Error';
 import RedeemableGift from './RedeemableGift';
 import RedeemableLoyaltyCard from './RedeemableLoyaltyCard';
-
 /**
  * The RedeemableResult model module.
  * @module model/RedeemableResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedeemableResult {
     /**
      * Constructs a new <code>RedeemableResult</code>.
      * Information about redeemable result.
-     * @alias module:model/RedeemableResult
+     * @alias RedeemableResult
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class RedeemableResult {
     /**
      * Constructs a <code>RedeemableResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedeemableResult} obj Optional instance to populate.
-     * @returns {module:model/RedeemableResult} The populated <code>RedeemableResult</code> instance.
+     * @param {Partial<RedeemableResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedeemableResult} [obj] Optional instance to populate.
+     * @returns {RedeemableResult} The populated <code>RedeemableResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class RedeemableResult {
 
     /**
      * Validates the JSON data with respect to <code>RedeemableResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedeemableResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedeemableResult</code>.
      */
     static validateJSON(data) {
@@ -108,28 +107,28 @@ class RedeemableResult {
 
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 RedeemableResult.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/Bundle} 
- */
+    * @type {Bundle | undefined}
+    */
 RedeemableResult.prototype['bundle'] = undefined;
 
 /**
- * @member {module:model/RedeemableGift} 
- */
+    * @type {RedeemableGift | undefined}
+    */
 RedeemableResult.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/RedeemableLoyaltyCard} 
- */
+    * @type {RedeemableLoyaltyCard | undefined}
+    */
 RedeemableResult.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Error} 
- */
+    * @type {Error | undefined}
+    */
 RedeemableResult.prototype['error'] = undefined;
 
 

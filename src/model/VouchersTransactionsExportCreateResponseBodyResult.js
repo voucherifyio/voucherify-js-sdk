@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersTransactionsExportCreateResponseBodyResult model module.
  * @module model/VouchersTransactionsExportCreateResponseBodyResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersTransactionsExportCreateResponseBodyResult {
     /**
      * Constructs a new <code>VouchersTransactionsExportCreateResponseBodyResult</code>.
      * Contains the URL of the CSV file.
-     * @alias module:model/VouchersTransactionsExportCreateResponseBodyResult
+     * @alias VouchersTransactionsExportCreateResponseBodyResult
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VouchersTransactionsExportCreateResponseBodyResult {
     /**
      * Constructs a <code>VouchersTransactionsExportCreateResponseBodyResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersTransactionsExportCreateResponseBodyResult} obj Optional instance to populate.
-     * @returns {module:model/VouchersTransactionsExportCreateResponseBodyResult} The populated <code>VouchersTransactionsExportCreateResponseBodyResult</code> instance.
+     * @param {Partial<VouchersTransactionsExportCreateResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersTransactionsExportCreateResponseBodyResult} [obj] Optional instance to populate.
+     * @returns {VouchersTransactionsExportCreateResponseBodyResult} The populated <code>VouchersTransactionsExportCreateResponseBodyResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class VouchersTransactionsExportCreateResponseBodyResult {
 
     /**
      * Validates the JSON data with respect to <code>VouchersTransactionsExportCreateResponseBodyResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersTransactionsExportCreateResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersTransactionsExportCreateResponseBodyResult</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class VouchersTransactionsExportCreateResponseBodyResult {
 
 
 /**
- * URL of the CSV file location. It contains the `token` used for authorization in the [Download export](/api-reference/exports/download-export) method.
- * @member {String} 
- */
+    * URL of the CSV file location. It contains the `token` used for authorization in the [Download export](/api-reference/exports/download-export) method.
+    * @type {String | undefined}
+    */
 VouchersTransactionsExportCreateResponseBodyResult.prototype['url'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomerWithSummaryLoyaltyReferrals from './CustomerWithSummaryLoyaltyReferrals';
-
 /**
  * The CustomersListResponseBody model module.
  * @module model/CustomersListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersListResponseBody {
     /**
      * Constructs a new <code>CustomersListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/customers&#x60;.
-     * @alias module:model/CustomersListResponseBody
+     * @alias CustomersListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CustomersListResponseBody {
     /**
      * Constructs a <code>CustomersListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersListResponseBody} The populated <code>CustomersListResponseBody</code> instance.
+     * @param {Partial<CustomersListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersListResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersListResponseBody} The populated <code>CustomersListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CustomersListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,35 +103,35 @@ class CustomersListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about customers in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about customers in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CustomersListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of customer objects.
- * @member {String} 
- * @default 'customers'
- */
+    * Identifies the name of the attribute that contains the array of customer objects.
+    * @type {String | undefined}
+    * @default 'customers'
+    */
 CustomersListResponseBody.prototype['data_ref'] = 'customers';
 
 /**
- * Contains array of customer objects.
- * @member {Array.<module:model/CustomerWithSummaryLoyaltyReferrals>} 
- */
+    * Contains array of customer objects.
+    * @type {Array.<CustomerWithSummaryLoyaltyReferrals> | undefined}
+    */
 CustomersListResponseBody.prototype['customers'] = undefined;
 
 /**
- * Total number of customers.
- * @member {Number} 
- */
+    * Total number of customers.
+    * @type {Number | undefined}
+    */
 CustomersListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different end date filter) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different end date filter) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 CustomersListResponseBody.prototype['has_more'] = undefined;
 
 

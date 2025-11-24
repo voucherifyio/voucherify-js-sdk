@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrderCustomer model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemOrderCustomer {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer
+     * @alias RedemptionsListResponseBodyRedemptionsItemOrderCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsListResponseBodyRedemptionsItemOrderCustomer {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemOrderCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemOrderCustomer} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrderCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderCustomer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionsListResponseBodyRedemptionsItemOrderCustomer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderCustomer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemOrderCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemOrderCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionsListResponseBodyRedemptionsItemOrderCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

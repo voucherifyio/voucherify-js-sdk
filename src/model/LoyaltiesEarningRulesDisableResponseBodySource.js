@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesDisableResponseBodySource model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBodySource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesDisableResponseBodySource {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesDisableResponseBodySource</code>.
      * Contains the custom earning rule name and parent campaign.
-     * @alias module:model/LoyaltiesEarningRulesDisableResponseBodySource
+     * @alias LoyaltiesEarningRulesDisableResponseBodySource
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesDisableResponseBodySource {
     /**
      * Constructs a <code>LoyaltiesEarningRulesDisableResponseBodySource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesDisableResponseBodySource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesDisableResponseBodySource} The populated <code>LoyaltiesEarningRulesDisableResponseBodySource</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodySource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesDisableResponseBodySource} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesDisableResponseBodySource} The populated <code>LoyaltiesEarningRulesDisableResponseBodySource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesEarningRulesDisableResponseBodySource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesDisableResponseBodySource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodySource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesDisableResponseBodySource</code>.
      */
     static validateJSON(data) {
@@ -90,41 +89,41 @@ class LoyaltiesEarningRulesDisableResponseBodySource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodySource.prototype['banner'] = undefined;
 
 /**
- * A unique campaign identifier assigned by the Voucherify API.
- * @member {String} 
- */
+    * A unique campaign identifier assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodySource.prototype['object_id'] = undefined;
 
 /**
- * Defines the object associated with the earning rule. Defaults to `campaign`.
- * @member {module:model/LoyaltiesEarningRulesDisableResponseBodySource.ObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Defines the object associated with the earning rule. Defaults to `campaign`.
+    * @type {(keyof typeof LoyaltiesEarningRulesDisableResponseBodySource.ObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 LoyaltiesEarningRulesDisableResponseBodySource.prototype['object_type'] = 'campaign';
 
 
 
 
 
-/**
- * Allowed values for the <code>object_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesDisableResponseBodySource['ObjectTypeEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign"
-};
+    LoyaltiesEarningRulesDisableResponseBodySource['ObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

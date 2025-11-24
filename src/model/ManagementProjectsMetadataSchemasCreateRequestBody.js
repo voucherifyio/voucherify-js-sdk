@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsMetadataSchemaDefinition from './ManagementProjectsMetadataSchemaDefinition';
-
 /**
  * The ManagementProjectsMetadataSchemasCreateRequestBody model module.
  * @module model/ManagementProjectsMetadataSchemasCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsMetadataSchemasCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsMetadataSchemasCreateRequestBody</code>.
      * 
-     * @alias module:model/ManagementProjectsMetadataSchemasCreateRequestBody
+     * @alias ManagementProjectsMetadataSchemasCreateRequestBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsMetadataSchemasCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsMetadataSchemasCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsMetadataSchemasCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsMetadataSchemasCreateRequestBody} The populated <code>ManagementProjectsMetadataSchemasCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsMetadataSchemasCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsMetadataSchemasCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsMetadataSchemasCreateRequestBody} The populated <code>ManagementProjectsMetadataSchemasCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class ManagementProjectsMetadataSchemasCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsMetadataSchemasCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsMetadataSchemasCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsMetadataSchemasCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -83,22 +82,22 @@ class ManagementProjectsMetadataSchemasCreateRequestBody {
 
 
 /**
- * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type, or you can use standard resource types: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
- * @member {String} 
- */
+    * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type, or you can use standard resource types: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
+    * @type {String | undefined}
+    */
 ManagementProjectsMetadataSchemasCreateRequestBody.prototype['related_object'] = undefined;
 
 /**
- * Restricts the creation of metadata fields when set to `true`. In other words, it indicates whether or not you are allowed to create new metadata definitions; for example, in the campaign manager or publication manager. If it is set to true, then only the defined fields will be available for assigning values. 
- * @member {Boolean} 
- * @default false
- */
+    * Restricts the creation of metadata fields when set to `true`. In other words, it indicates whether or not you are allowed to create new metadata definitions; for example, in the campaign manager or publication manager. If it is set to true, then only the defined fields will be available for assigning values. 
+    * @type {Boolean | undefined}
+    * @default false
+    */
 ManagementProjectsMetadataSchemasCreateRequestBody.prototype['allow_defined_only'] = false;
 
 /**
- * Contains metadata definitions. There can be many properties within this object.  Only the properties sent in the request will be created.
- * @member {Object.<String, module:model/ManagementProjectsMetadataSchemaDefinition>} 
- */
+    * Contains metadata definitions. There can be many properties within this object.  Only the properties sent in the request will be created.
+    * @type {Object.<String, ManagementProjectsMetadataSchemaDefinition> | undefined}
+    */
 ManagementProjectsMetadataSchemasCreateRequestBody.prototype['properties'] = undefined;
 
 

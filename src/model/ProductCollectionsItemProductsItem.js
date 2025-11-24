@@ -12,18 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductCollectionsItemProductsItem model module.
  * @module model/ProductCollectionsItemProductsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsItemProductsItem {
     /**
      * Constructs a new <code>ProductCollectionsItemProductsItem</code>.
-     * @alias module:model/ProductCollectionsItemProductsItem
-     * @param id {String} The product ID.
-     * @param object {module:model/ProductCollectionsItemProductsItem.ObjectEnum} Denotes the type of the object represented by the ID.
+     * @alias ProductCollectionsItemProductsItem
+     * @param {String} id The product ID.
+     * @param {ProductCollectionsItemProductsItem.ObjectEnum} object Denotes the type of the object represented by the ID.
      */
     constructor(id, object) { 
         
@@ -43,9 +42,9 @@ class ProductCollectionsItemProductsItem {
     /**
      * Constructs a <code>ProductCollectionsItemProductsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsItemProductsItem} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsItemProductsItem} The populated <code>ProductCollectionsItemProductsItem</code> instance.
+     * @param {Partial<ProductCollectionsItemProductsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsItemProductsItem} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsItemProductsItem} The populated <code>ProductCollectionsItemProductsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class ProductCollectionsItemProductsItem {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsItemProductsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsItemProductsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsItemProductsItem</code>.
      */
     static validateJSON(data) {
@@ -98,46 +97,46 @@ class ProductCollectionsItemProductsItem {
 ProductCollectionsItemProductsItem.RequiredProperties = ["id", "object"];
 
 /**
- * The product ID.
- * @member {String} 
- */
+    * The product ID.
+    * @type {String}
+    */
 ProductCollectionsItemProductsItem.prototype['id'] = undefined;
 
 /**
- * Product ID for SKUs.
- * @member {String} 
- */
+    * Product ID for SKUs.
+    * @type {String | undefined}
+    */
 ProductCollectionsItemProductsItem.prototype['product_id'] = undefined;
 
 /**
- * Denotes the type of the object represented by the ID.
- * @member {module:model/ProductCollectionsItemProductsItem.ObjectEnum} 
- */
+    * Denotes the type of the object represented by the ID.
+    * @type {(keyof typeof ProductCollectionsItemProductsItem.ObjectEnum)}
+    */
 ProductCollectionsItemProductsItem.prototype['object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsItemProductsItem['ObjectEnum'] = {
-
     /**
-     * value: "sku"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "sku": "sku",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product"
-};
+    ProductCollectionsItemProductsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product"    
+    };
 
 
 

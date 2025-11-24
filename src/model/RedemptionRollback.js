@@ -20,17 +20,16 @@ import RedemptionRollbackLoyaltyCard from './RedemptionRollbackLoyaltyCard';
 import RedemptionRollbackOrder from './RedemptionRollbackOrder';
 import SimpleCustomer from './SimpleCustomer';
 import Voucher from './Voucher';
-
 /**
  * The RedemptionRollback model module.
  * @module model/RedemptionRollback
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRollback {
     /**
      * Constructs a new <code>RedemptionRollback</code>.
      * This is an object representing a redemption rollback.
-     * @alias module:model/RedemptionRollback
+     * @alias RedemptionRollback
      */
     constructor() { 
         
@@ -49,9 +48,9 @@ class RedemptionRollback {
     /**
      * Constructs a <code>RedemptionRollback</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRollback} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRollback} The populated <code>RedemptionRollback</code> instance.
+     * @param {Partial<RedemptionRollback>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRollback} [obj] Optional instance to populate.
+     * @returns {RedemptionRollback} The populated <code>RedemptionRollback</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -132,7 +131,7 @@ class RedemptionRollback {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRollback</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRollback>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRollback</code>.
      */
     static validateJSON(data) {
@@ -226,222 +225,222 @@ class RedemptionRollback {
 
 
 /**
- * Unique identifier of the redemption rollback.
- * @member {String} 
- */
+    * Unique identifier of the redemption rollback.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by the JSON
- * @member {module:model/RedemptionRollback.ObjectEnum} 
- * @default 'redemption_rollback'
- */
+    * The type of the object represented by the JSON
+    * @type {(keyof typeof RedemptionRollback.ObjectEnum) | undefined}
+    * @default 'redemption_rollback'
+    */
 RedemptionRollback.prototype['object'] = 'redemption_rollback';
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedemptionRollback.prototype['date'] = undefined;
 
 /**
- * Unique customer ID of the redeeming customer.
- * @member {String} 
- */
+    * Unique customer ID of the redeeming customer.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['customer_id'] = undefined;
 
 /**
- * Hashed customer source ID.
- * @member {String} 
- */
+    * Hashed customer source ID.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['tracking_id'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the redemption.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the redemption.
+    * @type {Object | undefined}
+    */
 RedemptionRollback.prototype['metadata'] = undefined;
 
 /**
- * For gift cards, this represents the number of the credits restored to the card in the rolledback redemption. The number is a negative integer in the smallest currency unit, e.g. -100 cents for $1.00 added back to the card. For loyalty cards, this represents the number of loyalty points restored to the card in the rolledback redemption. The number is a negative integer.
- * @member {Number} 
- */
+    * For gift cards, this represents the number of the credits restored to the card in the rolledback redemption. The number is a negative integer in the smallest currency unit, e.g. -100 cents for $1.00 added back to the card. For loyalty cards, this represents the number of loyalty points restored to the card in the rolledback redemption. The number is a negative integer.
+    * @type {Number | undefined}
+    */
 RedemptionRollback.prototype['amount'] = undefined;
 
 /**
- * Unique redemption ID of the parent redemption.
- * @member {String} 
- */
+    * Unique redemption ID of the parent redemption.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['redemption'] = undefined;
 
 /**
- * System generated cause for the redemption being invalid in the context of the provided parameters.
- * @member {String} 
- */
+    * System generated cause for the redemption being invalid in the context of the provided parameters.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['reason'] = undefined;
 
 /**
- * Redemption result.
- * @member {module:model/RedemptionRollback.ResultEnum} 
- */
+    * Redemption result.
+    * @type {(keyof typeof RedemptionRollback.ResultEnum) | undefined}
+    */
 RedemptionRollback.prototype['result'] = undefined;
 
 /**
- * Redemption status.
- * @member {module:model/RedemptionRollback.StatusEnum} 
- */
+    * Redemption status.
+    * @type {(keyof typeof RedemptionRollback.StatusEnum) | undefined}
+    */
 RedemptionRollback.prototype['status'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['failure_code'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['failure_message'] = undefined;
 
 /**
- * @member {module:model/RedemptionRollbackOrder} 
- */
+    * @type {RedemptionRollbackOrder | undefined}
+    */
 RedemptionRollback.prototype['order'] = undefined;
 
 /**
- * @member {module:model/RedemptionRollbackChannel} 
- */
+    * @type {RedemptionRollbackChannel | undefined}
+    */
 RedemptionRollback.prototype['channel'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 RedemptionRollback.prototype['customer'] = undefined;
 
 /**
- * Defines the related object.
- * @member {module:model/RedemptionRollback.RelatedObjectTypeEnum} 
- */
+    * Defines the related object.
+    * @type {(keyof typeof RedemptionRollback.RelatedObjectTypeEnum) | undefined}
+    */
 RedemptionRollback.prototype['related_object_type'] = undefined;
 
 /**
- * Unique identifier of the related object. It is assigned by Voucherify, i.e. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
- * @member {String} 
- */
+    * Unique identifier of the related object. It is assigned by Voucherify, i.e. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
+    * @type {String | undefined}
+    */
 RedemptionRollback.prototype['related_object_id'] = undefined;
 
 /**
- * @member {module:model/Voucher} 
- */
+    * @type {Voucher | undefined}
+    */
 RedemptionRollback.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/PromotionTier} 
- */
+    * @type {PromotionTier | undefined}
+    */
 RedemptionRollback.prototype['promotion_tier'] = undefined;
 
 /**
- * @member {module:model/RedemptionRewardResult} 
- */
+    * @type {RedemptionRewardResult | undefined}
+    */
 RedemptionRollback.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/RedemptionRollbackGift} 
- */
+    * @type {RedemptionRollbackGift | undefined}
+    */
 RedemptionRollback.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/RedemptionRollbackLoyaltyCard} 
- */
+    * @type {RedemptionRollbackLoyaltyCard | undefined}
+    */
 RedemptionRollback.prototype['loyalty_card'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRollback['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RedemptionRollback['ObjectEnum'] = {
+    
+        /**
+         * value: "redemption_rollback"
+         * @constant
+         */
+        "redemption_rollback": "redemption_rollback"    
+    };
+
 
     /**
-     * value: "redemption_rollback"
-     * @constant
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "redemption_rollback": "redemption_rollback"
-};
+    RedemptionRollback['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "FAILURE"
+         * @constant
+         */
+        "FAILURE": "FAILURE"    
+    };
 
-
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRollback['ResultEnum'] = {
 
     /**
-     * value: "SUCCESS"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SUCCESS": "SUCCESS",
+    RedemptionRollback['StatusEnum'] = {
+    
+        /**
+         * value: "SUCCEEDED"
+         * @constant
+         */
+        "SUCCEEDED": "SUCCEEDED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED"    
+    };
+
 
     /**
-     * value: "FAILURE"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "FAILURE": "FAILURE"
-};
-
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRollback['StatusEnum'] = {
-
-    /**
-     * value: "SUCCEEDED"
-     * @constant
-     */
-    "SUCCEEDED": "SUCCEEDED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRollback['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "redemption"
-     * @constant
-     */
-    "redemption": "redemption"
-};
+    RedemptionRollback['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption"    
+    };
 
 
 

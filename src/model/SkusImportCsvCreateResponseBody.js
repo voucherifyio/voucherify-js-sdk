@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SkusImportCsvCreateResponseBody model module.
  * @module model/SkusImportCsvCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SkusImportCsvCreateResponseBody {
     /**
      * Constructs a new <code>SkusImportCsvCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/skus/importCSV&#x60;.
-     * @alias module:model/SkusImportCsvCreateResponseBody
+     * @alias SkusImportCsvCreateResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SkusImportCsvCreateResponseBody {
     /**
      * Constructs a <code>SkusImportCsvCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SkusImportCsvCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/SkusImportCsvCreateResponseBody} The populated <code>SkusImportCsvCreateResponseBody</code> instance.
+     * @param {Partial<SkusImportCsvCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {SkusImportCsvCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {SkusImportCsvCreateResponseBody} The populated <code>SkusImportCsvCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class SkusImportCsvCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>SkusImportCsvCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SkusImportCsvCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SkusImportCsvCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class SkusImportCsvCreateResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 SkusImportCsvCreateResponseBody.prototype['async_action_id'] = undefined;
 
 

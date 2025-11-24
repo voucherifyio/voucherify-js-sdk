@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsUsersAssignRequestBody model module.
  * @module model/ManagementProjectsUsersAssignRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUsersAssignRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsUsersAssignRequestBody</code>.
-     * @alias module:model/ManagementProjectsUsersAssignRequestBody
+     * @alias ManagementProjectsUsersAssignRequestBody
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ManagementProjectsUsersAssignRequestBody {
     /**
      * Constructs a <code>ManagementProjectsUsersAssignRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUsersAssignRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUsersAssignRequestBody} The populated <code>ManagementProjectsUsersAssignRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsUsersAssignRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUsersAssignRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUsersAssignRequestBody} The populated <code>ManagementProjectsUsersAssignRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ManagementProjectsUsersAssignRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUsersAssignRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUsersAssignRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUsersAssignRequestBody</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class ManagementProjectsUsersAssignRequestBody {
 
 
 /**
- * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
- * @member {String} 
- */
+    * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignRequestBody.prototype['id'] = undefined;
 
 /**
- * The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
- * @member {String} 
- */
+    * The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignRequestBody.prototype['login'] = undefined;
 
 /**
- * The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, or an ID of a custom role.
- * @member {String} 
- */
+    * The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, or an ID of a custom role.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignRequestBody.prototype['role'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListPublicationsSourceId model module.
  * @module model/ParameterFiltersListPublicationsSourceId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublicationsSourceId {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsSourceId</code>.
      * Filter publications by source id.
-     * @alias module:model/ParameterFiltersListPublicationsSourceId
+     * @alias ParameterFiltersListPublicationsSourceId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListPublicationsSourceId {
     /**
      * Constructs a <code>ParameterFiltersListPublicationsSourceId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublicationsSourceId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublicationsSourceId} The populated <code>ParameterFiltersListPublicationsSourceId</code> instance.
+     * @param {Partial<ParameterFiltersListPublicationsSourceId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublicationsSourceId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublicationsSourceId} The populated <code>ParameterFiltersListPublicationsSourceId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListPublicationsSourceId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublicationsSourceId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublicationsSourceId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublicationsSourceId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListPublicationsSourceId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListPublicationsSourceId.prototype['conditions'] = undefined;
 
 

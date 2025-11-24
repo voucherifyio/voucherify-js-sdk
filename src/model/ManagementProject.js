@@ -16,16 +16,15 @@ import ManagementProjectApiUsageNotifications from './ManagementProjectApiUsageN
 import ManagementProjectDefaultCodeConfig from './ManagementProjectDefaultCodeConfig';
 import ManagementProjectLimits from './ManagementProjectLimits';
 import ManagementProjectWebhooksCalloutNotifications from './ManagementProjectWebhooksCalloutNotifications';
-
 /**
  * The ManagementProject model module.
  * @module model/ManagementProject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProject {
     /**
      * Constructs a new <code>ManagementProject</code>.
-     * @alias module:model/ManagementProject
+     * @alias ManagementProject
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ManagementProject {
     /**
      * Constructs a <code>ManagementProject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProject} obj Optional instance to populate.
-     * @returns {module:model/ManagementProject} The populated <code>ManagementProject</code> instance.
+     * @param {Partial<ManagementProject>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProject} [obj] Optional instance to populate.
+     * @returns {ManagementProject} The populated <code>ManagementProject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -128,7 +127,7 @@ class ManagementProject {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProject</code>.
      */
     static validateJSON(data) {
@@ -202,173 +201,173 @@ class ManagementProject {
 
 
 /**
- * Unique identifier of the project.
- * @member {String} 
- */
+    * Unique identifier of the project.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['id'] = undefined;
 
 /**
- * The name of the project.
- * @member {String} 
- */
+    * The name of the project.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['name'] = undefined;
 
 /**
- * A user-defined description of the project, e.g. its purpose, scope, region.
- * @member {String} 
- */
+    * A user-defined description of the project, e.g. its purpose, scope, region.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['description'] = undefined;
 
 /**
- * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
- * @member {String} 
- */
+    * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['timezone'] = undefined;
 
 /**
- * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
- * @member {String} 
- */
+    * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['currency'] = undefined;
 
 /**
- * The country dial code for the project. It is equal to an ITU country code.
- * @member {String} 
- */
+    * The country dial code for the project. It is equal to an ITU country code.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['dial_code'] = undefined;
 
 /**
- * The webhook version used in the project.
- * @member {module:model/ManagementProject.WebhookVersionEnum} 
- * @default 'v2024-01-01'
- */
+    * The webhook version used in the project.
+    * @type {(keyof typeof ManagementProject.WebhookVersionEnum) | undefined}
+    * @default 'v2024-01-01'
+    */
 ManagementProject.prototype['webhook_version'] = 'v2024-01-01';
 
 /**
- * An array of URL addresses that allow client requests.
- * @member {Array.<String>} 
- */
+    * An array of URL addresses that allow client requests.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProject.prototype['client_trusted_domains'] = undefined;
 
 /**
- * Enables client-side redemption.
- * @member {Boolean} 
- */
+    * Enables client-side redemption.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_redeem_enabled'] = undefined;
 
 /**
- * Enables client-side publication.
- * @member {Boolean} 
- */
+    * Enables client-side publication.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_publish_enabled'] = undefined;
 
 /**
- * Enables client-side listing of vouchers.
- * @member {Boolean} 
- */
+    * Enables client-side listing of vouchers.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_list_vouchers_enabled'] = undefined;
 
 /**
- * Enables client-side creation of customers.
- * @member {Boolean} 
- */
+    * Enables client-side creation of customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_create_customer_enabled'] = undefined;
 
 /**
- * Enables client-side events for loyalty and referral programs.
- * @member {Boolean} 
- */
+    * Enables client-side events for loyalty and referral programs.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_loyalty_events_enabled'] = undefined;
 
 /**
- * Enables client-side setting of voucher expiration date.
- * @member {Boolean} 
- */
+    * Enables client-side setting of voucher expiration date.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['client_set_voucher_expiration_date_enabled'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectWebhooksCalloutNotifications} 
- */
+    * @type {ManagementProjectWebhooksCalloutNotifications | undefined}
+    */
 ManagementProject.prototype['webhooks_callout_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectApiUsageNotifications} 
- */
+    * @type {ManagementProjectApiUsageNotifications | undefined}
+    */
 ManagementProject.prototype['api_usage_notifications'] = undefined;
 
 /**
- * The identifier of the cluster where the project will be created.
- * @member {String} 
- */
+    * The identifier of the cluster where the project will be created.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['cluster_id'] = undefined;
 
 /**
- * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
- * @member {Boolean} 
- */
+    * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['case_sensitive_codes'] = undefined;
 
 /**
- * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
- * @member {module:model/ManagementProject.ApiVersionEnum} 
- * @default 'v2018-08-01'
- */
+    * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
+    * @type {(keyof typeof ManagementProject.ApiVersionEnum) | undefined}
+    * @default 'v2018-08-01'
+    */
 ManagementProject.prototype['api_version'] = 'v2018-08-01';
 
 /**
- * Determines if the project is a sandbox project.
- * @member {Boolean} 
- */
+    * Determines if the project is a sandbox project.
+    * @type {Boolean | undefined}
+    */
 ManagementProject.prototype['is_sandbox'] = undefined;
 
 /**
- * Webhook token used for authentication.
- * @member {String} 
- */
+    * Webhook token used for authentication.
+    * @type {String | undefined}
+    */
 ManagementProject.prototype['webhook_token'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectDefaultCodeConfig} 
- */
+    * @type {ManagementProjectDefaultCodeConfig | undefined}
+    */
 ManagementProject.prototype['default_code_config'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectLimits} 
- */
+    * @type {ManagementProjectLimits | undefined}
+    */
 ManagementProject.prototype['limits'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>webhook_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProject['WebhookVersionEnum'] = {
+    /**
+     * Allowed values for the <code>webhook_version</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProject['WebhookVersionEnum'] = {
+    
+        /**
+         * value: "v2024-01-01"
+         * @constant
+         */
+        "v2024-01-01": "v2024-01-01"    
+    };
+
 
     /**
-     * value: "v2024-01-01"
-     * @constant
+     * Allowed values for the <code>api_version</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "v2024-01-01": "v2024-01-01"
-};
-
-
-/**
- * Allowed values for the <code>api_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProject['ApiVersionEnum'] = {
-
-    /**
-     * value: "v2018-08-01"
-     * @constant
-     */
-    "v2018-08-01": "v2018-08-01"
-};
+    ManagementProject['ApiVersionEnum'] = {
+    
+        /**
+         * value: "v2018-08-01"
+         * @constant
+         */
+        "v2018-08-01": "v2018-08-01"    
+    };
 
 
 

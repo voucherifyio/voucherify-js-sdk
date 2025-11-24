@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerSummaryOrders model module.
  * @module model/CustomerSummaryOrders
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerSummaryOrders {
     /**
      * Constructs a new <code>CustomerSummaryOrders</code>.
      * Lists details about orders related to the customer. Lists only data for orders with the &#x60;PAID&#x60; or &#x60;FULFILLED&#x60; status. Data from orders with a &#x60;CREATED&#x60; or &#x60;CANCELED&#x60; status are not included. The data is updated also when an order changes status.
-     * @alias module:model/CustomerSummaryOrders
+     * @alias CustomerSummaryOrders
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerSummaryOrders {
     /**
      * Constructs a <code>CustomerSummaryOrders</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerSummaryOrders} obj Optional instance to populate.
-     * @returns {module:model/CustomerSummaryOrders} The populated <code>CustomerSummaryOrders</code> instance.
+     * @param {Partial<CustomerSummaryOrders>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerSummaryOrders} [obj] Optional instance to populate.
+     * @returns {CustomerSummaryOrders} The populated <code>CustomerSummaryOrders</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class CustomerSummaryOrders {
 
     /**
      * Validates the JSON data with respect to <code>CustomerSummaryOrders</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerSummaryOrders>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerSummaryOrders</code>.
      */
     static validateJSON(data) {
@@ -83,33 +82,33 @@ class CustomerSummaryOrders {
 
 
 /**
- * The total amount spent by the customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The total amount spent by the customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 CustomerSummaryOrders.prototype['total_amount'] = undefined;
 
 /**
- * Total number of orders made by the customer.
- * @member {Number} 
- */
+    * Total number of orders made by the customer.
+    * @type {Number | undefined}
+    */
 CustomerSummaryOrders.prototype['total_count'] = undefined;
 
 /**
- * Average amount spent on orders. `total_amount` &divide; `total_count`. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Average amount spent on orders. `total_amount` &divide; `total_count`. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 CustomerSummaryOrders.prototype['average_amount'] = undefined;
 
 /**
- * Amount spent on last order. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Amount spent on last order. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 CustomerSummaryOrders.prototype['last_order_amount'] = undefined;
 
 /**
- * Timestamp representing the date and time of the customer's last order in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time of the customer's last order in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomerSummaryOrders.prototype['last_order_date'] = undefined;
 
 

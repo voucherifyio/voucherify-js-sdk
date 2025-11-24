@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer {
     /**
      * Constructs a new <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code>.
-     * @alias module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer
+     * @alias LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer {
     /**
      * Constructs a <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code> instance.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

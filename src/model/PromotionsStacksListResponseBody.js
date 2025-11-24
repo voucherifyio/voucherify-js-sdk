@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PromotionStack from './PromotionStack';
-
 /**
  * The PromotionsStacksListResponseBody model module.
  * @module model/PromotionsStacksListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsStacksListResponseBody {
     /**
      * Constructs a new <code>PromotionsStacksListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/promotions/stacks&#x60; and for **GET** &#x60;v1/promotions/{campaignId}/stacks&#x60;.
-     * @alias module:model/PromotionsStacksListResponseBody
+     * @alias PromotionsStacksListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PromotionsStacksListResponseBody {
     /**
      * Constructs a <code>PromotionsStacksListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsStacksListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/PromotionsStacksListResponseBody} The populated <code>PromotionsStacksListResponseBody</code> instance.
+     * @param {Partial<PromotionsStacksListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsStacksListResponseBody} [obj] Optional instance to populate.
+     * @returns {PromotionsStacksListResponseBody} The populated <code>PromotionsStacksListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class PromotionsStacksListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsStacksListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsStacksListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsStacksListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class PromotionsStacksListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about promotion stacks in a dictionary.
- * @member {module:model/PromotionsStacksListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about promotion stacks in a dictionary.
+    * @type {(keyof typeof PromotionsStacksListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 PromotionsStacksListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of promotion stack objects.
- * @member {module:model/PromotionsStacksListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of promotion stack objects.
+    * @type {(keyof typeof PromotionsStacksListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 PromotionsStacksListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of promotion stack objects.
- * @member {Array.<module:model/PromotionStack>} 
- */
+    * Contains array of promotion stack objects.
+    * @type {Array.<PromotionStack> | undefined}
+    */
 PromotionsStacksListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of promotion stacks.
- * @member {Number} 
- */
+    * Total number of promotion stacks.
+    * @type {Number | undefined}
+    */
 PromotionsStacksListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionsStacksListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    PromotionsStacksListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionsStacksListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    PromotionsStacksListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

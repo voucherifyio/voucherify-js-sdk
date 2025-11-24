@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionOrderCustomer model module.
  * @module model/RedemptionOrderCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionOrderCustomer {
     /**
      * Constructs a new <code>RedemptionOrderCustomer</code>.
-     * @alias module:model/RedemptionOrderCustomer
+     * @alias RedemptionOrderCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionOrderCustomer {
     /**
      * Constructs a <code>RedemptionOrderCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionOrderCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionOrderCustomer} The populated <code>RedemptionOrderCustomer</code> instance.
+     * @param {Partial<RedemptionOrderCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionOrderCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionOrderCustomer} The populated <code>RedemptionOrderCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionOrderCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionOrderCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionOrderCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionOrderCustomer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionOrderCustomer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionOrderCustomer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionOrderCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionOrderCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionOrderCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionOrderCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionOrderCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

@@ -17,16 +17,15 @@ import ParameterFiltersListReferralsRedeemableHoldersCreatedAt from './Parameter
 import ParameterFiltersListReferralsRedeemableHoldersCustomerId from './ParameterFiltersListReferralsRedeemableHoldersCustomerId';
 import ParameterFiltersListReferralsRedeemableHoldersHolderRole from './ParameterFiltersListReferralsRedeemableHoldersHolderRole';
 import ParameterFiltersListReferralsRedeemableHoldersId from './ParameterFiltersListReferralsRedeemableHoldersId';
-
 /**
  * The ParameterFiltersListReferralsRedeemableHolders model module.
  * @module model/ParameterFiltersListReferralsRedeemableHolders
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListReferralsRedeemableHolders {
     /**
      * Constructs a new <code>ParameterFiltersListReferralsRedeemableHolders</code>.
-     * @alias module:model/ParameterFiltersListReferralsRedeemableHolders
+     * @alias ParameterFiltersListReferralsRedeemableHolders
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ParameterFiltersListReferralsRedeemableHolders {
     /**
      * Constructs a <code>ParameterFiltersListReferralsRedeemableHolders</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHolders} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListReferralsRedeemableHolders} The populated <code>ParameterFiltersListReferralsRedeemableHolders</code> instance.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHolders>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListReferralsRedeemableHolders} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListReferralsRedeemableHolders} The populated <code>ParameterFiltersListReferralsRedeemableHolders</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ParameterFiltersListReferralsRedeemableHolders {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListReferralsRedeemableHolders</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHolders>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListReferralsRedeemableHolders</code>.
      */
     static validateJSON(data) {
@@ -103,28 +102,28 @@ class ParameterFiltersListReferralsRedeemableHolders {
 
 
 /**
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersId} 
- */
+    * @type {ParameterFiltersListReferralsRedeemableHoldersId | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHolders.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt} 
- */
+    * @type {ParameterFiltersListReferralsRedeemableHoldersCreatedAt | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHolders.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRole} 
- */
+    * @type {ParameterFiltersListReferralsRedeemableHoldersHolderRole | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHolders.prototype['holder_role'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersCustomerId} 
- */
+    * @type {ParameterFiltersListReferralsRedeemableHoldersCustomerId | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHolders.prototype['customer_id'] = undefined;
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHolders.prototype['junction'] = undefined;
 
 

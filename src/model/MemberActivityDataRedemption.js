@@ -20,16 +20,15 @@ import MemberActivityDataRedemptionRelatedRedemptions from './MemberActivityData
 import MemberActivityDataRedemptionReward from './MemberActivityDataRedemptionReward';
 import MemberActivityDataRedemptionVoucher from './MemberActivityDataRedemptionVoucher';
 import SimpleCustomer from './SimpleCustomer';
-
 /**
  * The MemberActivityDataRedemption model module.
  * @module model/MemberActivityDataRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemption {
     /**
      * Constructs a new <code>MemberActivityDataRedemption</code>.
-     * @alias module:model/MemberActivityDataRedemption
+     * @alias MemberActivityDataRedemption
      */
     constructor() { 
         
@@ -48,9 +47,9 @@ class MemberActivityDataRedemption {
     /**
      * Constructs a <code>MemberActivityDataRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemption} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemption} The populated <code>MemberActivityDataRedemption</code> instance.
+     * @param {Partial<MemberActivityDataRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemption} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemption} The populated <code>MemberActivityDataRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -149,7 +148,7 @@ class MemberActivityDataRedemption {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemption</code>.
      */
     static validateJSON(data) {
@@ -263,261 +262,261 @@ class MemberActivityDataRedemption {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['id'] = undefined;
 
 /**
- * Unique customer ID of the redeeming customer.
- * @member {String} 
- */
+    * Unique customer ID of the redeeming customer.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['customer_id'] = undefined;
 
 /**
- * Hashed customer source ID.
- * @member {String} 
- */
+    * Hashed customer source ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['tracking_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the redemption was created in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption was created in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemption.prototype['date'] = undefined;
 
 /**
- * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. In the case of redemption rollback, the numbers are expressed as negative integers. and For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction.
- * @member {Number} 
- */
+    * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. In the case of redemption rollback, the numbers are expressed as negative integers. and For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemption.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionOrder} 
- */
+    * @type {MemberActivityDataRedemptionOrder | undefined}
+    */
 MemberActivityDataRedemption.prototype['order'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionReward} 
- */
+    * @type {MemberActivityDataRedemptionReward | undefined}
+    */
 MemberActivityDataRedemption.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 MemberActivityDataRedemption.prototype['customer'] = undefined;
 
 /**
- * Redemption result.
- * @member {module:model/MemberActivityDataRedemption.ResultEnum} 
- */
+    * Redemption result.
+    * @type {(keyof typeof MemberActivityDataRedemption.ResultEnum) | undefined}
+    */
 MemberActivityDataRedemption.prototype['result'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemption.StatusEnum} 
- */
+    * @type {(keyof typeof MemberActivityDataRedemption.StatusEnum) | undefined}
+    */
 MemberActivityDataRedemption.prototype['status'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucher} 
- */
+    * @type {MemberActivityDataRedemptionVoucher | undefined}
+    */
 MemberActivityDataRedemption.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTier} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTier | undefined}
+    */
 MemberActivityDataRedemption.prototype['promotion_tier'] = undefined;
 
 /**
- * Unique redemption ID of the parent redemption.
- * @member {String} 
- */
+    * Unique redemption ID of the parent redemption.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['redemption'] = undefined;
 
 /**
- * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redemption. and The metadata object stores all custom attributes assigned to the redemption.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redemption. and The metadata object stores all custom attributes assigned to the redemption.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemption.prototype['metadata'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['failure_code'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['failure_message'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['reason'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionChannel} 
- */
+    * @type {MemberActivityDataRedemptionChannel | undefined}
+    */
 MemberActivityDataRedemption.prototype['channel'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the `redemption`.
- * @member {String} 
- * @default 'redemption'
- */
+    * The type of the object represented by the JSON. This object stores information about the `redemption`.
+    * @type {String | undefined}
+    * @default 'redemption'
+    */
 MemberActivityDataRedemption.prototype['object'] = 'redemption';
 
 /**
- * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemption.prototype['created_at'] = undefined;
 
 /**
- * The source of the channel for the redemption rollback. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
- * @member {module:model/MemberActivityDataRedemption.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption rollback. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+    * @type {(keyof typeof MemberActivityDataRedemption.ChannelTypeEnum) | undefined}
+    */
 MemberActivityDataRedemption.prototype['channel_type'] = undefined;
 
 /**
- * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
- * @member {String} 
- */
+    * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['channel_id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPreviousOrder} 
- */
+    * @type {MemberActivityDataRedemptionPreviousOrder | undefined}
+    */
 MemberActivityDataRedemption.prototype['previous_order'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRelatedRedemptions} 
- */
+    * @type {MemberActivityDataRedemptionRelatedRedemptions | undefined}
+    */
 MemberActivityDataRedemption.prototype['related_redemptions'] = undefined;
 
 /**
- * Unique redemption ID of the parent redemption.
- * @member {String} 
- */
+    * Unique redemption ID of the parent redemption.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['parent_redemption_id'] = undefined;
 
 /**
- * Defines the related object.
- * @member {module:model/MemberActivityDataRedemption.RelatedObjectTypeEnum} 
- */
+    * Defines the related object.
+    * @type {(keyof typeof MemberActivityDataRedemption.RelatedObjectTypeEnum) | undefined}
+    */
 MemberActivityDataRedemption.prototype['related_object_type'] = undefined;
 
 /**
- * Unique related object ID assigned by Voucherify, i.e. v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno for a voucher.
- * @member {String} 
- */
+    * Unique related object ID assigned by Voucherify, i.e. v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno for a voucher.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['related_object_id'] = undefined;
 
 /**
- * Unique related parent object ID assigned by Voucherify, i.e. v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno for a voucher.
- * @member {String} 
- */
+    * Unique related parent object ID assigned by Voucherify, i.e. v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno for a voucher.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['related_object_parent_id'] = undefined;
 
 /**
- * Campaign name
- * @member {String} 
- */
+    * Campaign name
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemption.prototype['campaign_name'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemption['ResultEnum'] = {
+    /**
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataRedemption['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "FAILURE"
+         * @constant
+         */
+        "FAILURE": "FAILURE"    
+    };
+
 
     /**
-     * value: "SUCCESS"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SUCCESS": "SUCCESS",
+    MemberActivityDataRedemption['StatusEnum'] = {
+    
+        /**
+         * value: "SUCCEEDED"
+         * @constant
+         */
+        "SUCCEEDED": "SUCCEEDED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "ROLLED BACK"
+         * @constant
+         */
+        "ROLLED BACK": "ROLLED BACK"    
+    };
+
 
     /**
-     * value: "FAILURE"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "FAILURE": "FAILURE"
-};
+    MemberActivityDataRedemption['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemption['StatusEnum'] = {
 
     /**
-     * value: "SUCCEEDED"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SUCCEEDED": "SUCCEEDED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "ROLLED BACK"
-     * @constant
-     */
-    "ROLLED BACK": "ROLLED BACK"
-};
-
-
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemption['ChannelTypeEnum'] = {
-
-    /**
-     * value: "USER"
-     * @constant
-     */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemption['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier"
-};
+    MemberActivityDataRedemption['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier"    
+    };
 
 
 

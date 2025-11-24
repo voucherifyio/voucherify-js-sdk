@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions from './ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesRedeemableObject model module.
  * @module model/ParameterFiltersListCustomerRedeemablesRedeemableObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesRedeemableObject {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code>.
      * Unique related object, i.e. &#x60;voucher&#x60;.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesRedeemableObject
+     * @alias ParameterFiltersListCustomerRedeemablesRedeemableObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObject {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObject} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObject} The populated <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesRedeemableObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesRedeemableObject} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesRedeemableObject} The populated <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObject {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesRedeemableObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesRedeemableObject</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObject {
 
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObject.prototype['conditions'] = undefined;
 
 

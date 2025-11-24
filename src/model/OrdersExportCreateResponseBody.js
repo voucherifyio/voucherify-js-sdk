@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import OrdersExportCreateResponseBodyParameters from './OrdersExportCreateResponseBodyParameters';
-
 /**
  * The OrdersExportCreateResponseBody model module.
  * @module model/OrdersExportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersExportCreateResponseBody {
     /**
      * Constructs a new <code>OrdersExportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/orders/export&#x60;.
-     * @alias module:model/OrdersExportCreateResponseBody
+     * @alias OrdersExportCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class OrdersExportCreateResponseBody {
     /**
      * Constructs a <code>OrdersExportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersExportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/OrdersExportCreateResponseBody} The populated <code>OrdersExportCreateResponseBody</code> instance.
+     * @param {Partial<OrdersExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersExportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {OrdersExportCreateResponseBody} The populated <code>OrdersExportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -85,7 +84,7 @@ class OrdersExportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>OrdersExportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersExportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -127,108 +126,108 @@ class OrdersExportCreateResponseBody {
 
 
 /**
- * Unique export ID.
- * @member {String} 
- */
+    * Unique export ID.
+    * @type {String | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of object being represented. This object stores information about the export.
- * @member {module:model/OrdersExportCreateResponseBody.ObjectEnum} 
- * @default 'export'
- */
+    * The type of object being represented. This object stores information about the export.
+    * @type {(keyof typeof OrdersExportCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'export'
+    */
 OrdersExportCreateResponseBody.prototype['object'] = 'export';
 
 /**
- * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
- * @member {module:model/OrdersExportCreateResponseBody.StatusEnum} 
- * @default 'SCHEDULED'
- */
+    * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
+    * @type {(keyof typeof OrdersExportCreateResponseBody.StatusEnum) | undefined}
+    * @default 'SCHEDULED'
+    */
 OrdersExportCreateResponseBody.prototype['status'] = 'SCHEDULED';
 
 /**
- * The channel through which the export was triggered.
- * @member {String} 
- */
+    * The channel through which the export was triggered.
+    * @type {String | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['channel'] = undefined;
 
 /**
- * Contains the URL of the CSV file.
- * @member {Object} 
- */
+    * Contains the URL of the CSV file.
+    * @type {Object | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['result'] = undefined;
 
 /**
- * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
- * @member {String} 
- */
+    * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
+    * @type {String | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['user_id'] = undefined;
 
 /**
- * The type of object to be exported.
- * @member {module:model/OrdersExportCreateResponseBody.ExportedObjectEnum} 
- * @default 'order'
- */
+    * The type of object to be exported.
+    * @type {(keyof typeof OrdersExportCreateResponseBody.ExportedObjectEnum) | undefined}
+    * @default 'order'
+    */
 OrdersExportCreateResponseBody.prototype['exported_object'] = 'order';
 
 /**
- * @member {module:model/OrdersExportCreateResponseBodyParameters} 
- */
+    * @type {OrdersExportCreateResponseBodyParameters | undefined}
+    */
 OrdersExportCreateResponseBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersExportCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    OrdersExportCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "export"
+         * @constant
+         */
+        "export": "export"    
+    };
+
 
     /**
-     * value: "export"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "export": "export"
-};
+    OrdersExportCreateResponseBody['StatusEnum'] = {
+    
+        /**
+         * value: "SCHEDULED"
+         * @constant
+         */
+        "SCHEDULED": "SCHEDULED"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersExportCreateResponseBody['StatusEnum'] = {
 
     /**
-     * value: "SCHEDULED"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SCHEDULED": "SCHEDULED"
-};
-
-
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersExportCreateResponseBody['ExportedObjectEnum'] = {
-
-    /**
-     * value: "order"
-     * @constant
-     */
-    "order": "order"
-};
+    OrdersExportCreateResponseBody['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "order"
+         * @constant
+         */
+        "order": "order"    
+    };
 
 
 

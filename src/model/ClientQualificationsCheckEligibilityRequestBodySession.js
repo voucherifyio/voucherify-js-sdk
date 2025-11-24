@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientQualificationsCheckEligibilityRequestBodySession model module.
  * @module model/ClientQualificationsCheckEligibilityRequestBodySession
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientQualificationsCheckEligibilityRequestBodySession {
     /**
      * Constructs a new <code>ClientQualificationsCheckEligibilityRequestBodySession</code>.
      * Parameter to return details about &#x60;locked_credits&#x60; on a gift card which has locked credits under a validation session.
-     * @alias module:model/ClientQualificationsCheckEligibilityRequestBodySession
+     * @alias ClientQualificationsCheckEligibilityRequestBodySession
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ClientQualificationsCheckEligibilityRequestBodySession {
     /**
      * Constructs a <code>ClientQualificationsCheckEligibilityRequestBodySession</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientQualificationsCheckEligibilityRequestBodySession} obj Optional instance to populate.
-     * @returns {module:model/ClientQualificationsCheckEligibilityRequestBodySession} The populated <code>ClientQualificationsCheckEligibilityRequestBodySession</code> instance.
+     * @param {Partial<ClientQualificationsCheckEligibilityRequestBodySession>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientQualificationsCheckEligibilityRequestBodySession} [obj] Optional instance to populate.
+     * @returns {ClientQualificationsCheckEligibilityRequestBodySession} The populated <code>ClientQualificationsCheckEligibilityRequestBodySession</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ClientQualificationsCheckEligibilityRequestBodySession {
 
     /**
      * Validates the JSON data with respect to <code>ClientQualificationsCheckEligibilityRequestBodySession</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientQualificationsCheckEligibilityRequestBodySession>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientQualificationsCheckEligibilityRequestBodySession</code>.
      */
     static validateJSON(data) {
@@ -76,29 +75,29 @@ class ClientQualificationsCheckEligibilityRequestBodySession {
 
 
 /**
- * Parameter required to return the details about the `locked_credits`.
- * @member {module:model/ClientQualificationsCheckEligibilityRequestBodySession.TypeEnum} 
- * @default 'LOCK'
- */
+    * Parameter required to return the details about the `locked_credits`.
+    * @type {(keyof typeof ClientQualificationsCheckEligibilityRequestBodySession.TypeEnum) | undefined}
+    * @default 'LOCK'
+    */
 ClientQualificationsCheckEligibilityRequestBodySession.prototype['type'] = 'LOCK';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ClientQualificationsCheckEligibilityRequestBodySession['TypeEnum'] = {
-
     /**
-     * value: "LOCK"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOCK": "LOCK"
-};
+    ClientQualificationsCheckEligibilityRequestBodySession['TypeEnum'] = {
+    
+        /**
+         * value: "LOCK"
+         * @constant
+         */
+        "LOCK": "LOCK"    
+    };
 
 
 

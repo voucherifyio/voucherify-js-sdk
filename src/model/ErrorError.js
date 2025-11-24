@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ErrorError model module.
  * @module model/ErrorError
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ErrorError {
     /**
      * Constructs a new <code>ErrorError</code>.
      * Includes additional information about the error.
-     * @alias module:model/ErrorError
+     * @alias ErrorError
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ErrorError {
     /**
      * Constructs a <code>ErrorError</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ErrorError} obj Optional instance to populate.
-     * @returns {module:model/ErrorError} The populated <code>ErrorError</code> instance.
+     * @param {Partial<ErrorError>} data The plain JavaScript object bearing properties of interest.
+     * @param {ErrorError} [obj] Optional instance to populate.
+     * @returns {ErrorError} The populated <code>ErrorError</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ErrorError {
 
     /**
      * Validates the JSON data with respect to <code>ErrorError</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ErrorError>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ErrorError</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ErrorError {
 
 
 /**
- * The message configured by the user in a validation rule.
- * @member {String} 
- */
+    * The message configured by the user in a validation rule.
+    * @type {String | undefined}
+    */
 ErrorError.prototype['message'] = undefined;
 
 

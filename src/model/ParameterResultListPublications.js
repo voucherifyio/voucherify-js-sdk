@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterResultListPublications.
-* @module model/ParameterResultListPublications
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterResultListPublications {
+ * Enum class ParameterResultListPublications.
+ * @module model/ParameterResultListPublications
+ * @version 3.0.1
+ */
+class ParameterResultListPublications {
     
-        /**
-         * value: "SUCCESS"
-         * @constant
-         */
-        "SUCCESS" = "SUCCESS";
-
+    /**
+     * 
+     * @constant
+     */
+    static "SUCCESS" = "SUCCESS";
     
-        /**
-         * value: "FAILURE"
-         * @constant
-         */
-        "FAILURE" = "FAILURE";
-
+    /**
+     * 
+     * @constant
+     */
+    static "FAILURE" = "FAILURE";
     
 
     /**
-    * Returns a <code>ParameterResultListPublications</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterResultListPublications} The enum <code>ParameterResultListPublications</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterResultListPublications, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterResultListPublications[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterResultListPublications[key];
     }
 }
+
+export default ParameterResultListPublications;
 

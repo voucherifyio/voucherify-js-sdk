@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionStackBaseTiers model module.
  * @module model/PromotionStackBaseTiers
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionStackBaseTiers {
     /**
      * Constructs a new <code>PromotionStackBaseTiers</code>.
      * Contains the tier configuration. A promotion stack can include up to 30 tiers.
-     * @alias module:model/PromotionStackBaseTiers
+     * @alias PromotionStackBaseTiers
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionStackBaseTiers {
     /**
      * Constructs a <code>PromotionStackBaseTiers</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionStackBaseTiers} obj Optional instance to populate.
-     * @returns {module:model/PromotionStackBaseTiers} The populated <code>PromotionStackBaseTiers</code> instance.
+     * @param {Partial<PromotionStackBaseTiers>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionStackBaseTiers} [obj] Optional instance to populate.
+     * @returns {PromotionStackBaseTiers} The populated <code>PromotionStackBaseTiers</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class PromotionStackBaseTiers {
 
     /**
      * Validates the JSON data with respect to <code>PromotionStackBaseTiers</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionStackBaseTiers>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionStackBaseTiers</code>.
      */
     static validateJSON(data) {
@@ -83,34 +82,34 @@ class PromotionStackBaseTiers {
 
 
 /**
- * Contains the list of tiers in a pre-defined sequence.
- * @member {Array.<String>} 
- */
+    * Contains the list of tiers in a pre-defined sequence.
+    * @type {Array.<String> | undefined}
+    */
 PromotionStackBaseTiers.prototype['ids'] = undefined;
 
 /**
- * @member {module:model/PromotionStackBaseTiers.HierarchyModeEnum} 
- * @default 'MANUAL'
- */
+    * @type {(keyof typeof PromotionStackBaseTiers.HierarchyModeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 PromotionStackBaseTiers.prototype['hierarchy_mode'] = 'MANUAL';
 
 
 
 
 
-/**
- * Allowed values for the <code>hierarchy_mode</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionStackBaseTiers['HierarchyModeEnum'] = {
-
     /**
-     * value: "MANUAL"
-     * @constant
+     * Allowed values for the <code>hierarchy_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MANUAL": "MANUAL"
-};
+    PromotionStackBaseTiers['HierarchyModeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
 
 
 

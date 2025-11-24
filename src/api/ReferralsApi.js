@@ -22,13 +22,13 @@ import ReferralsMembersHoldersListResponseBody from '../model/ReferralsMembersHo
 /**
 * Referrals service.
 * @module api/ReferralsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ReferralsApi {
 
     /**
     * Constructs a new ReferralsApi. 
-    * @alias module:api/ReferralsApi
+    * @alias ReferralsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -40,9 +40,9 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsAddHolders operation.
-     * @callback module:api/ReferralsApi~referralsAddHoldersCallback
+     * @callback referralsAddHoldersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {ReferralsMembersHoldersCreateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -50,9 +50,10 @@ export default class ReferralsApi {
      * Add Referral Code Holders
      * Adds new holders to a referral code as **referees**. The data sent in the request is upserted into the customer data. If the request returns an error even for one customer, you have to resend the whole request. Customer data is upserted if the data for all customers is correct. To use this endpoint, you must have the following permissions: - Create and modify Customers and Segments (customers.modify) - Publish Voucher (vouchers.publish)  👍 To add a holder as a referrer, use the [Create Publication](/api-reference/publications/create-publication) endpoint.  📘 Alternative endpoint This endpoint is an alternative to the [Add Referral Code Holders endpoint](/api-reference/referrals/add-referral-code-holders-with-campaign-id). The URL was re-designed to retrieve the referral member holders without providing the campaignId as a path paremeter.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} referralsMembersHoldersCreateInBulkRequestBody Specify the customer data to be upserted as redeemable holders.
-     * @param {module:api/ReferralsApi~referralsAddHoldersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReferralsMembersHoldersCreateInBulkResponseBody}
+     * @param {ReferralsMembersHoldersCreateInBulkRequestBody} referralsMembersHoldersCreateInBulkRequestBody Specify the customer data to be upserted as redeemable holders.
+     * @param {referralsAddHoldersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ReferralsMembersHoldersCreateInBulkResponseBody}
+     * @returns {Promise<(ReferralsMembersHoldersCreateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ReferralsMembersHoldersCreateInBulkResponseBody` object or with `undefined`.
      */
     referralsAddHolders(memberId, referralsMembersHoldersCreateInBulkRequestBody, callback) {
       let postBody = referralsMembersHoldersCreateInBulkRequestBody;
@@ -82,9 +83,9 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsAddHolders1 operation.
-     * @callback module:api/ReferralsApi~referralsAddHolders1Callback
+     * @callback referralsAddHolders1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {ReferralsMembersHoldersCreateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -93,9 +94,10 @@ export default class ReferralsApi {
      * Adds new holders to a referral code as **referees**. The data sent in the request is upserted into the customer data. If the request returns an error even for one customer, you have to resend the whole request. Customer data is upserted if the data for all customers is correct. To use this endpoint, you must have the following permissions: - Create and modify Customers and Segments (customers.modify) - Publish Voucher (vouchers.publish)  👍 To add a holder as a referrer, use the [Create Publication](/api-reference/publications/create-publication) endpoint.
      * @param {String} campaignId Unique identifier of a referral program campaign.
      * @param {String} memberId Unique referral code or its identifier.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} referralsMembersHoldersCreateInBulkRequestBody Specify the customer data to be upserted as redeemable holders.
-     * @param {module:api/ReferralsApi~referralsAddHolders1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReferralsMembersHoldersCreateInBulkResponseBody}
+     * @param {ReferralsMembersHoldersCreateInBulkRequestBody} referralsMembersHoldersCreateInBulkRequestBody Specify the customer data to be upserted as redeemable holders.
+     * @param {referralsAddHolders1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ReferralsMembersHoldersCreateInBulkResponseBody}
+     * @returns {Promise<(ReferralsMembersHoldersCreateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ReferralsMembersHoldersCreateInBulkResponseBody` object or with `undefined`.
      */
     referralsAddHolders1(campaignId, memberId, referralsMembersHoldersCreateInBulkRequestBody, callback) {
       let postBody = referralsMembersHoldersCreateInBulkRequestBody;
@@ -127,9 +129,9 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsCodeHolders operation.
-     * @callback module:api/ReferralsApi~referralsCodeHoldersCallback
+     * @callback referralsCodeHoldersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ReferralsMembersHoldersListResponseBody} [data] The data returned by the service call.
+     * @param {ReferralsMembersHoldersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -140,12 +142,13 @@ export default class ReferralsApi {
      * @param {String} memberId Unique referral code or its identifier.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListRedeemables,
+        order?: Exclude<keyof typeof ParameterOrderListRedeemables, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParameterFiltersListReferralsRedeemableHolders,
+        filters?: ParameterFiltersListReferralsRedeemableHolders,
      }} [opts] Optional parameters
-     * @param {module:api/ReferralsApi~referralsCodeHoldersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReferralsMembersHoldersListResponseBody}
+     * @param {referralsCodeHoldersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ReferralsMembersHoldersListResponseBody}
+     * @returns {Promise<(ReferralsMembersHoldersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ReferralsMembersHoldersListResponseBody` object or with `undefined`.
      */
     referralsCodeHolders(campaignId, memberId, opts, callback) {
       opts = opts || {};
@@ -181,9 +184,9 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsCodeHolders1 operation.
-     * @callback module:api/ReferralsApi~referralsCodeHolders1Callback
+     * @callback referralsCodeHolders1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ReferralsMembersHoldersListResponseBody} [data] The data returned by the service call.
+     * @param {ReferralsMembersHoldersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -193,12 +196,13 @@ export default class ReferralsApi {
      * @param {String} memberId Unique referral code or its identifier.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListRedeemables,
+        order?: Exclude<keyof typeof ParameterOrderListRedeemables, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParameterFiltersListReferralsRedeemableHolders,
+        filters?: ParameterFiltersListReferralsRedeemableHolders,
      }} [opts] Optional parameters
-     * @param {module:api/ReferralsApi~referralsCodeHolders1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReferralsMembersHoldersListResponseBody}
+     * @param {referralsCodeHolders1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ReferralsMembersHoldersListResponseBody}
+     * @returns {Promise<(ReferralsMembersHoldersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ReferralsMembersHoldersListResponseBody` object or with `undefined`.
      */
     referralsCodeHolders1(memberId, opts, callback) {
       opts = opts || {};
@@ -232,7 +236,7 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsRemoveHolder operation.
-     * @callback module:api/ReferralsApi~referralsRemoveHolderCallback
+     * @callback referralsRemoveHolderCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -243,7 +247,8 @@ export default class ReferralsApi {
      * Removes the holder from a referral card. You can remove a referee only. To use this endpoint, you must have the following permissions: - Create and modify Customers and Segments (customers.modify) - Publish Voucher (vouchers.publish)  📘 Alternative endpoint This endpoint is an alternative to the [Remove Referral Card Holder endpoint](/api-reference/referrals/remove-referral-card-holder-with-campaign-id). The URL was re-designed to retrieve the referral member holders without providing the campaignId as a path paremeter.
      * @param {String} memberId Unique referral code or its identifier.
      * @param {String} holderId Unique identifier of a redeemable holder.
-     * @param {module:api/ReferralsApi~referralsRemoveHolderCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {referralsRemoveHolderCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     referralsRemoveHolder(memberId, holderId, callback) {
       let postBody = null;
@@ -274,7 +279,7 @@ export default class ReferralsApi {
 
     /**
      * Callback function to receive the result of the referralsRemoveHolder1 operation.
-     * @callback module:api/ReferralsApi~referralsRemoveHolder1Callback
+     * @callback referralsRemoveHolder1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -286,7 +291,8 @@ export default class ReferralsApi {
      * @param {String} campaignId Unique identifier of a referral program campaign.
      * @param {String} memberId Unique referral code or its identifier.
      * @param {String} holderId Unique identifier of a redeemable holder.
-     * @param {module:api/ReferralsApi~referralsRemoveHolder1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {referralsRemoveHolder1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     referralsRemoveHolder1(campaignId, memberId, holderId, callback) {
       let postBody = null;

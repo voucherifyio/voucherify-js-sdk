@@ -17,18 +17,17 @@ import CodeConfig from './CodeConfig';
 import Discount from './Discount';
 import Gift from './Gift';
 import SimpleCampaignVoucherRedemption from './SimpleCampaignVoucherRedemption';
-
 /**
  * The SimpleCampaignVoucher model module.
  * @module model/SimpleCampaignVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleCampaignVoucher {
     /**
      * Constructs a new <code>SimpleCampaignVoucher</code>.
      * Simplified campaign voucher data.
-     * @alias module:model/SimpleCampaignVoucher
-     * @param codeConfig {module:model/CodeConfig} 
+     * @alias SimpleCampaignVoucher
+     * @param {CodeConfig} codeConfig 
      */
     constructor(codeConfig) { 
         
@@ -47,9 +46,9 @@ class SimpleCampaignVoucher {
     /**
      * Constructs a <code>SimpleCampaignVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleCampaignVoucher} obj Optional instance to populate.
-     * @returns {module:model/SimpleCampaignVoucher} The populated <code>SimpleCampaignVoucher</code> instance.
+     * @param {Partial<SimpleCampaignVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleCampaignVoucher} [obj] Optional instance to populate.
+     * @returns {SimpleCampaignVoucher} The populated <code>SimpleCampaignVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class SimpleCampaignVoucher {
 
     /**
      * Validates the JSON data with respect to <code>SimpleCampaignVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleCampaignVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleCampaignVoucher</code>.
      */
     static validateJSON(data) {
@@ -123,65 +122,65 @@ class SimpleCampaignVoucher {
 SimpleCampaignVoucher.RequiredProperties = ["code_config"];
 
 /**
- * Type of the voucher.
- * @member {module:model/SimpleCampaignVoucher.TypeEnum} 
- */
+    * Type of the voucher.
+    * @type {(keyof typeof SimpleCampaignVoucher.TypeEnum) | undefined}
+    */
 SimpleCampaignVoucher.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 SimpleCampaignVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 SimpleCampaignVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/CampaignLoyaltyCard} 
- */
+    * @type {CampaignLoyaltyCard | undefined}
+    */
 SimpleCampaignVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/SimpleCampaignVoucherRedemption} 
- */
+    * @type {SimpleCampaignVoucherRedemption | undefined}
+    */
 SimpleCampaignVoucher.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig}
+    */
 SimpleCampaignVoucher.prototype['code_config'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleCampaignVoucher['TypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER"
-};
+    SimpleCampaignVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER"    
+    };
 
 
 

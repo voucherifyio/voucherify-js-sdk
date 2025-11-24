@@ -22,16 +22,15 @@ import RedemptionsListResponseBodyRedemptionsItemPromotionTier from './Redemptio
 import RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions from './RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions';
 import RedemptionsListResponseBodyRedemptionsItemSession from './RedemptionsListResponseBodyRedemptionsItemSession';
 import RedemptionsListResponseBodyRedemptionsItemVoucher from './RedemptionsListResponseBodyRedemptionsItemVoucher';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItem model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItem {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItem</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItem
+     * @alias RedemptionsListResponseBodyRedemptionsItem
      */
     constructor() { 
         
@@ -49,9 +48,9 @@ class RedemptionsListResponseBodyRedemptionsItem {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItem} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItem} The populated <code>RedemptionsListResponseBodyRedemptionsItem</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItem} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItem} The populated <code>RedemptionsListResponseBodyRedemptionsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -138,7 +137,7 @@ class RedemptionsListResponseBodyRedemptionsItem {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItem</code>.
      */
     static validateJSON(data) {
@@ -240,239 +239,239 @@ class RedemptionsListResponseBodyRedemptionsItem {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['id'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItem.ObjectEnum} 
- */
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItem.ObjectEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['object'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['date'] = undefined;
 
 /**
- * Unique customer ID of the redeeming customer.
- * @member {String} 
- */
+    * Unique customer ID of the redeeming customer.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['customer_id'] = undefined;
 
 /**
- * Hashed customer source ID.
- * @member {String} 
- */
+    * Hashed customer source ID.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['tracking_id'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the redemption.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the redemption.
+    * @type {Object | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['metadata'] = undefined;
 
 /**
- * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. and For gift cards, this represents the number of the credits restored to the card in the rolledback redemption. The number is a negative integer in the smallest currency unit, e.g. -100 cents for $1.00 added back to the card. For loyalty cards, this represents the number of loyalty points restored to the card in the rolledback redemption. The number is a negative integer.
- * @member {Number} 
- */
+    * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. and For gift cards, this represents the number of the credits restored to the card in the rolledback redemption. The number is a negative integer in the smallest currency unit, e.g. -100 cents for $1.00 added back to the card. For loyalty cards, this represents the number of loyalty points restored to the card in the rolledback redemption. The number is a negative integer.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['amount'] = undefined;
 
 /**
- * Unique redemption ID of the parent redemption.
- * @member {String} 
- */
+    * Unique redemption ID of the parent redemption.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['redemption'] = undefined;
 
 /**
- * Redemption result.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItem.ResultEnum} 
- */
+    * Redemption result.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItem.ResultEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['result'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItem.StatusEnum} 
- */
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItem.StatusEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['status'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemSession} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemSession | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['session'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['related_redemptions'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['failure_code'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['failure_message'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrder} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemOrder | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['order'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemChannel} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemChannel | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['channel'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemCustomer} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemCustomer | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['customer'] = undefined;
 
 /**
- * Defines the related object.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItem.RelatedObjectTypeEnum} 
- */
+    * Defines the related object.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItem.RelatedObjectTypeEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['related_object_type'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['related_object_id'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTier} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemPromotionTier | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['promotion_tier'] = undefined;
 
 /**
- * @member {module:model/RedemptionRewardResult} 
- */
+    * @type {RedemptionRewardResult | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemGift} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemGift | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemLoyaltyCard | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemVoucher} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemVoucher | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['voucher'] = undefined;
 
 /**
- * System generated cause for the redemption being invalid in the context of the provided parameters.
- * @member {String} 
- */
+    * System generated cause for the redemption being invalid in the context of the provided parameters.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItem.prototype['reason'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItem['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RedemptionsListResponseBodyRedemptionsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption",
+    
+        /**
+         * value: "redemption_rollback"
+         * @constant
+         */
+        "redemption_rollback": "redemption_rollback"    
+    };
+
 
     /**
-     * value: "redemption"
-     * @constant
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "redemption": "redemption",
+    RedemptionsListResponseBodyRedemptionsItem['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "FAILURE"
+         * @constant
+         */
+        "FAILURE": "FAILURE"    
+    };
+
 
     /**
-     * value: "redemption_rollback"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "redemption_rollback": "redemption_rollback"
-};
+    RedemptionsListResponseBodyRedemptionsItem['StatusEnum'] = {
+    
+        /**
+         * value: "SUCCEEDED"
+         * @constant
+         */
+        "SUCCEEDED": "SUCCEEDED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "ROLLED_BACK"
+         * @constant
+         */
+        "ROLLED_BACK": "ROLLED_BACK"    
+    };
 
-
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItem['ResultEnum'] = {
 
     /**
-     * value: "SUCCESS"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SUCCESS": "SUCCESS",
-
-    /**
-     * value: "FAILURE"
-     * @constant
-     */
-    "FAILURE": "FAILURE"
-};
-
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItem['StatusEnum'] = {
-
-    /**
-     * value: "SUCCEEDED"
-     * @constant
-     */
-    "SUCCEEDED": "SUCCEEDED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "ROLLED_BACK"
-     * @constant
-     */
-    "ROLLED_BACK": "ROLLED_BACK"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItem['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "redemption"
-     * @constant
-     */
-    "redemption": "redemption"
-};
+    RedemptionsListResponseBodyRedemptionsItem['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption"    
+    };
 
 
 

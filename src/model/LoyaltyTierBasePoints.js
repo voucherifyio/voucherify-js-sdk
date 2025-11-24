@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyTierBasePoints model module.
  * @module model/LoyaltyTierBasePoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTierBasePoints {
     /**
      * Constructs a new <code>LoyaltyTierBasePoints</code>.
      * Defines range of loyalty tier in points.
-     * @alias module:model/LoyaltyTierBasePoints
+     * @alias LoyaltyTierBasePoints
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyTierBasePoints {
     /**
      * Constructs a <code>LoyaltyTierBasePoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTierBasePoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTierBasePoints} The populated <code>LoyaltyTierBasePoints</code> instance.
+     * @param {Partial<LoyaltyTierBasePoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTierBasePoints} [obj] Optional instance to populate.
+     * @returns {LoyaltyTierBasePoints} The populated <code>LoyaltyTierBasePoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyTierBasePoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTierBasePoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTierBasePoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTierBasePoints</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class LoyaltyTierBasePoints {
 
 
 /**
- * Bottom points threshold value.
- * @member {Number} 
- */
+    * Bottom points threshold value.
+    * @type {Number | undefined}
+    */
 LoyaltyTierBasePoints.prototype['from'] = undefined;
 
 /**
- * Top points threshold value.
- * @member {Number} 
- */
+    * Top points threshold value.
+    * @type {Number | undefined}
+    */
 LoyaltyTierBasePoints.prototype['to'] = undefined;
 
 

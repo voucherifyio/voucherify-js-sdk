@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LocationShapeGeojson model module.
  * @module model/LocationShapeGeojson
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationShapeGeojson {
     /**
      * Constructs a new <code>LocationShapeGeojson</code>.
-     * @alias module:model/LocationShapeGeojson
+     * @alias LocationShapeGeojson
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LocationShapeGeojson {
     /**
      * Constructs a <code>LocationShapeGeojson</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationShapeGeojson} obj Optional instance to populate.
-     * @returns {module:model/LocationShapeGeojson} The populated <code>LocationShapeGeojson</code> instance.
+     * @param {Partial<LocationShapeGeojson>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationShapeGeojson} [obj] Optional instance to populate.
+     * @returns {LocationShapeGeojson} The populated <code>LocationShapeGeojson</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class LocationShapeGeojson {
 
     /**
      * Validates the JSON data with respect to <code>LocationShapeGeojson</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationShapeGeojson>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationShapeGeojson</code>.
      */
     static validateJSON(data) {
@@ -81,38 +80,38 @@ class LocationShapeGeojson {
 
 
 /**
- * @member {module:model/LocationShapeGeojson.TypeEnum} 
- */
+    * @type {(keyof typeof LocationShapeGeojson.TypeEnum) | undefined}
+    */
 LocationShapeGeojson.prototype['type'] = undefined;
 
 /**
- * @member {Array.<Array.<Number>>} 
- */
+    * @type {Array.<Array.<Number>> | undefined}
+    */
 LocationShapeGeojson.prototype['coordinates'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LocationShapeGeojson['TypeEnum'] = {
-
     /**
-     * value: "Polygon"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "Polygon": "Polygon",
-
-    /**
-     * value: "MultiPolygon"
-     * @constant
-     */
-    "MultiPolygon": "MultiPolygon"
-};
+    LocationShapeGeojson['TypeEnum'] = {
+    
+        /**
+         * value: "Polygon"
+         * @constant
+         */
+        "Polygon": "Polygon",
+    
+        /**
+         * value: "MultiPolygon"
+         * @constant
+         */
+        "MultiPolygon": "MultiPolygon"    
+    };
 
 
 

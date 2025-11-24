@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemCustomer model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemCustomer {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemCustomer
+     * @alias RedemptionsListResponseBodyRedemptionsItemCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsListResponseBodyRedemptionsItemCustomer {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemCustomer} The populated <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemCustomer} The populated <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class RedemptionsListResponseBodyRedemptionsItemCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemCustomer</code>.
      */
     static validateJSON(data) {
@@ -106,59 +105,59 @@ class RedemptionsListResponseBodyRedemptionsItemCustomer {
 
 
 /**
- * Unique identifier of an existing customer. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an existing customer. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['name'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['email'] = undefined;
 
 /**
- * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
- * @member {String} 
- */
+    * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['source_id'] = undefined;
 
 /**
- * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
+    * @type {Object | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionsListResponseBodyRedemptionsItemCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionsListResponseBodyRedemptionsItemCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

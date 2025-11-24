@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoriesCreateRequestBody model module.
  * @module model/CategoriesCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesCreateRequestBody {
     /**
      * Constructs a new <code>CategoriesCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/categories&#x60;.
-     * @alias module:model/CategoriesCreateRequestBody
+     * @alias CategoriesCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CategoriesCreateRequestBody {
     /**
      * Constructs a <code>CategoriesCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesCreateRequestBody} The populated <code>CategoriesCreateRequestBody</code> instance.
+     * @param {Partial<CategoriesCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {CategoriesCreateRequestBody} The populated <code>CategoriesCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CategoriesCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class CategoriesCreateRequestBody {
 
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoriesCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoriesCreateRequestBody.prototype['hierarchy'] = undefined;
 
 

@@ -13,113 +13,101 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ExportOrderFields.
-* @module model/ExportOrderFields
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ExportOrderFields {
+ * Enum class ExportOrderFields.
+ * @module model/ExportOrderFields
+ * @version 3.0.1
+ */
+class ExportOrderFields {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "source_id"
-         * @constant
-         */
-        "source_id" = "source_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "source_id" = "source_id";
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "status"
-         * @constant
-         */
-        "status" = "status";
-
+    /**
+     * 
+     * @constant
+     */
+    static "status" = "status";
     
-        /**
-         * value: "amount"
-         * @constant
-         */
-        "amount" = "amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "amount" = "amount";
     
-        /**
-         * value: "discount_amount"
-         * @constant
-         */
-        "discount_amount" = "discount_amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "discount_amount" = "discount_amount";
     
-        /**
-         * value: "items_discount_amount"
-         * @constant
-         */
-        "items_discount_amount" = "items_discount_amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "items_discount_amount" = "items_discount_amount";
     
-        /**
-         * value: "total_discount_amount"
-         * @constant
-         */
-        "total_discount_amount" = "total_discount_amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "total_discount_amount" = "total_discount_amount";
     
-        /**
-         * value: "total_amount"
-         * @constant
-         */
-        "total_amount" = "total_amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "total_amount" = "total_amount";
     
-        /**
-         * value: "customer_id"
-         * @constant
-         */
-        "customer_id" = "customer_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "customer_id" = "customer_id";
     
-        /**
-         * value: "referrer_id"
-         * @constant
-         */
-        "referrer_id" = "referrer_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "referrer_id" = "referrer_id";
     
-        /**
-         * value: "metadata"
-         * @constant
-         */
-        "metadata" = "metadata";
-
+    /**
+     * 
+     * @constant
+     */
+    static "metadata" = "metadata";
     
 
     /**
-    * Returns a <code>ExportOrderFields</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ExportOrderFields} The enum <code>ExportOrderFields</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ExportOrderFields, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ExportOrderFields[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ExportOrderFields[key];
     }
 }
+
+export default ExportOrderFields;
 

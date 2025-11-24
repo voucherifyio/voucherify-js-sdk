@@ -13,18 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPendingPointsDetails from './LoyaltyPendingPointsDetails';
-
 /**
  * The LoyaltyPendingPoints model module.
  * @module model/LoyaltyPendingPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPoints {
     /**
      * Constructs a new <code>LoyaltyPendingPoints</code>.
      * Contains details about the pending point entry.
-     * @alias module:model/LoyaltyPendingPoints
-     * @param details {module:model/LoyaltyPendingPointsDetails} 
+     * @alias LoyaltyPendingPoints
+     * @param {LoyaltyPendingPointsDetails} details 
      */
     constructor(details) { 
         
@@ -43,9 +42,9 @@ class LoyaltyPendingPoints {
     /**
      * Constructs a <code>LoyaltyPendingPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPoints} The populated <code>LoyaltyPendingPoints</code> instance.
+     * @param {Partial<LoyaltyPendingPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPoints} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPoints} The populated <code>LoyaltyPendingPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -87,7 +86,7 @@ class LoyaltyPendingPoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPoints</code>.
      */
     static validateJSON(data) {
@@ -131,62 +130,62 @@ class LoyaltyPendingPoints {
 LoyaltyPendingPoints.RequiredProperties = ["details"];
 
 /**
- * Unique identifier of the pending point entry, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the pending point entry, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPoints.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the loyalty card, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the loyalty card, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPoints.prototype['voucher_id'] = undefined;
 
 /**
- * Unique campaign identifier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique campaign identifier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPoints.prototype['campaign_id'] = undefined;
 
 /**
- * Unique customer identifier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPoints.prototype['customer_id'] = undefined;
 
 /**
- * Unique order identifier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique order identifier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPoints.prototype['order_id'] = undefined;
 
 /**
- * Number of points in the pending state.
- * @member {Number} 
- */
+    * Number of points in the pending state.
+    * @type {Number | undefined}
+    */
 LoyaltyPendingPoints.prototype['points'] = undefined;
 
 /**
- * Date when the pending points are activated and added to the customer's loyalty card.
- * @member {Date} 
- */
+    * Date when the pending points are activated and added to the customer's loyalty card.
+    * @type {Date | undefined}
+    */
 LoyaltyPendingPoints.prototype['activates_at'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetails} 
- */
+    * @type {LoyaltyPendingPointsDetails}
+    */
 LoyaltyPendingPoints.prototype['details'] = undefined;
 
 /**
- * Timestamp representing the date and time when the pending point entry was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the pending point entry was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyPendingPoints.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the pending point entry was modified. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the pending point entry was modified. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyPendingPoints.prototype['updated_at'] = undefined;
 
 

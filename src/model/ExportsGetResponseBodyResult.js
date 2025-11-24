@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ExportsGetResponseBodyResult model module.
  * @module model/ExportsGetResponseBodyResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportsGetResponseBodyResult {
     /**
      * Constructs a new <code>ExportsGetResponseBodyResult</code>.
-     * @alias module:model/ExportsGetResponseBodyResult
+     * @alias ExportsGetResponseBodyResult
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ExportsGetResponseBodyResult {
     /**
      * Constructs a <code>ExportsGetResponseBodyResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportsGetResponseBodyResult} obj Optional instance to populate.
-     * @returns {module:model/ExportsGetResponseBodyResult} The populated <code>ExportsGetResponseBodyResult</code> instance.
+     * @param {Partial<ExportsGetResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportsGetResponseBodyResult} [obj] Optional instance to populate.
+     * @returns {ExportsGetResponseBodyResult} The populated <code>ExportsGetResponseBodyResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class ExportsGetResponseBodyResult {
 
     /**
      * Validates the JSON data with respect to <code>ExportsGetResponseBodyResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportsGetResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportsGetResponseBodyResult</code>.
      */
     static validateJSON(data) {
@@ -74,9 +73,9 @@ class ExportsGetResponseBodyResult {
 
 
 /**
- * URL of the CSV file location. It contains the token used for authorization in the Download export method.
- * @member {String} 
- */
+    * URL of the CSV file location. It contains the token used for authorization in the Download export method.
+    * @type {String | undefined}
+    */
 ExportsGetResponseBodyResult.prototype['url'] = undefined;
 
 

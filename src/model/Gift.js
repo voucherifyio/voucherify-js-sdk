@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The Gift model module.
  * @module model/Gift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Gift {
     /**
      * Constructs a new <code>Gift</code>.
      * Contains current gift card balance information.
-     * @alias module:model/Gift
+     * @alias Gift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class Gift {
     /**
      * Constructs a <code>Gift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Gift} obj Optional instance to populate.
-     * @returns {module:model/Gift} The populated <code>Gift</code> instance.
+     * @param {Partial<Gift>} data The plain JavaScript object bearing properties of interest.
+     * @param {Gift} [obj] Optional instance to populate.
+     * @returns {Gift} The populated <code>Gift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class Gift {
 
     /**
      * Validates the JSON data with respect to <code>Gift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Gift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Gift</code>.
      */
     static validateJSON(data) {
@@ -84,52 +83,52 @@ class Gift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 Gift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime.
+    * @type {Number | undefined}
+    */
 Gift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
+    * @type {Number | undefined}
+    */
 Gift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/Gift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof Gift.EffectEnum) | undefined}
+    */
 Gift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-Gift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    Gift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

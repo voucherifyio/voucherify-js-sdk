@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Category from './Category';
-
 /**
  * The CategoriesListResponseBody model module.
  * @module model/CategoriesListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesListResponseBody {
     /**
      * Constructs a new <code>CategoriesListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/categories&#x60;.
-     * @alias module:model/CategoriesListResponseBody
+     * @alias CategoriesListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CategoriesListResponseBody {
     /**
      * Constructs a <code>CategoriesListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesListResponseBody} The populated <code>CategoriesListResponseBody</code> instance.
+     * @param {Partial<CategoriesListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesListResponseBody} [obj] Optional instance to populate.
+     * @returns {CategoriesListResponseBody} The populated <code>CategoriesListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class CategoriesListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,62 +100,62 @@ class CategoriesListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about categories in a dictionary.
- * @member {module:model/CategoriesListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about categories in a dictionary.
+    * @type {(keyof typeof CategoriesListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 CategoriesListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of category objects.
- * @member {module:model/CategoriesListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of category objects.
+    * @type {(keyof typeof CategoriesListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 CategoriesListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * @member {Array.<module:model/Category>} 
- */
+    * @type {Array.<Category> | undefined}
+    */
 CategoriesListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of categories.
- * @member {Number} 
- */
+    * Total number of categories.
+    * @type {Number | undefined}
+    */
 CategoriesListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CategoriesListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    CategoriesListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-CategoriesListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    CategoriesListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersImportCreateResponseBody model module.
  * @module model/VouchersImportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersImportCreateResponseBody {
     /**
      * Constructs a new <code>VouchersImportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/vouchers/import&#x60;.
-     * @alias module:model/VouchersImportCreateResponseBody
+     * @alias VouchersImportCreateResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VouchersImportCreateResponseBody {
     /**
      * Constructs a <code>VouchersImportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersImportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersImportCreateResponseBody} The populated <code>VouchersImportCreateResponseBody</code> instance.
+     * @param {Partial<VouchersImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersImportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersImportCreateResponseBody} The populated <code>VouchersImportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class VouchersImportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersImportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersImportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class VouchersImportCreateResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 VouchersImportCreateResponseBody.prototype['async_action_id'] = undefined;
 
 

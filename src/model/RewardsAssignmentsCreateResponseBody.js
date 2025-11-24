@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RewardsAssignmentsCreateResponseBodyParameters from './RewardsAssignmentsCreateResponseBodyParameters';
-
 /**
  * The RewardsAssignmentsCreateResponseBody model module.
  * @module model/RewardsAssignmentsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsAssignmentsCreateResponseBody {
     /**
      * Constructs a new <code>RewardsAssignmentsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/rewards/{rewardId}/assignments/&#x60;.
-     * @alias module:model/RewardsAssignmentsCreateResponseBody
+     * @alias RewardsAssignmentsCreateResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class RewardsAssignmentsCreateResponseBody {
     /**
      * Constructs a <code>RewardsAssignmentsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsAssignmentsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsAssignmentsCreateResponseBody} The populated <code>RewardsAssignmentsCreateResponseBody</code> instance.
+     * @param {Partial<RewardsAssignmentsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsAssignmentsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {RewardsAssignmentsCreateResponseBody} The populated <code>RewardsAssignmentsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class RewardsAssignmentsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsAssignmentsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsAssignmentsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsAssignmentsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -119,86 +118,86 @@ class RewardsAssignmentsCreateResponseBody {
 
 
 /**
- * Unique reward assignment ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Associated reward ID.
- * @member {String} 
- */
+    * Associated reward ID.
+    * @type {String | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['reward_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward assignment.
- * @member {module:model/RewardsAssignmentsCreateResponseBody.ObjectEnum} 
- * @default 'reward_assignment'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward assignment.
+    * @type {(keyof typeof RewardsAssignmentsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'reward_assignment'
+    */
 RewardsAssignmentsCreateResponseBody.prototype['object'] = 'reward_assignment';
 
 /**
- * Related object ID to which the reward was assigned.
- * @member {String} 
- */
+    * Related object ID to which the reward was assigned.
+    * @type {String | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['related_object_id'] = undefined;
 
 /**
- * Related object type to which the reward was assigned.
- * @member {module:model/RewardsAssignmentsCreateResponseBody.RelatedObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Related object type to which the reward was assigned.
+    * @type {(keyof typeof RewardsAssignmentsCreateResponseBody.RelatedObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 RewardsAssignmentsCreateResponseBody.prototype['related_object_type'] = 'campaign';
 
 /**
- * @member {module:model/RewardsAssignmentsCreateResponseBodyParameters} 
- */
+    * @type {RewardsAssignmentsCreateResponseBodyParameters | undefined}
+    */
 RewardsAssignmentsCreateResponseBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RewardsAssignmentsCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RewardsAssignmentsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment"    
+    };
+
 
     /**
-     * value: "reward_assignment"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward_assignment": "reward_assignment"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-RewardsAssignmentsCreateResponseBody['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign"
-};
+    RewardsAssignmentsCreateResponseBody['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

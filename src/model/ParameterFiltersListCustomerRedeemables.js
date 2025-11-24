@@ -21,16 +21,15 @@ import ParameterFiltersListCustomerRedeemablesId from './ParameterFiltersListCus
 import ParameterFiltersListCustomerRedeemablesRedeemableId from './ParameterFiltersListCustomerRedeemablesRedeemableId';
 import ParameterFiltersListCustomerRedeemablesRedeemableObject from './ParameterFiltersListCustomerRedeemablesRedeemableObject';
 import ParameterFiltersListCustomerRedeemablesVoucherType from './ParameterFiltersListCustomerRedeemablesVoucherType';
-
 /**
  * The ParameterFiltersListCustomerRedeemables model module.
  * @module model/ParameterFiltersListCustomerRedeemables
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemables {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemables</code>.
-     * @alias module:model/ParameterFiltersListCustomerRedeemables
+     * @alias ParameterFiltersListCustomerRedeemables
      */
     constructor() { 
         
@@ -48,9 +47,9 @@ class ParameterFiltersListCustomerRedeemables {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemables</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemables} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemables} The populated <code>ParameterFiltersListCustomerRedeemables</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemables>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemables} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemables} The populated <code>ParameterFiltersListCustomerRedeemables</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -89,7 +88,7 @@ class ParameterFiltersListCustomerRedeemables {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemables</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemables>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemables</code>.
      */
     static validateJSON(data) {
@@ -135,48 +134,48 @@ class ParameterFiltersListCustomerRedeemables {
 
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesId} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesId | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCreatedAt} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesCreatedAt | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesRedeemableId} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesRedeemableId | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['redeemable_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObject} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesRedeemableObject | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['redeemable_object'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesHolderRole} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesHolderRole | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['holder_role'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCampaignId} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesCampaignId | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['campaign_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCampaignType} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesCampaignType | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['campaign_type'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesVoucherType} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesVoucherType | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['voucher_type'] = undefined;
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListCustomerRedeemables.prototype['junction'] = undefined;
 
 

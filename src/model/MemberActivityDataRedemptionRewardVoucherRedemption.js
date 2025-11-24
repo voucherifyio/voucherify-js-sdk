@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRewardVoucherRedemption model module.
  * @module model/MemberActivityDataRedemptionRewardVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardVoucherRedemption {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardVoucherRedemption</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardVoucherRedemption
+     * @alias MemberActivityDataRedemptionRewardVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataRedemptionRewardVoucherRedemption {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardVoucherRedemption} The populated <code>MemberActivityDataRedemptionRewardVoucherRedemption</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardVoucherRedemption} The populated <code>MemberActivityDataRedemptionRewardVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class MemberActivityDataRedemptionRewardVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -91,34 +90,34 @@ class MemberActivityDataRedemptionRewardVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 MemberActivityDataRedemptionRewardVoucherRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardVoucherRedemption.prototype['url'] = undefined;
 
 

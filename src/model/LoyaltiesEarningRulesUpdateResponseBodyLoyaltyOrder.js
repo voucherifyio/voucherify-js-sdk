@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount from './LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount';
 import LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata from './LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata';
 import LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount from './LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount';
-
 /**
  * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder model module.
  * @module model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code>.
-     * @alias module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder
+     * @alias LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder {
     /**
      * Constructs a <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount} 
- */
+    * @type {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount} 
- */
+    * @type {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder.prototype['total_amount'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata} 
- */
+    * @type {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder.prototype['metadata'] = undefined;
 
 

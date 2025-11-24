@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomersUpdateRequestBodyAddress from './CustomersUpdateRequestBodyAddress';
-
 /**
  * The CustomersUpdateRequestBody model module.
  * @module model/CustomersUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersUpdateRequestBody {
     /**
      * Constructs a new <code>CustomersUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;v1/customers/{customerId}&#x60;.
-     * @alias module:model/CustomersUpdateRequestBody
+     * @alias CustomersUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CustomersUpdateRequestBody {
     /**
      * Constructs a <code>CustomersUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersUpdateRequestBody} The populated <code>CustomersUpdateRequestBody</code> instance.
+     * @param {Partial<CustomersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {CustomersUpdateRequestBody} The populated <code>CustomersUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class CustomersUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -113,50 +112,50 @@ class CustomersUpdateRequestBody {
 
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 CustomersUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a customer object.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a customer object.
+    * @type {String | undefined}
+    */
 CustomersUpdateRequestBody.prototype['description'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 CustomersUpdateRequestBody.prototype['email'] = undefined;
 
 /**
- * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
- * @member {String} 
- */
+    * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
+    * @type {String | undefined}
+    */
 CustomersUpdateRequestBody.prototype['phone'] = undefined;
 
 /**
- * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
- * @member {Date} 
- */
+    * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
+    * @type {Date | undefined}
+    */
 CustomersUpdateRequestBody.prototype['birthday'] = undefined;
 
 /**
- * Customer's birthdate; format YYYY-MM-DD.
- * @member {Date} 
- */
+    * Customer's birthdate; format YYYY-MM-DD.
+    * @type {Date | undefined}
+    */
 CustomersUpdateRequestBody.prototype['birthdate'] = undefined;
 
 /**
- * @member {module:model/CustomersUpdateRequestBodyAddress} 
- */
+    * @type {CustomersUpdateRequestBodyAddress | undefined}
+    */
 CustomersUpdateRequestBody.prototype['address'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 CustomersUpdateRequestBody.prototype['metadata'] = undefined;
 
 

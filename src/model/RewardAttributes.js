@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardAttributes model module.
  * @module model/RewardAttributes
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardAttributes {
     /**
      * Constructs a new <code>RewardAttributes</code>.
      * These properties are configurable for **material rewards**.
-     * @alias module:model/RewardAttributes
+     * @alias RewardAttributes
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardAttributes {
     /**
      * Constructs a <code>RewardAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardAttributes} obj Optional instance to populate.
-     * @returns {module:model/RewardAttributes} The populated <code>RewardAttributes</code> instance.
+     * @param {Partial<RewardAttributes>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardAttributes} [obj] Optional instance to populate.
+     * @returns {RewardAttributes} The populated <code>RewardAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardAttributes {
 
     /**
      * Validates the JSON data with respect to <code>RewardAttributes</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardAttributes>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardAttributes</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardAttributes {
 
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file.
+    * @type {String | undefined}
+    */
 RewardAttributes.prototype['image_url'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a material reward.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a material reward.
+    * @type {String | undefined}
+    */
 RewardAttributes.prototype['description'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LocationsGetResponseBodyShapeGeojson model module.
  * @module model/LocationsGetResponseBodyShapeGeojson
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationsGetResponseBodyShapeGeojson {
     /**
      * Constructs a new <code>LocationsGetResponseBodyShapeGeojson</code>.
-     * @alias module:model/LocationsGetResponseBodyShapeGeojson
+     * @alias LocationsGetResponseBodyShapeGeojson
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LocationsGetResponseBodyShapeGeojson {
     /**
      * Constructs a <code>LocationsGetResponseBodyShapeGeojson</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationsGetResponseBodyShapeGeojson} obj Optional instance to populate.
-     * @returns {module:model/LocationsGetResponseBodyShapeGeojson} The populated <code>LocationsGetResponseBodyShapeGeojson</code> instance.
+     * @param {Partial<LocationsGetResponseBodyShapeGeojson>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationsGetResponseBodyShapeGeojson} [obj] Optional instance to populate.
+     * @returns {LocationsGetResponseBodyShapeGeojson} The populated <code>LocationsGetResponseBodyShapeGeojson</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class LocationsGetResponseBodyShapeGeojson {
 
     /**
      * Validates the JSON data with respect to <code>LocationsGetResponseBodyShapeGeojson</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationsGetResponseBodyShapeGeojson>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationsGetResponseBodyShapeGeojson</code>.
      */
     static validateJSON(data) {
@@ -81,38 +80,38 @@ class LocationsGetResponseBodyShapeGeojson {
 
 
 /**
- * @member {module:model/LocationsGetResponseBodyShapeGeojson.TypeEnum} 
- */
+    * @type {(keyof typeof LocationsGetResponseBodyShapeGeojson.TypeEnum) | undefined}
+    */
 LocationsGetResponseBodyShapeGeojson.prototype['type'] = undefined;
 
 /**
- * @member {Array.<Array.<Number>>} 
- */
+    * @type {Array.<Array.<Number>> | undefined}
+    */
 LocationsGetResponseBodyShapeGeojson.prototype['coordinates'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LocationsGetResponseBodyShapeGeojson['TypeEnum'] = {
-
     /**
-     * value: "Polygon"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "Polygon": "Polygon",
-
-    /**
-     * value: "MultiPolygon"
-     * @constant
-     */
-    "MultiPolygon": "MultiPolygon"
-};
+    LocationsGetResponseBodyShapeGeojson['TypeEnum'] = {
+    
+        /**
+         * value: "Polygon"
+         * @constant
+         */
+        "Polygon": "Polygon",
+    
+        /**
+         * value: "MultiPolygon"
+         * @constant
+         */
+        "MultiPolygon": "MultiPolygon"    
+    };
 
 
 

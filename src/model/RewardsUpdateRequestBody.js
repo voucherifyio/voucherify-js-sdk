@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import RewardsUpdateRequestBodyAttributes from './RewardsUpdateRequestBodyAttributes';
 import RewardsUpdateRequestBodyParameters from './RewardsUpdateRequestBodyParameters';
-
 /**
  * The RewardsUpdateRequestBody model module.
  * @module model/RewardsUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsUpdateRequestBody {
     /**
      * Constructs a new <code>RewardsUpdateRequestBody</code>.
-     * @alias module:model/RewardsUpdateRequestBody
+     * @alias RewardsUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RewardsUpdateRequestBody {
     /**
      * Constructs a <code>RewardsUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsUpdateRequestBody} The populated <code>RewardsUpdateRequestBody</code> instance.
+     * @param {Partial<RewardsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {RewardsUpdateRequestBody} The populated <code>RewardsUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class RewardsUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -96,31 +95,31 @@ class RewardsUpdateRequestBody {
 
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/RewardsUpdateRequestBodyParameters} 
- */
+    * @type {RewardsUpdateRequestBodyParameters | undefined}
+    */
 RewardsUpdateRequestBody.prototype['parameters'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
+    * @type {Object | undefined}
+    */
 RewardsUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * The number of units of the product that you want to share as a reward.  Use this parameter to code a stock-taking logic.
- * @member {Number} 
- */
+    * The number of units of the product that you want to share as a reward.  Use this parameter to code a stock-taking logic.
+    * @type {Number | undefined}
+    */
 RewardsUpdateRequestBody.prototype['stock'] = undefined;
 
 /**
- * @member {module:model/RewardsUpdateRequestBodyAttributes} 
- */
+    * @type {RewardsUpdateRequestBodyAttributes | undefined}
+    */
 RewardsUpdateRequestBody.prototype['attributes'] = undefined;
 
 

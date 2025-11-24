@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import ParameterFiltersListLocationsCreatedAt from './ParameterFiltersListLocationsCreatedAt';
 import ParameterFiltersListLocationsName from './ParameterFiltersListLocationsName';
 import ParameterFiltersListLocationsUpdatedAt from './ParameterFiltersListLocationsUpdatedAt';
-
 /**
  * The ParameterFiltersListLocations model module.
  * @module model/ParameterFiltersListLocations
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListLocations {
     /**
      * Constructs a new <code>ParameterFiltersListLocations</code>.
-     * @alias module:model/ParameterFiltersListLocations
+     * @alias ParameterFiltersListLocations
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ParameterFiltersListLocations {
     /**
      * Constructs a <code>ParameterFiltersListLocations</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListLocations} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListLocations} The populated <code>ParameterFiltersListLocations</code> instance.
+     * @param {Partial<ParameterFiltersListLocations>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListLocations} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListLocations} The populated <code>ParameterFiltersListLocations</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class ParameterFiltersListLocations {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListLocations</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListLocations>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListLocations</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class ParameterFiltersListLocations {
 
 
 /**
- * @member {module:model/ParameterFiltersListLocationsName} 
- */
+    * @type {ParameterFiltersListLocationsName | undefined}
+    */
 ParameterFiltersListLocations.prototype['name'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListLocationsCreatedAt} 
- */
+    * @type {ParameterFiltersListLocationsCreatedAt | undefined}
+    */
 ParameterFiltersListLocations.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListLocationsUpdatedAt} 
- */
+    * @type {ParameterFiltersListLocationsUpdatedAt | undefined}
+    */
 ParameterFiltersListLocations.prototype['updated_at'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPendingPoints from './LoyaltyPendingPoints';
-
 /**
  * The LoyaltiesMembersPendingPointsListResponseBody model module.
  * @module model/LoyaltiesMembersPendingPointsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPendingPointsListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMembersPendingPointsListResponseBody</code>.
      * Response body schema for **GET** &#x60;/loyalties/{campaignId}/members/{memberId}/pending-points&#x60; and **GET** &#x60;/loyalties/members/{memberId}/pending-points&#x60;.
-     * @alias module:model/LoyaltiesMembersPendingPointsListResponseBody
+     * @alias LoyaltiesMembersPendingPointsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMembersPendingPointsListResponseBody {
     /**
      * Constructs a <code>LoyaltiesMembersPendingPointsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPendingPointsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPendingPointsListResponseBody} The populated <code>LoyaltiesMembersPendingPointsListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMembersPendingPointsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPendingPointsListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPendingPointsListResponseBody} The populated <code>LoyaltiesMembersPendingPointsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LoyaltiesMembersPendingPointsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPendingPointsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPendingPointsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPendingPointsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,69 +107,69 @@ class LoyaltiesMembersPendingPointsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/LoyaltiesMembersPendingPointsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesMembersPendingPointsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of pending point objects.
- * @member {module:model/LoyaltiesMembersPendingPointsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of pending point objects.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 LoyaltiesMembersPendingPointsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of pending point entries. Each entry in the array is a separate pending point object.
- * @member {Array.<module:model/LoyaltyPendingPoints>} 
- */
+    * A dictionary that contains an array of pending point entries. Each entry in the array is a separate pending point object.
+    * @type {Array.<LoyaltyPendingPoints> | undefined}
+    */
 LoyaltiesMembersPendingPointsListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesMembersPendingPointsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the pending point entry ID in the `starting_after_id` query parameter to display another page of the results starting after the entry with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the pending point entry ID in the `starting_after_id` query parameter to display another page of the results starting after the entry with that ID.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersPendingPointsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesMembersPendingPointsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    LoyaltiesMembersPendingPointsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

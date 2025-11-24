@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListCampaignsCampaignStatusConditions from './ParameterFiltersListCampaignsCampaignStatusConditions';
-
 /**
  * The ParameterFiltersListCampaignsCampaignStatus model module.
  * @module model/ParameterFiltersListCampaignsCampaignStatus
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsCampaignStatus {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsCampaignStatus</code>.
      * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
-     * @alias module:model/ParameterFiltersListCampaignsCampaignStatus
+     * @alias ParameterFiltersListCampaignsCampaignStatus
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCampaignsCampaignStatus {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsCampaignStatus</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsCampaignStatus} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsCampaignStatus} The populated <code>ParameterFiltersListCampaignsCampaignStatus</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignStatus>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsCampaignStatus} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsCampaignStatus} The populated <code>ParameterFiltersListCampaignsCampaignStatus</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCampaignsCampaignStatus {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsCampaignStatus</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignStatus>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsCampaignStatus</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCampaignsCampaignStatus {
 
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCampaignStatusConditions} 
- */
+    * @type {ParameterFiltersListCampaignsCampaignStatusConditions | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatus.prototype['conditions'] = undefined;
 
 

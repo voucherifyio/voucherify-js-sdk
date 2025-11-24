@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListBinResourceTypeConditions model module.
  * @module model/ParameterFiltersListBinResourceTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListBinResourceTypeConditions {
     /**
      * Constructs a new <code>ParameterFiltersListBinResourceTypeConditions</code>.
-     * @alias module:model/ParameterFiltersListBinResourceTypeConditions
+     * @alias ParameterFiltersListBinResourceTypeConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListBinResourceTypeConditions {
     /**
      * Constructs a <code>ParameterFiltersListBinResourceTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListBinResourceTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListBinResourceTypeConditions} The populated <code>ParameterFiltersListBinResourceTypeConditions</code> instance.
+     * @param {Partial<ParameterFiltersListBinResourceTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListBinResourceTypeConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListBinResourceTypeConditions} The populated <code>ParameterFiltersListBinResourceTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ParameterFiltersListBinResourceTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListBinResourceTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListBinResourceTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListBinResourceTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -123,51 +122,51 @@ class ParameterFiltersListBinResourceTypeConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListBinResourceTypeConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListBinResourceTypeConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListBinResourceTypeConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListBinResourceTypeConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListBinResourceTypeConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListBinResourceTypeConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListBinResourceTypeConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListBinResourceTypeConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListBinResourceTypeConditions.prototype['$ends_with'] = undefined;
 
 
@@ -240,70 +239,70 @@ ParameterFiltersListBinResourceTypeConditions['NotInEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListBinResourceTypeConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListBinResourceTypeConditions['IsEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
+
 
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListBinResourceTypeConditions['IsNotEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    ParameterFiltersListBinResourceTypeConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

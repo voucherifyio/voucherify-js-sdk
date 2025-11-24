@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsRedeemRequestBodyRedeemablesItemGift model module.
  * @module model/RedemptionsRedeemRequestBodyRedeemablesItemGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRedeemRequestBodyRedeemablesItemGift {
     /**
      * Constructs a new <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code>.
      * Contains information on the number of gift card credits that the customer wants to apply to the order.
-     * @alias module:model/RedemptionsRedeemRequestBodyRedeemablesItemGift
+     * @alias RedemptionsRedeemRequestBodyRedeemablesItemGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsRedeemRequestBodyRedeemablesItemGift {
     /**
      * Constructs a <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRedeemRequestBodyRedeemablesItemGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRedeemRequestBodyRedeemablesItemGift} The populated <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code> instance.
+     * @param {Partial<RedemptionsRedeemRequestBodyRedeemablesItemGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRedeemRequestBodyRedeemablesItemGift} [obj] Optional instance to populate.
+     * @returns {RedemptionsRedeemRequestBodyRedeemablesItemGift} The populated <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionsRedeemRequestBodyRedeemablesItemGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRedeemRequestBodyRedeemablesItemGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRedeemRequestBodyRedeemablesItemGift</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class RedemptionsRedeemRequestBodyRedeemablesItemGift {
 
 
 /**
- * The number of credits that the user wants to use from the gift card to fulfill the order. The value of credits cannot be higher than the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The number of credits that the user wants to use from the gift card to fulfill the order. The value of credits cannot be higher than the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedemptionsRedeemRequestBodyRedeemablesItemGift.prototype['credits'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherBalanceRelatedObject model module.
  * @module model/VoucherBalanceRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherBalanceRelatedObject {
     /**
      * Constructs a new <code>VoucherBalanceRelatedObject</code>.
      * Defines the resource that is being modified with the values that are returned in the balance object.
-     * @alias module:model/VoucherBalanceRelatedObject
+     * @alias VoucherBalanceRelatedObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VoucherBalanceRelatedObject {
     /**
      * Constructs a <code>VoucherBalanceRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherBalanceRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/VoucherBalanceRelatedObject} The populated <code>VoucherBalanceRelatedObject</code> instance.
+     * @param {Partial<VoucherBalanceRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherBalanceRelatedObject} [obj] Optional instance to populate.
+     * @returns {VoucherBalanceRelatedObject} The populated <code>VoucherBalanceRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class VoucherBalanceRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>VoucherBalanceRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherBalanceRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherBalanceRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class VoucherBalanceRelatedObject {
 
 
 /**
- * Identifies the voucher that is being modified. The ID is assigned by the Voucherify API.
- * @member {String} 
- */
+    * Identifies the voucher that is being modified. The ID is assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 VoucherBalanceRelatedObject.prototype['id'] = undefined;
 
 /**
- * The object being modified, i.e. voucher.
- * @member {module:model/VoucherBalanceRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified, i.e. voucher.
+    * @type {(keyof typeof VoucherBalanceRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 VoucherBalanceRelatedObject.prototype['type'] = 'voucher';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherBalanceRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    VoucherBalanceRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

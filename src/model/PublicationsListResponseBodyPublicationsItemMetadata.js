@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PublicationsListResponseBodyPublicationsItemMetadata model module.
  * @module model/PublicationsListResponseBodyPublicationsItemMetadata
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PublicationsListResponseBodyPublicationsItemMetadata {
     /**
      * Constructs a new <code>PublicationsListResponseBodyPublicationsItemMetadata</code>.
-     * @alias module:model/PublicationsListResponseBodyPublicationsItemMetadata
+     * @alias PublicationsListResponseBodyPublicationsItemMetadata
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata {
     /**
      * Constructs a <code>PublicationsListResponseBodyPublicationsItemMetadata</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PublicationsListResponseBodyPublicationsItemMetadata} obj Optional instance to populate.
-     * @returns {module:model/PublicationsListResponseBodyPublicationsItemMetadata} The populated <code>PublicationsListResponseBodyPublicationsItemMetadata</code> instance.
+     * @param {Partial<PublicationsListResponseBodyPublicationsItemMetadata>} data The plain JavaScript object bearing properties of interest.
+     * @param {PublicationsListResponseBodyPublicationsItemMetadata} [obj] Optional instance to populate.
+     * @returns {PublicationsListResponseBodyPublicationsItemMetadata} The populated <code>PublicationsListResponseBodyPublicationsItemMetadata</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class PublicationsListResponseBodyPublicationsItemMetadata {
 
     /**
      * Validates the JSON data with respect to <code>PublicationsListResponseBodyPublicationsItemMetadata</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PublicationsListResponseBodyPublicationsItemMetadata>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PublicationsListResponseBodyPublicationsItemMetadata</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class PublicationsListResponseBodyPublicationsItemMetadata {
 
 
 /**
- * Defines the type of the distribution source.
- * @member {String} 
- */
+    * Defines the type of the distribution source.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItemMetadata.prototype['source_type'] = undefined;
 
 /**
- * Unique identifier of the distribution source.
- * @member {String} 
- */
+    * Unique identifier of the distribution source.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItemMetadata.prototype['source_id'] = undefined;
 
 /**
- * Unique identifier of the distribution.
- * @member {String} 
- */
+    * Unique identifier of the distribution.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItemMetadata.prototype['distribution_id'] = undefined;
 
 

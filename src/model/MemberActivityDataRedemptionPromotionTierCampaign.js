@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The MemberActivityDataRedemptionPromotionTierCampaign model module.
  * @module model/MemberActivityDataRedemptionPromotionTierCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionPromotionTierCampaign {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionPromotionTierCampaign</code>.
-     * @alias module:model/MemberActivityDataRedemptionPromotionTierCampaign
+     * @alias MemberActivityDataRedemptionPromotionTierCampaign
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MemberActivityDataRedemptionPromotionTierCampaign {
     /**
      * Constructs a <code>MemberActivityDataRedemptionPromotionTierCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionPromotionTierCampaign} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionPromotionTierCampaign} The populated <code>MemberActivityDataRedemptionPromotionTierCampaign</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionPromotionTierCampaign} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionPromotionTierCampaign} The populated <code>MemberActivityDataRedemptionPromotionTierCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class MemberActivityDataRedemptionPromotionTierCampaign {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionPromotionTierCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionPromotionTierCampaign</code>.
      */
     static validateJSON(data) {
@@ -121,56 +120,56 @@ class MemberActivityDataRedemptionPromotionTierCampaign {
 
 
 /**
- * Unique campaign ID.
- * @member {String} 
- */
+    * Unique campaign ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['id'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/MemberActivityDataRedemptionPromotionTierCampaign.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof MemberActivityDataRedemptionPromotionTierCampaign.ValidityDayOfWeekEnum>) | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['validity_hours'] = undefined;
 
 /**
- * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
- * @member {Boolean} 
- */
+    * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['active'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['category_id'] = undefined;
 
 /**
- * The type of the object represented by the campaign object. This object stores information about the campaign.
- * @member {String} 
- * @default 'campaign'
- */
+    * The type of the object represented by the campaign object. This object stores information about the campaign.
+    * @type {String | undefined}
+    * @default 'campaign'
+    */
 MemberActivityDataRedemptionPromotionTierCampaign.prototype['object'] = 'campaign';
 
 

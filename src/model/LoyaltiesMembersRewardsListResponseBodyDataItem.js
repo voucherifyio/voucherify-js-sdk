@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import Reward from './Reward';
 import RewardAssignment from './RewardAssignment';
-
 /**
  * The LoyaltiesMembersRewardsListResponseBodyDataItem model module.
  * @module model/LoyaltiesMembersRewardsListResponseBodyDataItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersRewardsListResponseBodyDataItem {
     /**
      * Constructs a new <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code>.
-     * @alias module:model/LoyaltiesMembersRewardsListResponseBodyDataItem
+     * @alias LoyaltiesMembersRewardsListResponseBodyDataItem
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesMembersRewardsListResponseBodyDataItem {
     /**
      * Constructs a <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersRewardsListResponseBodyDataItem} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersRewardsListResponseBodyDataItem} The populated <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code> instance.
+     * @param {Partial<LoyaltiesMembersRewardsListResponseBodyDataItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersRewardsListResponseBodyDataItem} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersRewardsListResponseBodyDataItem} The populated <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesMembersRewardsListResponseBodyDataItem {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersRewardsListResponseBodyDataItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersRewardsListResponseBodyDataItem</code>.
      */
     static validateJSON(data) {
@@ -91,39 +90,39 @@ class LoyaltiesMembersRewardsListResponseBodyDataItem {
 
 
 /**
- * @member {module:model/Reward} 
- */
+    * @type {Reward | undefined}
+    */
 LoyaltiesMembersRewardsListResponseBodyDataItem.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/RewardAssignment} 
- */
+    * @type {RewardAssignment | undefined}
+    */
 LoyaltiesMembersRewardsListResponseBodyDataItem.prototype['assignment'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/LoyaltiesMembersRewardsListResponseBodyDataItem.ObjectEnum} 
- * @default 'loyalty_reward'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof LoyaltiesMembersRewardsListResponseBodyDataItem.ObjectEnum) | undefined}
+    * @default 'loyalty_reward'
+    */
 LoyaltiesMembersRewardsListResponseBodyDataItem.prototype['object'] = 'loyalty_reward';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersRewardsListResponseBodyDataItem['ObjectEnum'] = {
-
     /**
-     * value: "loyalty_reward"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_reward": "loyalty_reward"
-};
+    LoyaltiesMembersRewardsListResponseBodyDataItem['ObjectEnum'] = {
+    
+        /**
+         * value: "loyalty_reward"
+         * @constant
+         */
+        "loyalty_reward": "loyalty_reward"    
+    };
 
 
 

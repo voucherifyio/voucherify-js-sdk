@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomersPermanentDeletionCreateResponseBodyDataJson from './CustomersPermanentDeletionCreateResponseBodyDataJson';
-
 /**
  * The CustomersPermanentDeletionCreateResponseBody model module.
  * @module model/CustomersPermanentDeletionCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersPermanentDeletionCreateResponseBody {
     /**
      * Constructs a new <code>CustomersPermanentDeletionCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/customers/{customerId}/permanent-deletion&#x60;.
-     * @alias module:model/CustomersPermanentDeletionCreateResponseBody
+     * @alias CustomersPermanentDeletionCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class CustomersPermanentDeletionCreateResponseBody {
     /**
      * Constructs a <code>CustomersPermanentDeletionCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersPermanentDeletionCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersPermanentDeletionCreateResponseBody} The populated <code>CustomersPermanentDeletionCreateResponseBody</code> instance.
+     * @param {Partial<CustomersPermanentDeletionCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersPermanentDeletionCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersPermanentDeletionCreateResponseBody} The populated <code>CustomersPermanentDeletionCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class CustomersPermanentDeletionCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersPermanentDeletionCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersPermanentDeletionCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersPermanentDeletionCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -117,47 +116,47 @@ class CustomersPermanentDeletionCreateResponseBody {
 
 
 /**
- * Unique permanent deletion object ID.
- * @member {String} 
- */
+    * Unique permanent deletion object ID.
+    * @type {String | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the customer was requested to be deleted in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the customer was requested to be deleted in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Unique customer ID that is being deleted.
- * @member {String} 
- */
+    * Unique customer ID that is being deleted.
+    * @type {String | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['related_object_id'] = undefined;
 
 /**
- * Object being deleted.
- * @member {String} 
- * @default 'customer'
- */
+    * Object being deleted.
+    * @type {String | undefined}
+    * @default 'customer'
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['related_object'] = 'customer';
 
 /**
- * Deletion status.
- * @member {String} 
- * @default 'DONE'
- */
+    * Deletion status.
+    * @type {String | undefined}
+    * @default 'DONE'
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['status'] = 'DONE';
 
 /**
- * @member {module:model/CustomersPermanentDeletionCreateResponseBodyDataJson} 
- */
+    * @type {CustomersPermanentDeletionCreateResponseBodyDataJson | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['data_json'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {String} 
- * @default 'pernament_deletion'
- */
+    * The type of the object represented by JSON.
+    * @type {String | undefined}
+    * @default 'pernament_deletion'
+    */
 CustomersPermanentDeletionCreateResponseBody.prototype['object'] = 'pernament_deletion';
 
 

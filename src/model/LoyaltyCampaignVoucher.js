@@ -17,18 +17,17 @@ import CodeConfig from './CodeConfig';
 import LoyaltyCampaignVoucherRedemption from './LoyaltyCampaignVoucherRedemption';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The LoyaltyCampaignVoucher model module.
  * @module model/LoyaltyCampaignVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCampaignVoucher {
     /**
      * Constructs a new <code>LoyaltyCampaignVoucher</code>.
      * Schema model for a campaign voucher.
-     * @alias module:model/LoyaltyCampaignVoucher
-     * @param codeConfig {module:model/CodeConfig} 
+     * @alias LoyaltyCampaignVoucher
+     * @param {CodeConfig} codeConfig 
      */
     constructor(codeConfig) { 
         
@@ -48,9 +47,9 @@ class LoyaltyCampaignVoucher {
     /**
      * Constructs a <code>LoyaltyCampaignVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCampaignVoucher} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCampaignVoucher} The populated <code>LoyaltyCampaignVoucher</code> instance.
+     * @param {Partial<LoyaltyCampaignVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCampaignVoucher} [obj] Optional instance to populate.
+     * @returns {LoyaltyCampaignVoucher} The populated <code>LoyaltyCampaignVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -92,7 +91,7 @@ class LoyaltyCampaignVoucher {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCampaignVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCampaignVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCampaignVoucher</code>.
      */
     static validateJSON(data) {
@@ -140,78 +139,78 @@ class LoyaltyCampaignVoucher {
 LoyaltyCampaignVoucher.RequiredProperties = ["code_config"];
 
 /**
- * Type of voucher.
- * @member {module:model/LoyaltyCampaignVoucher.TypeEnum} 
- * @default 'LOYALTY_CARD'
- */
+    * Type of voucher.
+    * @type {(keyof typeof LoyaltyCampaignVoucher.TypeEnum) | undefined}
+    * @default 'LOYALTY_CARD'
+    */
 LoyaltyCampaignVoucher.prototype['type'] = 'LOYALTY_CARD';
 
 /**
- * @member {module:model/CampaignLoyaltyCard} 
- */
+    * @type {CampaignLoyaltyCard | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/LoyaltyCampaignVoucherRedemption} 
- */
+    * @type {LoyaltyCampaignVoucherRedemption | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig}
+    */
 LoyaltyCampaignVoucher.prototype['code_config'] = undefined;
 
 /**
- * Always `false` for a loyalty card voucher
- * @member {Boolean} 
- */
+    * Always `false` for a loyalty card voucher
+    * @type {Boolean | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/LoyaltyCampaignVoucher.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof LoyaltyCampaignVoucher.ValidityDayOfWeekEnum>) | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 LoyaltyCampaignVoucher.prototype['validity_hours'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyCampaignVoucher['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    LoyaltyCampaignVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 /**

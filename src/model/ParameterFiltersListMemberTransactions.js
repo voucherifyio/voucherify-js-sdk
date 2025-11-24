@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import FilterConditionsDateTime from './FilterConditionsDateTime';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListMemberTransactions model module.
  * @module model/ParameterFiltersListMemberTransactions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListMemberTransactions {
     /**
      * Constructs a new <code>ParameterFiltersListMemberTransactions</code>.
-     * @alias module:model/ParameterFiltersListMemberTransactions
+     * @alias ParameterFiltersListMemberTransactions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListMemberTransactions {
     /**
      * Constructs a <code>ParameterFiltersListMemberTransactions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListMemberTransactions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListMemberTransactions} The populated <code>ParameterFiltersListMemberTransactions</code> instance.
+     * @param {Partial<ParameterFiltersListMemberTransactions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListMemberTransactions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListMemberTransactions} The populated <code>ParameterFiltersListMemberTransactions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class ParameterFiltersListMemberTransactions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListMemberTransactions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListMemberTransactions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListMemberTransactions</code>.
      */
     static validateJSON(data) {
@@ -83,13 +82,13 @@ class ParameterFiltersListMemberTransactions {
 
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 ParameterFiltersListMemberTransactions.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListMemberTransactions.prototype['id'] = undefined;
 
 

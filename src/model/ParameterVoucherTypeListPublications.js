@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterVoucherTypeListPublications.
-* @module model/ParameterVoucherTypeListPublications
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterVoucherTypeListPublications {
+ * Enum class ParameterVoucherTypeListPublications.
+ * @module model/ParameterVoucherTypeListPublications
+ * @version 3.0.1
+ */
+class ParameterVoucherTypeListPublications {
     
-        /**
-         * value: "discount"
-         * @constant
-         */
-        "discount" = "discount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "discount" = "discount";
     
-        /**
-         * value: "loyalty"
-         * @constant
-         */
-        "loyalty" = "loyalty";
-
+    /**
+     * 
+     * @constant
+     */
+    static "loyalty" = "loyalty";
     
 
     /**
-    * Returns a <code>ParameterVoucherTypeListPublications</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterVoucherTypeListPublications} The enum <code>ParameterVoucherTypeListPublications</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterVoucherTypeListPublications, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterVoucherTypeListPublications[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterVoucherTypeListPublications[key];
     }
 }
+
+export default ParameterVoucherTypeListPublications;
 

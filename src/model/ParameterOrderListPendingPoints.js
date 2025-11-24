@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListPendingPoints.
-* @module model/ParameterOrderListPendingPoints
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListPendingPoints {
+ * Enum class ParameterOrderListPendingPoints.
+ * @module model/ParameterOrderListPendingPoints
+ * @version 3.0.1
+ */
+class ParameterOrderListPendingPoints {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
 
     /**
-    * Returns a <code>ParameterOrderListPendingPoints</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListPendingPoints} The enum <code>ParameterOrderListPendingPoints</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListPendingPoints, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListPendingPoints[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListPendingPoints[key];
     }
 }
+
+export default ParameterOrderListPendingPoints;
 

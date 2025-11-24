@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientRedemptionsRedeemRequestBodyRedeemablesItemReward model module.
  * @module model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientRedemptionsRedeemRequestBodyRedeemablesItemReward {
     /**
      * Constructs a new <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code>.
      * Contains information about the reward that the customer wants to redeem and the number of points the customer is choosing to use for the reward.
-     * @alias module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward
+     * @alias ClientRedemptionsRedeemRequestBodyRedeemablesItemReward
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItemReward {
     /**
      * Constructs a <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward} obj Optional instance to populate.
-     * @returns {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward} The populated <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code> instance.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyRedeemablesItemReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientRedemptionsRedeemRequestBodyRedeemablesItemReward} [obj] Optional instance to populate.
+     * @returns {ClientRedemptionsRedeemRequestBodyRedeemablesItemReward} The populated <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItemReward {
 
     /**
      * Validates the JSON data with respect to <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyRedeemablesItemReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientRedemptionsRedeemRequestBodyRedeemablesItemReward</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItemReward {
 
 
 /**
- * Unique reward ID assigned by Voucherify. The reward must be assigned to the campaign in order for the user to be able to use the reward.
- * @member {String} 
- */
+    * Unique reward ID assigned by Voucherify. The reward must be assigned to the campaign in order for the user to be able to use the reward.
+    * @type {String | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItemReward.prototype['id'] = undefined;
 
 /**
- * The number of loyalty points that the user wants to spend in order to fulfill the order using a **pay with points** reward. The number of points cannot be higher than the current balance on the loyalty card.
- * @member {Number} 
- */
+    * The number of loyalty points that the user wants to spend in order to fulfill the order using a **pay with points** reward. The number of points cannot be higher than the current balance on the loyalty card.
+    * @type {Number | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItemReward.prototype['points'] = undefined;
 
 

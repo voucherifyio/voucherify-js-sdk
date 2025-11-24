@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsLoyaltyTier model module.
  * @module model/VoucherTransactionDetailsLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsLoyaltyTier {
     /**
      * Constructs a new <code>VoucherTransactionDetailsLoyaltyTier</code>.
      * Contains information about the loyalty tier that is mapped for the earning rule and used in the transaction.
-     * @alias module:model/VoucherTransactionDetailsLoyaltyTier
+     * @alias VoucherTransactionDetailsLoyaltyTier
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsLoyaltyTier {
     /**
      * Constructs a <code>VoucherTransactionDetailsLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsLoyaltyTier} The populated <code>VoucherTransactionDetailsLoyaltyTier</code> instance.
+     * @param {Partial<VoucherTransactionDetailsLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsLoyaltyTier} The populated <code>VoucherTransactionDetailsLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsLoyaltyTier {
 
 
 /**
- * Unique identifier of the loyalty tier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the loyalty tier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsLoyaltyTier.prototype['id'] = undefined;
 
 /**
- * User-defined name of the loyalty tier.
- * @member {String} 
- */
+    * User-defined name of the loyalty tier.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsLoyaltyTier.prototype['name'] = undefined;
 
 

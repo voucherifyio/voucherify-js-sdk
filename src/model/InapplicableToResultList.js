@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import InapplicableTo from './InapplicableTo';
-
 /**
  * The InapplicableToResultList model module.
  * @module model/InapplicableToResultList
- * @version 3.0.0
+ * @version 3.0.1
  */
 class InapplicableToResultList {
     /**
      * Constructs a new <code>InapplicableToResultList</code>.
-     * @alias module:model/InapplicableToResultList
+     * @alias InapplicableToResultList
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class InapplicableToResultList {
     /**
      * Constructs a <code>InapplicableToResultList</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InapplicableToResultList} obj Optional instance to populate.
-     * @returns {module:model/InapplicableToResultList} The populated <code>InapplicableToResultList</code> instance.
+     * @param {Partial<InapplicableToResultList>} data The plain JavaScript object bearing properties of interest.
+     * @param {InapplicableToResultList} [obj] Optional instance to populate.
+     * @returns {InapplicableToResultList} The populated <code>InapplicableToResultList</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -68,7 +67,7 @@ class InapplicableToResultList {
 
     /**
      * Validates the JSON data with respect to <code>InapplicableToResultList</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<InapplicableToResultList>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>InapplicableToResultList</code>.
      */
     static validateJSON(data) {
@@ -100,63 +99,63 @@ class InapplicableToResultList {
 
 
 /**
- * Contains array of items to which the discount cannot apply.
- * @member {Array.<module:model/InapplicableTo>} 
- */
+    * Contains array of items to which the discount cannot apply.
+    * @type {Array.<InapplicableTo> | undefined}
+    */
 InapplicableToResultList.prototype['data'] = undefined;
 
 /**
- * Total number of objects defining included products, SKUs, or product collections.
- * @member {Number} 
- */
+    * Total number of objects defining included products, SKUs, or product collections.
+    * @type {Number | undefined}
+    */
 InapplicableToResultList.prototype['total'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/InapplicableToResultList.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof InapplicableToResultList.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 InapplicableToResultList.prototype['object'] = 'list';
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/InapplicableToResultList.DataRefEnum} 
- * @default 'data'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof InapplicableToResultList.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 InapplicableToResultList.prototype['data_ref'] = 'data';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-InapplicableToResultList['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    InapplicableToResultList['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-InapplicableToResultList['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    InapplicableToResultList['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

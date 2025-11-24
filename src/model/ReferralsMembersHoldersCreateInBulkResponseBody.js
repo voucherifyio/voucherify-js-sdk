@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RedeemableHolder from './RedeemableHolder';
-
 /**
  * The ReferralsMembersHoldersCreateInBulkResponseBody model module.
  * @module model/ReferralsMembersHoldersCreateInBulkResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralsMembersHoldersCreateInBulkResponseBody {
     /**
      * Constructs a new <code>ReferralsMembersHoldersCreateInBulkResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/referrals/{campaignId}/members/{memberId}/holders&#x60; and **POST** &#x60;v1/referrals/members/{memberId}/holders&#x60;.
-     * @alias module:model/ReferralsMembersHoldersCreateInBulkResponseBody
+     * @alias ReferralsMembersHoldersCreateInBulkResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ReferralsMembersHoldersCreateInBulkResponseBody {
     /**
      * Constructs a <code>ReferralsMembersHoldersCreateInBulkResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ReferralsMembersHoldersCreateInBulkResponseBody} The populated <code>ReferralsMembersHoldersCreateInBulkResponseBody</code> instance.
+     * @param {Partial<ReferralsMembersHoldersCreateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralsMembersHoldersCreateInBulkResponseBody} [obj] Optional instance to populate.
+     * @returns {ReferralsMembersHoldersCreateInBulkResponseBody} The populated <code>ReferralsMembersHoldersCreateInBulkResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ReferralsMembersHoldersCreateInBulkResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ReferralsMembersHoldersCreateInBulkResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralsMembersHoldersCreateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralsMembersHoldersCreateInBulkResponseBody</code>.
      */
     static validateJSON(data) {
@@ -82,9 +81,9 @@ class ReferralsMembersHoldersCreateInBulkResponseBody {
 
 
 /**
- * Contains an array of referral card holders who are the customers sent in the request.
- * @member {Array.<module:model/RedeemableHolder>} 
- */
+    * Contains an array of referral card holders who are the customers sent in the request.
+    * @type {Array.<RedeemableHolder> | undefined}
+    */
 ReferralsMembersHoldersCreateInBulkResponseBody.prototype['holders'] = undefined;
 
 

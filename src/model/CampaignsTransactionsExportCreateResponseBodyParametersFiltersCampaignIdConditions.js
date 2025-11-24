@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions {
     /**
      * Constructs a new <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions
+     * @alias CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdCo
     /**
      * Constructs a <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions} The populated <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> instance.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions} The populated <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdCo
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdCo
 
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions.prototype['$in'] = undefined;
 
 

@@ -16,17 +16,16 @@ import ApplicationDetailsItem from './ApplicationDetailsItem';
 import OrderCalculatedItem from './OrderCalculatedItem';
 import OrderCalculatedItemProduct from './OrderCalculatedItemProduct';
 import OrderCalculatedItemSku from './OrderCalculatedItemSku';
-
 /**
  * The QualificationsRedeemableOrderItemsItem model module.
  * @module model/QualificationsRedeemableOrderItemsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsRedeemableOrderItemsItem {
     /**
      * Constructs a new <code>QualificationsRedeemableOrderItemsItem</code>.
-     * @alias module:model/QualificationsRedeemableOrderItemsItem
-     * @implements module:model/OrderCalculatedItem
+     * @alias QualificationsRedeemableOrderItemsItem
+     * @implements OrderCalculatedItem
      */
     constructor() { 
         OrderCalculatedItem.initialize(this);
@@ -45,9 +44,9 @@ class QualificationsRedeemableOrderItemsItem {
     /**
      * Constructs a <code>QualificationsRedeemableOrderItemsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsRedeemableOrderItemsItem} obj Optional instance to populate.
-     * @returns {module:model/QualificationsRedeemableOrderItemsItem} The populated <code>QualificationsRedeemableOrderItemsItem</code> instance.
+     * @param {Partial<QualificationsRedeemableOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsRedeemableOrderItemsItem} [obj] Optional instance to populate.
+     * @returns {QualificationsRedeemableOrderItemsItem} The populated <code>QualificationsRedeemableOrderItemsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -126,7 +125,7 @@ class QualificationsRedeemableOrderItemsItem {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsRedeemableOrderItemsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsRedeemableOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsRedeemableOrderItemsItem</code>.
      */
     static validateJSON(data) {
@@ -182,279 +181,300 @@ class QualificationsRedeemableOrderItemsItem {
 
 
 /**
- * Unique identifier of the order line item.
- * @member {String} 
- */
+    * Unique identifier of the order line item.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['sku_id'] = undefined;
 
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['product_id'] = undefined;
 
 /**
- * Used along with the source_id property, can be set to either sku or product.
- * @member {module:model/QualificationsRedeemableOrderItemsItem.RelatedObjectEnum} 
- */
+    * Used along with the source_id property, can be set to either sku or product.
+    * @type {(keyof typeof QualificationsRedeemableOrderItemsItem.RelatedObjectEnum) | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['related_object'] = undefined;
 
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} 
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['source_id'] = undefined;
 
 /**
- * The quantity of the particular item in the cart.
- * @member {Number} 
- */
+    * The quantity of the particular item in the cart.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['quantity'] = undefined;
 
 /**
- * Number of dicounted items.
- * @member {Number} 
- */
+    * Number of dicounted items.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['discount_quantity'] = undefined;
 
 /**
- * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
- * @member {Number} 
- */
+    * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['initial_quantity'] = undefined;
 
 /**
- * The total amount of the order item (price * quantity).
- * @member {Number} 
- */
+    * The total amount of the order item (price * quantity).
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} 
- */
+    * Sum of all order-item-level discounts applied to the order.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['discount_amount'] = undefined;
 
 /**
- * This field shows the order-level discount applied.
- * @member {Number} 
- */
+    * This field shows the order-level discount applied.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Number of the discounted items applied in the transaction.
- * @member {Number} 
- */
+    * Number of the discounted items applied in the transaction.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['applied_discount_quantity'] = undefined;
 
 /**
- * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['applied_quantity'] = undefined;
 
 /**
- * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['applied_quantity_amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['initial_amount'] = undefined;
 
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['price'] = undefined;
 
 /**
- * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
- * @member {Number} 
- */
+    * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
+    * @type {Number | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['subtotal_amount'] = undefined;
 
 /**
- * @member {module:model/OrderCalculatedItemProduct} 
- */
+    * @type {OrderCalculatedItemProduct | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['product'] = undefined;
 
 /**
- * @member {module:model/OrderCalculatedItemSku} 
- */
+    * @type {OrderCalculatedItemSku | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['sku'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/QualificationsRedeemableOrderItemsItem.ObjectEnum} 
- * @default 'order_item'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof QualificationsRedeemableOrderItemsItem.ObjectEnum) | undefined}
+    * @default 'order_item'
+    */
 QualificationsRedeemableOrderItemsItem.prototype['object'] = 'order_item';
 
 /**
- * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['metadata'] = undefined;
 
 /**
- * Array containing details about the items that are replaced and the items that are replacements for discounts with the `REPLACE_ITEMS` effect.
- * @member {Array.<module:model/ApplicationDetailsItem>} 
- */
+    * Array containing details about the items that are replaced and the items that are replacements for discounts with the `REPLACE_ITEMS` effect.
+    * @type {Array.<ApplicationDetailsItem> | undefined}
+    */
 QualificationsRedeemableOrderItemsItem.prototype['application_details'] = undefined;
 
 
 // Implement OrderCalculatedItem interface:
 /**
- * Unique identifier of the order line item.
- * @member {String} id
- */
+    * Unique identifier of the order line item.    *
+    * @type {String | undefined}
+    * @member {String | undefined} id
+    */
 OrderCalculatedItem.prototype['id'] = undefined;
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} sku_id
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.    *
+    * @type {String | undefined}
+    * @member {String | undefined} sku_id
+    */
 OrderCalculatedItem.prototype['sku_id'] = undefined;
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} product_id
- */
+    * Unique identifier of the product. It is assigned by Voucherify.    *
+    * @type {String | undefined}
+    * @member {String | undefined} product_id
+    */
 OrderCalculatedItem.prototype['product_id'] = undefined;
 /**
- * Used along with the source_id property, can be set to either sku or product.
- * @member {module:model/OrderCalculatedItem.RelatedObjectEnum} related_object
- */
+    * Used along with the source_id property, can be set to either sku or product.
+    * @type {(keyof typeof OrderCalculatedItem.RelatedObjectEnum) | undefined}
+    * @member {OrderCalculatedItem.RelatedObjectEnum | undefined} related_object
+    */
 OrderCalculatedItem.prototype['related_object'] = undefined;
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} source_id
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.    *
+    * @type {String | undefined}
+    * @member {String | undefined} source_id
+    */
 OrderCalculatedItem.prototype['source_id'] = undefined;
 /**
- * The quantity of the particular item in the cart.
- * @member {Number} quantity
- */
+    * The quantity of the particular item in the cart.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} quantity
+    */
 OrderCalculatedItem.prototype['quantity'] = undefined;
 /**
- * Number of dicounted items.
- * @member {Number} discount_quantity
- */
+    * Number of dicounted items.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} discount_quantity
+    */
 OrderCalculatedItem.prototype['discount_quantity'] = undefined;
 /**
- * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
- * @member {Number} initial_quantity
- */
+    * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} initial_quantity
+    */
 OrderCalculatedItem.prototype['initial_quantity'] = undefined;
 /**
- * The total amount of the order item (price * quantity).
- * @member {Number} amount
- */
+    * The total amount of the order item (price * quantity).    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} amount
+    */
 OrderCalculatedItem.prototype['amount'] = undefined;
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} discount_amount
- */
+    * Sum of all order-item-level discounts applied to the order.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} discount_amount
+    */
 OrderCalculatedItem.prototype['discount_amount'] = undefined;
 /**
- * This field shows the order-level discount applied.
- * @member {Number} applied_discount_amount
- */
+    * This field shows the order-level discount applied.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} applied_discount_amount
+    */
 OrderCalculatedItem.prototype['applied_discount_amount'] = undefined;
 /**
- * Number of the discounted items applied in the transaction.
- * @member {Number} applied_discount_quantity
- */
+    * Number of the discounted items applied in the transaction.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} applied_discount_quantity
+    */
 OrderCalculatedItem.prototype['applied_discount_quantity'] = undefined;
 /**
- * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} applied_quantity
- */
+    * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} applied_quantity
+    */
 OrderCalculatedItem.prototype['applied_quantity'] = undefined;
 /**
- * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} applied_quantity_amount
- */
+    * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} applied_quantity_amount
+    */
 OrderCalculatedItem.prototype['applied_quantity_amount'] = undefined;
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} initial_amount
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} initial_amount
+    */
 OrderCalculatedItem.prototype['initial_amount'] = undefined;
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} price
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} price
+    */
 OrderCalculatedItem.prototype['price'] = undefined;
 /**
- * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
- * @member {Number} subtotal_amount
- */
+    * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} subtotal_amount
+    */
 OrderCalculatedItem.prototype['subtotal_amount'] = undefined;
-/**
- * @member {module:model/OrderCalculatedItemProduct} product
- */
+/**    *
+    * @type {OrderCalculatedItemProduct | undefined}
+    * @member {OrderCalculatedItemProduct | undefined} product
+    */
 OrderCalculatedItem.prototype['product'] = undefined;
-/**
- * @member {module:model/OrderCalculatedItemSku} sku
- */
+/**    *
+    * @type {OrderCalculatedItemSku | undefined}
+    * @member {OrderCalculatedItemSku | undefined} sku
+    */
 OrderCalculatedItem.prototype['sku'] = undefined;
 /**
- * The type of the object represented by JSON.
- * @member {module:model/OrderCalculatedItem.ObjectEnum} object
- * @default 'order_item'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof OrderCalculatedItem.ObjectEnum) | undefined}
+    * @member {OrderCalculatedItem.ObjectEnum | undefined} object
+    * @default 'order_item'
+    */
 OrderCalculatedItem.prototype['object'] = 'order_item';
 /**
- * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} metadata
- */
+    * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.    *
+    * @type {Object | undefined}
+    * @member {Object | undefined} metadata
+    */
 OrderCalculatedItem.prototype['metadata'] = undefined;
 
 
 
-/**
- * Allowed values for the <code>related_object</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemableOrderItemsItem['RelatedObjectEnum'] = {
+    /**
+     * Allowed values for the <code>related_object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    QualificationsRedeemableOrderItemsItem['RelatedObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
+
 
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemableOrderItemsItem['ObjectEnum'] = {
-
-    /**
-     * value: "order_item"
-     * @constant
-     */
-    "order_item": "order_item"
-};
+    QualificationsRedeemableOrderItemsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "order_item"
+         * @constant
+         */
+        "order_item": "order_item"    
+    };
 
 
 

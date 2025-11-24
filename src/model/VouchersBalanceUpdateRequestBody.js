@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersBalanceUpdateRequestBody model module.
  * @module model/VouchersBalanceUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersBalanceUpdateRequestBody {
     /**
      * Constructs a new <code>VouchersBalanceUpdateRequestBody</code>.
      * Request body schema for &#x60;vouchers/{code}/balance&#x60;.
-     * @alias module:model/VouchersBalanceUpdateRequestBody
+     * @alias VouchersBalanceUpdateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VouchersBalanceUpdateRequestBody {
     /**
      * Constructs a <code>VouchersBalanceUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersBalanceUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersBalanceUpdateRequestBody} The populated <code>VouchersBalanceUpdateRequestBody</code> instance.
+     * @param {Partial<VouchersBalanceUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersBalanceUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersBalanceUpdateRequestBody} The populated <code>VouchersBalanceUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class VouchersBalanceUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersBalanceUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersBalanceUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersBalanceUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -85,21 +84,21 @@ class VouchersBalanceUpdateRequestBody {
 
 
 /**
- * The incremental amount to be added to or removed from the current balance on the gift card or loyalty card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. To remove balance, simply add a minus sign before the value, i.e. to remove $20, use -2000.
- * @member {Number} 
- */
+    * The incremental amount to be added to or removed from the current balance on the gift card or loyalty card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. To remove balance, simply add a minus sign before the value, i.e. to remove $20, use -2000.
+    * @type {Number | undefined}
+    */
 VouchersBalanceUpdateRequestBody.prototype['amount'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
+    * @type {String | undefined}
+    */
 VouchersBalanceUpdateRequestBody.prototype['source_id'] = undefined;
 
 /**
- * Reason why the transaction occurred.
- * @member {String} 
- */
+    * Reason why the transaction occurred.
+    * @type {String | undefined}
+    */
 VouchersBalanceUpdateRequestBody.prototype['reason'] = undefined;
 
 

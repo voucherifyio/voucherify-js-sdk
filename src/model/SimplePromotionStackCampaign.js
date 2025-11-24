@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimplePromotionStackCampaign model module.
  * @module model/SimplePromotionStackCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimplePromotionStackCampaign {
     /**
      * Constructs a new <code>SimplePromotionStackCampaign</code>.
      * Represents simplified promotion stack campaign data.
-     * @alias module:model/SimplePromotionStackCampaign
+     * @alias SimplePromotionStackCampaign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimplePromotionStackCampaign {
     /**
      * Constructs a <code>SimplePromotionStackCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimplePromotionStackCampaign} obj Optional instance to populate.
-     * @returns {module:model/SimplePromotionStackCampaign} The populated <code>SimplePromotionStackCampaign</code> instance.
+     * @param {Partial<SimplePromotionStackCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimplePromotionStackCampaign} [obj] Optional instance to populate.
+     * @returns {SimplePromotionStackCampaign} The populated <code>SimplePromotionStackCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class SimplePromotionStackCampaign {
 
     /**
      * Validates the JSON data with respect to <code>SimplePromotionStackCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimplePromotionStackCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimplePromotionStackCampaign</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class SimplePromotionStackCampaign {
 
 
 /**
- * Unique identifier of the campaign.
- * @member {String} 
- */
+    * Unique identifier of the campaign.
+    * @type {String | undefined}
+    */
 SimplePromotionStackCampaign.prototype['id'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsSegment model module.
  * @module model/VoucherTransactionDetailsSegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsSegment {
     /**
      * Constructs a new <code>VoucherTransactionDetailsSegment</code>.
      * Contains information about the segment.
-     * @alias module:model/VoucherTransactionDetailsSegment
+     * @alias VoucherTransactionDetailsSegment
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsSegment {
     /**
      * Constructs a <code>VoucherTransactionDetailsSegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsSegment} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsSegment} The populated <code>VoucherTransactionDetailsSegment</code> instance.
+     * @param {Partial<VoucherTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsSegment} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsSegment} The populated <code>VoucherTransactionDetailsSegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsSegment {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsSegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsSegment</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsSegment {
 
 
 /**
- * Unique identifier of the segment.
- * @member {String} 
- */
+    * Unique identifier of the segment.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsSegment.prototype['id'] = undefined;
 
 /**
- * Name of the segment.
- * @member {String} 
- */
+    * Name of the segment.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsSegment.prototype['name'] = undefined;
 
 

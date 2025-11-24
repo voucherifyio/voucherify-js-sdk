@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchemasUpdateRequestBodySchema from './ManagementProjectsCustomEventSchemasUpdateRequestBodySchema';
-
 /**
  * The ManagementProjectsCustomEventSchemasUpdateRequestBody model module.
  * @module model/ManagementProjectsCustomEventSchemasUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasUpdateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code>.
      * Request body schema for **POST** &#x60;/management/v1/projects/{projectId}/custom-event-schema/{customEventSchemaId}&#x60;.
-     * @alias module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody
+     * @alias ManagementProjectsCustomEventSchemasUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsCustomEventSchemasUpdateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody} The populated <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasUpdateRequestBody} The populated <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ManagementProjectsCustomEventSchemasUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ManagementProjectsCustomEventSchemasUpdateRequestBody {
 
 
 /**
- * @member {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBodySchema} 
- */
+    * @type {ManagementProjectsCustomEventSchemasUpdateRequestBodySchema | undefined}
+    */
 ManagementProjectsCustomEventSchemasUpdateRequestBody.prototype['schema'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsMetadataSchemaDefinition from './ManagementProjectsMetadataSchemaDefinition';
-
 /**
  * The ManagementProjectsMetadataSchemasGetResponseBody model module.
  * @module model/ManagementProjectsMetadataSchemasGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsMetadataSchemasGetResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsMetadataSchemasGetResponseBody</code>.
      * Response body schema for **GET** &#x60;management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}&#x60;.
-     * @alias module:model/ManagementProjectsMetadataSchemasGetResponseBody
+     * @alias ManagementProjectsMetadataSchemasGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsMetadataSchemasGetResponseBody {
     /**
      * Constructs a <code>ManagementProjectsMetadataSchemasGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsMetadataSchemasGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsMetadataSchemasGetResponseBody} The populated <code>ManagementProjectsMetadataSchemasGetResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsMetadataSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsMetadataSchemasGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsMetadataSchemasGetResponseBody} The populated <code>ManagementProjectsMetadataSchemasGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsMetadataSchemasGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsMetadataSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsMetadataSchemasGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -103,46 +102,46 @@ class ManagementProjectsMetadataSchemasGetResponseBody {
 
 
 /**
- * Unique identifier of the metadata schema.
- * @member {String} 
- */
+    * Unique identifier of the metadata schema.
+    * @type {String | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['id'] = undefined;
 
 /**
- * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
- * @member {String} 
- */
+    * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
+    * @type {String | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['related_object'] = undefined;
 
 /**
- * Contains metadata definitions.
- * @member {Object.<String, module:model/ManagementProjectsMetadataSchemaDefinition>} 
- */
+    * Contains metadata definitions.
+    * @type {Object.<String, ManagementProjectsMetadataSchemaDefinition> | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['properties'] = undefined;
 
 /**
- * Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
- * @member {Boolean} 
- */
+    * Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['allow_defined_only'] = undefined;
 
 /**
- * Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the metadata schema.
- * @member {String} 
- * @default 'metadata_schema'
- */
+    * The type of the object represented by the JSON. This object stores information about the metadata schema.
+    * @type {String | undefined}
+    * @default 'metadata_schema'
+    */
 ManagementProjectsMetadataSchemasGetResponseBody.prototype['object'] = 'metadata_schema';
 
 

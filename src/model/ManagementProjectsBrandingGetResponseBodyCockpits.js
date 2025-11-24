@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingGetResponseBodyCockpits model module.
  * @module model/ManagementProjectsBrandingGetResponseBodyCockpits
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingGetResponseBodyCockpits {
     /**
      * Constructs a new <code>ManagementProjectsBrandingGetResponseBodyCockpits</code>.
      * Defines customer cockpit details.
-     * @alias module:model/ManagementProjectsBrandingGetResponseBodyCockpits
+     * @alias ManagementProjectsBrandingGetResponseBodyCockpits
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingGetResponseBodyCockpits {
     /**
      * Constructs a <code>ManagementProjectsBrandingGetResponseBodyCockpits</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingGetResponseBodyCockpits} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingGetResponseBodyCockpits} The populated <code>ManagementProjectsBrandingGetResponseBodyCockpits</code> instance.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBodyCockpits>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingGetResponseBodyCockpits} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingGetResponseBodyCockpits} The populated <code>ManagementProjectsBrandingGetResponseBodyCockpits</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ManagementProjectsBrandingGetResponseBodyCockpits {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingGetResponseBodyCockpits</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBodyCockpits>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingGetResponseBodyCockpits</code>.
      */
     static validateJSON(data) {
@@ -100,112 +99,112 @@ class ManagementProjectsBrandingGetResponseBodyCockpits {
 
 
 /**
- * Enables the campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['campaigns_overview_enabled'] = undefined;
 
 /**
- * Enables the loyalty campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the loyalty campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['loyalty_enabled'] = undefined;
 
 /**
- * Enables the gift card overview for customers.
- * @member {Boolean} 
- */
+    * Enables the gift card overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['gift_cards_enabled'] = undefined;
 
 /**
- * Enables the discount coupon overview for customers.
- * @member {Boolean} 
- */
+    * Enables the discount coupon overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['coupons_enabled'] = undefined;
 
 /**
- * Enables the referral campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the referral campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['referrals_enabled'] = undefined;
 
 /**
- * Determines the color scheme of the customer cockpit.
- * @member {module:model/ManagementProjectsBrandingGetResponseBodyCockpits.ThemeEnum} 
- */
+    * Determines the color scheme of the customer cockpit.
+    * @type {(keyof typeof ManagementProjectsBrandingGetResponseBodyCockpits.ThemeEnum) | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['theme'] = undefined;
 
 /**
- * Enables the double opt-in option. It must be a valid URL format.
- * @member {Boolean} 
- */
+    * Enables the double opt-in option. It must be a valid URL format.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['use_custom_double_opt_in_redirect_url'] = undefined;
 
 /**
- * Defines the URL for the double opt-in consent. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL for the double opt-in consent. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyCockpits.prototype['custom_double_opt_in_redirect_url'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>theme</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsBrandingGetResponseBodyCockpits['ThemeEnum'] = {
-
     /**
-     * value: "blue"
-     * @constant
+     * Allowed values for the <code>theme</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "blue": "blue",
-
-    /**
-     * value: "dark-green"
-     * @constant
-     */
-    "dark-green": "dark-green",
-
-    /**
-     * value: "default"
-     * @constant
-     */
-    "default": "default",
-
-    /**
-     * value: "green"
-     * @constant
-     */
-    "green": "green",
-
-    /**
-     * value: "grey"
-     * @constant
-     */
-    "grey": "grey",
-
-    /**
-     * value: "orange"
-     * @constant
-     */
-    "orange": "orange",
-
-    /**
-     * value: "purple"
-     * @constant
-     */
-    "purple": "purple",
-
-    /**
-     * value: "red"
-     * @constant
-     */
-    "red": "red"
-};
+    ManagementProjectsBrandingGetResponseBodyCockpits['ThemeEnum'] = {
+    
+        /**
+         * value: "blue"
+         * @constant
+         */
+        "blue": "blue",
+    
+        /**
+         * value: "dark-green"
+         * @constant
+         */
+        "dark-green": "dark-green",
+    
+        /**
+         * value: "default"
+         * @constant
+         */
+        "default": "default",
+    
+        /**
+         * value: "green"
+         * @constant
+         */
+        "green": "green",
+    
+        /**
+         * value: "grey"
+         * @constant
+         */
+        "grey": "grey",
+    
+        /**
+         * value: "orange"
+         * @constant
+         */
+        "orange": "orange",
+    
+        /**
+         * value: "purple"
+         * @constant
+         */
+        "purple": "purple",
+    
+        /**
+         * value: "red"
+         * @constant
+         */
+        "red": "red"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardTypeProduct model module.
  * @module model/RewardTypeProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardTypeProduct {
     /**
      * Constructs a new <code>RewardTypeProduct</code>.
      * Contains information about the product given as a reward.
-     * @alias module:model/RewardTypeProduct
+     * @alias RewardTypeProduct
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardTypeProduct {
     /**
      * Constructs a <code>RewardTypeProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardTypeProduct} obj Optional instance to populate.
-     * @returns {module:model/RewardTypeProduct} The populated <code>RewardTypeProduct</code> instance.
+     * @param {Partial<RewardTypeProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardTypeProduct} [obj] Optional instance to populate.
+     * @returns {RewardTypeProduct} The populated <code>RewardTypeProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardTypeProduct {
 
     /**
      * Validates the JSON data with respect to <code>RewardTypeProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardTypeProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardTypeProduct</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardTypeProduct {
 
 
 /**
- * Unique product ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RewardTypeProduct.prototype['id'] = undefined;
 
 /**
- * Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
- * @member {String} 
- */
+    * Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
+    * @type {String | undefined}
+    */
 RewardTypeProduct.prototype['sku_id'] = undefined;
 
 

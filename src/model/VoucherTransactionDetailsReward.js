@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsReward model module.
  * @module model/VoucherTransactionDetailsReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsReward {
     /**
      * Constructs a new <code>VoucherTransactionDetailsReward</code>.
      * Contains information about the pay with points reward.
-     * @alias module:model/VoucherTransactionDetailsReward
+     * @alias VoucherTransactionDetailsReward
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsReward {
     /**
      * Constructs a <code>VoucherTransactionDetailsReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsReward} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsReward} The populated <code>VoucherTransactionDetailsReward</code> instance.
+     * @param {Partial<VoucherTransactionDetailsReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsReward} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsReward} The populated <code>VoucherTransactionDetailsReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsReward {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsReward</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsReward {
 
 
 /**
- * Unique reward ID.
- * @member {String} 
- */
+    * Unique reward ID.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsReward.prototype['id'] = undefined;
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsReward.prototype['name'] = undefined;
 
 

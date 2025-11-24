@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard {
     /**
      * Constructs a new <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code>.
      * Object representing loyalty card parameters. Child attributes are present only if type is LOYALTY_CARD.
-     * @alias module:model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard
+     * @alias LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard {
     /**
      * Constructs a <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code> instance.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -93,45 +92,45 @@ class LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard {
 
 
 /**
- * Total number of points added to the loyalty card over its lifespan.
- * @member {Number} 
- */
+    * Total number of points added to the loyalty card over its lifespan.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['balance'] = undefined;
 
 /**
- * The next closest date when the next set of points are due to expire.
- * @member {String} 
- */
+    * The next closest date when the next set of points are due to expire.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['next_expiration_date'] = undefined;
 
 /**
- * The amount of points that are set to expire next.
- * @member {Number} 
- */
+    * The amount of points that are set to expire next.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['next_expiration_points'] = undefined;
 
 /**
- * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
- * @member {Number} 
- */
+    * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['pending_points'] = undefined;
 
 /**
- * Shows the total number of expired points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of expired points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['expired_points'] = undefined;
 
 /**
- * Shows the total number of subtracted points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of subtracted points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard.prototype['subtracted_points'] = undefined;
 
 

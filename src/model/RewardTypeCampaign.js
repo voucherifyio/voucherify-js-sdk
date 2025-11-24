@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardTypeCampaign model module.
  * @module model/RewardTypeCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardTypeCampaign {
     /**
      * Constructs a new <code>RewardTypeCampaign</code>.
      * Objects stores information about the campaign related to the reward.
-     * @alias module:model/RewardTypeCampaign
+     * @alias RewardTypeCampaign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardTypeCampaign {
     /**
      * Constructs a <code>RewardTypeCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardTypeCampaign} obj Optional instance to populate.
-     * @returns {module:model/RewardTypeCampaign} The populated <code>RewardTypeCampaign</code> instance.
+     * @param {Partial<RewardTypeCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardTypeCampaign} [obj] Optional instance to populate.
+     * @returns {RewardTypeCampaign} The populated <code>RewardTypeCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class RewardTypeCampaign {
 
     /**
      * Validates the JSON data with respect to <code>RewardTypeCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardTypeCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardTypeCampaign</code>.
      */
     static validateJSON(data) {
@@ -85,52 +84,52 @@ class RewardTypeCampaign {
 
 
 /**
- * Unique campaign ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique campaign ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RewardTypeCampaign.prototype['id'] = undefined;
 
 /**
- * The number of points to be added to a loyalty card or the amount to be added to the current balance on the gift card.  For gift cards, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
- * @member {Number} 
- */
+    * The number of points to be added to a loyalty card or the amount to be added to the current balance on the gift card.  For gift cards, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+    * @type {Number | undefined}
+    */
 RewardTypeCampaign.prototype['balance'] = undefined;
 
 /**
- * Campaign type.
- * @member {module:model/RewardTypeCampaign.TypeEnum} 
- */
+    * Campaign type.
+    * @type {(keyof typeof RewardTypeCampaign.TypeEnum) | undefined}
+    */
 RewardTypeCampaign.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-RewardTypeCampaign['TypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS",
-
-    /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
-     */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM"
-};
+    RewardTypeCampaign['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS",
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM"    
+    };
 
 
 

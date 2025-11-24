@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesRewardsUpdateAssignmentResponseBodyParameters from './LoyaltiesRewardsUpdateAssignmentResponseBodyParameters';
-
 /**
  * The LoyaltiesRewardsUpdateAssignmentResponseBody model module.
  * @module model/LoyaltiesRewardsUpdateAssignmentResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsUpdateAssignmentResponseBody {
     /**
      * Constructs a new <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code>.
      * Response body schema for **PUT** &#x60;v1/v1/loyalties/{campaignId}/rewards/{assignmentId}&#x60;.
-     * @alias module:model/LoyaltiesRewardsUpdateAssignmentResponseBody
+     * @alias LoyaltiesRewardsUpdateAssignmentResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesRewardsUpdateAssignmentResponseBody {
     /**
      * Constructs a <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody} The populated <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code> instance.
+     * @param {Partial<LoyaltiesRewardsUpdateAssignmentResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsUpdateAssignmentResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsUpdateAssignmentResponseBody} The populated <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class LoyaltiesRewardsUpdateAssignmentResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsUpdateAssignmentResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsUpdateAssignmentResponseBody</code>.
      */
     static validateJSON(data) {
@@ -119,86 +118,86 @@ class LoyaltiesRewardsUpdateAssignmentResponseBody {
 
 
 /**
- * Unique reward assignment ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['id'] = undefined;
 
 /**
- * Associated reward ID.
- * @member {String} 
- */
+    * Associated reward ID.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['reward_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward assignment.
- * @member {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody.ObjectEnum} 
- * @default 'reward_assignment'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward assignment.
+    * @type {(keyof typeof LoyaltiesRewardsUpdateAssignmentResponseBody.ObjectEnum) | undefined}
+    * @default 'reward_assignment'
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['object'] = 'reward_assignment';
 
 /**
- * Related object ID to which the reward was assigned.
- * @member {String} 
- */
+    * Related object ID to which the reward was assigned.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['related_object_id'] = undefined;
 
 /**
- * Related object type to which the reward was assigned.
- * @member {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody.RelatedObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Related object type to which the reward was assigned.
+    * @type {(keyof typeof LoyaltiesRewardsUpdateAssignmentResponseBody.RelatedObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['related_object_type'] = 'campaign';
 
 /**
- * @member {module:model/LoyaltiesRewardsUpdateAssignmentResponseBodyParameters} 
- */
+    * @type {LoyaltiesRewardsUpdateAssignmentResponseBodyParameters | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentResponseBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesRewardsUpdateAssignmentResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesRewardsUpdateAssignmentResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment"    
+    };
+
 
     /**
-     * value: "reward_assignment"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward_assignment": "reward_assignment"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesRewardsUpdateAssignmentResponseBody['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign"
-};
+    LoyaltiesRewardsUpdateAssignmentResponseBody['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

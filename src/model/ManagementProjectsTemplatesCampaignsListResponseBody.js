@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignTemplate from './CampaignTemplate';
-
 /**
  * The ManagementProjectsTemplatesCampaignsListResponseBody model module.
  * @module model/ManagementProjectsTemplatesCampaignsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsTemplatesCampaignsListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsTemplatesCampaignsListResponseBody</code>.
      * Response body schema for **GET** &#x60;/management/v1/projects/{projectId}/templates/campaigns&#x60;.
-     * @alias module:model/ManagementProjectsTemplatesCampaignsListResponseBody
+     * @alias ManagementProjectsTemplatesCampaignsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsTemplatesCampaignsListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsTemplatesCampaignsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsTemplatesCampaignsListResponseBody} The populated <code>ManagementProjectsTemplatesCampaignsListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsTemplatesCampaignsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsTemplatesCampaignsListResponseBody} The populated <code>ManagementProjectsTemplatesCampaignsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class ManagementProjectsTemplatesCampaignsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsTemplatesCampaignsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsTemplatesCampaignsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -111,75 +110,75 @@ class ManagementProjectsTemplatesCampaignsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about campaign templates.
- * @member {module:model/ManagementProjectsTemplatesCampaignsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about campaign templates.
+    * @type {(keyof typeof ManagementProjectsTemplatesCampaignsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of campaign templates.
- * @member {module:model/ManagementProjectsTemplatesCampaignsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of campaign templates.
+    * @type {(keyof typeof ManagementProjectsTemplatesCampaignsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Dictionary that contains an array of campaign templates.
- * @member {Array.<module:model/CampaignTemplate>} 
- */
+    * Dictionary that contains an array of campaign templates.
+    * @type {Array.<CampaignTemplate> | undefined}
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of templates, regardless of the applied query parameters. Displayed only if the `include_total` query paremeter is set to `true`.
- * @member {Number} 
- */
+    * Total number of templates, regardless of the applied query parameters. Displayed only if the `include_total` query paremeter is set to `true`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the template ID in the `starting_after_id` query parameter to display another page of the results starting after the template with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the template ID in the `starting_after_id` query parameter to display another page of the results starting after the template with that ID.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsTemplatesCampaignsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsTemplatesCampaignsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsTemplatesCampaignsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsTemplatesCampaignsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

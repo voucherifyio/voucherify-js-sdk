@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignVoucherRedemption model module.
  * @module model/CampaignVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignVoucherRedemption {
     /**
      * Constructs a new <code>CampaignVoucherRedemption</code>.
      * Defines the redemption limits on vouchers.
-     * @alias module:model/CampaignVoucherRedemption
+     * @alias CampaignVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignVoucherRedemption {
     /**
      * Constructs a <code>CampaignVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignVoucherRedemption} The populated <code>CampaignVoucherRedemption</code> instance.
+     * @param {Partial<CampaignVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignVoucherRedemption} The populated <code>CampaignVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class CampaignVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignVoucherRedemption.prototype['quantity'] = undefined;
 
 

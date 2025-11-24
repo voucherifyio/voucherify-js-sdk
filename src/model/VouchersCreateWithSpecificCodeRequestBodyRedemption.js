@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersCreateWithSpecificCodeRequestBodyRedemption model module.
  * @module model/VouchersCreateWithSpecificCodeRequestBodyRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersCreateWithSpecificCodeRequestBodyRedemption {
     /**
      * Constructs a new <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code>.
-     * @alias module:model/VouchersCreateWithSpecificCodeRequestBodyRedemption
+     * @alias VouchersCreateWithSpecificCodeRequestBodyRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class VouchersCreateWithSpecificCodeRequestBodyRedemption {
     /**
      * Constructs a <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersCreateWithSpecificCodeRequestBodyRedemption} obj Optional instance to populate.
-     * @returns {module:model/VouchersCreateWithSpecificCodeRequestBodyRedemption} The populated <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code> instance.
+     * @param {Partial<VouchersCreateWithSpecificCodeRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersCreateWithSpecificCodeRequestBodyRedemption} [obj] Optional instance to populate.
+     * @returns {VouchersCreateWithSpecificCodeRequestBodyRedemption} The populated <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class VouchersCreateWithSpecificCodeRequestBodyRedemption {
 
     /**
      * Validates the JSON data with respect to <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersCreateWithSpecificCodeRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersCreateWithSpecificCodeRequestBodyRedemption</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class VouchersCreateWithSpecificCodeRequestBodyRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBodyRedemption.prototype['quantity'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyPendingPointsDetailsEarningRuleSource model module.
  * @module model/LoyaltyPendingPointsDetailsEarningRuleSource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPointsDetailsEarningRuleSource {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetailsEarningRuleSource</code>.
      * Contains the custom earning rule name.
-     * @alias module:model/LoyaltyPendingPointsDetailsEarningRuleSource
+     * @alias LoyaltyPendingPointsDetailsEarningRuleSource
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyPendingPointsDetailsEarningRuleSource {
     /**
      * Constructs a <code>LoyaltyPendingPointsDetailsEarningRuleSource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPointsDetailsEarningRuleSource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPointsDetailsEarningRuleSource} The populated <code>LoyaltyPendingPointsDetailsEarningRuleSource</code> instance.
+     * @param {Partial<LoyaltyPendingPointsDetailsEarningRuleSource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPointsDetailsEarningRuleSource} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPointsDetailsEarningRuleSource} The populated <code>LoyaltyPendingPointsDetailsEarningRuleSource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltyPendingPointsDetailsEarningRuleSource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPointsDetailsEarningRuleSource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPointsDetailsEarningRuleSource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPointsDetailsEarningRuleSource</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltyPendingPointsDetailsEarningRuleSource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsEarningRuleSource.prototype['banner'] = undefined;
 
 

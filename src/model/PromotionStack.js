@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import Category from './Category';
 import PromotionStackTiers from './PromotionStackTiers';
-
 /**
  * The PromotionStack model module.
  * @module model/PromotionStack
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionStack {
     /**
      * Constructs a new <code>PromotionStack</code>.
-     * @alias module:model/PromotionStack
+     * @alias PromotionStack
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class PromotionStack {
     /**
      * Constructs a <code>PromotionStack</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionStack} obj Optional instance to populate.
-     * @returns {module:model/PromotionStack} The populated <code>PromotionStack</code> instance.
+     * @param {Partial<PromotionStack>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionStack} [obj] Optional instance to populate.
+     * @returns {PromotionStack} The populated <code>PromotionStack</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class PromotionStack {
 
     /**
      * Validates the JSON data with respect to <code>PromotionStack</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionStack>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionStack</code>.
      */
     static validateJSON(data) {
@@ -131,76 +130,76 @@ class PromotionStack {
 
 
 /**
- * Promotion stack name.
- * @member {String} 
- */
+    * Promotion stack name.
+    * @type {String | undefined}
+    */
 PromotionStack.prototype['name'] = undefined;
 
 /**
- * @member {module:model/PromotionStackTiers} 
- */
+    * @type {PromotionStackTiers | undefined}
+    */
 PromotionStack.prototype['tiers'] = undefined;
 
 /**
- * Unique promotion stack ID.
- * @member {String} 
- */
+    * Unique promotion stack ID.
+    * @type {String | undefined}
+    */
 PromotionStack.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PromotionStack.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion stack was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion stack was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PromotionStack.prototype['updated_at'] = undefined;
 
 /**
- * Promotion stack's parent campaign's unique ID.
- * @member {String} 
- */
+    * Promotion stack's parent campaign's unique ID.
+    * @type {String | undefined}
+    */
 PromotionStack.prototype['campaign_id'] = undefined;
 
 /**
- * The type of the object represented by JSON. 
- * @member {module:model/PromotionStack.ObjectEnum} 
- * @default 'promotion_stack'
- */
+    * The type of the object represented by JSON. 
+    * @type {(keyof typeof PromotionStack.ObjectEnum) | undefined}
+    * @default 'promotion_stack'
+    */
 PromotionStack.prototype['object'] = 'promotion_stack';
 
 /**
- * Promotion stack category ID.
- * @member {String} 
- */
+    * Promotion stack category ID.
+    * @type {String | undefined}
+    */
 PromotionStack.prototype['category_id'] = undefined;
 
 /**
- * Details about the category assigned to the promotion stack.
- * @member {Array.<module:model/Category>} 
- */
+    * Details about the category assigned to the promotion stack.
+    * @type {Array.<Category> | undefined}
+    */
 PromotionStack.prototype['categories'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionStack['ObjectEnum'] = {
-
     /**
-     * value: "promotion_stack"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "promotion_stack": "promotion_stack"
-};
+    PromotionStack['ObjectEnum'] = {
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack"    
+    };
 
 
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import LocationsGetResponseBodyShapeDistance from './LocationsGetResponseBodyShapeDistance';
 import LocationsGetResponseBodyShapeGeojson from './LocationsGetResponseBodyShapeGeojson';
-
 /**
  * The LocationsGetResponseBodyShape model module.
  * @module model/LocationsGetResponseBodyShape
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationsGetResponseBodyShape {
     /**
      * Constructs a new <code>LocationsGetResponseBodyShape</code>.
-     * @alias module:model/LocationsGetResponseBodyShape
+     * @alias LocationsGetResponseBodyShape
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LocationsGetResponseBodyShape {
     /**
      * Constructs a <code>LocationsGetResponseBodyShape</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationsGetResponseBodyShape} obj Optional instance to populate.
-     * @returns {module:model/LocationsGetResponseBodyShape} The populated <code>LocationsGetResponseBodyShape</code> instance.
+     * @param {Partial<LocationsGetResponseBodyShape>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationsGetResponseBodyShape} [obj] Optional instance to populate.
+     * @returns {LocationsGetResponseBodyShape} The populated <code>LocationsGetResponseBodyShape</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class LocationsGetResponseBodyShape {
 
     /**
      * Validates the JSON data with respect to <code>LocationsGetResponseBodyShape</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationsGetResponseBodyShape>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationsGetResponseBodyShape</code>.
      */
     static validateJSON(data) {
@@ -97,69 +96,69 @@ class LocationsGetResponseBodyShape {
 
 
 /**
- * @member {module:model/LocationsGetResponseBodyShape.TypeEnum} 
- */
+    * @type {(keyof typeof LocationsGetResponseBodyShape.TypeEnum) | undefined}
+    */
 LocationsGetResponseBodyShape.prototype['type'] = undefined;
 
 /**
- * @member {module:model/LocationsGetResponseBodyShape.FormatEnum} 
- */
+    * @type {(keyof typeof LocationsGetResponseBodyShape.FormatEnum) | undefined}
+    */
 LocationsGetResponseBodyShape.prototype['format'] = undefined;
 
 /**
- * @member {module:model/LocationsGetResponseBodyShapeDistance} 
- */
+    * @type {LocationsGetResponseBodyShapeDistance | undefined}
+    */
 LocationsGetResponseBodyShape.prototype['distance'] = undefined;
 
 /**
- * @member {module:model/LocationsGetResponseBodyShapeGeojson} 
- */
+    * @type {LocationsGetResponseBodyShapeGeojson | undefined}
+    */
 LocationsGetResponseBodyShape.prototype['geojson'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LocationsGetResponseBodyShape['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LocationsGetResponseBodyShape['TypeEnum'] = {
+    
+        /**
+         * value: "circle"
+         * @constant
+         */
+        "circle": "circle",
+    
+        /**
+         * value: "polygon"
+         * @constant
+         */
+        "polygon": "polygon"    
+    };
+
 
     /**
-     * value: "circle"
-     * @constant
+     * Allowed values for the <code>format</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "circle": "circle",
-
-    /**
-     * value: "polygon"
-     * @constant
-     */
-    "polygon": "polygon"
-};
-
-
-/**
- * Allowed values for the <code>format</code> property.
- * @enum {String}
- * @readonly
- */
-LocationsGetResponseBodyShape['FormatEnum'] = {
-
-    /**
-     * value: "distance"
-     * @constant
-     */
-    "distance": "distance",
-
-    /**
-     * value: "geojson"
-     * @constant
-     */
-    "geojson": "geojson"
-};
+    LocationsGetResponseBodyShape['FormatEnum'] = {
+    
+        /**
+         * value: "distance"
+         * @constant
+         */
+        "distance": "distance",
+    
+        /**
+         * value: "geojson"
+         * @constant
+         */
+        "geojson": "geojson"    
+    };
 
 
 

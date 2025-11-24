@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import CustomerId from './CustomerId';
 import OrderRedemptionsEntry from './OrderRedemptionsEntry';
 import ReferrerId from './ReferrerId';
-
 /**
  * The OrderCalculated model module.
  * @module model/OrderCalculated
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrderCalculated {
     /**
      * Constructs a new <code>OrderCalculated</code>.
      * Order information.
-     * @alias module:model/OrderCalculated
+     * @alias OrderCalculated
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class OrderCalculated {
     /**
      * Constructs a <code>OrderCalculated</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderCalculated} obj Optional instance to populate.
-     * @returns {module:model/OrderCalculated} The populated <code>OrderCalculated</code> instance.
+     * @param {Partial<OrderCalculated>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrderCalculated} [obj] Optional instance to populate.
+     * @returns {OrderCalculated} The populated <code>OrderCalculated</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -121,7 +120,7 @@ class OrderCalculated {
 
     /**
      * Validates the JSON data with respect to <code>OrderCalculated</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrderCalculated>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrderCalculated</code>.
      */
     static validateJSON(data) {
@@ -167,179 +166,179 @@ class OrderCalculated {
 
 
 /**
- * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 OrderCalculated.prototype['id'] = undefined;
 
 /**
- * Unique source ID of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 OrderCalculated.prototype['source_id'] = undefined;
 
 /**
- * The order status.
- * @member {module:model/OrderCalculated.StatusEnum} 
- */
+    * The order status.
+    * @type {(keyof typeof OrderCalculated.StatusEnum) | undefined}
+    */
 OrderCalculated.prototype['status'] = undefined;
 
 /**
- * This is the sum of the order items' amounts. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * This is the sum of the order items' amounts. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['amount'] = undefined;
 
 /**
- * This is the sum of the order items' amounts before any discount or other effect (e.g. add missing units) is applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * This is the sum of the order items' amounts before any discount or other effect (e.g. add missing units) is applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['initial_amount'] = undefined;
 
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['discount_amount'] = undefined;
 
 /**
- * Sum of all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['items_discount_amount'] = undefined;
 
 /**
- * Sum of all order-level AND all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level AND all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['total_discount_amount'] = undefined;
 
 /**
- * Order amount after undoing all the discounts through the rollback redemption. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Order amount after undoing all the discounts through the rollback redemption. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['total_amount'] = undefined;
 
 /**
- * This field shows the order-level discount applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * This field shows the order-level discount applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Sum of all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `sum(items, i => i.applied_discount_amount)`
- * @member {Number} 
- */
+    * Sum of all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `sum(items, i => i.applied_discount_amount)`
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['items_applied_discount_amount'] = undefined;
 
 /**
- * Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
- * @member {Number} 
- */
+    * Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
+    * @type {Number | undefined}
+    */
 OrderCalculated.prototype['total_applied_discount_amount'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 OrderCalculated.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/OrderCalculated.ObjectEnum} 
- * @default 'order'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof OrderCalculated.ObjectEnum) | undefined}
+    * @default 'order'
+    */
 OrderCalculated.prototype['object'] = 'order';
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrderCalculated.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrderCalculated.prototype['updated_at'] = undefined;
 
 /**
- * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 OrderCalculated.prototype['customer_id'] = undefined;
 
 /**
- * Unique referrer ID.
- * @member {String} 
- */
+    * Unique referrer ID.
+    * @type {String | undefined}
+    */
 OrderCalculated.prototype['referrer_id'] = undefined;
 
 /**
- * @member {module:model/CustomerId} 
- */
+    * @type {CustomerId | undefined}
+    */
 OrderCalculated.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/ReferrerId} 
- */
+    * @type {ReferrerId | undefined}
+    */
 OrderCalculated.prototype['referrer'] = undefined;
 
 /**
- * @member {Object.<String, module:model/OrderRedemptionsEntry>} 
- */
+    * @type {Object.<String, OrderRedemptionsEntry> | undefined}
+    */
 OrderCalculated.prototype['redemptions'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-OrderCalculated['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    OrderCalculated['StatusEnum'] = {
+    
+        /**
+         * value: "CREATED"
+         * @constant
+         */
+        "CREATED": "CREATED",
+    
+        /**
+         * value: "PAID"
+         * @constant
+         */
+        "PAID": "PAID",
+    
+        /**
+         * value: "CANCELED"
+         * @constant
+         */
+        "CANCELED": "CANCELED",
+    
+        /**
+         * value: "FULFILLED"
+         * @constant
+         */
+        "FULFILLED": "FULFILLED"    
+    };
+
 
     /**
-     * value: "CREATED"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREATED": "CREATED",
-
-    /**
-     * value: "PAID"
-     * @constant
-     */
-    "PAID": "PAID",
-
-    /**
-     * value: "CANCELED"
-     * @constant
-     */
-    "CANCELED": "CANCELED",
-
-    /**
-     * value: "FULFILLED"
-     * @constant
-     */
-    "FULFILLED": "FULFILLED"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-OrderCalculated['ObjectEnum'] = {
-
-    /**
-     * value: "order"
-     * @constant
-     */
-    "order": "order"
-};
+    OrderCalculated['ObjectEnum'] = {
+    
+        /**
+         * value: "order"
+         * @constant
+         */
+        "order": "order"    
+    };
 
 
 

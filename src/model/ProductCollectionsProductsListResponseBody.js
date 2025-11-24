@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ProductCollectionsProductsListResponseBodyDataItem from './ProductCollectionsProductsListResponseBodyDataItem';
-
 /**
  * The ProductCollectionsProductsListResponseBody model module.
  * @module model/ProductCollectionsProductsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsProductsListResponseBody {
     /**
      * Constructs a new <code>ProductCollectionsProductsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/product-collections/{productCollectionId}/products&#x60;.
-     * @alias module:model/ProductCollectionsProductsListResponseBody
+     * @alias ProductCollectionsProductsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ProductCollectionsProductsListResponseBody {
     /**
      * Constructs a <code>ProductCollectionsProductsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsProductsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsProductsListResponseBody} The populated <code>ProductCollectionsProductsListResponseBody</code> instance.
+     * @param {Partial<ProductCollectionsProductsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsProductsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsProductsListResponseBody} The populated <code>ProductCollectionsProductsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ProductCollectionsProductsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsProductsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsProductsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsProductsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,28 +100,28 @@ class ProductCollectionsProductsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about products and SKUs.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about products and SKUs.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ProductCollectionsProductsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of products and SKUs.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of products and SKUs.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 ProductCollectionsProductsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * @member {Array.<module:model/ProductCollectionsProductsListResponseBodyDataItem>} 
- */
+    * @type {Array.<ProductCollectionsProductsListResponseBodyDataItem> | undefined}
+    */
 ProductCollectionsProductsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of products & SKUs in the product collection.
- * @member {Number} 
- */
+    * Total number of products & SKUs in the product collection.
+    * @type {Number | undefined}
+    */
 ProductCollectionsProductsListResponseBody.prototype['total'] = undefined;
 
 

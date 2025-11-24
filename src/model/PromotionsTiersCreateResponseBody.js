@@ -19,17 +19,16 @@ import PromotionsTiersCreateResponseBodySummary from './PromotionsTiersCreateRes
 import ValidationRuleAssignmentsList from './ValidationRuleAssignmentsList';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The PromotionsTiersCreateResponseBody model module.
  * @module model/PromotionsTiersCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsTiersCreateResponseBody {
     /**
      * Constructs a new <code>PromotionsTiersCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/promotions/{campaignId}/tiers&#x60;.
-     * @alias module:model/PromotionsTiersCreateResponseBody
+     * @alias PromotionsTiersCreateResponseBody
      */
     constructor() { 
         
@@ -48,9 +47,9 @@ class PromotionsTiersCreateResponseBody {
     /**
      * Constructs a <code>PromotionsTiersCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsTiersCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/PromotionsTiersCreateResponseBody} The populated <code>PromotionsTiersCreateResponseBody</code> instance.
+     * @param {Partial<PromotionsTiersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsTiersCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {PromotionsTiersCreateResponseBody} The populated <code>PromotionsTiersCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -128,7 +127,7 @@ class PromotionsTiersCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsTiersCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsTiersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsTiersCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -208,129 +207,129 @@ class PromotionsTiersCreateResponseBody {
 
 
 /**
- * Unique promotion tier ID.
- * @member {String} 
- */
+    * Unique promotion tier ID.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * Name of the promotion tier.
- * @member {String} 
- */
+    * Name of the promotion tier.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['banner'] = undefined;
 
 /**
- * @member {module:model/PromotionsTiersCreateResponseBodyAction} 
- */
+    * @type {PromotionsTiersCreateResponseBodyAction | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['action'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
+    * @type {Object | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['metadata'] = undefined;
 
 /**
- * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
- * @member {Number} 
- */
+    * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
+    * @type {Number | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['hierarchy'] = undefined;
 
 /**
- * Promotion unique ID.
- * @member {String} 
- */
+    * Promotion unique ID.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['promotion_id'] = undefined;
 
 /**
- * @member {module:model/PromotionsTiersCreateResponseBodyCampaign} 
- */
+    * @type {PromotionsTiersCreateResponseBodyCampaign | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['campaign'] = undefined;
 
 /**
- * Promotion tier's parent campaign's unique ID.
- * @member {String} 
- */
+    * Promotion tier's parent campaign's unique ID.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['campaign_id'] = undefined;
 
 /**
- * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
- * @member {Boolean} 
- */
+    * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
+    * @type {Boolean | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['active'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['start_date'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
+    * @type {Date | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/PromotionsTiersCreateResponseBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof PromotionsTiersCreateResponseBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['validity_hours'] = undefined;
 
 /**
- * @member {module:model/PromotionsTiersCreateResponseBodySummary} 
- */
+    * @type {PromotionsTiersCreateResponseBodySummary | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['summary'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the promotion tier.
- * @member {String} 
- * @default 'promotion_tier'
- */
+    * The type of the object represented by JSON. This object stores information about the promotion tier.
+    * @type {String | undefined}
+    * @default 'promotion_tier'
+    */
 PromotionsTiersCreateResponseBody.prototype['object'] = 'promotion_tier';
 
 /**
- * @member {module:model/ValidationRuleAssignmentsList} 
- */
+    * @type {ValidationRuleAssignmentsList | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['validation_rule_assignments'] = undefined;
 
 /**
- * Promotion tier category ID.
- * @member {String} 
- */
+    * Promotion tier category ID.
+    * @type {String | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['category_id'] = undefined;
 
 /**
- * @member {Array.<module:model/Category>} 
- */
+    * @type {Array.<Category> | undefined}
+    */
 PromotionsTiersCreateResponseBody.prototype['categories'] = undefined;
 
 

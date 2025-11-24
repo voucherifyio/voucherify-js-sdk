@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesMembersTransactionsExportCreateRequestBodyParameters from './LoyaltiesMembersTransactionsExportCreateRequestBodyParameters';
-
 /**
  * The LoyaltiesMembersTransactionsExportCreateRequestBody model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransactionsExportCreateRequestBody {
     /**
      * Constructs a new <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/loyalties/members/{memberId}/transactions/export&#x60; and for **POST** &#x60;v1/loyalties/{campaignId}/members/{memberId}/transactions/export&#x60;.
-     * @alias module:model/LoyaltiesMembersTransactionsExportCreateRequestBody
+     * @alias LoyaltiesMembersTransactionsExportCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersTransactionsExportCreateRequestBody {
     /**
      * Constructs a <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransactionsExportCreateRequestBody} The populated <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code> instance.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransactionsExportCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransactionsExportCreateRequestBody} The populated <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesMembersTransactionsExportCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransactionsExportCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesMembersTransactionsExportCreateRequestBody {
 
 
 /**
- * @member {module:model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters} 
- */
+    * @type {LoyaltiesMembersTransactionsExportCreateRequestBodyParameters | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateRequestBody.prototype['parameters'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters from './LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParameters model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code>.
      * List of fields and filters that were passed in the request body to create the export.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParameters {
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBodyParameters} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -90,45 +89,45 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParameters {
 
 
 /**
- * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters.OrderEnum} 
- */
+    * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateResponseBodyParameters.OrderEnum) | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data that was exported. These fields define the headers in the CSV file.    The array can be a combination of any of the following available fields:    | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Loyalty points bucket ID. | lopb_Wl1o3EjJIHSNjvO5BDLy4z1n | | campaign_id | Campaign ID of the parent loyalty campaign. | camp_7s3uXI44aKfIk5IhmeOPr6ic | | voucher_id | Voucher ID of the parent loyalty card. | v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655 | | status | Status of the loyalty points bucket. | `ACTIVE` or `INACTIVE` | | expires_at | Timestamp in ISO 8601 format representing the date when the points expire. | 2022-06-30 | | points | Number of points. | 1000 |
- * @member {Array.<module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters.FieldsEnum>} 
- */
+    * Array of strings containing the data that was exported. These fields define the headers in the CSV file.    The array can be a combination of any of the following available fields:    | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Loyalty points bucket ID. | lopb_Wl1o3EjJIHSNjvO5BDLy4z1n | | campaign_id | Campaign ID of the parent loyalty campaign. | camp_7s3uXI44aKfIk5IhmeOPr6ic | | voucher_id | Voucher ID of the parent loyalty card. | v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655 | | status | Status of the loyalty points bucket. | `ACTIVE` or `INACTIVE` | | expires_at | Timestamp in ISO 8601 format representing the date when the points expire. | 2022-06-30 | | points | Number of points. | 1000 |
+    * @type {(Array<keyof typeof LoyaltiesPointsExpirationExportCreateResponseBodyParameters.FieldsEnum>) | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParameters.prototype['filters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateResponseBodyParameters['OrderEnum'] = {
-
     /**
-     * value: "expires_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "expires_at": "expires_at",
-
-    /**
-     * value: "-expires_at"
-     * @constant
-     */
-    "-expires_at": "-expires_at"
-};
+    LoyaltiesPointsExpirationExportCreateResponseBodyParameters['OrderEnum'] = {
+    
+        /**
+         * value: "expires_at"
+         * @constant
+         */
+        "expires_at": "expires_at",
+    
+        /**
+         * value: "-expires_at"
+         * @constant
+         */
+        "-expires_at": "-expires_at"    
+    };
 
 
 /**

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidityHoursDailyItem model module.
  * @module model/ValidityHoursDailyItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidityHoursDailyItem {
     /**
      * Constructs a new <code>ValidityHoursDailyItem</code>.
      * Defines the reccuring period(s) when the resource will be active.
-     * @alias module:model/ValidityHoursDailyItem
+     * @alias ValidityHoursDailyItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidityHoursDailyItem {
     /**
      * Constructs a <code>ValidityHoursDailyItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidityHoursDailyItem} obj Optional instance to populate.
-     * @returns {module:model/ValidityHoursDailyItem} The populated <code>ValidityHoursDailyItem</code> instance.
+     * @param {Partial<ValidityHoursDailyItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidityHoursDailyItem} [obj] Optional instance to populate.
+     * @returns {ValidityHoursDailyItem} The populated <code>ValidityHoursDailyItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class ValidityHoursDailyItem {
 
     /**
      * Validates the JSON data with respect to <code>ValidityHoursDailyItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidityHoursDailyItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidityHoursDailyItem</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class ValidityHoursDailyItem {
 
 
 /**
- * Defines the starting hour of validity in the HH:mm format. The resource is *inactive before* this time.
- * @member {String} 
- */
+    * Defines the starting hour of validity in the HH:mm format. The resource is *inactive before* this time.
+    * @type {String | undefined}
+    */
 ValidityHoursDailyItem.prototype['start_time'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the resource is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3`  Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/ValidityHoursDailyItem.DaysOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the resource is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3`  Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof ValidityHoursDailyItem.DaysOfWeekEnum>) | undefined}
+    */
 ValidityHoursDailyItem.prototype['days_of_week'] = undefined;
 
 /**
- * Defines the ending hour of validity in the HH:mm format. The resource is *inactive after* this time.
- * @member {String} 
- */
+    * Defines the ending hour of validity in the HH:mm format. The resource is *inactive after* this time.
+    * @type {String | undefined}
+    */
 ValidityHoursDailyItem.prototype['expiration_time'] = undefined;
 
 

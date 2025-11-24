@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryCustomer model module.
  * @module model/RedemptionEntryCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryCustomer {
     /**
      * Constructs a new <code>RedemptionEntryCustomer</code>.
-     * @alias module:model/RedemptionEntryCustomer
+     * @alias RedemptionEntryCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionEntryCustomer {
     /**
      * Constructs a <code>RedemptionEntryCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryCustomer} The populated <code>RedemptionEntryCustomer</code> instance.
+     * @param {Partial<RedemptionEntryCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryCustomer} The populated <code>RedemptionEntryCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class RedemptionEntryCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryCustomer</code>.
      */
     static validateJSON(data) {
@@ -106,59 +105,59 @@ class RedemptionEntryCustomer {
 
 
 /**
- * Unique identifier of an existing customer. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an existing customer. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionEntryCustomer.prototype['id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 RedemptionEntryCustomer.prototype['name'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 RedemptionEntryCustomer.prototype['email'] = undefined;
 
 /**
- * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
- * @member {String} 
- */
+    * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+    * @type {String | undefined}
+    */
 RedemptionEntryCustomer.prototype['source_id'] = undefined;
 
 /**
- * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
+    * @type {Object | undefined}
+    */
 RedemptionEntryCustomer.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionEntryCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionEntryCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionEntryCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionEntryCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionEntryCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

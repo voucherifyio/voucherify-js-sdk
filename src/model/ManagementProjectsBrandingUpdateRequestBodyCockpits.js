@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingUpdateRequestBodyCockpits model module.
  * @module model/ManagementProjectsBrandingUpdateRequestBodyCockpits
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateRequestBodyCockpits {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code>.
      * Defines customer cockpit details.
-     * @alias module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits
+     * @alias ManagementProjectsBrandingUpdateRequestBodyCockpits
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingUpdateRequestBodyCockpits {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits} The populated <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBodyCockpits>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateRequestBodyCockpits} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateRequestBodyCockpits} The populated <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ManagementProjectsBrandingUpdateRequestBodyCockpits {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBodyCockpits>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateRequestBodyCockpits</code>.
      */
     static validateJSON(data) {
@@ -100,106 +99,106 @@ class ManagementProjectsBrandingUpdateRequestBodyCockpits {
 
 
 /**
- * Indicates if the campaign overview is turned on for customers.
- * @member {Boolean} 
- */
+    * Indicates if the campaign overview is turned on for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['campaigns_overview_enabled'] = undefined;
 
 /**
- * Indicates if the loyalty campaign overview is turned on for customers.
- * @member {Boolean} 
- */
+    * Indicates if the loyalty campaign overview is turned on for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['loyalty_enabled'] = undefined;
 
 /**
- * Indicates if the gift card overview is turned on for customers.
- * @member {Boolean} 
- */
+    * Indicates if the gift card overview is turned on for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['gift_cards_enabled'] = undefined;
 
 /**
- * Indicates if the discount coupon overview is turned on for customers.
- * @member {Boolean} 
- */
+    * Indicates if the discount coupon overview is turned on for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['coupons_enabled'] = undefined;
 
 /**
- * Indicates if the referral campaign overview is turned on for customers.
- * @member {Boolean} 
- */
+    * Indicates if the referral campaign overview is turned on for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['referrals_enabled'] = undefined;
 
 /**
- * Determines the color scheme of the customer cockpit.
- * @member {module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits.ThemeEnum} 
- */
+    * Determines the color scheme of the customer cockpit.
+    * @type {(keyof typeof ManagementProjectsBrandingUpdateRequestBodyCockpits.ThemeEnum) | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['theme'] = undefined;
 
 /**
- * Indicates if the double opt-in option is turned on.
- * @member {Boolean} 
- */
+    * Indicates if the double opt-in option is turned on.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['use_custom_double_opt_in_redirect_url'] = undefined;
 
 /**
- * Defines the URL for the double opt-in consent.
- * @member {String} 
- */
+    * Defines the URL for the double opt-in consent.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyCockpits.prototype['custom_double_opt_in_redirect_url'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>theme</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsBrandingUpdateRequestBodyCockpits['ThemeEnum'] = {
-
     /**
-     * value: "orange"
-     * @constant
+     * Allowed values for the <code>theme</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "orange": "orange",
-
-    /**
-     * value: "green"
-     * @constant
-     */
-    "green": "green",
-
-    /**
-     * value: "dark-green"
-     * @constant
-     */
-    "dark-green": "dark-green",
-
-    /**
-     * value: "blue"
-     * @constant
-     */
-    "blue": "blue",
-
-    /**
-     * value: "purple"
-     * @constant
-     */
-    "purple": "purple",
-
-    /**
-     * value: "red"
-     * @constant
-     */
-    "red": "red",
-
-    /**
-     * value: "grey"
-     * @constant
-     */
-    "grey": "grey"
-};
+    ManagementProjectsBrandingUpdateRequestBodyCockpits['ThemeEnum'] = {
+    
+        /**
+         * value: "orange"
+         * @constant
+         */
+        "orange": "orange",
+    
+        /**
+         * value: "green"
+         * @constant
+         */
+        "green": "green",
+    
+        /**
+         * value: "dark-green"
+         * @constant
+         */
+        "dark-green": "dark-green",
+    
+        /**
+         * value: "blue"
+         * @constant
+         */
+        "blue": "blue",
+    
+        /**
+         * value: "purple"
+         * @constant
+         */
+        "purple": "purple",
+    
+        /**
+         * value: "red"
+         * @constant
+         */
+        "red": "red",
+    
+        /**
+         * value: "grey"
+         * @constant
+         */
+        "grey": "grey"    
+    };
 
 
 

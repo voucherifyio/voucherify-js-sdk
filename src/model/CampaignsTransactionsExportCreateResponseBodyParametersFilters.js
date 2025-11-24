@@ -16,16 +16,15 @@ import CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId 
 import FilterConditionsDateTime from './FilterConditionsDateTime';
 import FilterConditionsString from './FilterConditionsString';
 import Junction from './Junction';
-
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParametersFilters model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParametersFilters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsExportCreateResponseBodyParametersFilters {
     /**
      * Constructs a new <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code>.
-     * @alias module:model/CampaignsTransactionsExportCreateResponseBodyParametersFilters
+     * @alias CampaignsTransactionsExportCreateResponseBodyParametersFilters
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFilters {
     /**
      * Constructs a <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFilters} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFilters} The populated <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code> instance.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParametersFilters>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsExportCreateResponseBodyParametersFilters} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsExportCreateResponseBodyParametersFilters} The populated <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFilters {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParametersFilters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsExportCreateResponseBodyParametersFilters</code>.
      */
     static validateJSON(data) {
@@ -95,23 +94,23 @@ class CampaignsTransactionsExportCreateResponseBodyParametersFilters {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParametersFilters.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParametersFilters.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParametersFilters.prototype['voucher_id'] = undefined;
 
 /**
- * @member {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId} 
- */
+    * @type {CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParametersFilters.prototype['campaign_id'] = undefined;
 
 

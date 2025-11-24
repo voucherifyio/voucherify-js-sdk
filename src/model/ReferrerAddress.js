@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ReferrerAddress model module.
  * @module model/ReferrerAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferrerAddress {
     /**
      * Constructs a new <code>ReferrerAddress</code>.
      * Customer&#39;s address.
-     * @alias module:model/ReferrerAddress
+     * @alias ReferrerAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ReferrerAddress {
     /**
      * Constructs a <code>ReferrerAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferrerAddress} obj Optional instance to populate.
-     * @returns {module:model/ReferrerAddress} The populated <code>ReferrerAddress</code> instance.
+     * @param {Partial<ReferrerAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferrerAddress} [obj] Optional instance to populate.
+     * @returns {ReferrerAddress} The populated <code>ReferrerAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class ReferrerAddress {
 
     /**
      * Validates the JSON data with respect to <code>ReferrerAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferrerAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferrerAddress</code>.
      */
     static validateJSON(data) {
@@ -110,39 +109,39 @@ class ReferrerAddress {
 
 
 /**
- * City
- * @member {String} 
- */
+    * City
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['city'] = undefined;
 
 /**
- * State
- * @member {String} 
- */
+    * State
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['state'] = undefined;
 
 /**
- * First line of address.
- * @member {String} 
- */
+    * First line of address.
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['line_1'] = undefined;
 
 /**
- * Second line of address.
- * @member {String} 
- */
+    * Second line of address.
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['line_2'] = undefined;
 
 /**
- * Country.
- * @member {String} 
- */
+    * Country.
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['country'] = undefined;
 
 /**
- * Postal code.
- * @member {String} 
- */
+    * Postal code.
+    * @type {String | undefined}
+    */
 ReferrerAddress.prototype['postal_code'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty from './LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty';
-
 /**
  * The LoyaltiesRewardsCreateAssignmentResponseBodyParameters model module.
  * @module model/LoyaltiesRewardsCreateAssignmentResponseBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsCreateAssignmentResponseBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code>.
      * Defines the cost of the reward.
-     * @alias module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParameters
+     * @alias LoyaltiesRewardsCreateAssignmentResponseBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParameters {
     /**
      * Constructs a <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParameters} The populated <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsCreateAssignmentResponseBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsCreateAssignmentResponseBodyParameters} The populated <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsCreateAssignmentResponseBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParameters {
 
 
 /**
- * @member {module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty} 
- */
+    * @type {LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty | undefined}
+    */
 LoyaltiesRewardsCreateAssignmentResponseBodyParameters.prototype['loyalty'] = undefined;
 
 

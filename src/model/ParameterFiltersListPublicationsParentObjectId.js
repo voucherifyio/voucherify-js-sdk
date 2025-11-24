@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListPublicationsParentObjectId model module.
  * @module model/ParameterFiltersListPublicationsParentObjectId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublicationsParentObjectId {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsParentObjectId</code>.
      * Filter publications by parent object id.
-     * @alias module:model/ParameterFiltersListPublicationsParentObjectId
+     * @alias ParameterFiltersListPublicationsParentObjectId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListPublicationsParentObjectId {
     /**
      * Constructs a <code>ParameterFiltersListPublicationsParentObjectId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublicationsParentObjectId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublicationsParentObjectId} The populated <code>ParameterFiltersListPublicationsParentObjectId</code> instance.
+     * @param {Partial<ParameterFiltersListPublicationsParentObjectId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublicationsParentObjectId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublicationsParentObjectId} The populated <code>ParameterFiltersListPublicationsParentObjectId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListPublicationsParentObjectId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublicationsParentObjectId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublicationsParentObjectId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublicationsParentObjectId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListPublicationsParentObjectId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListPublicationsParentObjectId.prototype['conditions'] = undefined;
 
 

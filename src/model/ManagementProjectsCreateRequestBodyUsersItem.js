@@ -12,18 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsCreateRequestBodyUsersItem model module.
  * @module model/ManagementProjectsCreateRequestBodyUsersItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCreateRequestBodyUsersItem {
     /**
      * Constructs a new <code>ManagementProjectsCreateRequestBodyUsersItem</code>.
      * Contains details about the users who will be assigned to the project. Only the &#x60;id&#x60; and &#x60;role&#x60; or &#x60;login&#x60; and &#x60;role&#x60; should be provided in the request.
-     * @alias module:model/ManagementProjectsCreateRequestBodyUsersItem
-     * @param role {String} The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT` or an ID of a custom role.
+     * @alias ManagementProjectsCreateRequestBodyUsersItem
+     * @param {String} role The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT` or an ID of a custom role.
      */
     constructor(role) { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsCreateRequestBodyUsersItem {
     /**
      * Constructs a <code>ManagementProjectsCreateRequestBodyUsersItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCreateRequestBodyUsersItem} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCreateRequestBodyUsersItem} The populated <code>ManagementProjectsCreateRequestBodyUsersItem</code> instance.
+     * @param {Partial<ManagementProjectsCreateRequestBodyUsersItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCreateRequestBodyUsersItem} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCreateRequestBodyUsersItem} The populated <code>ManagementProjectsCreateRequestBodyUsersItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class ManagementProjectsCreateRequestBodyUsersItem {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCreateRequestBodyUsersItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCreateRequestBodyUsersItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCreateRequestBodyUsersItem</code>.
      */
     static validateJSON(data) {
@@ -97,21 +96,21 @@ class ManagementProjectsCreateRequestBodyUsersItem {
 ManagementProjectsCreateRequestBodyUsersItem.RequiredProperties = ["role"];
 
 /**
- * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
- * @member {String} 
- */
+    * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBodyUsersItem.prototype['id'] = undefined;
 
 /**
- * The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
- * @member {String} 
- */
+    * The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBodyUsersItem.prototype['login'] = undefined;
 
 /**
- * The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT` or an ID of a custom role.
- * @member {String} 
- */
+    * The role of the user to be added. It can be one of the following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT` or an ID of a custom role.
+    * @type {String}
+    */
 ManagementProjectsCreateRequestBodyUsersItem.prototype['role'] = undefined;
 
 

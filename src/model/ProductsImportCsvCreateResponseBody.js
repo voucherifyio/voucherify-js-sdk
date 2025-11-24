@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductsImportCsvCreateResponseBody model module.
  * @module model/ProductsImportCsvCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsImportCsvCreateResponseBody {
     /**
      * Constructs a new <code>ProductsImportCsvCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/products/importCSV&#x60;.
-     * @alias module:model/ProductsImportCsvCreateResponseBody
+     * @alias ProductsImportCsvCreateResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ProductsImportCsvCreateResponseBody {
     /**
      * Constructs a <code>ProductsImportCsvCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsImportCsvCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsImportCsvCreateResponseBody} The populated <code>ProductsImportCsvCreateResponseBody</code> instance.
+     * @param {Partial<ProductsImportCsvCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsImportCsvCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsImportCsvCreateResponseBody} The populated <code>ProductsImportCsvCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ProductsImportCsvCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsImportCsvCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsImportCsvCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsImportCsvCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ProductsImportCsvCreateResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 ProductsImportCsvCreateResponseBody.prototype['async_action_id'] = undefined;
 
 

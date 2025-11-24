@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Export from './Export';
-
 /**
  * The ExportsListResponseBody model module.
  * @module model/ExportsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportsListResponseBody {
     /**
      * Constructs a new <code>ExportsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/exports&#x60;.
-     * @alias module:model/ExportsListResponseBody
+     * @alias ExportsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ExportsListResponseBody {
     /**
      * Constructs a <code>ExportsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ExportsListResponseBody} The populated <code>ExportsListResponseBody</code> instance.
+     * @param {Partial<ExportsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ExportsListResponseBody} The populated <code>ExportsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ExportsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ExportsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ExportsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about exports.
- * @member {module:model/ExportsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about exports.
+    * @type {(keyof typeof ExportsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ExportsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of exports.
- * @member {module:model/ExportsListResponseBody.DataRefEnum} 
- * @default 'exports'
- */
+    * Identifies the name of the attribute that contains the array of exports.
+    * @type {(keyof typeof ExportsListResponseBody.DataRefEnum) | undefined}
+    * @default 'exports'
+    */
 ExportsListResponseBody.prototype['data_ref'] = 'exports';
 
 /**
- * An array of export objects.
- * @member {Array.<module:model/Export>} 
- */
+    * An array of export objects.
+    * @type {Array.<Export> | undefined}
+    */
 ExportsListResponseBody.prototype['exports'] = undefined;
 
 /**
- * Total number of exports.
- * @member {Number} 
- */
+    * Total number of exports.
+    * @type {Number | undefined}
+    */
 ExportsListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ExportsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ExportsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ExportsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "exports"
-     * @constant
-     */
-    "exports": "exports"
-};
+    ExportsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "exports"
+         * @constant
+         */
+        "exports": "exports"    
+    };
 
 
 

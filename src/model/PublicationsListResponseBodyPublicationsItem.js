@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import CustomerWithSummaryLoyaltyReferrals from './CustomerWithSummaryLoyaltyReferrals';
 import ListPublicationsItemVoucher from './ListPublicationsItemVoucher';
 import PublicationsListResponseBodyPublicationsItemMetadata from './PublicationsListResponseBodyPublicationsItemMetadata';
-
 /**
  * The PublicationsListResponseBodyPublicationsItem model module.
  * @module model/PublicationsListResponseBodyPublicationsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PublicationsListResponseBodyPublicationsItem {
     /**
      * Constructs a new <code>PublicationsListResponseBodyPublicationsItem</code>.
-     * @alias module:model/PublicationsListResponseBodyPublicationsItem
+     * @alias PublicationsListResponseBodyPublicationsItem
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PublicationsListResponseBodyPublicationsItem {
     /**
      * Constructs a <code>PublicationsListResponseBodyPublicationsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PublicationsListResponseBodyPublicationsItem} obj Optional instance to populate.
-     * @returns {module:model/PublicationsListResponseBodyPublicationsItem} The populated <code>PublicationsListResponseBodyPublicationsItem</code> instance.
+     * @param {Partial<PublicationsListResponseBodyPublicationsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {PublicationsListResponseBodyPublicationsItem} [obj] Optional instance to populate.
+     * @returns {PublicationsListResponseBodyPublicationsItem} The populated <code>PublicationsListResponseBodyPublicationsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -102,7 +101,7 @@ class PublicationsListResponseBodyPublicationsItem {
 
     /**
      * Validates the JSON data with respect to <code>PublicationsListResponseBodyPublicationsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PublicationsListResponseBodyPublicationsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PublicationsListResponseBodyPublicationsItem</code>.
      */
     static validateJSON(data) {
@@ -172,130 +171,130 @@ class PublicationsListResponseBodyPublicationsItem {
 
 
 /**
- * Unique publication ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique publication ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the `publication`.
- * @member {module:model/PublicationsListResponseBodyPublicationsItem.ObjectEnum} 
- * @default 'publication'
- */
+    * The type of the object represented by the JSON. This object stores information about the `publication`.
+    * @type {(keyof typeof PublicationsListResponseBodyPublicationsItem.ObjectEnum) | undefined}
+    * @default 'publication'
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['object'] = 'publication';
 
 /**
- * Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['created_at'] = undefined;
 
 /**
- * Unique customer ID of the customer receiving the publication.
- * @member {String} 
- */
+    * Unique customer ID of the customer receiving the publication.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['customer_id'] = undefined;
 
 /**
- * Customer's `source_id`.
- * @member {String} 
- */
+    * Customer's `source_id`.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['tracking_id'] = undefined;
 
 /**
- * @member {module:model/PublicationsListResponseBodyPublicationsItemMetadata} 
- */
+    * @type {PublicationsListResponseBodyPublicationsItemMetadata | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['metadata'] = undefined;
 
 /**
- * How the publication was originated. It can be your own custom channel or an example value provided here.
- * @member {String} 
- */
+    * How the publication was originated. It can be your own custom channel or an example value provided here.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['channel'] = undefined;
 
 /**
- * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. 
- * @member {String} 
- */
+    * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. 
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['source_id'] = undefined;
 
 /**
- * @member {module:model/CustomerWithSummaryLoyaltyReferrals} 
- */
+    * @type {CustomerWithSummaryLoyaltyReferrals | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['customer'] = undefined;
 
 /**
- * Contains the voucher IDs that was assigned by Voucherify. and Contains the unique voucher codes that was assigned by Voucherify.
- * @member {Array.<String>} 
- */
+    * Contains the voucher IDs that was assigned by Voucherify. and Contains the unique voucher codes that was assigned by Voucherify.
+    * @type {Array.<String> | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['vouchers'] = undefined;
 
 /**
- * Contains the unique internal voucher IDs that was assigned by Voucherify.
- * @member {Array.<String>} 
- */
+    * Contains the unique internal voucher IDs that was assigned by Voucherify.
+    * @type {Array.<String> | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['vouchers_id'] = undefined;
 
 /**
- * @member {module:model/PublicationsListResponseBodyPublicationsItem.ResultEnum} 
- */
+    * @type {(keyof typeof PublicationsListResponseBodyPublicationsItem.ResultEnum) | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['result'] = undefined;
 
 /**
- * @member {module:model/ListPublicationsItemVoucher} 
- */
+    * @type {ListPublicationsItemVoucher | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['voucher'] = undefined;
 
 /**
- * Generic reason as to why the create publication operation failed.
- * @member {String} 
- */
+    * Generic reason as to why the create publication operation failed.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['failure_code'] = undefined;
 
 /**
- * This parameter will provide more expanded reason as to why the create publication operation failed.
- * @member {String} 
- */
+    * This parameter will provide more expanded reason as to why the create publication operation failed.
+    * @type {String | undefined}
+    */
 PublicationsListResponseBodyPublicationsItem.prototype['failure_message'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-PublicationsListResponseBodyPublicationsItem['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    PublicationsListResponseBodyPublicationsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "publication"
+         * @constant
+         */
+        "publication": "publication"    
+    };
+
 
     /**
-     * value: "publication"
-     * @constant
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "publication": "publication"
-};
-
-
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-PublicationsListResponseBodyPublicationsItem['ResultEnum'] = {
-
-    /**
-     * value: "SUCCESS"
-     * @constant
-     */
-    "SUCCESS": "SUCCESS",
-
-    /**
-     * value: "FAILURE"
-     * @constant
-     */
-    "FAILURE": "FAILURE"
-};
+    PublicationsListResponseBodyPublicationsItem['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "FAILURE"
+         * @constant
+         */
+        "FAILURE": "FAILURE"    
+    };
 
 
 

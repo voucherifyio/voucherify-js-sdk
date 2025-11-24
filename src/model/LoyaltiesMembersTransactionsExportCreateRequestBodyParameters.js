@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import ExportVoucherTransactionsFields from './ExportVoucherTransactionsFields';
 import ExportVoucherTransactionsFilters from './ExportVoucherTransactionsFilters';
 import ExportVoucherTransactionsOrder from './ExportVoucherTransactionsOrder';
-
 /**
  * The LoyaltiesMembersTransactionsExportCreateRequestBodyParameters model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransactionsExportCreateRequestBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code>.
      * List of available fields and filters that can be exported with an order along with the sorting order of the returned data.
-     * @alias module:model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters
+     * @alias LoyaltiesMembersTransactionsExportCreateRequestBodyParameters
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMembersTransactionsExportCreateRequestBodyParameters {
     /**
      * Constructs a <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters} The populated <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransactionsExportCreateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransactionsExportCreateRequestBodyParameters} The populated <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesMembersTransactionsExportCreateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransactionsExportCreateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -88,19 +87,19 @@ class LoyaltiesMembersTransactionsExportCreateRequestBodyParameters {
 
 
 /**
- * @member {module:model/ExportVoucherTransactionsOrder} 
- */
+    * @type {Exclude<keyof typeof ExportVoucherTransactionsOrder, "prototype" | "constructFromObject"> | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateRequestBodyParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data in the export. These fields define the headers in the CSV file.
- * @member {Array.<module:model/ExportVoucherTransactionsFields>} 
- */
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file.
+    * @type {Array.<Exclude<keyof typeof ExportVoucherTransactionsFields, "prototype" | "constructFromObject">> | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateRequestBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/ExportVoucherTransactionsFilters} 
- */
+    * @type {ExportVoucherTransactionsFilters | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateRequestBodyParameters.prototype['filters'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import UsageNotifications from './UsageNotifications';
-
 /**
  * The ManagementProjectsGetResponseBodyApiUsageNotifications model module.
  * @module model/ManagementProjectsGetResponseBodyApiUsageNotifications
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsGetResponseBodyApiUsageNotifications {
     /**
      * Constructs a new <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code>.
      * Determines the notification settings.
-     * @alias module:model/ManagementProjectsGetResponseBodyApiUsageNotifications
+     * @alias ManagementProjectsGetResponseBodyApiUsageNotifications
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsGetResponseBodyApiUsageNotifications {
     /**
      * Constructs a <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsGetResponseBodyApiUsageNotifications} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsGetResponseBodyApiUsageNotifications} The populated <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code> instance.
+     * @param {Partial<ManagementProjectsGetResponseBodyApiUsageNotifications>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsGetResponseBodyApiUsageNotifications} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsGetResponseBodyApiUsageNotifications} The populated <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectsGetResponseBodyApiUsageNotifications {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsGetResponseBodyApiUsageNotifications>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsGetResponseBodyApiUsageNotifications</code>.
      */
     static validateJSON(data) {
@@ -111,33 +110,33 @@ class ManagementProjectsGetResponseBodyApiUsageNotifications {
 
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['messages'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['api_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['bulk_api_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['webhook_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBodyApiUsageNotifications.prototype['cycle_calls'] = undefined;
 
 

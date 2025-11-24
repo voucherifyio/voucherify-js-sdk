@@ -14,18 +14,17 @@
 import ApiClient from '../ApiClient';
 import CustomerSummaryOrders from './CustomerSummaryOrders';
 import CustomerSummaryRedemptions from './CustomerSummaryRedemptions';
-
 /**
  * The CustomerSummary model module.
  * @module model/CustomerSummary
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerSummary {
     /**
      * Constructs a new <code>CustomerSummary</code>.
-     * @alias module:model/CustomerSummary
-     * @param redemptions {module:model/CustomerSummaryRedemptions} 
-     * @param orders {module:model/CustomerSummaryOrders} 
+     * @alias CustomerSummary
+     * @param {CustomerSummaryRedemptions} redemptions 
+     * @param {CustomerSummaryOrders} orders 
      */
     constructor(redemptions, orders) { 
         
@@ -45,9 +44,9 @@ class CustomerSummary {
     /**
      * Constructs a <code>CustomerSummary</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerSummary} obj Optional instance to populate.
-     * @returns {module:model/CustomerSummary} The populated <code>CustomerSummary</code> instance.
+     * @param {Partial<CustomerSummary>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerSummary} [obj] Optional instance to populate.
+     * @returns {CustomerSummary} The populated <code>CustomerSummary</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class CustomerSummary {
 
     /**
      * Validates the JSON data with respect to <code>CustomerSummary</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerSummary>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerSummary</code>.
      */
     static validateJSON(data) {
@@ -93,13 +92,13 @@ class CustomerSummary {
 CustomerSummary.RequiredProperties = ["redemptions", "orders"];
 
 /**
- * @member {module:model/CustomerSummaryRedemptions} 
- */
+    * @type {CustomerSummaryRedemptions}
+    */
 CustomerSummary.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/CustomerSummaryOrders} 
- */
+    * @type {CustomerSummaryOrders}
+    */
 CustomerSummary.prototype['orders'] = undefined;
 
 

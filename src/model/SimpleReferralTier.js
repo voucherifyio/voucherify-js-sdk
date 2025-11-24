@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleReferralTier model module.
  * @module model/SimpleReferralTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleReferralTier {
     /**
      * Constructs a new <code>SimpleReferralTier</code>.
-     * @alias module:model/SimpleReferralTier
+     * @alias SimpleReferralTier
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SimpleReferralTier {
     /**
      * Constructs a <code>SimpleReferralTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleReferralTier} obj Optional instance to populate.
-     * @returns {module:model/SimpleReferralTier} The populated <code>SimpleReferralTier</code> instance.
+     * @param {Partial<SimpleReferralTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleReferralTier} [obj] Optional instance to populate.
+     * @returns {SimpleReferralTier} The populated <code>SimpleReferralTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class SimpleReferralTier {
 
     /**
      * Validates the JSON data with respect to <code>SimpleReferralTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleReferralTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleReferralTier</code>.
      */
     static validateJSON(data) {
@@ -91,27 +90,27 @@ class SimpleReferralTier {
 
 
 /**
- * Unique referral tier ID.
- * @member {String} 
- */
+    * Unique referral tier ID.
+    * @type {String | undefined}
+    */
 SimpleReferralTier.prototype['id'] = undefined;
 
 /**
- * Campaign Id.
- * @member {String} 
- */
+    * Campaign Id.
+    * @type {String | undefined}
+    */
 SimpleReferralTier.prototype['campaign_id'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 SimpleReferralTier.prototype['banner'] = undefined;
 
 /**
- * Referral tier parameters
- * @member {Object} 
- */
+    * Referral tier parameters
+    * @type {Object | undefined}
+    */
 SimpleReferralTier.prototype['parameters'] = undefined;
 
 

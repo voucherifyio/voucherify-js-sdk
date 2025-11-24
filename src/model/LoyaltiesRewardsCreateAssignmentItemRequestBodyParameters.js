@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty from './LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty';
-
 /**
  * The LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters model module.
  * @module model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code>.
      * Defines the cost of the reward.
-     * @alias module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters
+     * @alias LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters {
     /**
      * Constructs a <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters} The populated <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters} The populated <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters {
 
 
 /**
- * @member {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty} 
- */
+    * @type {LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty | undefined}
+    */
 LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters.prototype['loyalty'] = undefined;
 
 

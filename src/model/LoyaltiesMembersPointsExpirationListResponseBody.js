@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPointsBucket from './LoyaltyPointsBucket';
-
 /**
  * The LoyaltiesMembersPointsExpirationListResponseBody model module.
  * @module model/LoyaltiesMembersPointsExpirationListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPointsExpirationListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMembersPointsExpirationListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/members/{memberId}/points-expiration&#x60;.
-     * @alias module:model/LoyaltiesMembersPointsExpirationListResponseBody
+     * @alias LoyaltiesMembersPointsExpirationListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMembersPointsExpirationListResponseBody {
     /**
      * Constructs a <code>LoyaltiesMembersPointsExpirationListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPointsExpirationListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPointsExpirationListResponseBody} The populated <code>LoyaltiesMembersPointsExpirationListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMembersPointsExpirationListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPointsExpirationListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPointsExpirationListResponseBody} The populated <code>LoyaltiesMembersPointsExpirationListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPointsExpirationListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPointsExpirationListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPointsExpirationListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class LoyaltiesMembersPointsExpirationListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about loyalty points expiration buckets in a dictionary.
- * @member {module:model/LoyaltiesMembersPointsExpirationListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about loyalty points expiration buckets in a dictionary.
+    * @type {(keyof typeof LoyaltiesMembersPointsExpirationListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesMembersPointsExpirationListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of loyalty points expiration bucket objects.
- * @member {module:model/LoyaltiesMembersPointsExpirationListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of loyalty points expiration bucket objects.
+    * @type {(keyof typeof LoyaltiesMembersPointsExpirationListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 LoyaltiesMembersPointsExpirationListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of loyalty points expiration buckets.
- * @member {Array.<module:model/LoyaltyPointsBucket>} 
- */
+    * Contains array of loyalty points expiration buckets.
+    * @type {Array.<LoyaltyPointsBucket> | undefined}
+    */
 LoyaltiesMembersPointsExpirationListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of point expiration buckets.
- * @member {Number} 
- */
+    * Total number of point expiration buckets.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersPointsExpirationListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPointsExpirationListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesMembersPointsExpirationListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPointsExpirationListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    LoyaltiesMembersPointsExpirationListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

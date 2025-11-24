@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodyOrderReferrer model module.
  * @module model/RedemptionsGetResponseBodyOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyOrderReferrer {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyOrderReferrer</code>.
-     * @alias module:model/RedemptionsGetResponseBodyOrderReferrer
+     * @alias RedemptionsGetResponseBodyOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsGetResponseBodyOrderReferrer {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyOrderReferrer} The populated <code>RedemptionsGetResponseBodyOrderReferrer</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyOrderReferrer} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyOrderReferrer} The populated <code>RedemptionsGetResponseBodyOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionsGetResponseBodyOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionsGetResponseBodyOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsGetResponseBodyOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsGetResponseBodyOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionsGetResponseBodyOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsGetResponseBodyOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionsGetResponseBodyOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

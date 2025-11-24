@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerSummaryRedemptionsGift model module.
  * @module model/CustomerSummaryRedemptionsGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerSummaryRedemptionsGift {
     /**
      * Constructs a new <code>CustomerSummaryRedemptionsGift</code>.
      * Summary of gift card credits.
-     * @alias module:model/CustomerSummaryRedemptionsGift
+     * @alias CustomerSummaryRedemptionsGift
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class CustomerSummaryRedemptionsGift {
     /**
      * Constructs a <code>CustomerSummaryRedemptionsGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerSummaryRedemptionsGift} obj Optional instance to populate.
-     * @returns {module:model/CustomerSummaryRedemptionsGift} The populated <code>CustomerSummaryRedemptionsGift</code> instance.
+     * @param {Partial<CustomerSummaryRedemptionsGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerSummaryRedemptionsGift} [obj] Optional instance to populate.
+     * @returns {CustomerSummaryRedemptionsGift} The populated <code>CustomerSummaryRedemptionsGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class CustomerSummaryRedemptionsGift {
 
     /**
      * Validates the JSON data with respect to <code>CustomerSummaryRedemptionsGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerSummaryRedemptionsGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerSummaryRedemptionsGift</code>.
      */
     static validateJSON(data) {
@@ -76,17 +75,17 @@ class CustomerSummaryRedemptionsGift {
 
 
 /**
- * Total amount of gift card credits redeemed by customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- * @default 0
- */
+    * Total amount of gift card credits redeemed by customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    * @default 0
+    */
 CustomerSummaryRedemptionsGift.prototype['redeemed_amount'] = 0;
 
 /**
- * Remaining gift card balance across all gift cards. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- * @default 0
- */
+    * Remaining gift card balance across all gift cards. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    * @default 0
+    */
 CustomerSummaryRedemptionsGift.prototype['amount_to_go'] = 0;
 
 

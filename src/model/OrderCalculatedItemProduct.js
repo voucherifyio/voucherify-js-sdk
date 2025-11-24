@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OrderCalculatedItemProduct model module.
  * @module model/OrderCalculatedItemProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrderCalculatedItemProduct {
     /**
      * Constructs a new <code>OrderCalculatedItemProduct</code>.
      * An object containing details of the related product.
-     * @alias module:model/OrderCalculatedItemProduct
+     * @alias OrderCalculatedItemProduct
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class OrderCalculatedItemProduct {
     /**
      * Constructs a <code>OrderCalculatedItemProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderCalculatedItemProduct} obj Optional instance to populate.
-     * @returns {module:model/OrderCalculatedItemProduct} The populated <code>OrderCalculatedItemProduct</code> instance.
+     * @param {Partial<OrderCalculatedItemProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrderCalculatedItemProduct} [obj] Optional instance to populate.
+     * @returns {OrderCalculatedItemProduct} The populated <code>OrderCalculatedItemProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class OrderCalculatedItemProduct {
 
     /**
      * Validates the JSON data with respect to <code>OrderCalculatedItemProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrderCalculatedItemProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrderCalculatedItemProduct</code>.
      */
     static validateJSON(data) {
@@ -98,39 +97,39 @@ class OrderCalculatedItemProduct {
 
 
 /**
- * A unique identifier that represents the product and is assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the product and is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 OrderCalculatedItemProduct.prototype['id'] = undefined;
 
 /**
- * The merchant's product ID (if it is different than Voucherify's product ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
- * @member {String} 
- */
+    * The merchant's product ID (if it is different than Voucherify's product ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
+    * @type {String | undefined}
+    */
 OrderCalculatedItemProduct.prototype['source_id'] = undefined;
 
 /**
- * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
- * @member {Boolean} 
- */
+    * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
+    * @type {Boolean | undefined}
+    */
 OrderCalculatedItemProduct.prototype['override'] = undefined;
 
 /**
- * Product name.
- * @member {String} 
- */
+    * Product name.
+    * @type {String | undefined}
+    */
 OrderCalculatedItemProduct.prototype['name'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a product. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a product. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 OrderCalculatedItemProduct.prototype['metadata'] = undefined;
 
 /**
- * Product price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Product price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderCalculatedItemProduct.prototype['price'] = undefined;
 
 

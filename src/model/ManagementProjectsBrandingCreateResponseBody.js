@@ -16,17 +16,16 @@ import ManagementProjectsBrandingCreateResponseBodyAddress from './ManagementPro
 import ManagementProjectsBrandingCreateResponseBodyBrand from './ManagementProjectsBrandingCreateResponseBodyBrand';
 import ManagementProjectsBrandingCreateResponseBodyCockpits from './ManagementProjectsBrandingCreateResponseBodyCockpits';
 import ManagementProjectsBrandingCreateResponseBodyContact from './ManagementProjectsBrandingCreateResponseBodyContact';
-
 /**
  * The ManagementProjectsBrandingCreateResponseBody model module.
  * @module model/ManagementProjectsBrandingCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingCreateResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsBrandingCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;/management/v1/projects/{projectId}/branding&#x60;.
-     * @alias module:model/ManagementProjectsBrandingCreateResponseBody
+     * @alias ManagementProjectsBrandingCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsBrandingCreateResponseBody {
     /**
      * Constructs a <code>ManagementProjectsBrandingCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingCreateResponseBody} The populated <code>ManagementProjectsBrandingCreateResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsBrandingCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingCreateResponseBody} The populated <code>ManagementProjectsBrandingCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectsBrandingCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -107,29 +106,29 @@ class ManagementProjectsBrandingCreateResponseBody {
 
 
 /**
- * Unique identifier of the brand configuration.
- * @member {String} 
- */
+    * Unique identifier of the brand configuration.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateResponseBodyBrand} 
- */
+    * @type {ManagementProjectsBrandingCreateResponseBodyBrand | undefined}
+    */
 ManagementProjectsBrandingCreateResponseBody.prototype['brand'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateResponseBodyAddress} 
- */
+    * @type {ManagementProjectsBrandingCreateResponseBodyAddress | undefined}
+    */
 ManagementProjectsBrandingCreateResponseBody.prototype['address'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateResponseBodyContact} 
- */
+    * @type {ManagementProjectsBrandingCreateResponseBodyContact | undefined}
+    */
 ManagementProjectsBrandingCreateResponseBody.prototype['contact'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateResponseBodyCockpits} 
- */
+    * @type {ManagementProjectsBrandingCreateResponseBodyCockpits | undefined}
+    */
 ManagementProjectsBrandingCreateResponseBody.prototype['cockpits'] = undefined;
 
 

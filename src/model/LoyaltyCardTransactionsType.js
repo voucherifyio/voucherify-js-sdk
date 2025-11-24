@@ -13,85 +13,77 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class LoyaltyCardTransactionsType.
-* @module model/LoyaltyCardTransactionsType
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class LoyaltyCardTransactionsType {
+ * Enum class LoyaltyCardTransactionsType.
+ * @module model/LoyaltyCardTransactionsType
+ * @version 3.0.1
+ */
+class LoyaltyCardTransactionsType {
     
-        /**
-         * value: "PENDING_POINTS_ACTIVATION"
-         * @constant
-         */
-        "PENDING_POINTS_ACTIVATION" = "PENDING_POINTS_ACTIVATION";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "PENDING_POINTS_ACTIVATION" = "PENDING_POINTS_ACTIVATION";
     
-        /**
-         * value: "POINTS_ACCRUAL"
-         * @constant
-         */
-        "POINTS_ACCRUAL" = "POINTS_ACCRUAL";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_ACCRUAL" = "POINTS_ACCRUAL";
     
-        /**
-         * value: "POINTS_REDEMPTION"
-         * @constant
-         */
-        "POINTS_REDEMPTION" = "POINTS_REDEMPTION";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_REDEMPTION" = "POINTS_REDEMPTION";
     
-        /**
-         * value: "POINTS_REFUND"
-         * @constant
-         */
-        "POINTS_REFUND" = "POINTS_REFUND";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_REFUND" = "POINTS_REFUND";
     
-        /**
-         * value: "POINTS_ADDITION"
-         * @constant
-         */
-        "POINTS_ADDITION" = "POINTS_ADDITION";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_ADDITION" = "POINTS_ADDITION";
     
-        /**
-         * value: "POINTS_REMOVAL"
-         * @constant
-         */
-        "POINTS_REMOVAL" = "POINTS_REMOVAL";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_REMOVAL" = "POINTS_REMOVAL";
     
-        /**
-         * value: "POINTS_EXPIRATION"
-         * @constant
-         */
-        "POINTS_EXPIRATION" = "POINTS_EXPIRATION";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_EXPIRATION" = "POINTS_EXPIRATION";
     
-        /**
-         * value: "POINTS_TRANSFER_IN"
-         * @constant
-         */
-        "POINTS_TRANSFER_IN" = "POINTS_TRANSFER_IN";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_TRANSFER_IN" = "POINTS_TRANSFER_IN";
     
-        /**
-         * value: "POINTS_TRANSFER_OUT"
-         * @constant
-         */
-        "POINTS_TRANSFER_OUT" = "POINTS_TRANSFER_OUT";
-
+    /**
+     * Transaction types concerning loyalty points.
+     * @constant
+     */
+    static "POINTS_TRANSFER_OUT" = "POINTS_TRANSFER_OUT";
     
 
     /**
-    * Returns a <code>LoyaltyCardTransactionsType</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/LoyaltyCardTransactionsType} The enum <code>LoyaltyCardTransactionsType</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof LoyaltyCardTransactionsType, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof LoyaltyCardTransactionsType[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return LoyaltyCardTransactionsType[key];
     }
 }
+
+export default LoyaltyCardTransactionsType;
 

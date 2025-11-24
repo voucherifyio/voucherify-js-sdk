@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListBinId model module.
  * @module model/ParameterFiltersListBinId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListBinId {
     /**
      * Constructs a new <code>ParameterFiltersListBinId</code>.
      * Unique identifier of the bin entry.
-     * @alias module:model/ParameterFiltersListBinId
+     * @alias ParameterFiltersListBinId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListBinId {
     /**
      * Constructs a <code>ParameterFiltersListBinId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListBinId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListBinId} The populated <code>ParameterFiltersListBinId</code> instance.
+     * @param {Partial<ParameterFiltersListBinId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListBinId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListBinId} The populated <code>ParameterFiltersListBinId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListBinId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListBinId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListBinId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListBinId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListBinId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListBinId.prototype['conditions'] = undefined;
 
 

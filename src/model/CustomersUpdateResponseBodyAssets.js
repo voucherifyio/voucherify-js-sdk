@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomersUpdateResponseBodyAssets model module.
  * @module model/CustomersUpdateResponseBodyAssets
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersUpdateResponseBodyAssets {
     /**
      * Constructs a new <code>CustomersUpdateResponseBodyAssets</code>.
      * Contains information about the customer&#39;s cockpit.
-     * @alias module:model/CustomersUpdateResponseBodyAssets
+     * @alias CustomersUpdateResponseBodyAssets
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomersUpdateResponseBodyAssets {
     /**
      * Constructs a <code>CustomersUpdateResponseBodyAssets</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersUpdateResponseBodyAssets} obj Optional instance to populate.
-     * @returns {module:model/CustomersUpdateResponseBodyAssets} The populated <code>CustomersUpdateResponseBodyAssets</code> instance.
+     * @param {Partial<CustomersUpdateResponseBodyAssets>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersUpdateResponseBodyAssets} [obj] Optional instance to populate.
+     * @returns {CustomersUpdateResponseBodyAssets} The populated <code>CustomersUpdateResponseBodyAssets</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CustomersUpdateResponseBodyAssets {
 
     /**
      * Validates the JSON data with respect to <code>CustomersUpdateResponseBodyAssets</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersUpdateResponseBodyAssets>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersUpdateResponseBodyAssets</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class CustomersUpdateResponseBodyAssets {
 
 
 /**
- * Customer's cockpit URL address.
- * @member {String} 
- */
+    * Customer's cockpit URL address.
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAssets.prototype['cockpit_url'] = undefined;
 
 

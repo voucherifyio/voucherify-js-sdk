@@ -18,17 +18,16 @@ import InapplicableToResultList from './InapplicableToResultList';
 import QualificationsRedeemableBaseOrder from './QualificationsRedeemableBaseOrder';
 import RedeemableResult from './RedeemableResult';
 import ValidationRulesAssignmentsList from './ValidationRulesAssignmentsList';
-
 /**
  * The QualificationsRedeemableBase model module.
  * @module model/QualificationsRedeemableBase
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsRedeemableBase {
     /**
      * Constructs a new <code>QualificationsRedeemableBase</code>.
      * Data of single redeemable which was properly qualified.
-     * @alias module:model/QualificationsRedeemableBase
+     * @alias QualificationsRedeemableBase
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class QualificationsRedeemableBase {
     /**
      * Constructs a <code>QualificationsRedeemableBase</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsRedeemableBase} obj Optional instance to populate.
-     * @returns {module:model/QualificationsRedeemableBase} The populated <code>QualificationsRedeemableBase</code> instance.
+     * @param {Partial<QualificationsRedeemableBase>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsRedeemableBase} [obj] Optional instance to populate.
+     * @returns {QualificationsRedeemableBase} The populated <code>QualificationsRedeemableBase</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -105,7 +104,7 @@ class QualificationsRedeemableBase {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsRedeemableBase</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsRedeemableBase>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsRedeemableBase</code>.
      */
     static validateJSON(data) {
@@ -177,125 +176,125 @@ class QualificationsRedeemableBase {
 
 
 /**
- * ID of the redeemable. For a voucher, it's its `code` value.
- * @member {String} 
- */
+    * ID of the redeemable. For a voucher, it's its `code` value.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['id'] = undefined;
 
 /**
- * Object type of the redeemable.
- * @member {module:model/QualificationsRedeemableBase.ObjectEnum} 
- */
+    * Object type of the redeemable.
+    * @type {(keyof typeof QualificationsRedeemableBase.ObjectEnum) | undefined}
+    */
 QualificationsRedeemableBase.prototype['object'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 QualificationsRedeemableBase.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/RedeemableResult} 
- */
+    * @type {RedeemableResult | undefined}
+    */
 QualificationsRedeemableBase.prototype['result'] = undefined;
 
 /**
- * @member {module:model/QualificationsRedeemableBaseOrder} 
- */
+    * @type {QualificationsRedeemableBaseOrder | undefined}
+    */
 QualificationsRedeemableBase.prototype['order'] = undefined;
 
 /**
- * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
- * @member {String} 
- */
+    * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['validation_rule_id'] = undefined;
 
 /**
- * @member {module:model/ApplicableToResultList} 
- */
+    * @type {ApplicableToResultList | undefined}
+    */
 QualificationsRedeemableBase.prototype['applicable_to'] = undefined;
 
 /**
- * @member {module:model/InapplicableToResultList} 
- */
+    * @type {InapplicableToResultList | undefined}
+    */
 QualificationsRedeemableBase.prototype['inapplicable_to'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
+    * @type {Object | undefined}
+    */
 QualificationsRedeemableBase.prototype['metadata'] = undefined;
 
 /**
- * List of category information.
- * @member {Array.<module:model/CategoryWithStackingRulesType>} 
- */
+    * List of category information.
+    * @type {Array.<CategoryWithStackingRulesType> | undefined}
+    */
 QualificationsRedeemableBase.prototype['categories'] = undefined;
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['banner'] = undefined;
 
 /**
- * Name of the redeemable.
- * @member {String} 
- */
+    * Name of the redeemable.
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['name'] = undefined;
 
 /**
- * Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
- * @member {String} 
- */
+    * Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['campaign_name'] = undefined;
 
 /**
- * Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
- * @member {String} 
- */
+    * Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+    * @type {String | undefined}
+    */
 QualificationsRedeemableBase.prototype['campaign_id'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesAssignmentsList} 
- */
+    * @type {ValidationRulesAssignmentsList | undefined}
+    */
 QualificationsRedeemableBase.prototype['validation_rules_assignments'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemableBase['ObjectEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "promotion_stack"
-     * @constant
-     */
-    "promotion_stack": "promotion_stack",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    QualificationsRedeemableBase['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

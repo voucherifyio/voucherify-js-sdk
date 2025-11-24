@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsUsersAssignResponseBody model module.
  * @module model/ManagementProjectsUsersAssignResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUsersAssignResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsUsersAssignResponseBody</code>.
      * Details about the user assigned to the project.
-     * @alias module:model/ManagementProjectsUsersAssignResponseBody
+     * @alias ManagementProjectsUsersAssignResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsUsersAssignResponseBody {
     /**
      * Constructs a <code>ManagementProjectsUsersAssignResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUsersAssignResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUsersAssignResponseBody} The populated <code>ManagementProjectsUsersAssignResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsUsersAssignResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUsersAssignResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUsersAssignResponseBody} The populated <code>ManagementProjectsUsersAssignResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class ManagementProjectsUsersAssignResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUsersAssignResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUsersAssignResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUsersAssignResponseBody</code>.
      */
     static validateJSON(data) {
@@ -109,45 +108,45 @@ class ManagementProjectsUsersAssignResponseBody {
 
 
 /**
- * The unique identifier of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The unique identifier of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['id'] = undefined;
 
 /**
- * The login data of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The login data of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['login'] = undefined;
 
 /**
- * The email address of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The email address of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['email'] = undefined;
 
 /**
- * The first name of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The first name of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['first_name'] = undefined;
 
 /**
- * The last name of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The last name of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['last_name'] = undefined;
 
 /**
- * Lists key-value pairs, where the key is the project to which the user is assigned. The value is the role assigned in a given project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature).
- * @member {Object.<String, String>} 
- */
+    * Lists key-value pairs, where the key is the project to which the user is assigned. The value is the role assigned in a given project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature).
+    * @type {Object.<String, String> | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['projects'] = undefined;
 
 /**
- * Determines if the user is the owner for the organization in Voucherify.
- * @member {Boolean} 
- */
+    * Determines if the user is the owner for the organization in Voucherify.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUsersAssignResponseBody.prototype['is_owner'] = undefined;
 
 

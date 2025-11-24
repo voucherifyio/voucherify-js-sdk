@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimplePromotionStackTiers model module.
  * @module model/SimplePromotionStackTiers
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimplePromotionStackTiers {
     /**
      * Constructs a new <code>SimplePromotionStackTiers</code>.
      * Contains the tier configuration. A promotion stack can include up to 30 tiers.
-     * @alias module:model/SimplePromotionStackTiers
+     * @alias SimplePromotionStackTiers
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class SimplePromotionStackTiers {
     /**
      * Constructs a <code>SimplePromotionStackTiers</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimplePromotionStackTiers} obj Optional instance to populate.
-     * @returns {module:model/SimplePromotionStackTiers} The populated <code>SimplePromotionStackTiers</code> instance.
+     * @param {Partial<SimplePromotionStackTiers>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimplePromotionStackTiers} [obj] Optional instance to populate.
+     * @returns {SimplePromotionStackTiers} The populated <code>SimplePromotionStackTiers</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class SimplePromotionStackTiers {
 
     /**
      * Validates the JSON data with respect to <code>SimplePromotionStackTiers</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimplePromotionStackTiers>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimplePromotionStackTiers</code>.
      */
     static validateJSON(data) {
@@ -83,34 +82,34 @@ class SimplePromotionStackTiers {
 
 
 /**
- * Contains the list of tiers in a pre-defined sequence.
- * @member {Array.<String>} 
- */
+    * Contains the list of tiers in a pre-defined sequence.
+    * @type {Array.<String> | undefined}
+    */
 SimplePromotionStackTiers.prototype['ids'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionStackTiers.HierarchyModeEnum} 
- * @default 'MANUAL'
- */
+    * @type {(keyof typeof SimplePromotionStackTiers.HierarchyModeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 SimplePromotionStackTiers.prototype['hierarchy_mode'] = 'MANUAL';
 
 
 
 
 
-/**
- * Allowed values for the <code>hierarchy_mode</code> property.
- * @enum {String}
- * @readonly
- */
-SimplePromotionStackTiers['HierarchyModeEnum'] = {
-
     /**
-     * value: "MANUAL"
-     * @constant
+     * Allowed values for the <code>hierarchy_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MANUAL": "MANUAL"
-};
+    SimplePromotionStackTiers['HierarchyModeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemSource model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemSource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemSource {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code>.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemSource
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemSource
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemSource {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemSource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemSource} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemSource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemSource} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemSource} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemSource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemSource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemSource</code>.
      */
     static validateJSON(data) {
@@ -74,9 +73,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemSource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemSource.prototype['banner'] = undefined;
 
 

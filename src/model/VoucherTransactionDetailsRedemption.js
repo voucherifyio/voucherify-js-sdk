@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsRedemption model module.
  * @module model/VoucherTransactionDetailsRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsRedemption {
     /**
      * Constructs a new <code>VoucherTransactionDetailsRedemption</code>.
      * Contains information about the original redemption.
-     * @alias module:model/VoucherTransactionDetailsRedemption
+     * @alias VoucherTransactionDetailsRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsRedemption {
     /**
      * Constructs a <code>VoucherTransactionDetailsRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsRedemption} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsRedemption} The populated <code>VoucherTransactionDetailsRedemption</code> instance.
+     * @param {Partial<VoucherTransactionDetailsRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsRedemption} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsRedemption} The populated <code>VoucherTransactionDetailsRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class VoucherTransactionDetailsRedemption {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsRedemption</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class VoucherTransactionDetailsRedemption {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsRedemption.prototype['id'] = undefined;
 
 

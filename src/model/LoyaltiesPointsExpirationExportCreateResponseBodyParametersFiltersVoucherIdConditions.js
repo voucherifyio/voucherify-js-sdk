@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions</code>.
      */
     static validateJSON(data) {
@@ -96,27 +95,27 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
 
 
 /**
- * Array of the resource values that should be included in the results.
- * @member {Array.<String>} 
- */
+    * Array of the resource values that should be included in the results.
+    * @type {Array.<String> | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions.prototype['$in'] = undefined;
 
 /**
- * Array of the resource values that should be excluded from the results.
- * @member {Array.<String>} 
- */
+    * Array of the resource values that should be excluded from the results.
+    * @type {Array.<String> | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions.prototype['$not_in'] = undefined;
 
 /**
- * Specify the exact resource value.
- * @member {String} 
- */
+    * Specify the exact resource value.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions.prototype['$is'] = undefined;
 
 /**
- * Results should omit this value.
- * @member {String} 
- */
+    * Results should omit this value.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions.prototype['$is_not'] = undefined;
 
 

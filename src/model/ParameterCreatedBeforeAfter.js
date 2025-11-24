@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterCreatedBeforeAfter model module.
  * @module model/ParameterCreatedBeforeAfter
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterCreatedBeforeAfter {
     /**
      * Constructs a new <code>ParameterCreatedBeforeAfter</code>.
-     * @alias module:model/ParameterCreatedBeforeAfter
+     * @alias ParameterCreatedBeforeAfter
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterCreatedBeforeAfter {
     /**
      * Constructs a <code>ParameterCreatedBeforeAfter</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterCreatedBeforeAfter} obj Optional instance to populate.
-     * @returns {module:model/ParameterCreatedBeforeAfter} The populated <code>ParameterCreatedBeforeAfter</code> instance.
+     * @param {Partial<ParameterCreatedBeforeAfter>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterCreatedBeforeAfter} [obj] Optional instance to populate.
+     * @returns {ParameterCreatedBeforeAfter} The populated <code>ParameterCreatedBeforeAfter</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ParameterCreatedBeforeAfter {
 
     /**
      * Validates the JSON data with respect to <code>ParameterCreatedBeforeAfter</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterCreatedBeforeAfter>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterCreatedBeforeAfter</code>.
      */
     static validateJSON(data) {
@@ -73,15 +72,15 @@ class ParameterCreatedBeforeAfter {
 
 
 /**
- * Timestamp representing the date and time before the voucher was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time before the voucher was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ParameterCreatedBeforeAfter.prototype['before'] = undefined;
 
 /**
- * Timestamp representing the date and time after the voucher was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time after the voucher was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ParameterCreatedBeforeAfter.prototype['after'] = undefined;
 
 

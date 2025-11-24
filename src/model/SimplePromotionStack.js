@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import SimplePromotionStackCampaign from './SimplePromotionStackCampaign';
 import SimplePromotionStackTiers from './SimplePromotionStackTiers';
-
 /**
  * The SimplePromotionStack model module.
  * @module model/SimplePromotionStack
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimplePromotionStack {
     /**
      * Constructs a new <code>SimplePromotionStack</code>.
      * Represents simplified promotion stack data.
-     * @alias module:model/SimplePromotionStack
+     * @alias SimplePromotionStack
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class SimplePromotionStack {
     /**
      * Constructs a <code>SimplePromotionStack</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimplePromotionStack} obj Optional instance to populate.
-     * @returns {module:model/SimplePromotionStack} The populated <code>SimplePromotionStack</code> instance.
+     * @param {Partial<SimplePromotionStack>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimplePromotionStack} [obj] Optional instance to populate.
+     * @returns {SimplePromotionStack} The populated <code>SimplePromotionStack</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -71,7 +70,7 @@ class SimplePromotionStack {
 
     /**
      * Validates the JSON data with respect to <code>SimplePromotionStack</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimplePromotionStack>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimplePromotionStack</code>.
      */
     static validateJSON(data) {
@@ -105,31 +104,31 @@ class SimplePromotionStack {
 
 
 /**
- * Unique identifier of the promotion stack.
- * @member {String} 
- */
+    * Unique identifier of the promotion stack.
+    * @type {String | undefined}
+    */
 SimplePromotionStack.prototype['id'] = undefined;
 
 /**
- * Name of the promotion stack.
- * @member {String} 
- */
+    * Name of the promotion stack.
+    * @type {String | undefined}
+    */
 SimplePromotionStack.prototype['name'] = undefined;
 
 /**
- * Unique identifier of the category of the promotion stack.
- * @member {String} 
- */
+    * Unique identifier of the category of the promotion stack.
+    * @type {String | undefined}
+    */
 SimplePromotionStack.prototype['category_id'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionStackCampaign} 
- */
+    * @type {SimplePromotionStackCampaign | undefined}
+    */
 SimplePromotionStack.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionStackTiers} 
- */
+    * @type {SimplePromotionStackTiers | undefined}
+    */
 SimplePromotionStack.prototype['tiers'] = undefined;
 
 

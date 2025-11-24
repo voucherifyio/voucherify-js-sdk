@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyTiersExpirationAllExpirationDateRounding model module.
  * @module model/LoyaltyTiersExpirationAllExpirationDateRounding
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTiersExpirationAllExpirationDateRounding {
     /**
      * Constructs a new <code>LoyaltyTiersExpirationAllExpirationDateRounding</code>.
      * Defines the rounding mechanism for tier expiration.
-     * @alias module:model/LoyaltyTiersExpirationAllExpirationDateRounding
+     * @alias LoyaltyTiersExpirationAllExpirationDateRounding
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyTiersExpirationAllExpirationDateRounding {
     /**
      * Constructs a <code>LoyaltyTiersExpirationAllExpirationDateRounding</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTiersExpirationAllExpirationDateRounding} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTiersExpirationAllExpirationDateRounding} The populated <code>LoyaltyTiersExpirationAllExpirationDateRounding</code> instance.
+     * @param {Partial<LoyaltyTiersExpirationAllExpirationDateRounding>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTiersExpirationAllExpirationDateRounding} [obj] Optional instance to populate.
+     * @returns {LoyaltyTiersExpirationAllExpirationDateRounding} The populated <code>LoyaltyTiersExpirationAllExpirationDateRounding</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class LoyaltyTiersExpirationAllExpirationDateRounding {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTiersExpirationAllExpirationDateRounding</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTiersExpirationAllExpirationDateRounding>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTiersExpirationAllExpirationDateRounding</code>.
      */
     static validateJSON(data) {
@@ -93,107 +92,107 @@ class LoyaltyTiersExpirationAllExpirationDateRounding {
 
 
 /**
- * This mechanism describes a custom rounding for the expiration date.
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDateRounding.TypeEnum} 
- */
+    * This mechanism describes a custom rounding for the expiration date.
+    * @type {(keyof typeof LoyaltyTiersExpirationAllExpirationDateRounding.TypeEnum) | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDateRounding.prototype['type'] = undefined;
 
 /**
- * This mechanism describes a rounding strategy for the expiration date.
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDateRounding.StrategyEnum} 
- */
+    * This mechanism describes a rounding strategy for the expiration date.
+    * @type {(keyof typeof LoyaltyTiersExpirationAllExpirationDateRounding.StrategyEnum) | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDateRounding.prototype['strategy'] = undefined;
 
 /**
- * Defines the type of unit of time in which the rounding period is counted.
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDateRounding.UnitEnum} 
- * @default 'MONTH'
- */
+    * Defines the type of unit of time in which the rounding period is counted.
+    * @type {(keyof typeof LoyaltyTiersExpirationAllExpirationDateRounding.UnitEnum) | undefined}
+    * @default 'MONTH'
+    */
 LoyaltyTiersExpirationAllExpirationDateRounding.prototype['unit'] = 'MONTH';
 
 /**
- * Value for the unit of time that the rounding applies to. Units for this parameter are defined by the `rounding.unit` parameter.     - `0`: January - `1`: February - `2`: March - `3`: April - `4`: May - `5`: June - `6`: July - `7`: August - `8`: September - `9`: October - `10`: November - `11`: December
- * @member {Number} 
- */
+    * Value for the unit of time that the rounding applies to. Units for this parameter are defined by the `rounding.unit` parameter.     - `0`: January - `1`: February - `2`: March - `3`: April - `4`: May - `5`: June - `6`: July - `7`: August - `8`: September - `9`: October - `10`: November - `11`: December
+    * @type {Number | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDateRounding.prototype['value'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAllExpirationDateRounding['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltyTiersExpirationAllExpirationDateRounding['TypeEnum'] = {
+    
+        /**
+         * value: "MONTH"
+         * @constant
+         */
+        "MONTH": "MONTH",
+    
+        /**
+         * value: "QUARTER"
+         * @constant
+         */
+        "QUARTER": "QUARTER",
+    
+        /**
+         * value: "HALF_YEAR"
+         * @constant
+         */
+        "HALF_YEAR": "HALF_YEAR",
+    
+        /**
+         * value: "YEAR"
+         * @constant
+         */
+        "YEAR": "YEAR",
+    
+        /**
+         * value: "CUSTOM"
+         * @constant
+         */
+        "CUSTOM": "CUSTOM"    
+    };
+
 
     /**
-     * value: "MONTH"
-     * @constant
+     * Allowed values for the <code>strategy</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MONTH": "MONTH",
+    LoyaltyTiersExpirationAllExpirationDateRounding['StrategyEnum'] = {
+    
+        /**
+         * value: "START"
+         * @constant
+         */
+        "START": "START",
+    
+        /**
+         * value: "END"
+         * @constant
+         */
+        "END": "END"    
+    };
+
 
     /**
-     * value: "QUARTER"
-     * @constant
+     * Allowed values for the <code>unit</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "QUARTER": "QUARTER",
-
-    /**
-     * value: "HALF_YEAR"
-     * @constant
-     */
-    "HALF_YEAR": "HALF_YEAR",
-
-    /**
-     * value: "YEAR"
-     * @constant
-     */
-    "YEAR": "YEAR",
-
-    /**
-     * value: "CUSTOM"
-     * @constant
-     */
-    "CUSTOM": "CUSTOM"
-};
-
-
-/**
- * Allowed values for the <code>strategy</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAllExpirationDateRounding['StrategyEnum'] = {
-
-    /**
-     * value: "START"
-     * @constant
-     */
-    "START": "START",
-
-    /**
-     * value: "END"
-     * @constant
-     */
-    "END": "END"
-};
-
-
-/**
- * Allowed values for the <code>unit</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAllExpirationDateRounding['UnitEnum'] = {
-
-    /**
-     * value: "MONTH"
-     * @constant
-     */
-    "MONTH": "MONTH"
-};
+    LoyaltyTiersExpirationAllExpirationDateRounding['UnitEnum'] = {
+    
+        /**
+         * value: "MONTH"
+         * @constant
+         */
+        "MONTH": "MONTH"    
+    };
 
 
 

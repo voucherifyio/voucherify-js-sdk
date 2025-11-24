@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPendingPointsDetailsEarningRuleSource from './LoyaltyPendingPointsDetailsEarningRuleSource';
-
 /**
  * The LoyaltyPendingPointsDetailsEarningRule model module.
  * @module model/LoyaltyPendingPointsDetailsEarningRule
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPointsDetailsEarningRule {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetailsEarningRule</code>.
      * Contains information about the earning rule.
-     * @alias module:model/LoyaltyPendingPointsDetailsEarningRule
+     * @alias LoyaltyPendingPointsDetailsEarningRule
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyPendingPointsDetailsEarningRule {
     /**
      * Constructs a <code>LoyaltyPendingPointsDetailsEarningRule</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPointsDetailsEarningRule} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPointsDetailsEarningRule} The populated <code>LoyaltyPendingPointsDetailsEarningRule</code> instance.
+     * @param {Partial<LoyaltyPendingPointsDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPointsDetailsEarningRule} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPointsDetailsEarningRule} The populated <code>LoyaltyPendingPointsDetailsEarningRule</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltyPendingPointsDetailsEarningRule {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPointsDetailsEarningRule</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPointsDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPointsDetailsEarningRule</code>.
      */
     static validateJSON(data) {
@@ -83,14 +82,14 @@ class LoyaltyPendingPointsDetailsEarningRule {
 
 
 /**
- * Unique identifier of an earning rule, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an earning rule, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsEarningRule.prototype['id'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsEarningRuleSource} 
- */
+    * @type {LoyaltyPendingPointsDetailsEarningRuleSource | undefined}
+    */
 LoyaltyPendingPointsDetailsEarningRule.prototype['source'] = undefined;
 
 

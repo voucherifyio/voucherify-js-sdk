@@ -13,64 +13,59 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ExportOrderOrder.
-* @module model/ExportOrderOrder
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ExportOrderOrder {
+ * Enum class ExportOrderOrder.
+ * @module model/ExportOrderOrder
+ * @version 3.0.1
+ */
+class ExportOrderOrder {
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-updated_at"
-         * @constant
-         */
-        "-updated_at" = "-updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-updated_at" = "-updated_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "-status"
-         * @constant
-         */
-        "-status" = "-status";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-status" = "-status";
     
-        /**
-         * value: "status"
-         * @constant
-         */
-        "status" = "status";
-
+    /**
+     * 
+     * @constant
+     */
+    static "status" = "status";
     
 
     /**
-    * Returns a <code>ExportOrderOrder</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ExportOrderOrder} The enum <code>ExportOrderOrder</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ExportOrderOrder, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ExportOrderOrder[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ExportOrderOrder[key];
     }
 }
+
+export default ExportOrderOrder;
 

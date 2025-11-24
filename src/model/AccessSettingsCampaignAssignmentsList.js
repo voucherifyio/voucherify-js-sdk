@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import AreaStoreCampaignAssignment from './AreaStoreCampaignAssignment';
-
 /**
  * The AccessSettingsCampaignAssignmentsList model module.
  * @module model/AccessSettingsCampaignAssignmentsList
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AccessSettingsCampaignAssignmentsList {
     /**
      * Constructs a new <code>AccessSettingsCampaignAssignmentsList</code>.
      * Lists all assignments of the campaign to areas and stores. For [GET List Campaigns](/api-reference/campaigns/list-campaigns), this is returned if the &#x60;expand&#x3D;access_settings_assignments&#x60; query parameter is passed in the request. This object is not returned for the [GET Campaign summary endpoint](/api-reference/campaigns/get-campaign-summary).  **NOTE**: This object is returned only if the Areas and Stores enterprise feature is enabled. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.
-     * @alias module:model/AccessSettingsCampaignAssignmentsList
+     * @alias AccessSettingsCampaignAssignmentsList
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class AccessSettingsCampaignAssignmentsList {
     /**
      * Constructs a <code>AccessSettingsCampaignAssignmentsList</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AccessSettingsCampaignAssignmentsList} obj Optional instance to populate.
-     * @returns {module:model/AccessSettingsCampaignAssignmentsList} The populated <code>AccessSettingsCampaignAssignmentsList</code> instance.
+     * @param {Partial<AccessSettingsCampaignAssignmentsList>} data The plain JavaScript object bearing properties of interest.
+     * @param {AccessSettingsCampaignAssignmentsList} [obj] Optional instance to populate.
+     * @returns {AccessSettingsCampaignAssignmentsList} The populated <code>AccessSettingsCampaignAssignmentsList</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class AccessSettingsCampaignAssignmentsList {
 
     /**
      * Validates the JSON data with respect to <code>AccessSettingsCampaignAssignmentsList</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AccessSettingsCampaignAssignmentsList>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AccessSettingsCampaignAssignmentsList</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class AccessSettingsCampaignAssignmentsList {
 
 
 /**
- * The type of the object represented by JSON. Default is `list`. This object stores information about campaign assignments to areas and stores
- * @member {module:model/AccessSettingsCampaignAssignmentsList.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. Default is `list`. This object stores information about campaign assignments to areas and stores
+    * @type {(keyof typeof AccessSettingsCampaignAssignmentsList.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 AccessSettingsCampaignAssignmentsList.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of campaign assignments.
- * @member {module:model/AccessSettingsCampaignAssignmentsList.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of campaign assignments.
+    * @type {(keyof typeof AccessSettingsCampaignAssignmentsList.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 AccessSettingsCampaignAssignmentsList.prototype['data_ref'] = 'data';
 
 /**
- * Contains an array of campaign assignments.
- * @member {Array.<module:model/AreaStoreCampaignAssignment>} 
- */
+    * Contains an array of campaign assignments.
+    * @type {Array.<AreaStoreCampaignAssignment> | undefined}
+    */
 AccessSettingsCampaignAssignmentsList.prototype['data'] = undefined;
 
 /**
- * Total number of areas and stores to which the campaign is assigned.
- * @member {Number} 
- */
+    * Total number of areas and stores to which the campaign is assigned.
+    * @type {Number | undefined}
+    */
 AccessSettingsCampaignAssignmentsList.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-AccessSettingsCampaignAssignmentsList['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    AccessSettingsCampaignAssignmentsList['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-AccessSettingsCampaignAssignmentsList['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    AccessSettingsCampaignAssignmentsList['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

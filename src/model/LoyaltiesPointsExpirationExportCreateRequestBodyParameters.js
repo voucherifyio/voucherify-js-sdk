@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters from './LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateRequestBodyParameters model module.
  * @module model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateRequestBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code>.
      * List of fields and filters that will be used to create the export.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters
+     * @alias LoyaltiesPointsExpirationExportCreateRequestBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParameters {
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters} The populated <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateRequestBodyParameters} The populated <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -90,45 +89,45 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParameters {
 
 
 /**
- * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters.OrderEnum} 
- */
+    * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateRequestBodyParameters.OrderEnum) | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateRequestBodyParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data that was exported. These fields define the headers in the CSV file.    The array can be a combination of any of the following available fields:    | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Loyalty points bucket ID. | lopb_Wl1o3EjJIHSNjvO5BDLy4z1n | | campaign_id | Campaign ID of the parent loyalty campaign. | camp_7s3uXI44aKfIk5IhmeOPr6ic | | voucher_id | Voucher ID of the parent loyalty card. | v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655 | | status | Status of the loyalty point bucket. | `ACTIVE` or `EXPIRED` | | expires_at | Timestamp in ISO 8601 format representing the date when the points expire. | 2022-06-30 | | points | Number of points. | 1000 |
- * @member {Array.<module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters.FieldsEnum>} 
- */
+    * Array of strings containing the data that was exported. These fields define the headers in the CSV file.    The array can be a combination of any of the following available fields:    | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Loyalty points bucket ID. | lopb_Wl1o3EjJIHSNjvO5BDLy4z1n | | campaign_id | Campaign ID of the parent loyalty campaign. | camp_7s3uXI44aKfIk5IhmeOPr6ic | | voucher_id | Voucher ID of the parent loyalty card. | v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655 | | status | Status of the loyalty point bucket. | `ACTIVE` or `EXPIRED` | | expires_at | Timestamp in ISO 8601 format representing the date when the points expire. | 2022-06-30 | | points | Number of points. | 1000 |
+    * @type {(Array<keyof typeof LoyaltiesPointsExpirationExportCreateRequestBodyParameters.FieldsEnum>) | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateRequestBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateRequestBodyParameters.prototype['filters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateRequestBodyParameters['OrderEnum'] = {
-
     /**
-     * value: "expires_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "expires_at": "expires_at",
-
-    /**
-     * value: "-expires_at"
-     * @constant
-     */
-    "-expires_at": "-expires_at"
-};
+    LoyaltiesPointsExpirationExportCreateRequestBodyParameters['OrderEnum'] = {
+    
+        /**
+         * value: "expires_at"
+         * @constant
+         */
+        "expires_at": "expires_at",
+    
+        /**
+         * value: "-expires_at"
+         * @constant
+         */
+        "-expires_at": "-expires_at"    
+    };
 
 
 /**

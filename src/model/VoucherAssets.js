@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import VoucherAssetsBarcode from './VoucherAssetsBarcode';
 import VoucherAssetsQr from './VoucherAssetsQr';
-
 /**
  * The VoucherAssets model module.
  * @module model/VoucherAssets
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherAssets {
     /**
      * Constructs a new <code>VoucherAssets</code>.
      * Stores links to images of QR and barcode that correspond to an encrypted voucher code.
-     * @alias module:model/VoucherAssets
+     * @alias VoucherAssets
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class VoucherAssets {
     /**
      * Constructs a <code>VoucherAssets</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherAssets} obj Optional instance to populate.
-     * @returns {module:model/VoucherAssets} The populated <code>VoucherAssets</code> instance.
+     * @param {Partial<VoucherAssets>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherAssets} [obj] Optional instance to populate.
+     * @returns {VoucherAssets} The populated <code>VoucherAssets</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class VoucherAssets {
 
     /**
      * Validates the JSON data with respect to <code>VoucherAssets</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherAssets>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherAssets</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class VoucherAssets {
 
 
 /**
- * @member {module:model/VoucherAssetsQr} 
- */
+    * @type {VoucherAssetsQr | undefined}
+    */
 VoucherAssets.prototype['qr'] = undefined;
 
 /**
- * @member {module:model/VoucherAssetsBarcode} 
- */
+    * @type {VoucherAssetsBarcode | undefined}
+    */
 VoucherAssets.prototype['barcode'] = undefined;
 
 

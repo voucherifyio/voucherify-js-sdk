@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsEventSchema model module.
  * @module model/LoyaltyCardTransactionDetailsEventSchema
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsEventSchema {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsEventSchema</code>.
      * Contains information about the custom event metadata schema.
-     * @alias module:model/LoyaltyCardTransactionDetailsEventSchema
+     * @alias LoyaltyCardTransactionDetailsEventSchema
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsEventSchema {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsEventSchema</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsEventSchema} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsEventSchema} The populated <code>LoyaltyCardTransactionDetailsEventSchema</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsEventSchema>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsEventSchema} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsEventSchema} The populated <code>LoyaltyCardTransactionDetailsEventSchema</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyCardTransactionDetailsEventSchema {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsEventSchema</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsEventSchema>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsEventSchema</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltyCardTransactionDetailsEventSchema {
 
 
 /**
- * Unique metadata schema ID.
- * @member {String} 
- */
+    * Unique metadata schema ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsEventSchema.prototype['id'] = undefined;
 
 /**
- * Type of custom event.
- * @member {String} 
- */
+    * Type of custom event.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsEventSchema.prototype['name'] = undefined;
 
 

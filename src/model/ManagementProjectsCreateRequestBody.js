@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import ManagementProjectsCreateRequestBodyApiUsageNotifications from './ManagementProjectsCreateRequestBodyApiUsageNotifications';
 import ManagementProjectsCreateRequestBodyUsersItem from './ManagementProjectsCreateRequestBodyUsersItem';
 import ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications from './ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications';
-
 /**
  * The ManagementProjectsCreateRequestBody model module.
  * @module model/ManagementProjectsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;/management/v1/projects&#x60;.
-     * @alias module:model/ManagementProjectsCreateRequestBody
+     * @alias ManagementProjectsCreateRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ManagementProjectsCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCreateRequestBody} The populated <code>ManagementProjectsCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCreateRequestBody} The populated <code>ManagementProjectsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -116,7 +115,7 @@ class ManagementProjectsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -184,151 +183,151 @@ class ManagementProjectsCreateRequestBody {
 
 
 /**
- * Determines if the vouchers in the project will be case sensitive (if `true`, `C0dE-cfV` is not equal to `c0de-cfv`) or case insensitive (if false, `C0dE-cfV` is equal to `c0de-cfv`).
- * @member {Boolean} 
- */
+    * Determines if the vouchers in the project will be case sensitive (if `true`, `C0dE-cfV` is not equal to `c0de-cfv`) or case insensitive (if false, `C0dE-cfV` is equal to `c0de-cfv`).
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['case_sensitive_codes'] = undefined;
 
 /**
- * The name of the project.
- * @member {String} 
- */
+    * The name of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * A user-defined description of the project, e.g. its purpose, scope, region.
- * @member {String} 
- */
+    * A user-defined description of the project, e.g. its purpose, scope, region.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['description'] = undefined;
 
 /**
- * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
- * @member {String} 
- */
+    * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['timezone'] = undefined;
 
 /**
- * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
- * @member {String} 
- */
+    * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['currency'] = undefined;
 
 /**
- * The country dial code for the project. It is equal to an ITU country code.
- * @member {String} 
- */
+    * The country dial code for the project. It is equal to an ITU country code.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['dial_code'] = undefined;
 
 /**
- * The webhook version used in the project.
- * @member {module:model/ManagementProjectsCreateRequestBody.WebhookVersionEnum} 
- * @default 'v2024-01-01'
- */
+    * The webhook version used in the project.
+    * @type {(keyof typeof ManagementProjectsCreateRequestBody.WebhookVersionEnum) | undefined}
+    * @default 'v2024-01-01'
+    */
 ManagementProjectsCreateRequestBody.prototype['webhook_version'] = 'v2024-01-01';
 
 /**
- * An array of URL addresses that allow client requests.
- * @member {Array.<String>} 
- */
+    * An array of URL addresses that allow client requests.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_trusted_domains'] = undefined;
 
 /**
- * Enables client-side redemption.
- * @member {Boolean} 
- */
+    * Enables client-side redemption.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_redeem_enabled'] = undefined;
 
 /**
- * Enables client-side publication.
- * @member {Boolean} 
- */
+    * Enables client-side publication.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_publish_enabled'] = undefined;
 
 /**
- * Enables client-side listing of vouchers.
- * @member {Boolean} 
- */
+    * Enables client-side listing of vouchers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_list_vouchers_enabled'] = undefined;
 
 /**
- * Enables client-side creation of customers.
- * @member {Boolean} 
- */
+    * Enables client-side creation of customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_create_customer_enabled'] = undefined;
 
 /**
- * Enables client-side events for loyalty and referral programs.
- * @member {Boolean} 
- */
+    * Enables client-side events for loyalty and referral programs.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_loyalty_events_enabled'] = undefined;
 
 /**
- * Enables client-side setting of voucher expiration date.
- * @member {Boolean} 
- */
+    * Enables client-side setting of voucher expiration date.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['client_set_voucher_expiration_date_enabled'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications} 
- */
+    * @type {ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['webhooks_callout_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateRequestBodyApiUsageNotifications} 
- */
+    * @type {ManagementProjectsCreateRequestBodyApiUsageNotifications | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['api_usage_notifications'] = undefined;
 
 /**
- * The identifier of the cluster where the project will be created. The default cluster is `eu1` unless otherwise configured.
- * @member {String} 
- */
+    * The identifier of the cluster where the project will be created. The default cluster is `eu1` unless otherwise configured.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['cluster_id'] = undefined;
 
 /**
- * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
- * @member {module:model/ManagementProjectsCreateRequestBody.ApiVersionEnum} 
- * @default 'v2018-08-01'
- */
+    * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
+    * @type {(keyof typeof ManagementProjectsCreateRequestBody.ApiVersionEnum) | undefined}
+    * @default 'v2018-08-01'
+    */
 ManagementProjectsCreateRequestBody.prototype['api_version'] = 'v2018-08-01';
 
 /**
- * The users (their identifiers, logins, and roles) who will be assigned to the project. You can assign only existing Voucherify users.  It must be used either in the following combinations: - `id` and `role`, or - `login` and `role`.
- * @member {Array.<module:model/ManagementProjectsCreateRequestBodyUsersItem>} 
- */
+    * The users (their identifiers, logins, and roles) who will be assigned to the project. You can assign only existing Voucherify users.  It must be used either in the following combinations: - `id` and `role`, or - `login` and `role`.
+    * @type {Array.<ManagementProjectsCreateRequestBodyUsersItem> | undefined}
+    */
 ManagementProjectsCreateRequestBody.prototype['users'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>webhook_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCreateRequestBody['WebhookVersionEnum'] = {
+    /**
+     * Allowed values for the <code>webhook_version</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsCreateRequestBody['WebhookVersionEnum'] = {
+    
+        /**
+         * value: "v2024-01-01"
+         * @constant
+         */
+        "v2024-01-01": "v2024-01-01"    
+    };
+
 
     /**
-     * value: "v2024-01-01"
-     * @constant
+     * Allowed values for the <code>api_version</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "v2024-01-01": "v2024-01-01"
-};
-
-
-/**
- * Allowed values for the <code>api_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCreateRequestBody['ApiVersionEnum'] = {
-
-    /**
-     * value: "v2018-08-01"
-     * @constant
-     */
-    "v2018-08-01": "v2018-08-01"
-};
+    ManagementProjectsCreateRequestBody['ApiVersionEnum'] = {
+    
+        /**
+         * value: "v2018-08-01"
+         * @constant
+         */
+        "v2018-08-01": "v2018-08-01"    
+    };
 
 
 

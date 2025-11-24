@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleEvent model module.
  * @module model/SimpleEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleEvent {
     /**
      * Constructs a new <code>SimpleEvent</code>.
      * Simplified event data.
-     * @alias module:model/SimpleEvent
+     * @alias SimpleEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimpleEvent {
     /**
      * Constructs a <code>SimpleEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleEvent} obj Optional instance to populate.
-     * @returns {module:model/SimpleEvent} The populated <code>SimpleEvent</code> instance.
+     * @param {Partial<SimpleEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleEvent} [obj] Optional instance to populate.
+     * @returns {SimpleEvent} The populated <code>SimpleEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class SimpleEvent {
 
     /**
      * Validates the JSON data with respect to <code>SimpleEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleEvent</code>.
      */
     static validateJSON(data) {
@@ -106,64 +105,64 @@ class SimpleEvent {
 
 
 /**
- * Unique identifier assigned by Voucherify that will be linked to the this event.
- * @member {String} 
- */
+    * Unique identifier assigned by Voucherify that will be linked to the this event.
+    * @type {String | undefined}
+    */
 SimpleEvent.prototype['id'] = undefined;
 
 /**
- * Type of the triggering event.
- * @member {String} 
- */
+    * Type of the triggering event.
+    * @type {String | undefined}
+    */
 SimpleEvent.prototype['type'] = undefined;
 
 /**
- * Type of the event.
- * @member {module:model/SimpleEvent.CategoryEnum} 
- */
+    * Type of the event.
+    * @type {(keyof typeof SimpleEvent.CategoryEnum) | undefined}
+    */
 SimpleEvent.prototype['category'] = undefined;
 
 /**
- * ID of the entity that initiated the event.
- * @member {String} 
- */
+    * ID of the entity that initiated the event.
+    * @type {String | undefined}
+    */
 SimpleEvent.prototype['entity_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the event was created in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the event was created in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleEvent.prototype['created_at'] = undefined;
 
 /**
- * Unique identifier of the request that triggered the event.
- * @member {String} 
- */
+    * Unique identifier of the request that triggered the event.
+    * @type {String | undefined}
+    */
 SimpleEvent.prototype['group_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>category</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleEvent['CategoryEnum'] = {
-
     /**
-     * value: "EFFECT"
-     * @constant
+     * Allowed values for the <code>category</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "EFFECT": "EFFECT",
-
-    /**
-     * value: "ACTION"
-     * @constant
-     */
-    "ACTION": "ACTION"
-};
+    SimpleEvent['CategoryEnum'] = {
+    
+        /**
+         * value: "EFFECT"
+         * @constant
+         */
+        "EFFECT": "EFFECT",
+    
+        /**
+         * value: "ACTION"
+         * @constant
+         */
+        "ACTION": "ACTION"    
+    };
 
 
 

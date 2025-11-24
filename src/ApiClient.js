@@ -17,7 +17,7 @@ import qs from "qs";
 
 /**
 * @module ApiClient
-* @version 3.0.0
+* @version 3.0.1
 */
 
 /**
@@ -61,7 +61,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Javascript-SDK/3.0.0'
+            'User-Agent': 'OpenAPI-Javascript-SDK/3.0.1'
         };
 
         /**

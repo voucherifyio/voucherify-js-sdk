@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsDateTime from './FilterConditionsDateTime';
-
 /**
  * The ParameterFiltersListCampaignsExpirationDate model module.
  * @module model/ParameterFiltersListCampaignsExpirationDate
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsExpirationDate {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsExpirationDate</code>.
      * Timestamp representing the date and time when the campaign expired. The value is shown in the ISO 8601 format.
-     * @alias module:model/ParameterFiltersListCampaignsExpirationDate
+     * @alias ParameterFiltersListCampaignsExpirationDate
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCampaignsExpirationDate {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsExpirationDate</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsExpirationDate} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsExpirationDate} The populated <code>ParameterFiltersListCampaignsExpirationDate</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsExpirationDate>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsExpirationDate} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsExpirationDate} The populated <code>ParameterFiltersListCampaignsExpirationDate</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCampaignsExpirationDate {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsExpirationDate</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsExpirationDate>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsExpirationDate</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCampaignsExpirationDate {
 
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 ParameterFiltersListCampaignsExpirationDate.prototype['conditions'] = undefined;
 
 

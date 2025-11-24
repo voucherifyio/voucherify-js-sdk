@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsRollback model module.
  * @module model/LoyaltyCardTransactionDetailsRollback
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsRollback {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsRollback</code>.
      * Contains information about the redemption rollback.
-     * @alias module:model/LoyaltyCardTransactionDetailsRollback
+     * @alias LoyaltyCardTransactionDetailsRollback
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsRollback {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsRollback</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsRollback} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsRollback} The populated <code>LoyaltyCardTransactionDetailsRollback</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsRollback} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsRollback} The populated <code>LoyaltyCardTransactionDetailsRollback</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltyCardTransactionDetailsRollback {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsRollback</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsRollback</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltyCardTransactionDetailsRollback {
 
 
 /**
- * Unique redemption rollback ID.
- * @member {String} 
- */
+    * Unique redemption rollback ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsRollback.prototype['id'] = undefined;
 
 

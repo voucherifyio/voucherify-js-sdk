@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryRelatedRedemptionsRedemptionsItem model module.
  * @module model/RedemptionEntryRelatedRedemptionsRedemptionsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryRelatedRedemptionsRedemptionsItem {
     /**
      * Constructs a new <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code>.
-     * @alias module:model/RedemptionEntryRelatedRedemptionsRedemptionsItem
+     * @alias RedemptionEntryRelatedRedemptionsRedemptionsItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionEntryRelatedRedemptionsRedemptionsItem {
     /**
      * Constructs a <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryRelatedRedemptionsRedemptionsItem} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryRelatedRedemptionsRedemptionsItem} The populated <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code> instance.
+     * @param {Partial<RedemptionEntryRelatedRedemptionsRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryRelatedRedemptionsRedemptionsItem} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryRelatedRedemptionsRedemptionsItem} The populated <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class RedemptionEntryRelatedRedemptionsRedemptionsItem {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryRelatedRedemptionsRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryRelatedRedemptionsRedemptionsItem</code>.
      */
     static validateJSON(data) {
@@ -77,15 +76,15 @@ class RedemptionEntryRelatedRedemptionsRedemptionsItem {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 RedemptionEntryRelatedRedemptionsRedemptionsItem.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedemptionEntryRelatedRedemptionsRedemptionsItem.prototype['date'] = undefined;
 
 

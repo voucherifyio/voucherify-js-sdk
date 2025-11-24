@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardTypeCoin model module.
  * @module model/RewardTypeCoin
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardTypeCoin {
     /**
      * Constructs a new <code>RewardTypeCoin</code>.
      * Defines the ratio by mapping the number of loyalty points in points_ratio to a predefined cash amount in exchange_ratio.
-     * @alias module:model/RewardTypeCoin
+     * @alias RewardTypeCoin
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardTypeCoin {
     /**
      * Constructs a <code>RewardTypeCoin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardTypeCoin} obj Optional instance to populate.
-     * @returns {module:model/RewardTypeCoin} The populated <code>RewardTypeCoin</code> instance.
+     * @param {Partial<RewardTypeCoin>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardTypeCoin} [obj] Optional instance to populate.
+     * @returns {RewardTypeCoin} The populated <code>RewardTypeCoin</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardTypeCoin {
 
     /**
      * Validates the JSON data with respect to <code>RewardTypeCoin</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardTypeCoin>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardTypeCoin</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class RewardTypeCoin {
 
 
 /**
- * The cash equivalent of the points defined in the points_ratio property.
- * @member {Number} 
- */
+    * The cash equivalent of the points defined in the points_ratio property.
+    * @type {Number | undefined}
+    */
 RewardTypeCoin.prototype['exchange_ratio'] = undefined;
 
 /**
- * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
- * @member {Number} 
- */
+    * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
+    * @type {Number | undefined}
+    */
 RewardTypeCoin.prototype['points_ratio'] = undefined;
 
 

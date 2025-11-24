@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPointsBucketBucket from './LoyaltyPointsBucketBucket';
-
 /**
  * The LoyaltyPointsBucket model module.
  * @module model/LoyaltyPointsBucket
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPointsBucket {
     /**
      * Constructs a new <code>LoyaltyPointsBucket</code>.
      * Contains the details about expiring loyalty points.
-     * @alias module:model/LoyaltyPointsBucket
+     * @alias LoyaltyPointsBucket
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltyPointsBucket {
     /**
      * Constructs a <code>LoyaltyPointsBucket</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPointsBucket} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPointsBucket} The populated <code>LoyaltyPointsBucket</code> instance.
+     * @param {Partial<LoyaltyPointsBucket>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPointsBucket} [obj] Optional instance to populate.
+     * @returns {LoyaltyPointsBucket} The populated <code>LoyaltyPointsBucket</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class LoyaltyPointsBucket {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPointsBucket</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPointsBucket>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPointsBucket</code>.
      */
     static validateJSON(data) {
@@ -121,76 +120,76 @@ class LoyaltyPointsBucket {
 
 
 /**
- * Unique identifier of the loyalty points bucket.
- * @member {String} 
- */
+    * Unique identifier of the loyalty points bucket.
+    * @type {String | undefined}
+    */
 LoyaltyPointsBucket.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the parent loyalty card.
- * @member {String} 
- */
+    * Unique identifier of the parent loyalty card.
+    * @type {String | undefined}
+    */
 LoyaltyPointsBucket.prototype['voucher_id'] = undefined;
 
 /**
- * Unique identifier of the parent campaign.
- * @member {String} 
- */
+    * Unique identifier of the parent campaign.
+    * @type {String | undefined}
+    */
 LoyaltyPointsBucket.prototype['campaign_id'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPointsBucketBucket} 
- */
+    * @type {LoyaltyPointsBucketBucket | undefined}
+    */
 LoyaltyPointsBucket.prototype['bucket'] = undefined;
 
 /**
- * Loyalty point point bucket status.
- * @member {String} 
- */
+    * Loyalty point point bucket status.
+    * @type {String | undefined}
+    */
 LoyaltyPointsBucket.prototype['status'] = undefined;
 
 /**
- * Date when the number of points defined in the bucket object are due to expire.
- * @member {Date} 
- */
+    * Date when the number of points defined in the bucket object are due to expire.
+    * @type {Date | undefined}
+    */
 LoyaltyPointsBucket.prototype['expires_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty point bucket object was created in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty point bucket object was created in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyPointsBucket.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty point bucket object was updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty point bucket object was updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyPointsBucket.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the loyalty point bucket.
- * @member {module:model/LoyaltyPointsBucket.ObjectEnum} 
- * @default 'loyalty_points_bucket'
- */
+    * The type of the object represented by JSON. This object stores information about the loyalty point bucket.
+    * @type {(keyof typeof LoyaltyPointsBucket.ObjectEnum) | undefined}
+    * @default 'loyalty_points_bucket'
+    */
 LoyaltyPointsBucket.prototype['object'] = 'loyalty_points_bucket';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyPointsBucket['ObjectEnum'] = {
-
     /**
-     * value: "loyalty_points_bucket"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_points_bucket": "loyalty_points_bucket"
-};
+    LoyaltyPointsBucket['ObjectEnum'] = {
+    
+        /**
+         * value: "loyalty_points_bucket"
+         * @constant
+         */
+        "loyalty_points_bucket": "loyalty_points_bucket"    
+    };
 
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ReferralProgramRefereeRewardRelatedObjectParent from './ReferralProgramRefereeRewardRelatedObjectParent';
-
 /**
  * The ReferralProgramRefereeReward model module.
  * @module model/ReferralProgramRefereeReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralProgramRefereeReward {
     /**
      * Constructs a new <code>ReferralProgramRefereeReward</code>.
      * Defines the referee reward.
-     * @alias module:model/ReferralProgramRefereeReward
+     * @alias ReferralProgramRefereeReward
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ReferralProgramRefereeReward {
     /**
      * Constructs a <code>ReferralProgramRefereeReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralProgramRefereeReward} obj Optional instance to populate.
-     * @returns {module:model/ReferralProgramRefereeReward} The populated <code>ReferralProgramRefereeReward</code> instance.
+     * @param {Partial<ReferralProgramRefereeReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralProgramRefereeReward} [obj] Optional instance to populate.
+     * @returns {ReferralProgramRefereeReward} The populated <code>ReferralProgramRefereeReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class ReferralProgramRefereeReward {
 
     /**
      * Validates the JSON data with respect to <code>ReferralProgramRefereeReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralProgramRefereeReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralProgramRefereeReward</code>.
      */
     static validateJSON(data) {
@@ -86,45 +85,45 @@ class ReferralProgramRefereeReward {
 
 
 /**
- * @member {module:model/ReferralProgramRefereeRewardRelatedObjectParent} 
- */
+    * @type {ReferralProgramRefereeRewardRelatedObjectParent | undefined}
+    */
 ReferralProgramRefereeReward.prototype['related_object_parent'] = undefined;
 
 /**
- * Type of reward.
- * @member {module:model/ReferralProgramRefereeReward.TypeEnum} 
- */
+    * Type of reward.
+    * @type {(keyof typeof ReferralProgramRefereeReward.TypeEnum) | undefined}
+    */
 ReferralProgramRefereeReward.prototype['type'] = undefined;
 
 /**
- * Define the number of `points` to add to a loyalty card or `credits` to the balance on a gift card. In case of the gift card, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
- * @member {Number} 
- */
+    * Define the number of `points` to add to a loyalty card or `credits` to the balance on a gift card. In case of the gift card, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+    * @type {Number | undefined}
+    */
 ReferralProgramRefereeReward.prototype['amount'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ReferralProgramRefereeReward['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER"
-};
+    ReferralProgramRefereeReward['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER"    
+    };
 
 
 

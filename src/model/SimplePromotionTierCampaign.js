@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimplePromotionTierCampaign model module.
  * @module model/SimplePromotionTierCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimplePromotionTierCampaign {
     /**
      * Constructs a new <code>SimplePromotionTierCampaign</code>.
      * Contains details about promotion tier&#39;s parent campaign.
-     * @alias module:model/SimplePromotionTierCampaign
+     * @alias SimplePromotionTierCampaign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimplePromotionTierCampaign {
     /**
      * Constructs a <code>SimplePromotionTierCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimplePromotionTierCampaign} obj Optional instance to populate.
-     * @returns {module:model/SimplePromotionTierCampaign} The populated <code>SimplePromotionTierCampaign</code> instance.
+     * @param {Partial<SimplePromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimplePromotionTierCampaign} [obj] Optional instance to populate.
+     * @returns {SimplePromotionTierCampaign} The populated <code>SimplePromotionTierCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class SimplePromotionTierCampaign {
 
     /**
      * Validates the JSON data with respect to <code>SimplePromotionTierCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimplePromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimplePromotionTierCampaign</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class SimplePromotionTierCampaign {
 
 
 /**
- * Unique campaign ID.
- * @member {String} 
- */
+    * Unique campaign ID.
+    * @type {String | undefined}
+    */
 SimplePromotionTierCampaign.prototype['id'] = undefined;
 
 

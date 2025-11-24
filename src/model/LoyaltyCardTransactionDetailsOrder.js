@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsOrder model module.
  * @module model/LoyaltyCardTransactionDetailsOrder
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsOrder {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsOrder</code>.
      * Contains information about the original order.
-     * @alias module:model/LoyaltyCardTransactionDetailsOrder
+     * @alias LoyaltyCardTransactionDetailsOrder
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsOrder {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsOrder</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsOrder} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsOrder} The populated <code>LoyaltyCardTransactionDetailsOrder</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsOrder>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsOrder} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsOrder} The populated <code>LoyaltyCardTransactionDetailsOrder</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyCardTransactionDetailsOrder {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsOrder</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsOrder>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsOrder</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltyCardTransactionDetailsOrder {
 
 
 /**
- * Unique order ID.
- * @member {String} 
- */
+    * Unique order ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsOrder.prototype['id'] = undefined;
 
 /**
- * The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
- * @member {String} 
- */
+    * The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsOrder.prototype['source_id'] = undefined;
 
 

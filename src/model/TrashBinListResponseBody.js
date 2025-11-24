@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import TrashBinItem from './TrashBinItem';
-
 /**
  * The TrashBinListResponseBody model module.
  * @module model/TrashBinListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TrashBinListResponseBody {
     /**
      * Constructs a new <code>TrashBinListResponseBody</code>.
      * Retrieves a list of the resources moved the bin.
-     * @alias module:model/TrashBinListResponseBody
+     * @alias TrashBinListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class TrashBinListResponseBody {
     /**
      * Constructs a <code>TrashBinListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TrashBinListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/TrashBinListResponseBody} The populated <code>TrashBinListResponseBody</code> instance.
+     * @param {Partial<TrashBinListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TrashBinListResponseBody} [obj] Optional instance to populate.
+     * @returns {TrashBinListResponseBody} The populated <code>TrashBinListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class TrashBinListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>TrashBinListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TrashBinListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TrashBinListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -111,75 +110,75 @@ class TrashBinListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the bin entries in a dictionary.
- * @member {module:model/TrashBinListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the bin entries in a dictionary.
+    * @type {(keyof typeof TrashBinListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 TrashBinListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of bin entry objects.
- * @member {module:model/TrashBinListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of bin entry objects.
+    * @type {(keyof typeof TrashBinListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 TrashBinListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of bin entry objects.
- * @member {Array.<module:model/TrashBinItem>} 
- */
+    * Array of bin entry objects.
+    * @type {Array.<TrashBinItem> | undefined}
+    */
 TrashBinListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of bin entries. This is the number of the entries returned in the array, not the number of all matching results or all resources currently moved to the bin.
- * @member {Number} 
- */
+    * The total number of bin entries. This is the number of the entries returned in the array, not the number of all matching results or all resources currently moved to the bin.
+    * @type {Number | undefined}
+    */
 TrashBinListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 TrashBinListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * If `has_more` is `true`, it returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
- * @member {String} 
- */
+    * If `has_more` is `true`, it returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
+    * @type {String | undefined}
+    */
 TrashBinListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TrashBinListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    TrashBinListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-TrashBinListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    TrashBinListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

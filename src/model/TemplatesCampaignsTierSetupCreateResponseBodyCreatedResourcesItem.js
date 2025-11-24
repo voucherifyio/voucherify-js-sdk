@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem model module.
  * @module model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem {
     /**
      * Constructs a new <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code>.
-     * @alias module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem
+     * @alias TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem {
     /**
      * Constructs a <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem} The populated <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code> instance.
+     * @param {Partial<TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem} The populated <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem</code>.
      */
     static validateJSON(data) {
@@ -81,64 +80,64 @@ class TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem {
 
 
 /**
- * Unique identifier assigned to the created resource. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier assigned to the created resource. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem.prototype['id'] = undefined;
 
 /**
- * The type of the created resource.
- * @member {module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem.ObjectEnum} 
- */
+    * The type of the created resource.
+    * @type {(keyof typeof TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem.ObjectEnum) | undefined}
+    */
 TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem.prototype['object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem['ObjectEnum'] = {
-
     /**
-     * value: "validation_rules"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "validation_rules": "validation_rules",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "products_collection"
-     * @constant
-     */
-    "products_collection": "products_collection",
-
-    /**
-     * value: "segments"
-     * @constant
-     */
-    "segments": "segments",
-
-    /**
-     * value: "location"
-     * @constant
-     */
-    "location": "location"
-};
+    TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem['ObjectEnum'] = {
+    
+        /**
+         * value: "validation_rules"
+         * @constant
+         */
+        "validation_rules": "validation_rules",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection",
+    
+        /**
+         * value: "segments"
+         * @constant
+         */
+        "segments": "segments",
+    
+        /**
+         * value: "location"
+         * @constant
+         */
+        "location": "location"    
+    };
 
 
 

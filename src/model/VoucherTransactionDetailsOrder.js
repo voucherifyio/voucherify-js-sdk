@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsOrder model module.
  * @module model/VoucherTransactionDetailsOrder
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsOrder {
     /**
      * Constructs a new <code>VoucherTransactionDetailsOrder</code>.
      * Contains information about the original order.
-     * @alias module:model/VoucherTransactionDetailsOrder
+     * @alias VoucherTransactionDetailsOrder
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsOrder {
     /**
      * Constructs a <code>VoucherTransactionDetailsOrder</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsOrder} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsOrder} The populated <code>VoucherTransactionDetailsOrder</code> instance.
+     * @param {Partial<VoucherTransactionDetailsOrder>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsOrder} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsOrder} The populated <code>VoucherTransactionDetailsOrder</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsOrder {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsOrder</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsOrder>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsOrder</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsOrder {
 
 
 /**
- * Unique order ID.
- * @member {String} 
- */
+    * Unique order ID.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsOrder.prototype['id'] = undefined;
 
 /**
- * The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
- * @member {String} 
- */
+    * The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsOrder.prototype['source_id'] = undefined;
 
 

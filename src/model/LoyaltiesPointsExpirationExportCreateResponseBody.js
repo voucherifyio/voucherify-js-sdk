@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParameters from './LoyaltiesPointsExpirationExportCreateResponseBodyParameters';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBody model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBody {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBody</code>.
      * Object representing an export of points expirations. 
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBody
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBody {
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBody} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBody</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBody} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -85,7 +84,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -127,129 +126,129 @@ class LoyaltiesPointsExpirationExportCreateResponseBody {
 
 
 /**
- * Unique export ID.
- * @member {String} 
- */
+    * Unique export ID.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of object being represented. This object stores information about the export.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBody.ObjectEnum} 
- * @default 'export'
- */
+    * The type of object being represented. This object stores information about the export.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'export'
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['object'] = 'export';
 
 /**
- * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Status of the export. Informs you whether the export has already been completed.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBody.StatusEnum} 
- * @default 'SCHEDULED'
- */
+    * Status of the export. Informs you whether the export has already been completed.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateResponseBody.StatusEnum) | undefined}
+    * @default 'SCHEDULED'
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['status'] = 'SCHEDULED';
 
 /**
- * The channel through which the export was triggered.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBody.ChannelEnum} 
- */
+    * The channel through which the export was triggered.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateResponseBody.ChannelEnum) | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['channel'] = undefined;
 
 /**
- * The type of exported object.
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBody.ExportedObjectEnum} 
- * @default 'points_expiration'
- */
+    * The type of exported object.
+    * @type {(keyof typeof LoyaltiesPointsExpirationExportCreateResponseBody.ExportedObjectEnum) | undefined}
+    * @default 'points_expiration'
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['exported_object'] = 'points_expiration';
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateResponseBodyParameters | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['parameters'] = undefined;
 
 /**
- * Always null.
- * @member {Object} 
- */
+    * Always null.
+    * @type {Object | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['result'] = undefined;
 
 /**
- * `user_id` identifies the specific user who initiated the export through the Voucherify Dashboard. `user_id` is returned when the channel value is `WEBSITE`.
- * @member {String} 
- */
+    * `user_id` identifies the specific user who initiated the export through the Voucherify Dashboard. `user_id` is returned when the channel value is `WEBSITE`.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBody.prototype['user_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesPointsExpirationExportCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "export"
+         * @constant
+         */
+        "export": "export"    
+    };
+
 
     /**
-     * value: "export"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "export": "export"
-};
+    LoyaltiesPointsExpirationExportCreateResponseBody['StatusEnum'] = {
+    
+        /**
+         * value: "SCHEDULED"
+         * @constant
+         */
+        "SCHEDULED": "SCHEDULED"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateResponseBody['StatusEnum'] = {
 
     /**
-     * value: "SCHEDULED"
-     * @constant
+     * Allowed values for the <code>channel</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SCHEDULED": "SCHEDULED"
-};
+    LoyaltiesPointsExpirationExportCreateResponseBody['ChannelEnum'] = {
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "WEBSITE"
+         * @constant
+         */
+        "WEBSITE": "WEBSITE"    
+    };
 
-
-/**
- * Allowed values for the <code>channel</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateResponseBody['ChannelEnum'] = {
 
     /**
-     * value: "API"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "API": "API",
-
-    /**
-     * value: "WEBSITE"
-     * @constant
-     */
-    "WEBSITE": "WEBSITE"
-};
-
-
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPointsExpirationExportCreateResponseBody['ExportedObjectEnum'] = {
-
-    /**
-     * value: "points_expiration"
-     * @constant
-     */
-    "points_expiration": "points_expiration"
-};
+    LoyaltiesPointsExpirationExportCreateResponseBody['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "points_expiration"
+         * @constant
+         */
+        "points_expiration": "points_expiration"    
+    };
 
 
 

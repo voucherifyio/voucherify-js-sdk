@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata from './LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code>.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata} 
- */
+    * @type {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer.prototype['metadata'] = undefined;
 
 

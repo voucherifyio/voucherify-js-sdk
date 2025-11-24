@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersPendingPointsBalanceRequestBody model module.
  * @module model/LoyaltiesMembersPendingPointsBalanceRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPendingPointsBalanceRequestBody {
     /**
      * Constructs a new <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance&#x60;.
-     * @alias module:model/LoyaltiesMembersPendingPointsBalanceRequestBody
+     * @alias LoyaltiesMembersPendingPointsBalanceRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersPendingPointsBalanceRequestBody {
     /**
      * Constructs a <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPendingPointsBalanceRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPendingPointsBalanceRequestBody} The populated <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code> instance.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPendingPointsBalanceRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPendingPointsBalanceRequestBody} The populated <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesMembersPendingPointsBalanceRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPendingPointsBalanceRequestBody</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class LoyaltiesMembersPendingPointsBalanceRequestBody {
 
 
 /**
- * Add or subtract pending points with a given ID. A negative value subtracts the points.
- * @member {Number} 
- */
+    * Add or subtract pending points with a given ID. A negative value subtracts the points.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersPendingPointsBalanceRequestBody.prototype['points'] = undefined;
 
 

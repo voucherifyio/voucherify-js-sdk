@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ResourceTypes from './ResourceTypes';
-
 /**
  * The QualificationsOptionFiltersResourceTypeConditions model module.
  * @module model/QualificationsOptionFiltersResourceTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFiltersResourceTypeConditions {
     /**
      * Constructs a new <code>QualificationsOptionFiltersResourceTypeConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result. - &#x60;campaign&#x60; refers to campaigns; - &#x60;voucher&#x60; refers to generic (standalone) vouchers or published vouchers; - &#x60;promotion_tier&#x60; refers to promotion tiers.
-     * @alias module:model/QualificationsOptionFiltersResourceTypeConditions
+     * @alias QualificationsOptionFiltersResourceTypeConditions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class QualificationsOptionFiltersResourceTypeConditions {
     /**
      * Constructs a <code>QualificationsOptionFiltersResourceTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFiltersResourceTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFiltersResourceTypeConditions} The populated <code>QualificationsOptionFiltersResourceTypeConditions</code> instance.
+     * @param {Partial<QualificationsOptionFiltersResourceTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFiltersResourceTypeConditions} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFiltersResourceTypeConditions} The populated <code>QualificationsOptionFiltersResourceTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class QualificationsOptionFiltersResourceTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFiltersResourceTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFiltersResourceTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFiltersResourceTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -97,23 +96,23 @@ class QualificationsOptionFiltersResourceTypeConditions {
 
 
 /**
- * @member {Array.<module:model/ResourceTypes>} 
- */
+    * @type {Array.<Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersResourceTypeConditions.prototype['$is'] = undefined;
 
 /**
- * @member {Array.<module:model/ResourceTypes>} 
- */
+    * @type {Array.<Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersResourceTypeConditions.prototype['$is_not'] = undefined;
 
 /**
- * @member {Array.<module:model/ResourceTypes>} 
- */
+    * @type {Array.<Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersResourceTypeConditions.prototype['$in'] = undefined;
 
 /**
- * @member {Array.<module:model/ResourceTypes>} 
- */
+    * @type {Array.<Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersResourceTypeConditions.prototype['$not_in'] = undefined;
 
 

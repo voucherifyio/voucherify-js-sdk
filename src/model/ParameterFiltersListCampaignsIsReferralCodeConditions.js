@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsIsReferralCodeConditions model module.
  * @module model/ParameterFiltersListCampaignsIsReferralCodeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsIsReferralCodeConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code>.
-     * @alias module:model/ParameterFiltersListCampaignsIsReferralCodeConditions
+     * @alias ParameterFiltersListCampaignsIsReferralCodeConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListCampaignsIsReferralCodeConditions {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsIsReferralCodeConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsIsReferralCodeConditions} The populated <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsIsReferralCodeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsIsReferralCodeConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsIsReferralCodeConditions} The populated <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ParameterFiltersListCampaignsIsReferralCodeConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsIsReferralCodeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsIsReferralCodeConditions</code>.
      */
     static validateJSON(data) {
@@ -81,61 +80,61 @@ class ParameterFiltersListCampaignsIsReferralCodeConditions {
 
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListCampaignsIsReferralCodeConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCampaignsIsReferralCodeConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListCampaignsIsReferralCodeConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListCampaignsIsReferralCodeConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCampaignsIsReferralCodeConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListCampaignsIsReferralCodeConditions.prototype['$is_not'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCampaignsIsReferralCodeConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListCampaignsIsReferralCodeConditions['IsEnum'] = {
+    
+        /**
+         * value: "TRUE"
+         * @constant
+         */
+        "TRUE": "TRUE",
+    
+        /**
+         * value: "FALSE"
+         * @constant
+         */
+        "FALSE": "FALSE"    
+    };
+
 
     /**
-     * value: "TRUE"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "TRUE": "TRUE",
-
-    /**
-     * value: "FALSE"
-     * @constant
-     */
-    "FALSE": "FALSE"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCampaignsIsReferralCodeConditions['IsNotEnum'] = {
-
-    /**
-     * value: "TRUE"
-     * @constant
-     */
-    "TRUE": "TRUE",
-
-    /**
-     * value: "FALSE"
-     * @constant
-     */
-    "FALSE": "FALSE"
-};
+    ParameterFiltersListCampaignsIsReferralCodeConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "TRUE"
+         * @constant
+         */
+        "TRUE": "TRUE",
+    
+        /**
+         * value: "FALSE"
+         * @constant
+         */
+        "FALSE": "FALSE"    
+    };
 
 
 

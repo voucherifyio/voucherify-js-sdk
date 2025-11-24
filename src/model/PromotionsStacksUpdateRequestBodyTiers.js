@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionsStacksUpdateRequestBodyTiers model module.
  * @module model/PromotionsStacksUpdateRequestBodyTiers
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsStacksUpdateRequestBodyTiers {
     /**
      * Constructs a new <code>PromotionsStacksUpdateRequestBodyTiers</code>.
      * Contains the tier configuration. A promotion stack can include up to 30 tiers.
-     * @alias module:model/PromotionsStacksUpdateRequestBodyTiers
+     * @alias PromotionsStacksUpdateRequestBodyTiers
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionsStacksUpdateRequestBodyTiers {
     /**
      * Constructs a <code>PromotionsStacksUpdateRequestBodyTiers</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsStacksUpdateRequestBodyTiers} obj Optional instance to populate.
-     * @returns {module:model/PromotionsStacksUpdateRequestBodyTiers} The populated <code>PromotionsStacksUpdateRequestBodyTiers</code> instance.
+     * @param {Partial<PromotionsStacksUpdateRequestBodyTiers>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsStacksUpdateRequestBodyTiers} [obj] Optional instance to populate.
+     * @returns {PromotionsStacksUpdateRequestBodyTiers} The populated <code>PromotionsStacksUpdateRequestBodyTiers</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class PromotionsStacksUpdateRequestBodyTiers {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsStacksUpdateRequestBodyTiers</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsStacksUpdateRequestBodyTiers>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsStacksUpdateRequestBodyTiers</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class PromotionsStacksUpdateRequestBodyTiers {
 
 
 /**
- * Contains the list of tiers in a pre-defined sequence.
- * @member {Array.<String>} 
- */
+    * Contains the list of tiers in a pre-defined sequence.
+    * @type {Array.<String> | undefined}
+    */
 PromotionsStacksUpdateRequestBodyTiers.prototype['ids'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {module:model/PromotionsStacksUpdateRequestBodyTiers.HierarchyModeEnum} 
- * @default 'MANUAL'
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {(keyof typeof PromotionsStacksUpdateRequestBodyTiers.HierarchyModeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 PromotionsStacksUpdateRequestBodyTiers.prototype['hierarchy_mode'] = 'MANUAL';
 
 
 
 
 
-/**
- * Allowed values for the <code>hierarchy_mode</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionsStacksUpdateRequestBodyTiers['HierarchyModeEnum'] = {
-
     /**
-     * value: "MANUAL"
-     * @constant
+     * Allowed values for the <code>hierarchy_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MANUAL": "MANUAL"
-};
+    PromotionsStacksUpdateRequestBodyTiers['HierarchyModeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
 
 
 

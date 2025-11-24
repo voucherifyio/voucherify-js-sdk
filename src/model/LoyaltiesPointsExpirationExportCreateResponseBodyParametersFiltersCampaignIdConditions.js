@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaign
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaign
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions</code>.
      */
     static validateJSON(data) {
@@ -96,27 +95,27 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaign
 
 
 /**
- * Array of the resource values that should be included in the results.
- * @member {Array.<String>} 
- */
+    * Array of the resource values that should be included in the results.
+    * @type {Array.<String> | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions.prototype['$in'] = undefined;
 
 /**
- * Array of the resource values that should be included in the results.
- * @member {Array.<String>} 
- */
+    * Array of the resource values that should be included in the results.
+    * @type {Array.<String> | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions.prototype['$not_in'] = undefined;
 
 /**
- * Specify the exact resource value.
- * @member {String} 
- */
+    * Specify the exact resource value.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions.prototype['$is'] = undefined;
 
 /**
- * Results should omit this value.
- * @member {String} 
- */
+    * Results should omit this value.
+    * @type {String | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions.prototype['$is_not'] = undefined;
 
 

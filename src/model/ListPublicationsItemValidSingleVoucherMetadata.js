@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ListPublicationsItemValidSingleVoucherMetadata model module.
  * @module model/ListPublicationsItemValidSingleVoucherMetadata
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ListPublicationsItemValidSingleVoucherMetadata {
     /**
      * Constructs a new <code>ListPublicationsItemValidSingleVoucherMetadata</code>.
      * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
-     * @alias module:model/ListPublicationsItemValidSingleVoucherMetadata
+     * @alias ListPublicationsItemValidSingleVoucherMetadata
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ListPublicationsItemValidSingleVoucherMetadata {
     /**
      * Constructs a <code>ListPublicationsItemValidSingleVoucherMetadata</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ListPublicationsItemValidSingleVoucherMetadata} obj Optional instance to populate.
-     * @returns {module:model/ListPublicationsItemValidSingleVoucherMetadata} The populated <code>ListPublicationsItemValidSingleVoucherMetadata</code> instance.
+     * @param {Partial<ListPublicationsItemValidSingleVoucherMetadata>} data The plain JavaScript object bearing properties of interest.
+     * @param {ListPublicationsItemValidSingleVoucherMetadata} [obj] Optional instance to populate.
+     * @returns {ListPublicationsItemValidSingleVoucherMetadata} The populated <code>ListPublicationsItemValidSingleVoucherMetadata</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class ListPublicationsItemValidSingleVoucherMetadata {
 
     /**
      * Validates the JSON data with respect to <code>ListPublicationsItemValidSingleVoucherMetadata</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ListPublicationsItemValidSingleVoucherMetadata>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ListPublicationsItemValidSingleVoucherMetadata</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class ListPublicationsItemValidSingleVoucherMetadata {
 
 
 /**
- * Defines the type of the distribution source.
- * @member {String} 
- */
+    * Defines the type of the distribution source.
+    * @type {String | undefined}
+    */
 ListPublicationsItemValidSingleVoucherMetadata.prototype['source_type'] = undefined;
 
 /**
- * Unique identifier of the distribution source.
- * @member {String} 
- */
+    * Unique identifier of the distribution source.
+    * @type {String | undefined}
+    */
 ListPublicationsItemValidSingleVoucherMetadata.prototype['source_id'] = undefined;
 
 /**
- * Unique identifier of the distribution.
- * @member {String} 
- */
+    * Unique identifier of the distribution.
+    * @type {String | undefined}
+    */
 ListPublicationsItemValidSingleVoucherMetadata.prototype['distribution_id'] = undefined;
 
 

@@ -17,17 +17,16 @@ import CustomerReferrals from './CustomerReferrals';
 import CustomerSummary from './CustomerSummary';
 import CustomersCreateResponseBodyAddress from './CustomersCreateResponseBodyAddress';
 import CustomersCreateResponseBodyAssets from './CustomersCreateResponseBodyAssets';
-
 /**
  * The CustomersCreateResponseBody model module.
  * @module model/CustomersCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersCreateResponseBody {
     /**
      * Constructs a new <code>CustomersCreateResponseBody</code>.
      * Response body for **POST** &#x60;v1/customers&#x60;.
-     * @alias module:model/CustomersCreateResponseBody
+     * @alias CustomersCreateResponseBody
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class CustomersCreateResponseBody {
     /**
      * Constructs a <code>CustomersCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersCreateResponseBody} The populated <code>CustomersCreateResponseBody</code> instance.
+     * @param {Partial<CustomersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersCreateResponseBody} The populated <code>CustomersCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -114,7 +113,7 @@ class CustomersCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -176,126 +175,126 @@ class CustomersCreateResponseBody {
 
 
 /**
- * The ID of an existing customer that will be linked to redemption in this request.
- * @member {String} 
- */
+    * The ID of an existing customer that will be linked to redemption in this request.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
- * @member {String} 
- */
+    * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['source_id'] = undefined;
 
 /**
- * @member {module:model/CustomerSummary} 
- */
+    * @type {CustomerSummary | undefined}
+    */
 CustomersCreateResponseBody.prototype['summary'] = undefined;
 
 /**
- * @member {module:model/CustomerLoyalty} 
- */
+    * @type {CustomerLoyalty | undefined}
+    */
 CustomersCreateResponseBody.prototype['loyalty'] = undefined;
 
 /**
- * @member {module:model/CustomerReferrals} 
- */
+    * @type {CustomerReferrals | undefined}
+    */
 CustomersCreateResponseBody.prototype['referrals'] = undefined;
 
 /**
- * Object used to store system metadata information.
- * @member {Object} 
- */
+    * Object used to store system metadata information.
+    * @type {Object | undefined}
+    */
 CustomersCreateResponseBody.prototype['system_metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomersCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomersCreateResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/CustomersCreateResponseBodyAssets} 
- */
+    * @type {CustomersCreateResponseBodyAssets | undefined}
+    */
 CustomersCreateResponseBody.prototype['assets'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/CustomersCreateResponseBody.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof CustomersCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 CustomersCreateResponseBody.prototype['object'] = 'customer';
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a customer object.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a customer object.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['description'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['email'] = undefined;
 
 /**
- * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
- * @member {String} 
- */
+    * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
+    * @type {String | undefined}
+    */
 CustomersCreateResponseBody.prototype['phone'] = undefined;
 
 /**
- * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
- * @member {Date} 
- */
+    * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
+    * @type {Date | undefined}
+    */
 CustomersCreateResponseBody.prototype['birthday'] = undefined;
 
 /**
- * Customer's birthdate; format YYYY-MM-DD.
- * @member {Date} 
- */
+    * Customer's birthdate; format YYYY-MM-DD.
+    * @type {Date | undefined}
+    */
 CustomersCreateResponseBody.prototype['birthdate'] = undefined;
 
 /**
- * @member {module:model/CustomersCreateResponseBodyAddress} 
- */
+    * @type {CustomersCreateResponseBodyAddress | undefined}
+    */
 CustomersCreateResponseBody.prototype['address'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 CustomersCreateResponseBody.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CustomersCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    CustomersCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

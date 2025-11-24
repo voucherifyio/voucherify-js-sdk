@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ExportCampaignTransactionsFilters from './ExportCampaignTransactionsFilters';
-
 /**
  * The LoyaltiesTransactionsExportCreateRequestBodyParameters model module.
  * @module model/LoyaltiesTransactionsExportCreateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTransactionsExportCreateRequestBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code>.
      * List of available parameters containing fields and filters that can be exported for transactions in a loyalty card campaign, along with the sorting order of the returned data.
-     * @alias module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters
+     * @alias LoyaltiesTransactionsExportCreateRequestBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesTransactionsExportCreateRequestBodyParameters {
     /**
      * Constructs a <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters} The populated <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesTransactionsExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTransactionsExportCreateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTransactionsExportCreateRequestBodyParameters} The populated <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesTransactionsExportCreateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTransactionsExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTransactionsExportCreateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -90,45 +89,45 @@ class LoyaltiesTransactionsExportCreateRequestBodyParameters {
 
 
 /**
- * How the export is ordered, where the dash `-` preceding a sorting option means sorting in a descending order.
- * @member {module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters.OrderEnum} 
- */
+    * How the export is ordered, where the dash `-` preceding a sorting option means sorting in a descending order.
+    * @type {(keyof typeof LoyaltiesTransactionsExportCreateRequestBodyParameters.OrderEnum) | undefined}
+    */
 LoyaltiesTransactionsExportCreateRequestBodyParameters.prototype['order'] = undefined;
 
 /**
- * Data fields that will be exported for the transactions that are associated with balance movements on cards in a campaign.
- * @member {Array.<module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters.FieldsEnum>} 
- */
+    * Data fields that will be exported for the transactions that are associated with balance movements on cards in a campaign.
+    * @type {(Array<keyof typeof LoyaltiesTransactionsExportCreateRequestBodyParameters.FieldsEnum>) | undefined}
+    */
 LoyaltiesTransactionsExportCreateRequestBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/ExportCampaignTransactionsFilters} 
- */
+    * @type {ExportCampaignTransactionsFilters | undefined}
+    */
 LoyaltiesTransactionsExportCreateRequestBodyParameters.prototype['filters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesTransactionsExportCreateRequestBodyParameters['OrderEnum'] = {
-
     /**
-     * value: "-created_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "-created_at": "-created_at",
-
-    /**
-     * value: "created_at"
-     * @constant
-     */
-    "created_at": "created_at"
-};
+    LoyaltiesTransactionsExportCreateRequestBodyParameters['OrderEnum'] = {
+    
+        /**
+         * value: "-created_at"
+         * @constant
+         */
+        "-created_at": "-created_at",
+    
+        /**
+         * value: "created_at"
+         * @constant
+         */
+        "created_at": "created_at"    
+    };
 
 
 /**

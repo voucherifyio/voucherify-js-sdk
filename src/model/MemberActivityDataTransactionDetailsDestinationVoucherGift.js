@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsDestinationVoucherGift model module.
  * @module model/MemberActivityDataTransactionDetailsDestinationVoucherGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsDestinationVoucherGift {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsDestinationVoucherGift
+     * @alias MemberActivityDataTransactionDetailsDestinationVoucherGift
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsDestinationVoucherGift {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsDestinationVoucherGift} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsDestinationVoucherGift} The populated <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsDestinationVoucherGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsDestinationVoucherGift} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsDestinationVoucherGift} The populated <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class MemberActivityDataTransactionDetailsDestinationVoucherGift {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsDestinationVoucherGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsDestinationVoucherGift</code>.
      */
     static validateJSON(data) {
@@ -83,52 +82,52 @@ class MemberActivityDataTransactionDetailsDestinationVoucherGift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherGift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherGift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherGift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/MemberActivityDataTransactionDetailsDestinationVoucherGift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof MemberActivityDataTransactionDetailsDestinationVoucherGift.EffectEnum) | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherGift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataTransactionDetailsDestinationVoucherGift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    MemberActivityDataTransactionDetailsDestinationVoucherGift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

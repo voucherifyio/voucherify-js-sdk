@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerAddress model module.
  * @module model/CustomerAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerAddress {
     /**
      * Constructs a new <code>CustomerAddress</code>.
      * Customer&#39;s address.
-     * @alias module:model/CustomerAddress
+     * @alias CustomerAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerAddress {
     /**
      * Constructs a <code>CustomerAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerAddress} obj Optional instance to populate.
-     * @returns {module:model/CustomerAddress} The populated <code>CustomerAddress</code> instance.
+     * @param {Partial<CustomerAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerAddress} [obj] Optional instance to populate.
+     * @returns {CustomerAddress} The populated <code>CustomerAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CustomerAddress {
 
     /**
      * Validates the JSON data with respect to <code>CustomerAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerAddress</code>.
      */
     static validateJSON(data) {
@@ -110,39 +109,39 @@ class CustomerAddress {
 
 
 /**
- * City
- * @member {String} 
- */
+    * City
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['city'] = undefined;
 
 /**
- * State
- * @member {String} 
- */
+    * State
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['state'] = undefined;
 
 /**
- * First line of address.
- * @member {String} 
- */
+    * First line of address.
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['line_1'] = undefined;
 
 /**
- * Second line of address.
- * @member {String} 
- */
+    * Second line of address.
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['line_2'] = undefined;
 
 /**
- * Country.
- * @member {String} 
- */
+    * Country.
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['country'] = undefined;
 
 /**
- * Postal code.
- * @member {String} 
- */
+    * Postal code.
+    * @type {String | undefined}
+    */
 CustomerAddress.prototype['postal_code'] = undefined;
 
 

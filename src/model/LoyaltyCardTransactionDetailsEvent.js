@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsEvent model module.
  * @module model/LoyaltyCardTransactionDetailsEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsEvent {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsEvent</code>.
      * Contains information about the event that triggers the point accrual.
-     * @alias module:model/LoyaltyCardTransactionDetailsEvent
+     * @alias LoyaltyCardTransactionDetailsEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsEvent {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsEvent} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsEvent} The populated <code>LoyaltyCardTransactionDetailsEvent</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsEvent} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsEvent} The populated <code>LoyaltyCardTransactionDetailsEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyCardTransactionDetailsEvent {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsEvent</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltyCardTransactionDetailsEvent {
 
 
 /**
- * Unique event ID.
- * @member {String} 
- */
+    * Unique event ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsEvent.prototype['id'] = undefined;
 
 /**
- * Type of event.
- * @member {String} 
- */
+    * Type of event.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsEvent.prototype['type'] = undefined;
 
 

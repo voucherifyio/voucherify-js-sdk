@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The AsyncActionGetResponseBody model module.
  * @module model/AsyncActionGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AsyncActionGetResponseBody {
     /**
      * Constructs a new <code>AsyncActionGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/async-actions/{asyncActionId}&#x60;.
-     * @alias module:model/AsyncActionGetResponseBody
+     * @alias AsyncActionGetResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class AsyncActionGetResponseBody {
     /**
      * Constructs a <code>AsyncActionGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AsyncActionGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/AsyncActionGetResponseBody} The populated <code>AsyncActionGetResponseBody</code> instance.
+     * @param {Partial<AsyncActionGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {AsyncActionGetResponseBody} [obj] Optional instance to populate.
+     * @returns {AsyncActionGetResponseBody} The populated <code>AsyncActionGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -88,7 +87,7 @@ class AsyncActionGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>AsyncActionGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AsyncActionGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AsyncActionGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -126,148 +125,148 @@ class AsyncActionGetResponseBody {
 
 
 /**
- * Async action unique ID.
- * @member {String} 
- */
+    * Async action unique ID.
+    * @type {String | undefined}
+    */
 AsyncActionGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Type of async action.
- * @member {String} 
- */
+    * Type of async action.
+    * @type {String | undefined}
+    */
 AsyncActionGetResponseBody.prototype['type'] = undefined;
 
 /**
- * Status of the async action. Informs you whether the async action has already been completed.
- * @member {module:model/AsyncActionGetResponseBody.StatusEnum} 
- */
+    * Status of the async action. Informs you whether the async action has already been completed.
+    * @type {(keyof typeof AsyncActionGetResponseBody.StatusEnum) | undefined}
+    */
 AsyncActionGetResponseBody.prototype['status'] = undefined;
 
 /**
- * Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
- * @member {module:model/AsyncActionGetResponseBody.OperationStatusEnum} 
- */
+    * Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
+    * @type {(keyof typeof AsyncActionGetResponseBody.OperationStatusEnum) | undefined}
+    */
 AsyncActionGetResponseBody.prototype['operation_status'] = undefined;
 
 /**
- * Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 AsyncActionGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 AsyncActionGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * Unique request ID.
- * @member {String} 
- */
+    * Unique request ID.
+    * @type {String | undefined}
+    */
 AsyncActionGetResponseBody.prototype['request_id'] = undefined;
 
 /**
- * The length of time it took to process the request in milliseconds.
- * @member {Number} 
- */
+    * The length of time it took to process the request in milliseconds.
+    * @type {Number | undefined}
+    */
 AsyncActionGetResponseBody.prototype['processing_time'] = undefined;
 
 /**
- * % progress to completion of the asynchronous action.
- * @member {Number} 
- */
+    * % progress to completion of the asynchronous action.
+    * @type {Number | undefined}
+    */
 AsyncActionGetResponseBody.prototype['progress'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the `async_action`.
- * @member {module:model/AsyncActionGetResponseBody.ObjectEnum} 
- * @default 'async_action'
- */
+    * The type of the object represented by JSON. This object stores information about the `async_action`.
+    * @type {(keyof typeof AsyncActionGetResponseBody.ObjectEnum) | undefined}
+    * @default 'async_action'
+    */
 AsyncActionGetResponseBody.prototype['object'] = 'async_action';
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 AsyncActionGetResponseBody.prototype['result'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionGetResponseBody['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    AsyncActionGetResponseBody['StatusEnum'] = {
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE",
+    
+        /**
+         * value: "ENQUEUED"
+         * @constant
+         */
+        "ENQUEUED": "ENQUEUED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS"    
+    };
+
 
     /**
-     * value: "DONE"
-     * @constant
+     * Allowed values for the <code>operation_status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DONE": "DONE",
+    AsyncActionGetResponseBody['OperationStatusEnum'] = {
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "UNKNOWN"
+         * @constant
+         */
+        "UNKNOWN": "UNKNOWN"    
+    };
+
 
     /**
-     * value: "ENQUEUED"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ENQUEUED": "ENQUEUED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS"
-};
-
-
-/**
- * Allowed values for the <code>operation_status</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionGetResponseBody['OperationStatusEnum'] = {
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "SUCCESS"
-     * @constant
-     */
-    "SUCCESS": "SUCCESS",
-
-    /**
-     * value: "UNKNOWN"
-     * @constant
-     */
-    "UNKNOWN": "UNKNOWN"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionGetResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "async_action"
-     * @constant
-     */
-    "async_action": "async_action"
-};
+    AsyncActionGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "async_action"
+         * @constant
+         */
+        "async_action": "async_action"    
+    };
 
 
 

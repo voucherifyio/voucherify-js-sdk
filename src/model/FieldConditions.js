@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import FiltersCondition from './FiltersCondition';
-
 /**
  * The FieldConditions model module.
  * @module model/FieldConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class FieldConditions {
     /**
      * Constructs a new <code>FieldConditions</code>.
-     * @alias module:model/FieldConditions
+     * @alias FieldConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class FieldConditions {
     /**
      * Constructs a <code>FieldConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/FieldConditions} obj Optional instance to populate.
-     * @returns {module:model/FieldConditions} The populated <code>FieldConditions</code> instance.
+     * @param {Partial<FieldConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {FieldConditions} [obj] Optional instance to populate.
+     * @returns {FieldConditions} The populated <code>FieldConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class FieldConditions {
 
     /**
      * Validates the JSON data with respect to <code>FieldConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<FieldConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>FieldConditions</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class FieldConditions {
 
 
 /**
- * @member {module:model/FiltersCondition} 
- */
+    * @type {FiltersCondition | undefined}
+    */
 FieldConditions.prototype['conditions'] = undefined;
 
 

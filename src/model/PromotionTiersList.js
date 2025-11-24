@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PromotionTier from './PromotionTier';
-
 /**
  * The PromotionTiersList model module.
  * @module model/PromotionTiersList
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTiersList {
     /**
      * Constructs a new <code>PromotionTiersList</code>.
      * Promotion Tiers
-     * @alias module:model/PromotionTiersList
+     * @alias PromotionTiersList
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PromotionTiersList {
     /**
      * Constructs a <code>PromotionTiersList</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTiersList} obj Optional instance to populate.
-     * @returns {module:model/PromotionTiersList} The populated <code>PromotionTiersList</code> instance.
+     * @param {Partial<PromotionTiersList>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTiersList} [obj] Optional instance to populate.
+     * @returns {PromotionTiersList} The populated <code>PromotionTiersList</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class PromotionTiersList {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTiersList</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTiersList>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTiersList</code>.
      */
     static validateJSON(data) {
@@ -104,35 +103,35 @@ class PromotionTiersList {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about promotion tiers in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about promotion tiers in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 PromotionTiersList.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of promotion tier objects.
- * @member {String} 
- * @default 'tiers'
- */
+    * Identifies the name of the attribute that contains the array of promotion tier objects.
+    * @type {String | undefined}
+    * @default 'tiers'
+    */
 PromotionTiersList.prototype['data_ref'] = 'tiers';
 
 /**
- * Contains array of promotion tier objects.
- * @member {Array.<module:model/PromotionTier>} 
- */
+    * Contains array of promotion tier objects.
+    * @type {Array.<PromotionTier> | undefined}
+    */
 PromotionTiersList.prototype['tiers'] = undefined;
 
 /**
- * Total number of promotion tiers.
- * @member {Number} 
- */
+    * Total number of promotion tiers.
+    * @type {Number | undefined}
+    */
 PromotionTiersList.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 PromotionTiersList.prototype['has_more'] = undefined;
 
 

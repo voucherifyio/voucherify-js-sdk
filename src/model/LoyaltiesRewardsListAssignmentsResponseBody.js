@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RewardAssignment from './RewardAssignment';
-
 /**
  * The LoyaltiesRewardsListAssignmentsResponseBody model module.
  * @module model/LoyaltiesRewardsListAssignmentsResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsListAssignmentsResponseBody {
     /**
      * Constructs a new <code>LoyaltiesRewardsListAssignmentsResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/rewards&#x60;.
-     * @alias module:model/LoyaltiesRewardsListAssignmentsResponseBody
+     * @alias LoyaltiesRewardsListAssignmentsResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesRewardsListAssignmentsResponseBody {
     /**
      * Constructs a <code>LoyaltiesRewardsListAssignmentsResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsListAssignmentsResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsListAssignmentsResponseBody} The populated <code>LoyaltiesRewardsListAssignmentsResponseBody</code> instance.
+     * @param {Partial<LoyaltiesRewardsListAssignmentsResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsListAssignmentsResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsListAssignmentsResponseBody} The populated <code>LoyaltiesRewardsListAssignmentsResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesRewardsListAssignmentsResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsListAssignmentsResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsListAssignmentsResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsListAssignmentsResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,48 +100,48 @@ class LoyaltiesRewardsListAssignmentsResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about loyalty reward assignments in a dictionary.
- * @member {module:model/LoyaltiesRewardsListAssignmentsResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about loyalty reward assignments in a dictionary.
+    * @type {(keyof typeof LoyaltiesRewardsListAssignmentsResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesRewardsListAssignmentsResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of reward assignment objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of reward assignment objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 LoyaltiesRewardsListAssignmentsResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of reward assignment objects.
- * @member {Array.<module:model/RewardAssignment>} 
- */
+    * Contains array of reward assignment objects.
+    * @type {Array.<RewardAssignment> | undefined}
+    */
 LoyaltiesRewardsListAssignmentsResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of reward assignment objects.
- * @member {Number} 
- */
+    * Total number of reward assignment objects.
+    * @type {Number | undefined}
+    */
 LoyaltiesRewardsListAssignmentsResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesRewardsListAssignmentsResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
+    LoyaltiesRewardsListAssignmentsResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
 
 
 

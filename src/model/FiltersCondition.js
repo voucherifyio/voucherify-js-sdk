@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The FiltersCondition model module.
  * @module model/FiltersCondition
- * @version 3.0.0
+ * @version 3.0.1
  */
 class FiltersCondition {
     /**
      * Constructs a new <code>FiltersCondition</code>.
-     * @alias module:model/FiltersCondition
+     * @alias FiltersCondition
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class FiltersCondition {
     /**
      * Constructs a <code>FiltersCondition</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/FiltersCondition} obj Optional instance to populate.
-     * @returns {module:model/FiltersCondition} The populated <code>FiltersCondition</code> instance.
+     * @param {Partial<FiltersCondition>} data The plain JavaScript object bearing properties of interest.
+     * @param {FiltersCondition} [obj] Optional instance to populate.
+     * @returns {FiltersCondition} The populated <code>FiltersCondition</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -128,7 +127,7 @@ class FiltersCondition {
 
     /**
      * Validates the JSON data with respect to <code>FiltersCondition</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<FiltersCondition>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>FiltersCondition</code>.
      */
     static validateJSON(data) {
@@ -142,128 +141,128 @@ class FiltersCondition {
 
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$in'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$not_in'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$is'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$is_days_ago'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$is_days_in_future'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$is_not'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$has_value'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$is_unknown'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$contains'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$not_contain'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$starts_with'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$ends_with'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$more_than'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$less_than'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$more_than_ago'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$less_than_ago'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$more_than_future'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$less_than_future'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$more_than_equal'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$less_than_equal'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$after'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$before'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$count'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$count_less'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 FiltersCondition.prototype['$count_more'] = undefined;
 
 

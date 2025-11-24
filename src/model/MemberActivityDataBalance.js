@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import MemberActivityDataBalanceRelatedObject from './MemberActivityDataBalanceRelatedObject';
-
 /**
  * The MemberActivityDataBalance model module.
  * @module model/MemberActivityDataBalance
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataBalance {
     /**
      * Constructs a new <code>MemberActivityDataBalance</code>.
-     * @alias module:model/MemberActivityDataBalance
+     * @alias MemberActivityDataBalance
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class MemberActivityDataBalance {
     /**
      * Constructs a <code>MemberActivityDataBalance</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataBalance} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataBalance} The populated <code>MemberActivityDataBalance</code> instance.
+     * @param {Partial<MemberActivityDataBalance>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataBalance} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataBalance} The populated <code>MemberActivityDataBalance</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class MemberActivityDataBalance {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataBalance</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataBalance>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataBalance</code>.
      */
     static validateJSON(data) {
@@ -109,112 +108,112 @@ class MemberActivityDataBalance {
 
 
 /**
- * Credits added or subtracted on a gift card.
- * @member {Number} 
- */
+    * Credits added or subtracted on a gift card.
+    * @type {Number | undefined}
+    */
 MemberActivityDataBalance.prototype['amount'] = undefined;
 
 /**
- * Points added or subtracted in the transaction of a loyalty card.
- * @member {Number} 
- */
+    * Points added or subtracted in the transaction of a loyalty card.
+    * @type {Number | undefined}
+    */
 MemberActivityDataBalance.prototype['points'] = undefined;
 
 /**
- * The type of voucher whose balance is being adjusted due to the transaction.
- * @member {module:model/MemberActivityDataBalance.TypeEnum} 
- */
+    * The type of voucher whose balance is being adjusted due to the transaction.
+    * @type {(keyof typeof MemberActivityDataBalance.TypeEnum) | undefined}
+    */
 MemberActivityDataBalance.prototype['type'] = undefined;
 
 /**
- * The number of all points or credits accumulated on the card as affected by add or subtract operations.
- * @member {Number} 
- */
+    * The number of all points or credits accumulated on the card as affected by add or subtract operations.
+    * @type {Number | undefined}
+    */
 MemberActivityDataBalance.prototype['total'] = undefined;
 
 /**
- * The type of the object represented by the JSON.
- * @member {module:model/MemberActivityDataBalance.ObjectEnum} 
- * @default 'balance'
- */
+    * The type of the object represented by the JSON.
+    * @type {(keyof typeof MemberActivityDataBalance.ObjectEnum) | undefined}
+    * @default 'balance'
+    */
 MemberActivityDataBalance.prototype['object'] = 'balance';
 
 /**
- * The available points or credits on the card after the transaction as affected by redemption or rollback.
- * @member {Number} 
- */
+    * The available points or credits on the card after the transaction as affected by redemption or rollback.
+    * @type {Number | undefined}
+    */
 MemberActivityDataBalance.prototype['balance'] = undefined;
 
 /**
- * The type of the operation being performed. The operation type is `AUTOMATIC` if it is an automatic redemption.
- * @member {module:model/MemberActivityDataBalance.OperationTypeEnum} 
- */
+    * The type of the operation being performed. The operation type is `AUTOMATIC` if it is an automatic redemption.
+    * @type {(keyof typeof MemberActivityDataBalance.OperationTypeEnum) | undefined}
+    */
 MemberActivityDataBalance.prototype['operation_type'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataBalanceRelatedObject} 
- */
+    * @type {MemberActivityDataBalanceRelatedObject | undefined}
+    */
 MemberActivityDataBalance.prototype['related_object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataBalance['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataBalance['TypeEnum'] = {
+    
+        /**
+         * value: "loyalty_card"
+         * @constant
+         */
+        "loyalty_card": "loyalty_card",
+    
+        /**
+         * value: "gift_voucher"
+         * @constant
+         */
+        "gift_voucher": "gift_voucher"    
+    };
+
 
     /**
-     * value: "loyalty_card"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_card": "loyalty_card",
+    MemberActivityDataBalance['ObjectEnum'] = {
+    
+        /**
+         * value: "balance"
+         * @constant
+         */
+        "balance": "balance"    
+    };
+
 
     /**
-     * value: "gift_voucher"
-     * @constant
+     * Allowed values for the <code>operation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "gift_voucher": "gift_voucher"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataBalance['ObjectEnum'] = {
-
-    /**
-     * value: "balance"
-     * @constant
-     */
-    "balance": "balance"
-};
-
-
-/**
- * Allowed values for the <code>operation_type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataBalance['OperationTypeEnum'] = {
-
-    /**
-     * value: "MANUAL"
-     * @constant
-     */
-    "MANUAL": "MANUAL",
-
-    /**
-     * value: "AUTOMATIC"
-     * @constant
-     */
-    "AUTOMATIC": "AUTOMATIC"
-};
+    MemberActivityDataBalance['OperationTypeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL",
+    
+        /**
+         * value: "AUTOMATIC"
+         * @constant
+         */
+        "AUTOMATIC": "AUTOMATIC"    
+    };
 
 
 

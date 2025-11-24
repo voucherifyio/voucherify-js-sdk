@@ -16,17 +16,16 @@ import ManagementProjectsBrandingAddress from './ManagementProjectsBrandingAddre
 import ManagementProjectsBrandingBrand from './ManagementProjectsBrandingBrand';
 import ManagementProjectsBrandingCockpits from './ManagementProjectsBrandingCockpits';
 import ManagementProjectsBrandingContact from './ManagementProjectsBrandingContact';
-
 /**
  * The ManagementProjectsBranding model module.
  * @module model/ManagementProjectsBranding
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBranding {
     /**
      * Constructs a new <code>ManagementProjectsBranding</code>.
      * Response brand schema.
-     * @alias module:model/ManagementProjectsBranding
+     * @alias ManagementProjectsBranding
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsBranding {
     /**
      * Constructs a <code>ManagementProjectsBranding</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBranding} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBranding} The populated <code>ManagementProjectsBranding</code> instance.
+     * @param {Partial<ManagementProjectsBranding>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBranding} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBranding} The populated <code>ManagementProjectsBranding</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectsBranding {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBranding</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBranding>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBranding</code>.
      */
     static validateJSON(data) {
@@ -107,29 +106,29 @@ class ManagementProjectsBranding {
 
 
 /**
- * Unique identifier of the brand configuration.
- * @member {String} 
- */
+    * Unique identifier of the brand configuration.
+    * @type {String | undefined}
+    */
 ManagementProjectsBranding.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingBrand} 
- */
+    * @type {ManagementProjectsBrandingBrand | undefined}
+    */
 ManagementProjectsBranding.prototype['brand'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingAddress} 
- */
+    * @type {ManagementProjectsBrandingAddress | undefined}
+    */
 ManagementProjectsBranding.prototype['address'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingContact} 
- */
+    * @type {ManagementProjectsBrandingContact | undefined}
+    */
 ManagementProjectsBranding.prototype['contact'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCockpits} 
- */
+    * @type {ManagementProjectsBrandingCockpits | undefined}
+    */
 ManagementProjectsBranding.prototype['cockpits'] = undefined;
 
 

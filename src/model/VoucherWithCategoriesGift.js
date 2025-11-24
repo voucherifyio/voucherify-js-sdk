@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherWithCategoriesGift model module.
  * @module model/VoucherWithCategoriesGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherWithCategoriesGift {
     /**
      * Constructs a new <code>VoucherWithCategoriesGift</code>.
      * Object representing gift parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;GIFT_VOUCHER&#x60;. Defaults to &#x60;null&#x60;.
-     * @alias module:model/VoucherWithCategoriesGift
+     * @alias VoucherWithCategoriesGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherWithCategoriesGift {
     /**
      * Constructs a <code>VoucherWithCategoriesGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherWithCategoriesGift} obj Optional instance to populate.
-     * @returns {module:model/VoucherWithCategoriesGift} The populated <code>VoucherWithCategoriesGift</code> instance.
+     * @param {Partial<VoucherWithCategoriesGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherWithCategoriesGift} [obj] Optional instance to populate.
+     * @returns {VoucherWithCategoriesGift} The populated <code>VoucherWithCategoriesGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class VoucherWithCategoriesGift {
 
     /**
      * Validates the JSON data with respect to <code>VoucherWithCategoriesGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherWithCategoriesGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherWithCategoriesGift</code>.
      */
     static validateJSON(data) {
@@ -84,52 +83,52 @@ class VoucherWithCategoriesGift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesGift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesGift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesGift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/VoucherWithCategoriesGift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof VoucherWithCategoriesGift.EffectEnum) | undefined}
+    */
 VoucherWithCategoriesGift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherWithCategoriesGift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    VoucherWithCategoriesGift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

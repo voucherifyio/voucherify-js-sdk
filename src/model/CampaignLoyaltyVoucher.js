@@ -15,18 +15,17 @@ import ApiClient from '../ApiClient';
 import CampaignLoyaltyCard from './CampaignLoyaltyCard';
 import CampaignLoyaltyVoucherRedemption from './CampaignLoyaltyVoucherRedemption';
 import CodeConfig from './CodeConfig';
-
 /**
  * The CampaignLoyaltyVoucher model module.
  * @module model/CampaignLoyaltyVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignLoyaltyVoucher {
     /**
      * Constructs a new <code>CampaignLoyaltyVoucher</code>.
      * Schema model for a discount voucher.
-     * @alias module:model/CampaignLoyaltyVoucher
-     * @param loyaltyCard {module:model/CampaignLoyaltyCard} 
+     * @alias CampaignLoyaltyVoucher
+     * @param {CampaignLoyaltyCard} loyaltyCard 
      */
     constructor(loyaltyCard) { 
         
@@ -46,9 +45,9 @@ class CampaignLoyaltyVoucher {
     /**
      * Constructs a <code>CampaignLoyaltyVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignLoyaltyVoucher} obj Optional instance to populate.
-     * @returns {module:model/CampaignLoyaltyVoucher} The populated <code>CampaignLoyaltyVoucher</code> instance.
+     * @param {Partial<CampaignLoyaltyVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignLoyaltyVoucher} [obj] Optional instance to populate.
+     * @returns {CampaignLoyaltyVoucher} The populated <code>CampaignLoyaltyVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CampaignLoyaltyVoucher {
 
     /**
      * Validates the JSON data with respect to <code>CampaignLoyaltyVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignLoyaltyVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignLoyaltyVoucher</code>.
      */
     static validateJSON(data) {
@@ -108,44 +107,44 @@ class CampaignLoyaltyVoucher {
 CampaignLoyaltyVoucher.RequiredProperties = ["loyalty_card"];
 
 /**
- * Type of voucher.
- * @member {module:model/CampaignLoyaltyVoucher.TypeEnum} 
- * @default 'LOYALTY_CARD'
- */
+    * Type of voucher.
+    * @type {(keyof typeof CampaignLoyaltyVoucher.TypeEnum) | undefined}
+    * @default 'LOYALTY_CARD'
+    */
 CampaignLoyaltyVoucher.prototype['type'] = 'LOYALTY_CARD';
 
 /**
- * @member {module:model/CampaignLoyaltyCard} 
- */
+    * @type {CampaignLoyaltyCard}
+    */
 CampaignLoyaltyVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/CampaignLoyaltyVoucherRedemption} 
- */
+    * @type {CampaignLoyaltyVoucherRedemption | undefined}
+    */
 CampaignLoyaltyVoucher.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig | undefined}
+    */
 CampaignLoyaltyVoucher.prototype['code_config'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignLoyaltyVoucher['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    CampaignLoyaltyVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 

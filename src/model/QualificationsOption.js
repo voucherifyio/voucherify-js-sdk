@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import QualificationsOptionFilters from './QualificationsOptionFilters';
-
 /**
  * The QualificationsOption model module.
  * @module model/QualificationsOption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOption {
     /**
      * Constructs a new <code>QualificationsOption</code>.
      * Configure parameters returned in the response.
-     * @alias module:model/QualificationsOption
+     * @alias QualificationsOption
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class QualificationsOption {
     /**
      * Constructs a <code>QualificationsOption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOption} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOption} The populated <code>QualificationsOption</code> instance.
+     * @param {Partial<QualificationsOption>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOption} [obj] Optional instance to populate.
+     * @returns {QualificationsOption} The populated <code>QualificationsOption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class QualificationsOption {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOption</code>.
      */
     static validateJSON(data) {
@@ -96,32 +95,32 @@ class QualificationsOption {
 
 
 /**
- * The maximum number of redeemables to be returned in the API request. The actual number of returned redeemables will be determined by the API. The default value is set to 5
- * @member {Number} 
- */
+    * The maximum number of redeemables to be returned in the API request. The actual number of returned redeemables will be determined by the API. The default value is set to 5
+    * @type {Number | undefined}
+    */
 QualificationsOption.prototype['limit'] = undefined;
 
 /**
- * Cursor used for paging.
- * @member {Date} 
- */
+    * Cursor used for paging.
+    * @type {Date | undefined}
+    */
 QualificationsOption.prototype['starting_after'] = undefined;
 
 /**
- * @member {module:model/QualificationsOptionFilters} 
- */
+    * @type {QualificationsOptionFilters | undefined}
+    */
 QualificationsOption.prototype['filters'] = undefined;
 
 /**
- * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [`\"redeemable\"`] | Returns the redeemables':<br />- metadata<br />- redeemable name,<br />- campaign name,<br />- campaign ID| | [`\"category\"`] | - Returns an expanded `categories` object, showing details about the category. | | [`\"validation_rules\"`] | - Returns an expanded `validation_rules` object, showing details about the validation rules. |
- * @member {Array.<module:model/QualificationsOption.ExpandEnum>} 
- */
+    * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [`\"redeemable\"`] | Returns the redeemables':<br />- metadata<br />- redeemable name,<br />- campaign name,<br />- campaign ID| | [`\"category\"`] | - Returns an expanded `categories` object, showing details about the category. | | [`\"validation_rules\"`] | - Returns an expanded `validation_rules` object, showing details about the validation rules. |
+    * @type {(Array<keyof typeof QualificationsOption.ExpandEnum>) | undefined}
+    */
 QualificationsOption.prototype['expand'] = undefined;
 
 /**
- * Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
- * @member {module:model/QualificationsOption.SortingRuleEnum} 
- */
+    * Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
+    * @type {(keyof typeof QualificationsOption.SortingRuleEnum) | undefined}
+    */
 QualificationsOption.prototype['sorting_rule'] = undefined;
 
 
@@ -155,31 +154,31 @@ QualificationsOption['ExpandEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>sorting_rule</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsOption['SortingRuleEnum'] = {
-
     /**
-     * value: "BEST_DEAL"
-     * @constant
+     * Allowed values for the <code>sorting_rule</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "BEST_DEAL": "BEST_DEAL",
-
-    /**
-     * value: "LEAST_DEAL"
-     * @constant
-     */
-    "LEAST_DEAL": "LEAST_DEAL",
-
-    /**
-     * value: "DEFAULT"
-     * @constant
-     */
-    "DEFAULT": "DEFAULT"
-};
+    QualificationsOption['SortingRuleEnum'] = {
+    
+        /**
+         * value: "BEST_DEAL"
+         * @constant
+         */
+        "BEST_DEAL": "BEST_DEAL",
+    
+        /**
+         * value: "LEAST_DEAL"
+         * @constant
+         */
+        "LEAST_DEAL": "LEAST_DEAL",
+    
+        /**
+         * value: "DEFAULT"
+         * @constant
+         */
+        "DEFAULT": "DEFAULT"    
+    };
 
 
 

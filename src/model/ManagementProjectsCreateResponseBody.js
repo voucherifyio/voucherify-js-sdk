@@ -16,17 +16,16 @@ import ManagementProjectsCreateResponseBodyApiUsageNotifications from './Managem
 import ManagementProjectsCreateResponseBodyClientSideKey from './ManagementProjectsCreateResponseBodyClientSideKey';
 import ManagementProjectsCreateResponseBodyServerSideKey from './ManagementProjectsCreateResponseBodyServerSideKey';
 import ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications from './ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications';
-
 /**
  * The ManagementProjectsCreateResponseBody model module.
  * @module model/ManagementProjectsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCreateResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;management/v1/projects&#x60;.
-     * @alias module:model/ManagementProjectsCreateResponseBody
+     * @alias ManagementProjectsCreateResponseBody
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class ManagementProjectsCreateResponseBody {
     /**
      * Constructs a <code>ManagementProjectsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCreateResponseBody} The populated <code>ManagementProjectsCreateResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCreateResponseBody} The populated <code>ManagementProjectsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -129,7 +128,7 @@ class ManagementProjectsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -203,173 +202,173 @@ class ManagementProjectsCreateResponseBody {
 
 
 /**
- * Unique identifier of the project.
- * @member {String} 
- */
+    * Unique identifier of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The name of the project.
- * @member {String} 
- */
+    * The name of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * A user-defined description of the project, e.g. its purpose, scope, region.
- * @member {String} 
- */
+    * A user-defined description of the project, e.g. its purpose, scope, region.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['description'] = undefined;
 
 /**
- * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
- * @member {String} 
- */
+    * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['timezone'] = undefined;
 
 /**
- * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
- * @member {String} 
- */
+    * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['currency'] = undefined;
 
 /**
- * The country dial code for the project. It is equal to an ITU country code.
- * @member {String} 
- */
+    * The country dial code for the project. It is equal to an ITU country code.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['dial_code'] = undefined;
 
 /**
- * The webhook version used in the project.
- * @member {module:model/ManagementProjectsCreateResponseBody.WebhookVersionEnum} 
- * @default 'v2024-01-01'
- */
+    * The webhook version used in the project.
+    * @type {(keyof typeof ManagementProjectsCreateResponseBody.WebhookVersionEnum) | undefined}
+    * @default 'v2024-01-01'
+    */
 ManagementProjectsCreateResponseBody.prototype['webhook_version'] = 'v2024-01-01';
 
 /**
- * An array of URL addresses that allow client requests.
- * @member {Array.<String>} 
- */
+    * An array of URL addresses that allow client requests.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_trusted_domains'] = undefined;
 
 /**
- * Enables client-side redemption.
- * @member {Boolean} 
- */
+    * Enables client-side redemption.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_redeem_enabled'] = undefined;
 
 /**
- * Enables client-side publication.
- * @member {Boolean} 
- */
+    * Enables client-side publication.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_publish_enabled'] = undefined;
 
 /**
- * Enables client-side listing of vouchers.
- * @member {Boolean} 
- */
+    * Enables client-side listing of vouchers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_list_vouchers_enabled'] = undefined;
 
 /**
- * Enables client-side creation of customers.
- * @member {Boolean} 
- */
+    * Enables client-side creation of customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_create_customer_enabled'] = undefined;
 
 /**
- * Enables client-side events for loyalty and referral programs.
- * @member {Boolean} 
- */
+    * Enables client-side events for loyalty and referral programs.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_loyalty_events_enabled'] = undefined;
 
 /**
- * Enables client-side setting of voucher expiration date.
- * @member {Boolean} 
- */
+    * Enables client-side setting of voucher expiration date.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_set_voucher_expiration_date_enabled'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications} 
- */
+    * @type {ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['webhooks_callout_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateResponseBodyApiUsageNotifications} 
- */
+    * @type {ManagementProjectsCreateResponseBodyApiUsageNotifications | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['api_usage_notifications'] = undefined;
 
 /**
- * The identifier of the cluster where the project will be created.
- * @member {String} 
- */
+    * The identifier of the cluster where the project will be created.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['cluster_id'] = undefined;
 
 /**
- * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
- * @member {Boolean} 
- */
+    * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['case_sensitive_codes'] = undefined;
 
 /**
- * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
- * @member {module:model/ManagementProjectsCreateResponseBody.ApiVersionEnum} 
- * @default 'v2018-08-01'
- */
+    * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
+    * @type {(keyof typeof ManagementProjectsCreateResponseBody.ApiVersionEnum) | undefined}
+    * @default 'v2018-08-01'
+    */
 ManagementProjectsCreateResponseBody.prototype['api_version'] = 'v2018-08-01';
 
 /**
- * Determines if the project is a sandbox project.
- * @member {Boolean} 
- */
+    * Determines if the project is a sandbox project.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['is_sandbox'] = undefined;
 
 /**
- * Webhook token used for authentication.
- * @member {String} 
- */
+    * Webhook token used for authentication.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['webhook_token'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateResponseBodyServerSideKey} 
- */
+    * @type {ManagementProjectsCreateResponseBodyServerSideKey | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['server_side_key'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCreateResponseBodyClientSideKey} 
- */
+    * @type {ManagementProjectsCreateResponseBodyClientSideKey | undefined}
+    */
 ManagementProjectsCreateResponseBody.prototype['client_side_key'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>webhook_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCreateResponseBody['WebhookVersionEnum'] = {
+    /**
+     * Allowed values for the <code>webhook_version</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsCreateResponseBody['WebhookVersionEnum'] = {
+    
+        /**
+         * value: "v2024-01-01"
+         * @constant
+         */
+        "v2024-01-01": "v2024-01-01"    
+    };
+
 
     /**
-     * value: "v2024-01-01"
-     * @constant
+     * Allowed values for the <code>api_version</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "v2024-01-01": "v2024-01-01"
-};
-
-
-/**
- * Allowed values for the <code>api_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCreateResponseBody['ApiVersionEnum'] = {
-
-    /**
-     * value: "v2018-08-01"
-     * @constant
-     */
-    "v2018-08-01": "v2018-08-01"
-};
+    ManagementProjectsCreateResponseBody['ApiVersionEnum'] = {
+    
+        /**
+         * value: "v2018-08-01"
+         * @constant
+         */
+        "v2018-08-01": "v2018-08-01"    
+    };
 
 
 

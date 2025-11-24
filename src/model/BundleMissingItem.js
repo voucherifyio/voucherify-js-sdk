@@ -12,20 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The BundleMissingItem model module.
  * @module model/BundleMissingItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class BundleMissingItem {
     /**
      * Constructs a new <code>BundleMissingItem</code>.
      * Determines a product, SKU, or collection that is in bundle conditions, but is missing in the customer&#39;s order items. Determines also the missing quantity.
-     * @alias module:model/BundleMissingItem
-     * @param id {String} Unique identifier of the collection, product, or SKU that is missing in the customer's order items. This is an ID assigned by Voucherify.
-     * @param object {module:model/BundleMissingItem.ObjectEnum} Determines the type of the object that is missing in the customer's order items.
-     * @param itemQuantity {Number} Quantity of items that are missing in the order items to meet the bundle conditions.
+     * @alias BundleMissingItem
+     * @param {String} id Unique identifier of the collection, product, or SKU that is missing in the customer's order items. This is an ID assigned by Voucherify.
+     * @param {BundleMissingItem.ObjectEnum} object Determines the type of the object that is missing in the customer's order items.
+     * @param {Number} itemQuantity Quantity of items that are missing in the order items to meet the bundle conditions.
      */
     constructor(id, object, itemQuantity) { 
         
@@ -46,9 +45,9 @@ class BundleMissingItem {
     /**
      * Constructs a <code>BundleMissingItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BundleMissingItem} obj Optional instance to populate.
-     * @returns {module:model/BundleMissingItem} The populated <code>BundleMissingItem</code> instance.
+     * @param {Partial<BundleMissingItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {BundleMissingItem} [obj] Optional instance to populate.
+     * @returns {BundleMissingItem} The populated <code>BundleMissingItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class BundleMissingItem {
 
     /**
      * Validates the JSON data with respect to <code>BundleMissingItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<BundleMissingItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>BundleMissingItem</code>.
      */
     static validateJSON(data) {
@@ -97,52 +96,52 @@ class BundleMissingItem {
 BundleMissingItem.RequiredProperties = ["id", "object", "item_quantity"];
 
 /**
- * Unique identifier of the collection, product, or SKU that is missing in the customer's order items. This is an ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the collection, product, or SKU that is missing in the customer's order items. This is an ID assigned by Voucherify.
+    * @type {String}
+    */
 BundleMissingItem.prototype['id'] = undefined;
 
 /**
- * Determines the type of the object that is missing in the customer's order items.
- * @member {module:model/BundleMissingItem.ObjectEnum} 
- */
+    * Determines the type of the object that is missing in the customer's order items.
+    * @type {(keyof typeof BundleMissingItem.ObjectEnum)}
+    */
 BundleMissingItem.prototype['object'] = undefined;
 
 /**
- * Quantity of items that are missing in the order items to meet the bundle conditions.
- * @member {Number} 
- */
+    * Quantity of items that are missing in the order items to meet the bundle conditions.
+    * @type {Number}
+    */
 BundleMissingItem.prototype['item_quantity'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-BundleMissingItem['ObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "products_collection"
-     * @constant
-     */
-    "products_collection": "products_collection",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    BundleMissingItem['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

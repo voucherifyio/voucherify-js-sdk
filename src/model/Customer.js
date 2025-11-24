@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import CustomerAddress from './CustomerAddress';
-
 /**
  * The Customer model module.
  * @module model/Customer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Customer {
     /**
      * Constructs a new <code>Customer</code>.
-     * @alias module:model/Customer
+     * @alias Customer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class Customer {
     /**
      * Constructs a <code>Customer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Customer} obj Optional instance to populate.
-     * @returns {module:model/Customer} The populated <code>Customer</code> instance.
+     * @param {Partial<Customer>} data The plain JavaScript object bearing properties of interest.
+     * @param {Customer} [obj] Optional instance to populate.
+     * @returns {Customer} The populated <code>Customer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class Customer {
 
     /**
      * Validates the JSON data with respect to <code>Customer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Customer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Customer</code>.
      */
     static validateJSON(data) {
@@ -126,62 +125,62 @@ class Customer {
 
 
 /**
- * The ID of an existing customer.
- * @member {String} 
- */
+    * The ID of an existing customer.
+    * @type {String | undefined}
+    */
 Customer.prototype['id'] = undefined;
 
 /**
- * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
- * @member {String} 
- */
+    * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
+    * @type {String | undefined}
+    */
 Customer.prototype['source_id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 Customer.prototype['name'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a customer object.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a customer object.
+    * @type {String | undefined}
+    */
 Customer.prototype['description'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 Customer.prototype['email'] = undefined;
 
 /**
- * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
- * @member {String} 
- */
+    * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
+    * @type {String | undefined}
+    */
 Customer.prototype['phone'] = undefined;
 
 /**
- * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
- * @member {Date} 
- */
+    * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
+    * @type {Date | undefined}
+    */
 Customer.prototype['birthday'] = undefined;
 
 /**
- * Customer's birthdate; format YYYY-MM-DD.
- * @member {Date} 
- */
+    * Customer's birthdate; format YYYY-MM-DD.
+    * @type {Date | undefined}
+    */
 Customer.prototype['birthdate'] = undefined;
 
 /**
- * @member {module:model/CustomerAddress} 
- */
+    * @type {CustomerAddress | undefined}
+    */
 Customer.prototype['address'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 Customer.prototype['metadata'] = undefined;
 
 

@@ -19,13 +19,13 @@ import AsyncActionsListResponseBody from '../model/AsyncActionsListResponseBody'
 /**
 * AsyncActions service.
 * @module api/AsyncActionsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class AsyncActionsApi {
 
     /**
     * Constructs a new AsyncActionsApi. 
-    * @alias module:api/AsyncActionsApi
+    * @alias AsyncActionsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,9 +37,9 @@ export default class AsyncActionsApi {
 
     /**
      * Callback function to receive the result of the getAsyncAction operation.
-     * @callback module:api/AsyncActionsApi~getAsyncActionCallback
+     * @callback getAsyncActionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/AsyncActionGetResponseBody} [data] The data returned by the service call.
+     * @param {AsyncActionGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -47,8 +47,9 @@ export default class AsyncActionsApi {
      * Get Async Action
      * Check the result of a scheduled asynchronous operation.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action. If you would like to learn more about importing data into Voucherify, read more [here](https://support.voucherify.io/article/574-data-import).       
      * @param {String} asyncActionId Unique ID of the asynchronous operation.
-     * @param {module:api/AsyncActionsApi~getAsyncActionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AsyncActionGetResponseBody}
+     * @param {getAsyncActionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link AsyncActionGetResponseBody}
+     * @returns {Promise<(AsyncActionGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `AsyncActionGetResponseBody` object or with `undefined`.
      */
     getAsyncAction(asyncActionId, callback) {
       let postBody = null;
@@ -77,9 +78,9 @@ export default class AsyncActionsApi {
 
     /**
      * Callback function to receive the result of the listAsyncActions operation.
-     * @callback module:api/AsyncActionsApi~listAsyncActionsCallback
+     * @callback listAsyncActionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/AsyncActionsListResponseBody} [data] The data returned by the service call.
+     * @param {AsyncActionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -90,8 +91,9 @@ export default class AsyncActionsApi {
         limit?: Number,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/AsyncActionsApi~listAsyncActionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AsyncActionsListResponseBody}
+     * @param {listAsyncActionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link AsyncActionsListResponseBody}
+     * @returns {Promise<(AsyncActionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `AsyncActionsListResponseBody` object or with `undefined`.
      */
     listAsyncActions(opts, callback) {
       opts = opts || {};

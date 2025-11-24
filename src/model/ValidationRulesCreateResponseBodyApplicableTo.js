@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ApplicableTo from './ApplicableTo';
-
 /**
  * The ValidationRulesCreateResponseBodyApplicableTo model module.
  * @module model/ValidationRulesCreateResponseBodyApplicableTo
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesCreateResponseBodyApplicableTo {
     /**
      * Constructs a new <code>ValidationRulesCreateResponseBodyApplicableTo</code>.
-     * @alias module:model/ValidationRulesCreateResponseBodyApplicableTo
+     * @alias ValidationRulesCreateResponseBodyApplicableTo
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationRulesCreateResponseBodyApplicableTo {
     /**
      * Constructs a <code>ValidationRulesCreateResponseBodyApplicableTo</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesCreateResponseBodyApplicableTo} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesCreateResponseBodyApplicableTo} The populated <code>ValidationRulesCreateResponseBodyApplicableTo</code> instance.
+     * @param {Partial<ValidationRulesCreateResponseBodyApplicableTo>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesCreateResponseBodyApplicableTo} [obj] Optional instance to populate.
+     * @returns {ValidationRulesCreateResponseBodyApplicableTo} The populated <code>ValidationRulesCreateResponseBodyApplicableTo</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class ValidationRulesCreateResponseBodyApplicableTo {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesCreateResponseBodyApplicableTo</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesCreateResponseBodyApplicableTo>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesCreateResponseBodyApplicableTo</code>.
      */
     static validateJSON(data) {
@@ -97,21 +96,21 @@ class ValidationRulesCreateResponseBodyApplicableTo {
 
 
 /**
- * Defines which items are excluded from a discount.
- * @member {Array.<module:model/ApplicableTo>} 
- */
+    * Defines which items are excluded from a discount.
+    * @type {Array.<ApplicableTo> | undefined}
+    */
 ValidationRulesCreateResponseBodyApplicableTo.prototype['excluded'] = undefined;
 
 /**
- * Defines which items are included in a discount.
- * @member {Array.<module:model/ApplicableTo>} 
- */
+    * Defines which items are included in a discount.
+    * @type {Array.<ApplicableTo> | undefined}
+    */
 ValidationRulesCreateResponseBodyApplicableTo.prototype['included'] = undefined;
 
 /**
- * Indicates whether all items are included in the discount.
- * @member {Boolean} 
- */
+    * Indicates whether all items are included in the discount.
+    * @type {Boolean | undefined}
+    */
 ValidationRulesCreateResponseBodyApplicableTo.prototype['included_all'] = undefined;
 
 

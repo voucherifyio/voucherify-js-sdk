@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingGetResponseBodyContact model module.
  * @module model/ManagementProjectsBrandingGetResponseBodyContact
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingGetResponseBodyContact {
     /**
      * Constructs a new <code>ManagementProjectsBrandingGetResponseBodyContact</code>.
      * Defines contact details.
-     * @alias module:model/ManagementProjectsBrandingGetResponseBodyContact
+     * @alias ManagementProjectsBrandingGetResponseBodyContact
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingGetResponseBodyContact {
     /**
      * Constructs a <code>ManagementProjectsBrandingGetResponseBodyContact</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingGetResponseBodyContact} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingGetResponseBodyContact} The populated <code>ManagementProjectsBrandingGetResponseBodyContact</code> instance.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBodyContact>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingGetResponseBodyContact} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingGetResponseBodyContact} The populated <code>ManagementProjectsBrandingGetResponseBodyContact</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ManagementProjectsBrandingGetResponseBodyContact {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingGetResponseBodyContact</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBodyContact>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingGetResponseBodyContact</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class ManagementProjectsBrandingGetResponseBodyContact {
 
 
 /**
- * Defines the brand's email address. It must be a valid email format.
- * @member {String} 
- */
+    * Defines the brand's email address. It must be a valid email format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyContact.prototype['email'] = undefined;
 
 /**
- * Defines the brand's phone number.
- * @member {String} 
- */
+    * Defines the brand's phone number.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingGetResponseBodyContact.prototype['phone'] = undefined;
 
 

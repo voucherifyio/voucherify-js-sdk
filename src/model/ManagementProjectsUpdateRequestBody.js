@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import ManagementProjectsUpdateRequestBodyApiUsageNotifications from './ManagementProjectsUpdateRequestBodyApiUsageNotifications';
 import ManagementProjectsUpdateRequestBodyDefaultCodeConfig from './ManagementProjectsUpdateRequestBodyDefaultCodeConfig';
 import ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications from './ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications';
-
 /**
  * The ManagementProjectsUpdateRequestBody model module.
  * @module model/ManagementProjectsUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUpdateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;/management/v1/projects/{projectId}&#x60;.
-     * @alias module:model/ManagementProjectsUpdateRequestBody
+     * @alias ManagementProjectsUpdateRequestBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsUpdateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUpdateRequestBody} The populated <code>ManagementProjectsUpdateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUpdateRequestBody} The populated <code>ManagementProjectsUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -106,7 +105,7 @@ class ManagementProjectsUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -160,116 +159,116 @@ class ManagementProjectsUpdateRequestBody {
 
 
 /**
- * The name of the project.
- * @member {String} 
- */
+    * The name of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * A user-defined description of the project, e.g. its purpose, scope, region.
- * @member {String} 
- */
+    * A user-defined description of the project, e.g. its purpose, scope, region.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['description'] = undefined;
 
 /**
- * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
- * @member {String} 
- */
+    * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['timezone'] = undefined;
 
 /**
- * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
- * @member {String} 
- */
+    * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['currency'] = undefined;
 
 /**
- * The country dial code for the project. It is equal to an ITU country code.
- * @member {String} 
- */
+    * The country dial code for the project. It is equal to an ITU country code.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['dial_code'] = undefined;
 
 /**
- * The webhook version used in the project.
- * @member {module:model/ManagementProjectsUpdateRequestBody.WebhookVersionEnum} 
- * @default 'v2024-01-01'
- */
+    * The webhook version used in the project.
+    * @type {(keyof typeof ManagementProjectsUpdateRequestBody.WebhookVersionEnum) | undefined}
+    * @default 'v2024-01-01'
+    */
 ManagementProjectsUpdateRequestBody.prototype['webhook_version'] = 'v2024-01-01';
 
 /**
- * An array of URL addresses that allow client requests.
- * @member {Array.<String>} 
- */
+    * An array of URL addresses that allow client requests.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_trusted_domains'] = undefined;
 
 /**
- * Enables client-side redemption.
- * @member {Boolean} 
- */
+    * Enables client-side redemption.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_redeem_enabled'] = undefined;
 
 /**
- * Enables client-side publication.
- * @member {Boolean} 
- */
+    * Enables client-side publication.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_publish_enabled'] = undefined;
 
 /**
- * Enables client-side listing of vouchers.
- * @member {Boolean} 
- */
+    * Enables client-side listing of vouchers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_list_vouchers_enabled'] = undefined;
 
 /**
- * Enables client-side creation of customers.
- * @member {Boolean} 
- */
+    * Enables client-side creation of customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_create_customer_enabled'] = undefined;
 
 /**
- * Enables client-side events for loyalty and referral programs.
- * @member {Boolean} 
- */
+    * Enables client-side events for loyalty and referral programs.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_loyalty_events_enabled'] = undefined;
 
 /**
- * Enables client-side setting of voucher expiration date.
- * @member {Boolean} 
- */
+    * Enables client-side setting of voucher expiration date.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['client_set_voucher_expiration_date_enabled'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications} 
- */
+    * @type {ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['webhooks_callout_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsUpdateRequestBodyApiUsageNotifications} 
- */
+    * @type {ManagementProjectsUpdateRequestBodyApiUsageNotifications | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['api_usage_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig} 
- */
+    * @type {ManagementProjectsUpdateRequestBodyDefaultCodeConfig | undefined}
+    */
 ManagementProjectsUpdateRequestBody.prototype['default_code_config'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>webhook_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsUpdateRequestBody['WebhookVersionEnum'] = {
-
     /**
-     * value: "v2024-01-01"
-     * @constant
+     * Allowed values for the <code>webhook_version</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "v2024-01-01": "v2024-01-01"
-};
+    ManagementProjectsUpdateRequestBody['WebhookVersionEnum'] = {
+    
+        /**
+         * value: "v2024-01-01"
+         * @constant
+         */
+        "v2024-01-01": "v2024-01-01"    
+    };
 
 
 

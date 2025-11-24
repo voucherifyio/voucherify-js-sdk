@@ -22,13 +22,13 @@ import ParameterOrderListExports from '../model/ParameterOrderListExports';
 /**
 * Exports service.
 * @module api/ExportsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ExportsApi {
 
     /**
     * Constructs a new ExportsApi. 
-    * @alias module:api/ExportsApi
+    * @alias ExportsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -40,18 +40,19 @@ export default class ExportsApi {
 
     /**
      * Callback function to receive the result of the createExport operation.
-     * @callback module:api/ExportsApi~createExportCallback
+     * @callback createExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ExportsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ExportsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Export
      * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:    📘 Date and time in the export API  The exported date and times are always provided in the UTC time zone. # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
-     * @param {module:model/ExportsCreateRequestBody} exportsCreateRequestBody Specify the details of the export that you would like to create.
-     * @param {module:api/ExportsApi~createExportCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ExportsCreateResponseBody}
+     * @param {ExportsCreateRequestBody} exportsCreateRequestBody Specify the details of the export that you would like to create.
+     * @param {createExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ExportsCreateResponseBody}
+     * @returns {Promise<(ExportsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ExportsCreateResponseBody` object or with `undefined`.
      */
     createExport(exportsCreateRequestBody, callback) {
       let postBody = exportsCreateRequestBody;
@@ -79,7 +80,7 @@ export default class ExportsApi {
 
     /**
      * Callback function to receive the result of the deleteExport operation.
-     * @callback module:api/ExportsApi~deleteExportCallback
+     * @callback deleteExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -89,7 +90,8 @@ export default class ExportsApi {
      * Delete Export
      * This method deletes a previously created export object.
      * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
-     * @param {module:api/ExportsApi~deleteExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteExport(exportId, callback) {
       let postBody = null;
@@ -118,7 +120,7 @@ export default class ExportsApi {
 
     /**
      * Callback function to receive the result of the downloadExport operation.
-     * @callback module:api/ExportsApi~downloadExportCallback
+     * @callback downloadExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param {String} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
@@ -131,8 +133,9 @@ export default class ExportsApi {
      * @param {{
         token?: String,
      }} [opts] Optional parameters
-     * @param {module:api/ExportsApi~downloadExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {downloadExportCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link String}
+     * @returns {Promise<(String | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `String` object or with `undefined`.
      */
     downloadExport(exportId, opts, callback) {
       opts = opts || {};
@@ -163,9 +166,9 @@ export default class ExportsApi {
 
     /**
      * Callback function to receive the result of the getExport operation.
-     * @callback module:api/ExportsApi~getExportCallback
+     * @callback getExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ExportsGetResponseBody} [data] The data returned by the service call.
+     * @param {ExportsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -173,8 +176,9 @@ export default class ExportsApi {
      * Get Export
      * Retrieves the URL of the downloadable file, which was generated via the [Create Export](/api-reference/exports/create-export) method.
      * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
-     * @param {module:api/ExportsApi~getExportCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ExportsGetResponseBody}
+     * @param {getExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ExportsGetResponseBody}
+     * @returns {Promise<(ExportsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ExportsGetResponseBody` object or with `undefined`.
      */
     getExport(exportId, callback) {
       let postBody = null;
@@ -203,9 +207,9 @@ export default class ExportsApi {
 
     /**
      * Callback function to receive the result of the listExports operation.
-     * @callback module:api/ExportsApi~listExportsCallback
+     * @callback listExportsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ExportsListResponseBody} [data] The data returned by the service call.
+     * @param {ExportsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -215,10 +219,11 @@ export default class ExportsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListExports,
+        order?: Exclude<keyof typeof ParameterOrderListExports, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/ExportsApi~listExportsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ExportsListResponseBody}
+     * @param {listExportsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ExportsListResponseBody}
+     * @returns {Promise<(ExportsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ExportsListResponseBody` object or with `undefined`.
      */
     listExports(opts, callback) {
       opts = opts || {};

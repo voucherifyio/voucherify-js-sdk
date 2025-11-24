@@ -13,18 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import RedemptionEntry from './RedemptionEntry';
-
 /**
  * The VouchersRedemptionGetResponseBody model module.
  * @module model/VouchersRedemptionGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersRedemptionGetResponseBody {
     /**
      * Constructs a new <code>VouchersRedemptionGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/vouchers/{code}/redemption&#x60;.
-     * @alias module:model/VouchersRedemptionGetResponseBody
-     * @param redemptionEntries {Array.<module:model/RedemptionEntry>} Contains the array of successful and failed redemption objects.
+     * @alias VouchersRedemptionGetResponseBody
+     * @param {Array.<RedemptionEntry>} redemptionEntries Contains the array of successful and failed redemption objects.
      */
     constructor(redemptionEntries) { 
         
@@ -45,9 +44,9 @@ class VouchersRedemptionGetResponseBody {
     /**
      * Constructs a <code>VouchersRedemptionGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersRedemptionGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersRedemptionGetResponseBody} The populated <code>VouchersRedemptionGetResponseBody</code> instance.
+     * @param {Partial<VouchersRedemptionGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersRedemptionGetResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersRedemptionGetResponseBody} The populated <code>VouchersRedemptionGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class VouchersRedemptionGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersRedemptionGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersRedemptionGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersRedemptionGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -122,47 +121,47 @@ class VouchersRedemptionGetResponseBody {
 VouchersRedemptionGetResponseBody.RequiredProperties = ["redemption_entries"];
 
 /**
- * The maximum number of times a voucher can be redeemed.
- * @member {Number} 
- */
+    * The maximum number of times a voucher can be redeemed.
+    * @type {Number | undefined}
+    */
 VouchersRedemptionGetResponseBody.prototype['quantity'] = undefined;
 
 /**
- * The number of times the voucher was redeemed successfully.
- * @member {Number} 
- */
+    * The number of times the voucher was redeemed successfully.
+    * @type {Number | undefined}
+    */
 VouchersRedemptionGetResponseBody.prototype['redeemed_quantity'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about redemptions in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about redemptions in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 VouchersRedemptionGetResponseBody.prototype['object'] = 'list';
 
 /**
- * URL
- * @member {String} 
- */
+    * URL
+    * @type {String | undefined}
+    */
 VouchersRedemptionGetResponseBody.prototype['url'] = undefined;
 
 /**
- * Identifies the name of the attribute that contains the array of `redemption_entries`.
- * @member {String} 
- * @default 'redemption_entries'
- */
+    * Identifies the name of the attribute that contains the array of `redemption_entries`.
+    * @type {String | undefined}
+    * @default 'redemption_entries'
+    */
 VouchersRedemptionGetResponseBody.prototype['data_ref'] = 'redemption_entries';
 
 /**
- * Total number of redemption objects.
- * @member {Number} 
- */
+    * Total number of redemption objects.
+    * @type {Number | undefined}
+    */
 VouchersRedemptionGetResponseBody.prototype['total'] = undefined;
 
 /**
- * Contains the array of successful and failed redemption objects.
- * @member {Array.<module:model/RedemptionEntry>} 
- */
+    * Contains the array of successful and failed redemption objects.
+    * @type {Array.<RedemptionEntry>}
+    */
 VouchersRedemptionGetResponseBody.prototype['redemption_entries'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ProductCollectionsCreateResponseBodyProductsItem from './ProductCollectionsCreateResponseBodyProductsItem';
-
 /**
  * The ProductCollectionsCreateResponseBody model module.
  * @module model/ProductCollectionsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsCreateResponseBody {
     /**
      * Constructs a new <code>ProductCollectionsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/product-collections&#x60;.
-     * @alias module:model/ProductCollectionsCreateResponseBody
+     * @alias ProductCollectionsCreateResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ProductCollectionsCreateResponseBody {
     /**
      * Constructs a <code>ProductCollectionsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsCreateResponseBody} The populated <code>ProductCollectionsCreateResponseBody</code> instance.
+     * @param {Partial<ProductCollectionsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsCreateResponseBody} The populated <code>ProductCollectionsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ProductCollectionsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -117,86 +116,86 @@ class ProductCollectionsCreateResponseBody {
 
 
 /**
- * Product collection ID.
- * @member {String} 
- */
+    * Product collection ID.
+    * @type {String | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Unique user-defined product collection name.
- * @member {String} 
- */
+    * Unique user-defined product collection name.
+    * @type {String | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * Describes whether the product collection is dynamic (products come in and leave based on set criteria) or static (manually selected products).
- * @member {module:model/ProductCollectionsCreateResponseBody.TypeEnum} 
- */
+    * Describes whether the product collection is dynamic (products come in and leave based on set criteria) or static (manually selected products).
+    * @type {(keyof typeof ProductCollectionsCreateResponseBody.TypeEnum) | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['type'] = undefined;
 
 /**
- * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
- * @member {Object} 
- */
+    * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
+    * @type {Object | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['filter'] = undefined;
 
 /**
- * Defines a set of products for a `STATIC` product collection type.
- * @member {Array.<module:model/ProductCollectionsCreateResponseBodyProductsItem>} 
- */
+    * Defines a set of products for a `STATIC` product collection type.
+    * @type {Array.<ProductCollectionsCreateResponseBodyProductsItem> | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['products'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductCollectionsCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the static product collection.
- * @member {module:model/ProductCollectionsCreateResponseBody.ObjectEnum} 
- * @default 'products_collection'
- */
+    * The type of the object represented by JSON. This object stores information about the static product collection.
+    * @type {(keyof typeof ProductCollectionsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'products_collection'
+    */
 ProductCollectionsCreateResponseBody.prototype['object'] = 'products_collection';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsCreateResponseBody['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ProductCollectionsCreateResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE"    
+    };
+
 
     /**
-     * value: "STATIC"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "STATIC": "STATIC",
-
-    /**
-     * value: "AUTO_UPDATE"
-     * @constant
-     */
-    "AUTO_UPDATE": "AUTO_UPDATE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsCreateResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "products_collection"
-     * @constant
-     */
-    "products_collection": "products_collection"
-};
+    ProductCollectionsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection"    
+    };
 
 
 

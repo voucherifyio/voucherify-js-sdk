@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata from './LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata';
-
 /**
  * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code>.
-     * @alias module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent
+     * @alias LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent {
     /**
      * Constructs a <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata} 
- */
+    * @type {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent.prototype['metadata'] = undefined;
 
 

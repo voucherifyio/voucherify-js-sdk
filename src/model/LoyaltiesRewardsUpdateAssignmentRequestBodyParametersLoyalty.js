@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty model module.
  * @module model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty {
     /**
      * Constructs a new <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code>.
      * Stores the points parameter.
-     * @alias module:model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty
+     * @alias LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty {
     /**
      * Constructs a <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty} The populated <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code> instance.
+     * @param {Partial<LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty} The populated <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty {
 
 
 /**
- * Defines how many points are required to obtain the reward.
- * @member {Number} 
- */
+    * Defines how many points are required to obtain the reward.
+    * @type {Number | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty.prototype['points'] = undefined;
 
 /**
- * Determines if the reward is redeemed automatically when the customer reaches the sufficient number of points to redeem it. Value `true` means that the automatic reward redemption is active. Only one reward can be set to be redeemed automatically in a loyalty campaign, i.e. only one can have the value `true`.
- * @member {Boolean} 
- */
+    * Determines if the reward is redeemed automatically when the customer reaches the sufficient number of points to redeem it. Value `true` means that the automatic reward redemption is active. Only one reward can be set to be redeemed automatically in a loyalty campaign, i.e. only one can have the value `true`.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty.prototype['auto_redeem'] = undefined;
 
 

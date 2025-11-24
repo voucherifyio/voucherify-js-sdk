@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyCardTransaction from './LoyaltyCardTransaction';
-
 /**
  * The LoyaltiesTransactionsListResponseBody model module.
  * @module model/LoyaltiesTransactionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTransactionsListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesTransactionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/transactions&#x60;.
-     * @alias module:model/LoyaltiesTransactionsListResponseBody
+     * @alias LoyaltiesTransactionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesTransactionsListResponseBody {
     /**
      * Constructs a <code>LoyaltiesTransactionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTransactionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTransactionsListResponseBody} The populated <code>LoyaltiesTransactionsListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTransactionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTransactionsListResponseBody} The populated <code>LoyaltiesTransactionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LoyaltiesTransactionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTransactionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTransactionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,69 +107,69 @@ class LoyaltiesTransactionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/LoyaltiesTransactionsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof LoyaltiesTransactionsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesTransactionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of transaction objects.
- * @member {module:model/LoyaltiesTransactionsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of transaction objects.
+    * @type {(keyof typeof LoyaltiesTransactionsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 LoyaltiesTransactionsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
- * @member {Array.<module:model/LoyaltyCardTransaction>} 
- */
+    * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
+    * @type {Array.<LoyaltyCardTransaction> | undefined}
+    */
 LoyaltiesTransactionsListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesTransactionsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
+    * @type {String | undefined}
+    */
 LoyaltiesTransactionsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesTransactionsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesTransactionsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesTransactionsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    LoyaltiesTransactionsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import MetadataSchemaDeprecated from './MetadataSchemaDeprecated';
-
 /**
  * The MetadataSchemasListResponseBody model module.
  * @module model/MetadataSchemasListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MetadataSchemasListResponseBody {
     /**
      * Constructs a new <code>MetadataSchemasListResponseBody</code>.
      * Object containing a list of metadata schemas.
-     * @alias module:model/MetadataSchemasListResponseBody
+     * @alias MetadataSchemasListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class MetadataSchemasListResponseBody {
     /**
      * Constructs a <code>MetadataSchemasListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MetadataSchemasListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/MetadataSchemasListResponseBody} The populated <code>MetadataSchemasListResponseBody</code> instance.
+     * @param {Partial<MetadataSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {MetadataSchemasListResponseBody} [obj] Optional instance to populate.
+     * @returns {MetadataSchemasListResponseBody} The populated <code>MetadataSchemasListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class MetadataSchemasListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>MetadataSchemasListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MetadataSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MetadataSchemasListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class MetadataSchemasListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the metadata schemas in a dictionary.
- * @member {module:model/MetadataSchemasListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the metadata schemas in a dictionary.
+    * @type {(keyof typeof MetadataSchemasListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 MetadataSchemasListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of metadata schema objects.
- * @member {module:model/MetadataSchemasListResponseBody.DataRefEnum} 
- * @default 'schemas'
- */
+    * Identifies the name of the attribute that contains the array of metadata schema objects.
+    * @type {(keyof typeof MetadataSchemasListResponseBody.DataRefEnum) | undefined}
+    * @default 'schemas'
+    */
 MetadataSchemasListResponseBody.prototype['data_ref'] = 'schemas';
 
 /**
- * Array of metadata schema objects. The metadata schemas are listed by related object properties.
- * @member {Array.<module:model/MetadataSchemaDeprecated>} 
- */
+    * Array of metadata schema objects. The metadata schemas are listed by related object properties.
+    * @type {Array.<MetadataSchemaDeprecated> | undefined}
+    */
 MetadataSchemasListResponseBody.prototype['schemas'] = undefined;
 
 /**
- * The total number of metadata schema objects.
- * @member {Number} 
- */
+    * The total number of metadata schema objects.
+    * @type {Number | undefined}
+    */
 MetadataSchemasListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MetadataSchemasListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MetadataSchemasListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-MetadataSchemasListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "schemas"
-     * @constant
-     */
-    "schemas": "schemas"
-};
+    MetadataSchemasListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "schemas"
+         * @constant
+         */
+        "schemas": "schemas"    
+    };
 
 
 

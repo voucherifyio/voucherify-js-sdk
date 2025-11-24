@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListTransactions.
-* @module model/ParameterOrderListTransactions
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListTransactions {
+ * Enum class ParameterOrderListTransactions.
+ * @module model/ParameterOrderListTransactions
+ * @version 3.0.1
+ */
+class ParameterOrderListTransactions {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
 
     /**
-    * Returns a <code>ParameterOrderListTransactions</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListTransactions} The enum <code>ParameterOrderListTransactions</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListTransactions[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListTransactions[key];
     }
 }
+
+export default ParameterOrderListTransactions;
 

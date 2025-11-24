@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ApplicableToEffect from './ApplicableToEffect';
 import InapplicableToOrderItemUnitsItem from './InapplicableToOrderItemUnitsItem';
-
 /**
  * The InapplicableTo model module.
  * @module model/InapplicableTo
- * @version 3.0.0
+ * @version 3.0.1
  */
 class InapplicableTo {
     /**
      * Constructs a new <code>InapplicableTo</code>.
-     * @alias module:model/InapplicableTo
-     * @param effect {module:model/ApplicableToEffect} 
+     * @alias InapplicableTo
+     * @param {Exclude<keyof typeof ApplicableToEffect, "prototype" | "constructFromObject">} effect 
      */
     constructor(effect) { 
         
@@ -43,9 +42,9 @@ class InapplicableTo {
     /**
      * Constructs a <code>InapplicableTo</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InapplicableTo} obj Optional instance to populate.
-     * @returns {module:model/InapplicableTo} The populated <code>InapplicableTo</code> instance.
+     * @param {Partial<InapplicableTo>} data The plain JavaScript object bearing properties of interest.
+     * @param {InapplicableTo} [obj] Optional instance to populate.
+     * @returns {InapplicableTo} The populated <code>InapplicableTo</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -108,7 +107,7 @@ class InapplicableTo {
 
     /**
      * Validates the JSON data with respect to <code>InapplicableTo</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<InapplicableTo>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>InapplicableTo</code>.
      */
     static validateJSON(data) {
@@ -166,156 +165,156 @@ class InapplicableTo {
 InapplicableTo.RequiredProperties = ["effect"];
 
 /**
- * This object stores information about the resource to which the discount is applicable.
- * @member {module:model/InapplicableTo.ObjectEnum} 
- */
+    * This object stores information about the resource to which the discount is applicable.
+    * @type {(keyof typeof InapplicableTo.ObjectEnum) | undefined}
+    */
 InapplicableTo.prototype['object'] = undefined;
 
 /**
- * Unique product collection, product, or SKU identifier assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product collection, product, or SKU identifier assigned by Voucherify.
+    * @type {String | undefined}
+    */
 InapplicableTo.prototype['id'] = undefined;
 
 /**
- * The source identifier from your inventory system.
- * @member {String} 
- */
+    * The source identifier from your inventory system.
+    * @type {String | undefined}
+    */
 InapplicableTo.prototype['source_id'] = undefined;
 
 /**
- * Parent product's unique ID assigned by Voucherify.
- * @member {String} 
- */
+    * Parent product's unique ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 InapplicableTo.prototype['product_id'] = undefined;
 
 /**
- * Parent product's source ID from your inventory system.
- * @member {String} 
- */
+    * Parent product's source ID from your inventory system.
+    * @type {String | undefined}
+    */
 InapplicableTo.prototype['product_source_id'] = undefined;
 
 /**
- * New fixed price of an item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 price is written as 1000. In case of the fixed price being calculated by the formula, i.e. the price_formula parameter is present in the fixed price definition, this value becomes the fallback value. Such that in a case where the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed price.
- * @member {Number} 
- */
+    * New fixed price of an item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 price is written as 1000. In case of the fixed price being calculated by the formula, i.e. the price_formula parameter is present in the fixed price definition, this value becomes the fallback value. Such that in a case where the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed price.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['price'] = undefined;
 
 /**
- * Formula used to dynamically calculate the discounted price of an item.
- * @member {Number} 
- */
+    * Formula used to dynamically calculate the discounted price of an item.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['price_formula'] = undefined;
 
 /**
- * @member {module:model/ApplicableToEffect} 
- */
+    * @type {Exclude<keyof typeof ApplicableToEffect, "prototype" | "constructFromObject">}
+    */
 InapplicableTo.prototype['effect'] = undefined;
 
 /**
- * The maximum number of units allowed to be discounted per order line item.
- * @member {Number} 
- */
+    * The maximum number of units allowed to be discounted per order line item.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['quantity_limit'] = undefined;
 
 /**
- * The maximum number of units allowed to be discounted combined across all matched order line items.
- * @member {Number} 
- */
+    * The maximum number of units allowed to be discounted combined across all matched order line items.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['aggregated_quantity_limit'] = undefined;
 
 /**
- * Upper limit allowed to be applied as a discount per order line item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
- * @member {Number} 
- */
+    * Upper limit allowed to be applied as a discount per order line item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['amount_limit'] = undefined;
 
 /**
- * Maximum discount amount per order. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount on the entire order is written as 600. This value is definable for the following discount effects: - `APPLY_TO_ITEMS` (each item subtotal is discounted equally) - `APPLY_TO_ITEMS_BY_QUANTITY` (each unit of matched products has the same discount value)
- * @member {Number} 
- */
+    * Maximum discount amount per order. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount on the entire order is written as 600. This value is definable for the following discount effects: - `APPLY_TO_ITEMS` (each item subtotal is discounted equally) - `APPLY_TO_ITEMS_BY_QUANTITY` (each unit of matched products has the same discount value)
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['aggregated_amount_limit'] = undefined;
 
 /**
- * Lists which order lines are (not) covered by the discount. The order in the array is determined by the sequence of applied discounts, while the numbers correspond to the order lines sent in the `order` object in the request. The first order line is assigned `0`, the second order line is assigned `1`, and so on.
- * @member {Array.<Number>} 
- */
+    * Lists which order lines are (not) covered by the discount. The order in the array is determined by the sequence of applied discounts, while the numbers correspond to the order lines sent in the `order` object in the request. The first order line is assigned `0`, the second order line is assigned `1`, and so on.
+    * @type {Array.<Number> | undefined}
+    */
 InapplicableTo.prototype['order_item_indices'] = undefined;
 
 /**
- * Lists which units within order lines are covered by the discount. The order line items are listed according to sequence of applied discounts while the `index` corresponds to the order line sent in the `order` object in the request.
- * @member {Array.<module:model/InapplicableToOrderItemUnitsItem>} 
- */
+    * Lists which units within order lines are covered by the discount. The order line items are listed according to sequence of applied discounts while the `index` corresponds to the order line sent in the `order` object in the request.
+    * @type {Array.<InapplicableToOrderItemUnitsItem> | undefined}
+    */
 InapplicableTo.prototype['order_item_units'] = undefined;
 
 /**
- * Determines the recurrence of the discount, e.g. `\"repeat\": 3` means that the discount is applied to every third item.
- * @member {Number} 
- */
+    * Determines the recurrence of the discount, e.g. `\"repeat\": 3` means that the discount is applied to every third item.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['repeat'] = undefined;
 
 /**
- * Determines how many items are skipped before the discount is applied.
- * @member {Number} 
- */
+    * Determines how many items are skipped before the discount is applied.
+    * @type {Number | undefined}
+    */
 InapplicableTo.prototype['skip_initially'] = undefined;
 
 /**
- * Determines to which kinds of objects the discount is applicable. `ITEM` includes products and SKUs. `UNIT` means particular units within an order line.
- * @member {module:model/InapplicableTo.TargetEnum} 
- */
+    * Determines to which kinds of objects the discount is applicable. `ITEM` includes products and SKUs. `UNIT` means particular units within an order line.
+    * @type {(keyof typeof InapplicableTo.TargetEnum) | undefined}
+    */
 InapplicableTo.prototype['target'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-InapplicableTo['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    InapplicableTo['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection"    
+    };
+
 
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>target</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "products_collection"
-     * @constant
-     */
-    "products_collection": "products_collection"
-};
-
-
-/**
- * Allowed values for the <code>target</code> property.
- * @enum {String}
- * @readonly
- */
-InapplicableTo['TargetEnum'] = {
-
-    /**
-     * value: "ITEM"
-     * @constant
-     */
-    "ITEM": "ITEM",
-
-    /**
-     * value: "UNIT"
-     * @constant
-     */
-    "UNIT": "UNIT"
-};
+    InapplicableTo['TargetEnum'] = {
+    
+        /**
+         * value: "ITEM"
+         * @constant
+         */
+        "ITEM": "ITEM",
+    
+        /**
+         * value: "UNIT"
+         * @constant
+         */
+        "UNIT": "UNIT"    
+    };
 
 
 

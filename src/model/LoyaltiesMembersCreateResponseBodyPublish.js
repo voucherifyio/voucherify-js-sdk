@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersCreateResponseBodyPublish model module.
  * @module model/LoyaltiesMembersCreateResponseBodyPublish
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersCreateResponseBodyPublish {
     /**
      * Constructs a new <code>LoyaltiesMembersCreateResponseBodyPublish</code>.
      * This object stores a summary of publish events: an events counter and an endpoint which can be called to return details of each event.  A publication is required for loyalty cards and referral codes. This object gets updated whenever a voucher has been published. Publication means assigning a code to a particular customer. Typically, a publication is made by distributing your codes to your customers, e.g. through Export to MailChimp or   | Required | Optional | | -------- | :------: | | &#x60;type&#x60;:&#x60;LOYALTY_CARD&#x60; |  &#x60;type&#x60;:&#x60;DISCOUNT_VOUCHER&#x60;   |  | &#x60;is_referral_code&#x60;:&#x60;true&#x60;      |    &#x60;type&#x60;:&#x60;GIFT_VOUCHER&#x60;   | 
-     * @alias module:model/LoyaltiesMembersCreateResponseBodyPublish
+     * @alias LoyaltiesMembersCreateResponseBodyPublish
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersCreateResponseBodyPublish {
     /**
      * Constructs a <code>LoyaltiesMembersCreateResponseBodyPublish</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersCreateResponseBodyPublish} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersCreateResponseBodyPublish} The populated <code>LoyaltiesMembersCreateResponseBodyPublish</code> instance.
+     * @param {Partial<LoyaltiesMembersCreateResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersCreateResponseBodyPublish} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersCreateResponseBodyPublish} The populated <code>LoyaltiesMembersCreateResponseBodyPublish</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesMembersCreateResponseBodyPublish {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersCreateResponseBodyPublish</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersCreateResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersCreateResponseBodyPublish</code>.
      */
     static validateJSON(data) {
@@ -86,22 +85,22 @@ class LoyaltiesMembersCreateResponseBodyPublish {
 
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LoyaltiesMembersCreateResponseBodyPublish.prototype['object'] = 'list';
 
 /**
- * Publication event counter.
- * @member {Number} 
- */
+    * Publication event counter.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersCreateResponseBodyPublish.prototype['count'] = undefined;
 
 /**
- * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
- * @member {String} 
- */
+    * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
+    * @type {String | undefined}
+    */
 LoyaltiesMembersCreateResponseBodyPublish.prototype['url'] = undefined;
 
 

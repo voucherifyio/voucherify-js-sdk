@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignLoyaltyCardExpirationRules from './CampaignLoyaltyCardExpirationRules';
-
 /**
  * The CampaignLoyaltyCard model module.
  * @module model/CampaignLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignLoyaltyCard {
     /**
      * Constructs a new <code>CampaignLoyaltyCard</code>.
      * Schema model for a campaign loyalty card.
-     * @alias module:model/CampaignLoyaltyCard
+     * @alias CampaignLoyaltyCard
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignLoyaltyCard {
     /**
      * Constructs a <code>CampaignLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/CampaignLoyaltyCard} The populated <code>CampaignLoyaltyCard</code> instance.
+     * @param {Partial<CampaignLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {CampaignLoyaltyCard} The populated <code>CampaignLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class CampaignLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>CampaignLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -79,14 +78,14 @@ class CampaignLoyaltyCard {
 
 
 /**
- * The initial number of points to assign to the loyalty card. This is the current loyalty card score i.e. the number of loyalty points on the card.
- * @member {Number} 
- */
+    * The initial number of points to assign to the loyalty card. This is the current loyalty card score i.e. the number of loyalty points on the card.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * @member {module:model/CampaignLoyaltyCardExpirationRules} 
- */
+    * @type {CampaignLoyaltyCardExpirationRules | undefined}
+    */
 CampaignLoyaltyCard.prototype['expiration_rules'] = undefined;
 
 

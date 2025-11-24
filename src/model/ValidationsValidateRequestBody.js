@@ -17,17 +17,16 @@ import Order from './Order';
 import Session from './Session';
 import ValidationsValidateRequestBodyOptions from './ValidationsValidateRequestBodyOptions';
 import ValidationsValidateRequestBodyRedeemablesItem from './ValidationsValidateRequestBodyRedeemablesItem';
-
 /**
  * The ValidationsValidateRequestBody model module.
  * @module model/ValidationsValidateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateRequestBody {
     /**
      * Constructs a new <code>ValidationsValidateRequestBody</code>.
      * Response body schema for **POST** &#x60;v1/validations&#x60;.
-     * @alias module:model/ValidationsValidateRequestBody
+     * @alias ValidationsValidateRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ValidationsValidateRequestBody {
     /**
      * Constructs a <code>ValidationsValidateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateRequestBody} The populated <code>ValidationsValidateRequestBody</code> instance.
+     * @param {Partial<ValidationsValidateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateRequestBody} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateRequestBody} The populated <code>ValidationsValidateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class ValidationsValidateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -124,40 +123,40 @@ class ValidationsValidateRequestBody {
 
 
 /**
- * @member {module:model/ValidationsValidateRequestBodyOptions} 
- */
+    * @type {ValidationsValidateRequestBodyOptions | undefined}
+    */
 ValidationsValidateRequestBody.prototype['options'] = undefined;
 
 /**
- * @member {Array.<module:model/ValidationsValidateRequestBodyRedeemablesItem>} 
- */
+    * @type {Array.<ValidationsValidateRequestBodyRedeemablesItem> | undefined}
+    */
 ValidationsValidateRequestBody.prototype['redeemables'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 ValidationsValidateRequestBody.prototype['order'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 ValidationsValidateRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Session} 
- */
+    * @type {Session | undefined}
+    */
 ValidationsValidateRequestBody.prototype['session'] = undefined;
 
 /**
- * Is correspondent to Customer's source_id
- * @member {String} 
- */
+    * Is correspondent to Customer's source_id
+    * @type {String | undefined}
+    */
 ValidationsValidateRequestBody.prototype['tracking_id'] = undefined;
 
 /**
- * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
- * @member {Object} 
- */
+    * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
+    * @type {Object | undefined}
+    */
 ValidationsValidateRequestBody.prototype['metadata'] = undefined;
 
 

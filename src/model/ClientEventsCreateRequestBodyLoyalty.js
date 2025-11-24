@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientEventsCreateRequestBodyLoyalty model module.
  * @module model/ClientEventsCreateRequestBodyLoyalty
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientEventsCreateRequestBodyLoyalty {
     /**
      * Constructs a new <code>ClientEventsCreateRequestBodyLoyalty</code>.
      * If an earning rule in a loyalty program is based on a custom event. This objects let&#39;s you specify the loyalty card to which the custom event should be attributed to.
-     * @alias module:model/ClientEventsCreateRequestBodyLoyalty
+     * @alias ClientEventsCreateRequestBodyLoyalty
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ClientEventsCreateRequestBodyLoyalty {
     /**
      * Constructs a <code>ClientEventsCreateRequestBodyLoyalty</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientEventsCreateRequestBodyLoyalty} obj Optional instance to populate.
-     * @returns {module:model/ClientEventsCreateRequestBodyLoyalty} The populated <code>ClientEventsCreateRequestBodyLoyalty</code> instance.
+     * @param {Partial<ClientEventsCreateRequestBodyLoyalty>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientEventsCreateRequestBodyLoyalty} [obj] Optional instance to populate.
+     * @returns {ClientEventsCreateRequestBodyLoyalty} The populated <code>ClientEventsCreateRequestBodyLoyalty</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ClientEventsCreateRequestBodyLoyalty {
 
     /**
      * Validates the JSON data with respect to <code>ClientEventsCreateRequestBodyLoyalty</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientEventsCreateRequestBodyLoyalty>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientEventsCreateRequestBodyLoyalty</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ClientEventsCreateRequestBodyLoyalty {
 
 
 /**
- * Code of the loyalty card to receive points based on the calculation method defined in the related earning rule. An earning rule is triggered for the loyalty card when the event passed in the `event` parameter of the request payload gets sent along with this loyalty card code.
- * @member {String} 
- */
+    * Code of the loyalty card to receive points based on the calculation method defined in the related earning rule. An earning rule is triggered for the loyalty card when the event passed in the `event` parameter of the request payload gets sent along with this loyalty card code.
+    * @type {String | undefined}
+    */
 ClientEventsCreateRequestBodyLoyalty.prototype['code'] = undefined;
 
 

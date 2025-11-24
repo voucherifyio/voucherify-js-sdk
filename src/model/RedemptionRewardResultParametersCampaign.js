@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionRewardResultParametersCampaign model module.
  * @module model/RedemptionRewardResultParametersCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRewardResultParametersCampaign {
     /**
      * Constructs a new <code>RedemptionRewardResultParametersCampaign</code>.
      * Defines the product redeemed as a reward.
-     * @alias module:model/RedemptionRewardResultParametersCampaign
+     * @alias RedemptionRewardResultParametersCampaign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionRewardResultParametersCampaign {
     /**
      * Constructs a <code>RedemptionRewardResultParametersCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRewardResultParametersCampaign} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRewardResultParametersCampaign} The populated <code>RedemptionRewardResultParametersCampaign</code> instance.
+     * @param {Partial<RedemptionRewardResultParametersCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRewardResultParametersCampaign} [obj] Optional instance to populate.
+     * @returns {RedemptionRewardResultParametersCampaign} The populated <code>RedemptionRewardResultParametersCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class RedemptionRewardResultParametersCampaign {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRewardResultParametersCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRewardResultParametersCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRewardResultParametersCampaign</code>.
      */
     static validateJSON(data) {
@@ -85,21 +84,21 @@ class RedemptionRewardResultParametersCampaign {
 
 
 /**
- * Campaign unique ID.
- * @member {String} 
- */
+    * Campaign unique ID.
+    * @type {String | undefined}
+    */
 RedemptionRewardResultParametersCampaign.prototype['id'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 RedemptionRewardResultParametersCampaign.prototype['balance'] = undefined;
 
 /**
- * Defines the type of the campaign.
- * @member {String} 
- */
+    * Defines the type of the campaign.
+    * @type {String | undefined}
+    */
 RedemptionRewardResultParametersCampaign.prototype['type'] = undefined;
 
 

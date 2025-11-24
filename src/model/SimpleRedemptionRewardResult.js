@@ -17,17 +17,16 @@ import SimpleCustomer from './SimpleCustomer';
 import SimpleProduct from './SimpleProduct';
 import SimpleSku from './SimpleSku';
 import SimpleVoucher from './SimpleVoucher';
-
 /**
  * The SimpleRedemptionRewardResult model module.
  * @module model/SimpleRedemptionRewardResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleRedemptionRewardResult {
     /**
      * Constructs a new <code>SimpleRedemptionRewardResult</code>.
      * Simplified redemption reward result data
-     * @alias module:model/SimpleRedemptionRewardResult
+     * @alias SimpleRedemptionRewardResult
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class SimpleRedemptionRewardResult {
     /**
      * Constructs a <code>SimpleRedemptionRewardResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleRedemptionRewardResult} obj Optional instance to populate.
-     * @returns {module:model/SimpleRedemptionRewardResult} The populated <code>SimpleRedemptionRewardResult</code> instance.
+     * @param {Partial<SimpleRedemptionRewardResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleRedemptionRewardResult} [obj] Optional instance to populate.
+     * @returns {SimpleRedemptionRewardResult} The populated <code>SimpleRedemptionRewardResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -102,7 +101,7 @@ class SimpleRedemptionRewardResult {
 
     /**
      * Validates the JSON data with respect to <code>SimpleRedemptionRewardResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleRedemptionRewardResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleRedemptionRewardResult</code>.
      */
     static validateJSON(data) {
@@ -160,129 +159,129 @@ class SimpleRedemptionRewardResult {
 
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['customer'] = undefined;
 
 /**
- * Unique reward assignment ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['assignment_id'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/SimpleProduct} 
- */
+    * @type {SimpleProduct | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['product'] = undefined;
 
 /**
- * @member {module:model/SimpleSku} 
- */
+    * @type {SimpleSku | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['sku'] = undefined;
 
 /**
- * Unique loyalty tier ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique loyalty tier ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['loyalty_tier_id'] = undefined;
 
 /**
- * Unique reward ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward.
- * @member {module:model/SimpleRedemptionRewardResult.ObjectEnum} 
- * @default 'reward'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward.
+    * @type {(keyof typeof SimpleRedemptionRewardResult.ObjectEnum) | undefined}
+    * @default 'reward'
+    */
 SimpleRedemptionRewardResult.prototype['object'] = 'reward';
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['name'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/RewardType} 
- */
+    * @type {RewardType | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['parameters'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
+    * @type {Object | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['metadata'] = undefined;
 
 /**
- * Reward type.
- * @member {module:model/SimpleRedemptionRewardResult.TypeEnum} 
- */
+    * Reward type.
+    * @type {(keyof typeof SimpleRedemptionRewardResult.TypeEnum) | undefined}
+    */
 SimpleRedemptionRewardResult.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleRedemptionRewardResult['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SimpleRedemptionRewardResult['ObjectEnum'] = {
+    
+        /**
+         * value: "reward"
+         * @constant
+         */
+        "reward": "reward"    
+    };
+
 
     /**
-     * value: "reward"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward": "reward"
-};
-
-
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleRedemptionRewardResult['TypeEnum'] = {
-
-    /**
-     * value: "CAMPAIGN"
-     * @constant
-     */
-    "CAMPAIGN": "CAMPAIGN",
-
-    /**
-     * value: "COIN"
-     * @constant
-     */
-    "COIN": "COIN",
-
-    /**
-     * value: "MATERIAL"
-     * @constant
-     */
-    "MATERIAL": "MATERIAL"
-};
+    SimpleRedemptionRewardResult['TypeEnum'] = {
+    
+        /**
+         * value: "CAMPAIGN"
+         * @constant
+         */
+        "CAMPAIGN": "CAMPAIGN",
+    
+        /**
+         * value: "COIN"
+         * @constant
+         */
+        "COIN": "COIN",
+    
+        /**
+         * value: "MATERIAL"
+         * @constant
+         */
+        "MATERIAL": "MATERIAL"    
+    };
 
 
 

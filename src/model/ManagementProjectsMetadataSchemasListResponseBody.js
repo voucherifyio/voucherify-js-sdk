@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsMetadataSchema from './ManagementProjectsMetadataSchema';
-
 /**
  * The ManagementProjectsMetadataSchemasListResponseBody model module.
  * @module model/ManagementProjectsMetadataSchemasListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsMetadataSchemasListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsMetadataSchemasListResponseBody</code>.
      * Object containing a list of metadata schemas.
-     * @alias module:model/ManagementProjectsMetadataSchemasListResponseBody
+     * @alias ManagementProjectsMetadataSchemasListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsMetadataSchemasListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsMetadataSchemasListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsMetadataSchemasListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsMetadataSchemasListResponseBody} The populated <code>ManagementProjectsMetadataSchemasListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsMetadataSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsMetadataSchemasListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsMetadataSchemasListResponseBody} The populated <code>ManagementProjectsMetadataSchemasListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsMetadataSchemasListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsMetadataSchemasListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsMetadataSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsMetadataSchemasListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsMetadataSchemasListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the metadata schemas in a dictionary.
- * @member {module:model/ManagementProjectsMetadataSchemasListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the metadata schemas in a dictionary.
+    * @type {(keyof typeof ManagementProjectsMetadataSchemasListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsMetadataSchemasListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of metadata schema objects.
- * @member {module:model/ManagementProjectsMetadataSchemasListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of metadata schema objects.
+    * @type {(keyof typeof ManagementProjectsMetadataSchemasListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsMetadataSchemasListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of metadata schema objects. The metadata schemas are listed by related object properties.
- * @member {Array.<module:model/ManagementProjectsMetadataSchema>} 
- */
+    * Array of metadata schema objects. The metadata schemas are listed by related object properties.
+    * @type {Array.<ManagementProjectsMetadataSchema> | undefined}
+    */
 ManagementProjectsMetadataSchemasListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of metadata schema objects.
- * @member {Number} 
- */
+    * The total number of metadata schema objects.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemasListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsMetadataSchemasListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsMetadataSchemasListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsMetadataSchemasListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsMetadataSchemasListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

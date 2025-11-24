@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions from './ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions';
 import ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks from './ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks';
-
 /**
  * The ManagementProjectsGetResponseBodyWebhooksCalloutNotifications model module.
  * @module model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsGetResponseBodyWebhooksCalloutNotifications {
     /**
      * Constructs a new <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code>.
      * Determines the notification settings for webhook callouts configured in Distributions and Project settings.
-     * @alias module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications
+     * @alias ManagementProjectsGetResponseBodyWebhooksCalloutNotifications
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsGetResponseBodyWebhooksCalloutNotifications {
     /**
      * Constructs a <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications} The populated <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code> instance.
+     * @param {Partial<ManagementProjectsGetResponseBodyWebhooksCalloutNotifications>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsGetResponseBodyWebhooksCalloutNotifications} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsGetResponseBodyWebhooksCalloutNotifications} The populated <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ManagementProjectsGetResponseBodyWebhooksCalloutNotifications {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsGetResponseBodyWebhooksCalloutNotifications>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsGetResponseBodyWebhooksCalloutNotifications</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class ManagementProjectsGetResponseBodyWebhooksCalloutNotifications {
 
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions} 
- */
+    * @type {ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions | undefined}
+    */
 ManagementProjectsGetResponseBodyWebhooksCalloutNotifications.prototype['distributions'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks} 
- */
+    * @type {ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks | undefined}
+    */
 ManagementProjectsGetResponseBodyWebhooksCalloutNotifications.prototype['webhooks'] = undefined;
 
 

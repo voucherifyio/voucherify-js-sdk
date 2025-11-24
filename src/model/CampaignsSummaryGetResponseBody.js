@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import CampaignBase from './CampaignBase';
-
 /**
  * The CampaignsSummaryGetResponseBody model module.
  * @module model/CampaignsSummaryGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsSummaryGetResponseBody {
     /**
      * Constructs a new <code>CampaignsSummaryGetResponseBody</code>.
-     * @alias module:model/CampaignsSummaryGetResponseBody
+     * @alias CampaignsSummaryGetResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignsSummaryGetResponseBody {
     /**
      * Constructs a <code>CampaignsSummaryGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsSummaryGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsSummaryGetResponseBody} The populated <code>CampaignsSummaryGetResponseBody</code> instance.
+     * @param {Partial<CampaignsSummaryGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsSummaryGetResponseBody} [obj] Optional instance to populate.
+     * @returns {CampaignsSummaryGetResponseBody} The populated <code>CampaignsSummaryGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -178,7 +177,7 @@ class CampaignsSummaryGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsSummaryGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsSummaryGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsSummaryGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -200,268 +199,268 @@ class CampaignsSummaryGetResponseBody {
 
 
 /**
- * The type of the object, which is `campaign_summary`.
- * @member {module:model/CampaignsSummaryGetResponseBody.ObjectEnum} 
- * @default 'campaign_summary'
- */
+    * The type of the object, which is `campaign_summary`.
+    * @type {(keyof typeof CampaignsSummaryGetResponseBody.ObjectEnum) | undefined}
+    * @default 'campaign_summary'
+    */
 CampaignsSummaryGetResponseBody.prototype['object'] = 'campaign_summary';
 
 /**
- * @member {module:model/CampaignBase} 
- */
+    * @type {CampaignBase | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['campaign'] = undefined;
 
 /**
- * Total number of redemptions, which includes successful and failed redemptions.
- * @member {Number} 
- */
+    * Total number of redemptions, which includes successful and failed redemptions.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['redemptions'] = undefined;
 
 /**
- * Total number of successful redemptions.
- * @member {Number} 
- */
+    * Total number of successful redemptions.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['redemptions_succeeded'] = undefined;
 
 /**
- * Total number of failed redemptions.
- * @member {Number} 
- */
+    * Total number of failed redemptions.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['redemptions_failed'] = undefined;
 
 /**
- * Total number of rollbacks, which includes successful and failed rollbacks.
- * @member {Number} 
- */
+    * Total number of rollbacks, which includes successful and failed rollbacks.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['rollbacks'] = undefined;
 
 /**
- * Total number of successful rollbacks.
- * @member {Number} 
- */
+    * Total number of successful rollbacks.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['rollbacks_succeeded'] = undefined;
 
 /**
- * Total number of failed rollbacks.
- * @member {Number} 
- */
+    * Total number of failed rollbacks.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['rollbacks_failed'] = undefined;
 
 /**
- * Total number of validations, which includes successful and failed validations.
- * @member {Number} 
- */
+    * Total number of validations, which includes successful and failed validations.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['validations'] = undefined;
 
 /**
- * Total number of successful validations.
- * @member {Number} 
- */
+    * Total number of successful validations.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['validations_succeeded'] = undefined;
 
 /**
- * Total number of failed validations.
- * @member {Number} 
- */
+    * Total number of failed validations.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['validations_failed'] = undefined;
 
 /**
- * Total amount of orders related to the campaign. This amount is not reduced by `orders_rolledback_amount`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * Total amount of orders related to the campaign. This amount is not reduced by `orders_rolledback_amount`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['orders_amount'] = undefined;
 
 /**
- * Total amount of orders that were rolled back and are related to the campaign. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * Total amount of orders that were rolled back and are related to the campaign. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['orders_rolledback_amount'] = undefined;
 
 /**
- * Total number of vouchers created within the campaign. Includes vouchers generated when the campaign was created, vouchers added manually, or vouchers generated automatically when a new customer joined the campaign.
- * @member {Number} 
- */
+    * Total number of vouchers created within the campaign. Includes vouchers generated when the campaign was created, vouchers added manually, or vouchers generated automatically when a new customer joined the campaign.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['vouchers_created'] = undefined;
 
 /**
- * Total number of vouchers deleted within the campaign. Includes vouchers moved to the bin and vouchers deleted permanently. Vouchers moved to the bin and then deleted permanently are counted once.
- * @member {Number} 
- */
+    * Total number of vouchers deleted within the campaign. Includes vouchers moved to the bin and vouchers deleted permanently. Vouchers moved to the bin and then deleted permanently are counted once.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['vouchers_deleted'] = undefined;
 
 /**
- * Total number of publications, which includes successful and failed publications.
- * @member {Number} 
- */
+    * Total number of publications, which includes successful and failed publications.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['publications'] = undefined;
 
 /**
- * Total number of successful publications.
- * @member {Number} 
- */
+    * Total number of successful publications.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['publications_succeeded'] = undefined;
 
 /**
- * Total number of failed publications.
- * @member {Number} 
- */
+    * Total number of failed publications.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['publications_failed'] = undefined;
 
 /**
- * Total amount of discounts related to the campaign. This amount is not reduced by the `rolledback_discounted_amount`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * Total amount of discounts related to the campaign. This amount is not reduced by the `rolledback_discounted_amount`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['discounted_amount'] = undefined;
 
 /**
- * Total amount of discounts orders that were rolled back and are related to the campaign. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * Total amount of discounts orders that were rolled back and are related to the campaign. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['rolledback_discounted_amount'] = undefined;
 
 /**
- * The total credit amount for all created gift cards. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount for all created gift cards. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['created_vouchers_amount'] = undefined;
 
 /**
- * The total credit amount that was added. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount that was added. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['amount_added'] = undefined;
 
 /**
- * The total credit amount that was deleted by deleting gift cards. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount that was deleted by deleting gift cards. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['amount_deleted'] = undefined;
 
 /**
- * The total credit amount that was redeemed. This amount is not reduced by the `amount_rolledback`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount that was redeemed. This amount is not reduced by the `amount_rolledback`. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['amount_redeemed'] = undefined;
 
 /**
- * The total credit amount that was rolled back. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount that was rolled back. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['amount_rolledback'] = undefined;
 
 /**
- * The total credit amount that was subtracted. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
- * @member {Number} 
- */
+    * The total credit amount that was subtracted. The value is multiplied by `100` to precisely represent 2 decimal places. For example, `$10` is represented as `1000`.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['amount_subtracted'] = undefined;
 
 /**
- * Total number of points added to newly created loyalty cards. This also counts points added for the loyalty cards which are created by importing a CSV file to a campaign.
- * @member {Number} 
- */
+    * Total number of points added to newly created loyalty cards. This also counts points added for the loyalty cards which are created by importing a CSV file to a campaign.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['created_vouchers_points'] = undefined;
 
 /**
- * Total number of points that were deleted.
- * @member {Number} 
- */
+    * Total number of points that were deleted.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_deleted'] = undefined;
 
 /**
- * Total number of points that were subtracted.
- * @member {Number} 
- */
+    * Total number of points that were subtracted.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_subtracted'] = undefined;
 
 /**
- * Total number of points that were added. This includes points added manually or automatically by redeeming a reward that adds loyalty points to cards in this campaign.
- * @member {Number} 
- */
+    * Total number of points that were added. This includes points added manually or automatically by redeeming a reward that adds loyalty points to cards in this campaign.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_added'] = undefined;
 
 /**
- * Total number of points that were rewarded to loyalty cards through earning rules. This includes pending points that were activated.
- * @member {Number} 
- */
+    * Total number of points that were rewarded to loyalty cards through earning rules. This includes pending points that were activated.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_rewarded'] = undefined;
 
 /**
- * Total number of points that were redeemed for rewards.
- * @member {Number} 
- */
+    * Total number of points that were redeemed for rewards.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_redeemed'] = undefined;
 
 /**
- * Total number of points that were rolled back for reward redemptions.
- * @member {Number} 
- */
+    * Total number of points that were rolled back for reward redemptions.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_rolledback'] = undefined;
 
 /**
- * Total number of points that have expired.
- * @member {Number} 
- */
+    * Total number of points that have expired.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_expired'] = undefined;
 
 /**
- * Total number of points transferred out of loyalty cards covered by the campaign.
- * @member {Number} 
- */
+    * Total number of points transferred out of loyalty cards covered by the campaign.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_transferred_out'] = undefined;
 
 /**
- * Total number of points transferred into loyalty cards covered by the campaign.
- * @member {Number} 
- */
+    * Total number of points transferred into loyalty cards covered by the campaign.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['points_transferred_in'] = undefined;
 
 /**
- * Total number of pending points that were added either as part of earning rules or added manually to an existing pending point bucket. Pending points that were activated manually or automatically or that were canceled do not affect this number.
- * @member {Number} 
- */
+    * Total number of pending points that were added either as part of earning rules or added manually to an existing pending point bucket. Pending points that were activated manually or automatically or that were canceled do not affect this number.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['pending_points_added'] = undefined;
 
 /**
- * Total number of pending points that were subtracted from existing pending point buckets.
- * @member {Number} 
- */
+    * Total number of pending points that were subtracted from existing pending point buckets.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['pending_points_subtracted'] = undefined;
 
 /**
- * Total number of pending points that were activated manually or automatically.
- * @member {Number} 
- */
+    * Total number of pending points that were activated manually or automatically.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['pending_points_activated'] = undefined;
 
 /**
- * Total number of pending points that were canceled.
- * @member {Number} 
- */
+    * Total number of pending points that were canceled.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['pending_points_canceled'] = undefined;
 
 /**
- * Total number of all referred customers.
- * @member {Number} 
- */
+    * Total number of all referred customers.
+    * @type {Number | undefined}
+    */
 CampaignsSummaryGetResponseBody.prototype['referred_customers'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsSummaryGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "campaign_summary"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign_summary": "campaign_summary"
-};
+    CampaignsSummaryGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign_summary"
+         * @constant
+         */
+        "campaign_summary": "campaign_summary"    
+    };
 
 
 

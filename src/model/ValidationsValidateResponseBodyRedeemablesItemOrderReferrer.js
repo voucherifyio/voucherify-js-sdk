@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemOrderReferrer model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItemOrderReferrer {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code>.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer
+     * @alias ValidationsValidateResponseBodyRedeemablesItemOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationsValidateResponseBodyRedeemablesItemOrderReferrer {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer} The populated <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItemOrderReferrer} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItemOrderReferrer} The populated <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ValidationsValidateResponseBodyRedeemablesItemOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItemOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class ValidationsValidateResponseBodyRedeemablesItemOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ValidationsValidateResponseBodyRedeemablesItemOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 ValidationsValidateResponseBodyRedeemablesItemOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsValidateResponseBodyRedeemablesItemOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    ValidationsValidateResponseBodyRedeemablesItemOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

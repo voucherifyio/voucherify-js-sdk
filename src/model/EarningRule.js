@@ -21,16 +21,15 @@ import EarningRuleSegment from './EarningRuleSegment';
 import EarningRuleSource from './EarningRuleSource';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The EarningRule model module.
  * @module model/EarningRule
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRule {
     /**
      * Constructs a new <code>EarningRule</code>.
-     * @alias module:model/EarningRule
+     * @alias EarningRule
      */
     constructor() { 
         
@@ -49,9 +48,9 @@ class EarningRule {
     /**
      * Constructs a <code>EarningRule</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRule} obj Optional instance to populate.
-     * @returns {module:model/EarningRule} The populated <code>EarningRule</code> instance.
+     * @param {Partial<EarningRule>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRule} [obj] Optional instance to populate.
+     * @returns {EarningRule} The populated <code>EarningRule</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -126,7 +125,7 @@ class EarningRule {
 
     /**
      * Validates the JSON data with respect to <code>EarningRule</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRule>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRule</code>.
      */
     static validateJSON(data) {
@@ -208,139 +207,139 @@ class EarningRule {
 
 
 /**
- * Assigned by the Voucherify API, identifies the earning rule object.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the earning rule object.
+    * @type {String | undefined}
+    */
 EarningRule.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 EarningRule.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyalty} 
- */
+    * @type {EarningRuleLoyalty | undefined}
+    */
 EarningRule.prototype['loyalty'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 EarningRule.prototype['event'] = undefined;
 
 /**
- * @member {module:model/EarningRuleCustomEvent} 
- */
+    * @type {EarningRuleCustomEvent | undefined}
+    */
 EarningRule.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/EarningRuleSegment} 
- */
+    * @type {EarningRuleSegment | undefined}
+    */
 EarningRule.prototype['segment'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyTier} 
- */
+    * @type {EarningRuleLoyaltyTier | undefined}
+    */
 EarningRule.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/EarningRulePendingPoints} 
- */
+    * @type {EarningRulePendingPoints | undefined}
+    */
 EarningRule.prototype['pending_points'] = undefined;
 
 /**
- * @member {module:model/EarningRuleSource} 
- */
+    * @type {EarningRuleSource | undefined}
+    */
 EarningRule.prototype['source'] = undefined;
 
 /**
- * The type of the object represented by JSON. Default is earning_rule.
- * @member {module:model/EarningRule.ObjectEnum} 
- * @default 'earning_rule'
- */
+    * The type of the object represented by JSON. Default is earning_rule.
+    * @type {(keyof typeof EarningRule.ObjectEnum) | undefined}
+    * @default 'earning_rule'
+    */
 EarningRule.prototype['object'] = 'earning_rule';
 
 /**
- * For internal use by Voucherify.
- * @member {String} 
- */
+    * For internal use by Voucherify.
+    * @type {String | undefined}
+    */
 EarningRule.prototype['automation_id'] = undefined;
 
 /**
- * Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
- * @member {String} 
- */
+    * Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
+    * @type {String | undefined}
+    */
 EarningRule.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
- * @member {String} 
- */
+    * Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
+    * @type {String | undefined}
+    */
 EarningRule.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 EarningRule.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/EarningRule.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof EarningRule.ValidityDayOfWeekEnum>) | undefined}
+    */
 EarningRule.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 EarningRule.prototype['validity_hours'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the earning rule. A set of key/value pairs that you can attach to an earning rule object. It can be useful for storing additional information about the earning rule in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the earning rule. A set of key/value pairs that you can attach to an earning rule object. It can be useful for storing additional information about the earning rule in a structured format.
+    * @type {Object | undefined}
+    */
 EarningRule.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/EarningRuleExpirationRules} 
- */
+    * @type {EarningRuleExpirationRules | undefined}
+    */
 EarningRule.prototype['expiration_rules'] = undefined;
 
 /**
- * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
- * @member {String} 
- */
+    * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
+    * @type {String | undefined}
+    */
 EarningRule.prototype['validation_rule_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 EarningRule.prototype['updated_at'] = undefined;
 
 /**
- * A flag to toggle the earning rule on or off. You can disable an earning rule even though it's within the active period defined by the start_date and expiration_date of the campaign or the earning rule's own start_date and expiration_date.  - `true` indicates an active earning rule - `false` indicates an inactive earning rule
- * @member {Boolean} 
- */
+    * A flag to toggle the earning rule on or off. You can disable an earning rule even though it's within the active period defined by the start_date and expiration_date of the campaign or the earning rule's own start_date and expiration_date.  - `true` indicates an active earning rule - `false` indicates an inactive earning rule
+    * @type {Boolean | undefined}
+    */
 EarningRule.prototype['active'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-EarningRule['ObjectEnum'] = {
-
     /**
-     * value: "earning_rule"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "earning_rule": "earning_rule"
-};
+    EarningRule['ObjectEnum'] = {
+    
+        /**
+         * value: "earning_rule"
+         * @constant
+         */
+        "earning_rule": "earning_rule"    
+    };
 
 
 /**

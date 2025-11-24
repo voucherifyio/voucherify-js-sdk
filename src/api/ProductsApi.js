@@ -36,13 +36,13 @@ import SkusImportCsvCreateResponseBody from '../model/SkusImportCsvCreateRespons
 /**
 * Products service.
 * @module api/ProductsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ProductsApi {
 
     /**
     * Constructs a new ProductsApi. 
-    * @alias module:api/ProductsApi
+    * @alias ProductsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -54,18 +54,19 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the createProduct operation.
-     * @callback module:api/ProductsApi~createProductCallback
+     * @callback createProductCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ProductsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Product
      * Creates a product object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the product database, Voucherify will return a related product object with updated fields.
-     * @param {module:model/ProductsCreateRequestBody} productsCreateRequestBody Specify the product parameters.
-     * @param {module:api/ProductsApi~createProductCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsCreateResponseBody}
+     * @param {ProductsCreateRequestBody} productsCreateRequestBody Specify the product parameters.
+     * @param {createProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsCreateResponseBody}
+     * @returns {Promise<(ProductsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsCreateResponseBody` object or with `undefined`.
      */
     createProduct(productsCreateRequestBody, callback) {
       let postBody = productsCreateRequestBody;
@@ -93,9 +94,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the createSku operation.
-     * @callback module:api/ProductsApi~createSkuCallback
+     * @callback createSkuCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsSkusCreateResponseBody} [data] The data returned by the service call.
+     * @param {ProductsSkusCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -103,9 +104,10 @@ export default class ProductsApi {
      * Create SKU
      * This method adds product variants to a [created product](/api-reference/products/create-product).   📘 Upsert Mode  If you pass an id or a source_id that already exists in the sku database, Voucherify will return a related sku object with updated fields.
      * @param {String} productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID.
-     * @param {module:model/ProductsSkusCreateRequestBody} productsSkusCreateRequestBody Specify the SKU parameters to be created.
-     * @param {module:api/ProductsApi~createSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsSkusCreateResponseBody}
+     * @param {ProductsSkusCreateRequestBody} productsSkusCreateRequestBody Specify the SKU parameters to be created.
+     * @param {createSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsSkusCreateResponseBody}
+     * @returns {Promise<(ProductsSkusCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsSkusCreateResponseBody` object or with `undefined`.
      */
     createSku(productId, productsSkusCreateRequestBody, callback) {
       let postBody = productsSkusCreateRequestBody;
@@ -135,7 +137,7 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the deleteProduct operation.
-     * @callback module:api/ProductsApi~deleteProductCallback
+     * @callback deleteProductCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -148,7 +150,8 @@ export default class ProductsApi {
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~deleteProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteProduct(productId, opts, callback) {
       opts = opts || {};
@@ -179,7 +182,7 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the deleteSku operation.
-     * @callback module:api/ProductsApi~deleteSkuCallback
+     * @callback deleteSkuCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -193,7 +196,8 @@ export default class ProductsApi {
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~deleteSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteSku(productId, skuId, opts, callback) {
       opts = opts || {};
@@ -226,9 +230,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the getProduct operation.
-     * @callback module:api/ProductsApi~getProductCallback
+     * @callback getProductCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsGetResponseBody} [data] The data returned by the service call.
+     * @param {ProductsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -236,8 +240,9 @@ export default class ProductsApi {
      * Get Product
      * Retrieve details of a given product and its SKUs, if any.
      * @param {String} productId A Voucherify product ID or source ID.
-     * @param {module:api/ProductsApi~getProductCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsGetResponseBody}
+     * @param {getProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsGetResponseBody}
+     * @returns {Promise<(ProductsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsGetResponseBody` object or with `undefined`.
      */
     getProduct(productId, callback) {
       let postBody = null;
@@ -266,9 +271,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the getSku operation.
-     * @callback module:api/ProductsApi~getSkuCallback
+     * @callback getSkuCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/SkusGetResponseBody} [data] The data returned by the service call.
+     * @param {SkusGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -276,8 +281,9 @@ export default class ProductsApi {
      * Get SKU
      * Retrieve details of a SKU.
      * @param {String} skuId A Voucherify SKU identifier or SKU source ID.
-     * @param {module:api/ProductsApi~getSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SkusGetResponseBody}
+     * @param {getSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link SkusGetResponseBody}
+     * @returns {Promise<(SkusGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `SkusGetResponseBody` object or with `undefined`.
      */
     getSku(skuId, callback) {
       let postBody = null;
@@ -306,9 +312,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the importProductsUsingCsv operation.
-     * @callback module:api/ProductsApi~importProductsUsingCsvCallback
+     * @callback importProductsUsingCsvCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsImportCsvCreateResponseBody} [data] The data returned by the service call.
+     * @param {ProductsImportCsvCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -318,8 +324,9 @@ export default class ProductsApi {
      * @param {{
         file?: File,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~importProductsUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsImportCsvCreateResponseBody}
+     * @param {importProductsUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsImportCsvCreateResponseBody}
+     * @returns {Promise<(ProductsImportCsvCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsImportCsvCreateResponseBody` object or with `undefined`.
      */
     importProductsUsingCsv(opts, callback) {
       opts = opts || {};
@@ -348,9 +355,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the importSKUsUsingCsv operation.
-     * @callback module:api/ProductsApi~importSKUsUsingCsvCallback
+     * @callback importSKUsUsingCsvCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/SkusImportCsvCreateResponseBody} [data] The data returned by the service call.
+     * @param {SkusImportCsvCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -360,8 +367,9 @@ export default class ProductsApi {
      * @param {{
         file?: File,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~importSKUsUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SkusImportCsvCreateResponseBody}
+     * @param {importSKUsUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link SkusImportCsvCreateResponseBody}
+     * @returns {Promise<(SkusImportCsvCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `SkusImportCsvCreateResponseBody` object or with `undefined`.
      */
     importSKUsUsingCsv(opts, callback) {
       opts = opts || {};
@@ -390,9 +398,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the listProducts operation.
-     * @callback module:api/ProductsApi~listProductsCallback
+     * @callback listProductsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsListResponseBody} [data] The data returned by the service call.
+     * @param {ProductsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -402,12 +410,13 @@ export default class ProductsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrder,
+        order?: Exclude<keyof typeof ParameterOrder, "prototype" | "constructFromObject">,
         startDate?: Date,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~listProductsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsListResponseBody}
+     * @param {listProductsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsListResponseBody}
+     * @returns {Promise<(ProductsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsListResponseBody` object or with `undefined`.
      */
     listProducts(opts, callback) {
       opts = opts || {};
@@ -440,9 +449,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the listSKUsInProduct operation.
-     * @callback module:api/ProductsApi~listSKUsInProductCallback
+     * @callback listSKUsInProductCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsSkusListResponseBody} [data] The data returned by the service call.
+     * @param {ProductsSkusListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -453,12 +462,13 @@ export default class ProductsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrder,
+        order?: Exclude<keyof typeof ParameterOrder, "prototype" | "constructFromObject">,
         startDate?: Date,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/ProductsApi~listSKUsInProductCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsSkusListResponseBody}
+     * @param {listSKUsInProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsSkusListResponseBody}
+     * @returns {Promise<(ProductsSkusListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsSkusListResponseBody` object or with `undefined`.
      */
     listSKUsInProduct(productId, opts, callback) {
       opts = opts || {};
@@ -493,9 +503,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the updateProduct operation.
-     * @callback module:api/ProductsApi~updateProductCallback
+     * @callback updateProductCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ProductsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -503,9 +513,10 @@ export default class ProductsApi {
      * Update Product
      * Updates the specified product by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
      * @param {String} productId A Voucherify product ID or source ID.
-     * @param {module:model/ProductsUpdateRequestBody} productsUpdateRequestBody Specify the parameters of the product that are to be updated.
-     * @param {module:api/ProductsApi~updateProductCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsUpdateResponseBody}
+     * @param {ProductsUpdateRequestBody} productsUpdateRequestBody Specify the parameters of the product that are to be updated.
+     * @param {updateProductCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsUpdateResponseBody}
+     * @returns {Promise<(ProductsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsUpdateResponseBody` object or with `undefined`.
      */
     updateProduct(productId, productsUpdateRequestBody, callback) {
       let postBody = productsUpdateRequestBody;
@@ -535,18 +546,19 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the updateProductsInBulk operation.
-     * @callback module:api/ProductsApi~updateProductsInBulkCallback
+     * @callback updateProductsInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {ProductsUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Products in Bulk
      * Update products in one asynchronous operation. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {Array.<module:model/ProductsUpdateInBulkRequestBody>} productsUpdateInBulkRequestBody List the product fields to be updated in each product object.
-     * @param {module:api/ProductsApi~updateProductsInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsUpdateInBulkResponseBody}
+     * @param {Array.<ProductsUpdateInBulkRequestBody>} productsUpdateInBulkRequestBody List the product fields to be updated in each product object.
+     * @param {updateProductsInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsUpdateInBulkResponseBody}
+     * @returns {Promise<(ProductsUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateProductsInBulk(productsUpdateInBulkRequestBody, callback) {
       let postBody = productsUpdateInBulkRequestBody;
@@ -574,18 +586,19 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the updateProductsMetadataInBulk operation.
-     * @callback module:api/ProductsApi~updateProductsMetadataInBulkCallback
+     * @callback updateProductsMetadataInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {ProductsMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Products' Metadata in Bulk
      * Updates metadata parameters for a list of products. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {module:model/ProductsMetadataUpdateInBulkRequestBody} productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs.
-     * @param {module:api/ProductsApi~updateProductsMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsMetadataUpdateInBulkResponseBody}
+     * @param {ProductsMetadataUpdateInBulkRequestBody} productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs.
+     * @param {updateProductsMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsMetadataUpdateInBulkResponseBody}
+     * @returns {Promise<(ProductsMetadataUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsMetadataUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateProductsMetadataInBulk(productsMetadataUpdateInBulkRequestBody, callback) {
       let postBody = productsMetadataUpdateInBulkRequestBody;
@@ -613,9 +626,9 @@ export default class ProductsApi {
 
     /**
      * Callback function to receive the result of the updateSku operation.
-     * @callback module:api/ProductsApi~updateSkuCallback
+     * @callback updateSkuCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductsSkusUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ProductsSkusUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -624,9 +637,10 @@ export default class ProductsApi {
      * Updates the specified SKU by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged. Fields other than the ones listed in the request body schema wont be modified. Even if provided, they will be silently skipped.
      * @param {String} productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID.
      * @param {String} skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID.
-     * @param {module:model/ProductsSkusUpdateRequestBody} productsSkusUpdateRequestBody Specify the parameters to be updated.
-     * @param {module:api/ProductsApi~updateSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductsSkusUpdateResponseBody}
+     * @param {ProductsSkusUpdateRequestBody} productsSkusUpdateRequestBody Specify the parameters to be updated.
+     * @param {updateSkuCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductsSkusUpdateResponseBody}
+     * @returns {Promise<(ProductsSkusUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductsSkusUpdateResponseBody` object or with `undefined`.
      */
     updateSku(productId, skuId, productsSkusUpdateRequestBody, callback) {
       let postBody = productsSkusUpdateRequestBody;

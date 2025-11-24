@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer {
     /**
      * Constructs a new <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code>.
-     * @alias module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer
+     * @alias ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer {
     /**
      * Constructs a <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code> instance.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsSegment model module.
  * @module model/LoyaltyCardTransactionDetailsSegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsSegment {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsSegment</code>.
      * Contains information about the segment.
-     * @alias module:model/LoyaltyCardTransactionDetailsSegment
+     * @alias LoyaltyCardTransactionDetailsSegment
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsSegment {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsSegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsSegment} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsSegment} The populated <code>LoyaltyCardTransactionDetailsSegment</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsSegment} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsSegment} The populated <code>LoyaltyCardTransactionDetailsSegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyCardTransactionDetailsSegment {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsSegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsSegment</code>.
      */
     static validateJSON(data) {
@@ -82,13 +81,13 @@ class LoyaltyCardTransactionDetailsSegment {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsSegment.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsSegment.prototype['name'] = undefined;
 
 

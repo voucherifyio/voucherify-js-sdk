@@ -17,16 +17,15 @@ import CategoryWithStackingRulesType from './CategoryWithStackingRulesType';
 import ClientValidationsValidateResponseBodyRedeemablesItemOrder from './ClientValidationsValidateResponseBodyRedeemablesItemOrder';
 import ClientValidationsValidateResponseBodyRedeemablesItemResult from './ClientValidationsValidateResponseBodyRedeemablesItemResult';
 import InapplicableToResultList from './InapplicableToResultList';
-
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItem model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateResponseBodyRedeemablesItem {
     /**
      * Constructs a new <code>ClientValidationsValidateResponseBodyRedeemablesItem</code>.
-     * @alias module:model/ClientValidationsValidateResponseBodyRedeemablesItem
+     * @alias ClientValidationsValidateResponseBodyRedeemablesItem
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ClientValidationsValidateResponseBodyRedeemablesItem {
     /**
      * Constructs a <code>ClientValidationsValidateResponseBodyRedeemablesItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateResponseBodyRedeemablesItem} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateResponseBodyRedeemablesItem} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItem</code> instance.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateResponseBodyRedeemablesItem} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateResponseBodyRedeemablesItem} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -94,7 +93,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItem {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItem</code>.
      */
     static validateJSON(data) {
@@ -158,121 +157,121 @@ class ClientValidationsValidateResponseBodyRedeemablesItem {
 
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItem.StatusEnum} 
- */
+    * @type {(keyof typeof ClientValidationsValidateResponseBodyRedeemablesItem.StatusEnum) | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['status'] = undefined;
 
 /**
- * Redeemable ID, i.e. the voucher code.
- * @member {String} 
- */
+    * Redeemable ID, i.e. the voucher code.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['id'] = undefined;
 
 /**
- * Redeemable's object type.
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItem.ObjectEnum} 
- */
+    * Redeemable's object type.
+    * @type {(keyof typeof ClientValidationsValidateResponseBodyRedeemablesItem.ObjectEnum) | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['object'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrder} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemOrder | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['order'] = undefined;
 
 /**
- * @member {module:model/ApplicableToResultList} 
- */
+    * @type {ApplicableToResultList | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['applicable_to'] = undefined;
 
 /**
- * @member {module:model/InapplicableToResultList} 
- */
+    * @type {InapplicableToResultList | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['inapplicable_to'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResult} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResult | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['result'] = undefined;
 
 /**
- * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
+    * @type {Object | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/CategoryWithStackingRulesType>} 
- */
+    * @type {Array.<CategoryWithStackingRulesType> | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['categories'] = undefined;
 
 /**
- * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['campaign_name'] = undefined;
 
 /**
- * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['campaign_id'] = undefined;
 
 /**
- * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItem.prototype['name'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-ClientValidationsValidateResponseBodyRedeemablesItem['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ClientValidationsValidateResponseBodyRedeemablesItem['StatusEnum'] = {
+    
+        /**
+         * value: "APPLICABLE"
+         * @constant
+         */
+        "APPLICABLE": "APPLICABLE",
+    
+        /**
+         * value: "INAPPLICABLE"
+         * @constant
+         */
+        "INAPPLICABLE": "INAPPLICABLE",
+    
+        /**
+         * value: "SKIPPED"
+         * @constant
+         */
+        "SKIPPED": "SKIPPED"    
+    };
+
 
     /**
-     * value: "APPLICABLE"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLICABLE": "APPLICABLE",
-
-    /**
-     * value: "INAPPLICABLE"
-     * @constant
-     */
-    "INAPPLICABLE": "INAPPLICABLE",
-
-    /**
-     * value: "SKIPPED"
-     * @constant
-     */
-    "SKIPPED": "SKIPPED"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ClientValidationsValidateResponseBodyRedeemablesItem['ObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier"
-};
+    ClientValidationsValidateResponseBodyRedeemablesItem['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier"    
+    };
 
 
 

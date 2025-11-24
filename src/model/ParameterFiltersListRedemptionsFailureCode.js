@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListRedemptionsFailureCode model module.
  * @module model/ParameterFiltersListRedemptionsFailureCode
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListRedemptionsFailureCode {
     /**
      * Constructs a new <code>ParameterFiltersListRedemptionsFailureCode</code>.
      * Failure code, i.e. quantity_exceeded.
-     * @alias module:model/ParameterFiltersListRedemptionsFailureCode
+     * @alias ParameterFiltersListRedemptionsFailureCode
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListRedemptionsFailureCode {
     /**
      * Constructs a <code>ParameterFiltersListRedemptionsFailureCode</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListRedemptionsFailureCode} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListRedemptionsFailureCode} The populated <code>ParameterFiltersListRedemptionsFailureCode</code> instance.
+     * @param {Partial<ParameterFiltersListRedemptionsFailureCode>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListRedemptionsFailureCode} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListRedemptionsFailureCode} The populated <code>ParameterFiltersListRedemptionsFailureCode</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListRedemptionsFailureCode {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListRedemptionsFailureCode</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListRedemptionsFailureCode>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListRedemptionsFailureCode</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListRedemptionsFailureCode {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListRedemptionsFailureCode.prototype['conditions'] = undefined;
 
 

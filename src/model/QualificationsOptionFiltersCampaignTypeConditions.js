@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterCampaignType from './ParameterCampaignType';
-
 /**
  * The QualificationsOptionFiltersCampaignTypeConditions model module.
  * @module model/QualificationsOptionFiltersCampaignTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFiltersCampaignTypeConditions {
     /**
      * Constructs a new <code>QualificationsOptionFiltersCampaignTypeConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/QualificationsOptionFiltersCampaignTypeConditions
+     * @alias QualificationsOptionFiltersCampaignTypeConditions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class QualificationsOptionFiltersCampaignTypeConditions {
     /**
      * Constructs a <code>QualificationsOptionFiltersCampaignTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFiltersCampaignTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFiltersCampaignTypeConditions} The populated <code>QualificationsOptionFiltersCampaignTypeConditions</code> instance.
+     * @param {Partial<QualificationsOptionFiltersCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFiltersCampaignTypeConditions} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFiltersCampaignTypeConditions} The populated <code>QualificationsOptionFiltersCampaignTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class QualificationsOptionFiltersCampaignTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFiltersCampaignTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFiltersCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFiltersCampaignTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -97,23 +96,23 @@ class QualificationsOptionFiltersCampaignTypeConditions {
 
 
 /**
- * @member {Array.<module:model/ParameterCampaignType>} 
- */
+    * @type {Array.<Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersCampaignTypeConditions.prototype['$is'] = undefined;
 
 /**
- * @member {Array.<module:model/ParameterCampaignType>} 
- */
+    * @type {Array.<Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersCampaignTypeConditions.prototype['$is_not'] = undefined;
 
 /**
- * @member {Array.<module:model/ParameterCampaignType>} 
- */
+    * @type {Array.<Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersCampaignTypeConditions.prototype['$in'] = undefined;
 
 /**
- * @member {Array.<module:model/ParameterCampaignType>} 
- */
+    * @type {Array.<Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">> | undefined}
+    */
 QualificationsOptionFiltersCampaignTypeConditions.prototype['$not_in'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryPromotionTierSummaryOrders model module.
  * @module model/RedemptionEntryPromotionTierSummaryOrders
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryPromotionTierSummaryOrders {
     /**
      * Constructs a new <code>RedemptionEntryPromotionTierSummaryOrders</code>.
-     * @alias module:model/RedemptionEntryPromotionTierSummaryOrders
+     * @alias RedemptionEntryPromotionTierSummaryOrders
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionEntryPromotionTierSummaryOrders {
     /**
      * Constructs a <code>RedemptionEntryPromotionTierSummaryOrders</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryPromotionTierSummaryOrders} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryPromotionTierSummaryOrders} The populated <code>RedemptionEntryPromotionTierSummaryOrders</code> instance.
+     * @param {Partial<RedemptionEntryPromotionTierSummaryOrders>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryPromotionTierSummaryOrders} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryPromotionTierSummaryOrders} The populated <code>RedemptionEntryPromotionTierSummaryOrders</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class RedemptionEntryPromotionTierSummaryOrders {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryPromotionTierSummaryOrders</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryPromotionTierSummaryOrders>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryPromotionTierSummaryOrders</code>.
      */
     static validateJSON(data) {
@@ -73,15 +72,15 @@ class RedemptionEntryPromotionTierSummaryOrders {
 
 
 /**
- * Sum of order totals.
- * @member {Number} 
- */
+    * Sum of order totals.
+    * @type {Number | undefined}
+    */
 RedemptionEntryPromotionTierSummaryOrders.prototype['total_amount'] = undefined;
 
 /**
- * Sum of total discount applied using the promotion tier.
- * @member {Number} 
- */
+    * Sum of total discount applied using the promotion tier.
+    * @type {Number | undefined}
+    */
 RedemptionEntryPromotionTierSummaryOrders.prototype['total_discount_amount'] = undefined;
 
 

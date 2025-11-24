@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TemplatesCampaignsUpdateResponseBody model module.
  * @module model/TemplatesCampaignsUpdateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsUpdateResponseBody {
     /**
      * Constructs a new <code>TemplatesCampaignsUpdateResponseBody</code>.
      * Request body schema for **PUT** &#x60;/templates/campaign/{campaignTemplateId}&#x60;.
-     * @alias module:model/TemplatesCampaignsUpdateResponseBody
+     * @alias TemplatesCampaignsUpdateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class TemplatesCampaignsUpdateResponseBody {
     /**
      * Constructs a <code>TemplatesCampaignsUpdateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsUpdateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsUpdateResponseBody} The populated <code>TemplatesCampaignsUpdateResponseBody</code> instance.
+     * @param {Partial<TemplatesCampaignsUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsUpdateResponseBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsUpdateResponseBody} The populated <code>TemplatesCampaignsUpdateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class TemplatesCampaignsUpdateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsUpdateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsUpdateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -110,86 +109,86 @@ class TemplatesCampaignsUpdateResponseBody {
 
 
 /**
- * Unique identifier of the campaign template. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the campaign template. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['id'] = undefined;
 
 /**
- * User-defined name of the campaign template.
- * @member {String} 
- */
+    * User-defined name of the campaign template.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['name'] = undefined;
 
 /**
- * User-defined description of the campaign template.
- * @member {String} 
- */
+    * User-defined description of the campaign template.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['description'] = undefined;
 
 /**
- * Type of the campaign used to create the campaign template. Templates created from a promotion tier are converted to `DISCOUNT_COUPONS`.
- * @member {module:model/TemplatesCampaignsUpdateResponseBody.CampaignTypeEnum} 
- */
+    * Type of the campaign used to create the campaign template. Templates created from a promotion tier are converted to `DISCOUNT_COUPONS`.
+    * @type {(keyof typeof TemplatesCampaignsUpdateResponseBody.CampaignTypeEnum) | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['campaign_type'] = undefined;
 
 /**
- * Timestamp representing the date and time when the campaign template was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the campaign template was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/TemplatesCampaignsUpdateResponseBody.ObjectEnum} 
- * @default 'campaign_template'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof TemplatesCampaignsUpdateResponseBody.ObjectEnum) | undefined}
+    * @default 'campaign_template'
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['object'] = 'campaign_template';
 
 /**
- * Timestamp representing the date and time when the campaign template was last updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the campaign template was last updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 TemplatesCampaignsUpdateResponseBody.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsUpdateResponseBody['CampaignTypeEnum'] = {
+    /**
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    TemplatesCampaignsUpdateResponseBody['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS"    
+    };
+
 
     /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsUpdateResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "campaign_template"
-     * @constant
-     */
-    "campaign_template": "campaign_template"
-};
+    TemplatesCampaignsUpdateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign_template"
+         * @constant
+         */
+        "campaign_template": "campaign_template"    
+    };
 
 
 

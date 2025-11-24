@@ -19,13 +19,13 @@ import OAuthTokenIntrospectResponseBody from '../model/OAuthTokenIntrospectRespo
 /**
 * OAuth service.
 * @module api/OAuthApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class OAuthApi {
 
     /**
     * Constructs a new OAuthApi. 
-    * @alias module:api/OAuthApi
+    * @alias OAuthApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,9 +37,9 @@ export default class OAuthApi {
 
     /**
      * Callback function to receive the result of the generateOauthToken operation.
-     * @callback module:api/OAuthApi~generateOauthTokenCallback
+     * @callback generateOauthTokenCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OAuthTokenGenerateResponseBody} [data] The data returned by the service call.
+     * @param {OAuthTokenGenerateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -47,11 +47,12 @@ export default class OAuthApi {
      * Generate OAuth 2.0 Token
      * Generate an OAuth 2.0 token for an API client. The token can be used to authorize access to the Voucherify API. The token inherits the permissions and IP whitelists of the API key that is used to generate the OAuth token. You can define the scope that limits its usage. You can generate up to 1000 OAuth tokens per project. The token expires in 900 seconds (15 minutes). If the API key that is used to generate the OAuth token is deleted or blocked, you cannot generate new OAuth tokens and the existing ones will stop working within one minute. If the API key used to generate an OAuth token is regenerated, the OAuth token can still be used. 🚧 Format of scope values Separate the values of the scope property with spaces.
      * @param {{
-        grantType?: module:model/String,
+        grantType?: String,
         scope?: String,
      }} [opts] Optional parameters
-     * @param {module:api/OAuthApi~generateOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OAuthTokenGenerateResponseBody}
+     * @param {generateOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OAuthTokenGenerateResponseBody}
+     * @returns {Promise<(OAuthTokenGenerateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OAuthTokenGenerateResponseBody` object or with `undefined`.
      */
     generateOauthToken(opts, callback) {
       opts = opts || {};
@@ -81,9 +82,9 @@ export default class OAuthApi {
 
     /**
      * Callback function to receive the result of the introspectOauthToken operation.
-     * @callback module:api/OAuthApi~introspectOauthTokenCallback
+     * @callback introspectOauthTokenCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OAuthTokenIntrospectResponseBody} [data] The data returned by the service call.
+     * @param {OAuthTokenIntrospectResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -93,8 +94,9 @@ export default class OAuthApi {
      * @param {{
         accessToken?: String,
      }} [opts] Optional parameters
-     * @param {module:api/OAuthApi~introspectOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OAuthTokenIntrospectResponseBody}
+     * @param {introspectOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OAuthTokenIntrospectResponseBody}
+     * @returns {Promise<(OAuthTokenIntrospectResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OAuthTokenIntrospectResponseBody` object or with `undefined`.
      */
     introspectOauthToken(opts, callback) {
       opts = opts || {};
@@ -123,7 +125,7 @@ export default class OAuthApi {
 
     /**
      * Callback function to receive the result of the revokeOauthToken operation.
-     * @callback module:api/OAuthApi~revokeOauthTokenCallback
+     * @callback revokeOauthTokenCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -135,7 +137,8 @@ export default class OAuthApi {
      * @param {{
         accessToken?: String,
      }} [opts] Optional parameters
-     * @param {module:api/OAuthApi~revokeOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {revokeOauthTokenCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     revokeOauthToken(opts, callback) {
       opts = opts || {};

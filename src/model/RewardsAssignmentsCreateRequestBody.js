@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RewardsAssignmentsCreateRequestBodyParameters from './RewardsAssignmentsCreateRequestBodyParameters';
-
 /**
  * The RewardsAssignmentsCreateRequestBody model module.
  * @module model/RewardsAssignmentsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsAssignmentsCreateRequestBody {
     /**
      * Constructs a new <code>RewardsAssignmentsCreateRequestBody</code>.
-     * @alias module:model/RewardsAssignmentsCreateRequestBody
+     * @alias RewardsAssignmentsCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardsAssignmentsCreateRequestBody {
     /**
      * Constructs a <code>RewardsAssignmentsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsAssignmentsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsAssignmentsCreateRequestBody} The populated <code>RewardsAssignmentsCreateRequestBody</code> instance.
+     * @param {Partial<RewardsAssignmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsAssignmentsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {RewardsAssignmentsCreateRequestBody} The populated <code>RewardsAssignmentsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class RewardsAssignmentsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsAssignmentsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsAssignmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsAssignmentsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -89,19 +88,19 @@ class RewardsAssignmentsCreateRequestBody {
 
 
 /**
- * The campaign ID of the campaign to which the reward is to be assigned.
- * @member {String} 
- */
+    * The campaign ID of the campaign to which the reward is to be assigned.
+    * @type {String | undefined}
+    */
 RewardsAssignmentsCreateRequestBody.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/RewardsAssignmentsCreateRequestBodyParameters} 
- */
+    * @type {RewardsAssignmentsCreateRequestBodyParameters | undefined}
+    */
 RewardsAssignmentsCreateRequestBody.prototype['parameters'] = undefined;
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 RewardsAssignmentsCreateRequestBody.prototype['validation_rules'] = undefined;
 
 

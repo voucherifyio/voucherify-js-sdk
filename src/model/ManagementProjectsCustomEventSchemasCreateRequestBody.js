@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchemasCreateRequestBodySchema from './ManagementProjectsCustomEventSchemasCreateRequestBodySchema';
-
 /**
  * The ManagementProjectsCustomEventSchemasCreateRequestBody model module.
  * @module model/ManagementProjectsCustomEventSchemasCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;/management/v1/projects/{projectId}/custom-event-schema&#x60;.
-     * @alias module:model/ManagementProjectsCustomEventSchemasCreateRequestBody
+     * @alias ManagementProjectsCustomEventSchemasCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsCustomEventSchemasCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasCreateRequestBody} The populated <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasCreateRequestBody} The populated <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class ManagementProjectsCustomEventSchemasCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -83,14 +82,14 @@ class ManagementProjectsCustomEventSchemasCreateRequestBody {
 
 
 /**
- * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
- * @member {String} 
- */
+    * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
+    * @type {String | undefined}
+    */
 ManagementProjectsCustomEventSchemasCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchema} 
- */
+    * @type {ManagementProjectsCustomEventSchemasCreateRequestBodySchema | undefined}
+    */
 ManagementProjectsCustomEventSchemasCreateRequestBody.prototype['schema'] = undefined;
 
 

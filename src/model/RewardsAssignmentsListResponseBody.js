@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RewardAssignment from './RewardAssignment';
-
 /**
  * The RewardsAssignmentsListResponseBody model module.
  * @module model/RewardsAssignmentsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsAssignmentsListResponseBody {
     /**
      * Constructs a new <code>RewardsAssignmentsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/rewards/{rewardID}/assignments&#x60;.
-     * @alias module:model/RewardsAssignmentsListResponseBody
+     * @alias RewardsAssignmentsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class RewardsAssignmentsListResponseBody {
     /**
      * Constructs a <code>RewardsAssignmentsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsAssignmentsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsAssignmentsListResponseBody} The populated <code>RewardsAssignmentsListResponseBody</code> instance.
+     * @param {Partial<RewardsAssignmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsAssignmentsListResponseBody} [obj] Optional instance to populate.
+     * @returns {RewardsAssignmentsListResponseBody} The populated <code>RewardsAssignmentsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class RewardsAssignmentsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsAssignmentsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsAssignmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsAssignmentsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,28 +100,28 @@ class RewardsAssignmentsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about reward assignments in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about reward assignments in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RewardsAssignmentsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of reward assignments.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of reward assignments.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 RewardsAssignmentsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * @member {Array.<module:model/RewardAssignment>} 
- */
+    * @type {Array.<RewardAssignment> | undefined}
+    */
 RewardsAssignmentsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of reward assignments.
- * @member {Number} 
- */
+    * Total number of reward assignments.
+    * @type {Number | undefined}
+    */
 RewardsAssignmentsListResponseBody.prototype['total'] = undefined;
 
 

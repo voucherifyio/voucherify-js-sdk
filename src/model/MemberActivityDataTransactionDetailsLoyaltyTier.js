@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsLoyaltyTier model module.
  * @module model/MemberActivityDataTransactionDetailsLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsLoyaltyTier {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsLoyaltyTier</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsLoyaltyTier
+     * @alias MemberActivityDataTransactionDetailsLoyaltyTier
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsLoyaltyTier {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsLoyaltyTier} The populated <code>MemberActivityDataTransactionDetailsLoyaltyTier</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsLoyaltyTier} The populated <code>MemberActivityDataTransactionDetailsLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataTransactionDetailsLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -81,15 +80,15 @@ class MemberActivityDataTransactionDetailsLoyaltyTier {
 
 
 /**
- * Unique identifier of the loyalty tier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the loyalty tier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsLoyaltyTier.prototype['id'] = undefined;
 
 /**
- * User-defined name of the loyalty tier.
- * @member {String} 
- */
+    * User-defined name of the loyalty tier.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsLoyaltyTier.prototype['name'] = undefined;
 
 

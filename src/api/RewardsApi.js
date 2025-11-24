@@ -29,13 +29,13 @@ import RewardsUpdateResponseBody from '../model/RewardsUpdateResponseBody';
 /**
 * Rewards service.
 * @module api/RewardsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class RewardsApi {
 
     /**
     * Constructs a new RewardsApi. 
-    * @alias module:api/RewardsApi
+    * @alias RewardsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -47,18 +47,19 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the createReward operation.
-     * @callback module:api/RewardsApi~createRewardCallback
+     * @callback createRewardCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsCreateResponseBody} [data] The data returned by the service call.
+     * @param {RewardsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Reward
      * Create a new reward.
-     * @param {module:model/RewardsCreateRequestBody} rewardsCreateRequestBody Define parameters of the new reward.
-     * @param {module:api/RewardsApi~createRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsCreateResponseBody}
+     * @param {RewardsCreateRequestBody} rewardsCreateRequestBody Define parameters of the new reward.
+     * @param {createRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsCreateResponseBody}
+     * @returns {Promise<(RewardsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsCreateResponseBody` object or with `undefined`.
      */
     createReward(rewardsCreateRequestBody, callback) {
       let postBody = rewardsCreateRequestBody;
@@ -86,9 +87,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the createRewardAssignment operation.
-     * @callback module:api/RewardsApi~createRewardAssignmentCallback
+     * @callback createRewardAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsAssignmentsCreateResponseBody} [data] The data returned by the service call.
+     * @param {RewardsAssignmentsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -96,9 +97,10 @@ export default class RewardsApi {
      * Create Reward Assignment
      * Assigns a reward to a specified loyalty campaign.
      * @param {String} rewardId A unique reward ID.
-     * @param {module:model/RewardsAssignmentsCreateRequestBody} rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
-     * @param {module:api/RewardsApi~createRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsAssignmentsCreateResponseBody}
+     * @param {RewardsAssignmentsCreateRequestBody} rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
+     * @param {createRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsAssignmentsCreateResponseBody}
+     * @returns {Promise<(RewardsAssignmentsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsAssignmentsCreateResponseBody` object or with `undefined`.
      */
     createRewardAssignment(rewardId, rewardsAssignmentsCreateRequestBody, callback) {
       let postBody = rewardsAssignmentsCreateRequestBody;
@@ -128,7 +130,7 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the deleteReward operation.
-     * @callback module:api/RewardsApi~deleteRewardCallback
+     * @callback deleteRewardCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -138,7 +140,8 @@ export default class RewardsApi {
      * Delete Reward
      * Delete a reward.
      * @param {String} rewardId A unique reward ID.
-     * @param {module:api/RewardsApi~deleteRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteReward(rewardId, callback) {
       let postBody = null;
@@ -167,7 +170,7 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the deleteRewardAssignment operation.
-     * @callback module:api/RewardsApi~deleteRewardAssignmentCallback
+     * @callback deleteRewardAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -178,7 +181,8 @@ export default class RewardsApi {
      * This method deletes a reward assignment for a particular reward.
      * @param {String} rewardId A unique reward ID.
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:api/RewardsApi~deleteRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteRewardAssignment(rewardId, assignmentId, callback) {
       let postBody = null;
@@ -209,9 +213,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the getReward operation.
-     * @callback module:api/RewardsApi~getRewardCallback
+     * @callback getRewardCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/Reward} [data] The data returned by the service call.
+     * @param {Reward} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -219,8 +223,9 @@ export default class RewardsApi {
      * Get Reward
      * Retrieve a reward by the reward ID.
      * @param {String} rewardId A unique reward ID.
-     * @param {module:api/RewardsApi~getRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reward}
+     * @param {getRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Reward}
+     * @returns {Promise<(Reward | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `Reward` object or with `undefined`.
      */
     getReward(rewardId, callback) {
       let postBody = null;
@@ -249,9 +254,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the getRewardAssignment operation.
-     * @callback module:api/RewardsApi~getRewardAssignmentCallback
+     * @callback getRewardAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsAssignmentsGetResponseBody} [data] The data returned by the service call.
+     * @param {RewardsAssignmentsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -260,8 +265,9 @@ export default class RewardsApi {
      * Retrieve a reward assignment.
      * @param {String} rewardId A unique reward ID.
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:api/RewardsApi~getRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsAssignmentsGetResponseBody}
+     * @param {getRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsAssignmentsGetResponseBody}
+     * @returns {Promise<(RewardsAssignmentsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsAssignmentsGetResponseBody` object or with `undefined`.
      */
     getRewardAssignment(rewardId, assignmentId, callback) {
       let postBody = null;
@@ -292,9 +298,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the listRewardAssignments operation.
-     * @callback module:api/RewardsApi~listRewardAssignmentsCallback
+     * @callback listRewardAssignmentsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsAssignmentsListResponseBody} [data] The data returned by the service call.
+     * @param {RewardsAssignmentsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -306,8 +312,9 @@ export default class RewardsApi {
         limit?: Number,
         page?: Number,
      }} [opts] Optional parameters
-     * @param {module:api/RewardsApi~listRewardAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsAssignmentsListResponseBody}
+     * @param {listRewardAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsAssignmentsListResponseBody}
+     * @returns {Promise<(RewardsAssignmentsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsAssignmentsListResponseBody` object or with `undefined`.
      */
     listRewardAssignments(rewardId, opts, callback) {
       opts = opts || {};
@@ -339,9 +346,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the listRewards operation.
-     * @callback module:api/RewardsApi~listRewardsCallback
+     * @callback listRewardsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsListResponseBody} [data] The data returned by the service call.
+     * @param {RewardsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -353,8 +360,9 @@ export default class RewardsApi {
         page?: Number,
         assignmentId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/RewardsApi~listRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsListResponseBody}
+     * @param {listRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsListResponseBody}
+     * @returns {Promise<(RewardsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsListResponseBody` object or with `undefined`.
      */
     listRewards(opts, callback) {
       opts = opts || {};
@@ -385,9 +393,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the updateReward operation.
-     * @callback module:api/RewardsApi~updateRewardCallback
+     * @callback updateRewardCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {RewardsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -395,9 +403,10 @@ export default class RewardsApi {
      * Update Reward
      * Update the details of a reward.
      * @param {String} rewardId A unique reward ID.
-     * @param {module:model/RewardsUpdateRequestBody} rewardsUpdateRequestBody Define the parameters to be updated for the reward.
-     * @param {module:api/RewardsApi~updateRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsUpdateResponseBody}
+     * @param {RewardsUpdateRequestBody} rewardsUpdateRequestBody Define the parameters to be updated for the reward.
+     * @param {updateRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsUpdateResponseBody}
+     * @returns {Promise<(RewardsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsUpdateResponseBody` object or with `undefined`.
      */
     updateReward(rewardId, rewardsUpdateRequestBody, callback) {
       let postBody = rewardsUpdateRequestBody;
@@ -427,9 +436,9 @@ export default class RewardsApi {
 
     /**
      * Callback function to receive the result of the updateRewardAssignment operation.
-     * @callback module:api/RewardsApi~updateRewardAssignmentCallback
+     * @callback updateRewardAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RewardsAssignmentsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {RewardsAssignmentsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -438,9 +447,10 @@ export default class RewardsApi {
      * Update the number of points needed to successfully redeem the reward.
      * @param {String} rewardId A unique reward ID.
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:model/RewardsAssignmentsUpdateRequestBody} rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward.
-     * @param {module:api/RewardsApi~updateRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RewardsAssignmentsUpdateResponseBody}
+     * @param {RewardsAssignmentsUpdateRequestBody} rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward.
+     * @param {updateRewardAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RewardsAssignmentsUpdateResponseBody}
+     * @returns {Promise<(RewardsAssignmentsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RewardsAssignmentsUpdateResponseBody` object or with `undefined`.
      */
     updateRewardAssignment(rewardId, assignmentId, rewardsAssignmentsUpdateRequestBody, callback) {
       let postBody = rewardsAssignmentsUpdateRequestBody;

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EarningRuleLoyaltyCustomerMetadata model module.
  * @module model/EarningRuleLoyaltyCustomerMetadata
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyaltyCustomerMetadata {
     /**
      * Constructs a new <code>EarningRuleLoyaltyCustomerMetadata</code>.
      * Defines the ratio based on the property defined in the calculation_type parameter. For every given increment of value (1, 10, etc) defined in the every parameter for the property defined in calculation_type, give the customer the number of points defined in the points parameter. In other words, for every order metadata property value, give points.
-     * @alias module:model/EarningRuleLoyaltyCustomerMetadata
+     * @alias EarningRuleLoyaltyCustomerMetadata
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EarningRuleLoyaltyCustomerMetadata {
     /**
      * Constructs a <code>EarningRuleLoyaltyCustomerMetadata</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyaltyCustomerMetadata} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyaltyCustomerMetadata} The populated <code>EarningRuleLoyaltyCustomerMetadata</code> instance.
+     * @param {Partial<EarningRuleLoyaltyCustomerMetadata>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyaltyCustomerMetadata} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyaltyCustomerMetadata} The populated <code>EarningRuleLoyaltyCustomerMetadata</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class EarningRuleLoyaltyCustomerMetadata {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyaltyCustomerMetadata</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyaltyCustomerMetadata>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyaltyCustomerMetadata</code>.
      */
     static validateJSON(data) {
@@ -88,27 +87,27 @@ class EarningRuleLoyaltyCustomerMetadata {
 
 
 /**
- * For how many increments of the customer metadata property to grant points for.
- * @member {Number} 
- */
+    * For how many increments of the customer metadata property to grant points for.
+    * @type {Number | undefined}
+    */
 EarningRuleLoyaltyCustomerMetadata.prototype['every'] = undefined;
 
 /**
- * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
- * @member {Number} 
- */
+    * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
+    * @type {Number | undefined}
+    */
 EarningRuleLoyaltyCustomerMetadata.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 EarningRuleLoyaltyCustomerMetadata.prototype['points_formula'] = undefined;
 
 /**
- * Customer metadata property.
- * @member {String} 
- */
+    * Customer metadata property.
+    * @type {String | undefined}
+    */
 EarningRuleLoyaltyCustomerMetadata.prototype['property'] = undefined;
 
 

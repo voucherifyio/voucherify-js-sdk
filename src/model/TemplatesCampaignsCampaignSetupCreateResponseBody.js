@@ -14,18 +14,17 @@
 import ApiClient from '../ApiClient';
 import Campaign from './Campaign';
 import TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem from './TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem';
-
 /**
  * The TemplatesCampaignsCampaignSetupCreateResponseBody model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsCampaignSetupCreateResponseBody {
     /**
      * Constructs a new <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;/v1/templates/campaigns/{campaignTemplateId}/campaign-setup&#x60;.
-     * @alias module:model/TemplatesCampaignsCampaignSetupCreateResponseBody
-     * @param campaign {module:model/Campaign} 
+     * @alias TemplatesCampaignsCampaignSetupCreateResponseBody
+     * @param {Campaign} campaign 
      */
     constructor(campaign) { 
         
@@ -45,9 +44,9 @@ class TemplatesCampaignsCampaignSetupCreateResponseBody {
     /**
      * Constructs a <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsCampaignSetupCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsCampaignSetupCreateResponseBody} The populated <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code> instance.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsCampaignSetupCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsCampaignSetupCreateResponseBody} The populated <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -68,7 +67,7 @@ class TemplatesCampaignsCampaignSetupCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsCampaignSetupCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -106,40 +105,40 @@ class TemplatesCampaignsCampaignSetupCreateResponseBody {
 TemplatesCampaignsCampaignSetupCreateResponseBody.RequiredProperties = ["campaign"];
 
 /**
- * Contains a list of resources that have been added to the project when the campaign has been created out of the template.
- * @member {Array.<module:model/TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem>} 
- */
+    * Contains a list of resources that have been added to the project when the campaign has been created out of the template.
+    * @type {Array.<TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem> | undefined}
+    */
 TemplatesCampaignsCampaignSetupCreateResponseBody.prototype['created_resources'] = undefined;
 
 /**
- * @member {module:model/Campaign} 
- */
+    * @type {Campaign}
+    */
 TemplatesCampaignsCampaignSetupCreateResponseBody.prototype['campaign'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the campaign created out of the campaign template.
- * @member {module:model/TemplatesCampaignsCampaignSetupCreateResponseBody.ObjectEnum} 
- * @default 'campaign_setup'
- */
+    * The type of the object represented by JSON. This object stores information about the campaign created out of the campaign template.
+    * @type {(keyof typeof TemplatesCampaignsCampaignSetupCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'campaign_setup'
+    */
 TemplatesCampaignsCampaignSetupCreateResponseBody.prototype['object'] = 'campaign_setup';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsCampaignSetupCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "campaign_setup"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign_setup": "campaign_setup"
-};
+    TemplatesCampaignsCampaignSetupCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign_setup"
+         * @constant
+         */
+        "campaign_setup": "campaign_setup"    
+    };
 
 
 

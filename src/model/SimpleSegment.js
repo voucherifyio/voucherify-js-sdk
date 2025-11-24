@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleSegment model module.
  * @module model/SimpleSegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleSegment {
     /**
      * Constructs a new <code>SimpleSegment</code>.
-     * @alias module:model/SimpleSegment
+     * @alias SimpleSegment
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimpleSegment {
     /**
      * Constructs a <code>SimpleSegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleSegment} obj Optional instance to populate.
-     * @returns {module:model/SimpleSegment} The populated <code>SimpleSegment</code> instance.
+     * @param {Partial<SimpleSegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleSegment} [obj] Optional instance to populate.
+     * @returns {SimpleSegment} The populated <code>SimpleSegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class SimpleSegment {
 
     /**
      * Validates the JSON data with respect to <code>SimpleSegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleSegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleSegment</code>.
      */
     static validateJSON(data) {
@@ -89,41 +88,41 @@ class SimpleSegment {
 
 
 /**
- * Unique segment ID.
- * @member {String} 
- */
+    * Unique segment ID.
+    * @type {String | undefined}
+    */
 SimpleSegment.prototype['id'] = undefined;
 
 /**
- * Segment name.
- * @member {String} 
- */
+    * Segment name.
+    * @type {String | undefined}
+    */
 SimpleSegment.prototype['name'] = undefined;
 
 /**
- * The type of the object represented by the ID.
- * @member {module:model/SimpleSegment.ObjectEnum} 
- * @default 'segment'
- */
+    * The type of the object represented by the ID.
+    * @type {(keyof typeof SimpleSegment.ObjectEnum) | undefined}
+    * @default 'segment'
+    */
 SimpleSegment.prototype['object'] = 'segment';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleSegment['ObjectEnum'] = {
-
     /**
-     * value: "segment"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "segment": "segment"
-};
+    SimpleSegment['ObjectEnum'] = {
+    
+        /**
+         * value: "segment"
+         * @constant
+         */
+        "segment": "segment"    
+    };
 
 
 

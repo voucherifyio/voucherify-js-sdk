@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationRuleAssignment model module.
  * @module model/ValidationRuleAssignment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRuleAssignment {
     /**
      * Constructs a new <code>ValidationRuleAssignment</code>.
      * This is an object representing a validation rule assignment.
-     * @alias module:model/ValidationRuleAssignment
+     * @alias ValidationRuleAssignment
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ValidationRuleAssignment {
     /**
      * Constructs a <code>ValidationRuleAssignment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRuleAssignment} obj Optional instance to populate.
-     * @returns {module:model/ValidationRuleAssignment} The populated <code>ValidationRuleAssignment</code> instance.
+     * @param {Partial<ValidationRuleAssignment>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRuleAssignment} [obj] Optional instance to populate.
+     * @returns {ValidationRuleAssignment} The populated <code>ValidationRuleAssignment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ValidationRuleAssignment {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRuleAssignment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRuleAssignment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRuleAssignment</code>.
      */
     static validateJSON(data) {
@@ -107,104 +106,104 @@ class ValidationRuleAssignment {
 
 
 /**
- * Validation rule assignment ID.
- * @member {String} 
- */
+    * Validation rule assignment ID.
+    * @type {String | undefined}
+    */
 ValidationRuleAssignment.prototype['id'] = undefined;
 
 /**
- * Validation rule ID.
- * @member {String} 
- */
+    * Validation rule ID.
+    * @type {String | undefined}
+    */
 ValidationRuleAssignment.prototype['rule_id'] = undefined;
 
 /**
- * The resource ID to which the validation rule was assigned.
- * @member {String} 
- */
+    * The resource ID to which the validation rule was assigned.
+    * @type {String | undefined}
+    */
 ValidationRuleAssignment.prototype['related_object_id'] = undefined;
 
 /**
- * The type of resource to which the validation rule was assigned.
- * @member {module:model/ValidationRuleAssignment.RelatedObjectTypeEnum} 
- */
+    * The type of resource to which the validation rule was assigned.
+    * @type {(keyof typeof ValidationRuleAssignment.RelatedObjectTypeEnum) | undefined}
+    */
 ValidationRuleAssignment.prototype['related_object_type'] = undefined;
 
 /**
- * Timestamp representing the date and time when the validation rule assignment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the validation rule assignment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ValidationRuleAssignment.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by the ID.
- * @member {module:model/ValidationRuleAssignment.ObjectEnum} 
- * @default 'validation_rules_assignment'
- */
+    * The type of the object represented by the ID.
+    * @type {(keyof typeof ValidationRuleAssignment.ObjectEnum) | undefined}
+    * @default 'validation_rules_assignment'
+    */
 ValidationRuleAssignment.prototype['object'] = 'validation_rules_assignment';
 
 
 
 
 
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRuleAssignment['RelatedObjectTypeEnum'] = {
+    /**
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationRuleAssignment['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "earning_rule"
+         * @constant
+         */
+        "earning_rule": "earning_rule",
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "distribution"
+         * @constant
+         */
+        "distribution": "distribution"    
+    };
+
 
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher",
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign",
-
-    /**
-     * value: "earning_rule"
-     * @constant
-     */
-    "earning_rule": "earning_rule",
-
-    /**
-     * value: "reward_assignment"
-     * @constant
-     */
-    "reward_assignment": "reward_assignment",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "distribution"
-     * @constant
-     */
-    "distribution": "distribution"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRuleAssignment['ObjectEnum'] = {
-
-    /**
-     * value: "validation_rules_assignment"
-     * @constant
-     */
-    "validation_rules_assignment": "validation_rules_assignment"
-};
+    ValidationRuleAssignment['ObjectEnum'] = {
+    
+        /**
+         * value: "validation_rules_assignment"
+         * @constant
+         */
+        "validation_rules_assignment": "validation_rules_assignment"    
+    };
 
 
 

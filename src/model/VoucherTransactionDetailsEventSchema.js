@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsEventSchema model module.
  * @module model/VoucherTransactionDetailsEventSchema
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsEventSchema {
     /**
      * Constructs a new <code>VoucherTransactionDetailsEventSchema</code>.
      * Contains information about the custom event metadata schema.
-     * @alias module:model/VoucherTransactionDetailsEventSchema
+     * @alias VoucherTransactionDetailsEventSchema
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsEventSchema {
     /**
      * Constructs a <code>VoucherTransactionDetailsEventSchema</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsEventSchema} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsEventSchema} The populated <code>VoucherTransactionDetailsEventSchema</code> instance.
+     * @param {Partial<VoucherTransactionDetailsEventSchema>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsEventSchema} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsEventSchema} The populated <code>VoucherTransactionDetailsEventSchema</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsEventSchema {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsEventSchema</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsEventSchema>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsEventSchema</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsEventSchema {
 
 
 /**
- * Unique identifier of the metadata schema.
- * @member {String} 
- */
+    * Unique identifier of the metadata schema.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsEventSchema.prototype['id'] = undefined;
 
 /**
- * Type of the custom event.
- * @member {String} 
- */
+    * Type of the custom event.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsEventSchema.prototype['name'] = undefined;
 
 

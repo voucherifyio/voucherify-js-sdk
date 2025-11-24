@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRewardParametersProduct model module.
  * @module model/MemberActivityDataRedemptionRewardParametersProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardParametersProduct {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardParametersProduct</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardParametersProduct
+     * @alias MemberActivityDataRedemptionRewardParametersProduct
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataRedemptionRewardParametersProduct {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardParametersProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardParametersProduct} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardParametersProduct} The populated <code>MemberActivityDataRedemptionRewardParametersProduct</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardParametersProduct} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardParametersProduct} The populated <code>MemberActivityDataRedemptionRewardParametersProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataRedemptionRewardParametersProduct {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardParametersProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardParametersProduct</code>.
      */
     static validateJSON(data) {
@@ -81,13 +80,13 @@ class MemberActivityDataRedemptionRewardParametersProduct {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersProduct.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersProduct.prototype['sku_id'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionsTiersUpdateResponseBodySummaryRedemptions model module.
  * @module model/PromotionsTiersUpdateResponseBodySummaryRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsTiersUpdateResponseBodySummaryRedemptions {
     /**
      * Constructs a new <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code>.
      * Contains statistics about promotion tier redemptions.
-     * @alias module:model/PromotionsTiersUpdateResponseBodySummaryRedemptions
+     * @alias PromotionsTiersUpdateResponseBodySummaryRedemptions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class PromotionsTiersUpdateResponseBodySummaryRedemptions {
     /**
      * Constructs a <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsTiersUpdateResponseBodySummaryRedemptions} obj Optional instance to populate.
-     * @returns {module:model/PromotionsTiersUpdateResponseBodySummaryRedemptions} The populated <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code> instance.
+     * @param {Partial<PromotionsTiersUpdateResponseBodySummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsTiersUpdateResponseBodySummaryRedemptions} [obj] Optional instance to populate.
+     * @returns {PromotionsTiersUpdateResponseBodySummaryRedemptions} The populated <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class PromotionsTiersUpdateResponseBodySummaryRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsTiersUpdateResponseBodySummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsTiersUpdateResponseBodySummaryRedemptions</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class PromotionsTiersUpdateResponseBodySummaryRedemptions {
 
 
 /**
- * Number of times the promotion tier was redeemed.
- * @member {Number} 
- */
+    * Number of times the promotion tier was redeemed.
+    * @type {Number | undefined}
+    */
 PromotionsTiersUpdateResponseBodySummaryRedemptions.prototype['total_redeemed'] = undefined;
 
 

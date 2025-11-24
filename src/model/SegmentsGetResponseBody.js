@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SegmentsGetResponseBody model module.
  * @module model/SegmentsGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SegmentsGetResponseBody {
     /**
      * Constructs a new <code>SegmentsGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/v1/segments/{segmentId}&#x60;.
-     * @alias module:model/SegmentsGetResponseBody
+     * @alias SegmentsGetResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class SegmentsGetResponseBody {
     /**
      * Constructs a <code>SegmentsGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SegmentsGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/SegmentsGetResponseBody} The populated <code>SegmentsGetResponseBody</code> instance.
+     * @param {Partial<SegmentsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {SegmentsGetResponseBody} [obj] Optional instance to populate.
+     * @returns {SegmentsGetResponseBody} The populated <code>SegmentsGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class SegmentsGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>SegmentsGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SegmentsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SegmentsGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -110,112 +109,112 @@ class SegmentsGetResponseBody {
 
 
 /**
- * Unique segment ID.
- * @member {String} 
- */
+    * Unique segment ID.
+    * @type {String | undefined}
+    */
 SegmentsGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Segment name.
- * @member {String} 
- */
+    * Segment name.
+    * @type {String | undefined}
+    */
 SegmentsGetResponseBody.prototype['name'] = undefined;
 
 /**
- * Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SegmentsGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Defines whether the segment is: - Active (`auto-update`): customers enter and leave the segment based on the defined filters and the `customer.segment.entered` and `customer.segment.left` events are triggered, - Passive (`passive`): customers enter and leave the segment based on the defined filters, but the `customer.segment.entered` and `customer.segment.left` events are not triggered, - Static (`static`): manually selected customers.
- * @member {module:model/SegmentsGetResponseBody.TypeEnum} 
- */
+    * Defines whether the segment is: - Active (`auto-update`): customers enter and leave the segment based on the defined filters and the `customer.segment.entered` and `customer.segment.left` events are triggered, - Passive (`passive`): customers enter and leave the segment based on the defined filters, but the `customer.segment.entered` and `customer.segment.left` events are not triggered, - Static (`static`): manually selected customers.
+    * @type {(keyof typeof SegmentsGetResponseBody.TypeEnum) | undefined}
+    */
 SegmentsGetResponseBody.prototype['type'] = undefined;
 
 /**
- * Defines a set of criteria for an `auto-update` or `passive` segment type.
- * @member {Object} 
- */
+    * Defines a set of criteria for an `auto-update` or `passive` segment type.
+    * @type {Object | undefined}
+    */
 SegmentsGetResponseBody.prototype['filter'] = undefined;
 
 /**
- * @member {module:model/SegmentsGetResponseBody.InitialSyncStatusEnum} 
- */
+    * @type {(keyof typeof SegmentsGetResponseBody.InitialSyncStatusEnum) | undefined}
+    */
 SegmentsGetResponseBody.prototype['initial_sync_status'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the customer segment.
- * @member {module:model/SegmentsGetResponseBody.ObjectEnum} 
- * @default 'segment'
- */
+    * The type of the object represented by JSON. This object stores information about the customer segment.
+    * @type {(keyof typeof SegmentsGetResponseBody.ObjectEnum) | undefined}
+    * @default 'segment'
+    */
 SegmentsGetResponseBody.prototype['object'] = 'segment';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsGetResponseBody['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SegmentsGetResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "auto-update"
+         * @constant
+         */
+        "auto-update": "auto-update",
+    
+        /**
+         * value: "passive"
+         * @constant
+         */
+        "passive": "passive",
+    
+        /**
+         * value: "static"
+         * @constant
+         */
+        "static": "static"    
+    };
+
 
     /**
-     * value: "auto-update"
-     * @constant
+     * Allowed values for the <code>initial_sync_status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "auto-update": "auto-update",
+    SegmentsGetResponseBody['InitialSyncStatusEnum'] = {
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS",
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE"    
+    };
+
 
     /**
-     * value: "passive"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "passive": "passive",
-
-    /**
-     * value: "static"
-     * @constant
-     */
-    "static": "static"
-};
-
-
-/**
- * Allowed values for the <code>initial_sync_status</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsGetResponseBody['InitialSyncStatusEnum'] = {
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS",
-
-    /**
-     * value: "DONE"
-     * @constant
-     */
-    "DONE": "DONE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsGetResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "segment"
-     * @constant
-     */
-    "segment": "segment"
-};
+    SegmentsGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "segment"
+         * @constant
+         */
+        "segment": "segment"    
+    };
 
 
 

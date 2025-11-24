@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ExportParameters model module.
  * @module model/ExportParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportParameters {
     /**
      * Constructs a new <code>ExportParameters</code>.
-     * @alias module:model/ExportParameters
+     * @alias ExportParameters
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ExportParameters {
     /**
      * Constructs a <code>ExportParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportParameters} obj Optional instance to populate.
-     * @returns {module:model/ExportParameters} The populated <code>ExportParameters</code> instance.
+     * @param {Partial<ExportParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportParameters} [obj] Optional instance to populate.
+     * @returns {ExportParameters} The populated <code>ExportParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class ExportParameters {
 
     /**
      * Validates the JSON data with respect to <code>ExportParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportParameters</code>.
      */
     static validateJSON(data) {
@@ -91,195 +90,195 @@ class ExportParameters {
 
 
 /**
- * @member {module:model/ExportParameters.OrderEnum} 
- */
+    * @type {(keyof typeof ExportParameters.OrderEnum) | undefined}
+    */
 ExportParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data in the export. These fields define the headers in the CSV file.
- * @member {Array.<module:model/ExportParameters.FieldsEnum>} 
- */
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file.
+    * @type {(Array<keyof typeof ExportParameters.FieldsEnum>) | undefined}
+    */
 ExportParameters.prototype['fields'] = undefined;
 
 /**
- * Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\"
- * @member {Object} 
- */
+    * Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\"
+    * @type {Object | undefined}
+    */
 ExportParameters.prototype['filters'] = undefined;
 
 /**
- * Unique identifier of the campaign. It is assigned by Voucherify. The campaign ID defines the campaign for which the voucher export will be triggered.
- * @member {String} 
- */
+    * Unique identifier of the campaign. It is assigned by Voucherify. The campaign ID defines the campaign for which the voucher export will be triggered.
+    * @type {String | undefined}
+    */
 ExportParameters.prototype['campaign_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-ExportParameters['OrderEnum'] = {
-
     /**
-     * value: "-created_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "-created_at": "-created_at",
-
-    /**
-     * value: "created_at"
-     * @constant
-     */
-    "created_at": "created_at",
-
-    /**
-     * value: "-updated_at"
-     * @constant
-     */
-    "-updated_at": "-updated_at",
-
-    /**
-     * value: "updated_at"
-     * @constant
-     */
-    "updated_at": "updated_at",
-
-    /**
-     * value: "-code"
-     * @constant
-     */
-    "-code": "-code",
-
-    /**
-     * value: "code"
-     * @constant
-     */
-    "code": "code",
-
-    /**
-     * value: "-id"
-     * @constant
-     */
-    "-id": "-id",
-
-    /**
-     * value: "id"
-     * @constant
-     */
-    "id": "id",
-
-    /**
-     * value: "-voucher_code"
-     * @constant
-     */
-    "-voucher_code": "-voucher_code",
-
-    /**
-     * value: "voucher_code"
-     * @constant
-     */
-    "voucher_code": "voucher_code",
-
-    /**
-     * value: "-tracking_id"
-     * @constant
-     */
-    "-tracking_id": "-tracking_id",
-
-    /**
-     * value: "tracking_id"
-     * @constant
-     */
-    "tracking_id": "tracking_id",
-
-    /**
-     * value: "-customer_id"
-     * @constant
-     */
-    "-customer_id": "-customer_id",
-
-    /**
-     * value: "customer_id"
-     * @constant
-     */
-    "customer_id": "customer_id",
-
-    /**
-     * value: "-name"
-     * @constant
-     */
-    "-name": "-name",
-
-    /**
-     * value: "name"
-     * @constant
-     */
-    "name": "name",
-
-    /**
-     * value: "-email"
-     * @constant
-     */
-    "-email": "-email",
-
-    /**
-     * value: "email"
-     * @constant
-     */
-    "email": "email",
-
-    /**
-     * value: "-source_id"
-     * @constant
-     */
-    "-source_id": "-source_id",
-
-    /**
-     * value: "source_id"
-     * @constant
-     */
-    "source_id": "source_id",
-
-    /**
-     * value: "-channel"
-     * @constant
-     */
-    "-channel": "-channel",
-
-    /**
-     * value: "channel"
-     * @constant
-     */
-    "channel": "channel",
-
-    /**
-     * value: "-status"
-     * @constant
-     */
-    "-status": "-status",
-
-    /**
-     * value: "status"
-     * @constant
-     */
-    "status": "status",
-
-    /**
-     * value: "-expires_at"
-     * @constant
-     */
-    "-expires_at": "-expires_at",
-
-    /**
-     * value: "expires_at"
-     * @constant
-     */
-    "expires_at": "expires_at"
-};
+    ExportParameters['OrderEnum'] = {
+    
+        /**
+         * value: "-created_at"
+         * @constant
+         */
+        "-created_at": "-created_at",
+    
+        /**
+         * value: "created_at"
+         * @constant
+         */
+        "created_at": "created_at",
+    
+        /**
+         * value: "-updated_at"
+         * @constant
+         */
+        "-updated_at": "-updated_at",
+    
+        /**
+         * value: "updated_at"
+         * @constant
+         */
+        "updated_at": "updated_at",
+    
+        /**
+         * value: "-code"
+         * @constant
+         */
+        "-code": "-code",
+    
+        /**
+         * value: "code"
+         * @constant
+         */
+        "code": "code",
+    
+        /**
+         * value: "-id"
+         * @constant
+         */
+        "-id": "-id",
+    
+        /**
+         * value: "id"
+         * @constant
+         */
+        "id": "id",
+    
+        /**
+         * value: "-voucher_code"
+         * @constant
+         */
+        "-voucher_code": "-voucher_code",
+    
+        /**
+         * value: "voucher_code"
+         * @constant
+         */
+        "voucher_code": "voucher_code",
+    
+        /**
+         * value: "-tracking_id"
+         * @constant
+         */
+        "-tracking_id": "-tracking_id",
+    
+        /**
+         * value: "tracking_id"
+         * @constant
+         */
+        "tracking_id": "tracking_id",
+    
+        /**
+         * value: "-customer_id"
+         * @constant
+         */
+        "-customer_id": "-customer_id",
+    
+        /**
+         * value: "customer_id"
+         * @constant
+         */
+        "customer_id": "customer_id",
+    
+        /**
+         * value: "-name"
+         * @constant
+         */
+        "-name": "-name",
+    
+        /**
+         * value: "name"
+         * @constant
+         */
+        "name": "name",
+    
+        /**
+         * value: "-email"
+         * @constant
+         */
+        "-email": "-email",
+    
+        /**
+         * value: "email"
+         * @constant
+         */
+        "email": "email",
+    
+        /**
+         * value: "-source_id"
+         * @constant
+         */
+        "-source_id": "-source_id",
+    
+        /**
+         * value: "source_id"
+         * @constant
+         */
+        "source_id": "source_id",
+    
+        /**
+         * value: "-channel"
+         * @constant
+         */
+        "-channel": "-channel",
+    
+        /**
+         * value: "channel"
+         * @constant
+         */
+        "channel": "channel",
+    
+        /**
+         * value: "-status"
+         * @constant
+         */
+        "-status": "-status",
+    
+        /**
+         * value: "status"
+         * @constant
+         */
+        "status": "status",
+    
+        /**
+         * value: "-expires_at"
+         * @constant
+         */
+        "-expires_at": "-expires_at",
+    
+        /**
+         * value: "expires_at"
+         * @constant
+         */
+        "expires_at": "expires_at"    
+    };
 
 
 /**

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesMembersTransactionsExportCreateResponseBodyParameters from './LoyaltiesMembersTransactionsExportCreateResponseBodyParameters';
-
 /**
  * The LoyaltiesMembersTransactionsExportCreateResponseBody model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransactionsExportCreateResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/loyalties/members/{memberId}/transactions/export&#x60; and for **POST** &#x60;v1/loyalties/{campaignId}/members/{memberId}/transactions/export&#x60;.
-     * @alias module:model/LoyaltiesMembersTransactionsExportCreateResponseBody
+     * @alias LoyaltiesMembersTransactionsExportCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody {
     /**
      * Constructs a <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody} The populated <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransactionsExportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransactionsExportCreateResponseBody} The populated <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -85,7 +84,7 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransactionsExportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -127,108 +126,108 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody {
 
 
 /**
- * Unique export ID.
- * @member {String} 
- */
+    * Unique export ID.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of object being represented. This object stores information about the export.
- * @member {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody.ObjectEnum} 
- * @default 'export'
- */
+    * The type of object being represented. This object stores information about the export.
+    * @type {(keyof typeof LoyaltiesMembersTransactionsExportCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'export'
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['object'] = 'export';
 
 /**
- * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
- * @member {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody.StatusEnum} 
- * @default 'SCHEDULED'
- */
+    * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
+    * @type {(keyof typeof LoyaltiesMembersTransactionsExportCreateResponseBody.StatusEnum) | undefined}
+    * @default 'SCHEDULED'
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['status'] = 'SCHEDULED';
 
 /**
- * The channel through which the export was triggered.
- * @member {String} 
- */
+    * The channel through which the export was triggered.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['channel'] = undefined;
 
 /**
- * Contains the URL of the CSV file.
- * @member {Object} 
- */
+    * Contains the URL of the CSV file.
+    * @type {Object | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['result'] = undefined;
 
 /**
- * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
- * @member {String} 
- */
+    * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['user_id'] = undefined;
 
 /**
- * The type of object to be exported.
- * @member {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody.ExportedObjectEnum} 
- * @default 'voucher_transactions'
- */
+    * The type of object to be exported.
+    * @type {(keyof typeof LoyaltiesMembersTransactionsExportCreateResponseBody.ExportedObjectEnum) | undefined}
+    * @default 'voucher_transactions'
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['exported_object'] = 'voucher_transactions';
 
 /**
- * @member {module:model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters} 
- */
+    * @type {LoyaltiesMembersTransactionsExportCreateResponseBodyParameters | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersTransactionsExportCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesMembersTransactionsExportCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "export"
+         * @constant
+         */
+        "export": "export"    
+    };
+
 
     /**
-     * value: "export"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "export": "export"
-};
+    LoyaltiesMembersTransactionsExportCreateResponseBody['StatusEnum'] = {
+    
+        /**
+         * value: "SCHEDULED"
+         * @constant
+         */
+        "SCHEDULED": "SCHEDULED"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersTransactionsExportCreateResponseBody['StatusEnum'] = {
 
     /**
-     * value: "SCHEDULED"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SCHEDULED": "SCHEDULED"
-};
-
-
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersTransactionsExportCreateResponseBody['ExportedObjectEnum'] = {
-
-    /**
-     * value: "voucher_transactions"
-     * @constant
-     */
-    "voucher_transactions": "voucher_transactions"
-};
+    LoyaltiesMembersTransactionsExportCreateResponseBody['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "voucher_transactions"
+         * @constant
+         */
+        "voucher_transactions": "voucher_transactions"    
+    };
 
 
 

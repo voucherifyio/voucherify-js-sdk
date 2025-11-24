@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The FilterConditionsDateTime model module.
  * @module model/FilterConditionsDateTime
- * @version 3.0.0
+ * @version 3.0.1
  */
 class FilterConditionsDateTime {
     /**
      * Constructs a new <code>FilterConditionsDateTime</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/FilterConditionsDateTime
+     * @alias FilterConditionsDateTime
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class FilterConditionsDateTime {
     /**
      * Constructs a <code>FilterConditionsDateTime</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/FilterConditionsDateTime} obj Optional instance to populate.
-     * @returns {module:model/FilterConditionsDateTime} The populated <code>FilterConditionsDateTime</code> instance.
+     * @param {Partial<FilterConditionsDateTime>} data The plain JavaScript object bearing properties of interest.
+     * @param {FilterConditionsDateTime} [obj] Optional instance to populate.
+     * @returns {FilterConditionsDateTime} The populated <code>FilterConditionsDateTime</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class FilterConditionsDateTime {
 
     /**
      * Validates the JSON data with respect to <code>FilterConditionsDateTime</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<FilterConditionsDateTime>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>FilterConditionsDateTime</code>.
      */
     static validateJSON(data) {
@@ -94,39 +93,39 @@ class FilterConditionsDateTime {
 
 
 /**
- * Value is after this date. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Value is after this date. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 FilterConditionsDateTime.prototype['$after'] = undefined;
 
 /**
- * Value is before this date. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Value is before this date. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 FilterConditionsDateTime.prototype['$before'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 FilterConditionsDateTime.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 FilterConditionsDateTime.prototype['$is_unknown'] = undefined;
 
 /**
- * Value is more days ago before the current date and time, e.g. more than `10` days ago.
- * @member {Number} 
- */
+    * Value is more days ago before the current date and time, e.g. more than `10` days ago.
+    * @type {Number | undefined}
+    */
 FilterConditionsDateTime.prototype['$more_than'] = undefined;
 
 /**
- * Value is less days before the current date and time, e.g. less than `10` days ago.
- * @member {Number} 
- */
+    * Value is less days before the current date and time, e.g. less than `10` days ago.
+    * @type {Number | undefined}
+    */
 FilterConditionsDateTime.prototype['$less_than'] = undefined;
 
 

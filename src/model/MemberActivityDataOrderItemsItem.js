@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import MemberActivityDataOrderItemsItemProduct from './MemberActivityDataOrderItemsItemProduct';
 import MemberActivityDataOrderItemsItemSku from './MemberActivityDataOrderItemsItemSku';
-
 /**
  * The MemberActivityDataOrderItemsItem model module.
  * @module model/MemberActivityDataOrderItemsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataOrderItemsItem {
     /**
      * Constructs a new <code>MemberActivityDataOrderItemsItem</code>.
-     * @alias module:model/MemberActivityDataOrderItemsItem
+     * @alias MemberActivityDataOrderItemsItem
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MemberActivityDataOrderItemsItem {
     /**
      * Constructs a <code>MemberActivityDataOrderItemsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataOrderItemsItem} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataOrderItemsItem} The populated <code>MemberActivityDataOrderItemsItem</code> instance.
+     * @param {Partial<MemberActivityDataOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataOrderItemsItem} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataOrderItemsItem} The populated <code>MemberActivityDataOrderItemsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -119,7 +118,7 @@ class MemberActivityDataOrderItemsItem {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataOrderItemsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataOrderItemsItem</code>.
      */
     static validateJSON(data) {
@@ -165,166 +164,166 @@ class MemberActivityDataOrderItemsItem {
 
 
 /**
- * Unique identifier of the order line item.
- * @member {String} 
- */
+    * Unique identifier of the order line item.
+    * @type {String | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataOrderItemsItem.ObjectEnum} 
- * @default 'order_item'
- */
+    * @type {(keyof typeof MemberActivityDataOrderItemsItem.ObjectEnum) | undefined}
+    * @default 'order_item'
+    */
 MemberActivityDataOrderItemsItem.prototype['object'] = 'order_item';
 
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} 
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+    * @type {String | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['source_id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataOrderItemsItem.RelatedObjectEnum} 
- */
+    * @type {(keyof typeof MemberActivityDataOrderItemsItem.RelatedObjectEnum) | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['related_object'] = undefined;
 
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['product_id'] = undefined;
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['sku_id'] = undefined;
 
 /**
- * Quantity of the particular item in the cart. and The quantity of the particular item in the cart.
- * @member {Number} 
- */
+    * Quantity of the particular item in the cart. and The quantity of the particular item in the cart.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['quantity'] = undefined;
 
 /**
- * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['applied_quantity'] = undefined;
 
 /**
- * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['applied_quantity_amount'] = undefined;
 
 /**
- * Number of discounted items. and Number of dicounted items.
- * @member {Number} 
- */
+    * Number of discounted items. and Number of dicounted items.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['discount_quantity'] = undefined;
 
 /**
- * Number of the discounted items applied in the transaction.
- * @member {Number} 
- */
+    * Number of the discounted items applied in the transaction.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['applied_discount_quantity'] = undefined;
 
 /**
- * Total amount of the order item (price * quantity). and The total amount of the order item (price * quantity).
- * @member {Number} 
- */
+    * Total amount of the order item (price * quantity). and The total amount of the order item (price * quantity).
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} 
- */
+    * Sum of all order-item-level discounts applied to the order.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['discount_amount'] = undefined;
 
 /**
- * Order-level discount amount applied in the transaction. and This field shows the order-level discount applied.
- * @member {Number} 
- */
+    * Order-level discount amount applied in the transaction. and This field shows the order-level discount applied.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['price'] = undefined;
 
 /**
- * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`discount_amount` and Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
- * @member {Number} 
- */
+    * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`discount_amount` and Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['subtotal_amount'] = undefined;
 
 /**
- * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
- * @member {Number} 
- */
+    * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['initial_quantity'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['initial_amount'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataOrderItemsItemProduct} 
- */
+    * @type {MemberActivityDataOrderItemsItemProduct | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['product'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataOrderItemsItemSku} 
- */
+    * @type {MemberActivityDataOrderItemsItemSku | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['sku'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 MemberActivityDataOrderItemsItem.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataOrderItemsItem['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataOrderItemsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "order_item"
+         * @constant
+         */
+        "order_item": "order_item"    
+    };
+
 
     /**
-     * value: "order_item"
-     * @constant
+     * Allowed values for the <code>related_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "order_item": "order_item"
-};
-
-
-/**
- * Allowed values for the <code>related_object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataOrderItemsItem['RelatedObjectEnum'] = {
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    MemberActivityDataOrderItemsItem['RelatedObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

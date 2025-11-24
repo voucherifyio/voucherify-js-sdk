@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import ApplicationDetailsItem from './ApplicationDetailsItem';
 import RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct from './RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct';
 import RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku from './RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrderItemsItem model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemOrderItemsItem {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem
+     * @alias RedemptionsListResponseBodyRedemptionsItemOrderItemsItem
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class RedemptionsListResponseBodyRedemptionsItemOrderItemsItem {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemOrderItemsItem} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemOrderItemsItem} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -123,7 +122,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrderItemsItem {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderItemsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderItemsItem</code>.
      */
     static validateJSON(data) {
@@ -179,174 +178,174 @@ class RedemptionsListResponseBodyRedemptionsItemOrderItemsItem {
 
 
 /**
- * Unique identifier of the order line item.
- * @member {String} 
- */
+    * Unique identifier of the order line item.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['sku_id'] = undefined;
 
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['product_id'] = undefined;
 
 /**
- * Used along with the source_id property, can be set to either sku or product.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.RelatedObjectEnum} 
- */
+    * Used along with the source_id property, can be set to either sku or product.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.RelatedObjectEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['related_object'] = undefined;
 
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} 
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['source_id'] = undefined;
 
 /**
- * The quantity of the particular item in the cart.
- * @member {Number} 
- */
+    * The quantity of the particular item in the cart.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['quantity'] = undefined;
 
 /**
- * Number of dicounted items.
- * @member {Number} 
- */
+    * Number of dicounted items.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['discount_quantity'] = undefined;
 
 /**
- * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
- * @member {Number} 
- */
+    * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['initial_quantity'] = undefined;
 
 /**
- * The total amount of the order item (price * quantity).
- * @member {Number} 
- */
+    * The total amount of the order item (price * quantity).
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} 
- */
+    * Sum of all order-item-level discounts applied to the order.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['discount_amount'] = undefined;
 
 /**
- * This field shows the order-level discount applied.
- * @member {Number} 
- */
+    * This field shows the order-level discount applied.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Number of the discounted items applied in the transaction.
- * @member {Number} 
- */
+    * Number of the discounted items applied in the transaction.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['applied_discount_quantity'] = undefined;
 
 /**
- * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['applied_quantity'] = undefined;
 
 /**
- * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['applied_quantity_amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['initial_amount'] = undefined;
 
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['price'] = undefined;
 
 /**
- * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
- * @member {Number} 
- */
+    * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['subtotal_amount'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['product'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku} 
- */
+    * @type {RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['sku'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.ObjectEnum} 
- * @default 'order_item'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.ObjectEnum) | undefined}
+    * @default 'order_item'
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['object'] = 'order_item';
 
 /**
- * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['metadata'] = undefined;
 
 /**
- * Array containing details about the items that are replaced and the items that are replacements for discounts with the `REPLACE_ITEMS` effect.
- * @member {Array.<module:model/ApplicationDetailsItem>} 
- */
+    * Array containing details about the items that are replaced and the items that are replacements for discounts with the `REPLACE_ITEMS` effect.
+    * @type {Array.<ApplicationDetailsItem> | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderItemsItem.prototype['application_details'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>related_object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemOrderItemsItem['RelatedObjectEnum'] = {
+    /**
+     * Allowed values for the <code>related_object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RedemptionsListResponseBodyRedemptionsItemOrderItemsItem['RelatedObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
+
 
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemOrderItemsItem['ObjectEnum'] = {
-
-    /**
-     * value: "order_item"
-     * @constant
-     */
-    "order_item": "order_item"
-};
+    RedemptionsListResponseBodyRedemptionsItemOrderItemsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "order_item"
+         * @constant
+         */
+        "order_item": "order_item"    
+    };
 
 
 

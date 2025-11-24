@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import OrderItem from './OrderItem';
-
 /**
  * The Order model module.
  * @module model/Order
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Order {
     /**
      * Constructs a new <code>Order</code>.
      * Order information.
-     * @alias module:model/Order
+     * @alias Order
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class Order {
     /**
      * Constructs a <code>Order</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Order} obj Optional instance to populate.
-     * @returns {module:model/Order} The populated <code>Order</code> instance.
+     * @param {Partial<Order>} data The plain JavaScript object bearing properties of interest.
+     * @param {Order} [obj] Optional instance to populate.
+     * @returns {Order} The populated <code>Order</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class Order {
 
     /**
      * Validates the JSON data with respect to <code>Order</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Order>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Order</code>.
      */
     static validateJSON(data) {
@@ -115,88 +114,88 @@ class Order {
 
 
 /**
- * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 Order.prototype['id'] = undefined;
 
 /**
- * Unique source ID of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 Order.prototype['source_id'] = undefined;
 
 /**
- * The order status.
- * @member {module:model/Order.StatusEnum} 
- */
+    * The order status.
+    * @type {(keyof typeof Order.StatusEnum) | undefined}
+    */
 Order.prototype['status'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 Order.prototype['amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 Order.prototype['initial_amount'] = undefined;
 
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 Order.prototype['discount_amount'] = undefined;
 
 /**
- * Array of items applied to the order. It can include up to 500 items.
- * @member {Array.<module:model/OrderItem>} 
- */
+    * Array of items applied to the order. It can include up to 500 items.
+    * @type {Array.<OrderItem> | undefined}
+    */
 Order.prototype['items'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 Order.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-Order['StatusEnum'] = {
-
     /**
-     * value: "CREATED"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREATED": "CREATED",
-
-    /**
-     * value: "PAID"
-     * @constant
-     */
-    "PAID": "PAID",
-
-    /**
-     * value: "CANCELED"
-     * @constant
-     */
-    "CANCELED": "CANCELED",
-
-    /**
-     * value: "FULFILLED"
-     * @constant
-     */
-    "FULFILLED": "FULFILLED"
-};
+    Order['StatusEnum'] = {
+    
+        /**
+         * value: "CREATED"
+         * @constant
+         */
+        "CREATED": "CREATED",
+    
+        /**
+         * value: "PAID"
+         * @constant
+         */
+        "PAID": "PAID",
+    
+        /**
+         * value: "CANCELED"
+         * @constant
+         */
+        "CANCELED": "CANCELED",
+    
+        /**
+         * value: "FULFILLED"
+         * @constant
+         */
+        "FULFILLED": "FULFILLED"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRewardParametersCoin model module.
  * @module model/MemberActivityDataRedemptionRewardParametersCoin
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardParametersCoin {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardParametersCoin</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardParametersCoin
+     * @alias MemberActivityDataRedemptionRewardParametersCoin
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataRedemptionRewardParametersCoin {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardParametersCoin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardParametersCoin} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardParametersCoin} The populated <code>MemberActivityDataRedemptionRewardParametersCoin</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersCoin>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardParametersCoin} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardParametersCoin} The populated <code>MemberActivityDataRedemptionRewardParametersCoin</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataRedemptionRewardParametersCoin {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardParametersCoin</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersCoin>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardParametersCoin</code>.
      */
     static validateJSON(data) {
@@ -73,15 +72,15 @@ class MemberActivityDataRedemptionRewardParametersCoin {
 
 
 /**
- * The cash equivalent of the points defined in the points_ratio property.
- * @member {Number} 
- */
+    * The cash equivalent of the points defined in the points_ratio property.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersCoin.prototype['exchange_ratio'] = undefined;
 
 /**
- * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property. and The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
- * @member {Number} 
- */
+    * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property. and The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersCoin.prototype['points_ratio'] = undefined;
 
 

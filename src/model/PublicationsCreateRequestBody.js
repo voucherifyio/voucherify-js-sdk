@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import CreatePublicationCampaign from './CreatePublicationCampaign';
 import Customer from './Customer';
-
 /**
  * The PublicationsCreateRequestBody model module.
  * @module model/PublicationsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PublicationsCreateRequestBody {
     /**
      * Constructs a new <code>PublicationsCreateRequestBody</code>.
-     * @alias module:model/PublicationsCreateRequestBody
+     * @alias PublicationsCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PublicationsCreateRequestBody {
     /**
      * Constructs a <code>PublicationsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PublicationsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/PublicationsCreateRequestBody} The populated <code>PublicationsCreateRequestBody</code> instance.
+     * @param {Partial<PublicationsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PublicationsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {PublicationsCreateRequestBody} The populated <code>PublicationsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class PublicationsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>PublicationsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PublicationsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PublicationsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -107,37 +106,37 @@ class PublicationsCreateRequestBody {
 
 
 /**
- * Code of the voucher being published.
- * @member {String} 
- */
+    * Code of the voucher being published.
+    * @type {String | undefined}
+    */
 PublicationsCreateRequestBody.prototype['voucher'] = undefined;
 
 /**
- * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
- * @member {String} 
- */
+    * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
+    * @type {String | undefined}
+    */
 PublicationsCreateRequestBody.prototype['source_id'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 PublicationsCreateRequestBody.prototype['customer'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
+    * @type {Object | undefined}
+    */
 PublicationsCreateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Specify the distribution channel.
- * @member {String} 
- */
+    * Specify the distribution channel.
+    * @type {String | undefined}
+    */
 PublicationsCreateRequestBody.prototype['channel'] = undefined;
 
 /**
- * @member {module:model/CreatePublicationCampaign} 
- */
+    * @type {CreatePublicationCampaign | undefined}
+    */
 PublicationsCreateRequestBody.prototype['campaign'] = undefined;
 
 

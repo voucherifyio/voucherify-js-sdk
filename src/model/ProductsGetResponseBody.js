@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import SkusListForProduct from './SkusListForProduct';
-
 /**
  * The ProductsGetResponseBody model module.
  * @module model/ProductsGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsGetResponseBody {
     /**
      * Constructs a new <code>ProductsGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/products/{productId}&#x60;.
-     * @alias module:model/ProductsGetResponseBody
+     * @alias ProductsGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ProductsGetResponseBody {
     /**
      * Constructs a <code>ProductsGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsGetResponseBody} The populated <code>ProductsGetResponseBody</code> instance.
+     * @param {Partial<ProductsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsGetResponseBody} The populated <code>ProductsGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -89,7 +88,7 @@ class ProductsGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -131,88 +130,88 @@ class ProductsGetResponseBody {
 
 
 /**
- * Unique product ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 ProductsGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Unique product source ID.
- * @member {String} 
- */
+    * Unique product source ID.
+    * @type {String | undefined}
+    */
 ProductsGetResponseBody.prototype['source_id'] = undefined;
 
 /**
- * Unique user-defined product name.
- * @member {String} 
- */
+    * Unique user-defined product name.
+    * @type {String | undefined}
+    */
 ProductsGetResponseBody.prototype['name'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 ProductsGetResponseBody.prototype['price'] = undefined;
 
 /**
- * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
- * @member {Array.<String>} 
- */
+    * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
+    * @type {Array.<String> | undefined}
+    */
 ProductsGetResponseBody.prototype['attributes'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 ProductsGetResponseBody.prototype['metadata'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
+    * @type {String | undefined}
+    */
 ProductsGetResponseBody.prototype['image_url'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductsGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductsGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the product.
- * @member {module:model/ProductsGetResponseBody.ObjectEnum} 
- * @default 'product'
- */
+    * The type of the object represented by JSON. This object stores information about the product.
+    * @type {(keyof typeof ProductsGetResponseBody.ObjectEnum) | undefined}
+    * @default 'product'
+    */
 ProductsGetResponseBody.prototype['object'] = 'product';
 
 /**
- * @member {module:model/SkusListForProduct} 
- */
+    * @type {SkusListForProduct | undefined}
+    */
 ProductsGetResponseBody.prototype['skus'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductsGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product"
-};
+    ProductsGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem model module.
  * @module model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem {
     /**
      * Constructs a new <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code>.
      * 
-     * @alias module:model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem
+     * @alias ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem {
     /**
      * Constructs a <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem} The populated <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code> instance.
+     * @param {Partial<ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem} The populated <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem {
 
 
 /**
- * Determines the maximum number of API calls per time set in `\"duration\"`.
- * @member {Number} 
- */
+    * Determines the maximum number of API calls per time set in `\"duration\"`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem.prototype['value'] = undefined;
 
 /**
- * Determines the amount of time during which the calls up to the number specified in the `value` can be made. The duration is presented in the ISO 8601 format, e.g. `PT1H` means one hour.
- * @member {String} 
- */
+    * Determines the amount of time during which the calls up to the number specified in the `value` can be made. The duration is presented in the ISO 8601 format, e.g. `PT1H` means one hour.
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem.prototype['duration'] = undefined;
 
 

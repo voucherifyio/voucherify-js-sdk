@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoryWithStackingRulesType model module.
  * @module model/CategoryWithStackingRulesType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoryWithStackingRulesType {
     /**
      * Constructs a new <code>CategoryWithStackingRulesType</code>.
      * Category object with &#x60;stacking_rules_type&#x60;
-     * @alias module:model/CategoryWithStackingRulesType
+     * @alias CategoryWithStackingRulesType
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CategoryWithStackingRulesType {
     /**
      * Constructs a <code>CategoryWithStackingRulesType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoryWithStackingRulesType} obj Optional instance to populate.
-     * @returns {module:model/CategoryWithStackingRulesType} The populated <code>CategoryWithStackingRulesType</code> instance.
+     * @param {Partial<CategoryWithStackingRulesType>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoryWithStackingRulesType} [obj] Optional instance to populate.
+     * @returns {CategoryWithStackingRulesType} The populated <code>CategoryWithStackingRulesType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class CategoryWithStackingRulesType {
 
     /**
      * Validates the JSON data with respect to <code>CategoryWithStackingRulesType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoryWithStackingRulesType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoryWithStackingRulesType</code>.
      */
     static validateJSON(data) {
@@ -106,86 +105,86 @@ class CategoryWithStackingRulesType {
 
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CategoryWithStackingRulesType.prototype['id'] = undefined;
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoryWithStackingRulesType.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoryWithStackingRulesType.prototype['hierarchy'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the category.
- * @member {module:model/CategoryWithStackingRulesType.ObjectEnum} 
- * @default 'category'
- */
+    * The type of the object represented by the JSON. This object stores information about the category.
+    * @type {(keyof typeof CategoryWithStackingRulesType.ObjectEnum) | undefined}
+    * @default 'category'
+    */
 CategoryWithStackingRulesType.prototype['object'] = 'category';
 
 /**
- * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoryWithStackingRulesType.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoryWithStackingRulesType.prototype['updated_at'] = undefined;
 
 /**
- * The type of the stacking rule eligibility.
- * @member {module:model/CategoryWithStackingRulesType.StackingRulesTypeEnum} 
- */
+    * The type of the stacking rule eligibility.
+    * @type {(keyof typeof CategoryWithStackingRulesType.StackingRulesTypeEnum) | undefined}
+    */
 CategoryWithStackingRulesType.prototype['stacking_rules_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CategoryWithStackingRulesType['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    CategoryWithStackingRulesType['ObjectEnum'] = {
+    
+        /**
+         * value: "category"
+         * @constant
+         */
+        "category": "category"    
+    };
+
 
     /**
-     * value: "category"
-     * @constant
+     * Allowed values for the <code>stacking_rules_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "category": "category"
-};
-
-
-/**
- * Allowed values for the <code>stacking_rules_type</code> property.
- * @enum {String}
- * @readonly
- */
-CategoryWithStackingRulesType['StackingRulesTypeEnum'] = {
-
-    /**
-     * value: "JOINT"
-     * @constant
-     */
-    "JOINT": "JOINT",
-
-    /**
-     * value: "EXCLUSIVE"
-     * @constant
-     */
-    "EXCLUSIVE": "EXCLUSIVE"
-};
+    CategoryWithStackingRulesType['StackingRulesTypeEnum'] = {
+    
+        /**
+         * value: "JOINT"
+         * @constant
+         */
+        "JOINT": "JOINT",
+    
+        /**
+         * value: "EXCLUSIVE"
+         * @constant
+         */
+        "EXCLUSIVE": "EXCLUSIVE"    
+    };
 
 
 

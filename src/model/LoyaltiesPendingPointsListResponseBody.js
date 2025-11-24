@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyPendingPoints from './LoyaltyPendingPoints';
-
 /**
  * The LoyaltiesPendingPointsListResponseBody model module.
  * @module model/LoyaltiesPendingPointsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPendingPointsListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesPendingPointsListResponseBody</code>.
      * Response body schema for **GET** &#x60;/loyalties/{campaignId}/pending-points&#x60;.
-     * @alias module:model/LoyaltiesPendingPointsListResponseBody
+     * @alias LoyaltiesPendingPointsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesPendingPointsListResponseBody {
     /**
      * Constructs a <code>LoyaltiesPendingPointsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPendingPointsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPendingPointsListResponseBody} The populated <code>LoyaltiesPendingPointsListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesPendingPointsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPendingPointsListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPendingPointsListResponseBody} The populated <code>LoyaltiesPendingPointsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LoyaltiesPendingPointsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPendingPointsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPendingPointsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPendingPointsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,69 +107,69 @@ class LoyaltiesPendingPointsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/LoyaltiesPendingPointsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof LoyaltiesPendingPointsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesPendingPointsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of pending point objects.
- * @member {module:model/LoyaltiesPendingPointsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of pending point objects.
+    * @type {(keyof typeof LoyaltiesPendingPointsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 LoyaltiesPendingPointsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of pending point entries. Each entry in the array is a separate pending point object.
- * @member {Array.<module:model/LoyaltyPendingPoints>} 
- */
+    * A dictionary that contains an array of pending point entries. Each entry in the array is a separate pending point object.
+    * @type {Array.<LoyaltyPendingPoints> | undefined}
+    */
 LoyaltiesPendingPointsListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesPendingPointsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the pending point entry ID in the `starting_after_id` query parameter to display another page of the results starting after the entry with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the pending point entry ID in the `starting_after_id` query parameter to display another page of the results starting after the entry with that ID.
+    * @type {String | undefined}
+    */
 LoyaltiesPendingPointsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPendingPointsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesPendingPointsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesPendingPointsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    LoyaltiesPendingPointsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

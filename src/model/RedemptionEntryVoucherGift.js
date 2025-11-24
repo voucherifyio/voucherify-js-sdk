@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryVoucherGift model module.
  * @module model/RedemptionEntryVoucherGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryVoucherGift {
     /**
      * Constructs a new <code>RedemptionEntryVoucherGift</code>.
-     * @alias module:model/RedemptionEntryVoucherGift
+     * @alias RedemptionEntryVoucherGift
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionEntryVoucherGift {
     /**
      * Constructs a <code>RedemptionEntryVoucherGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryVoucherGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryVoucherGift} The populated <code>RedemptionEntryVoucherGift</code> instance.
+     * @param {Partial<RedemptionEntryVoucherGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryVoucherGift} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryVoucherGift} The populated <code>RedemptionEntryVoucherGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class RedemptionEntryVoucherGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryVoucherGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryVoucherGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryVoucherGift</code>.
      */
     static validateJSON(data) {
@@ -83,52 +82,52 @@ class RedemptionEntryVoucherGift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedemptionEntryVoucherGift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedemptionEntryVoucherGift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedemptionEntryVoucherGift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/RedemptionEntryVoucherGift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof RedemptionEntryVoucherGift.EffectEnum) | undefined}
+    */
 RedemptionEntryVoucherGift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionEntryVoucherGift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    RedemptionEntryVoucherGift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

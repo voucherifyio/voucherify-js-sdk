@@ -19,13 +19,13 @@ import ValidationsValidateResponseBody from '../model/ValidationsValidateRespons
 /**
 * Validations service.
 * @module api/ValidationsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ValidationsApi {
 
     /**
     * Constructs a new ValidationsApi. 
-    * @alias module:api/ValidationsApi
+    * @alias ValidationsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,18 +37,19 @@ export default class ValidationsApi {
 
     /**
      * Callback function to receive the result of the validateStackedDiscounts operation.
-     * @callback module:api/ValidationsApi~validateStackedDiscountsCallback
+     * @callback validateStackedDiscountsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationsValidateResponseBody} [data] The data returned by the service call.
+     * @param {ValidationsValidateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Validate Stackable Discounts
      * Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys. API keys with a Merchant role cant use this endpoint.
-     * @param {module:model/ValidationsValidateRequestBody} validationsValidateRequestBody 
-     * @param {module:api/ValidationsApi~validateStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationsValidateResponseBody}
+     * @param {ValidationsValidateRequestBody} validationsValidateRequestBody 
+     * @param {validateStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationsValidateResponseBody}
+     * @returns {Promise<(ValidationsValidateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationsValidateResponseBody` object or with `undefined`.
      */
     validateStackedDiscounts(validationsValidateRequestBody, callback) {
       let postBody = validationsValidateRequestBody;

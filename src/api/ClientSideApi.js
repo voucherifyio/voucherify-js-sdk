@@ -27,13 +27,13 @@ import ParameterOrderListPromotionTiersClientSide from '../model/ParameterOrderL
 /**
 * ClientSide service.
 * @module api/ClientSideApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ClientSideApi {
 
     /**
     * Constructs a new ClientSideApi. 
-    * @alias module:api/ClientSideApi
+    * @alias ClientSideApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -45,18 +45,19 @@ export default class ClientSideApi {
 
     /**
      * Callback function to receive the result of the checkEligibilityClientSide operation.
-     * @callback module:api/ClientSideApi~checkEligibilityClientSideCallback
+     * @callback checkEligibilityClientSideCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ClientQualificationsCheckEligibilityResponseBody} [data] The data returned by the service call.
+     * @param {ClientQualificationsCheckEligibilityResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Check Eligibility (client-side)
      * Generate a list of redeemables that are applicable in the context of the customer and order. The new qualifications method is an improved version of [Campaign Qualifications](/api-reference/campaigns/examine-campaign-qualification), [Voucher Qualifications](/api-reference/vouchers/examine-voucher-qualification) API requests. The new qualification method introduces the following improvements: - Qualification results are returned faster - No limit on the number of returned redeemables - Introduces new qualification scenarios, not available in the previous version  👍 Scenario Guide  Read our dedicated guide to learn about some use cases this endpoint can cover [here](/guides/checking-eligibility). # Paging  The Voucherify Qualifications API request will return to you all of the redeemables available for the customer in batches of up to 50 redeemables per page. To get the next batch of redeemables, you need to use the starting_after cursor. To process of paging the redeemables works in the following manner: - You send the first API request for Qualifications without the starting_after parameter. - The response will contain a parameter named has_more. If the parameters value is set to true, then more redeemables are available. - Get the value of the created_at parameter of the last returned redeemable. The value of this parameter will be used as a cursor to retrieve the next page of redeemables. - Send another API request for Qualification with the starting_after parameter set to the value taken from the created_at parameter from the last returned redeemable. - Voucherify will return the next page of redeemables. - If the has_more parameter is set to true, apply steps 3-5 to get the next page of redeemables.
-     * @param {module:model/ClientQualificationsCheckEligibilityRequestBody} clientQualificationsCheckEligibilityRequestBody Define order and customer context.
-     * @param {module:api/ClientSideApi~checkEligibilityClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ClientQualificationsCheckEligibilityResponseBody}
+     * @param {ClientQualificationsCheckEligibilityRequestBody} clientQualificationsCheckEligibilityRequestBody Define order and customer context.
+     * @param {checkEligibilityClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ClientQualificationsCheckEligibilityResponseBody}
+     * @returns {Promise<(ClientQualificationsCheckEligibilityResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ClientQualificationsCheckEligibilityResponseBody` object or with `undefined`.
      */
     checkEligibilityClientSide(clientQualificationsCheckEligibilityRequestBody, callback) {
       let postBody = clientQualificationsCheckEligibilityRequestBody;
@@ -84,9 +85,9 @@ export default class ClientSideApi {
 
     /**
      * Callback function to receive the result of the listPromotionTiersClientSide operation.
-     * @callback module:api/ClientSideApi~listPromotionTiersClientSideCallback
+     * @callback listPromotionTiersClientSideCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ClientPromotionsTiersListResponseBody} [data] The data returned by the service call.
+     * @param {ClientPromotionsTiersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -98,10 +99,11 @@ export default class ClientSideApi {
         isAvailable?: Boolean,
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListPromotionTiersClientSide,
+        order?: Exclude<keyof typeof ParameterOrderListPromotionTiersClientSide, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/ClientSideApi~listPromotionTiersClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ClientPromotionsTiersListResponseBody}
+     * @param {listPromotionTiersClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ClientPromotionsTiersListResponseBody}
+     * @returns {Promise<(ClientPromotionsTiersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ClientPromotionsTiersListResponseBody` object or with `undefined`.
      */
     listPromotionTiersClientSide(origin, opts, callback) {
       opts = opts || {};
@@ -135,9 +137,9 @@ export default class ClientSideApi {
 
     /**
      * Callback function to receive the result of the redeemStackedDiscountsClientSide operation.
-     * @callback module:api/ClientSideApi~redeemStackedDiscountsClientSideCallback
+     * @callback redeemStackedDiscountsClientSideCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ClientRedemptionsRedeemResponseBody} [data] The data returned by the service call.
+     * @param {ClientRedemptionsRedeemResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -145,9 +147,10 @@ export default class ClientSideApi {
      * Redeem Stackable Discounts (client-side)
      * This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications. # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:    📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {module:model/ClientRedemptionsRedeemRequestBody} clientRedemptionsRedeemRequestBody 
-     * @param {module:api/ClientSideApi~redeemStackedDiscountsClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ClientRedemptionsRedeemResponseBody}
+     * @param {ClientRedemptionsRedeemRequestBody} clientRedemptionsRedeemRequestBody 
+     * @param {redeemStackedDiscountsClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ClientRedemptionsRedeemResponseBody}
+     * @returns {Promise<(ClientRedemptionsRedeemResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ClientRedemptionsRedeemResponseBody` object or with `undefined`.
      */
     redeemStackedDiscountsClientSide(origin, clientRedemptionsRedeemRequestBody, callback) {
       let postBody = clientRedemptionsRedeemRequestBody;
@@ -177,9 +180,9 @@ export default class ClientSideApi {
 
     /**
      * Callback function to receive the result of the trackCustomEventClientSide operation.
-     * @callback module:api/ClientSideApi~trackCustomEventClientSideCallback
+     * @callback trackCustomEventClientSideCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ClientEventsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ClientEventsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -187,9 +190,10 @@ export default class ClientSideApi {
      * Track Custom Event (client-side)
      * To track a custom event, you create an event object.   The event object must be linked to the customer who performs the action. If a customer doesnt exist in Voucherify, the customer will be created.
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {module:model/ClientEventsCreateRequestBody} clientEventsCreateRequestBody Specify the details of the custom event.
-     * @param {module:api/ClientSideApi~trackCustomEventClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ClientEventsCreateResponseBody}
+     * @param {ClientEventsCreateRequestBody} clientEventsCreateRequestBody Specify the details of the custom event.
+     * @param {trackCustomEventClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ClientEventsCreateResponseBody}
+     * @returns {Promise<(ClientEventsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ClientEventsCreateResponseBody` object or with `undefined`.
      */
     trackCustomEventClientSide(origin, clientEventsCreateRequestBody, callback) {
       let postBody = clientEventsCreateRequestBody;
@@ -219,9 +223,9 @@ export default class ClientSideApi {
 
     /**
      * Callback function to receive the result of the validateStackedDiscountsClientSide operation.
-     * @callback module:api/ClientSideApi~validateStackedDiscountsClientSideCallback
+     * @callback validateStackedDiscountsClientSideCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ClientValidationsValidateResponseBody} [data] The data returned by the service call.
+     * @param {ClientValidationsValidateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -229,9 +233,10 @@ export default class ClientSideApi {
      * Validate Stackable Discounts (client-side)
      * Verify redeemables provided in the request. This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications.
      * @param {String} origin Indicates the origin (scheme, hostname, and port).
-     * @param {module:model/ClientValidationsValidateRequestBody} clientValidationsValidateRequestBody 
-     * @param {module:api/ClientSideApi~validateStackedDiscountsClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ClientValidationsValidateResponseBody}
+     * @param {ClientValidationsValidateRequestBody} clientValidationsValidateRequestBody 
+     * @param {validateStackedDiscountsClientSideCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ClientValidationsValidateResponseBody}
+     * @returns {Promise<(ClientValidationsValidateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ClientValidationsValidateResponseBody` object or with `undefined`.
      */
     validateStackedDiscountsClientSide(origin, clientValidationsValidateRequestBody, callback) {
       let postBody = clientValidationsValidateRequestBody;

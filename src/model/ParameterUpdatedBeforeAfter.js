@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterUpdatedBeforeAfter model module.
  * @module model/ParameterUpdatedBeforeAfter
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterUpdatedBeforeAfter {
     /**
      * Constructs a new <code>ParameterUpdatedBeforeAfter</code>.
-     * @alias module:model/ParameterUpdatedBeforeAfter
+     * @alias ParameterUpdatedBeforeAfter
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterUpdatedBeforeAfter {
     /**
      * Constructs a <code>ParameterUpdatedBeforeAfter</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterUpdatedBeforeAfter} obj Optional instance to populate.
-     * @returns {module:model/ParameterUpdatedBeforeAfter} The populated <code>ParameterUpdatedBeforeAfter</code> instance.
+     * @param {Partial<ParameterUpdatedBeforeAfter>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterUpdatedBeforeAfter} [obj] Optional instance to populate.
+     * @returns {ParameterUpdatedBeforeAfter} The populated <code>ParameterUpdatedBeforeAfter</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ParameterUpdatedBeforeAfter {
 
     /**
      * Validates the JSON data with respect to <code>ParameterUpdatedBeforeAfter</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterUpdatedBeforeAfter>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterUpdatedBeforeAfter</code>.
      */
     static validateJSON(data) {
@@ -73,15 +72,15 @@ class ParameterUpdatedBeforeAfter {
 
 
 /**
- * Timestamp representing the date and time before the voucher was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time before the voucher was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ParameterUpdatedBeforeAfter.prototype['before'] = undefined;
 
 /**
- * Timestamp representing the date and time after the voucher was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time after the voucher was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ParameterUpdatedBeforeAfter.prototype['after'] = undefined;
 
 

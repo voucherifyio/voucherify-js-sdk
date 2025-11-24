@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomersUpdateResponseBodyAddress model module.
  * @module model/CustomersUpdateResponseBodyAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersUpdateResponseBodyAddress {
     /**
      * Constructs a new <code>CustomersUpdateResponseBodyAddress</code>.
      * Customer&#39;s address.
-     * @alias module:model/CustomersUpdateResponseBodyAddress
+     * @alias CustomersUpdateResponseBodyAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomersUpdateResponseBodyAddress {
     /**
      * Constructs a <code>CustomersUpdateResponseBodyAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersUpdateResponseBodyAddress} obj Optional instance to populate.
-     * @returns {module:model/CustomersUpdateResponseBodyAddress} The populated <code>CustomersUpdateResponseBodyAddress</code> instance.
+     * @param {Partial<CustomersUpdateResponseBodyAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersUpdateResponseBodyAddress} [obj] Optional instance to populate.
+     * @returns {CustomersUpdateResponseBodyAddress} The populated <code>CustomersUpdateResponseBodyAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CustomersUpdateResponseBodyAddress {
 
     /**
      * Validates the JSON data with respect to <code>CustomersUpdateResponseBodyAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersUpdateResponseBodyAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersUpdateResponseBodyAddress</code>.
      */
     static validateJSON(data) {
@@ -110,39 +109,39 @@ class CustomersUpdateResponseBodyAddress {
 
 
 /**
- * City
- * @member {String} 
- */
+    * City
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['city'] = undefined;
 
 /**
- * State
- * @member {String} 
- */
+    * State
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['state'] = undefined;
 
 /**
- * First line of address.
- * @member {String} 
- */
+    * First line of address.
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['line_1'] = undefined;
 
 /**
- * Second line of address.
- * @member {String} 
- */
+    * Second line of address.
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['line_2'] = undefined;
 
 /**
- * Country.
- * @member {String} 
- */
+    * Country.
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['country'] = undefined;
 
 /**
- * Postal code.
- * @member {String} 
- */
+    * Postal code.
+    * @type {String | undefined}
+    */
 CustomersUpdateResponseBodyAddress.prototype['postal_code'] = undefined;
 
 

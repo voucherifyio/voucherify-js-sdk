@@ -26,17 +26,16 @@ import VoucherTransactionDetailsRedemption from './VoucherTransactionDetailsRede
 import VoucherTransactionDetailsReward from './VoucherTransactionDetailsReward';
 import VoucherTransactionDetailsRollback from './VoucherTransactionDetailsRollback';
 import VoucherTransactionDetailsSegment from './VoucherTransactionDetailsSegment';
-
 /**
  * The VoucherTransactionDetails model module.
  * @module model/VoucherTransactionDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetails {
     /**
      * Constructs a new <code>VoucherTransactionDetails</code>.
      * Contains the detailed information about the transaction.
-     * @alias module:model/VoucherTransactionDetails
+     * @alias VoucherTransactionDetails
      */
     constructor() { 
         
@@ -54,9 +53,9 @@ class VoucherTransactionDetails {
     /**
      * Constructs a <code>VoucherTransactionDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetails} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetails} The populated <code>VoucherTransactionDetails</code> instance.
+     * @param {Partial<VoucherTransactionDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetails} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetails} The populated <code>VoucherTransactionDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -113,7 +112,7 @@ class VoucherTransactionDetails {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetails</code>.
      */
     static validateJSON(data) {
@@ -187,78 +186,78 @@ class VoucherTransactionDetails {
 
 
 /**
- * @member {module:model/VoucherBalance} 
- */
+    * @type {VoucherBalance | undefined}
+    */
 VoucherTransactionDetails.prototype['balance'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsOrder} 
- */
+    * @type {VoucherTransactionDetailsOrder | undefined}
+    */
 VoucherTransactionDetails.prototype['order'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsEvent} 
- */
+    * @type {VoucherTransactionDetailsEvent | undefined}
+    */
 VoucherTransactionDetails.prototype['event'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsEarningRule} 
- */
+    * @type {VoucherTransactionDetailsEarningRule | undefined}
+    */
 VoucherTransactionDetails.prototype['earning_rule'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsSegment} 
- */
+    * @type {VoucherTransactionDetailsSegment | undefined}
+    */
 VoucherTransactionDetails.prototype['segment'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsLoyaltyTier} 
- */
+    * @type {VoucherTransactionDetailsLoyaltyTier | undefined}
+    */
 VoucherTransactionDetails.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsRedemption} 
- */
+    * @type {VoucherTransactionDetailsRedemption | undefined}
+    */
 VoucherTransactionDetails.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsRollback} 
- */
+    * @type {VoucherTransactionDetailsRollback | undefined}
+    */
 VoucherTransactionDetails.prototype['rollback'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsCustomEvent} 
- */
+    * @type {VoucherTransactionDetailsCustomEvent | undefined}
+    */
 VoucherTransactionDetails.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsEventSchema} 
- */
+    * @type {VoucherTransactionDetailsEventSchema | undefined}
+    */
 VoucherTransactionDetails.prototype['event_schema'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsHolderLoyaltyTier} 
- */
+    * @type {VoucherTransactionDetailsHolderLoyaltyTier | undefined}
+    */
 VoucherTransactionDetails.prototype['holder_loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPoints} 
- */
+    * @type {LoyaltyPendingPoints | undefined}
+    */
 VoucherTransactionDetails.prototype['pending_points'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsReward} 
- */
+    * @type {VoucherTransactionDetailsReward | undefined}
+    */
 VoucherTransactionDetails.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 VoucherTransactionDetails.prototype['source_voucher'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 VoucherTransactionDetails.prototype['destination_voucher'] = undefined;
 
 

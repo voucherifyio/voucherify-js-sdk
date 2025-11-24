@@ -13,50 +13,47 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListLoyaltyTiers.
-* @module model/ParameterOrderListLoyaltyTiers
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListLoyaltyTiers {
+ * Enum class ParameterOrderListLoyaltyTiers.
+ * @module model/ParameterOrderListLoyaltyTiers
+ * @version 3.0.1
+ */
+class ParameterOrderListLoyaltyTiers {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "-updated_at"
-         * @constant
-         */
-        "-updated_at" = "-updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-updated_at" = "-updated_at";
     
 
     /**
-    * Returns a <code>ParameterOrderListLoyaltyTiers</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListLoyaltyTiers} The enum <code>ParameterOrderListLoyaltyTiers</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListLoyaltyTiers, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListLoyaltyTiers[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListLoyaltyTiers[key];
     }
 }
+
+export default ParameterOrderListLoyaltyTiers;
 

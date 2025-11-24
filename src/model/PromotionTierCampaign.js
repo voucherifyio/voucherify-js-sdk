@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The PromotionTierCampaign model module.
  * @module model/PromotionTierCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierCampaign {
     /**
      * Constructs a new <code>PromotionTierCampaign</code>.
      * Contains details about promotion tier&#39;s parent campaign.
-     * @alias module:model/PromotionTierCampaign
+     * @alias PromotionTierCampaign
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PromotionTierCampaign {
     /**
      * Constructs a <code>PromotionTierCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierCampaign} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierCampaign} The populated <code>PromotionTierCampaign</code> instance.
+     * @param {Partial<PromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierCampaign} [obj] Optional instance to populate.
+     * @returns {PromotionTierCampaign} The populated <code>PromotionTierCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class PromotionTierCampaign {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierCampaign</code>.
      */
     static validateJSON(data) {
@@ -122,56 +121,56 @@ class PromotionTierCampaign {
 
 
 /**
- * Unique campaign ID.
- * @member {String} 
- */
+    * Unique campaign ID.
+    * @type {String | undefined}
+    */
 PromotionTierCampaign.prototype['id'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 PromotionTierCampaign.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 PromotionTierCampaign.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 PromotionTierCampaign.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/PromotionTierCampaign.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof PromotionTierCampaign.ValidityDayOfWeekEnum>) | undefined}
+    */
 PromotionTierCampaign.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 PromotionTierCampaign.prototype['validity_hours'] = undefined;
 
 /**
- * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
- * @member {Boolean} 
- */
+    * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+    * @type {Boolean | undefined}
+    */
 PromotionTierCampaign.prototype['active'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to.
+    * @type {String | undefined}
+    */
 PromotionTierCampaign.prototype['category_id'] = undefined;
 
 /**
- * The type of the object represented by the campaign object. This object stores information about the campaign.
- * @member {String} 
- * @default 'campaign'
- */
+    * The type of the object represented by the campaign object. This object stores information about the campaign.
+    * @type {String | undefined}
+    * @default 'campaign'
+    */
 PromotionTierCampaign.prototype['object'] = 'campaign';
 
 

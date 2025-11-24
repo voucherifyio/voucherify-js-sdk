@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LocationsGetResponseBodyShape from './LocationsGetResponseBodyShape';
-
 /**
  * The LocationsGetResponseBody model module.
  * @module model/LocationsGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationsGetResponseBody {
     /**
      * Constructs a new <code>LocationsGetResponseBody</code>.
      * Response schema for listing locations using **GET** &#x60;/v1/locations/{locationId}&#x60;.
-     * @alias module:model/LocationsGetResponseBody
+     * @alias LocationsGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LocationsGetResponseBody {
     /**
      * Constructs a <code>LocationsGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationsGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LocationsGetResponseBody} The populated <code>LocationsGetResponseBody</code> instance.
+     * @param {Partial<LocationsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationsGetResponseBody} [obj] Optional instance to populate.
+     * @returns {LocationsGetResponseBody} The populated <code>LocationsGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class LocationsGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LocationsGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationsGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,58 +103,58 @@ class LocationsGetResponseBody {
 
 
 /**
- * Unique location ID, assigned by the Voucherify API.
- * @member {String} 
- */
+    * Unique location ID, assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LocationsGetResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about a `location`.
- * @member {module:model/LocationsGetResponseBody.ObjectEnum} 
- * @default 'location'
- */
+    * The type of the object represented by JSON. This object stores information about a `location`.
+    * @type {(keyof typeof LocationsGetResponseBody.ObjectEnum) | undefined}
+    * @default 'location'
+    */
 LocationsGetResponseBody.prototype['object'] = 'location';
 
 /**
- * Location name.
- * @member {String} 
- */
+    * Location name.
+    * @type {String | undefined}
+    */
 LocationsGetResponseBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/LocationsGetResponseBodyShape} 
- */
+    * @type {LocationsGetResponseBodyShape | undefined}
+    */
 LocationsGetResponseBody.prototype['shape'] = undefined;
 
 /**
- * Timestamp representing the date and time when the location was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the location was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LocationsGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the location was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the location was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LocationsGetResponseBody.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LocationsGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "location"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "location": "location"
-};
+    LocationsGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "location"
+         * @constant
+         */
+        "location": "location"    
+    };
 
 
 

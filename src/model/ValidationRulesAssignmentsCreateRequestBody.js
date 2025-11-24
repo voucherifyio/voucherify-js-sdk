@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationRulesAssignmentsCreateRequestBody model module.
  * @module model/ValidationRulesAssignmentsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesAssignmentsCreateRequestBody {
     /**
      * Constructs a new <code>ValidationRulesAssignmentsCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/validation-rules/{validationRuleId}/assignments&#x60;.
-     * @alias module:model/ValidationRulesAssignmentsCreateRequestBody
+     * @alias ValidationRulesAssignmentsCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ValidationRulesAssignmentsCreateRequestBody {
     /**
      * Constructs a <code>ValidationRulesAssignmentsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesAssignmentsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesAssignmentsCreateRequestBody} The populated <code>ValidationRulesAssignmentsCreateRequestBody</code> instance.
+     * @param {Partial<ValidationRulesAssignmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesAssignmentsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ValidationRulesAssignmentsCreateRequestBody} The populated <code>ValidationRulesAssignmentsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class ValidationRulesAssignmentsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesAssignmentsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesAssignmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesAssignmentsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -83,65 +82,65 @@ class ValidationRulesAssignmentsCreateRequestBody {
 
 
 /**
- * Defines the related object, e.g. `voucher`.
- * @member {module:model/ValidationRulesAssignmentsCreateRequestBody.RelatedObjectTypeEnum} 
- * @default 'voucher'
- */
+    * Defines the related object, e.g. `voucher`.
+    * @type {(keyof typeof ValidationRulesAssignmentsCreateRequestBody.RelatedObjectTypeEnum) | undefined}
+    * @default 'voucher'
+    */
 ValidationRulesAssignmentsCreateRequestBody.prototype['related_object_type'] = 'voucher';
 
 /**
- * Unique related object ID assigned by Voucherify, e.g. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
- * @member {String} 
- */
+    * Unique related object ID assigned by Voucherify, e.g. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
+    * @type {String | undefined}
+    */
 ValidationRulesAssignmentsCreateRequestBody.prototype['related_object_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRulesAssignmentsCreateRequestBody['RelatedObjectTypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign",
-
-    /**
-     * value: "earning_rule"
-     * @constant
-     */
-    "earning_rule": "earning_rule",
-
-    /**
-     * value: "distribution"
-     * @constant
-     */
-    "distribution": "distribution",
-
-    /**
-     * value: "reward_assignment"
-     * @constant
-     */
-    "reward_assignment": "reward_assignment"
-};
+    ValidationRulesAssignmentsCreateRequestBody['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "earning_rule"
+         * @constant
+         */
+        "earning_rule": "earning_rule",
+    
+        /**
+         * value: "distribution"
+         * @constant
+         */
+        "distribution": "distribution",
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment"    
+    };
 
 
 

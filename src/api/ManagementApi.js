@@ -65,13 +65,13 @@ import ParameterTemplatesList from '../model/ParameterTemplatesList';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ManagementApi {
 
     /**
     * Constructs a new ManagementApi. 
-    * @alias module:api/ManagementApi
+    * @alias ManagementApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -83,9 +83,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the assignUser operation.
-     * @callback module:api/ManagementApi~assignUserCallback
+     * @callback assignUserCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsUsersAssignResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsUsersAssignResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -93,9 +93,10 @@ export default class ManagementApi {
      * Assign User
      * Assigns a user to a given project. The user must be an existing user in Voucherify.  🚧 Correct Use of Data To avoid errors, use the role key with either id or login keys.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsUsersAssignRequestBody} managementProjectsUsersAssignRequestBody Defines the user details.
-     * @param {module:api/ManagementApi~assignUserCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsUsersAssignResponseBody}
+     * @param {ManagementProjectsUsersAssignRequestBody} managementProjectsUsersAssignRequestBody Defines the user details.
+     * @param {assignUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsUsersAssignResponseBody}
+     * @returns {Promise<(ManagementProjectsUsersAssignResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsUsersAssignResponseBody` object or with `undefined`.
      */
     assignUser(projectId, managementProjectsUsersAssignRequestBody, callback) {
       let postBody = managementProjectsUsersAssignRequestBody;
@@ -125,9 +126,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createBrand operation.
-     * @callback module:api/ManagementApi~createBrandCallback
+     * @callback createBrandCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsBrandingCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsBrandingCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -135,9 +136,10 @@ export default class ManagementApi {
      * Create Brand
      * Creates a new brand configuration. You can have only one brand configured for a project.  📘 White Labelling  The white labelling settings which can be found in Project Settings > Brand Details and which are available only for Enterprise clients as a separate service can be configured only in the user interface.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsBrandingCreateRequestBody} managementProjectsBrandingCreateRequestBody Defines a brand configuration.
-     * @param {module:api/ManagementApi~createBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsBrandingCreateResponseBody}
+     * @param {ManagementProjectsBrandingCreateRequestBody} managementProjectsBrandingCreateRequestBody Defines a brand configuration.
+     * @param {createBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsBrandingCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsBrandingCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsBrandingCreateResponseBody` object or with `undefined`.
      */
     createBrand(projectId, managementProjectsBrandingCreateRequestBody, callback) {
       let postBody = managementProjectsBrandingCreateRequestBody;
@@ -167,9 +169,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createCustomEventSchema operation.
-     * @callback module:api/ManagementApi~createCustomEventSchemaCallback
+     * @callback createCustomEventSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsCustomEventSchemasCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsCustomEventSchemasCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -177,9 +179,10 @@ export default class ManagementApi {
      * Create Custom Event Schema
      * Creates a custom event schema. The properties object is required, but it can be empty, however. This object is for optional custom properties (metadata).  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsCustomEventSchemasCreateRequestBody} managementProjectsCustomEventSchemasCreateRequestBody Defines the custom event schema.
-     * @param {module:api/ManagementApi~createCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasCreateResponseBody}
+     * @param {ManagementProjectsCustomEventSchemasCreateRequestBody} managementProjectsCustomEventSchemasCreateRequestBody Defines the custom event schema.
+     * @param {createCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsCustomEventSchemasCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsCustomEventSchemasCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsCustomEventSchemasCreateResponseBody` object or with `undefined`.
      */
     createCustomEventSchema(projectId, managementProjectsCustomEventSchemasCreateRequestBody, callback) {
       let postBody = managementProjectsCustomEventSchemasCreateRequestBody;
@@ -209,9 +212,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createMetadataSchema operation.
-     * @callback module:api/ManagementApi~createMetadataSchemaCallback
+     * @callback createMetadataSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsMetadataSchemasCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsMetadataSchemasCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -219,9 +222,10 @@ export default class ManagementApi {
      * Create Metadata Schema
      * Creates a new metadata (custom attribute) schema for a given resource. The schema consists of a set of key-value pairs to customize Voucherify resources.  You can nest your object within a standard metadata schema, e.g. within a campaign or customer schema. However, your nested object cant include another nested object. The standard metadata schemas are: - Campaign - Voucher - Publication - Redemption - Product - Customer - Order - Order line item - Loyalty Tier - Promotion Tier - Earning rule - Reward Use this endpoint to define a metadata schema of a given resource for the first time. Once you configure a metadata schema for a given related_object, use the PUT [Update metadata schema](/api-reference/management/update-metadata-schema) endpoint to either update or add new metadata key-value pairs. For example, use this endpoint to define a metadata schema for related_object: campaign for the first time. If you want define a new metadata property for campaign, use the [PUT Update metadata schema](/api-reference/management/update-metadata-schema) endpoint.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsMetadataSchemasCreateRequestBody} managementProjectsMetadataSchemasCreateRequestBody Defines the metadata schema.
-     * @param {module:api/ManagementApi~createMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsMetadataSchemasCreateResponseBody}
+     * @param {ManagementProjectsMetadataSchemasCreateRequestBody} managementProjectsMetadataSchemasCreateRequestBody Defines the metadata schema.
+     * @param {createMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsMetadataSchemasCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsMetadataSchemasCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsMetadataSchemasCreateResponseBody` object or with `undefined`.
      */
     createMetadataSchema(projectId, managementProjectsMetadataSchemasCreateRequestBody, callback) {
       let postBody = managementProjectsMetadataSchemasCreateRequestBody;
@@ -251,18 +255,19 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createProject operation.
-     * @callback module:api/ManagementApi~createProjectCallback
+     * @callback createProjectCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Project
      * Creates a new project. You can add users, specify the cluster, timezone, currency, and other details. All owners are added to the project by default.
-     * @param {module:model/ManagementProjectsCreateRequestBody} managementProjectsCreateRequestBody Define project details.
-     * @param {module:api/ManagementApi~createProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsCreateResponseBody}
+     * @param {ManagementProjectsCreateRequestBody} managementProjectsCreateRequestBody Define project details.
+     * @param {createProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsCreateResponseBody` object or with `undefined`.
      */
     createProject(managementProjectsCreateRequestBody, callback) {
       let postBody = managementProjectsCreateRequestBody;
@@ -290,9 +295,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createStackingRules operation.
-     * @callback module:api/ManagementApi~createStackingRulesCallback
+     * @callback createStackingRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsStackingRulesCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsStackingRulesCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -300,9 +305,10 @@ export default class ManagementApi {
      * Create Stacking Rules
      * Overwrites the default stacking rules. If new stacking rules have been created for the project earlier (e.g. in the user interface), it returns an error. Use [Update stacking rules](/api-reference/management/update-stacking-rules) endpoint to change the rules.  📘 Stacking rules documentation  Read [the Stacking rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsStackingRulesCreateRequestBody} managementProjectsStackingRulesCreateRequestBody Defines the stacking rule parameters.
-     * @param {module:api/ManagementApi~createStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsStackingRulesCreateResponseBody}
+     * @param {ManagementProjectsStackingRulesCreateRequestBody} managementProjectsStackingRulesCreateRequestBody Defines the stacking rule parameters.
+     * @param {createStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsStackingRulesCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsStackingRulesCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsStackingRulesCreateResponseBody` object or with `undefined`.
      */
     createStackingRules(projectId, managementProjectsStackingRulesCreateRequestBody, callback) {
       let postBody = managementProjectsStackingRulesCreateRequestBody;
@@ -332,9 +338,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the createWebhook operation.
-     * @callback module:api/ManagementApi~createWebhookCallback
+     * @callback createWebhookCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsWebhooksCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsWebhooksCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -342,9 +348,10 @@ export default class ManagementApi {
      * Create Webhook
      * Creates a new webhook configuration.  📘 Webhook Documentation  Read [Webhooks v2024-01-01](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsWebhooksCreateRequestBody} managementProjectsWebhooksCreateRequestBody Defines a webhook configuration.
-     * @param {module:api/ManagementApi~createWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsWebhooksCreateResponseBody}
+     * @param {ManagementProjectsWebhooksCreateRequestBody} managementProjectsWebhooksCreateRequestBody Defines a webhook configuration.
+     * @param {createWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsWebhooksCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsWebhooksCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsWebhooksCreateResponseBody` object or with `undefined`.
      */
     createWebhook(projectId, managementProjectsWebhooksCreateRequestBody, callback) {
       let postBody = managementProjectsWebhooksCreateRequestBody;
@@ -374,7 +381,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteBrand operation.
-     * @callback module:api/ManagementApi~deleteBrandCallback
+     * @callback deleteBrandCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -385,7 +392,8 @@ export default class ManagementApi {
      * Deletes permanently a brand configuration.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} brandingId Provide the unique identifier of the brand configuration.
-     * @param {module:api/ManagementApi~deleteBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteBrand(projectId, brandingId, callback) {
       let postBody = null;
@@ -416,7 +424,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteCustomEventSchema operation.
-     * @callback module:api/ManagementApi~deleteCustomEventSchemaCallback
+     * @callback deleteCustomEventSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -427,7 +435,8 @@ export default class ManagementApi {
      * Deletes permanently the custom event schema with its custom properties (metadata).  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} customEventSchemaId Provide the unique identifier of the custom event schema.
-     * @param {module:api/ManagementApi~deleteCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteCustomEventSchema(projectId, customEventSchemaId, callback) {
       let postBody = null;
@@ -458,7 +467,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteMetadataSchema operation.
-     * @callback module:api/ManagementApi~deleteMetadataSchemaCallback
+     * @callback deleteMetadataSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -469,7 +478,8 @@ export default class ManagementApi {
      * Deletes permanently the metadata schema. In standard metadata schemas, this endpoint removes permanently all definitions. The standard metadata schemas are: - Campaign - Voucher - Publication - Redemption - Product - Customer - Order - Order line item - Loyalty Tier - Promotion Tier - Earning rule - Reward If you want to delete only one definition, use the [Update Metadata Schema](/api-reference/management/update-metadata-schema) endpoint. In the request, provide the deleted: true pair in the definition object. This definition will be moved to Removed definitions. If you want to create a new standard metadata schema, use the [Create Metadata Schema](/api-reference/management/create-metadata-schema) endpoint.  🚧 Metadata Purging This endpoint deletes permanently the metadata schemas only. However, it does not purge the metadata from associated entities, so the metadata added to those entities will remain. If you want to purge metadata from the entities: 1. Remove all the definitions you want to purge. You can do this either in Voucherify Project Settings > Metadata Schema tab or with the [Update Metadata Schema](/api-reference/management/update-metadata-schema) endpoint. 2. In Voucherify Project Settings > Metadata Schema tab, go to the relevant metadata schema. 3. In Removed definitions, click the bin button next to the definitions whose metadata you want to purge from entities. Note: - This is an asynchronous action. You will be notified when it has been completed. - You cannot purge metadata for the Redemption and Publication schemas. 4. Use the Delete Metadata Schema request to delete the metadata schema from Voucherify.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} metadataSchemaId Provide the unique identifier of the metadata schema.
-     * @param {module:api/ManagementApi~deleteMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteMetadataSchema(projectId, metadataSchemaId, callback) {
       let postBody = null;
@@ -500,7 +510,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteProject operation.
-     * @callback module:api/ManagementApi~deleteProjectCallback
+     * @callback deleteProjectCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -510,7 +520,8 @@ export default class ManagementApi {
      * Delete Project
      * Deletes an existing project. The users currently using the deleted project will be automatically logged out.  🚧 Sandbox Project The sandbox project cannot be deleted.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~deleteProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteProject(projectId, callback) {
       let postBody = null;
@@ -539,7 +550,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteStackingRules operation.
-     * @callback module:api/ManagementApi~deleteStackingRulesCallback
+     * @callback deleteStackingRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -550,7 +561,8 @@ export default class ManagementApi {
      * Deletes permanently the current settings for the stacking rules. The stacking rules are restored to default values.  📘 Stacking Rules Documentation  Read [the Stacking Rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} stackingRulesId Provide the unique identifier of the stacking rules.
-     * @param {module:api/ManagementApi~deleteStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteStackingRules(projectId, stackingRulesId, callback) {
       let postBody = null;
@@ -581,7 +593,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the deleteWebhook operation.
-     * @callback module:api/ManagementApi~deleteWebhookCallback
+     * @callback deleteWebhookCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -592,7 +604,8 @@ export default class ManagementApi {
      * Deletes a webhook configuration.  📘 Webhook Documentation  Read [Introduction to webhooks](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} webhookId Provide the unique identifier of the webhook configuration.
-     * @param {module:api/ManagementApi~deleteWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteWebhook(projectId, webhookId, callback) {
       let postBody = null;
@@ -623,9 +636,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getBrand operation.
-     * @callback module:api/ManagementApi~getBrandCallback
+     * @callback getBrandCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsBrandingGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsBrandingGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -634,8 +647,9 @@ export default class ManagementApi {
      * Retrieves a brand configuration.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} brandingId Provide the unique identifier of the brand configuration.
-     * @param {module:api/ManagementApi~getBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsBrandingGetResponseBody}
+     * @param {getBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsBrandingGetResponseBody}
+     * @returns {Promise<(ManagementProjectsBrandingGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsBrandingGetResponseBody` object or with `undefined`.
      */
     getBrand(projectId, brandingId, callback) {
       let postBody = null;
@@ -666,9 +680,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getCustomEventSchema operation.
-     * @callback module:api/ManagementApi~getCustomEventSchemaCallback
+     * @callback getCustomEventSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsCustomEventSchemasGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsCustomEventSchemasGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -677,8 +691,9 @@ export default class ManagementApi {
      * Retrieves a custom event schema.  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} customEventSchemaId Provide the unique identifier of the custom event schema.
-     * @param {module:api/ManagementApi~getCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasGetResponseBody}
+     * @param {getCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsCustomEventSchemasGetResponseBody}
+     * @returns {Promise<(ManagementProjectsCustomEventSchemasGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsCustomEventSchemasGetResponseBody` object or with `undefined`.
      */
     getCustomEventSchema(projectId, customEventSchemaId, callback) {
       let postBody = null;
@@ -709,9 +724,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getMetadataSchema1 operation.
-     * @callback module:api/ManagementApi~getMetadataSchema1Callback
+     * @callback getMetadataSchema1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsMetadataSchemasGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsMetadataSchemasGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -720,8 +735,9 @@ export default class ManagementApi {
      * Retrieves a metadata schema.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} metadataSchemaId Provide the unique identifier of the metadata schema.
-     * @param {module:api/ManagementApi~getMetadataSchema1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsMetadataSchemasGetResponseBody}
+     * @param {getMetadataSchema1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsMetadataSchemasGetResponseBody}
+     * @returns {Promise<(ManagementProjectsMetadataSchemasGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsMetadataSchemasGetResponseBody` object or with `undefined`.
      */
     getMetadataSchema1(projectId, metadataSchemaId, callback) {
       let postBody = null;
@@ -752,9 +768,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getProject operation.
-     * @callback module:api/ManagementApi~getProjectCallback
+     * @callback getProjectCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -762,8 +778,9 @@ export default class ManagementApi {
      * Get Project
      * Retrieves an existing project.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~getProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsGetResponseBody}
+     * @param {getProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsGetResponseBody}
+     * @returns {Promise<(ManagementProjectsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsGetResponseBody` object or with `undefined`.
      */
     getProject(projectId, callback) {
       let postBody = null;
@@ -792,9 +809,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getStackingRules operation.
-     * @callback module:api/ManagementApi~getStackingRulesCallback
+     * @callback getStackingRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsStackingRulesGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsStackingRulesGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -803,8 +820,9 @@ export default class ManagementApi {
      * Retrieves the stacking rules for the project.  📘 Stacking Rules Documentation  Read [the Stacking Rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} stackingRulesId Provide the unique identifier of the stacking rules.
-     * @param {module:api/ManagementApi~getStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsStackingRulesGetResponseBody}
+     * @param {getStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsStackingRulesGetResponseBody}
+     * @returns {Promise<(ManagementProjectsStackingRulesGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsStackingRulesGetResponseBody` object or with `undefined`.
      */
     getStackingRules(projectId, stackingRulesId, callback) {
       let postBody = null;
@@ -835,9 +853,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getUser operation.
-     * @callback module:api/ManagementApi~getUserCallback
+     * @callback getUserCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsUsersGetUserResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsUsersGetUserResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -846,8 +864,9 @@ export default class ManagementApi {
      * Retrieves the project users details.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} userId Provide the unique identifier of the user. Alternatively, provide the users login.
-     * @param {module:api/ManagementApi~getUserCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsUsersGetUserResponseBody}
+     * @param {getUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsUsersGetUserResponseBody}
+     * @returns {Promise<(ManagementProjectsUsersGetUserResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsUsersGetUserResponseBody` object or with `undefined`.
      */
     getUser(projectId, userId, callback) {
       let postBody = null;
@@ -878,9 +897,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the getWebhook operation.
-     * @callback module:api/ManagementApi~getWebhookCallback
+     * @callback getWebhookCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsWebhooksGetResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsWebhooksGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -889,8 +908,9 @@ export default class ManagementApi {
      * Retrieves a webhook configuration.  📘 Webhook Documentation  Read [Introduction to webhooks](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} webhookId Provide the unique identifier of the webhook configuration.
-     * @param {module:api/ManagementApi~getWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsWebhooksGetResponseBody}
+     * @param {getWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsWebhooksGetResponseBody}
+     * @returns {Promise<(ManagementProjectsWebhooksGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsWebhooksGetResponseBody` object or with `undefined`.
      */
     getWebhook(projectId, webhookId, callback) {
       let postBody = null;
@@ -921,7 +941,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the inviteUser operation.
-     * @callback module:api/ManagementApi~inviteUserCallback
+     * @callback inviteUserCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -930,8 +950,9 @@ export default class ManagementApi {
     /**
      * Invite a New User
      * Sends an invitation to an email address that has not been used yet as a Voucherify user login. You can specify the projects to which the invited user will be assigned and define their roles.
-     * @param {module:model/ManagementProjectsUsersInviteCreateRequestBody} managementProjectsUsersInviteCreateRequestBody Defines the details of the invitation, the project, and roles to which the user will be assigned.
-     * @param {module:api/ManagementApi~inviteUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {ManagementProjectsUsersInviteCreateRequestBody} managementProjectsUsersInviteCreateRequestBody Defines the details of the invitation, the project, and roles to which the user will be assigned.
+     * @param {inviteUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     inviteUser(managementProjectsUsersInviteCreateRequestBody, callback) {
       let postBody = managementProjectsUsersInviteCreateRequestBody;
@@ -959,9 +980,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listBrands operation.
-     * @callback module:api/ManagementApi~listBrandsCallback
+     * @callback listBrandsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsBrandingListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsBrandingListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -969,8 +990,9 @@ export default class ManagementApi {
      * List Brands
      * Lists all brand configurations. Because a project can have only one brand, it always returns a list with one item. This endpoint can be used to retrieve the brand configuration created with the Voucherify Dashboard and the ID.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listBrandsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsBrandingListResponseBody}
+     * @param {listBrandsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsBrandingListResponseBody}
+     * @returns {Promise<(ManagementProjectsBrandingListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsBrandingListResponseBody` object or with `undefined`.
      */
     listBrands(projectId, callback) {
       let postBody = null;
@@ -999,9 +1021,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listCustomEventSchemas operation.
-     * @callback module:api/ManagementApi~listCustomEventSchemasCallback
+     * @callback listCustomEventSchemasCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsCustomEventSchemasListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsCustomEventSchemasListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1009,8 +1031,9 @@ export default class ManagementApi {
      * List Custom Event Schemas
      * Lists all custom event schemas available in the project.  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listCustomEventSchemasCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasListResponseBody}
+     * @param {listCustomEventSchemasCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsCustomEventSchemasListResponseBody}
+     * @returns {Promise<(ManagementProjectsCustomEventSchemasListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsCustomEventSchemasListResponseBody` object or with `undefined`.
      */
     listCustomEventSchemas(projectId, callback) {
       let postBody = null;
@@ -1039,9 +1062,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listMetadataSchemas1 operation.
-     * @callback module:api/ManagementApi~listMetadataSchemas1Callback
+     * @callback listMetadataSchemas1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsMetadataSchemasListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsMetadataSchemasListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1049,8 +1072,9 @@ export default class ManagementApi {
      * List Metadata Schemas
      * Lists all metadata schemas available in the project.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listMetadataSchemas1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsMetadataSchemasListResponseBody}
+     * @param {listMetadataSchemas1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsMetadataSchemasListResponseBody}
+     * @returns {Promise<(ManagementProjectsMetadataSchemasListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsMetadataSchemasListResponseBody` object or with `undefined`.
      */
     listMetadataSchemas1(projectId, callback) {
       let postBody = null;
@@ -1079,17 +1103,18 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listProjects operation.
-     * @callback module:api/ManagementApi~listProjectsCallback
+     * @callback listProjectsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * List Projects
      * Lists all projects for the organization. The endpoint does not require any query parameters.
-     * @param {module:api/ManagementApi~listProjectsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsListResponseBody}
+     * @param {listProjectsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsListResponseBody}
+     * @returns {Promise<(ManagementProjectsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsListResponseBody` object or with `undefined`.
      */
     listProjects(callback) {
       let postBody = null;
@@ -1116,9 +1141,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listStackingRules operation.
-     * @callback module:api/ManagementApi~listStackingRulesCallback
+     * @callback listStackingRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsStackingRulesListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsStackingRulesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1126,8 +1151,9 @@ export default class ManagementApi {
      * List Stacking Rules
      * Lists all stacking rules. Returns always a list with one item. This endpoint can be used to retrieve the default stacking rules. The default stacking rules do not have an ID that could be used with the [Get Stacking Rules](/api-reference/management/get-stacking-rules) or [Update Stacking Rules](/api-reference/management/update-stacking-rules) endpoints.  📘 Stacking Rules Documentation  Read [the Stacking Rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsStackingRulesListResponseBody}
+     * @param {listStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsStackingRulesListResponseBody}
+     * @returns {Promise<(ManagementProjectsStackingRulesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsStackingRulesListResponseBody` object or with `undefined`.
      */
     listStackingRules(projectId, callback) {
       let postBody = null;
@@ -1156,9 +1182,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listUsers operation.
-     * @callback module:api/ManagementApi~listUsersCallback
+     * @callback listUsersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsUsersListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsUsersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1166,8 +1192,9 @@ export default class ManagementApi {
      * List Users
      * Lists all users assigned to the project.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listUsersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsUsersListResponseBody}
+     * @param {listUsersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsUsersListResponseBody}
+     * @returns {Promise<(ManagementProjectsUsersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsUsersListResponseBody` object or with `undefined`.
      */
     listUsers(projectId, callback) {
       let postBody = null;
@@ -1196,9 +1223,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the listWebhooks operation.
-     * @callback module:api/ManagementApi~listWebhooksCallback
+     * @callback listWebhooksCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsWebhooksListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsWebhooksListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1206,8 +1233,9 @@ export default class ManagementApi {
      * List Webhooks
      * Lists all webhook configurations for the project.  📘 Webhook Documentation  Read [Introduction to webhooks](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:api/ManagementApi~listWebhooksCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsWebhooksListResponseBody}
+     * @param {listWebhooksCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsWebhooksListResponseBody}
+     * @returns {Promise<(ManagementProjectsWebhooksListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsWebhooksListResponseBody` object or with `undefined`.
      */
     listWebhooks(projectId, callback) {
       let postBody = null;
@@ -1236,9 +1264,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the managementCopyCampaignTemplate operation.
-     * @callback module:api/ManagementApi~managementCopyCampaignTemplateCallback
+     * @callback managementCopyCampaignTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1247,9 +1275,10 @@ export default class ManagementApi {
      * Copies a campaign template to another project. The resources, like validation rules or products, will not be copied to the destination project yet. When the template is used to create a new campaign or add a new promotion tier, the resources will be created in the destination project.  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} campaignTemplateId Provide the unique identifier of the campaign template.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} managementProjectsTemplatesCampaignsCopyCreateRequestBody Determines the details about the template in the destination project as well as the destination project itself.
-     * @param {module:api/ManagementApi~managementCopyCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody}
+     * @param {ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} managementProjectsTemplatesCampaignsCopyCreateRequestBody Determines the details about the template in the destination project as well as the destination project itself.
+     * @param {managementCopyCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsTemplatesCampaignsCopyCreateResponseBody}
+     * @returns {Promise<(ManagementProjectsTemplatesCampaignsCopyCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsTemplatesCampaignsCopyCreateResponseBody` object or with `undefined`.
      */
     managementCopyCampaignTemplate(projectId, campaignTemplateId, managementProjectsTemplatesCampaignsCopyCreateRequestBody, callback) {
       let postBody = managementProjectsTemplatesCampaignsCopyCreateRequestBody;
@@ -1281,9 +1310,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the managementListCampaignTemplates operation.
-     * @callback module:api/ManagementApi~managementListCampaignTemplatesCallback
+     * @callback managementListCampaignTemplatesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsListResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsTemplatesCampaignsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1294,12 +1323,13 @@ export default class ManagementApi {
      * @param {{
         limit?: Number,
         startingAfterId?: String,
-        order?: module:model/ParameterTemplatesList,
+        order?: Exclude<keyof typeof ParameterTemplatesList, "prototype" | "constructFromObject">,
         includeTotal?: Boolean,
-        filters?: module:model/ParameterFiltersListTemplates,
+        filters?: ParameterFiltersListTemplates,
      }} [opts] Optional parameters
-     * @param {module:api/ManagementApi~managementListCampaignTemplatesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsTemplatesCampaignsListResponseBody}
+     * @param {managementListCampaignTemplatesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsTemplatesCampaignsListResponseBody}
+     * @returns {Promise<(ManagementProjectsTemplatesCampaignsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsTemplatesCampaignsListResponseBody` object or with `undefined`.
      */
     managementListCampaignTemplates(projectId, opts, callback) {
       opts = opts || {};
@@ -1334,7 +1364,7 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the unassignUser operation.
-     * @callback module:api/ManagementApi~unassignUserCallback
+     * @callback unassignUserCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -1345,7 +1375,8 @@ export default class ManagementApi {
      * Unassigns the user from the project. If the user is currently logged in, they are automatically logged out. If the user is assigned to only one project, they cannot be unassigned from that project.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} userId Provide the unique identifier of the user. Alternatively, provide the users login.
-     * @param {module:api/ManagementApi~unassignUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {unassignUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     unassignUser(projectId, userId, callback) {
       let postBody = null;
@@ -1376,9 +1407,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateBrand operation.
-     * @callback module:api/ManagementApi~updateBrandCallback
+     * @callback updateBrandCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsBrandingUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsBrandingUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1387,9 +1418,10 @@ export default class ManagementApi {
      * Updates a brand configuration. Only the fields sent in the request will be updated. The fields omitted in the request will remain unchanged.  📘 White Labelling  The white labelling settings which can be found in Project Settings > Brand Details and which are available only for Enterprise clients as a separate service can be configured only in the user interface.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} brandingId Provide the unique identifier of the brand configuration.
-     * @param {module:model/ManagementProjectsBrandingUpdateRequestBody} managementProjectsBrandingUpdateRequestBody Defines the brand configuration to be updated.
-     * @param {module:api/ManagementApi~updateBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsBrandingUpdateResponseBody}
+     * @param {ManagementProjectsBrandingUpdateRequestBody} managementProjectsBrandingUpdateRequestBody Defines the brand configuration to be updated.
+     * @param {updateBrandCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsBrandingUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsBrandingUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsBrandingUpdateResponseBody` object or with `undefined`.
      */
     updateBrand(projectId, brandingId, managementProjectsBrandingUpdateRequestBody, callback) {
       let postBody = managementProjectsBrandingUpdateRequestBody;
@@ -1421,9 +1453,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateCustomEventSchema operation.
-     * @callback module:api/ManagementApi~updateCustomEventSchemaCallback
+     * @callback updateCustomEventSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsCustomEventSchemasUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsCustomEventSchemasUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1432,9 +1464,10 @@ export default class ManagementApi {
      * Updates a custom event schema. With this request, you can: - Add a nonexistent property to a custom event schema. - Update an existing property. In the request, you can provide only those properties you want to add or update. Definitions omitted in the request remain unchanged.  👍 Additional Notes - You can change the type of an existing property, e.g. from string to number. - You can remove a custom property with this endpoint by providing deleted: true in the request. However, you cannot permanently remove an event definition or its property with this endpoint.  📘 Custom Event Documentation  Read [Custom Events](https://support.voucherify.io/article/111-custom-events) article to learn how custom events work in Voucherify. Read also the details about the [Track Custom Event](/api-reference/events/track-custom-event) endpoint and the [Custom Event Object](/api-reference/events/event-object).
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} customEventSchemaId Provide the unique identifier of the custom event schema.
-     * @param {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody} managementProjectsCustomEventSchemasUpdateRequestBody Defines the custom event schema to be updated.
-     * @param {module:api/ManagementApi~updateCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsCustomEventSchemasUpdateResponseBody}
+     * @param {ManagementProjectsCustomEventSchemasUpdateRequestBody} managementProjectsCustomEventSchemasUpdateRequestBody Defines the custom event schema to be updated.
+     * @param {updateCustomEventSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsCustomEventSchemasUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsCustomEventSchemasUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsCustomEventSchemasUpdateResponseBody` object or with `undefined`.
      */
     updateCustomEventSchema(projectId, customEventSchemaId, managementProjectsCustomEventSchemasUpdateRequestBody, callback) {
       let postBody = managementProjectsCustomEventSchemasUpdateRequestBody;
@@ -1466,9 +1499,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateMetadataSchema operation.
-     * @callback module:api/ManagementApi~updateMetadataSchemaCallback
+     * @callback updateMetadataSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsMetadataSchemasUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsMetadataSchemasUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1477,9 +1510,10 @@ export default class ManagementApi {
      * Updates a metadata schema. With this request, you can: - Add a nonexistent attribute definition to the metadata schema. - Update an existing attribute definition by overwriting its current values. In the request, you can provide only those definitions you want to add or update. Definitions omitted in the request remain unchanged. However, if you want to update a definition, you will have to add all its current key-value pairs as well. Only the pairs sent in the request are saved for this definition. This means that the key-value pairs that are not sent in a request are restored to default values. For example, if your definition has an array with values and it is not sent in an update request, the array values will be deleted.  👍 Additional Notes - You cannot change the type of an existing schema, e.g. from string to number. - You can remove a definition with this endpoint by providing deleted: true in the request. It will be moved to the Removed definitions section in the user interface. However, you cannot permanently remove a definition with this endpoint.  📘 Metadata Documentation  Read [the Getting Started with Metadata](https://support.voucherify.io/article/99-schema-validation-metadata) and [Metadata Mapping](/guides/metadata-mapping) articles to learn how metadata work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} metadataSchemaId Provide the unique identifier of the metadata schema.
-     * @param {module:model/ManagementProjectsMetadataSchemasUpdateRequestBody} managementProjectsMetadataSchemasUpdateRequestBody Defines the metadata schema to be updated.
-     * @param {module:api/ManagementApi~updateMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsMetadataSchemasUpdateResponseBody}
+     * @param {ManagementProjectsMetadataSchemasUpdateRequestBody} managementProjectsMetadataSchemasUpdateRequestBody Defines the metadata schema to be updated.
+     * @param {updateMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsMetadataSchemasUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsMetadataSchemasUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsMetadataSchemasUpdateResponseBody` object or with `undefined`.
      */
     updateMetadataSchema(projectId, metadataSchemaId, managementProjectsMetadataSchemasUpdateRequestBody, callback) {
       let postBody = managementProjectsMetadataSchemasUpdateRequestBody;
@@ -1511,9 +1545,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateProject operation.
-     * @callback module:api/ManagementApi~updateProjectCallback
+     * @callback updateProjectCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1521,9 +1555,10 @@ export default class ManagementApi {
      * Update Project
      * Updates an existing project. You can add or modify settings for timezone, currency, notifications, and other details. Only the fields sent in the request will be updated.
      * @param {String} projectId Provide the unique identifier of the project.
-     * @param {module:model/ManagementProjectsUpdateRequestBody} managementProjectsUpdateRequestBody Define the project details to be updated.
-     * @param {module:api/ManagementApi~updateProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsUpdateResponseBody}
+     * @param {ManagementProjectsUpdateRequestBody} managementProjectsUpdateRequestBody Define the project details to be updated.
+     * @param {updateProjectCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsUpdateResponseBody` object or with `undefined`.
      */
     updateProject(projectId, managementProjectsUpdateRequestBody, callback) {
       let postBody = managementProjectsUpdateRequestBody;
@@ -1553,9 +1588,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateStackingRules operation.
-     * @callback module:api/ManagementApi~updateStackingRulesCallback
+     * @callback updateStackingRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsStackingRulesUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsStackingRulesUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1564,9 +1599,10 @@ export default class ManagementApi {
      * Updates the stacking rules. Only the provided fields will be updated. However, if you update an array, the content of the array is overwritten. This means that if you want to add new values to an array and retain existing ones, you need to provide both the existing and new values in the request.  📘 Stacking Rules Documentation  Read [the Stacking Rules article](https://support.voucherify.io/article/604-stacking-rules) to learn how they work.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} stackingRulesId Provide the unique identifier of the stacking rules.
-     * @param {module:model/ManagementProjectsStackingRulesUpdateRequestBody} managementProjectsStackingRulesUpdateRequestBody Defines the stacking rules to be updated.
-     * @param {module:api/ManagementApi~updateStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsStackingRulesUpdateResponseBody}
+     * @param {ManagementProjectsStackingRulesUpdateRequestBody} managementProjectsStackingRulesUpdateRequestBody Defines the stacking rules to be updated.
+     * @param {updateStackingRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsStackingRulesUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsStackingRulesUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsStackingRulesUpdateResponseBody` object or with `undefined`.
      */
     updateStackingRules(projectId, stackingRulesId, managementProjectsStackingRulesUpdateRequestBody, callback) {
       let postBody = managementProjectsStackingRulesUpdateRequestBody;
@@ -1598,9 +1634,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateUser operation.
-     * @callback module:api/ManagementApi~updateUserCallback
+     * @callback updateUserCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsUsersUpdateRoleResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsUsersUpdateRoleResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1609,9 +1645,10 @@ export default class ManagementApi {
      * Updates the users role.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} userId Provide the unique identifier of the user. Alternatively, provide the users login.
-     * @param {module:model/ManagementProjectsUsersUpdateRoleRequestBody} managementProjectsUsersUpdateRoleRequestBody Defines the users new role.
-     * @param {module:api/ManagementApi~updateUserCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsUsersUpdateRoleResponseBody}
+     * @param {ManagementProjectsUsersUpdateRoleRequestBody} managementProjectsUsersUpdateRoleRequestBody Defines the users new role.
+     * @param {updateUserCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsUsersUpdateRoleResponseBody}
+     * @returns {Promise<(ManagementProjectsUsersUpdateRoleResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsUsersUpdateRoleResponseBody` object or with `undefined`.
      */
     updateUser(projectId, userId, managementProjectsUsersUpdateRoleRequestBody, callback) {
       let postBody = managementProjectsUsersUpdateRoleRequestBody;
@@ -1643,9 +1680,9 @@ export default class ManagementApi {
 
     /**
      * Callback function to receive the result of the updateWebhook operation.
-     * @callback module:api/ManagementApi~updateWebhookCallback
+     * @callback updateWebhookCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ManagementProjectsWebhooksUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ManagementProjectsWebhooksUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1654,9 +1691,10 @@ export default class ManagementApi {
      * Updates a webhook configuration. The events listed in the request are overwritten. If you want to add more events, provide also the events that are already in the webhook configuration.  📘 Webhook Documentation  Read [Introduction to webhooks](/api-reference/introduction-to-webhooks) article to learn how webhooks work in Voucherify.
      * @param {String} projectId Provide the unique identifier of the project.
      * @param {String} webhookId Provide the unique identifier of the webhook configuration.
-     * @param {module:model/ManagementProjectsWebhooksUpdateRequestBody} managementProjectsWebhooksUpdateRequestBody Defines the webhook configuration to be updated.
-     * @param {module:api/ManagementApi~updateWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ManagementProjectsWebhooksUpdateResponseBody}
+     * @param {ManagementProjectsWebhooksUpdateRequestBody} managementProjectsWebhooksUpdateRequestBody Defines the webhook configuration to be updated.
+     * @param {updateWebhookCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ManagementProjectsWebhooksUpdateResponseBody}
+     * @returns {Promise<(ManagementProjectsWebhooksUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ManagementProjectsWebhooksUpdateResponseBody` object or with `undefined`.
      */
     updateWebhook(projectId, webhookId, managementProjectsWebhooksUpdateRequestBody, callback) {
       let postBody = managementProjectsWebhooksUpdateRequestBody;

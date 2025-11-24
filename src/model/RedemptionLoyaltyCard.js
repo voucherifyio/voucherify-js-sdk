@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionLoyaltyCard model module.
  * @module model/RedemptionLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionLoyaltyCard {
     /**
      * Constructs a new <code>RedemptionLoyaltyCard</code>.
      * Contains the number of points subtracted from the loyalty card for the redemption.
-     * @alias module:model/RedemptionLoyaltyCard
+     * @alias RedemptionLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionLoyaltyCard {
     /**
      * Constructs a <code>RedemptionLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/RedemptionLoyaltyCard} The populated <code>RedemptionLoyaltyCard</code> instance.
+     * @param {Partial<RedemptionLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {RedemptionLoyaltyCard} The populated <code>RedemptionLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class RedemptionLoyaltyCard {
 
 
 /**
- * Number of points subtracted from the loyalty card as a result of the redemption.
- * @member {Number} 
- */
+    * Number of points subtracted from the loyalty card as a result of the redemption.
+    * @type {Number | undefined}
+    */
 RedemptionLoyaltyCard.prototype['points'] = undefined;
 
 

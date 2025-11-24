@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SegmentsCreateRequestBody model module.
  * @module model/SegmentsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SegmentsCreateRequestBody {
     /**
      * Constructs a new <code>SegmentsCreateRequestBody</code>.
-     * @alias module:model/SegmentsCreateRequestBody
+     * @alias SegmentsCreateRequestBody
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SegmentsCreateRequestBody {
     /**
      * Constructs a <code>SegmentsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SegmentsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/SegmentsCreateRequestBody} The populated <code>SegmentsCreateRequestBody</code> instance.
+     * @param {Partial<SegmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {SegmentsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {SegmentsCreateRequestBody} The populated <code>SegmentsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class SegmentsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>SegmentsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SegmentsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SegmentsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -91,57 +90,57 @@ class SegmentsCreateRequestBody {
 
 
 /**
- * Segment name.
- * @member {String} 
- */
+    * Segment name.
+    * @type {String | undefined}
+    */
 SegmentsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/SegmentsCreateRequestBody.TypeEnum} 
- */
+    * @type {(keyof typeof SegmentsCreateRequestBody.TypeEnum) | undefined}
+    */
 SegmentsCreateRequestBody.prototype['type'] = undefined;
 
 /**
- * Array of customer IDs.
- * @member {Array.<String>} 
- */
+    * Array of customer IDs.
+    * @type {Array.<String> | undefined}
+    */
 SegmentsCreateRequestBody.prototype['customers'] = undefined;
 
 /**
- * Defines a set of criteria for an `auto-update` or `passive` segment type.
- * @member {Object} 
- */
+    * Defines a set of criteria for an `auto-update` or `passive` segment type.
+    * @type {Object | undefined}
+    */
 SegmentsCreateRequestBody.prototype['filter'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsCreateRequestBody['TypeEnum'] = {
-
     /**
-     * value: "static"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "static": "static",
-
-    /**
-     * value: "auto-update"
-     * @constant
-     */
-    "auto-update": "auto-update",
-
-    /**
-     * value: "passive"
-     * @constant
-     */
-    "passive": "passive"
-};
+    SegmentsCreateRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "static"
+         * @constant
+         */
+        "static": "static",
+    
+        /**
+         * value: "auto-update"
+         * @constant
+         */
+        "auto-update": "auto-update",
+    
+        /**
+         * value: "passive"
+         * @constant
+         */
+        "passive": "passive"    
+    };
 
 
 

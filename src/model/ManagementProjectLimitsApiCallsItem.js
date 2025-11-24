@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectLimitsApiCallsItem model module.
  * @module model/ManagementProjectLimitsApiCallsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectLimitsApiCallsItem {
     /**
      * Constructs a new <code>ManagementProjectLimitsApiCallsItem</code>.
      * Determines the limit of API calls per given unit time.
-     * @alias module:model/ManagementProjectLimitsApiCallsItem
+     * @alias ManagementProjectLimitsApiCallsItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectLimitsApiCallsItem {
     /**
      * Constructs a <code>ManagementProjectLimitsApiCallsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectLimitsApiCallsItem} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectLimitsApiCallsItem} The populated <code>ManagementProjectLimitsApiCallsItem</code> instance.
+     * @param {Partial<ManagementProjectLimitsApiCallsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectLimitsApiCallsItem} [obj] Optional instance to populate.
+     * @returns {ManagementProjectLimitsApiCallsItem} The populated <code>ManagementProjectLimitsApiCallsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ManagementProjectLimitsApiCallsItem {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectLimitsApiCallsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectLimitsApiCallsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectLimitsApiCallsItem</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class ManagementProjectLimitsApiCallsItem {
 
 
 /**
- * Determines the maximum number of API calls per time set in `\"duration\"`.
- * @member {Number} 
- */
+    * Determines the maximum number of API calls per time set in `\"duration\"`.
+    * @type {Number | undefined}
+    */
 ManagementProjectLimitsApiCallsItem.prototype['value'] = undefined;
 
 /**
- * Determines the amount of time during which the calls up to the number specified in the `value` can be made. The duration is presented in the ISO 8601 format, e.g. `PT1H` means one hour.
- * @member {String} 
- */
+    * Determines the amount of time during which the calls up to the number specified in the `value` can be made. The duration is presented in the ISO 8601 format, e.g. `PT1H` means one hour.
+    * @type {String | undefined}
+    */
 ManagementProjectLimitsApiCallsItem.prototype['duration'] = undefined;
 
 

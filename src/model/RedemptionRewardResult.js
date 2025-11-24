@@ -17,16 +17,15 @@ import RedemptionRewardResultParameters from './RedemptionRewardResultParameters
 import SimpleCustomer from './SimpleCustomer';
 import Sku from './Sku';
 import Voucher from './Voucher';
-
 /**
  * The RedemptionRewardResult model module.
  * @module model/RedemptionRewardResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRewardResult {
     /**
      * Constructs a new <code>RedemptionRewardResult</code>.
-     * @alias module:model/RedemptionRewardResult
+     * @alias RedemptionRewardResult
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class RedemptionRewardResult {
     /**
      * Constructs a <code>RedemptionRewardResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRewardResult} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRewardResult} The populated <code>RedemptionRewardResult</code> instance.
+     * @param {Partial<RedemptionRewardResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRewardResult} [obj] Optional instance to populate.
+     * @returns {RedemptionRewardResult} The populated <code>RedemptionRewardResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -101,7 +100,7 @@ class RedemptionRewardResult {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRewardResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRewardResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRewardResult</code>.
      */
     static validateJSON(data) {
@@ -159,129 +158,129 @@ class RedemptionRewardResult {
 
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 RedemptionRewardResult.prototype['customer'] = undefined;
 
 /**
- * Unique reward assignment ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionRewardResult.prototype['assignment_id'] = undefined;
 
 /**
- * @member {module:model/Voucher} 
- */
+    * @type {Voucher | undefined}
+    */
 RedemptionRewardResult.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/Product} 
- */
+    * @type {Product | undefined}
+    */
 RedemptionRewardResult.prototype['product'] = undefined;
 
 /**
- * @member {module:model/Sku} 
- */
+    * @type {Sku | undefined}
+    */
 RedemptionRewardResult.prototype['sku'] = undefined;
 
 /**
- * Unique loyalty tier ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique loyalty tier ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionRewardResult.prototype['loyalty_tier_id'] = undefined;
 
 /**
- * Unique reward ID.
- * @member {String} 
- */
+    * Unique reward ID.
+    * @type {String | undefined}
+    */
 RedemptionRewardResult.prototype['id'] = undefined;
 
 /**
- * Name of the reward.
- * @member {String} 
- */
+    * Name of the reward.
+    * @type {String | undefined}
+    */
 RedemptionRewardResult.prototype['name'] = undefined;
 
 /**
- * The type of the object represented by the JSON
- * @member {module:model/RedemptionRewardResult.ObjectEnum} 
- * @default 'reward'
- */
+    * The type of the object represented by the JSON
+    * @type {(keyof typeof RedemptionRewardResult.ObjectEnum) | undefined}
+    * @default 'reward'
+    */
 RedemptionRewardResult.prototype['object'] = 'reward';
 
 /**
- * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedemptionRewardResult.prototype['created_at'] = undefined;
 
 /**
- * Timestamp in ISO 8601 format indicating when the reward was updated.
- * @member {Date} 
- */
+    * Timestamp in ISO 8601 format indicating when the reward was updated.
+    * @type {Date | undefined}
+    */
 RedemptionRewardResult.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/RedemptionRewardResultParameters} 
- */
+    * @type {RedemptionRewardResultParameters | undefined}
+    */
 RedemptionRewardResult.prototype['parameters'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
+    * @type {Object | undefined}
+    */
 RedemptionRewardResult.prototype['metadata'] = undefined;
 
 /**
- * Reward type.
- * @member {module:model/RedemptionRewardResult.TypeEnum} 
- */
+    * Reward type.
+    * @type {(keyof typeof RedemptionRewardResult.TypeEnum) | undefined}
+    */
 RedemptionRewardResult.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRewardResult['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RedemptionRewardResult['ObjectEnum'] = {
+    
+        /**
+         * value: "reward"
+         * @constant
+         */
+        "reward": "reward"    
+    };
+
 
     /**
-     * value: "reward"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward": "reward"
-};
-
-
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRewardResult['TypeEnum'] = {
-
-    /**
-     * value: "CAMPAIGN"
-     * @constant
-     */
-    "CAMPAIGN": "CAMPAIGN",
-
-    /**
-     * value: "COIN"
-     * @constant
-     */
-    "COIN": "COIN",
-
-    /**
-     * value: "MATERIAL"
-     * @constant
-     */
-    "MATERIAL": "MATERIAL"
-};
+    RedemptionRewardResult['TypeEnum'] = {
+    
+        /**
+         * value: "CAMPAIGN"
+         * @constant
+         */
+        "CAMPAIGN": "CAMPAIGN",
+    
+        /**
+         * value: "COIN"
+         * @constant
+         */
+        "COIN": "COIN",
+    
+        /**
+         * value: "MATERIAL"
+         * @constant
+         */
+        "MATERIAL": "MATERIAL"    
+    };
 
 
 

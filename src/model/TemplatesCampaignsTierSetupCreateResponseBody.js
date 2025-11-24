@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import PromotionTier from './PromotionTier';
 import TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem from './TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem';
-
 /**
  * The TemplatesCampaignsTierSetupCreateResponseBody model module.
  * @module model/TemplatesCampaignsTierSetupCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsTierSetupCreateResponseBody {
     /**
      * Constructs a new <code>TemplatesCampaignsTierSetupCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;/v1/templates/campaigns/{campaignTemplateId}/tier-setup&#x60;.
-     * @alias module:model/TemplatesCampaignsTierSetupCreateResponseBody
+     * @alias TemplatesCampaignsTierSetupCreateResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class TemplatesCampaignsTierSetupCreateResponseBody {
     /**
      * Constructs a <code>TemplatesCampaignsTierSetupCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsTierSetupCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsTierSetupCreateResponseBody} The populated <code>TemplatesCampaignsTierSetupCreateResponseBody</code> instance.
+     * @param {Partial<TemplatesCampaignsTierSetupCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsTierSetupCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsTierSetupCreateResponseBody} The populated <code>TemplatesCampaignsTierSetupCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class TemplatesCampaignsTierSetupCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsTierSetupCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsTierSetupCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsTierSetupCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -98,40 +97,40 @@ class TemplatesCampaignsTierSetupCreateResponseBody {
 
 
 /**
- * Contains a list of resources that have been added to the project when the promotion tier has been created out of the template.
- * @member {Array.<module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem>} 
- */
+    * Contains a list of resources that have been added to the project when the promotion tier has been created out of the template.
+    * @type {Array.<TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem> | undefined}
+    */
 TemplatesCampaignsTierSetupCreateResponseBody.prototype['created_resources'] = undefined;
 
 /**
- * @member {module:model/PromotionTier} 
- */
+    * @type {PromotionTier | undefined}
+    */
 TemplatesCampaignsTierSetupCreateResponseBody.prototype['promotion_tier'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the campaign created out of the campaign template.
- * @member {module:model/TemplatesCampaignsTierSetupCreateResponseBody.ObjectEnum} 
- * @default 'promotion_tier_setup'
- */
+    * The type of the object represented by JSON. This object stores information about the campaign created out of the campaign template.
+    * @type {(keyof typeof TemplatesCampaignsTierSetupCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'promotion_tier_setup'
+    */
 TemplatesCampaignsTierSetupCreateResponseBody.prototype['object'] = 'promotion_tier_setup';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsTierSetupCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "promotion_tier_setup"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "promotion_tier_setup": "promotion_tier_setup"
-};
+    TemplatesCampaignsTierSetupCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "promotion_tier_setup"
+         * @constant
+         */
+        "promotion_tier_setup": "promotion_tier_setup"    
+    };
 
 
 

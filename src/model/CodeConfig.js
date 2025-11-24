@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CodeConfig model module.
  * @module model/CodeConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CodeConfig {
     /**
      * Constructs a new <code>CodeConfig</code>.
      * Contains information about the config used for the voucher code. Defines the code&#39;s pattern (prefix, postfix, length, charset, etc).
-     * @alias module:model/CodeConfig
+     * @alias CodeConfig
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CodeConfig {
     /**
      * Constructs a <code>CodeConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CodeConfig} obj Optional instance to populate.
-     * @returns {module:model/CodeConfig} The populated <code>CodeConfig</code> instance.
+     * @param {Partial<CodeConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {CodeConfig} [obj] Optional instance to populate.
+     * @returns {CodeConfig} The populated <code>CodeConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CodeConfig {
 
     /**
      * Validates the JSON data with respect to <code>CodeConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CodeConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CodeConfig</code>.
      */
     static validateJSON(data) {
@@ -102,39 +101,39 @@ class CodeConfig {
 
 
 /**
- * Number of characters in a generated code (excluding prefix and postfix).
- * @member {Number} 
- */
+    * Number of characters in a generated code (excluding prefix and postfix).
+    * @type {Number | undefined}
+    */
 CodeConfig.prototype['length'] = undefined;
 
 /**
- * Characters that can appear in the code.    Examples:  - Alphanumeric: `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Alphabetic: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Alphabetic Lowercase: `abcdefghijklmnopqrstuvwxyz`  - Alphabetic Uppercase: `ABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Numbers: `0123456789`   - Custom: a custom character set
- * @member {String} 
- */
+    * Characters that can appear in the code.    Examples:  - Alphanumeric: `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Alphabetic: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Alphabetic Lowercase: `abcdefghijklmnopqrstuvwxyz`  - Alphabetic Uppercase: `ABCDEFGHIJKLMNOPQRSTUVWXYZ`  - Numbers: `0123456789`   - Custom: a custom character set
+    * @type {String | undefined}
+    */
 CodeConfig.prototype['charset'] = undefined;
 
 /**
- * A text appended before the code.
- * @member {String} 
- */
+    * A text appended before the code.
+    * @type {String | undefined}
+    */
 CodeConfig.prototype['prefix'] = undefined;
 
 /**
- * A text appended after the code.
- * @member {String} 
- */
+    * A text appended after the code.
+    * @type {String | undefined}
+    */
 CodeConfig.prototype['postfix'] = undefined;
 
 /**
- * A pattern for codes where hashes (#) will be replaced with random characters. Overrides `length`.
- * @member {String} 
- */
+    * A pattern for codes where hashes (#) will be replaced with random characters. Overrides `length`.
+    * @type {String | undefined}
+    */
 CodeConfig.prototype['pattern'] = undefined;
 
 /**
- * Internal value, does not change anything if provided.
- * @member {Number} 
- */
+    * Internal value, does not change anything if provided.
+    * @type {Number | undefined}
+    */
 CodeConfig.prototype['initial_count'] = undefined;
 
 

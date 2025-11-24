@@ -34,16 +34,15 @@ import SimpleRedemptionRewardResult from './SimpleRedemptionRewardResult';
 import SimpleReferralTier from './SimpleReferralTier';
 import SimpleVoucher from './SimpleVoucher';
 import VoucherBalance from './VoucherBalance';
-
 /**
  * The MemberActivityData model module.
  * @module model/MemberActivityData
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityData {
     /**
      * Constructs a new <code>MemberActivityData</code>.
-     * @alias module:model/MemberActivityData
+     * @alias MemberActivityData
      */
     constructor() { 
         
@@ -61,9 +60,9 @@ class MemberActivityData {
     /**
      * Constructs a <code>MemberActivityData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityData} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityData} The populated <code>MemberActivityData</code> instance.
+     * @param {Partial<MemberActivityData>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityData} [obj] Optional instance to populate.
+     * @returns {MemberActivityData} The populated <code>MemberActivityData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -171,7 +170,7 @@ class MemberActivityData {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityData</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityData>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityData</code>.
      */
     static validateJSON(data) {
@@ -303,164 +302,164 @@ class MemberActivityData {
 
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 MemberActivityData.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/SimpleCampaign} 
- */
+    * @type {SimpleCampaign | undefined}
+    */
 MemberActivityData.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTier} 
- */
+    * @type {LoyaltyTier | undefined}
+    */
 MemberActivityData.prototype['loyalty_tier_from'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTier} 
- */
+    * @type {LoyaltyTier | undefined}
+    */
 MemberActivityData.prototype['loyalty_tier_to'] = undefined;
 
 /**
- * @member {Date} 
- */
+    * @type {Date | undefined}
+    */
 MemberActivityData.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTier} 
- */
+    * @type {LoyaltyTier | undefined}
+    */
 MemberActivityData.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {Date} 
- */
+    * @type {Date | undefined}
+    */
 MemberActivityData.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ListPublicationsItemValidSingleVoucher} 
- */
+    * @type {ListPublicationsItemValidSingleVoucher | undefined}
+    */
 MemberActivityData.prototype['publication'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataOrder} 
- */
+    * @type {MemberActivityDataOrder | undefined}
+    */
 MemberActivityData.prototype['order'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 MemberActivityData.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 MemberActivityData.prototype['holder'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionTier} 
- */
+    * @type {SimplePromotionTier | undefined}
+    */
 MemberActivityData.prototype['promotion_tier'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionStack} 
- */
+    * @type {SimplePromotionStack | undefined}
+    */
 MemberActivityData.prototype['promotion_stack'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemption} 
- */
+    * @type {MemberActivityDataRedemption | undefined}
+    */
 MemberActivityData.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/SimpleRedemption} 
- */
+    * @type {SimpleRedemption | undefined}
+    */
 MemberActivityData.prototype['redemption_rollback'] = undefined;
 
 /**
- * @member {module:model/SimpleRedemptionRewardResult} 
- */
+    * @type {SimpleRedemptionRewardResult | undefined}
+    */
 MemberActivityData.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/SimpleReferralTier} 
- */
+    * @type {SimpleReferralTier | undefined}
+    */
 MemberActivityData.prototype['referral_tier'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataBalance} 
- */
+    * @type {MemberActivityDataBalance | undefined}
+    */
 MemberActivityData.prototype['balance'] = undefined;
 
 /**
- * @member {module:model/CustomEvent} 
- */
+    * @type {CustomEvent | undefined}
+    */
 MemberActivityData.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataCustomerEvent} 
- */
+    * @type {MemberActivityDataCustomerEvent | undefined}
+    */
 MemberActivityData.prototype['customer_event'] = undefined;
 
 /**
- * @member {module:model/EarningRule} 
- */
+    * @type {EarningRule | undefined}
+    */
 MemberActivityData.prototype['earning_rule'] = undefined;
 
 /**
- * @member {module:model/SimpleEvent} 
- */
+    * @type {SimpleEvent | undefined}
+    */
 MemberActivityData.prototype['event'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 MemberActivityData.prototype['reward_redemption'] = undefined;
 
 /**
- * @member {module:model/RewardAssignment} 
- */
+    * @type {RewardAssignment | undefined}
+    */
 MemberActivityData.prototype['reward_assignment'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityData.prototype['source'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransaction} 
- */
+    * @type {MemberActivityDataTransaction | undefined}
+    */
 MemberActivityData.prototype['transaction'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPoints} 
- */
+    * @type {LoyaltyPendingPoints | undefined}
+    */
 MemberActivityData.prototype['pending_points'] = undefined;
 
 /**
- * @member {module:model/VoucherBalance} 
- */
+    * @type {VoucherBalance | undefined}
+    */
 MemberActivityData.prototype['voucher_pending_points_balance'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 MemberActivityData.prototype['source_voucher'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 MemberActivityData.prototype['destination_voucher'] = undefined;
 
 /**
- * The number of expired points.
- * @member {Number} 
- */
+    * The number of expired points.
+    * @type {Number | undefined}
+    */
 MemberActivityData.prototype['points'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltyPointsBucket>} 
- */
+    * @type {Array.<LoyaltyPointsBucket> | undefined}
+    */
 MemberActivityData.prototype['buckets'] = undefined;
 
 

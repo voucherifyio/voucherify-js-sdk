@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherWithCategories from './VoucherWithCategories';
-
 /**
  * The VouchersListResponseBody model module.
  * @module model/VouchersListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersListResponseBody {
     /**
      * Constructs a new <code>VouchersListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/vouchers&#x60;.
-     * @alias module:model/VouchersListResponseBody
+     * @alias VouchersListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class VouchersListResponseBody {
     /**
      * Constructs a <code>VouchersListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersListResponseBody} The populated <code>VouchersListResponseBody</code> instance.
+     * @param {Partial<VouchersListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersListResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersListResponseBody} The populated <code>VouchersListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class VouchersListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class VouchersListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/VouchersListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof VouchersListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 VouchersListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of voucher objects.
- * @member {module:model/VouchersListResponseBody.DataRefEnum} 
- * @default 'vouchers'
- */
+    * Identifies the name of the attribute that contains the array of voucher objects.
+    * @type {(keyof typeof VouchersListResponseBody.DataRefEnum) | undefined}
+    * @default 'vouchers'
+    */
 VouchersListResponseBody.prototype['data_ref'] = 'vouchers';
 
 /**
- * A dictionary that contains an array of  vouchers. Each entry in the array is a separate voucher object.
- * @member {Array.<module:model/VoucherWithCategories>} 
- */
+    * A dictionary that contains an array of  vouchers. Each entry in the array is a separate voucher object.
+    * @type {Array.<VoucherWithCategories> | undefined}
+    */
 VouchersListResponseBody.prototype['vouchers'] = undefined;
 
 /**
- * Returns how many vouchers in the project meet the limits defined by the query parameter definitions.
- * @member {Number} 
- */
+    * Returns how many vouchers in the project meet the limits defined by the query parameter definitions.
+    * @type {Number | undefined}
+    */
 VouchersListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    VouchersListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "vouchers"
-     * @constant
-     */
-    "vouchers": "vouchers"
-};
+    VouchersListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "vouchers"
+         * @constant
+         */
+        "vouchers": "vouchers"    
+    };
 
 
 

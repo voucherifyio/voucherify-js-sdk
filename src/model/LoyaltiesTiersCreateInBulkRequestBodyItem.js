@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import LoyaltyTierBase from './LoyaltyTierBase';
 import LoyaltyTierBasePoints from './LoyaltyTierBasePoints';
 import MappingPoints from './MappingPoints';
-
 /**
  * The LoyaltiesTiersCreateInBulkRequestBodyItem model module.
  * @module model/LoyaltiesTiersCreateInBulkRequestBodyItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTiersCreateInBulkRequestBodyItem {
     /**
      * Constructs a new <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code>.
-     * @alias module:model/LoyaltiesTiersCreateInBulkRequestBodyItem
-     * @implements module:model/LoyaltyTierBase
+     * @alias LoyaltiesTiersCreateInBulkRequestBodyItem
+     * @implements LoyaltyTierBase
      */
     constructor() { 
         LoyaltyTierBase.initialize(this);
@@ -43,9 +42,9 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem {
     /**
      * Constructs a <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTiersCreateInBulkRequestBodyItem} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTiersCreateInBulkRequestBodyItem} The populated <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code> instance.
+     * @param {Partial<LoyaltiesTiersCreateInBulkRequestBodyItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTiersCreateInBulkRequestBodyItem} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTiersCreateInBulkRequestBodyItem} The populated <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTiersCreateInBulkRequestBodyItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTiersCreateInBulkRequestBodyItem</code>.
      */
     static validateJSON(data) {
@@ -95,54 +94,58 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem {
 
 
 /**
- * Loyalty Tier name.
- * @member {String} 
- */
+    * Loyalty Tier name.
+    * @type {String | undefined}
+    */
 LoyaltiesTiersCreateInBulkRequestBodyItem.prototype['name'] = undefined;
 
 /**
- * Contains a list of earning rule IDs and their points mapping for the given earning rule.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of earning rule IDs and their points mapping for the given earning rule.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltiesTiersCreateInBulkRequestBodyItem.prototype['earning_rules'] = undefined;
 
 /**
- * Contains a list of reward IDs and their points mapping for the given reward.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of reward IDs and their points mapping for the given reward.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltiesTiersCreateInBulkRequestBodyItem.prototype['rewards'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTierBasePoints} 
- */
+    * @type {LoyaltyTierBasePoints | undefined}
+    */
 LoyaltiesTiersCreateInBulkRequestBodyItem.prototype['points'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the loyalty tier. A set of key/value pairs that you can attach to a loyalty tier object. It can be useful for storing additional information about the loyalty tier in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the loyalty tier. A set of key/value pairs that you can attach to a loyalty tier object. It can be useful for storing additional information about the loyalty tier in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltiesTiersCreateInBulkRequestBodyItem.prototype['metadata'] = undefined;
 
 
 // Implement LoyaltyTierBase interface:
 /**
- * Loyalty Tier name.
- * @member {String} name
- */
+    * Loyalty Tier name.    *
+    * @type {String | undefined}
+    * @member {String | undefined} name
+    */
 LoyaltyTierBase.prototype['name'] = undefined;
 /**
- * Contains a list of earning rule IDs and their points mapping for the given earning rule.
- * @member {Object.<String, module:model/MappingPoints>} earning_rules
- */
+    * Contains a list of earning rule IDs and their points mapping for the given earning rule.    *
+    * @type {Object.<String, MappingPoints> | undefined}
+    * @member {Object.<String, MappingPoints> | undefined} earning_rules
+    */
 LoyaltyTierBase.prototype['earning_rules'] = undefined;
 /**
- * Contains a list of reward IDs and their points mapping for the given reward.
- * @member {Object.<String, module:model/MappingPoints>} rewards
- */
+    * Contains a list of reward IDs and their points mapping for the given reward.    *
+    * @type {Object.<String, MappingPoints> | undefined}
+    * @member {Object.<String, MappingPoints> | undefined} rewards
+    */
 LoyaltyTierBase.prototype['rewards'] = undefined;
-/**
- * @member {module:model/LoyaltyTierBasePoints} points
- */
+/**    *
+    * @type {LoyaltyTierBasePoints | undefined}
+    * @member {LoyaltyTierBasePoints | undefined} points
+    */
 LoyaltyTierBase.prototype['points'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LocationsGetResponseBodyShapeDistance model module.
  * @module model/LocationsGetResponseBodyShapeDistance
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationsGetResponseBodyShapeDistance {
     /**
      * Constructs a new <code>LocationsGetResponseBodyShapeDistance</code>.
      * Defines the parameters for the circle.
-     * @alias module:model/LocationsGetResponseBodyShapeDistance
+     * @alias LocationsGetResponseBodyShapeDistance
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LocationsGetResponseBodyShapeDistance {
     /**
      * Constructs a <code>LocationsGetResponseBodyShapeDistance</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationsGetResponseBodyShapeDistance} obj Optional instance to populate.
-     * @returns {module:model/LocationsGetResponseBodyShapeDistance} The populated <code>LocationsGetResponseBodyShapeDistance</code> instance.
+     * @param {Partial<LocationsGetResponseBodyShapeDistance>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationsGetResponseBodyShapeDistance} [obj] Optional instance to populate.
+     * @returns {LocationsGetResponseBodyShapeDistance} The populated <code>LocationsGetResponseBodyShapeDistance</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LocationsGetResponseBodyShapeDistance {
 
     /**
      * Validates the JSON data with respect to <code>LocationsGetResponseBodyShapeDistance</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationsGetResponseBodyShapeDistance>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationsGetResponseBodyShapeDistance</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LocationsGetResponseBodyShapeDistance {
 
 
 /**
- * Center of the circle identified by GPS coordinates in decimal degrees.
- * @member {String} 
- */
+    * Center of the circle identified by GPS coordinates in decimal degrees.
+    * @type {String | undefined}
+    */
 LocationsGetResponseBodyShapeDistance.prototype['center'] = undefined;
 
 /**
- * Defines the radius of the circle.
- * @member {String} 
- */
+    * Defines the radius of the circle.
+    * @type {String | undefined}
+    */
 LocationsGetResponseBodyShapeDistance.prototype['radius'] = undefined;
 
 

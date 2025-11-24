@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerSummaryRedemptionsLoyaltyCard model module.
  * @module model/CustomerSummaryRedemptionsLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerSummaryRedemptionsLoyaltyCard {
     /**
      * Constructs a new <code>CustomerSummaryRedemptionsLoyaltyCard</code>.
      * Summary of loyalty points.
-     * @alias module:model/CustomerSummaryRedemptionsLoyaltyCard
+     * @alias CustomerSummaryRedemptionsLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerSummaryRedemptionsLoyaltyCard {
     /**
      * Constructs a <code>CustomerSummaryRedemptionsLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerSummaryRedemptionsLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/CustomerSummaryRedemptionsLoyaltyCard} The populated <code>CustomerSummaryRedemptionsLoyaltyCard</code> instance.
+     * @param {Partial<CustomerSummaryRedemptionsLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerSummaryRedemptionsLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {CustomerSummaryRedemptionsLoyaltyCard} The populated <code>CustomerSummaryRedemptionsLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CustomerSummaryRedemptionsLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>CustomerSummaryRedemptionsLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerSummaryRedemptionsLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerSummaryRedemptionsLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class CustomerSummaryRedemptionsLoyaltyCard {
 
 
 /**
- * Total number of loyalty points redeemed by the customer.
- * @member {Number} 
- */
+    * Total number of loyalty points redeemed by the customer.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptionsLoyaltyCard.prototype['redeemed_points'] = undefined;
 
 /**
- * Sum of remaining available point balance across all loyalty cards.
- * @member {Number} 
- */
+    * Sum of remaining available point balance across all loyalty cards.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptionsLoyaltyCard.prototype['points_to_go'] = undefined;
 
 

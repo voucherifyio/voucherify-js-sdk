@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount from './LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount';
 import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity from './LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity';
 import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount from './LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code>.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity} 
- */
+    * @type {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.prototype['quantity'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount} 
- */
+    * @type {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount} 
- */
+    * @type {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.prototype['subtotal_amount'] = undefined;
 
 

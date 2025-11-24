@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyTiersExpirationAllExpirationDateRounding from './LoyaltyTiersExpirationAllExpirationDateRounding';
-
 /**
  * The LoyaltyTiersExpirationAllExpirationDate model module.
  * @module model/LoyaltyTiersExpirationAllExpirationDate
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTiersExpirationAllExpirationDate {
     /**
      * Constructs a new <code>LoyaltyTiersExpirationAllExpirationDate</code>.
      * Defines the conditions for the expiration date of a tier.
-     * @alias module:model/LoyaltyTiersExpirationAllExpirationDate
+     * @alias LoyaltyTiersExpirationAllExpirationDate
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyTiersExpirationAllExpirationDate {
     /**
      * Constructs a <code>LoyaltyTiersExpirationAllExpirationDate</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTiersExpirationAllExpirationDate} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTiersExpirationAllExpirationDate} The populated <code>LoyaltyTiersExpirationAllExpirationDate</code> instance.
+     * @param {Partial<LoyaltyTiersExpirationAllExpirationDate>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTiersExpirationAllExpirationDate} [obj] Optional instance to populate.
+     * @returns {LoyaltyTiersExpirationAllExpirationDate} The populated <code>LoyaltyTiersExpirationAllExpirationDate</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltyTiersExpirationAllExpirationDate {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTiersExpirationAllExpirationDate</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTiersExpirationAllExpirationDate>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTiersExpirationAllExpirationDate</code>.
      */
     static validateJSON(data) {
@@ -90,57 +89,57 @@ class LoyaltyTiersExpirationAllExpirationDate {
 
 
 /**
- * What triggers the tier to expire for a customer.     `END_OF_PERIOD`: Expire tier at the end of the period.     `END_OF_NEXT_PERIOD`:  Expire tier at the end of the next period.   `BALANCE_DROP`: Tier expires when the points balance drops below the required range of the tier.   `CUSTOM`: Tier expires after a certain time period passes following the instance the points balance drops below the required range of the tier.
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDate.TypeEnum} 
- */
+    * What triggers the tier to expire for a customer.     `END_OF_PERIOD`: Expire tier at the end of the period.     `END_OF_NEXT_PERIOD`:  Expire tier at the end of the next period.   `BALANCE_DROP`: Tier expires when the points balance drops below the required range of the tier.   `CUSTOM`: Tier expires after a certain time period passes following the instance the points balance drops below the required range of the tier.
+    * @type {(keyof typeof LoyaltyTiersExpirationAllExpirationDate.TypeEnum) | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDate.prototype['type'] = undefined;
 
 /**
- * Extend the expiration by adding extra months or days in ISO 8601 format. The tier will remain active even though it reaches its expiration time period. For example, a tier with a duration of `P3M` will be valid for an additional duration of 3 months and a tier with a duration of `P1D` will be valid for an additional duration of 1 day.
- * @member {String} 
- */
+    * Extend the expiration by adding extra months or days in ISO 8601 format. The tier will remain active even though it reaches its expiration time period. For example, a tier with a duration of `P3M` will be valid for an additional duration of 3 months and a tier with a duration of `P1D` will be valid for an additional duration of 1 day.
+    * @type {String | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDate.prototype['extend'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDateRounding} 
- */
+    * @type {LoyaltyTiersExpirationAllExpirationDateRounding | undefined}
+    */
 LoyaltyTiersExpirationAllExpirationDate.prototype['rounding'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAllExpirationDate['TypeEnum'] = {
-
     /**
-     * value: "END_OF_PERIOD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "END_OF_PERIOD": "END_OF_PERIOD",
-
-    /**
-     * value: "END_OF_NEXT_PERIOD"
-     * @constant
-     */
-    "END_OF_NEXT_PERIOD": "END_OF_NEXT_PERIOD",
-
-    /**
-     * value: "BALANCE_DROP"
-     * @constant
-     */
-    "BALANCE_DROP": "BALANCE_DROP",
-
-    /**
-     * value: "CUSTOM"
-     * @constant
-     */
-    "CUSTOM": "CUSTOM"
-};
+    LoyaltyTiersExpirationAllExpirationDate['TypeEnum'] = {
+    
+        /**
+         * value: "END_OF_PERIOD"
+         * @constant
+         */
+        "END_OF_PERIOD": "END_OF_PERIOD",
+    
+        /**
+         * value: "END_OF_NEXT_PERIOD"
+         * @constant
+         */
+        "END_OF_NEXT_PERIOD": "END_OF_NEXT_PERIOD",
+    
+        /**
+         * value: "BALANCE_DROP"
+         * @constant
+         */
+        "BALANCE_DROP": "BALANCE_DROP",
+    
+        /**
+         * value: "CUSTOM"
+         * @constant
+         */
+        "CUSTOM": "CUSTOM"    
+    };
 
 
 

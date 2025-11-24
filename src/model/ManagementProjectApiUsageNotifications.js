@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import UsageNotifications from './UsageNotifications';
-
 /**
  * The ManagementProjectApiUsageNotifications model module.
  * @module model/ManagementProjectApiUsageNotifications
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectApiUsageNotifications {
     /**
      * Constructs a new <code>ManagementProjectApiUsageNotifications</code>.
      * Determines the notification settings.
-     * @alias module:model/ManagementProjectApiUsageNotifications
+     * @alias ManagementProjectApiUsageNotifications
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectApiUsageNotifications {
     /**
      * Constructs a <code>ManagementProjectApiUsageNotifications</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectApiUsageNotifications} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectApiUsageNotifications} The populated <code>ManagementProjectApiUsageNotifications</code> instance.
+     * @param {Partial<ManagementProjectApiUsageNotifications>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectApiUsageNotifications} [obj] Optional instance to populate.
+     * @returns {ManagementProjectApiUsageNotifications} The populated <code>ManagementProjectApiUsageNotifications</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectApiUsageNotifications {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectApiUsageNotifications</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectApiUsageNotifications>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectApiUsageNotifications</code>.
      */
     static validateJSON(data) {
@@ -111,33 +110,33 @@ class ManagementProjectApiUsageNotifications {
 
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['messages'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['api_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['bulk_api_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['webhook_calls'] = undefined;
 
 /**
- * @member {module:model/UsageNotifications} 
- */
+    * @type {UsageNotifications | undefined}
+    */
 ManagementProjectApiUsageNotifications.prototype['cycle_calls'] = undefined;
 
 

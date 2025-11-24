@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemLoyaltyCard model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemLoyaltyCard {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard
+     * @alias RedemptionsListResponseBodyRedemptionsItemLoyaltyCard
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsListResponseBodyRedemptionsItemLoyaltyCard {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard} The populated <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemLoyaltyCard} The populated <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class RedemptionsListResponseBodyRedemptionsItemLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class RedemptionsListResponseBodyRedemptionsItemLoyaltyCard {
 
 
 /**
- * Number of points subtracted from the loyalty card as a result of the redemption. and Number of points being returned to the loyalty card for the reward redemption rollback. It is expressed as a negative integer.
- * @member {Number} 
- */
+    * Number of points subtracted from the loyalty card as a result of the redemption. and Number of points being returned to the loyalty card for the reward redemption rollback. It is expressed as a negative integer.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemLoyaltyCard.prototype['points'] = undefined;
 
 

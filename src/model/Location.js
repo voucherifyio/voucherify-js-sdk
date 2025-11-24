@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LocationShape from './LocationShape';
-
 /**
  * The Location model module.
  * @module model/Location
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Location {
     /**
      * Constructs a new <code>Location</code>.
      * This is an object representing a location.
-     * @alias module:model/Location
+     * @alias Location
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class Location {
     /**
      * Constructs a <code>Location</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Location} obj Optional instance to populate.
-     * @returns {module:model/Location} The populated <code>Location</code> instance.
+     * @param {Partial<Location>} data The plain JavaScript object bearing properties of interest.
+     * @param {Location} [obj] Optional instance to populate.
+     * @returns {Location} The populated <code>Location</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class Location {
 
     /**
      * Validates the JSON data with respect to <code>Location</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Location>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Location</code>.
      */
     static validateJSON(data) {
@@ -104,58 +103,58 @@ class Location {
 
 
 /**
- * Unique location ID, assigned by the Voucherify API.
- * @member {String} 
- */
+    * Unique location ID, assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 Location.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about a `location`.
- * @member {module:model/Location.ObjectEnum} 
- * @default 'location'
- */
+    * The type of the object represented by JSON. This object stores information about a `location`.
+    * @type {(keyof typeof Location.ObjectEnum) | undefined}
+    * @default 'location'
+    */
 Location.prototype['object'] = 'location';
 
 /**
- * Location name.
- * @member {String} 
- */
+    * Location name.
+    * @type {String | undefined}
+    */
 Location.prototype['name'] = undefined;
 
 /**
- * @member {module:model/LocationShape} 
- */
+    * @type {LocationShape | undefined}
+    */
 Location.prototype['shape'] = undefined;
 
 /**
- * Timestamp representing the date and time when the location was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the location was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Location.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the location was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the location was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Location.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-Location['ObjectEnum'] = {
-
     /**
-     * value: "location"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "location": "location"
-};
+    Location['ObjectEnum'] = {
+    
+        /**
+         * value: "location"
+         * @constant
+         */
+        "location": "location"    
+    };
 
 
 

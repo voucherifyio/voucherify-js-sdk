@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import PromotionStackBase from './PromotionStackBase';
 import PromotionsStacksCreateResponseBodyTiers from './PromotionsStacksCreateResponseBodyTiers';
-
 /**
  * The PromotionsStacksCreateResponseBody model module.
  * @module model/PromotionsStacksCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsStacksCreateResponseBody {
     /**
      * Constructs a new <code>PromotionsStacksCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/promotions/{campaignId}/stacks&#x60;.
-     * @alias module:model/PromotionsStacksCreateResponseBody
+     * @alias PromotionsStacksCreateResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PromotionsStacksCreateResponseBody {
     /**
      * Constructs a <code>PromotionsStacksCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsStacksCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/PromotionsStacksCreateResponseBody} The populated <code>PromotionsStacksCreateResponseBody</code> instance.
+     * @param {Partial<PromotionsStacksCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsStacksCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {PromotionsStacksCreateResponseBody} The populated <code>PromotionsStacksCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class PromotionsStacksCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsStacksCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsStacksCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsStacksCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -129,70 +128,70 @@ class PromotionsStacksCreateResponseBody {
 
 
 /**
- * Promotion stack name.
- * @member {String} 
- */
+    * Promotion stack name.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/PromotionsStacksCreateResponseBodyTiers} 
- */
+    * @type {PromotionsStacksCreateResponseBodyTiers | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['tiers'] = undefined;
 
 /**
- * Unique promotion stack ID.
- * @member {String} 
- */
+    * Unique promotion stack ID.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Promotion stack's parent campaign's unique ID.
- * @member {String} 
- */
+    * Promotion stack's parent campaign's unique ID.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['campaign_id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/PromotionsStacksCreateResponseBody.ObjectEnum} 
- * @default 'promotion_stack'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof PromotionsStacksCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'promotion_stack'
+    */
 PromotionsStacksCreateResponseBody.prototype['object'] = 'promotion_stack';
 
 /**
- * Promotion stack category ID.
- * @member {String} 
- */
+    * Promotion stack category ID.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['category_id'] = undefined;
 
 /**
- * Details about the category assigned to the promotion stack.
- * @member {Array.<module:model/PromotionStackBase>} 
- */
+    * Details about the category assigned to the promotion stack.
+    * @type {Array.<PromotionStackBase> | undefined}
+    */
 PromotionsStacksCreateResponseBody.prototype['categories'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionsStacksCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "promotion_stack"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "promotion_stack": "promotion_stack"
-};
+    PromotionsStacksCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack"    
+    };
 
 
 

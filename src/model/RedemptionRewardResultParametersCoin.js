@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionRewardResultParametersCoin model module.
  * @module model/RedemptionRewardResultParametersCoin
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRewardResultParametersCoin {
     /**
      * Constructs a new <code>RedemptionRewardResultParametersCoin</code>.
      * Defines the ratio by mapping the number of loyalty points in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
-     * @alias module:model/RedemptionRewardResultParametersCoin
+     * @alias RedemptionRewardResultParametersCoin
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionRewardResultParametersCoin {
     /**
      * Constructs a <code>RedemptionRewardResultParametersCoin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRewardResultParametersCoin} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRewardResultParametersCoin} The populated <code>RedemptionRewardResultParametersCoin</code> instance.
+     * @param {Partial<RedemptionRewardResultParametersCoin>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRewardResultParametersCoin} [obj] Optional instance to populate.
+     * @returns {RedemptionRewardResultParametersCoin} The populated <code>RedemptionRewardResultParametersCoin</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionRewardResultParametersCoin {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRewardResultParametersCoin</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRewardResultParametersCoin>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRewardResultParametersCoin</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class RedemptionRewardResultParametersCoin {
 
 
 /**
- * The cash equivalent of the points defined in the `points_ratio` property.
- * @member {Number} 
- */
+    * The cash equivalent of the points defined in the `points_ratio` property.
+    * @type {Number | undefined}
+    */
 RedemptionRewardResultParametersCoin.prototype['exchange_ratio'] = undefined;
 
 /**
- * The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
- * @member {Number} 
- */
+    * The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+    * @type {Number | undefined}
+    */
 RedemptionRewardResultParametersCoin.prototype['points_ratio'] = undefined;
 
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import Discount from './Discount';
 import Gift from './Gift';
-
 /**
  * The ListPublicationsItemVoucher model module.
  * @module model/ListPublicationsItemVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ListPublicationsItemVoucher {
     /**
      * Constructs a new <code>ListPublicationsItemVoucher</code>.
-     * @alias module:model/ListPublicationsItemVoucher
+     * @alias ListPublicationsItemVoucher
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ListPublicationsItemVoucher {
     /**
      * Constructs a <code>ListPublicationsItemVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ListPublicationsItemVoucher} obj Optional instance to populate.
-     * @returns {module:model/ListPublicationsItemVoucher} The populated <code>ListPublicationsItemVoucher</code> instance.
+     * @param {Partial<ListPublicationsItemVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {ListPublicationsItemVoucher} [obj] Optional instance to populate.
+     * @returns {ListPublicationsItemVoucher} The populated <code>ListPublicationsItemVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ListPublicationsItemVoucher {
 
     /**
      * Validates the JSON data with respect to <code>ListPublicationsItemVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ListPublicationsItemVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ListPublicationsItemVoucher</code>.
      */
     static validateJSON(data) {
@@ -111,63 +110,63 @@ class ListPublicationsItemVoucher {
 
 
 /**
- * Voucher code.
- * @member {String} 
- */
+    * Voucher code.
+    * @type {String | undefined}
+    */
 ListPublicationsItemVoucher.prototype['code'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ListPublicationsItemVoucher.ObjectEnum} 
- * @default 'voucher'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ListPublicationsItemVoucher.ObjectEnum) | undefined}
+    * @default 'voucher'
+    */
 ListPublicationsItemVoucher.prototype['object'] = 'voucher';
 
 /**
- * Campaign name
- * @member {String} 
- */
+    * Campaign name
+    * @type {String | undefined}
+    */
 ListPublicationsItemVoucher.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 ListPublicationsItemVoucher.prototype['gift'] = undefined;
 
 /**
- * Defines the loyalty card details.
- * @member {Object} 
- */
+    * Defines the loyalty card details.
+    * @type {Object | undefined}
+    */
 ListPublicationsItemVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 ListPublicationsItemVoucher.prototype['discount'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 ListPublicationsItemVoucher.prototype['is_referral_code'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ListPublicationsItemVoucher['ObjectEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    ListPublicationsItemVoucher['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

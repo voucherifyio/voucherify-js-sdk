@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import EarningRule from './EarningRule';
-
 /**
  * The LoyaltiesEarningRulesListResponseBody model module.
  * @module model/LoyaltiesEarningRulesListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesListResponseBody</code>.
      * Response body schema for listing earning rules using **GET** &#x60;v1/loyalties/{campaignId}/earning-rules&#x60; endpoint.
-     * @alias module:model/LoyaltiesEarningRulesListResponseBody
+     * @alias LoyaltiesEarningRulesListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesEarningRulesListResponseBody {
     /**
      * Constructs a <code>LoyaltiesEarningRulesListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesListResponseBody} The populated <code>LoyaltiesEarningRulesListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesListResponseBody} The populated <code>LoyaltiesEarningRulesListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesEarningRulesListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,48 +100,48 @@ class LoyaltiesEarningRulesListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about earning rules in a dictionary.
- * @member {module:model/LoyaltiesEarningRulesListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about earning rules in a dictionary.
+    * @type {(keyof typeof LoyaltiesEarningRulesListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesEarningRulesListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of earning rule objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of earning rule objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 LoyaltiesEarningRulesListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of earning rule objects.
- * @member {Array.<module:model/EarningRule>} 
- */
+    * Contains array of earning rule objects.
+    * @type {Array.<EarningRule> | undefined}
+    */
 LoyaltiesEarningRulesListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of earning rule objects.
- * @member {Number} 
- */
+    * Total number of earning rule objects.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesListResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
+    LoyaltiesEarningRulesListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
 
 
 

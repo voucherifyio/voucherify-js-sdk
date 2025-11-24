@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The Session model module.
  * @module model/Session
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Session {
     /**
      * Constructs a new <code>Session</code>.
-     * @alias module:model/Session
+     * @alias Session
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class Session {
     /**
      * Constructs a <code>Session</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Session} obj Optional instance to populate.
-     * @returns {module:model/Session} The populated <code>Session</code> instance.
+     * @param {Partial<Session>} data The plain JavaScript object bearing properties of interest.
+     * @param {Session} [obj] Optional instance to populate.
+     * @returns {Session} The populated <code>Session</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class Session {
 
     /**
      * Validates the JSON data with respect to <code>Session</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Session>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Session</code>.
      */
     static validateJSON(data) {
@@ -92,98 +91,98 @@ class Session {
 
 
 /**
- * The session unique ID assigned by Voucherify or your own unique session ID. Sending an existing ID will result in overwriting an existing session. If no session key is provided, then a new ID will be generated.
- * @member {String} 
- */
+    * The session unique ID assigned by Voucherify or your own unique session ID. Sending an existing ID will result in overwriting an existing session. If no session key is provided, then a new ID will be generated.
+    * @type {String | undefined}
+    */
 Session.prototype['key'] = undefined;
 
 /**
- * This parameter is required to establish a new session.
- * @member {module:model/Session.TypeEnum} 
- * @default 'LOCK'
- */
+    * This parameter is required to establish a new session.
+    * @type {(keyof typeof Session.TypeEnum) | undefined}
+    * @default 'LOCK'
+    */
 Session.prototype['type'] = 'LOCK';
 
 /**
- * Value for the period of time that the session is active. Units for this parameter are defined by the session.ttl_unit parameter.
- * @member {Number} 
- */
+    * Value for the period of time that the session is active. Units for this parameter are defined by the session.ttl_unit parameter.
+    * @type {Number | undefined}
+    */
 Session.prototype['ttl'] = undefined;
 
 /**
- * Defines the type of unit in which the session time is counted.
- * @member {module:model/Session.TtlUnitEnum} 
- */
+    * Defines the type of unit in which the session time is counted.
+    * @type {(keyof typeof Session.TtlUnitEnum) | undefined}
+    */
 Session.prototype['ttl_unit'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-Session['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    Session['TypeEnum'] = {
+    
+        /**
+         * value: "LOCK"
+         * @constant
+         */
+        "LOCK": "LOCK"    
+    };
+
 
     /**
-     * value: "LOCK"
-     * @constant
+     * Allowed values for the <code>ttl_unit</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOCK": "LOCK"
-};
-
-
-/**
- * Allowed values for the <code>ttl_unit</code> property.
- * @enum {String}
- * @readonly
- */
-Session['TtlUnitEnum'] = {
-
-    /**
-     * value: "DAYS"
-     * @constant
-     */
-    "DAYS": "DAYS",
-
-    /**
-     * value: "HOURS"
-     * @constant
-     */
-    "HOURS": "HOURS",
-
-    /**
-     * value: "MICROSECONDS"
-     * @constant
-     */
-    "MICROSECONDS": "MICROSECONDS",
-
-    /**
-     * value: "MILLISECONDS"
-     * @constant
-     */
-    "MILLISECONDS": "MILLISECONDS",
-
-    /**
-     * value: "MINUTES"
-     * @constant
-     */
-    "MINUTES": "MINUTES",
-
-    /**
-     * value: "NANOSECONDS"
-     * @constant
-     */
-    "NANOSECONDS": "NANOSECONDS",
-
-    /**
-     * value: "SECONDS"
-     * @constant
-     */
-    "SECONDS": "SECONDS"
-};
+    Session['TtlUnitEnum'] = {
+    
+        /**
+         * value: "DAYS"
+         * @constant
+         */
+        "DAYS": "DAYS",
+    
+        /**
+         * value: "HOURS"
+         * @constant
+         */
+        "HOURS": "HOURS",
+    
+        /**
+         * value: "MICROSECONDS"
+         * @constant
+         */
+        "MICROSECONDS": "MICROSECONDS",
+    
+        /**
+         * value: "MILLISECONDS"
+         * @constant
+         */
+        "MILLISECONDS": "MILLISECONDS",
+    
+        /**
+         * value: "MINUTES"
+         * @constant
+         */
+        "MINUTES": "MINUTES",
+    
+        /**
+         * value: "NANOSECONDS"
+         * @constant
+         */
+        "NANOSECONDS": "NANOSECONDS",
+    
+        /**
+         * value: "SECONDS"
+         * @constant
+         */
+        "SECONDS": "SECONDS"    
+    };
 
 
 

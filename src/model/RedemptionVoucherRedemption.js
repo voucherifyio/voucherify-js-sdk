@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionVoucherRedemption model module.
  * @module model/RedemptionVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionVoucherRedemption {
     /**
      * Constructs a new <code>RedemptionVoucherRedemption</code>.
      * Stores a summary of redemptions that have been applied to the voucher.
-     * @alias module:model/RedemptionVoucherRedemption
+     * @alias RedemptionVoucherRedemption
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RedemptionVoucherRedemption {
     /**
      * Constructs a <code>RedemptionVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/RedemptionVoucherRedemption} The populated <code>RedemptionVoucherRedemption</code> instance.
+     * @param {Partial<RedemptionVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {RedemptionVoucherRedemption} The populated <code>RedemptionVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class RedemptionVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -92,34 +91,34 @@ class RedemptionVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 RedemptionVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 RedemptionVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 RedemptionVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RedemptionVoucherRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 RedemptionVoucherRedemption.prototype['url'] = undefined;
 
 

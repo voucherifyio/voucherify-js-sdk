@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ApplicableTo from './ApplicableTo';
-
 /**
  * The ApplicableToResultList model module.
  * @module model/ApplicableToResultList
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ApplicableToResultList {
     /**
      * Constructs a new <code>ApplicableToResultList</code>.
-     * @alias module:model/ApplicableToResultList
+     * @alias ApplicableToResultList
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ApplicableToResultList {
     /**
      * Constructs a <code>ApplicableToResultList</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ApplicableToResultList} obj Optional instance to populate.
-     * @returns {module:model/ApplicableToResultList} The populated <code>ApplicableToResultList</code> instance.
+     * @param {Partial<ApplicableToResultList>} data The plain JavaScript object bearing properties of interest.
+     * @param {ApplicableToResultList} [obj] Optional instance to populate.
+     * @returns {ApplicableToResultList} The populated <code>ApplicableToResultList</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -68,7 +67,7 @@ class ApplicableToResultList {
 
     /**
      * Validates the JSON data with respect to <code>ApplicableToResultList</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ApplicableToResultList>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ApplicableToResultList</code>.
      */
     static validateJSON(data) {
@@ -100,63 +99,63 @@ class ApplicableToResultList {
 
 
 /**
- * Contains array of items to which the discount can apply.
- * @member {Array.<module:model/ApplicableTo>} 
- */
+    * Contains array of items to which the discount can apply.
+    * @type {Array.<ApplicableTo> | undefined}
+    */
 ApplicableToResultList.prototype['data'] = undefined;
 
 /**
- * Total number of objects defining included products, SKUs, or product collections.
- * @member {Number} 
- */
+    * Total number of objects defining included products, SKUs, or product collections.
+    * @type {Number | undefined}
+    */
 ApplicableToResultList.prototype['total'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ApplicableToResultList.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ApplicableToResultList.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ApplicableToResultList.prototype['object'] = 'list';
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ApplicableToResultList.DataRefEnum} 
- * @default 'data'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ApplicableToResultList.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ApplicableToResultList.prototype['data_ref'] = 'data';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ApplicableToResultList['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ApplicableToResultList['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ApplicableToResultList['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ApplicableToResultList['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

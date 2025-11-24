@@ -20,13 +20,13 @@ import TrashBinListResponseBody from '../model/TrashBinListResponseBody';
 /**
 * Bin service.
 * @module api/BinApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class BinApi {
 
     /**
     * Constructs a new BinApi. 
-    * @alias module:api/BinApi
+    * @alias BinApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -38,7 +38,7 @@ export default class BinApi {
 
     /**
      * Callback function to receive the result of the deleteBinEntry operation.
-     * @callback module:api/BinApi~deleteBinEntryCallback
+     * @callback deleteBinEntryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -48,7 +48,8 @@ export default class BinApi {
      * Delete Bin Entry
      * Deletes permanently a bin entry with a given ID.The following resources can be moved to the bin and permanently deleted: - campaigns - vouchers - products - SKUs To use this endpoint and delete a given resource type, you must have the following permissions: - vouchers.delete to delete a voucher, - campaigns.delete to delete a campaign, - products.delete to delete a product or SKU.
      * @param {String} binEntryId Provide the unique identifier of the bin entry.
-     * @param {module:api/BinApi~deleteBinEntryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteBinEntryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteBinEntry(binEntryId, callback) {
       let postBody = null;
@@ -77,9 +78,9 @@ export default class BinApi {
 
     /**
      * Callback function to receive the result of the listBinEntries operation.
-     * @callback module:api/BinApi~listBinEntriesCallback
+     * @callback listBinEntriesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TrashBinListResponseBody} [data] The data returned by the service call.
+     * @param {TrashBinListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -88,12 +89,13 @@ export default class BinApi {
      * Retrieves a list of resources moved to the bin. The following resources can be moved to the bin: - campaigns - vouchers - products - SKUs To use this endpoint, you must have the following permissions: - vouchers.read - campaigns.read - products.read
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListBin,
+        order?: Exclude<keyof typeof ParameterOrderListBin, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParameterFiltersListBin,
+        filters?: ParameterFiltersListBin,
      }} [opts] Optional parameters
-     * @param {module:api/BinApi~listBinEntriesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TrashBinListResponseBody}
+     * @param {listBinEntriesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TrashBinListResponseBody}
+     * @returns {Promise<(TrashBinListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TrashBinListResponseBody` object or with `undefined`.
      */
     listBinEntries(opts, callback) {
       opts = opts || {};

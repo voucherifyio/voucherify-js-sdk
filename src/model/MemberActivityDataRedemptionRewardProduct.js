@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import SkusListForProduct from './SkusListForProduct';
-
 /**
  * The MemberActivityDataRedemptionRewardProduct model module.
  * @module model/MemberActivityDataRedemptionRewardProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardProduct {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardProduct</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardProduct
+     * @alias MemberActivityDataRedemptionRewardProduct
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class MemberActivityDataRedemptionRewardProduct {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardProduct} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardProduct} The populated <code>MemberActivityDataRedemptionRewardProduct</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardProduct} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardProduct} The populated <code>MemberActivityDataRedemptionRewardProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -88,7 +87,7 @@ class MemberActivityDataRedemptionRewardProduct {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardProduct</code>.
      */
     static validateJSON(data) {
@@ -130,85 +129,85 @@ class MemberActivityDataRedemptionRewardProduct {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['source_id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['name'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['price'] = undefined;
 
 /**
- * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
- * @member {Array.<String>} 
- */
+    * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
+    * @type {Array.<String> | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['attributes'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['metadata'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['image_url'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the product.
- * @member {module:model/MemberActivityDataRedemptionRewardProduct.ObjectEnum} 
- * @default 'product'
- */
+    * The type of the object represented by JSON. This object stores information about the product.
+    * @type {(keyof typeof MemberActivityDataRedemptionRewardProduct.ObjectEnum) | undefined}
+    * @default 'product'
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['object'] = 'product';
 
 /**
- * @member {module:model/SkusListForProduct} 
- */
+    * @type {SkusListForProduct | undefined}
+    */
 MemberActivityDataRedemptionRewardProduct.prototype['skus'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionRewardProduct['ObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product"
-};
+    MemberActivityDataRedemptionRewardProduct['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsUpdateRequestBodyDefaultCodeConfig model module.
  * @module model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUpdateRequestBodyDefaultCodeConfig {
     /**
      * Constructs a new <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code>.
      * Determines the character set that is used as default for vouchers. It is affected by the &#x60;\&quot;case_sensitive_codes\&quot;&#x60; setting.
-     * @alias module:model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig
+     * @alias ManagementProjectsUpdateRequestBodyDefaultCodeConfig
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsUpdateRequestBodyDefaultCodeConfig {
     /**
      * Constructs a <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig} The populated <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code> instance.
+     * @param {Partial<ManagementProjectsUpdateRequestBodyDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUpdateRequestBodyDefaultCodeConfig} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUpdateRequestBodyDefaultCodeConfig} The populated <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ManagementProjectsUpdateRequestBodyDefaultCodeConfig {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUpdateRequestBodyDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUpdateRequestBodyDefaultCodeConfig</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ManagementProjectsUpdateRequestBodyDefaultCodeConfig {
 
 
 /**
- * Lists all characters that are used as default for vouchers
- * @member {String} 
- */
+    * Lists all characters that are used as default for vouchers
+    * @type {String | undefined}
+    */
 ManagementProjectsUpdateRequestBodyDefaultCodeConfig.prototype['charset'] = undefined;
 
 

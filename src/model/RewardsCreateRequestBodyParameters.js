@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import RewardsCreateRequestBodyParametersCampaign from './RewardsCreateRequestBodyParametersCampaign';
 import RewardsCreateRequestBodyParametersCoin from './RewardsCreateRequestBodyParametersCoin';
 import RewardsCreateRequestBodyParametersProduct from './RewardsCreateRequestBodyParametersProduct';
-
 /**
  * The RewardsCreateRequestBodyParameters model module.
  * @module model/RewardsCreateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsCreateRequestBodyParameters {
     /**
      * Constructs a new <code>RewardsCreateRequestBodyParameters</code>.
-     * @alias module:model/RewardsCreateRequestBodyParameters
+     * @alias RewardsCreateRequestBodyParameters
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RewardsCreateRequestBodyParameters {
     /**
      * Constructs a <code>RewardsCreateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsCreateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/RewardsCreateRequestBodyParameters} The populated <code>RewardsCreateRequestBodyParameters</code> instance.
+     * @param {Partial<RewardsCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsCreateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {RewardsCreateRequestBodyParameters} The populated <code>RewardsCreateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class RewardsCreateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>RewardsCreateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsCreateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class RewardsCreateRequestBodyParameters {
 
 
 /**
- * @member {module:model/RewardsCreateRequestBodyParametersCampaign} 
- */
+    * @type {RewardsCreateRequestBodyParametersCampaign | undefined}
+    */
 RewardsCreateRequestBodyParameters.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/RewardsCreateRequestBodyParametersProduct} 
- */
+    * @type {RewardsCreateRequestBodyParametersProduct | undefined}
+    */
 RewardsCreateRequestBodyParameters.prototype['product'] = undefined;
 
 /**
- * @member {module:model/RewardsCreateRequestBodyParametersCoin} 
- */
+    * @type {RewardsCreateRequestBodyParametersCoin | undefined}
+    */
 RewardsCreateRequestBodyParameters.prototype['coin'] = undefined;
 
 

@@ -17,16 +17,15 @@ import CampaignsCreateRequestBodyVoucherRedemption from './CampaignsCreateReques
 import CodeConfig from './CodeConfig';
 import Discount from './Discount';
 import Gift from './Gift';
-
 /**
  * The CampaignsCreateRequestBodyVoucher model module.
  * @module model/CampaignsCreateRequestBodyVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsCreateRequestBodyVoucher {
     /**
      * Constructs a new <code>CampaignsCreateRequestBodyVoucher</code>.
-     * @alias module:model/CampaignsCreateRequestBodyVoucher
+     * @alias CampaignsCreateRequestBodyVoucher
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class CampaignsCreateRequestBodyVoucher {
     /**
      * Constructs a <code>CampaignsCreateRequestBodyVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsCreateRequestBodyVoucher} obj Optional instance to populate.
-     * @returns {module:model/CampaignsCreateRequestBodyVoucher} The populated <code>CampaignsCreateRequestBodyVoucher</code> instance.
+     * @param {Partial<CampaignsCreateRequestBodyVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsCreateRequestBodyVoucher} [obj] Optional instance to populate.
+     * @returns {CampaignsCreateRequestBodyVoucher} The populated <code>CampaignsCreateRequestBodyVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class CampaignsCreateRequestBodyVoucher {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsCreateRequestBodyVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsCreateRequestBodyVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsCreateRequestBodyVoucher</code>.
      */
     static validateJSON(data) {
@@ -117,70 +116,70 @@ class CampaignsCreateRequestBodyVoucher {
 
 
 /**
- * @member {module:model/CampaignsCreateRequestBodyVoucher.TypeEnum} 
- */
+    * @type {(keyof typeof CampaignsCreateRequestBodyVoucher.TypeEnum) | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['code_config'] = undefined;
 
 /**
- * @member {module:model/CampaignsCreateRequestBodyVoucherRedemption} 
- */
+    * @type {CampaignsCreateRequestBodyVoucherRedemption | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['redemption'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/CampaignLoyaltyCard} 
- */
+    * @type {CampaignLoyaltyCard | undefined}
+    */
 CampaignsCreateRequestBodyVoucher.prototype['loyalty_card'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsCreateRequestBodyVoucher['TypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    CampaignsCreateRequestBodyVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 

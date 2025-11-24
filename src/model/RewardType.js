@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import RewardTypeCampaign from './RewardTypeCampaign';
 import RewardTypeCoin from './RewardTypeCoin';
 import RewardTypeProduct from './RewardTypeProduct';
-
 /**
  * The RewardType model module.
  * @module model/RewardType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardType {
     /**
      * Constructs a new <code>RewardType</code>.
-     * @alias module:model/RewardType
+     * @alias RewardType
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RewardType {
     /**
      * Constructs a <code>RewardType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardType} obj Optional instance to populate.
-     * @returns {module:model/RewardType} The populated <code>RewardType</code> instance.
+     * @param {Partial<RewardType>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardType} [obj] Optional instance to populate.
+     * @returns {RewardType} The populated <code>RewardType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class RewardType {
 
     /**
      * Validates the JSON data with respect to <code>RewardType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardType</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class RewardType {
 
 
 /**
- * @member {module:model/RewardTypeCampaign} 
- */
+    * @type {RewardTypeCampaign | undefined}
+    */
 RewardType.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/RewardTypeCoin} 
- */
+    * @type {RewardTypeCoin | undefined}
+    */
 RewardType.prototype['coin'] = undefined;
 
 /**
- * @member {module:model/RewardTypeProduct} 
- */
+    * @type {RewardTypeProduct | undefined}
+    */
 RewardType.prototype['product'] = undefined;
 
 

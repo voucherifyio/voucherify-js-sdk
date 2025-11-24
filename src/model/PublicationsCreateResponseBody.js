@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import CustomerWithSummaryLoyaltyReferrals from './CustomerWithSummaryLoyaltyReferrals';
 import Voucher from './Voucher';
-
 /**
  * The PublicationsCreateResponseBody model module.
  * @module model/PublicationsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PublicationsCreateResponseBody {
     /**
      * Constructs a new <code>PublicationsCreateResponseBody</code>.
-     * @alias module:model/PublicationsCreateResponseBody
+     * @alias PublicationsCreateResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class PublicationsCreateResponseBody {
     /**
      * Constructs a <code>PublicationsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PublicationsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/PublicationsCreateResponseBody} The populated <code>PublicationsCreateResponseBody</code> instance.
+     * @param {Partial<PublicationsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PublicationsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {PublicationsCreateResponseBody} The populated <code>PublicationsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -97,7 +96,7 @@ class PublicationsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>PublicationsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PublicationsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PublicationsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -155,131 +154,131 @@ class PublicationsCreateResponseBody {
 
 
 /**
- * Unique publication ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique publication ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 PublicationsCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the `publication`.
- * @member {module:model/PublicationsCreateResponseBody.ObjectEnum} 
- * @default 'publication'
- */
+    * The type of the object represented by the JSON. This object stores information about the `publication`.
+    * @type {(keyof typeof PublicationsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'publication'
+    */
 PublicationsCreateResponseBody.prototype['object'] = 'publication';
 
 /**
- * Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 PublicationsCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Unique customer ID of the customer receiving the publication.
- * @member {String} 
- */
+    * Unique customer ID of the customer receiving the publication.
+    * @type {String | undefined}
+    */
 PublicationsCreateResponseBody.prototype['customer_id'] = undefined;
 
 /**
- * Customer's `source_id`.
- * @member {String} 
- */
+    * Customer's `source_id`.
+    * @type {String | undefined}
+    */
 PublicationsCreateResponseBody.prototype['tracking_id'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
+    * @type {Object | undefined}
+    */
 PublicationsCreateResponseBody.prototype['metadata'] = undefined;
 
 /**
- * How the publication was originated. It can be your own custom channel or an example value provided here.
- * @member {module:model/PublicationsCreateResponseBody.ChannelEnum} 
- * @default 'API'
- */
+    * How the publication was originated. It can be your own custom channel or an example value provided here.
+    * @type {(keyof typeof PublicationsCreateResponseBody.ChannelEnum) | undefined}
+    * @default 'API'
+    */
 PublicationsCreateResponseBody.prototype['channel'] = 'API';
 
 /**
- * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. 
- * @member {String} 
- */
+    * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. 
+    * @type {String | undefined}
+    */
 PublicationsCreateResponseBody.prototype['source_id'] = undefined;
 
 /**
- * Status of the publication attempt.
- * @member {module:model/PublicationsCreateResponseBody.ResultEnum} 
- * @default 'SUCCESS'
- */
+    * Status of the publication attempt.
+    * @type {(keyof typeof PublicationsCreateResponseBody.ResultEnum) | undefined}
+    * @default 'SUCCESS'
+    */
 PublicationsCreateResponseBody.prototype['result'] = 'SUCCESS';
 
 /**
- * @member {module:model/CustomerWithSummaryLoyaltyReferrals} 
- */
+    * @type {CustomerWithSummaryLoyaltyReferrals | undefined}
+    */
 PublicationsCreateResponseBody.prototype['customer'] = undefined;
 
 /**
- * Contains the unique internal voucher ID that was assigned by Voucherify.
- * @member {Array.<String>} 
- */
+    * Contains the unique internal voucher ID that was assigned by Voucherify.
+    * @type {Array.<String> | undefined}
+    */
 PublicationsCreateResponseBody.prototype['vouchers_id'] = undefined;
 
 /**
- * @member {module:model/Voucher} 
- */
+    * @type {Voucher | undefined}
+    */
 PublicationsCreateResponseBody.prototype['voucher'] = undefined;
 
 /**
- * Contains the unique voucher codes that was assigned by Voucherify.
- * @member {Array.<String>} 
- */
+    * Contains the unique voucher codes that was assigned by Voucherify.
+    * @type {Array.<String> | undefined}
+    */
 PublicationsCreateResponseBody.prototype['vouchers'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-PublicationsCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    PublicationsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "publication"
+         * @constant
+         */
+        "publication": "publication"    
+    };
+
 
     /**
-     * value: "publication"
-     * @constant
+     * Allowed values for the <code>channel</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "publication": "publication"
-};
+    PublicationsCreateResponseBody['ChannelEnum'] = {
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API"    
+    };
 
-
-/**
- * Allowed values for the <code>channel</code> property.
- * @enum {String}
- * @readonly
- */
-PublicationsCreateResponseBody['ChannelEnum'] = {
 
     /**
-     * value: "API"
-     * @constant
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "API": "API"
-};
-
-
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-PublicationsCreateResponseBody['ResultEnum'] = {
-
-    /**
-     * value: "SUCCESS"
-     * @constant
-     */
-    "SUCCESS": "SUCCESS"
-};
+    PublicationsCreateResponseBody['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS"    
+    };
 
 
 

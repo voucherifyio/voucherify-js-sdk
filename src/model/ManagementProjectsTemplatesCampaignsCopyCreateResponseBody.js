@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsTemplatesCampaignsCopyCreateResponseBody model module.
  * @module model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsTemplatesCampaignsCopyCreateResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;/management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy&#x60;.
-     * @alias module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody
+     * @alias ManagementProjectsTemplatesCampaignsCopyCreateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsTemplatesCampaignsCopyCreateResponseBody {
     /**
      * Constructs a <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} The populated <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsCopyCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsTemplatesCampaignsCopyCreateResponseBody} The populated <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectsTemplatesCampaignsCopyCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsCopyCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsTemplatesCampaignsCopyCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -107,80 +106,80 @@ class ManagementProjectsTemplatesCampaignsCopyCreateResponseBody {
 
 
 /**
- * Unique identifier of the campaign template. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the campaign template. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * User-defined name of the campaign template.
- * @member {String} 
- */
+    * User-defined name of the campaign template.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * User-defined description of the campaign template.
- * @member {String} 
- */
+    * User-defined description of the campaign template.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['description'] = undefined;
 
 /**
- * Type of the campaign used to create the campaign template. Templates created from a promotion tier are converted to `DISCOUNT_COUPONS`.
- * @member {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.CampaignTypeEnum} 
- */
+    * Type of the campaign used to create the campaign template. Templates created from a promotion tier are converted to `DISCOUNT_COUPONS`.
+    * @type {(keyof typeof ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.CampaignTypeEnum) | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['campaign_type'] = undefined;
 
 /**
- * Timestamp representing the date and time when the campaign template was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the campaign template was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.ObjectEnum} 
- * @default 'campaign_template'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'campaign_template'
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateResponseBody.prototype['object'] = 'campaign_template';
 
 
 
 
 
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsTemplatesCampaignsCopyCreateResponseBody['CampaignTypeEnum'] = {
+    /**
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsTemplatesCampaignsCopyCreateResponseBody['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS"    
+    };
+
 
     /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsTemplatesCampaignsCopyCreateResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "campaign_template"
-     * @constant
-     */
-    "campaign_template": "campaign_template"
-};
+    ManagementProjectsTemplatesCampaignsCopyCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign_template"
+         * @constant
+         */
+        "campaign_template": "campaign_template"    
+    };
 
 
 

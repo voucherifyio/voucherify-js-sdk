@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyaltyTier model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyaltyTier {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code>.
      * Defines the tier associated with the earning rule definition.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier
+     * @alias LoyaltiesEarningRulesGetResponseBodyLoyaltyTier
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyTier {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodyLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodyLoyaltyTier} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyTier {
 
 
 /**
- * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
- * @member {String} 
- */
+    * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyTier.prototype['id'] = undefined;
 
 

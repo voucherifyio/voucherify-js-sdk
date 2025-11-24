@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignsTransactionsExportCreateRequestBodyParameters from './CampaignsTransactionsExportCreateRequestBodyParameters';
-
 /**
  * The CampaignsTransactionsExportCreateRequestBody model module.
  * @module model/CampaignsTransactionsExportCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsExportCreateRequestBody {
     /**
      * Constructs a new <code>CampaignsTransactionsExportCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/campaigns/{campaignId}/transactions/export&#x60;.
-     * @alias module:model/CampaignsTransactionsExportCreateRequestBody
+     * @alias CampaignsTransactionsExportCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignsTransactionsExportCreateRequestBody {
     /**
      * Constructs a <code>CampaignsTransactionsExportCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsExportCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsExportCreateRequestBody} The populated <code>CampaignsTransactionsExportCreateRequestBody</code> instance.
+     * @param {Partial<CampaignsTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsExportCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsExportCreateRequestBody} The populated <code>CampaignsTransactionsExportCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class CampaignsTransactionsExportCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsExportCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsExportCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class CampaignsTransactionsExportCreateRequestBody {
 
 
 /**
- * @member {module:model/CampaignsTransactionsExportCreateRequestBodyParameters} 
- */
+    * @type {CampaignsTransactionsExportCreateRequestBodyParameters | undefined}
+    */
 CampaignsTransactionsExportCreateRequestBody.prototype['parameters'] = undefined;
 
 

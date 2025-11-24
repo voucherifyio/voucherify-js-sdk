@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsStackingRulesCreateRequestBody model module.
  * @module model/ManagementProjectsStackingRulesCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsStackingRulesCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsStackingRulesCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;/management/v1/projects/{projectId}/stacking-rules&#x60;.
-     * @alias module:model/ManagementProjectsStackingRulesCreateRequestBody
+     * @alias ManagementProjectsStackingRulesCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsStackingRulesCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsStackingRulesCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsStackingRulesCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsStackingRulesCreateRequestBody} The populated <code>ManagementProjectsStackingRulesCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsStackingRulesCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsStackingRulesCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsStackingRulesCreateRequestBody} The populated <code>ManagementProjectsStackingRulesCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -108,7 +107,7 @@ class ManagementProjectsStackingRulesCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsStackingRulesCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsStackingRulesCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsStackingRulesCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -170,241 +169,241 @@ class ManagementProjectsStackingRulesCreateRequestBody {
 
 
 /**
- * Lists the IDs of exclusive categories. A redeemable from a campaign with an exclusive category is the only redeemable to be redeemed when applied with redeemables from other campaigns unless these campaigns are exclusive or joint.
- * @member {Array.<String>} 
- */
+    * Lists the IDs of exclusive categories. A redeemable from a campaign with an exclusive category is the only redeemable to be redeemed when applied with redeemables from other campaigns unless these campaigns are exclusive or joint.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['exclusive_categories'] = undefined;
 
 /**
- * Lists the IDs of the joint categories. A campaign with a joint category is always applied regardless of the exclusivity of other campaigns.
- * @member {Array.<String>} 
- */
+    * Lists the IDs of the joint categories. A campaign with a joint category is always applied regardless of the exclusivity of other campaigns.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['joint_categories'] = undefined;
 
 /**
- * Defines how many redeemables can be sent in one request. Note: more redeemables means more processing time.
- * @member {Number} 
- */
+    * Defines how many redeemables can be sent in one request. Note: more redeemables means more processing time.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_limit'] = undefined;
 
 /**
- * Defines how many redeemables can be applied in one request. The number must be less than or equal to `redeemables_limit`. For example, a user can select 30 discounts but only 5 will be applied to the order and the remaining will be `SKIPPED` according to the `redeemables_sorting_rule`.
- * @member {Number} 
- */
+    * Defines how many redeemables can be applied in one request. The number must be less than or equal to `redeemables_limit`. For example, a user can select 30 discounts but only 5 will be applied to the order and the remaining will be `SKIPPED` according to the `redeemables_sorting_rule`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['applicable_redeemables_limit'] = undefined;
 
 /**
- * Defines how many redeemables with the same category can be applied in one request. The number must be less than or equal to `applicable_redeemables_limit`. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
- * @member {Number} 
- */
+    * Defines how many redeemables with the same category can be applied in one request. The number must be less than or equal to `applicable_redeemables_limit`. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['applicable_redeemables_per_category_limit'] = undefined;
 
 /**
- * Lists categories by category IDs (keys) and defines their limits (values) of applicable redeemables that belong to campaigns with that category.
- * @member {Object.<String, Number>} 
- */
+    * Lists categories by category IDs (keys) and defines their limits (values) of applicable redeemables that belong to campaigns with that category.
+    * @type {Object.<String, Number> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['applicable_redeemables_category_limits'] = undefined;
 
 /**
- * Defines how many redeemables with an assigned exclusive category can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
- * @member {Number} 
- */
+    * Defines how many redeemables with an assigned exclusive category can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['applicable_exclusive_redeemables_limit'] = undefined;
 
 /**
- * Defines how many redeemables with an assigned exclusive category can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`. The number must be less than or equal to `applicable_exclusive_redeemables_limit`.
- * @member {Number} 
- */
+    * Defines how many redeemables with an assigned exclusive category can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`. The number must be less than or equal to `applicable_exclusive_redeemables_limit`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['applicable_exclusive_redeemables_per_category_limit'] = undefined;
 
 /**
- * Defines if the discounts are applied by taking into account the initial order amount or the discounted order amount.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.DiscountCalculationModeEnum} 
- */
+    * Defines if the discounts are applied by taking into account the initial order amount or the discounted order amount.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.DiscountCalculationModeEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['discount_calculation_mode'] = undefined;
 
 /**
- * Lists the IDs of the categories that apply a discount based on the initial amount.
- * @member {Array.<String>} 
- */
+    * Lists the IDs of the categories that apply a discount based on the initial amount.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['initial_amount_mode_categories'] = undefined;
 
 /**
- * Lists the IDs of the categories that apply a discount based on the discounted amount.
- * @member {Array.<String>} 
- */
+    * Lists the IDs of the categories that apply a discount based on the discounted amount.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['discounted_amount_mode_categories'] = undefined;
 
 /**
- * Defines the application mode for redeemables. `\"ALL\"` means that all redeemables must be validated for the redemption to be successful. `\"PARTIAL\"` means that only those redeemables that can be validated will be redeemed. The redeemables that fail validaton will be skipped.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.RedeemablesApplicationModeEnum} 
- */
+    * Defines the application mode for redeemables. `\"ALL\"` means that all redeemables must be validated for the redemption to be successful. `\"PARTIAL\"` means that only those redeemables that can be validated will be redeemed. The redeemables that fail validaton will be skipped.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.RedeemablesApplicationModeEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_application_mode'] = undefined;
 
 /**
- * Defines redeemables sorting rule. `CATEGORY_HIERARCHY` means that redeemables are applied oaccording to the category priority. `REQUESTED_ORDER` means that redeemables are applied in the sequence provided in the request.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.RedeemablesSortingRuleEnum} 
- */
+    * Defines redeemables sorting rule. `CATEGORY_HIERARCHY` means that redeemables are applied oaccording to the category priority. `REQUESTED_ORDER` means that redeemables are applied in the sequence provided in the request.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.RedeemablesSortingRuleEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_sorting_rule'] = undefined;
 
 /**
- * Defines redeemables products application mode. `STACK` means that multiple discounts can be applied to a product. `ONCE` means that only one discount can be applied to the same product.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.RedeemablesProductsApplicationModeEnum} 
- */
+    * Defines redeemables products application mode. `STACK` means that multiple discounts can be applied to a product. `ONCE` means that only one discount can be applied to the same product.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.RedeemablesProductsApplicationModeEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_products_application_mode'] = undefined;
 
 /**
- * Defines redeemables no effect rule. `REDEEM_ANYWAY` means that the redeemable will be redeemed regardless of any restrictions or conditions in place. `SKIP` means that the redeemable will be processed only when an applicable effect is calculated.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.RedeemablesNoEffectRuleEnum} 
- */
+    * Defines redeemables no effect rule. `REDEEM_ANYWAY` means that the redeemable will be redeemed regardless of any restrictions or conditions in place. `SKIP` means that the redeemable will be processed only when an applicable effect is calculated.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.RedeemablesNoEffectRuleEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_no_effect_rule'] = undefined;
 
 /**
- * Lists category IDs. Redeemables with a given category are skipped even if the `redeemables_no_effect_rule` is set to `REDEEM_ANYWAY`. Category IDs can't overlap with the IDs in `no_effect_redeem_anyway_categories`.
- * @member {Array.<String>} 
- */
+    * Lists category IDs. Redeemables with a given category are skipped even if the `redeemables_no_effect_rule` is set to `REDEEM_ANYWAY`. Category IDs can't overlap with the IDs in `no_effect_redeem_anyway_categories`.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['no_effect_skip_categories'] = undefined;
 
 /**
- * Lists category IDs. Redeemables with a given category are redeemed anyway even if the `redeemables_no_effect_rule` is set to `SKIP`. Category IDs can't overlap with the IDs in `no_effect_skip_categories`.
- * @member {Array.<String>} 
- */
+    * Lists category IDs. Redeemables with a given category are redeemed anyway even if the `redeemables_no_effect_rule` is set to `SKIP`. Category IDs can't overlap with the IDs in `no_effect_skip_categories`.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['no_effect_redeem_anyway_categories'] = undefined;
 
 /**
- * Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values.
- * @member {module:model/ManagementProjectsStackingRulesCreateRequestBody.RedeemablesRollbackOrderModeEnum} 
- */
+    * Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values.
+    * @type {(keyof typeof ManagementProjectsStackingRulesCreateRequestBody.RedeemablesRollbackOrderModeEnum) | undefined}
+    */
 ManagementProjectsStackingRulesCreateRequestBody.prototype['redeemables_rollback_order_mode'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>discount_calculation_mode</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['DiscountCalculationModeEnum'] = {
+    /**
+     * Allowed values for the <code>discount_calculation_mode</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsStackingRulesCreateRequestBody['DiscountCalculationModeEnum'] = {
+    
+        /**
+         * value: "INITIAL_AMOUNT"
+         * @constant
+         */
+        "INITIAL_AMOUNT": "INITIAL_AMOUNT",
+    
+        /**
+         * value: "DISCOUNTED_AMOUNT"
+         * @constant
+         */
+        "DISCOUNTED_AMOUNT": "DISCOUNTED_AMOUNT"    
+    };
+
 
     /**
-     * value: "INITIAL_AMOUNT"
-     * @constant
+     * Allowed values for the <code>redeemables_application_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "INITIAL_AMOUNT": "INITIAL_AMOUNT",
+    ManagementProjectsStackingRulesCreateRequestBody['RedeemablesApplicationModeEnum'] = {
+    
+        /**
+         * value: "ALL"
+         * @constant
+         */
+        "ALL": "ALL",
+    
+        /**
+         * value: "PARTIAL"
+         * @constant
+         */
+        "PARTIAL": "PARTIAL"    
+    };
+
 
     /**
-     * value: "DISCOUNTED_AMOUNT"
-     * @constant
+     * Allowed values for the <code>redeemables_sorting_rule</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNTED_AMOUNT": "DISCOUNTED_AMOUNT"
-};
+    ManagementProjectsStackingRulesCreateRequestBody['RedeemablesSortingRuleEnum'] = {
+    
+        /**
+         * value: "CATEGORY_HIERARCHY"
+         * @constant
+         */
+        "CATEGORY_HIERARCHY": "CATEGORY_HIERARCHY",
+    
+        /**
+         * value: "REQUESTED_ORDER"
+         * @constant
+         */
+        "REQUESTED_ORDER": "REQUESTED_ORDER"    
+    };
 
-
-/**
- * Allowed values for the <code>redeemables_application_mode</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['RedeemablesApplicationModeEnum'] = {
 
     /**
-     * value: "ALL"
-     * @constant
+     * Allowed values for the <code>redeemables_products_application_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ALL": "ALL",
+    ManagementProjectsStackingRulesCreateRequestBody['RedeemablesProductsApplicationModeEnum'] = {
+    
+        /**
+         * value: "STACK"
+         * @constant
+         */
+        "STACK": "STACK",
+    
+        /**
+         * value: "ONCE"
+         * @constant
+         */
+        "ONCE": "ONCE"    
+    };
+
 
     /**
-     * value: "PARTIAL"
-     * @constant
+     * Allowed values for the <code>redeemables_no_effect_rule</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "PARTIAL": "PARTIAL"
-};
+    ManagementProjectsStackingRulesCreateRequestBody['RedeemablesNoEffectRuleEnum'] = {
+    
+        /**
+         * value: "REDEEM_ANYWAY"
+         * @constant
+         */
+        "REDEEM_ANYWAY": "REDEEM_ANYWAY",
+    
+        /**
+         * value: "SKIP"
+         * @constant
+         */
+        "SKIP": "SKIP"    
+    };
 
-
-/**
- * Allowed values for the <code>redeemables_sorting_rule</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['RedeemablesSortingRuleEnum'] = {
 
     /**
-     * value: "CATEGORY_HIERARCHY"
-     * @constant
+     * Allowed values for the <code>redeemables_rollback_order_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CATEGORY_HIERARCHY": "CATEGORY_HIERARCHY",
-
-    /**
-     * value: "REQUESTED_ORDER"
-     * @constant
-     */
-    "REQUESTED_ORDER": "REQUESTED_ORDER"
-};
-
-
-/**
- * Allowed values for the <code>redeemables_products_application_mode</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['RedeemablesProductsApplicationModeEnum'] = {
-
-    /**
-     * value: "STACK"
-     * @constant
-     */
-    "STACK": "STACK",
-
-    /**
-     * value: "ONCE"
-     * @constant
-     */
-    "ONCE": "ONCE"
-};
-
-
-/**
- * Allowed values for the <code>redeemables_no_effect_rule</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['RedeemablesNoEffectRuleEnum'] = {
-
-    /**
-     * value: "REDEEM_ANYWAY"
-     * @constant
-     */
-    "REDEEM_ANYWAY": "REDEEM_ANYWAY",
-
-    /**
-     * value: "SKIP"
-     * @constant
-     */
-    "SKIP": "SKIP"
-};
-
-
-/**
- * Allowed values for the <code>redeemables_rollback_order_mode</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesCreateRequestBody['RedeemablesRollbackOrderModeEnum'] = {
-
-    /**
-     * value: "WITH_ORDER"
-     * @constant
-     */
-    "WITH_ORDER": "WITH_ORDER",
-
-    /**
-     * value: "WITHOUT_ORDER"
-     * @constant
-     */
-    "WITHOUT_ORDER": "WITHOUT_ORDER"
-};
+    ManagementProjectsStackingRulesCreateRequestBody['RedeemablesRollbackOrderModeEnum'] = {
+    
+        /**
+         * value: "WITH_ORDER"
+         * @constant
+         */
+        "WITH_ORDER": "WITH_ORDER",
+    
+        /**
+         * value: "WITHOUT_ORDER"
+         * @constant
+         */
+        "WITHOUT_ORDER": "WITHOUT_ORDER"    
+    };
 
 
 

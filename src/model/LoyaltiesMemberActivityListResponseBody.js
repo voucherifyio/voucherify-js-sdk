@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import MemberActivity from './MemberActivity';
-
 /**
  * The LoyaltiesMemberActivityListResponseBody model module.
  * @module model/LoyaltiesMemberActivityListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMemberActivityListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMemberActivityListResponseBody</code>.
      * Response body schema for retrieving member activity.
-     * @alias module:model/LoyaltiesMemberActivityListResponseBody
+     * @alias LoyaltiesMemberActivityListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMemberActivityListResponseBody {
     /**
      * Constructs a <code>LoyaltiesMemberActivityListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMemberActivityListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMemberActivityListResponseBody} The populated <code>LoyaltiesMemberActivityListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMemberActivityListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMemberActivityListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMemberActivityListResponseBody} The populated <code>LoyaltiesMemberActivityListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LoyaltiesMemberActivityListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMemberActivityListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMemberActivityListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMemberActivityListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,54 +107,54 @@ class LoyaltiesMemberActivityListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about member activities in a dictionary.
- * @member {module:model/LoyaltiesMemberActivityListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about member activities in a dictionary.
+    * @type {(keyof typeof LoyaltiesMemberActivityListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 LoyaltiesMemberActivityListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of member activity objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of member activity objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 LoyaltiesMemberActivityListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of member activity objects.
- * @member {Array.<module:model/MemberActivity>} 
- */
+    * Array of member activity objects.
+    * @type {Array.<MemberActivity> | undefined}
+    */
 LoyaltiesMemberActivityListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesMemberActivityListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the event ID in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the event ID in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
+    * @type {String | undefined}
+    */
 LoyaltiesMemberActivityListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMemberActivityListResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
+    LoyaltiesMemberActivityListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
 
 
 

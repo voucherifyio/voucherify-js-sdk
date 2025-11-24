@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The AccessSettingsAssign model module.
  * @module model/AccessSettingsAssign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AccessSettingsAssign {
     /**
      * Constructs a new <code>AccessSettingsAssign</code>.
      * Assigns the campaign to an area or a store. Provide the area and/or store IDs in the respective arrays. If a campaign changes assignments between areas or stores, unassign it from the area. For example, if a campaign is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the campaign from Area-01 and assign to Store-01 only.  If you want to assign the campaign to stores only, you do not have to send the area ID.
-     * @alias module:model/AccessSettingsAssign
+     * @alias AccessSettingsAssign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class AccessSettingsAssign {
     /**
      * Constructs a <code>AccessSettingsAssign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AccessSettingsAssign} obj Optional instance to populate.
-     * @returns {module:model/AccessSettingsAssign} The populated <code>AccessSettingsAssign</code> instance.
+     * @param {Partial<AccessSettingsAssign>} data The plain JavaScript object bearing properties of interest.
+     * @param {AccessSettingsAssign} [obj] Optional instance to populate.
+     * @returns {AccessSettingsAssign} The populated <code>AccessSettingsAssign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class AccessSettingsAssign {
 
     /**
      * Validates the JSON data with respect to <code>AccessSettingsAssign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AccessSettingsAssign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AccessSettingsAssign</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class AccessSettingsAssign {
 
 
 /**
- * List all area IDs to which the campaign will be assigned.
- * @member {Array.<String>} 
- */
+    * List all area IDs to which the campaign will be assigned.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsAssign.prototype['areas_ids'] = undefined;
 
 /**
- * List all store IDs to which the campaign will be assigned.
- * @member {Array.<String>} 
- */
+    * List all store IDs to which the campaign will be assigned.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsAssign.prototype['area_stores_ids'] = undefined;
 
 /**
- * List all area IDs where the campaign is assigned to all stores in the area. This assignment is not equal to the assignment to all `area_stores_ids` listed separately.
- * @member {Array.<String>} 
- */
+    * List all area IDs where the campaign is assigned to all stores in the area. This assignment is not equal to the assignment to all `area_stores_ids` listed separately.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsAssign.prototype['area_all_stores_ids'] = undefined;
 
 

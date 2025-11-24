@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRewardCustomer model module.
  * @module model/MemberActivityDataRedemptionRewardCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardCustomer {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardCustomer</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardCustomer
+     * @alias MemberActivityDataRedemptionRewardCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataRedemptionRewardCustomer {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardCustomer} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardCustomer} The populated <code>MemberActivityDataRedemptionRewardCustomer</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardCustomer} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardCustomer} The populated <code>MemberActivityDataRedemptionRewardCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class MemberActivityDataRedemptionRewardCustomer {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardCustomer</code>.
      */
     static validateJSON(data) {
@@ -106,59 +105,59 @@ class MemberActivityDataRedemptionRewardCustomer {
 
 
 /**
- * Unique identifier of an existing customer. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an existing customer. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['name'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['email'] = undefined;
 
 /**
- * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
- * @member {String} 
- */
+    * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['source_id'] = undefined;
 
 /**
- * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/MemberActivityDataRedemptionRewardCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof MemberActivityDataRedemptionRewardCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 MemberActivityDataRedemptionRewardCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionRewardCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    MemberActivityDataRedemptionRewardCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

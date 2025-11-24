@@ -16,17 +16,16 @@ import AccessSettings from './AccessSettings';
 import CampaignLoyaltyVoucher from './CampaignLoyaltyVoucher';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The LoyaltiesCreateCampaignRequestBody model module.
  * @module model/LoyaltiesCreateCampaignRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesCreateCampaignRequestBody {
     /**
      * Constructs a new <code>LoyaltiesCreateCampaignRequestBody</code>.
      * Request body schema for **POST** &#x60;/loyalties&#x60;.
-     * @alias module:model/LoyaltiesCreateCampaignRequestBody
+     * @alias LoyaltiesCreateCampaignRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class LoyaltiesCreateCampaignRequestBody {
     /**
      * Constructs a <code>LoyaltiesCreateCampaignRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesCreateCampaignRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesCreateCampaignRequestBody} The populated <code>LoyaltiesCreateCampaignRequestBody</code> instance.
+     * @param {Partial<LoyaltiesCreateCampaignRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesCreateCampaignRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesCreateCampaignRequestBody} The populated <code>LoyaltiesCreateCampaignRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -116,7 +115,7 @@ class LoyaltiesCreateCampaignRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesCreateCampaignRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesCreateCampaignRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesCreateCampaignRequestBody</code>.
      */
     static validateJSON(data) {
@@ -178,139 +177,139 @@ class LoyaltiesCreateCampaignRequestBody {
 
 
 /**
- * Campaign name.
- * @member {String} 
- */
+    * Campaign name.
+    * @type {String | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['name'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
+    * @type {String | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['description'] = undefined;
 
 /**
- * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
- * @member {module:model/LoyaltiesCreateCampaignRequestBody.TypeEnum} 
- */
+    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
+    * @type {(keyof typeof LoyaltiesCreateCampaignRequestBody.TypeEnum) | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['type'] = undefined;
 
 /**
- * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
- * @member {Boolean} 
- */
+    * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['join_once'] = undefined;
 
 /**
- * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
- * @member {Boolean} 
- */
+    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['auto_join'] = undefined;
 
 /**
- * Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
- * @member {Boolean} 
- */
+    * Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['use_voucher_metadata_schema'] = undefined;
 
 /**
- * Total number of unique vouchers in campaign (size of campaign).
- * @member {Number} 
- */
+    * Total number of unique vouchers in campaign (size of campaign).
+    * @type {Number | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['vouchers_count'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/LoyaltiesCreateCampaignRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof LoyaltiesCreateCampaignRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
- * @member {String} 
- */
+    * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
+    * @type {String | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['activity_duration_after_publishing'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
+    * @type {String | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['category_id'] = undefined;
 
 /**
- * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
- * @member {String} 
- */
+    * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
+    * @type {String | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['category'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/AccessSettings} 
- */
+    * @type {AccessSettings | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['access_settings'] = undefined;
 
 /**
- * Type of campaign.
- * @member {module:model/LoyaltiesCreateCampaignRequestBody.CampaignTypeEnum} 
- * @default 'LOYALTY_PROGRAM'
- */
+    * Type of campaign.
+    * @type {(keyof typeof LoyaltiesCreateCampaignRequestBody.CampaignTypeEnum) | undefined}
+    * @default 'LOYALTY_PROGRAM'
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['campaign_type'] = 'LOYALTY_PROGRAM';
 
 /**
- * @member {module:model/CampaignLoyaltyVoucher} 
- */
+    * @type {CampaignLoyaltyVoucher | undefined}
+    */
 LoyaltiesCreateCampaignRequestBody.prototype['voucher'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesCreateCampaignRequestBody['TypeEnum'] = {
-
     /**
-     * value: "AUTO_UPDATE"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "AUTO_UPDATE": "AUTO_UPDATE",
-
-    /**
-     * value: "STATIC"
-     * @constant
-     */
-    "STATIC": "STATIC"
-};
+    LoyaltiesCreateCampaignRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE",
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC"    
+    };
 
 
 /**
@@ -364,19 +363,19 @@ LoyaltiesCreateCampaignRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesCreateCampaignRequestBody['CampaignTypeEnum'] = {
-
     /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM"
-};
+    LoyaltiesCreateCampaignRequestBody['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM"    
+    };
 
 
 

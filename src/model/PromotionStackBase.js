@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import PromotionStackBaseTiers from './PromotionStackBaseTiers';
-
 /**
  * The PromotionStackBase model module.
  * @module model/PromotionStackBase
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionStackBase {
     /**
      * Constructs a new <code>PromotionStackBase</code>.
-     * @alias module:model/PromotionStackBase
+     * @alias PromotionStackBase
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class PromotionStackBase {
     /**
      * Constructs a <code>PromotionStackBase</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionStackBase} obj Optional instance to populate.
-     * @returns {module:model/PromotionStackBase} The populated <code>PromotionStackBase</code> instance.
+     * @param {Partial<PromotionStackBase>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionStackBase} [obj] Optional instance to populate.
+     * @returns {PromotionStackBase} The populated <code>PromotionStackBase</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class PromotionStackBase {
 
     /**
      * Validates the JSON data with respect to <code>PromotionStackBase</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionStackBase>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionStackBase</code>.
      */
     static validateJSON(data) {
@@ -82,14 +81,14 @@ class PromotionStackBase {
 
 
 /**
- * Promotion stack name.
- * @member {String} 
- */
+    * Promotion stack name.
+    * @type {String | undefined}
+    */
 PromotionStackBase.prototype['name'] = undefined;
 
 /**
- * @member {module:model/PromotionStackBaseTiers} 
- */
+    * @type {PromotionStackBaseTiers | undefined}
+    */
 PromotionStackBase.prototype['tiers'] = undefined;
 
 

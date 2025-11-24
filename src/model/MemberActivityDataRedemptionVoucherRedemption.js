@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionVoucherRedemption model module.
  * @module model/MemberActivityDataRedemptionVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionVoucherRedemption {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionVoucherRedemption</code>.
-     * @alias module:model/MemberActivityDataRedemptionVoucherRedemption
+     * @alias MemberActivityDataRedemptionVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataRedemptionVoucherRedemption {
     /**
      * Constructs a <code>MemberActivityDataRedemptionVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionVoucherRedemption} The populated <code>MemberActivityDataRedemptionVoucherRedemption</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionVoucherRedemption} The populated <code>MemberActivityDataRedemptionVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class MemberActivityDataRedemptionVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -91,34 +90,34 @@ class MemberActivityDataRedemptionVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 MemberActivityDataRedemptionVoucherRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucherRedemption.prototype['url'] = undefined;
 
 

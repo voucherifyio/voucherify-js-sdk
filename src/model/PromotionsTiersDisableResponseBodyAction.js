@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Discount from './Discount';
-
 /**
  * The PromotionsTiersDisableResponseBodyAction model module.
  * @module model/PromotionsTiersDisableResponseBodyAction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsTiersDisableResponseBodyAction {
     /**
      * Constructs a new <code>PromotionsTiersDisableResponseBodyAction</code>.
      * Contains details about the discount applied by the promotion tier.
-     * @alias module:model/PromotionsTiersDisableResponseBodyAction
+     * @alias PromotionsTiersDisableResponseBodyAction
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionsTiersDisableResponseBodyAction {
     /**
      * Constructs a <code>PromotionsTiersDisableResponseBodyAction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsTiersDisableResponseBodyAction} obj Optional instance to populate.
-     * @returns {module:model/PromotionsTiersDisableResponseBodyAction} The populated <code>PromotionsTiersDisableResponseBodyAction</code> instance.
+     * @param {Partial<PromotionsTiersDisableResponseBodyAction>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsTiersDisableResponseBodyAction} [obj] Optional instance to populate.
+     * @returns {PromotionsTiersDisableResponseBodyAction} The populated <code>PromotionsTiersDisableResponseBodyAction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class PromotionsTiersDisableResponseBodyAction {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsTiersDisableResponseBodyAction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsTiersDisableResponseBodyAction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsTiersDisableResponseBodyAction</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class PromotionsTiersDisableResponseBodyAction {
 
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 PromotionsTiersDisableResponseBodyAction.prototype['discount'] = undefined;
 
 

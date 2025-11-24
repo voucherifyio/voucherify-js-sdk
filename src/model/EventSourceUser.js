@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EventSourceUser model module.
  * @module model/EventSourceUser
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EventSourceUser {
     /**
      * Constructs a new <code>EventSourceUser</code>.
      * Determines the Voucherify user who triggered the event.
-     * @alias module:model/EventSourceUser
+     * @alias EventSourceUser
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EventSourceUser {
     /**
      * Constructs a <code>EventSourceUser</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventSourceUser} obj Optional instance to populate.
-     * @returns {module:model/EventSourceUser} The populated <code>EventSourceUser</code> instance.
+     * @param {Partial<EventSourceUser>} data The plain JavaScript object bearing properties of interest.
+     * @param {EventSourceUser} [obj] Optional instance to populate.
+     * @returns {EventSourceUser} The populated <code>EventSourceUser</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class EventSourceUser {
 
     /**
      * Validates the JSON data with respect to <code>EventSourceUser</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EventSourceUser>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EventSourceUser</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class EventSourceUser {
 
 
 /**
- * Unique identifier of the user.
- * @member {String} 
- */
+    * Unique identifier of the user.
+    * @type {String | undefined}
+    */
 EventSourceUser.prototype['id'] = undefined;
 
 

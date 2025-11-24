@@ -16,17 +16,16 @@ import ManagementProjectsBrandingCreateRequestBodyAddress from './ManagementProj
 import ManagementProjectsBrandingCreateRequestBodyBrand from './ManagementProjectsBrandingCreateRequestBodyBrand';
 import ManagementProjectsBrandingCreateRequestBodyCockpits from './ManagementProjectsBrandingCreateRequestBodyCockpits';
 import ManagementProjectsBrandingCreateRequestBodyContact from './ManagementProjectsBrandingCreateRequestBodyContact';
-
 /**
  * The ManagementProjectsBrandingCreateRequestBody model module.
  * @module model/ManagementProjectsBrandingCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsBrandingCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;/management/v1/projects/{projectId}/branding&#x60;.
-     * @alias module:model/ManagementProjectsBrandingCreateRequestBody
+     * @alias ManagementProjectsBrandingCreateRequestBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsBrandingCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsBrandingCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingCreateRequestBody} The populated <code>ManagementProjectsBrandingCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsBrandingCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingCreateRequestBody} The populated <code>ManagementProjectsBrandingCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class ManagementProjectsBrandingCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -100,23 +99,23 @@ class ManagementProjectsBrandingCreateRequestBody {
 
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateRequestBodyBrand} 
- */
+    * @type {ManagementProjectsBrandingCreateRequestBodyBrand | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBody.prototype['brand'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateRequestBodyAddress} 
- */
+    * @type {ManagementProjectsBrandingCreateRequestBodyAddress | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBody.prototype['address'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateRequestBodyContact} 
- */
+    * @type {ManagementProjectsBrandingCreateRequestBodyContact | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBody.prototype['contact'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingCreateRequestBodyCockpits} 
- */
+    * @type {ManagementProjectsBrandingCreateRequestBodyCockpits | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBody.prototype['cockpits'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoriesUpdateResponseBody model module.
  * @module model/CategoriesUpdateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesUpdateResponseBody {
     /**
      * Constructs a new <code>CategoriesUpdateResponseBody</code>.
      * Response body schema for **PUT** &#x60;v1/categories/{categoryId}&#x60;.
-     * @alias module:model/CategoriesUpdateResponseBody
+     * @alias CategoriesUpdateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CategoriesUpdateResponseBody {
     /**
      * Constructs a <code>CategoriesUpdateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesUpdateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesUpdateResponseBody} The populated <code>CategoriesUpdateResponseBody</code> instance.
+     * @param {Partial<CategoriesUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesUpdateResponseBody} [obj] Optional instance to populate.
+     * @returns {CategoriesUpdateResponseBody} The populated <code>CategoriesUpdateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class CategoriesUpdateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesUpdateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesUpdateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -99,58 +98,58 @@ class CategoriesUpdateResponseBody {
 
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CategoriesUpdateResponseBody.prototype['id'] = undefined;
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoriesUpdateResponseBody.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoriesUpdateResponseBody.prototype['hierarchy'] = undefined;
 
 /**
- * @member {module:model/CategoriesUpdateResponseBody.ObjectEnum} 
- * @default 'category'
- */
+    * @type {(keyof typeof CategoriesUpdateResponseBody.ObjectEnum) | undefined}
+    * @default 'category'
+    */
 CategoriesUpdateResponseBody.prototype['object'] = 'category';
 
 /**
- * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoriesUpdateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoriesUpdateResponseBody.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CategoriesUpdateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "category"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "category": "category"
-};
+    CategoriesUpdateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "category"
+         * @constant
+         */
+        "category": "category"    
+    };
 
 
 

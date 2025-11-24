@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Sku from './Sku';
-
 /**
  * The SkusListForProduct model module.
  * @module model/SkusListForProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SkusListForProduct {
     /**
      * Constructs a new <code>SkusListForProduct</code>.
      * Contains information about child SKUs.
-     * @alias module:model/SkusListForProduct
+     * @alias SkusListForProduct
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class SkusListForProduct {
     /**
      * Constructs a <code>SkusListForProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SkusListForProduct} obj Optional instance to populate.
-     * @returns {module:model/SkusListForProduct} The populated <code>SkusListForProduct</code> instance.
+     * @param {Partial<SkusListForProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {SkusListForProduct} [obj] Optional instance to populate.
+     * @returns {SkusListForProduct} The populated <code>SkusListForProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class SkusListForProduct {
 
     /**
      * Validates the JSON data with respect to <code>SkusListForProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SkusListForProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SkusListForProduct</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class SkusListForProduct {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about SKUs.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about SKUs.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 SkusListForProduct.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of SKUs.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of SKUs.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 SkusListForProduct.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of SKUs.
- * @member {Array.<module:model/Sku>} 
- */
+    * A dictionary that contains an array of SKUs.
+    * @type {Array.<Sku> | undefined}
+    */
 SkusListForProduct.prototype['data'] = undefined;
 
 /**
- * Total number of SKUs in the product.
- * @member {Number} 
- */
+    * Total number of SKUs in the product.
+    * @type {Number | undefined}
+    */
 SkusListForProduct.prototype['total'] = undefined;
 
 

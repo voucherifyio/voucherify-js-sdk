@@ -17,16 +17,15 @@ import ParameterFiltersListBinId from './ParameterFiltersListBinId';
 import ParameterFiltersListBinResourceId from './ParameterFiltersListBinResourceId';
 import ParameterFiltersListBinResourceName from './ParameterFiltersListBinResourceName';
 import ParameterFiltersListBinResourceType from './ParameterFiltersListBinResourceType';
-
 /**
  * The ParameterFiltersListBin model module.
  * @module model/ParameterFiltersListBin
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListBin {
     /**
      * Constructs a new <code>ParameterFiltersListBin</code>.
-     * @alias module:model/ParameterFiltersListBin
+     * @alias ParameterFiltersListBin
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ParameterFiltersListBin {
     /**
      * Constructs a <code>ParameterFiltersListBin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListBin} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListBin} The populated <code>ParameterFiltersListBin</code> instance.
+     * @param {Partial<ParameterFiltersListBin>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListBin} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListBin} The populated <code>ParameterFiltersListBin</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ParameterFiltersListBin {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListBin</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListBin>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListBin</code>.
      */
     static validateJSON(data) {
@@ -103,28 +102,28 @@ class ParameterFiltersListBin {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListBin.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListBinId} 
- */
+    * @type {ParameterFiltersListBinId | undefined}
+    */
 ParameterFiltersListBin.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListBinResourceType} 
- */
+    * @type {ParameterFiltersListBinResourceType | undefined}
+    */
 ParameterFiltersListBin.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListBinResourceName} 
- */
+    * @type {ParameterFiltersListBinResourceName | undefined}
+    */
 ParameterFiltersListBin.prototype['resource_name'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListBinResourceId} 
- */
+    * @type {ParameterFiltersListBinResourceId | undefined}
+    */
 ParameterFiltersListBin.prototype['resource_id'] = undefined;
 
 

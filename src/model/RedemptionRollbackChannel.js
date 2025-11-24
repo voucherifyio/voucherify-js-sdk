@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionRollbackChannel model module.
  * @module model/RedemptionRollbackChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRollbackChannel {
     /**
      * Constructs a new <code>RedemptionRollbackChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/RedemptionRollbackChannel
+     * @alias RedemptionRollbackChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionRollbackChannel {
     /**
      * Constructs a <code>RedemptionRollbackChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRollbackChannel} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRollbackChannel} The populated <code>RedemptionRollbackChannel</code> instance.
+     * @param {Partial<RedemptionRollbackChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRollbackChannel} [obj] Optional instance to populate.
+     * @returns {RedemptionRollbackChannel} The populated <code>RedemptionRollbackChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionRollbackChannel {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRollbackChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRollbackChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRollbackChannel</code>.
      */
     static validateJSON(data) {
@@ -82,40 +81,40 @@ class RedemptionRollbackChannel {
 
 
 /**
- * Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
- * @member {String} 
- */
+    * Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
+    * @type {String | undefined}
+    */
 RedemptionRollbackChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
- * @member {module:model/RedemptionRollbackChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+    * @type {(keyof typeof RedemptionRollbackChannel.ChannelTypeEnum) | undefined}
+    */
 RedemptionRollbackChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionRollbackChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API"
-};
+    RedemptionRollbackChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API"    
+    };
 
 
 

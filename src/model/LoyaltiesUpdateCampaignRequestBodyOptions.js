@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesUpdateCampaignRequestBodyOptions model module.
  * @module model/LoyaltiesUpdateCampaignRequestBodyOptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesUpdateCampaignRequestBodyOptions {
     /**
      * Constructs a new <code>LoyaltiesUpdateCampaignRequestBodyOptions</code>.
-     * @alias module:model/LoyaltiesUpdateCampaignRequestBodyOptions
+     * @alias LoyaltiesUpdateCampaignRequestBodyOptions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LoyaltiesUpdateCampaignRequestBodyOptions {
     /**
      * Constructs a <code>LoyaltiesUpdateCampaignRequestBodyOptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesUpdateCampaignRequestBodyOptions} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesUpdateCampaignRequestBodyOptions} The populated <code>LoyaltiesUpdateCampaignRequestBodyOptions</code> instance.
+     * @param {Partial<LoyaltiesUpdateCampaignRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesUpdateCampaignRequestBodyOptions} [obj] Optional instance to populate.
+     * @returns {LoyaltiesUpdateCampaignRequestBodyOptions} The populated <code>LoyaltiesUpdateCampaignRequestBodyOptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class LoyaltiesUpdateCampaignRequestBodyOptions {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesUpdateCampaignRequestBodyOptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesUpdateCampaignRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesUpdateCampaignRequestBodyOptions</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class LoyaltiesUpdateCampaignRequestBodyOptions {
 
 
 /**
- * Determine if tiers should be recalculated or no.
- * @member {Boolean} 
- */
+    * Determine if tiers should be recalculated or no.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesUpdateCampaignRequestBodyOptions.prototype['recalculate_tiers'] = undefined;
 
 

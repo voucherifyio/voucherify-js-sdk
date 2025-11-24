@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption {
     /**
      * Constructs a new <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code>.
      * Stores the quantity of redemptions that can be applied to the voucher.
-     * @alias module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption
+     * @alias TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption {
     /**
      * Constructs a <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption} The populated <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code> instance.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption} The populated <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption.prototype['quantity'] = undefined;
 
 

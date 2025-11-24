@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoriesUpdateRequestBody model module.
  * @module model/CategoriesUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesUpdateRequestBody {
     /**
      * Constructs a new <code>CategoriesUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;v1/categories/{categoryId}&#x60;.
-     * @alias module:model/CategoriesUpdateRequestBody
+     * @alias CategoriesUpdateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CategoriesUpdateRequestBody {
     /**
      * Constructs a <code>CategoriesUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesUpdateRequestBody} The populated <code>CategoriesUpdateRequestBody</code> instance.
+     * @param {Partial<CategoriesUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {CategoriesUpdateRequestBody} The populated <code>CategoriesUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CategoriesUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class CategoriesUpdateRequestBody {
 
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoriesUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoriesUpdateRequestBody.prototype['hierarchy'] = undefined;
 
 

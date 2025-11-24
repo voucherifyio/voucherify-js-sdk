@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardsUpdateRequestBodyParametersCoin model module.
  * @module model/RewardsUpdateRequestBodyParametersCoin
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsUpdateRequestBodyParametersCoin {
     /**
      * Constructs a new <code>RewardsUpdateRequestBodyParametersCoin</code>.
      * Define the ratio by mapping the number of loyalty points in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
-     * @alias module:model/RewardsUpdateRequestBodyParametersCoin
+     * @alias RewardsUpdateRequestBodyParametersCoin
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardsUpdateRequestBodyParametersCoin {
     /**
      * Constructs a <code>RewardsUpdateRequestBodyParametersCoin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsUpdateRequestBodyParametersCoin} obj Optional instance to populate.
-     * @returns {module:model/RewardsUpdateRequestBodyParametersCoin} The populated <code>RewardsUpdateRequestBodyParametersCoin</code> instance.
+     * @param {Partial<RewardsUpdateRequestBodyParametersCoin>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsUpdateRequestBodyParametersCoin} [obj] Optional instance to populate.
+     * @returns {RewardsUpdateRequestBodyParametersCoin} The populated <code>RewardsUpdateRequestBodyParametersCoin</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardsUpdateRequestBodyParametersCoin {
 
     /**
      * Validates the JSON data with respect to <code>RewardsUpdateRequestBodyParametersCoin</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsUpdateRequestBodyParametersCoin>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsUpdateRequestBodyParametersCoin</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardsUpdateRequestBodyParametersCoin {
 
 
 /**
- * The cash equivalent of the points defined in the `points_ratio` property.
- * @member {String} 
- */
+    * The cash equivalent of the points defined in the `points_ratio` property.
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBodyParametersCoin.prototype['exchange_ratio'] = undefined;
 
 /**
- * The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
- * @member {String} 
- */
+    * The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBodyParametersCoin.prototype['points_ratio'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemChannel model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemChannel {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemChannel</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemChannel
+     * @alias RedemptionsListResponseBodyRedemptionsItemChannel
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsListResponseBodyRedemptionsItemChannel {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemChannel} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemChannel} The populated <code>RedemptionsListResponseBodyRedemptionsItemChannel</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemChannel} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemChannel} The populated <code>RedemptionsListResponseBodyRedemptionsItemChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class RedemptionsListResponseBodyRedemptionsItemChannel {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemChannel</code>.
      */
     static validateJSON(data) {
@@ -81,44 +80,44 @@ class RedemptionsListResponseBodyRedemptionsItemChannel {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemChannel.prototype['channel_id'] = undefined;
 
 /**
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemChannel.ChannelTypeEnum} 
- */
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemChannel.ChannelTypeEnum) | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM"
-};
+    RedemptionsListResponseBodyRedemptionsItemChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM"    
+    };
 
 
 

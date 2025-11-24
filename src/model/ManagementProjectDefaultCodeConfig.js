@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectDefaultCodeConfig model module.
  * @module model/ManagementProjectDefaultCodeConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectDefaultCodeConfig {
     /**
      * Constructs a new <code>ManagementProjectDefaultCodeConfig</code>.
      * Determines the character set that is used as default for vouchers. It is affected by the &#x60;\&quot;case_sensitive_codes\&quot;&#x60; setting.
-     * @alias module:model/ManagementProjectDefaultCodeConfig
+     * @alias ManagementProjectDefaultCodeConfig
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectDefaultCodeConfig {
     /**
      * Constructs a <code>ManagementProjectDefaultCodeConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectDefaultCodeConfig} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectDefaultCodeConfig} The populated <code>ManagementProjectDefaultCodeConfig</code> instance.
+     * @param {Partial<ManagementProjectDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectDefaultCodeConfig} [obj] Optional instance to populate.
+     * @returns {ManagementProjectDefaultCodeConfig} The populated <code>ManagementProjectDefaultCodeConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ManagementProjectDefaultCodeConfig {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectDefaultCodeConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectDefaultCodeConfig</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ManagementProjectDefaultCodeConfig {
 
 
 /**
- * Lists all characters that are used as default for vouchers
- * @member {String} 
- */
+    * Lists all characters that are used as default for vouchers
+    * @type {String | undefined}
+    */
 ManagementProjectDefaultCodeConfig.prototype['charset'] = undefined;
 
 

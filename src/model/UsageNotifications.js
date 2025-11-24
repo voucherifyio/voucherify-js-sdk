@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The UsageNotifications model module.
  * @module model/UsageNotifications
- * @version 3.0.0
+ * @version 3.0.1
  */
 class UsageNotifications {
     /**
      * Constructs a new <code>UsageNotifications</code>.
-     * @alias module:model/UsageNotifications
+     * @alias UsageNotifications
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class UsageNotifications {
     /**
      * Constructs a <code>UsageNotifications</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/UsageNotifications} obj Optional instance to populate.
-     * @returns {module:model/UsageNotifications} The populated <code>UsageNotifications</code> instance.
+     * @param {Partial<UsageNotifications>} data The plain JavaScript object bearing properties of interest.
+     * @param {UsageNotifications} [obj] Optional instance to populate.
+     * @returns {UsageNotifications} The populated <code>UsageNotifications</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class UsageNotifications {
 
     /**
      * Validates the JSON data with respect to <code>UsageNotifications</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<UsageNotifications>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>UsageNotifications</code>.
      */
     static validateJSON(data) {
@@ -83,27 +82,27 @@ class UsageNotifications {
 
 
 /**
- * Enables the notification.
- * @member {Boolean} 
- */
+    * Enables the notification.
+    * @type {Boolean | undefined}
+    */
 UsageNotifications.prototype['enabled'] = undefined;
 
 /**
- * The percent value of the limit which, when reached, triggers the notification.
- * @member {Number} 
- */
+    * The percent value of the limit which, when reached, triggers the notification.
+    * @type {Number | undefined}
+    */
 UsageNotifications.prototype['value'] = undefined;
 
 /**
- * Enables the notification in the application.
- * @member {Boolean} 
- */
+    * Enables the notification in the application.
+    * @type {Boolean | undefined}
+    */
 UsageNotifications.prototype['in_app'] = undefined;
 
 /**
- * An array of email addresses which will receive the notification.
- * @member {Array.<String>} 
- */
+    * An array of email addresses which will receive the notification.
+    * @type {Array.<String> | undefined}
+    */
 UsageNotifications.prototype['emails'] = undefined;
 
 

@@ -13,106 +13,95 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListPublications.
-* @module model/ParameterOrderListPublications
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListPublications {
+ * Enum class ParameterOrderListPublications.
+ * @module model/ParameterOrderListPublications
+ * @version 3.0.1
+ */
+class ParameterOrderListPublications {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
-        /**
-         * value: "voucher_code"
-         * @constant
-         */
-        "voucher_code" = "voucher_code";
-
+    /**
+     * 
+     * @constant
+     */
+    static "voucher_code" = "voucher_code";
     
-        /**
-         * value: "-voucher_code"
-         * @constant
-         */
-        "-voucher_code" = "-voucher_code";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-voucher_code" = "-voucher_code";
     
-        /**
-         * value: "tracking_id"
-         * @constant
-         */
-        "tracking_id" = "tracking_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "tracking_id" = "tracking_id";
     
-        /**
-         * value: "-tracking_id"
-         * @constant
-         */
-        "-tracking_id" = "-tracking_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-tracking_id" = "-tracking_id";
     
-        /**
-         * value: "customer_id"
-         * @constant
-         */
-        "customer_id" = "customer_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "customer_id" = "customer_id";
     
-        /**
-         * value: "-customer_id"
-         * @constant
-         */
-        "-customer_id" = "-customer_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-customer_id" = "-customer_id";
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "channel"
-         * @constant
-         */
-        "channel" = "channel";
-
+    /**
+     * 
+     * @constant
+     */
+    static "channel" = "channel";
     
-        /**
-         * value: "-channel"
-         * @constant
-         */
-        "-channel" = "-channel";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-channel" = "-channel";
     
 
     /**
-    * Returns a <code>ParameterOrderListPublications</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListPublications} The enum <code>ParameterOrderListPublications</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListPublications, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListPublications[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListPublications[key];
     }
 }
+
+export default ParameterOrderListPublications;
 

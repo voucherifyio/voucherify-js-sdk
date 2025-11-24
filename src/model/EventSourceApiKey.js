@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EventSourceApiKey model module.
  * @module model/EventSourceApiKey
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EventSourceApiKey {
     /**
      * Constructs a new <code>EventSourceApiKey</code>.
      * Determines the API key used to initiate the event.
-     * @alias module:model/EventSourceApiKey
+     * @alias EventSourceApiKey
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EventSourceApiKey {
     /**
      * Constructs a <code>EventSourceApiKey</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventSourceApiKey} obj Optional instance to populate.
-     * @returns {module:model/EventSourceApiKey} The populated <code>EventSourceApiKey</code> instance.
+     * @param {Partial<EventSourceApiKey>} data The plain JavaScript object bearing properties of interest.
+     * @param {EventSourceApiKey} [obj] Optional instance to populate.
+     * @returns {EventSourceApiKey} The populated <code>EventSourceApiKey</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class EventSourceApiKey {
 
     /**
      * Validates the JSON data with respect to <code>EventSourceApiKey</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EventSourceApiKey>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EventSourceApiKey</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class EventSourceApiKey {
 
 
 /**
- * Channel name in the application keys.
- * @member {String} 
- */
+    * Channel name in the application keys.
+    * @type {String | undefined}
+    */
 EventSourceApiKey.prototype['name'] = undefined;
 
 /**
- * Contains the application ID from the Voucherify API key pair.
- * @member {String} 
- */
+    * Contains the application ID from the Voucherify API key pair.
+    * @type {String | undefined}
+    */
 EventSourceApiKey.prototype['app_id'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyCampaign from './LoyaltyCampaign';
-
 /**
  * The LoyaltiesListCampaignsResponseBody model module.
  * @module model/LoyaltiesListCampaignsResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesListCampaignsResponseBody {
     /**
      * Constructs a new <code>LoyaltiesListCampaignsResponseBody</code>.
      * Response body schema for **Get** &#x60;/loyalties&#x60;.
-     * @alias module:model/LoyaltiesListCampaignsResponseBody
+     * @alias LoyaltiesListCampaignsResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesListCampaignsResponseBody {
     /**
      * Constructs a <code>LoyaltiesListCampaignsResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesListCampaignsResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesListCampaignsResponseBody} The populated <code>LoyaltiesListCampaignsResponseBody</code> instance.
+     * @param {Partial<LoyaltiesListCampaignsResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesListCampaignsResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesListCampaignsResponseBody} The populated <code>LoyaltiesListCampaignsResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesListCampaignsResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesListCampaignsResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesListCampaignsResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesListCampaignsResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,48 +100,48 @@ class LoyaltiesListCampaignsResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about loyalty campaigns in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about loyalty campaigns in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LoyaltiesListCampaignsResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of loyalty campaign objects.
- * @member {module:model/LoyaltiesListCampaignsResponseBody.DataRefEnum} 
- * @default 'campaigns'
- */
+    * Identifies the name of the attribute that contains the array of loyalty campaign objects.
+    * @type {(keyof typeof LoyaltiesListCampaignsResponseBody.DataRefEnum) | undefined}
+    * @default 'campaigns'
+    */
 LoyaltiesListCampaignsResponseBody.prototype['data_ref'] = 'campaigns';
 
 /**
- * Contains an array of loyalty campaign objects.
- * @member {Array.<module:model/LoyaltyCampaign>} 
- */
+    * Contains an array of loyalty campaign objects.
+    * @type {Array.<LoyaltyCampaign> | undefined}
+    */
 LoyaltiesListCampaignsResponseBody.prototype['campaigns'] = undefined;
 
 /**
- * Total number of loyalty campaign objects.
- * @member {Number} 
- */
+    * Total number of loyalty campaign objects.
+    * @type {Number | undefined}
+    */
 LoyaltiesListCampaignsResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesListCampaignsResponseBody['DataRefEnum'] = {
-
     /**
-     * value: "campaigns"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaigns": "campaigns"
-};
+    LoyaltiesListCampaignsResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "campaigns"
+         * @constant
+         */
+        "campaigns": "campaigns"    
+    };
 
 
 

@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import Category from './Category';
 import ReferralProgram from './ReferralProgram';
 import SimpleCampaignVoucher from './SimpleCampaignVoucher';
-
 /**
  * The SimpleCampaign model module.
  * @module model/SimpleCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleCampaign {
     /**
      * Constructs a new <code>SimpleCampaign</code>.
      * Simplified campaign data.
-     * @alias module:model/SimpleCampaign
+     * @alias SimpleCampaign
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class SimpleCampaign {
     /**
      * Constructs a <code>SimpleCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleCampaign} obj Optional instance to populate.
-     * @returns {module:model/SimpleCampaign} The populated <code>SimpleCampaign</code> instance.
+     * @param {Partial<SimpleCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleCampaign} [obj] Optional instance to populate.
+     * @returns {SimpleCampaign} The populated <code>SimpleCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -118,7 +117,7 @@ class SimpleCampaign {
 
     /**
      * Validates the JSON data with respect to <code>SimpleCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleCampaign</code>.
      */
     static validateJSON(data) {
@@ -182,168 +181,168 @@ class SimpleCampaign {
 
 
 /**
- * Campaign ID.
- * @member {String} 
- */
+    * Campaign ID.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['id'] = undefined;
 
 /**
- * Campaign name.
- * @member {String} 
- */
+    * Campaign name.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['name'] = undefined;
 
 /**
- * Type of campaign.
- * @member {String} 
- */
+    * Type of campaign.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['campaign_type'] = undefined;
 
 /**
- * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: campaign for single vouchers
- * @member {module:model/SimpleCampaign.TypeEnum} 
- */
+    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: campaign for single vouchers
+    * @type {(keyof typeof SimpleCampaign.TypeEnum) | undefined}
+    */
 SimpleCampaign.prototype['type'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 SimpleCampaign.prototype['is_referral_code'] = undefined;
 
 /**
- * @member {module:model/SimpleCampaignVoucher} 
- */
+    * @type {SimpleCampaignVoucher | undefined}
+    */
 SimpleCampaign.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/ReferralProgram} 
- */
+    * @type {ReferralProgram | undefined}
+    */
 SimpleCampaign.prototype['referral_program'] = undefined;
 
 /**
- * Indicates whether customers will be able to auto-join the campaign if any earning rule is fulfilled.
- * @member {Boolean} 
- */
+    * Indicates whether customers will be able to auto-join the campaign if any earning rule is fulfilled.
+    * @type {Boolean | undefined}
+    */
 SimpleCampaign.prototype['auto_join'] = undefined;
 
 /**
- * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
- * @member {Boolean} 
- */
+    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
+    * @type {Boolean | undefined}
+    */
 SimpleCampaign.prototype['join_once'] = undefined;
 
 /**
- * Indicates whether the campaign is active.
- * @member {Boolean} 
- */
+    * Indicates whether the campaign is active.
+    * @type {Boolean | undefined}
+    */
 SimpleCampaign.prototype['active'] = undefined;
 
 /**
- * The unique category ID that this campaign belongs to.
- * @member {String} 
- */
+    * The unique category ID that this campaign belongs to.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['category_id'] = undefined;
 
 /**
- * Unique category name.
- * @member {String} 
- */
+    * Unique category name.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['category'] = undefined;
 
 /**
- * Contains details about the category.
- * @member {Array.<module:model/Category>} 
- */
+    * Contains details about the category.
+    * @type {Array.<Category> | undefined}
+    */
 SimpleCampaign.prototype['categories'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a campaign. The metadata object stores all custom attributes assigned to the campaign.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a campaign. The metadata object stores all custom attributes assigned to the campaign.
+    * @type {Object | undefined}
+    */
 SimpleCampaign.prototype['metadata'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is inactive *before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is inactive *before* this date. 
+    * @type {Date | undefined}
+    */
 SimpleCampaign.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is inactive *after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is inactive *after* this date.
+    * @type {Date | undefined}
+    */
 SimpleCampaign.prototype['expiration_date'] = undefined;
 
 /**
- * An optional field to keep extra textual information about the campaign such as a campaign description and details.
- * @member {String} 
- */
+    * An optional field to keep extra textual information about the campaign such as a campaign description and details.
+    * @type {String | undefined}
+    */
 SimpleCampaign.prototype['description'] = undefined;
 
 /**
- * Timestamp representing the date and time when the campaign was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the campaign was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleCampaign.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the campaign was updated in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the campaign was updated in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleCampaign.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the campaign.
- * @member {module:model/SimpleCampaign.ObjectEnum} 
- * @default 'campaign'
- */
+    * The type of the object represented by JSON. This object stores information about the campaign.
+    * @type {(keyof typeof SimpleCampaign.ObjectEnum) | undefined}
+    * @default 'campaign'
+    */
 SimpleCampaign.prototype['object'] = 'campaign';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleCampaign['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SimpleCampaign['TypeEnum'] = {
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE",
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "STANDALONE"
+         * @constant
+         */
+        "STANDALONE": "STANDALONE"    
+    };
+
 
     /**
-     * value: "AUTO_UPDATE"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "AUTO_UPDATE": "AUTO_UPDATE",
-
-    /**
-     * value: "STATIC"
-     * @constant
-     */
-    "STATIC": "STATIC",
-
-    /**
-     * value: "STANDALONE"
-     * @constant
-     */
-    "STANDALONE": "STANDALONE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleCampaign['ObjectEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign"
-};
+    SimpleCampaign['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

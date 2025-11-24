@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsSegment model module.
  * @module model/MemberActivityDataTransactionDetailsSegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsSegment {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsSegment</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsSegment
+     * @alias MemberActivityDataTransactionDetailsSegment
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsSegment {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsSegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsSegment} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsSegment} The populated <code>MemberActivityDataTransactionDetailsSegment</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsSegment} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsSegment} The populated <code>MemberActivityDataTransactionDetailsSegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataTransactionDetailsSegment {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsSegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsSegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsSegment</code>.
      */
     static validateJSON(data) {
@@ -81,13 +80,13 @@ class MemberActivityDataTransactionDetailsSegment {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSegment.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSegment.prototype['name'] = undefined;
 
 

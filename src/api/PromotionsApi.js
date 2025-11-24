@@ -35,13 +35,13 @@ import PromotionsTiersUpdateResponseBody from '../model/PromotionsTiersUpdateRes
 /**
 * Promotions service.
 * @module api/PromotionsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class PromotionsApi {
 
     /**
     * Constructs a new PromotionsApi. 
-    * @alias module:api/PromotionsApi
+    * @alias PromotionsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -53,9 +53,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the addPromotionTierToCampaign operation.
-     * @callback module:api/PromotionsApi~addPromotionTierToCampaignCallback
+     * @callback addPromotionTierToCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersCreateResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -63,9 +63,10 @@ export default class PromotionsApi {
      * Add Promotion Tier to Campaign
      * This method allows you to add a new promotion tier to an existing campaign. The tier hierarchy will be set as the next consequtive integer following the lowest ranking tier.
      * @param {String} campaignId Unique campaign ID assigned by Voucherify.
-     * @param {module:model/PromotionsTiersCreateRequestBody} promotionsTiersCreateRequestBody Specify the promotion tier parameters.
-     * @param {module:api/PromotionsApi~addPromotionTierToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersCreateResponseBody}
+     * @param {PromotionsTiersCreateRequestBody} promotionsTiersCreateRequestBody Specify the promotion tier parameters.
+     * @param {addPromotionTierToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersCreateResponseBody}
+     * @returns {Promise<(PromotionsTiersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersCreateResponseBody` object or with `undefined`.
      */
     addPromotionTierToCampaign(campaignId, promotionsTiersCreateRequestBody, callback) {
       let postBody = promotionsTiersCreateRequestBody;
@@ -95,9 +96,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the createPromotionStack operation.
-     * @callback module:api/PromotionsApi~createPromotionStackCallback
+     * @callback createPromotionStackCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsStacksCreateResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsStacksCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -105,9 +106,10 @@ export default class PromotionsApi {
      * Create Promotion Stack
      * This method creates one promotion stack. The sequence of promotion tier IDs will determine the promotion stacking order.
      * @param {String} campaignId Unique campaign ID.
-     * @param {module:model/PromotionsStacksCreateRequestBody} promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack.
-     * @param {module:api/PromotionsApi~createPromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsStacksCreateResponseBody}
+     * @param {PromotionsStacksCreateRequestBody} promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack.
+     * @param {createPromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsStacksCreateResponseBody}
+     * @returns {Promise<(PromotionsStacksCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsStacksCreateResponseBody` object or with `undefined`.
      */
     createPromotionStack(campaignId, promotionsStacksCreateRequestBody, callback) {
       let postBody = promotionsStacksCreateRequestBody;
@@ -137,7 +139,7 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the deletePromotionStack operation.
-     * @callback module:api/PromotionsApi~deletePromotionStackCallback
+     * @callback deletePromotionStackCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -148,7 +150,8 @@ export default class PromotionsApi {
      * This method deletes a promotion stack.
      * @param {String} campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
      * @param {String} stackId Promotion stack ID.
-     * @param {module:api/PromotionsApi~deletePromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deletePromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deletePromotionStack(campaignId, stackId, callback) {
       let postBody = null;
@@ -179,7 +182,7 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the deletePromotionTier operation.
-     * @callback module:api/PromotionsApi~deletePromotionTierCallback
+     * @callback deletePromotionTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -189,7 +192,8 @@ export default class PromotionsApi {
      * Delete Promotion Tier
      * This method deletes a promotion tier.
      * @param {String} promotionTierId Unique promotion tier ID.
-     * @param {module:api/PromotionsApi~deletePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deletePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deletePromotionTier(promotionTierId, callback) {
       let postBody = null;
@@ -218,9 +222,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the disablePromotionTier operation.
-     * @callback module:api/PromotionsApi~disablePromotionTierCallback
+     * @callback disablePromotionTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersDisableResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersDisableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -228,8 +232,9 @@ export default class PromotionsApi {
      * Disable Promotion Tier
      * This method disables a promotion tier, i.e. makes the active parameter   false.
      * @param {String} promotionTierId Unique promotion tier ID.
-     * @param {module:api/PromotionsApi~disablePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersDisableResponseBody}
+     * @param {disablePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersDisableResponseBody}
+     * @returns {Promise<(PromotionsTiersDisableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersDisableResponseBody` object or with `undefined`.
      */
     disablePromotionTier(promotionTierId, callback) {
       let postBody = null;
@@ -258,9 +263,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the enablePromotionTier operation.
-     * @callback module:api/PromotionsApi~enablePromotionTierCallback
+     * @callback enablePromotionTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersEnableResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersEnableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -268,8 +273,9 @@ export default class PromotionsApi {
      * Enable Promotion Tier
      * This method enables a promotion tier, i.e. makes the active parameter   true.
      * @param {String} promotionTierId Unique promotion tier ID.
-     * @param {module:api/PromotionsApi~enablePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersEnableResponseBody}
+     * @param {enablePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersEnableResponseBody}
+     * @returns {Promise<(PromotionsTiersEnableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersEnableResponseBody` object or with `undefined`.
      */
     enablePromotionTier(promotionTierId, callback) {
       let postBody = null;
@@ -298,9 +304,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the getPromotionStack operation.
-     * @callback module:api/PromotionsApi~getPromotionStackCallback
+     * @callback getPromotionStackCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsStacksGetResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsStacksGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -309,8 +315,9 @@ export default class PromotionsApi {
      * This method returns the details of a promotion stack, including the promotion tiers grouped within the stack.
      * @param {String} campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
      * @param {String} stackId Promotion stack ID.
-     * @param {module:api/PromotionsApi~getPromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsStacksGetResponseBody}
+     * @param {getPromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsStacksGetResponseBody}
+     * @returns {Promise<(PromotionsStacksGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsStacksGetResponseBody` object or with `undefined`.
      */
     getPromotionStack(campaignId, stackId, callback) {
       let postBody = null;
@@ -341,9 +348,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the getPromotionTier operation.
-     * @callback module:api/PromotionsApi~getPromotionTierCallback
+     * @callback getPromotionTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersGetResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -351,8 +358,9 @@ export default class PromotionsApi {
      * Get Promotion Tier
      * This method enables you to retrieve a specific promotion tier.
      * @param {String} promotionTierId Unique promotion tier ID.
-     * @param {module:api/PromotionsApi~getPromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersGetResponseBody}
+     * @param {getPromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersGetResponseBody}
+     * @returns {Promise<(PromotionsTiersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersGetResponseBody` object or with `undefined`.
      */
     getPromotionTier(promotionTierId, callback) {
       let postBody = null;
@@ -381,9 +389,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the listAllPromotionStacks operation.
-     * @callback module:api/PromotionsApi~listAllPromotionStacksCallback
+     * @callback listAllPromotionStacksCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsStacksListResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsStacksListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -393,12 +401,13 @@ export default class PromotionsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListAllPromotionStacks,
-        createdAt?: module:model/ParameterCreatedBeforeAfter,
-        updatedAt?: module:model/ParameterUpdatedBeforeAfter,
+        order?: Exclude<keyof typeof ParameterOrderListAllPromotionStacks, "prototype" | "constructFromObject">,
+        createdAt?: ParameterCreatedBeforeAfter,
+        updatedAt?: ParameterUpdatedBeforeAfter,
      }} [opts] Optional parameters
-     * @param {module:api/PromotionsApi~listAllPromotionStacksCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsStacksListResponseBody}
+     * @param {listAllPromotionStacksCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsStacksListResponseBody}
+     * @returns {Promise<(PromotionsStacksListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsStacksListResponseBody` object or with `undefined`.
      */
     listAllPromotionStacks(opts, callback) {
       opts = opts || {};
@@ -431,9 +440,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the listPromotionStacksInCampaign operation.
-     * @callback module:api/PromotionsApi~listPromotionStacksInCampaignCallback
+     * @callback listPromotionStacksInCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsStacksListResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsStacksListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -441,8 +450,9 @@ export default class PromotionsApi {
      * List Promotion Stacks in Campaign
      * This method enables you to list promotion stacks from a specified campaign.
      * @param {String} campaignId Unique campaign ID.
-     * @param {module:api/PromotionsApi~listPromotionStacksInCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsStacksListResponseBody}
+     * @param {listPromotionStacksInCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsStacksListResponseBody}
+     * @returns {Promise<(PromotionsStacksListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsStacksListResponseBody` object or with `undefined`.
      */
     listPromotionStacksInCampaign(campaignId, callback) {
       let postBody = null;
@@ -471,9 +481,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the listPromotionTiers operation.
-     * @callback module:api/PromotionsApi~listPromotionTiersCallback
+     * @callback listPromotionTiersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersListResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -484,10 +494,11 @@ export default class PromotionsApi {
         isAvailable?: Boolean,
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListPromotionTiers,
+        order?: Exclude<keyof typeof ParameterOrderListPromotionTiers, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/PromotionsApi~listPromotionTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersListResponseBody}
+     * @param {listPromotionTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersListResponseBody}
+     * @returns {Promise<(PromotionsTiersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersListResponseBody` object or with `undefined`.
      */
     listPromotionTiers(opts, callback) {
       opts = opts || {};
@@ -519,9 +530,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the listPromotionTiersFromCampaign operation.
-     * @callback module:api/PromotionsApi~listPromotionTiersFromCampaignCallback
+     * @callback listPromotionTiersFromCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersListResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -529,8 +540,9 @@ export default class PromotionsApi {
      * List Promotion Tiers from Campaign
      * This method enables you to list promotion tiers from a specified campaign.
      * @param {String} campaignId Unique campaign ID assigned by Voucherify.
-     * @param {module:api/PromotionsApi~listPromotionTiersFromCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersListResponseBody}
+     * @param {listPromotionTiersFromCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersListResponseBody}
+     * @returns {Promise<(PromotionsTiersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersListResponseBody` object or with `undefined`.
      */
     listPromotionTiersFromCampaign(campaignId, callback) {
       let postBody = null;
@@ -559,9 +571,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the updatePromotionStack operation.
-     * @callback module:api/PromotionsApi~updatePromotionStackCallback
+     * @callback updatePromotionStackCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsStacksUpdateResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsStacksUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -570,9 +582,10 @@ export default class PromotionsApi {
      * This methods allows for editing an existing stack.
      * @param {String} campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
      * @param {String} stackId Promotion stack ID.
-     * @param {module:model/PromotionsStacksUpdateRequestBody} promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update.
-     * @param {module:api/PromotionsApi~updatePromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsStacksUpdateResponseBody}
+     * @param {PromotionsStacksUpdateRequestBody} promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update.
+     * @param {updatePromotionStackCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsStacksUpdateResponseBody}
+     * @returns {Promise<(PromotionsStacksUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsStacksUpdateResponseBody` object or with `undefined`.
      */
     updatePromotionStack(campaignId, stackId, promotionsStacksUpdateRequestBody, callback) {
       let postBody = promotionsStacksUpdateRequestBody;
@@ -604,9 +617,9 @@ export default class PromotionsApi {
 
     /**
      * Callback function to receive the result of the updatePromotionTier operation.
-     * @callback module:api/PromotionsApi~updatePromotionTierCallback
+     * @callback updatePromotionTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PromotionsTiersUpdateResponseBody} [data] The data returned by the service call.
+     * @param {PromotionsTiersUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -614,9 +627,10 @@ export default class PromotionsApi {
      * Update Promotion Tier
      * This method updates a promotion tier.
      * @param {String} promotionTierId Unique promotion tier ID.
-     * @param {module:model/PromotionsTiersUpdateRequestBody} promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update.
-     * @param {module:api/PromotionsApi~updatePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PromotionsTiersUpdateResponseBody}
+     * @param {PromotionsTiersUpdateRequestBody} promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update.
+     * @param {updatePromotionTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PromotionsTiersUpdateResponseBody}
+     * @returns {Promise<(PromotionsTiersUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PromotionsTiersUpdateResponseBody` object or with `undefined`.
      */
     updatePromotionTier(promotionTierId, promotionsTiersUpdateRequestBody, callback) {
       let postBody = promotionsTiersUpdateRequestBody;

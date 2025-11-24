@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem from './RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem';
 import RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem from './RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem';
-
 /**
  * The RedemptionsGetResponseBodyRelatedRedemptions model module.
  * @module model/RedemptionsGetResponseBodyRelatedRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyRelatedRedemptions {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyRelatedRedemptions</code>.
-     * @alias module:model/RedemptionsGetResponseBodyRelatedRedemptions
+     * @alias RedemptionsGetResponseBodyRelatedRedemptions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RedemptionsGetResponseBodyRelatedRedemptions {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyRelatedRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyRelatedRedemptions} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyRelatedRedemptions} The populated <code>RedemptionsGetResponseBodyRelatedRedemptions</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyRelatedRedemptions} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyRelatedRedemptions} The populated <code>RedemptionsGetResponseBodyRelatedRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class RedemptionsGetResponseBodyRelatedRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyRelatedRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyRelatedRedemptions</code>.
      */
     static validateJSON(data) {
@@ -95,13 +94,13 @@ class RedemptionsGetResponseBodyRelatedRedemptions {
 
 
 /**
- * @member {Array.<module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem>} 
- */
+    * @type {Array.<RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem> | undefined}
+    */
 RedemptionsGetResponseBodyRelatedRedemptions.prototype['rollbacks'] = undefined;
 
 /**
- * @member {Array.<module:model/RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem>} 
- */
+    * @type {Array.<RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem> | undefined}
+    */
 RedemptionsGetResponseBodyRelatedRedemptions.prototype['redemptions'] = undefined;
 
 

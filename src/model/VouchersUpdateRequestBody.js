@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import Discount from './Discount';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The VouchersUpdateRequestBody model module.
  * @module model/VouchersUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersUpdateRequestBody {
     /**
      * Constructs a new <code>VouchersUpdateRequestBody</code>.
-     * @alias module:model/VouchersUpdateRequestBody
+     * @alias VouchersUpdateRequestBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class VouchersUpdateRequestBody {
     /**
      * Constructs a <code>VouchersUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersUpdateRequestBody} The populated <code>VouchersUpdateRequestBody</code> instance.
+     * @param {Partial<VouchersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersUpdateRequestBody} The populated <code>VouchersUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -93,7 +92,7 @@ class VouchersUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -139,73 +138,73 @@ class VouchersUpdateRequestBody {
 
 
 /**
- * The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 VouchersUpdateRequestBody.prototype['category'] = undefined;
 
 /**
- * Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 VouchersUpdateRequestBody.prototype['category_id'] = undefined;
 
 /**
- * Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
- * @member {Date} 
- */
+    * Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
+    * @type {Date | undefined}
+    */
 VouchersUpdateRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 VouchersUpdateRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 VouchersUpdateRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/VouchersUpdateRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof VouchersUpdateRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 VouchersUpdateRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 VouchersUpdateRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 VouchersUpdateRequestBody.prototype['active'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 VouchersUpdateRequestBody.prototype['additional_info'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 VouchersUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Defines the type of the voucher. 
- * @member {module:model/VouchersUpdateRequestBody.TypeEnum} 
- * @default 'DISCOUNT_VOUCHER'
- */
+    * Defines the type of the voucher. 
+    * @type {(keyof typeof VouchersUpdateRequestBody.TypeEnum) | undefined}
+    * @default 'DISCOUNT_VOUCHER'
+    */
 VouchersUpdateRequestBody.prototype['type'] = 'DISCOUNT_VOUCHER';
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 VouchersUpdateRequestBody.prototype['discount'] = undefined;
 
 
@@ -263,19 +262,19 @@ VouchersUpdateRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersUpdateRequestBody['TypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"
-};
+    VouchersUpdateRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"    
+    };
 
 
 

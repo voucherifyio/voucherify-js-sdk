@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import EarningRuleLoyaltyCustomEventMetadata from './EarningRuleLoyaltyCustomEventMetadata';
-
 /**
  * The EarningRuleLoyaltyCustomEvent model module.
  * @module model/EarningRuleLoyaltyCustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyaltyCustomEvent {
     /**
      * Constructs a new <code>EarningRuleLoyaltyCustomEvent</code>.
-     * @alias module:model/EarningRuleLoyaltyCustomEvent
+     * @alias EarningRuleLoyaltyCustomEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EarningRuleLoyaltyCustomEvent {
     /**
      * Constructs a <code>EarningRuleLoyaltyCustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyaltyCustomEvent} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyaltyCustomEvent} The populated <code>EarningRuleLoyaltyCustomEvent</code> instance.
+     * @param {Partial<EarningRuleLoyaltyCustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyaltyCustomEvent} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyaltyCustomEvent} The populated <code>EarningRuleLoyaltyCustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class EarningRuleLoyaltyCustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyaltyCustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyaltyCustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyaltyCustomEvent</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class EarningRuleLoyaltyCustomEvent {
 
 
 /**
- * @member {module:model/EarningRuleLoyaltyCustomEventMetadata} 
- */
+    * @type {EarningRuleLoyaltyCustomEventMetadata | undefined}
+    */
 EarningRuleLoyaltyCustomEvent.prototype['metadata'] = undefined;
 
 

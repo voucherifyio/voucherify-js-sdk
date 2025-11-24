@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ExportsCreateRequestBodyParameters from './ExportsCreateRequestBodyParameters';
-
 /**
  * The ExportsCreateRequestBody model module.
  * @module model/ExportsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportsCreateRequestBody {
     /**
      * Constructs a new <code>ExportsCreateRequestBody</code>.
-     * @alias module:model/ExportsCreateRequestBody
+     * @alias ExportsCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ExportsCreateRequestBody {
     /**
      * Constructs a <code>ExportsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ExportsCreateRequestBody} The populated <code>ExportsCreateRequestBody</code> instance.
+     * @param {Partial<ExportsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ExportsCreateRequestBody} The populated <code>ExportsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ExportsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ExportsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -82,68 +81,68 @@ class ExportsCreateRequestBody {
 
 
 /**
- * @member {module:model/ExportsCreateRequestBody.ExportedObjectEnum} 
- */
+    * @type {(keyof typeof ExportsCreateRequestBody.ExportedObjectEnum) | undefined}
+    */
 ExportsCreateRequestBody.prototype['exported_object'] = undefined;
 
 /**
- * @member {module:model/ExportsCreateRequestBodyParameters} 
- */
+    * @type {ExportsCreateRequestBodyParameters | undefined}
+    */
 ExportsCreateRequestBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-ExportsCreateRequestBody['ExportedObjectEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher",
-
-    /**
-     * value: "redemption"
-     * @constant
-     */
-    "redemption": "redemption",
-
-    /**
-     * value: "customer"
-     * @constant
-     */
-    "customer": "customer",
-
-    /**
-     * value: "publication"
-     * @constant
-     */
-    "publication": "publication",
-
-    /**
-     * value: "order"
-     * @constant
-     */
-    "order": "order",
-
-    /**
-     * value: "points_expiration"
-     * @constant
-     */
-    "points_expiration": "points_expiration",
-
-    /**
-     * value: "voucher_transactions"
-     * @constant
-     */
-    "voucher_transactions": "voucher_transactions"
-};
+    ExportsCreateRequestBody['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption",
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer",
+    
+        /**
+         * value: "publication"
+         * @constant
+         */
+        "publication": "publication",
+    
+        /**
+         * value: "order"
+         * @constant
+         */
+        "order": "order",
+    
+        /**
+         * value: "points_expiration"
+         * @constant
+         */
+        "points_expiration": "points_expiration",
+    
+        /**
+         * value: "voucher_transactions"
+         * @constant
+         */
+        "voucher_transactions": "voucher_transactions"    
+    };
 
 
 

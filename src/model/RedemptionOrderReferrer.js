@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionOrderReferrer model module.
  * @module model/RedemptionOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionOrderReferrer {
     /**
      * Constructs a new <code>RedemptionOrderReferrer</code>.
-     * @alias module:model/RedemptionOrderReferrer
+     * @alias RedemptionOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionOrderReferrer {
     /**
      * Constructs a <code>RedemptionOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionOrderReferrer} The populated <code>RedemptionOrderReferrer</code> instance.
+     * @param {Partial<RedemptionOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionOrderReferrer} [obj] Optional instance to populate.
+     * @returns {RedemptionOrderReferrer} The populated <code>RedemptionOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

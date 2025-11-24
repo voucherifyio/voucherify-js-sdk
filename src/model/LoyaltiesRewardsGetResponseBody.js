@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesRewardsGetResponseBodyParameters from './LoyaltiesRewardsGetResponseBodyParameters';
-
 /**
  * The LoyaltiesRewardsGetResponseBody model module.
  * @module model/LoyaltiesRewardsGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsGetResponseBody {
     /**
      * Constructs a new <code>LoyaltiesRewardsGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/rewards/{assignmentId}&#x60;
-     * @alias module:model/LoyaltiesRewardsGetResponseBody
+     * @alias LoyaltiesRewardsGetResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesRewardsGetResponseBody {
     /**
      * Constructs a <code>LoyaltiesRewardsGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsGetResponseBody} The populated <code>LoyaltiesRewardsGetResponseBody</code> instance.
+     * @param {Partial<LoyaltiesRewardsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsGetResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsGetResponseBody} The populated <code>LoyaltiesRewardsGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class LoyaltiesRewardsGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -119,86 +118,86 @@ class LoyaltiesRewardsGetResponseBody {
 
 
 /**
- * Unique reward assignment ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Associated reward ID.
- * @member {String} 
- */
+    * Associated reward ID.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['reward_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward assignment.
- * @member {module:model/LoyaltiesRewardsGetResponseBody.ObjectEnum} 
- * @default 'reward_assignment'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward assignment.
+    * @type {(keyof typeof LoyaltiesRewardsGetResponseBody.ObjectEnum) | undefined}
+    * @default 'reward_assignment'
+    */
 LoyaltiesRewardsGetResponseBody.prototype['object'] = 'reward_assignment';
 
 /**
- * Related object ID to which the reward was assigned.
- * @member {String} 
- */
+    * Related object ID to which the reward was assigned.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['related_object_id'] = undefined;
 
 /**
- * Related object type to which the reward was assigned.
- * @member {module:model/LoyaltiesRewardsGetResponseBody.RelatedObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Related object type to which the reward was assigned.
+    * @type {(keyof typeof LoyaltiesRewardsGetResponseBody.RelatedObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 LoyaltiesRewardsGetResponseBody.prototype['related_object_type'] = 'campaign';
 
 /**
- * @member {module:model/LoyaltiesRewardsGetResponseBodyParameters} 
- */
+    * @type {LoyaltiesRewardsGetResponseBodyParameters | undefined}
+    */
 LoyaltiesRewardsGetResponseBody.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesRewardsGetResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesRewardsGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment"    
+    };
+
 
     /**
-     * value: "reward_assignment"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward_assignment": "reward_assignment"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesRewardsGetResponseBody['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign"
-};
+    LoyaltiesRewardsGetResponseBody['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

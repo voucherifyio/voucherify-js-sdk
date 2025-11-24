@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionRewardResultParametersProduct model module.
  * @module model/RedemptionRewardResultParametersProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRewardResultParametersProduct {
     /**
      * Constructs a new <code>RedemptionRewardResultParametersProduct</code>.
      * Defines the product redeemed as a reward.
-     * @alias module:model/RedemptionRewardResultParametersProduct
+     * @alias RedemptionRewardResultParametersProduct
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionRewardResultParametersProduct {
     /**
      * Constructs a <code>RedemptionRewardResultParametersProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRewardResultParametersProduct} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRewardResultParametersProduct} The populated <code>RedemptionRewardResultParametersProduct</code> instance.
+     * @param {Partial<RedemptionRewardResultParametersProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRewardResultParametersProduct} [obj] Optional instance to populate.
+     * @returns {RedemptionRewardResultParametersProduct} The populated <code>RedemptionRewardResultParametersProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionRewardResultParametersProduct {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRewardResultParametersProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRewardResultParametersProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRewardResultParametersProduct</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RedemptionRewardResultParametersProduct {
 
 
 /**
- * Unique product ID, assigned by Voucherify. 
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify. 
+    * @type {String | undefined}
+    */
 RedemptionRewardResultParametersProduct.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionRewardResultParametersProduct.prototype['sku_id'] = undefined;
 
 

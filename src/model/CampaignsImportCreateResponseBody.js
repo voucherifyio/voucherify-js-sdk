@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsImportCreateResponseBody model module.
  * @module model/CampaignsImportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsImportCreateResponseBody {
     /**
      * Constructs a new <code>CampaignsImportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/campaigns/{campaignId}/import&#x60;.
-     * @alias module:model/CampaignsImportCreateResponseBody
+     * @alias CampaignsImportCreateResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsImportCreateResponseBody {
     /**
      * Constructs a <code>CampaignsImportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsImportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsImportCreateResponseBody} The populated <code>CampaignsImportCreateResponseBody</code> instance.
+     * @param {Partial<CampaignsImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsImportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {CampaignsImportCreateResponseBody} The populated <code>CampaignsImportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignsImportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsImportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsImportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class CampaignsImportCreateResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 CampaignsImportCreateResponseBody.prototype['async_action_id'] = undefined;
 
 

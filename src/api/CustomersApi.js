@@ -39,13 +39,13 @@ import ParameterOrderListRedeemables from '../model/ParameterOrderListRedeemable
 /**
 * Customers service.
 * @module api/CustomersApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class CustomersApi {
 
     /**
     * Constructs a new CustomersApi. 
-    * @alias module:api/CustomersApi
+    * @alias CustomersApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -57,18 +57,19 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the createCustomer operation.
-     * @callback module:api/CustomersApi~createCustomerCallback
+     * @callback createCustomerCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersCreateResponseBody} [data] The data returned by the service call.
+     * @param {CustomersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Customer
      * Creates a customer object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields.
-     * @param {module:model/CustomersCreateRequestBody} customersCreateRequestBody Create a customer with specified parameters.
-     * @param {module:api/CustomersApi~createCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersCreateResponseBody}
+     * @param {CustomersCreateRequestBody} customersCreateRequestBody Create a customer with specified parameters.
+     * @param {createCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersCreateResponseBody}
+     * @returns {Promise<(CustomersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersCreateResponseBody` object or with `undefined`.
      */
     createCustomer(customersCreateRequestBody, callback) {
       let postBody = customersCreateRequestBody;
@@ -96,9 +97,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the customerPermanentlyDeletion operation.
-     * @callback module:api/CustomersApi~customerPermanentlyDeletionCallback
+     * @callback customerPermanentlyDeletionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersPermanentDeletionCreateResponseBody} [data] The data returned by the service call.
+     * @param {CustomersPermanentDeletionCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -106,8 +107,9 @@ export default class CustomersApi {
      * Delete Customer Permanently
      * The organization user can remove consumer data permanently from the Voucherify system by using this API method. It deletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
      * @param {String} customerId A Voucherify customers id or source_id.
-     * @param {module:api/CustomersApi~customerPermanentlyDeletionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersPermanentDeletionCreateResponseBody}
+     * @param {customerPermanentlyDeletionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersPermanentDeletionCreateResponseBody}
+     * @returns {Promise<(CustomersPermanentDeletionCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersPermanentDeletionCreateResponseBody` object or with `undefined`.
      */
     customerPermanentlyDeletion(customerId, callback) {
       let postBody = null;
@@ -136,7 +138,7 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the deleteCustomer operation.
-     * @callback module:api/CustomersApi~deleteCustomerCallback
+     * @callback deleteCustomerCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -146,7 +148,8 @@ export default class CustomersApi {
      * Delete Customer
      * This method deletes a customer.
      * @param {String} customerId A Voucherify customers id or source_id.
-     * @param {module:api/CustomersApi~deleteCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteCustomer(customerId, callback) {
       let postBody = null;
@@ -175,9 +178,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the getCustomer operation.
-     * @callback module:api/CustomersApi~getCustomerCallback
+     * @callback getCustomerCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersGetResponseBody} [data] The data returned by the service call.
+     * @param {CustomersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -185,8 +188,9 @@ export default class CustomersApi {
      * Get Customer
      * Retrieves details of a given customer by customers id or source_id.
      * @param {String} customerId A Voucherify customers id or source_id.
-     * @param {module:api/CustomersApi~getCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersGetResponseBody}
+     * @param {getCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersGetResponseBody}
+     * @returns {Promise<(CustomersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersGetResponseBody` object or with `undefined`.
      */
     getCustomer(customerId, callback) {
       let postBody = null;
@@ -215,9 +219,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the importCustomersUsingCsv operation.
-     * @callback module:api/CustomersApi~importCustomersUsingCsvCallback
+     * @callback importCustomersUsingCsvCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersImportCsvCreateResponseBody} [data] The data returned by the service call.
+     * @param {CustomersImportCsvCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -227,8 +231,9 @@ export default class CustomersApi {
      * @param {{
         file?: File,
      }} [opts] Optional parameters
-     * @param {module:api/CustomersApi~importCustomersUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersImportCsvCreateResponseBody}
+     * @param {importCustomersUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersImportCsvCreateResponseBody}
+     * @returns {Promise<(CustomersImportCsvCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersImportCsvCreateResponseBody` object or with `undefined`.
      */
     importCustomersUsingCsv(opts, callback) {
       opts = opts || {};
@@ -257,9 +262,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the listCustomerActivity operation.
-     * @callback module:api/CustomersApi~listCustomerActivityCallback
+     * @callback listCustomerActivityCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersActivityListResponseBody} [data] The data returned by the service call.
+     * @param {CustomersActivityListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -269,17 +274,18 @@ export default class CustomersApi {
      * @param {String} customerId A Voucherify customers id or source ID of the customer who performed the activities.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderCreatedAt,
+        order?: Exclude<keyof typeof ParameterOrderCreatedAt, "prototype" | "constructFromObject">,
         startingAfterId?: String,
         startDate?: Date,
         endDate?: Date,
         campaignId?: String,
-        campaignType?: module:model/ParameterCampaignType,
-        category?: module:model/ParameterActivityCategory,
-        type?: module:model/ParameterCustomerEvent,
+        campaignType?: Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">,
+        category?: Exclude<keyof typeof ParameterActivityCategory, "prototype" | "constructFromObject">,
+        type?: Exclude<keyof typeof ParameterCustomerEvent, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/CustomersApi~listCustomerActivityCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersActivityListResponseBody}
+     * @param {listCustomerActivityCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersActivityListResponseBody}
+     * @returns {Promise<(CustomersActivityListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersActivityListResponseBody` object or with `undefined`.
      */
     listCustomerActivity(customerId, opts, callback) {
       opts = opts || {};
@@ -318,9 +324,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the listCustomerRedeemables operation.
-     * @callback module:api/CustomersApi~listCustomerRedeemablesCallback
+     * @callback listCustomerRedeemablesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersRedeemablesListResponseBody} [data] The data returned by the service call.
+     * @param {CustomersRedeemablesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -330,12 +336,13 @@ export default class CustomersApi {
      * @param {String} customerId Unique identifier of a customer represented by an internal customer ID or customer source ID.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListRedeemables,
+        order?: Exclude<keyof typeof ParameterOrderListRedeemables, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParameterFiltersListCustomerRedeemables,
+        filters?: ParameterFiltersListCustomerRedeemables,
      }} [opts] Optional parameters
-     * @param {module:api/CustomersApi~listCustomerRedeemablesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersRedeemablesListResponseBody}
+     * @param {listCustomerRedeemablesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersRedeemablesListResponseBody}
+     * @returns {Promise<(CustomersRedeemablesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersRedeemablesListResponseBody` object or with `undefined`.
      */
     listCustomerRedeemables(customerId, opts, callback) {
       opts = opts || {};
@@ -369,9 +376,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the listCustomerSegments operation.
-     * @callback module:api/CustomersApi~listCustomerSegmentsCallback
+     * @callback listCustomerSegmentsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersSegmentsListResponseBody} [data] The data returned by the service call.
+     * @param {CustomersSegmentsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -379,8 +386,9 @@ export default class CustomersApi {
      * List Customer's Segments
      * Returns the list of segments IDs to which the customer belongs to.   If you pass a customerId which is not stored and recognized by Voucherify as an existing customer in the system, the response will generate a list of segments that the customer would potentialy qualify for if they were to become a customer tracked in the system.
      * @param {String} customerId Unique identifier of a customer represented by an internal customer ID or customer source ID.
-     * @param {module:api/CustomersApi~listCustomerSegmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersSegmentsListResponseBody}
+     * @param {listCustomerSegmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersSegmentsListResponseBody}
+     * @returns {Promise<(CustomersSegmentsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersSegmentsListResponseBody` object or with `undefined`.
      */
     listCustomerSegments(customerId, callback) {
       let postBody = null;
@@ -409,9 +417,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the listCustomers operation.
-     * @callback module:api/CustomersApi~listCustomersCallback
+     * @callback listCustomersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersListResponseBody} [data] The data returned by the service call.
+     * @param {CustomersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -429,11 +437,12 @@ export default class CustomersApi {
         createdAtAfter?: Date,
         updatedAtBefore?: Date,
         updatedAtAfter?: Date,
-        order?: module:model/ParameterOrderListCustomers,
+        order?: Exclude<keyof typeof ParameterOrderListCustomers, "prototype" | "constructFromObject">,
         startingAfter?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/CustomersApi~listCustomersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersListResponseBody}
+     * @param {listCustomersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersListResponseBody}
+     * @returns {Promise<(CustomersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersListResponseBody` object or with `undefined`.
      */
     listCustomers(opts, callback) {
       opts = opts || {};
@@ -473,9 +482,9 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the updateCustomer operation.
-     * @callback module:api/CustomersApi~updateCustomerCallback
+     * @callback updateCustomerCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersUpdateResponseBody} [data] The data returned by the service call.
+     * @param {CustomersUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -483,9 +492,10 @@ export default class CustomersApi {
      * Update Customer
      * Updates the specified customer by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
      * @param {String} customerId A Voucherify customers id or source_id.
-     * @param {module:model/CustomersUpdateRequestBody} customersUpdateRequestBody Specify the parameters to be updated.
-     * @param {module:api/CustomersApi~updateCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersUpdateResponseBody}
+     * @param {CustomersUpdateRequestBody} customersUpdateRequestBody Specify the parameters to be updated.
+     * @param {updateCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersUpdateResponseBody}
+     * @returns {Promise<(CustomersUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersUpdateResponseBody` object or with `undefined`.
      */
     updateCustomer(customerId, customersUpdateRequestBody, callback) {
       let postBody = customersUpdateRequestBody;
@@ -515,18 +525,19 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the updateCustomersInBulk operation.
-     * @callback module:api/CustomersApi~updateCustomersInBulkCallback
+     * @callback updateCustomersInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {CustomersUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Customers in Bulk
      * Updates customers in one asynchronous operation. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a customer object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {Array.<module:model/CustomersUpdateInBulkRequestBody>} customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object.
-     * @param {module:api/CustomersApi~updateCustomersInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersUpdateInBulkResponseBody}
+     * @param {Array.<CustomersUpdateInBulkRequestBody>} customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object.
+     * @param {updateCustomersInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersUpdateInBulkResponseBody}
+     * @returns {Promise<(CustomersUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateCustomersInBulk(customersUpdateInBulkRequestBody, callback) {
       let postBody = customersUpdateInBulkRequestBody;
@@ -554,18 +565,19 @@ export default class CustomersApi {
 
     /**
      * Callback function to receive the result of the updateCustomersMetadataInBulk operation.
-     * @callback module:api/CustomersApi~updateCustomersMetadataInBulkCallback
+     * @callback updateCustomersMetadataInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CustomersMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {CustomersMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Customers' Metadata in Bulk
      * Updates metadata parameters for a list of customers. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {module:model/CustomersMetadataUpdateInBulkRequestBody} customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs.
-     * @param {module:api/CustomersApi~updateCustomersMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CustomersMetadataUpdateInBulkResponseBody}
+     * @param {CustomersMetadataUpdateInBulkRequestBody} customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs.
+     * @param {updateCustomersMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CustomersMetadataUpdateInBulkResponseBody}
+     * @returns {Promise<(CustomersMetadataUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CustomersMetadataUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateCustomersMetadataInBulk(customersMetadataUpdateInBulkRequestBody, callback) {
       let postBody = customersMetadataUpdateInBulkRequestBody;

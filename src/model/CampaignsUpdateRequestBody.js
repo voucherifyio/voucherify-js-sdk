@@ -20,16 +20,15 @@ import LoyaltyTiersExpirationAll from './LoyaltyTiersExpirationAll';
 import ReferralProgram from './ReferralProgram';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The CampaignsUpdateRequestBody model module.
  * @module model/CampaignsUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsUpdateRequestBody {
     /**
      * Constructs a new <code>CampaignsUpdateRequestBody</code>.
-     * @alias module:model/CampaignsUpdateRequestBody
+     * @alias CampaignsUpdateRequestBody
      */
     constructor() { 
         
@@ -47,9 +46,9 @@ class CampaignsUpdateRequestBody {
     /**
      * Constructs a <code>CampaignsUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsUpdateRequestBody} The populated <code>CampaignsUpdateRequestBody</code> instance.
+     * @param {Partial<CampaignsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {CampaignsUpdateRequestBody} The populated <code>CampaignsUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -121,7 +120,7 @@ class CampaignsUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -195,115 +194,115 @@ class CampaignsUpdateRequestBody {
 
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/CampaignsUpdateRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof CampaignsUpdateRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
+    * @type {String | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['description'] = undefined;
 
 /**
- * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
- * @member {String} 
- */
+    * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
+    * @type {String | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['category'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
+    * @type {Object | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Determine which metadata should be removed from campaign.
- * @member {Array.<String>} 
- */
+    * Determine which metadata should be removed from campaign.
+    * @type {Array.<String> | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['unset_metadata_fields'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
+    * @type {String | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['category_id'] = undefined;
 
 /**
- * @member {module:model/AccessSettings} 
- */
+    * @type {AccessSettings | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['access_settings'] = undefined;
 
 /**
- * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
- * @member {String} 
- */
+    * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
+    * @type {String | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['activity_duration_after_publishing'] = undefined;
 
 /**
- * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
- * @member {Boolean} 
- */
+    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
+    * @type {Boolean | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['join_once'] = undefined;
 
 /**
- * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
- * @member {Boolean} 
- */
+    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * @type {Boolean | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['auto_join'] = undefined;
 
 /**
- * Defines whether the campaign can be updated with new vouchers after campaign creation.  - `AUTO_UPDATE`: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method). -  `STATIC`: vouchers need to be manually published.  If the `type` of the campaign is `STANDALONE`, the type cannot be changed. Also, the `type` cannot be changed to `STANDALONE`.
- * @member {module:model/CampaignsUpdateRequestBody.TypeEnum} 
- */
+    * Defines whether the campaign can be updated with new vouchers after campaign creation.  - `AUTO_UPDATE`: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method). -  `STATIC`: vouchers need to be manually published.  If the `type` of the campaign is `STANDALONE`, the type cannot be changed. Also, the `type` cannot be changed to `STANDALONE`.
+    * @type {(keyof typeof CampaignsUpdateRequestBody.TypeEnum) | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/ReferralProgram} 
- */
+    * @type {ReferralProgram | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['referral_program'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTiersExpirationAll} 
- */
+    * @type {LoyaltyTiersExpirationAll | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['loyalty_tiers_expiration'] = undefined;
 
 /**
- * @member {module:model/CampaignsUpdateRequestBodyOptions} 
- */
+    * @type {CampaignsUpdateRequestBodyOptions | undefined}
+    */
 CampaignsUpdateRequestBody.prototype['options'] = undefined;
 
 
@@ -361,25 +360,25 @@ CampaignsUpdateRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsUpdateRequestBody['TypeEnum'] = {
-
     /**
-     * value: "AUTO_UPDATE"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "AUTO_UPDATE": "AUTO_UPDATE",
-
-    /**
-     * value: "STATIC"
-     * @constant
-     */
-    "STATIC": "STATIC"
-};
+    CampaignsUpdateRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE",
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC"    
+    };
 
 
 

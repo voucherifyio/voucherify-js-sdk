@@ -13,50 +13,47 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListEarningRules.
-* @module model/ParameterOrderListEarningRules
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListEarningRules {
+ * Enum class ParameterOrderListEarningRules.
+ * @module model/ParameterOrderListEarningRules
+ * @version 3.0.1
+ */
+class ParameterOrderListEarningRules {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "-updated_at"
-         * @constant
-         */
-        "-updated_at" = "-updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-updated_at" = "-updated_at";
     
 
     /**
-    * Returns a <code>ParameterOrderListEarningRules</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListEarningRules} The enum <code>ParameterOrderListEarningRules</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListEarningRules, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListEarningRules[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListEarningRules[key];
     }
 }
+
+export default ParameterOrderListEarningRules;
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import SimpleProductDiscountUnit from './SimpleProductDiscountUnit';
 import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
-
 /**
  * The DiscountUnitMultipleOneUnit model module.
  * @module model/DiscountUnitMultipleOneUnit
- * @version 3.0.0
+ * @version 3.0.1
  */
 class DiscountUnitMultipleOneUnit {
     /**
      * Constructs a new <code>DiscountUnitMultipleOneUnit</code>.
-     * @alias module:model/DiscountUnitMultipleOneUnit
+     * @alias DiscountUnitMultipleOneUnit
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class DiscountUnitMultipleOneUnit {
     /**
      * Constructs a <code>DiscountUnitMultipleOneUnit</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DiscountUnitMultipleOneUnit} obj Optional instance to populate.
-     * @returns {module:model/DiscountUnitMultipleOneUnit} The populated <code>DiscountUnitMultipleOneUnit</code> instance.
+     * @param {Partial<DiscountUnitMultipleOneUnit>} data The plain JavaScript object bearing properties of interest.
+     * @param {DiscountUnitMultipleOneUnit} [obj] Optional instance to populate.
+     * @returns {DiscountUnitMultipleOneUnit} The populated <code>DiscountUnitMultipleOneUnit</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class DiscountUnitMultipleOneUnit {
 
     /**
      * Validates the JSON data with respect to <code>DiscountUnitMultipleOneUnit</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<DiscountUnitMultipleOneUnit>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>DiscountUnitMultipleOneUnit</code>.
      */
     static validateJSON(data) {
@@ -107,62 +106,62 @@ class DiscountUnitMultipleOneUnit {
 
 
 /**
- * Number of units to be granted a full value discount.
- * @member {Number} 
- */
+    * Number of units to be granted a full value discount.
+    * @type {Number | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['unit_off'] = undefined;
 
 /**
- * Formula used to dynamically calculate the number of units.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the number of units.
+    * @type {String | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['unit_off_formula'] = undefined;
 
 /**
- * Defines how the unit is added to the customer's order.  
- * @member {module:model/DiscountUnitMultipleOneUnit.EffectEnum} 
- */
+    * Defines how the unit is added to the customer's order.  
+    * @type {(keyof typeof DiscountUnitMultipleOneUnit.EffectEnum) | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['effect'] = undefined;
 
 /**
- * The product deemed as free, chosen from product inventory (e.g. time, items).
- * @member {String} 
- */
+    * The product deemed as free, chosen from product inventory (e.g. time, items).
+    * @type {String | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['unit_type'] = undefined;
 
 /**
- * @member {module:model/SimpleProductDiscountUnit} 
- */
+    * @type {SimpleProductDiscountUnit | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['product'] = undefined;
 
 /**
- * @member {module:model/SimpleSkuDiscountUnit} 
- */
+    * @type {SimpleSkuDiscountUnit | undefined}
+    */
 DiscountUnitMultipleOneUnit.prototype['sku'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-DiscountUnitMultipleOneUnit['EffectEnum'] = {
-
     /**
-     * value: "ADD_NEW_ITEMS"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ADD_NEW_ITEMS": "ADD_NEW_ITEMS",
-
-    /**
-     * value: "ADD_MISSING_ITEMS"
-     * @constant
-     */
-    "ADD_MISSING_ITEMS": "ADD_MISSING_ITEMS"
-};
+    DiscountUnitMultipleOneUnit['EffectEnum'] = {
+    
+        /**
+         * value: "ADD_NEW_ITEMS"
+         * @constant
+         */
+        "ADD_NEW_ITEMS": "ADD_NEW_ITEMS",
+    
+        /**
+         * value: "ADD_MISSING_ITEMS"
+         * @constant
+         */
+        "ADD_MISSING_ITEMS": "ADD_MISSING_ITEMS"    
+    };
 
 
 

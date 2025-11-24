@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomersPermanentDeletionCreateResponseBodyDataJson model module.
  * @module model/CustomersPermanentDeletionCreateResponseBodyDataJson
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersPermanentDeletionCreateResponseBodyDataJson {
     /**
      * Constructs a new <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code>.
      * Statistics summarizing the number of related information that was deleted.
-     * @alias module:model/CustomersPermanentDeletionCreateResponseBodyDataJson
+     * @alias CustomersPermanentDeletionCreateResponseBodyDataJson
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson {
     /**
      * Constructs a <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersPermanentDeletionCreateResponseBodyDataJson} obj Optional instance to populate.
-     * @returns {module:model/CustomersPermanentDeletionCreateResponseBodyDataJson} The populated <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code> instance.
+     * @param {Partial<CustomersPermanentDeletionCreateResponseBodyDataJson>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersPermanentDeletionCreateResponseBodyDataJson} [obj] Optional instance to populate.
+     * @returns {CustomersPermanentDeletionCreateResponseBodyDataJson} The populated <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson {
 
     /**
      * Validates the JSON data with respect to <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersPermanentDeletionCreateResponseBodyDataJson>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersPermanentDeletionCreateResponseBodyDataJson</code>.
      */
     static validateJSON(data) {
@@ -90,46 +89,46 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson {
 
 
 /**
- * Number of events deleted.
- * @member {Number} 
- */
+    * Number of events deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['events'] = undefined;
 
 /**
- * Number of customer events deleted.
- * @member {Number} 
- */
+    * Number of customer events deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['customer_events'] = undefined;
 
 /**
- * Number of daily events deleted.
- * @member {Number} 
- */
+    * Number of daily events deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['daily_events'] = undefined;
 
 /**
- * Number of segments deleted.
- * @member {Number} 
- */
+    * Number of segments deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['segments'] = undefined;
 
 /**
- * Number of orders deleted.
- * @member {Number} 
- */
+    * Number of orders deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['orders'] = undefined;
 
 /**
- * Number of order events deleted.
- * @member {Number} 
- */
+    * Number of order events deleted.
+    * @type {Number | undefined}
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['order_events'] = undefined;
 
 /**
- * Number of customers deleted.
- * @member {Number} 
- * @default 1
- */
+    * Number of customers deleted.
+    * @type {Number | undefined}
+    * @default 1
+    */
 CustomersPermanentDeletionCreateResponseBodyDataJson.prototype['customer'] = 1;
 
 

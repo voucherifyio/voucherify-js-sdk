@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardsUpdateRequestBodyParametersCampaign model module.
  * @module model/RewardsUpdateRequestBodyParametersCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsUpdateRequestBodyParametersCampaign {
     /**
      * Constructs a new <code>RewardsUpdateRequestBodyParametersCampaign</code>.
-     * @alias module:model/RewardsUpdateRequestBodyParametersCampaign
+     * @alias RewardsUpdateRequestBodyParametersCampaign
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RewardsUpdateRequestBodyParametersCampaign {
     /**
      * Constructs a <code>RewardsUpdateRequestBodyParametersCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsUpdateRequestBodyParametersCampaign} obj Optional instance to populate.
-     * @returns {module:model/RewardsUpdateRequestBodyParametersCampaign} The populated <code>RewardsUpdateRequestBodyParametersCampaign</code> instance.
+     * @param {Partial<RewardsUpdateRequestBodyParametersCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsUpdateRequestBodyParametersCampaign} [obj] Optional instance to populate.
+     * @returns {RewardsUpdateRequestBodyParametersCampaign} The populated <code>RewardsUpdateRequestBodyParametersCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class RewardsUpdateRequestBodyParametersCampaign {
 
     /**
      * Validates the JSON data with respect to <code>RewardsUpdateRequestBodyParametersCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsUpdateRequestBodyParametersCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsUpdateRequestBodyParametersCampaign</code>.
      */
     static validateJSON(data) {
@@ -77,14 +76,14 @@ class RewardsUpdateRequestBodyParametersCampaign {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBodyParametersCampaign.prototype['id'] = undefined;
 
 /**
- * The incremental points to be added to the current balance on the loyalty card. and The incremental amount to be added to the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The incremental points to be added to the current balance on the loyalty card. and The incremental amount to be added to the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RewardsUpdateRequestBodyParametersCampaign.prototype['balance'] = undefined;
 
 

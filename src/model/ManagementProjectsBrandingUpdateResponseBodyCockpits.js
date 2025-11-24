@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingUpdateResponseBodyCockpits model module.
  * @module model/ManagementProjectsBrandingUpdateResponseBodyCockpits
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateResponseBodyCockpits {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code>.
      * Defines customer cockpit details.
-     * @alias module:model/ManagementProjectsBrandingUpdateResponseBodyCockpits
+     * @alias ManagementProjectsBrandingUpdateResponseBodyCockpits
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingUpdateResponseBodyCockpits {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateResponseBodyCockpits} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateResponseBodyCockpits} The populated <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyCockpits>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateResponseBodyCockpits} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateResponseBodyCockpits} The populated <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ManagementProjectsBrandingUpdateResponseBodyCockpits {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyCockpits>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateResponseBodyCockpits</code>.
      */
     static validateJSON(data) {
@@ -100,112 +99,112 @@ class ManagementProjectsBrandingUpdateResponseBodyCockpits {
 
 
 /**
- * Enables the campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['campaigns_overview_enabled'] = undefined;
 
 /**
- * Enables the loyalty campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the loyalty campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['loyalty_enabled'] = undefined;
 
 /**
- * Enables the gift card overview for customers.
- * @member {Boolean} 
- */
+    * Enables the gift card overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['gift_cards_enabled'] = undefined;
 
 /**
- * Enables the discount coupon overview for customers.
- * @member {Boolean} 
- */
+    * Enables the discount coupon overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['coupons_enabled'] = undefined;
 
 /**
- * Enables the referral campaign overview for customers.
- * @member {Boolean} 
- */
+    * Enables the referral campaign overview for customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['referrals_enabled'] = undefined;
 
 /**
- * Determines the color scheme of the customer cockpit.
- * @member {module:model/ManagementProjectsBrandingUpdateResponseBodyCockpits.ThemeEnum} 
- */
+    * Determines the color scheme of the customer cockpit.
+    * @type {(keyof typeof ManagementProjectsBrandingUpdateResponseBodyCockpits.ThemeEnum) | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['theme'] = undefined;
 
 /**
- * Enables the double opt-in option. It must be a valid URL format.
- * @member {Boolean} 
- */
+    * Enables the double opt-in option. It must be a valid URL format.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['use_custom_double_opt_in_redirect_url'] = undefined;
 
 /**
- * Defines the URL for the double opt-in consent. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL for the double opt-in consent. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyCockpits.prototype['custom_double_opt_in_redirect_url'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>theme</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsBrandingUpdateResponseBodyCockpits['ThemeEnum'] = {
-
     /**
-     * value: "blue"
-     * @constant
+     * Allowed values for the <code>theme</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "blue": "blue",
-
-    /**
-     * value: "dark-green"
-     * @constant
-     */
-    "dark-green": "dark-green",
-
-    /**
-     * value: "default"
-     * @constant
-     */
-    "default": "default",
-
-    /**
-     * value: "green"
-     * @constant
-     */
-    "green": "green",
-
-    /**
-     * value: "grey"
-     * @constant
-     */
-    "grey": "grey",
-
-    /**
-     * value: "orange"
-     * @constant
-     */
-    "orange": "orange",
-
-    /**
-     * value: "purple"
-     * @constant
-     */
-    "purple": "purple",
-
-    /**
-     * value: "red"
-     * @constant
-     */
-    "red": "red"
-};
+    ManagementProjectsBrandingUpdateResponseBodyCockpits['ThemeEnum'] = {
+    
+        /**
+         * value: "blue"
+         * @constant
+         */
+        "blue": "blue",
+    
+        /**
+         * value: "dark-green"
+         * @constant
+         */
+        "dark-green": "dark-green",
+    
+        /**
+         * value: "default"
+         * @constant
+         */
+        "default": "default",
+    
+        /**
+         * value: "green"
+         * @constant
+         */
+        "green": "green",
+    
+        /**
+         * value: "grey"
+         * @constant
+         */
+        "grey": "grey",
+    
+        /**
+         * value: "orange"
+         * @constant
+         */
+        "orange": "orange",
+    
+        /**
+         * value: "purple"
+         * @constant
+         */
+        "purple": "purple",
+    
+        /**
+         * value: "red"
+         * @constant
+         */
+        "red": "red"    
+    };
 
 
 

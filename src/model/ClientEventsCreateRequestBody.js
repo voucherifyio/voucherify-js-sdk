@@ -15,18 +15,17 @@ import ApiClient from '../ApiClient';
 import ClientEventsCreateRequestBodyLoyalty from './ClientEventsCreateRequestBodyLoyalty';
 import ClientEventsCreateRequestBodyReferral from './ClientEventsCreateRequestBodyReferral';
 import Customer from './Customer';
-
 /**
  * The ClientEventsCreateRequestBody model module.
  * @module model/ClientEventsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientEventsCreateRequestBody {
     /**
      * Constructs a new <code>ClientEventsCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/events&#x60;.
-     * @alias module:model/ClientEventsCreateRequestBody
-     * @param customer {module:model/Customer} 
+     * @alias ClientEventsCreateRequestBody
+     * @param {Customer} customer 
      */
     constructor(customer) { 
         
@@ -45,9 +44,9 @@ class ClientEventsCreateRequestBody {
     /**
      * Constructs a <code>ClientEventsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientEventsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ClientEventsCreateRequestBody} The populated <code>ClientEventsCreateRequestBody</code> instance.
+     * @param {Partial<ClientEventsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientEventsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ClientEventsCreateRequestBody} The populated <code>ClientEventsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class ClientEventsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientEventsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientEventsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientEventsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -110,30 +109,30 @@ class ClientEventsCreateRequestBody {
 ClientEventsCreateRequestBody.RequiredProperties = ["customer"];
 
 /**
- * Event name. This is the same name that you used to define a custom event in the **Dashboard** > **Project Settings** > **Event Schema**.
- * @member {String} 
- */
+    * Event name. This is the same name that you used to define a custom event in the **Dashboard** > **Project Settings** > **Event Schema**.
+    * @type {String | undefined}
+    */
 ClientEventsCreateRequestBody.prototype['event'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer}
+    */
 ClientEventsCreateRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/ClientEventsCreateRequestBodyReferral} 
- */
+    * @type {ClientEventsCreateRequestBodyReferral | undefined}
+    */
 ClientEventsCreateRequestBody.prototype['referral'] = undefined;
 
 /**
- * @member {module:model/ClientEventsCreateRequestBodyLoyalty} 
- */
+    * @type {ClientEventsCreateRequestBodyLoyalty | undefined}
+    */
 ClientEventsCreateRequestBody.prototype['loyalty'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the event. A set of key/value pairs that you can attach to an event object. It can be useful for storing additional information about the event in a structured format. Event metadata schema is defined in the **Dashboard** > **Project Settings** > **Event Schema** > **Edit particular event** > **Metadata property definition**.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the event. A set of key/value pairs that you can attach to an event object. It can be useful for storing additional information about the event in a structured format. Event metadata schema is defined in the **Dashboard** > **Project Settings** > **Event Schema** > **Edit particular event** > **Metadata property definition**.
+    * @type {Object | undefined}
+    */
 ClientEventsCreateRequestBody.prototype['metadata'] = undefined;
 
 

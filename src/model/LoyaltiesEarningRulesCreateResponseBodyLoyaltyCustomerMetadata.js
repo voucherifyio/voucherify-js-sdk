@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code>.
      * Defines the ratio based on the property defined in the calculation_type parameter. For every given increment of value (1, 10, etc) defined in the every parameter for the property defined in calculation_type, give the customer the number of points defined in the points parameter. In other words, for every order metadata property value, give points.
-     * @alias module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata
+     * @alias LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata} The populated <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata} The populated <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata</code>.
      */
     static validateJSON(data) {
@@ -88,27 +87,27 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata {
 
 
 /**
- * For how many increments of the customer metadata property to grant points for.
- * @member {Number} 
- */
+    * For how many increments of the customer metadata property to grant points for.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata.prototype['every'] = undefined;
 
 /**
- * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
- * @member {Number} 
- */
+    * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata.prototype['points_formula'] = undefined;
 
 /**
- * Customer metadata property.
- * @member {String} 
- */
+    * Customer metadata property.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata.prototype['property'] = undefined;
 
 

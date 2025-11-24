@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import EventSource from './EventSource';
 import MemberActivityData from './MemberActivityData';
-
 /**
  * The MemberActivityData1 model module.
  * @module model/MemberActivityData1
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityData1 {
     /**
      * Constructs a new <code>MemberActivityData1</code>.
      * Contains details about the event. The objects that are returned in the data attribute differ based on the context of the event type.
-     * @alias module:model/MemberActivityData1
+     * @alias MemberActivityData1
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MemberActivityData1 {
     /**
      * Constructs a <code>MemberActivityData1</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityData1} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityData1} The populated <code>MemberActivityData1</code> instance.
+     * @param {Partial<MemberActivityData1>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityData1} [obj] Optional instance to populate.
+     * @returns {MemberActivityData1} The populated <code>MemberActivityData1</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class MemberActivityData1 {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityData1</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityData1>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityData1</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class MemberActivityData1 {
 
 
 /**
- * @member {module:model/MemberActivityData} 
- */
+    * @type {MemberActivityData | undefined}
+    */
 MemberActivityData1.prototype['data'] = undefined;
 
 /**
- * @member {module:model/EventSource} 
- */
+    * @type {EventSource | undefined}
+    */
 MemberActivityData1.prototype['event_source'] = undefined;
 
 

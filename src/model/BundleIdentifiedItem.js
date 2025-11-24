@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The BundleIdentifiedItem model module.
  * @module model/BundleIdentifiedItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class BundleIdentifiedItem {
     /**
      * Constructs a new <code>BundleIdentifiedItem</code>.
      * Determines a product from the customer&#39;s order items that meets bundle conditions.
-     * @alias module:model/BundleIdentifiedItem
-     * @param id {String} Unique identifier of the product or SKU that meets the bundle condition. This is an ID assigned by Voucherify.
-     * @param object {module:model/BundleIdentifiedItem.ObjectEnum} Determines the type of the object that meets the bundle condition.
-     * @param itemIndex {Number} Number assigned to the order line item in accordance with the order sent in the request. It starts with `0` for the first order line item in the request.
-     * @param itemQuantity {Number} Quantity of items that meet the bundle conditions. If the quantity in the order is higher than the quantity required by the bundle, this returns only the number that meets the bundle. For example, if the bundle requires `5` coffees, but the order includes `10` coffees, `item_quantity` returns `5`.
+     * @alias BundleIdentifiedItem
+     * @param {String} id Unique identifier of the product or SKU that meets the bundle condition. This is an ID assigned by Voucherify.
+     * @param {BundleIdentifiedItem.ObjectEnum} object Determines the type of the object that meets the bundle condition.
+     * @param {Number} itemIndex Number assigned to the order line item in accordance with the order sent in the request. It starts with `0` for the first order line item in the request.
+     * @param {Number} itemQuantity Quantity of items that meet the bundle conditions. If the quantity in the order is higher than the quantity required by the bundle, this returns only the number that meets the bundle. For example, if the bundle requires `5` coffees, but the order includes `10` coffees, `item_quantity` returns `5`.
      */
     constructor(id, object, itemIndex, itemQuantity) { 
         
@@ -48,9 +47,9 @@ class BundleIdentifiedItem {
     /**
      * Constructs a <code>BundleIdentifiedItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BundleIdentifiedItem} obj Optional instance to populate.
-     * @returns {module:model/BundleIdentifiedItem} The populated <code>BundleIdentifiedItem</code> instance.
+     * @param {Partial<BundleIdentifiedItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {BundleIdentifiedItem} [obj] Optional instance to populate.
+     * @returns {BundleIdentifiedItem} The populated <code>BundleIdentifiedItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class BundleIdentifiedItem {
 
     /**
      * Validates the JSON data with respect to <code>BundleIdentifiedItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<BundleIdentifiedItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>BundleIdentifiedItem</code>.
      */
     static validateJSON(data) {
@@ -102,52 +101,52 @@ class BundleIdentifiedItem {
 BundleIdentifiedItem.RequiredProperties = ["id", "object", "item_index", "item_quantity"];
 
 /**
- * Unique identifier of the product or SKU that meets the bundle condition. This is an ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product or SKU that meets the bundle condition. This is an ID assigned by Voucherify.
+    * @type {String}
+    */
 BundleIdentifiedItem.prototype['id'] = undefined;
 
 /**
- * Determines the type of the object that meets the bundle condition.
- * @member {module:model/BundleIdentifiedItem.ObjectEnum} 
- */
+    * Determines the type of the object that meets the bundle condition.
+    * @type {(keyof typeof BundleIdentifiedItem.ObjectEnum)}
+    */
 BundleIdentifiedItem.prototype['object'] = undefined;
 
 /**
- * Number assigned to the order line item in accordance with the order sent in the request. It starts with `0` for the first order line item in the request.
- * @member {Number} 
- */
+    * Number assigned to the order line item in accordance with the order sent in the request. It starts with `0` for the first order line item in the request.
+    * @type {Number}
+    */
 BundleIdentifiedItem.prototype['item_index'] = undefined;
 
 /**
- * Quantity of items that meet the bundle conditions. If the quantity in the order is higher than the quantity required by the bundle, this returns only the number that meets the bundle. For example, if the bundle requires `5` coffees, but the order includes `10` coffees, `item_quantity` returns `5`.
- * @member {Number} 
- */
+    * Quantity of items that meet the bundle conditions. If the quantity in the order is higher than the quantity required by the bundle, this returns only the number that meets the bundle. For example, if the bundle requires `5` coffees, but the order includes `10` coffees, `item_quantity` returns `5`.
+    * @type {Number}
+    */
 BundleIdentifiedItem.prototype['item_quantity'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-BundleIdentifiedItem['ObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    BundleIdentifiedItem['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

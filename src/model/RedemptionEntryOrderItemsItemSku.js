@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryOrderItemsItemSku model module.
  * @module model/RedemptionEntryOrderItemsItemSku
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryOrderItemsItemSku {
     /**
      * Constructs a new <code>RedemptionEntryOrderItemsItemSku</code>.
-     * @alias module:model/RedemptionEntryOrderItemsItemSku
+     * @alias RedemptionEntryOrderItemsItemSku
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionEntryOrderItemsItemSku {
     /**
      * Constructs a <code>RedemptionEntryOrderItemsItemSku</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryOrderItemsItemSku} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryOrderItemsItemSku} The populated <code>RedemptionEntryOrderItemsItemSku</code> instance.
+     * @param {Partial<RedemptionEntryOrderItemsItemSku>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryOrderItemsItemSku} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryOrderItemsItemSku} The populated <code>RedemptionEntryOrderItemsItemSku</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -71,7 +70,7 @@ class RedemptionEntryOrderItemsItemSku {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryOrderItemsItemSku</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryOrderItemsItemSku>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryOrderItemsItemSku</code>.
      */
     static validateJSON(data) {
@@ -97,39 +96,39 @@ class RedemptionEntryOrderItemsItemSku {
 
 
 /**
- * A unique identifier that represents the SKU and is assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the SKU and is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['id'] = undefined;
 
 /**
- * The merchant's SKU ID (if it is different than Voucherify's SKU ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
- * @member {String} 
- */
+    * The merchant's SKU ID (if it is different than Voucherify's SKU ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
+    * @type {String | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['source_id'] = undefined;
 
 /**
- * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
- * @member {Boolean} 
- */
+    * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
+    * @type {Boolean | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['override'] = undefined;
 
 /**
- * The SKU name.
- * @member {String} 
- */
+    * The SKU name.
+    * @type {String | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['sku'] = undefined;
 
 /**
- * SKU price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * SKU price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['price'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an SKU. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an SKU. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 RedemptionEntryOrderItemsItemSku.prototype['metadata'] = undefined;
 
 

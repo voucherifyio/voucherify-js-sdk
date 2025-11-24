@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import QualificationsRedeemable from './QualificationsRedeemable';
-
 /**
  * The QualificationsRedeemables model module.
  * @module model/QualificationsRedeemables
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsRedeemables {
     /**
      * Constructs a new <code>QualificationsRedeemables</code>.
      * List of redeemables for examine qualification.
-     * @alias module:model/QualificationsRedeemables
+     * @alias QualificationsRedeemables
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class QualificationsRedeemables {
     /**
      * Constructs a <code>QualificationsRedeemables</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsRedeemables} obj Optional instance to populate.
-     * @returns {module:model/QualificationsRedeemables} The populated <code>QualificationsRedeemables</code> instance.
+     * @param {Partial<QualificationsRedeemables>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsRedeemables} [obj] Optional instance to populate.
+     * @returns {QualificationsRedeemables} The populated <code>QualificationsRedeemables</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class QualificationsRedeemables {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsRedeemables</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsRedeemables>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsRedeemables</code>.
      */
     static validateJSON(data) {
@@ -107,75 +106,75 @@ class QualificationsRedeemables {
 
 
 /**
- * The type of the object represented by JSON. Default is `list`.
- * @member {module:model/QualificationsRedeemables.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. Default is `list`.
+    * @type {(keyof typeof QualificationsRedeemables.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 QualificationsRedeemables.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of qualified redeemables.
- * @member {module:model/QualificationsRedeemables.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of qualified redeemables.
+    * @type {(keyof typeof QualificationsRedeemables.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 QualificationsRedeemables.prototype['data_ref'] = 'data';
 
 /**
- * Array of qualified redeemables.
- * @member {Array.<module:model/QualificationsRedeemable>} 
- */
+    * Array of qualified redeemables.
+    * @type {Array.<QualificationsRedeemable> | undefined}
+    */
 QualificationsRedeemables.prototype['data'] = undefined;
 
 /**
- * The number of redeemables returned in the API request.
- * @member {Number} 
- */
+    * The number of redeemables returned in the API request.
+    * @type {Number | undefined}
+    */
 QualificationsRedeemables.prototype['total'] = undefined;
 
 /**
- * As results are always limited, the `has_more` flag indicates if there are more records for given parameters. This lets you know if you can run another request (with different options) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As results are always limited, the `has_more` flag indicates if there are more records for given parameters. This lets you know if you can run another request (with different options) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 QualificationsRedeemables.prototype['has_more'] = undefined;
 
 /**
- * Timestamp representing the date and time to use in `starting_after` cursor to get more redeemables.
- * @member {Date} 
- */
+    * Timestamp representing the date and time to use in `starting_after` cursor to get more redeemables.
+    * @type {Date | undefined}
+    */
 QualificationsRedeemables.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemables['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    QualificationsRedeemables['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemables['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    QualificationsRedeemables['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

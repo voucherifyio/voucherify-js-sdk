@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyChannel model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyChannel {
     /**
      * Constructs a new <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel
+     * @alias LoyaltiesMembersRedemptionRedeemResponseBodyChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel {
     /**
      * Constructs a <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code> instance.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersRedemptionRedeemResponseBodyChannel} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersRedemptionRedeemResponseBodyChannel} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyChannel</code>.
      */
     static validateJSON(data) {
@@ -82,46 +81,46 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel {
 
 
 /**
- * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API. For `AUTO_REDEEM`, it is the reward assignment ID.
- * @member {String} 
- */
+    * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API. For `AUTO_REDEEM`, it is the reward assignment ID.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemResponseBodyChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
- * @member {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
+    * @type {(keyof typeof LoyaltiesMembersRedemptionRedeemResponseBodyChannel.ChannelTypeEnum) | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemResponseBodyChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersRedemptionRedeemResponseBodyChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM"
-};
+    LoyaltiesMembersRedemptionRedeemResponseBodyChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM"    
+    };
 
 
 

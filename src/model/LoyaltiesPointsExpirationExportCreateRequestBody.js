@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesPointsExpirationExportCreateRequestBodyParameters from './LoyaltiesPointsExpirationExportCreateRequestBodyParameters';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateRequestBody model module.
  * @module model/LoyaltiesPointsExpirationExportCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateRequestBody {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateRequestBody</code>.
      * Request schema model for validating a voucher using **POST** &#x60;/v1/loyalties/{campaignId}/points-expiration/export&#x60;
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateRequestBody
+     * @alias LoyaltiesPointsExpirationExportCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBody {
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateRequestBody} The populated <code>LoyaltiesPointsExpirationExportCreateRequestBody</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateRequestBody} The populated <code>LoyaltiesPointsExpirationExportCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesPointsExpirationExportCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesPointsExpirationExportCreateRequestBody {
 
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateRequestBodyParameters | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateRequestBody.prototype['parameters'] = undefined;
 
 

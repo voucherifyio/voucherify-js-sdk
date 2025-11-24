@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrderReferrer model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemOrderReferrer {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer
+     * @alias RedemptionsListResponseBodyRedemptionsItemOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsListResponseBodyRedemptionsItemOrderReferrer {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemOrderReferrer} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemOrderReferrer} The populated <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionsListResponseBodyRedemptionsItemOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsListResponseBodyRedemptionsItemOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionsListResponseBodyRedemptionsItemOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsListResponseBodyRedemptionsItemOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionsListResponseBodyRedemptionsItemOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SegmentsCreateResponseBody model module.
  * @module model/SegmentsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SegmentsCreateResponseBody {
     /**
      * Constructs a new <code>SegmentsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/segments&#x60;.
-     * @alias module:model/SegmentsCreateResponseBody
+     * @alias SegmentsCreateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class SegmentsCreateResponseBody {
     /**
      * Constructs a <code>SegmentsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SegmentsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/SegmentsCreateResponseBody} The populated <code>SegmentsCreateResponseBody</code> instance.
+     * @param {Partial<SegmentsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {SegmentsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {SegmentsCreateResponseBody} The populated <code>SegmentsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class SegmentsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>SegmentsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SegmentsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SegmentsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -110,112 +109,112 @@ class SegmentsCreateResponseBody {
 
 
 /**
- * Unique segment ID.
- * @member {String} 
- */
+    * Unique segment ID.
+    * @type {String | undefined}
+    */
 SegmentsCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Segment name.
- * @member {String} 
- */
+    * Segment name.
+    * @type {String | undefined}
+    */
 SegmentsCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SegmentsCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Defines whether the segment is: - Active (`auto-update`): customers enter and leave the segment based on the defined filters and the `customer.segment.entered` and `customer.segment.left` events are triggered, - Passive (`passive`): customers enter and leave the segment based on the defined filters, but the `customer.segment.entered` and `customer.segment.left` events are not triggered, - Static (`static`): manually selected customers.
- * @member {module:model/SegmentsCreateResponseBody.TypeEnum} 
- */
+    * Defines whether the segment is: - Active (`auto-update`): customers enter and leave the segment based on the defined filters and the `customer.segment.entered` and `customer.segment.left` events are triggered, - Passive (`passive`): customers enter and leave the segment based on the defined filters, but the `customer.segment.entered` and `customer.segment.left` events are not triggered, - Static (`static`): manually selected customers.
+    * @type {(keyof typeof SegmentsCreateResponseBody.TypeEnum) | undefined}
+    */
 SegmentsCreateResponseBody.prototype['type'] = undefined;
 
 /**
- * Defines a set of criteria for an `auto-update` or `passive` segment type.
- * @member {Object} 
- */
+    * Defines a set of criteria for an `auto-update` or `passive` segment type.
+    * @type {Object | undefined}
+    */
 SegmentsCreateResponseBody.prototype['filter'] = undefined;
 
 /**
- * @member {module:model/SegmentsCreateResponseBody.InitialSyncStatusEnum} 
- */
+    * @type {(keyof typeof SegmentsCreateResponseBody.InitialSyncStatusEnum) | undefined}
+    */
 SegmentsCreateResponseBody.prototype['initial_sync_status'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the customer segment.
- * @member {module:model/SegmentsCreateResponseBody.ObjectEnum} 
- * @default 'segment'
- */
+    * The type of the object represented by JSON. This object stores information about the customer segment.
+    * @type {(keyof typeof SegmentsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'segment'
+    */
 SegmentsCreateResponseBody.prototype['object'] = 'segment';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsCreateResponseBody['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SegmentsCreateResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "auto-update"
+         * @constant
+         */
+        "auto-update": "auto-update",
+    
+        /**
+         * value: "passive"
+         * @constant
+         */
+        "passive": "passive",
+    
+        /**
+         * value: "static"
+         * @constant
+         */
+        "static": "static"    
+    };
+
 
     /**
-     * value: "auto-update"
-     * @constant
+     * Allowed values for the <code>initial_sync_status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "auto-update": "auto-update",
+    SegmentsCreateResponseBody['InitialSyncStatusEnum'] = {
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS",
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE"    
+    };
+
 
     /**
-     * value: "passive"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "passive": "passive",
-
-    /**
-     * value: "static"
-     * @constant
-     */
-    "static": "static"
-};
-
-
-/**
- * Allowed values for the <code>initial_sync_status</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsCreateResponseBody['InitialSyncStatusEnum'] = {
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS",
-
-    /**
-     * value: "DONE"
-     * @constant
-     */
-    "DONE": "DONE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SegmentsCreateResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "segment"
-     * @constant
-     */
-    "segment": "segment"
-};
+    SegmentsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "segment"
+         * @constant
+         */
+        "segment": "segment"    
+    };
 
 
 

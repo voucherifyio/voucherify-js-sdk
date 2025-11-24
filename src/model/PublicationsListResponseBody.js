@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PublicationsListResponseBodyPublicationsItem from './PublicationsListResponseBodyPublicationsItem';
-
 /**
  * The PublicationsListResponseBody model module.
  * @module model/PublicationsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PublicationsListResponseBody {
     /**
      * Constructs a new <code>PublicationsListResponseBody</code>.
      * Response body schema for listing publications using **GET** &#x60;v1/publications&#x60;.
-     * @alias module:model/PublicationsListResponseBody
+     * @alias PublicationsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PublicationsListResponseBody {
     /**
      * Constructs a <code>PublicationsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PublicationsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/PublicationsListResponseBody} The populated <code>PublicationsListResponseBody</code> instance.
+     * @param {Partial<PublicationsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PublicationsListResponseBody} [obj] Optional instance to populate.
+     * @returns {PublicationsListResponseBody} The populated <code>PublicationsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class PublicationsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>PublicationsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PublicationsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PublicationsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class PublicationsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about publications in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about publications in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 PublicationsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of publications.
- * @member {String} 
- * @default 'publications'
- */
+    * Identifies the name of the attribute that contains the array of publications.
+    * @type {String | undefined}
+    * @default 'publications'
+    */
 PublicationsListResponseBody.prototype['data_ref'] = 'publications';
 
 /**
- * Response schema model for publishing vouchers to a specific customer.
- * @member {Array.<module:model/PublicationsListResponseBodyPublicationsItem>} 
- */
+    * Response schema model for publishing vouchers to a specific customer.
+    * @type {Array.<PublicationsListResponseBodyPublicationsItem> | undefined}
+    */
 PublicationsListResponseBody.prototype['publications'] = undefined;
 
 /**
- * Total number of publications.
- * @member {Number} 
- */
+    * Total number of publications.
+    * @type {Number | undefined}
+    */
 PublicationsListResponseBody.prototype['total'] = undefined;
 
 

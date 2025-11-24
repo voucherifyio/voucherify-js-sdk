@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListTemplatesCampaignTypeConditions model module.
  * @module model/ParameterFiltersListTemplatesCampaignTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListTemplatesCampaignTypeConditions {
     /**
      * Constructs a new <code>ParameterFiltersListTemplatesCampaignTypeConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/ParameterFiltersListTemplatesCampaignTypeConditions
+     * @alias ParameterFiltersListTemplatesCampaignTypeConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListTemplatesCampaignTypeConditions {
     /**
      * Constructs a <code>ParameterFiltersListTemplatesCampaignTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListTemplatesCampaignTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListTemplatesCampaignTypeConditions} The populated <code>ParameterFiltersListTemplatesCampaignTypeConditions</code> instance.
+     * @param {Partial<ParameterFiltersListTemplatesCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListTemplatesCampaignTypeConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListTemplatesCampaignTypeConditions} The populated <code>ParameterFiltersListTemplatesCampaignTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ParameterFiltersListTemplatesCampaignTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListTemplatesCampaignTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListTemplatesCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListTemplatesCampaignTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -124,51 +123,51 @@ class ParameterFiltersListTemplatesCampaignTypeConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListTemplatesCampaignTypeConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListTemplatesCampaignTypeConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListTemplatesCampaignTypeConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListTemplatesCampaignTypeConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListTemplatesCampaignTypeConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListTemplatesCampaignTypeConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListTemplatesCampaignTypeConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListTemplatesCampaignTypeConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListTemplatesCampaignTypeConditions.prototype['$ends_with'] = undefined;
 
 
@@ -217,46 +216,46 @@ ParameterFiltersListTemplatesCampaignTypeConditions['NotInEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListTemplatesCampaignTypeConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListTemplatesCampaignTypeConditions['IsEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS"    
+    };
+
 
     /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListTemplatesCampaignTypeConditions['IsNotEnum'] = {
-
-    /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
-     */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS"
-};
+    ParameterFiltersListTemplatesCampaignTypeConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS"    
+    };
 
 
 

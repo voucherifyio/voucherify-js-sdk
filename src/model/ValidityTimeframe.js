@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidityTimeframe model module.
  * @module model/ValidityTimeframe
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidityTimeframe {
     /**
      * Constructs a new <code>ValidityTimeframe</code>.
      * Set recurrent time periods when the earning rule is valid. For example, valid for 1 hour every other day.&#x60;start_date&#x60; **required** when including the &#x60;validity_timeframe&#x60;.
-     * @alias module:model/ValidityTimeframe
+     * @alias ValidityTimeframe
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidityTimeframe {
     /**
      * Constructs a <code>ValidityTimeframe</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidityTimeframe} obj Optional instance to populate.
-     * @returns {module:model/ValidityTimeframe} The populated <code>ValidityTimeframe</code> instance.
+     * @param {Partial<ValidityTimeframe>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidityTimeframe} [obj] Optional instance to populate.
+     * @returns {ValidityTimeframe} The populated <code>ValidityTimeframe</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ValidityTimeframe {
 
     /**
      * Validates the JSON data with respect to <code>ValidityTimeframe</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidityTimeframe>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidityTimeframe</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class ValidityTimeframe {
 
 
 /**
- * Defines the amount of time an earning rule will be active in ISO 8601 format. For example, an earning rule with a `duration` of `PT1H` will be valid for a duration of one hour.
- * @member {String} 
- */
+    * Defines the amount of time an earning rule will be active in ISO 8601 format. For example, an earning rule with a `duration` of `PT1H` will be valid for a duration of one hour.
+    * @type {String | undefined}
+    */
 ValidityTimeframe.prototype['duration'] = undefined;
 
 /**
- * Defines the intervening time between two time points in ISO 8601 format, expressed as a duration. For example, an earning rule with an `interval` of `P2D` will be valid every other day.
- * @member {String} 
- */
+    * Defines the intervening time between two time points in ISO 8601 format, expressed as a duration. For example, an earning rule with an `interval` of `P2D` will be valid every other day.
+    * @type {String | undefined}
+    */
 ValidityTimeframe.prototype['interval'] = undefined;
 
 

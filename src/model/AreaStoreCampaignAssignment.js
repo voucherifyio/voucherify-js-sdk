@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The AreaStoreCampaignAssignment model module.
  * @module model/AreaStoreCampaignAssignment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AreaStoreCampaignAssignment {
     /**
      * Constructs a new <code>AreaStoreCampaignAssignment</code>.
      * An object representing an assignment of a campaign to an area or store.
-     * @alias module:model/AreaStoreCampaignAssignment
+     * @alias AreaStoreCampaignAssignment
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class AreaStoreCampaignAssignment {
     /**
      * Constructs a <code>AreaStoreCampaignAssignment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AreaStoreCampaignAssignment} obj Optional instance to populate.
-     * @returns {module:model/AreaStoreCampaignAssignment} The populated <code>AreaStoreCampaignAssignment</code> instance.
+     * @param {Partial<AreaStoreCampaignAssignment>} data The plain JavaScript object bearing properties of interest.
+     * @param {AreaStoreCampaignAssignment} [obj] Optional instance to populate.
+     * @returns {AreaStoreCampaignAssignment} The populated <code>AreaStoreCampaignAssignment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class AreaStoreCampaignAssignment {
 
     /**
      * Validates the JSON data with respect to <code>AreaStoreCampaignAssignment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AreaStoreCampaignAssignment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AreaStoreCampaignAssignment</code>.
      */
     static validateJSON(data) {
@@ -103,59 +102,59 @@ class AreaStoreCampaignAssignment {
 
 
 /**
- * Unique identifier of the campaign assignment.
- * @member {String} 
- */
+    * Unique identifier of the campaign assignment.
+    * @type {String | undefined}
+    */
 AreaStoreCampaignAssignment.prototype['id'] = undefined;
 
 /**
- * Unique identifier of the area to which the campaign is assigned.
- * @member {String} 
- */
+    * Unique identifier of the area to which the campaign is assigned.
+    * @type {String | undefined}
+    */
 AreaStoreCampaignAssignment.prototype['area_id'] = undefined;
 
 /**
- * Determines if the campaign is assigned to all of the stores in the area, i.e. if an area ID is passed in the `access_settings.assign.area_all_stores_ids` in the request.
- * @member {Boolean} 
- */
+    * Determines if the campaign is assigned to all of the stores in the area, i.e. if an area ID is passed in the `access_settings.assign.area_all_stores_ids` in the request.
+    * @type {Boolean | undefined}
+    */
 AreaStoreCampaignAssignment.prototype['all_stores'] = undefined;
 
 /**
- * Unique identifier of the store to which the campaign is assigned.
- * @member {String} 
- */
+    * Unique identifier of the store to which the campaign is assigned.
+    * @type {String | undefined}
+    */
 AreaStoreCampaignAssignment.prototype['area_store_id'] = undefined;
 
 /**
- * Date and time when the assignment was made. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Date and time when the assignment was made. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 AreaStoreCampaignAssignment.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the campaign assignment to areas or stores.
- * @member {module:model/AreaStoreCampaignAssignment.ObjectEnum} 
- * @default 'area_store_campaign_assignment'
- */
+    * The type of the object represented by JSON. This object stores information about the campaign assignment to areas or stores.
+    * @type {(keyof typeof AreaStoreCampaignAssignment.ObjectEnum) | undefined}
+    * @default 'area_store_campaign_assignment'
+    */
 AreaStoreCampaignAssignment.prototype['object'] = 'area_store_campaign_assignment';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-AreaStoreCampaignAssignment['ObjectEnum'] = {
-
     /**
-     * value: "area_store_campaign_assignment"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "area_store_campaign_assignment": "area_store_campaign_assignment"
-};
+    AreaStoreCampaignAssignment['ObjectEnum'] = {
+    
+        /**
+         * value: "area_store_campaign_assignment"
+         * @constant
+         */
+        "area_store_campaign_assignment": "area_store_campaign_assignment"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code>.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions
+     * @alias ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions} The populated <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions} The populated <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions</code>.
      */
     static validateJSON(data) {
@@ -125,53 +124,53 @@ class ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.IsEnum} 
- * @default 'voucher'
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.IsEnum) | undefined}
+    * @default 'voucher'
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$is'] = 'voucher';
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.IsNotEnum} 
- * @default 'voucher'
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.IsNotEnum) | undefined}
+    * @default 'voucher'
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$is_not'] = 'voucher';
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.prototype['$ends_with'] = undefined;
 
 
@@ -208,34 +207,34 @@ ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions['NotInEnum'] =
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions['IsEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
+
 
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions['IsNotEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

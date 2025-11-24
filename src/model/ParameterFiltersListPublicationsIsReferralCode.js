@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListPublicationsIsReferralCode model module.
  * @module model/ParameterFiltersListPublicationsIsReferralCode
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublicationsIsReferralCode {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsIsReferralCode</code>.
      * Filter publications by is referall code.
-     * @alias module:model/ParameterFiltersListPublicationsIsReferralCode
+     * @alias ParameterFiltersListPublicationsIsReferralCode
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListPublicationsIsReferralCode {
     /**
      * Constructs a <code>ParameterFiltersListPublicationsIsReferralCode</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublicationsIsReferralCode} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublicationsIsReferralCode} The populated <code>ParameterFiltersListPublicationsIsReferralCode</code> instance.
+     * @param {Partial<ParameterFiltersListPublicationsIsReferralCode>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublicationsIsReferralCode} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublicationsIsReferralCode} The populated <code>ParameterFiltersListPublicationsIsReferralCode</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListPublicationsIsReferralCode {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublicationsIsReferralCode</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublicationsIsReferralCode>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublicationsIsReferralCode</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListPublicationsIsReferralCode {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListPublicationsIsReferralCode.prototype['conditions'] = undefined;
 
 

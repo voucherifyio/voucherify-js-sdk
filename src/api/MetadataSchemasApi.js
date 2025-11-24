@@ -19,13 +19,13 @@ import MetadataSchemasListResponseBody from '../model/MetadataSchemasListRespons
 /**
 * MetadataSchemas service.
 * @module api/MetadataSchemasApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class MetadataSchemasApi {
 
     /**
     * Constructs a new MetadataSchemasApi. 
-    * @alias module:api/MetadataSchemasApi
+    * @alias MetadataSchemasApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,9 +37,9 @@ export default class MetadataSchemasApi {
 
     /**
      * Callback function to receive the result of the getMetadataSchema operation.
-     * @callback module:api/MetadataSchemasApi~getMetadataSchemaCallback
+     * @callback getMetadataSchemaCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/MetadataSchemasGetResponseBody} [data] The data returned by the service call.
+     * @param {MetadataSchemasGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -47,8 +47,9 @@ export default class MetadataSchemasApi {
      * Get Metadata Schema
      * Retrieves a metadata schema per resource type. # Resource types ## Standard You can retrieve metadata schemas for the standard metadata schema definitions listed below. Add one of these types as the resource path parameter. - campaign - customer - earning_rule - loyalty_tier - order - order_item - product - promotion_tier - publication - redemption - reward - voucher ## Custom If you have defined a [custom metadata schema](https://support.voucherify.io/article/99-schema-validation-metadata#add-metadata), provide its name in the resource field to retrieve its details. 📘 Management API If you have Management API enabled, you can also use the [Get Metadata Schemas](/api-reference/management/get-metadata-schema) endpoint to retrieve a metadata schema using its ID.
      * @param {String} resource There is an infinite number of possibilities for retrieving metadata schemas by the resource type because you can define custom metadata schemas.
-     * @param {module:api/MetadataSchemasApi~getMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MetadataSchemasGetResponseBody}
+     * @param {getMetadataSchemaCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link MetadataSchemasGetResponseBody}
+     * @returns {Promise<(MetadataSchemasGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `MetadataSchemasGetResponseBody` object or with `undefined`.
      */
     getMetadataSchema(resource, callback) {
       let postBody = null;
@@ -77,17 +78,18 @@ export default class MetadataSchemasApi {
 
     /**
      * Callback function to receive the result of the listMetadataSchemas operation.
-     * @callback module:api/MetadataSchemasApi~listMetadataSchemasCallback
+     * @callback listMetadataSchemasCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/MetadataSchemasListResponseBody} [data] The data returned by the service call.
+     * @param {MetadataSchemasListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * List Metadata Schema Definitions
      * Retrieve metadata schema definitions. 📘 Management API If you have Management API enabled, you can also use the [List Metadata Schemas](/api-reference/management/list-metadata-schemas) endpoint to list all metadata schemas.
-     * @param {module:api/MetadataSchemasApi~listMetadataSchemasCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MetadataSchemasListResponseBody}
+     * @param {listMetadataSchemasCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link MetadataSchemasListResponseBody}
+     * @returns {Promise<(MetadataSchemasListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `MetadataSchemasListResponseBody` object or with `undefined`.
      */
     listMetadataSchemas(callback) {
       let postBody = null;

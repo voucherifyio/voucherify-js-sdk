@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import BundleIdentifiedItem from './BundleIdentifiedItem';
 import BundleMissingItem from './BundleMissingItem';
-
 /**
  * The Bundle model module.
  * @module model/Bundle
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Bundle {
     /**
      * Constructs a new <code>Bundle</code>.
      * Determines how the bundle conditions are met by the customer&#39;s order items. The items in the order meet the bundle condition in the following way: SKU, then product, then collection.
-     * @alias module:model/Bundle
+     * @alias Bundle
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class Bundle {
     /**
      * Constructs a <code>Bundle</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Bundle} obj Optional instance to populate.
-     * @returns {module:model/Bundle} The populated <code>Bundle</code> instance.
+     * @param {Partial<Bundle>} data The plain JavaScript object bearing properties of interest.
+     * @param {Bundle} [obj] Optional instance to populate.
+     * @returns {Bundle} The populated <code>Bundle</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -68,7 +67,7 @@ class Bundle {
 
     /**
      * Validates the JSON data with respect to <code>Bundle</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Bundle>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Bundle</code>.
      */
     static validateJSON(data) {
@@ -102,27 +101,27 @@ class Bundle {
 
 
 /**
- * Determines how many bundles are qualified. If there are missing bundle products, the value is `0`. If the bundle is qualified, the value is `1`. The maximum number of identified bundles can equal the number set in `limit`. Also defines the multiplier of the discount for `AMOUNT`, `PERCENT`, and `UNIT` discount types. To inform end-customers that more products can be added to meet additional bundles, compare this parameter with `limit`.
- * @member {Number} 
- */
+    * Determines how many bundles are qualified. If there are missing bundle products, the value is `0`. If the bundle is qualified, the value is `1`. The maximum number of identified bundles can equal the number set in `limit`. Also defines the multiplier of the discount for `AMOUNT`, `PERCENT`, and `UNIT` discount types. To inform end-customers that more products can be added to meet additional bundles, compare this parameter with `limit`.
+    * @type {Number | undefined}
+    */
 Bundle.prototype['quantity'] = undefined;
 
 /**
- * Determines the maximum number of identified bundles. This also defines the maximum multiplier of the bundle discount.
- * @member {Number} 
- */
+    * Determines the maximum number of identified bundles. This also defines the maximum multiplier of the bundle discount.
+    * @type {Number | undefined}
+    */
 Bundle.prototype['limit'] = undefined;
 
 /**
- * Determines products from the customer's order items that meet bundle conditions. SKUs meet the conditions for their product that is used in the bundle. Returns only the products and their quantity that meet the bundle.
- * @member {Array.<module:model/BundleIdentifiedItem>} 
- */
+    * Determines products from the customer's order items that meet bundle conditions. SKUs meet the conditions for their product that is used in the bundle. Returns only the products and their quantity that meet the bundle.
+    * @type {Array.<BundleIdentifiedItem> | undefined}
+    */
 Bundle.prototype['identified'] = undefined;
 
 /**
- * Determines products, SKUs, or collections from the bundle that are missing in the customer's order items. Determines also the missing quantity. For collections, this means that order items do not include a sufficient number of items that belong to the collection. Not returned when all required bundle items are in the order.
- * @member {Array.<module:model/BundleMissingItem>} 
- */
+    * Determines products, SKUs, or collections from the bundle that are missing in the customer's order items. Determines also the missing quantity. For collections, this means that order items do not include a sufficient number of items that belong to the collection. Not returned when all required bundle items are in the order.
+    * @type {Array.<BundleMissingItem> | undefined}
+    */
 Bundle.prototype['missing'] = undefined;
 
 

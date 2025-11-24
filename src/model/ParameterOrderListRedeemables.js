@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListRedeemables.
-* @module model/ParameterOrderListRedeemables
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListRedeemables {
+ * Enum class ParameterOrderListRedeemables.
+ * @module model/ParameterOrderListRedeemables
+ * @version 3.0.1
+ */
+class ParameterOrderListRedeemables {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
 
     /**
-    * Returns a <code>ParameterOrderListRedeemables</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListRedeemables} The enum <code>ParameterOrderListRedeemables</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListRedeemables, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListRedeemables[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListRedeemables[key];
     }
 }
+
+export default ParameterOrderListRedeemables;
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationRulesCreateResponseBodyError model module.
  * @module model/ValidationRulesCreateResponseBodyError
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesCreateResponseBodyError {
     /**
      * Constructs a new <code>ValidationRulesCreateResponseBodyError</code>.
      * Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
-     * @alias module:model/ValidationRulesCreateResponseBodyError
+     * @alias ValidationRulesCreateResponseBodyError
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationRulesCreateResponseBodyError {
     /**
      * Constructs a <code>ValidationRulesCreateResponseBodyError</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesCreateResponseBodyError} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesCreateResponseBodyError} The populated <code>ValidationRulesCreateResponseBodyError</code> instance.
+     * @param {Partial<ValidationRulesCreateResponseBodyError>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesCreateResponseBodyError} [obj] Optional instance to populate.
+     * @returns {ValidationRulesCreateResponseBodyError} The populated <code>ValidationRulesCreateResponseBodyError</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ValidationRulesCreateResponseBodyError {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesCreateResponseBodyError</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesCreateResponseBodyError>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesCreateResponseBodyError</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ValidationRulesCreateResponseBodyError {
 
 
 /**
- * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
- * @member {String} 
- */
+    * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
+    * @type {String | undefined}
+    */
 ValidationRulesCreateResponseBodyError.prototype['message'] = undefined;
 
 

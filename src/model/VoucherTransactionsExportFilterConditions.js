@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransactionsExportFilterConditionsVoucherId from './VoucherTransactionsExportFilterConditionsVoucherId';
-
 /**
  * The VoucherTransactionsExportFilterConditions model module.
  * @module model/VoucherTransactionsExportFilterConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionsExportFilterConditions {
     /**
      * Constructs a new <code>VoucherTransactionsExportFilterConditions</code>.
      * Filter condition.
-     * @alias module:model/VoucherTransactionsExportFilterConditions
+     * @alias VoucherTransactionsExportFilterConditions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VoucherTransactionsExportFilterConditions {
     /**
      * Constructs a <code>VoucherTransactionsExportFilterConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionsExportFilterConditions} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionsExportFilterConditions} The populated <code>VoucherTransactionsExportFilterConditions</code> instance.
+     * @param {Partial<VoucherTransactionsExportFilterConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionsExportFilterConditions} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionsExportFilterConditions} The populated <code>VoucherTransactionsExportFilterConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class VoucherTransactionsExportFilterConditions {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionsExportFilterConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionsExportFilterConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionsExportFilterConditions</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class VoucherTransactionsExportFilterConditions {
 
 
 /**
- * @member {module:model/VoucherTransactionsExportFilterConditionsVoucherId} 
- */
+    * @type {VoucherTransactionsExportFilterConditionsVoucherId | undefined}
+    */
 VoucherTransactionsExportFilterConditions.prototype['voucher_id'] = undefined;
 
 

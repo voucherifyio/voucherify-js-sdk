@@ -27,16 +27,15 @@ import MemberActivityDataTransactionDetailsRollback from './MemberActivityDataTr
 import MemberActivityDataTransactionDetailsSegment from './MemberActivityDataTransactionDetailsSegment';
 import MemberActivityDataTransactionDetailsSourceVoucher from './MemberActivityDataTransactionDetailsSourceVoucher';
 import VoucherBalance from './VoucherBalance';
-
 /**
  * The MemberActivityDataTransactionDetails model module.
  * @module model/MemberActivityDataTransactionDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetails {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetails</code>.
-     * @alias module:model/MemberActivityDataTransactionDetails
+     * @alias MemberActivityDataTransactionDetails
      */
     constructor() { 
         
@@ -54,9 +53,9 @@ class MemberActivityDataTransactionDetails {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetails} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetails} The populated <code>MemberActivityDataTransactionDetails</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetails} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetails} The populated <code>MemberActivityDataTransactionDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -113,7 +112,7 @@ class MemberActivityDataTransactionDetails {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetails</code>.
      */
     static validateJSON(data) {
@@ -187,78 +186,78 @@ class MemberActivityDataTransactionDetails {
 
 
 /**
- * @member {module:model/VoucherBalance} 
- */
+    * @type {VoucherBalance | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['balance'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsOrder} 
- */
+    * @type {MemberActivityDataTransactionDetailsOrder | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['order'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsEvent} 
- */
+    * @type {MemberActivityDataTransactionDetailsEvent | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['event'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsEarningRule} 
- */
+    * @type {MemberActivityDataTransactionDetailsEarningRule | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['earning_rule'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsSegment} 
- */
+    * @type {MemberActivityDataTransactionDetailsSegment | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['segment'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsLoyaltyTier} 
- */
+    * @type {MemberActivityDataTransactionDetailsLoyaltyTier | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsRedemption} 
- */
+    * @type {MemberActivityDataTransactionDetailsRedemption | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsRollback} 
- */
+    * @type {MemberActivityDataTransactionDetailsRollback | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['rollback'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsCustomEvent} 
- */
+    * @type {MemberActivityDataTransactionDetailsCustomEvent | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsEventSchema} 
- */
+    * @type {MemberActivityDataTransactionDetailsEventSchema | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['event_schema'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsHolderLoyaltyTier} 
- */
+    * @type {MemberActivityDataTransactionDetailsHolderLoyaltyTier | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['holder_loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPoints} 
- */
+    * @type {LoyaltyPendingPoints | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['pending_points'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsReward} 
- */
+    * @type {MemberActivityDataTransactionDetailsReward | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucher} 
- */
+    * @type {MemberActivityDataTransactionDetailsSourceVoucher | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['source_voucher'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsDestinationVoucher} 
- */
+    * @type {MemberActivityDataTransactionDetailsDestinationVoucher | undefined}
+    */
 MemberActivityDataTransactionDetails.prototype['destination_voucher'] = undefined;
 
 

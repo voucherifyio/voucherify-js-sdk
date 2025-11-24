@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsDateTime from './FilterConditionsDateTime';
-
 /**
  * The ParameterFiltersListLocationsCreatedAt model module.
  * @module model/ParameterFiltersListLocationsCreatedAt
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListLocationsCreatedAt {
     /**
      * Constructs a new <code>ParameterFiltersListLocationsCreatedAt</code>.
      * Timestamp representing the date and time when the location was created. The value is shown in the ISO 8601 format.
-     * @alias module:model/ParameterFiltersListLocationsCreatedAt
+     * @alias ParameterFiltersListLocationsCreatedAt
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListLocationsCreatedAt {
     /**
      * Constructs a <code>ParameterFiltersListLocationsCreatedAt</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListLocationsCreatedAt} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListLocationsCreatedAt} The populated <code>ParameterFiltersListLocationsCreatedAt</code> instance.
+     * @param {Partial<ParameterFiltersListLocationsCreatedAt>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListLocationsCreatedAt} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListLocationsCreatedAt} The populated <code>ParameterFiltersListLocationsCreatedAt</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListLocationsCreatedAt {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListLocationsCreatedAt</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListLocationsCreatedAt>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListLocationsCreatedAt</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListLocationsCreatedAt {
 
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 ParameterFiltersListLocationsCreatedAt.prototype['conditions'] = undefined;
 
 

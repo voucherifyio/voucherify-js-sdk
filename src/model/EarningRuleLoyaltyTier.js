@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EarningRuleLoyaltyTier model module.
  * @module model/EarningRuleLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyaltyTier {
     /**
      * Constructs a new <code>EarningRuleLoyaltyTier</code>.
      * Defines the tier associated with the earning rule definition.
-     * @alias module:model/EarningRuleLoyaltyTier
+     * @alias EarningRuleLoyaltyTier
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EarningRuleLoyaltyTier {
     /**
      * Constructs a <code>EarningRuleLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyaltyTier} The populated <code>EarningRuleLoyaltyTier</code> instance.
+     * @param {Partial<EarningRuleLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyaltyTier} The populated <code>EarningRuleLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class EarningRuleLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class EarningRuleLoyaltyTier {
 
 
 /**
- * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
- * @member {String} 
- */
+    * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
+    * @type {String | undefined}
+    */
 EarningRuleLoyaltyTier.prototype['id'] = undefined;
 
 

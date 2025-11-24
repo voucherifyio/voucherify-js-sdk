@@ -18,16 +18,15 @@ import SimpleLoyaltyCard from './SimpleLoyaltyCard';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
 import VouchersCreateWithSpecificCodeRequestBodyRedemption from './VouchersCreateWithSpecificCodeRequestBodyRedemption';
-
 /**
  * The VouchersCreateWithSpecificCodeRequestBody model module.
  * @module model/VouchersCreateWithSpecificCodeRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersCreateWithSpecificCodeRequestBody {
     /**
      * Constructs a new <code>VouchersCreateWithSpecificCodeRequestBody</code>.
-     * @alias module:model/VouchersCreateWithSpecificCodeRequestBody
+     * @alias VouchersCreateWithSpecificCodeRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class VouchersCreateWithSpecificCodeRequestBody {
     /**
      * Constructs a <code>VouchersCreateWithSpecificCodeRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersCreateWithSpecificCodeRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersCreateWithSpecificCodeRequestBody} The populated <code>VouchersCreateWithSpecificCodeRequestBody</code> instance.
+     * @param {Partial<VouchersCreateWithSpecificCodeRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersCreateWithSpecificCodeRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersCreateWithSpecificCodeRequestBody} The populated <code>VouchersCreateWithSpecificCodeRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -113,7 +112,7 @@ class VouchersCreateWithSpecificCodeRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersCreateWithSpecificCodeRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersCreateWithSpecificCodeRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersCreateWithSpecificCodeRequestBody</code>.
      */
     static validateJSON(data) {
@@ -183,104 +182,104 @@ class VouchersCreateWithSpecificCodeRequestBody {
 
 
 /**
- * Identifies the voucher's parent campaign using a unique campaign name.
- * @member {String} 
- */
+    * Identifies the voucher's parent campaign using a unique campaign name.
+    * @type {String | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['campaign'] = undefined;
 
 /**
- * Identifies the voucher's parent campaign using a unique campaign ID assigned by the Voucherify API.
- * @member {String} 
- */
+    * Identifies the voucher's parent campaign using a unique campaign ID assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['campaign_id'] = undefined;
 
 /**
- * The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['category'] = undefined;
 
 /**
- * Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['category_id'] = undefined;
 
 /**
- * Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
- * @member {Date} 
- */
+    * Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
+    * @type {Date | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/VouchersCreateWithSpecificCodeRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof VouchersCreateWithSpecificCodeRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['active'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['additional_info'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Array containing the ID of the validation rule associated with the voucher.
- * @member {Array.<String>} 
- */
+    * Array containing the ID of the validation rule associated with the voucher.
+    * @type {Array.<String> | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['validation_rules'] = undefined;
 
 /**
- * @member {module:model/VouchersCreateWithSpecificCodeRequestBodyRedemption} 
- */
+    * @type {VouchersCreateWithSpecificCodeRequestBodyRedemption | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/VouchersCreateWithSpecificCodeRequestBody.TypeEnum} 
- */
+    * @type {(keyof typeof VouchersCreateWithSpecificCodeRequestBody.TypeEnum) | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/SimpleLoyaltyCard} 
- */
+    * @type {SimpleLoyaltyCard | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 VouchersCreateWithSpecificCodeRequestBody.prototype['discount'] = undefined;
 
 
@@ -338,31 +337,31 @@ VouchersCreateWithSpecificCodeRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersCreateWithSpecificCodeRequestBody['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"
-};
+    VouchersCreateWithSpecificCodeRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"    
+    };
 
 
 

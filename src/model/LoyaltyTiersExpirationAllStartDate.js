@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyTiersExpirationAllStartDate model module.
  * @module model/LoyaltyTiersExpirationAllStartDate
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTiersExpirationAllStartDate {
     /**
      * Constructs a new <code>LoyaltyTiersExpirationAllStartDate</code>.
      * Defines the conditions for the start date of the tier.
-     * @alias module:model/LoyaltyTiersExpirationAllStartDate
+     * @alias LoyaltyTiersExpirationAllStartDate
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyTiersExpirationAllStartDate {
     /**
      * Constructs a <code>LoyaltyTiersExpirationAllStartDate</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTiersExpirationAllStartDate} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTiersExpirationAllStartDate} The populated <code>LoyaltyTiersExpirationAllStartDate</code> instance.
+     * @param {Partial<LoyaltyTiersExpirationAllStartDate>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTiersExpirationAllStartDate} [obj] Optional instance to populate.
+     * @returns {LoyaltyTiersExpirationAllStartDate} The populated <code>LoyaltyTiersExpirationAllStartDate</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltyTiersExpirationAllStartDate {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTiersExpirationAllStartDate</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTiersExpirationAllStartDate>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTiersExpirationAllStartDate</code>.
      */
     static validateJSON(data) {
@@ -75,34 +74,34 @@ class LoyaltyTiersExpirationAllStartDate {
 
 
 /**
- * What triggers the tier to be valid for a customer.     `IMMEDIATE`: After reaching the minimum required points.  `NEXT_PERIOD`: When the next qualification period starts.
- * @member {module:model/LoyaltyTiersExpirationAllStartDate.TypeEnum} 
- */
+    * What triggers the tier to be valid for a customer.     `IMMEDIATE`: After reaching the minimum required points.  `NEXT_PERIOD`: When the next qualification period starts.
+    * @type {(keyof typeof LoyaltyTiersExpirationAllStartDate.TypeEnum) | undefined}
+    */
 LoyaltyTiersExpirationAllStartDate.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAllStartDate['TypeEnum'] = {
-
     /**
-     * value: "IMMEDIATE"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "IMMEDIATE": "IMMEDIATE",
-
-    /**
-     * value: "NEXT_PERIOD"
-     * @constant
-     */
-    "NEXT_PERIOD": "NEXT_PERIOD"
-};
+    LoyaltyTiersExpirationAllStartDate['TypeEnum'] = {
+    
+        /**
+         * value: "IMMEDIATE"
+         * @constant
+         */
+        "IMMEDIATE": "IMMEDIATE",
+    
+        /**
+         * value: "NEXT_PERIOD"
+         * @constant
+         */
+        "NEXT_PERIOD": "NEXT_PERIOD"    
+    };
 
 
 

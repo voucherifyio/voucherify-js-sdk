@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import PromotionTierCreateParamsAction from './PromotionTierCreateParamsAction';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The PromotionTierCreateParams model module.
  * @module model/PromotionTierCreateParams
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierCreateParams {
     /**
      * Constructs a new <code>PromotionTierCreateParams</code>.
      * This is an object representing a promotion tier create params. Promotion tiers are always assigned to a campaign and cannot be used standalone.
-     * @alias module:model/PromotionTierCreateParams
+     * @alias PromotionTierCreateParams
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class PromotionTierCreateParams {
     /**
      * Constructs a <code>PromotionTierCreateParams</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierCreateParams} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierCreateParams} The populated <code>PromotionTierCreateParams</code> instance.
+     * @param {Partial<PromotionTierCreateParams>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierCreateParams} [obj] Optional instance to populate.
+     * @returns {PromotionTierCreateParams} The populated <code>PromotionTierCreateParams</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -99,7 +98,7 @@ class PromotionTierCreateParams {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierCreateParams</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierCreateParams>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierCreateParams</code>.
      */
     static validateJSON(data) {
@@ -149,84 +148,84 @@ class PromotionTierCreateParams {
 
 
 /**
- * Name of the promotion tier.
- * @member {String} 
- */
+    * Name of the promotion tier.
+    * @type {String | undefined}
+    */
 PromotionTierCreateParams.prototype['name'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 PromotionTierCreateParams.prototype['banner'] = undefined;
 
 /**
- * @member {module:model/PromotionTierCreateParamsAction} 
- */
+    * @type {PromotionTierCreateParamsAction | undefined}
+    */
 PromotionTierCreateParams.prototype['action'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
+    * @type {Object | undefined}
+    */
 PromotionTierCreateParams.prototype['metadata'] = undefined;
 
 /**
- * Array containing the ID of the validation rule associated with the promotion tier.
- * @member {Array.<String>} 
- */
+    * Array containing the ID of the validation rule associated with the promotion tier.
+    * @type {Array.<String> | undefined}
+    */
 PromotionTierCreateParams.prototype['validation_rules'] = undefined;
 
 /**
- * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
- * @member {Boolean} 
- */
+    * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
+    * @type {Boolean | undefined}
+    */
 PromotionTierCreateParams.prototype['active'] = undefined;
 
 /**
- * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
- * @member {Number} 
- */
+    * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
+    * @type {Number | undefined}
+    */
 PromotionTierCreateParams.prototype['hierarchy'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 PromotionTierCreateParams.prototype['start_date'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
+    * @type {Date | undefined}
+    */
 PromotionTierCreateParams.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 PromotionTierCreateParams.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/PromotionTierCreateParams.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof PromotionTierCreateParams.ValidityDayOfWeekEnum>) | undefined}
+    */
 PromotionTierCreateParams.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 PromotionTierCreateParams.prototype['validity_hours'] = undefined;
 
 /**
- * Assign category to the promotion tier.
- * @member {String} 
- */
+    * Assign category to the promotion tier.
+    * @type {String | undefined}
+    */
 PromotionTierCreateParams.prototype['category'] = undefined;
 
 /**
- * Instead of using the category name, you can alternatively assign a new category to a promotion tier using a unique category ID, i.e. `cat_0c9da30e7116ba6bba`.
- * @member {String} 
- */
+    * Instead of using the category name, you can alternatively assign a new category to a promotion tier using a unique category ID, i.e. `cat_0c9da30e7116ba6bba`.
+    * @type {String | undefined}
+    */
 PromotionTierCreateParams.prototype['category_id'] = undefined;
 
 

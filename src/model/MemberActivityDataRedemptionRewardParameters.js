@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import MemberActivityDataRedemptionRewardParametersCampaign from './MemberActivityDataRedemptionRewardParametersCampaign';
 import MemberActivityDataRedemptionRewardParametersCoin from './MemberActivityDataRedemptionRewardParametersCoin';
 import MemberActivityDataRedemptionRewardParametersProduct from './MemberActivityDataRedemptionRewardParametersProduct';
-
 /**
  * The MemberActivityDataRedemptionRewardParameters model module.
  * @module model/MemberActivityDataRedemptionRewardParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardParameters {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardParameters</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardParameters
+     * @alias MemberActivityDataRedemptionRewardParameters
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MemberActivityDataRedemptionRewardParameters {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardParameters} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardParameters} The populated <code>MemberActivityDataRedemptionRewardParameters</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardParameters} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardParameters} The populated <code>MemberActivityDataRedemptionRewardParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class MemberActivityDataRedemptionRewardParameters {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardParameters</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class MemberActivityDataRedemptionRewardParameters {
 
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardParametersCampaign} 
- */
+    * @type {MemberActivityDataRedemptionRewardParametersCampaign | undefined}
+    */
 MemberActivityDataRedemptionRewardParameters.prototype['campaign'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardParametersCoin} 
- */
+    * @type {MemberActivityDataRedemptionRewardParametersCoin | undefined}
+    */
 MemberActivityDataRedemptionRewardParameters.prototype['coin'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardParametersProduct} 
- */
+    * @type {MemberActivityDataRedemptionRewardParametersProduct | undefined}
+    */
 MemberActivityDataRedemptionRewardParameters.prototype['product'] = undefined;
 
 

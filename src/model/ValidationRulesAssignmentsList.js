@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import BusValRuleAssignment from './BusValRuleAssignment';
-
 /**
  * The ValidationRulesAssignmentsList model module.
  * @module model/ValidationRulesAssignmentsList
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesAssignmentsList {
     /**
      * Constructs a new <code>ValidationRulesAssignmentsList</code>.
      * List of Validation Rules Assignments
-     * @alias module:model/ValidationRulesAssignmentsList
+     * @alias ValidationRulesAssignmentsList
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ValidationRulesAssignmentsList {
     /**
      * Constructs a <code>ValidationRulesAssignmentsList</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesAssignmentsList} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesAssignmentsList} The populated <code>ValidationRulesAssignmentsList</code> instance.
+     * @param {Partial<ValidationRulesAssignmentsList>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesAssignmentsList} [obj] Optional instance to populate.
+     * @returns {ValidationRulesAssignmentsList} The populated <code>ValidationRulesAssignmentsList</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ValidationRulesAssignmentsList {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesAssignmentsList</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesAssignmentsList>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesAssignmentsList</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ValidationRulesAssignmentsList {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about validation rules assignments.
- * @member {module:model/ValidationRulesAssignmentsList.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about validation rules assignments.
+    * @type {(keyof typeof ValidationRulesAssignmentsList.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ValidationRulesAssignmentsList.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of validation rules assignments.
- * @member {module:model/ValidationRulesAssignmentsList.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of validation rules assignments.
+    * @type {(keyof typeof ValidationRulesAssignmentsList.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ValidationRulesAssignmentsList.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of validation rules assignments.
- * @member {Array.<module:model/BusValRuleAssignment>} 
- */
+    * Contains array of validation rules assignments.
+    * @type {Array.<BusValRuleAssignment> | undefined}
+    */
 ValidationRulesAssignmentsList.prototype['data'] = undefined;
 
 /**
- * Total number of validation rules assignments.
- * @member {Number} 
- */
+    * Total number of validation rules assignments.
+    * @type {Number | undefined}
+    */
 ValidationRulesAssignmentsList.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRulesAssignmentsList['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationRulesAssignmentsList['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRulesAssignmentsList['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ValidationRulesAssignmentsList['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

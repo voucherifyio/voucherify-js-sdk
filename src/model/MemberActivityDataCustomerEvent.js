@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import SimpleSegment from './SimpleSegment';
-
 /**
  * The MemberActivityDataCustomerEvent model module.
  * @module model/MemberActivityDataCustomerEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataCustomerEvent {
     /**
      * Constructs a new <code>MemberActivityDataCustomerEvent</code>.
-     * @alias module:model/MemberActivityDataCustomerEvent
+     * @alias MemberActivityDataCustomerEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataCustomerEvent {
     /**
      * Constructs a <code>MemberActivityDataCustomerEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataCustomerEvent} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataCustomerEvent} The populated <code>MemberActivityDataCustomerEvent</code> instance.
+     * @param {Partial<MemberActivityDataCustomerEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataCustomerEvent} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataCustomerEvent} The populated <code>MemberActivityDataCustomerEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class MemberActivityDataCustomerEvent {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataCustomerEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataCustomerEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataCustomerEvent</code>.
      */
     static validateJSON(data) {
@@ -82,14 +81,14 @@ class MemberActivityDataCustomerEvent {
 
 
 /**
- * @member {module:model/SimpleSegment} 
- */
+    * @type {SimpleSegment | undefined}
+    */
 MemberActivityDataCustomerEvent.prototype['segment'] = undefined;
 
 /**
- * Type of activity that triggered the event.
- * @member {String} 
- */
+    * Type of activity that triggered the event.
+    * @type {String | undefined}
+    */
 MemberActivityDataCustomerEvent.prototype['event_type'] = undefined;
 
 

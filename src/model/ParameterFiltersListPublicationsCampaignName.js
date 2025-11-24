@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListPublicationsCampaignName model module.
  * @module model/ParameterFiltersListPublicationsCampaignName
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublicationsCampaignName {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsCampaignName</code>.
      * Filter publications by campaign names.
-     * @alias module:model/ParameterFiltersListPublicationsCampaignName
+     * @alias ParameterFiltersListPublicationsCampaignName
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListPublicationsCampaignName {
     /**
      * Constructs a <code>ParameterFiltersListPublicationsCampaignName</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublicationsCampaignName} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublicationsCampaignName} The populated <code>ParameterFiltersListPublicationsCampaignName</code> instance.
+     * @param {Partial<ParameterFiltersListPublicationsCampaignName>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublicationsCampaignName} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublicationsCampaignName} The populated <code>ParameterFiltersListPublicationsCampaignName</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListPublicationsCampaignName {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublicationsCampaignName</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublicationsCampaignName>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublicationsCampaignName</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListPublicationsCampaignName {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListPublicationsCampaignName.prototype['conditions'] = undefined;
 
 

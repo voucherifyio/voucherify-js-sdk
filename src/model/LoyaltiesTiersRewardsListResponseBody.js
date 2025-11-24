@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesLoyaltyTierReward from './LoyaltiesLoyaltyTierReward';
-
 /**
  * The LoyaltiesTiersRewardsListResponseBody model module.
  * @module model/LoyaltiesTiersRewardsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTiersRewardsListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesTiersRewardsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/rewards&#x60;.
-     * @alias module:model/LoyaltiesTiersRewardsListResponseBody
+     * @alias LoyaltiesTiersRewardsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesTiersRewardsListResponseBody {
     /**
      * Constructs a <code>LoyaltiesTiersRewardsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTiersRewardsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTiersRewardsListResponseBody} The populated <code>LoyaltiesTiersRewardsListResponseBody</code> instance.
+     * @param {Partial<LoyaltiesTiersRewardsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTiersRewardsListResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTiersRewardsListResponseBody} The populated <code>LoyaltiesTiersRewardsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesTiersRewardsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTiersRewardsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTiersRewardsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTiersRewardsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class LoyaltiesTiersRewardsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about loyalty tier rewards in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about loyalty tier rewards in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LoyaltiesTiersRewardsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of loyalty tier reward objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of loyalty tier reward objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 LoyaltiesTiersRewardsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Contains array of loyalty tier reward objects.
- * @member {Array.<module:model/LoyaltiesLoyaltyTierReward>} 
- */
+    * Contains array of loyalty tier reward objects.
+    * @type {Array.<LoyaltiesLoyaltyTierReward> | undefined}
+    */
 LoyaltiesTiersRewardsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of loyalty tier reward objects.
- * @member {Number} 
- */
+    * Total number of loyalty tier reward objects.
+    * @type {Number | undefined}
+    */
 LoyaltiesTiersRewardsListResponseBody.prototype['total'] = undefined;
 
 
