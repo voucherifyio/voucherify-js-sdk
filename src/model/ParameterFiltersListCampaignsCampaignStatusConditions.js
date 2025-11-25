@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsCampaignStatusConditions model module.
  * @module model/ParameterFiltersListCampaignsCampaignStatusConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsCampaignStatusConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsCampaignStatusConditions</code>.
      * Data conditions used to narrow down the data records to be returned in the result.
-     * @alias module:model/ParameterFiltersListCampaignsCampaignStatusConditions
+     * @alias ParameterFiltersListCampaignsCampaignStatusConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListCampaignsCampaignStatusConditions {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsCampaignStatusConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsCampaignStatusConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsCampaignStatusConditions} The populated <code>ParameterFiltersListCampaignsCampaignStatusConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignStatusConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsCampaignStatusConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsCampaignStatusConditions} The populated <code>ParameterFiltersListCampaignsCampaignStatusConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ParameterFiltersListCampaignsCampaignStatusConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsCampaignStatusConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignStatusConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsCampaignStatusConditions</code>.
      */
     static validateJSON(data) {
@@ -124,51 +123,51 @@ class ParameterFiltersListCampaignsCampaignStatusConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCampaignsCampaignStatusConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCampaignsCampaignStatusConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCampaignsCampaignStatusConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCampaignsCampaignStatusConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListCampaignsCampaignStatusConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCampaignsCampaignStatusConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListCampaignsCampaignStatusConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCampaignsCampaignStatusConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCampaignsCampaignStatusConditions.prototype['$ends_with'] = undefined;
 
 
@@ -253,82 +252,82 @@ ParameterFiltersListCampaignsCampaignStatusConditions['NotInEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCampaignsCampaignStatusConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListCampaignsCampaignStatusConditions['IsEnum'] = {
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE",
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "DRAFT"
+         * @constant
+         */
+        "DRAFT": "DRAFT",
+    
+        /**
+         * value: "MODIFYING"
+         * @constant
+         */
+        "MODIFYING": "MODIFYING"    
+    };
+
 
     /**
-     * value: "DONE"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DONE": "DONE",
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "DRAFT"
-     * @constant
-     */
-    "DRAFT": "DRAFT",
-
-    /**
-     * value: "MODIFYING"
-     * @constant
-     */
-    "MODIFYING": "MODIFYING"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCampaignsCampaignStatusConditions['IsNotEnum'] = {
-
-    /**
-     * value: "DONE"
-     * @constant
-     */
-    "DONE": "DONE",
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "DRAFT"
-     * @constant
-     */
-    "DRAFT": "DRAFT",
-
-    /**
-     * value: "MODIFYING"
-     * @constant
-     */
-    "MODIFYING": "MODIFYING"
-};
+    ParameterFiltersListCampaignsCampaignStatusConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE",
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "DRAFT"
+         * @constant
+         */
+        "DRAFT": "DRAFT",
+    
+        /**
+         * value: "MODIFYING"
+         * @constant
+         */
+        "MODIFYING": "MODIFYING"    
+    };
 
 
 

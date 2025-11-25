@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersGetResponseBodyRedemption model module.
  * @module model/VouchersGetResponseBodyRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersGetResponseBodyRedemption {
     /**
      * Constructs a new <code>VouchersGetResponseBodyRedemption</code>.
      * Stores a summary of redemptions that have been applied to the voucher.
-     * @alias module:model/VouchersGetResponseBodyRedemption
+     * @alias VouchersGetResponseBodyRedemption
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VouchersGetResponseBodyRedemption {
     /**
      * Constructs a <code>VouchersGetResponseBodyRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersGetResponseBodyRedemption} obj Optional instance to populate.
-     * @returns {module:model/VouchersGetResponseBodyRedemption} The populated <code>VouchersGetResponseBodyRedemption</code> instance.
+     * @param {Partial<VouchersGetResponseBodyRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersGetResponseBodyRedemption} [obj] Optional instance to populate.
+     * @returns {VouchersGetResponseBodyRedemption} The populated <code>VouchersGetResponseBodyRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class VouchersGetResponseBodyRedemption {
 
     /**
      * Validates the JSON data with respect to <code>VouchersGetResponseBodyRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersGetResponseBodyRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersGetResponseBodyRedemption</code>.
      */
     static validateJSON(data) {
@@ -92,34 +91,34 @@ class VouchersGetResponseBodyRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 VouchersGetResponseBodyRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 VouchersGetResponseBodyRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 VouchersGetResponseBodyRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 VouchersGetResponseBodyRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 VouchersGetResponseBodyRedemption.prototype['url'] = undefined;
 
 

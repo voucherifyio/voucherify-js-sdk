@@ -13,64 +13,59 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListCustomers.
-* @module model/ParameterOrderListCustomers
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListCustomers {
+ * Enum class ParameterOrderListCustomers.
+ * @module model/ParameterOrderListCustomers
+ * @version 3.0.1
+ */
+class ParameterOrderListCustomers {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "-updated_at"
-         * @constant
-         */
-        "-updated_at" = "-updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-updated_at" = "-updated_at";
     
-        /**
-         * value: "source_id"
-         * @constant
-         */
-        "source_id" = "source_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "source_id" = "source_id";
     
-        /**
-         * value: "-source_id"
-         * @constant
-         */
-        "-source_id" = "-source_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-source_id" = "-source_id";
     
 
     /**
-    * Returns a <code>ParameterOrderListCustomers</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListCustomers} The enum <code>ParameterOrderListCustomers</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListCustomers, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListCustomers[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListCustomers[key];
     }
 }
+
+export default ParameterOrderListCustomers;
 

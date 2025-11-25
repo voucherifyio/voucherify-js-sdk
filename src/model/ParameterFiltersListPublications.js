@@ -22,16 +22,15 @@ import ParameterFiltersListPublicationsRelatedObjectId from './ParameterFiltersL
 import ParameterFiltersListPublicationsResult from './ParameterFiltersListPublicationsResult';
 import ParameterFiltersListPublicationsSourceId from './ParameterFiltersListPublicationsSourceId';
 import ParameterFiltersListPublicationsVoucherType from './ParameterFiltersListPublicationsVoucherType';
-
 /**
  * The ParameterFiltersListPublications model module.
  * @module model/ParameterFiltersListPublications
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublications {
     /**
      * Constructs a new <code>ParameterFiltersListPublications</code>.
-     * @alias module:model/ParameterFiltersListPublications
+     * @alias ParameterFiltersListPublications
      */
     constructor() { 
         
@@ -49,9 +48,9 @@ class ParameterFiltersListPublications {
     /**
      * Constructs a <code>ParameterFiltersListPublications</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublications} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublications} The populated <code>ParameterFiltersListPublications</code> instance.
+     * @param {Partial<ParameterFiltersListPublications>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublications} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublications} The populated <code>ParameterFiltersListPublications</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -93,7 +92,7 @@ class ParameterFiltersListPublications {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublications</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublications>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublications</code>.
      */
     static validateJSON(data) {
@@ -143,53 +142,53 @@ class ParameterFiltersListPublications {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListPublications.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsFailureCode} 
- */
+    * @type {ParameterFiltersListPublicationsFailureCode | undefined}
+    */
 ParameterFiltersListPublications.prototype['failure_code'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsResult} 
- */
+    * @type {ParameterFiltersListPublicationsResult | undefined}
+    */
 ParameterFiltersListPublications.prototype['result'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsCustomerId} 
- */
+    * @type {ParameterFiltersListPublicationsCustomerId | undefined}
+    */
 ParameterFiltersListPublications.prototype['customer_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsCampaignName} 
- */
+    * @type {ParameterFiltersListPublicationsCampaignName | undefined}
+    */
 ParameterFiltersListPublications.prototype['campaign_name'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsVoucherType} 
- */
+    * @type {ParameterFiltersListPublicationsVoucherType | undefined}
+    */
 ParameterFiltersListPublications.prototype['voucher_type'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsIsReferralCode} 
- */
+    * @type {ParameterFiltersListPublicationsIsReferralCode | undefined}
+    */
 ParameterFiltersListPublications.prototype['is_referral_code'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsParentObjectId} 
- */
+    * @type {ParameterFiltersListPublicationsParentObjectId | undefined}
+    */
 ParameterFiltersListPublications.prototype['parent_object_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsRelatedObjectId} 
- */
+    * @type {ParameterFiltersListPublicationsRelatedObjectId | undefined}
+    */
 ParameterFiltersListPublications.prototype['related_object_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListPublicationsSourceId} 
- */
+    * @type {ParameterFiltersListPublicationsSourceId | undefined}
+    */
 ParameterFiltersListPublications.prototype['source_id'] = undefined;
 
 

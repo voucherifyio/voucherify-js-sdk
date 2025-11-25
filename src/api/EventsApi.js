@@ -19,13 +19,13 @@ import EventsCreateResponseBody from '../model/EventsCreateResponseBody';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class EventsApi {
 
     /**
     * Constructs a new EventsApi. 
-    * @alias module:api/EventsApi
+    * @alias EventsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -37,18 +37,19 @@ export default class EventsApi {
 
     /**
      * Callback function to receive the result of the trackCustomEvent operation.
-     * @callback module:api/EventsApi~trackCustomEventCallback
+     * @callback trackCustomEventCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/EventsCreateResponseBody} [data] The data returned by the service call.
+     * @param {EventsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Track Custom Event
      * To track a custom event, you create an event object.   The event object must be linked to the customer who performs the action. If a customer doesnt exist in Voucherify, the customer will be created.
-     * @param {module:model/EventsCreateRequestBody} eventsCreateRequestBody Specify the details of the custom event.
-     * @param {module:api/EventsApi~trackCustomEventCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EventsCreateResponseBody}
+     * @param {EventsCreateRequestBody} eventsCreateRequestBody Specify the details of the custom event.
+     * @param {trackCustomEventCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link EventsCreateResponseBody}
+     * @returns {Promise<(EventsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `EventsCreateResponseBody` object or with `undefined`.
      */
     trackCustomEvent(eventsCreateRequestBody, callback) {
       let postBody = eventsCreateRequestBody;

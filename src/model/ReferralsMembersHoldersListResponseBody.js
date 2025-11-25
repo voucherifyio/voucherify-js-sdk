@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RedeemableHolder from './RedeemableHolder';
-
 /**
  * The ReferralsMembersHoldersListResponseBody model module.
  * @module model/ReferralsMembersHoldersListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralsMembersHoldersListResponseBody {
     /**
      * Constructs a new <code>ReferralsMembersHoldersListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/referrals/{campaignId}/members/{memberId}/holders&#x60; and for **GET** &#x60;v1/referrals/members/{memberId}/holders&#x60;
-     * @alias module:model/ReferralsMembersHoldersListResponseBody
+     * @alias ReferralsMembersHoldersListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ReferralsMembersHoldersListResponseBody {
     /**
      * Constructs a <code>ReferralsMembersHoldersListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralsMembersHoldersListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ReferralsMembersHoldersListResponseBody} The populated <code>ReferralsMembersHoldersListResponseBody</code> instance.
+     * @param {Partial<ReferralsMembersHoldersListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralsMembersHoldersListResponseBody} [obj] Optional instance to populate.
+     * @returns {ReferralsMembersHoldersListResponseBody} The populated <code>ReferralsMembersHoldersListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class ReferralsMembersHoldersListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ReferralsMembersHoldersListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralsMembersHoldersListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralsMembersHoldersListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -111,41 +110,41 @@ class ReferralsMembersHoldersListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about redeemables holders
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about redeemables holders
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ReferralsMembersHoldersListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of holders.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of holders.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 ReferralsMembersHoldersListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of holders.
- * @member {Array.<module:model/RedeemableHolder>} 
- */
+    * A dictionary that contains an array of holders.
+    * @type {Array.<RedeemableHolder> | undefined}
+    */
 ReferralsMembersHoldersListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of holders assigned to the redeemable.
- * @member {Number} 
- */
+    * Total number of holders assigned to the redeemable.
+    * @type {Number | undefined}
+    */
 ReferralsMembersHoldersListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 ReferralsMembersHoldersListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
+    * @type {String | undefined}
+    */
 ReferralsMembersHoldersListResponseBody.prototype['more_starting_after'] = undefined;
 
 

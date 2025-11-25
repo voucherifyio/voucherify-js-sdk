@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardsCreateResponseBodyAttributes model module.
  * @module model/RewardsCreateResponseBodyAttributes
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsCreateResponseBodyAttributes {
     /**
      * Constructs a new <code>RewardsCreateResponseBodyAttributes</code>.
      * These properties are configurable for **material rewards**.
-     * @alias module:model/RewardsCreateResponseBodyAttributes
+     * @alias RewardsCreateResponseBodyAttributes
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardsCreateResponseBodyAttributes {
     /**
      * Constructs a <code>RewardsCreateResponseBodyAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsCreateResponseBodyAttributes} obj Optional instance to populate.
-     * @returns {module:model/RewardsCreateResponseBodyAttributes} The populated <code>RewardsCreateResponseBodyAttributes</code> instance.
+     * @param {Partial<RewardsCreateResponseBodyAttributes>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsCreateResponseBodyAttributes} [obj] Optional instance to populate.
+     * @returns {RewardsCreateResponseBodyAttributes} The populated <code>RewardsCreateResponseBodyAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardsCreateResponseBodyAttributes {
 
     /**
      * Validates the JSON data with respect to <code>RewardsCreateResponseBodyAttributes</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsCreateResponseBodyAttributes>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsCreateResponseBodyAttributes</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardsCreateResponseBodyAttributes {
 
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file.
+    * @type {String | undefined}
+    */
 RewardsCreateResponseBodyAttributes.prototype['image_url'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a material reward.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a material reward.
+    * @type {String | undefined}
+    */
 RewardsCreateResponseBodyAttributes.prototype['description'] = undefined;
 
 

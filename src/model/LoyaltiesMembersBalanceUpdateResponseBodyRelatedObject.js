@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject model module.
  * @module model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject {
     /**
      * Constructs a new <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code>.
      * Defines the object that is being modified with the values that are returned in the balance object.
-     * @alias module:model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject
+     * @alias LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject {
     /**
      * Constructs a <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject} The populated <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code> instance.
+     * @param {Partial<LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject} The populated <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject {
 
 
 /**
- * The object being modified.
- * @member {module:model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified.
+    * @type {(keyof typeof LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.prototype['type'] = 'voucher';
 
 /**
- * Identifies the loyalty card that is being modified, this is the ID that was assigned by the Voucherify API.
- * @member {String} 
- */
+    * Identifies the loyalty card that is being modified, this is the ID that was assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.prototype['id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

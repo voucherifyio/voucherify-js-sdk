@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerId model module.
  * @module model/CustomerId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerId {
     /**
      * Constructs a new <code>CustomerId</code>.
-     * @alias module:model/CustomerId
+     * @alias CustomerId
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerId {
     /**
      * Constructs a <code>CustomerId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerId} obj Optional instance to populate.
-     * @returns {module:model/CustomerId} The populated <code>CustomerId</code> instance.
+     * @param {Partial<CustomerId>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerId} [obj] Optional instance to populate.
+     * @returns {CustomerId} The populated <code>CustomerId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CustomerId {
 
     /**
      * Validates the JSON data with respect to <code>CustomerId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerId</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class CustomerId {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 CustomerId.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/CustomerId.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof CustomerId.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 CustomerId.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CustomerId['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    CustomerId['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyRedemption model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateCombinedResponseBodyRedemption {
     /**
      * Constructs a new <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code>.
      * Stores a summary of redemptions that have been applied to the voucher.
-     * @alias module:model/CampaignsVouchersCreateCombinedResponseBodyRedemption
+     * @alias CampaignsVouchersCreateCombinedResponseBodyRedemption
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignsVouchersCreateCombinedResponseBodyRedemption {
     /**
      * Constructs a <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateCombinedResponseBodyRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateCombinedResponseBodyRedemption} The populated <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code> instance.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateCombinedResponseBodyRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateCombinedResponseBodyRedemption} The populated <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class CampaignsVouchersCreateCombinedResponseBodyRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateCombinedResponseBodyRedemption</code>.
      */
     static validateJSON(data) {
@@ -92,34 +91,34 @@ class CampaignsVouchersCreateCombinedResponseBodyRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CampaignsVouchersCreateCombinedResponseBodyRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyRedemption.prototype['url'] = undefined;
 
 

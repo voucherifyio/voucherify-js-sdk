@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodyPendingPoints model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyPendingPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodyPendingPoints {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code>.
      * Defines the configuration for pending points. Pending points can be used only with the &#x60;order.paid&#x60; event.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints
+     * @alias LoyaltiesEarningRulesGetResponseBodyPendingPoints
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesGetResponseBodyPendingPoints {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints} The populated <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyPendingPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodyPendingPoints} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodyPendingPoints} The populated <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltiesEarningRulesGetResponseBodyPendingPoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyPendingPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodyPendingPoints</code>.
      */
     static validateJSON(data) {
@@ -79,35 +78,35 @@ class LoyaltiesEarningRulesGetResponseBodyPendingPoints {
 
 
 /**
- * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints.PeriodTypeEnum} 
- * @default 'DAY'
- */
+    * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBodyPendingPoints.PeriodTypeEnum) | undefined}
+    * @default 'DAY'
+    */
 LoyaltiesEarningRulesGetResponseBodyPendingPoints.prototype['period_type'] = 'DAY';
 
 /**
- * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
- * @member {Number} 
- */
+    * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyPendingPoints.prototype['period_value'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>period_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBodyPendingPoints['PeriodTypeEnum'] = {
-
     /**
-     * value: "DAY"
-     * @constant
+     * Allowed values for the <code>period_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DAY": "DAY"
-};
+    LoyaltiesEarningRulesGetResponseBodyPendingPoints['PeriodTypeEnum'] = {
+    
+        /**
+         * value: "DAY"
+         * @constant
+         */
+        "DAY": "DAY"    
+    };
 
 
 

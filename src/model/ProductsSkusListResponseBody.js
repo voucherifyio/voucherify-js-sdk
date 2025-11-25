@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Sku from './Sku';
-
 /**
  * The ProductsSkusListResponseBody model module.
  * @module model/ProductsSkusListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsSkusListResponseBody {
     /**
      * Constructs a new <code>ProductsSkusListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/products/{productId}/SKUs&#x60;.
-     * @alias module:model/ProductsSkusListResponseBody
+     * @alias ProductsSkusListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ProductsSkusListResponseBody {
     /**
      * Constructs a <code>ProductsSkusListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsSkusListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsSkusListResponseBody} The populated <code>ProductsSkusListResponseBody</code> instance.
+     * @param {Partial<ProductsSkusListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsSkusListResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsSkusListResponseBody} The populated <code>ProductsSkusListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ProductsSkusListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsSkusListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsSkusListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsSkusListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class ProductsSkusListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about SKUs.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about SKUs.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ProductsSkusListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of SKUs.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of SKUs.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 ProductsSkusListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of SKUs.
- * @member {Array.<module:model/Sku>} 
- */
+    * A dictionary that contains an array of SKUs.
+    * @type {Array.<Sku> | undefined}
+    */
 ProductsSkusListResponseBody.prototype['skus'] = undefined;
 
 /**
- * Total number of SKUs in the product.
- * @member {Number} 
- */
+    * Total number of SKUs in the product.
+    * @type {Number | undefined}
+    */
 ProductsSkusListResponseBody.prototype['total'] = undefined;
 
 

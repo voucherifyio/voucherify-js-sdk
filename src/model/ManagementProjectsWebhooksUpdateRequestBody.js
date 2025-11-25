@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsWebhooksUpdateRequestBody model module.
  * @module model/ManagementProjectsWebhooksUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsWebhooksUpdateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsWebhooksUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;/management/v1/projects/{projectId}/webhooks&#x60;.
-     * @alias module:model/ManagementProjectsWebhooksUpdateRequestBody
+     * @alias ManagementProjectsWebhooksUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsWebhooksUpdateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsWebhooksUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsWebhooksUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsWebhooksUpdateRequestBody} The populated <code>ManagementProjectsWebhooksUpdateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsWebhooksUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsWebhooksUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsWebhooksUpdateRequestBody} The populated <code>ManagementProjectsWebhooksUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class ManagementProjectsWebhooksUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsWebhooksUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsWebhooksUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsWebhooksUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -86,22 +85,22 @@ class ManagementProjectsWebhooksUpdateRequestBody {
 
 
 /**
- * URL address that receives webhooks.
- * @member {String} 
- */
+    * URL address that receives webhooks.
+    * @type {String | undefined}
+    */
 ManagementProjectsWebhooksUpdateRequestBody.prototype['target_url'] = undefined;
 
 /**
- * Lists the events that trigger webhook sendout.
- * @member {Array.<module:model/ManagementProjectsWebhooksUpdateRequestBody.EventsEnum>} 
- */
+    * Lists the events that trigger webhook sendout.
+    * @type {(Array<keyof typeof ManagementProjectsWebhooksUpdateRequestBody.EventsEnum>) | undefined}
+    */
 ManagementProjectsWebhooksUpdateRequestBody.prototype['events'] = undefined;
 
 /**
- * Determines if the webhook configuration is active.
- * @member {Boolean} 
- * @default true
- */
+    * Determines if the webhook configuration is active.
+    * @type {Boolean | undefined}
+    * @default true
+    */
 ManagementProjectsWebhooksUpdateRequestBody.prototype['active'] = true;
 
 

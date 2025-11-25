@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import Junction from './Junction';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId from './LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId from './LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code>.
      * Data filters used to narrow down the data records to be returned in the export.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters {
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters</code>.
      */
     static validateJSON(data) {
@@ -88,18 +87,18 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters.prototype['voucher_id'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters.prototype['campaign_id'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsWebhooksGetResponseBody model module.
  * @module model/ManagementProjectsWebhooksGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsWebhooksGetResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsWebhooksGetResponseBody</code>.
      * Response body schema for **GET** &#x60;/management/v1/projects/{projectId}/webhooks/{webhookId}&#x60;.
-     * @alias module:model/ManagementProjectsWebhooksGetResponseBody
+     * @alias ManagementProjectsWebhooksGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsWebhooksGetResponseBody {
     /**
      * Constructs a <code>ManagementProjectsWebhooksGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsWebhooksGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsWebhooksGetResponseBody} The populated <code>ManagementProjectsWebhooksGetResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsWebhooksGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsWebhooksGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsWebhooksGetResponseBody} The populated <code>ManagementProjectsWebhooksGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class ManagementProjectsWebhooksGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsWebhooksGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsWebhooksGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsWebhooksGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,60 +103,60 @@ class ManagementProjectsWebhooksGetResponseBody {
 
 
 /**
- * Unique identifier of the webhook.
- * @member {String} 
- */
+    * Unique identifier of the webhook.
+    * @type {String | undefined}
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ManagementProjectsWebhooksGetResponseBody.ObjectEnum} 
- * @default 'webhook'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ManagementProjectsWebhooksGetResponseBody.ObjectEnum) | undefined}
+    * @default 'webhook'
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['object'] = 'webhook';
 
 /**
- * Timestamp representing the date and time when the webhook configuration was created. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the webhook configuration was created. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * URL address that receives webhooks.
- * @member {String} 
- */
+    * URL address that receives webhooks.
+    * @type {String | undefined}
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['target_url'] = undefined;
 
 /**
- * Lists the events that trigger webhook sendout.
- * @member {Array.<module:model/ManagementProjectsWebhooksGetResponseBody.EventsEnum>} 
- */
+    * Lists the events that trigger webhook sendout.
+    * @type {(Array<keyof typeof ManagementProjectsWebhooksGetResponseBody.EventsEnum>) | undefined}
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['events'] = undefined;
 
 /**
- * Determines if the webhook configuration is active.
- * @member {Boolean} 
- * @default true
- */
+    * Determines if the webhook configuration is active.
+    * @type {Boolean | undefined}
+    * @default true
+    */
 ManagementProjectsWebhooksGetResponseBody.prototype['active'] = true;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsWebhooksGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "webhook"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "webhook": "webhook"
-};
+    ManagementProjectsWebhooksGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "webhook"
+         * @constant
+         */
+        "webhook": "webhook"    
+    };
 
 
 /**

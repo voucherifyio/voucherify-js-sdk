@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryOrderCustomer model module.
  * @module model/RedemptionEntryOrderCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryOrderCustomer {
     /**
      * Constructs a new <code>RedemptionEntryOrderCustomer</code>.
-     * @alias module:model/RedemptionEntryOrderCustomer
+     * @alias RedemptionEntryOrderCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionEntryOrderCustomer {
     /**
      * Constructs a <code>RedemptionEntryOrderCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryOrderCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryOrderCustomer} The populated <code>RedemptionEntryOrderCustomer</code> instance.
+     * @param {Partial<RedemptionEntryOrderCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryOrderCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryOrderCustomer} The populated <code>RedemptionEntryOrderCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionEntryOrderCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryOrderCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryOrderCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryOrderCustomer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionEntryOrderCustomer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionEntryOrderCustomer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionEntryOrderCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionEntryOrderCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionEntryOrderCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionEntryOrderCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionEntryOrderCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

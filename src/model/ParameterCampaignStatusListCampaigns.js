@@ -13,57 +13,53 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterCampaignStatusListCampaigns.
-* @module model/ParameterCampaignStatusListCampaigns
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterCampaignStatusListCampaigns {
+ * Enum class ParameterCampaignStatusListCampaigns.
+ * @module model/ParameterCampaignStatusListCampaigns
+ * @version 3.0.1
+ */
+class ParameterCampaignStatusListCampaigns {
     
-        /**
-         * value: "DONE"
-         * @constant
-         */
-        "DONE" = "DONE";
-
+    /**
+     * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+     * @constant
+     */
+    static "DONE" = "DONE";
     
-        /**
-         * value: "IN_PROGRESS"
-         * @constant
-         */
-        "IN_PROGRESS" = "IN_PROGRESS";
-
+    /**
+     * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+     * @constant
+     */
+    static "IN_PROGRESS" = "IN_PROGRESS";
     
-        /**
-         * value: "FAILED"
-         * @constant
-         */
-        "FAILED" = "FAILED";
-
+    /**
+     * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+     * @constant
+     */
+    static "FAILED" = "FAILED";
     
-        /**
-         * value: "DRAFT"
-         * @constant
-         */
-        "DRAFT" = "DRAFT";
-
+    /**
+     * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+     * @constant
+     */
+    static "DRAFT" = "DRAFT";
     
-        /**
-         * value: "MODIFYING"
-         * @constant
-         */
-        "MODIFYING" = "MODIFYING";
-
+    /**
+     * Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+     * @constant
+     */
+    static "MODIFYING" = "MODIFYING";
     
 
     /**
-    * Returns a <code>ParameterCampaignStatusListCampaigns</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterCampaignStatusListCampaigns} The enum <code>ParameterCampaignStatusListCampaigns</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterCampaignStatusListCampaigns, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterCampaignStatusListCampaigns[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterCampaignStatusListCampaigns[key];
     }
 }
+
+export default ParameterCampaignStatusListCampaigns;
 

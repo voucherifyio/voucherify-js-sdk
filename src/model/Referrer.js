@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ReferrerAddress from './ReferrerAddress';
-
 /**
  * The Referrer model module.
  * @module model/Referrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Referrer {
     /**
      * Constructs a new <code>Referrer</code>.
-     * @alias module:model/Referrer
+     * @alias Referrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class Referrer {
     /**
      * Constructs a <code>Referrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Referrer} obj Optional instance to populate.
-     * @returns {module:model/Referrer} The populated <code>Referrer</code> instance.
+     * @param {Partial<Referrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {Referrer} [obj] Optional instance to populate.
+     * @returns {Referrer} The populated <code>Referrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class Referrer {
 
     /**
      * Validates the JSON data with respect to <code>Referrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Referrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Referrer</code>.
      */
     static validateJSON(data) {
@@ -126,62 +125,62 @@ class Referrer {
 
 
 /**
- * The ID of an existing customer.
- * @member {String} 
- */
+    * The ID of an existing customer.
+    * @type {String | undefined}
+    */
 Referrer.prototype['id'] = undefined;
 
 /**
- * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
- * @member {String} 
- */
+    * A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
+    * @type {String | undefined}
+    */
 Referrer.prototype['source_id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 Referrer.prototype['name'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a customer object.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a customer object.
+    * @type {String | undefined}
+    */
 Referrer.prototype['description'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 Referrer.prototype['email'] = undefined;
 
 /**
- * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
- * @member {String} 
- */
+    * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
+    * @type {String | undefined}
+    */
 Referrer.prototype['phone'] = undefined;
 
 /**
- * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
- * @member {Date} 
- */
+    * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
+    * @type {Date | undefined}
+    */
 Referrer.prototype['birthday'] = undefined;
 
 /**
- * Customer's birthdate; format YYYY-MM-DD.
- * @member {Date} 
- */
+    * Customer's birthdate; format YYYY-MM-DD.
+    * @type {Date | undefined}
+    */
 Referrer.prototype['birthdate'] = undefined;
 
 /**
- * @member {module:model/ReferrerAddress} 
- */
+    * @type {ReferrerAddress | undefined}
+    */
 Referrer.prototype['address'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 Referrer.prototype['metadata'] = undefined;
 
 

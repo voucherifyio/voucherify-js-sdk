@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyPendingPointsDetailsHolderLoyaltyTier model module.
  * @module model/LoyaltyPendingPointsDetailsHolderLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPointsDetailsHolderLoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code>.
      * Loyalty tier of the loyalty card holder at the moment when the transaction occurred. The loyalty tier is the tier in which the holder was at the moment pending points were created.
-     * @alias module:model/LoyaltyPendingPointsDetailsHolderLoyaltyTier
+     * @alias LoyaltyPendingPointsDetailsHolderLoyaltyTier
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyPendingPointsDetailsHolderLoyaltyTier {
     /**
      * Constructs a <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPointsDetailsHolderLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPointsDetailsHolderLoyaltyTier} The populated <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code> instance.
+     * @param {Partial<LoyaltyPendingPointsDetailsHolderLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPointsDetailsHolderLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPointsDetailsHolderLoyaltyTier} The populated <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyPendingPointsDetailsHolderLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPointsDetailsHolderLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltyPendingPointsDetailsHolderLoyaltyTier {
 
 
 /**
- * Unique identifier of the loyalty tier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the loyalty tier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsHolderLoyaltyTier.prototype['id'] = undefined;
 
 /**
- * User-defined name of the loyalty tier.
- * @member {String} 
- */
+    * User-defined name of the loyalty tier.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsHolderLoyaltyTier.prototype['name'] = undefined;
 
 

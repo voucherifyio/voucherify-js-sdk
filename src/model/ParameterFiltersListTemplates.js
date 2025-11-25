@@ -16,16 +16,15 @@ import Junction from './Junction';
 import ParameterFiltersListTemplatesCampaignType from './ParameterFiltersListTemplatesCampaignType';
 import ParameterFiltersListTemplatesId from './ParameterFiltersListTemplatesId';
 import ParameterFiltersListTemplatesName from './ParameterFiltersListTemplatesName';
-
 /**
  * The ParameterFiltersListTemplates model module.
  * @module model/ParameterFiltersListTemplates
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListTemplates {
     /**
      * Constructs a new <code>ParameterFiltersListTemplates</code>.
-     * @alias module:model/ParameterFiltersListTemplates
+     * @alias ParameterFiltersListTemplates
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ParameterFiltersListTemplates {
     /**
      * Constructs a <code>ParameterFiltersListTemplates</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListTemplates} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListTemplates} The populated <code>ParameterFiltersListTemplates</code> instance.
+     * @param {Partial<ParameterFiltersListTemplates>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListTemplates} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListTemplates} The populated <code>ParameterFiltersListTemplates</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ParameterFiltersListTemplates {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListTemplates</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListTemplates>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListTemplates</code>.
      */
     static validateJSON(data) {
@@ -95,23 +94,23 @@ class ParameterFiltersListTemplates {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListTemplates.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListTemplatesId} 
- */
+    * @type {ParameterFiltersListTemplatesId | undefined}
+    */
 ParameterFiltersListTemplates.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListTemplatesName} 
- */
+    * @type {ParameterFiltersListTemplatesName | undefined}
+    */
 ParameterFiltersListTemplates.prototype['name'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListTemplatesCampaignType} 
- */
+    * @type {ParameterFiltersListTemplatesCampaignType | undefined}
+    */
 ParameterFiltersListTemplates.prototype['campaign_type'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsTransactionsExportCreateResponseBodyResult model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsExportCreateResponseBodyResult {
     /**
      * Constructs a new <code>CampaignsTransactionsExportCreateResponseBodyResult</code>.
      * Contains the URL of the CSV file.
-     * @alias module:model/CampaignsTransactionsExportCreateResponseBodyResult
+     * @alias CampaignsTransactionsExportCreateResponseBodyResult
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsTransactionsExportCreateResponseBodyResult {
     /**
      * Constructs a <code>CampaignsTransactionsExportCreateResponseBodyResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBodyResult} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsExportCreateResponseBodyResult} The populated <code>CampaignsTransactionsExportCreateResponseBodyResult</code> instance.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsExportCreateResponseBodyResult} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsExportCreateResponseBodyResult} The populated <code>CampaignsTransactionsExportCreateResponseBodyResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignsTransactionsExportCreateResponseBodyResult {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsExportCreateResponseBodyResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsExportCreateResponseBodyResult</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class CampaignsTransactionsExportCreateResponseBodyResult {
 
 
 /**
- * URL of the CSV file location. It contains the `token` used for authorization in the [Download export](/api-reference/exports/download-export) method.
- * @member {String} 
- */
+    * URL of the CSV file location. It contains the `token` used for authorization in the [Download export](/api-reference/exports/download-export) method.
+    * @type {String | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyResult.prototype['url'] = undefined;
 
 

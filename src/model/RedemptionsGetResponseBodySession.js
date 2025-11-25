@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodySession model module.
  * @module model/RedemptionsGetResponseBodySession
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodySession {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodySession</code>.
      * Contains details about the redemption session lock. Sessions can be established only for discount vouchers, promotions, and gift cards.
-     * @alias module:model/RedemptionsGetResponseBodySession
+     * @alias RedemptionsGetResponseBodySession
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsGetResponseBodySession {
     /**
      * Constructs a <code>RedemptionsGetResponseBodySession</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodySession} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodySession} The populated <code>RedemptionsGetResponseBodySession</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodySession>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodySession} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodySession} The populated <code>RedemptionsGetResponseBodySession</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionsGetResponseBodySession {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodySession</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodySession>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodySession</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class RedemptionsGetResponseBodySession {
 
 
 /**
- * The session unique ID assigned by Voucherify or your own unique session ID sent in the request.
- * @member {String} 
- */
+    * The session unique ID assigned by Voucherify or your own unique session ID sent in the request.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodySession.prototype['key'] = undefined;
 
 

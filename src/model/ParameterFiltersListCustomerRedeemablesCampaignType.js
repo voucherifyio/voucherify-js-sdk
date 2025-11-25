@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListCustomerRedeemablesCampaignTypeConditions from './ParameterFiltersListCustomerRedeemablesCampaignTypeConditions';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesCampaignType model module.
  * @module model/ParameterFiltersListCustomerRedeemablesCampaignType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesCampaignType {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesCampaignType</code>.
      * Type of the campaign. Allowed values: &#x60;DISCOUNT_COUPONS&#x60;, &#x60;REFERRAL_PROGRAM&#x60;, &#x60;GIFT_VOUCHERS&#x60;, &#x60;LOYALTY_PROGRAM&#x60;
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesCampaignType
+     * @alias ParameterFiltersListCustomerRedeemablesCampaignType
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCustomerRedeemablesCampaignType {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesCampaignType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesCampaignType} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesCampaignType} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignType</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignType>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesCampaignType} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesCampaignType} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCustomerRedeemablesCampaignType {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignType</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCustomerRedeemablesCampaignType {
 
 
 /**
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions} 
- */
+    * @type {ParameterFiltersListCustomerRedeemablesCampaignTypeConditions | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignType.prototype['conditions'] = undefined;
 
 

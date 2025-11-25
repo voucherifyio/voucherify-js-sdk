@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Discount from './Discount';
-
 /**
  * The PromotionTierCreateParamsAction model module.
  * @module model/PromotionTierCreateParamsAction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierCreateParamsAction {
     /**
      * Constructs a new <code>PromotionTierCreateParamsAction</code>.
      * Contains details about the discount applied by the promotion tier.
-     * @alias module:model/PromotionTierCreateParamsAction
+     * @alias PromotionTierCreateParamsAction
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionTierCreateParamsAction {
     /**
      * Constructs a <code>PromotionTierCreateParamsAction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierCreateParamsAction} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierCreateParamsAction} The populated <code>PromotionTierCreateParamsAction</code> instance.
+     * @param {Partial<PromotionTierCreateParamsAction>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierCreateParamsAction} [obj] Optional instance to populate.
+     * @returns {PromotionTierCreateParamsAction} The populated <code>PromotionTierCreateParamsAction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class PromotionTierCreateParamsAction {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierCreateParamsAction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierCreateParamsAction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierCreateParamsAction</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class PromotionTierCreateParamsAction {
 
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 PromotionTierCreateParamsAction.prototype['discount'] = undefined;
 
 

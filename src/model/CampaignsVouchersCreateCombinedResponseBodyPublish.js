@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyPublish model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyPublish
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateCombinedResponseBodyPublish {
     /**
      * Constructs a new <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code>.
      * Stores a summary of publication events: an event counter and endpoint to return details of each event. Publication is an assignment of a code to a customer, e.g. through a distribution.
-     * @alias module:model/CampaignsVouchersCreateCombinedResponseBodyPublish
+     * @alias CampaignsVouchersCreateCombinedResponseBodyPublish
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignsVouchersCreateCombinedResponseBodyPublish {
     /**
      * Constructs a <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateCombinedResponseBodyPublish} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateCombinedResponseBodyPublish} The populated <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code> instance.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateCombinedResponseBodyPublish} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateCombinedResponseBodyPublish} The populated <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class CampaignsVouchersCreateCombinedResponseBodyPublish {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateCombinedResponseBodyPublish</code>.
      */
     static validateJSON(data) {
@@ -86,22 +85,22 @@ class CampaignsVouchersCreateCombinedResponseBodyPublish {
 
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CampaignsVouchersCreateCombinedResponseBodyPublish.prototype['object'] = 'list';
 
 /**
- * Publication events counter.
- * @member {Number} 
- */
+    * Publication events counter.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyPublish.prototype['count'] = undefined;
 
 /**
- * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
- * @member {String} 
- */
+    * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyPublish.prototype['url'] = undefined;
 
 

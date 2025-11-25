@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultGift model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultGift {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code>.
      * Stores the amount of gift card credits to be applied.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItemResultGift
+     * @alias ValidationsValidateResponseBodyRedeemablesItemResultGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResultGift {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItemResultGift} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItemResultGift} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItemResultGift} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItemResultGift} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultGift {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultGift</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class ValidationsValidateResponseBodyRedeemablesItemResultGift {
 
 
 /**
- * Available funds at the moment of validation. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Available funds at the moment of validation. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResultGift.prototype['balance'] = undefined;
 
 /**
- * Total number of gift card credits to be applied. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total number of gift card credits to be applied. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResultGift.prototype['credits'] = undefined;
 
 

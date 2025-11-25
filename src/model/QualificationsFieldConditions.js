@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import QualificationsFiltersCondition from './QualificationsFiltersCondition';
-
 /**
  * The QualificationsFieldConditions model module.
  * @module model/QualificationsFieldConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsFieldConditions {
     /**
      * Constructs a new <code>QualificationsFieldConditions</code>.
-     * @alias module:model/QualificationsFieldConditions
+     * @alias QualificationsFieldConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class QualificationsFieldConditions {
     /**
      * Constructs a <code>QualificationsFieldConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsFieldConditions} obj Optional instance to populate.
-     * @returns {module:model/QualificationsFieldConditions} The populated <code>QualificationsFieldConditions</code> instance.
+     * @param {Partial<QualificationsFieldConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsFieldConditions} [obj] Optional instance to populate.
+     * @returns {QualificationsFieldConditions} The populated <code>QualificationsFieldConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class QualificationsFieldConditions {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsFieldConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsFieldConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsFieldConditions</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class QualificationsFieldConditions {
 
 
 /**
- * @member {module:model/QualificationsFiltersCondition} 
- */
+    * @type {QualificationsFiltersCondition | undefined}
+    */
 QualificationsFieldConditions.prototype['conditions'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import SimpleSegment from './SimpleSegment';
-
 /**
  * The CustomersSegmentsListResponseBody model module.
  * @module model/CustomersSegmentsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersSegmentsListResponseBody {
     /**
      * Constructs a new <code>CustomersSegmentsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/customers/{customerId}/segments&#x60;.
-     * @alias module:model/CustomersSegmentsListResponseBody
+     * @alias CustomersSegmentsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CustomersSegmentsListResponseBody {
     /**
      * Constructs a <code>CustomersSegmentsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersSegmentsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersSegmentsListResponseBody} The populated <code>CustomersSegmentsListResponseBody</code> instance.
+     * @param {Partial<CustomersSegmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersSegmentsListResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersSegmentsListResponseBody} The populated <code>CustomersSegmentsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class CustomersSegmentsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersSegmentsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersSegmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersSegmentsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class CustomersSegmentsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about customer segments.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about customer segments.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CustomersSegmentsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of segment IDs.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of segment IDs.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 CustomersSegmentsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of segment IDs and names.
- * @member {Array.<module:model/SimpleSegment>} 
- */
+    * A dictionary that contains an array of segment IDs and names.
+    * @type {Array.<SimpleSegment> | undefined}
+    */
 CustomersSegmentsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of segments the customer belongs to.
- * @member {Number} 
- */
+    * Total number of segments the customer belongs to.
+    * @type {Number | undefined}
+    */
 CustomersSegmentsListResponseBody.prototype['total'] = undefined;
 
 

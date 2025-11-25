@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import CodeConfig from './CodeConfig';
 import TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption from './TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption';
-
 /**
  * The TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher {
     /**
      * Constructs a new <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code>.
      * 
-     * @alias module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher
+     * @alias TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher {
     /**
      * Constructs a <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher} The populated <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code> instance.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher} The populated <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher {
 
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig | undefined}
+    */
 TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher.prototype['code_config'] = undefined;
 
 /**
- * @member {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption} 
- */
+    * @type {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption | undefined}
+    */
 TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher.prototype['redemption'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OAuthTokenIntrospectResponseBody model module.
  * @module model/OAuthTokenIntrospectResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OAuthTokenIntrospectResponseBody {
     /**
      * Constructs a new <code>OAuthTokenIntrospectResponseBody</code>.
      * Response body schema for **POST** &#x60;/oauth/introspect&#x60;.
-     * @alias module:model/OAuthTokenIntrospectResponseBody
+     * @alias OAuthTokenIntrospectResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class OAuthTokenIntrospectResponseBody {
     /**
      * Constructs a <code>OAuthTokenIntrospectResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OAuthTokenIntrospectResponseBody} obj Optional instance to populate.
-     * @returns {module:model/OAuthTokenIntrospectResponseBody} The populated <code>OAuthTokenIntrospectResponseBody</code> instance.
+     * @param {Partial<OAuthTokenIntrospectResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OAuthTokenIntrospectResponseBody} [obj] Optional instance to populate.
+     * @returns {OAuthTokenIntrospectResponseBody} The populated <code>OAuthTokenIntrospectResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class OAuthTokenIntrospectResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>OAuthTokenIntrospectResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OAuthTokenIntrospectResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OAuthTokenIntrospectResponseBody</code>.
      */
     static validateJSON(data) {
@@ -106,65 +105,65 @@ class OAuthTokenIntrospectResponseBody {
 
 
 /**
- * The access token used to authorize access to the Voucherify API.
- * @member {String} 
- */
+    * The access token used to authorize access to the Voucherify API.
+    * @type {String | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['access_token'] = undefined;
 
 /**
- * Unique client identifier, assigned by Voucherify, for OAuth.
- * @member {String} 
- */
+    * Unique client identifier, assigned by Voucherify, for OAuth.
+    * @type {String | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['client_id'] = undefined;
 
 /**
- * Timestamp in seconds in the Unix format indicating when the token expires.
- * @member {Number} 
- */
+    * Timestamp in seconds in the Unix format indicating when the token expires.
+    * @type {Number | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['expires_at'] = undefined;
 
 /**
- * Number of seconds left until the token expires.
- * @member {Number} 
- */
+    * Number of seconds left until the token expires.
+    * @type {Number | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['expires_in'] = undefined;
 
 /**
- * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `SKUs`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
- * @member {String} 
- */
+    * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `SKUs`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
+    * @type {String | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['scope'] = undefined;
 
 /**
- * Type of the token. Use the value as the header prefix for authorization.
- * @member {module:model/OAuthTokenIntrospectResponseBody.TokenTypeEnum} 
- * @default 'Bearer'
- */
+    * Type of the token. Use the value as the header prefix for authorization.
+    * @type {(keyof typeof OAuthTokenIntrospectResponseBody.TokenTypeEnum) | undefined}
+    * @default 'Bearer'
+    */
 OAuthTokenIntrospectResponseBody.prototype['token_type'] = 'Bearer';
 
 /**
- * Determines if the token is active. Nonexistent tokens are also marked as inactive.
- * @member {Boolean} 
- */
+    * Determines if the token is active. Nonexistent tokens are also marked as inactive.
+    * @type {Boolean | undefined}
+    */
 OAuthTokenIntrospectResponseBody.prototype['active'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>token_type</code> property.
- * @enum {String}
- * @readonly
- */
-OAuthTokenIntrospectResponseBody['TokenTypeEnum'] = {
-
     /**
-     * value: "Bearer"
-     * @constant
+     * Allowed values for the <code>token_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "Bearer": "Bearer"
-};
+    OAuthTokenIntrospectResponseBody['TokenTypeEnum'] = {
+    
+        /**
+         * value: "Bearer"
+         * @constant
+         */
+        "Bearer": "Bearer"    
+    };
 
 
 

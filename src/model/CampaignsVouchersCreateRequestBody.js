@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignsVouchersCreateRequestBodyRedemption from './CampaignsVouchersCreateRequestBodyRedemption';
-
 /**
  * The CampaignsVouchersCreateRequestBody model module.
  * @module model/CampaignsVouchersCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateRequestBody {
     /**
      * Constructs a new <code>CampaignsVouchersCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/campaigns/{campaignId}/vouchers/{code}&#x60;.
-     * @alias module:model/CampaignsVouchersCreateRequestBody
+     * @alias CampaignsVouchersCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CampaignsVouchersCreateRequestBody {
     /**
      * Constructs a <code>CampaignsVouchersCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateRequestBody} The populated <code>CampaignsVouchersCreateRequestBody</code> instance.
+     * @param {Partial<CampaignsVouchersCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateRequestBody} The populated <code>CampaignsVouchersCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class CampaignsVouchersCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -99,38 +98,38 @@ class CampaignsVouchersCreateRequestBody {
 
 
 /**
- * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
- * @member {String} 
- */
+    * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['category'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the voucher. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the voucher. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/CampaignsVouchersCreateRequestBodyRedemption} 
- */
+    * @type {CampaignsVouchersCreateRequestBodyRedemption | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['redemption'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['additional_info'] = undefined;
 
 /**
- * Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 CampaignsVouchersCreateRequestBody.prototype['expiration_date'] = undefined;
 
 

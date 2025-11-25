@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingUpdateResponseBodyBrand model module.
  * @module model/ManagementProjectsBrandingUpdateResponseBodyBrand
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateResponseBodyBrand {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code>.
      * Defines basic brand details.
-     * @alias module:model/ManagementProjectsBrandingUpdateResponseBodyBrand
+     * @alias ManagementProjectsBrandingUpdateResponseBodyBrand
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingUpdateResponseBodyBrand {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateResponseBodyBrand} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateResponseBodyBrand} The populated <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyBrand>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateResponseBodyBrand} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateResponseBodyBrand} The populated <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingUpdateResponseBodyBrand {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyBrand>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateResponseBodyBrand</code>.
      */
     static validateJSON(data) {
@@ -103,33 +102,33 @@ class ManagementProjectsBrandingUpdateResponseBodyBrand {
 
 
 /**
- * Defines brand name.
- * @member {String} 
- */
+    * Defines brand name.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyBrand.prototype['name'] = undefined;
 
 /**
- * Defines the URL to the brand's privacy policy. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's privacy policy. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyBrand.prototype['privacy_policy_url'] = undefined;
 
 /**
- * Defines the URL to the brand's terms of use.  It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's terms of use.  It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyBrand.prototype['terms_of_use_url'] = undefined;
 
 /**
- * Defines the message that is displayed to customers who opted in an email newsletter.
- * @member {String} 
- */
+    * Defines the message that is displayed to customers who opted in an email newsletter.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyBrand.prototype['permission_reminder'] = undefined;
 
 /**
- * Defines the URL to the brand's website. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's website. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyBrand.prototype['website_url'] = undefined;
 
 

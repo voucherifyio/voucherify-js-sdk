@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesHolderRoleConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesHolderRoleConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code>.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions
+     * @alias ParameterFiltersListCustomerRedeemablesHolderRoleConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListCustomerRedeemablesHolderRoleConditions {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions} The populated <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesHolderRoleConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesHolderRoleConditions} The populated <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ParameterFiltersListCustomerRedeemablesHolderRoleConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesHolderRoleConditions</code>.
      */
     static validateJSON(data) {
@@ -123,51 +122,51 @@ class ParameterFiltersListCustomerRedeemablesHolderRoleConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesHolderRoleConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesHolderRoleConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesHolderRoleConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesHolderRoleConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesHolderRoleConditions.prototype['$ends_with'] = undefined;
 
 
@@ -228,58 +227,58 @@ ParameterFiltersListCustomerRedeemablesHolderRoleConditions['NotInEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesHolderRoleConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListCustomerRedeemablesHolderRoleConditions['IsEnum'] = {
+    
+        /**
+         * value: "OWNER"
+         * @constant
+         */
+        "OWNER": "OWNER",
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER"    
+    };
+
 
     /**
-     * value: "OWNER"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "OWNER": "OWNER",
-
-    /**
-     * value: "REFEREE"
-     * @constant
-     */
-    "REFEREE": "REFEREE",
-
-    /**
-     * value: "REFERRER"
-     * @constant
-     */
-    "REFERRER": "REFERRER"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesHolderRoleConditions['IsNotEnum'] = {
-
-    /**
-     * value: "OWNER"
-     * @constant
-     */
-    "OWNER": "OWNER",
-
-    /**
-     * value: "REFEREE"
-     * @constant
-     */
-    "REFEREE": "REFEREE",
-
-    /**
-     * value: "REFERRER"
-     * @constant
-     */
-    "REFERRER": "REFERRER"
-};
+    ParameterFiltersListCustomerRedeemablesHolderRoleConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "OWNER"
+         * @constant
+         */
+        "OWNER": "OWNER",
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER"    
+    };
 
 
 

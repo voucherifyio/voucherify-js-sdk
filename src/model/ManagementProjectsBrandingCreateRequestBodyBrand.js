@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingCreateRequestBodyBrand model module.
  * @module model/ManagementProjectsBrandingCreateRequestBodyBrand
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingCreateRequestBodyBrand {
     /**
      * Constructs a new <code>ManagementProjectsBrandingCreateRequestBodyBrand</code>.
      * Defines basic brand details.
-     * @alias module:model/ManagementProjectsBrandingCreateRequestBodyBrand
+     * @alias ManagementProjectsBrandingCreateRequestBodyBrand
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsBrandingCreateRequestBodyBrand {
     /**
      * Constructs a <code>ManagementProjectsBrandingCreateRequestBodyBrand</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingCreateRequestBodyBrand} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingCreateRequestBodyBrand} The populated <code>ManagementProjectsBrandingCreateRequestBodyBrand</code> instance.
+     * @param {Partial<ManagementProjectsBrandingCreateRequestBodyBrand>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingCreateRequestBodyBrand} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingCreateRequestBodyBrand} The populated <code>ManagementProjectsBrandingCreateRequestBodyBrand</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class ManagementProjectsBrandingCreateRequestBodyBrand {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingCreateRequestBodyBrand</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingCreateRequestBodyBrand>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingCreateRequestBodyBrand</code>.
      */
     static validateJSON(data) {
@@ -104,34 +103,34 @@ class ManagementProjectsBrandingCreateRequestBodyBrand {
 
 
 /**
- * Defines brand name.
- * @member {String} 
- */
+    * Defines brand name.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBodyBrand.prototype['name'] = undefined;
 
 /**
- * Defines the URL to the brand's privacy policy. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's privacy policy. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBodyBrand.prototype['privacy_policy_url'] = undefined;
 
 /**
- * Defines the URL to the brand's terms of use.  It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's terms of use.  It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBodyBrand.prototype['terms_of_use_url'] = undefined;
 
 /**
- * Defines the message that is displayed to customers who opted in an email newsletter.
- * @member {String} 
- * @default 'You are receiving this email because you opted in at our website.'
- */
+    * Defines the message that is displayed to customers who opted in an email newsletter.
+    * @type {String | undefined}
+    * @default 'You are receiving this email because you opted in at our website.'
+    */
 ManagementProjectsBrandingCreateRequestBodyBrand.prototype['permission_reminder'] = 'You are receiving this email because you opted in at our website.';
 
 /**
- * Defines the URL to the brand's website. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's website. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingCreateRequestBodyBrand.prototype['website_url'] = undefined;
 
 

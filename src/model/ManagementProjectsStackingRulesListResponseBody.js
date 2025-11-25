@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsStackingRules from './ManagementProjectsStackingRules';
-
 /**
  * The ManagementProjectsStackingRulesListResponseBody model module.
  * @module model/ManagementProjectsStackingRulesListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsStackingRulesListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsStackingRulesListResponseBody</code>.
      * Response body schema for **GET** &#x60;/management/v1/projects/{projectId}/stacking-rules&#x60;.
-     * @alias module:model/ManagementProjectsStackingRulesListResponseBody
+     * @alias ManagementProjectsStackingRulesListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsStackingRulesListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsStackingRulesListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsStackingRulesListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsStackingRulesListResponseBody} The populated <code>ManagementProjectsStackingRulesListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsStackingRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsStackingRulesListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsStackingRulesListResponseBody} The populated <code>ManagementProjectsStackingRulesListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsStackingRulesListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsStackingRulesListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsStackingRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsStackingRulesListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsStackingRulesListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the stacking rules in a dictionary.
- * @member {module:model/ManagementProjectsStackingRulesListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the stacking rules in a dictionary.
+    * @type {(keyof typeof ManagementProjectsStackingRulesListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsStackingRulesListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of stacking rule objects.
- * @member {module:model/ManagementProjectsStackingRulesListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of stacking rule objects.
+    * @type {(keyof typeof ManagementProjectsStackingRulesListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsStackingRulesListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of only one stacking rule object.
- * @member {Array.<module:model/ManagementProjectsStackingRules>} 
- */
+    * Array of only one stacking rule object.
+    * @type {Array.<ManagementProjectsStackingRules> | undefined}
+    */
 ManagementProjectsStackingRulesListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of stacking rule objects. It is always 1.
- * @member {Number} 
- */
+    * The total number of stacking rule objects. It is always 1.
+    * @type {Number | undefined}
+    */
 ManagementProjectsStackingRulesListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsStackingRulesListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsStackingRulesListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsStackingRulesListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

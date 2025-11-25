@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ProductCollectionsItemProductsItem from './ProductCollectionsItemProductsItem';
-
 /**
  * The ProductCollectionsItem model module.
  * @module model/ProductCollectionsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsItem {
     /**
      * Constructs a new <code>ProductCollectionsItem</code>.
      * This is an object representing a product collection base. 
-     * @alias module:model/ProductCollectionsItem
+     * @alias ProductCollectionsItem
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ProductCollectionsItem {
     /**
      * Constructs a <code>ProductCollectionsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsItem} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsItem} The populated <code>ProductCollectionsItem</code> instance.
+     * @param {Partial<ProductCollectionsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsItem} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsItem} The populated <code>ProductCollectionsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ProductCollectionsItem {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsItem</code>.
      */
     static validateJSON(data) {
@@ -117,86 +116,86 @@ class ProductCollectionsItem {
 
 
 /**
- * Product collection ID.
- * @member {String} 
- */
+    * Product collection ID.
+    * @type {String | undefined}
+    */
 ProductCollectionsItem.prototype['id'] = undefined;
 
 /**
- * Unique user-defined product collection name.
- * @member {String} 
- */
+    * Unique user-defined product collection name.
+    * @type {String | undefined}
+    */
 ProductCollectionsItem.prototype['name'] = undefined;
 
 /**
- * Describes whether the product collection is dynamic (products come in and leave based on set criteria) or static (manually selected products).
- * @member {module:model/ProductCollectionsItem.TypeEnum} 
- */
+    * Describes whether the product collection is dynamic (products come in and leave based on set criteria) or static (manually selected products).
+    * @type {(keyof typeof ProductCollectionsItem.TypeEnum) | undefined}
+    */
 ProductCollectionsItem.prototype['type'] = undefined;
 
 /**
- * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
- * @member {Object} 
- */
+    * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
+    * @type {Object | undefined}
+    */
 ProductCollectionsItem.prototype['filter'] = undefined;
 
 /**
- * Defines a set of products for a `STATIC` product collection type.
- * @member {Array.<module:model/ProductCollectionsItemProductsItem>} 
- */
+    * Defines a set of products for a `STATIC` product collection type.
+    * @type {Array.<ProductCollectionsItemProductsItem> | undefined}
+    */
 ProductCollectionsItem.prototype['products'] = undefined;
 
 /**
- * Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductCollectionsItem.prototype['created_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the static product collection.
- * @member {module:model/ProductCollectionsItem.ObjectEnum} 
- * @default 'products_collection'
- */
+    * The type of the object represented by JSON. This object stores information about the static product collection.
+    * @type {(keyof typeof ProductCollectionsItem.ObjectEnum) | undefined}
+    * @default 'products_collection'
+    */
 ProductCollectionsItem.prototype['object'] = 'products_collection';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsItem['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ProductCollectionsItem['TypeEnum'] = {
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE"    
+    };
+
 
     /**
-     * value: "STATIC"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "STATIC": "STATIC",
-
-    /**
-     * value: "AUTO_UPDATE"
-     * @constant
-     */
-    "AUTO_UPDATE": "AUTO_UPDATE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsItem['ObjectEnum'] = {
-
-    /**
-     * value: "products_collection"
-     * @constant
-     */
-    "products_collection": "products_collection"
-};
+    ProductCollectionsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection"    
+    };
 
 
 

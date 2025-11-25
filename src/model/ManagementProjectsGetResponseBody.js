@@ -16,16 +16,15 @@ import ManagementProjectsGetResponseBodyApiUsageNotifications from './Management
 import ManagementProjectsGetResponseBodyDefaultCodeConfig from './ManagementProjectsGetResponseBodyDefaultCodeConfig';
 import ManagementProjectsGetResponseBodyLimits from './ManagementProjectsGetResponseBodyLimits';
 import ManagementProjectsGetResponseBodyWebhooksCalloutNotifications from './ManagementProjectsGetResponseBodyWebhooksCalloutNotifications';
-
 /**
  * The ManagementProjectsGetResponseBody model module.
  * @module model/ManagementProjectsGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsGetResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsGetResponseBody</code>.
-     * @alias module:model/ManagementProjectsGetResponseBody
+     * @alias ManagementProjectsGetResponseBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ManagementProjectsGetResponseBody {
     /**
      * Constructs a <code>ManagementProjectsGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsGetResponseBody} The populated <code>ManagementProjectsGetResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsGetResponseBody} The populated <code>ManagementProjectsGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -128,7 +127,7 @@ class ManagementProjectsGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -202,173 +201,173 @@ class ManagementProjectsGetResponseBody {
 
 
 /**
- * Unique identifier of the project.
- * @member {String} 
- */
+    * Unique identifier of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['id'] = undefined;
 
 /**
- * The name of the project.
- * @member {String} 
- */
+    * The name of the project.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['name'] = undefined;
 
 /**
- * A user-defined description of the project, e.g. its purpose, scope, region.
- * @member {String} 
- */
+    * A user-defined description of the project, e.g. its purpose, scope, region.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['description'] = undefined;
 
 /**
- * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
- * @member {String} 
- */
+    * The time zone in which the project is established. It can be in the GMT format or in accordance with IANA time zone database.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['timezone'] = undefined;
 
 /**
- * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
- * @member {String} 
- */
+    * The currency used in the project. It is equal to a 3-letter ISO 4217 code.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['currency'] = undefined;
 
 /**
- * The country dial code for the project. It is equal to an ITU country code.
- * @member {String} 
- */
+    * The country dial code for the project. It is equal to an ITU country code.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['dial_code'] = undefined;
 
 /**
- * The webhook version used in the project.
- * @member {module:model/ManagementProjectsGetResponseBody.WebhookVersionEnum} 
- * @default 'v2024-01-01'
- */
+    * The webhook version used in the project.
+    * @type {(keyof typeof ManagementProjectsGetResponseBody.WebhookVersionEnum) | undefined}
+    * @default 'v2024-01-01'
+    */
 ManagementProjectsGetResponseBody.prototype['webhook_version'] = 'v2024-01-01';
 
 /**
- * An array of URL addresses that allow client requests.
- * @member {Array.<String>} 
- */
+    * An array of URL addresses that allow client requests.
+    * @type {Array.<String> | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_trusted_domains'] = undefined;
 
 /**
- * Enables client-side redemption.
- * @member {Boolean} 
- */
+    * Enables client-side redemption.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_redeem_enabled'] = undefined;
 
 /**
- * Enables client-side publication.
- * @member {Boolean} 
- */
+    * Enables client-side publication.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_publish_enabled'] = undefined;
 
 /**
- * Enables client-side listing of vouchers.
- * @member {Boolean} 
- */
+    * Enables client-side listing of vouchers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_list_vouchers_enabled'] = undefined;
 
 /**
- * Enables client-side creation of customers.
- * @member {Boolean} 
- */
+    * Enables client-side creation of customers.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_create_customer_enabled'] = undefined;
 
 /**
- * Enables client-side events for loyalty and referral programs.
- * @member {Boolean} 
- */
+    * Enables client-side events for loyalty and referral programs.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_loyalty_events_enabled'] = undefined;
 
 /**
- * Enables client-side setting of voucher expiration date.
- * @member {Boolean} 
- */
+    * Enables client-side setting of voucher expiration date.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['client_set_voucher_expiration_date_enabled'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications} 
- */
+    * @type {ManagementProjectsGetResponseBodyWebhooksCalloutNotifications | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['webhooks_callout_notifications'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyApiUsageNotifications} 
- */
+    * @type {ManagementProjectsGetResponseBodyApiUsageNotifications | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['api_usage_notifications'] = undefined;
 
 /**
- * The identifier of the cluster where the project will be created.
- * @member {String} 
- */
+    * The identifier of the cluster where the project will be created.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['cluster_id'] = undefined;
 
 /**
- * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
- * @member {Boolean} 
- */
+    * Determines if the vouchers in the project will be: - case sensitive - if `true`, `C0dE-cfV` is **not** equal to `c0de-cfv`), - case insensitive - if `false`, `C0dE-cfV` is equal to `c0de-cfv`.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['case_sensitive_codes'] = undefined;
 
 /**
- * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
- * @member {module:model/ManagementProjectsGetResponseBody.ApiVersionEnum} 
- * @default 'v2018-08-01'
- */
+    * The API version used in the project. Currently, the default and only value is `v2018-08-01`.
+    * @type {(keyof typeof ManagementProjectsGetResponseBody.ApiVersionEnum) | undefined}
+    * @default 'v2018-08-01'
+    */
 ManagementProjectsGetResponseBody.prototype['api_version'] = 'v2018-08-01';
 
 /**
- * Determines if the project is a sandbox project.
- * @member {Boolean} 
- */
+    * Determines if the project is a sandbox project.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['is_sandbox'] = undefined;
 
 /**
- * Webhook token used for authentication.
- * @member {String} 
- */
+    * Webhook token used for authentication.
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['webhook_token'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyDefaultCodeConfig} 
- */
+    * @type {ManagementProjectsGetResponseBodyDefaultCodeConfig | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['default_code_config'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsGetResponseBodyLimits} 
- */
+    * @type {ManagementProjectsGetResponseBodyLimits | undefined}
+    */
 ManagementProjectsGetResponseBody.prototype['limits'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>webhook_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsGetResponseBody['WebhookVersionEnum'] = {
+    /**
+     * Allowed values for the <code>webhook_version</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsGetResponseBody['WebhookVersionEnum'] = {
+    
+        /**
+         * value: "v2024-01-01"
+         * @constant
+         */
+        "v2024-01-01": "v2024-01-01"    
+    };
+
 
     /**
-     * value: "v2024-01-01"
-     * @constant
+     * Allowed values for the <code>api_version</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "v2024-01-01": "v2024-01-01"
-};
-
-
-/**
- * Allowed values for the <code>api_version</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsGetResponseBody['ApiVersionEnum'] = {
-
-    /**
-     * value: "v2018-08-01"
-     * @constant
-     */
-    "v2018-08-01": "v2018-08-01"
-};
+    ManagementProjectsGetResponseBody['ApiVersionEnum'] = {
+    
+        /**
+         * value: "v2018-08-01"
+         * @constant
+         */
+        "v2018-08-01": "v2018-08-01"    
+    };
 
 
 

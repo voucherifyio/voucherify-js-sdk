@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesTiersGetResponseBodyPoints model module.
  * @module model/LoyaltiesTiersGetResponseBodyPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTiersGetResponseBodyPoints {
     /**
      * Constructs a new <code>LoyaltiesTiersGetResponseBodyPoints</code>.
      * Defines range of loyalty tier in points.
-     * @alias module:model/LoyaltiesTiersGetResponseBodyPoints
+     * @alias LoyaltiesTiersGetResponseBodyPoints
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesTiersGetResponseBodyPoints {
     /**
      * Constructs a <code>LoyaltiesTiersGetResponseBodyPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTiersGetResponseBodyPoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTiersGetResponseBodyPoints} The populated <code>LoyaltiesTiersGetResponseBodyPoints</code> instance.
+     * @param {Partial<LoyaltiesTiersGetResponseBodyPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTiersGetResponseBodyPoints} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTiersGetResponseBodyPoints} The populated <code>LoyaltiesTiersGetResponseBodyPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesTiersGetResponseBodyPoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTiersGetResponseBodyPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTiersGetResponseBodyPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTiersGetResponseBodyPoints</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class LoyaltiesTiersGetResponseBodyPoints {
 
 
 /**
- * Bottom points threshold value.
- * @member {Number} 
- */
+    * Bottom points threshold value.
+    * @type {Number | undefined}
+    */
 LoyaltiesTiersGetResponseBodyPoints.prototype['from'] = undefined;
 
 /**
- * Top points threshold value.
- * @member {Number} 
- */
+    * Top points threshold value.
+    * @type {Number | undefined}
+    */
 LoyaltiesTiersGetResponseBodyPoints.prototype['to'] = undefined;
 
 

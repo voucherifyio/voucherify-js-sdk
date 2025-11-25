@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchemaSchema from './ManagementProjectsCustomEventSchemaSchema';
-
 /**
  * The ManagementProjectsCustomEventSchema model module.
  * @module model/ManagementProjectsCustomEventSchema
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchema {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchema</code>.
      * Object containing the response to creating a custom event schema.
-     * @alias module:model/ManagementProjectsCustomEventSchema
+     * @alias ManagementProjectsCustomEventSchema
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsCustomEventSchema {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchema</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchema} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchema} The populated <code>ManagementProjectsCustomEventSchema</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchema>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchema} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchema} The populated <code>ManagementProjectsCustomEventSchema</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class ManagementProjectsCustomEventSchema {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchema</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchema>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchema</code>.
      */
     static validateJSON(data) {
@@ -104,58 +103,58 @@ class ManagementProjectsCustomEventSchema {
 
 
 /**
- * Unique identifier of the custom event schema.
- * @member {String} 
- */
+    * Unique identifier of the custom event schema.
+    * @type {String | undefined}
+    */
 ManagementProjectsCustomEventSchema.prototype['id'] = undefined;
 
 /**
- * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
- * @member {String} 
- */
+    * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
+    * @type {String | undefined}
+    */
 ManagementProjectsCustomEventSchema.prototype['name'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCustomEventSchemaSchema} 
- */
+    * @type {ManagementProjectsCustomEventSchemaSchema | undefined}
+    */
 ManagementProjectsCustomEventSchema.prototype['schema'] = undefined;
 
 /**
- * Timestamp representing the date and time when the custom event schema was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the custom event schema was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsCustomEventSchema.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the custom event schema was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the custom event schema was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsCustomEventSchema.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ManagementProjectsCustomEventSchema.ObjectEnum} 
- * @default 'custom-event-schema'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ManagementProjectsCustomEventSchema.ObjectEnum) | undefined}
+    * @default 'custom-event-schema'
+    */
 ManagementProjectsCustomEventSchema.prototype['object'] = 'custom-event-schema';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCustomEventSchema['ObjectEnum'] = {
-
     /**
-     * value: "custom-event-schema"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "custom-event-schema": "custom-event-schema"
-};
+    ManagementProjectsCustomEventSchema['ObjectEnum'] = {
+    
+        /**
+         * value: "custom-event-schema"
+         * @constant
+         */
+        "custom-event-schema": "custom-event-schema"    
+    };
 
 
 

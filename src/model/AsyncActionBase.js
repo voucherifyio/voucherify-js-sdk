@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The AsyncActionBase model module.
  * @module model/AsyncActionBase
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AsyncActionBase {
     /**
      * Constructs a new <code>AsyncActionBase</code>.
      * This is an object representing an asynchronous action.
-     * @alias module:model/AsyncActionBase
+     * @alias AsyncActionBase
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class AsyncActionBase {
     /**
      * Constructs a <code>AsyncActionBase</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AsyncActionBase} obj Optional instance to populate.
-     * @returns {module:model/AsyncActionBase} The populated <code>AsyncActionBase</code> instance.
+     * @param {Partial<AsyncActionBase>} data The plain JavaScript object bearing properties of interest.
+     * @param {AsyncActionBase} [obj] Optional instance to populate.
+     * @returns {AsyncActionBase} The populated <code>AsyncActionBase</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -85,7 +84,7 @@ class AsyncActionBase {
 
     /**
      * Validates the JSON data with respect to <code>AsyncActionBase</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AsyncActionBase>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AsyncActionBase</code>.
      */
     static validateJSON(data) {
@@ -123,143 +122,143 @@ class AsyncActionBase {
 
 
 /**
- * Async action unique ID.
- * @member {String} 
- */
+    * Async action unique ID.
+    * @type {String | undefined}
+    */
 AsyncActionBase.prototype['id'] = undefined;
 
 /**
- * Type of async action.
- * @member {String} 
- */
+    * Type of async action.
+    * @type {String | undefined}
+    */
 AsyncActionBase.prototype['type'] = undefined;
 
 /**
- * Status of the async action. Informs you whether the async action has already been completed.
- * @member {module:model/AsyncActionBase.StatusEnum} 
- */
+    * Status of the async action. Informs you whether the async action has already been completed.
+    * @type {(keyof typeof AsyncActionBase.StatusEnum) | undefined}
+    */
 AsyncActionBase.prototype['status'] = undefined;
 
 /**
- * Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
- * @member {module:model/AsyncActionBase.OperationStatusEnum} 
- */
+    * Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
+    * @type {(keyof typeof AsyncActionBase.OperationStatusEnum) | undefined}
+    */
 AsyncActionBase.prototype['operation_status'] = undefined;
 
 /**
- * Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 AsyncActionBase.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 AsyncActionBase.prototype['updated_at'] = undefined;
 
 /**
- * Unique request ID.
- * @member {String} 
- */
+    * Unique request ID.
+    * @type {String | undefined}
+    */
 AsyncActionBase.prototype['request_id'] = undefined;
 
 /**
- * The length of time it took to process the request in milliseconds.
- * @member {Number} 
- */
+    * The length of time it took to process the request in milliseconds.
+    * @type {Number | undefined}
+    */
 AsyncActionBase.prototype['processing_time'] = undefined;
 
 /**
- * % progress to completion of the asynchronous action.
- * @member {Number} 
- */
+    * % progress to completion of the asynchronous action.
+    * @type {Number | undefined}
+    */
 AsyncActionBase.prototype['progress'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the `async_action`.
- * @member {module:model/AsyncActionBase.ObjectEnum} 
- * @default 'async_action'
- */
+    * The type of the object represented by JSON. This object stores information about the `async_action`.
+    * @type {(keyof typeof AsyncActionBase.ObjectEnum) | undefined}
+    * @default 'async_action'
+    */
 AsyncActionBase.prototype['object'] = 'async_action';
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionBase['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    AsyncActionBase['StatusEnum'] = {
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE",
+    
+        /**
+         * value: "ENQUEUED"
+         * @constant
+         */
+        "ENQUEUED": "ENQUEUED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS"    
+    };
+
 
     /**
-     * value: "DONE"
-     * @constant
+     * Allowed values for the <code>operation_status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DONE": "DONE",
+    AsyncActionBase['OperationStatusEnum'] = {
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "UNKNOWN"
+         * @constant
+         */
+        "UNKNOWN": "UNKNOWN"    
+    };
+
 
     /**
-     * value: "ENQUEUED"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ENQUEUED": "ENQUEUED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS"
-};
-
-
-/**
- * Allowed values for the <code>operation_status</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionBase['OperationStatusEnum'] = {
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "SUCCESS"
-     * @constant
-     */
-    "SUCCESS": "SUCCESS",
-
-    /**
-     * value: "UNKNOWN"
-     * @constant
-     */
-    "UNKNOWN": "UNKNOWN"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionBase['ObjectEnum'] = {
-
-    /**
-     * value: "async_action"
-     * @constant
-     */
-    "async_action": "async_action"
-};
+    AsyncActionBase['ObjectEnum'] = {
+    
+        /**
+         * value: "async_action"
+         * @constant
+         */
+        "async_action": "async_action"    
+    };
 
 
 

@@ -17,17 +17,16 @@ import LoyaltyPendingPointsDetailsEvent from './LoyaltyPendingPointsDetailsEvent
 import LoyaltyPendingPointsDetailsHolderLoyaltyTier from './LoyaltyPendingPointsDetailsHolderLoyaltyTier';
 import LoyaltyPendingPointsDetailsLoyaltyTier from './LoyaltyPendingPointsDetailsLoyaltyTier';
 import LoyaltyPendingPointsDetailsOrder from './LoyaltyPendingPointsDetailsOrder';
-
 /**
  * The LoyaltyPendingPointsDetails model module.
  * @module model/LoyaltyPendingPointsDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPointsDetails {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetails</code>.
      * Details about how the pending points were earned.
-     * @alias module:model/LoyaltyPendingPointsDetails
+     * @alias LoyaltyPendingPointsDetails
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class LoyaltyPendingPointsDetails {
     /**
      * Constructs a <code>LoyaltyPendingPointsDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPointsDetails} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPointsDetails} The populated <code>LoyaltyPendingPointsDetails</code> instance.
+     * @param {Partial<LoyaltyPendingPointsDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPointsDetails} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPointsDetails} The populated <code>LoyaltyPendingPointsDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class LoyaltyPendingPointsDetails {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPointsDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPointsDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPointsDetails</code>.
      */
     static validateJSON(data) {
@@ -108,28 +107,28 @@ class LoyaltyPendingPointsDetails {
 
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsLoyaltyTier} 
- */
+    * @type {LoyaltyPendingPointsDetailsLoyaltyTier | undefined}
+    */
 LoyaltyPendingPointsDetails.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsHolderLoyaltyTier} 
- */
+    * @type {LoyaltyPendingPointsDetailsHolderLoyaltyTier | undefined}
+    */
 LoyaltyPendingPointsDetails.prototype['holder_loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsEvent} 
- */
+    * @type {LoyaltyPendingPointsDetailsEvent | undefined}
+    */
 LoyaltyPendingPointsDetails.prototype['event'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsEarningRule} 
- */
+    * @type {LoyaltyPendingPointsDetailsEarningRule | undefined}
+    */
 LoyaltyPendingPointsDetails.prototype['earning_rule'] = undefined;
 
 /**
- * @member {module:model/LoyaltyPendingPointsDetailsOrder} 
- */
+    * @type {LoyaltyPendingPointsDetailsOrder | undefined}
+    */
 LoyaltyPendingPointsDetails.prototype['order'] = undefined;
 
 

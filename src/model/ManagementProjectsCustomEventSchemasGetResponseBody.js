@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchemasGetResponseBodySchema from './ManagementProjectsCustomEventSchemasGetResponseBodySchema';
-
 /**
  * The ManagementProjectsCustomEventSchemasGetResponseBody model module.
  * @module model/ManagementProjectsCustomEventSchemasGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasGetResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasGetResponseBody</code>.
      * Response body schema for **GET** &#x60;/management/v1/projects/{projectId}/custom-event-schema/{customEventSchemaId}&#x60;.
-     * @alias module:model/ManagementProjectsCustomEventSchemasGetResponseBody
+     * @alias ManagementProjectsCustomEventSchemasGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsCustomEventSchemasGetResponseBody {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasGetResponseBody} The populated <code>ManagementProjectsCustomEventSchemasGetResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasGetResponseBody} The populated <code>ManagementProjectsCustomEventSchemasGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class ManagementProjectsCustomEventSchemasGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,58 +103,58 @@ class ManagementProjectsCustomEventSchemasGetResponseBody {
 
 
 /**
- * Unique identifier of the custom event schema.
- * @member {String} 
- */
+    * Unique identifier of the custom event schema.
+    * @type {String | undefined}
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['id'] = undefined;
 
 /**
- * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
- * @member {String} 
- */
+    * User-defined name of the custom event. This is also shown in **Project Settings** > **Event Schema** in the Voucherify Dashboard.
+    * @type {String | undefined}
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsCustomEventSchemasGetResponseBodySchema} 
- */
+    * @type {ManagementProjectsCustomEventSchemasGetResponseBodySchema | undefined}
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['schema'] = undefined;
 
 /**
- * Timestamp representing the date and time when the custom event schema was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the custom event schema was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the custom event schema was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the custom event schema was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ManagementProjectsCustomEventSchemasGetResponseBody.ObjectEnum} 
- * @default 'custom-event-schema'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ManagementProjectsCustomEventSchemasGetResponseBody.ObjectEnum) | undefined}
+    * @default 'custom-event-schema'
+    */
 ManagementProjectsCustomEventSchemasGetResponseBody.prototype['object'] = 'custom-event-schema';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCustomEventSchemasGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "custom-event-schema"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "custom-event-schema": "custom-event-schema"
-};
+    ManagementProjectsCustomEventSchemasGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "custom-event-schema"
+         * @constant
+         */
+        "custom-event-schema": "custom-event-schema"    
+    };
 
 
 

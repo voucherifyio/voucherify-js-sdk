@@ -12,18 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductCollectionsGetResponseBodyProductsItem model module.
  * @module model/ProductCollectionsGetResponseBodyProductsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsGetResponseBodyProductsItem {
     /**
      * Constructs a new <code>ProductCollectionsGetResponseBodyProductsItem</code>.
-     * @alias module:model/ProductCollectionsGetResponseBodyProductsItem
-     * @param id {String} The product ID.
-     * @param object {module:model/ProductCollectionsGetResponseBodyProductsItem.ObjectEnum} Denotes the type of the object represented by the ID.
+     * @alias ProductCollectionsGetResponseBodyProductsItem
+     * @param {String} id The product ID.
+     * @param {ProductCollectionsGetResponseBodyProductsItem.ObjectEnum} object Denotes the type of the object represented by the ID.
      */
     constructor(id, object) { 
         
@@ -43,9 +42,9 @@ class ProductCollectionsGetResponseBodyProductsItem {
     /**
      * Constructs a <code>ProductCollectionsGetResponseBodyProductsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsGetResponseBodyProductsItem} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsGetResponseBodyProductsItem} The populated <code>ProductCollectionsGetResponseBodyProductsItem</code> instance.
+     * @param {Partial<ProductCollectionsGetResponseBodyProductsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsGetResponseBodyProductsItem} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsGetResponseBodyProductsItem} The populated <code>ProductCollectionsGetResponseBodyProductsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class ProductCollectionsGetResponseBodyProductsItem {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsGetResponseBodyProductsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsGetResponseBodyProductsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsGetResponseBodyProductsItem</code>.
      */
     static validateJSON(data) {
@@ -98,46 +97,46 @@ class ProductCollectionsGetResponseBodyProductsItem {
 ProductCollectionsGetResponseBodyProductsItem.RequiredProperties = ["id", "object"];
 
 /**
- * The product ID.
- * @member {String} 
- */
+    * The product ID.
+    * @type {String}
+    */
 ProductCollectionsGetResponseBodyProductsItem.prototype['id'] = undefined;
 
 /**
- * Product ID for SKUs.
- * @member {String} 
- */
+    * Product ID for SKUs.
+    * @type {String | undefined}
+    */
 ProductCollectionsGetResponseBodyProductsItem.prototype['product_id'] = undefined;
 
 /**
- * Denotes the type of the object represented by the ID.
- * @member {module:model/ProductCollectionsGetResponseBodyProductsItem.ObjectEnum} 
- */
+    * Denotes the type of the object represented by the ID.
+    * @type {(keyof typeof ProductCollectionsGetResponseBodyProductsItem.ObjectEnum)}
+    */
 ProductCollectionsGetResponseBodyProductsItem.prototype['object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsGetResponseBodyProductsItem['ObjectEnum'] = {
-
     /**
-     * value: "sku"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "sku": "sku",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product"
-};
+    ProductCollectionsGetResponseBodyProductsItem['ObjectEnum'] = {
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesTransferPoints model module.
  * @module model/LoyaltiesTransferPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTransferPoints {
     /**
      * Constructs a new <code>LoyaltiesTransferPoints</code>.
-     * @alias module:model/LoyaltiesTransferPoints
+     * @alias LoyaltiesTransferPoints
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LoyaltiesTransferPoints {
     /**
      * Constructs a <code>LoyaltiesTransferPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTransferPoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTransferPoints} The populated <code>LoyaltiesTransferPoints</code> instance.
+     * @param {Partial<LoyaltiesTransferPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTransferPoints} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTransferPoints} The populated <code>LoyaltiesTransferPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesTransferPoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTransferPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTransferPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTransferPoints</code>.
      */
     static validateJSON(data) {
@@ -91,27 +90,27 @@ class LoyaltiesTransferPoints {
 
 
 /**
- * Unique loyalty card code from which the user wants to transfer loyalty points (source).
- * @member {String} 
- */
+    * Unique loyalty card code from which the user wants to transfer loyalty points (source).
+    * @type {String | undefined}
+    */
 LoyaltiesTransferPoints.prototype['code'] = undefined;
 
 /**
- * The number of loyalty points that the user wants to transfer to another loyalty card. The number of points cannot be higher than the current balance on the loyalty card (source).
- * @member {Number} 
- */
+    * The number of loyalty points that the user wants to transfer to another loyalty card. The number of points cannot be higher than the current balance on the loyalty card (source).
+    * @type {Number | undefined}
+    */
 LoyaltiesTransferPoints.prototype['points'] = undefined;
 
 /**
- * Reason for the transfer.
- * @member {String} 
- */
+    * Reason for the transfer.
+    * @type {String | undefined}
+    */
 LoyaltiesTransferPoints.prototype['reason'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
+    * @type {String | undefined}
+    */
 LoyaltiesTransferPoints.prototype['source_id'] = undefined;
 
 

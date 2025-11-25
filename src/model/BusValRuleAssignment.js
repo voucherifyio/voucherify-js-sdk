@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The BusValRuleAssignment model module.
  * @module model/BusValRuleAssignment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class BusValRuleAssignment {
     /**
      * Constructs a new <code>BusValRuleAssignment</code>.
      * Assignments of business validation rule
-     * @alias module:model/BusValRuleAssignment
+     * @alias BusValRuleAssignment
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class BusValRuleAssignment {
     /**
      * Constructs a <code>BusValRuleAssignment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BusValRuleAssignment} obj Optional instance to populate.
-     * @returns {module:model/BusValRuleAssignment} The populated <code>BusValRuleAssignment</code> instance.
+     * @param {Partial<BusValRuleAssignment>} data The plain JavaScript object bearing properties of interest.
+     * @param {BusValRuleAssignment} [obj] Optional instance to populate.
+     * @returns {BusValRuleAssignment} The populated <code>BusValRuleAssignment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -82,7 +81,7 @@ class BusValRuleAssignment {
 
     /**
      * Validates the JSON data with respect to <code>BusValRuleAssignment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<BusValRuleAssignment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>BusValRuleAssignment</code>.
      */
     static validateJSON(data) {
@@ -124,104 +123,104 @@ class BusValRuleAssignment {
 
 
 /**
- * The unique identifier for a assignment
- * @member {String} 
- */
+    * The unique identifier for a assignment
+    * @type {String | undefined}
+    */
 BusValRuleAssignment.prototype['id'] = undefined;
 
 /**
- * The unique identifier for a rule
- * @member {String} 
- */
+    * The unique identifier for a rule
+    * @type {String | undefined}
+    */
 BusValRuleAssignment.prototype['rule_id'] = undefined;
 
 /**
- * The unique identifier for a related object
- * @member {String} 
- */
+    * The unique identifier for a related object
+    * @type {String | undefined}
+    */
 BusValRuleAssignment.prototype['related_object_id'] = undefined;
 
 /**
- * The type of related object
- * @member {String} 
- */
+    * The type of related object
+    * @type {String | undefined}
+    */
 BusValRuleAssignment.prototype['related_object_type'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 BusValRuleAssignment.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 BusValRuleAssignment.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/BusValRuleAssignment.ObjectEnum} 
- * @default 'validation_rules_assignment'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof BusValRuleAssignment.ObjectEnum) | undefined}
+    * @default 'validation_rules_assignment'
+    */
 BusValRuleAssignment.prototype['object'] = 'validation_rules_assignment';
 
 /**
- * The validation status of the assignment
- * @member {module:model/BusValRuleAssignment.ValidationStatusEnum} 
- */
+    * The validation status of the assignment
+    * @type {(keyof typeof BusValRuleAssignment.ValidationStatusEnum) | undefined}
+    */
 BusValRuleAssignment.prototype['validation_status'] = undefined;
 
 /**
- * The list of omitted rules
- * @member {Array.<String>} 
- */
+    * The list of omitted rules
+    * @type {Array.<String> | undefined}
+    */
 BusValRuleAssignment.prototype['validation_omitted_rules'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-BusValRuleAssignment['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    BusValRuleAssignment['ObjectEnum'] = {
+    
+        /**
+         * value: "validation_rules_assignment"
+         * @constant
+         */
+        "validation_rules_assignment": "validation_rules_assignment"    
+    };
+
 
     /**
-     * value: "validation_rules_assignment"
-     * @constant
+     * Allowed values for the <code>validation_status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "validation_rules_assignment": "validation_rules_assignment"
-};
-
-
-/**
- * Allowed values for the <code>validation_status</code> property.
- * @enum {String}
- * @readonly
- */
-BusValRuleAssignment['ValidationStatusEnum'] = {
-
-    /**
-     * value: "VALID"
-     * @constant
-     */
-    "VALID": "VALID",
-
-    /**
-     * value: "PARTIALLY_VALID"
-     * @constant
-     */
-    "PARTIALLY_VALID": "PARTIALLY_VALID",
-
-    /**
-     * value: "INVALID"
-     * @constant
-     */
-    "INVALID": "INVALID"
-};
+    BusValRuleAssignment['ValidationStatusEnum'] = {
+    
+        /**
+         * value: "VALID"
+         * @constant
+         */
+        "VALID": "VALID",
+    
+        /**
+         * value: "PARTIALLY_VALID"
+         * @constant
+         */
+        "PARTIALLY_VALID": "PARTIALLY_VALID",
+    
+        /**
+         * value: "INVALID"
+         * @constant
+         */
+        "INVALID": "INVALID"    
+    };
 
 
 

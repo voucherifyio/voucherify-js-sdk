@@ -43,13 +43,13 @@ import ParametersFiltersListCampaignTransactions from '../model/ParametersFilter
 /**
 * Campaigns service.
 * @module api/CampaignsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class CampaignsApi {
 
     /**
     * Constructs a new CampaignsApi. 
-    * @alias module:api/CampaignsApi
+    * @alias CampaignsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -61,9 +61,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the addVoucherWithSpecificCodeToCampaign operation.
-     * @callback module:api/CampaignsApi~addVoucherWithSpecificCodeToCampaignCallback
+     * @callback addVoucherWithSpecificCodeToCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsVouchersCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsVouchersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -72,9 +72,10 @@ export default class CampaignsApi {
      * This method gives a possibility to add a new voucher to an existing campaign. The voucher definition will be inherited from the definition kept in the campaign profile. However, you are able to overwrite a few properties inherited from the campaign.
      * @param {String} campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {String} code A custom **code** that identifies the voucher.
-     * @param {module:model/CampaignsVouchersCreateRequestBody} campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite.
-     * @param {module:api/CampaignsApi~addVoucherWithSpecificCodeToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsVouchersCreateResponseBody}
+     * @param {CampaignsVouchersCreateRequestBody} campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite.
+     * @param {addVoucherWithSpecificCodeToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsVouchersCreateResponseBody}
+     * @returns {Promise<(CampaignsVouchersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsVouchersCreateResponseBody` object or with `undefined`.
      */
     addVoucherWithSpecificCodeToCampaign(campaignId, code, campaignsVouchersCreateRequestBody, callback) {
       let postBody = campaignsVouchersCreateRequestBody;
@@ -106,9 +107,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the addVouchersToCampaign operation.
-     * @callback module:api/CampaignsApi~addVouchersToCampaignCallback
+     * @callback addVouchersToCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsVouchersCreateCombinedResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsVouchersCreateCombinedResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -116,12 +117,13 @@ export default class CampaignsApi {
      * Add Vouchers to Campaign
      * This method gives the possibility to push new vouchers to an existing campaign. New vouchers will inherit properties from the campaign profile. However, it is possible to overwrite some of them in the request body. If you provide an optional code_config parameter with a voucher code configuration, then it will be used to generate new voucher codes. Otherwise, the voucher code configuration from the campaign will be used. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:model/CampaignsVouchersCreateInBulkRequestBody} campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite.
+     * @param {CampaignsVouchersCreateInBulkRequestBody} campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite.
      * @param {{
         vouchersCount?: Number,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~addVouchersToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsVouchersCreateCombinedResponseBody}
+     * @param {addVouchersToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsVouchersCreateCombinedResponseBody}
+     * @returns {Promise<(CampaignsVouchersCreateCombinedResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsVouchersCreateCombinedResponseBody` object or with `undefined`.
      */
     addVouchersToCampaign(campaignId, campaignsVouchersCreateInBulkRequestBody, opts, callback) {
       opts = opts || {};
@@ -153,18 +155,19 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the createCampaign operation.
-     * @callback module:api/CampaignsApi~createCampaignCallback
+     * @callback createCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Campaign
      * Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.    📘 Global uniqueness  All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.    🚧 Code generation status  This is an asynchronous action; you cant read or modify a newly created campaign until the code generation is completed. See the creation_status field in the [campaign object](/api-reference/campaigns/campaign-object) description. 🚧 Standalone Vouchers and Campaigns In version [v20241004](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004), generic (standalone) vouchers created through the Voucherify dashboard create a campaign for that voucher. However, you cannot create a standalone discount or gift voucher campaign with the type: STANDALONE through the API. Voucherify developers work on adding that feature. Follow the [Voucherify Release Notes](https://support.voucherify.io/article/23-whats-new-in-voucherify) for more details about released features.
-     * @param {module:model/CampaignsCreateRequestBody} campaignsCreateRequestBody Specify the details of the campaign that you would like to create.
-     * @param {module:api/CampaignsApi~createCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsCreateResponseBody}
+     * @param {CampaignsCreateRequestBody} campaignsCreateRequestBody Specify the details of the campaign that you would like to create.
+     * @param {createCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsCreateResponseBody}
+     * @returns {Promise<(CampaignsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsCreateResponseBody` object or with `undefined`.
      */
     createCampaign(campaignsCreateRequestBody, callback) {
       let postBody = campaignsCreateRequestBody;
@@ -192,9 +195,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the deleteCampaign operation.
-     * @callback module:api/CampaignsApi~deleteCampaignCallback
+     * @callback deleteCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsDeleteResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsDeleteResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -205,8 +208,9 @@ export default class CampaignsApi {
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~deleteCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsDeleteResponseBody}
+     * @param {deleteCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsDeleteResponseBody}
+     * @returns {Promise<(CampaignsDeleteResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsDeleteResponseBody` object or with `undefined`.
      */
     deleteCampaign(campaignId, opts, callback) {
       opts = opts || {};
@@ -237,7 +241,7 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the disableCampaign operation.
-     * @callback module:api/CampaignsApi~disableCampaignCallback
+     * @callback disableCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param {Object} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
@@ -247,8 +251,9 @@ export default class CampaignsApi {
      * Disable Campaign
      * There are various times when youll want to manage a campaigns accessibility. This can be done by two API methods for managing the campaign state - *enable* and *disable*.   Sets campaign state to **inactive**. The vouchers in this campaign can no longer be redeemed.
      * @param {String} campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:api/CampaignsApi~disableCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {disableCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
+     * @returns {Promise<(Object | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `Object` object or with `undefined`.
      */
     disableCampaign(campaignId, callback) {
       let postBody = null;
@@ -277,7 +282,7 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the enableCampaign operation.
-     * @callback module:api/CampaignsApi~enableCampaignCallback
+     * @callback enableCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param {Object} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
@@ -287,8 +292,9 @@ export default class CampaignsApi {
      * Enable Campaign
      * There are various times when youll want to manage a campaigns accessibility. This can be done by two API methods for managing the campaign state - *enable* and *disable*.   Sets campaign state to **active**. The vouchers in this campaign can be redeemed - only if the redemption occurs after the start date of the campaign and voucher and the voucher and campaign are not expired.
      * @param {String} campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
-     * @param {module:api/CampaignsApi~enableCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {enableCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
+     * @returns {Promise<(Object | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `Object` object or with `undefined`.
      */
     enableCampaign(campaignId, callback) {
       let postBody = null;
@@ -317,9 +323,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the exportCampaignTransactions operation.
-     * @callback module:api/CampaignsApi~exportCampaignTransactionsCallback
+     * @callback exportCampaignTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsTransactionsExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -327,9 +333,10 @@ export default class CampaignsApi {
      * Export Campaign Transactions
      * Export transactions is an asynchronous process that generates a CSV file with the data about credit movements on all gift cards or point movements on all loyalty cards in a given campaign. To export transactions: 1. In the export request, use parameters to select which fields will be exported, in what order, and which data will be filtered. 2. Use the returned id to track the export status with the [GET Export](/api-reference/exports/get-export) method. 3. In the GET Export method, when the returned status field has the DONE value, the export file has been generated. 4. Use the URL in the result property to download the file. You must be logged to your Voucherify account on a given cluster in the browser to be able to download the file. An export request will almost always result in a single file being generated by the system. However, when the data volume is large, the system may split the results into multiple files. An example export file can look as follows:    👍 Export Loyalty Campaign Transactions  For loyalty campaigns, this method works in the same way the [POST Export Loyalty Campaign Transactions](/api-reference/loyalties/export-loyalty-campaign-transactions) does.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:model/CampaignsTransactionsExportCreateRequestBody} campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export.
-     * @param {module:api/CampaignsApi~exportCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsTransactionsExportCreateResponseBody}
+     * @param {CampaignsTransactionsExportCreateRequestBody} campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export.
+     * @param {exportCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsTransactionsExportCreateResponseBody}
+     * @returns {Promise<(CampaignsTransactionsExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsTransactionsExportCreateResponseBody` object or with `undefined`.
      */
     exportCampaignTransactions(campaignId, campaignsTransactionsExportCreateRequestBody, callback) {
       let postBody = campaignsTransactionsExportCreateRequestBody;
@@ -359,9 +366,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the getCampaign operation.
-     * @callback module:api/CampaignsApi~getCampaignCallback
+     * @callback getCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsGetResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -369,8 +376,9 @@ export default class CampaignsApi {
      * Get Campaign
      * Retrieves the campaign with the given campaign ID or campaign name.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:api/CampaignsApi~getCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsGetResponseBody}
+     * @param {getCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsGetResponseBody}
+     * @returns {Promise<(CampaignsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsGetResponseBody` object or with `undefined`.
      */
     getCampaign(campaignId, callback) {
       let postBody = null;
@@ -399,9 +407,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the getCampaignSummary operation.
-     * @callback module:api/CampaignsApi~getCampaignSummaryCallback
+     * @callback getCampaignSummaryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsSummaryGetResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsSummaryGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -413,8 +421,9 @@ export default class CampaignsApi {
         startDate?: Date,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~getCampaignSummaryCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsSummaryGetResponseBody}
+     * @param {getCampaignSummaryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsSummaryGetResponseBody}
+     * @returns {Promise<(CampaignsSummaryGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsSummaryGetResponseBody` object or with `undefined`.
      */
     getCampaignSummary(campaignId, opts, callback) {
       opts = opts || {};
@@ -446,9 +455,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the importVouchersToCampaign operation.
-     * @callback module:api/CampaignsApi~importVouchersToCampaignCallback
+     * @callback importVouchersToCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsImportCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsImportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -456,9 +465,10 @@ export default class CampaignsApi {
      * Import Vouchers to Campaign
      * Imports vouchers to an **existing** campaign. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
      * @param {String} campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {Array.<module:model/CampaignsImportVoucherItem>} campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings.
-     * @param {module:api/CampaignsApi~importVouchersToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsImportCreateResponseBody}
+     * @param {Array.<CampaignsImportVoucherItem>} campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings.
+     * @param {importVouchersToCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsImportCreateResponseBody}
+     * @returns {Promise<(CampaignsImportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsImportCreateResponseBody` object or with `undefined`.
      */
     importVouchersToCampaign(campaignId, campaignsImportVoucherItem, callback) {
       let postBody = campaignsImportVoucherItem;
@@ -488,9 +498,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the importVouchersToCampaignUsingCsv operation.
-     * @callback module:api/CampaignsApi~importVouchersToCampaignUsingCsvCallback
+     * @callback importVouchersToCampaignUsingCsvCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsImportCsvCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsImportCsvCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -501,8 +511,9 @@ export default class CampaignsApi {
      * @param {{
         file?: File,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~importVouchersToCampaignUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsImportCsvCreateResponseBody}
+     * @param {importVouchersToCampaignUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsImportCsvCreateResponseBody}
+     * @returns {Promise<(CampaignsImportCsvCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsImportCsvCreateResponseBody` object or with `undefined`.
      */
     importVouchersToCampaignUsingCsv(campaignId, opts, callback) {
       opts = opts || {};
@@ -533,9 +544,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the listCampaignTransactions operation.
-     * @callback module:api/CampaignsApi~listCampaignTransactionsCallback
+     * @callback listCampaignTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsTransactionsListResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsTransactionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -545,12 +556,13 @@ export default class CampaignsApi {
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListTransactions,
+        order?: Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParametersFiltersListCampaignTransactions,
+        filters?: ParametersFiltersListCampaignTransactions,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~listCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsTransactionsListResponseBody}
+     * @param {listCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsTransactionsListResponseBody}
+     * @returns {Promise<(CampaignsTransactionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsTransactionsListResponseBody` object or with `undefined`.
      */
     listCampaignTransactions(campaignId, opts, callback) {
       opts = opts || {};
@@ -584,9 +596,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the listCampaigns operation.
-     * @callback module:api/CampaignsApi~listCampaignsCallback
+     * @callback listCampaignsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsListResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -596,16 +608,17 @@ export default class CampaignsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        campaignType?: module:model/ParameterCampaignType,
-        expand?: module:model/ParameterExpandListCampaigns,
-        campaignStatus?: module:model/ParameterCampaignStatusListCampaigns,
+        campaignType?: Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">,
+        expand?: Exclude<keyof typeof ParameterExpandListCampaigns, "prototype" | "constructFromObject">,
+        campaignStatus?: Exclude<keyof typeof ParameterCampaignStatusListCampaigns, "prototype" | "constructFromObject">,
         isReferralCode?: Boolean,
-        order?: module:model/ParameterOrderListCampaigns,
-        filters?: module:model/ParameterFiltersListCampaigns,
-        accessSettings?: module:model/ParameterCampaignsAccessSetttings,
+        order?: Exclude<keyof typeof ParameterOrderListCampaigns, "prototype" | "constructFromObject">,
+        filters?: ParameterFiltersListCampaigns,
+        accessSettings?: ParameterCampaignsAccessSetttings,
      }} [opts] Optional parameters
-     * @param {module:api/CampaignsApi~listCampaignsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsListResponseBody}
+     * @param {listCampaignsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsListResponseBody}
+     * @returns {Promise<(CampaignsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsListResponseBody` object or with `undefined`.
      */
     listCampaigns(opts, callback) {
       opts = opts || {};
@@ -642,9 +655,9 @@ export default class CampaignsApi {
 
     /**
      * Callback function to receive the result of the updateCampaign operation.
-     * @callback module:api/CampaignsApi~updateCampaignCallback
+     * @callback updateCampaignCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -652,9 +665,10 @@ export default class CampaignsApi {
      * Update Campaign
      * Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.  Fields other than the ones listed in the request body wont be modified. Even if provided, they will be silently skipped.     🚧 Vouchers will be affected  This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:model/CampaignsUpdateRequestBody} campaignsUpdateRequestBody Specify the campaign parameters to be updated.
-     * @param {module:api/CampaignsApi~updateCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsUpdateResponseBody}
+     * @param {CampaignsUpdateRequestBody} campaignsUpdateRequestBody Specify the campaign parameters to be updated.
+     * @param {updateCampaignCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsUpdateResponseBody}
+     * @returns {Promise<(CampaignsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsUpdateResponseBody` object or with `undefined`.
      */
     updateCampaign(campaignId, campaignsUpdateRequestBody, callback) {
       let postBody = campaignsUpdateRequestBody;

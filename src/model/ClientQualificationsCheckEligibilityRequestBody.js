@@ -16,17 +16,16 @@ import ClientQualificationsCheckEligibilityRequestBodySession from './ClientQual
 import Customer from './Customer';
 import Order from './Order';
 import QualificationsOption from './QualificationsOption';
-
 /**
  * The ClientQualificationsCheckEligibilityRequestBody model module.
  * @module model/ClientQualificationsCheckEligibilityRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientQualificationsCheckEligibilityRequestBody {
     /**
      * Constructs a new <code>ClientQualificationsCheckEligibilityRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/qualifications&#x60;.
-     * @alias module:model/ClientQualificationsCheckEligibilityRequestBody
+     * @alias ClientQualificationsCheckEligibilityRequestBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ClientQualificationsCheckEligibilityRequestBody {
     /**
      * Constructs a <code>ClientQualificationsCheckEligibilityRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientQualificationsCheckEligibilityRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ClientQualificationsCheckEligibilityRequestBody} The populated <code>ClientQualificationsCheckEligibilityRequestBody</code> instance.
+     * @param {Partial<ClientQualificationsCheckEligibilityRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientQualificationsCheckEligibilityRequestBody} [obj] Optional instance to populate.
+     * @returns {ClientQualificationsCheckEligibilityRequestBody} The populated <code>ClientQualificationsCheckEligibilityRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class ClientQualificationsCheckEligibilityRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientQualificationsCheckEligibilityRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientQualificationsCheckEligibilityRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientQualificationsCheckEligibilityRequestBody</code>.
      */
     static validateJSON(data) {
@@ -117,102 +116,102 @@ class ClientQualificationsCheckEligibilityRequestBody {
 
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['order'] = undefined;
 
 /**
- * Is correspondent to Customer's source_id
- * @member {String} 
- */
+    * Is correspondent to Customer's source_id
+    * @type {String | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['tracking_id'] = undefined;
 
 /**
- * Defines the scenario Voucherify should consider during the qualification process.  - `ALL` - Scenario that returns all redeemables available for the customer in one API request. This scenario is used by default when no value is selected. - `CUSTOMER_WALLET` - returns vouchers applicable to the customer's cart based on the vouchers assigned to the customer's profile. - `AUDIENCE_ONLY` - returns all vouchers, promotion tiers, and campaigns available to the customer. Voucherify validates the rules based on the customer profile only. - `PRODUCTS` - returns all promotions available for the products (when a discount is defined to be applied to the item or when the item is required in the validation rule). - `PRODUCTS_DISCOUNT` - returns all promotions available for products when a discount is defined as applicable to specific item(s). - `PROMOTION_STACKS` - returns the applicable promotion stacks. - `PRODUCTS_BY_CUSTOMER` - returns all promotions available for a customer for the products (when a discount is defined to be applied to the item or when the item is required in the validation rule). - `PRODUCTS_DISCOUNT_BY_CUSTOMER` - returns all promotions available for a customer for products when a discount is defined as applicable to specific item(s).
- * @member {module:model/ClientQualificationsCheckEligibilityRequestBody.ScenarioEnum} 
- */
+    * Defines the scenario Voucherify should consider during the qualification process.  - `ALL` - Scenario that returns all redeemables available for the customer in one API request. This scenario is used by default when no value is selected. - `CUSTOMER_WALLET` - returns vouchers applicable to the customer's cart based on the vouchers assigned to the customer's profile. - `AUDIENCE_ONLY` - returns all vouchers, promotion tiers, and campaigns available to the customer. Voucherify validates the rules based on the customer profile only. - `PRODUCTS` - returns all promotions available for the products (when a discount is defined to be applied to the item or when the item is required in the validation rule). - `PRODUCTS_DISCOUNT` - returns all promotions available for products when a discount is defined as applicable to specific item(s). - `PROMOTION_STACKS` - returns the applicable promotion stacks. - `PRODUCTS_BY_CUSTOMER` - returns all promotions available for a customer for the products (when a discount is defined to be applied to the item or when the item is required in the validation rule). - `PRODUCTS_DISCOUNT_BY_CUSTOMER` - returns all promotions available for a customer for products when a discount is defined as applicable to specific item(s).
+    * @type {(keyof typeof ClientQualificationsCheckEligibilityRequestBody.ScenarioEnum) | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['scenario'] = undefined;
 
 /**
- * @member {module:model/QualificationsOption} 
- */
+    * @type {QualificationsOption | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['options'] = undefined;
 
 /**
- * @member {module:model/ClientQualificationsCheckEligibilityRequestBodySession} 
- */
+    * @type {ClientQualificationsCheckEligibilityRequestBodySession | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['session'] = undefined;
 
 /**
- * A set of key/value pairs that you can send in the request body to check against redeemables requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the [Create Validation Rules](/api-reference/validation-rules/create-validation-rules) endpoint or via the Dashboard; in the _Advanced Rule Builder_ &rarr; _Advanced_ &rarr; _Redemption metadata satisfy_ or _Basic Builder_ &rarr; _Attributes match_ &rarr; _REDEMPTION METADATA_. [Read more](https://support.voucherify.io/article/148-how-to-build-a-rule).
- * @member {Object} 
- */
+    * A set of key/value pairs that you can send in the request body to check against redeemables requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the [Create Validation Rules](/api-reference/validation-rules/create-validation-rules) endpoint or via the Dashboard; in the _Advanced Rule Builder_ &rarr; _Advanced_ &rarr; _Redemption metadata satisfy_ or _Basic Builder_ &rarr; _Attributes match_ &rarr; _REDEMPTION METADATA_. [Read more](https://support.voucherify.io/article/148-how-to-build-a-rule).
+    * @type {Object | undefined}
+    */
 ClientQualificationsCheckEligibilityRequestBody.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>scenario</code> property.
- * @enum {String}
- * @readonly
- */
-ClientQualificationsCheckEligibilityRequestBody['ScenarioEnum'] = {
-
     /**
-     * value: "ALL"
-     * @constant
+     * Allowed values for the <code>scenario</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ALL": "ALL",
-
-    /**
-     * value: "CUSTOMER_WALLET"
-     * @constant
-     */
-    "CUSTOMER_WALLET": "CUSTOMER_WALLET",
-
-    /**
-     * value: "AUDIENCE_ONLY"
-     * @constant
-     */
-    "AUDIENCE_ONLY": "AUDIENCE_ONLY",
-
-    /**
-     * value: "PRODUCTS"
-     * @constant
-     */
-    "PRODUCTS": "PRODUCTS",
-
-    /**
-     * value: "PRODUCTS_DISCOUNT"
-     * @constant
-     */
-    "PRODUCTS_DISCOUNT": "PRODUCTS_DISCOUNT",
-
-    /**
-     * value: "PROMOTION_STACKS"
-     * @constant
-     */
-    "PROMOTION_STACKS": "PROMOTION_STACKS",
-
-    /**
-     * value: "PRODUCTS_BY_CUSTOMER"
-     * @constant
-     */
-    "PRODUCTS_BY_CUSTOMER": "PRODUCTS_BY_CUSTOMER",
-
-    /**
-     * value: "PRODUCTS_DISCOUNT_BY_CUSTOMER"
-     * @constant
-     */
-    "PRODUCTS_DISCOUNT_BY_CUSTOMER": "PRODUCTS_DISCOUNT_BY_CUSTOMER"
-};
+    ClientQualificationsCheckEligibilityRequestBody['ScenarioEnum'] = {
+    
+        /**
+         * value: "ALL"
+         * @constant
+         */
+        "ALL": "ALL",
+    
+        /**
+         * value: "CUSTOMER_WALLET"
+         * @constant
+         */
+        "CUSTOMER_WALLET": "CUSTOMER_WALLET",
+    
+        /**
+         * value: "AUDIENCE_ONLY"
+         * @constant
+         */
+        "AUDIENCE_ONLY": "AUDIENCE_ONLY",
+    
+        /**
+         * value: "PRODUCTS"
+         * @constant
+         */
+        "PRODUCTS": "PRODUCTS",
+    
+        /**
+         * value: "PRODUCTS_DISCOUNT"
+         * @constant
+         */
+        "PRODUCTS_DISCOUNT": "PRODUCTS_DISCOUNT",
+    
+        /**
+         * value: "PROMOTION_STACKS"
+         * @constant
+         */
+        "PROMOTION_STACKS": "PROMOTION_STACKS",
+    
+        /**
+         * value: "PRODUCTS_BY_CUSTOMER"
+         * @constant
+         */
+        "PRODUCTS_BY_CUSTOMER": "PRODUCTS_BY_CUSTOMER",
+    
+        /**
+         * value: "PRODUCTS_DISCOUNT_BY_CUSTOMER"
+         * @constant
+         */
+        "PRODUCTS_DISCOUNT_BY_CUSTOMER": "PRODUCTS_DISCOUNT_BY_CUSTOMER"    
+    };
 
 
 

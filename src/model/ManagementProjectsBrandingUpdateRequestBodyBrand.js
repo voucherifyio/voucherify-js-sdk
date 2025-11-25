@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingUpdateRequestBodyBrand model module.
  * @module model/ManagementProjectsBrandingUpdateRequestBodyBrand
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateRequestBodyBrand {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code>.
      * Defines basic brand details.
-     * @alias module:model/ManagementProjectsBrandingUpdateRequestBodyBrand
+     * @alias ManagementProjectsBrandingUpdateRequestBodyBrand
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingUpdateRequestBodyBrand {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateRequestBodyBrand} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateRequestBodyBrand} The populated <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBodyBrand>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateRequestBodyBrand} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateRequestBodyBrand} The populated <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingUpdateRequestBodyBrand {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBodyBrand>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateRequestBodyBrand</code>.
      */
     static validateJSON(data) {
@@ -103,33 +102,33 @@ class ManagementProjectsBrandingUpdateRequestBodyBrand {
 
 
 /**
- * Defines brand name.
- * @member {String} 
- */
+    * Defines brand name.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyBrand.prototype['name'] = undefined;
 
 /**
- * Defines the URL to the brand's privacy policy.
- * @member {String} 
- */
+    * Defines the URL to the brand's privacy policy.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyBrand.prototype['privacy_policy_url'] = undefined;
 
 /**
- * Defines the URL to the brand's terms of use.
- * @member {String} 
- */
+    * Defines the URL to the brand's terms of use.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyBrand.prototype['terms_of_use_url'] = undefined;
 
 /**
- * Defines the message that is displayed to customers who opted in an email newsletter.
- * @member {String} 
- */
+    * Defines the message that is displayed to customers who opted in an email newsletter.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyBrand.prototype['permission_reminder'] = undefined;
 
 /**
- * Defines the URL to the brand's website.
- * @member {String} 
- */
+    * Defines the URL to the brand's website.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBodyBrand.prototype['website_url'] = undefined;
 
 

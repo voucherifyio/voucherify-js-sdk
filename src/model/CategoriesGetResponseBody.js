@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoriesGetResponseBody model module.
  * @module model/CategoriesGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesGetResponseBody {
     /**
      * Constructs a new <code>CategoriesGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/categories/{categoryId}&#x60;.
-     * @alias module:model/CategoriesGetResponseBody
+     * @alias CategoriesGetResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CategoriesGetResponseBody {
     /**
      * Constructs a <code>CategoriesGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesGetResponseBody} The populated <code>CategoriesGetResponseBody</code> instance.
+     * @param {Partial<CategoriesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesGetResponseBody} [obj] Optional instance to populate.
+     * @returns {CategoriesGetResponseBody} The populated <code>CategoriesGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class CategoriesGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -99,59 +98,59 @@ class CategoriesGetResponseBody {
 
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CategoriesGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoriesGetResponseBody.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoriesGetResponseBody.prototype['hierarchy'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the category.
- * @member {module:model/CategoriesGetResponseBody.ObjectEnum} 
- * @default 'category'
- */
+    * The type of the object represented by the JSON. This object stores information about the category.
+    * @type {(keyof typeof CategoriesGetResponseBody.ObjectEnum) | undefined}
+    * @default 'category'
+    */
 CategoriesGetResponseBody.prototype['object'] = 'category';
 
 /**
- * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoriesGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoriesGetResponseBody.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CategoriesGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "category"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "category": "category"
-};
+    CategoriesGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "category"
+         * @constant
+         */
+        "category": "category"    
+    };
 
 
 

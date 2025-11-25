@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import LocationShapeDistance from './LocationShapeDistance';
 import LocationShapeGeojson from './LocationShapeGeojson';
-
 /**
  * The LocationShape model module.
  * @module model/LocationShape
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationShape {
     /**
      * Constructs a new <code>LocationShape</code>.
-     * @alias module:model/LocationShape
+     * @alias LocationShape
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LocationShape {
     /**
      * Constructs a <code>LocationShape</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationShape} obj Optional instance to populate.
-     * @returns {module:model/LocationShape} The populated <code>LocationShape</code> instance.
+     * @param {Partial<LocationShape>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationShape} [obj] Optional instance to populate.
+     * @returns {LocationShape} The populated <code>LocationShape</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class LocationShape {
 
     /**
      * Validates the JSON data with respect to <code>LocationShape</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationShape>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationShape</code>.
      */
     static validateJSON(data) {
@@ -97,69 +96,69 @@ class LocationShape {
 
 
 /**
- * @member {module:model/LocationShape.TypeEnum} 
- */
+    * @type {(keyof typeof LocationShape.TypeEnum) | undefined}
+    */
 LocationShape.prototype['type'] = undefined;
 
 /**
- * @member {module:model/LocationShape.FormatEnum} 
- */
+    * @type {(keyof typeof LocationShape.FormatEnum) | undefined}
+    */
 LocationShape.prototype['format'] = undefined;
 
 /**
- * @member {module:model/LocationShapeDistance} 
- */
+    * @type {LocationShapeDistance | undefined}
+    */
 LocationShape.prototype['distance'] = undefined;
 
 /**
- * @member {module:model/LocationShapeGeojson} 
- */
+    * @type {LocationShapeGeojson | undefined}
+    */
 LocationShape.prototype['geojson'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LocationShape['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LocationShape['TypeEnum'] = {
+    
+        /**
+         * value: "circle"
+         * @constant
+         */
+        "circle": "circle",
+    
+        /**
+         * value: "polygon"
+         * @constant
+         */
+        "polygon": "polygon"    
+    };
+
 
     /**
-     * value: "circle"
-     * @constant
+     * Allowed values for the <code>format</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "circle": "circle",
-
-    /**
-     * value: "polygon"
-     * @constant
-     */
-    "polygon": "polygon"
-};
-
-
-/**
- * Allowed values for the <code>format</code> property.
- * @enum {String}
- * @readonly
- */
-LocationShape['FormatEnum'] = {
-
-    /**
-     * value: "distance"
-     * @constant
-     */
-    "distance": "distance",
-
-    /**
-     * value: "geojson"
-     * @constant
-     */
-    "geojson": "geojson"
-};
+    LocationShape['FormatEnum'] = {
+    
+        /**
+         * value: "distance"
+         * @constant
+         */
+        "distance": "distance",
+    
+        /**
+         * value: "geojson"
+         * @constant
+         */
+        "geojson": "geojson"    
+    };
 
 
 

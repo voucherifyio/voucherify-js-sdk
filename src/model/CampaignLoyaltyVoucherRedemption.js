@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignLoyaltyVoucherRedemption model module.
  * @module model/CampaignLoyaltyVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignLoyaltyVoucherRedemption {
     /**
      * Constructs a new <code>CampaignLoyaltyVoucherRedemption</code>.
      * Defines the redemption limits on vouchers.
-     * @alias module:model/CampaignLoyaltyVoucherRedemption
+     * @alias CampaignLoyaltyVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignLoyaltyVoucherRedemption {
     /**
      * Constructs a <code>CampaignLoyaltyVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignLoyaltyVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignLoyaltyVoucherRedemption} The populated <code>CampaignLoyaltyVoucherRedemption</code> instance.
+     * @param {Partial<CampaignLoyaltyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignLoyaltyVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignLoyaltyVoucherRedemption} The populated <code>CampaignLoyaltyVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignLoyaltyVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignLoyaltyVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignLoyaltyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignLoyaltyVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class CampaignLoyaltyVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyVoucherRedemption.prototype['quantity'] = undefined;
 
 

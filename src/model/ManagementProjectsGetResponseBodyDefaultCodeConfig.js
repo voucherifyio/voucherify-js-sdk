@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsGetResponseBodyDefaultCodeConfig model module.
  * @module model/ManagementProjectsGetResponseBodyDefaultCodeConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsGetResponseBodyDefaultCodeConfig {
     /**
      * Constructs a new <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code>.
      * Determines the character set that is used as default for vouchers. It is affected by the &#x60;\&quot;case_sensitive_codes\&quot;&#x60; setting.
-     * @alias module:model/ManagementProjectsGetResponseBodyDefaultCodeConfig
+     * @alias ManagementProjectsGetResponseBodyDefaultCodeConfig
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsGetResponseBodyDefaultCodeConfig {
     /**
      * Constructs a <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsGetResponseBodyDefaultCodeConfig} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsGetResponseBodyDefaultCodeConfig} The populated <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code> instance.
+     * @param {Partial<ManagementProjectsGetResponseBodyDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsGetResponseBodyDefaultCodeConfig} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsGetResponseBodyDefaultCodeConfig} The populated <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ManagementProjectsGetResponseBodyDefaultCodeConfig {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsGetResponseBodyDefaultCodeConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsGetResponseBodyDefaultCodeConfig</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ManagementProjectsGetResponseBodyDefaultCodeConfig {
 
 
 /**
- * Lists all characters that are used as default for vouchers
- * @member {String} 
- */
+    * Lists all characters that are used as default for vouchers
+    * @type {String | undefined}
+    */
 ManagementProjectsGetResponseBodyDefaultCodeConfig.prototype['charset'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Reward from './Reward';
-
 /**
  * The RewardsListResponseBody model module.
  * @module model/RewardsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsListResponseBody {
     /**
      * Constructs a new <code>RewardsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/rewards&#x60;.
-     * @alias module:model/RewardsListResponseBody
+     * @alias RewardsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class RewardsListResponseBody {
     /**
      * Constructs a <code>RewardsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsListResponseBody} The populated <code>RewardsListResponseBody</code> instance.
+     * @param {Partial<RewardsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsListResponseBody} [obj] Optional instance to populate.
+     * @returns {RewardsListResponseBody} The populated <code>RewardsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class RewardsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class RewardsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RewardsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of transaction objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of transaction objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 RewardsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of rewards. Each entry in the array is a separate transaction object.
- * @member {Array.<module:model/Reward>} 
- */
+    * A dictionary that contains an array of rewards. Each entry in the array is a separate transaction object.
+    * @type {Array.<Reward> | undefined}
+    */
 RewardsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Returns how many rewards in the project meet the limits defined by the query parameter definitions.
- * @member {Number} 
- */
+    * Returns how many rewards in the project meet the limits defined by the query parameter definitions.
+    * @type {Number | undefined}
+    */
 RewardsListResponseBody.prototype['total'] = undefined;
 
 

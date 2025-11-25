@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsTypeConditions model module.
  * @module model/ParameterFiltersListCampaignsTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsTypeConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsTypeConditions</code>.
-     * @alias module:model/ParameterFiltersListCampaignsTypeConditions
+     * @alias ParameterFiltersListCampaignsTypeConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListCampaignsTypeConditions {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsTypeConditions} The populated <code>ParameterFiltersListCampaignsTypeConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsTypeConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsTypeConditions} The populated <code>ParameterFiltersListCampaignsTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ParameterFiltersListCampaignsTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -81,15 +80,15 @@ class ParameterFiltersListCampaignsTypeConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCampaignsTypeConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCampaignsTypeConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListCampaignsTypeConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCampaignsTypeConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCampaignsTypeConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListCampaignsTypeConditions.prototype['$not_in'] = undefined;
 
 

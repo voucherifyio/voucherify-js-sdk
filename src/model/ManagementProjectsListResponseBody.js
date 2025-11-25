@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProject from './ManagementProject';
-
 /**
  * The ManagementProjectsListResponseBody model module.
  * @module model/ManagementProjectsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsListResponseBody</code>.
      * Schema model for **GET** &#x60;managment/v1/projects&#x60;.
-     * @alias module:model/ManagementProjectsListResponseBody
+     * @alias ManagementProjectsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsListResponseBody} The populated <code>ManagementProjectsListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsListResponseBody} The populated <code>ManagementProjectsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the projects in a dictionary.
- * @member {module:model/ManagementProjectsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the projects in a dictionary.
+    * @type {(keyof typeof ManagementProjectsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of project objects.
- * @member {module:model/ManagementProjectsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of project objects.
+    * @type {(keyof typeof ManagementProjectsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of project objects.
- * @member {Array.<module:model/ManagementProject>} 
- */
+    * Array of project objects.
+    * @type {Array.<ManagementProject> | undefined}
+    */
 ManagementProjectsListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of projects.
- * @member {Number} 
- */
+    * The total number of projects.
+    * @type {Number | undefined}
+    */
 ManagementProjectsListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code>.
      * Defines the tier associated with the earning rule definition.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier {
 
 
 /**
- * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
- * @member {String} 
- */
+    * Unique loyalty tier ID associated with the earning rule.      - `__ANY__`: any loyalty tier within the campaign
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier.prototype['id'] = undefined;
 
 

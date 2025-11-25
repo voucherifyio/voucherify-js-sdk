@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingBrand model module.
  * @module model/ManagementProjectsBrandingBrand
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingBrand {
     /**
      * Constructs a new <code>ManagementProjectsBrandingBrand</code>.
      * Defines basic brand details.
-     * @alias module:model/ManagementProjectsBrandingBrand
+     * @alias ManagementProjectsBrandingBrand
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingBrand {
     /**
      * Constructs a <code>ManagementProjectsBrandingBrand</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingBrand} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingBrand} The populated <code>ManagementProjectsBrandingBrand</code> instance.
+     * @param {Partial<ManagementProjectsBrandingBrand>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingBrand} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingBrand} The populated <code>ManagementProjectsBrandingBrand</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingBrand {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingBrand</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingBrand>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingBrand</code>.
      */
     static validateJSON(data) {
@@ -103,33 +102,33 @@ class ManagementProjectsBrandingBrand {
 
 
 /**
- * Defines brand name.
- * @member {String} 
- */
+    * Defines brand name.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingBrand.prototype['name'] = undefined;
 
 /**
- * Defines the URL to the brand's privacy policy. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's privacy policy. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingBrand.prototype['privacy_policy_url'] = undefined;
 
 /**
- * Defines the URL to the brand's terms of use.  It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's terms of use.  It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingBrand.prototype['terms_of_use_url'] = undefined;
 
 /**
- * Defines the message that is displayed to customers who opted in an email newsletter.
- * @member {String} 
- */
+    * Defines the message that is displayed to customers who opted in an email newsletter.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingBrand.prototype['permission_reminder'] = undefined;
 
 /**
- * Defines the URL to the brand's website. It must be a valid URL format.
- * @member {String} 
- */
+    * Defines the URL to the brand's website. It must be a valid URL format.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingBrand.prototype['website_url'] = undefined;
 
 

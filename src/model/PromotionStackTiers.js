@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionStackTiers model module.
  * @module model/PromotionStackTiers
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionStackTiers {
     /**
      * Constructs a new <code>PromotionStackTiers</code>.
      * Contains the tier configuration. A promotion stack can include up to 30 tiers.
-     * @alias module:model/PromotionStackTiers
+     * @alias PromotionStackTiers
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionStackTiers {
     /**
      * Constructs a <code>PromotionStackTiers</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionStackTiers} obj Optional instance to populate.
-     * @returns {module:model/PromotionStackTiers} The populated <code>PromotionStackTiers</code> instance.
+     * @param {Partial<PromotionStackTiers>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionStackTiers} [obj] Optional instance to populate.
+     * @returns {PromotionStackTiers} The populated <code>PromotionStackTiers</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class PromotionStackTiers {
 
     /**
      * Validates the JSON data with respect to <code>PromotionStackTiers</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionStackTiers>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionStackTiers</code>.
      */
     static validateJSON(data) {
@@ -83,34 +82,34 @@ class PromotionStackTiers {
 
 
 /**
- * Contains the list of tiers in a pre-defined sequence.
- * @member {Array.<String>} 
- */
+    * Contains the list of tiers in a pre-defined sequence.
+    * @type {Array.<String> | undefined}
+    */
 PromotionStackTiers.prototype['ids'] = undefined;
 
 /**
- * @member {module:model/PromotionStackTiers.HierarchyModeEnum} 
- * @default 'MANUAL'
- */
+    * @type {(keyof typeof PromotionStackTiers.HierarchyModeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 PromotionStackTiers.prototype['hierarchy_mode'] = 'MANUAL';
 
 
 
 
 
-/**
- * Allowed values for the <code>hierarchy_mode</code> property.
- * @enum {String}
- * @readonly
- */
-PromotionStackTiers['HierarchyModeEnum'] = {
-
     /**
-     * value: "MANUAL"
-     * @constant
+     * Allowed values for the <code>hierarchy_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MANUAL": "MANUAL"
-};
+    PromotionStackTiers['HierarchyModeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
 
 
 

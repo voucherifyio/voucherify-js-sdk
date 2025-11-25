@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsDateTime from './FilterConditionsDateTime';
-
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersCreatedAt model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListReferralsRedeemableHoldersCreatedAt {
     /**
      * Constructs a new <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code>.
      * Timestamp representing the date and time when the redeemable was added to the holder. The value is shown in the ISO 8601 format.
-     * @alias module:model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt
+     * @alias ParameterFiltersListReferralsRedeemableHoldersCreatedAt
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListReferralsRedeemableHoldersCreatedAt {
     /**
      * Constructs a <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt} The populated <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code> instance.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersCreatedAt>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListReferralsRedeemableHoldersCreatedAt} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListReferralsRedeemableHoldersCreatedAt} The populated <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListReferralsRedeemableHoldersCreatedAt {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersCreatedAt>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListReferralsRedeemableHoldersCreatedAt</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListReferralsRedeemableHoldersCreatedAt {
 
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersCreatedAt.prototype['conditions'] = undefined;
 
 

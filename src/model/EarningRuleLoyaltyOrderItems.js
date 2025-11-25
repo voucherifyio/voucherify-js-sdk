@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import EarningRuleLoyaltyOrderItemsAmount from './EarningRuleLoyaltyOrderItemsAmount';
 import EarningRuleLoyaltyOrderItemsQuantity from './EarningRuleLoyaltyOrderItemsQuantity';
 import EarningRuleLoyaltyOrderItemsSubtotalAmount from './EarningRuleLoyaltyOrderItemsSubtotalAmount';
-
 /**
  * The EarningRuleLoyaltyOrderItems model module.
  * @module model/EarningRuleLoyaltyOrderItems
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyaltyOrderItems {
     /**
      * Constructs a new <code>EarningRuleLoyaltyOrderItems</code>.
-     * @alias module:model/EarningRuleLoyaltyOrderItems
+     * @alias EarningRuleLoyaltyOrderItems
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class EarningRuleLoyaltyOrderItems {
     /**
      * Constructs a <code>EarningRuleLoyaltyOrderItems</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyaltyOrderItems} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyaltyOrderItems} The populated <code>EarningRuleLoyaltyOrderItems</code> instance.
+     * @param {Partial<EarningRuleLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyaltyOrderItems} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyaltyOrderItems} The populated <code>EarningRuleLoyaltyOrderItems</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class EarningRuleLoyaltyOrderItems {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyaltyOrderItems</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyaltyOrderItems</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class EarningRuleLoyaltyOrderItems {
 
 
 /**
- * @member {module:model/EarningRuleLoyaltyOrderItemsQuantity} 
- */
+    * @type {EarningRuleLoyaltyOrderItemsQuantity | undefined}
+    */
 EarningRuleLoyaltyOrderItems.prototype['quantity'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyOrderItemsAmount} 
- */
+    * @type {EarningRuleLoyaltyOrderItemsAmount | undefined}
+    */
 EarningRuleLoyaltyOrderItems.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyOrderItemsSubtotalAmount} 
- */
+    * @type {EarningRuleLoyaltyOrderItemsSubtotalAmount | undefined}
+    */
 EarningRuleLoyaltyOrderItems.prototype['subtotal_amount'] = undefined;
 
 

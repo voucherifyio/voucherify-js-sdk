@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsRollback model module.
  * @module model/MemberActivityDataTransactionDetailsRollback
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsRollback {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsRollback</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsRollback
+     * @alias MemberActivityDataTransactionDetailsRollback
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsRollback {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsRollback</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsRollback} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsRollback} The populated <code>MemberActivityDataTransactionDetailsRollback</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsRollback} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsRollback} The populated <code>MemberActivityDataTransactionDetailsRollback</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class MemberActivityDataTransactionDetailsRollback {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsRollback</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsRollback</code>.
      */
     static validateJSON(data) {
@@ -74,8 +73,8 @@ class MemberActivityDataTransactionDetailsRollback {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsRollback.prototype['id'] = undefined;
 
 

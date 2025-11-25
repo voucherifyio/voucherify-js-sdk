@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsEarningRuleSource model module.
  * @module model/LoyaltyCardTransactionDetailsEarningRuleSource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsEarningRuleSource {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsEarningRuleSource</code>.
      * Contains the custom earning rule name.
-     * @alias module:model/LoyaltyCardTransactionDetailsEarningRuleSource
+     * @alias LoyaltyCardTransactionDetailsEarningRuleSource
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsEarningRuleSource {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsEarningRuleSource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsEarningRuleSource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsEarningRuleSource} The populated <code>LoyaltyCardTransactionDetailsEarningRuleSource</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsEarningRuleSource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsEarningRuleSource} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsEarningRuleSource} The populated <code>LoyaltyCardTransactionDetailsEarningRuleSource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltyCardTransactionDetailsEarningRuleSource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsEarningRuleSource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsEarningRuleSource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsEarningRuleSource</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltyCardTransactionDetailsEarningRuleSource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsEarningRuleSource.prototype['banner'] = undefined;
 
 

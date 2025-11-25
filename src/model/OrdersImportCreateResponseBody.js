@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OrdersImportCreateResponseBody model module.
  * @module model/OrdersImportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersImportCreateResponseBody {
     /**
      * Constructs a new <code>OrdersImportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/orders/import&#x60;.
-     * @alias module:model/OrdersImportCreateResponseBody
+     * @alias OrdersImportCreateResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class OrdersImportCreateResponseBody {
     /**
      * Constructs a <code>OrdersImportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersImportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/OrdersImportCreateResponseBody} The populated <code>OrdersImportCreateResponseBody</code> instance.
+     * @param {Partial<OrdersImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersImportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {OrdersImportCreateResponseBody} The populated <code>OrdersImportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class OrdersImportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>OrdersImportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersImportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersImportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class OrdersImportCreateResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 OrdersImportCreateResponseBody.prototype['async_action_id'] = undefined;
 
 

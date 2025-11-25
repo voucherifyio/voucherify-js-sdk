@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model module.
  * @module model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code>.
-     * @alias module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem
+     * @alias LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicable
     /**
      * Constructs a <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicable
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem</code>.
      */
     static validateJSON(data) {
@@ -81,46 +80,46 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicable
 
 
 /**
- * Type of object which will be covered by the earning rule.
- * @member {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.ObjectEnum} 
- */
+    * Type of object which will be covered by the earning rule.
+    * @type {(keyof typeof LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.ObjectEnum) | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.prototype['object'] = undefined;
 
 /**
- * Unique ID of the resource assigned by Voucherify. Values are, for example, `pc_75U0dHlr7u75BJodrW1AE3t6` for product collection, `prod_0bae32322150fd0546` for a product, or `sku_0b7d7dfb090be5c619` for a SKU.
- * @member {String} 
- */
+    * Unique ID of the resource assigned by Voucherify. Values are, for example, `pc_75U0dHlr7u75BJodrW1AE3t6` for product collection, `prod_0bae32322150fd0546` for a product, or `sku_0b7d7dfb090be5c619` for a SKU.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.prototype['id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem['ObjectEnum'] = {
-
     /**
-     * value: "products_collection"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "products_collection": "products_collection",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem['ObjectEnum'] = {
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

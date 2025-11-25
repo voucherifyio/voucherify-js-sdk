@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject from './LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject';
-
 /**
  * The LoyaltiesMembersPendingPointsBalanceResponseBody model module.
  * @module model/LoyaltiesMembersPendingPointsBalanceResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPendingPointsBalanceResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code>.
      * Response body schema for **POST** &#x60;/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance&#x60;.
-     * @alias module:model/LoyaltiesMembersPendingPointsBalanceResponseBody
+     * @alias LoyaltiesMembersPendingPointsBalanceResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMembersPendingPointsBalanceResponseBody {
     /**
      * Constructs a <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody} The populated <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPendingPointsBalanceResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPendingPointsBalanceResponseBody} The populated <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LoyaltiesMembersPendingPointsBalanceResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPendingPointsBalanceResponseBody</code>.
      */
     static validateJSON(data) {
@@ -98,68 +97,68 @@ class LoyaltiesMembersPendingPointsBalanceResponseBody {
 
 
 /**
- * The number of pending points added to or subtracted from the loyalty card.
- * @member {Number} 
- */
+    * The number of pending points added to or subtracted from the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBody.prototype['points'] = undefined;
 
 /**
- * Total number of pending points currently on a loyalty card.
- * @member {Number} 
- */
+    * Total number of pending points currently on a loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBody.prototype['total'] = undefined;
 
 /**
- * The type of the object represented by JSON. Default is `balance`.
- * @member {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody.ObjectEnum} 
- * @default 'balance'
- */
+    * The type of the object represented by JSON. Default is `balance`.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsBalanceResponseBody.ObjectEnum) | undefined}
+    * @default 'balance'
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBody.prototype['object'] = 'balance';
 
 /**
- * @member {module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject} 
- */
+    * @type {LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject | undefined}
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBody.prototype['related_object'] = undefined;
 
 /**
- * The type of the operation being performed.
- * @member {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody.OperationTypeEnum} 
- * @default 'MANUAL'
- */
+    * The type of the operation being performed.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsBalanceResponseBody.OperationTypeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBody.prototype['operation_type'] = 'MANUAL';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsBalanceResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesMembersPendingPointsBalanceResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "balance"
+         * @constant
+         */
+        "balance": "balance"    
+    };
+
 
     /**
-     * value: "balance"
-     * @constant
+     * Allowed values for the <code>operation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "balance": "balance"
-};
-
-
-/**
- * Allowed values for the <code>operation_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsBalanceResponseBody['OperationTypeEnum'] = {
-
-    /**
-     * value: "MANUAL"
-     * @constant
-     */
-    "MANUAL": "MANUAL"
-};
+    LoyaltiesMembersPendingPointsBalanceResponseBody['OperationTypeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductsSkusCreateRequestBody model module.
  * @module model/ProductsSkusCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsSkusCreateRequestBody {
     /**
      * Constructs a new <code>ProductsSkusCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/products/{productId}/skus
-     * @alias module:model/ProductsSkusCreateRequestBody
+     * @alias ProductsSkusCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ProductsSkusCreateRequestBody {
     /**
      * Constructs a <code>ProductsSkusCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsSkusCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsSkusCreateRequestBody} The populated <code>ProductsSkusCreateRequestBody</code> instance.
+     * @param {Partial<ProductsSkusCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsSkusCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ProductsSkusCreateRequestBody} The populated <code>ProductsSkusCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class ProductsSkusCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsSkusCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsSkusCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsSkusCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -112,51 +111,51 @@ class ProductsSkusCreateRequestBody {
 
 
 /**
- * Unique SKU ID.
- * @member {String} 
- */
+    * Unique SKU ID.
+    * @type {String | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['id'] = undefined;
 
 /**
- * A unique SKU identifier from your inventory system.
- * @member {String} 
- */
+    * A unique SKU identifier from your inventory system.
+    * @type {String | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['source_id'] = undefined;
 
 /**
- * Unique user-defined SKU name.
- * @member {String} 
- */
+    * Unique user-defined SKU name.
+    * @type {String | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['sku'] = undefined;
 
 /**
- * SKU unit price. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * SKU unit price. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['price'] = undefined;
 
 /**
- * SKU price currency.
- * @member {String} 
- */
+    * SKU price currency.
+    * @type {String | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['currency'] = undefined;
 
 /**
- * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
- * @member {Object} 
- */
+    * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
+    * @type {Object | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['attributes'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+    * @type {String | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['image_url'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format.
+    * @type {Object | undefined}
+    */
 ProductsSkusCreateRequestBody.prototype['metadata'] = undefined;
 
 

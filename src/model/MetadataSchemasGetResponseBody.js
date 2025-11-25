@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import MetadataSchemaDefinitionDeprecated from './MetadataSchemaDefinitionDeprecated';
-
 /**
  * The MetadataSchemasGetResponseBody model module.
  * @module model/MetadataSchemasGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MetadataSchemasGetResponseBody {
     /**
      * Constructs a new <code>MetadataSchemasGetResponseBody</code>.
      * Response body schema for **GET** &#x60;/v1/metadata-schemas/{resource}&#x60;.
-     * @alias module:model/MetadataSchemasGetResponseBody
+     * @alias MetadataSchemasGetResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MetadataSchemasGetResponseBody {
     /**
      * Constructs a <code>MetadataSchemasGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MetadataSchemasGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/MetadataSchemasGetResponseBody} The populated <code>MetadataSchemasGetResponseBody</code> instance.
+     * @param {Partial<MetadataSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {MetadataSchemasGetResponseBody} [obj] Optional instance to populate.
+     * @returns {MetadataSchemasGetResponseBody} The populated <code>MetadataSchemasGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class MetadataSchemasGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>MetadataSchemasGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MetadataSchemasGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MetadataSchemasGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -103,46 +102,46 @@ class MetadataSchemasGetResponseBody {
 
 
 /**
- * Unique identifier of the metadata schema.
- * @member {String} 
- */
+    * Unique identifier of the metadata schema.
+    * @type {String | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['id'] = undefined;
 
 /**
- * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
- * @member {String} 
- */
+    * The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
+    * @type {String | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['related_object'] = undefined;
 
 /**
- * Contains metadata definitions.
- * @member {Object.<String, module:model/MetadataSchemaDefinitionDeprecated>} 
- */
+    * Contains metadata definitions.
+    * @type {Object.<String, MetadataSchemaDefinitionDeprecated> | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['properties'] = undefined;
 
 /**
- * Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
- * @member {Boolean} 
- */
+    * Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
+    * @type {Boolean | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['allow_defined_only'] = undefined;
 
 /**
- * Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MetadataSchemasGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the metadata schema.
- * @member {String} 
- * @default 'metadata_schema'
- */
+    * The type of the object represented by the JSON. This object stores information about the metadata schema.
+    * @type {String | undefined}
+    * @default 'metadata_schema'
+    */
 MetadataSchemasGetResponseBody.prototype['object'] = 'metadata_schema';
 
 

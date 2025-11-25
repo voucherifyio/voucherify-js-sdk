@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CategoriesCreateResponseBody model module.
  * @module model/CategoriesCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CategoriesCreateResponseBody {
     /**
      * Constructs a new <code>CategoriesCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/categories&#x60;.
-     * @alias module:model/CategoriesCreateResponseBody
+     * @alias CategoriesCreateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CategoriesCreateResponseBody {
     /**
      * Constructs a <code>CategoriesCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoriesCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CategoriesCreateResponseBody} The populated <code>CategoriesCreateResponseBody</code> instance.
+     * @param {Partial<CategoriesCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CategoriesCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {CategoriesCreateResponseBody} The populated <code>CategoriesCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class CategoriesCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CategoriesCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CategoriesCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CategoriesCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -96,52 +95,52 @@ class CategoriesCreateResponseBody {
 
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CategoriesCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 CategoriesCreateResponseBody.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 CategoriesCreateResponseBody.prototype['hierarchy'] = undefined;
 
 /**
- * @member {module:model/CategoriesCreateResponseBody.ObjectEnum} 
- * @default 'category'
- */
+    * @type {(keyof typeof CategoriesCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'category'
+    */
 CategoriesCreateResponseBody.prototype['object'] = 'category';
 
 /**
- * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CategoriesCreateResponseBody.prototype['created_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CategoriesCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "category"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "category": "category"
-};
+    CategoriesCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "category"
+         * @constant
+         */
+        "category": "category"    
+    };
 
 
 

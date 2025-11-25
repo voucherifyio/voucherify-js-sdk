@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleProduct model module.
  * @module model/SimpleProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleProduct {
     /**
      * Constructs a new <code>SimpleProduct</code>.
-     * @alias module:model/SimpleProduct
+     * @alias SimpleProduct
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SimpleProduct {
     /**
      * Constructs a <code>SimpleProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleProduct} obj Optional instance to populate.
-     * @returns {module:model/SimpleProduct} The populated <code>SimpleProduct</code> instance.
+     * @param {Partial<SimpleProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleProduct} [obj] Optional instance to populate.
+     * @returns {SimpleProduct} The populated <code>SimpleProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class SimpleProduct {
 
     /**
      * Validates the JSON data with respect to <code>SimpleProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleProduct</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class SimpleProduct {
 
 
 /**
- * Unique product ID.
- * @member {String} 
- */
+    * Unique product ID.
+    * @type {String | undefined}
+    */
 SimpleProduct.prototype['id'] = undefined;
 
 /**
- * Product source id.
- * @member {String} 
- */
+    * Product source id.
+    * @type {String | undefined}
+    */
 SimpleProduct.prototype['source_id'] = undefined;
 
 /**
- * Product name.
- * @member {String} 
- */
+    * Product name.
+    * @type {String | undefined}
+    */
 SimpleProduct.prototype['name'] = undefined;
 
 

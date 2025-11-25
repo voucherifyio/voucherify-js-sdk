@@ -13,18 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import SimpleCustomerRequiredObjectType from './SimpleCustomerRequiredObjectType';
-
 /**
  * The EventsCreateResponseBody model module.
  * @module model/EventsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EventsCreateResponseBody {
     /**
      * Constructs a new <code>EventsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/events&#x60;.
-     * @alias module:model/EventsCreateResponseBody
-     * @param customer {module:model/SimpleCustomerRequiredObjectType} 
+     * @alias EventsCreateResponseBody
+     * @param {SimpleCustomerRequiredObjectType} customer 
      */
     constructor(customer) { 
         
@@ -44,9 +43,9 @@ class EventsCreateResponseBody {
     /**
      * Constructs a <code>EventsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/EventsCreateResponseBody} The populated <code>EventsCreateResponseBody</code> instance.
+     * @param {Partial<EventsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {EventsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {EventsCreateResponseBody} The populated <code>EventsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class EventsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>EventsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EventsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EventsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,57 +107,57 @@ class EventsCreateResponseBody {
 EventsCreateResponseBody.RequiredProperties = ["customer"];
 
 /**
- * The object represented is an `event`.
- * @member {module:model/EventsCreateResponseBody.ObjectEnum} 
- * @default 'event'
- */
+    * The object represented is an `event`.
+    * @type {(keyof typeof EventsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'event'
+    */
 EventsCreateResponseBody.prototype['object'] = 'event';
 
 /**
- * The event name.
- * @member {String} 
- */
+    * The event name.
+    * @type {String | undefined}
+    */
 EventsCreateResponseBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomerRequiredObjectType} 
- */
+    * @type {SimpleCustomerRequiredObjectType}
+    */
 EventsCreateResponseBody.prototype['customer'] = undefined;
 
 /**
- * A `null` referral object.
- * @member {Object} 
- */
+    * A `null` referral object.
+    * @type {Object | undefined}
+    */
 EventsCreateResponseBody.prototype['referral'] = undefined;
 
 /**
- * A `null` loyalty object.
- * @member {Object} 
- */
+    * A `null` loyalty object.
+    * @type {Object | undefined}
+    */
 EventsCreateResponseBody.prototype['loyalty'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 EventsCreateResponseBody.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-EventsCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "event"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "event": "event"
-};
+    EventsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "event"
+         * @constant
+         */
+        "event": "event"    
+    };
 
 
 

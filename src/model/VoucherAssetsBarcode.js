@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherAssetsBarcode model module.
  * @module model/VoucherAssetsBarcode
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherAssetsBarcode {
     /**
      * Constructs a new <code>VoucherAssetsBarcode</code>.
      * Stores barcode representation of encrypted code.
-     * @alias module:model/VoucherAssetsBarcode
+     * @alias VoucherAssetsBarcode
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherAssetsBarcode {
     /**
      * Constructs a <code>VoucherAssetsBarcode</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherAssetsBarcode} obj Optional instance to populate.
-     * @returns {module:model/VoucherAssetsBarcode} The populated <code>VoucherAssetsBarcode</code> instance.
+     * @param {Partial<VoucherAssetsBarcode>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherAssetsBarcode} [obj] Optional instance to populate.
+     * @returns {VoucherAssetsBarcode} The populated <code>VoucherAssetsBarcode</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherAssetsBarcode {
 
     /**
      * Validates the JSON data with respect to <code>VoucherAssetsBarcode</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherAssetsBarcode>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherAssetsBarcode</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherAssetsBarcode {
 
 
 /**
- * Encrypted voucher code ID.
- * @member {String} 
- */
+    * Encrypted voucher code ID.
+    * @type {String | undefined}
+    */
 VoucherAssetsBarcode.prototype['id'] = undefined;
 
 /**
- * URL to barcode    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
- * @member {String} 
- */
+    * URL to barcode    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
+    * @type {String | undefined}
+    */
 VoucherAssetsBarcode.prototype['url'] = undefined;
 
 

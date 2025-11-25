@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes model module.
  * @module model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes {
     /**
      * Constructs a new <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code>.
      * These properties are configurable for **material rewards**.
-     * @alias module:model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes
+     * @alias LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes {
     /**
      * Constructs a <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes} The populated <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code> instance.
+     * @param {Partial<LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes} The populated <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes {
 
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes.prototype['image_url'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a material reward.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a material reward.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes.prototype['description'] = undefined;
 
 

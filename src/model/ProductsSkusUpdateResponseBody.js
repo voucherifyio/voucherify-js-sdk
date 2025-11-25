@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductsSkusUpdateResponseBody model module.
  * @module model/ProductsSkusUpdateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsSkusUpdateResponseBody {
     /**
      * Constructs a new <code>ProductsSkusUpdateResponseBody</code>.
      * Response body schema for **PUT** &#x60;v1/products/{productId}/skus/{skuId}&#x60;.
-     * @alias module:model/ProductsSkusUpdateResponseBody
+     * @alias ProductsSkusUpdateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ProductsSkusUpdateResponseBody {
     /**
      * Constructs a <code>ProductsSkusUpdateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsSkusUpdateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsSkusUpdateResponseBody} The populated <code>ProductsSkusUpdateResponseBody</code> instance.
+     * @param {Partial<ProductsSkusUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsSkusUpdateResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsSkusUpdateResponseBody} The populated <code>ProductsSkusUpdateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -91,7 +90,7 @@ class ProductsSkusUpdateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsSkusUpdateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsSkusUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsSkusUpdateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -133,95 +132,95 @@ class ProductsSkusUpdateResponseBody {
 
 
 /**
- * A unique identifier that represents the SKU and is assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the SKU and is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['id'] = undefined;
 
 /**
- * A unique SKU identifier from your inventory system.
- * @member {String} 
- */
+    * A unique SKU identifier from your inventory system.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['source_id'] = undefined;
 
 /**
- * The parent product's unique ID.
- * @member {String} 
- */
+    * The parent product's unique ID.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['product_id'] = undefined;
 
 /**
- * Unique user-defined SKU name.
- * @member {String} 
- */
+    * Unique user-defined SKU name.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['sku'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['price'] = undefined;
 
 /**
- * SKU price currency.
- * @member {String} 
- */
+    * SKU price currency.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['currency'] = undefined;
 
 /**
- * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
- * @member {Object} 
- */
+    * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
+    * @type {Object | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['attributes'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+    * @type {String | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['image_url'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ProductsSkusUpdateResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the `SKU`.
- * @member {module:model/ProductsSkusUpdateResponseBody.ObjectEnum} 
- * @default 'sku'
- */
+    * The type of the object represented by JSON. This object stores information about the `SKU`.
+    * @type {(keyof typeof ProductsSkusUpdateResponseBody.ObjectEnum) | undefined}
+    * @default 'sku'
+    */
 ProductsSkusUpdateResponseBody.prototype['object'] = 'sku';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductsSkusUpdateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "sku"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "sku": "sku"
-};
+    ProductsSkusUpdateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

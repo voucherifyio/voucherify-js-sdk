@@ -18,16 +18,15 @@ import ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount from '
 import ClientValidationsValidateResponseBodyRedeemablesItemResultGift from './ClientValidationsValidateResponseBodyRedeemablesItemResultGift';
 import ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard from './ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard';
 import Error from './Error';
-
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResult model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResult {
     /**
      * Constructs a new <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code>.
-     * @alias module:model/ClientValidationsValidateResponseBodyRedeemablesItemResult
+     * @alias ClientValidationsValidateResponseBodyRedeemablesItemResult
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult {
     /**
      * Constructs a <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResult} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResult} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code> instance.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateResponseBodyRedeemablesItemResult} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateResponseBodyRedeemablesItemResult} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResult</code>.
      */
     static validateJSON(data) {
@@ -115,33 +114,33 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult {
 
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/Bundle} 
- */
+    * @type {Bundle | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['bundle'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultGift} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResultGift | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Error} 
- */
+    * @type {Error | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['error'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDetails} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResultDetails | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResult.prototype['details'] = undefined;
 
 

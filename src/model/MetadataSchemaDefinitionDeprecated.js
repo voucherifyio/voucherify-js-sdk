@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MetadataSchemaDefinitionDeprecated model module.
  * @module model/MetadataSchemaDefinitionDeprecated
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MetadataSchemaDefinitionDeprecated {
     /**
      * Constructs a new <code>MetadataSchemaDefinitionDeprecated</code>.
      * Custom definition name. This is also shown in **Project Settings** &gt; **Metadata Schema** in the Voucherify Dashboard.
-     * @alias module:model/MetadataSchemaDefinitionDeprecated
+     * @alias MetadataSchemaDefinitionDeprecated
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MetadataSchemaDefinitionDeprecated {
     /**
      * Constructs a <code>MetadataSchemaDefinitionDeprecated</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MetadataSchemaDefinitionDeprecated} obj Optional instance to populate.
-     * @returns {module:model/MetadataSchemaDefinitionDeprecated} The populated <code>MetadataSchemaDefinitionDeprecated</code> instance.
+     * @param {Partial<MetadataSchemaDefinitionDeprecated>} data The plain JavaScript object bearing properties of interest.
+     * @param {MetadataSchemaDefinitionDeprecated} [obj] Optional instance to populate.
+     * @returns {MetadataSchemaDefinitionDeprecated} The populated <code>MetadataSchemaDefinitionDeprecated</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -96,7 +95,7 @@ class MetadataSchemaDefinitionDeprecated {
 
     /**
      * Validates the JSON data with respect to <code>MetadataSchemaDefinitionDeprecated</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MetadataSchemaDefinitionDeprecated>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MetadataSchemaDefinitionDeprecated</code>.
      */
     static validateJSON(data) {
@@ -126,147 +125,147 @@ class MetadataSchemaDefinitionDeprecated {
 
 
 /**
- * @member {module:model/MetadataSchemaDefinitionDeprecated.TypeEnum} 
- */
+    * @type {(keyof typeof MetadataSchemaDefinitionDeprecated.TypeEnum) | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['type'] = undefined;
 
 /**
- * Indicates whether the definition is an array.
- * @member {Boolean} 
- */
+    * Indicates whether the definition is an array.
+    * @type {Boolean | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['array'] = undefined;
 
 /**
- * Indicates whether this definition is optional or not optional for the resource.
- * @member {Boolean} 
- */
+    * Indicates whether this definition is optional or not optional for the resource.
+    * @type {Boolean | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['optional'] = undefined;
 
 /**
- * Returns the name of the custom resource if the resource was previously defined in the Dashboard as a custom (non-standard) Nested object.
- * @member {String} 
- */
+    * Returns the name of the custom resource if the resource was previously defined in the Dashboard as a custom (non-standard) Nested object.
+    * @type {String | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['objectType'] = undefined;
 
 /**
- * Array of possible values when the setting for `is equal to any of` in the Dashboard is defined explicitly.
- * @member {Array.<Object>} 
- */
+    * Array of possible values when the setting for `is equal to any of` in the Dashboard is defined explicitly.
+    * @type {Array.<Object> | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['eq'] = undefined;
 
 /**
- * Array of values that are not allowed when the setting for `is not equal to any of` in the Dashboard is defined explicitly.
- * @member {Array.<Object>} 
- */
+    * Array of values that are not allowed when the setting for `is not equal to any of` in the Dashboard is defined explicitly.
+    * @type {Array.<Object> | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['ne'] = undefined;
 
 /**
- * A property of `number` type must have `less than` this value.
- * @member {Number} 
- */
+    * A property of `number` type must have `less than` this value.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['lt'] = undefined;
 
 /**
- * A property of `number` type must be `less than or equal` to this value.
- * @member {Number} 
- */
+    * A property of `number` type must be `less than or equal` to this value.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['lte'] = undefined;
 
 /**
- * A property of `number` type must be `greater than` this value.
- * @member {Number} 
- */
+    * A property of `number` type must be `greater than` this value.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['gt'] = undefined;
 
 /**
- * A property of `number` type must be `greater than or equal` to this value.
- * @member {Number} 
- */
+    * A property of `number` type must be `greater than or equal` to this value.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['gte'] = undefined;
 
 /**
- * Indicates whether the definition was deleted from the schema.
- * @member {Boolean} 
- */
+    * Indicates whether the definition was deleted from the schema.
+    * @type {Boolean | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['deleted'] = undefined;
 
 /**
- * Value for maximum length when the setting for `has maximum length of` in the Dashboard is defined explicitly.
- * @member {Number} 
- */
+    * Value for maximum length when the setting for `has maximum length of` in the Dashboard is defined explicitly.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['maxLength'] = undefined;
 
 /**
- * Value indicating minimum length when the setting for `has minimum length of` in the Dashboard is defined explicitly.
- * @member {Number} 
- */
+    * Value indicating minimum length when the setting for `has minimum length of` in the Dashboard is defined explicitly.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['minLength'] = undefined;
 
 /**
- * Value indicating exact length when the setting for `has exact length of` in the Dashboard is defined explicitly.
- * @member {Number} 
- */
+    * Value indicating exact length when the setting for `has exact length of` in the Dashboard is defined explicitly.
+    * @type {Number | undefined}
+    */
 MetadataSchemaDefinitionDeprecated.prototype['exactLength'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MetadataSchemaDefinitionDeprecated['TypeEnum'] = {
-
     /**
-     * value: "string"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "string": "string",
-
-    /**
-     * value: "number"
-     * @constant
-     */
-    "number": "number",
-
-    /**
-     * value: "object"
-     * @constant
-     */
-    "object": "object",
-
-    /**
-     * value: "date"
-     * @constant
-     */
-    "date": "date",
-
-    /**
-     * value: "datetime"
-     * @constant
-     */
-    "datetime": "datetime",
-
-    /**
-     * value: "geopoint"
-     * @constant
-     */
-    "geopoint": "geopoint",
-
-    /**
-     * value: "boolean"
-     * @constant
-     */
-    "boolean": "boolean",
-
-    /**
-     * value: "image_url"
-     * @constant
-     */
-    "image_url": "image_url"
-};
+    MetadataSchemaDefinitionDeprecated['TypeEnum'] = {
+    
+        /**
+         * value: "string"
+         * @constant
+         */
+        "string": "string",
+    
+        /**
+         * value: "number"
+         * @constant
+         */
+        "number": "number",
+    
+        /**
+         * value: "object"
+         * @constant
+         */
+        "object": "object",
+    
+        /**
+         * value: "date"
+         * @constant
+         */
+        "date": "date",
+    
+        /**
+         * value: "datetime"
+         * @constant
+         */
+        "datetime": "datetime",
+    
+        /**
+         * value: "geopoint"
+         * @constant
+         */
+        "geopoint": "geopoint",
+    
+        /**
+         * value: "boolean"
+         * @constant
+         */
+        "boolean": "boolean",
+    
+        /**
+         * value: "image_url"
+         * @constant
+         */
+        "image_url": "image_url"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryGift model module.
  * @module model/RedemptionEntryGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryGift {
     /**
      * Constructs a new <code>RedemptionEntryGift</code>.
-     * @alias module:model/RedemptionEntryGift
+     * @alias RedemptionEntryGift
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionEntryGift {
     /**
      * Constructs a <code>RedemptionEntryGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryGift} The populated <code>RedemptionEntryGift</code> instance.
+     * @param {Partial<RedemptionEntryGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryGift} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryGift} The populated <code>RedemptionEntryGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class RedemptionEntryGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryGift</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class RedemptionEntryGift {
 
 
 /**
- * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00). and Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
- * @member {Number} 
- */
+    * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00). and Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
+    * @type {Number | undefined}
+    */
 RedemptionEntryGift.prototype['amount'] = undefined;
 
 

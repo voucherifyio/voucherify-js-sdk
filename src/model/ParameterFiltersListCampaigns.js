@@ -29,16 +29,15 @@ import ParameterFiltersListCampaignsUpdatedAt from './ParameterFiltersListCampai
 import ParameterFiltersListCampaignsValidityDayOfWeek from './ParameterFiltersListCampaignsValidityDayOfWeek';
 import ParameterFiltersListCampaignsValidityTimeframe from './ParameterFiltersListCampaignsValidityTimeframe';
 import ParameterFiltersListCampaignsVoucherType from './ParameterFiltersListCampaignsVoucherType';
-
 /**
  * The ParameterFiltersListCampaigns model module.
  * @module model/ParameterFiltersListCampaigns
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaigns {
     /**
      * Constructs a new <code>ParameterFiltersListCampaigns</code>.
-     * @alias module:model/ParameterFiltersListCampaigns
+     * @alias ParameterFiltersListCampaigns
      */
     constructor() { 
         
@@ -56,9 +55,9 @@ class ParameterFiltersListCampaigns {
     /**
      * Constructs a <code>ParameterFiltersListCampaigns</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaigns} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaigns} The populated <code>ParameterFiltersListCampaigns</code> instance.
+     * @param {Partial<ParameterFiltersListCampaigns>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaigns} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaigns} The populated <code>ParameterFiltersListCampaigns</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -121,7 +120,7 @@ class ParameterFiltersListCampaigns {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaigns</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaigns>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaigns</code>.
      */
     static validateJSON(data) {
@@ -199,88 +198,88 @@ class ParameterFiltersListCampaigns {
 
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCampaigns} 
- */
+    * @type {ParameterFiltersListCampaignsCampaigns | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['campaigns'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCampaignsId} 
- */
+    * @type {ParameterFiltersListCampaignsCampaignsId | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['campaigns_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCampaignStatus} 
- */
+    * @type {ParameterFiltersListCampaignsCampaignStatus | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['campaign_status'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsStatus} 
- */
+    * @type {ParameterFiltersListCampaignsStatus | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['status'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsActive} 
- */
+    * @type {ParameterFiltersListCampaignsActive | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['active'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsIsReferralCode} 
- */
+    * @type {ParameterFiltersListCampaignsIsReferralCode | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['is_referral_code'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsValidityTimeframe} 
- */
+    * @type {ParameterFiltersListCampaignsValidityTimeframe | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['validity_timeframe'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsVoucherType} 
- */
+    * @type {ParameterFiltersListCampaignsVoucherType | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['voucher_type'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCategories} 
- */
+    * @type {ParameterFiltersListCampaignsCategories | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['categories'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCategoryIds} 
- */
+    * @type {ParameterFiltersListCampaignsCategoryIds | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['category_ids'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsType} 
- */
+    * @type {ParameterFiltersListCampaignsType | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['type'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsCreatedDate} 
- */
+    * @type {ParameterFiltersListCampaignsCreatedDate | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['created_date'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsUpdatedAt} 
- */
+    * @type {ParameterFiltersListCampaignsUpdatedAt | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsStartDate} 
- */
+    * @type {ParameterFiltersListCampaignsStartDate | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['start_date'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsExpirationDate} 
- */
+    * @type {ParameterFiltersListCampaignsExpirationDate | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsValidityDayOfWeek} 
- */
+    * @type {ParameterFiltersListCampaignsValidityDayOfWeek | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListCampaigns.prototype['junction'] = undefined;
 
 

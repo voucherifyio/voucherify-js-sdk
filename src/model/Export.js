@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import ExportParameters from './ExportParameters';
 import ExportResult from './ExportResult';
-
 /**
  * The Export model module.
  * @module model/Export
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Export {
     /**
      * Constructs a new <code>Export</code>.
-     * @alias module:model/Export
+     * @alias Export
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class Export {
     /**
      * Constructs a <code>Export</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Export} obj Optional instance to populate.
-     * @returns {module:model/Export} The populated <code>Export</code> instance.
+     * @param {Partial<Export>} data The plain JavaScript object bearing properties of interest.
+     * @param {Export} [obj] Optional instance to populate.
+     * @returns {Export} The populated <code>Export</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class Export {
 
     /**
      * Validates the JSON data with respect to <code>Export</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Export>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Export</code>.
      */
     static validateJSON(data) {
@@ -129,158 +128,158 @@ class Export {
 
 
 /**
- * Unique export ID.
- * @member {String} 
- */
+    * Unique export ID.
+    * @type {String | undefined}
+    */
 Export.prototype['id'] = undefined;
 
 /**
- * The type of object being represented. This object stores information about the export.
- * @member {module:model/Export.ObjectEnum} 
- * @default 'export'
- */
+    * The type of object being represented. This object stores information about the export.
+    * @type {(keyof typeof Export.ObjectEnum) | undefined}
+    * @default 'export'
+    */
 Export.prototype['object'] = 'export';
 
 /**
- * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Export.prototype['created_at'] = undefined;
 
 /**
- * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
- * @member {module:model/Export.StatusEnum} 
- */
+    * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
+    * @type {(keyof typeof Export.StatusEnum) | undefined}
+    */
 Export.prototype['status'] = undefined;
 
 /**
- * The channel through which the export was triggered.
- * @member {String} 
- */
+    * The channel through which the export was triggered.
+    * @type {String | undefined}
+    */
 Export.prototype['channel'] = undefined;
 
 /**
- * @member {module:model/ExportResult} 
- */
+    * @type {ExportResult | undefined}
+    */
 Export.prototype['result'] = undefined;
 
 /**
- * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
- * @member {String} 
- */
+    * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
+    * @type {String | undefined}
+    */
 Export.prototype['user_id'] = undefined;
 
 /**
- * @member {module:model/Export.ExportedObjectEnum} 
- */
+    * @type {(keyof typeof Export.ExportedObjectEnum) | undefined}
+    */
 Export.prototype['exported_object'] = undefined;
 
 /**
- * @member {module:model/ExportParameters} 
- */
+    * @type {ExportParameters | undefined}
+    */
 Export.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-Export['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    Export['ObjectEnum'] = {
+    
+        /**
+         * value: "export"
+         * @constant
+         */
+        "export": "export"    
+    };
+
 
     /**
-     * value: "export"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "export": "export"
-};
+    Export['StatusEnum'] = {
+    
+        /**
+         * value: "SCHEDULED"
+         * @constant
+         */
+        "SCHEDULED": "SCHEDULED",
+    
+        /**
+         * value: "IN_PROGRESS"
+         * @constant
+         */
+        "IN_PROGRESS": "IN_PROGRESS",
+    
+        /**
+         * value: "DONE"
+         * @constant
+         */
+        "DONE": "DONE",
+    
+        /**
+         * value: "ERROR"
+         * @constant
+         */
+        "ERROR": "ERROR"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-Export['StatusEnum'] = {
 
     /**
-     * value: "SCHEDULED"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SCHEDULED": "SCHEDULED",
-
-    /**
-     * value: "IN_PROGRESS"
-     * @constant
-     */
-    "IN_PROGRESS": "IN_PROGRESS",
-
-    /**
-     * value: "DONE"
-     * @constant
-     */
-    "DONE": "DONE",
-
-    /**
-     * value: "ERROR"
-     * @constant
-     */
-    "ERROR": "ERROR"
-};
-
-
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-Export['ExportedObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "redemption"
-     * @constant
-     */
-    "redemption": "redemption",
-
-    /**
-     * value: "customer"
-     * @constant
-     */
-    "customer": "customer",
-
-    /**
-     * value: "publication"
-     * @constant
-     */
-    "publication": "publication",
-
-    /**
-     * value: "order"
-     * @constant
-     */
-    "order": "order",
-
-    /**
-     * value: "points_expiration"
-     * @constant
-     */
-    "points_expiration": "points_expiration",
-
-    /**
-     * value: "voucher_transactions"
-     * @constant
-     */
-    "voucher_transactions": "voucher_transactions"
-};
+    Export['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption",
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer",
+    
+        /**
+         * value: "publication"
+         * @constant
+         */
+        "publication": "publication",
+    
+        /**
+         * value: "order"
+         * @constant
+         */
+        "order": "order",
+    
+        /**
+         * value: "points_expiration"
+         * @constant
+         */
+        "points_expiration": "points_expiration",
+    
+        /**
+         * value: "voucher_transactions"
+         * @constant
+         */
+        "voucher_transactions": "voucher_transactions"    
+    };
 
 
 

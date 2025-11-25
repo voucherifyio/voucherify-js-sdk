@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomerActivity from './CustomerActivity';
-
 /**
  * The CustomersActivityListResponseBody model module.
  * @module model/CustomersActivityListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersActivityListResponseBody {
     /**
      * Constructs a new <code>CustomersActivityListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/customers/{customerId}/activity&#x60;.
-     * @alias module:model/CustomersActivityListResponseBody
+     * @alias CustomersActivityListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CustomersActivityListResponseBody {
     /**
      * Constructs a <code>CustomersActivityListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersActivityListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersActivityListResponseBody} The populated <code>CustomersActivityListResponseBody</code> instance.
+     * @param {Partial<CustomersActivityListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersActivityListResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersActivityListResponseBody} The populated <code>CustomersActivityListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CustomersActivityListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersActivityListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersActivityListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersActivityListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,54 +107,54 @@ class CustomersActivityListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about customer activities in a dictionary.
- * @member {module:model/CustomersActivityListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about customer activities in a dictionary.
+    * @type {(keyof typeof CustomersActivityListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 CustomersActivityListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of customer activity objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of customer activity objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 CustomersActivityListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of customer activity objects.
- * @member {Array.<module:model/CustomerActivity>} 
- */
+    * Array of customer activity objects.
+    * @type {Array.<CustomerActivity> | undefined}
+    */
 CustomersActivityListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 CustomersActivityListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the event ID in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the event ID in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
+    * @type {String | undefined}
+    */
 CustomersActivityListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CustomersActivityListResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
+    CustomersActivityListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
 
 
 

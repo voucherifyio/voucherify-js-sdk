@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsValidateRequestBodyOptions model module.
  * @module model/ValidationsValidateRequestBodyOptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateRequestBodyOptions {
     /**
      * Constructs a new <code>ValidationsValidateRequestBodyOptions</code>.
      * Configure parameters returned in the response.
-     * @alias module:model/ValidationsValidateRequestBodyOptions
+     * @alias ValidationsValidateRequestBodyOptions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationsValidateRequestBodyOptions {
     /**
      * Constructs a <code>ValidationsValidateRequestBodyOptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateRequestBodyOptions} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateRequestBodyOptions} The populated <code>ValidationsValidateRequestBodyOptions</code> instance.
+     * @param {Partial<ValidationsValidateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateRequestBodyOptions} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateRequestBodyOptions} The populated <code>ValidationsValidateRequestBodyOptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ValidationsValidateRequestBodyOptions {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateRequestBodyOptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateRequestBodyOptions</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ValidationsValidateRequestBodyOptions {
 
 
 /**
- * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. |
- * @member {Array.<module:model/ValidationsValidateRequestBodyOptions.ExpandEnum>} 
- */
+    * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. |
+    * @type {(Array<keyof typeof ValidationsValidateRequestBodyOptions.ExpandEnum>) | undefined}
+    */
 ValidationsValidateRequestBodyOptions.prototype['expand'] = undefined;
 
 

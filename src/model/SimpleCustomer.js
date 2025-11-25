@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleCustomer model module.
  * @module model/SimpleCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleCustomer {
     /**
      * Constructs a new <code>SimpleCustomer</code>.
      * Simplified customer data.
-     * @alias module:model/SimpleCustomer
+     * @alias SimpleCustomer
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class SimpleCustomer {
     /**
      * Constructs a <code>SimpleCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleCustomer} obj Optional instance to populate.
-     * @returns {module:model/SimpleCustomer} The populated <code>SimpleCustomer</code> instance.
+     * @param {Partial<SimpleCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleCustomer} [obj] Optional instance to populate.
+     * @returns {SimpleCustomer} The populated <code>SimpleCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class SimpleCustomer {
 
     /**
      * Validates the JSON data with respect to <code>SimpleCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleCustomer</code>.
      */
     static validateJSON(data) {
@@ -107,59 +106,59 @@ class SimpleCustomer {
 
 
 /**
- * Unique identifier of an existing customer. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an existing customer. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleCustomer.prototype['id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 SimpleCustomer.prototype['name'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 SimpleCustomer.prototype['email'] = undefined;
 
 /**
- * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
- * @member {String} 
- */
+    * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+    * @type {String | undefined}
+    */
 SimpleCustomer.prototype['source_id'] = undefined;
 
 /**
- * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
+    * @type {Object | undefined}
+    */
 SimpleCustomer.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/SimpleCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof SimpleCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 SimpleCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    SimpleCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

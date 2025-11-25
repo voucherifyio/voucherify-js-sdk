@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleOrderItem model module.
  * @module model/SimpleOrderItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleOrderItem {
     /**
      * Constructs a new <code>SimpleOrderItem</code>.
-     * @alias module:model/SimpleOrderItem
+     * @alias SimpleOrderItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimpleOrderItem {
     /**
      * Constructs a <code>SimpleOrderItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleOrderItem} obj Optional instance to populate.
-     * @returns {module:model/SimpleOrderItem} The populated <code>SimpleOrderItem</code> instance.
+     * @param {Partial<SimpleOrderItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleOrderItem} [obj] Optional instance to populate.
+     * @returns {SimpleOrderItem} The populated <code>SimpleOrderItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -102,7 +101,7 @@ class SimpleOrderItem {
 
     /**
      * Validates the JSON data with respect to <code>SimpleOrderItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleOrderItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleOrderItem</code>.
      */
     static validateJSON(data) {
@@ -140,140 +139,140 @@ class SimpleOrderItem {
 
 
 /**
- * Unique identifier of the order line item.
- * @member {String} 
- */
+    * Unique identifier of the order line item.
+    * @type {String | undefined}
+    */
 SimpleOrderItem.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the `order_item`.
- * @member {module:model/SimpleOrderItem.ObjectEnum} 
- * @default 'order_item'
- */
+    * The type of the object represented by JSON. This object stores information about the `order_item`.
+    * @type {(keyof typeof SimpleOrderItem.ObjectEnum) | undefined}
+    * @default 'order_item'
+    */
 SimpleOrderItem.prototype['object'] = 'order_item';
 
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} 
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+    * @type {String | undefined}
+    */
 SimpleOrderItem.prototype['source_id'] = undefined;
 
 /**
- * Used along with the `source_id` property, can be set to either SKU or product.
- * @member {module:model/SimpleOrderItem.RelatedObjectEnum} 
- */
+    * Used along with the `source_id` property, can be set to either SKU or product.
+    * @type {(keyof typeof SimpleOrderItem.RelatedObjectEnum) | undefined}
+    */
 SimpleOrderItem.prototype['related_object'] = undefined;
 
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleOrderItem.prototype['product_id'] = undefined;
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleOrderItem.prototype['sku_id'] = undefined;
 
 /**
- * Quantity of the particular item in the cart.
- * @member {Number} 
- */
+    * Quantity of the particular item in the cart.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['quantity'] = undefined;
 
 /**
- * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['applied_quantity'] = undefined;
 
 /**
- * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
- * @member {Number} 
- */
+    * Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['applied_quantity_amount'] = undefined;
 
 /**
- * Number of discounted items.
- * @member {Number} 
- */
+    * Number of discounted items.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['discount_quantity'] = undefined;
 
 /**
- * Number of the discounted items applied in the transaction.
- * @member {Number} 
- */
+    * Number of the discounted items applied in the transaction.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['applied_discount_quantity'] = undefined;
 
 /**
- * Total amount of the order item (price * quantity).
- * @member {Number} 
- */
+    * Total amount of the order item (price * quantity).
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} 
- */
+    * Sum of all order-item-level discounts applied to the order.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['discount_amount'] = undefined;
 
 /**
- * Order-level discount amount applied in the transaction.
- * @member {Number} 
- */
+    * Order-level discount amount applied in the transaction.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['applied_discount_amount'] = undefined;
 
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['price'] = undefined;
 
 /**
- * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`discount_amount`
- * @member {Number} 
- */
+    * Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`discount_amount`
+    * @type {Number | undefined}
+    */
 SimpleOrderItem.prototype['subtotal_amount'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleOrderItem['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SimpleOrderItem['ObjectEnum'] = {
+    
+        /**
+         * value: "order_item"
+         * @constant
+         */
+        "order_item": "order_item"    
+    };
+
 
     /**
-     * value: "order_item"
-     * @constant
+     * Allowed values for the <code>related_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "order_item": "order_item"
-};
-
-
-/**
- * Allowed values for the <code>related_object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleOrderItem['RelatedObjectEnum'] = {
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    SimpleOrderItem['RelatedObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

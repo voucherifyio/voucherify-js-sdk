@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionTierSummaryRedemptions model module.
  * @module model/PromotionTierSummaryRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierSummaryRedemptions {
     /**
      * Constructs a new <code>PromotionTierSummaryRedemptions</code>.
      * Contains statistics about promotion tier redemptions.
-     * @alias module:model/PromotionTierSummaryRedemptions
+     * @alias PromotionTierSummaryRedemptions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class PromotionTierSummaryRedemptions {
     /**
      * Constructs a <code>PromotionTierSummaryRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierSummaryRedemptions} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierSummaryRedemptions} The populated <code>PromotionTierSummaryRedemptions</code> instance.
+     * @param {Partial<PromotionTierSummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierSummaryRedemptions} [obj] Optional instance to populate.
+     * @returns {PromotionTierSummaryRedemptions} The populated <code>PromotionTierSummaryRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class PromotionTierSummaryRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierSummaryRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierSummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierSummaryRedemptions</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class PromotionTierSummaryRedemptions {
 
 
 /**
- * Number of times the promotion tier was redeemed.
- * @member {Number} 
- */
+    * Number of times the promotion tier was redeemed.
+    * @type {Number | undefined}
+    */
 PromotionTierSummaryRedemptions.prototype['total_redeemed'] = undefined;
 
 

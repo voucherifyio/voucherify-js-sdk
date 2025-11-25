@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import ClientQualificationsCheckEligibilityResponseBodyOrder from './ClientQualificationsCheckEligibilityResponseBodyOrder';
 import QualificationsRedeemables from './QualificationsRedeemables';
 import StackingRules from './StackingRules';
-
 /**
  * The ClientQualificationsCheckEligibilityResponseBody model module.
  * @module model/ClientQualificationsCheckEligibilityResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientQualificationsCheckEligibilityResponseBody {
     /**
      * Constructs a new <code>ClientQualificationsCheckEligibilityResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/qualifications&#x60;.
-     * @alias module:model/ClientQualificationsCheckEligibilityResponseBody
+     * @alias ClientQualificationsCheckEligibilityResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ClientQualificationsCheckEligibilityResponseBody {
     /**
      * Constructs a <code>ClientQualificationsCheckEligibilityResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientQualificationsCheckEligibilityResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ClientQualificationsCheckEligibilityResponseBody} The populated <code>ClientQualificationsCheckEligibilityResponseBody</code> instance.
+     * @param {Partial<ClientQualificationsCheckEligibilityResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientQualificationsCheckEligibilityResponseBody} [obj] Optional instance to populate.
+     * @returns {ClientQualificationsCheckEligibilityResponseBody} The populated <code>ClientQualificationsCheckEligibilityResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ClientQualificationsCheckEligibilityResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientQualificationsCheckEligibilityResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientQualificationsCheckEligibilityResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientQualificationsCheckEligibilityResponseBody</code>.
      */
     static validateJSON(data) {
@@ -99,24 +98,24 @@ class ClientQualificationsCheckEligibilityResponseBody {
 
 
 /**
- * @member {module:model/QualificationsRedeemables} 
- */
+    * @type {QualificationsRedeemables | undefined}
+    */
 ClientQualificationsCheckEligibilityResponseBody.prototype['redeemables'] = undefined;
 
 /**
- * This identifier is generated during voucher qualification based on your internal id (e.g., email, database ID). This is a hashed customer source ID.
- * @member {String} 
- */
+    * This identifier is generated during voucher qualification based on your internal id (e.g., email, database ID). This is a hashed customer source ID.
+    * @type {String | undefined}
+    */
 ClientQualificationsCheckEligibilityResponseBody.prototype['tracking_id'] = undefined;
 
 /**
- * @member {module:model/ClientQualificationsCheckEligibilityResponseBodyOrder} 
- */
+    * @type {ClientQualificationsCheckEligibilityResponseBodyOrder | undefined}
+    */
 ClientQualificationsCheckEligibilityResponseBody.prototype['order'] = undefined;
 
 /**
- * @member {module:model/StackingRules} 
- */
+    * @type {StackingRules | undefined}
+    */
 ClientQualificationsCheckEligibilityResponseBody.prototype['stacking_rules'] = undefined;
 
 

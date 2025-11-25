@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListCampaignsVoucherTypeConditions from './ParameterFiltersListCampaignsVoucherTypeConditions';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesVoucherType model module.
  * @module model/ParameterFiltersListCustomerRedeemablesVoucherType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesVoucherType {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesVoucherType</code>.
      * Type of the voucher. Allowed values: &#x60;DISCOUNT_VOUCHER&#x60;, &#x60;GIFT_VOUCHER&#x60;, &#x60;LOYALTY_CARD&#x60;.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesVoucherType
+     * @alias ParameterFiltersListCustomerRedeemablesVoucherType
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCustomerRedeemablesVoucherType {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesVoucherType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesVoucherType} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesVoucherType} The populated <code>ParameterFiltersListCustomerRedeemablesVoucherType</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesVoucherType>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesVoucherType} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesVoucherType} The populated <code>ParameterFiltersListCustomerRedeemablesVoucherType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCustomerRedeemablesVoucherType {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesVoucherType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesVoucherType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesVoucherType</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCustomerRedeemablesVoucherType {
 
 
 /**
- * @member {module:model/ParameterFiltersListCampaignsVoucherTypeConditions} 
- */
+    * @type {ParameterFiltersListCampaignsVoucherTypeConditions | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesVoucherType.prototype['conditions'] = undefined;
 
 

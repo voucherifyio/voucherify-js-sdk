@@ -13,64 +13,59 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderVouchers.
-* @module model/ParameterOrderVouchers
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderVouchers {
+ * Enum class ParameterOrderVouchers.
+ * @module model/ParameterOrderVouchers
+ * @version 3.0.1
+ */
+class ParameterOrderVouchers {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "updated_at"
-         * @constant
-         */
-        "updated_at" = "updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "updated_at" = "updated_at";
     
-        /**
-         * value: "-updated_at"
-         * @constant
-         */
-        "-updated_at" = "-updated_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-updated_at" = "-updated_at";
     
-        /**
-         * value: "code"
-         * @constant
-         */
-        "code" = "code";
-
+    /**
+     * 
+     * @constant
+     */
+    static "code" = "code";
     
-        /**
-         * value: "-code"
-         * @constant
-         */
-        "-code" = "-code";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-code" = "-code";
     
 
     /**
-    * Returns a <code>ParameterOrderVouchers</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderVouchers} The enum <code>ParameterOrderVouchers</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderVouchers, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderVouchers[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderVouchers[key];
     }
 }
+
+export default ParameterOrderVouchers;
 

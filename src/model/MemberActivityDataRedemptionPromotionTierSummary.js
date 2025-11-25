@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import MemberActivityDataRedemptionPromotionTierSummaryOrders from './MemberActivityDataRedemptionPromotionTierSummaryOrders';
 import MemberActivityDataRedemptionPromotionTierSummaryRedemptions from './MemberActivityDataRedemptionPromotionTierSummaryRedemptions';
-
 /**
  * The MemberActivityDataRedemptionPromotionTierSummary model module.
  * @module model/MemberActivityDataRedemptionPromotionTierSummary
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionPromotionTierSummary {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionPromotionTierSummary</code>.
      * Contains statistics about promotion tier redemptions and orders.
-     * @alias module:model/MemberActivityDataRedemptionPromotionTierSummary
+     * @alias MemberActivityDataRedemptionPromotionTierSummary
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class MemberActivityDataRedemptionPromotionTierSummary {
     /**
      * Constructs a <code>MemberActivityDataRedemptionPromotionTierSummary</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionPromotionTierSummary} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionPromotionTierSummary} The populated <code>MemberActivityDataRedemptionPromotionTierSummary</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierSummary>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionPromotionTierSummary} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionPromotionTierSummary} The populated <code>MemberActivityDataRedemptionPromotionTierSummary</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class MemberActivityDataRedemptionPromotionTierSummary {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionPromotionTierSummary</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierSummary>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionPromotionTierSummary</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class MemberActivityDataRedemptionPromotionTierSummary {
 
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTierSummaryRedemptions} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTierSummaryRedemptions | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierSummary.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTierSummaryOrders} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTierSummaryOrders | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierSummary.prototype['orders'] = undefined;
 
 

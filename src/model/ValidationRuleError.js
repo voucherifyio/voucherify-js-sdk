@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationRuleError model module.
  * @module model/ValidationRuleError
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRuleError {
     /**
      * Constructs a new <code>ValidationRuleError</code>.
      * Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
-     * @alias module:model/ValidationRuleError
+     * @alias ValidationRuleError
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationRuleError {
     /**
      * Constructs a <code>ValidationRuleError</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRuleError} obj Optional instance to populate.
-     * @returns {module:model/ValidationRuleError} The populated <code>ValidationRuleError</code> instance.
+     * @param {Partial<ValidationRuleError>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRuleError} [obj] Optional instance to populate.
+     * @returns {ValidationRuleError} The populated <code>ValidationRuleError</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ValidationRuleError {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRuleError</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRuleError>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRuleError</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ValidationRuleError {
 
 
 /**
- * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
- * @member {String} 
- */
+    * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
+    * @type {String | undefined}
+    */
 ValidationRuleError.prototype['message'] = undefined;
 
 

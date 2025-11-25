@@ -16,17 +16,16 @@ import Customer from './Customer';
 import Order from './Order';
 import OrderItem from './OrderItem';
 import Referrer from './Referrer';
-
 /**
  * The OrdersImportCreateRequestBodyItem model module.
  * @module model/OrdersImportCreateRequestBodyItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersImportCreateRequestBodyItem {
     /**
      * Constructs a new <code>OrdersImportCreateRequestBodyItem</code>.
-     * @alias module:model/OrdersImportCreateRequestBodyItem
-     * @implements module:model/Order
+     * @alias OrdersImportCreateRequestBodyItem
+     * @implements Order
      */
     constructor() { 
         Order.initialize(this);
@@ -44,9 +43,9 @@ class OrdersImportCreateRequestBodyItem {
     /**
      * Constructs a <code>OrdersImportCreateRequestBodyItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersImportCreateRequestBodyItem} obj Optional instance to populate.
-     * @returns {module:model/OrdersImportCreateRequestBodyItem} The populated <code>OrdersImportCreateRequestBodyItem</code> instance.
+     * @param {Partial<OrdersImportCreateRequestBodyItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersImportCreateRequestBodyItem} [obj] Optional instance to populate.
+     * @returns {OrdersImportCreateRequestBodyItem} The populated <code>OrdersImportCreateRequestBodyItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -95,7 +94,7 @@ class OrdersImportCreateRequestBodyItem {
 
     /**
      * Validates the JSON data with respect to <code>OrdersImportCreateRequestBodyItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersImportCreateRequestBodyItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersImportCreateRequestBodyItem</code>.
      */
     static validateJSON(data) {
@@ -143,151 +142,159 @@ class OrdersImportCreateRequestBodyItem {
 
 
 /**
- * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['id'] = undefined;
 
 /**
- * Unique source ID of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['source_id'] = undefined;
 
 /**
- * The order status.
- * @member {module:model/OrdersImportCreateRequestBodyItem.StatusEnum} 
- */
+    * The order status.
+    * @type {(keyof typeof OrdersImportCreateRequestBodyItem.StatusEnum) | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['status'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['initial_amount'] = undefined;
 
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['discount_amount'] = undefined;
 
 /**
- * Array of items applied to the order. It can include up to 500 items.
- * @member {Array.<module:model/OrderItem>} 
- */
+    * Array of items applied to the order. It can include up to 500 items.
+    * @type {Array.<OrderItem> | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['items'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['created_at'] = undefined;
 
 /**
- * Unique referrer ID.
- * @member {String} 
- */
+    * Unique referrer ID.
+    * @type {String | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['referrer_id'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Referrer} 
- */
+    * @type {Referrer | undefined}
+    */
 OrdersImportCreateRequestBodyItem.prototype['referrer'] = undefined;
 
 
 // Implement Order interface:
 /**
- * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.
- * @member {String} id
- */
+    * Unique ID assigned by Voucherify of an existing order that will be linked to the redemption of this request.    *
+    * @type {String | undefined}
+    * @member {String | undefined} id
+    */
 Order.prototype['id'] = undefined;
 /**
- * Unique source ID of an existing order that will be linked to the redemption of this request.
- * @member {String} source_id
- */
+    * Unique source ID of an existing order that will be linked to the redemption of this request.    *
+    * @type {String | undefined}
+    * @member {String | undefined} source_id
+    */
 Order.prototype['source_id'] = undefined;
 /**
- * The order status.
- * @member {module:model/Order.StatusEnum} status
- */
+    * The order status.
+    * @type {(keyof typeof Order.StatusEnum) | undefined}
+    * @member {Order.StatusEnum | undefined} status
+    */
 Order.prototype['status'] = undefined;
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} amount
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} amount
+    */
 Order.prototype['amount'] = undefined;
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} initial_amount
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} initial_amount
+    */
 Order.prototype['initial_amount'] = undefined;
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} discount_amount
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).    *
+    * @type {Number | undefined}
+    * @member {Number | undefined} discount_amount
+    */
 Order.prototype['discount_amount'] = undefined;
 /**
- * Array of items applied to the order. It can include up to 500 items.
- * @member {Array.<module:model/OrderItem>} items
- */
+    * Array of items applied to the order. It can include up to 500 items.    *
+    * @type {Array.<OrderItem> | undefined}
+    * @member {Array.<OrderItem> | undefined} items
+    */
 Order.prototype['items'] = undefined;
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} metadata
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.    *
+    * @type {Object | undefined}
+    * @member {Object | undefined} metadata
+    */
 Order.prototype['metadata'] = undefined;
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersImportCreateRequestBodyItem['StatusEnum'] = {
-
     /**
-     * value: "CREATED"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREATED": "CREATED",
-
-    /**
-     * value: "PAID"
-     * @constant
-     */
-    "PAID": "PAID",
-
-    /**
-     * value: "CANCELED"
-     * @constant
-     */
-    "CANCELED": "CANCELED",
-
-    /**
-     * value: "FULFILLED"
-     * @constant
-     */
-    "FULFILLED": "FULFILLED"
-};
+    OrdersImportCreateRequestBodyItem['StatusEnum'] = {
+    
+        /**
+         * value: "CREATED"
+         * @constant
+         */
+        "CREATED": "CREATED",
+    
+        /**
+         * value: "PAID"
+         * @constant
+         */
+        "PAID": "PAID",
+    
+        /**
+         * value: "CANCELED"
+         * @constant
+         */
+        "CANCELED": "CANCELED",
+    
+        /**
+         * value: "FULFILLED"
+         * @constant
+         */
+        "FULFILLED": "FULFILLED"    
+    };
 
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Customer from './Customer';
-
 /**
  * The ReferralsMembersHoldersCreateInBulkRequestBody model module.
  * @module model/ReferralsMembersHoldersCreateInBulkRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralsMembersHoldersCreateInBulkRequestBody {
     /**
      * Constructs a new <code>ReferralsMembersHoldersCreateInBulkRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/referrals/{campaignId}/members/{memberId}/holders&#x60; and **POST** &#x60;v1/referrals/members/{memberId}/holders&#x60;.
-     * @alias module:model/ReferralsMembersHoldersCreateInBulkRequestBody
+     * @alias ReferralsMembersHoldersCreateInBulkRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ReferralsMembersHoldersCreateInBulkRequestBody {
     /**
      * Constructs a <code>ReferralsMembersHoldersCreateInBulkRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ReferralsMembersHoldersCreateInBulkRequestBody} The populated <code>ReferralsMembersHoldersCreateInBulkRequestBody</code> instance.
+     * @param {Partial<ReferralsMembersHoldersCreateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralsMembersHoldersCreateInBulkRequestBody} [obj] Optional instance to populate.
+     * @returns {ReferralsMembersHoldersCreateInBulkRequestBody} The populated <code>ReferralsMembersHoldersCreateInBulkRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class ReferralsMembersHoldersCreateInBulkRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ReferralsMembersHoldersCreateInBulkRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralsMembersHoldersCreateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralsMembersHoldersCreateInBulkRequestBody</code>.
      */
     static validateJSON(data) {
@@ -85,15 +84,15 @@ class ReferralsMembersHoldersCreateInBulkRequestBody {
 
 
 /**
- * Array of holders to be added to a referral card as referees. You have to send at least one object in the array up to a maximum of 100 objects. You can send either a `source_id` or `id`, or both; however, at least one of them is required. If both are sent, Voucherify checks `id` to upsert that customer's data.
- * @member {Array.<module:model/Customer>} 
- */
+    * Array of holders to be added to a referral card as referees. You have to send at least one object in the array up to a maximum of 100 objects. You can send either a `source_id` or `id`, or both; however, at least one of them is required. If both are sent, Voucherify checks `id` to upsert that customer's data.
+    * @type {Array.<Customer> | undefined}
+    */
 ReferralsMembersHoldersCreateInBulkRequestBody.prototype['holders'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to the redeemable holders sent in the array. The value can be a string, number, boolean, date, datetime, image URL, or object. The metadata must meet the metadata schema for publications. The metadata object stores all custom attributes assigned to the redeemable holder.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to the redeemable holders sent in the array. The value can be a string, number, boolean, date, datetime, image URL, or object. The metadata must meet the metadata schema for publications. The metadata object stores all custom attributes assigned to the redeemable holder.
+    * @type {Object | undefined}
+    */
 ReferralsMembersHoldersCreateInBulkRequestBody.prototype['metadata'] = undefined;
 
 

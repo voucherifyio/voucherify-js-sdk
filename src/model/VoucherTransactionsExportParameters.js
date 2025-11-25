@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionsExportParameters model module.
  * @module model/VoucherTransactionsExportParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionsExportParameters {
     /**
      * Constructs a new <code>VoucherTransactionsExportParameters</code>.
      * List of available fields and filters that can be exported with a gift card or loyalty card transactions export along with the sorting order of the returned data.
-     * @alias module:model/VoucherTransactionsExportParameters
+     * @alias VoucherTransactionsExportParameters
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionsExportParameters {
     /**
      * Constructs a <code>VoucherTransactionsExportParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionsExportParameters} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionsExportParameters} The populated <code>VoucherTransactionsExportParameters</code> instance.
+     * @param {Partial<VoucherTransactionsExportParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionsExportParameters} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionsExportParameters} The populated <code>VoucherTransactionsExportParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionsExportParameters {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionsExportParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionsExportParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionsExportParameters</code>.
      */
     static validateJSON(data) {
@@ -82,40 +81,40 @@ class VoucherTransactionsExportParameters {
 
 
 /**
- * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
- * @member {module:model/VoucherTransactionsExportParameters.OrderEnum} 
- */
+    * How the export is filtered, where the dash `-` preceding a sorting option means sorting in a descending order.
+    * @type {(keyof typeof VoucherTransactionsExportParameters.OrderEnum) | undefined}
+    */
 VoucherTransactionsExportParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique transaction ID. | vtx_0cb7811f1c07765800 | | type | Transaction type. | - `CREDITS_REMOVAL` <br /> - `CREDITS_ADDITION` <br /> - `CREDITS_REFUND` <br /> - `CREDITS_REDEMPTION` <br /> - `POINTS_ACCRUAL` <br /> - `POINTS_REDEMPTION`<br /> - `POINTS_REFUND`<br /> - `POINTS_ADDITION`<br /> - `POINTS_REMOVAL`<br /> - `POINTS_EXPIRATION`<br /> - `POINTS_TRANSFER_IN`<br /> - `POINTS_TRANSFER_OUT` | | source_id | Unique transaction source ID. | 8638 | | reason | Contains the reason for the transaction if one was included originally. |  | | balance | The gift card or loyalty card balance after the transaction. |  | | amount | The amount of gift card or loyalty card credits being allocated during the transaction. This value can either be negative or positive depending on the nature of the transaction. |  | | created_at | Timestamp in ISO 8601 format representing the date and time when the transaction was created. | 2022-03-09T09:16:32.521Z  | | voucher_id | Unique Voucher ID. | v_dky7ksKfPX50Wb2Bxvcoeb1xT20b6tcp | | campaign_id | Parent campaign ID. | camp_FNYR4jhqZBM9xTptxDGgeNBV | | source|  Channel through which the transaction was initiated. | API | | details | More detailed information stored in the form of a JSON. | Provides more details related to the transaction in the form of an object. | | related_transaction_id | Unique transaction ID related to a receiver/donor card in the case of a points transfer from/to another card. | vtx_0c9afe802593b34b80 |
- * @member {Array.<module:model/VoucherTransactionsExportParameters.FieldsEnum>} 
- */
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique transaction ID. | vtx_0cb7811f1c07765800 | | type | Transaction type. | - `CREDITS_REMOVAL` <br /> - `CREDITS_ADDITION` <br /> - `CREDITS_REFUND` <br /> - `CREDITS_REDEMPTION` <br /> - `POINTS_ACCRUAL` <br /> - `POINTS_REDEMPTION`<br /> - `POINTS_REFUND`<br /> - `POINTS_ADDITION`<br /> - `POINTS_REMOVAL`<br /> - `POINTS_EXPIRATION`<br /> - `POINTS_TRANSFER_IN`<br /> - `POINTS_TRANSFER_OUT` | | source_id | Unique transaction source ID. | 8638 | | reason | Contains the reason for the transaction if one was included originally. |  | | balance | The gift card or loyalty card balance after the transaction. |  | | amount | The amount of gift card or loyalty card credits being allocated during the transaction. This value can either be negative or positive depending on the nature of the transaction. |  | | created_at | Timestamp in ISO 8601 format representing the date and time when the transaction was created. | 2022-03-09T09:16:32.521Z  | | voucher_id | Unique Voucher ID. | v_dky7ksKfPX50Wb2Bxvcoeb1xT20b6tcp | | campaign_id | Parent campaign ID. | camp_FNYR4jhqZBM9xTptxDGgeNBV | | source|  Channel through which the transaction was initiated. | API | | details | More detailed information stored in the form of a JSON. | Provides more details related to the transaction in the form of an object. | | related_transaction_id | Unique transaction ID related to a receiver/donor card in the case of a points transfer from/to another card. | vtx_0c9afe802593b34b80 |
+    * @type {(Array<keyof typeof VoucherTransactionsExportParameters.FieldsEnum>) | undefined}
+    */
 VoucherTransactionsExportParameters.prototype['fields'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherTransactionsExportParameters['OrderEnum'] = {
-
     /**
-     * value: "-created_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "-created_at": "-created_at",
-
-    /**
-     * value: "created_at"
-     * @constant
-     */
-    "created_at": "created_at"
-};
+    VoucherTransactionsExportParameters['OrderEnum'] = {
+    
+        /**
+         * value: "-created_at"
+         * @constant
+         */
+        "-created_at": "-created_at",
+    
+        /**
+         * value: "created_at"
+         * @constant
+         */
+        "created_at": "created_at"    
+    };
 
 
 /**

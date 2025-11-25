@@ -16,16 +16,15 @@ import EarningRuleLoyaltyCustomEvent from './EarningRuleLoyaltyCustomEvent';
 import EarningRuleLoyaltyCustomer from './EarningRuleLoyaltyCustomer';
 import EarningRuleLoyaltyOrder from './EarningRuleLoyaltyOrder';
 import EarningRuleLoyaltyOrderItems from './EarningRuleLoyaltyOrderItems';
-
 /**
  * The EarningRuleLoyalty model module.
  * @module model/EarningRuleLoyalty
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyalty {
     /**
      * Constructs a new <code>EarningRuleLoyalty</code>.
-     * @alias module:model/EarningRuleLoyalty
+     * @alias EarningRuleLoyalty
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class EarningRuleLoyalty {
     /**
      * Constructs a <code>EarningRuleLoyalty</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyalty} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyalty} The populated <code>EarningRuleLoyalty</code> instance.
+     * @param {Partial<EarningRuleLoyalty>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyalty} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyalty} The populated <code>EarningRuleLoyalty</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class EarningRuleLoyalty {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyalty</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyalty>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyalty</code>.
      */
     static validateJSON(data) {
@@ -123,127 +122,127 @@ class EarningRuleLoyalty {
 
 
 /**
- * @member {module:model/EarningRuleLoyalty.TypeEnum} 
- */
+    * @type {(keyof typeof EarningRuleLoyalty.TypeEnum) | undefined}
+    */
 EarningRuleLoyalty.prototype['type'] = undefined;
 
 /**
- * Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
- * @member {Number} 
- */
+    * Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
+    * @type {Number | undefined}
+    */
 EarningRuleLoyalty.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 EarningRuleLoyalty.prototype['points_formula'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyalty.CalculationTypeEnum} 
- */
+    * @type {(keyof typeof EarningRuleLoyalty.CalculationTypeEnum) | undefined}
+    */
 EarningRuleLoyalty.prototype['calculation_type'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyOrder} 
- */
+    * @type {EarningRuleLoyaltyOrder | undefined}
+    */
 EarningRuleLoyalty.prototype['order'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyOrderItems} 
- */
+    * @type {EarningRuleLoyaltyOrderItems | undefined}
+    */
 EarningRuleLoyalty.prototype['order_items'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyCustomer} 
- */
+    * @type {EarningRuleLoyaltyCustomer | undefined}
+    */
 EarningRuleLoyalty.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/EarningRuleLoyaltyCustomEvent} 
- */
+    * @type {EarningRuleLoyaltyCustomEvent | undefined}
+    */
 EarningRuleLoyalty.prototype['custom_event'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-EarningRuleLoyalty['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    EarningRuleLoyalty['TypeEnum'] = {
+    
+        /**
+         * value: "FIXED"
+         * @constant
+         */
+        "FIXED": "FIXED",
+    
+        /**
+         * value: "PROPORTIONAL"
+         * @constant
+         */
+        "PROPORTIONAL": "PROPORTIONAL"    
+    };
+
 
     /**
-     * value: "FIXED"
-     * @constant
+     * Allowed values for the <code>calculation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "FIXED": "FIXED",
-
-    /**
-     * value: "PROPORTIONAL"
-     * @constant
-     */
-    "PROPORTIONAL": "PROPORTIONAL"
-};
-
-
-/**
- * Allowed values for the <code>calculation_type</code> property.
- * @enum {String}
- * @readonly
- */
-EarningRuleLoyalty['CalculationTypeEnum'] = {
-
-    /**
-     * value: "ORDER_AMOUNT"
-     * @constant
-     */
-    "ORDER_AMOUNT": "ORDER_AMOUNT",
-
-    /**
-     * value: "ORDER_TOTAL_AMOUNT"
-     * @constant
-     */
-    "ORDER_TOTAL_AMOUNT": "ORDER_TOTAL_AMOUNT",
-
-    /**
-     * value: "ORDER_METADATA"
-     * @constant
-     */
-    "ORDER_METADATA": "ORDER_METADATA",
-
-    /**
-     * value: "ORDER_ITEMS_QUANTITY"
-     * @constant
-     */
-    "ORDER_ITEMS_QUANTITY": "ORDER_ITEMS_QUANTITY",
-
-    /**
-     * value: "ORDER_ITEMS_AMOUNT"
-     * @constant
-     */
-    "ORDER_ITEMS_AMOUNT": "ORDER_ITEMS_AMOUNT",
-
-    /**
-     * value: "ORDER_ITEMS_SUBTOTAL_AMOUNT"
-     * @constant
-     */
-    "ORDER_ITEMS_SUBTOTAL_AMOUNT": "ORDER_ITEMS_SUBTOTAL_AMOUNT",
-
-    /**
-     * value: "CUSTOMER_METADATA"
-     * @constant
-     */
-    "CUSTOMER_METADATA": "CUSTOMER_METADATA",
-
-    /**
-     * value: "CUSTOM_EVENT_METADATA"
-     * @constant
-     */
-    "CUSTOM_EVENT_METADATA": "CUSTOM_EVENT_METADATA"
-};
+    EarningRuleLoyalty['CalculationTypeEnum'] = {
+    
+        /**
+         * value: "ORDER_AMOUNT"
+         * @constant
+         */
+        "ORDER_AMOUNT": "ORDER_AMOUNT",
+    
+        /**
+         * value: "ORDER_TOTAL_AMOUNT"
+         * @constant
+         */
+        "ORDER_TOTAL_AMOUNT": "ORDER_TOTAL_AMOUNT",
+    
+        /**
+         * value: "ORDER_METADATA"
+         * @constant
+         */
+        "ORDER_METADATA": "ORDER_METADATA",
+    
+        /**
+         * value: "ORDER_ITEMS_QUANTITY"
+         * @constant
+         */
+        "ORDER_ITEMS_QUANTITY": "ORDER_ITEMS_QUANTITY",
+    
+        /**
+         * value: "ORDER_ITEMS_AMOUNT"
+         * @constant
+         */
+        "ORDER_ITEMS_AMOUNT": "ORDER_ITEMS_AMOUNT",
+    
+        /**
+         * value: "ORDER_ITEMS_SUBTOTAL_AMOUNT"
+         * @constant
+         */
+        "ORDER_ITEMS_SUBTOTAL_AMOUNT": "ORDER_ITEMS_SUBTOTAL_AMOUNT",
+    
+        /**
+         * value: "CUSTOMER_METADATA"
+         * @constant
+         */
+        "CUSTOMER_METADATA": "CUSTOMER_METADATA",
+    
+        /**
+         * value: "CUSTOM_EVENT_METADATA"
+         * @constant
+         */
+        "CUSTOM_EVENT_METADATA": "CUSTOM_EVENT_METADATA"    
+    };
 
 
 

@@ -19,18 +19,17 @@ import Discount from './Discount';
 import Gift from './Gift';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The CampaignVoucher model module.
  * @module model/CampaignVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignVoucher {
     /**
      * Constructs a new <code>CampaignVoucher</code>.
      * Schema model for a campaign voucher.
-     * @alias module:model/CampaignVoucher
-     * @param codeConfig {module:model/CodeConfig} 
+     * @alias CampaignVoucher
+     * @param {CodeConfig} codeConfig 
      */
     constructor(codeConfig) { 
         
@@ -49,9 +48,9 @@ class CampaignVoucher {
     /**
      * Constructs a <code>CampaignVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignVoucher} obj Optional instance to populate.
-     * @returns {module:model/CampaignVoucher} The populated <code>CampaignVoucher</code> instance.
+     * @param {Partial<CampaignVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignVoucher} [obj] Optional instance to populate.
+     * @returns {CampaignVoucher} The populated <code>CampaignVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -99,7 +98,7 @@ class CampaignVoucher {
 
     /**
      * Validates the JSON data with respect to <code>CampaignVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignVoucher</code>.
      */
     static validateJSON(data) {
@@ -155,68 +154,68 @@ class CampaignVoucher {
 CampaignVoucher.RequiredProperties = ["code_config"];
 
 /**
- * Type of voucher.
- * @member {String} 
- */
+    * Type of voucher.
+    * @type {String | undefined}
+    */
 CampaignVoucher.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 CampaignVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 CampaignVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/CampaignLoyaltyCard} 
- */
+    * @type {CampaignLoyaltyCard | undefined}
+    */
 CampaignVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/CampaignVoucherRedemption} 
- */
+    * @type {CampaignVoucherRedemption | undefined}
+    */
 CampaignVoucher.prototype['redemption'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig}
+    */
 CampaignVoucher.prototype['code_config'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 CampaignVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 CampaignVoucher.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 CampaignVoucher.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 CampaignVoucher.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/CampaignVoucher.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof CampaignVoucher.ValidityDayOfWeekEnum>) | undefined}
+    */
 CampaignVoucher.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 CampaignVoucher.prototype['validity_hours'] = undefined;
 
 

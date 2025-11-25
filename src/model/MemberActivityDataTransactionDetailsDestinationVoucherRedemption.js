@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsDestinationVoucherRedemption model module.
  * @module model/MemberActivityDataTransactionDetailsDestinationVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsDestinationVoucherRedemption {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsDestinationVoucherRedemption
+     * @alias MemberActivityDataTransactionDetailsDestinationVoucherRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsDestinationVoucherRedemption {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsDestinationVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsDestinationVoucherRedemption} The populated <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsDestinationVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsDestinationVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsDestinationVoucherRedemption} The populated <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class MemberActivityDataTransactionDetailsDestinationVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsDestinationVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsDestinationVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -76,21 +75,21 @@ class MemberActivityDataTransactionDetailsDestinationVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 MemberActivityDataTransactionDetailsDestinationVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 

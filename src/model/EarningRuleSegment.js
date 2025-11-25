@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EarningRuleSegment model module.
  * @module model/EarningRuleSegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleSegment {
     /**
      * Constructs a new <code>EarningRuleSegment</code>.
      * Contains the ID of a customer segment. Required for the &#x60;customer.segment.entered&#x60; option in the event.
-     * @alias module:model/EarningRuleSegment
+     * @alias EarningRuleSegment
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EarningRuleSegment {
     /**
      * Constructs a <code>EarningRuleSegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleSegment} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleSegment} The populated <code>EarningRuleSegment</code> instance.
+     * @param {Partial<EarningRuleSegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleSegment} [obj] Optional instance to populate.
+     * @returns {EarningRuleSegment} The populated <code>EarningRuleSegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class EarningRuleSegment {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleSegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleSegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleSegment</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class EarningRuleSegment {
 
 
 /**
- * Contains a unique identifier of a customer segment. Assigned by the Voucherify API.
- * @member {String} 
- */
+    * Contains a unique identifier of a customer segment. Assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 EarningRuleSegment.prototype['id'] = undefined;
 
 

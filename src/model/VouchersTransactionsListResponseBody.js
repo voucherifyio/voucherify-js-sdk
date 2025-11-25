@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransaction from './VoucherTransaction';
-
 /**
  * The VouchersTransactionsListResponseBody model module.
  * @module model/VouchersTransactionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersTransactionsListResponseBody {
     /**
      * Constructs a new <code>VouchersTransactionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/vouchers/{code}/transactions&#x60;.
-     * @alias module:model/VouchersTransactionsListResponseBody
+     * @alias VouchersTransactionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class VouchersTransactionsListResponseBody {
     /**
      * Constructs a <code>VouchersTransactionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersTransactionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersTransactionsListResponseBody} The populated <code>VouchersTransactionsListResponseBody</code> instance.
+     * @param {Partial<VouchersTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersTransactionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersTransactionsListResponseBody} The populated <code>VouchersTransactionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class VouchersTransactionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersTransactionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersTransactionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,69 +107,69 @@ class VouchersTransactionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/VouchersTransactionsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof VouchersTransactionsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 VouchersTransactionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of transaction objects.
- * @member {module:model/VouchersTransactionsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of transaction objects.
+    * @type {(keyof typeof VouchersTransactionsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 VouchersTransactionsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
- * @member {Array.<module:model/VoucherTransaction>} 
- */
+    * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
+    * @type {Array.<VoucherTransaction> | undefined}
+    */
 VouchersTransactionsListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 VouchersTransactionsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
+    * @type {String | undefined}
+    */
 VouchersTransactionsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersTransactionsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    VouchersTransactionsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersTransactionsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    VouchersTransactionsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

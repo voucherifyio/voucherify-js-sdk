@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions {
     /**
      * Constructs a new <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code>.
-     * @alias module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions
+     * @alias ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions {
     /**
      * Constructs a <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions} The populated <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code> instance.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions} The populated <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions</code>.
      */
     static validateJSON(data) {
@@ -123,51 +122,51 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions.prototype['$ends_with'] = undefined;
 
 
@@ -216,46 +215,46 @@ ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions['NotInEnum'] 
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions['IsEnum'] = {
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER"    
+    };
+
 
     /**
-     * value: "REFEREE"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "REFEREE": "REFEREE",
-
-    /**
-     * value: "REFERRER"
-     * @constant
-     */
-    "REFERRER": "REFERRER"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions['IsNotEnum'] = {
-
-    /**
-     * value: "REFEREE"
-     * @constant
-     */
-    "REFEREE": "REFEREE",
-
-    /**
-     * value: "REFERRER"
-     * @constant
-     */
-    "REFERRER": "REFERRER"
-};
+    ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER"    
+    };
 
 
 

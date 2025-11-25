@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ValidationRuleAssignment from './ValidationRuleAssignment';
-
 /**
  * The ValidationRulesAssignmentsListResponseBody model module.
  * @module model/ValidationRulesAssignmentsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesAssignmentsListResponseBody {
     /**
      * Constructs a new <code>ValidationRulesAssignmentsListResponseBody</code>.
      * Response body for **GET** &#x60;v1/validation-rules-assignments&#x60; and **GET** &#x60;v1/validation-rules/{validationRuleId}/assignments&#x60;.
-     * @alias module:model/ValidationRulesAssignmentsListResponseBody
+     * @alias ValidationRulesAssignmentsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ValidationRulesAssignmentsListResponseBody {
     /**
      * Constructs a <code>ValidationRulesAssignmentsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesAssignmentsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesAssignmentsListResponseBody} The populated <code>ValidationRulesAssignmentsListResponseBody</code> instance.
+     * @param {Partial<ValidationRulesAssignmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesAssignmentsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ValidationRulesAssignmentsListResponseBody} The populated <code>ValidationRulesAssignmentsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ValidationRulesAssignmentsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesAssignmentsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesAssignmentsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesAssignmentsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class ValidationRulesAssignmentsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about validation rule assignments.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about validation rule assignments.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ValidationRulesAssignmentsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of validation rule assignments.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of validation rule assignments.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 ValidationRulesAssignmentsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of validation rule assignments.
- * @member {Array.<module:model/ValidationRuleAssignment>} 
- */
+    * A dictionary that contains an array of validation rule assignments.
+    * @type {Array.<ValidationRuleAssignment> | undefined}
+    */
 ValidationRulesAssignmentsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of validation rule assignments.
- * @member {Number} 
- */
+    * Total number of validation rule assignments.
+    * @type {Number | undefined}
+    */
 ValidationRulesAssignmentsListResponseBody.prototype['total'] = undefined;
 
 

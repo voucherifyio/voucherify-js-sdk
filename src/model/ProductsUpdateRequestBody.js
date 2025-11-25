@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductsUpdateRequestBody model module.
  * @module model/ProductsUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsUpdateRequestBody {
     /**
      * Constructs a new <code>ProductsUpdateRequestBody</code>.
      * Request schema for **PUT** &#x60;v1/products&#x60;.
-     * @alias module:model/ProductsUpdateRequestBody
+     * @alias ProductsUpdateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ProductsUpdateRequestBody {
     /**
      * Constructs a <code>ProductsUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsUpdateRequestBody} The populated <code>ProductsUpdateRequestBody</code> instance.
+     * @param {Partial<ProductsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ProductsUpdateRequestBody} The populated <code>ProductsUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ProductsUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -95,33 +94,33 @@ class ProductsUpdateRequestBody {
 
 
 /**
- * Unique user-defined product name.
- * @member {String} 
- */
+    * Unique user-defined product name.
+    * @type {String | undefined}
+    */
 ProductsUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 ProductsUpdateRequestBody.prototype['price'] = undefined;
 
 /**
- * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
- * @member {Array.<String>} 
- */
+    * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
+    * @type {Array.<String> | undefined}
+    */
 ProductsUpdateRequestBody.prototype['attributes'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
+    * @type {Object | undefined}
+    */
 ProductsUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
+    * @type {String | undefined}
+    */
 ProductsUpdateRequestBody.prototype['image_url'] = undefined;
 
 

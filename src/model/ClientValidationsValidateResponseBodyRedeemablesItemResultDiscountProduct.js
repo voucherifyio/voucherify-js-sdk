@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct {
     /**
      * Constructs a new <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code>.
-     * @alias module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct
+     * @alias ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct 
     /**
      * Constructs a <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code> instance.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct 
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct 
 
 
 /**
- * Unique product ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct.prototype['id'] = undefined;
 
 /**
- * Product's source ID.
- * @member {String} 
- */
+    * Product's source ID.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct.prototype['source_id'] = undefined;
 
 /**
- * Product name.
- * @member {String} 
- */
+    * Product name.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct.prototype['name'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataBalanceRelatedObject model module.
  * @module model/MemberActivityDataBalanceRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataBalanceRelatedObject {
     /**
      * Constructs a new <code>MemberActivityDataBalanceRelatedObject</code>.
-     * @alias module:model/MemberActivityDataBalanceRelatedObject
+     * @alias MemberActivityDataBalanceRelatedObject
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataBalanceRelatedObject {
     /**
      * Constructs a <code>MemberActivityDataBalanceRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataBalanceRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataBalanceRelatedObject} The populated <code>MemberActivityDataBalanceRelatedObject</code> instance.
+     * @param {Partial<MemberActivityDataBalanceRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataBalanceRelatedObject} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataBalanceRelatedObject} The populated <code>MemberActivityDataBalanceRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class MemberActivityDataBalanceRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataBalanceRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataBalanceRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataBalanceRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class MemberActivityDataBalanceRelatedObject {
 
 
 /**
- * Identifies the voucher that is being modified. The ID is assigned by the Voucherify API.
- * @member {String} 
- */
+    * Identifies the voucher that is being modified. The ID is assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 MemberActivityDataBalanceRelatedObject.prototype['id'] = undefined;
 
 /**
- * The object being modified, i.e. voucher.
- * @member {module:model/MemberActivityDataBalanceRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified, i.e. voucher.
+    * @type {(keyof typeof MemberActivityDataBalanceRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 MemberActivityDataBalanceRelatedObject.prototype['type'] = 'voucher';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataBalanceRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    MemberActivityDataBalanceRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

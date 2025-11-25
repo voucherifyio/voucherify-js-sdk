@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerLoyaltyCampaignsEntryValue model module.
  * @module model/CustomerLoyaltyCampaignsEntryValue
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerLoyaltyCampaignsEntryValue {
     /**
      * Constructs a new <code>CustomerLoyaltyCampaignsEntryValue</code>.
      * Contains details about the point balances left on loyalty cards and the number of referred customers in each campaign.
-     * @alias module:model/CustomerLoyaltyCampaignsEntryValue
+     * @alias CustomerLoyaltyCampaignsEntryValue
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerLoyaltyCampaignsEntryValue {
     /**
      * Constructs a <code>CustomerLoyaltyCampaignsEntryValue</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerLoyaltyCampaignsEntryValue} obj Optional instance to populate.
-     * @returns {module:model/CustomerLoyaltyCampaignsEntryValue} The populated <code>CustomerLoyaltyCampaignsEntryValue</code> instance.
+     * @param {Partial<CustomerLoyaltyCampaignsEntryValue>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerLoyaltyCampaignsEntryValue} [obj] Optional instance to populate.
+     * @returns {CustomerLoyaltyCampaignsEntryValue} The populated <code>CustomerLoyaltyCampaignsEntryValue</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class CustomerLoyaltyCampaignsEntryValue {
 
     /**
      * Validates the JSON data with respect to <code>CustomerLoyaltyCampaignsEntryValue</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerLoyaltyCampaignsEntryValue>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerLoyaltyCampaignsEntryValue</code>.
      */
     static validateJSON(data) {
@@ -81,21 +80,21 @@ class CustomerLoyaltyCampaignsEntryValue {
 
 
 /**
- * Remaining point balance in campaign.
- * @member {Number} 
- */
+    * Remaining point balance in campaign.
+    * @type {Number | undefined}
+    */
 CustomerLoyaltyCampaignsEntryValue.prototype['points'] = undefined;
 
 /**
- * Customer's loyalty tier within the campaign.
- * @member {String} 
- */
+    * Customer's loyalty tier within the campaign.
+    * @type {String | undefined}
+    */
 CustomerLoyaltyCampaignsEntryValue.prototype['loyalty_tier'] = undefined;
 
 /**
- * Number of customers referred by the customer in campaign.
- * @member {Number} 
- */
+    * Number of customers referred by the customer in campaign.
+    * @type {Number | undefined}
+    */
 CustomerLoyaltyCampaignsEntryValue.prototype['referred_customers'] = undefined;
 
 

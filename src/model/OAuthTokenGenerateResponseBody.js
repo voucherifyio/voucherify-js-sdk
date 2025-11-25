@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OAuthTokenGenerateResponseBody model module.
  * @module model/OAuthTokenGenerateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OAuthTokenGenerateResponseBody {
     /**
      * Constructs a new <code>OAuthTokenGenerateResponseBody</code>.
      * Response body schema for **POST** &#x60;/oauth/token&#x60;.
-     * @alias module:model/OAuthTokenGenerateResponseBody
+     * @alias OAuthTokenGenerateResponseBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class OAuthTokenGenerateResponseBody {
     /**
      * Constructs a <code>OAuthTokenGenerateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OAuthTokenGenerateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/OAuthTokenGenerateResponseBody} The populated <code>OAuthTokenGenerateResponseBody</code> instance.
+     * @param {Partial<OAuthTokenGenerateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OAuthTokenGenerateResponseBody} [obj] Optional instance to populate.
+     * @returns {OAuthTokenGenerateResponseBody} The populated <code>OAuthTokenGenerateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class OAuthTokenGenerateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>OAuthTokenGenerateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OAuthTokenGenerateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OAuthTokenGenerateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -103,59 +102,59 @@ class OAuthTokenGenerateResponseBody {
 
 
 /**
- * The access token used to authorize access to the Voucherify API.
- * @member {String} 
- */
+    * The access token used to authorize access to the Voucherify API.
+    * @type {String | undefined}
+    */
 OAuthTokenGenerateResponseBody.prototype['access_token'] = undefined;
 
 /**
- * Unique client identifier, assigned by Voucherify, for OAuth.
- * @member {String} 
- */
+    * Unique client identifier, assigned by Voucherify, for OAuth.
+    * @type {String | undefined}
+    */
 OAuthTokenGenerateResponseBody.prototype['client_id'] = undefined;
 
 /**
- * Timestamp in seconds in the Unix format indicating when the token expires.
- * @member {Number} 
- */
+    * Timestamp in seconds in the Unix format indicating when the token expires.
+    * @type {Number | undefined}
+    */
 OAuthTokenGenerateResponseBody.prototype['expires_at'] = undefined;
 
 /**
- * Number of seconds left until the token expires.
- * @member {Number} 
- */
+    * Number of seconds left until the token expires.
+    * @type {Number | undefined}
+    */
 OAuthTokenGenerateResponseBody.prototype['expires_in'] = undefined;
 
 /**
- * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `SKUs`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
- * @member {String} 
- */
+    * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `SKUs`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
+    * @type {String | undefined}
+    */
 OAuthTokenGenerateResponseBody.prototype['scope'] = undefined;
 
 /**
- * Type of the token. Use the value as the header prefix for authorization.
- * @member {module:model/OAuthTokenGenerateResponseBody.TokenTypeEnum} 
- * @default 'Bearer'
- */
+    * Type of the token. Use the value as the header prefix for authorization.
+    * @type {(keyof typeof OAuthTokenGenerateResponseBody.TokenTypeEnum) | undefined}
+    * @default 'Bearer'
+    */
 OAuthTokenGenerateResponseBody.prototype['token_type'] = 'Bearer';
 
 
 
 
 
-/**
- * Allowed values for the <code>token_type</code> property.
- * @enum {String}
- * @readonly
- */
-OAuthTokenGenerateResponseBody['TokenTypeEnum'] = {
-
     /**
-     * value: "Bearer"
-     * @constant
+     * Allowed values for the <code>token_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "Bearer": "Bearer"
-};
+    OAuthTokenGenerateResponseBody['TokenTypeEnum'] = {
+    
+        /**
+         * value: "Bearer"
+         * @constant
+         */
+        "Bearer": "Bearer"    
+    };
 
 
 

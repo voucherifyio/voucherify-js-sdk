@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterActivityCategory.
-* @module model/ParameterActivityCategory
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterActivityCategory {
+ * Enum class ParameterActivityCategory.
+ * @module model/ParameterActivityCategory
+ * @version 3.0.1
+ */
+class ParameterActivityCategory {
     
-        /**
-         * value: "ACTION"
-         * @constant
-         */
-        "ACTION" = "ACTION";
-
+    /**
+     * 
+     * @constant
+     */
+    static "ACTION" = "ACTION";
     
-        /**
-         * value: "EFFECT"
-         * @constant
-         */
-        "EFFECT" = "EFFECT";
-
+    /**
+     * 
+     * @constant
+     */
+    static "EFFECT" = "EFFECT";
     
 
     /**
-    * Returns a <code>ParameterActivityCategory</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterActivityCategory} The enum <code>ParameterActivityCategory</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterActivityCategory, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterActivityCategory[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterActivityCategory[key];
     }
 }
+
+export default ParameterActivityCategory;
 

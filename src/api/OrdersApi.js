@@ -28,13 +28,13 @@ import ParameterOrderListOrders from '../model/ParameterOrderListOrders';
 /**
 * Orders service.
 * @module api/OrdersApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class OrdersApi {
 
     /**
     * Constructs a new OrdersApi. 
-    * @alias module:api/OrdersApi
+    * @alias OrdersApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -46,18 +46,19 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the createOrder operation.
-     * @callback module:api/OrdersApi~createOrderCallback
+     * @callback createOrderCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersCreateResponseBody} [data] The data returned by the service call.
+     * @param {OrdersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Order
      * Creates an order object and triggers an order creation event.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the order database, Voucherify will return a related order object with updated fields.
-     * @param {module:model/OrdersCreateRequestBody} ordersCreateRequestBody Specify the order parameters.
-     * @param {module:api/OrdersApi~createOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersCreateResponseBody}
+     * @param {OrdersCreateRequestBody} ordersCreateRequestBody Specify the order parameters.
+     * @param {createOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersCreateResponseBody}
+     * @returns {Promise<(OrdersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersCreateResponseBody` object or with `undefined`.
      */
     createOrder(ordersCreateRequestBody, callback) {
       let postBody = ordersCreateRequestBody;
@@ -85,18 +86,19 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the createOrderExport operation.
-     * @callback module:api/OrdersApi~createOrderExportCallback
+     * @callback createOrderExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {OrdersExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Orders Export
      * Creates a downloadable CSV file containing a list of orders. The parameters listed in the payload resembles headers in the CSV file. To include a parameter to the file, add it to the parameters.fields object in the request body. The available filters are all [order object](/api-reference/orders/order-calculated-object) attributes. Additionally, any metadata defined in the metadata schema can be exported. Passing an empty JSON will generate a file containing three default fields: id, source_id, and status. The fields array is an array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:    
-     * @param {module:model/OrdersExportCreateRequestBody} ordersExportCreateRequestBody Specify which order parameters you would like to export.
-     * @param {module:api/OrdersApi~createOrderExportCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersExportCreateResponseBody}
+     * @param {OrdersExportCreateRequestBody} ordersExportCreateRequestBody Specify which order parameters you would like to export.
+     * @param {createOrderExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersExportCreateResponseBody}
+     * @returns {Promise<(OrdersExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersExportCreateResponseBody` object or with `undefined`.
      */
     createOrderExport(ordersExportCreateRequestBody, callback) {
       let postBody = ordersExportCreateRequestBody;
@@ -124,9 +126,9 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the getOrder operation.
-     * @callback module:api/OrdersApi~getOrderCallback
+     * @callback getOrderCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersGetResponseBody} [data] The data returned by the service call.
+     * @param {OrdersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -134,8 +136,9 @@ export default class OrdersApi {
      * Get Order
      * Retrieve a specific order by passing its ID.
      * @param {String} orderId Unique Voucherify order ID or order source ID.
-     * @param {module:api/OrdersApi~getOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersGetResponseBody}
+     * @param {getOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersGetResponseBody}
+     * @returns {Promise<(OrdersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersGetResponseBody` object or with `undefined`.
      */
     getOrder(orderId, callback) {
       let postBody = null;
@@ -164,18 +167,19 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the importOrders operation.
-     * @callback module:api/OrdersApi~importOrdersCallback
+     * @callback importOrdersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersImportCreateResponseBody} [data] The data returned by the service call.
+     * @param {OrdersImportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Import Orders
      *   🚧 Historical orders  This endpoint should only be used to import historical orders into Voucherify. For on-going synchronization, the [update order](/api-reference/orders/update-order) endpoints should be used. This is critical because this endpoint does not store events or launch distributions. # Limitations ## Import volume There can be only a single on-going order import per tenant per project at a given time. The user can schedule more imports but those extra imports will be scheduled to run in sequence one by one.   ## Maximum count of orders in single import There is a 2000 limit but we might decide to change it to a lower / higher value at any given time depending if we find this value is too high or too low with time. # Notifications There are no notifications on the Dashboard because this import is launched via the API. # Triggered actions    If you import orders with customers, then a logic will be scheduled responsible for placing these customers into segments and refreshing the segments summary. Consequently, this update will trigger  - **customers entering into segments**  - **distributions** based on any rules tied to customer entering segment(s) - **earning rules** based on the customer entering segment(s) # What is not triggered 1. No webhooks are triggered during the import of orders - for both orders and upserted products / SKUs.   2. Distributions based on Order Update, Order Paid, Order Created and Order Cancelled. In other words if you have a distribution based on Order Paid and you import an order with a PAID status, the distribution is not going to be triggered.     3. No events are created during the import of orders - for both orders and upserted products / SKUs. In other words you wont see any events in the Activity tab in the Dashboard such as Order created or Order paid. If you are additionally upserting products / SKUs, then you wont see the Product created events listed, etc.    4. Earning rules based on Order Paid wont be triggered. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request with [GET Async Action](/api-reference/async-actions/get-async-action) endpoint.
-     * @param {Array.<module:model/OrdersImportCreateRequestBodyItem>} ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects.
-     * @param {module:api/OrdersApi~importOrdersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersImportCreateResponseBody}
+     * @param {Array.<OrdersImportCreateRequestBodyItem>} ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects.
+     * @param {importOrdersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersImportCreateResponseBody}
+     * @returns {Promise<(OrdersImportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersImportCreateResponseBody` object or with `undefined`.
      */
     importOrders(ordersImportCreateRequestBodyItem, callback) {
       let postBody = ordersImportCreateRequestBodyItem;
@@ -203,9 +207,9 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the listOrders operation.
-     * @callback module:api/OrdersApi~listOrdersCallback
+     * @callback listOrdersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersListResponseBody} [data] The data returned by the service call.
+     * @param {OrdersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -215,10 +219,11 @@ export default class OrdersApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListOrders,
+        order?: Exclude<keyof typeof ParameterOrderListOrders, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/OrdersApi~listOrdersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersListResponseBody}
+     * @param {listOrdersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersListResponseBody}
+     * @returns {Promise<(OrdersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersListResponseBody` object or with `undefined`.
      */
     listOrders(opts, callback) {
       opts = opts || {};
@@ -249,9 +254,9 @@ export default class OrdersApi {
 
     /**
      * Callback function to receive the result of the updateOrder operation.
-     * @callback module:api/OrdersApi~updateOrderCallback
+     * @callback updateOrderCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/OrdersUpdateResponseBody} [data] The data returned by the service call.
+     * @param {OrdersUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -259,9 +264,10 @@ export default class OrdersApi {
      * Update Order
      * Updates the specified order by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged.
      * @param {String} orderId Unique Voucherify order ID or order source ID.
-     * @param {module:model/OrdersUpdateRequestBody} ordersUpdateRequestBody Specify the parameters of the order that are to be updated.
-     * @param {module:api/OrdersApi~updateOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrdersUpdateResponseBody}
+     * @param {OrdersUpdateRequestBody} ordersUpdateRequestBody Specify the parameters of the order that are to be updated.
+     * @param {updateOrderCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link OrdersUpdateResponseBody}
+     * @returns {Promise<(OrdersUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `OrdersUpdateResponseBody` object or with `undefined`.
      */
     updateOrder(orderId, ordersUpdateRequestBody, callback) {
       let postBody = ordersUpdateRequestBody;

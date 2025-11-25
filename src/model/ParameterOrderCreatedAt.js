@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderCreatedAt.
-* @module model/ParameterOrderCreatedAt
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderCreatedAt {
+ * Enum class ParameterOrderCreatedAt.
+ * @module model/ParameterOrderCreatedAt
+ * @version 3.0.1
+ */
+class ParameterOrderCreatedAt {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
 
     /**
-    * Returns a <code>ParameterOrderCreatedAt</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderCreatedAt} The enum <code>ParameterOrderCreatedAt</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderCreatedAt, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderCreatedAt[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderCreatedAt[key];
     }
 }
+
+export default ParameterOrderCreatedAt;
 

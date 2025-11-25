@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardsUpdateRequestBodyParametersProduct model module.
  * @module model/RewardsUpdateRequestBodyParametersProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsUpdateRequestBodyParametersProduct {
     /**
      * Constructs a new <code>RewardsUpdateRequestBodyParametersProduct</code>.
      * Define the product given as a reward.
-     * @alias module:model/RewardsUpdateRequestBodyParametersProduct
+     * @alias RewardsUpdateRequestBodyParametersProduct
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardsUpdateRequestBodyParametersProduct {
     /**
      * Constructs a <code>RewardsUpdateRequestBodyParametersProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsUpdateRequestBodyParametersProduct} obj Optional instance to populate.
-     * @returns {module:model/RewardsUpdateRequestBodyParametersProduct} The populated <code>RewardsUpdateRequestBodyParametersProduct</code> instance.
+     * @param {Partial<RewardsUpdateRequestBodyParametersProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsUpdateRequestBodyParametersProduct} [obj] Optional instance to populate.
+     * @returns {RewardsUpdateRequestBodyParametersProduct} The populated <code>RewardsUpdateRequestBodyParametersProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardsUpdateRequestBodyParametersProduct {
 
     /**
      * Validates the JSON data with respect to <code>RewardsUpdateRequestBodyParametersProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsUpdateRequestBodyParametersProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsUpdateRequestBodyParametersProduct</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardsUpdateRequestBodyParametersProduct {
 
 
 /**
- * Unique product ID, assigned by Voucherify, given as a reward.
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify, given as a reward.
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBodyParametersProduct.prototype['id'] = undefined;
 
 /**
- * Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
- * @member {String} 
- */
+    * Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
+    * @type {String | undefined}
+    */
 RewardsUpdateRequestBodyParametersProduct.prototype['sku_id'] = undefined;
 
 

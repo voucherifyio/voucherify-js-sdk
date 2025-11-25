@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransactionDetailsEarningRuleSource from './VoucherTransactionDetailsEarningRuleSource';
-
 /**
  * The VoucherTransactionDetailsEarningRule model module.
  * @module model/VoucherTransactionDetailsEarningRule
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsEarningRule {
     /**
      * Constructs a new <code>VoucherTransactionDetailsEarningRule</code>.
      * Contains information about the earning rule.
-     * @alias module:model/VoucherTransactionDetailsEarningRule
+     * @alias VoucherTransactionDetailsEarningRule
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VoucherTransactionDetailsEarningRule {
     /**
      * Constructs a <code>VoucherTransactionDetailsEarningRule</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsEarningRule} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsEarningRule} The populated <code>VoucherTransactionDetailsEarningRule</code> instance.
+     * @param {Partial<VoucherTransactionDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsEarningRule} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsEarningRule} The populated <code>VoucherTransactionDetailsEarningRule</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class VoucherTransactionDetailsEarningRule {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsEarningRule</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsEarningRule</code>.
      */
     static validateJSON(data) {
@@ -83,14 +82,14 @@ class VoucherTransactionDetailsEarningRule {
 
 
 /**
- * Unique identifier of an earning rule, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an earning rule, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsEarningRule.prototype['id'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetailsEarningRuleSource} 
- */
+    * @type {VoucherTransactionDetailsEarningRuleSource | undefined}
+    */
 VoucherTransactionDetailsEarningRule.prototype['source'] = undefined;
 
 

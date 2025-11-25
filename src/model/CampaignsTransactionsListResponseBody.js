@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransaction from './VoucherTransaction';
-
 /**
  * The CampaignsTransactionsListResponseBody model module.
  * @module model/CampaignsTransactionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsListResponseBody {
     /**
      * Constructs a new <code>CampaignsTransactionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/campaigns/{campaignId}/transactions&#x60;.
-     * @alias module:model/CampaignsTransactionsListResponseBody
+     * @alias CampaignsTransactionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CampaignsTransactionsListResponseBody {
     /**
      * Constructs a <code>CampaignsTransactionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsListResponseBody} The populated <code>CampaignsTransactionsListResponseBody</code> instance.
+     * @param {Partial<CampaignsTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsListResponseBody} The populated <code>CampaignsTransactionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CampaignsTransactionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,69 +107,69 @@ class CampaignsTransactionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/CampaignsTransactionsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof CampaignsTransactionsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 CampaignsTransactionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of transaction objects.
- * @member {module:model/CampaignsTransactionsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of transaction objects.
+    * @type {(keyof typeof CampaignsTransactionsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 CampaignsTransactionsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
- * @member {Array.<module:model/VoucherTransaction>} 
- */
+    * A dictionary that contains an array of transactions. Each entry in the array is a separate transaction object.
+    * @type {Array.<VoucherTransaction> | undefined}
+    */
 CampaignsTransactionsListResponseBody.prototype['data'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 CampaignsTransactionsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
+    * @type {String | undefined}
+    */
 CampaignsTransactionsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsTransactionsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    CampaignsTransactionsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsTransactionsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    CampaignsTransactionsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

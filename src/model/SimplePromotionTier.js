@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import SimplePromotionTierCampaign from './SimplePromotionTierCampaign';
-
 /**
  * The SimplePromotionTier model module.
  * @module model/SimplePromotionTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimplePromotionTier {
     /**
      * Constructs a new <code>SimplePromotionTier</code>.
      * This is an object representing a simple promotion tier. Promotion tiers are always assigned to a campaign and cannot be used standalone.
-     * @alias module:model/SimplePromotionTier
+     * @alias SimplePromotionTier
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class SimplePromotionTier {
     /**
      * Constructs a <code>SimplePromotionTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimplePromotionTier} obj Optional instance to populate.
-     * @returns {module:model/SimplePromotionTier} The populated <code>SimplePromotionTier</code> instance.
+     * @param {Partial<SimplePromotionTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimplePromotionTier} [obj] Optional instance to populate.
+     * @returns {SimplePromotionTier} The populated <code>SimplePromotionTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class SimplePromotionTier {
 
     /**
      * Validates the JSON data with respect to <code>SimplePromotionTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimplePromotionTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimplePromotionTier</code>.
      */
     static validateJSON(data) {
@@ -100,32 +99,32 @@ class SimplePromotionTier {
 
 
 /**
- * Unique promotion tier ID.
- * @member {String} 
- */
+    * Unique promotion tier ID.
+    * @type {String | undefined}
+    */
 SimplePromotionTier.prototype['id'] = undefined;
 
 /**
- * Name of the promotion tier.
- * @member {String} 
- */
+    * Name of the promotion tier.
+    * @type {String | undefined}
+    */
 SimplePromotionTier.prototype['name'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 SimplePromotionTier.prototype['banner'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionTierCampaign} 
- */
+    * @type {SimplePromotionTierCampaign | undefined}
+    */
 SimplePromotionTier.prototype['campaign'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a promotion tier. The metadata object stores all custom attributes assigned to the promotion tier.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a promotion tier. The metadata object stores all custom attributes assigned to the promotion tier.
+    * @type {Object | undefined}
+    */
 SimplePromotionTier.prototype['metadata'] = undefined;
 
 

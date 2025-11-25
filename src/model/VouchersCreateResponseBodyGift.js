@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersCreateResponseBodyGift model module.
  * @module model/VouchersCreateResponseBodyGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersCreateResponseBodyGift {
     /**
      * Constructs a new <code>VouchersCreateResponseBodyGift</code>.
      * Object representing gift parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;GIFT_VOUCHER&#x60;. Defaults to &#x60;null&#x60;.
-     * @alias module:model/VouchersCreateResponseBodyGift
+     * @alias VouchersCreateResponseBodyGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VouchersCreateResponseBodyGift {
     /**
      * Constructs a <code>VouchersCreateResponseBodyGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersCreateResponseBodyGift} obj Optional instance to populate.
-     * @returns {module:model/VouchersCreateResponseBodyGift} The populated <code>VouchersCreateResponseBodyGift</code> instance.
+     * @param {Partial<VouchersCreateResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersCreateResponseBodyGift} [obj] Optional instance to populate.
+     * @returns {VouchersCreateResponseBodyGift} The populated <code>VouchersCreateResponseBodyGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class VouchersCreateResponseBodyGift {
 
     /**
      * Validates the JSON data with respect to <code>VouchersCreateResponseBodyGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersCreateResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersCreateResponseBodyGift</code>.
      */
     static validateJSON(data) {
@@ -84,52 +83,52 @@ class VouchersCreateResponseBodyGift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VouchersCreateResponseBodyGift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VouchersCreateResponseBodyGift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VouchersCreateResponseBodyGift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/VouchersCreateResponseBodyGift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof VouchersCreateResponseBodyGift.EffectEnum) | undefined}
+    */
 VouchersCreateResponseBodyGift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersCreateResponseBodyGift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    VouchersCreateResponseBodyGift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

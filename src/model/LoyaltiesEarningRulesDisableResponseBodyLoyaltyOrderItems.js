@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount from './LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount';
 import LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity from './LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity';
 import LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount from './LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount';
-
 /**
  * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code>.
-     * @alias module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems
+     * @alias LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems {
     /**
      * Constructs a <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems</code>.
      */
     static validateJSON(data) {
@@ -91,18 +90,18 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity} 
- */
+    * @type {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems.prototype['quantity'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount} 
- */
+    * @type {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount} 
- */
+    * @type {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems.prototype['subtotal_amount'] = undefined;
 
 

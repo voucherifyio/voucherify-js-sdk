@@ -13,57 +13,53 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ApplicableToEffect.
-* @module model/ApplicableToEffect
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ApplicableToEffect {
+ * Enum class ApplicableToEffect.
+ * @module model/ApplicableToEffect
+ * @version 3.0.1
+ */
+class ApplicableToEffect {
     
-        /**
-         * value: "APPLY_TO_EVERY"
-         * @constant
-         */
-        "APPLY_TO_EVERY" = "APPLY_TO_EVERY";
-
+    /**
+     * 
+     * @constant
+     */
+    static "APPLY_TO_EVERY" = "APPLY_TO_EVERY";
     
-        /**
-         * value: "APPLY_TO_CHEAPEST"
-         * @constant
-         */
-        "APPLY_TO_CHEAPEST" = "APPLY_TO_CHEAPEST";
-
+    /**
+     * 
+     * @constant
+     */
+    static "APPLY_TO_CHEAPEST" = "APPLY_TO_CHEAPEST";
     
-        /**
-         * value: "APPLY_FROM_CHEAPEST"
-         * @constant
-         */
-        "APPLY_FROM_CHEAPEST" = "APPLY_FROM_CHEAPEST";
-
+    /**
+     * 
+     * @constant
+     */
+    static "APPLY_FROM_CHEAPEST" = "APPLY_FROM_CHEAPEST";
     
-        /**
-         * value: "APPLY_TO_MOST_EXPENSIVE"
-         * @constant
-         */
-        "APPLY_TO_MOST_EXPENSIVE" = "APPLY_TO_MOST_EXPENSIVE";
-
+    /**
+     * 
+     * @constant
+     */
+    static "APPLY_TO_MOST_EXPENSIVE" = "APPLY_TO_MOST_EXPENSIVE";
     
-        /**
-         * value: "APPLY_FROM_MOST_EXPENSIVE"
-         * @constant
-         */
-        "APPLY_FROM_MOST_EXPENSIVE" = "APPLY_FROM_MOST_EXPENSIVE";
-
+    /**
+     * 
+     * @constant
+     */
+    static "APPLY_FROM_MOST_EXPENSIVE" = "APPLY_FROM_MOST_EXPENSIVE";
     
 
     /**
-    * Returns a <code>ApplicableToEffect</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ApplicableToEffect} The enum <code>ApplicableToEffect</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ApplicableToEffect, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ApplicableToEffect[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ApplicableToEffect[key];
     }
 }
+
+export default ApplicableToEffect;
 

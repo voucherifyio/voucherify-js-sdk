@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ExportOrderFields from './ExportOrderFields';
 import ExportOrderOrder from './ExportOrderOrder';
-
 /**
  * The OrdersExportCreateRequestBodyParameters model module.
  * @module model/OrdersExportCreateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersExportCreateRequestBodyParameters {
     /**
      * Constructs a new <code>OrdersExportCreateRequestBodyParameters</code>.
      * List of available fields and filters that can be exported with an order along with the sorting order of the returned data.
-     * @alias module:model/OrdersExportCreateRequestBodyParameters
+     * @alias OrdersExportCreateRequestBodyParameters
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class OrdersExportCreateRequestBodyParameters {
     /**
      * Constructs a <code>OrdersExportCreateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersExportCreateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/OrdersExportCreateRequestBodyParameters} The populated <code>OrdersExportCreateRequestBodyParameters</code> instance.
+     * @param {Partial<OrdersExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersExportCreateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {OrdersExportCreateRequestBodyParameters} The populated <code>OrdersExportCreateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class OrdersExportCreateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>OrdersExportCreateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersExportCreateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersExportCreateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -83,20 +82,20 @@ class OrdersExportCreateRequestBodyParameters {
 
 
 /**
- * @member {module:model/ExportOrderOrder} 
- */
+    * @type {Exclude<keyof typeof ExportOrderOrder, "prototype" | "constructFromObject"> | undefined}
+    */
 OrdersExportCreateRequestBodyParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data in the export. These fields define the headers in the CSV file.
- * @member {Array.<module:model/ExportOrderFields>} 
- */
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file.
+    * @type {Array.<Exclude<keyof typeof ExportOrderFields, "prototype" | "constructFromObject">> | undefined}
+    */
 OrdersExportCreateRequestBodyParameters.prototype['fields'] = undefined;
 
 /**
- * Allowed additional properties must start with \"metadata.\"
- * @member {Object} 
- */
+    * Allowed additional properties must start with \"metadata.\"
+    * @type {Object | undefined}
+    */
 OrdersExportCreateRequestBodyParameters.prototype['filters'] = undefined;
 
 

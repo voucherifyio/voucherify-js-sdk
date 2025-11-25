@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsRedeemableSkippedResultDetails model module.
  * @module model/ValidationsRedeemableSkippedResultDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsRedeemableSkippedResultDetails {
     /**
      * Constructs a new <code>ValidationsRedeemableSkippedResultDetails</code>.
-     * @alias module:model/ValidationsRedeemableSkippedResultDetails
+     * @alias ValidationsRedeemableSkippedResultDetails
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ValidationsRedeemableSkippedResultDetails {
     /**
      * Constructs a <code>ValidationsRedeemableSkippedResultDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsRedeemableSkippedResultDetails} obj Optional instance to populate.
-     * @returns {module:model/ValidationsRedeemableSkippedResultDetails} The populated <code>ValidationsRedeemableSkippedResultDetails</code> instance.
+     * @param {Partial<ValidationsRedeemableSkippedResultDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsRedeemableSkippedResultDetails} [obj] Optional instance to populate.
+     * @returns {ValidationsRedeemableSkippedResultDetails} The populated <code>ValidationsRedeemableSkippedResultDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ValidationsRedeemableSkippedResultDetails {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsRedeemableSkippedResultDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsRedeemableSkippedResultDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsRedeemableSkippedResultDetails</code>.
      */
     static validateJSON(data) {
@@ -81,62 +80,62 @@ class ValidationsRedeemableSkippedResultDetails {
 
 
 /**
- * @member {module:model/ValidationsRedeemableSkippedResultDetails.KeyEnum} 
- */
+    * @type {(keyof typeof ValidationsRedeemableSkippedResultDetails.KeyEnum) | undefined}
+    */
 ValidationsRedeemableSkippedResultDetails.prototype['key'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ValidationsRedeemableSkippedResultDetails.prototype['message'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>key</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsRedeemableSkippedResultDetails['KeyEnum'] = {
-
     /**
-     * value: "applicable_redeemables_limit_exceeded"
-     * @constant
+     * Allowed values for the <code>key</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "applicable_redeemables_limit_exceeded": "applicable_redeemables_limit_exceeded",
-
-    /**
-     * value: "applicable_redeemables_per_category_limit_exceeded"
-     * @constant
-     */
-    "applicable_redeemables_per_category_limit_exceeded": "applicable_redeemables_per_category_limit_exceeded",
-
-    /**
-     * value: "applicable_exclusive_redeemables_limit_exceeded"
-     * @constant
-     */
-    "applicable_exclusive_redeemables_limit_exceeded": "applicable_exclusive_redeemables_limit_exceeded",
-
-    /**
-     * value: "applicable_exclusive_redeemables_per_category_limit_exceeded"
-     * @constant
-     */
-    "applicable_exclusive_redeemables_per_category_limit_exceeded": "applicable_exclusive_redeemables_per_category_limit_exceeded",
-
-    /**
-     * value: "exclusion_rules_not_met"
-     * @constant
-     */
-    "exclusion_rules_not_met": "exclusion_rules_not_met",
-
-    /**
-     * value: "preceding_validation_failed"
-     * @constant
-     */
-    "preceding_validation_failed": "preceding_validation_failed"
-};
+    ValidationsRedeemableSkippedResultDetails['KeyEnum'] = {
+    
+        /**
+         * value: "applicable_redeemables_limit_exceeded"
+         * @constant
+         */
+        "applicable_redeemables_limit_exceeded": "applicable_redeemables_limit_exceeded",
+    
+        /**
+         * value: "applicable_redeemables_per_category_limit_exceeded"
+         * @constant
+         */
+        "applicable_redeemables_per_category_limit_exceeded": "applicable_redeemables_per_category_limit_exceeded",
+    
+        /**
+         * value: "applicable_exclusive_redeemables_limit_exceeded"
+         * @constant
+         */
+        "applicable_exclusive_redeemables_limit_exceeded": "applicable_exclusive_redeemables_limit_exceeded",
+    
+        /**
+         * value: "applicable_exclusive_redeemables_per_category_limit_exceeded"
+         * @constant
+         */
+        "applicable_exclusive_redeemables_per_category_limit_exceeded": "applicable_exclusive_redeemables_per_category_limit_exceeded",
+    
+        /**
+         * value: "exclusion_rules_not_met"
+         * @constant
+         */
+        "exclusion_rules_not_met": "exclusion_rules_not_met",
+    
+        /**
+         * value: "preceding_validation_failed"
+         * @constant
+         */
+        "preceding_validation_failed": "preceding_validation_failed"    
+    };
 
 
 

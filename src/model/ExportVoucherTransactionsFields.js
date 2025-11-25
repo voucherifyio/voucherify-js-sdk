@@ -13,106 +13,95 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ExportVoucherTransactionsFields.
-* @module model/ExportVoucherTransactionsFields
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ExportVoucherTransactionsFields {
+ * Enum class ExportVoucherTransactionsFields.
+ * @module model/ExportVoucherTransactionsFields
+ * @version 3.0.1
+ */
+class ExportVoucherTransactionsFields {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "campaign_id"
-         * @constant
-         */
-        "campaign_id" = "campaign_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "campaign_id" = "campaign_id";
     
-        /**
-         * value: "voucher_id"
-         * @constant
-         */
-        "voucher_id" = "voucher_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "voucher_id" = "voucher_id";
     
-        /**
-         * value: "type"
-         * @constant
-         */
-        "type" = "type";
-
+    /**
+     * 
+     * @constant
+     */
+    static "type" = "type";
     
-        /**
-         * value: "source_id"
-         * @constant
-         */
-        "source_id" = "source_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "source_id" = "source_id";
     
-        /**
-         * value: "reason"
-         * @constant
-         */
-        "reason" = "reason";
-
+    /**
+     * 
+     * @constant
+     */
+    static "reason" = "reason";
     
-        /**
-         * value: "source"
-         * @constant
-         */
-        "source" = "source";
-
+    /**
+     * 
+     * @constant
+     */
+    static "source" = "source";
     
-        /**
-         * value: "balance"
-         * @constant
-         */
-        "balance" = "balance";
-
+    /**
+     * 
+     * @constant
+     */
+    static "balance" = "balance";
     
-        /**
-         * value: "amount"
-         * @constant
-         */
-        "amount" = "amount";
-
+    /**
+     * 
+     * @constant
+     */
+    static "amount" = "amount";
     
-        /**
-         * value: "related_transaction_id"
-         * @constant
-         */
-        "related_transaction_id" = "related_transaction_id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "related_transaction_id" = "related_transaction_id";
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "details"
-         * @constant
-         */
-        "details" = "details";
-
+    /**
+     * 
+     * @constant
+     */
+    static "details" = "details";
     
 
     /**
-    * Returns a <code>ExportVoucherTransactionsFields</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ExportVoucherTransactionsFields} The enum <code>ExportVoucherTransactionsFields</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ExportVoucherTransactionsFields, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ExportVoucherTransactionsFields[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ExportVoucherTransactionsFields[key];
     }
 }
+
+export default ExportVoucherTransactionsFields;
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import CategoryWithStackingRulesType from './CategoryWithStackingRulesType';
 import ValidationsRedeemableInapplicableResult from './ValidationsRedeemableInapplicableResult';
-
 /**
  * The ValidationsRedeemableInapplicable model module.
  * @module model/ValidationsRedeemableInapplicable
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsRedeemableInapplicable {
     /**
      * Constructs a new <code>ValidationsRedeemableInapplicable</code>.
-     * @alias module:model/ValidationsRedeemableInapplicable
+     * @alias ValidationsRedeemableInapplicable
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ValidationsRedeemableInapplicable {
     /**
      * Constructs a <code>ValidationsRedeemableInapplicable</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsRedeemableInapplicable} obj Optional instance to populate.
-     * @returns {module:model/ValidationsRedeemableInapplicable} The populated <code>ValidationsRedeemableInapplicable</code> instance.
+     * @param {Partial<ValidationsRedeemableInapplicable>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsRedeemableInapplicable} [obj] Optional instance to populate.
+     * @returns {ValidationsRedeemableInapplicable} The populated <code>ValidationsRedeemableInapplicable</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class ValidationsRedeemableInapplicable {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsRedeemableInapplicable</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsRedeemableInapplicable>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsRedeemableInapplicable</code>.
      */
     static validateJSON(data) {
@@ -135,96 +134,96 @@ class ValidationsRedeemableInapplicable {
 
 
 /**
- * Indicates whether the redeemable can be applied or not applied based on the validation rules.
- * @member {module:model/ValidationsRedeemableInapplicable.StatusEnum} 
- * @default 'INAPPLICABLE'
- */
+    * Indicates whether the redeemable can be applied or not applied based on the validation rules.
+    * @type {(keyof typeof ValidationsRedeemableInapplicable.StatusEnum) | undefined}
+    * @default 'INAPPLICABLE'
+    */
 ValidationsRedeemableInapplicable.prototype['status'] = 'INAPPLICABLE';
 
 /**
- * Redeemable ID, i.e. the voucher code.
- * @member {String} 
- */
+    * Redeemable ID, i.e. the voucher code.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['id'] = undefined;
 
 /**
- * Redeemable's object type.
- * @member {module:model/ValidationsRedeemableInapplicable.ObjectEnum} 
- */
+    * Redeemable's object type.
+    * @type {(keyof typeof ValidationsRedeemableInapplicable.ObjectEnum) | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['object'] = undefined;
 
 /**
- * @member {module:model/ValidationsRedeemableInapplicableResult} 
- */
+    * @type {ValidationsRedeemableInapplicableResult | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['result'] = undefined;
 
 /**
- * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
+    * @type {Object | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/CategoryWithStackingRulesType>} 
- */
+    * @type {Array.<CategoryWithStackingRulesType> | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['categories'] = undefined;
 
 /**
- * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['campaign_name'] = undefined;
 
 /**
- * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['campaign_id'] = undefined;
 
 /**
- * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicable.prototype['name'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsRedeemableInapplicable['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationsRedeemableInapplicable['StatusEnum'] = {
+    
+        /**
+         * value: "INAPPLICABLE"
+         * @constant
+         */
+        "INAPPLICABLE": "INAPPLICABLE"    
+    };
+
 
     /**
-     * value: "INAPPLICABLE"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "INAPPLICABLE": "INAPPLICABLE"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsRedeemableInapplicable['ObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier"
-};
+    ValidationsRedeemableInapplicable['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier"    
+    };
 
 
 

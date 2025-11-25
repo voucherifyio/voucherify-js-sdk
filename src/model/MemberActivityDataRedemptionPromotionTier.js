@@ -19,16 +19,15 @@ import MemberActivityDataRedemptionPromotionTierSummary from './MemberActivityDa
 import ValidationRuleAssignmentsList from './ValidationRuleAssignmentsList';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The MemberActivityDataRedemptionPromotionTier model module.
  * @module model/MemberActivityDataRedemptionPromotionTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionPromotionTier {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionPromotionTier</code>.
-     * @alias module:model/MemberActivityDataRedemptionPromotionTier
+     * @alias MemberActivityDataRedemptionPromotionTier
      */
     constructor() { 
         
@@ -47,9 +46,9 @@ class MemberActivityDataRedemptionPromotionTier {
     /**
      * Constructs a <code>MemberActivityDataRedemptionPromotionTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionPromotionTier} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionPromotionTier} The populated <code>MemberActivityDataRedemptionPromotionTier</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionPromotionTier} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionPromotionTier} The populated <code>MemberActivityDataRedemptionPromotionTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -127,7 +126,7 @@ class MemberActivityDataRedemptionPromotionTier {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionPromotionTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionPromotionTier</code>.
      */
     static validateJSON(data) {
@@ -207,129 +206,129 @@ class MemberActivityDataRedemptionPromotionTier {
 
 
 /**
- * Unique promotion tier ID.
- * @member {String} 
- */
+    * Unique promotion tier ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['id'] = undefined;
 
 /**
- * Name of the promotion tier.
- * @member {String} 
- */
+    * Name of the promotion tier.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['name'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['banner'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTierCampaign} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTierCampaign | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['campaign'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a promotion tier. The metadata object stores all custom attributes assigned to the promotion tier. and The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a promotion tier. The metadata object stores all custom attributes assigned to the promotion tier. and The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTierAction} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTierAction | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['action'] = undefined;
 
 /**
- * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
- * @member {Number} 
- */
+    * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['hierarchy'] = undefined;
 
 /**
- * Promotion unique ID.
- * @member {String} 
- */
+    * Promotion unique ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['promotion_id'] = undefined;
 
 /**
- * Promotion tier's parent campaign's unique ID.
- * @member {String} 
- */
+    * Promotion tier's parent campaign's unique ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['campaign_id'] = undefined;
 
 /**
- * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
- * @member {Boolean} 
- */
+    * A flag to toggle the promotion tier on or off. You can disable a promotion tier even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* promotion tier - `false` indicates an *inactive* promotion tier
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['active'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['start_date'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/MemberActivityDataRedemptionPromotionTier.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof MemberActivityDataRedemptionPromotionTier.ValidityDayOfWeekEnum>) | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['validity_hours'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionPromotionTierSummary} 
- */
+    * @type {MemberActivityDataRedemptionPromotionTierSummary | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['summary'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the promotion tier.
- * @member {String} 
- * @default 'promotion_tier'
- */
+    * The type of the object represented by JSON. This object stores information about the promotion tier.
+    * @type {String | undefined}
+    * @default 'promotion_tier'
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['object'] = 'promotion_tier';
 
 /**
- * @member {module:model/ValidationRuleAssignmentsList} 
- */
+    * @type {ValidationRuleAssignmentsList | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['validation_rule_assignments'] = undefined;
 
 /**
- * Promotion tier category ID.
- * @member {String} 
- */
+    * Promotion tier category ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['category_id'] = undefined;
 
 /**
- * @member {Array.<module:model/Category>} 
- */
+    * @type {Array.<Category> | undefined}
+    */
 MemberActivityDataRedemptionPromotionTier.prototype['categories'] = undefined;
 
 

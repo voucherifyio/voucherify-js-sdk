@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsStatusConditions model module.
  * @module model/ParameterFiltersListCampaignsStatusConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsStatusConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsStatusConditions</code>.
      * Data conditions used to narrow down the data records to be returned in the result.
-     * @alias module:model/ParameterFiltersListCampaignsStatusConditions
+     * @alias ParameterFiltersListCampaignsStatusConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListCampaignsStatusConditions {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsStatusConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsStatusConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsStatusConditions} The populated <code>ParameterFiltersListCampaignsStatusConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsStatusConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsStatusConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsStatusConditions} The populated <code>ParameterFiltersListCampaignsStatusConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ParameterFiltersListCampaignsStatusConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsStatusConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsStatusConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsStatusConditions</code>.
      */
     static validateJSON(data) {
@@ -83,33 +82,33 @@ class ParameterFiltersListCampaignsStatusConditions {
 
 
 /**
- * Campaigns finished generation codes. This also returns campaigns regardless of their `expiration_date` and `start_date`.
- * @member {Object} 
- */
+    * Campaigns finished generation codes. This also returns campaigns regardless of their `expiration_date` and `start_date`.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsStatusConditions.prototype['$active'] = undefined;
 
 /**
- * Campaigs failed to generated codes.
- * @member {Object} 
- */
+    * Campaigs failed to generated codes.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsStatusConditions.prototype['$failed'] = undefined;
 
 /**
- * Campaigns are generating codes or they are updating.
- * @member {Object} 
- */
+    * Campaigns are generating codes or they are updating.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsStatusConditions.prototype['$in_progress'] = undefined;
 
 /**
- * Campaigns generated codes, but their `expiration_date` is in the past.
- * @member {Object} 
- */
+    * Campaigns generated codes, but their `expiration_date` is in the past.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsStatusConditions.prototype['$expired'] = undefined;
 
 /**
- * Campaigns generated codes, but their `start_date` is in the future.
- * @member {Object} 
- */
+    * Campaigns generated codes, but their `start_date` is in the future.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsStatusConditions.prototype['before_start'] = undefined;
 
 

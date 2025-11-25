@@ -86,13 +86,13 @@ import ParametersFiltersListCampaignTransactions from '../model/ParametersFilter
 /**
 * Loyalties service.
 * @module api/LoyaltiesApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class LoyaltiesApi {
 
     /**
     * Constructs a new LoyaltiesApi. 
-    * @alias module:api/LoyaltiesApi
+    * @alias LoyaltiesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -104,9 +104,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the activateMemberPendingPoints operation.
-     * @callback module:api/LoyaltiesApi~activateMemberPendingPointsCallback
+     * @callback activateMemberPendingPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersPendingPointsActivateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersPendingPointsActivateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -115,8 +115,9 @@ export default class LoyaltiesApi {
      * Activate manually the pending points and add them to the loyalty card. The pending points are determined by the pending point ID. Once activated, the pending point entry with that ID is not listed by the endpoints: List member ([with campaign ID](/api-reference/loyalties/list-member-pending-points-with-campaign-id), [without campaign ID](/api-reference/loyalties/list-member-pending-points)), [List campaign pending points](/api-reference/loyalties/list-campaign-pending-points). This **POST** method does not require a request body. 👍 Configuring pending points Pending points are configured as part of an earning rule with [POST Create earning rule](/api-reference/loyalties/create-earning-rule) or [PUT Update earning rule](/api-reference/loyalties/update-earning-rule).
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
      * @param {String} pendingPointsId Unique pending point identifier, assigned by Voucherify.
-     * @param {module:api/LoyaltiesApi~activateMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersPendingPointsActivateResponseBody}
+     * @param {activateMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersPendingPointsActivateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersPendingPointsActivateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersPendingPointsActivateResponseBody` object or with `undefined`.
      */
     activateMemberPendingPoints(memberId, pendingPointsId, callback) {
       let postBody = null;
@@ -147,9 +148,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the addMember operation.
-     * @callback module:api/LoyaltiesApi~addMemberCallback
+     * @callback addMemberCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersCreateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -157,9 +158,10 @@ export default class LoyaltiesApi {
      * Add Member
      * This method assigns a loyalty card to a customer. It selects a [loyalty card](/api-reference/vouchers/get-voucher) suitable for publication, adds a publish entry, and returns the published voucher.   A voucher is suitable for publication when its active and hasnt been published yet.    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use **auto-update** campaign.
      * @param {String} campaignId Unique campaign ID of the loyalty program.
-     * @param {module:model/LoyaltiesMembersCreateRequestBody} loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint.
-     * @param {module:api/LoyaltiesApi~addMemberCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersCreateResponseBody}
+     * @param {LoyaltiesMembersCreateRequestBody} loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint.
+     * @param {addMemberCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersCreateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersCreateResponseBody` object or with `undefined`.
      */
     addMember(campaignId, loyaltiesMembersCreateRequestBody, callback) {
       let postBody = loyaltiesMembersCreateRequestBody;
@@ -189,9 +191,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the adjustMemberPendingPoints operation.
-     * @callback module:api/LoyaltiesApi~adjustMemberPendingPointsCallback
+     * @callback adjustMemberPendingPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersPendingPointsBalanceResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -200,9 +202,10 @@ export default class LoyaltiesApi {
      * Adjusts the pending points with a given ID. You can add or subtract the number of points. 👍 Configuring pending points Pending points are configured as part of an earning rule with [POST Create earning rule](/api-reference/loyalties/create-earning-rule) or [PUT Update earning rule](/api-reference/loyalties/update-earning-rule).
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
      * @param {String} pendingPointsId Unique pending point identifier, assigned by Voucherify.
-     * @param {module:model/LoyaltiesMembersPendingPointsBalanceRequestBody} loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted.
-     * @param {module:api/LoyaltiesApi~adjustMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersPendingPointsBalanceResponseBody}
+     * @param {LoyaltiesMembersPendingPointsBalanceRequestBody} loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted.
+     * @param {adjustMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersPendingPointsBalanceResponseBody}
+     * @returns {Promise<(LoyaltiesMembersPendingPointsBalanceResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersPendingPointsBalanceResponseBody` object or with `undefined`.
      */
     adjustMemberPendingPoints(memberId, pendingPointsId, loyaltiesMembersPendingPointsBalanceRequestBody, callback) {
       let postBody = loyaltiesMembersPendingPointsBalanceRequestBody;
@@ -234,7 +237,7 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the cancelMemberPendingPoints operation.
-     * @callback module:api/LoyaltiesApi~cancelMemberPendingPointsCallback
+     * @callback cancelMemberPendingPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -245,7 +248,8 @@ export default class LoyaltiesApi {
      * Cancel manually the pending points for the loyalty card. The pending points are determined by the pending point ID. Once canceled, the pending point entry with that ID is not listed by the endpoints: List member ([with campaign ID](/api-reference/loyalties/list-member-pending-points-with-campaign-id), [without campaign ID](/api-reference/loyalties/list-member-pending-points)), [List campaign pending points](/api-reference/loyalties/list-campaign-pending-points). This **POST** method does not require a request body and it returns an empty, 204, response. 👍 Configuring pending points Pending points are configured as part of an earning rule with [POST Create earning rule](/api-reference/loyalties/create-earning-rule) or [PUT Update earning rule](/api-reference/loyalties/update-earning-rule).
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
      * @param {String} pendingPointsId Unique pending point identifier, assigned by Voucherify.
-     * @param {module:api/LoyaltiesApi~cancelMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {cancelMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     cancelMemberPendingPoints(memberId, pendingPointsId, callback) {
       let postBody = null;
@@ -276,9 +280,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the createEarningRule operation.
-     * @callback module:api/LoyaltiesApi~createEarningRuleCallback
+     * @callback createEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {Array.<module:model/LoyaltiesEarningRulesCreateResponseBody>} [data] The data returned by the service call.
+     * @param {Array.<LoyaltiesEarningRulesCreateResponseBody>} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -286,9 +290,10 @@ export default class LoyaltiesApi {
      * Create Earning Rule
      * Create earning rules for a loyalty campaign.  🚧 Maximum number of earning rules  You can create up to 100 earning rules per project. The limit can be customized for clients with a single-tenant setup.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
-     * @param {Array.<module:model/LoyaltiesEarningRulesCreateRequestBodyItem>} loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object
-     * @param {module:api/LoyaltiesApi~createEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/LoyaltiesEarningRulesCreateResponseBody>}
+     * @param {Array.<LoyaltiesEarningRulesCreateRequestBodyItem>} loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object
+     * @param {createEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<LoyaltiesEarningRulesCreateResponseBody>}
+     * @returns {Promise<(Array.<LoyaltiesEarningRulesCreateResponseBody> | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `Array.<LoyaltiesEarningRulesCreateResponseBody>` object or with `undefined`.
      */
     createEarningRule(campaignId, loyaltiesEarningRulesCreateRequestBodyItem, callback) {
       let postBody = loyaltiesEarningRulesCreateRequestBodyItem;
@@ -318,9 +323,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the createInBulkLoyaltyTiers operation.
-     * @callback module:api/LoyaltiesApi~createInBulkLoyaltyTiersCallback
+     * @callback createInBulkLoyaltyTiersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {Array.<module:model/LoyaltyTier>} [data] The data returned by the service call.
+     * @param {Array.<LoyaltyTier>} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -328,9 +333,10 @@ export default class LoyaltiesApi {
      * Create loyalty tiers
      * Creates loyalty tiers for desired campaign.
      * @param {String} campaignId Unique loyalty campaign ID or name.
-     * @param {Array.<module:model/LoyaltiesTiersCreateInBulkRequestBodyItem>} loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign.
-     * @param {module:api/LoyaltiesApi~createInBulkLoyaltyTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/LoyaltyTier>}
+     * @param {Array.<LoyaltiesTiersCreateInBulkRequestBodyItem>} loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign.
+     * @param {createInBulkLoyaltyTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<LoyaltyTier>}
+     * @returns {Promise<(Array.<LoyaltyTier> | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `Array.<LoyaltyTier>` object or with `undefined`.
      */
     createInBulkLoyaltyTiers(campaignId, loyaltiesTiersCreateInBulkRequestBodyItem, callback) {
       let postBody = loyaltiesTiersCreateInBulkRequestBodyItem;
@@ -360,18 +366,19 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the createLoyaltyProgram operation.
-     * @callback module:api/LoyaltiesApi~createLoyaltyProgramCallback
+     * @callback createLoyaltyProgramCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesCreateCampaignResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesCreateCampaignResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Loyalty Campaign
      * Creates a batch of [loyalty cards](/api-reference/loyalties/get-member) aggregated in a single loyalty campaign. It also allows you to define a custom codes pattern.    📘 Global uniqueness  All codes are unique across the whole project. Voucherify wont allow to generate the same codes in any of your campaigns.  🚧 Asynchronous action!  This is an asynchronous action, you cant read or modify a newly created campaign until the code generation is completed. See creation_status field in the [loyalty campaign object](/api-reference/loyalties/loyalty-campaign-object) description.
-     * @param {module:model/LoyaltiesCreateCampaignRequestBody} loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details.
-     * @param {module:api/LoyaltiesApi~createLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesCreateCampaignResponseBody}
+     * @param {LoyaltiesCreateCampaignRequestBody} loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details.
+     * @param {createLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesCreateCampaignResponseBody}
+     * @returns {Promise<(LoyaltiesCreateCampaignResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesCreateCampaignResponseBody` object or with `undefined`.
      */
     createLoyaltyProgram(loyaltiesCreateCampaignRequestBody, callback) {
       let postBody = loyaltiesCreateCampaignRequestBody;
@@ -399,9 +406,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the createPointsExpirationExport operation.
-     * @callback module:api/LoyaltiesApi~createPointsExpirationExportCallback
+     * @callback createPointsExpirationExportCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -409,9 +416,10 @@ export default class LoyaltiesApi {
      * Export Loyalty Campaign Point Expiration
      * Schedule the generation of a point expiration CSV file for a particular campaign. It can list point buckets, which can have an ACTIVE or EXPIRED status.
      * @param {String} campaignId Unique campaign ID or name.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateRequestBody} loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned.
-     * @param {module:api/LoyaltiesApi~createPointsExpirationExportCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesPointsExpirationExportCreateResponseBody}
+     * @param {LoyaltiesPointsExpirationExportCreateRequestBody} loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned.
+     * @param {createPointsExpirationExportCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesPointsExpirationExportCreateResponseBody}
+     * @returns {Promise<(LoyaltiesPointsExpirationExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesPointsExpirationExportCreateResponseBody` object or with `undefined`.
      */
     createPointsExpirationExport(campaignId, loyaltiesPointsExpirationExportCreateRequestBody, callback) {
       let postBody = loyaltiesPointsExpirationExportCreateRequestBody;
@@ -441,9 +449,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the createRewardAssignment1 operation.
-     * @callback module:api/LoyaltiesApi~createRewardAssignment1Callback
+     * @callback createRewardAssignment1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardsCreateAssignmentResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardsCreateAssignmentResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -451,9 +459,10 @@ export default class LoyaltiesApi {
      * Create Loyalty Campaign Reward Assignment
      * Add rewards to a loyalty campaign.
      * @param {String} campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
-     * @param {Array.<module:model/LoyaltiesRewardsCreateAssignmentItemRequestBody>} loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points.
-     * @param {module:api/LoyaltiesApi~createRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardsCreateAssignmentResponseBody}
+     * @param {Array.<LoyaltiesRewardsCreateAssignmentItemRequestBody>} loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points.
+     * @param {createRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardsCreateAssignmentResponseBody}
+     * @returns {Promise<(LoyaltiesRewardsCreateAssignmentResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardsCreateAssignmentResponseBody` object or with `undefined`.
      */
     createRewardAssignment1(campaignId, loyaltiesRewardsCreateAssignmentItemRequestBody, callback) {
       let postBody = loyaltiesRewardsCreateAssignmentItemRequestBody;
@@ -483,7 +492,7 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the deleteEarningRule operation.
-     * @callback module:api/LoyaltiesApi~deleteEarningRuleCallback
+     * @callback deleteEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -494,7 +503,8 @@ export default class LoyaltiesApi {
      * This method deletes an earning rule for a specific loyalty campaign.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} earningRuleId A unique earning rule ID.
-     * @param {module:api/LoyaltiesApi~deleteEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteEarningRule(campaignId, earningRuleId, callback) {
       let postBody = null;
@@ -525,9 +535,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the deleteLoyaltyProgram operation.
-     * @callback module:api/LoyaltiesApi~deleteLoyaltyProgramCallback
+     * @callback deleteLoyaltyProgramCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesDeleteResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesDeleteResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -538,8 +548,9 @@ export default class LoyaltiesApi {
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~deleteLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesDeleteResponseBody}
+     * @param {deleteLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesDeleteResponseBody}
+     * @returns {Promise<(LoyaltiesDeleteResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesDeleteResponseBody` object or with `undefined`.
      */
     deleteLoyaltyProgram(campaignId, opts, callback) {
       opts = opts || {};
@@ -570,7 +581,7 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the deleteRewardAssignment1 operation.
-     * @callback module:api/LoyaltiesApi~deleteRewardAssignment1Callback
+     * @callback deleteRewardAssignment1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -581,7 +592,8 @@ export default class LoyaltiesApi {
      * This method deletes a reward assignment for a particular loyalty campaign.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:api/LoyaltiesApi~deleteRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteRewardAssignment1(campaignId, assignmentId, callback) {
       let postBody = null;
@@ -612,9 +624,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the disableEarningRule operation.
-     * @callback module:api/LoyaltiesApi~disableEarningRuleCallback
+     * @callback disableEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesEarningRulesDisableResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesEarningRulesDisableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -623,8 +635,9 @@ export default class LoyaltiesApi {
      * Disable an earning rule.
      * @param {String} campaignId Unique campaign ID or name.
      * @param {String} earningRuleId Unique identifier of an earning rule, assigned by Voucherify.
-     * @param {module:api/LoyaltiesApi~disableEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesEarningRulesDisableResponseBody}
+     * @param {disableEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesEarningRulesDisableResponseBody}
+     * @returns {Promise<(LoyaltiesEarningRulesDisableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesEarningRulesDisableResponseBody` object or with `undefined`.
      */
     disableEarningRule(campaignId, earningRuleId, callback) {
       let postBody = null;
@@ -655,9 +668,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the enableEarningRule operation.
-     * @callback module:api/LoyaltiesApi~enableEarningRuleCallback
+     * @callback enableEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesEarningRulesEnableResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesEarningRulesEnableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -666,8 +679,9 @@ export default class LoyaltiesApi {
      * Enable an earning rule.
      * @param {String} campaignId Unique campaign ID or name.
      * @param {String} earningRuleId Unique identifier of an earning rule, assigned by Voucherify.
-     * @param {module:api/LoyaltiesApi~enableEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesEarningRulesEnableResponseBody}
+     * @param {enableEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesEarningRulesEnableResponseBody}
+     * @returns {Promise<(LoyaltiesEarningRulesEnableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesEarningRulesEnableResponseBody` object or with `undefined`.
      */
     enableEarningRule(campaignId, earningRuleId, callback) {
       let postBody = null;
@@ -698,9 +712,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the exportLoyaltyCampaignTransactions operation.
-     * @callback module:api/LoyaltiesApi~exportLoyaltyCampaignTransactionsCallback
+     * @callback exportLoyaltyCampaignTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {CampaignsTransactionsExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -708,9 +722,10 @@ export default class LoyaltiesApi {
      * Export Loyalty Campaign Transactions
      * Export transactions is an asynchronous process that generates a CSV file with the data about or point movements on all loyalty cards in a given campaign. To export transactions: 1. In the export request, use parameters to select which fields will be exported, in what order, and which data will be filtered. 2. Use the returned id to track the export status with the [GET Export](/api-reference/exports/get-export) method. 3. In the GET Export method, when the returned status field has the DONE value, the export file has been generated. 4. Use the URL in the result property to download the file. You must be logged to your Voucherify account on a given cluster in the browser to be able to download the file. An export request will almost always result in a single file being generated by the system. However, when the data volume is large, the system may split the results into multiple files. An example export file can look as follows:    👍 Export Campaign Transactions  This method works in the same way the [POST Export Campaign Transactions](/api-reference/campaigns/export-campaign-transactions) does, but it is limited to loyalty campaigns only. The POST Export Campaign Transactions method can also export gift card campaign transactions.
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-     * @param {module:model/LoyaltiesTransactionsExportCreateRequestBody} loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export.
-     * @param {module:api/LoyaltiesApi~exportLoyaltyCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CampaignsTransactionsExportCreateResponseBody}
+     * @param {LoyaltiesTransactionsExportCreateRequestBody} loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export.
+     * @param {exportLoyaltyCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CampaignsTransactionsExportCreateResponseBody}
+     * @returns {Promise<(CampaignsTransactionsExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CampaignsTransactionsExportCreateResponseBody` object or with `undefined`.
      */
     exportLoyaltyCampaignTransactions(campaignId, loyaltiesTransactionsExportCreateRequestBody, callback) {
       let postBody = loyaltiesTransactionsExportCreateRequestBody;
@@ -740,9 +755,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the exportLoyaltyCardTransactions operation.
-     * @callback module:api/LoyaltiesApi~exportLoyaltyCardTransactionsCallback
+     * @callback exportLoyaltyCardTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -750,9 +765,10 @@ export default class LoyaltiesApi {
      * Export Loyalty Card Transactions
      * Export transactions that are associated with point movements on a loyalty card.   
      * @param {String} memberId A unique code identifying the loyalty card that you are looking to export transaction data for.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateRequestBody} loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export.
-     * @param {module:api/LoyaltiesApi~exportLoyaltyCardTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTransactionsExportCreateResponseBody}
+     * @param {LoyaltiesMembersTransactionsExportCreateRequestBody} loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export.
+     * @param {exportLoyaltyCardTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTransactionsExportCreateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTransactionsExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTransactionsExportCreateResponseBody` object or with `undefined`.
      */
     exportLoyaltyCardTransactions(memberId, loyaltiesMembersTransactionsExportCreateRequestBody, callback) {
       let postBody = loyaltiesMembersTransactionsExportCreateRequestBody;
@@ -782,9 +798,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the exportLoyaltyCardTransactions1 operation.
-     * @callback module:api/LoyaltiesApi~exportLoyaltyCardTransactions1Callback
+     * @callback exportLoyaltyCardTransactions1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -793,9 +809,10 @@ export default class LoyaltiesApi {
      * Export transactions that are associated with point movements on a loyalty card.   
      * @param {String} campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export.
      * @param {String} memberId A unique code identifying the loyalty card that you are looking to export transaction data for.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateRequestBody} loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export.
-     * @param {module:api/LoyaltiesApi~exportLoyaltyCardTransactions1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTransactionsExportCreateResponseBody}
+     * @param {LoyaltiesMembersTransactionsExportCreateRequestBody} loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export.
+     * @param {exportLoyaltyCardTransactions1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTransactionsExportCreateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTransactionsExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTransactionsExportCreateResponseBody` object or with `undefined`.
      */
     exportLoyaltyCardTransactions1(campaignId, memberId, loyaltiesMembersTransactionsExportCreateRequestBody, callback) {
       let postBody = loyaltiesMembersTransactionsExportCreateRequestBody;
@@ -827,9 +844,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getEarningRule operation.
-     * @callback module:api/LoyaltiesApi~getEarningRuleCallback
+     * @callback getEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesEarningRulesGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -838,8 +855,9 @@ export default class LoyaltiesApi {
      * Retrieves an earning rule assigned to a campaign.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} earningRuleId A unique earning rule ID.
-     * @param {module:api/LoyaltiesApi~getEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesEarningRulesGetResponseBody}
+     * @param {getEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesEarningRulesGetResponseBody}
+     * @returns {Promise<(LoyaltiesEarningRulesGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesEarningRulesGetResponseBody` object or with `undefined`.
      */
     getEarningRule(campaignId, earningRuleId, callback) {
       let postBody = null;
@@ -870,9 +888,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getLoyaltyProgram operation.
-     * @callback module:api/LoyaltiesApi~getLoyaltyProgramCallback
+     * @callback getLoyaltyProgramCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesGetCampaignResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesGetCampaignResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -880,8 +898,9 @@ export default class LoyaltiesApi {
      * Get Loyalty Campaign
      * Retrieve a specific loyalty campaign.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
-     * @param {module:api/LoyaltiesApi~getLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesGetCampaignResponseBody}
+     * @param {getLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesGetCampaignResponseBody}
+     * @returns {Promise<(LoyaltiesGetCampaignResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesGetCampaignResponseBody` object or with `undefined`.
      */
     getLoyaltyProgram(campaignId, callback) {
       let postBody = null;
@@ -910,9 +929,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getLoyaltyTier operation.
-     * @callback module:api/LoyaltiesApi~getLoyaltyTierCallback
+     * @callback getLoyaltyTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesTiersGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesTiersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -921,8 +940,9 @@ export default class LoyaltiesApi {
      * Retrieve a loyalty tier from a loyalty campaign by the loyalty tier ID.
      * @param {String} campaignId Unique loyalty campaign ID or name.
      * @param {String} loyaltyTierId Unique loyalty tier ID.
-     * @param {module:api/LoyaltiesApi~getLoyaltyTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesTiersGetResponseBody}
+     * @param {getLoyaltyTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesTiersGetResponseBody}
+     * @returns {Promise<(LoyaltiesTiersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesTiersGetResponseBody` object or with `undefined`.
      */
     getLoyaltyTier(campaignId, loyaltyTierId, callback) {
       let postBody = null;
@@ -953,9 +973,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getMember operation.
-     * @callback module:api/LoyaltiesApi~getMemberCallback
+     * @callback getMemberCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -963,8 +983,9 @@ export default class LoyaltiesApi {
      * Get Member
      * Retrieve loyalty card with the given member ID (i.e. voucher code).      📘 Alternative endpoint  This endpoint is an alternative to this [endpoint](/api-reference/loyalties/get-member-with-campaign-id). The URL was re-designed to allow you to retrieve loyalty card details without having to provide the campaignId as a path parameter.
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
-     * @param {module:api/LoyaltiesApi~getMemberCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersGetResponseBody}
+     * @param {getMemberCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersGetResponseBody}
+     * @returns {Promise<(LoyaltiesMembersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersGetResponseBody` object or with `undefined`.
      */
     getMember(memberId, callback) {
       let postBody = null;
@@ -993,9 +1014,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getMember1 operation.
-     * @callback module:api/LoyaltiesApi~getMember1Callback
+     * @callback getMember1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1004,8 +1025,9 @@ export default class LoyaltiesApi {
      * Retrieves the loyalty card with the given member ID (i.e. voucher code).
      * @param {String} campaignId Unique campaign ID.
      * @param {String} memberId Unique code that identifies the loyalty card.
-     * @param {module:api/LoyaltiesApi~getMember1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersGetResponseBody}
+     * @param {getMember1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersGetResponseBody}
+     * @returns {Promise<(LoyaltiesMembersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersGetResponseBody` object or with `undefined`.
      */
     getMember1(campaignId, memberId, callback) {
       let postBody = null;
@@ -1036,9 +1058,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getRewardAssignment1 operation.
-     * @callback module:api/LoyaltiesApi~getRewardAssignment1Callback
+     * @callback getRewardAssignment1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardAssignmentsGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardAssignmentsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1047,8 +1069,9 @@ export default class LoyaltiesApi {
      * Retrieve specific reward assignment.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} assignmentId Unique reward assignment ID.
-     * @param {module:api/LoyaltiesApi~getRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardAssignmentsGetResponseBody}
+     * @param {getRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardAssignmentsGetResponseBody}
+     * @returns {Promise<(LoyaltiesRewardAssignmentsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardAssignmentsGetResponseBody` object or with `undefined`.
      */
     getRewardAssignment1(campaignId, assignmentId, callback) {
       let postBody = null;
@@ -1079,9 +1102,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getRewardAssignment2 operation.
-     * @callback module:api/LoyaltiesApi~getRewardAssignment2Callback
+     * @callback getRewardAssignment2Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardsGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1090,8 +1113,9 @@ export default class LoyaltiesApi {
      * Retrieve specific reward assignment.  📘 Alternative endpoint  This endpoint is an alternative to this [endpoint](/api-reference/loyalties/get-campaign-reward-assignments). 
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:api/LoyaltiesApi~getRewardAssignment2Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardsGetResponseBody}
+     * @param {getRewardAssignment2Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardsGetResponseBody}
+     * @returns {Promise<(LoyaltiesRewardsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardsGetResponseBody` object or with `undefined`.
      */
     getRewardAssignment2(campaignId, assignmentId, callback) {
       let postBody = null;
@@ -1122,9 +1146,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the getRewardDetails operation.
-     * @callback module:api/LoyaltiesApi~getRewardDetailsCallback
+     * @callback getRewardDetailsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardAssignmentsRewardGetResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardAssignmentsRewardGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1133,8 +1157,9 @@ export default class LoyaltiesApi {
      * Get reward details in the context of a loyalty campaign and reward assignment ID.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} assignmentId Unique reward assignment ID.
-     * @param {module:api/LoyaltiesApi~getRewardDetailsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardAssignmentsRewardGetResponseBody}
+     * @param {getRewardDetailsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardAssignmentsRewardGetResponseBody}
+     * @returns {Promise<(LoyaltiesRewardAssignmentsRewardGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardAssignmentsRewardGetResponseBody` object or with `undefined`.
      */
     getRewardDetails(campaignId, assignmentId, callback) {
       let postBody = null;
@@ -1165,9 +1190,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listCampaignPendingPoints operation.
-     * @callback module:api/LoyaltiesApi~listCampaignPendingPointsCallback
+     * @callback listCampaignPendingPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesPendingPointsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesPendingPointsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1177,11 +1202,12 @@ export default class LoyaltiesApi {
      * @param {String} campaignId Unique campaign ID.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListPendingPoints,
+        order?: Exclude<keyof typeof ParameterOrderListPendingPoints, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listCampaignPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesPendingPointsListResponseBody}
+     * @param {listCampaignPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesPendingPointsListResponseBody}
+     * @returns {Promise<(LoyaltiesPendingPointsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesPendingPointsListResponseBody` object or with `undefined`.
      */
     listCampaignPendingPoints(campaignId, opts, callback) {
       opts = opts || {};
@@ -1214,9 +1240,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listEarningRules operation.
-     * @callback module:api/LoyaltiesApi~listEarningRulesCallback
+     * @callback listEarningRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesEarningRulesListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesEarningRulesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1227,10 +1253,11 @@ export default class LoyaltiesApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListEarningRules,
+        order?: Exclude<keyof typeof ParameterOrderListEarningRules, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listEarningRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesEarningRulesListResponseBody}
+     * @param {listEarningRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesEarningRulesListResponseBody}
+     * @returns {Promise<(LoyaltiesEarningRulesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesEarningRulesListResponseBody` object or with `undefined`.
      */
     listEarningRules(campaignId, opts, callback) {
       opts = opts || {};
@@ -1263,9 +1290,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyCampaignTransactions operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyCampaignTransactionsCallback
+     * @callback listLoyaltyCampaignTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesTransactionsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesTransactionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1275,12 +1302,13 @@ export default class LoyaltiesApi {
      * @param {String} campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListTransactions,
+        order?: Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">,
         startingAfterId?: String,
-        filters?: module:model/ParametersFiltersListCampaignTransactions,
+        filters?: ParametersFiltersListCampaignTransactions,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesTransactionsListResponseBody}
+     * @param {listLoyaltyCampaignTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesTransactionsListResponseBody}
+     * @returns {Promise<(LoyaltiesTransactionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesTransactionsListResponseBody` object or with `undefined`.
      */
     listLoyaltyCampaignTransactions(campaignId, opts, callback) {
       opts = opts || {};
@@ -1314,9 +1342,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyCardTransactions operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyCardTransactionsCallback
+     * @callback listLoyaltyCardTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTransactionsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTransactionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1326,12 +1354,13 @@ export default class LoyaltiesApi {
      * @param {String} memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListTransactions,
-        filters?: module:model/ParameterFiltersListMemberTransactions,
+        order?: Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">,
+        filters?: ParameterFiltersListMemberTransactions,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyCardTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTransactionsListResponseBody}
+     * @param {listLoyaltyCardTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTransactionsListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTransactionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTransactionsListResponseBody` object or with `undefined`.
      */
     listLoyaltyCardTransactions(memberId, opts, callback) {
       opts = opts || {};
@@ -1365,9 +1394,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyCardTransactions1 operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyCardTransactions1Callback
+     * @callback listLoyaltyCardTransactions1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTransactionsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTransactionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1378,12 +1407,13 @@ export default class LoyaltiesApi {
      * @param {String} memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListTransactions,
-        filters?: module:model/ParameterFiltersListMemberTransactions,
+        order?: Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">,
+        filters?: ParameterFiltersListMemberTransactions,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyCardTransactions1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTransactionsListResponseBody}
+     * @param {listLoyaltyCardTransactions1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTransactionsListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTransactionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTransactionsListResponseBody` object or with `undefined`.
      */
     listLoyaltyCardTransactions1(campaignId, memberId, opts, callback) {
       opts = opts || {};
@@ -1419,9 +1449,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyPrograms operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyProgramsCallback
+     * @callback listLoyaltyProgramsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesListCampaignsResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesListCampaignsResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1431,11 +1461,12 @@ export default class LoyaltiesApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        expand?: module:model/ParameterExpandListCampaigns,
-        order?: module:model/ParameterOrderListCampaigns,
+        expand?: Exclude<keyof typeof ParameterExpandListCampaigns, "prototype" | "constructFromObject">,
+        order?: Exclude<keyof typeof ParameterOrderListCampaigns, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyProgramsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesListCampaignsResponseBody}
+     * @param {listLoyaltyProgramsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesListCampaignsResponseBody}
+     * @returns {Promise<(LoyaltiesListCampaignsResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesListCampaignsResponseBody` object or with `undefined`.
      */
     listLoyaltyPrograms(opts, callback) {
       opts = opts || {};
@@ -1467,9 +1498,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyTierEarningRules operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyTierEarningRulesCallback
+     * @callback listLoyaltyTierEarningRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesTiersEarningRulesListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesTiersEarningRulesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1482,8 +1513,9 @@ export default class LoyaltiesApi {
         limit?: Number,
         page?: Number,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyTierEarningRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesTiersEarningRulesListResponseBody}
+     * @param {listLoyaltyTierEarningRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesTiersEarningRulesListResponseBody}
+     * @returns {Promise<(LoyaltiesTiersEarningRulesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesTiersEarningRulesListResponseBody` object or with `undefined`.
      */
     listLoyaltyTierEarningRules(campaignId, loyaltyTierId, opts, callback) {
       opts = opts || {};
@@ -1517,9 +1549,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyTierRewards operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyTierRewardsCallback
+     * @callback listLoyaltyTierRewardsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesTiersRewardsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesTiersRewardsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1528,8 +1560,9 @@ export default class LoyaltiesApi {
      * Get available rewards for a given tier.
      * @param {String} campaignId Unique campaign ID or name.
      * @param {String} loyaltyTierId Unique loyalty tier ID.
-     * @param {module:api/LoyaltiesApi~listLoyaltyTierRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesTiersRewardsListResponseBody}
+     * @param {listLoyaltyTierRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesTiersRewardsListResponseBody}
+     * @returns {Promise<(LoyaltiesTiersRewardsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesTiersRewardsListResponseBody` object or with `undefined`.
      */
     listLoyaltyTierRewards(campaignId, loyaltyTierId, callback) {
       let postBody = null;
@@ -1560,9 +1593,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listLoyaltyTiers operation.
-     * @callback module:api/LoyaltiesApi~listLoyaltyTiersCallback
+     * @callback listLoyaltyTiersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesTiersListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesTiersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1572,10 +1605,11 @@ export default class LoyaltiesApi {
      * @param {String} campaignId Unique loyalty campaign ID or name.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListLoyaltyTiers,
+        order?: Exclude<keyof typeof ParameterOrderListLoyaltyTiers, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listLoyaltyTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesTiersListResponseBody}
+     * @param {listLoyaltyTiersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesTiersListResponseBody}
+     * @returns {Promise<(LoyaltiesTiersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesTiersListResponseBody` object or with `undefined`.
      */
     listLoyaltyTiers(campaignId, opts, callback) {
       opts = opts || {};
@@ -1607,9 +1641,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberActivity operation.
-     * @callback module:api/LoyaltiesApi~listMemberActivityCallback
+     * @callback listMemberActivityCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMemberActivityListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMemberActivityListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1619,11 +1653,12 @@ export default class LoyaltiesApi {
      * @param {String} memberId Unique loyalty card assigned to a particular customer.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderCreatedAt,
+        order?: Exclude<keyof typeof ParameterOrderCreatedAt, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMemberActivityCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMemberActivityListResponseBody}
+     * @param {listMemberActivityCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMemberActivityListResponseBody}
+     * @returns {Promise<(LoyaltiesMemberActivityListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMemberActivityListResponseBody` object or with `undefined`.
      */
     listMemberActivity(memberId, opts, callback) {
       opts = opts || {};
@@ -1656,9 +1691,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberActivity1 operation.
-     * @callback module:api/LoyaltiesApi~listMemberActivity1Callback
+     * @callback listMemberActivity1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMemberActivityListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMemberActivityListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1669,11 +1704,12 @@ export default class LoyaltiesApi {
      * @param {String} memberId A code that identifies the loyalty card.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderCreatedAt,
+        order?: Exclude<keyof typeof ParameterOrderCreatedAt, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMemberActivity1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMemberActivityListResponseBody}
+     * @param {listMemberActivity1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMemberActivityListResponseBody}
+     * @returns {Promise<(LoyaltiesMemberActivityListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMemberActivityListResponseBody` object or with `undefined`.
      */
     listMemberActivity1(campaignId, memberId, opts, callback) {
       opts = opts || {};
@@ -1708,9 +1744,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberLoyaltyTier operation.
-     * @callback module:api/LoyaltiesApi~listMemberLoyaltyTierCallback
+     * @callback listMemberLoyaltyTierCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTiersListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTiersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1718,8 +1754,9 @@ export default class LoyaltiesApi {
      * List Member's Loyalty Tiers
      * Retrieve member tiers using the loyalty card ID.
      * @param {String} memberId Unique loyalty card assigned to a particular customer.
-     * @param {module:api/LoyaltiesApi~listMemberLoyaltyTierCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTiersListResponseBody}
+     * @param {listMemberLoyaltyTierCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTiersListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTiersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTiersListResponseBody` object or with `undefined`.
      */
     listMemberLoyaltyTier(memberId, callback) {
       let postBody = null;
@@ -1748,9 +1785,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberPendingPoints operation.
-     * @callback module:api/LoyaltiesApi~listMemberPendingPointsCallback
+     * @callback listMemberPendingPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersPendingPointsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersPendingPointsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1760,11 +1797,12 @@ export default class LoyaltiesApi {
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListPendingPoints,
+        order?: Exclude<keyof typeof ParameterOrderListPendingPoints, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersPendingPointsListResponseBody}
+     * @param {listMemberPendingPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersPendingPointsListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersPendingPointsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersPendingPointsListResponseBody` object or with `undefined`.
      */
     listMemberPendingPoints(memberId, opts, callback) {
       opts = opts || {};
@@ -1797,9 +1835,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberPendingPoints1 operation.
-     * @callback module:api/LoyaltiesApi~listMemberPendingPoints1Callback
+     * @callback listMemberPendingPoints1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersPendingPointsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersPendingPointsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1810,11 +1848,12 @@ export default class LoyaltiesApi {
      * @param {String} memberId Unique loyalty card code assigned to a particular customer.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListPendingPoints,
+        order?: Exclude<keyof typeof ParameterOrderListPendingPoints, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMemberPendingPoints1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersPendingPointsListResponseBody}
+     * @param {listMemberPendingPoints1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersPendingPointsListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersPendingPointsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersPendingPointsListResponseBody` object or with `undefined`.
      */
     listMemberPendingPoints1(campaignId, memberId, opts, callback) {
       opts = opts || {};
@@ -1849,9 +1888,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMemberRewards operation.
-     * @callback module:api/LoyaltiesApi~listMemberRewardsCallback
+     * @callback listMemberRewardsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersRewardsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersRewardsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1862,8 +1901,9 @@ export default class LoyaltiesApi {
      * @param {{
         affordableOnly?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMemberRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersRewardsListResponseBody}
+     * @param {listMemberRewardsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersRewardsListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersRewardsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersRewardsListResponseBody` object or with `undefined`.
      */
     listMemberRewards(memberId, opts, callback) {
       opts = opts || {};
@@ -1894,9 +1934,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listMembers operation.
-     * @callback module:api/LoyaltiesApi~listMembersCallback
+     * @callback listMembersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesListMembersResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesListMembersResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1908,14 +1948,15 @@ export default class LoyaltiesApi {
         limit?: Number,
         page?: Number,
         customer?: String,
-        createdAt?: module:model/ParameterCreatedBeforeAfter,
-        updatedAt?: module:model/ParameterUpdatedBeforeAfter,
-        order?: module:model/ParameterOrderVouchers,
+        createdAt?: ParameterCreatedBeforeAfter,
+        updatedAt?: ParameterUpdatedBeforeAfter,
+        order?: Exclude<keyof typeof ParameterOrderVouchers, "prototype" | "constructFromObject">,
         code?: String,
         ids?: Array.<String>,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listMembersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesListMembersResponseBody}
+     * @param {listMembersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesListMembersResponseBody}
+     * @returns {Promise<(LoyaltiesListMembersResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesListMembersResponseBody` object or with `undefined`.
      */
     listMembers(campaignId, opts, callback) {
       opts = opts || {};
@@ -1953,9 +1994,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listPointsExpiration operation.
-     * @callback module:api/LoyaltiesApi~listPointsExpirationCallback
+     * @callback listPointsExpirationCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersPointsExpirationListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersPointsExpirationListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -1968,8 +2009,9 @@ export default class LoyaltiesApi {
         limit?: Number,
         page?: Number,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listPointsExpirationCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersPointsExpirationListResponseBody}
+     * @param {listPointsExpirationCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersPointsExpirationListResponseBody}
+     * @returns {Promise<(LoyaltiesMembersPointsExpirationListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersPointsExpirationListResponseBody` object or with `undefined`.
      */
     listPointsExpiration(campaignId, memberId, opts, callback) {
       opts = opts || {};
@@ -2003,9 +2045,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listRewardAssignments1 operation.
-     * @callback module:api/LoyaltiesApi~listRewardAssignments1Callback
+     * @callback listRewardAssignments1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardAssignmentsListResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardAssignmentsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2018,8 +2060,9 @@ export default class LoyaltiesApi {
         page?: Number,
         assignmentId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listRewardAssignments1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardAssignmentsListResponseBody}
+     * @param {listRewardAssignments1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardAssignmentsListResponseBody}
+     * @returns {Promise<(LoyaltiesRewardAssignmentsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardAssignmentsListResponseBody` object or with `undefined`.
      */
     listRewardAssignments1(campaignId, opts, callback) {
       opts = opts || {};
@@ -2052,9 +2095,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the listRewardAssignments2 operation.
-     * @callback module:api/LoyaltiesApi~listRewardAssignments2Callback
+     * @callback listRewardAssignments2Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardsListAssignmentsResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardsListAssignmentsResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2067,8 +2110,9 @@ export default class LoyaltiesApi {
         page?: Number,
         assignmentId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/LoyaltiesApi~listRewardAssignments2Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardsListAssignmentsResponseBody}
+     * @param {listRewardAssignments2Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardsListAssignmentsResponseBody}
+     * @returns {Promise<(LoyaltiesRewardsListAssignmentsResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardsListAssignmentsResponseBody` object or with `undefined`.
      */
     listRewardAssignments2(campaignId, opts, callback) {
       opts = opts || {};
@@ -2101,9 +2145,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the redeemReward operation.
-     * @callback module:api/LoyaltiesApi~redeemRewardCallback
+     * @callback redeemRewardCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersRedemptionRedeemResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2111,9 +2155,10 @@ export default class LoyaltiesApi {
      * Redeem Reward
      *   📘 Alternative endpoint This endpoint is an alternative to this [endpoint](/api-reference/loyalties/redeem-reward-with-campaign-id). The URL was re-designed to allow you to redeem a reward without having to provide the campaignId as a path parameter.
      * @param {String} memberId Unique loyalty card assigned to a particular customer.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemRequestBody} loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
-     * @param {module:api/LoyaltiesApi~redeemRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersRedemptionRedeemResponseBody}
+     * @param {LoyaltiesMembersRedemptionRedeemRequestBody} loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
+     * @param {redeemRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersRedemptionRedeemResponseBody}
+     * @returns {Promise<(LoyaltiesMembersRedemptionRedeemResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersRedemptionRedeemResponseBody` object or with `undefined`.
      */
     redeemReward(memberId, loyaltiesMembersRedemptionRedeemRequestBody, callback) {
       let postBody = loyaltiesMembersRedemptionRedeemRequestBody;
@@ -2143,9 +2188,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the redeemReward1 operation.
-     * @callback module:api/LoyaltiesApi~redeemReward1Callback
+     * @callback redeemReward1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersRedemptionRedeemResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2154,9 +2199,10 @@ export default class LoyaltiesApi {
      * Exchange points from a loyalty card for a specified reward. This API method returns an assigned award in the response. It means that if a requesting customer gets a coupon code with a discount for the next order, that discount code will be visible in response as part of the reward object definition.
      * @param {String} campaignId Unique campaign ID.
      * @param {String} memberId A code that identifies the loyalty card.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemRequestBody} loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
-     * @param {module:api/LoyaltiesApi~redeemReward1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersRedemptionRedeemResponseBody}
+     * @param {LoyaltiesMembersRedemptionRedeemRequestBody} loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
+     * @param {redeemReward1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersRedemptionRedeemResponseBody}
+     * @returns {Promise<(LoyaltiesMembersRedemptionRedeemResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersRedemptionRedeemResponseBody` object or with `undefined`.
      */
     redeemReward1(campaignId, memberId, loyaltiesMembersRedemptionRedeemRequestBody, callback) {
       let postBody = loyaltiesMembersRedemptionRedeemRequestBody;
@@ -2188,9 +2234,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the transferPoints operation.
-     * @callback module:api/LoyaltiesApi~transferPointsCallback
+     * @callback transferPointsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersTransfersCreateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersTransfersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2199,9 +2245,10 @@ export default class LoyaltiesApi {
      * Transfer points between different loyalty cards which have holders. Provide the campaign ID and the loyalty card ID you want the points to be transferred to as path parameters. In the request body, provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. Transfer works only for loyalty cards that have holders, meaning the cards were published to customers. The transferred points expire according to the target program expiration rules.
      * @param {String} campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination).
      * @param {String} memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination).
-     * @param {Array.<module:model/LoyaltiesTransferPoints>} loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card.
-     * @param {module:api/LoyaltiesApi~transferPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersTransfersCreateResponseBody}
+     * @param {Array.<LoyaltiesTransferPoints>} loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card.
+     * @param {transferPointsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersTransfersCreateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersTransfersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersTransfersCreateResponseBody` object or with `undefined`.
      */
     transferPoints(campaignId, memberId, loyaltiesTransferPoints, callback) {
       let postBody = loyaltiesTransferPoints;
@@ -2233,9 +2280,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the updateEarningRule operation.
-     * @callback module:api/LoyaltiesApi~updateEarningRuleCallback
+     * @callback updateEarningRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesEarningRulesUpdateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesEarningRulesUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2244,9 +2291,10 @@ export default class LoyaltiesApi {
      * Update an earning rule definition.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} earningRuleId A unique earning rule ID.
-     * @param {module:model/LoyaltiesEarningRulesUpdateRequestBody} loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule.
-     * @param {module:api/LoyaltiesApi~updateEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesEarningRulesUpdateResponseBody}
+     * @param {LoyaltiesEarningRulesUpdateRequestBody} loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule.
+     * @param {updateEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesEarningRulesUpdateResponseBody}
+     * @returns {Promise<(LoyaltiesEarningRulesUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesEarningRulesUpdateResponseBody` object or with `undefined`.
      */
     updateEarningRule(campaignId, earningRuleId, loyaltiesEarningRulesUpdateRequestBody, callback) {
       let postBody = loyaltiesEarningRulesUpdateRequestBody;
@@ -2278,9 +2326,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the updateLoyaltyCardBalance operation.
-     * @callback module:api/LoyaltiesApi~updateLoyaltyCardBalanceCallback
+     * @callback updateLoyaltyCardBalanceCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersBalanceUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2288,9 +2336,10 @@ export default class LoyaltiesApi {
      * Adjust Loyalty Card Balance
      * This method gives adds or removes balance to an existing loyalty card that is assigned to a holder. The removal of points will consume the points that expire the soonest.   >🚧 Async Action    This is an async action. If you want to perform several add or remove loyalty card balance actions in a short time and their order matters, set up sufficient time-out between the calls.  📘 Alternative endpoint  This endpoint is an alternative to this [endpoint](/api-reference/loyalties/adjust-loyalty-card-balance-with-campaign-id). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the campaignId as a path parameter.
      * @param {String} memberId Unique loyalty card assigned to a particular customer.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateRequestBody} loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism.
-     * @param {module:api/LoyaltiesApi~updateLoyaltyCardBalanceCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersBalanceUpdateResponseBody}
+     * @param {LoyaltiesMembersBalanceUpdateRequestBody} loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism.
+     * @param {updateLoyaltyCardBalanceCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersBalanceUpdateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersBalanceUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersBalanceUpdateResponseBody` object or with `undefined`.
      */
     updateLoyaltyCardBalance(memberId, loyaltiesMembersBalanceUpdateRequestBody, callback) {
       let postBody = loyaltiesMembersBalanceUpdateRequestBody;
@@ -2320,9 +2369,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the updateLoyaltyCardBalance1 operation.
-     * @callback module:api/LoyaltiesApi~updateLoyaltyCardBalance1Callback
+     * @callback updateLoyaltyCardBalance1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesMembersBalanceUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2331,9 +2380,10 @@ export default class LoyaltiesApi {
      * This method adds or removes balance to an existing loyalty card that is assigned to a holder. The removal of points will consume the points that expire the soonest.   >🚧 Async Action    This is an async action. If you want to perform several add or remove loyalty card balance actions in a short time and their order matters, set up sufficient time-out between the calls.
      * @param {String} campaignId Unique campaign ID.
      * @param {String} memberId A code that identifies the loyalty card.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateRequestBody} loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism.
-     * @param {module:api/LoyaltiesApi~updateLoyaltyCardBalance1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesMembersBalanceUpdateResponseBody}
+     * @param {LoyaltiesMembersBalanceUpdateRequestBody} loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism.
+     * @param {updateLoyaltyCardBalance1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesMembersBalanceUpdateResponseBody}
+     * @returns {Promise<(LoyaltiesMembersBalanceUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesMembersBalanceUpdateResponseBody` object or with `undefined`.
      */
     updateLoyaltyCardBalance1(campaignId, memberId, loyaltiesMembersBalanceUpdateRequestBody, callback) {
       let postBody = loyaltiesMembersBalanceUpdateRequestBody;
@@ -2365,9 +2415,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the updateLoyaltyProgram operation.
-     * @callback module:api/LoyaltiesApi~updateLoyaltyProgramCallback
+     * @callback updateLoyaltyProgramCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesUpdateCampaignResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesUpdateCampaignResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2375,9 +2425,10 @@ export default class LoyaltiesApi {
      * Update Loyalty Campaign
      * Updates a loyalty program.  Fields other than those specified in the allowed request body payload wont be modified (even if provided they are silently skipped). Any parameters not provided will be left unchanged.  This method will update the [loyalty cards](/api-reference/loyalties/get-member) which have not been published or redeemed yet.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
-     * @param {module:model/LoyaltiesUpdateCampaignRequestBody} loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign.
-     * @param {module:api/LoyaltiesApi~updateLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesUpdateCampaignResponseBody}
+     * @param {LoyaltiesUpdateCampaignRequestBody} loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign.
+     * @param {updateLoyaltyProgramCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesUpdateCampaignResponseBody}
+     * @returns {Promise<(LoyaltiesUpdateCampaignResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesUpdateCampaignResponseBody` object or with `undefined`.
      */
     updateLoyaltyProgram(campaignId, loyaltiesUpdateCampaignRequestBody, callback) {
       let postBody = loyaltiesUpdateCampaignRequestBody;
@@ -2407,9 +2458,9 @@ export default class LoyaltiesApi {
 
     /**
      * Callback function to receive the result of the updateRewardAssignment1 operation.
-     * @callback module:api/LoyaltiesApi~updateRewardAssignment1Callback
+     * @callback updateRewardAssignment1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody} [data] The data returned by the service call.
+     * @param {LoyaltiesRewardsUpdateAssignmentResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -2418,9 +2469,10 @@ export default class LoyaltiesApi {
      * Updates rewards parameters, i.e. the points cost for the specific reward.
      * @param {String} campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
      * @param {String} assignmentId A unique reward assignment ID.
-     * @param {module:model/LoyaltiesRewardsUpdateAssignmentRequestBody} loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment.
-     * @param {module:api/LoyaltiesApi~updateRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LoyaltiesRewardsUpdateAssignmentResponseBody}
+     * @param {LoyaltiesRewardsUpdateAssignmentRequestBody} loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment.
+     * @param {updateRewardAssignment1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LoyaltiesRewardsUpdateAssignmentResponseBody}
+     * @returns {Promise<(LoyaltiesRewardsUpdateAssignmentResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LoyaltiesRewardsUpdateAssignmentResponseBody` object or with `undefined`.
      */
     updateRewardAssignment1(campaignId, assignmentId, loyaltiesRewardsUpdateAssignmentRequestBody, callback) {
       let postBody = loyaltiesRewardsUpdateAssignmentRequestBody;

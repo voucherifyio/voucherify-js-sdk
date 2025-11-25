@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Discount from './Discount';
-
 /**
  * The MemberActivityDataRedemptionPromotionTierAction model module.
  * @module model/MemberActivityDataRedemptionPromotionTierAction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionPromotionTierAction {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionPromotionTierAction</code>.
      * Contains details about the discount applied by the promotion tier.
-     * @alias module:model/MemberActivityDataRedemptionPromotionTierAction
+     * @alias MemberActivityDataRedemptionPromotionTierAction
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class MemberActivityDataRedemptionPromotionTierAction {
     /**
      * Constructs a <code>MemberActivityDataRedemptionPromotionTierAction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionPromotionTierAction} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionPromotionTierAction} The populated <code>MemberActivityDataRedemptionPromotionTierAction</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierAction>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionPromotionTierAction} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionPromotionTierAction} The populated <code>MemberActivityDataRedemptionPromotionTierAction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class MemberActivityDataRedemptionPromotionTierAction {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionPromotionTierAction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionPromotionTierAction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionPromotionTierAction</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class MemberActivityDataRedemptionPromotionTierAction {
 
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 MemberActivityDataRedemptionPromotionTierAction.prototype['discount'] = undefined;
 
 

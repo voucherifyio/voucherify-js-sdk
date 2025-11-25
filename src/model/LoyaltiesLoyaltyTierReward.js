@@ -14,20 +14,19 @@
 import ApiClient from '../ApiClient';
 import Reward from './Reward';
 import RewardAssignment from './RewardAssignment';
-
 /**
  * The LoyaltiesLoyaltyTierReward model module.
  * @module model/LoyaltiesLoyaltyTierReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesLoyaltyTierReward {
     /**
      * Constructs a new <code>LoyaltiesLoyaltyTierReward</code>.
      * This is an object representing a loyalty tier reward.
-     * @alias module:model/LoyaltiesLoyaltyTierReward
-     * @param reward {module:model/Reward} 
-     * @param assignment {module:model/RewardAssignment} 
-     * @param object {module:model/LoyaltiesLoyaltyTierReward.ObjectEnum} The type of the object represented by JSON. This object stores information about the loyalty tier reward.
+     * @alias LoyaltiesLoyaltyTierReward
+     * @param {Reward} reward 
+     * @param {RewardAssignment} assignment 
+     * @param {LoyaltiesLoyaltyTierReward.ObjectEnum} object The type of the object represented by JSON. This object stores information about the loyalty tier reward.
      */
     constructor(reward, assignment, object) { 
         
@@ -48,9 +47,9 @@ class LoyaltiesLoyaltyTierReward {
     /**
      * Constructs a <code>LoyaltiesLoyaltyTierReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesLoyaltyTierReward} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesLoyaltyTierReward} The populated <code>LoyaltiesLoyaltyTierReward</code> instance.
+     * @param {Partial<LoyaltiesLoyaltyTierReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesLoyaltyTierReward} [obj] Optional instance to populate.
+     * @returns {LoyaltiesLoyaltyTierReward} The populated <code>LoyaltiesLoyaltyTierReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -71,7 +70,7 @@ class LoyaltiesLoyaltyTierReward {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesLoyaltyTierReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesLoyaltyTierReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesLoyaltyTierReward</code>.
      */
     static validateJSON(data) {
@@ -103,39 +102,39 @@ class LoyaltiesLoyaltyTierReward {
 LoyaltiesLoyaltyTierReward.RequiredProperties = ["reward", "assignment", "object"];
 
 /**
- * @member {module:model/Reward} 
- */
+    * @type {Reward}
+    */
 LoyaltiesLoyaltyTierReward.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/RewardAssignment} 
- */
+    * @type {RewardAssignment}
+    */
 LoyaltiesLoyaltyTierReward.prototype['assignment'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the loyalty tier reward.
- * @member {module:model/LoyaltiesLoyaltyTierReward.ObjectEnum} 
- * @default 'loyalty_tier_reward'
- */
+    * The type of the object represented by JSON. This object stores information about the loyalty tier reward.
+    * @type {(keyof typeof LoyaltiesLoyaltyTierReward.ObjectEnum)}
+    * @default 'loyalty_tier_reward'
+    */
 LoyaltiesLoyaltyTierReward.prototype['object'] = 'loyalty_tier_reward';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesLoyaltyTierReward['ObjectEnum'] = {
-
     /**
-     * value: "loyalty_tier_reward"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_tier_reward": "loyalty_tier_reward"
-};
+    LoyaltiesLoyaltyTierReward['ObjectEnum'] = {
+    
+        /**
+         * value: "loyalty_tier_reward"
+         * @constant
+         */
+        "loyalty_tier_reward": "loyalty_tier_reward"    
+    };
 
 
 

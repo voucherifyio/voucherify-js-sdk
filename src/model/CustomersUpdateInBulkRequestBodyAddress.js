@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomersUpdateInBulkRequestBodyAddress model module.
  * @module model/CustomersUpdateInBulkRequestBodyAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersUpdateInBulkRequestBodyAddress {
     /**
      * Constructs a new <code>CustomersUpdateInBulkRequestBodyAddress</code>.
      * Customer&#39;s address.
-     * @alias module:model/CustomersUpdateInBulkRequestBodyAddress
+     * @alias CustomersUpdateInBulkRequestBodyAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomersUpdateInBulkRequestBodyAddress {
     /**
      * Constructs a <code>CustomersUpdateInBulkRequestBodyAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersUpdateInBulkRequestBodyAddress} obj Optional instance to populate.
-     * @returns {module:model/CustomersUpdateInBulkRequestBodyAddress} The populated <code>CustomersUpdateInBulkRequestBodyAddress</code> instance.
+     * @param {Partial<CustomersUpdateInBulkRequestBodyAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersUpdateInBulkRequestBodyAddress} [obj] Optional instance to populate.
+     * @returns {CustomersUpdateInBulkRequestBodyAddress} The populated <code>CustomersUpdateInBulkRequestBodyAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CustomersUpdateInBulkRequestBodyAddress {
 
     /**
      * Validates the JSON data with respect to <code>CustomersUpdateInBulkRequestBodyAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersUpdateInBulkRequestBodyAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersUpdateInBulkRequestBodyAddress</code>.
      */
     static validateJSON(data) {
@@ -110,39 +109,39 @@ class CustomersUpdateInBulkRequestBodyAddress {
 
 
 /**
- * City
- * @member {String} 
- */
+    * City
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['city'] = undefined;
 
 /**
- * State
- * @member {String} 
- */
+    * State
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['state'] = undefined;
 
 /**
- * First line of address.
- * @member {String} 
- */
+    * First line of address.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['line_1'] = undefined;
 
 /**
- * Second line of address.
- * @member {String} 
- */
+    * Second line of address.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['line_2'] = undefined;
 
 /**
- * Country.
- * @member {String} 
- */
+    * Country.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['country'] = undefined;
 
 /**
- * Postal code.
- * @member {String} 
- */
+    * Postal code.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBodyAddress.prototype['postal_code'] = undefined;
 
 

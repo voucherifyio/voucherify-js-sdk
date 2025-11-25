@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OrderItemSku model module.
  * @module model/OrderItemSku
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrderItemSku {
     /**
      * Constructs a new <code>OrderItemSku</code>.
      * An object containing details of the related SKU.
-     * @alias module:model/OrderItemSku
+     * @alias OrderItemSku
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class OrderItemSku {
     /**
      * Constructs a <code>OrderItemSku</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderItemSku} obj Optional instance to populate.
-     * @returns {module:model/OrderItemSku} The populated <code>OrderItemSku</code> instance.
+     * @param {Partial<OrderItemSku>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrderItemSku} [obj] Optional instance to populate.
+     * @returns {OrderItemSku} The populated <code>OrderItemSku</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class OrderItemSku {
 
     /**
      * Validates the JSON data with respect to <code>OrderItemSku</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrderItemSku>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrderItemSku</code>.
      */
     static validateJSON(data) {
@@ -98,39 +97,39 @@ class OrderItemSku {
 
 
 /**
- * A unique identifier that represents the SKU and is assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the SKU and is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 OrderItemSku.prototype['id'] = undefined;
 
 /**
- * The merchant's SKU ID (if it is different than Voucherify's SKU ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
- * @member {String} 
- */
+    * The merchant's SKU ID (if it is different than Voucherify's SKU ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
+    * @type {String | undefined}
+    */
 OrderItemSku.prototype['source_id'] = undefined;
 
 /**
- * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
- * @member {Boolean} 
- */
+    * The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
+    * @type {Boolean | undefined}
+    */
 OrderItemSku.prototype['override'] = undefined;
 
 /**
- * The SKU name.
- * @member {String} 
- */
+    * The SKU name.
+    * @type {String | undefined}
+    */
 OrderItemSku.prototype['sku'] = undefined;
 
 /**
- * SKU price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * SKU price. A positive integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrderItemSku.prototype['price'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 OrderItemSku.prototype['metadata'] = undefined;
 
 

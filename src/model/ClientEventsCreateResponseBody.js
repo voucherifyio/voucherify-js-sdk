@@ -13,18 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import SimpleCustomerRequiredObjectType from './SimpleCustomerRequiredObjectType';
-
 /**
  * The ClientEventsCreateResponseBody model module.
  * @module model/ClientEventsCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientEventsCreateResponseBody {
     /**
      * Constructs a new <code>ClientEventsCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/events&#x60;.
-     * @alias module:model/ClientEventsCreateResponseBody
-     * @param customer {module:model/SimpleCustomerRequiredObjectType} 
+     * @alias ClientEventsCreateResponseBody
+     * @param {SimpleCustomerRequiredObjectType} customer 
      */
     constructor(customer) { 
         
@@ -44,9 +43,9 @@ class ClientEventsCreateResponseBody {
     /**
      * Constructs a <code>ClientEventsCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientEventsCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ClientEventsCreateResponseBody} The populated <code>ClientEventsCreateResponseBody</code> instance.
+     * @param {Partial<ClientEventsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientEventsCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {ClientEventsCreateResponseBody} The populated <code>ClientEventsCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -76,7 +75,7 @@ class ClientEventsCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientEventsCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientEventsCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientEventsCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,57 +107,57 @@ class ClientEventsCreateResponseBody {
 ClientEventsCreateResponseBody.RequiredProperties = ["customer"];
 
 /**
- * The object represented is an `event`.
- * @member {module:model/ClientEventsCreateResponseBody.ObjectEnum} 
- * @default 'event'
- */
+    * The object represented is an `event`.
+    * @type {(keyof typeof ClientEventsCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'event'
+    */
 ClientEventsCreateResponseBody.prototype['object'] = 'event';
 
 /**
- * The event name.
- * @member {String} 
- */
+    * The event name.
+    * @type {String | undefined}
+    */
 ClientEventsCreateResponseBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomerRequiredObjectType} 
- */
+    * @type {SimpleCustomerRequiredObjectType}
+    */
 ClientEventsCreateResponseBody.prototype['customer'] = undefined;
 
 /**
- * A `null` referral object.
- * @member {Object} 
- */
+    * A `null` referral object.
+    * @type {Object | undefined}
+    */
 ClientEventsCreateResponseBody.prototype['referral'] = undefined;
 
 /**
- * A `null` loyalty object.
- * @member {Object} 
- */
+    * A `null` loyalty object.
+    * @type {Object | undefined}
+    */
 ClientEventsCreateResponseBody.prototype['loyalty'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 ClientEventsCreateResponseBody.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ClientEventsCreateResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "event"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "event": "event"
-};
+    ClientEventsCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "event"
+         * @constant
+         */
+        "event": "event"    
+    };
 
 
 

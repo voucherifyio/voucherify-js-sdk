@@ -17,17 +17,16 @@ import Discount from './Discount';
 import Gift from './Gift';
 import SimpleLoyaltyCard from './SimpleLoyaltyCard';
 import SimpleVoucherRedemption from './SimpleVoucherRedemption';
-
 /**
  * The SimpleVoucher model module.
  * @module model/SimpleVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleVoucher {
     /**
      * Constructs a new <code>SimpleVoucher</code>.
      * Simplified voucher data.
-     * @alias module:model/SimpleVoucher
+     * @alias SimpleVoucher
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class SimpleVoucher {
     /**
      * Constructs a <code>SimpleVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleVoucher} obj Optional instance to populate.
-     * @returns {module:model/SimpleVoucher} The populated <code>SimpleVoucher</code> instance.
+     * @param {Partial<SimpleVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleVoucher} [obj] Optional instance to populate.
+     * @returns {SimpleVoucher} The populated <code>SimpleVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -123,7 +122,7 @@ class SimpleVoucher {
 
     /**
      * Validates the JSON data with respect to <code>SimpleVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleVoucher</code>.
      */
     static validateJSON(data) {
@@ -199,172 +198,172 @@ class SimpleVoucher {
 
 
 /**
- * A unique identifier that represents the voucher assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the voucher assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['id'] = undefined;
 
 /**
- * Voucher code.
- * @member {String} 
- */
+    * Voucher code.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['code'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 SimpleVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 SimpleVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/SimpleLoyaltyCard} 
- */
+    * @type {SimpleLoyaltyCard | undefined}
+    */
 SimpleVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * Type of the voucher.
- * @member {module:model/SimpleVoucher.TypeEnum} 
- */
+    * Type of the voucher.
+    * @type {(keyof typeof SimpleVoucher.TypeEnum) | undefined}
+    */
 SimpleVoucher.prototype['type'] = undefined;
 
 /**
- * Campaign name.
- * @member {String} 
- */
+    * Campaign name.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['campaign'] = undefined;
 
 /**
- * Campaign unique ID.
- * @member {String} 
- */
+    * Campaign unique ID.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['campaign_id'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 SimpleVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['holder_id'] = undefined;
 
 /**
- * Unique identifier of the referrer assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the referrer assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['referrer_id'] = undefined;
 
 /**
- * Unique identifier of the category that this voucher belongs to.
- * @member {String} 
- */
+    * Unique identifier of the category that this voucher belongs to.
+    * @type {String | undefined}
+    */
 SimpleVoucher.prototype['category_id'] = undefined;
 
 /**
- * Contains details about the category.
- * @member {Array.<module:model/Category>} 
- */
+    * Contains details about the category.
+    * @type {Array.<Category> | undefined}
+    */
 SimpleVoucher.prototype['categories'] = undefined;
 
 /**
- * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher.
- * @member {Boolean} 
- */
+    * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher.
+    * @type {Boolean | undefined}
+    */
 SimpleVoucher.prototype['active'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleVoucher.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleVoucher.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucherRedemption} 
- */
+    * @type {SimpleVoucherRedemption | undefined}
+    */
 SimpleVoucher.prototype['redemption'] = undefined;
 
 /**
- * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
- * @member {Date} 
- */
+    * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
+    * @type {Date | undefined}
+    */
 SimpleVoucher.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 SimpleVoucher.prototype['expiration_date'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher.
+    * @type {Object | undefined}
+    */
 SimpleVoucher.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/SimpleVoucher.ObjectEnum} 
- * @default 'voucher'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof SimpleVoucher.ObjectEnum) | undefined}
+    * @default 'voucher'
+    */
 SimpleVoucher.prototype['object'] = 'voucher';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleVoucher['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SimpleVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER"    
+    };
+
 
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleVoucher['ObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    SimpleVoucher['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

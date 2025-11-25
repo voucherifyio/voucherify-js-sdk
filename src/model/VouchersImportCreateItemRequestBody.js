@@ -16,16 +16,15 @@ import Discount from './Discount';
 import Gift from './Gift';
 import ValidityTimeframe from './ValidityTimeframe';
 import VouchersImportCreateItemRequestBodyRedemption from './VouchersImportCreateItemRequestBodyRedemption';
-
 /**
  * The VouchersImportCreateItemRequestBody model module.
  * @module model/VouchersImportCreateItemRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersImportCreateItemRequestBody {
     /**
      * Constructs a new <code>VouchersImportCreateItemRequestBody</code>.
-     * @alias module:model/VouchersImportCreateItemRequestBody
+     * @alias VouchersImportCreateItemRequestBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class VouchersImportCreateItemRequestBody {
     /**
      * Constructs a <code>VouchersImportCreateItemRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersImportCreateItemRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersImportCreateItemRequestBody} The populated <code>VouchersImportCreateItemRequestBody</code> instance.
+     * @param {Partial<VouchersImportCreateItemRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersImportCreateItemRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersImportCreateItemRequestBody} The populated <code>VouchersImportCreateItemRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -96,7 +95,7 @@ class VouchersImportCreateItemRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersImportCreateItemRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersImportCreateItemRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersImportCreateItemRequestBody</code>.
      */
     static validateJSON(data) {
@@ -146,76 +145,76 @@ class VouchersImportCreateItemRequestBody {
 
 
 /**
- * Value representing the imported code.
- * @member {String} 
- */
+    * Value representing the imported code.
+    * @type {String | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['code'] = undefined;
 
 /**
- * @member {module:model/VouchersImportCreateItemRequestBodyRedemption} 
- */
+    * @type {VouchersImportCreateItemRequestBodyRedemption | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['redemption'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['active'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['category'] = undefined;
 
 /**
- * Activation timestamp presented in the ISO 8601 format. Voucher is *inactive before* this date. Start date defines when the code starts to be active. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
- * @member {Date} 
- */
+    * Activation timestamp presented in the ISO 8601 format. Voucher is *inactive before* this date. Start date defines when the code starts to be active. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
+    * @type {Date | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
- * @member {Date} 
- */
+    * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
+    * @type {Date | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/VouchersImportCreateItemRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof VouchersImportCreateItemRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['additional_info'] = undefined;
 
 /**
- * @member {module:model/VouchersImportCreateItemRequestBody.TypeEnum} 
- */
+    * @type {(keyof typeof VouchersImportCreateItemRequestBody.TypeEnum) | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 VouchersImportCreateItemRequestBody.prototype['discount'] = undefined;
 
 
@@ -273,25 +272,25 @@ VouchersImportCreateItemRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersImportCreateItemRequestBody['TypeEnum'] = {
-
     /**
-     * value: "GIFT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"
-};
+    VouchersImportCreateItemRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The QualificationsFiltersCondition model module.
  * @module model/QualificationsFiltersCondition
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsFiltersCondition {
     /**
      * Constructs a new <code>QualificationsFiltersCondition</code>.
-     * @alias module:model/QualificationsFiltersCondition
+     * @alias QualificationsFiltersCondition
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class QualificationsFiltersCondition {
     /**
      * Constructs a <code>QualificationsFiltersCondition</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsFiltersCondition} obj Optional instance to populate.
-     * @returns {module:model/QualificationsFiltersCondition} The populated <code>QualificationsFiltersCondition</code> instance.
+     * @param {Partial<QualificationsFiltersCondition>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsFiltersCondition} [obj] Optional instance to populate.
+     * @returns {QualificationsFiltersCondition} The populated <code>QualificationsFiltersCondition</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -71,7 +70,7 @@ class QualificationsFiltersCondition {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsFiltersCondition</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsFiltersCondition>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsFiltersCondition</code>.
      */
     static validateJSON(data) {
@@ -101,33 +100,33 @@ class QualificationsFiltersCondition {
 
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 QualificationsFiltersCondition.prototype['$is'] = undefined;
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 QualificationsFiltersCondition.prototype['$is_not'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 QualificationsFiltersCondition.prototype['$has_value'] = undefined;
 
 /**
- * @member {Object} 
- */
+    * @type {Object | undefined}
+    */
 QualificationsFiltersCondition.prototype['$is_unknown'] = undefined;
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 QualificationsFiltersCondition.prototype['$in'] = undefined;
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 QualificationsFiltersCondition.prototype['$not_in'] = undefined;
 
 

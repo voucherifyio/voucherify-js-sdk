@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyAssetsQr model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransfersCreateResponseBodyAssetsQr {
     /**
      * Constructs a new <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code>.
      * Stores Quick Response (QR) representation of encrypted code.
-     * @alias module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr
+     * @alias LoyaltiesMembersTransfersCreateResponseBodyAssetsQr
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssetsQr {
     /**
      * Constructs a <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code> instance.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyAssetsQr>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransfersCreateResponseBodyAssetsQr} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransfersCreateResponseBodyAssetsQr} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssetsQr {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyAssetsQr>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyAssetsQr</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssetsQr {
 
 
 /**
- * Encrypted voucher code ID.
- * @member {String} 
- */
+    * Encrypted voucher code ID.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyAssetsQr.prototype['id'] = undefined;
 
 /**
- * URL to QR code    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
- * @member {String} 
- */
+    * URL to QR code    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyAssetsQr.prototype['url'] = undefined;
 
 

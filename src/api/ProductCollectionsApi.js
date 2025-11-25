@@ -23,13 +23,13 @@ import ProductCollectionsProductsListResponseBody from '../model/ProductCollecti
 /**
 * ProductCollections service.
 * @module api/ProductCollectionsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ProductCollectionsApi {
 
     /**
     * Constructs a new ProductCollectionsApi. 
-    * @alias module:api/ProductCollectionsApi
+    * @alias ProductCollectionsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -41,18 +41,19 @@ export default class ProductCollectionsApi {
 
     /**
      * Callback function to receive the result of the createProductCollection operation.
-     * @callback module:api/ProductCollectionsApi~createProductCollectionCallback
+     * @callback createProductCollectionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductCollectionsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ProductCollectionsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Product Collection
      * This method creates a new product collection.
-     * @param {module:model/ProductCollectionsCreateRequestBody} productCollectionsCreateRequestBody 
-     * @param {module:api/ProductCollectionsApi~createProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductCollectionsCreateResponseBody}
+     * @param {ProductCollectionsCreateRequestBody} productCollectionsCreateRequestBody 
+     * @param {createProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductCollectionsCreateResponseBody}
+     * @returns {Promise<(ProductCollectionsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductCollectionsCreateResponseBody` object or with `undefined`.
      */
     createProductCollection(productCollectionsCreateRequestBody, callback) {
       let postBody = productCollectionsCreateRequestBody;
@@ -80,7 +81,7 @@ export default class ProductCollectionsApi {
 
     /**
      * Callback function to receive the result of the deleteProductCollection operation.
-     * @callback module:api/ProductCollectionsApi~deleteProductCollectionCallback
+     * @callback deleteProductCollectionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -90,7 +91,8 @@ export default class ProductCollectionsApi {
      * Delete Product Collection
      * This method deletes a product collection.
      * @param {String} productCollectionId A unique product collection ID.
-     * @param {module:api/ProductCollectionsApi~deleteProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteProductCollection(productCollectionId, callback) {
       let postBody = null;
@@ -119,9 +121,9 @@ export default class ProductCollectionsApi {
 
     /**
      * Callback function to receive the result of the getProductCollection operation.
-     * @callback module:api/ProductCollectionsApi~getProductCollectionCallback
+     * @callback getProductCollectionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductCollectionsGetResponseBody} [data] The data returned by the service call.
+     * @param {ProductCollectionsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -129,8 +131,9 @@ export default class ProductCollectionsApi {
      * Get Product Collection
      * Retrieves the product collection.
      * @param {String} productCollectionId A unique product collection ID.
-     * @param {module:api/ProductCollectionsApi~getProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductCollectionsGetResponseBody}
+     * @param {getProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductCollectionsGetResponseBody}
+     * @returns {Promise<(ProductCollectionsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductCollectionsGetResponseBody` object or with `undefined`.
      */
     getProductCollection(productCollectionId, callback) {
       let postBody = null;
@@ -159,9 +162,9 @@ export default class ProductCollectionsApi {
 
     /**
      * Callback function to receive the result of the listProductCollections operation.
-     * @callback module:api/ProductCollectionsApi~listProductCollectionsCallback
+     * @callback listProductCollectionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductCollectionsListResponseBody} [data] The data returned by the service call.
+     * @param {ProductCollectionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -171,10 +174,11 @@ export default class ProductCollectionsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrder,
+        order?: Exclude<keyof typeof ParameterOrder, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/ProductCollectionsApi~listProductCollectionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductCollectionsListResponseBody}
+     * @param {listProductCollectionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductCollectionsListResponseBody}
+     * @returns {Promise<(ProductCollectionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductCollectionsListResponseBody` object or with `undefined`.
      */
     listProductCollections(opts, callback) {
       opts = opts || {};
@@ -205,9 +209,9 @@ export default class ProductCollectionsApi {
 
     /**
      * Callback function to receive the result of the listProductsInCollection operation.
-     * @callback module:api/ProductCollectionsApi~listProductsInCollectionCallback
+     * @callback listProductsInCollectionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ProductCollectionsProductsListResponseBody} [data] The data returned by the service call.
+     * @param {ProductCollectionsProductsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -218,11 +222,12 @@ export default class ProductCollectionsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrder,
+        order?: Exclude<keyof typeof ParameterOrder, "prototype" | "constructFromObject">,
         startingAfter?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/ProductCollectionsApi~listProductsInCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductCollectionsProductsListResponseBody}
+     * @param {listProductsInCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ProductCollectionsProductsListResponseBody}
+     * @returns {Promise<(ProductCollectionsProductsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ProductCollectionsProductsListResponseBody` object or with `undefined`.
      */
     listProductsInCollection(productCollectionId, opts, callback) {
       opts = opts || {};

@@ -13,57 +13,53 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterCampaignType.
-* @module model/ParameterCampaignType
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterCampaignType {
+ * Enum class ParameterCampaignType.
+ * @module model/ParameterCampaignType
+ * @version 3.0.1
+ */
+class ParameterCampaignType {
     
-        /**
-         * value: "PROMOTION"
-         * @constant
-         */
-        "PROMOTION" = "PROMOTION";
-
+    /**
+     * 
+     * @constant
+     */
+    static "PROMOTION" = "PROMOTION";
     
-        /**
-         * value: "GIFT_VOUCHERS"
-         * @constant
-         */
-        "GIFT_VOUCHERS" = "GIFT_VOUCHERS";
-
+    /**
+     * 
+     * @constant
+     */
+    static "GIFT_VOUCHERS" = "GIFT_VOUCHERS";
     
-        /**
-         * value: "REFERRAL_PROGRAM"
-         * @constant
-         */
-        "REFERRAL_PROGRAM" = "REFERRAL_PROGRAM";
-
+    /**
+     * 
+     * @constant
+     */
+    static "REFERRAL_PROGRAM" = "REFERRAL_PROGRAM";
     
-        /**
-         * value: "DISCOUNT_COUPONS"
-         * @constant
-         */
-        "DISCOUNT_COUPONS" = "DISCOUNT_COUPONS";
-
+    /**
+     * 
+     * @constant
+     */
+    static "DISCOUNT_COUPONS" = "DISCOUNT_COUPONS";
     
-        /**
-         * value: "LOYALTY_PROGRAM"
-         * @constant
-         */
-        "LOYALTY_PROGRAM" = "LOYALTY_PROGRAM";
-
+    /**
+     * 
+     * @constant
+     */
+    static "LOYALTY_PROGRAM" = "LOYALTY_PROGRAM";
     
 
     /**
-    * Returns a <code>ParameterCampaignType</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterCampaignType} The enum <code>ParameterCampaignType</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterCampaignType[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterCampaignType[key];
     }
 }
+
+export default ParameterCampaignType;
 

@@ -13,18 +13,17 @@
 
 import ApiClient from '../ApiClient';
 import RedeemableVoucher from './RedeemableVoucher';
-
 /**
  * The CustomerRedeemableRedeemable model module.
  * @module model/CustomerRedeemableRedeemable
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerRedeemableRedeemable {
     /**
      * Constructs a new <code>CustomerRedeemableRedeemable</code>.
      * Detailed information about the customer&#39;s redeemable item
-     * @alias module:model/CustomerRedeemableRedeemable
-     * @param voucher {module:model/RedeemableVoucher} 
+     * @alias CustomerRedeemableRedeemable
+     * @param {RedeemableVoucher} voucher 
      */
     constructor(voucher) { 
         
@@ -44,9 +43,9 @@ class CustomerRedeemableRedeemable {
     /**
      * Constructs a <code>CustomerRedeemableRedeemable</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerRedeemableRedeemable} obj Optional instance to populate.
-     * @returns {module:model/CustomerRedeemableRedeemable} The populated <code>CustomerRedeemableRedeemable</code> instance.
+     * @param {Partial<CustomerRedeemableRedeemable>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerRedeemableRedeemable} [obj] Optional instance to populate.
+     * @returns {CustomerRedeemableRedeemable} The populated <code>CustomerRedeemableRedeemable</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class CustomerRedeemableRedeemable {
 
     /**
      * Validates the JSON data with respect to <code>CustomerRedeemableRedeemable</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerRedeemableRedeemable>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerRedeemableRedeemable</code>.
      */
     static validateJSON(data) {
@@ -99,70 +98,70 @@ class CustomerRedeemableRedeemable {
 CustomerRedeemableRedeemable.RequiredProperties = ["voucher"];
 
 /**
- * Type of the redeemable.
- * @member {String} 
- */
+    * Type of the redeemable.
+    * @type {String | undefined}
+    */
 CustomerRedeemableRedeemable.prototype['type'] = undefined;
 
 /**
- * @member {module:model/RedeemableVoucher} 
- */
+    * @type {RedeemableVoucher}
+    */
 CustomerRedeemableRedeemable.prototype['voucher'] = undefined;
 
 /**
- * Status of the redeemable.
- * @member {module:model/CustomerRedeemableRedeemable.StatusEnum} 
- * @default 'ACTIVE'
- */
+    * Status of the redeemable.
+    * @type {(keyof typeof CustomerRedeemableRedeemable.StatusEnum) | undefined}
+    * @default 'ACTIVE'
+    */
 CustomerRedeemableRedeemable.prototype['status'] = 'ACTIVE';
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-CustomerRedeemableRedeemable['StatusEnum'] = {
-
     /**
-     * value: "ACTIVE"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "ACTIVE": "ACTIVE",
-
-    /**
-     * value: "USED"
-     * @constant
-     */
-    "USED": "USED",
-
-    /**
-     * value: "DISABLED"
-     * @constant
-     */
-    "DISABLED": "DISABLED",
-
-    /**
-     * value: "NOT_ACTIVE_YET"
-     * @constant
-     */
-    "NOT_ACTIVE_YET": "NOT_ACTIVE_YET",
-
-    /**
-     * value: "EXPIRED"
-     * @constant
-     */
-    "EXPIRED": "EXPIRED",
-
-    /**
-     * value: "NO_BALANCE"
-     * @constant
-     */
-    "NO_BALANCE": "NO_BALANCE"
-};
+    CustomerRedeemableRedeemable['StatusEnum'] = {
+    
+        /**
+         * value: "ACTIVE"
+         * @constant
+         */
+        "ACTIVE": "ACTIVE",
+    
+        /**
+         * value: "USED"
+         * @constant
+         */
+        "USED": "USED",
+    
+        /**
+         * value: "DISABLED"
+         * @constant
+         */
+        "DISABLED": "DISABLED",
+    
+        /**
+         * value: "NOT_ACTIVE_YET"
+         * @constant
+         */
+        "NOT_ACTIVE_YET": "NOT_ACTIVE_YET",
+    
+        /**
+         * value: "EXPIRED"
+         * @constant
+         */
+        "EXPIRED": "EXPIRED",
+    
+        /**
+         * value: "NO_BALANCE"
+         * @constant
+         */
+        "NO_BALANCE": "NO_BALANCE"    
+    };
 
 
 

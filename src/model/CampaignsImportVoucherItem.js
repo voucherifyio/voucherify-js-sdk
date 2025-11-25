@@ -17,16 +17,15 @@ import Discount from './Discount';
 import Gift from './Gift';
 import SimpleLoyaltyCard from './SimpleLoyaltyCard';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The CampaignsImportVoucherItem model module.
  * @module model/CampaignsImportVoucherItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsImportVoucherItem {
     /**
      * Constructs a new <code>CampaignsImportVoucherItem</code>.
-     * @alias module:model/CampaignsImportVoucherItem
+     * @alias CampaignsImportVoucherItem
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class CampaignsImportVoucherItem {
     /**
      * Constructs a <code>CampaignsImportVoucherItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsImportVoucherItem} obj Optional instance to populate.
-     * @returns {module:model/CampaignsImportVoucherItem} The populated <code>CampaignsImportVoucherItem</code> instance.
+     * @param {Partial<CampaignsImportVoucherItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsImportVoucherItem} [obj] Optional instance to populate.
+     * @returns {CampaignsImportVoucherItem} The populated <code>CampaignsImportVoucherItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -100,7 +99,7 @@ class CampaignsImportVoucherItem {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsImportVoucherItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsImportVoucherItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsImportVoucherItem</code>.
      */
     static validateJSON(data) {
@@ -154,81 +153,81 @@ class CampaignsImportVoucherItem {
 
 
 /**
- * Value representing the imported code.
- * @member {String} 
- */
+    * Value representing the imported code.
+    * @type {String | undefined}
+    */
 CampaignsImportVoucherItem.prototype['code'] = undefined;
 
 /**
- * @member {module:model/CampaignsImportVoucherItemRedemption} 
- */
+    * @type {CampaignsImportVoucherItemRedemption | undefined}
+    */
 CampaignsImportVoucherItem.prototype['redemption'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 CampaignsImportVoucherItem.prototype['active'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 CampaignsImportVoucherItem.prototype['metadata'] = undefined;
 
 /**
- * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
- * @member {String} 
- */
+    * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
+    * @type {String | undefined}
+    */
 CampaignsImportVoucherItem.prototype['category'] = undefined;
 
 /**
- * Activation timestamp presented in the ISO 8601 format. Voucher is *inactive before* this date. Start date defines when the code starts to be active. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
- * @member {Date} 
- */
+    * Activation timestamp presented in the ISO 8601 format. Voucher is *inactive before* this date. Start date defines when the code starts to be active. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
+    * @type {Date | undefined}
+    */
 CampaignsImportVoucherItem.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
- * @member {Date} 
- */
+    * Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date. Allowed date formats are: - YYYY-MM-DD - YYYY-MM-DDTHH - YYYY-MM-DDTHH:mm - YYYY-MM-DDTHH:mm:ss - YYYY-MM-DDTHH:mm:ssZ - YYYY-MM-DDTHH:mm:ss.SSSZ
+    * @type {Date | undefined}
+    */
 CampaignsImportVoucherItem.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 CampaignsImportVoucherItem.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/CampaignsImportVoucherItem.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof CampaignsImportVoucherItem.ValidityDayOfWeekEnum>) | undefined}
+    */
 CampaignsImportVoucherItem.prototype['validity_day_of_week'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 CampaignsImportVoucherItem.prototype['additional_info'] = undefined;
 
 /**
- * @member {module:model/CampaignsImportVoucherItem.TypeEnum} 
- */
+    * @type {(keyof typeof CampaignsImportVoucherItem.TypeEnum) | undefined}
+    */
 CampaignsImportVoucherItem.prototype['type'] = undefined;
 
 /**
- * @member {module:model/SimpleLoyaltyCard} 
- */
+    * @type {SimpleLoyaltyCard | undefined}
+    */
 CampaignsImportVoucherItem.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Gift} 
- */
+    * @type {Gift | undefined}
+    */
 CampaignsImportVoucherItem.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 CampaignsImportVoucherItem.prototype['discount'] = undefined;
 
 
@@ -286,31 +285,31 @@ CampaignsImportVoucherItem['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsImportVoucherItem['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"
-};
+    CampaignsImportVoucherItem['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER"    
+    };
 
 
 

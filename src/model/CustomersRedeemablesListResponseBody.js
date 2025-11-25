@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomerRedeemable from './CustomerRedeemable';
-
 /**
  * The CustomersRedeemablesListResponseBody model module.
  * @module model/CustomersRedeemablesListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersRedeemablesListResponseBody {
     /**
      * Constructs a new <code>CustomersRedeemablesListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/customers/{customerId}/redeemables&#x60;.
-     * @alias module:model/CustomersRedeemablesListResponseBody
+     * @alias CustomersRedeemablesListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CustomersRedeemablesListResponseBody {
     /**
      * Constructs a <code>CustomersRedeemablesListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersRedeemablesListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersRedeemablesListResponseBody} The populated <code>CustomersRedeemablesListResponseBody</code> instance.
+     * @param {Partial<CustomersRedeemablesListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersRedeemablesListResponseBody} [obj] Optional instance to populate.
+     * @returns {CustomersRedeemablesListResponseBody} The populated <code>CustomersRedeemablesListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class CustomersRedeemablesListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersRedeemablesListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersRedeemablesListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersRedeemablesListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -111,41 +110,41 @@ class CustomersRedeemablesListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about customer redeemables.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about customer redeemables.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CustomersRedeemablesListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of redeemables.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of redeemables.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 CustomersRedeemablesListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of redeemables.
- * @member {Array.<module:model/CustomerRedeemable>} 
- */
+    * A dictionary that contains an array of redeemables.
+    * @type {Array.<CustomerRedeemable> | undefined}
+    */
 CustomersRedeemablesListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of results returned.
- * @member {Number} 
- */
+    * Total number of results returned.
+    * @type {Number | undefined}
+    */
 CustomersRedeemablesListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 CustomersRedeemablesListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the ID in the `starting_after_id` query parameter to display another page of the results occuring after the field with that ID.
+    * @type {String | undefined}
+    */
 CustomersRedeemablesListResponseBody.prototype['more_starting_after'] = undefined;
 
 

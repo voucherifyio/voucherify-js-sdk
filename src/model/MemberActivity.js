@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import MemberActivityData1 from './MemberActivityData1';
-
 /**
  * The MemberActivity model module.
  * @module model/MemberActivity
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivity {
     /**
      * Constructs a new <code>MemberActivity</code>.
      * This is an object representing member activity.    This is a general object which presents moments from members&#39; activity. There are all types of different events that members perform during their journey once they participate in a loyalty program. Events describe moments when the members redeem loyalty cards and earn points or rewards. The list of all types of activities is listed below.  The details describing the activity are collected in an array property named &#x60;data&#x60;. In this object, software integrators can find all further information explaining the event context.
-     * @alias module:model/MemberActivity
+     * @alias MemberActivity
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class MemberActivity {
     /**
      * Constructs a <code>MemberActivity</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivity} obj Optional instance to populate.
-     * @returns {module:model/MemberActivity} The populated <code>MemberActivity</code> instance.
+     * @param {Partial<MemberActivity>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivity} [obj] Optional instance to populate.
+     * @returns {MemberActivity} The populated <code>MemberActivity</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class MemberActivity {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivity</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivity>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivity</code>.
      */
     static validateJSON(data) {
@@ -100,201 +99,201 @@ class MemberActivity {
 
 
 /**
- * Unique event ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique event ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivity.prototype['id'] = undefined;
 
 /**
- * Event type.
- * @member {module:model/MemberActivity.TypeEnum} 
- */
+    * Event type.
+    * @type {(keyof typeof MemberActivity.TypeEnum) | undefined}
+    */
 MemberActivity.prototype['type'] = undefined;
 
 /**
- * @member {module:model/MemberActivityData1} 
- */
+    * @type {MemberActivityData1 | undefined}
+    */
 MemberActivity.prototype['data'] = undefined;
 
 /**
- * Timestamp representing the date and time when the member activity occurred in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the member activity occurred in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivity.prototype['created_at'] = undefined;
 
 /**
- * Unique identifier of the request that caused the event.
- * @member {String} 
- */
+    * Unique identifier of the request that caused the event.
+    * @type {String | undefined}
+    */
 MemberActivity.prototype['group_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivity['TypeEnum'] = {
-
     /**
-     * value: "customer.loyalty.tier.upgraded"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer.loyalty.tier.upgraded": "customer.loyalty.tier.upgraded",
-
-    /**
-     * value: "customer.loyalty.tier.downgraded"
-     * @constant
-     */
-    "customer.loyalty.tier.downgraded": "customer.loyalty.tier.downgraded",
-
-    /**
-     * value: "customer.loyalty.tier.prolonged"
-     * @constant
-     */
-    "customer.loyalty.tier.prolonged": "customer.loyalty.tier.prolonged",
-
-    /**
-     * value: "customer.loyalty.tier.expiration.changed"
-     * @constant
-     */
-    "customer.loyalty.tier.expiration.changed": "customer.loyalty.tier.expiration.changed",
-
-    /**
-     * value: "customer.loyalty.tier.joined"
-     * @constant
-     */
-    "customer.loyalty.tier.joined": "customer.loyalty.tier.joined",
-
-    /**
-     * value: "customer.loyalty.tier.left"
-     * @constant
-     */
-    "customer.loyalty.tier.left": "customer.loyalty.tier.left",
-
-    /**
-     * value: "customer.publication.succeeded"
-     * @constant
-     */
-    "customer.publication.succeeded": "customer.publication.succeeded",
-
-    /**
-     * value: "customer.publication.failed"
-     * @constant
-     */
-    "customer.publication.failed": "customer.publication.failed",
-
-    /**
-     * value: "customer.redemption.failed"
-     * @constant
-     */
-    "customer.redemption.failed": "customer.redemption.failed",
-
-    /**
-     * value: "customer.redemption.succceeded"
-     * @constant
-     */
-    "customer.redemption.succceeded": "customer.redemption.succceeded",
-
-    /**
-     * value: "customer.redemption.rollback.failed"
-     * @constant
-     */
-    "customer.redemption.rollback.failed": "customer.redemption.rollback.failed",
-
-    /**
-     * value: "customer.redemption.rollback.succceeded"
-     * @constant
-     */
-    "customer.redemption.rollback.succceeded": "customer.redemption.rollback.succceeded",
-
-    /**
-     * value: "customer.rewarded"
-     * @constant
-     */
-    "customer.rewarded": "customer.rewarded",
-
-    /**
-     * value: "customer.rewarded.loyalty_points"
-     * @constant
-     */
-    "customer.rewarded.loyalty_points": "customer.rewarded.loyalty_points",
-
-    /**
-     * value: "customer.reward_redemptions.created"
-     * @constant
-     */
-    "customer.reward_redemptions.created": "customer.reward_redemptions.created",
-
-    /**
-     * value: "customer.reward_redemptions.pending"
-     * @constant
-     */
-    "customer.reward_redemptions.pending": "customer.reward_redemptions.pending",
-
-    /**
-     * value: "customer.reward_redemptions.completed"
-     * @constant
-     */
-    "customer.reward_redemptions.completed": "customer.reward_redemptions.completed",
-
-    /**
-     * value: "customer.reward_redemptions.rolledback"
-     * @constant
-     */
-    "customer.reward_redemptions.rolledback": "customer.reward_redemptions.rolledback",
-
-    /**
-     * value: "customer.voucher.deleted"
-     * @constant
-     */
-    "customer.voucher.deleted": "customer.voucher.deleted",
-
-    /**
-     * value: "customer.voucher.loyalty_card.pending_points.activated"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.pending_points.activated": "customer.voucher.loyalty_card.pending_points.activated",
-
-    /**
-     * value: "customer.voucher.loyalty_card.pending_points.added"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.pending_points.added": "customer.voucher.loyalty_card.pending_points.added",
-
-    /**
-     * value: "customer.voucher.loyalty_card.pending_points.canceled"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.pending_points.canceled": "customer.voucher.loyalty_card.pending_points.canceled",
-
-    /**
-     * value: "customer.voucher.loyalty_card.pending_points.updated"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.pending_points.updated": "customer.voucher.loyalty_card.pending_points.updated",
-
-    /**
-     * value: "customer.voucher.loyalty_card.points_added"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.points_added": "customer.voucher.loyalty_card.points_added",
-
-    /**
-     * value: "customer.voucher.loyalty_card.points_transferred"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.points_transferred": "customer.voucher.loyalty_card.points_transferred",
-
-    /**
-     * value: "customer.voucher.loyalty_card.points_expired"
-     * @constant
-     */
-    "customer.voucher.loyalty_card.points_expired": "customer.voucher.loyalty_card.points_expired"
-};
+    MemberActivity['TypeEnum'] = {
+    
+        /**
+         * value: "customer.loyalty.tier.upgraded"
+         * @constant
+         */
+        "customer.loyalty.tier.upgraded": "customer.loyalty.tier.upgraded",
+    
+        /**
+         * value: "customer.loyalty.tier.downgraded"
+         * @constant
+         */
+        "customer.loyalty.tier.downgraded": "customer.loyalty.tier.downgraded",
+    
+        /**
+         * value: "customer.loyalty.tier.prolonged"
+         * @constant
+         */
+        "customer.loyalty.tier.prolonged": "customer.loyalty.tier.prolonged",
+    
+        /**
+         * value: "customer.loyalty.tier.expiration.changed"
+         * @constant
+         */
+        "customer.loyalty.tier.expiration.changed": "customer.loyalty.tier.expiration.changed",
+    
+        /**
+         * value: "customer.loyalty.tier.joined"
+         * @constant
+         */
+        "customer.loyalty.tier.joined": "customer.loyalty.tier.joined",
+    
+        /**
+         * value: "customer.loyalty.tier.left"
+         * @constant
+         */
+        "customer.loyalty.tier.left": "customer.loyalty.tier.left",
+    
+        /**
+         * value: "customer.publication.succeeded"
+         * @constant
+         */
+        "customer.publication.succeeded": "customer.publication.succeeded",
+    
+        /**
+         * value: "customer.publication.failed"
+         * @constant
+         */
+        "customer.publication.failed": "customer.publication.failed",
+    
+        /**
+         * value: "customer.redemption.failed"
+         * @constant
+         */
+        "customer.redemption.failed": "customer.redemption.failed",
+    
+        /**
+         * value: "customer.redemption.succceeded"
+         * @constant
+         */
+        "customer.redemption.succceeded": "customer.redemption.succceeded",
+    
+        /**
+         * value: "customer.redemption.rollback.failed"
+         * @constant
+         */
+        "customer.redemption.rollback.failed": "customer.redemption.rollback.failed",
+    
+        /**
+         * value: "customer.redemption.rollback.succceeded"
+         * @constant
+         */
+        "customer.redemption.rollback.succceeded": "customer.redemption.rollback.succceeded",
+    
+        /**
+         * value: "customer.rewarded"
+         * @constant
+         */
+        "customer.rewarded": "customer.rewarded",
+    
+        /**
+         * value: "customer.rewarded.loyalty_points"
+         * @constant
+         */
+        "customer.rewarded.loyalty_points": "customer.rewarded.loyalty_points",
+    
+        /**
+         * value: "customer.reward_redemptions.created"
+         * @constant
+         */
+        "customer.reward_redemptions.created": "customer.reward_redemptions.created",
+    
+        /**
+         * value: "customer.reward_redemptions.pending"
+         * @constant
+         */
+        "customer.reward_redemptions.pending": "customer.reward_redemptions.pending",
+    
+        /**
+         * value: "customer.reward_redemptions.completed"
+         * @constant
+         */
+        "customer.reward_redemptions.completed": "customer.reward_redemptions.completed",
+    
+        /**
+         * value: "customer.reward_redemptions.rolledback"
+         * @constant
+         */
+        "customer.reward_redemptions.rolledback": "customer.reward_redemptions.rolledback",
+    
+        /**
+         * value: "customer.voucher.deleted"
+         * @constant
+         */
+        "customer.voucher.deleted": "customer.voucher.deleted",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.pending_points.activated"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.pending_points.activated": "customer.voucher.loyalty_card.pending_points.activated",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.pending_points.added"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.pending_points.added": "customer.voucher.loyalty_card.pending_points.added",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.pending_points.canceled"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.pending_points.canceled": "customer.voucher.loyalty_card.pending_points.canceled",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.pending_points.updated"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.pending_points.updated": "customer.voucher.loyalty_card.pending_points.updated",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.points_added"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.points_added": "customer.voucher.loyalty_card.points_added",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.points_transferred"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.points_transferred": "customer.voucher.loyalty_card.points_transferred",
+    
+        /**
+         * value: "customer.voucher.loyalty_card.points_expired"
+         * @constant
+         */
+        "customer.voucher.loyalty_card.points_expired": "customer.voucher.loyalty_card.points_expired"    
+    };
 
 
 

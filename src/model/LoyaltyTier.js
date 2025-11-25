@@ -16,16 +16,15 @@ import LoyaltyTierConfig from './LoyaltyTierConfig';
 import LoyaltyTierExpiration from './LoyaltyTierExpiration';
 import LoyaltyTierPoints from './LoyaltyTierPoints';
 import MappingPoints from './MappingPoints';
-
 /**
  * The LoyaltyTier model module.
  * @module model/LoyaltyTier
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyTier</code>.
-     * @alias module:model/LoyaltyTier
+     * @alias LoyaltyTier
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class LoyaltyTier {
     /**
      * Constructs a <code>LoyaltyTier</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTier} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTier} The populated <code>LoyaltyTier</code> instance.
+     * @param {Partial<LoyaltyTier>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTier} [obj] Optional instance to populate.
+     * @returns {LoyaltyTier} The populated <code>LoyaltyTier</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -94,7 +93,7 @@ class LoyaltyTier {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTier</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTier>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTier</code>.
      */
     static validateJSON(data) {
@@ -136,92 +135,92 @@ class LoyaltyTier {
 
 
 /**
- * Loyalty Tier name.
- * @member {String} 
- */
+    * Loyalty Tier name.
+    * @type {String | undefined}
+    */
 LoyaltyTier.prototype['name'] = undefined;
 
 /**
- * Contains a list of earning rule IDs and their points mapping for the given earning rule.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of earning rule IDs and their points mapping for the given earning rule.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltyTier.prototype['earning_rules'] = undefined;
 
 /**
- * Contains a list of reward IDs and their points mapping for the given reward.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of reward IDs and their points mapping for the given reward.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltyTier.prototype['rewards'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTierPoints} 
- */
+    * @type {LoyaltyTierPoints | undefined}
+    */
 LoyaltyTier.prototype['points'] = undefined;
 
 /**
- * Unique loyalty tier ID.
- * @member {String} 
- */
+    * Unique loyalty tier ID.
+    * @type {String | undefined}
+    */
 LoyaltyTier.prototype['id'] = undefined;
 
 /**
- * Unique parent campaign ID.
- * @member {String} 
- */
+    * Unique parent campaign ID.
+    * @type {String | undefined}
+    */
 LoyaltyTier.prototype['campaign_id'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the loyalty tier. A set of key/value pairs that you can attach to a loyalty tier object. It can be useful for storing additional information about the loyalty tier in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the loyalty tier. A set of key/value pairs that you can attach to a loyalty tier object. It can be useful for storing additional information about the loyalty tier in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltyTier.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyTier.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyTier.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTierConfig} 
- */
+    * @type {LoyaltyTierConfig | undefined}
+    */
 LoyaltyTier.prototype['config'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTierExpiration} 
- */
+    * @type {LoyaltyTierExpiration | undefined}
+    */
 LoyaltyTier.prototype['expiration'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the loyalty.
- * @member {module:model/LoyaltyTier.ObjectEnum} 
- * @default 'loyalty_tier'
- */
+    * The type of the object represented by JSON. This object stores information about the loyalty.
+    * @type {(keyof typeof LoyaltyTier.ObjectEnum) | undefined}
+    * @default 'loyalty_tier'
+    */
 LoyaltyTier.prototype['object'] = 'loyalty_tier';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTier['ObjectEnum'] = {
-
     /**
-     * value: "loyalty_tier"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_tier": "loyalty_tier"
-};
+    LoyaltyTier['ObjectEnum'] = {
+    
+        /**
+         * value: "loyalty_tier"
+         * @constant
+         */
+        "loyalty_tier": "loyalty_tier"    
+    };
 
 
 

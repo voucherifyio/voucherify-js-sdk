@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import LoyaltyCardTransactionDetails from './LoyaltyCardTransactionDetails';
 import LoyaltyCardTransactionsType from './LoyaltyCardTransactionsType';
-
 /**
  * The LoyaltyCardTransaction model module.
  * @module model/LoyaltyCardTransaction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransaction {
     /**
      * Constructs a new <code>LoyaltyCardTransaction</code>.
-     * @alias module:model/LoyaltyCardTransaction
+     * @alias LoyaltyCardTransaction
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyCardTransaction {
     /**
      * Constructs a <code>LoyaltyCardTransaction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransaction} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransaction} The populated <code>LoyaltyCardTransaction</code> instance.
+     * @param {Partial<LoyaltyCardTransaction>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransaction} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransaction} The populated <code>LoyaltyCardTransaction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -85,7 +84,7 @@ class LoyaltyCardTransaction {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransaction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransaction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransaction</code>.
      */
     static validateJSON(data) {
@@ -131,61 +130,61 @@ class LoyaltyCardTransaction {
 
 
 /**
- * Unique transaction ID.
- * @member {String} 
- */
+    * Unique transaction ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['id'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['source_id'] = undefined;
 
 /**
- * Unique voucher ID.
- * @member {String} 
- */
+    * Unique voucher ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['voucher_id'] = undefined;
 
 /**
- * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
- * @member {String} 
- */
+    * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['campaign_id'] = undefined;
 
 /**
- * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['source'] = undefined;
 
 /**
- * Reason why the transaction occurred. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * Reason why the transaction occurred. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['reason'] = undefined;
 
 /**
- * The related transaction ID on the receiving card.
- * @member {String} 
- */
+    * The related transaction ID on the receiving card.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransaction.prototype['related_transaction_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyCardTransaction.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/LoyaltyCardTransactionDetails} 
- */
+    * @type {LoyaltyCardTransactionDetails | undefined}
+    */
 LoyaltyCardTransaction.prototype['details'] = undefined;
 
 /**
- * @member {module:model/LoyaltyCardTransactionsType} 
- */
+    * @type {Exclude<keyof typeof LoyaltyCardTransactionsType, "prototype" | "constructFromObject"> | undefined}
+    */
 LoyaltyCardTransaction.prototype['type'] = undefined;
 
 

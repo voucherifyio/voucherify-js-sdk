@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject model module.
  * @module model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject {
     /**
      * Constructs a new <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code>.
      * Defines the resource that is being modified.
-     * @alias module:model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject
+     * @alias LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject {
     /**
      * Constructs a <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject} The populated <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code> instance.
+     * @param {Partial<LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject} The populated <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject {
 
 
 /**
- * The object being modified, i.e. `voucher`.
- * @member {module:model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified, i.e. `voucher`.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject.prototype['type'] = 'voucher';
 
 /**
- * Identifies the voucher that is being modified. This is the unique identifer that was assigned by Voucherify.
- * @member {String} 
- */
+    * Identifies the voucher that is being modified. This is the unique identifer that was assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject.prototype['id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

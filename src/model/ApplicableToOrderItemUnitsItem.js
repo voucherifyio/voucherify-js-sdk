@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ApplicableToOrderItemUnitsItem model module.
  * @module model/ApplicableToOrderItemUnitsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ApplicableToOrderItemUnitsItem {
     /**
      * Constructs a new <code>ApplicableToOrderItemUnitsItem</code>.
-     * @alias module:model/ApplicableToOrderItemUnitsItem
+     * @alias ApplicableToOrderItemUnitsItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ApplicableToOrderItemUnitsItem {
     /**
      * Constructs a <code>ApplicableToOrderItemUnitsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ApplicableToOrderItemUnitsItem} obj Optional instance to populate.
-     * @returns {module:model/ApplicableToOrderItemUnitsItem} The populated <code>ApplicableToOrderItemUnitsItem</code> instance.
+     * @param {Partial<ApplicableToOrderItemUnitsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ApplicableToOrderItemUnitsItem} [obj] Optional instance to populate.
+     * @returns {ApplicableToOrderItemUnitsItem} The populated <code>ApplicableToOrderItemUnitsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ApplicableToOrderItemUnitsItem {
 
     /**
      * Validates the JSON data with respect to <code>ApplicableToOrderItemUnitsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ApplicableToOrderItemUnitsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ApplicableToOrderItemUnitsItem</code>.
      */
     static validateJSON(data) {
@@ -80,21 +79,21 @@ class ApplicableToOrderItemUnitsItem {
 
 
 /**
- * Number assigned to the order line item in accordance with the order sent in the request.
- * @member {Number} 
- */
+    * Number assigned to the order line item in accordance with the order sent in the request.
+    * @type {Number | undefined}
+    */
 ApplicableToOrderItemUnitsItem.prototype['index'] = undefined;
 
 /**
- * Numbers of units in the order line covered by the discount; e.g. `2, 5, 8` for 10 units with the setting `\"skip_initially\": 1`, `\"repeat\": 3`. The counting of units starts from `1`. The maximum quantity of all handled units is 1000. If the quantity of all order items exceeds 1000, this array is not returned, but `units_limit_exceeded: true`. However, the discount is calculated properly for all relevant units.
- * @member {Array.<Number>} 
- */
+    * Numbers of units in the order line covered by the discount; e.g. `2, 5, 8` for 10 units with the setting `\"skip_initially\": 1`, `\"repeat\": 3`. The counting of units starts from `1`. The maximum quantity of all handled units is 1000. If the quantity of all order items exceeds 1000, this array is not returned, but `units_limit_exceeded: true`. However, the discount is calculated properly for all relevant units.
+    * @type {Array.<Number> | undefined}
+    */
 ApplicableToOrderItemUnitsItem.prototype['units'] = undefined;
 
 /**
- * Returned as `true` only when the sum total of `quantity` of all order items exceeds 1000.
- * @member {Boolean} 
- */
+    * Returned as `true` only when the sum total of `quantity` of all order items exceeds 1000.
+    * @type {Boolean | undefined}
+    */
 ApplicableToOrderItemUnitsItem.prototype['units_limit_exceeded'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ExportResult model module.
  * @module model/ExportResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportResult {
     /**
      * Constructs a new <code>ExportResult</code>.
-     * @alias module:model/ExportResult
+     * @alias ExportResult
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ExportResult {
     /**
      * Constructs a <code>ExportResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportResult} obj Optional instance to populate.
-     * @returns {module:model/ExportResult} The populated <code>ExportResult</code> instance.
+     * @param {Partial<ExportResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportResult} [obj] Optional instance to populate.
+     * @returns {ExportResult} The populated <code>ExportResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class ExportResult {
 
     /**
      * Validates the JSON data with respect to <code>ExportResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportResult</code>.
      */
     static validateJSON(data) {
@@ -74,9 +73,9 @@ class ExportResult {
 
 
 /**
- * URL of the CSV file location. It contains the token used for authorization in the Download export method.
- * @member {String} 
- */
+    * URL of the CSV file location. It contains the token used for authorization in the Download export method.
+    * @type {String | undefined}
+    */
 ExportResult.prototype['url'] = undefined;
 
 

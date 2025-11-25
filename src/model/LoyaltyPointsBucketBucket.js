@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyPointsBucketBucket model module.
  * @module model/LoyaltyPointsBucketBucket
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPointsBucketBucket {
     /**
      * Constructs a new <code>LoyaltyPointsBucketBucket</code>.
      * Defines the number of points stored in this loyalty point bucket.
-     * @alias module:model/LoyaltyPointsBucketBucket
+     * @alias LoyaltyPointsBucketBucket
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyPointsBucketBucket {
     /**
      * Constructs a <code>LoyaltyPointsBucketBucket</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPointsBucketBucket} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPointsBucketBucket} The populated <code>LoyaltyPointsBucketBucket</code> instance.
+     * @param {Partial<LoyaltyPointsBucketBucket>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPointsBucketBucket} [obj] Optional instance to populate.
+     * @returns {LoyaltyPointsBucketBucket} The populated <code>LoyaltyPointsBucketBucket</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltyPointsBucketBucket {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPointsBucketBucket</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPointsBucketBucket>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPointsBucketBucket</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class LoyaltyPointsBucketBucket {
 
 
 /**
- * Total number of points in the loyalty point bucket.
- * @member {Number} 
- */
+    * Total number of points in the loyalty point bucket.
+    * @type {Number | undefined}
+    */
 LoyaltyPointsBucketBucket.prototype['total_points'] = undefined;
 
 

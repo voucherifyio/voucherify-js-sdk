@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignTemplate from './CampaignTemplate';
-
 /**
  * The TemplatesCampaignsListResponseBody model module.
  * @module model/TemplatesCampaignsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsListResponseBody {
     /**
      * Constructs a new <code>TemplatesCampaignsListResponseBody</code>.
      * Response body schema for **GET** &#x60;/v1/templates/campaign&#x60;.
-     * @alias module:model/TemplatesCampaignsListResponseBody
+     * @alias TemplatesCampaignsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class TemplatesCampaignsListResponseBody {
     /**
      * Constructs a <code>TemplatesCampaignsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsListResponseBody} The populated <code>TemplatesCampaignsListResponseBody</code> instance.
+     * @param {Partial<TemplatesCampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsListResponseBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsListResponseBody} The populated <code>TemplatesCampaignsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class TemplatesCampaignsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -111,75 +110,75 @@ class TemplatesCampaignsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about campaign templates.
- * @member {module:model/TemplatesCampaignsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about campaign templates.
+    * @type {(keyof typeof TemplatesCampaignsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 TemplatesCampaignsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of campaign templates.
- * @member {module:model/TemplatesCampaignsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of campaign templates.
+    * @type {(keyof typeof TemplatesCampaignsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 TemplatesCampaignsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Dictionary that contains an array of campaign templates.
- * @member {Array.<module:model/CampaignTemplate>} 
- */
+    * Dictionary that contains an array of campaign templates.
+    * @type {Array.<CampaignTemplate> | undefined}
+    */
 TemplatesCampaignsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of templates, regardless of the applied query parameters. Displayed only if the `include_total` query paremeter is set to `true`.
- * @member {Number} 
- */
+    * Total number of templates, regardless of the applied query parameters. Displayed only if the `include_total` query paremeter is set to `true`.
+    * @type {Number | undefined}
+    */
 TemplatesCampaignsListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 TemplatesCampaignsListResponseBody.prototype['has_more'] = undefined;
 
 /**
- * Returns an ID that can be used to return another page of results. Use the template ID in the `starting_after_id` query parameter to display another page of the results starting after the template with that ID.
- * @member {String} 
- */
+    * Returns an ID that can be used to return another page of results. Use the template ID in the `starting_after_id` query parameter to display another page of the results starting after the template with that ID.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsListResponseBody.prototype['more_starting_after'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    TemplatesCampaignsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-TemplatesCampaignsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    TemplatesCampaignsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

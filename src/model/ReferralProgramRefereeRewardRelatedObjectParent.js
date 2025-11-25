@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ReferralProgramRefereeRewardRelatedObjectParent model module.
  * @module model/ReferralProgramRefereeRewardRelatedObjectParent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralProgramRefereeRewardRelatedObjectParent {
     /**
      * Constructs a new <code>ReferralProgramRefereeRewardRelatedObjectParent</code>.
      * Details of the resource from which the reward originates.
-     * @alias module:model/ReferralProgramRefereeRewardRelatedObjectParent
+     * @alias ReferralProgramRefereeRewardRelatedObjectParent
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ReferralProgramRefereeRewardRelatedObjectParent {
     /**
      * Constructs a <code>ReferralProgramRefereeRewardRelatedObjectParent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralProgramRefereeRewardRelatedObjectParent} obj Optional instance to populate.
-     * @returns {module:model/ReferralProgramRefereeRewardRelatedObjectParent} The populated <code>ReferralProgramRefereeRewardRelatedObjectParent</code> instance.
+     * @param {Partial<ReferralProgramRefereeRewardRelatedObjectParent>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralProgramRefereeRewardRelatedObjectParent} [obj] Optional instance to populate.
+     * @returns {ReferralProgramRefereeRewardRelatedObjectParent} The populated <code>ReferralProgramRefereeRewardRelatedObjectParent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class ReferralProgramRefereeRewardRelatedObjectParent {
 
     /**
      * Validates the JSON data with respect to <code>ReferralProgramRefereeRewardRelatedObjectParent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralProgramRefereeRewardRelatedObjectParent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralProgramRefereeRewardRelatedObjectParent</code>.
      */
     static validateJSON(data) {
@@ -90,41 +89,41 @@ class ReferralProgramRefereeRewardRelatedObjectParent {
 
 
 /**
- * Unique ID of the reward source.
- * @member {String} 
- */
+    * Unique ID of the reward source.
+    * @type {String | undefined}
+    */
 ReferralProgramRefereeRewardRelatedObjectParent.prototype['id'] = undefined;
 
 /**
- * Name of the reward source.
- * @member {String} 
- */
+    * Name of the reward source.
+    * @type {String | undefined}
+    */
 ReferralProgramRefereeRewardRelatedObjectParent.prototype['name'] = undefined;
 
 /**
- * Type of resource represented by the source of the reward.
- * @member {module:model/ReferralProgramRefereeRewardRelatedObjectParent.ObjectEnum} 
- * @default 'CAMPAIGN'
- */
+    * Type of resource represented by the source of the reward.
+    * @type {(keyof typeof ReferralProgramRefereeRewardRelatedObjectParent.ObjectEnum) | undefined}
+    * @default 'CAMPAIGN'
+    */
 ReferralProgramRefereeRewardRelatedObjectParent.prototype['object'] = 'CAMPAIGN';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ReferralProgramRefereeRewardRelatedObjectParent['ObjectEnum'] = {
-
     /**
-     * value: "CAMPAIGN"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CAMPAIGN": "CAMPAIGN"
-};
+    ReferralProgramRefereeRewardRelatedObjectParent['ObjectEnum'] = {
+    
+        /**
+         * value: "CAMPAIGN"
+         * @constant
+         */
+        "CAMPAIGN": "CAMPAIGN"    
+    };
 
 
 

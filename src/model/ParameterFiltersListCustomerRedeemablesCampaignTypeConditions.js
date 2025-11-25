@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesCampaignTypeConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesCampaignTypeConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code>.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions
+     * @alias ParameterFiltersListCustomerRedeemablesCampaignTypeConditions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterFiltersListCustomerRedeemablesCampaignTypeConditions {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesCampaignTypeConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesCampaignTypeConditions} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ParameterFiltersListCustomerRedeemablesCampaignTypeConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignTypeConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignTypeConditions</code>.
      */
     static validateJSON(data) {
@@ -123,51 +122,51 @@ class ParameterFiltersListCustomerRedeemablesCampaignTypeConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.InEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.InEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.NotInEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.NotInEnum>) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.IsEnum} 
- */
+    * Value is exactly this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.IsEnum) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.IsNotEnum} 
- */
+    * Results omit this value (single value).
+    * @type {(keyof typeof ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.IsNotEnum) | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.prototype['$ends_with'] = undefined;
 
 
@@ -240,70 +239,70 @@ ParameterFiltersListCustomerRedeemablesCampaignTypeConditions['NotInEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>$is</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesCampaignTypeConditions['IsEnum'] = {
+    /**
+     * Allowed values for the <code>$is</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ParameterFiltersListCustomerRedeemablesCampaignTypeConditions['IsEnum'] = {
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS",
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "REFERRAL_PROGRAM"
+         * @constant
+         */
+        "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"    
+    };
+
 
     /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
+     * Allowed values for the <code>$is_not</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS",
-
-    /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
-     */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "REFERRAL_PROGRAM"
-     * @constant
-     */
-    "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"
-};
-
-
-/**
- * Allowed values for the <code>$is_not</code> property.
- * @enum {String}
- * @readonly
- */
-ParameterFiltersListCustomerRedeemablesCampaignTypeConditions['IsNotEnum'] = {
-
-    /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
-     */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS",
-
-    /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
-     */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "REFERRAL_PROGRAM"
-     * @constant
-     */
-    "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"
-};
+    ParameterFiltersListCustomerRedeemablesCampaignTypeConditions['IsNotEnum'] = {
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS",
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "REFERRAL_PROGRAM"
+         * @constant
+         */
+        "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"    
+    };
 
 
 

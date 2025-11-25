@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryOrderReferrer model module.
  * @module model/RedemptionEntryOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryOrderReferrer {
     /**
      * Constructs a new <code>RedemptionEntryOrderReferrer</code>.
-     * @alias module:model/RedemptionEntryOrderReferrer
+     * @alias RedemptionEntryOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionEntryOrderReferrer {
     /**
      * Constructs a <code>RedemptionEntryOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryOrderReferrer} The populated <code>RedemptionEntryOrderReferrer</code> instance.
+     * @param {Partial<RedemptionEntryOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryOrderReferrer} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryOrderReferrer} The populated <code>RedemptionEntryOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionEntryOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class RedemptionEntryOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 RedemptionEntryOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionEntryOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionEntryOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionEntryOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionEntryOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionEntryOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

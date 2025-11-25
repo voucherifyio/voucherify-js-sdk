@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import EventSource from './EventSource';
-
 /**
  * The LoyaltyPendingPointsDetailsEvent model module.
  * @module model/LoyaltyPendingPointsDetailsEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyPendingPointsDetailsEvent {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetailsEvent</code>.
      * Details about the event that created pending points.
-     * @alias module:model/LoyaltyPendingPointsDetailsEvent
+     * @alias LoyaltyPendingPointsDetailsEvent
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltyPendingPointsDetailsEvent {
     /**
      * Constructs a <code>LoyaltyPendingPointsDetailsEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyPendingPointsDetailsEvent} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyPendingPointsDetailsEvent} The populated <code>LoyaltyPendingPointsDetailsEvent</code> instance.
+     * @param {Partial<LoyaltyPendingPointsDetailsEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyPendingPointsDetailsEvent} [obj] Optional instance to populate.
+     * @returns {LoyaltyPendingPointsDetailsEvent} The populated <code>LoyaltyPendingPointsDetailsEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class LoyaltyPendingPointsDetailsEvent {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyPendingPointsDetailsEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyPendingPointsDetailsEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyPendingPointsDetailsEvent</code>.
      */
     static validateJSON(data) {
@@ -115,85 +114,85 @@ class LoyaltyPendingPointsDetailsEvent {
 
 
 /**
- * Unique event identifier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique event identifier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['id'] = undefined;
 
 /**
- * Type of the event that triggered the creation of pending points.
- * @member {module:model/LoyaltyPendingPointsDetailsEvent.TypeEnum} 
- * @default 'customer.order.paid'
- */
+    * Type of the event that triggered the creation of pending points.
+    * @type {(keyof typeof LoyaltyPendingPointsDetailsEvent.TypeEnum) | undefined}
+    * @default 'customer.order.paid'
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['type'] = 'customer.order.paid';
 
 /**
- * Unique identifier of the request that triggered the event, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the request that triggered the event, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['group_id'] = undefined;
 
 /**
- * Unique identifier of the entity that triggered the event, assigned by Voucherify. For pending points, it is the `customer_id` of the customer who paid for the order.
- * @member {String} 
- */
+    * Unique identifier of the entity that triggered the event, assigned by Voucherify. For pending points, it is the `customer_id` of the customer who paid for the order.
+    * @type {String | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['entity_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the event occurred. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the event occurred. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['created_at'] = undefined;
 
 /**
- * Type of the event.
- * @member {module:model/LoyaltyPendingPointsDetailsEvent.CategoryEnum} 
- */
+    * Type of the event.
+    * @type {(keyof typeof LoyaltyPendingPointsDetailsEvent.CategoryEnum) | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['category'] = undefined;
 
 /**
- * @member {module:model/EventSource} 
- */
+    * @type {EventSource | undefined}
+    */
 LoyaltyPendingPointsDetailsEvent.prototype['event_source'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyPendingPointsDetailsEvent['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltyPendingPointsDetailsEvent['TypeEnum'] = {
+    
+        /**
+         * value: "customer.order.paid"
+         * @constant
+         */
+        "customer.order.paid": "customer.order.paid"    
+    };
+
 
     /**
-     * value: "customer.order.paid"
-     * @constant
+     * Allowed values for the <code>category</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer.order.paid": "customer.order.paid"
-};
-
-
-/**
- * Allowed values for the <code>category</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyPendingPointsDetailsEvent['CategoryEnum'] = {
-
-    /**
-     * value: "ACTION"
-     * @constant
-     */
-    "ACTION": "ACTION",
-
-    /**
-     * value: "EFFECT"
-     * @constant
-     */
-    "EFFECT": "EFFECT"
-};
+    LoyaltyPendingPointsDetailsEvent['CategoryEnum'] = {
+    
+        /**
+         * value: "ACTION"
+         * @constant
+         */
+        "ACTION": "ACTION",
+    
+        /**
+         * value: "EFFECT"
+         * @constant
+         */
+        "EFFECT": "EFFECT"    
+    };
 
 
 

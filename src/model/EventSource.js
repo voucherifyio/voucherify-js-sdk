@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import EventSourceApiKey from './EventSourceApiKey';
 import EventSourceUser from './EventSourceUser';
-
 /**
  * The EventSource model module.
  * @module model/EventSource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EventSource {
     /**
      * Constructs a new <code>EventSource</code>.
      * Contains the source of the object that initiated the event.
-     * @alias module:model/EventSource
+     * @alias EventSource
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class EventSource {
     /**
      * Constructs a <code>EventSource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventSource} obj Optional instance to populate.
-     * @returns {module:model/EventSource} The populated <code>EventSource</code> instance.
+     * @param {Partial<EventSource>} data The plain JavaScript object bearing properties of interest.
+     * @param {EventSource} [obj] Optional instance to populate.
+     * @returns {EventSource} The populated <code>EventSource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class EventSource {
 
     /**
      * Validates the JSON data with respect to <code>EventSource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EventSource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EventSource</code>.
      */
     static validateJSON(data) {
@@ -91,56 +90,56 @@ class EventSource {
 
 
 /**
- * Determines the channel that initiated the event.
- * @member {module:model/EventSource.ChannelEnum} 
- */
+    * Determines the channel that initiated the event.
+    * @type {(keyof typeof EventSource.ChannelEnum) | undefined}
+    */
 EventSource.prototype['channel'] = undefined;
 
 /**
- * @member {module:model/EventSourceUser} 
- */
+    * @type {EventSourceUser | undefined}
+    */
 EventSource.prototype['user'] = undefined;
 
 /**
- * @member {module:model/EventSourceApiKey} 
- */
+    * @type {EventSourceApiKey | undefined}
+    */
 EventSource.prototype['api_key'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel</code> property.
- * @enum {String}
- * @readonly
- */
-EventSource['ChannelEnum'] = {
-
     /**
-     * value: "USER_PORTAL"
-     * @constant
+     * Allowed values for the <code>channel</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER_PORTAL": "USER_PORTAL",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API",
-
-    /**
-     * value: "CLIENT_API"
-     * @constant
-     */
-    "CLIENT_API": "CLIENT_API",
-
-    /**
-     * value: "INTERNAL"
-     * @constant
-     */
-    "INTERNAL": "INTERNAL"
-};
+    EventSource['ChannelEnum'] = {
+    
+        /**
+         * value: "USER_PORTAL"
+         * @constant
+         */
+        "USER_PORTAL": "USER_PORTAL",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "CLIENT_API"
+         * @constant
+         */
+        "CLIENT_API": "CLIENT_API",
+    
+        /**
+         * value: "INTERNAL"
+         * @constant
+         */
+        "INTERNAL": "INTERNAL"    
+    };
 
 
 

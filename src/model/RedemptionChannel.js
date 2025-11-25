@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionChannel model module.
  * @module model/RedemptionChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionChannel {
     /**
      * Constructs a new <code>RedemptionChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/RedemptionChannel
+     * @alias RedemptionChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionChannel {
     /**
      * Constructs a <code>RedemptionChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionChannel} obj Optional instance to populate.
-     * @returns {module:model/RedemptionChannel} The populated <code>RedemptionChannel</code> instance.
+     * @param {Partial<RedemptionChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionChannel} [obj] Optional instance to populate.
+     * @returns {RedemptionChannel} The populated <code>RedemptionChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionChannel {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionChannel</code>.
      */
     static validateJSON(data) {
@@ -82,46 +81,46 @@ class RedemptionChannel {
 
 
 /**
- * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API. For `AUTO_REDEEM`, it is the reward assignment ID.
- * @member {String} 
- */
+    * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API. For `AUTO_REDEEM`, it is the reward assignment ID.
+    * @type {String | undefined}
+    */
 RedemptionChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
- * @member {module:model/RedemptionChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
+    * @type {(keyof typeof RedemptionChannel.ChannelTypeEnum) | undefined}
+    */
 RedemptionChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM"
-};
+    RedemptionChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM"    
+    };
 
 
 

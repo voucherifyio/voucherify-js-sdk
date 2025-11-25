@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import QualificationsOptionFiltersHolderRoleConditions from './QualificationsOptionFiltersHolderRoleConditions';
-
 /**
  * The QualificationsOptionFiltersHolderRole model module.
  * @module model/QualificationsOptionFiltersHolderRole
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFiltersHolderRole {
     /**
      * Constructs a new <code>QualificationsOptionFiltersHolderRole</code>.
-     * @alias module:model/QualificationsOptionFiltersHolderRole
+     * @alias QualificationsOptionFiltersHolderRole
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class QualificationsOptionFiltersHolderRole {
     /**
      * Constructs a <code>QualificationsOptionFiltersHolderRole</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFiltersHolderRole} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFiltersHolderRole} The populated <code>QualificationsOptionFiltersHolderRole</code> instance.
+     * @param {Partial<QualificationsOptionFiltersHolderRole>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFiltersHolderRole} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFiltersHolderRole} The populated <code>QualificationsOptionFiltersHolderRole</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class QualificationsOptionFiltersHolderRole {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFiltersHolderRole</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFiltersHolderRole>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFiltersHolderRole</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class QualificationsOptionFiltersHolderRole {
 
 
 /**
- * @member {module:model/QualificationsOptionFiltersHolderRoleConditions} 
- */
+    * @type {QualificationsOptionFiltersHolderRoleConditions | undefined}
+    */
 QualificationsOptionFiltersHolderRole.prototype['conditions'] = undefined;
 
 

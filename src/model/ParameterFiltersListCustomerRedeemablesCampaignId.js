@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListCustomerRedeemablesCampaignId model module.
  * @module model/ParameterFiltersListCustomerRedeemablesCampaignId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCustomerRedeemablesCampaignId {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesCampaignId</code>.
      * Unique campaign identifer, e.g. &#x60;camp_bfrwAVsP6Q1EM1ZjgHwheKYr&#x60;.
-     * @alias module:model/ParameterFiltersListCustomerRedeemablesCampaignId
+     * @alias ParameterFiltersListCustomerRedeemablesCampaignId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCustomerRedeemablesCampaignId {
     /**
      * Constructs a <code>ParameterFiltersListCustomerRedeemablesCampaignId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCustomerRedeemablesCampaignId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCustomerRedeemablesCampaignId} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignId</code> instance.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCustomerRedeemablesCampaignId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCustomerRedeemablesCampaignId} The populated <code>ParameterFiltersListCustomerRedeemablesCampaignId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCustomerRedeemablesCampaignId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCustomerRedeemablesCampaignId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCustomerRedeemablesCampaignId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCustomerRedeemablesCampaignId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListCustomerRedeemablesCampaignId.prototype['conditions'] = undefined;
 
 

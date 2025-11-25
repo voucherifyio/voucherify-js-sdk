@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingAddress model module.
  * @module model/ManagementProjectsBrandingAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingAddress {
     /**
      * Constructs a new <code>ManagementProjectsBrandingAddress</code>.
      * Defines the address details.
-     * @alias module:model/ManagementProjectsBrandingAddress
+     * @alias ManagementProjectsBrandingAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingAddress {
     /**
      * Constructs a <code>ManagementProjectsBrandingAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingAddress} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingAddress} The populated <code>ManagementProjectsBrandingAddress</code> instance.
+     * @param {Partial<ManagementProjectsBrandingAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingAddress} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingAddress} The populated <code>ManagementProjectsBrandingAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingAddress {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingAddress</code>.
      */
     static validateJSON(data) {
@@ -103,33 +102,33 @@ class ManagementProjectsBrandingAddress {
 
 
 /**
- * Defines the brand's street.
- * @member {String} 
- */
+    * Defines the brand's street.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingAddress.prototype['street'] = undefined;
 
 /**
- * Defines the brand's city.
- * @member {String} 
- */
+    * Defines the brand's city.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingAddress.prototype['city'] = undefined;
 
 /**
- * Defines the brand's postal code.
- * @member {String} 
- */
+    * Defines the brand's postal code.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingAddress.prototype['postal'] = undefined;
 
 /**
- * Defines the brand's state or similar administrative area.
- * @member {String} 
- */
+    * Defines the brand's state or similar administrative area.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingAddress.prototype['state'] = undefined;
 
 /**
- * Defines the brand's country.
- * @member {String} 
- */
+    * Defines the brand's country.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingAddress.prototype['country'] = undefined;
 
 

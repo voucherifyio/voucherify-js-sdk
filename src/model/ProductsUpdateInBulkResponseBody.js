@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ProductsUpdateInBulkResponseBody model module.
  * @module model/ProductsUpdateInBulkResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsUpdateInBulkResponseBody {
     /**
      * Constructs a new <code>ProductsUpdateInBulkResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/products/bulk/async&#x60;.
-     * @alias module:model/ProductsUpdateInBulkResponseBody
+     * @alias ProductsUpdateInBulkResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ProductsUpdateInBulkResponseBody {
     /**
      * Constructs a <code>ProductsUpdateInBulkResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsUpdateInBulkResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsUpdateInBulkResponseBody} The populated <code>ProductsUpdateInBulkResponseBody</code> instance.
+     * @param {Partial<ProductsUpdateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsUpdateInBulkResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsUpdateInBulkResponseBody} The populated <code>ProductsUpdateInBulkResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ProductsUpdateInBulkResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsUpdateInBulkResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsUpdateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsUpdateInBulkResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ProductsUpdateInBulkResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 ProductsUpdateInBulkResponseBody.prototype['async_action_id'] = undefined;
 
 

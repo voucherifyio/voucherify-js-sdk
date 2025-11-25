@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RewardAssignmentParametersLoyalty from './RewardAssignmentParametersLoyalty';
-
 /**
  * The RewardAssignmentParameters model module.
  * @module model/RewardAssignmentParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardAssignmentParameters {
     /**
      * Constructs a new <code>RewardAssignmentParameters</code>.
      * Defines the cost of the reward.
-     * @alias module:model/RewardAssignmentParameters
+     * @alias RewardAssignmentParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RewardAssignmentParameters {
     /**
      * Constructs a <code>RewardAssignmentParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardAssignmentParameters} obj Optional instance to populate.
-     * @returns {module:model/RewardAssignmentParameters} The populated <code>RewardAssignmentParameters</code> instance.
+     * @param {Partial<RewardAssignmentParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardAssignmentParameters} [obj] Optional instance to populate.
+     * @returns {RewardAssignmentParameters} The populated <code>RewardAssignmentParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class RewardAssignmentParameters {
 
     /**
      * Validates the JSON data with respect to <code>RewardAssignmentParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardAssignmentParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardAssignmentParameters</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class RewardAssignmentParameters {
 
 
 /**
- * @member {module:model/RewardAssignmentParametersLoyalty} 
- */
+    * @type {RewardAssignmentParametersLoyalty | undefined}
+    */
 RewardAssignmentParameters.prototype['loyalty'] = undefined;
 
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem from './MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem';
 import MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem from './MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem';
-
 /**
  * The MemberActivityDataRedemptionRelatedRedemptions model module.
  * @module model/MemberActivityDataRedemptionRelatedRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRelatedRedemptions {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRelatedRedemptions</code>.
-     * @alias module:model/MemberActivityDataRedemptionRelatedRedemptions
+     * @alias MemberActivityDataRedemptionRelatedRedemptions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class MemberActivityDataRedemptionRelatedRedemptions {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRelatedRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRelatedRedemptions} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRelatedRedemptions} The populated <code>MemberActivityDataRedemptionRelatedRedemptions</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRelatedRedemptions} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRelatedRedemptions} The populated <code>MemberActivityDataRedemptionRelatedRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class MemberActivityDataRedemptionRelatedRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRelatedRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRelatedRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRelatedRedemptions</code>.
      */
     static validateJSON(data) {
@@ -95,13 +94,13 @@ class MemberActivityDataRedemptionRelatedRedemptions {
 
 
 /**
- * @member {Array.<module:model/MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem>} 
- */
+    * @type {Array.<MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem> | undefined}
+    */
 MemberActivityDataRedemptionRelatedRedemptions.prototype['rollbacks'] = undefined;
 
 /**
- * @member {Array.<module:model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem>} 
- */
+    * @type {Array.<MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem> | undefined}
+    */
 MemberActivityDataRedemptionRelatedRedemptions.prototype['redemptions'] = undefined;
 
 

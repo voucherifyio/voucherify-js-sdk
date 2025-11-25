@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PromotionsStacksCreateRequestBodyTiers from './PromotionsStacksCreateRequestBodyTiers';
-
 /**
  * The PromotionsStacksCreateRequestBody model module.
  * @module model/PromotionsStacksCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsStacksCreateRequestBody {
     /**
      * Constructs a new <code>PromotionsStacksCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/promotions/{campaignId}/stacks&#x60;.
-     * @alias module:model/PromotionsStacksCreateRequestBody
+     * @alias PromotionsStacksCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionsStacksCreateRequestBody {
     /**
      * Constructs a <code>PromotionsStacksCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsStacksCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/PromotionsStacksCreateRequestBody} The populated <code>PromotionsStacksCreateRequestBody</code> instance.
+     * @param {Partial<PromotionsStacksCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsStacksCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {PromotionsStacksCreateRequestBody} The populated <code>PromotionsStacksCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class PromotionsStacksCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsStacksCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsStacksCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsStacksCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -90,20 +89,20 @@ class PromotionsStacksCreateRequestBody {
 
 
 /**
- * Promotion stack name.
- * @member {String} 
- */
+    * Promotion stack name.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/PromotionsStacksCreateRequestBodyTiers} 
- */
+    * @type {PromotionsStacksCreateRequestBodyTiers | undefined}
+    */
 PromotionsStacksCreateRequestBody.prototype['tiers'] = undefined;
 
 /**
- * Promotion stack category ID.
- * @member {String} 
- */
+    * Promotion stack category ID.
+    * @type {String | undefined}
+    */
 PromotionsStacksCreateRequestBody.prototype['category_id'] = undefined;
 
 

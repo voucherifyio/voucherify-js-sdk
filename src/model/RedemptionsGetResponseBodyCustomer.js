@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodyCustomer model module.
  * @module model/RedemptionsGetResponseBodyCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyCustomer {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyCustomer</code>.
-     * @alias module:model/RedemptionsGetResponseBodyCustomer
+     * @alias RedemptionsGetResponseBodyCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsGetResponseBodyCustomer {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyCustomer} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyCustomer} The populated <code>RedemptionsGetResponseBodyCustomer</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyCustomer} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyCustomer} The populated <code>RedemptionsGetResponseBodyCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class RedemptionsGetResponseBodyCustomer {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyCustomer</code>.
      */
     static validateJSON(data) {
@@ -106,59 +105,59 @@ class RedemptionsGetResponseBodyCustomer {
 
 
 /**
- * Unique identifier of an existing customer. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an existing customer. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyCustomer.prototype['id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyCustomer.prototype['name'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyCustomer.prototype['email'] = undefined;
 
 /**
- * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
- * @member {String} 
- */
+    * A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyCustomer.prototype['source_id'] = undefined;
 
 /**
- * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
+    * @type {Object | undefined}
+    */
 RedemptionsGetResponseBodyCustomer.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedemptionsGetResponseBodyCustomer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedemptionsGetResponseBodyCustomer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 RedemptionsGetResponseBodyCustomer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsGetResponseBodyCustomer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    RedemptionsGetResponseBodyCustomer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

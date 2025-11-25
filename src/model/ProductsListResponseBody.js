@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Product from './Product';
-
 /**
  * The ProductsListResponseBody model module.
  * @module model/ProductsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductsListResponseBody {
     /**
      * Constructs a new <code>ProductsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/products&#x60;.
-     * @alias module:model/ProductsListResponseBody
+     * @alias ProductsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ProductsListResponseBody {
     /**
      * Constructs a <code>ProductsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductsListResponseBody} The populated <code>ProductsListResponseBody</code> instance.
+     * @param {Partial<ProductsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductsListResponseBody} The populated <code>ProductsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ProductsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class ProductsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about products in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about products in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ProductsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of product objects.
- * @member {String} 
- * @default 'products'
- */
+    * Identifies the name of the attribute that contains the array of product objects.
+    * @type {String | undefined}
+    * @default 'products'
+    */
 ProductsListResponseBody.prototype['data_ref'] = 'products';
 
 /**
- * Contains array of product objects.
- * @member {Array.<module:model/Product>} 
- */
+    * Contains array of product objects.
+    * @type {Array.<Product> | undefined}
+    */
 ProductsListResponseBody.prototype['products'] = undefined;
 
 /**
- * Total number of product objects.
- * @member {Number} 
- */
+    * Total number of product objects.
+    * @type {Number | undefined}
+    */
 ProductsListResponseBody.prototype['total'] = undefined;
 
 

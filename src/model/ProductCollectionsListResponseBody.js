@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ProductCollectionsItem from './ProductCollectionsItem';
-
 /**
  * The ProductCollectionsListResponseBody model module.
  * @module model/ProductCollectionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsListResponseBody {
     /**
      * Constructs a new <code>ProductCollectionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/product-collections&#x60;.
-     * @alias module:model/ProductCollectionsListResponseBody
+     * @alias ProductCollectionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ProductCollectionsListResponseBody {
     /**
      * Constructs a <code>ProductCollectionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsListResponseBody} The populated <code>ProductCollectionsListResponseBody</code> instance.
+     * @param {Partial<ProductCollectionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsListResponseBody} The populated <code>ProductCollectionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ProductCollectionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ProductCollectionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about product collections.
- * @member {module:model/ProductCollectionsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about product collections.
+    * @type {(keyof typeof ProductCollectionsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ProductCollectionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of product collections.
- * @member {module:model/ProductCollectionsListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the JSON property that contains the array of product collections.
+    * @type {(keyof typeof ProductCollectionsListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ProductCollectionsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * A dictionary that contains an array of product collections and their details.
- * @member {Array.<module:model/ProductCollectionsItem>} 
- */
+    * A dictionary that contains an array of product collections and their details.
+    * @type {Array.<ProductCollectionsItem> | undefined}
+    */
 ProductCollectionsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of product collections.
- * @member {Number} 
- */
+    * Total number of product collections.
+    * @type {Number | undefined}
+    */
 ProductCollectionsListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ProductCollectionsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ProductCollectionsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsBranding from './ManagementProjectsBranding';
-
 /**
  * The ManagementProjectsBrandingListResponseBody model module.
  * @module model/ManagementProjectsBrandingListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsBrandingListResponseBody</code>.
      * Object containing a list of brand configurations. It always contains one item.
-     * @alias module:model/ManagementProjectsBrandingListResponseBody
+     * @alias ManagementProjectsBrandingListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsBrandingListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsBrandingListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingListResponseBody} The populated <code>ManagementProjectsBrandingListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsBrandingListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingListResponseBody} The populated <code>ManagementProjectsBrandingListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsBrandingListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the brand in a dictionary.
- * @member {module:model/ManagementProjectsBrandingListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the brand in a dictionary.
+    * @type {(keyof typeof ManagementProjectsBrandingListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsBrandingListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of brand objects.
- * @member {module:model/ManagementProjectsBrandingListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of brand objects.
+    * @type {(keyof typeof ManagementProjectsBrandingListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsBrandingListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of brand objects. It contains only one object.
- * @member {Array.<module:model/ManagementProjectsBranding>} 
- */
+    * Array of brand objects. It contains only one object.
+    * @type {Array.<ManagementProjectsBranding> | undefined}
+    */
 ManagementProjectsBrandingListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of brand objects. It is always `1`.
- * @member {Number} 
- */
+    * The total number of brand objects. It is always `1`.
+    * @type {Number | undefined}
+    */
 ManagementProjectsBrandingListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsBrandingListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsBrandingListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsBrandingListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsBrandingListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

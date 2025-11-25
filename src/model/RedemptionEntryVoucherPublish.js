@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntryVoucherPublish model module.
  * @module model/RedemptionEntryVoucherPublish
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntryVoucherPublish {
     /**
      * Constructs a new <code>RedemptionEntryVoucherPublish</code>.
-     * @alias module:model/RedemptionEntryVoucherPublish
+     * @alias RedemptionEntryVoucherPublish
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionEntryVoucherPublish {
     /**
      * Constructs a <code>RedemptionEntryVoucherPublish</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntryVoucherPublish} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntryVoucherPublish} The populated <code>RedemptionEntryVoucherPublish</code> instance.
+     * @param {Partial<RedemptionEntryVoucherPublish>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntryVoucherPublish} [obj] Optional instance to populate.
+     * @returns {RedemptionEntryVoucherPublish} The populated <code>RedemptionEntryVoucherPublish</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class RedemptionEntryVoucherPublish {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntryVoucherPublish</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntryVoucherPublish>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntryVoucherPublish</code>.
      */
     static validateJSON(data) {
@@ -85,22 +84,22 @@ class RedemptionEntryVoucherPublish {
 
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RedemptionEntryVoucherPublish.prototype['object'] = 'list';
 
 /**
- * Publication events counter.
- * @member {Number} 
- */
+    * Publication events counter.
+    * @type {Number | undefined}
+    */
 RedemptionEntryVoucherPublish.prototype['count'] = undefined;
 
 /**
- * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
- * @member {String} 
- */
+    * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
+    * @type {String | undefined}
+    */
 RedemptionEntryVoucherPublish.prototype['url'] = undefined;
 
 

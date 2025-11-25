@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyCardTransactionDetailsCustomEvent model module.
  * @module model/LoyaltyCardTransactionDetailsCustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyCardTransactionDetailsCustomEvent {
     /**
      * Constructs a new <code>LoyaltyCardTransactionDetailsCustomEvent</code>.
      * Contains information about the custom event that triggers the point accrual.
-     * @alias module:model/LoyaltyCardTransactionDetailsCustomEvent
+     * @alias LoyaltyCardTransactionDetailsCustomEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyCardTransactionDetailsCustomEvent {
     /**
      * Constructs a <code>LoyaltyCardTransactionDetailsCustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyCardTransactionDetailsCustomEvent} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyCardTransactionDetailsCustomEvent} The populated <code>LoyaltyCardTransactionDetailsCustomEvent</code> instance.
+     * @param {Partial<LoyaltyCardTransactionDetailsCustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyCardTransactionDetailsCustomEvent} [obj] Optional instance to populate.
+     * @returns {LoyaltyCardTransactionDetailsCustomEvent} The populated <code>LoyaltyCardTransactionDetailsCustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LoyaltyCardTransactionDetailsCustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyCardTransactionDetailsCustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyCardTransactionDetailsCustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyCardTransactionDetailsCustomEvent</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LoyaltyCardTransactionDetailsCustomEvent {
 
 
 /**
- * Unique event ID.
- * @member {String} 
- */
+    * Unique event ID.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsCustomEvent.prototype['id'] = undefined;
 
 /**
- * Type of custom event.
- * @member {String} 
- */
+    * Type of custom event.
+    * @type {String | undefined}
+    */
 LoyaltyCardTransactionDetailsCustomEvent.prototype['type'] = undefined;
 
 

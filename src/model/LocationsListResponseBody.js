@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Location from './Location';
-
 /**
  * The LocationsListResponseBody model module.
  * @module model/LocationsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationsListResponseBody {
     /**
      * Constructs a new <code>LocationsListResponseBody</code>.
      * Response schema for listing locations using **GET** &#x60;v1/locations&#x60;.
-     * @alias module:model/LocationsListResponseBody
+     * @alias LocationsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LocationsListResponseBody {
     /**
      * Constructs a <code>LocationsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LocationsListResponseBody} The populated <code>LocationsListResponseBody</code> instance.
+     * @param {Partial<LocationsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationsListResponseBody} [obj] Optional instance to populate.
+     * @returns {LocationsListResponseBody} The populated <code>LocationsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class LocationsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LocationsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,35 +103,35 @@ class LocationsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about locations in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about locations in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LocationsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of metadata schema objects.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of metadata schema objects.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 LocationsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of location objects.
- * @member {Array.<module:model/Location>} 
- */
+    * Array of location objects.
+    * @type {Array.<Location> | undefined}
+    */
 LocationsListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of locations.
- * @member {Number} 
- */
+    * Total number of locations.
+    * @type {Number | undefined}
+    */
 LocationsListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different end date filter) to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different end date filter) to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 LocationsListResponseBody.prototype['has_more'] = undefined;
 
 

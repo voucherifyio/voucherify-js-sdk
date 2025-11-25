@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyTierExpiration model module.
  * @module model/LoyaltyTierExpiration
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTierExpiration {
     /**
      * Constructs a new <code>LoyaltyTierExpiration</code>.
      * Defines loyalty tier expiration date.
-     * @alias module:model/LoyaltyTierExpiration
+     * @alias LoyaltyTierExpiration
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltyTierExpiration {
     /**
      * Constructs a <code>LoyaltyTierExpiration</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTierExpiration} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTierExpiration} The populated <code>LoyaltyTierExpiration</code> instance.
+     * @param {Partial<LoyaltyTierExpiration>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTierExpiration} [obj] Optional instance to populate.
+     * @returns {LoyaltyTierExpiration} The populated <code>LoyaltyTierExpiration</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class LoyaltyTierExpiration {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTierExpiration</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTierExpiration>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTierExpiration</code>.
      */
     static validateJSON(data) {
@@ -109,45 +108,45 @@ class LoyaltyTierExpiration {
 
 
 /**
- * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyTierExpiration.prototype['customer_id'] = undefined;
 
 /**
- * Unique campaign ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique campaign ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyTierExpiration.prototype['campaign_id'] = undefined;
 
 /**
- * Unique tier ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique tier ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltyTierExpiration.prototype['tier_id'] = undefined;
 
 /**
- * Activation timestamp defines when the loyalty tier starts to be active in ISO 8601 format. Loyalty tier is inactive before this date.
- * @member {String} 
- */
+    * Activation timestamp defines when the loyalty tier starts to be active in ISO 8601 format. Loyalty tier is inactive before this date.
+    * @type {String | undefined}
+    */
 LoyaltyTierExpiration.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the loyalty tier expires in ISO 8601 format. Loyalty tier is inactive after this date.
- * @member {String} 
- */
+    * Expiration timestamp defines when the loyalty tier expires in ISO 8601 format. Loyalty tier is inactive after this date.
+    * @type {String | undefined}
+    */
 LoyaltyTierExpiration.prototype['expiration_date'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyTierExpiration.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltyTierExpiration.prototype['updated_at'] = undefined;
 
 

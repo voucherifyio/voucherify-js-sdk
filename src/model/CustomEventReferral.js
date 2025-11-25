@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomEventReferral model module.
  * @module model/CustomEventReferral
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomEventReferral {
     /**
      * Constructs a new <code>CustomEventReferral</code>.
      * Referral object.
-     * @alias module:model/CustomEventReferral
+     * @alias CustomEventReferral
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomEventReferral {
     /**
      * Constructs a <code>CustomEventReferral</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomEventReferral} obj Optional instance to populate.
-     * @returns {module:model/CustomEventReferral} The populated <code>CustomEventReferral</code> instance.
+     * @param {Partial<CustomEventReferral>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomEventReferral} [obj] Optional instance to populate.
+     * @returns {CustomEventReferral} The populated <code>CustomEventReferral</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class CustomEventReferral {
 
     /**
      * Validates the JSON data with respect to <code>CustomEventReferral</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomEventReferral>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomEventReferral</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class CustomEventReferral {
 
 
 /**
- * Unique referrer ID.
- * @member {String} 
- */
+    * Unique referrer ID.
+    * @type {String | undefined}
+    */
 CustomEventReferral.prototype['referrer_id'] = undefined;
 
 /**
- * Voucher code.
- * @member {String} 
- */
+    * Voucher code.
+    * @type {String | undefined}
+    */
 CustomEventReferral.prototype['code'] = undefined;
 
 /**
- * Unique voucher ID.
- * @member {String} 
- */
+    * Unique voucher ID.
+    * @type {String | undefined}
+    */
 CustomEventReferral.prototype['id'] = undefined;
 
 

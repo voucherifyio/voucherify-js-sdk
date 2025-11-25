@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsWebhook from './ManagementProjectsWebhook';
-
 /**
  * The ManagementProjectsWebhooksListResponseBody model module.
  * @module model/ManagementProjectsWebhooksListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsWebhooksListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsWebhooksListResponseBody</code>.
      * Object containing a list of webhook configurations.
-     * @alias module:model/ManagementProjectsWebhooksListResponseBody
+     * @alias ManagementProjectsWebhooksListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsWebhooksListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsWebhooksListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsWebhooksListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsWebhooksListResponseBody} The populated <code>ManagementProjectsWebhooksListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsWebhooksListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsWebhooksListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsWebhooksListResponseBody} The populated <code>ManagementProjectsWebhooksListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsWebhooksListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsWebhooksListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsWebhooksListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsWebhooksListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsWebhooksListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the webhook configurations in a dictionary.
- * @member {module:model/ManagementProjectsWebhooksListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the webhook configurations in a dictionary.
+    * @type {(keyof typeof ManagementProjectsWebhooksListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsWebhooksListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of webhook objects.
- * @member {module:model/ManagementProjectsWebhooksListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of webhook objects.
+    * @type {(keyof typeof ManagementProjectsWebhooksListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsWebhooksListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of webhook objects.
- * @member {Array.<module:model/ManagementProjectsWebhook>} 
- */
+    * Array of webhook objects.
+    * @type {Array.<ManagementProjectsWebhook> | undefined}
+    */
 ManagementProjectsWebhooksListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of webhook objects.
- * @member {Number} 
- */
+    * The total number of webhook objects.
+    * @type {Number | undefined}
+    */
 ManagementProjectsWebhooksListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsWebhooksListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsWebhooksListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsWebhooksListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsWebhooksListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

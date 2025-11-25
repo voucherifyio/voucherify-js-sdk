@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleSkuDiscountUnit model module.
  * @module model/SimpleSkuDiscountUnit
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleSkuDiscountUnit {
     /**
      * Constructs a new <code>SimpleSkuDiscountUnit</code>.
-     * @alias module:model/SimpleSkuDiscountUnit
+     * @alias SimpleSkuDiscountUnit
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SimpleSkuDiscountUnit {
     /**
      * Constructs a <code>SimpleSkuDiscountUnit</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleSkuDiscountUnit} obj Optional instance to populate.
-     * @returns {module:model/SimpleSkuDiscountUnit} The populated <code>SimpleSkuDiscountUnit</code> instance.
+     * @param {Partial<SimpleSkuDiscountUnit>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleSkuDiscountUnit} [obj] Optional instance to populate.
+     * @returns {SimpleSkuDiscountUnit} The populated <code>SimpleSkuDiscountUnit</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class SimpleSkuDiscountUnit {
 
     /**
      * Validates the JSON data with respect to <code>SimpleSkuDiscountUnit</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleSkuDiscountUnit>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleSkuDiscountUnit</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class SimpleSkuDiscountUnit {
 
 
 /**
- * Unique SKU ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique SKU ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleSkuDiscountUnit.prototype['id'] = undefined;
 
 /**
- * Product variant's source ID.
- * @member {String} 
- */
+    * Product variant's source ID.
+    * @type {String | undefined}
+    */
 SimpleSkuDiscountUnit.prototype['source_id'] = undefined;
 
 /**
- * Sku name
- * @member {String} 
- */
+    * Sku name
+    * @type {String | undefined}
+    */
 SimpleSkuDiscountUnit.prototype['name'] = undefined;
 
 

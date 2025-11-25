@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsRollback model module.
  * @module model/VoucherTransactionDetailsRollback
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsRollback {
     /**
      * Constructs a new <code>VoucherTransactionDetailsRollback</code>.
      * Contains information about the redemption rollback.
-     * @alias module:model/VoucherTransactionDetailsRollback
+     * @alias VoucherTransactionDetailsRollback
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsRollback {
     /**
      * Constructs a <code>VoucherTransactionDetailsRollback</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsRollback} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsRollback} The populated <code>VoucherTransactionDetailsRollback</code> instance.
+     * @param {Partial<VoucherTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsRollback} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsRollback} The populated <code>VoucherTransactionDetailsRollback</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class VoucherTransactionDetailsRollback {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsRollback</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsRollback>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsRollback</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class VoucherTransactionDetailsRollback {
 
 
 /**
- * Unique identifier of the redemption rollback.
- * @member {String} 
- */
+    * Unique identifier of the redemption rollback.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsRollback.prototype['id'] = undefined;
 
 

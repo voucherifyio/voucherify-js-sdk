@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyMember from './LoyaltyMember';
-
 /**
  * The LoyaltiesListMembersResponseBody model module.
  * @module model/LoyaltiesListMembersResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesListMembersResponseBody {
     /**
      * Constructs a new <code>LoyaltiesListMembersResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/members&#x60;.
-     * @alias module:model/LoyaltiesListMembersResponseBody
+     * @alias LoyaltiesListMembersResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesListMembersResponseBody {
     /**
      * Constructs a <code>LoyaltiesListMembersResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesListMembersResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesListMembersResponseBody} The populated <code>LoyaltiesListMembersResponseBody</code> instance.
+     * @param {Partial<LoyaltiesListMembersResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesListMembersResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesListMembersResponseBody} The populated <code>LoyaltiesListMembersResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class LoyaltiesListMembersResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesListMembersResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesListMembersResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesListMembersResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,48 +100,48 @@ class LoyaltiesListMembersResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about members in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about members in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LoyaltiesListMembersResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of voucher objects.
- * @member {module:model/LoyaltiesListMembersResponseBody.DataRefEnum} 
- * @default 'vouchers'
- */
+    * Identifies the name of the attribute that contains the array of voucher objects.
+    * @type {(keyof typeof LoyaltiesListMembersResponseBody.DataRefEnum) | undefined}
+    * @default 'vouchers'
+    */
 LoyaltiesListMembersResponseBody.prototype['data_ref'] = 'vouchers';
 
 /**
- * Contains array of voucher objects representing loyalty cards, in other words, loyalty program members.
- * @member {Array.<module:model/LoyaltyMember>} 
- */
+    * Contains array of voucher objects representing loyalty cards, in other words, loyalty program members.
+    * @type {Array.<LoyaltyMember> | undefined}
+    */
 LoyaltiesListMembersResponseBody.prototype['vouchers'] = undefined;
 
 /**
- * Total number of voucher objects.
- * @member {Number} 
- */
+    * Total number of voucher objects.
+    * @type {Number | undefined}
+    */
 LoyaltiesListMembersResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesListMembersResponseBody['DataRefEnum'] = {
-
     /**
-     * value: "vouchers"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "vouchers": "vouchers"
-};
+    LoyaltiesListMembersResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "vouchers"
+         * @constant
+         */
+        "vouchers": "vouchers"    
+    };
 
 
 

@@ -15,16 +15,15 @@ import ApiClient from '../ApiClient';
 import ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct from './ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct';
 import DiscountUnitMultipleOneUnit from './DiscountUnitMultipleOneUnit';
 import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
-
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**
      * Constructs a new <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code>.
-     * @alias module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount
+     * @alias ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**
      * Constructs a <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code> instance.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount} The populated <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -107,7 +106,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount</code>.
      */
     static validateJSON(data) {
@@ -167,194 +166,194 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
 
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.TypeEnum} 
- */
+    * @type {(keyof typeof ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.TypeEnum) | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['type'] = undefined;
 
 /**
- * Amount taken off the subtotal of a price. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000.
- * @member {Number} 
- */
+    * Amount taken off the subtotal of a price. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['amount_off'] = undefined;
 
 /**
- * Formula used to dynamically calculate the discount.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the discount.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['amount_off_formula'] = undefined;
 
 /**
- * Maximum discount amount per order.
- * @member {Number} 
- */
+    * Maximum discount amount per order.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['aggregated_amount_limit'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.EffectEnum} 
- */
+    * @type {(keyof typeof ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.EffectEnum) | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['effect'] = undefined;
 
 /**
- * Flag indicating whether the discount was calculated using a formula.
- * @member {Boolean} 
- */
+    * Flag indicating whether the discount was calculated using a formula.
+    * @type {Boolean | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['is_dynamic'] = undefined;
 
 /**
- * Number of units to be granted a full value discount.
- * @member {Number} 
- */
+    * Number of units to be granted a full value discount.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['unit_off'] = undefined;
 
 /**
- * Formula used to dynamically calculate the number of units.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the number of units.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['unit_off_formula'] = undefined;
 
 /**
- * The product deemed as free, chosen from product inventory (e.g. time, items).
- * @member {String} 
- */
+    * The product deemed as free, chosen from product inventory (e.g. time, items).
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['unit_type'] = undefined;
 
 /**
- * @member {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct} 
- */
+    * @type {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['product'] = undefined;
 
 /**
- * @member {module:model/SimpleSkuDiscountUnit} 
- */
+    * @type {SimpleSkuDiscountUnit | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['sku'] = undefined;
 
 /**
- * @member {Array.<module:model/DiscountUnitMultipleOneUnit>} 
- */
+    * @type {Array.<DiscountUnitMultipleOneUnit> | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['units'] = undefined;
 
 /**
- * The percent discount that the customer will receive.
- * @member {Number} 
- */
+    * The percent discount that the customer will receive.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['percent_off'] = undefined;
 
 /**
- * Formula used to dynamically calculate the discount.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the discount.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['percent_off_formula'] = undefined;
 
 /**
- * Upper limit allowed to be applied as a discount. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
- * @member {Number} 
- */
+    * Upper limit allowed to be applied as a discount. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['amount_limit'] = undefined;
 
 /**
- * Sets a fixed value for an order total or the item price. The value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000. If the fixed amount is calculated by the formula, i.e. the `fixed_amount_formula` parameter is present in the fixed amount definition, this value becomes the **fallback value**. As a result, if the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed value.
- * @member {Number} 
- */
+    * Sets a fixed value for an order total or the item price. The value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000. If the fixed amount is calculated by the formula, i.e. the `fixed_amount_formula` parameter is present in the fixed amount definition, this value becomes the **fallback value**. As a result, if the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed value.
+    * @type {Number | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['fixed_amount'] = undefined;
 
 /**
- * Formula used to dynamically calculate the discount.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the discount.
+    * @type {String | undefined}
+    */
 ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['fixed_amount_formula'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount['TypeEnum'] = {
+    
+        /**
+         * value: "AMOUNT"
+         * @constant
+         */
+        "AMOUNT": "AMOUNT",
+    
+        /**
+         * value: "UNIT"
+         * @constant
+         */
+        "UNIT": "UNIT",
+    
+        /**
+         * value: "PERCENT"
+         * @constant
+         */
+        "PERCENT": "PERCENT",
+    
+        /**
+         * value: "FIXED"
+         * @constant
+         */
+        "FIXED": "FIXED"    
+    };
+
 
     /**
-     * value: "AMOUNT"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "AMOUNT": "AMOUNT",
-
-    /**
-     * value: "UNIT"
-     * @constant
-     */
-    "UNIT": "UNIT",
-
-    /**
-     * value: "PERCENT"
-     * @constant
-     */
-    "PERCENT": "PERCENT",
-
-    /**
-     * value: "FIXED"
-     * @constant
-     */
-    "FIXED": "FIXED"
-};
-
-
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount['EffectEnum'] = {
-
-    /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
-     */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS",
-
-    /**
-     * value: "APPLY_TO_ITEMS_PROPORTIONALLY"
-     * @constant
-     */
-    "APPLY_TO_ITEMS_PROPORTIONALLY": "APPLY_TO_ITEMS_PROPORTIONALLY",
-
-    /**
-     * value: "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY"
-     * @constant
-     */
-    "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY": "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY",
-
-    /**
-     * value: "APPLY_TO_ITEMS_BY_QUANTITY"
-     * @constant
-     */
-    "APPLY_TO_ITEMS_BY_QUANTITY": "APPLY_TO_ITEMS_BY_QUANTITY",
-
-    /**
-     * value: "ADD_MISSING_ITEMS"
-     * @constant
-     */
-    "ADD_MISSING_ITEMS": "ADD_MISSING_ITEMS",
-
-    /**
-     * value: "ADD_NEW_ITEMS"
-     * @constant
-     */
-    "ADD_NEW_ITEMS": "ADD_NEW_ITEMS",
-
-    /**
-     * value: "ADD_MANY_ITEMS"
-     * @constant
-     */
-    "ADD_MANY_ITEMS": "ADD_MANY_ITEMS"
-};
+    ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS",
+    
+        /**
+         * value: "APPLY_TO_ITEMS_PROPORTIONALLY"
+         * @constant
+         */
+        "APPLY_TO_ITEMS_PROPORTIONALLY": "APPLY_TO_ITEMS_PROPORTIONALLY",
+    
+        /**
+         * value: "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY"
+         * @constant
+         */
+        "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY": "APPLY_TO_ITEMS_PROPORTIONALLY_BY_QUANTITY",
+    
+        /**
+         * value: "APPLY_TO_ITEMS_BY_QUANTITY"
+         * @constant
+         */
+        "APPLY_TO_ITEMS_BY_QUANTITY": "APPLY_TO_ITEMS_BY_QUANTITY",
+    
+        /**
+         * value: "ADD_MISSING_ITEMS"
+         * @constant
+         */
+        "ADD_MISSING_ITEMS": "ADD_MISSING_ITEMS",
+    
+        /**
+         * value: "ADD_NEW_ITEMS"
+         * @constant
+         */
+        "ADD_NEW_ITEMS": "ADD_NEW_ITEMS",
+    
+        /**
+         * value: "ADD_MANY_ITEMS"
+         * @constant
+         */
+        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS"    
+    };
 
 
 

@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ProductWithoutSkus from './ProductWithoutSkus';
-
 /**
  * The ProductCollectionsProductsListResponseBodyDataItem model module.
  * @module model/ProductCollectionsProductsListResponseBodyDataItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsProductsListResponseBodyDataItem {
     /**
      * Constructs a new <code>ProductCollectionsProductsListResponseBodyDataItem</code>.
-     * @alias module:model/ProductCollectionsProductsListResponseBodyDataItem
+     * @alias ProductCollectionsProductsListResponseBodyDataItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ProductCollectionsProductsListResponseBodyDataItem {
     /**
      * Constructs a <code>ProductCollectionsProductsListResponseBodyDataItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsProductsListResponseBodyDataItem} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsProductsListResponseBodyDataItem} The populated <code>ProductCollectionsProductsListResponseBodyDataItem</code> instance.
+     * @param {Partial<ProductCollectionsProductsListResponseBodyDataItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsProductsListResponseBodyDataItem} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsProductsListResponseBodyDataItem} The populated <code>ProductCollectionsProductsListResponseBodyDataItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -96,7 +95,7 @@ class ProductCollectionsProductsListResponseBodyDataItem {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsProductsListResponseBodyDataItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsProductsListResponseBodyDataItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsProductsListResponseBodyDataItem</code>.
      */
     static validateJSON(data) {
@@ -158,105 +157,105 @@ class ProductCollectionsProductsListResponseBodyDataItem {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['source_id'] = undefined;
 
 /**
- * Unique user-defined product name.
- * @member {String} 
- */
+    * Unique user-defined product name.
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['name'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['price'] = undefined;
 
 /**
- * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
- * @member {Array.<String>} 
- */
+    * A list of product attributes whose values you can customize for given SKUs: `[\"color\",\"size\",\"ranking\"]`. Each child SKU can have a unique value for a given attribute.
+    * @type {Array.<String> | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['attributes'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections. and The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections. and The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['metadata'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['image_url'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['created_at'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/ProductCollectionsProductsListResponseBodyDataItem.ObjectEnum} 
- */
+    * @type {(keyof typeof ProductCollectionsProductsListResponseBodyDataItem.ObjectEnum) | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['object'] = undefined;
 
 /**
- * The parent product's unique ID.
- * @member {String} 
- */
+    * The parent product's unique ID.
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['product_id'] = undefined;
 
 /**
- * Unique user-defined SKU name.
- * @member {String} 
- */
+    * Unique user-defined SKU name.
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['sku'] = undefined;
 
 /**
- * SKU price currency.
- * @member {String} 
- */
+    * SKU price currency.
+    * @type {String | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['currency'] = undefined;
 
 /**
- * @member {module:model/ProductWithoutSkus} 
- */
+    * @type {ProductWithoutSkus | undefined}
+    */
 ProductCollectionsProductsListResponseBodyDataItem.prototype['product'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsProductsListResponseBodyDataItem['ObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    ProductCollectionsProductsListResponseBodyDataItem['ObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterTemplatesList.
-* @module model/ParameterTemplatesList
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterTemplatesList {
+ * Enum class ParameterTemplatesList.
+ * @module model/ParameterTemplatesList
+ * @version 3.0.1
+ */
+class ParameterTemplatesList {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
 
     /**
-    * Returns a <code>ParameterTemplatesList</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterTemplatesList} The enum <code>ParameterTemplatesList</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterTemplatesList, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterTemplatesList[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterTemplatesList[key];
     }
 }
+
+export default ParameterTemplatesList;
 

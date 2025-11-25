@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import CustomerSummaryRedemptionsGift from './CustomerSummaryRedemptionsGift';
 import CustomerSummaryRedemptionsLoyaltyCard from './CustomerSummaryRedemptionsLoyaltyCard';
-
 /**
  * The CustomerSummaryRedemptions model module.
  * @module model/CustomerSummaryRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerSummaryRedemptions {
     /**
      * Constructs a new <code>CustomerSummaryRedemptions</code>.
-     * @alias module:model/CustomerSummaryRedemptions
+     * @alias CustomerSummaryRedemptions
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CustomerSummaryRedemptions {
     /**
      * Constructs a <code>CustomerSummaryRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerSummaryRedemptions} obj Optional instance to populate.
-     * @returns {module:model/CustomerSummaryRedemptions} The populated <code>CustomerSummaryRedemptions</code> instance.
+     * @param {Partial<CustomerSummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerSummaryRedemptions} [obj] Optional instance to populate.
+     * @returns {CustomerSummaryRedemptions} The populated <code>CustomerSummaryRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class CustomerSummaryRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>CustomerSummaryRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerSummaryRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerSummaryRedemptions</code>.
      */
     static validateJSON(data) {
@@ -101,49 +100,49 @@ class CustomerSummaryRedemptions {
 
 
 /**
- * Total number of redemptions made by the customer.
- * @member {Number} 
- */
+    * Total number of redemptions made by the customer.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_redeemed'] = undefined;
 
 /**
- * Total number of redemptions that failed.
- * @member {Number} 
- */
+    * Total number of redemptions that failed.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_failed'] = undefined;
 
 /**
- * Total number of redemptions that succeeded.
- * @member {Number} 
- */
+    * Total number of redemptions that succeeded.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_succeeded'] = undefined;
 
 /**
- * Total number of redemptions that were rolled back for the customer.
- * @member {Number} 
- */
+    * Total number of redemptions that were rolled back for the customer.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_rolled_back'] = undefined;
 
 /**
- * Total number of redemption rollbacks that failed.
- * @member {Number} 
- */
+    * Total number of redemption rollbacks that failed.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_rollback_failed'] = undefined;
 
 /**
- * Total number of redemption rollbacks that succeeded.
- * @member {Number} 
- */
+    * Total number of redemption rollbacks that succeeded.
+    * @type {Number | undefined}
+    */
 CustomerSummaryRedemptions.prototype['total_rollback_succeeded'] = undefined;
 
 /**
- * @member {module:model/CustomerSummaryRedemptionsGift} 
- */
+    * @type {CustomerSummaryRedemptionsGift | undefined}
+    */
 CustomerSummaryRedemptions.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/CustomerSummaryRedemptionsLoyaltyCard} 
- */
+    * @type {CustomerSummaryRedemptionsLoyaltyCard | undefined}
+    */
 CustomerSummaryRedemptions.prototype['loyalty_card'] = undefined;
 
 

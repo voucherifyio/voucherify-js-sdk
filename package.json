@@ -1,12 +1,15 @@
 {
   "name": "@voucherify/sdk",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Voucherify promotion engine REST API. Please see https://docs.voucherify.io/docs for more details.",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build:types": "tsc",
+    "build:js": "rollup -c rollup.config.js",
+    "build": "npm run build:types && npm run build:js",
     "prepare": "npm run build",
     "test": "npm run format:test && mocha --require @babel/register --timeout 15000 --recursive",
     "format:test": "prettier --write \"test/**/*.js\"",

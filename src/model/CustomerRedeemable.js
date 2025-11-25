@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomerRedeemableRedeemable from './CustomerRedeemableRedeemable';
-
 /**
  * The CustomerRedeemable model module.
  * @module model/CustomerRedeemable
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerRedeemable {
     /**
      * Constructs a new <code>CustomerRedeemable</code>.
      * Single customer&#39;s redeemable
-     * @alias module:model/CustomerRedeemable
+     * @alias CustomerRedeemable
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class CustomerRedeemable {
     /**
      * Constructs a <code>CustomerRedeemable</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerRedeemable} obj Optional instance to populate.
-     * @returns {module:model/CustomerRedeemable} The populated <code>CustomerRedeemable</code> instance.
+     * @param {Partial<CustomerRedeemable>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerRedeemable} [obj] Optional instance to populate.
+     * @returns {CustomerRedeemable} The populated <code>CustomerRedeemable</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -88,7 +87,7 @@ class CustomerRedeemable {
 
     /**
      * Validates the JSON data with respect to <code>CustomerRedeemable</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerRedeemable>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerRedeemable</code>.
      */
     static validateJSON(data) {
@@ -138,162 +137,162 @@ class CustomerRedeemable {
 
 
 /**
- * Unique redeemable holder identifier.
- * @member {String} 
- */
+    * Unique redeemable holder identifier.
+    * @type {String | undefined}
+    */
 CustomerRedeemable.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomerRedeemable.prototype['created_at'] = undefined;
 
 /**
- * Identifier of the redeemable item.
- * @member {String} 
- */
+    * Identifier of the redeemable item.
+    * @type {String | undefined}
+    */
 CustomerRedeemable.prototype['redeemable_id'] = undefined;
 
 /**
- * Type of the redeemable.
- * @member {String} 
- */
+    * Type of the redeemable.
+    * @type {String | undefined}
+    */
 CustomerRedeemable.prototype['redeemable_object'] = undefined;
 
 /**
- * Identifier of the customer.
- * @member {String} 
- */
+    * Identifier of the customer.
+    * @type {String | undefined}
+    */
 CustomerRedeemable.prototype['customer_id'] = undefined;
 
 /**
- * Role of the holder.
- * @member {module:model/CustomerRedeemable.HolderRoleEnum} 
- * @default 'OWNER'
- */
+    * Role of the holder.
+    * @type {(keyof typeof CustomerRedeemable.HolderRoleEnum) | undefined}
+    * @default 'OWNER'
+    */
 CustomerRedeemable.prototype['holder_role'] = 'OWNER';
 
 /**
- * Unique campaign identifier, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique campaign identifier, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CustomerRedeemable.prototype['campaign_id'] = undefined;
 
 /**
- * Defines the type of the campaign.
- * @member {module:model/CustomerRedeemable.CampaignTypeEnum} 
- * @default 'DISCOUNT_COUPONS'
- */
+    * Defines the type of the campaign.
+    * @type {(keyof typeof CustomerRedeemable.CampaignTypeEnum) | undefined}
+    * @default 'DISCOUNT_COUPONS'
+    */
 CustomerRedeemable.prototype['campaign_type'] = 'DISCOUNT_COUPONS';
 
 /**
- * Defines the type of the voucher.
- * @member {module:model/CustomerRedeemable.VoucherTypeEnum} 
- * @default 'DISCOUNT_VOUCHER'
- */
+    * Defines the type of the voucher.
+    * @type {(keyof typeof CustomerRedeemable.VoucherTypeEnum) | undefined}
+    * @default 'DISCOUNT_VOUCHER'
+    */
 CustomerRedeemable.prototype['voucher_type'] = 'DISCOUNT_VOUCHER';
 
 /**
- * @member {module:model/CustomerRedeemableRedeemable} 
- */
+    * @type {CustomerRedeemableRedeemable | undefined}
+    */
 CustomerRedeemable.prototype['redeemable'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>holder_role</code> property.
- * @enum {String}
- * @readonly
- */
-CustomerRedeemable['HolderRoleEnum'] = {
+    /**
+     * Allowed values for the <code>holder_role</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    CustomerRedeemable['HolderRoleEnum'] = {
+    
+        /**
+         * value: "OWNER"
+         * @constant
+         */
+        "OWNER": "OWNER",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER",
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE"    
+    };
+
 
     /**
-     * value: "OWNER"
-     * @constant
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "OWNER": "OWNER",
+    CustomerRedeemable['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS",
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "PROMOTION"
+         * @constant
+         */
+        "PROMOTION": "PROMOTION",
+    
+        /**
+         * value: "REFERRAL_PROGRAM"
+         * @constant
+         */
+        "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"    
+    };
+
 
     /**
-     * value: "REFERRER"
-     * @constant
+     * Allowed values for the <code>voucher_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "REFERRER": "REFERRER",
-
-    /**
-     * value: "REFEREE"
-     * @constant
-     */
-    "REFEREE": "REFEREE"
-};
-
-
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-CustomerRedeemable['CampaignTypeEnum'] = {
-
-    /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
-     */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS",
-
-    /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
-     */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "PROMOTION"
-     * @constant
-     */
-    "PROMOTION": "PROMOTION",
-
-    /**
-     * value: "REFERRAL_PROGRAM"
-     * @constant
-     */
-    "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"
-};
-
-
-/**
- * Allowed values for the <code>voucher_type</code> property.
- * @enum {String}
- * @readonly
- */
-CustomerRedeemable['VoucherTypeEnum'] = {
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    CustomerRedeemable['VoucherTypeEnum'] = {
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 

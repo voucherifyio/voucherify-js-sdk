@@ -29,13 +29,13 @@ import TemplatesCampaignsUpdateResponseBody from '../model/TemplatesCampaignsUpd
 /**
 * Templates service.
 * @module api/TemplatesApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class TemplatesApi {
 
     /**
     * Constructs a new TemplatesApi. 
-    * @alias module:api/TemplatesApi
+    * @alias TemplatesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -47,9 +47,9 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the addTierFromTemplate operation.
-     * @callback module:api/TemplatesApi~addTierFromTemplateCallback
+     * @callback addTierFromTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsTierSetupCreateResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsTierSetupCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -57,9 +57,10 @@ export default class TemplatesApi {
      * Add Promotion Tier From Template
      * Creates a promotion tier out of a discount campaign template and adds it to an existing promotion campaign. To add a promotion tier to a campaign, you need to provide the name in the request and the campaign ID. Other fields are optional. If no other fields are sent, the configuration from the template will be used. You can send new values of the fields listed below to replace the settings saved in the template. However, you cannot assign an action or an existing validation rule or create a new one in the request. If the template has a validation rule, a new validation rule is always created for the promotion tier. When the promotion tier has been created, then you can: - [Update the validation rule](/api-reference/validation-rules/update-validation-rule), - [Unassign the validation rule](/api-reference/validation-rules/delete-validation-rule-assignment), - [Assign an existing validation rule](/api-reference/validation-rules/create-validation-rule-assignment).  👍 Promotion Tiers and Campaign Templates You can create a campaign template out of a promotion tier. Promotion tiers are converted to a discount campaign with the DISCOUNT_COUPON type. You can use this template to create: - [Discount campaign](/api-reference/templates/create-campaign-from-template) - [Promotion tier](/api-reference/templates/add-promotion-tier-from-template)  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} campaignTemplateId Pass the campaign template ID that was assigned by Voucherify.
-     * @param {module:model/TemplatesCampaignsTierSetupCreateRequestBody} templatesCampaignsTierSetupCreateRequestBody Only name and campaign_id are required. The rest of the fields will overwrite the template configuration.
-     * @param {module:api/TemplatesApi~addTierFromTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsTierSetupCreateResponseBody}
+     * @param {TemplatesCampaignsTierSetupCreateRequestBody} templatesCampaignsTierSetupCreateRequestBody Only name and campaign_id are required. The rest of the fields will overwrite the template configuration.
+     * @param {addTierFromTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsTierSetupCreateResponseBody}
+     * @returns {Promise<(TemplatesCampaignsTierSetupCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsTierSetupCreateResponseBody` object or with `undefined`.
      */
     addTierFromTemplate(campaignTemplateId, templatesCampaignsTierSetupCreateRequestBody, callback) {
       let postBody = templatesCampaignsTierSetupCreateRequestBody;
@@ -89,9 +90,9 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the createCampaignFromTemplate operation.
-     * @callback module:api/TemplatesApi~createCampaignFromTemplateCallback
+     * @callback createCampaignFromTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsCampaignSetupCreateResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsCampaignSetupCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -99,9 +100,10 @@ export default class TemplatesApi {
      * Create Campaign From Template
      * Creates a campaign out of a campaign template. To create a campaign, you need to provide the name in the request, while other fields are optional. If no other fields are sent, the configuration from the template will be used. You can send new values of the fields listed below to replace the settings saved in the template. However, you cannot assign an existing validation rule or create a new one in the request. If the template has a validation rule, a new validation rule is always created for the campaign. When the campaign has been created, then you can: - [Update the validation rule](/api-reference/validation-rules/update-validation-rule), - [Unassign the validation rule](/api-reference/validation-rules/delete-validation-rule-assignment), - [Assign an existing validation rule](/api-reference/validation-rules/create-validation-rules-assignments).  👍 Promotion Tiers and Campaign Templates You can create a campaign template out of a promotion tier. Promotion tiers are converted to a discount campaign with the DISCOUNT_COUPON type. You can use this template to create: - [Discount campaign](/api-reference/templates/create-campaign-from-template) - [Promotion tier](/api-reference/templates/add-promotion-tier-from-template)  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} campaignTemplateId Pass the campaign template ID that was assigned by Voucherify.
-     * @param {module:model/TemplatesCampaignsCampaignSetupCreateRequestBody} templatesCampaignsCampaignSetupCreateRequestBody Only name is required. The rest of the fields will overwrite the template configuration.
-     * @param {module:api/TemplatesApi~createCampaignFromTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsCampaignSetupCreateResponseBody}
+     * @param {TemplatesCampaignsCampaignSetupCreateRequestBody} templatesCampaignsCampaignSetupCreateRequestBody Only name is required. The rest of the fields will overwrite the template configuration.
+     * @param {createCampaignFromTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsCampaignSetupCreateResponseBody}
+     * @returns {Promise<(TemplatesCampaignsCampaignSetupCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsCampaignSetupCreateResponseBody` object or with `undefined`.
      */
     createCampaignFromTemplate(campaignTemplateId, templatesCampaignsCampaignSetupCreateRequestBody, callback) {
       let postBody = templatesCampaignsCampaignSetupCreateRequestBody;
@@ -131,18 +133,19 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the createCampaignTemplate operation.
-     * @callback module:api/TemplatesApi~createCampaignTemplateCallback
+     * @callback createCampaignTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsCreateTemplateResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsCreateTemplateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Campaign Template
      * Creates a template for a discount or gift campaign, or a promotion tier. A template stores campaign configuration **without** the following details: - Campaign name - Category - Code count The following elements are not supported by campaign templates: - Redeeming API keys - Redeeming users - Customer loyalty tier - Static segments  👍 Promotion Tiers and Campaign Templates You can create a campaign template out of a promotion tier. Promotion tiers are converted to a discount campaign with the DISCOUNT_COUPON type. You can use this template to create: - [Discount campaign](/api-reference/templates/create-campaign-from-template), - [Promotion tier](/api-reference/templates/add-promotion-tier-from-template).  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
-     * @param {module:model/TemplatesCampaignsCreateRequestBody} templatesCampaignsCreateRequestBody Provide details for a campaign template
-     * @param {module:api/TemplatesApi~createCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsCreateTemplateResponseBody}
+     * @param {TemplatesCampaignsCreateRequestBody} templatesCampaignsCreateRequestBody Provide details for a campaign template
+     * @param {createCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsCreateTemplateResponseBody}
+     * @returns {Promise<(TemplatesCampaignsCreateTemplateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsCreateTemplateResponseBody` object or with `undefined`.
      */
     createCampaignTemplate(templatesCampaignsCreateRequestBody, callback) {
       let postBody = templatesCampaignsCreateRequestBody;
@@ -170,7 +173,7 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the deleteCampaignTemplate operation.
-     * @callback module:api/TemplatesApi~deleteCampaignTemplateCallback
+     * @callback deleteCampaignTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -180,7 +183,8 @@ export default class TemplatesApi {
      * Delete Campaign Template
      * Deletes the campaign template permanently.  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} campaignTemplateId Pass the campaign template ID that was assigned by Voucherify.
-     * @param {module:api/TemplatesApi~deleteCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteCampaignTemplate(campaignTemplateId, callback) {
       let postBody = null;
@@ -209,9 +213,9 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the getCampaignTemplate operation.
-     * @callback module:api/TemplatesApi~getCampaignTemplateCallback
+     * @callback getCampaignTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsGetResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -219,8 +223,9 @@ export default class TemplatesApi {
      * Get Campaign Template
      * Retrieves a campaign template available in the project.  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} campaignTemplateId Pass the campaign template ID that was assigned by Voucherify.
-     * @param {module:api/TemplatesApi~getCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsGetResponseBody}
+     * @param {getCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsGetResponseBody}
+     * @returns {Promise<(TemplatesCampaignsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsGetResponseBody` object or with `undefined`.
      */
     getCampaignTemplate(campaignTemplateId, callback) {
       let postBody = null;
@@ -249,9 +254,9 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the listCampaignTemplates operation.
-     * @callback module:api/TemplatesApi~listCampaignTemplatesCallback
+     * @callback listCampaignTemplatesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsListResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -261,12 +266,13 @@ export default class TemplatesApi {
      * @param {{
         limit?: Number,
         startingAfterId?: String,
-        order?: module:model/ParameterTemplatesList,
+        order?: Exclude<keyof typeof ParameterTemplatesList, "prototype" | "constructFromObject">,
         includeTotal?: Boolean,
-        filters?: module:model/ParameterFiltersListTemplates,
+        filters?: ParameterFiltersListTemplates,
      }} [opts] Optional parameters
-     * @param {module:api/TemplatesApi~listCampaignTemplatesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsListResponseBody}
+     * @param {listCampaignTemplatesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsListResponseBody}
+     * @returns {Promise<(TemplatesCampaignsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsListResponseBody` object or with `undefined`.
      */
     listCampaignTemplates(opts, callback) {
       opts = opts || {};
@@ -299,9 +305,9 @@ export default class TemplatesApi {
 
     /**
      * Callback function to receive the result of the updateCampaignTemplate operation.
-     * @callback module:api/TemplatesApi~updateCampaignTemplateCallback
+     * @callback updateCampaignTemplateCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/TemplatesCampaignsUpdateResponseBody} [data] The data returned by the service call.
+     * @param {TemplatesCampaignsUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -309,9 +315,10 @@ export default class TemplatesApi {
      * Update Campaign Template
      * Updates the name or description of the campaign template.  📘 Campaign Templates – Documentation Read the [Campaign Templates documentation](https://support.voucherify.io/article/620-campaign-templates) to learn more about this feature.
      * @param {String} campaignTemplateId Pass the campaign template ID that was assigned by Voucherify.
-     * @param {module:model/TemplatesCampaignsUpdateRequestBody} templatesCampaignsUpdateRequestBody Provide the new name or description for the campaign template
-     * @param {module:api/TemplatesApi~updateCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplatesCampaignsUpdateResponseBody}
+     * @param {TemplatesCampaignsUpdateRequestBody} templatesCampaignsUpdateRequestBody Provide the new name or description for the campaign template
+     * @param {updateCampaignTemplateCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link TemplatesCampaignsUpdateResponseBody}
+     * @returns {Promise<(TemplatesCampaignsUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `TemplatesCampaignsUpdateResponseBody` object or with `undefined`.
      */
     updateCampaignTemplate(campaignTemplateId, templatesCampaignsUpdateRequestBody, callback) {
       let postBody = templatesCampaignsUpdateRequestBody;

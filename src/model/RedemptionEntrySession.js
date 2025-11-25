@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionEntrySession model module.
  * @module model/RedemptionEntrySession
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionEntrySession {
     /**
      * Constructs a new <code>RedemptionEntrySession</code>.
      * Contains details about the redemption session lock. Sessions can be established only for discount vouchers, promotions, and gift cards.
-     * @alias module:model/RedemptionEntrySession
+     * @alias RedemptionEntrySession
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionEntrySession {
     /**
      * Constructs a <code>RedemptionEntrySession</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionEntrySession} obj Optional instance to populate.
-     * @returns {module:model/RedemptionEntrySession} The populated <code>RedemptionEntrySession</code> instance.
+     * @param {Partial<RedemptionEntrySession>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionEntrySession} [obj] Optional instance to populate.
+     * @returns {RedemptionEntrySession} The populated <code>RedemptionEntrySession</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionEntrySession {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionEntrySession</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionEntrySession>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionEntrySession</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class RedemptionEntrySession {
 
 
 /**
- * The session unique ID assigned by Voucherify or your own unique session ID sent in the request.
- * @member {String} 
- */
+    * The session unique ID assigned by Voucherify or your own unique session ID sent in the request.
+    * @type {String | undefined}
+    */
 RedemptionEntrySession.prototype['key'] = undefined;
 
 

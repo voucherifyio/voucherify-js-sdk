@@ -42,13 +42,13 @@ import VouchersUpdateResponseBody from '../model/VouchersUpdateResponseBody';
 /**
 * Vouchers service.
 * @module api/VouchersApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class VouchersApi {
 
     /**
     * Constructs a new VouchersApi. 
-    * @alias module:api/VouchersApi
+    * @alias VouchersApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -60,9 +60,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the createVoucher operation.
-     * @callback module:api/VouchersApi~createVoucherCallback
+     * @callback createVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersCreateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -70,9 +70,10 @@ export default class VouchersApi {
      * Create Voucher
      * Create a generic (standalone) vouchers. You can choose to create a GIFT_VOUCHER, a DISCOUNT_VOUCHER, or a LOYALTY_CARD. The code path parameter can use all letters of the English alphabet, Arabic numerals and special characters. When you create a new voucher, you can specify a type to create it. Creating a new voucher will create a new generic (standalone) vouchers if no campaign name or campaign_id is provided. However, if an ID or name of a campaign with the type set to STANDALONE is provided, the voucher will be added to such campaign. In the case of the loyalty card, a campaign name or ID is required. 🚧 Standalone Vouchers and Campaigns In version [v20241004](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004), generic (standalone) vouchers created through the Voucherify dashboard create a campaign for that voucher. However, vouchers created through the API do not have a campaign attached, so the values for campaign and campaign_id are null. Voucherify developers work on adding an optional feature to create a generic (standalone) vouchers campaign through the API. Follow the [Voucherify Release Notes](https://support.voucherify.io/article/23-whats-new-in-voucherify) for more details about released features.
      * @param {String} code A unique **code** that identifies the voucher.
-     * @param {module:model/VouchersCreateWithSpecificCodeRequestBody} vouchersCreateWithSpecificCodeRequestBody Specify the details of the voucher that you would like to create.
-     * @param {module:api/VouchersApi~createVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersCreateResponseBody}
+     * @param {VouchersCreateWithSpecificCodeRequestBody} vouchersCreateWithSpecificCodeRequestBody Specify the details of the voucher that you would like to create.
+     * @param {createVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersCreateResponseBody}
+     * @returns {Promise<(VouchersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersCreateResponseBody` object or with `undefined`.
      */
     createVoucher(code, vouchersCreateWithSpecificCodeRequestBody, callback) {
       let postBody = vouchersCreateWithSpecificCodeRequestBody;
@@ -102,7 +103,7 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the deleteVoucher operation.
-     * @callback module:api/VouchersApi~deleteVoucherCallback
+     * @callback deleteVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -115,7 +116,8 @@ export default class VouchersApi {
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/VouchersApi~deleteVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteVoucher(code, opts, callback) {
       opts = opts || {};
@@ -146,9 +148,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the disableVoucher operation.
-     * @callback module:api/VouchersApi~disableVoucherCallback
+     * @callback disableVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersDisableResponseBody} [data] The data returned by the service call.
+     * @param {VouchersDisableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -156,8 +158,9 @@ export default class VouchersApi {
      * Disable Voucher
      * There are various times when youll want to manage a vouchers accessibility. This can be done by two API methods for managing the voucher state - *enable* and *disable*.   ___ This method sets the voucher state to **inactive**. The voucher cannot be redeemed.
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-     * @param {module:api/VouchersApi~disableVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersDisableResponseBody}
+     * @param {disableVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersDisableResponseBody}
+     * @returns {Promise<(VouchersDisableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersDisableResponseBody` object or with `undefined`.
      */
     disableVoucher(code, callback) {
       let postBody = null;
@@ -186,9 +189,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the enableVoucher operation.
-     * @callback module:api/VouchersApi~enableVoucherCallback
+     * @callback enableVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersEnableResponseBody} [data] The data returned by the service call.
+     * @param {VouchersEnableResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -196,8 +199,9 @@ export default class VouchersApi {
      * Enable Voucher
      * There are various times when youll want to manage a vouchers accessibility. This can be done by two API methods for managing the voucher state - *enable* and *disable*.   ___ The method sets the voucher state to **active**. The voucher can be redeemed - only if the redemption occurs after the start date and the voucher is not expired.
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-     * @param {module:api/VouchersApi~enableVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersEnableResponseBody}
+     * @param {enableVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersEnableResponseBody}
+     * @returns {Promise<(VouchersEnableResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersEnableResponseBody` object or with `undefined`.
      */
     enableVoucher(code, callback) {
       let postBody = null;
@@ -226,9 +230,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the exportVoucherTransactions operation.
-     * @callback module:api/VouchersApi~exportVoucherTransactionsCallback
+     * @callback exportVoucherTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersTransactionsExportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -236,9 +240,10 @@ export default class VouchersApi {
      * Export Voucher Transactions
      * Export transactions that are associated with credit movements on a gift card or loyalty card.   
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-     * @param {module:model/VouchersTransactionsExportCreateRequestBody} vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export.
-     * @param {module:api/VouchersApi~exportVoucherTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersTransactionsExportCreateResponseBody}
+     * @param {VouchersTransactionsExportCreateRequestBody} vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export.
+     * @param {exportVoucherTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersTransactionsExportCreateResponseBody}
+     * @returns {Promise<(VouchersTransactionsExportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersTransactionsExportCreateResponseBody` object or with `undefined`.
      */
     exportVoucherTransactions(code, vouchersTransactionsExportCreateRequestBody, callback) {
       let postBody = vouchersTransactionsExportCreateRequestBody;
@@ -268,18 +273,19 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the generateRandomCode operation.
-     * @callback module:api/VouchersApi~generateRandomCodeCallback
+     * @callback generateRandomCodeCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersCreateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Generate Random Code
      * Create a generic (standalone) vouchers. You can choose to create a GIFT_VOUCHER, a DISCOUNT_VOUCHER, or a LOYALTY_CARD.  When you create a new voucher, you can specify a type to create it. Creating a new voucher will create a new generic (standalone) vouchers if no campaign name or campaign_id is provided. However, if an ID or name of a campaign with the type set to STANDALONE is provided, the voucher will be added to such campaign. In case of the loyalty card, a campaign name is required. You can optionally use the code parameter to define a specific code or the code_config parameter to design rules for Voucherify API to create a random code. If neither of the two parameters are passed, then a random code is generated by the Voucherify API. This method will return an error when trying to create a voucher that already exists. 🚧 Standalone Vouchers and Campaigns In version [v20241004](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004), generic (standalone) vouchers created through the Voucherify dashboard create a campaign for that voucher. However, vouchers created through the API do not have a campaign attached, so the values for campaign and campaign_id are null. Voucherify developers work on adding an optional feature to create a generic (standalone) vouchers campaign through the API. Follow the [Voucherify Release Notes](https://support.voucherify.io/article/23-whats-new-in-voucherify) for more details about released features.
-     * @param {module:model/VouchersCreateRequestBody} vouchersCreateRequestBody Specify the details of the voucher that you would like to create.
-     * @param {module:api/VouchersApi~generateRandomCodeCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersCreateResponseBody}
+     * @param {VouchersCreateRequestBody} vouchersCreateRequestBody Specify the details of the voucher that you would like to create.
+     * @param {generateRandomCodeCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersCreateResponseBody}
+     * @returns {Promise<(VouchersCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersCreateResponseBody` object or with `undefined`.
      */
     generateRandomCode(vouchersCreateRequestBody, callback) {
       let postBody = vouchersCreateRequestBody;
@@ -307,9 +313,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the getVoucher operation.
-     * @callback module:api/VouchersApi~getVoucherCallback
+     * @callback getVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersGetResponseBody} [data] The data returned by the service call.
+     * @param {VouchersGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -317,8 +323,9 @@ export default class VouchersApi {
      * Get Voucher
      * Retrieves the voucher with the given code or unique Voucherify ID. You can either pass the voucher ID which was assigned by Voucherify, e.g., v_7HxHkf4VAkMuc8u4lZs78lyRwhRze5UE, or the code of the voucher as the path parameter value, e.g., 7fjWdr.
      * @param {String} code A unique **code** that identifies the voucher.
-     * @param {module:api/VouchersApi~getVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersGetResponseBody}
+     * @param {getVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersGetResponseBody}
+     * @returns {Promise<(VouchersGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersGetResponseBody` object or with `undefined`.
      */
     getVoucher(code, callback) {
       let postBody = null;
@@ -347,18 +354,19 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the importVouchers operation.
-     * @callback module:api/VouchersApi~importVouchersCallback
+     * @callback importVouchersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersImportCreateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersImportCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Import Vouchers
      * Import generic (standalone) vouchers and gift cards into the repository.  📘 Important notes  - **Start and expiration dates** need to be provided in compliance with the ISO 8601 norms. For example, 2020-03-11T09:00:00.000Z.  - Custom code attributes (not supported by-default) need to be added as code **metadata**.  - You **cannot import the same codes** to a single Voucherify Project. Any parameters not provided in the payload will be left blank or null. For both **standalone discount vouchers and gift cards**, you can import the following fields:   - code - category - active - type - start_date - expiration_date - redemption.quantity - additional_info - metadata For **gift cards**, you can also import the following field: - gift.amount For **discount vouchers**, you can import the discount object. The object will slightly vary depending on the type of discount. Each discount type **requires** the type to be defined in the import.   Fields other than the ones listed above wont be imported. Even if provided, they will be silently skipped. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action). 🚧 Standalone Vouchers and Campaigns In version [v20241004](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004), generic (standalone) vouchers created through the Voucherify dashboard create a campaign for that voucher. However, vouchers imported through the dashboard in the Vouchers section or through the API do not have a campaign attached, so the values for campaign and campaign_id are null.
-     * @param {Array.<module:model/VouchersImportCreateItemRequestBody>} vouchersImportCreateItemRequestBody The request body is an array of objects. Each object contains details about a specific voucher. 
-     * @param {module:api/VouchersApi~importVouchersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersImportCreateResponseBody}
+     * @param {Array.<VouchersImportCreateItemRequestBody>} vouchersImportCreateItemRequestBody The request body is an array of objects. Each object contains details about a specific voucher. 
+     * @param {importVouchersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersImportCreateResponseBody}
+     * @returns {Promise<(VouchersImportCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersImportCreateResponseBody` object or with `undefined`.
      */
     importVouchers(vouchersImportCreateItemRequestBody, callback) {
       let postBody = vouchersImportCreateItemRequestBody;
@@ -386,9 +394,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the importVouchersUsingCsv operation.
-     * @callback module:api/VouchersApi~importVouchersUsingCsvCallback
+     * @callback importVouchersUsingCsvCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersImportCsvCreateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersImportCsvCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -399,8 +407,9 @@ export default class VouchersApi {
         file?: File,
         webhooksEnable?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/VouchersApi~importVouchersUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersImportCsvCreateResponseBody}
+     * @param {importVouchersUsingCsvCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersImportCsvCreateResponseBody}
+     * @returns {Promise<(VouchersImportCsvCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersImportCsvCreateResponseBody` object or with `undefined`.
      */
     importVouchersUsingCsv(opts, callback) {
       opts = opts || {};
@@ -430,9 +439,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the listVoucherTransactions operation.
-     * @callback module:api/VouchersApi~listVoucherTransactionsCallback
+     * @callback listVoucherTransactionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersTransactionsListResponseBody} [data] The data returned by the service call.
+     * @param {VouchersTransactionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -442,11 +451,12 @@ export default class VouchersApi {
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListTransactions,
+        order?: Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">,
         startingAfterId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/VouchersApi~listVoucherTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersTransactionsListResponseBody}
+     * @param {listVoucherTransactionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersTransactionsListResponseBody}
+     * @returns {Promise<(VouchersTransactionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersTransactionsListResponseBody` object or with `undefined`.
      */
     listVoucherTransactions(code, opts, callback) {
       opts = opts || {};
@@ -479,9 +489,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the listVouchers operation.
-     * @callback module:api/VouchersApi~listVouchersCallback
+     * @callback listVouchersCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersListResponseBody} [data] The data returned by the service call.
+     * @param {VouchersListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -495,14 +505,15 @@ export default class VouchersApi {
         campaignId?: String,
         customer?: String,
         campaign?: String,
-        createdAt?: module:model/ParameterCreatedBeforeAfter,
-        updatedAt?: module:model/ParameterUpdatedBeforeAfter,
-        order?: module:model/ParameterOrderVouchers,
+        createdAt?: ParameterCreatedBeforeAfter,
+        updatedAt?: ParameterUpdatedBeforeAfter,
+        order?: Exclude<keyof typeof ParameterOrderVouchers, "prototype" | "constructFromObject">,
         code?: String,
         ids?: Array.<String>,
      }} [opts] Optional parameters
-     * @param {module:api/VouchersApi~listVouchersCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersListResponseBody}
+     * @param {listVouchersCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersListResponseBody}
+     * @returns {Promise<(VouchersListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersListResponseBody` object or with `undefined`.
      */
     listVouchers(opts, callback) {
       opts = opts || {};
@@ -541,7 +552,7 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the releaseValidationSession operation.
-     * @callback module:api/VouchersApi~releaseValidationSessionCallback
+     * @callback releaseValidationSessionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -552,7 +563,8 @@ export default class VouchersApi {
      * Manually release a validation session that has been set up for the voucher. This method undoes the actions that are explained in the [Locking validation session](/guides/locking-validation-session) guide.   📘 Release session in the Dashboard  You can also use the [Validations Manager](https://support.voucherify.io/article/16-dashboard-sections#sessions) in the Dashboard to unlock sessions.
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify.
      * @param {String} sessionKey A unique session identifier.
-     * @param {module:api/VouchersApi~releaseValidationSessionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {releaseValidationSessionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     releaseValidationSession(code, sessionKey, callback) {
       let postBody = null;
@@ -583,9 +595,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the updateVoucher operation.
-     * @callback module:api/VouchersApi~updateVoucherCallback
+     * @callback updateVoucherCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersUpdateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -593,9 +605,10 @@ export default class VouchersApi {
      * Update Voucher
      * Updates the specified voucher by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged. Fields other than the ones listed in the request body wont be modified. Even if provided, they will be silently skipped. If you want to change the amount on a gift card or the number of points on a loyalty card, use the [Adjust voucher balance](/api-reference/vouchers/adjust-voucher-balance) endpoint.
      * @param {String} code A unique **code** that identifies the voucher.
-     * @param {module:model/VouchersUpdateRequestBody} vouchersUpdateRequestBody Specify the parameters to be updated.
-     * @param {module:api/VouchersApi~updateVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersUpdateResponseBody}
+     * @param {VouchersUpdateRequestBody} vouchersUpdateRequestBody Specify the parameters to be updated.
+     * @param {updateVoucherCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersUpdateResponseBody}
+     * @returns {Promise<(VouchersUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersUpdateResponseBody` object or with `undefined`.
      */
     updateVoucher(code, vouchersUpdateRequestBody, callback) {
       let postBody = vouchersUpdateRequestBody;
@@ -625,9 +638,9 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the updateVoucherBalance operation.
-     * @callback module:api/VouchersApi~updateVoucherBalanceCallback
+     * @callback updateVoucherBalanceCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersBalanceUpdateResponseBody} [data] The data returned by the service call.
+     * @param {VouchersBalanceUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -635,9 +648,10 @@ export default class VouchersApi {
      * Adjust Voucher Balance
      * Add balance to an existing gift card or loyalty card. For loyalty cards, it must be assigned to a holder.
      * @param {String} code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-     * @param {module:model/VouchersBalanceUpdateRequestBody} vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher.
-     * @param {module:api/VouchersApi~updateVoucherBalanceCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersBalanceUpdateResponseBody}
+     * @param {VouchersBalanceUpdateRequestBody} vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher.
+     * @param {updateVoucherBalanceCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersBalanceUpdateResponseBody}
+     * @returns {Promise<(VouchersBalanceUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersBalanceUpdateResponseBody` object or with `undefined`.
      */
     updateVoucherBalance(code, vouchersBalanceUpdateRequestBody, callback) {
       let postBody = vouchersBalanceUpdateRequestBody;
@@ -667,18 +681,19 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the updateVouchersInBulk operation.
-     * @callback module:api/VouchersApi~updateVouchersInBulkCallback
+     * @callback updateVouchersInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {VouchersUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Vouchers in Bulk
      * Updates specific metadata parameters for each code, respectively, in one asynchronous operation. The request can include up to **10 MB** of data. Upserts are not supported.  🚧 Currently, only **metadata** updates are supported. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {Array.<module:model/VouchersUpdateInBulkItemRequestBody>} vouchersUpdateInBulkItemRequestBody List the codes to be updated with the metadata key/value pairs for that code.
-     * @param {module:api/VouchersApi~updateVouchersInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersUpdateInBulkResponseBody}
+     * @param {Array.<VouchersUpdateInBulkItemRequestBody>} vouchersUpdateInBulkItemRequestBody List the codes to be updated with the metadata key/value pairs for that code.
+     * @param {updateVouchersInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersUpdateInBulkResponseBody}
+     * @returns {Promise<(VouchersUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateVouchersInBulk(vouchersUpdateInBulkItemRequestBody, callback) {
       let postBody = vouchersUpdateInBulkItemRequestBody;
@@ -706,18 +721,19 @@ export default class VouchersApi {
 
     /**
      * Callback function to receive the result of the updateVouchersMetadataInBulk operation.
-     * @callback module:api/VouchersApi~updateVouchersMetadataInBulkCallback
+     * @callback updateVouchersMetadataInBulkCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
+     * @param {VouchersMetadataUpdateInBulkResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Update Vouchers' Metadata in Bulk
      * Updates metadata parameters for a list of codes. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. Upserts are not supported. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
-     * @param {module:model/VouchersMetadataUpdateInBulkRequestBody} vouchersMetadataUpdateInBulkRequestBody List the codes of the vouchers you would like to update with the metadata key/value pairs.
-     * @param {module:api/VouchersApi~updateVouchersMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersMetadataUpdateInBulkResponseBody}
+     * @param {VouchersMetadataUpdateInBulkRequestBody} vouchersMetadataUpdateInBulkRequestBody List the codes of the vouchers you would like to update with the metadata key/value pairs.
+     * @param {updateVouchersMetadataInBulkCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersMetadataUpdateInBulkResponseBody}
+     * @returns {Promise<(VouchersMetadataUpdateInBulkResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersMetadataUpdateInBulkResponseBody` object or with `undefined`.
      */
     updateVouchersMetadataInBulk(vouchersMetadataUpdateInBulkRequestBody, callback) {
       let postBody = vouchersMetadataUpdateInBulkRequestBody;

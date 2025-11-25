@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import QualificationsOptionFiltersResourceTypeConditions from './QualificationsOptionFiltersResourceTypeConditions';
-
 /**
  * The QualificationsOptionFiltersResourceType model module.
  * @module model/QualificationsOptionFiltersResourceType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFiltersResourceType {
     /**
      * Constructs a new <code>QualificationsOptionFiltersResourceType</code>.
-     * @alias module:model/QualificationsOptionFiltersResourceType
+     * @alias QualificationsOptionFiltersResourceType
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class QualificationsOptionFiltersResourceType {
     /**
      * Constructs a <code>QualificationsOptionFiltersResourceType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFiltersResourceType} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFiltersResourceType} The populated <code>QualificationsOptionFiltersResourceType</code> instance.
+     * @param {Partial<QualificationsOptionFiltersResourceType>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFiltersResourceType} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFiltersResourceType} The populated <code>QualificationsOptionFiltersResourceType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class QualificationsOptionFiltersResourceType {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFiltersResourceType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFiltersResourceType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFiltersResourceType</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class QualificationsOptionFiltersResourceType {
 
 
 /**
- * @member {module:model/QualificationsOptionFiltersResourceTypeConditions} 
- */
+    * @type {QualificationsOptionFiltersResourceTypeConditions | undefined}
+    */
 QualificationsOptionFiltersResourceType.prototype['conditions'] = undefined;
 
 

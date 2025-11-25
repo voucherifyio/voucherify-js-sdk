@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import PromotionTierSummaryOrders from './PromotionTierSummaryOrders';
 import PromotionTierSummaryRedemptions from './PromotionTierSummaryRedemptions';
-
 /**
  * The PromotionTierSummary model module.
  * @module model/PromotionTierSummary
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierSummary {
     /**
      * Constructs a new <code>PromotionTierSummary</code>.
      * Contains statistics about promotion tier redemptions and orders.
-     * @alias module:model/PromotionTierSummary
+     * @alias PromotionTierSummary
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class PromotionTierSummary {
     /**
      * Constructs a <code>PromotionTierSummary</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierSummary} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierSummary} The populated <code>PromotionTierSummary</code> instance.
+     * @param {Partial<PromotionTierSummary>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierSummary} [obj] Optional instance to populate.
+     * @returns {PromotionTierSummary} The populated <code>PromotionTierSummary</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class PromotionTierSummary {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierSummary</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierSummary>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierSummary</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class PromotionTierSummary {
 
 
 /**
- * @member {module:model/PromotionTierSummaryRedemptions} 
- */
+    * @type {PromotionTierSummaryRedemptions | undefined}
+    */
 PromotionTierSummary.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/PromotionTierSummaryOrders} 
- */
+    * @type {PromotionTierSummaryOrders | undefined}
+    */
 PromotionTierSummary.prototype['orders'] = undefined;
 
 

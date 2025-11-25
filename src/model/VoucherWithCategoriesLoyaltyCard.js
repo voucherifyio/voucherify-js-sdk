@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherWithCategoriesLoyaltyCard model module.
  * @module model/VoucherWithCategoriesLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherWithCategoriesLoyaltyCard {
     /**
      * Constructs a new <code>VoucherWithCategoriesLoyaltyCard</code>.
      * Object representing loyalty card parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;LOYALTY_CARD&#x60;. Defaults to &#x60;null&#x60;.
-     * @alias module:model/VoucherWithCategoriesLoyaltyCard
+     * @alias VoucherWithCategoriesLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherWithCategoriesLoyaltyCard {
     /**
      * Constructs a <code>VoucherWithCategoriesLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherWithCategoriesLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/VoucherWithCategoriesLoyaltyCard} The populated <code>VoucherWithCategoriesLoyaltyCard</code> instance.
+     * @param {Partial<VoucherWithCategoriesLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherWithCategoriesLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {VoucherWithCategoriesLoyaltyCard} The populated <code>VoucherWithCategoriesLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class VoucherWithCategoriesLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>VoucherWithCategoriesLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherWithCategoriesLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherWithCategoriesLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -89,45 +88,45 @@ class VoucherWithCategoriesLoyaltyCard {
 
 
 /**
- * Total number of points added to the loyalty card over its lifespan.
- * @member {Number} 
- */
+    * Total number of points added to the loyalty card over its lifespan.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['balance'] = undefined;
 
 /**
- * The next closest date when the next set of points are due to expire.
- * @member {Date} 
- */
+    * The next closest date when the next set of points are due to expire.
+    * @type {Date | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['next_expiration_date'] = undefined;
 
 /**
- * The amount of points that are set to expire next.
- * @member {Number} 
- */
+    * The amount of points that are set to expire next.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['next_expiration_points'] = undefined;
 
 /**
- * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
- * @member {Number} 
- */
+    * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['pending_points'] = undefined;
 
 /**
- * Shows the total number of expired points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of expired points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['expired_points'] = undefined;
 
 /**
- * Shows the total number of subtracted points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of subtracted points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 VoucherWithCategoriesLoyaltyCard.prototype['subtracted_points'] = undefined;
 
 

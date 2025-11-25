@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsValidityDayOfWeekConditions model module.
  * @module model/ParameterFiltersListCampaignsValidityDayOfWeekConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsValidityDayOfWeekConditions {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code>.
      * Data conditions used to narrow down the data records to be returned in the result.
-     * @alias module:model/ParameterFiltersListCampaignsValidityDayOfWeekConditions
+     * @alias ParameterFiltersListCampaignsValidityDayOfWeekConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListCampaignsValidityDayOfWeekConditions {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsValidityDayOfWeekConditions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsValidityDayOfWeekConditions} The populated <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsValidityDayOfWeekConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsValidityDayOfWeekConditions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsValidityDayOfWeekConditions} The populated <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ParameterFiltersListCampaignsValidityDayOfWeekConditions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsValidityDayOfWeekConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsValidityDayOfWeekConditions</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ParameterFiltersListCampaignsValidityDayOfWeekConditions {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<module:model/ParameterFiltersListCampaignsValidityDayOfWeekConditions.IsEnum>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {(Array<keyof typeof ParameterFiltersListCampaignsValidityDayOfWeekConditions.IsEnum>) | undefined}
+    */
 ParameterFiltersListCampaignsValidityDayOfWeekConditions.prototype['$is'] = undefined;
 
 

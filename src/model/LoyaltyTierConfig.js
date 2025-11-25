@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltyTierConfigPoints from './LoyaltyTierConfigPoints';
-
 /**
  * The LoyaltyTierConfig model module.
  * @module model/LoyaltyTierConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTierConfig {
     /**
      * Constructs a new <code>LoyaltyTierConfig</code>.
      * Defines loyalty tier range in points.
-     * @alias module:model/LoyaltyTierConfig
+     * @alias LoyaltyTierConfig
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyTierConfig {
     /**
      * Constructs a <code>LoyaltyTierConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTierConfig} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTierConfig} The populated <code>LoyaltyTierConfig</code> instance.
+     * @param {Partial<LoyaltyTierConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTierConfig} [obj] Optional instance to populate.
+     * @returns {LoyaltyTierConfig} The populated <code>LoyaltyTierConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltyTierConfig {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTierConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTierConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTierConfig</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltyTierConfig {
 
 
 /**
- * @member {module:model/LoyaltyTierConfigPoints} 
- */
+    * @type {LoyaltyTierConfigPoints | undefined}
+    */
 LoyaltyTierConfig.prototype['points'] = undefined;
 
 

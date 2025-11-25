@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The Sku model module.
  * @module model/Sku
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Sku {
     /**
      * Constructs a new <code>Sku</code>.
      * This is an object representing a product SKU.
-     * @alias module:model/Sku
+     * @alias Sku
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class Sku {
     /**
      * Constructs a <code>Sku</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Sku} obj Optional instance to populate.
-     * @returns {module:model/Sku} The populated <code>Sku</code> instance.
+     * @param {Partial<Sku>} data The plain JavaScript object bearing properties of interest.
+     * @param {Sku} [obj] Optional instance to populate.
+     * @returns {Sku} The populated <code>Sku</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -91,7 +90,7 @@ class Sku {
 
     /**
      * Validates the JSON data with respect to <code>Sku</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Sku>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Sku</code>.
      */
     static validateJSON(data) {
@@ -133,95 +132,95 @@ class Sku {
 
 
 /**
- * A unique identifier that represents the SKU and is assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the SKU and is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 Sku.prototype['id'] = undefined;
 
 /**
- * A unique SKU identifier from your inventory system.
- * @member {String} 
- */
+    * A unique SKU identifier from your inventory system.
+    * @type {String | undefined}
+    */
 Sku.prototype['source_id'] = undefined;
 
 /**
- * The parent product's unique ID.
- * @member {String} 
- */
+    * The parent product's unique ID.
+    * @type {String | undefined}
+    */
 Sku.prototype['product_id'] = undefined;
 
 /**
- * Unique user-defined SKU name.
- * @member {String} 
- */
+    * Unique user-defined SKU name.
+    * @type {String | undefined}
+    */
 Sku.prototype['sku'] = undefined;
 
 /**
- * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
- * @member {Number} 
- */
+    * Unit price. It is represented by a value multiplied by 100 to accurately reflect 2 decimal places, such as `$100.00` being expressed as `10000`.
+    * @type {Number | undefined}
+    */
 Sku.prototype['price'] = undefined;
 
 /**
- * SKU price currency.
- * @member {String} 
- */
+    * SKU price currency.
+    * @type {String | undefined}
+    */
 Sku.prototype['currency'] = undefined;
 
 /**
- * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
- * @member {Object} 
- */
+    * The attributes object stores values for all custom attributes inherited by the SKU from the parent product. A set of key/value pairs that are attached to a SKU object and are unique to each SKU within a product family.
+    * @type {Object | undefined}
+    */
 Sku.prototype['attributes'] = undefined;
 
 /**
- * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
- * @member {String} 
- */
+    * The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+    * @type {String | undefined}
+    */
 Sku.prototype['image_url'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the SKU. A set of key/value pairs that you can attach to a SKU object. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
+    * @type {Object | undefined}
+    */
 Sku.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Sku.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Sku.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the `SKU`.
- * @member {module:model/Sku.ObjectEnum} 
- * @default 'sku'
- */
+    * The type of the object represented by JSON. This object stores information about the `SKU`.
+    * @type {(keyof typeof Sku.ObjectEnum) | undefined}
+    * @default 'sku'
+    */
 Sku.prototype['object'] = 'sku';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-Sku['ObjectEnum'] = {
-
     /**
-     * value: "sku"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "sku": "sku"
-};
+    Sku['ObjectEnum'] = {
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

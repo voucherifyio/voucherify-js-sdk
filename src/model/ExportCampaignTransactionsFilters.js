@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import FilterConditionsDateTime from './FilterConditionsDateTime';
 import FilterConditionsString from './FilterConditionsString';
 import Junction from './Junction';
-
 /**
  * The ExportCampaignTransactionsFilters model module.
  * @module model/ExportCampaignTransactionsFilters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ExportCampaignTransactionsFilters {
     /**
      * Constructs a new <code>ExportCampaignTransactionsFilters</code>.
      * Data filters and their conditions to narrow down the returned data.
-     * @alias module:model/ExportCampaignTransactionsFilters
+     * @alias ExportCampaignTransactionsFilters
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ExportCampaignTransactionsFilters {
     /**
      * Constructs a <code>ExportCampaignTransactionsFilters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExportCampaignTransactionsFilters} obj Optional instance to populate.
-     * @returns {module:model/ExportCampaignTransactionsFilters} The populated <code>ExportCampaignTransactionsFilters</code> instance.
+     * @param {Partial<ExportCampaignTransactionsFilters>} data The plain JavaScript object bearing properties of interest.
+     * @param {ExportCampaignTransactionsFilters} [obj] Optional instance to populate.
+     * @returns {ExportCampaignTransactionsFilters} The populated <code>ExportCampaignTransactionsFilters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class ExportCampaignTransactionsFilters {
 
     /**
      * Validates the JSON data with respect to <code>ExportCampaignTransactionsFilters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ExportCampaignTransactionsFilters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ExportCampaignTransactionsFilters</code>.
      */
     static validateJSON(data) {
@@ -88,18 +87,18 @@ class ExportCampaignTransactionsFilters {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ExportCampaignTransactionsFilters.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/FilterConditionsDateTime} 
- */
+    * @type {FilterConditionsDateTime | undefined}
+    */
 ExportCampaignTransactionsFilters.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ExportCampaignTransactionsFilters.prototype['voucher_id'] = undefined;
 
 

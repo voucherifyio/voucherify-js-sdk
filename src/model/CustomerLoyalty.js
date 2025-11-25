@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import CustomerLoyaltyCampaignsEntryValue from './CustomerLoyaltyCampaignsEntryValue';
-
 /**
  * The CustomerLoyalty model module.
  * @module model/CustomerLoyalty
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerLoyalty {
     /**
      * Constructs a new <code>CustomerLoyalty</code>.
-     * @alias module:model/CustomerLoyalty
+     * @alias CustomerLoyalty
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerLoyalty {
     /**
      * Constructs a <code>CustomerLoyalty</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerLoyalty} obj Optional instance to populate.
-     * @returns {module:model/CustomerLoyalty} The populated <code>CustomerLoyalty</code> instance.
+     * @param {Partial<CustomerLoyalty>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerLoyalty} [obj] Optional instance to populate.
+     * @returns {CustomerLoyalty} The populated <code>CustomerLoyalty</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class CustomerLoyalty {
 
     /**
      * Validates the JSON data with respect to <code>CustomerLoyalty</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerLoyalty>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerLoyalty</code>.
      */
     static validateJSON(data) {
@@ -77,21 +76,21 @@ class CustomerLoyalty {
 
 
 /**
- * Customer's loyalty points minus expired for all loyalty cards which the customer has.
- * @member {Number} 
- */
+    * Customer's loyalty points minus expired for all loyalty cards which the customer has.
+    * @type {Number | undefined}
+    */
 CustomerLoyalty.prototype['points'] = undefined;
 
 /**
- * Total number of customers referred by the customer.
- * @member {Number} 
- */
+    * Total number of customers referred by the customer.
+    * @type {Number | undefined}
+    */
 CustomerLoyalty.prototype['referred_customers'] = undefined;
 
 /**
- * Contains campaigns with details about point balances and how many customers were referred by the customer.
- * @member {Object.<String, module:model/CustomerLoyaltyCampaignsEntryValue>} 
- */
+    * Contains campaigns with details about point balances and how many customers were referred by the customer.
+    * @type {Object.<String, CustomerLoyaltyCampaignsEntryValue> | undefined}
+    */
 CustomerLoyalty.prototype['campaigns'] = undefined;
 
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The RedemptionsGetResponseBodyPromotionTierCampaign model module.
  * @module model/RedemptionsGetResponseBodyPromotionTierCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyPromotionTierCampaign {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyPromotionTierCampaign</code>.
-     * @alias module:model/RedemptionsGetResponseBodyPromotionTierCampaign
+     * @alias RedemptionsGetResponseBodyPromotionTierCampaign
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RedemptionsGetResponseBodyPromotionTierCampaign {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyPromotionTierCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyPromotionTierCampaign} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyPromotionTierCampaign} The populated <code>RedemptionsGetResponseBodyPromotionTierCampaign</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyPromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyPromotionTierCampaign} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyPromotionTierCampaign} The populated <code>RedemptionsGetResponseBodyPromotionTierCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class RedemptionsGetResponseBodyPromotionTierCampaign {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyPromotionTierCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyPromotionTierCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyPromotionTierCampaign</code>.
      */
     static validateJSON(data) {
@@ -121,56 +120,56 @@ class RedemptionsGetResponseBodyPromotionTierCampaign {
 
 
 /**
- * Unique campaign ID.
- * @member {String} 
- */
+    * Unique campaign ID.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['id'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/RedemptionsGetResponseBodyPromotionTierCampaign.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof RedemptionsGetResponseBodyPromotionTierCampaign.ValidityDayOfWeekEnum>) | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['validity_hours'] = undefined;
 
 /**
- * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
- * @member {Boolean} 
- */
+    * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+    * @type {Boolean | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['active'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['category_id'] = undefined;
 
 /**
- * The type of the object represented by the campaign object. This object stores information about the campaign.
- * @member {String} 
- * @default 'campaign'
- */
+    * The type of the object represented by the campaign object. This object stores information about the campaign.
+    * @type {String | undefined}
+    * @default 'campaign'
+    */
 RedemptionsGetResponseBodyPromotionTierCampaign.prototype['object'] = 'campaign';
 
 

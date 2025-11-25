@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue from './ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue';
-
 /**
  * The ManagementProjectsCustomEventSchemasUpdateResponseBodySchema model module.
  * @module model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasUpdateResponseBodySchema {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code>.
      * Object containing custom event schema and its custom attributes (metadata).
-     * @alias module:model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema
+     * @alias ManagementProjectsCustomEventSchemasUpdateResponseBodySchema
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsCustomEventSchemasUpdateResponseBodySchema {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema} The populated <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasUpdateResponseBodySchema>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasUpdateResponseBodySchema} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasUpdateResponseBodySchema} The populated <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ManagementProjectsCustomEventSchemasUpdateResponseBodySchema {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasUpdateResponseBodySchema>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasUpdateResponseBodySchema</code>.
      */
     static validateJSON(data) {
@@ -72,9 +71,9 @@ class ManagementProjectsCustomEventSchemasUpdateResponseBodySchema {
 
 
 /**
- * Defines custom event custom attributes (metadata).
- * @member {Object.<String, module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue>} 
- */
+    * Defines custom event custom attributes (metadata).
+    * @type {Object.<String, ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue> | undefined}
+    */
 ManagementProjectsCustomEventSchemasUpdateResponseBodySchema.prototype['properties'] = undefined;
 
 

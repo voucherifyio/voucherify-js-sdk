@@ -23,16 +23,15 @@ import ValidationRulesAssignmentsList from './ValidationRulesAssignmentsList';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
 import VoucherAssets from './VoucherAssets';
-
 /**
  * The MemberActivityDataRedemptionVoucher model module.
  * @module model/MemberActivityDataRedemptionVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionVoucher {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionVoucher</code>.
-     * @alias module:model/MemberActivityDataRedemptionVoucher
+     * @alias MemberActivityDataRedemptionVoucher
      */
     constructor() { 
         
@@ -50,9 +49,9 @@ class MemberActivityDataRedemptionVoucher {
     /**
      * Constructs a <code>MemberActivityDataRedemptionVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionVoucher} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionVoucher} The populated <code>MemberActivityDataRedemptionVoucher</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionVoucher} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionVoucher} The populated <code>MemberActivityDataRedemptionVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -154,7 +153,7 @@ class MemberActivityDataRedemptionVoucher {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionVoucher</code>.
      */
     static validateJSON(data) {
@@ -278,193 +277,193 @@ class MemberActivityDataRedemptionVoucher {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['code'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucherGift} 
- */
+    * @type {MemberActivityDataRedemptionVoucherGift | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucherLoyaltyCard} 
- */
+    * @type {MemberActivityDataRedemptionVoucherLoyaltyCard | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucher.TypeEnum} 
- */
+    * @type {(keyof typeof MemberActivityDataRedemptionVoucher.TypeEnum) | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['type'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['campaign'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['campaign_id'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['holder_id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['referrer_id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['category_id'] = undefined;
 
 /**
- * Contains details about the category.
- * @member {Array.<module:model/Category>} 
- */
+    * Contains details about the category.
+    * @type {Array.<Category> | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['categories'] = undefined;
 
 /**
- * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher. and A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher. and A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['active'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['created_at'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucherRedemption} 
- */
+    * @type {MemberActivityDataRedemptionVoucherRedemption | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['redemption'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['expiration_date'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher. and The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher. and The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['metadata'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['object'] = undefined;
 
 /**
- * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
- * @member {String} 
- */
+    * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['category'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/MemberActivityDataRedemptionVoucher.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof MemberActivityDataRedemptionVoucher.ValidityDayOfWeekEnum>) | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['validity_hours'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['additional_info'] = undefined;
 
 /**
- * @member {module:model/VoucherAssets} 
- */
+    * @type {VoucherAssets | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['assets'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionVoucherPublish} 
- */
+    * @type {MemberActivityDataRedemptionVoucherPublish | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['publish'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesAssignmentsList} 
- */
+    * @type {ValidationRulesAssignmentsList | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['validation_rules_assignments'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 MemberActivityDataRedemptionVoucher.prototype['holder'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionVoucher['TypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER"
-};
+    MemberActivityDataRedemptionVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER"    
+    };
 
 
 /**

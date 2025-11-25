@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsMetadataSchemaDefinition model module.
  * @module model/ManagementProjectsMetadataSchemaDefinition
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsMetadataSchemaDefinition {
     /**
      * Constructs a new <code>ManagementProjectsMetadataSchemaDefinition</code>.
      * Custom definition name. This is also shown in **Project Settings** &gt; **Metadata Schema** in the Voucherify Dashboard.
-     * @alias module:model/ManagementProjectsMetadataSchemaDefinition
+     * @alias ManagementProjectsMetadataSchemaDefinition
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsMetadataSchemaDefinition {
     /**
      * Constructs a <code>ManagementProjectsMetadataSchemaDefinition</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsMetadataSchemaDefinition} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsMetadataSchemaDefinition} The populated <code>ManagementProjectsMetadataSchemaDefinition</code> instance.
+     * @param {Partial<ManagementProjectsMetadataSchemaDefinition>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsMetadataSchemaDefinition} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsMetadataSchemaDefinition} The populated <code>ManagementProjectsMetadataSchemaDefinition</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -96,7 +95,7 @@ class ManagementProjectsMetadataSchemaDefinition {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsMetadataSchemaDefinition</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsMetadataSchemaDefinition>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsMetadataSchemaDefinition</code>.
      */
     static validateJSON(data) {
@@ -126,147 +125,147 @@ class ManagementProjectsMetadataSchemaDefinition {
 
 
 /**
- * Indicates the type of metadata. Note that `\"geopoint\"` type is a paid feature.
- * @member {module:model/ManagementProjectsMetadataSchemaDefinition.TypeEnum} 
- */
+    * Indicates the type of metadata. Note that `\"geopoint\"` type is a paid feature.
+    * @type {(keyof typeof ManagementProjectsMetadataSchemaDefinition.TypeEnum) | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['type'] = undefined;
 
 /**
- * Indicates if this definition is optional or not for the resource.
- * @member {Boolean} 
- */
+    * Indicates if this definition is optional or not for the resource.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['optional'] = undefined;
 
 /**
- * Indicates if the definition is an array.
- * @member {Boolean} 
- */
+    * Indicates if the definition is an array.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['array'] = undefined;
 
 /**
- * Indicates if the definition has been deleted from the schema.
- * @member {Boolean} 
- */
+    * Indicates if the definition has been deleted from the schema.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['deleted'] = undefined;
 
 /**
- * The name of the custom resource (i.e. a nested object) if the resource has been previously defined. Otherwise, it is `null` for other types.
- * @member {String} 
- */
+    * The name of the custom resource (i.e. a nested object) if the resource has been previously defined. Otherwise, it is `null` for other types.
+    * @type {String | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['object_type'] = undefined;
 
 /**
- * Value indicating the minimum length. Available only for the `string` type.
- * @member {Number} 
- */
+    * Value indicating the minimum length. Available only for the `string` type.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['min_length'] = undefined;
 
 /**
- * Value indicating the maximum length. Available only for the `string` type.
- * @member {Number} 
- */
+    * Value indicating the maximum length. Available only for the `string` type.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['max_length'] = undefined;
 
 /**
- * Value indicating the exact length. Available only for the `string` type.
- * @member {Number} 
- */
+    * Value indicating the exact length. Available only for the `string` type.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['exact_length'] = undefined;
 
 /**
- * @member {Array.<Object>} 
- */
+    * @type {Array.<Object> | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['eq'] = undefined;
 
 /**
- * Array of values that are not allowed. Available only for the `number` type.
- * @member {Array.<Number>} 
- */
+    * Array of values that are not allowed. Available only for the `number` type.
+    * @type {Array.<Number> | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['ne'] = undefined;
 
 /**
- * A property of the `number` type must have `less than` this value. The value should be up to two decimal places.
- * @member {Number} 
- */
+    * A property of the `number` type must have `less than` this value. The value should be up to two decimal places.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['lt'] = undefined;
 
 /**
- * A property of the `number` type must be `less than or equal` to this value. The value should be up to two decimal places.
- * @member {Number} 
- */
+    * A property of the `number` type must be `less than or equal` to this value. The value should be up to two decimal places.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['lte'] = undefined;
 
 /**
- * A property of `number` type must be `greater than` this value. The value should be up to two decimal places.
- * @member {Number} 
- */
+    * A property of `number` type must be `greater than` this value. The value should be up to two decimal places.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['gt'] = undefined;
 
 /**
- * A property of `number` type must be `greater than or equal` to this value. The value should be up to two decimal places.
- * @member {Number} 
- */
+    * A property of `number` type must be `greater than or equal` to this value. The value should be up to two decimal places.
+    * @type {Number | undefined}
+    */
 ManagementProjectsMetadataSchemaDefinition.prototype['gte'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsMetadataSchemaDefinition['TypeEnum'] = {
-
     /**
-     * value: "string"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "string": "string",
-
-    /**
-     * value: "number"
-     * @constant
-     */
-    "number": "number",
-
-    /**
-     * value: "object"
-     * @constant
-     */
-    "object": "object",
-
-    /**
-     * value: "date"
-     * @constant
-     */
-    "date": "date",
-
-    /**
-     * value: "datetime"
-     * @constant
-     */
-    "datetime": "datetime",
-
-    /**
-     * value: "geopoint"
-     * @constant
-     */
-    "geopoint": "geopoint",
-
-    /**
-     * value: "boolean"
-     * @constant
-     */
-    "boolean": "boolean",
-
-    /**
-     * value: "image_url"
-     * @constant
-     */
-    "image_url": "image_url"
-};
+    ManagementProjectsMetadataSchemaDefinition['TypeEnum'] = {
+    
+        /**
+         * value: "string"
+         * @constant
+         */
+        "string": "string",
+    
+        /**
+         * value: "number"
+         * @constant
+         */
+        "number": "number",
+    
+        /**
+         * value: "object"
+         * @constant
+         */
+        "object": "object",
+    
+        /**
+         * value: "date"
+         * @constant
+         */
+        "date": "date",
+    
+        /**
+         * value: "datetime"
+         * @constant
+         */
+        "datetime": "datetime",
+    
+        /**
+         * value: "geopoint"
+         * @constant
+         */
+        "geopoint": "geopoint",
+    
+        /**
+         * value: "boolean"
+         * @constant
+         */
+        "boolean": "boolean",
+    
+        /**
+         * value: "image_url"
+         * @constant
+         */
+        "image_url": "image_url"    
+    };
 
 
 

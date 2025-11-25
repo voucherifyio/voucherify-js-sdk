@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleProductDiscountUnit model module.
  * @module model/SimpleProductDiscountUnit
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleProductDiscountUnit {
     /**
      * Constructs a new <code>SimpleProductDiscountUnit</code>.
-     * @alias module:model/SimpleProductDiscountUnit
+     * @alias SimpleProductDiscountUnit
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SimpleProductDiscountUnit {
     /**
      * Constructs a <code>SimpleProductDiscountUnit</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleProductDiscountUnit} obj Optional instance to populate.
-     * @returns {module:model/SimpleProductDiscountUnit} The populated <code>SimpleProductDiscountUnit</code> instance.
+     * @param {Partial<SimpleProductDiscountUnit>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleProductDiscountUnit} [obj] Optional instance to populate.
+     * @returns {SimpleProductDiscountUnit} The populated <code>SimpleProductDiscountUnit</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class SimpleProductDiscountUnit {
 
     /**
      * Validates the JSON data with respect to <code>SimpleProductDiscountUnit</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleProductDiscountUnit>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleProductDiscountUnit</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class SimpleProductDiscountUnit {
 
 
 /**
- * Unique product ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 SimpleProductDiscountUnit.prototype['id'] = undefined;
 
 /**
- * Product's source ID.
- * @member {String} 
- */
+    * Product's source ID.
+    * @type {String | undefined}
+    */
 SimpleProductDiscountUnit.prototype['source_id'] = undefined;
 
 /**
- * Product name.
- * @member {String} 
- */
+    * Product name.
+    * @type {String | undefined}
+    */
 SimpleProductDiscountUnit.prototype['name'] = undefined;
 
 

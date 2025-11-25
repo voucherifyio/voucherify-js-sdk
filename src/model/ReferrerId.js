@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ReferrerId model module.
  * @module model/ReferrerId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferrerId {
     /**
      * Constructs a new <code>ReferrerId</code>.
-     * @alias module:model/ReferrerId
+     * @alias ReferrerId
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ReferrerId {
     /**
      * Constructs a <code>ReferrerId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferrerId} obj Optional instance to populate.
-     * @returns {module:model/ReferrerId} The populated <code>ReferrerId</code> instance.
+     * @param {Partial<ReferrerId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferrerId} [obj] Optional instance to populate.
+     * @returns {ReferrerId} The populated <code>ReferrerId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ReferrerId {
 
     /**
      * Validates the JSON data with respect to <code>ReferrerId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferrerId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferrerId</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class ReferrerId {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 ReferrerId.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ReferrerId.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ReferrerId.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 ReferrerId.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ReferrerId['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    ReferrerId['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ReferralProgramCustomEvent model module.
  * @module model/ReferralProgramCustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralProgramCustomEvent {
     /**
      * Constructs a new <code>ReferralProgramCustomEvent</code>.
      * Contains details about the custom event.
-     * @alias module:model/ReferralProgramCustomEvent
+     * @alias ReferralProgramCustomEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ReferralProgramCustomEvent {
     /**
      * Constructs a <code>ReferralProgramCustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralProgramCustomEvent} obj Optional instance to populate.
-     * @returns {module:model/ReferralProgramCustomEvent} The populated <code>ReferralProgramCustomEvent</code> instance.
+     * @param {Partial<ReferralProgramCustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralProgramCustomEvent} [obj] Optional instance to populate.
+     * @returns {ReferralProgramCustomEvent} The populated <code>ReferralProgramCustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ReferralProgramCustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>ReferralProgramCustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralProgramCustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralProgramCustomEvent</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class ReferralProgramCustomEvent {
 
 
 /**
- * Unique custom event ID.
- * @member {String} 
- */
+    * Unique custom event ID.
+    * @type {String | undefined}
+    */
 ReferralProgramCustomEvent.prototype['id'] = undefined;
 
 /**
- * Custom event name.
- * @member {String} 
- */
+    * Custom event name.
+    * @type {String | undefined}
+    */
 ReferralProgramCustomEvent.prototype['name'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Discount from './Discount';
-
 /**
  * The PromotionTierAction model module.
  * @module model/PromotionTierAction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierAction {
     /**
      * Constructs a new <code>PromotionTierAction</code>.
      * Contains details about the discount applied by the promotion tier.
-     * @alias module:model/PromotionTierAction
+     * @alias PromotionTierAction
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class PromotionTierAction {
     /**
      * Constructs a <code>PromotionTierAction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierAction} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierAction} The populated <code>PromotionTierAction</code> instance.
+     * @param {Partial<PromotionTierAction>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierAction} [obj] Optional instance to populate.
+     * @returns {PromotionTierAction} The populated <code>PromotionTierAction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class PromotionTierAction {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierAction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierAction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierAction</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class PromotionTierAction {
 
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 PromotionTierAction.prototype['discount'] = undefined;
 
 

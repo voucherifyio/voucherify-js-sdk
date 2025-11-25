@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionVoucherGift model module.
  * @module model/MemberActivityDataRedemptionVoucherGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionVoucherGift {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionVoucherGift</code>.
-     * @alias module:model/MemberActivityDataRedemptionVoucherGift
+     * @alias MemberActivityDataRedemptionVoucherGift
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataRedemptionVoucherGift {
     /**
      * Constructs a <code>MemberActivityDataRedemptionVoucherGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionVoucherGift} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionVoucherGift} The populated <code>MemberActivityDataRedemptionVoucherGift</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionVoucherGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionVoucherGift} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionVoucherGift} The populated <code>MemberActivityDataRedemptionVoucherGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class MemberActivityDataRedemptionVoucherGift {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionVoucherGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionVoucherGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionVoucherGift</code>.
      */
     static validateJSON(data) {
@@ -83,52 +82,52 @@ class MemberActivityDataRedemptionVoucherGift {
 
 
 /**
- * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherGift.prototype['amount'] = undefined;
 
 /**
- * Total amount of subtracted credits over the gift card lifetime. and Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Total amount of subtracted credits over the gift card lifetime. and Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherGift.prototype['subtracted_amount'] = undefined;
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`. `balance` = `amount` - `subtracted_amount` - `redemption.redeemed_amount`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionVoucherGift.prototype['balance'] = undefined;
 
 /**
- * Defines how the credits are applied to the customer's order.
- * @member {module:model/MemberActivityDataRedemptionVoucherGift.EffectEnum} 
- */
+    * Defines how the credits are applied to the customer's order.
+    * @type {(keyof typeof MemberActivityDataRedemptionVoucherGift.EffectEnum) | undefined}
+    */
 MemberActivityDataRedemptionVoucherGift.prototype['effect'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>effect</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionVoucherGift['EffectEnum'] = {
-
     /**
-     * value: "APPLY_TO_ORDER"
-     * @constant
+     * Allowed values for the <code>effect</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLY_TO_ORDER": "APPLY_TO_ORDER",
-
-    /**
-     * value: "APPLY_TO_ITEMS"
-     * @constant
-     */
-    "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"
-};
+    MemberActivityDataRedemptionVoucherGift['EffectEnum'] = {
+    
+        /**
+         * value: "APPLY_TO_ORDER"
+         * @constant
+         */
+        "APPLY_TO_ORDER": "APPLY_TO_ORDER",
+    
+        /**
+         * value: "APPLY_TO_ITEMS"
+         * @constant
+         */
+        "APPLY_TO_ITEMS": "APPLY_TO_ITEMS"    
+    };
 
 
 

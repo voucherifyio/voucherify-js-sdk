@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The FilterConditionsString model module.
  * @module model/FilterConditionsString
- * @version 3.0.0
+ * @version 3.0.1
  */
 class FilterConditionsString {
     /**
      * Constructs a new <code>FilterConditionsString</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/FilterConditionsString
+     * @alias FilterConditionsString
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class FilterConditionsString {
     /**
      * Constructs a <code>FilterConditionsString</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/FilterConditionsString} obj Optional instance to populate.
-     * @returns {module:model/FilterConditionsString} The populated <code>FilterConditionsString</code> instance.
+     * @param {Partial<FilterConditionsString>} data The plain JavaScript object bearing properties of interest.
+     * @param {FilterConditionsString} [obj] Optional instance to populate.
+     * @returns {FilterConditionsString} The populated <code>FilterConditionsString</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class FilterConditionsString {
 
     /**
      * Validates the JSON data with respect to <code>FilterConditionsString</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<FilterConditionsString>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>FilterConditionsString</code>.
      */
     static validateJSON(data) {
@@ -138,63 +137,63 @@ class FilterConditionsString {
 
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<String>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {Array.<String> | undefined}
+    */
 FilterConditionsString.prototype['$in'] = undefined;
 
 /**
- * Array of resource values that should be included in the results (multiple values).
- * @member {Array.<String>} 
- */
+    * Array of resource values that should be included in the results (multiple values).
+    * @type {Array.<String> | undefined}
+    */
 FilterConditionsString.prototype['$not_in'] = undefined;
 
 /**
- * Value is exactly this value (single value).
- * @member {String} 
- */
+    * Value is exactly this value (single value).
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$is'] = undefined;
 
 /**
- * Results omit this value (single value).
- * @member {String} 
- */
+    * Results omit this value (single value).
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$is_not'] = undefined;
 
 /**
- * Value is NOT null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is NOT null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$has_value'] = undefined;
 
 /**
- * Value is null. The value for this parameter is an empty string.
- * @member {String} 
- */
+    * Value is null. The value for this parameter is an empty string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$is_unknown'] = undefined;
 
 /**
- * Value starts with the specified string.
- * @member {String} 
- */
+    * Value starts with the specified string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$starts_with'] = undefined;
 
 /**
- * Value ends with the specified string.
- * @member {String} 
- */
+    * Value ends with the specified string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$ends_with'] = undefined;
 
 /**
- * Value includes the specified string.
- * @member {String} 
- */
+    * Value includes the specified string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$contains'] = undefined;
 
 /**
- * Value does NOT include the specified string.
- * @member {String} 
- */
+    * Value does NOT include the specified string.
+    * @type {String | undefined}
+    */
 FilterConditionsString.prototype['$not_contain'] = undefined;
 
 

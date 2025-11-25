@@ -16,16 +16,15 @@ import ManagementProjectsBrandingUpdateRequestBodyAddress from './ManagementProj
 import ManagementProjectsBrandingUpdateRequestBodyBrand from './ManagementProjectsBrandingUpdateRequestBodyBrand';
 import ManagementProjectsBrandingUpdateRequestBodyCockpits from './ManagementProjectsBrandingUpdateRequestBodyCockpits';
 import ManagementProjectsBrandingUpdateRequestBodyContact from './ManagementProjectsBrandingUpdateRequestBodyContact';
-
 /**
  * The ManagementProjectsBrandingUpdateRequestBody model module.
  * @module model/ManagementProjectsBrandingUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateRequestBody</code>.
-     * @alias module:model/ManagementProjectsBrandingUpdateRequestBody
+     * @alias ManagementProjectsBrandingUpdateRequestBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsBrandingUpdateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateRequestBody} The populated <code>ManagementProjectsBrandingUpdateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateRequestBody} The populated <code>ManagementProjectsBrandingUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -99,23 +98,23 @@ class ManagementProjectsBrandingUpdateRequestBody {
 
 
 /**
- * @member {module:model/ManagementProjectsBrandingUpdateRequestBodyBrand} 
- */
+    * @type {ManagementProjectsBrandingUpdateRequestBodyBrand | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBody.prototype['brand'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingUpdateRequestBodyAddress} 
- */
+    * @type {ManagementProjectsBrandingUpdateRequestBodyAddress | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBody.prototype['address'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingUpdateRequestBodyContact} 
- */
+    * @type {ManagementProjectsBrandingUpdateRequestBodyContact | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBody.prototype['contact'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits} 
- */
+    * @type {ManagementProjectsBrandingUpdateRequestBodyCockpits | undefined}
+    */
 ManagementProjectsBrandingUpdateRequestBody.prototype['cockpits'] = undefined;
 
 

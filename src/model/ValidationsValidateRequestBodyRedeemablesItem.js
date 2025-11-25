@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import ValidationsValidateRequestBodyRedeemablesItemGift from './ValidationsValidateRequestBodyRedeemablesItemGift';
 import ValidationsValidateRequestBodyRedeemablesItemReward from './ValidationsValidateRequestBodyRedeemablesItemReward';
-
 /**
  * The ValidationsValidateRequestBodyRedeemablesItem model module.
  * @module model/ValidationsValidateRequestBodyRedeemablesItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateRequestBodyRedeemablesItem {
     /**
      * Constructs a new <code>ValidationsValidateRequestBodyRedeemablesItem</code>.
-     * @alias module:model/ValidationsValidateRequestBodyRedeemablesItem
+     * @alias ValidationsValidateRequestBodyRedeemablesItem
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ValidationsValidateRequestBodyRedeemablesItem {
     /**
      * Constructs a <code>ValidationsValidateRequestBodyRedeemablesItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateRequestBodyRedeemablesItem} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateRequestBodyRedeemablesItem} The populated <code>ValidationsValidateRequestBodyRedeemablesItem</code> instance.
+     * @param {Partial<ValidationsValidateRequestBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateRequestBodyRedeemablesItem} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateRequestBodyRedeemablesItem} The populated <code>ValidationsValidateRequestBodyRedeemablesItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class ValidationsValidateRequestBodyRedeemablesItem {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateRequestBodyRedeemablesItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateRequestBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateRequestBodyRedeemablesItem</code>.
      */
     static validateJSON(data) {
@@ -97,54 +96,54 @@ class ValidationsValidateRequestBodyRedeemablesItem {
 
 
 /**
- * @member {module:model/ValidationsValidateRequestBodyRedeemablesItem.ObjectEnum} 
- */
+    * @type {(keyof typeof ValidationsValidateRequestBodyRedeemablesItem.ObjectEnum) | undefined}
+    */
 ValidationsValidateRequestBodyRedeemablesItem.prototype['object'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ValidationsValidateRequestBodyRedeemablesItem.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateRequestBodyRedeemablesItemGift} 
- */
+    * @type {ValidationsValidateRequestBodyRedeemablesItemGift | undefined}
+    */
 ValidationsValidateRequestBodyRedeemablesItem.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateRequestBodyRedeemablesItemReward} 
- */
+    * @type {ValidationsValidateRequestBodyRedeemablesItemReward | undefined}
+    */
 ValidationsValidateRequestBodyRedeemablesItem.prototype['reward'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsValidateRequestBodyRedeemablesItem['ObjectEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "promotion_stack"
-     * @constant
-     */
-    "promotion_stack": "promotion_stack"
-};
+    ValidationsValidateRequestBodyRedeemablesItem['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack"    
+    };
 
 
 

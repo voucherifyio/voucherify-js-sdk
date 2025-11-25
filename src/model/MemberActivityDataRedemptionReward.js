@@ -17,16 +17,15 @@ import MemberActivityDataRedemptionRewardParameters from './MemberActivityDataRe
 import MemberActivityDataRedemptionRewardProduct from './MemberActivityDataRedemptionRewardProduct';
 import MemberActivityDataRedemptionRewardSku from './MemberActivityDataRedemptionRewardSku';
 import MemberActivityDataRedemptionRewardVoucher from './MemberActivityDataRedemptionRewardVoucher';
-
 /**
  * The MemberActivityDataRedemptionReward model module.
  * @module model/MemberActivityDataRedemptionReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionReward {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionReward</code>.
-     * @alias module:model/MemberActivityDataRedemptionReward
+     * @alias MemberActivityDataRedemptionReward
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class MemberActivityDataRedemptionReward {
     /**
      * Constructs a <code>MemberActivityDataRedemptionReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionReward} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionReward} The populated <code>MemberActivityDataRedemptionReward</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionReward} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionReward} The populated <code>MemberActivityDataRedemptionReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -101,7 +100,7 @@ class MemberActivityDataRedemptionReward {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionReward</code>.
      */
     static validateJSON(data) {
@@ -167,124 +166,124 @@ class MemberActivityDataRedemptionReward {
 
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardCustomer} 
- */
+    * @type {MemberActivityDataRedemptionRewardCustomer | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['customer'] = undefined;
 
 /**
- * Unique reward assignment ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['assignment_id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardVoucher} 
- */
+    * @type {MemberActivityDataRedemptionRewardVoucher | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardProduct} 
- */
+    * @type {MemberActivityDataRedemptionRewardProduct | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['product'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardSku} 
- */
+    * @type {MemberActivityDataRedemptionRewardSku | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['sku'] = undefined;
 
 /**
- * Unique loyalty tier ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique loyalty tier ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['loyalty_tier_id'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionReward.ObjectEnum} 
- * @default 'reward'
- */
+    * @type {(keyof typeof MemberActivityDataRedemptionReward.ObjectEnum) | undefined}
+    * @default 'reward'
+    */
 MemberActivityDataRedemptionReward.prototype['object'] = 'reward';
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['name'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['created_at'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataRedemptionRewardParameters} 
- */
+    * @type {MemberActivityDataRedemptionRewardParameters | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['parameters'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward.
+    * @type {Object | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['metadata'] = undefined;
 
 /**
- * Reward type.
- * @member {module:model/MemberActivityDataRedemptionReward.TypeEnum} 
- */
+    * Reward type.
+    * @type {(keyof typeof MemberActivityDataRedemptionReward.TypeEnum) | undefined}
+    */
 MemberActivityDataRedemptionReward.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionReward['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataRedemptionReward['ObjectEnum'] = {
+    
+        /**
+         * value: "reward"
+         * @constant
+         */
+        "reward": "reward"    
+    };
+
 
     /**
-     * value: "reward"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward": "reward"
-};
-
-
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionReward['TypeEnum'] = {
-
-    /**
-     * value: "CAMPAIGN"
-     * @constant
-     */
-    "CAMPAIGN": "CAMPAIGN",
-
-    /**
-     * value: "COIN"
-     * @constant
-     */
-    "COIN": "COIN",
-
-    /**
-     * value: "MATERIAL"
-     * @constant
-     */
-    "MATERIAL": "MATERIAL"
-};
+    MemberActivityDataRedemptionReward['TypeEnum'] = {
+    
+        /**
+         * value: "CAMPAIGN"
+         * @constant
+         */
+        "CAMPAIGN": "CAMPAIGN",
+    
+        /**
+         * value: "COIN"
+         * @constant
+         */
+        "COIN": "COIN",
+    
+        /**
+         * value: "MATERIAL"
+         * @constant
+         */
+        "MATERIAL": "MATERIAL"    
+    };
 
 
 

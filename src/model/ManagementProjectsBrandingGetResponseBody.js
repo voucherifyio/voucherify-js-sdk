@@ -16,17 +16,16 @@ import ManagementProjectsBrandingGetResponseBodyAddress from './ManagementProjec
 import ManagementProjectsBrandingGetResponseBodyBrand from './ManagementProjectsBrandingGetResponseBodyBrand';
 import ManagementProjectsBrandingGetResponseBodyCockpits from './ManagementProjectsBrandingGetResponseBodyCockpits';
 import ManagementProjectsBrandingGetResponseBodyContact from './ManagementProjectsBrandingGetResponseBodyContact';
-
 /**
  * The ManagementProjectsBrandingGetResponseBody model module.
  * @module model/ManagementProjectsBrandingGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingGetResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsBrandingGetResponseBody</code>.
      * Response body schema for **GET** &#x60;/management/v1/projects/{projectId}/branding/{brandingId}&#x60;.
-     * @alias module:model/ManagementProjectsBrandingGetResponseBody
+     * @alias ManagementProjectsBrandingGetResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsBrandingGetResponseBody {
     /**
      * Constructs a <code>ManagementProjectsBrandingGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingGetResponseBody} The populated <code>ManagementProjectsBrandingGetResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingGetResponseBody} The populated <code>ManagementProjectsBrandingGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class ManagementProjectsBrandingGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -107,29 +106,29 @@ class ManagementProjectsBrandingGetResponseBody {
 
 
 /**
- * Unique identifier of the brand configuration.
- * @member {String} 
- */
+    * Unique identifier of the brand configuration.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingGetResponseBody.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingGetResponseBodyBrand} 
- */
+    * @type {ManagementProjectsBrandingGetResponseBodyBrand | undefined}
+    */
 ManagementProjectsBrandingGetResponseBody.prototype['brand'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingGetResponseBodyAddress} 
- */
+    * @type {ManagementProjectsBrandingGetResponseBodyAddress | undefined}
+    */
 ManagementProjectsBrandingGetResponseBody.prototype['address'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingGetResponseBodyContact} 
- */
+    * @type {ManagementProjectsBrandingGetResponseBodyContact | undefined}
+    */
 ManagementProjectsBrandingGetResponseBody.prototype['contact'] = undefined;
 
 /**
- * @member {module:model/ManagementProjectsBrandingGetResponseBodyCockpits} 
- */
+    * @type {ManagementProjectsBrandingGetResponseBodyCockpits | undefined}
+    */
 ManagementProjectsBrandingGetResponseBody.prototype['cockpits'] = undefined;
 
 

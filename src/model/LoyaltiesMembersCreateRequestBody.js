@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import Customer from './Customer';
-
 /**
  * The LoyaltiesMembersCreateRequestBody model module.
  * @module model/LoyaltiesMembersCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersCreateRequestBody {
     /**
      * Constructs a new <code>LoyaltiesMembersCreateRequestBody</code>.
      * Request body schema for assigning a loyalty card to a customer using **POST** &#x60;/loyalties/{campaignId}/members&#x60;.
-     * @alias module:model/LoyaltiesMembersCreateRequestBody
+     * @alias LoyaltiesMembersCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersCreateRequestBody {
     /**
      * Constructs a <code>LoyaltiesMembersCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersCreateRequestBody} The populated <code>LoyaltiesMembersCreateRequestBody</code> instance.
+     * @param {Partial<LoyaltiesMembersCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersCreateRequestBody} The populated <code>LoyaltiesMembersCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class LoyaltiesMembersCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -100,32 +99,32 @@ class LoyaltiesMembersCreateRequestBody {
 
 
 /**
- * Code of voucher being published.
- * @member {String} 
- */
+    * Code of voucher being published.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersCreateRequestBody.prototype['voucher'] = undefined;
 
 /**
- * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
- * @member {String} 
- */
+    * The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersCreateRequestBody.prototype['source_id'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 LoyaltiesMembersCreateRequestBody.prototype['customer'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltiesMembersCreateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Specify the distribution channel.
- * @member {String} 
- */
+    * Specify the distribution channel.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersCreateRequestBody.prototype['channel'] = undefined;
 
 

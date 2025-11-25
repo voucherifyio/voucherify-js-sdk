@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem model module.
  * @module model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code>.
-     * @alias module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem
+     * @alias RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem} The populated <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem} The populated <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem</code>.
      */
     static validateJSON(data) {
@@ -84,46 +83,46 @@ class RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem {
 
 
 /**
- * Unique rollback redemption ID.
- * @member {String} 
- */
+    * Unique rollback redemption ID.
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.prototype['date'] = undefined;
 
 /**
- * Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values. This is returned only in GET `v1/redemptions/` and GET `v1/redemptions/{redemptionId}` endpoints.
- * @member {module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.RollbackOrderModeEnum} 
- */
+    * Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values. This is returned only in GET `v1/redemptions/` and GET `v1/redemptions/{redemptionId}` endpoints.
+    * @type {(keyof typeof RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.RollbackOrderModeEnum) | undefined}
+    */
 RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.prototype['rollback_order_mode'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>rollback_order_mode</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem['RollbackOrderModeEnum'] = {
-
     /**
-     * value: "WITH_ORDER"
-     * @constant
+     * Allowed values for the <code>rollback_order_mode</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "WITH_ORDER": "WITH_ORDER",
-
-    /**
-     * value: "WITHOUT_ORDER"
-     * @constant
-     */
-    "WITHOUT_ORDER": "WITHOUT_ORDER"
-};
+    RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem['RollbackOrderModeEnum'] = {
+    
+        /**
+         * value: "WITH_ORDER"
+         * @constant
+         */
+        "WITH_ORDER": "WITH_ORDER",
+    
+        /**
+         * value: "WITHOUT_ORDER"
+         * @constant
+         */
+        "WITHOUT_ORDER": "WITHOUT_ORDER"    
+    };
 
 
 

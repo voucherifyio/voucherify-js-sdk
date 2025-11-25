@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CreatePublicationCampaign model module.
  * @module model/CreatePublicationCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CreatePublicationCampaign {
     /**
      * Constructs a new <code>CreatePublicationCampaign</code>.
      * Create publication with campaign.
-     * @alias module:model/CreatePublicationCampaign
+     * @alias CreatePublicationCampaign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CreatePublicationCampaign {
     /**
      * Constructs a <code>CreatePublicationCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CreatePublicationCampaign} obj Optional instance to populate.
-     * @returns {module:model/CreatePublicationCampaign} The populated <code>CreatePublicationCampaign</code> instance.
+     * @param {Partial<CreatePublicationCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {CreatePublicationCampaign} [obj] Optional instance to populate.
+     * @returns {CreatePublicationCampaign} The populated <code>CreatePublicationCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CreatePublicationCampaign {
 
     /**
      * Validates the JSON data with respect to <code>CreatePublicationCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CreatePublicationCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CreatePublicationCampaign</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class CreatePublicationCampaign {
 
 
 /**
- * Name of voucher's parent campaign or unique campaign ID that was assigned by Voucherify.
- * @member {String} 
- */
+    * Name of voucher's parent campaign or unique campaign ID that was assigned by Voucherify.
+    * @type {String | undefined}
+    */
 CreatePublicationCampaign.prototype['name'] = undefined;
 
 /**
- * Number of vouchers to be published to customer.
- * @member {Number} 
- */
+    * Number of vouchers to be published to customer.
+    * @type {Number | undefined}
+    */
 CreatePublicationCampaign.prototype['count'] = undefined;
 
 

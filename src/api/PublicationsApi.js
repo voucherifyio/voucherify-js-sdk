@@ -26,13 +26,13 @@ import PublicationsListResponseBody from '../model/PublicationsListResponseBody'
 /**
 * Publications service.
 * @module api/PublicationsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class PublicationsApi {
 
     /**
     * Constructs a new PublicationsApi. 
-    * @alias module:api/PublicationsApi
+    * @alias PublicationsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -44,21 +44,22 @@ export default class PublicationsApi {
 
     /**
      * Callback function to receive the result of the createPublication operation.
-     * @callback module:api/PublicationsApi~createPublicationCallback
+     * @callback createPublicationCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PublicationsCreateResponseBody} [data] The data returned by the service call.
+     * @param {PublicationsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Publication
      * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish.    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.
-     * @param {module:model/PublicationsCreateRequestBody} publicationsCreateRequestBody Specify the publication parameters.
+     * @param {PublicationsCreateRequestBody} publicationsCreateRequestBody Specify the publication parameters.
      * @param {{
         joinOnce?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/PublicationsApi~createPublicationCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PublicationsCreateResponseBody}
+     * @param {createPublicationCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PublicationsCreateResponseBody}
+     * @returns {Promise<(PublicationsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PublicationsCreateResponseBody` object or with `undefined`.
      */
     createPublication(publicationsCreateRequestBody, opts, callback) {
       opts = opts || {};
@@ -88,25 +89,26 @@ export default class PublicationsApi {
 
     /**
      * Callback function to receive the result of the createPublication1 operation.
-     * @callback module:api/PublicationsApi~createPublication1Callback
+     * @callback createPublication1Callback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PublicationsCreateResponseBody} [data] The data returned by the service call.
+     * @param {PublicationsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Publication with GET
      * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.  ❗️ Limited access  Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &rarr; **Project Settings** &rarr; **General** &rarr; **Integration Keys** to set up a pair of API keys and use them to send the request.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication).    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.   # Example Request      ❗️ Required    Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped.
-     * @param {module:model/Customer} customer Contains information about the customer to whom the publication was directed.
+     * @param {Customer} customer Contains information about the customer to whom the publication was directed.
      * @param {{
         joinOnce?: Boolean,
         voucher?: String,
-        campaign?: module:model/CreatePublicationCampaign,
+        campaign?: CreatePublicationCampaign,
         sourceId?: String,
         metadata?: Object.<String, Object>,
      }} [opts] Optional parameters
-     * @param {module:api/PublicationsApi~createPublication1Callback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PublicationsCreateResponseBody}
+     * @param {createPublication1Callback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PublicationsCreateResponseBody}
+     * @returns {Promise<(PublicationsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PublicationsCreateResponseBody` object or with `undefined`.
      */
     createPublication1(customer, opts, callback) {
       opts = opts || {};
@@ -141,9 +143,9 @@ export default class PublicationsApi {
 
     /**
      * Callback function to receive the result of the listPublications operation.
-     * @callback module:api/PublicationsApi~listPublicationsCallback
+     * @callback listPublicationsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/PublicationsListResponseBody} [data] The data returned by the service call.
+     * @param {PublicationsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -153,18 +155,19 @@ export default class PublicationsApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListPublications,
+        order?: Exclude<keyof typeof ParameterOrderListPublications, "prototype" | "constructFromObject">,
         campaign?: String,
         customer?: String,
         voucher?: String,
-        result?: module:model/ParameterResultListPublications,
-        voucherType?: module:model/ParameterVoucherTypeListPublications,
+        result?: Exclude<keyof typeof ParameterResultListPublications, "prototype" | "constructFromObject">,
+        voucherType?: Exclude<keyof typeof ParameterVoucherTypeListPublications, "prototype" | "constructFromObject">,
         isReferralCode?: Boolean,
-        filters?: module:model/ParameterFiltersListPublications,
+        filters?: ParameterFiltersListPublications,
         sourceId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/PublicationsApi~listPublicationsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PublicationsListResponseBody}
+     * @param {listPublicationsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link PublicationsListResponseBody}
+     * @returns {Promise<(PublicationsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `PublicationsListResponseBody` object or with `undefined`.
      */
     listPublications(opts, callback) {
       opts = opts || {};

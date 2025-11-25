@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsImportVoucherItemRedemption model module.
  * @module model/CampaignsImportVoucherItemRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsImportVoucherItemRedemption {
     /**
      * Constructs a new <code>CampaignsImportVoucherItemRedemption</code>.
-     * @alias module:model/CampaignsImportVoucherItemRedemption
+     * @alias CampaignsImportVoucherItemRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class CampaignsImportVoucherItemRedemption {
     /**
      * Constructs a <code>CampaignsImportVoucherItemRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsImportVoucherItemRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignsImportVoucherItemRedemption} The populated <code>CampaignsImportVoucherItemRedemption</code> instance.
+     * @param {Partial<CampaignsImportVoucherItemRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsImportVoucherItemRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignsImportVoucherItemRedemption} The populated <code>CampaignsImportVoucherItemRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class CampaignsImportVoucherItemRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsImportVoucherItemRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsImportVoucherItemRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsImportVoucherItemRedemption</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class CampaignsImportVoucherItemRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignsImportVoucherItemRedemption.prototype['quantity'] = undefined;
 
 

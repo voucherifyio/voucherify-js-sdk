@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ManagementProjectsUpdateResponseBodyLimitsApiCallsItem from './ManagementProjectsUpdateResponseBodyLimitsApiCallsItem';
 import ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem from './ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem';
-
 /**
  * The ManagementProjectsUpdateResponseBodyLimits model module.
  * @module model/ManagementProjectsUpdateResponseBodyLimits
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUpdateResponseBodyLimits {
     /**
      * Constructs a new <code>ManagementProjectsUpdateResponseBodyLimits</code>.
      * Determines additional limits set on a given project, e.g. the Sandbox project. If no limits are returned, the limits set for the whole organization apply.
-     * @alias module:model/ManagementProjectsUpdateResponseBodyLimits
+     * @alias ManagementProjectsUpdateResponseBodyLimits
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsUpdateResponseBodyLimits {
     /**
      * Constructs a <code>ManagementProjectsUpdateResponseBodyLimits</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUpdateResponseBodyLimits} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUpdateResponseBodyLimits} The populated <code>ManagementProjectsUpdateResponseBodyLimits</code> instance.
+     * @param {Partial<ManagementProjectsUpdateResponseBodyLimits>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUpdateResponseBodyLimits} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUpdateResponseBodyLimits} The populated <code>ManagementProjectsUpdateResponseBodyLimits</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ManagementProjectsUpdateResponseBodyLimits {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUpdateResponseBodyLimits</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUpdateResponseBodyLimits>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUpdateResponseBodyLimits</code>.
      */
     static validateJSON(data) {
@@ -96,13 +95,13 @@ class ManagementProjectsUpdateResponseBodyLimits {
 
 
 /**
- * @member {Array.<module:model/ManagementProjectsUpdateResponseBodyLimitsApiCallsItem>} 
- */
+    * @type {Array.<ManagementProjectsUpdateResponseBodyLimitsApiCallsItem> | undefined}
+    */
 ManagementProjectsUpdateResponseBodyLimits.prototype['api_calls'] = undefined;
 
 /**
- * @member {Array.<module:model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem>} 
- */
+    * @type {Array.<ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem> | undefined}
+    */
 ManagementProjectsUpdateResponseBodyLimits.prototype['bulk_api_calls'] = undefined;
 
 

@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import LoyaltyTierBasePoints from './LoyaltyTierBasePoints';
 import MappingPoints from './MappingPoints';
-
 /**
  * The LoyaltyTierBase model module.
  * @module model/LoyaltyTierBase
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTierBase {
     /**
      * Constructs a new <code>LoyaltyTierBase</code>.
-     * @alias module:model/LoyaltyTierBase
+     * @alias LoyaltyTierBase
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyTierBase {
     /**
      * Constructs a <code>LoyaltyTierBase</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTierBase} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTierBase} The populated <code>LoyaltyTierBase</code> instance.
+     * @param {Partial<LoyaltyTierBase>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTierBase} [obj] Optional instance to populate.
+     * @returns {LoyaltyTierBase} The populated <code>LoyaltyTierBase</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class LoyaltyTierBase {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTierBase</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTierBase>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTierBase</code>.
      */
     static validateJSON(data) {
@@ -89,26 +88,26 @@ class LoyaltyTierBase {
 
 
 /**
- * Loyalty Tier name.
- * @member {String} 
- */
+    * Loyalty Tier name.
+    * @type {String | undefined}
+    */
 LoyaltyTierBase.prototype['name'] = undefined;
 
 /**
- * Contains a list of earning rule IDs and their points mapping for the given earning rule.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of earning rule IDs and their points mapping for the given earning rule.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltyTierBase.prototype['earning_rules'] = undefined;
 
 /**
- * Contains a list of reward IDs and their points mapping for the given reward.
- * @member {Object.<String, module:model/MappingPoints>} 
- */
+    * Contains a list of reward IDs and their points mapping for the given reward.
+    * @type {Object.<String, MappingPoints> | undefined}
+    */
 LoyaltyTierBase.prototype['rewards'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTierBasePoints} 
- */
+    * @type {LoyaltyTierBasePoints | undefined}
+    */
 LoyaltyTierBase.prototype['points'] = undefined;
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemGift model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemGift {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemGift</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemGift
+     * @alias RedemptionsListResponseBodyRedemptionsItemGift
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsListResponseBodyRedemptionsItemGift {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemGift} The populated <code>RedemptionsListResponseBodyRedemptionsItemGift</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemGift} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemGift} The populated <code>RedemptionsListResponseBodyRedemptionsItemGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class RedemptionsListResponseBodyRedemptionsItemGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemGift</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class RedemptionsListResponseBodyRedemptionsItemGift {
 
 
 /**
- * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00). and Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
- * @member {Number} 
- */
+    * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00). and Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemGift.prototype['amount'] = undefined;
 
 

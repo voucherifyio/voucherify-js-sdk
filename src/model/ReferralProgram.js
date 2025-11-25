@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ReferralProgramCustomEvent from './ReferralProgramCustomEvent';
 import ReferralProgramRefereeReward from './ReferralProgramRefereeReward';
-
 /**
  * The ReferralProgram model module.
  * @module model/ReferralProgram
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ReferralProgram {
     /**
      * Constructs a new <code>ReferralProgram</code>.
      * Defines the referee reward and the way a referral is triggered. Context: &#x60;REFERRAL_PROGRAM&#x60;.
-     * @alias module:model/ReferralProgram
+     * @alias ReferralProgram
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ReferralProgram {
     /**
      * Constructs a <code>ReferralProgram</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ReferralProgram} obj Optional instance to populate.
-     * @returns {module:model/ReferralProgram} The populated <code>ReferralProgram</code> instance.
+     * @param {Partial<ReferralProgram>} data The plain JavaScript object bearing properties of interest.
+     * @param {ReferralProgram} [obj] Optional instance to populate.
+     * @returns {ReferralProgram} The populated <code>ReferralProgram</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class ReferralProgram {
 
     /**
      * Validates the JSON data with respect to <code>ReferralProgram</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ReferralProgram>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ReferralProgram</code>.
      */
     static validateJSON(data) {
@@ -91,44 +90,44 @@ class ReferralProgram {
 
 
 /**
- * Define how a referral is triggered.
- * @member {module:model/ReferralProgram.ConversionEventTypeEnum} 
- */
+    * Define how a referral is triggered.
+    * @type {(keyof typeof ReferralProgram.ConversionEventTypeEnum) | undefined}
+    */
 ReferralProgram.prototype['conversion_event_type'] = undefined;
 
 /**
- * @member {module:model/ReferralProgramCustomEvent} 
- */
+    * @type {ReferralProgramCustomEvent | undefined}
+    */
 ReferralProgram.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/ReferralProgramRefereeReward} 
- */
+    * @type {ReferralProgramRefereeReward | undefined}
+    */
 ReferralProgram.prototype['referee_reward'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>conversion_event_type</code> property.
- * @enum {String}
- * @readonly
- */
-ReferralProgram['ConversionEventTypeEnum'] = {
-
     /**
-     * value: "redemption"
-     * @constant
+     * Allowed values for the <code>conversion_event_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "redemption": "redemption",
-
-    /**
-     * value: "custom_event"
-     * @constant
-     */
-    "custom_event": "custom_event"
-};
+    ReferralProgram['ConversionEventTypeEnum'] = {
+    
+        /**
+         * value: "redemption"
+         * @constant
+         */
+        "redemption": "redemption",
+    
+        /**
+         * value: "custom_event"
+         * @constant
+         */
+        "custom_event": "custom_event"    
+    };
 
 
 

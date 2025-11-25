@@ -16,17 +16,16 @@ import Redemption from './Redemption';
 import RedemptionsRedeemResponseBodyOrder from './RedemptionsRedeemResponseBodyOrder';
 import ValidationsRedeemableInapplicable from './ValidationsRedeemableInapplicable';
 import ValidationsRedeemableSkipped from './ValidationsRedeemableSkipped';
-
 /**
  * The RedemptionsRedeemResponseBody model module.
  * @module model/RedemptionsRedeemResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRedeemResponseBody {
     /**
      * Constructs a new <code>RedemptionsRedeemResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/redemptions&#x60;.
-     * @alias module:model/RedemptionsRedeemResponseBody
+     * @alias RedemptionsRedeemResponseBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class RedemptionsRedeemResponseBody {
     /**
      * Constructs a <code>RedemptionsRedeemResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRedeemResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRedeemResponseBody} The populated <code>RedemptionsRedeemResponseBody</code> instance.
+     * @param {Partial<RedemptionsRedeemResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRedeemResponseBody} [obj] Optional instance to populate.
+     * @returns {RedemptionsRedeemResponseBody} The populated <code>RedemptionsRedeemResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class RedemptionsRedeemResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRedeemResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRedeemResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRedeemResponseBody</code>.
      */
     static validateJSON(data) {
@@ -125,30 +124,30 @@ class RedemptionsRedeemResponseBody {
 
 
 /**
- * @member {Array.<module:model/Redemption>} 
- */
+    * @type {Array.<Redemption> | undefined}
+    */
 RedemptionsRedeemResponseBody.prototype['redemptions'] = undefined;
 
 /**
- * @member {module:model/Redemption} 
- */
+    * @type {Redemption | undefined}
+    */
 RedemptionsRedeemResponseBody.prototype['parent_redemption'] = undefined;
 
 /**
- * @member {module:model/RedemptionsRedeemResponseBodyOrder} 
- */
+    * @type {RedemptionsRedeemResponseBodyOrder | undefined}
+    */
 RedemptionsRedeemResponseBody.prototype['order'] = undefined;
 
 /**
- * Lists validation results of each inapplicable redeemable.
- * @member {Array.<module:model/ValidationsRedeemableInapplicable>} 
- */
+    * Lists validation results of each inapplicable redeemable.
+    * @type {Array.<ValidationsRedeemableInapplicable> | undefined}
+    */
 RedemptionsRedeemResponseBody.prototype['inapplicable_redeemables'] = undefined;
 
 /**
- * Lists validation results of each redeemable. If a redeemable can be applied, the API returns `\"status\": \"APPLICABLE\"`.
- * @member {Array.<module:model/ValidationsRedeemableSkipped>} 
- */
+    * Lists validation results of each redeemable. If a redeemable can be applied, the API returns `\"status\": \"APPLICABLE\"`.
+    * @type {Array.<ValidationsRedeemableSkipped> | undefined}
+    */
 RedemptionsRedeemResponseBody.prototype['skipped_redeemables'] = undefined;
 
 

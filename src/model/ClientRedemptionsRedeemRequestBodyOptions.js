@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientRedemptionsRedeemRequestBodyOptions model module.
  * @module model/ClientRedemptionsRedeemRequestBodyOptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientRedemptionsRedeemRequestBodyOptions {
     /**
      * Constructs a new <code>ClientRedemptionsRedeemRequestBodyOptions</code>.
      * Configure parameters returned in the response.
-     * @alias module:model/ClientRedemptionsRedeemRequestBodyOptions
+     * @alias ClientRedemptionsRedeemRequestBodyOptions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ClientRedemptionsRedeemRequestBodyOptions {
     /**
      * Constructs a <code>ClientRedemptionsRedeemRequestBodyOptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientRedemptionsRedeemRequestBodyOptions} obj Optional instance to populate.
-     * @returns {module:model/ClientRedemptionsRedeemRequestBodyOptions} The populated <code>ClientRedemptionsRedeemRequestBodyOptions</code> instance.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientRedemptionsRedeemRequestBodyOptions} [obj] Optional instance to populate.
+     * @returns {ClientRedemptionsRedeemRequestBodyOptions} The populated <code>ClientRedemptionsRedeemRequestBodyOptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ClientRedemptionsRedeemRequestBodyOptions {
 
     /**
      * Validates the JSON data with respect to <code>ClientRedemptionsRedeemRequestBodyOptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientRedemptionsRedeemRequestBodyOptions</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ClientRedemptionsRedeemRequestBodyOptions {
 
 
 /**
- * Expand array lets you configure params included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"redeemable\", \"redemption\", \"category\"] | - Returns each discount type's `metadata` in each child redemption object.<br />- Returns redemption object `metadata`.<br />- Returns an expanded `categories` object, showing details about the category. |
- * @member {Array.<module:model/ClientRedemptionsRedeemRequestBodyOptions.ExpandEnum>} 
- */
+    * Expand array lets you configure params included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"redeemable\", \"redemption\", \"category\"] | - Returns each discount type's `metadata` in each child redemption object.<br />- Returns redemption object `metadata`.<br />- Returns an expanded `categories` object, showing details about the category. |
+    * @type {(Array<keyof typeof ClientRedemptionsRedeemRequestBodyOptions.ExpandEnum>) | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyOptions.prototype['expand'] = undefined;
 
 

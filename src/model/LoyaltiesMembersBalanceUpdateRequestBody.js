@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PointsExpirationTypes from './PointsExpirationTypes';
-
 /**
  * The LoyaltiesMembersBalanceUpdateRequestBody model module.
  * @module model/LoyaltiesMembersBalanceUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersBalanceUpdateRequestBody {
     /**
      * Constructs a new <code>LoyaltiesMembersBalanceUpdateRequestBody</code>.
      * Request Body schema for **POST** &#x60;v1/loyalties/members/{memberId}/balance&#x60; and **POST** &#x60;v1/loyalties/{campaignId}/members/{memberId}/balance&#x60;.
-     * @alias module:model/LoyaltiesMembersBalanceUpdateRequestBody
+     * @alias LoyaltiesMembersBalanceUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersBalanceUpdateRequestBody {
     /**
      * Constructs a <code>LoyaltiesMembersBalanceUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersBalanceUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersBalanceUpdateRequestBody} The populated <code>LoyaltiesMembersBalanceUpdateRequestBody</code> instance.
+     * @param {Partial<LoyaltiesMembersBalanceUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersBalanceUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersBalanceUpdateRequestBody} The populated <code>LoyaltiesMembersBalanceUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class LoyaltiesMembersBalanceUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersBalanceUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersBalanceUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersBalanceUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -92,32 +91,32 @@ class LoyaltiesMembersBalanceUpdateRequestBody {
 
 
 /**
- * Incremental balance to be added to/subtracted from the loyalty card.  - To add points: 100 - To subtract points, add a minus: -100
- * @member {Number} 
- */
+    * Incremental balance to be added to/subtracted from the loyalty card.  - To add points: 100 - To subtract points, add a minus: -100
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersBalanceUpdateRequestBody.prototype['points'] = undefined;
 
 /**
- * @member {module:model/PointsExpirationTypes} 
- */
+    * @type {Exclude<keyof typeof PointsExpirationTypes, "prototype" | "constructFromObject"> | undefined}
+    */
 LoyaltiesMembersBalanceUpdateRequestBody.prototype['expiration_type'] = undefined;
 
 /**
- * Set expiration date for added points, i.e. `YYYY-MM-DD`. This parameter is required only when expiration_type is set to `CUSTOM_DATE`.
- * @member {Date} 
- */
+    * Set expiration date for added points, i.e. `YYYY-MM-DD`. This parameter is required only when expiration_type is set to `CUSTOM_DATE`.
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersBalanceUpdateRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * Reason for the transfer.
- * @member {String} 
- */
+    * Reason for the transfer.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersBalanceUpdateRequestBody.prototype['reason'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersBalanceUpdateRequestBody.prototype['source_id'] = undefined;
 
 

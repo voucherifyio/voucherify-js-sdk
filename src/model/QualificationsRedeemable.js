@@ -19,16 +19,15 @@ import QualificationsRedeemableBase from './QualificationsRedeemableBase';
 import QualificationsRedeemableOrder from './QualificationsRedeemableOrder';
 import RedeemableResult from './RedeemableResult';
 import ValidationRulesAssignmentsList from './ValidationRulesAssignmentsList';
-
 /**
  * The QualificationsRedeemable model module.
  * @module model/QualificationsRedeemable
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsRedeemable {
     /**
      * Constructs a new <code>QualificationsRedeemable</code>.
-     * @alias module:model/QualificationsRedeemable
+     * @alias QualificationsRedeemable
      */
     constructor() { 
         
@@ -46,9 +45,9 @@ class QualificationsRedeemable {
     /**
      * Constructs a <code>QualificationsRedeemable</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsRedeemable} obj Optional instance to populate.
-     * @returns {module:model/QualificationsRedeemable} The populated <code>QualificationsRedeemable</code> instance.
+     * @param {Partial<QualificationsRedeemable>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsRedeemable} [obj] Optional instance to populate.
+     * @returns {QualificationsRedeemable} The populated <code>QualificationsRedeemable</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -108,7 +107,7 @@ class QualificationsRedeemable {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsRedeemable</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsRedeemable>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsRedeemable</code>.
      */
     static validateJSON(data) {
@@ -190,130 +189,130 @@ class QualificationsRedeemable {
 
 
 /**
- * ID of the redeemable. For a voucher, it's its `code` value.
- * @member {String} 
- */
+    * ID of the redeemable. For a voucher, it's its `code` value.
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['id'] = undefined;
 
 /**
- * Object type of the redeemable.
- * @member {module:model/QualificationsRedeemable.ObjectEnum} 
- */
+    * Object type of the redeemable.
+    * @type {(keyof typeof QualificationsRedeemable.ObjectEnum) | undefined}
+    */
 QualificationsRedeemable.prototype['object'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 QualificationsRedeemable.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/RedeemableResult} 
- */
+    * @type {RedeemableResult | undefined}
+    */
 QualificationsRedeemable.prototype['result'] = undefined;
 
 /**
- * @member {module:model/QualificationsRedeemableOrder} 
- */
+    * @type {QualificationsRedeemableOrder | undefined}
+    */
 QualificationsRedeemable.prototype['order'] = undefined;
 
 /**
- * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
- * @member {String} 
- */
+    * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['validation_rule_id'] = undefined;
 
 /**
- * @member {module:model/ApplicableToResultList} 
- */
+    * @type {ApplicableToResultList | undefined}
+    */
 QualificationsRedeemable.prototype['applicable_to'] = undefined;
 
 /**
- * @member {module:model/InapplicableToResultList} 
- */
+    * @type {InapplicableToResultList | undefined}
+    */
 QualificationsRedeemable.prototype['inapplicable_to'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the product. A set of key/value pairs that you can attach to a product object. It can be useful for storing additional information about the product in a structured format.
+    * @type {Object | undefined}
+    */
 QualificationsRedeemable.prototype['metadata'] = undefined;
 
 /**
- * List of category information.
- * @member {Array.<module:model/CategoryWithStackingRulesType>} 
- */
+    * List of category information.
+    * @type {Array.<CategoryWithStackingRulesType> | undefined}
+    */
 QualificationsRedeemable.prototype['categories'] = undefined;
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['banner'] = undefined;
 
 /**
- * Name of the redeemable.
- * @member {String} 
- */
+    * Name of the redeemable.
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['name'] = undefined;
 
 /**
- * Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
- * @member {String} 
- */
+    * Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['campaign_name'] = undefined;
 
 /**
- * Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
- * @member {String} 
- */
+    * Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+    * @type {String | undefined}
+    */
 QualificationsRedeemable.prototype['campaign_id'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesAssignmentsList} 
- */
+    * @type {ValidationRulesAssignmentsList | undefined}
+    */
 QualificationsRedeemable.prototype['validation_rules_assignments'] = undefined;
 
 /**
- * @member {Array.<module:model/QualificationsRedeemableBase>} 
- */
+    * @type {Array.<QualificationsRedeemableBase> | undefined}
+    */
 QualificationsRedeemable.prototype['redeemables'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-QualificationsRedeemable['ObjectEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "promotion_stack"
-     * @constant
-     */
-    "promotion_stack": "promotion_stack",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    QualificationsRedeemable['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

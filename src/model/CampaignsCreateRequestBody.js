@@ -18,16 +18,15 @@ import CampaignsCreateRequestBodyVoucher from './CampaignsCreateRequestBodyVouch
 import ReferralProgram from './ReferralProgram';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The CampaignsCreateRequestBody model module.
  * @module model/CampaignsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsCreateRequestBody {
     /**
      * Constructs a new <code>CampaignsCreateRequestBody</code>.
-     * @alias module:model/CampaignsCreateRequestBody
+     * @alias CampaignsCreateRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class CampaignsCreateRequestBody {
     /**
      * Constructs a <code>CampaignsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsCreateRequestBody} The populated <code>CampaignsCreateRequestBody</code> instance.
+     * @param {Partial<CampaignsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {CampaignsCreateRequestBody} The populated <code>CampaignsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -125,7 +124,7 @@ class CampaignsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -199,153 +198,153 @@ class CampaignsCreateRequestBody {
 
 
 /**
- * Campaign name.
- * @member {String} 
- */
+    * Campaign name.
+    * @type {String | undefined}
+    */
 CampaignsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the campaign such as a campaign description and details.
+    * @type {String | undefined}
+    */
 CampaignsCreateRequestBody.prototype['description'] = undefined;
 
 /**
- * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
- * @member {module:model/CampaignsCreateRequestBody.TypeEnum} 
- */
+    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
+    * @type {(keyof typeof CampaignsCreateRequestBody.TypeEnum) | undefined}
+    */
 CampaignsCreateRequestBody.prototype['type'] = undefined;
 
 /**
- * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
- * @member {Boolean} 
- */
+    * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
+    * @type {Boolean | undefined}
+    */
 CampaignsCreateRequestBody.prototype['join_once'] = undefined;
 
 /**
- * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
- * @member {Boolean} 
- */
+    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * @type {Boolean | undefined}
+    */
 CampaignsCreateRequestBody.prototype['auto_join'] = undefined;
 
 /**
- * Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
- * @member {Boolean} 
- */
+    * Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
+    * @type {Boolean | undefined}
+    */
 CampaignsCreateRequestBody.prototype['use_voucher_metadata_schema'] = undefined;
 
 /**
- * Total number of unique vouchers in campaign (size of campaign).
- * @member {Number} 
- */
+    * Total number of unique vouchers in campaign (size of campaign).
+    * @type {Number | undefined}
+    */
 CampaignsCreateRequestBody.prototype['vouchers_count'] = undefined;
 
 /**
- * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 CampaignsCreateRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 CampaignsCreateRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 CampaignsCreateRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/CampaignsCreateRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof CampaignsCreateRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 CampaignsCreateRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 CampaignsCreateRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
- * @member {String} 
- */
+    * Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
+    * @type {String | undefined}
+    */
 CampaignsCreateRequestBody.prototype['activity_duration_after_publishing'] = undefined;
 
 /**
- * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
- * @member {String} 
- */
+    * Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
+    * @type {String | undefined}
+    */
 CampaignsCreateRequestBody.prototype['category_id'] = undefined;
 
 /**
- * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
- * @member {String} 
- */
+    * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
+    * @type {String | undefined}
+    */
 CampaignsCreateRequestBody.prototype['category'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
+    * @type {Object | undefined}
+    */
 CampaignsCreateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/AccessSettings} 
- */
+    * @type {AccessSettings | undefined}
+    */
 CampaignsCreateRequestBody.prototype['access_settings'] = undefined;
 
 /**
- * Array containing the ID of the validation rule associated with the promotion tier.
- * @member {Array.<String>} 
- */
+    * Array containing the ID of the validation rule associated with the promotion tier.
+    * @type {Array.<String> | undefined}
+    */
 CampaignsCreateRequestBody.prototype['validation_rules'] = undefined;
 
 /**
- * @member {module:model/CampaignsCreateRequestBody.CampaignTypeEnum} 
- */
+    * @type {(keyof typeof CampaignsCreateRequestBody.CampaignTypeEnum) | undefined}
+    */
 CampaignsCreateRequestBody.prototype['campaign_type'] = undefined;
 
 /**
- * @member {module:model/CampaignsCreateRequestBodyVoucher} 
- */
+    * @type {CampaignsCreateRequestBodyVoucher | undefined}
+    */
 CampaignsCreateRequestBody.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/ReferralProgram} 
- */
+    * @type {ReferralProgram | undefined}
+    */
 CampaignsCreateRequestBody.prototype['referral_program'] = undefined;
 
 /**
- * @member {module:model/CampaignsCreateRequestBodyPromotion} 
- */
+    * @type {CampaignsCreateRequestBodyPromotion | undefined}
+    */
 CampaignsCreateRequestBody.prototype['promotion'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsCreateRequestBody['TypeEnum'] = {
-
     /**
-     * value: "AUTO_UPDATE"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "AUTO_UPDATE": "AUTO_UPDATE",
-
-    /**
-     * value: "STATIC"
-     * @constant
-     */
-    "STATIC": "STATIC"
-};
+    CampaignsCreateRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE",
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC"    
+    };
 
 
 /**
@@ -399,43 +398,43 @@ CampaignsCreateRequestBody['ValidityDayOfWeekEnum'] = {
 };
 
 
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsCreateRequestBody['CampaignTypeEnum'] = {
-
     /**
-     * value: "DISCOUNT_COUPONS"
-     * @constant
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
-
-    /**
-     * value: "REFERRAL_PROGRAM"
-     * @constant
-     */
-    "REFERRAL_PROGRAM": "REFERRAL_PROGRAM",
-
-    /**
-     * value: "GIFT_VOUCHERS"
-     * @constant
-     */
-    "GIFT_VOUCHERS": "GIFT_VOUCHERS",
-
-    /**
-     * value: "LOYALTY_PROGRAM"
-     * @constant
-     */
-    "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
-
-    /**
-     * value: "PROMOTION"
-     * @constant
-     */
-    "PROMOTION": "PROMOTION"
-};
+    CampaignsCreateRequestBody['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_COUPONS"
+         * @constant
+         */
+        "DISCOUNT_COUPONS": "DISCOUNT_COUPONS",
+    
+        /**
+         * value: "REFERRAL_PROGRAM"
+         * @constant
+         */
+        "REFERRAL_PROGRAM": "REFERRAL_PROGRAM",
+    
+        /**
+         * value: "GIFT_VOUCHERS"
+         * @constant
+         */
+        "GIFT_VOUCHERS": "GIFT_VOUCHERS",
+    
+        /**
+         * value: "LOYALTY_PROGRAM"
+         * @constant
+         */
+        "LOYALTY_PROGRAM": "LOYALTY_PROGRAM",
+    
+        /**
+         * value: "PROMOTION"
+         * @constant
+         */
+        "PROMOTION": "PROMOTION"    
+    };
 
 
 

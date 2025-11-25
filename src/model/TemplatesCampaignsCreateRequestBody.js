@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TemplatesCampaignsCreateRequestBody model module.
  * @module model/TemplatesCampaignsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsCreateRequestBody {
     /**
      * Constructs a new <code>TemplatesCampaignsCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;/templates/campaign&#x60;.
-     * @alias module:model/TemplatesCampaignsCreateRequestBody
+     * @alias TemplatesCampaignsCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class TemplatesCampaignsCreateRequestBody {
     /**
      * Constructs a <code>TemplatesCampaignsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsCreateRequestBody} The populated <code>TemplatesCampaignsCreateRequestBody</code> instance.
+     * @param {Partial<TemplatesCampaignsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsCreateRequestBody} The populated <code>TemplatesCampaignsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class TemplatesCampaignsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -96,27 +95,27 @@ class TemplatesCampaignsCreateRequestBody {
 
 
 /**
- * Unique identifier of the campaign that will create a template. It must be an ID of an existing discount or gift card campaign. It cannot be passed when `promotion_tier_id` has value. Required when the `promotion_tier_id` is not passed or it is `null`.
- * @member {String} 
- */
+    * Unique identifier of the campaign that will create a template. It must be an ID of an existing discount or gift card campaign. It cannot be passed when `promotion_tier_id` has value. Required when the `promotion_tier_id` is not passed or it is `null`.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsCreateRequestBody.prototype['campaign_id'] = undefined;
 
 /**
- * Unique identifier of the promotion tier that will create a template. It cannot be passed when `campaign_id` has value. Required when the `campaign_id` is not passed or it is `null`.
- * @member {String} 
- */
+    * Unique identifier of the promotion tier that will create a template. It cannot be passed when `campaign_id` has value. Required when the `campaign_id` is not passed or it is `null`.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsCreateRequestBody.prototype['promotion_tier_id'] = undefined;
 
 /**
- * User-defined name of the campaign template. It must be unique.
- * @member {String} 
- */
+    * User-defined name of the campaign template. It must be unique.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * User-defined description of the campaign template.
- * @member {String} 
- */
+    * User-defined description of the campaign template.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsCreateRequestBody.prototype['description'] = undefined;
 
 

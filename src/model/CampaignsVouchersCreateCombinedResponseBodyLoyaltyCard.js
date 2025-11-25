@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard {
     /**
      * Constructs a new <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code>.
      * Object representing loyalty card parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;LOYALTY_CARD&#x60;. Defaults to &#x60;null&#x60;.
-     * @alias module:model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard
+     * @alias CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard {
     /**
      * Constructs a <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard} The populated <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code> instance.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard} The populated <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -89,45 +88,45 @@ class CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard {
 
 
 /**
- * Total number of points added to the loyalty card over its lifespan.
- * @member {Number} 
- */
+    * Total number of points added to the loyalty card over its lifespan.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['balance'] = undefined;
 
 /**
- * The next closest date when the next set of points are due to expire.
- * @member {Date} 
- */
+    * The next closest date when the next set of points are due to expire.
+    * @type {Date | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['next_expiration_date'] = undefined;
 
 /**
- * The amount of points that are set to expire next.
- * @member {Number} 
- */
+    * The amount of points that are set to expire next.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['next_expiration_points'] = undefined;
 
 /**
- * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
- * @member {Number} 
- */
+    * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['pending_points'] = undefined;
 
 /**
- * Shows the total number of expired points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of expired points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['expired_points'] = undefined;
 
 /**
- * Shows the total number of subtracted points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of subtracted points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard.prototype['subtracted_points'] = undefined;
 
 

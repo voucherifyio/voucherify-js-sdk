@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ValidationsRedeemableSkippedResultDetails from './ValidationsRedeemableSkippedResultDetails';
-
 /**
  * The ValidationsRedeemableSkippedResult model module.
  * @module model/ValidationsRedeemableSkippedResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsRedeemableSkippedResult {
     /**
      * Constructs a new <code>ValidationsRedeemableSkippedResult</code>.
      * Provides details about the reason why the redeemable is skipped.
-     * @alias module:model/ValidationsRedeemableSkippedResult
+     * @alias ValidationsRedeemableSkippedResult
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ValidationsRedeemableSkippedResult {
     /**
      * Constructs a <code>ValidationsRedeemableSkippedResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsRedeemableSkippedResult} obj Optional instance to populate.
-     * @returns {module:model/ValidationsRedeemableSkippedResult} The populated <code>ValidationsRedeemableSkippedResult</code> instance.
+     * @param {Partial<ValidationsRedeemableSkippedResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsRedeemableSkippedResult} [obj] Optional instance to populate.
+     * @returns {ValidationsRedeemableSkippedResult} The populated <code>ValidationsRedeemableSkippedResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ValidationsRedeemableSkippedResult {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsRedeemableSkippedResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsRedeemableSkippedResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsRedeemableSkippedResult</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ValidationsRedeemableSkippedResult {
 
 
 /**
- * @member {module:model/ValidationsRedeemableSkippedResultDetails} 
- */
+    * @type {ValidationsRedeemableSkippedResultDetails | undefined}
+    */
 ValidationsRedeemableSkippedResult.prototype['details'] = undefined;
 
 

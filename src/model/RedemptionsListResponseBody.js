@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RedemptionsListResponseBodyRedemptionsItem from './RedemptionsListResponseBodyRedemptionsItem';
-
 /**
  * The RedemptionsListResponseBody model module.
  * @module model/RedemptionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBody {
     /**
      * Constructs a new <code>RedemptionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/redemptions&#x60;.
-     * @alias module:model/RedemptionsListResponseBody
+     * @alias RedemptionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class RedemptionsListResponseBody {
     /**
      * Constructs a <code>RedemptionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBody} The populated <code>RedemptionsListResponseBody</code> instance.
+     * @param {Partial<RedemptionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBody} The populated <code>RedemptionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class RedemptionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,28 +100,28 @@ class RedemptionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about redemptions in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about redemptions in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RedemptionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of redemption objects.
- * @member {String} 
- * @default 'redemptions'
- */
+    * Identifies the name of the attribute that contains the array of redemption objects.
+    * @type {String | undefined}
+    * @default 'redemptions'
+    */
 RedemptionsListResponseBody.prototype['data_ref'] = 'redemptions';
 
 /**
- * @member {Array.<module:model/RedemptionsListResponseBodyRedemptionsItem>} 
- */
+    * @type {Array.<RedemptionsListResponseBodyRedemptionsItem> | undefined}
+    */
 RedemptionsListResponseBody.prototype['redemptions'] = undefined;
 
 /**
- * Total number of redemptions.
- * @member {Number} 
- */
+    * Total number of redemptions.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBody.prototype['total'] = undefined;
 
 

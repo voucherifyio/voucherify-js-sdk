@@ -19,19 +19,18 @@ import LoyaltiesMembersTransfersCreateResponseBodyPublish from './LoyaltiesMembe
 import LoyaltiesMembersTransfersCreateResponseBodyRedemption from './LoyaltiesMembersTransfersCreateResponseBodyRedemption';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The LoyaltiesMembersTransfersCreateResponseBody model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransfersCreateResponseBody {
     /**
      * Constructs a new <code>LoyaltiesMembersTransfersCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/loyalties/{campaignId}/members/{memberId}/transfers&#x60;.
-     * @alias module:model/LoyaltiesMembersTransfersCreateResponseBody
-     * @param validityTimeframe {module:model/ValidityTimeframe} 
-     * @param validityDayOfWeek {Array.<module:model/LoyaltiesMembersTransfersCreateResponseBody.ValidityDayOfWeekEnum>} Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @alias LoyaltiesMembersTransfersCreateResponseBody
+     * @param {ValidityTimeframe} validityTimeframe 
+     * @param {Array.<LoyaltiesMembersTransfersCreateResponseBody.ValidityDayOfWeekEnum>} validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      */
     constructor(validityTimeframe, validityDayOfWeek) { 
         
@@ -52,9 +51,9 @@ class LoyaltiesMembersTransfersCreateResponseBody {
     /**
      * Constructs a <code>LoyaltiesMembersTransfersCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransfersCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransfersCreateResponseBody} The populated <code>LoyaltiesMembersTransfersCreateResponseBody</code> instance.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransfersCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransfersCreateResponseBody} The populated <code>LoyaltiesMembersTransfersCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -138,7 +137,7 @@ class LoyaltiesMembersTransfersCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransfersCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransfersCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -236,159 +235,159 @@ class LoyaltiesMembersTransfersCreateResponseBody {
 LoyaltiesMembersTransfersCreateResponseBody.RequiredProperties = ["validity_timeframe", "validity_day_of_week"];
 
 /**
- * Assigned by the Voucherify API, identifies the voucher.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the voucher.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * A code that identifies a voucher. Pattern can use all letters of the English alphabet, Arabic numerals, and special characters.
- * @member {String} 
- */
+    * A code that identifies a voucher. Pattern can use all letters of the English alphabet, Arabic numerals, and special characters.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['code'] = undefined;
 
 /**
- * A unique campaign name, identifies the voucher's parent campaign.
- * @member {String} 
- */
+    * A unique campaign name, identifies the voucher's parent campaign.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['campaign'] = undefined;
 
 /**
- * Assigned by the Voucherify API, identifies the voucher's parent campaign.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the voucher's parent campaign.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['campaign_id'] = undefined;
 
 /**
- * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
- * @member {String} 
- */
+    * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['category'] = undefined;
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['category_id'] = undefined;
 
 /**
- * @member {Array.<module:model/Category>} 
- */
+    * @type {Array.<Category> | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['categories'] = undefined;
 
 /**
- * Defines the type of the voucher.
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBody.TypeEnum} 
- * @default 'LOYALTY_CARD'
- */
+    * Defines the type of the voucher.
+    * @type {(keyof typeof LoyaltiesMembersTransfersCreateResponseBody.TypeEnum) | undefined}
+    * @default 'LOYALTY_CARD'
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['type'] = 'LOYALTY_CARD';
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['loyalty_card'] = undefined;
 
 /**
- * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is inactive before this date.
- * @member {Date} 
- */
+    * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is inactive before this date.
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the code expires in ISO 8601 format. Voucher is inactive after this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the code expires in ISO 8601 format. Voucher is inactive after this date.
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/LoyaltiesMembersTransfersCreateResponseBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof LoyaltiesMembersTransfersCreateResponseBody.ValidityDayOfWeekEnum>)}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['validity_hours'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyPublish} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyPublish | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['publish'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyRedemption} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyRedemption | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['redemption'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the start_date and expiration_date.  - `true` indicates an active voucher - `false` indicates an inactive voucher
- * @member {String} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the start_date and expiration_date.  - `true` indicates an active voucher - `false` indicates an inactive voucher
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['active'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['additional_info'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssets} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyAssets | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['assets'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['is_referral_code'] = undefined;
 
 /**
- * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['holder_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * @member {Date} 
- */
+    * @type {Date | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBody.prototype['created_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersTransfersCreateResponseBody['TypeEnum'] = {
-
     /**
-     * value: "LOYALTY_CARD"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    LoyaltiesMembersTransfersCreateResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 /**

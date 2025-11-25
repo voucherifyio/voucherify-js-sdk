@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import EarningRuleLoyaltyCustomerMetadata from './EarningRuleLoyaltyCustomerMetadata';
-
 /**
  * The EarningRuleLoyaltyCustomer model module.
  * @module model/EarningRuleLoyaltyCustomer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleLoyaltyCustomer {
     /**
      * Constructs a new <code>EarningRuleLoyaltyCustomer</code>.
-     * @alias module:model/EarningRuleLoyaltyCustomer
+     * @alias EarningRuleLoyaltyCustomer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EarningRuleLoyaltyCustomer {
     /**
      * Constructs a <code>EarningRuleLoyaltyCustomer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleLoyaltyCustomer} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleLoyaltyCustomer} The populated <code>EarningRuleLoyaltyCustomer</code> instance.
+     * @param {Partial<EarningRuleLoyaltyCustomer>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleLoyaltyCustomer} [obj] Optional instance to populate.
+     * @returns {EarningRuleLoyaltyCustomer} The populated <code>EarningRuleLoyaltyCustomer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class EarningRuleLoyaltyCustomer {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleLoyaltyCustomer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleLoyaltyCustomer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleLoyaltyCustomer</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class EarningRuleLoyaltyCustomer {
 
 
 /**
- * @member {module:model/EarningRuleLoyaltyCustomerMetadata} 
- */
+    * @type {EarningRuleLoyaltyCustomerMetadata | undefined}
+    */
 EarningRuleLoyaltyCustomer.prototype['metadata'] = undefined;
 
 

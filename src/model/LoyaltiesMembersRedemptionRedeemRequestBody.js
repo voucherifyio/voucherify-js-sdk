@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import LoyaltiesMembersRedemptionRedeemRequestBodyReward from './LoyaltiesMembersRedemptionRedeemRequestBodyReward';
 import Order from './Order';
-
 /**
  * The LoyaltiesMembersRedemptionRedeemRequestBody model module.
  * @module model/LoyaltiesMembersRedemptionRedeemRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersRedemptionRedeemRequestBody {
     /**
      * Constructs a new <code>LoyaltiesMembersRedemptionRedeemRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/loyalties/{campaignId}/members/{memberId}/redemption&#x60; and for **POST** &#x60;v1/loyalties/members/{memberId}/redemption&#x60;.
-     * @alias module:model/LoyaltiesMembersRedemptionRedeemRequestBody
+     * @alias LoyaltiesMembersRedemptionRedeemRequestBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesMembersRedemptionRedeemRequestBody {
     /**
      * Constructs a <code>LoyaltiesMembersRedemptionRedeemRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersRedemptionRedeemRequestBody} The populated <code>LoyaltiesMembersRedemptionRedeemRequestBody</code> instance.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersRedemptionRedeemRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersRedemptionRedeemRequestBody} The populated <code>LoyaltiesMembersRedemptionRedeemRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class LoyaltiesMembersRedemptionRedeemRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersRedemptionRedeemRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersRedemptionRedeemRequestBody</code>.
      */
     static validateJSON(data) {
@@ -87,19 +86,19 @@ class LoyaltiesMembersRedemptionRedeemRequestBody {
 
 
 /**
- * @member {module:model/LoyaltiesMembersRedemptionRedeemRequestBodyReward} 
- */
+    * @type {LoyaltiesMembersRedemptionRedeemRequestBodyReward | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemRequestBody.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemRequestBody.prototype['order'] = undefined;
 
 /**
- * A set of key/value pairs that you can send in the request body to check against vouchers requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the [Create Validation Rules](/api-reference/validation-rules/create-validation-rules) endpoint or via the Dashboard; in the _Advanced Rule Builder_ &rarr; _Advanced_ &rarr; _Redemption metadata satisfy_ or _Basic Builder_ &rarr; _Attributes match_ &rarr; _REDEMPTION METADATA_. [Read more](https://support.voucherify.io/article/148-how-to-build-a-rule).
- * @member {Object} 
- */
+    * A set of key/value pairs that you can send in the request body to check against vouchers requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the [Create Validation Rules](/api-reference/validation-rules/create-validation-rules) endpoint or via the Dashboard; in the _Advanced Rule Builder_ &rarr; _Advanced_ &rarr; _Redemption metadata satisfy_ or _Basic Builder_ &rarr; _Attributes match_ &rarr; _REDEMPTION METADATA_. [Read more](https://support.voucherify.io/article/148-how-to-build-a-rule).
+    * @type {Object | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemRequestBody.prototype['metadata'] = undefined;
 
 

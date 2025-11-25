@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code>.
      * Stores the amount of loyalty card points to be applied in the redemption.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard
+     * @alias ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard {
 
 
 /**
- * Total number of loyalty points to be applied in the redemption.
- * @member {Number} 
- */
+    * Total number of loyalty points to be applied in the redemption.
+    * @type {Number | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard.prototype['points'] = undefined;
 
 

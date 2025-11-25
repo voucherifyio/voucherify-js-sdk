@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EarningRuleSource model module.
  * @module model/EarningRuleSource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRuleSource {
     /**
      * Constructs a new <code>EarningRuleSource</code>.
      * Contains the custom earning rule name and parent campaign.
-     * @alias module:model/EarningRuleSource
+     * @alias EarningRuleSource
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class EarningRuleSource {
     /**
      * Constructs a <code>EarningRuleSource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRuleSource} obj Optional instance to populate.
-     * @returns {module:model/EarningRuleSource} The populated <code>EarningRuleSource</code> instance.
+     * @param {Partial<EarningRuleSource>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRuleSource} [obj] Optional instance to populate.
+     * @returns {EarningRuleSource} The populated <code>EarningRuleSource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class EarningRuleSource {
 
     /**
      * Validates the JSON data with respect to <code>EarningRuleSource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRuleSource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRuleSource</code>.
      */
     static validateJSON(data) {
@@ -90,41 +89,41 @@ class EarningRuleSource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 EarningRuleSource.prototype['banner'] = undefined;
 
 /**
- * A unique campaign identifier assigned by the Voucherify API.
- * @member {String} 
- */
+    * A unique campaign identifier assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 EarningRuleSource.prototype['object_id'] = undefined;
 
 /**
- * Defines the object associated with the earning rule. Defaults to `campaign`.
- * @member {module:model/EarningRuleSource.ObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Defines the object associated with the earning rule. Defaults to `campaign`.
+    * @type {(keyof typeof EarningRuleSource.ObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 EarningRuleSource.prototype['object_type'] = 'campaign';
 
 
 
 
 
-/**
- * Allowed values for the <code>object_type</code> property.
- * @enum {String}
- * @readonly
- */
-EarningRuleSource['ObjectTypeEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign"
-};
+    EarningRuleSource['ObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

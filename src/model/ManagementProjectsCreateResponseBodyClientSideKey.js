@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsCreateResponseBodyClientSideKey model module.
  * @module model/ManagementProjectsCreateResponseBodyClientSideKey
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCreateResponseBodyClientSideKey {
     /**
      * Constructs a new <code>ManagementProjectsCreateResponseBodyClientSideKey</code>.
      * Contains the &#x60;app_id&#x60; and &#x60;app_token&#x60; to authenticate client-side requests.
-     * @alias module:model/ManagementProjectsCreateResponseBodyClientSideKey
+     * @alias ManagementProjectsCreateResponseBodyClientSideKey
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsCreateResponseBodyClientSideKey {
     /**
      * Constructs a <code>ManagementProjectsCreateResponseBodyClientSideKey</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCreateResponseBodyClientSideKey} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCreateResponseBodyClientSideKey} The populated <code>ManagementProjectsCreateResponseBodyClientSideKey</code> instance.
+     * @param {Partial<ManagementProjectsCreateResponseBodyClientSideKey>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCreateResponseBodyClientSideKey} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCreateResponseBodyClientSideKey} The populated <code>ManagementProjectsCreateResponseBodyClientSideKey</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ManagementProjectsCreateResponseBodyClientSideKey {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCreateResponseBodyClientSideKey</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCreateResponseBodyClientSideKey>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCreateResponseBodyClientSideKey</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class ManagementProjectsCreateResponseBodyClientSideKey {
 
 
 /**
- * Application ID to be used as `X-App-Id` header in every HTTP request.
- * @member {String} 
- */
+    * Application ID to be used as `X-App-Id` header in every HTTP request.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBodyClientSideKey.prototype['app_id'] = undefined;
 
 /**
- * Application token to be used as `X-App-Token` header in every HTTP request.  The application token (secret key) for the client-side authentication is visible in the Project Settings for 14 days when it is first generated in a newly-created project. Write your application token down and keep it in a safe place.
- * @member {String} 
- */
+    * Application token to be used as `X-App-Token` header in every HTTP request.  The application token (secret key) for the client-side authentication is visible in the Project Settings for 14 days when it is first generated in a newly-created project. Write your application token down and keep it in a safe place.
+    * @type {String | undefined}
+    */
 ManagementProjectsCreateResponseBodyClientSideKey.prototype['app_token'] = undefined;
 
 

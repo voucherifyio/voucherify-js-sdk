@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The Category model module.
  * @module model/Category
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Category {
     /**
      * Constructs a new <code>Category</code>.
      * This is an object representing a category.
-     * @alias module:model/Category
+     * @alias Category
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class Category {
     /**
      * Constructs a <code>Category</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Category} obj Optional instance to populate.
-     * @returns {module:model/Category} The populated <code>Category</code> instance.
+     * @param {Partial<Category>} data The plain JavaScript object bearing properties of interest.
+     * @param {Category} [obj] Optional instance to populate.
+     * @returns {Category} The populated <code>Category</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class Category {
 
     /**
      * Validates the JSON data with respect to <code>Category</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Category>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Category</code>.
      */
     static validateJSON(data) {
@@ -99,59 +98,59 @@ class Category {
 
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 Category.prototype['id'] = undefined;
 
 /**
- * Category name.
- * @member {String} 
- */
+    * Category name.
+    * @type {String | undefined}
+    */
 Category.prototype['name'] = undefined;
 
 /**
- * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
- * @member {Number} 
- */
+    * Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
+    * @type {Number | undefined}
+    */
 Category.prototype['hierarchy'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the category.
- * @member {module:model/Category.ObjectEnum} 
- * @default 'category'
- */
+    * The type of the object represented by the JSON. This object stores information about the category.
+    * @type {(keyof typeof Category.ObjectEnum) | undefined}
+    * @default 'category'
+    */
 Category.prototype['object'] = 'category';
 
 /**
- * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Category.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Category.prototype['updated_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-Category['ObjectEnum'] = {
-
     /**
-     * value: "category"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "category": "category"
-};
+    Category['ObjectEnum'] = {
+    
+        /**
+         * value: "category"
+         * @constant
+         */
+        "category": "category"    
+    };
 
 
 

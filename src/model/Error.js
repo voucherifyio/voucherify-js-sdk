@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ErrorError from './ErrorError';
-
 /**
  * The Error model module.
  * @module model/Error
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Error {
     /**
      * Constructs a new <code>Error</code>.
      * Error details
-     * @alias module:model/Error
+     * @alias Error
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class Error {
     /**
      * Constructs a <code>Error</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Error} obj Optional instance to populate.
-     * @returns {module:model/Error} The populated <code>Error</code> instance.
+     * @param {Partial<Error>} data The plain JavaScript object bearing properties of interest.
+     * @param {Error} [obj] Optional instance to populate.
+     * @returns {Error} The populated <code>Error</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class Error {
 
     /**
      * Validates the JSON data with respect to <code>Error</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Error>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Error</code>.
      */
     static validateJSON(data) {
@@ -121,50 +120,50 @@ class Error {
 
 
 /**
- * Error's HTTP status code.
- * @member {Number} 
- */
+    * Error's HTTP status code.
+    * @type {Number | undefined}
+    */
 Error.prototype['code'] = undefined;
 
 /**
- * Short string describing the kind of error which occurred.
- * @member {String} 
- */
+    * Short string describing the kind of error which occurred.
+    * @type {String | undefined}
+    */
 Error.prototype['key'] = undefined;
 
 /**
- * A human-readable message providing a short description of the error.
- * @member {String} 
- */
+    * A human-readable message providing a short description of the error.
+    * @type {String | undefined}
+    */
 Error.prototype['message'] = undefined;
 
 /**
- * A human-readable message providing more details about the error.
- * @member {String} 
- */
+    * A human-readable message providing more details about the error.
+    * @type {String | undefined}
+    */
 Error.prototype['details'] = undefined;
 
 /**
- * This ID is useful when troubleshooting and/or finding the root cause of an error response by our support team.
- * @member {String} 
- */
+    * This ID is useful when troubleshooting and/or finding the root cause of an error response by our support team.
+    * @type {String | undefined}
+    */
 Error.prototype['request_id'] = undefined;
 
 /**
- * Unique resource ID that can be used in another endpoint to get more details.
- * @member {String} 
- */
+    * Unique resource ID that can be used in another endpoint to get more details.
+    * @type {String | undefined}
+    */
 Error.prototype['resource_id'] = undefined;
 
 /**
- * The resource type.
- * @member {String} 
- */
+    * The resource type.
+    * @type {String | undefined}
+    */
 Error.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/ErrorError} 
- */
+    * @type {ErrorError | undefined}
+    */
 Error.prototype['error'] = undefined;
 
 

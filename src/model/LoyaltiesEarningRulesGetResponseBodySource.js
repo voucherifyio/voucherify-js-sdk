@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodySource model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodySource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodySource {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodySource</code>.
      * Contains the custom earning rule name and parent campaign.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodySource
+     * @alias LoyaltiesEarningRulesGetResponseBodySource
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesGetResponseBodySource {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodySource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodySource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodySource} The populated <code>LoyaltiesEarningRulesGetResponseBodySource</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodySource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodySource} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodySource} The populated <code>LoyaltiesEarningRulesGetResponseBodySource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesEarningRulesGetResponseBodySource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodySource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodySource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodySource</code>.
      */
     static validateJSON(data) {
@@ -90,41 +89,41 @@ class LoyaltiesEarningRulesGetResponseBodySource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodySource.prototype['banner'] = undefined;
 
 /**
- * A unique campaign identifier assigned by the Voucherify API.
- * @member {String} 
- */
+    * A unique campaign identifier assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodySource.prototype['object_id'] = undefined;
 
 /**
- * Defines the object associated with the earning rule. Defaults to `campaign`.
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodySource.ObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Defines the object associated with the earning rule. Defaults to `campaign`.
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBodySource.ObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 LoyaltiesEarningRulesGetResponseBodySource.prototype['object_type'] = 'campaign';
 
 
 
 
 
-/**
- * Allowed values for the <code>object_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBodySource['ObjectTypeEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign"
-};
+    LoyaltiesEarningRulesGetResponseBodySource['ObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

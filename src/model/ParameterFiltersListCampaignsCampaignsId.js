@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListCampaignsCampaignsId model module.
  * @module model/ParameterFiltersListCampaignsCampaignsId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsCampaignsId {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsCampaignsId</code>.
      * Unique identifier of the campaign. It is assigned by Voucherify.
-     * @alias module:model/ParameterFiltersListCampaignsCampaignsId
+     * @alias ParameterFiltersListCampaignsCampaignsId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListCampaignsCampaignsId {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsCampaignsId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsCampaignsId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsCampaignsId} The populated <code>ParameterFiltersListCampaignsCampaignsId</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignsId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsCampaignsId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsCampaignsId} The populated <code>ParameterFiltersListCampaignsCampaignsId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListCampaignsCampaignsId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsCampaignsId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsCampaignsId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsCampaignsId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListCampaignsCampaignsId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListCampaignsCampaignsId.prototype['conditions'] = undefined;
 
 

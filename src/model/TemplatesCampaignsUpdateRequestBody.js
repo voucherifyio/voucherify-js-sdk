@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TemplatesCampaignsUpdateRequestBody model module.
  * @module model/TemplatesCampaignsUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TemplatesCampaignsUpdateRequestBody {
     /**
      * Constructs a new <code>TemplatesCampaignsUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;/templates/campaign/{campaignTemplateId}&#x60;.
-     * @alias module:model/TemplatesCampaignsUpdateRequestBody
+     * @alias TemplatesCampaignsUpdateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class TemplatesCampaignsUpdateRequestBody {
     /**
      * Constructs a <code>TemplatesCampaignsUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplatesCampaignsUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/TemplatesCampaignsUpdateRequestBody} The populated <code>TemplatesCampaignsUpdateRequestBody</code> instance.
+     * @param {Partial<TemplatesCampaignsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {TemplatesCampaignsUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {TemplatesCampaignsUpdateRequestBody} The populated <code>TemplatesCampaignsUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class TemplatesCampaignsUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>TemplatesCampaignsUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TemplatesCampaignsUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TemplatesCampaignsUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class TemplatesCampaignsUpdateRequestBody {
 
 
 /**
- * User-defined name of the campaign template. It must be unique.
- * @member {String} 
- */
+    * User-defined name of the campaign template. It must be unique.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * User-defined description of the campaign template.
- * @member {String} 
- */
+    * User-defined description of the campaign template.
+    * @type {String | undefined}
+    */
 TemplatesCampaignsUpdateRequestBody.prototype['description'] = undefined;
 
 

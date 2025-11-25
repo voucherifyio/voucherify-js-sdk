@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata model module.
  * @module model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code>.
      * Defines the ratio based on the property defined in the calculation_type parameter. For every given increment of value (1, 10, etc) defined in the every parameter for the property defined in calculation_type, give the customer the number of points defined in the points parameter. In other words, for every order metadata property value, give points.
-     * @alias module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata
+     * @alias LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata {
     /**
      * Constructs a <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata} The populated <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata</code>.
      */
     static validateJSON(data) {
@@ -88,27 +87,27 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata {
 
 
 /**
- * For how many increments of the order metadata property to grant points for.
- * @member {Number} 
- */
+    * For how many increments of the order metadata property to grant points for.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata.prototype['every'] = undefined;
 
 /**
- * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
- * @member {Number} 
- */
+    * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata.prototype['points_formula'] = undefined;
 
 /**
- * Order metadata property.
- * @member {String} 
- */
+    * Order metadata property.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata.prototype['property'] = undefined;
 
 

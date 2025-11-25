@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListRedemptionsParentRedemptionId model module.
  * @module model/ParameterFiltersListRedemptionsParentRedemptionId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListRedemptionsParentRedemptionId {
     /**
      * Constructs a new <code>ParameterFiltersListRedemptionsParentRedemptionId</code>.
      * Unique parent redemption ID, i.e. r_0c5952900bcbfd54b6.
-     * @alias module:model/ParameterFiltersListRedemptionsParentRedemptionId
+     * @alias ParameterFiltersListRedemptionsParentRedemptionId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListRedemptionsParentRedemptionId {
     /**
      * Constructs a <code>ParameterFiltersListRedemptionsParentRedemptionId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListRedemptionsParentRedemptionId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListRedemptionsParentRedemptionId} The populated <code>ParameterFiltersListRedemptionsParentRedemptionId</code> instance.
+     * @param {Partial<ParameterFiltersListRedemptionsParentRedemptionId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListRedemptionsParentRedemptionId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListRedemptionsParentRedemptionId} The populated <code>ParameterFiltersListRedemptionsParentRedemptionId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListRedemptionsParentRedemptionId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListRedemptionsParentRedemptionId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListRedemptionsParentRedemptionId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListRedemptionsParentRedemptionId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListRedemptionsParentRedemptionId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListRedemptionsParentRedemptionId.prototype['conditions'] = undefined;
 
 

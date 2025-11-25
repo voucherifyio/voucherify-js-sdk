@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionTierSummaryOrders model module.
  * @module model/PromotionTierSummaryOrders
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionTierSummaryOrders {
     /**
      * Constructs a new <code>PromotionTierSummaryOrders</code>.
      * Contains statistics about orders related to the promotion tier.
-     * @alias module:model/PromotionTierSummaryOrders
+     * @alias PromotionTierSummaryOrders
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class PromotionTierSummaryOrders {
     /**
      * Constructs a <code>PromotionTierSummaryOrders</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionTierSummaryOrders} obj Optional instance to populate.
-     * @returns {module:model/PromotionTierSummaryOrders} The populated <code>PromotionTierSummaryOrders</code> instance.
+     * @param {Partial<PromotionTierSummaryOrders>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionTierSummaryOrders} [obj] Optional instance to populate.
+     * @returns {PromotionTierSummaryOrders} The populated <code>PromotionTierSummaryOrders</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class PromotionTierSummaryOrders {
 
     /**
      * Validates the JSON data with respect to <code>PromotionTierSummaryOrders</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionTierSummaryOrders>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionTierSummaryOrders</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class PromotionTierSummaryOrders {
 
 
 /**
- * Sum of order totals.
- * @member {Number} 
- */
+    * Sum of order totals.
+    * @type {Number | undefined}
+    */
 PromotionTierSummaryOrders.prototype['total_amount'] = undefined;
 
 /**
- * Sum of total discount applied using the promotion tier.
- * @member {Number} 
- */
+    * Sum of total discount applied using the promotion tier.
+    * @type {Number | undefined}
+    */
 PromotionTierSummaryOrders.prototype['total_discount_amount'] = undefined;
 
 

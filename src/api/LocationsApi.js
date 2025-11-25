@@ -21,13 +21,13 @@ import ParameterOrderListLocations from '../model/ParameterOrderListLocations';
 /**
 * Locations service.
 * @module api/LocationsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class LocationsApi {
 
     /**
     * Constructs a new LocationsApi. 
-    * @alias module:api/LocationsApi
+    * @alias LocationsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -39,9 +39,9 @@ export default class LocationsApi {
 
     /**
      * Callback function to receive the result of the getLocation operation.
-     * @callback module:api/LocationsApi~getLocationCallback
+     * @callback getLocationCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LocationsGetResponseBody} [data] The data returned by the service call.
+     * @param {LocationsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -49,8 +49,9 @@ export default class LocationsApi {
      * Get Location
      * Returns a location object.
      * @param {String} locationId The unique location ID.
-     * @param {module:api/LocationsApi~getLocationCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LocationsGetResponseBody}
+     * @param {getLocationCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LocationsGetResponseBody}
+     * @returns {Promise<(LocationsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LocationsGetResponseBody` object or with `undefined`.
      */
     getLocation(locationId, callback) {
       let postBody = null;
@@ -79,9 +80,9 @@ export default class LocationsApi {
 
     /**
      * Callback function to receive the result of the listLocations operation.
-     * @callback module:api/LocationsApi~listLocationsCallback
+     * @callback listLocationsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/LocationsListResponseBody} [data] The data returned by the service call.
+     * @param {LocationsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -90,12 +91,13 @@ export default class LocationsApi {
      * Returns a list of your locations.
      * @param {{
         limit?: Number,
-        order?: module:model/ParameterOrderListLocations,
-        filters?: module:model/ParameterFiltersListLocations,
+        order?: Exclude<keyof typeof ParameterOrderListLocations, "prototype" | "constructFromObject">,
+        filters?: ParameterFiltersListLocations,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/LocationsApi~listLocationsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LocationsListResponseBody}
+     * @param {listLocationsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link LocationsListResponseBody}
+     * @returns {Promise<(LocationsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `LocationsListResponseBody` object or with `undefined`.
      */
     listLocations(opts, callback) {
       opts = opts || {};

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleSku model module.
  * @module model/SimpleSku
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleSku {
     /**
      * Constructs a new <code>SimpleSku</code>.
-     * @alias module:model/SimpleSku
+     * @alias SimpleSku
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class SimpleSku {
     /**
      * Constructs a <code>SimpleSku</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleSku} obj Optional instance to populate.
-     * @returns {module:model/SimpleSku} The populated <code>SimpleSku</code> instance.
+     * @param {Partial<SimpleSku>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleSku} [obj] Optional instance to populate.
+     * @returns {SimpleSku} The populated <code>SimpleSku</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class SimpleSku {
 
     /**
      * Validates the JSON data with respect to <code>SimpleSku</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleSku>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleSku</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class SimpleSku {
 
 
 /**
- * Unique sku ID.
- * @member {String} 
- */
+    * Unique sku ID.
+    * @type {String | undefined}
+    */
 SimpleSku.prototype['id'] = undefined;
 
 /**
- * Sku source id.
- * @member {String} 
- */
+    * Sku source id.
+    * @type {String | undefined}
+    */
 SimpleSku.prototype['source_id'] = undefined;
 
 /**
- * Sku name.
- * @member {String} 
- */
+    * Sku name.
+    * @type {String | undefined}
+    */
 SimpleSku.prototype['sku'] = undefined;
 
 

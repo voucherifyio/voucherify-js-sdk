@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import CampaignsVouchersCreateInBulkRequestBodyRedemption from './CampaignsVouchersCreateInBulkRequestBodyRedemption';
 import CodeConfig from './CodeConfig';
-
 /**
  * The CampaignsVouchersCreateInBulkRequestBody model module.
  * @module model/CampaignsVouchersCreateInBulkRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateInBulkRequestBody {
     /**
      * Constructs a new <code>CampaignsVouchersCreateInBulkRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/campaigns/{campaignId}/vouchers&#x60;.
-     * @alias module:model/CampaignsVouchersCreateInBulkRequestBody
+     * @alias CampaignsVouchersCreateInBulkRequestBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class CampaignsVouchersCreateInBulkRequestBody {
     /**
      * Constructs a <code>CampaignsVouchersCreateInBulkRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateInBulkRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateInBulkRequestBody} The populated <code>CampaignsVouchersCreateInBulkRequestBody</code> instance.
+     * @param {Partial<CampaignsVouchersCreateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateInBulkRequestBody} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateInBulkRequestBody} The populated <code>CampaignsVouchersCreateInBulkRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class CampaignsVouchersCreateInBulkRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateInBulkRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateInBulkRequestBody</code>.
      */
     static validateJSON(data) {
@@ -114,49 +113,49 @@ class CampaignsVouchersCreateInBulkRequestBody {
 
 
 /**
- * Unique voucher code.
- * @member {String} 
- */
+    * Unique voucher code.
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['code'] = undefined;
 
 /**
- * @member {module:model/CodeConfig} 
- */
+    * @type {CodeConfig | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['code_config'] = undefined;
 
 /**
- * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
- * @member {String} 
- */
+    * The category assigned to the campaign. Either pass this parameter OR the `category_id`.
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['category'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the voucher. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the voucher. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/CampaignsVouchersCreateInBulkRequestBodyRedemption} 
- */
+    * @type {CampaignsVouchersCreateInBulkRequestBodyRedemption | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['redemption'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['additional_info'] = undefined;
 
 /**
- * Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBody.prototype['expiration_date'] = undefined;
 
 

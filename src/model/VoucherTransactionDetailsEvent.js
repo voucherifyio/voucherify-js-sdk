@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherTransactionDetailsEvent model module.
  * @module model/VoucherTransactionDetailsEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransactionDetailsEvent {
     /**
      * Constructs a new <code>VoucherTransactionDetailsEvent</code>.
      * Contains information about the event that triggers the point accrual.
-     * @alias module:model/VoucherTransactionDetailsEvent
+     * @alias VoucherTransactionDetailsEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransactionDetailsEvent {
     /**
      * Constructs a <code>VoucherTransactionDetailsEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransactionDetailsEvent} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransactionDetailsEvent} The populated <code>VoucherTransactionDetailsEvent</code> instance.
+     * @param {Partial<VoucherTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransactionDetailsEvent} [obj] Optional instance to populate.
+     * @returns {VoucherTransactionDetailsEvent} The populated <code>VoucherTransactionDetailsEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherTransactionDetailsEvent {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransactionDetailsEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransactionDetailsEvent</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherTransactionDetailsEvent {
 
 
 /**
- * Unique event ID.
- * @member {String} 
- */
+    * Unique event ID.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsEvent.prototype['id'] = undefined;
 
 /**
- * Type of event.
- * @member {String} 
- */
+    * Type of event.
+    * @type {String | undefined}
+    */
 VoucherTransactionDetailsEvent.prototype['type'] = undefined;
 
 

@@ -17,16 +17,15 @@ import CategoryWithStackingRulesType from './CategoryWithStackingRulesType';
 import InapplicableToResultList from './InapplicableToResultList';
 import ValidationsValidateResponseBodyRedeemablesItemOrder from './ValidationsValidateResponseBodyRedeemablesItemOrder';
 import ValidationsValidateResponseBodyRedeemablesItemResult from './ValidationsValidateResponseBodyRedeemablesItemResult';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItem model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItem {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItem</code>.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItem
+     * @alias ValidationsValidateResponseBodyRedeemablesItem
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class ValidationsValidateResponseBodyRedeemablesItem {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItem} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItem} The populated <code>ValidationsValidateResponseBodyRedeemablesItem</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItem} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItem} The populated <code>ValidationsValidateResponseBodyRedeemablesItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -94,7 +93,7 @@ class ValidationsValidateResponseBodyRedeemablesItem {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItem</code>.
      */
     static validateJSON(data) {
@@ -158,121 +157,121 @@ class ValidationsValidateResponseBodyRedeemablesItem {
 
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItem.StatusEnum} 
- */
+    * @type {(keyof typeof ValidationsValidateResponseBodyRedeemablesItem.StatusEnum) | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['status'] = undefined;
 
 /**
- * Redeemable ID, i.e. the voucher code.
- * @member {String} 
- */
+    * Redeemable ID, i.e. the voucher code.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['id'] = undefined;
 
 /**
- * Redeemable's object type.
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItem.ObjectEnum} 
- */
+    * Redeemable's object type.
+    * @type {(keyof typeof ValidationsValidateResponseBodyRedeemablesItem.ObjectEnum) | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['object'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemOrder} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemOrder | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['order'] = undefined;
 
 /**
- * @member {module:model/ApplicableToResultList} 
- */
+    * @type {ApplicableToResultList | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['applicable_to'] = undefined;
 
 /**
- * @member {module:model/InapplicableToResultList} 
- */
+    * @type {InapplicableToResultList | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['inapplicable_to'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemResult} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemResult | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['result'] = undefined;
 
 /**
- * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
+    * @type {Object | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['metadata'] = undefined;
 
 /**
- * @member {Array.<module:model/CategoryWithStackingRulesType>} 
- */
+    * @type {Array.<CategoryWithStackingRulesType> | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['categories'] = undefined;
 
 /**
- * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['campaign_name'] = undefined;
 
 /**
- * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['campaign_id'] = undefined;
 
 /**
- * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
- * @member {String} 
- */
+    * Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItem.prototype['name'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsValidateResponseBodyRedeemablesItem['StatusEnum'] = {
+    /**
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationsValidateResponseBodyRedeemablesItem['StatusEnum'] = {
+    
+        /**
+         * value: "APPLICABLE"
+         * @constant
+         */
+        "APPLICABLE": "APPLICABLE",
+    
+        /**
+         * value: "INAPPLICABLE"
+         * @constant
+         */
+        "INAPPLICABLE": "INAPPLICABLE",
+    
+        /**
+         * value: "SKIPPED"
+         * @constant
+         */
+        "SKIPPED": "SKIPPED"    
+    };
+
 
     /**
-     * value: "APPLICABLE"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "APPLICABLE": "APPLICABLE",
-
-    /**
-     * value: "INAPPLICABLE"
-     * @constant
-     */
-    "INAPPLICABLE": "INAPPLICABLE",
-
-    /**
-     * value: "SKIPPED"
-     * @constant
-     */
-    "SKIPPED": "SKIPPED"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationsValidateResponseBodyRedeemablesItem['ObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier"
-};
+    ValidationsValidateResponseBodyRedeemablesItem['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier"    
+    };
 
 
 

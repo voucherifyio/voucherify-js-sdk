@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code>.
      * Defines the ratio based on the property defined in the calculation_type parameter. For every set of value (1, 10, etc) defined in the every parameter for the property defined in calculation_type, give the customer the number of points defined in the points parameter. In other words, for every calculation_type, give points.
-     * @alias module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount
+     * @alias LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount {
     /**
      * Constructs a <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount} The populated <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount</code>.
      */
     static validateJSON(data) {
@@ -81,21 +80,21 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount {
 
 
 /**
- * Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 order amount is written as 1000.
- * @member {Number} 
- */
+    * Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 order amount is written as 1000.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount.prototype['every'] = undefined;
 
 /**
- * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
- * @member {Number} 
- */
+    * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount.prototype['points_formula'] = undefined;
 
 

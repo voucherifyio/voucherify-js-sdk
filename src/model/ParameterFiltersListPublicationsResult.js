@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListPublicationsResult model module.
  * @module model/ParameterFiltersListPublicationsResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListPublicationsResult {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsResult</code>.
      * Filter publications by names.
-     * @alias module:model/ParameterFiltersListPublicationsResult
+     * @alias ParameterFiltersListPublicationsResult
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListPublicationsResult {
     /**
      * Constructs a <code>ParameterFiltersListPublicationsResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListPublicationsResult} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListPublicationsResult} The populated <code>ParameterFiltersListPublicationsResult</code> instance.
+     * @param {Partial<ParameterFiltersListPublicationsResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListPublicationsResult} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListPublicationsResult} The populated <code>ParameterFiltersListPublicationsResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListPublicationsResult {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListPublicationsResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListPublicationsResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListPublicationsResult</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListPublicationsResult {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListPublicationsResult.prototype['conditions'] = undefined;
 
 

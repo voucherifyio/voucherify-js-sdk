@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedeemableGift model module.
  * @module model/RedeemableGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedeemableGift {
     /**
      * Constructs a new <code>RedeemableGift</code>.
      * Contains current gift card balance information.
-     * @alias module:model/RedeemableGift
+     * @alias RedeemableGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedeemableGift {
     /**
      * Constructs a <code>RedeemableGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedeemableGift} obj Optional instance to populate.
-     * @returns {module:model/RedeemableGift} The populated <code>RedeemableGift</code> instance.
+     * @param {Partial<RedeemableGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedeemableGift} [obj] Optional instance to populate.
+     * @returns {RedeemableGift} The populated <code>RedeemableGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class RedeemableGift {
 
     /**
      * Validates the JSON data with respect to <code>RedeemableGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedeemableGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedeemableGift</code>.
      */
     static validateJSON(data) {
@@ -77,21 +76,21 @@ class RedeemableGift {
 
 
 /**
- * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedeemableGift.prototype['balance'] = undefined;
 
 /**
- * The number of credits that the user wants to use from the gift card to fulfil the order. The value of credits cannot be higher than the current balance on the gift card. If the user gives more points than he has on the gift card, the application will return an error code in response. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The number of credits that the user wants to use from the gift card to fulfil the order. The value of credits cannot be higher than the current balance on the gift card. If the user gives more points than he has on the gift card, the application will return an error code in response. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 RedeemableGift.prototype['credits'] = undefined;
 
 /**
- * The number of credits that are locked under a validation session. This is returned if the qualification request includes `session.type: LOCK` parameter in the body. The value is multiplied by 100 to represent 2 decimal places. For example `10000` for `$100.00`. Returns `0` if there aren't any active validation sessions for the gift card.
- * @member {Number} 
- */
+    * The number of credits that are locked under a validation session. This is returned if the qualification request includes `session.type: LOCK` parameter in the body. The value is multiplied by 100 to represent 2 decimal places. For example `10000` for `$100.00`. Returns `0` if there aren't any active validation sessions for the gift card.
+    * @type {Number | undefined}
+    */
 RedeemableGift.prototype['locked_credits'] = undefined;
 
 

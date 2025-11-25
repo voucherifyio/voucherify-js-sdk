@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import LoyaltyTiersExpirationAllExpirationDate from './LoyaltyTiersExpirationAllExpirationDate';
 import LoyaltyTiersExpirationAllStartDate from './LoyaltyTiersExpirationAllStartDate';
-
 /**
  * The LoyaltyTiersExpirationAll model module.
  * @module model/LoyaltyTiersExpirationAll
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyTiersExpirationAll {
     /**
      * Constructs a new <code>LoyaltyTiersExpirationAll</code>.
      * Defines the Loyalty Tiers Expiration.
-     * @alias module:model/LoyaltyTiersExpirationAll
+     * @alias LoyaltyTiersExpirationAll
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltyTiersExpirationAll {
     /**
      * Constructs a <code>LoyaltyTiersExpirationAll</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyTiersExpirationAll} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyTiersExpirationAll} The populated <code>LoyaltyTiersExpirationAll</code> instance.
+     * @param {Partial<LoyaltyTiersExpirationAll>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyTiersExpirationAll} [obj] Optional instance to populate.
+     * @returns {LoyaltyTiersExpirationAll} The populated <code>LoyaltyTiersExpirationAll</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -68,7 +67,7 @@ class LoyaltyTiersExpirationAll {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyTiersExpirationAll</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyTiersExpirationAll>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyTiersExpirationAll</code>.
      */
     static validateJSON(data) {
@@ -98,83 +97,83 @@ class LoyaltyTiersExpirationAll {
 
 
 /**
- * Tier qualification.     `BALANCE`: Points balance is based on the customer's current points balance. Customers qualify for the tier if their points balance is in the points range of the tier.   `POINTS_IN_PERIOD`: A customer qualifies for the tier only if the sum of the accumulated points in a **defined time interval** reaches the tier threshold.
- * @member {module:model/LoyaltyTiersExpirationAll.QualificationTypeEnum} 
- */
+    * Tier qualification.     `BALANCE`: Points balance is based on the customer's current points balance. Customers qualify for the tier if their points balance is in the points range of the tier.   `POINTS_IN_PERIOD`: A customer qualifies for the tier only if the sum of the accumulated points in a **defined time interval** reaches the tier threshold.
+    * @type {(keyof typeof LoyaltyTiersExpirationAll.QualificationTypeEnum) | undefined}
+    */
 LoyaltyTiersExpirationAll.prototype['qualification_type'] = undefined;
 
 /**
- * Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br />January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br />- January - March<br />- April - June<br />- July - September<br />- October - December | | **Calendar Half-year** | Points collected in the half-year<br />- January - June<br />- July - December | | **Calendar Year** | Points collected in one calendar year<br />January - December |
- * @member {module:model/LoyaltyTiersExpirationAll.QualificationPeriodEnum} 
- */
+    * Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br />January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br />- January - March<br />- April - June<br />- July - September<br />- October - December | | **Calendar Half-year** | Points collected in the half-year<br />- January - June<br />- July - December | | **Calendar Year** | Points collected in one calendar year<br />January - December |
+    * @type {(keyof typeof LoyaltyTiersExpirationAll.QualificationPeriodEnum) | undefined}
+    */
 LoyaltyTiersExpirationAll.prototype['qualification_period'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTiersExpirationAllStartDate} 
- */
+    * @type {LoyaltyTiersExpirationAllStartDate | undefined}
+    */
 LoyaltyTiersExpirationAll.prototype['start_date'] = undefined;
 
 /**
- * @member {module:model/LoyaltyTiersExpirationAllExpirationDate} 
- */
+    * @type {LoyaltyTiersExpirationAllExpirationDate | undefined}
+    */
 LoyaltyTiersExpirationAll.prototype['expiration_date'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>qualification_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAll['QualificationTypeEnum'] = {
+    /**
+     * Allowed values for the <code>qualification_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltyTiersExpirationAll['QualificationTypeEnum'] = {
+    
+        /**
+         * value: "BALANCE"
+         * @constant
+         */
+        "BALANCE": "BALANCE",
+    
+        /**
+         * value: "POINTS_IN_PERIOD"
+         * @constant
+         */
+        "POINTS_IN_PERIOD": "POINTS_IN_PERIOD"    
+    };
+
 
     /**
-     * value: "BALANCE"
-     * @constant
+     * Allowed values for the <code>qualification_period</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "BALANCE": "BALANCE",
-
-    /**
-     * value: "POINTS_IN_PERIOD"
-     * @constant
-     */
-    "POINTS_IN_PERIOD": "POINTS_IN_PERIOD"
-};
-
-
-/**
- * Allowed values for the <code>qualification_period</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltyTiersExpirationAll['QualificationPeriodEnum'] = {
-
-    /**
-     * value: "MONTH"
-     * @constant
-     */
-    "MONTH": "MONTH",
-
-    /**
-     * value: "QUARTER"
-     * @constant
-     */
-    "QUARTER": "QUARTER",
-
-    /**
-     * value: "HALF_YEAR"
-     * @constant
-     */
-    "HALF_YEAR": "HALF_YEAR",
-
-    /**
-     * value: "YEAR"
-     * @constant
-     */
-    "YEAR": "YEAR"
-};
+    LoyaltyTiersExpirationAll['QualificationPeriodEnum'] = {
+    
+        /**
+         * value: "MONTH"
+         * @constant
+         */
+        "MONTH": "MONTH",
+    
+        /**
+         * value: "QUARTER"
+         * @constant
+         */
+        "QUARTER": "QUARTER",
+    
+        /**
+         * value: "HALF_YEAR"
+         * @constant
+         */
+        "HALF_YEAR": "HALF_YEAR",
+    
+        /**
+         * value: "YEAR"
+         * @constant
+         */
+        "YEAR": "YEAR"    
+    };
 
 
 

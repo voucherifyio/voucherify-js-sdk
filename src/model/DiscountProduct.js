@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The DiscountProduct model module.
  * @module model/DiscountProduct
- * @version 3.0.0
+ * @version 3.0.1
  */
 class DiscountProduct {
     /**
      * Constructs a new <code>DiscountProduct</code>.
-     * @alias module:model/DiscountProduct
+     * @alias DiscountProduct
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class DiscountProduct {
     /**
      * Constructs a <code>DiscountProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DiscountProduct} obj Optional instance to populate.
-     * @returns {module:model/DiscountProduct} The populated <code>DiscountProduct</code> instance.
+     * @param {Partial<DiscountProduct>} data The plain JavaScript object bearing properties of interest.
+     * @param {DiscountProduct} [obj] Optional instance to populate.
+     * @returns {DiscountProduct} The populated <code>DiscountProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class DiscountProduct {
 
     /**
      * Validates the JSON data with respect to <code>DiscountProduct</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<DiscountProduct>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>DiscountProduct</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class DiscountProduct {
 
 
 /**
- * Unique product ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique product ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 DiscountProduct.prototype['id'] = undefined;
 
 /**
- * Product's source ID.
- * @member {String} 
- */
+    * Product's source ID.
+    * @type {String | undefined}
+    */
 DiscountProduct.prototype['source_id'] = undefined;
 
 /**
- * Product name.
- * @member {String} 
- */
+    * Product name.
+    * @type {String | undefined}
+    */
 DiscountProduct.prototype['name'] = undefined;
 
 

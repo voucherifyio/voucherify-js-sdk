@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import CampaignsTransactionsExportCreateResponseBodyParametersFilters from './CampaignsTransactionsExportCreateResponseBodyParametersFilters';
-
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParameters model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsTransactionsExportCreateResponseBodyParameters {
     /**
      * Constructs a new <code>CampaignsTransactionsExportCreateResponseBodyParameters</code>.
-     * @alias module:model/CampaignsTransactionsExportCreateResponseBodyParameters
+     * @alias CampaignsTransactionsExportCreateResponseBodyParameters
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsTransactionsExportCreateResponseBodyParameters {
     /**
      * Constructs a <code>CampaignsTransactionsExportCreateResponseBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsTransactionsExportCreateResponseBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/CampaignsTransactionsExportCreateResponseBodyParameters} The populated <code>CampaignsTransactionsExportCreateResponseBodyParameters</code> instance.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsTransactionsExportCreateResponseBodyParameters} [obj] Optional instance to populate.
+     * @returns {CampaignsTransactionsExportCreateResponseBodyParameters} The populated <code>CampaignsTransactionsExportCreateResponseBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class CampaignsTransactionsExportCreateResponseBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsTransactionsExportCreateResponseBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsTransactionsExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsTransactionsExportCreateResponseBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -89,45 +88,45 @@ class CampaignsTransactionsExportCreateResponseBodyParameters {
 
 
 /**
- * How the export is ordered, where the dash `-` preceding a sorting option means sorting in a descending order.
- * @member {module:model/CampaignsTransactionsExportCreateResponseBodyParameters.OrderEnum} 
- */
+    * How the export is ordered, where the dash `-` preceding a sorting option means sorting in a descending order.
+    * @type {(keyof typeof CampaignsTransactionsExportCreateResponseBodyParameters.OrderEnum) | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParameters.prototype['order'] = undefined;
 
 /**
- * Data fields that will be exported for the transactions that are associated with balance movements on cards in a campaign.
- * @member {Array.<module:model/CampaignsTransactionsExportCreateResponseBodyParameters.FieldsEnum>} 
- */
+    * Data fields that will be exported for the transactions that are associated with balance movements on cards in a campaign.
+    * @type {(Array<keyof typeof CampaignsTransactionsExportCreateResponseBodyParameters.FieldsEnum>) | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFilters} 
- */
+    * @type {CampaignsTransactionsExportCreateResponseBodyParametersFilters | undefined}
+    */
 CampaignsTransactionsExportCreateResponseBodyParameters.prototype['filters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>order</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignsTransactionsExportCreateResponseBodyParameters['OrderEnum'] = {
-
     /**
-     * value: "-created_at"
-     * @constant
+     * Allowed values for the <code>order</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "-created_at": "-created_at",
-
-    /**
-     * value: "created_at"
-     * @constant
-     */
-    "created_at": "created_at"
-};
+    CampaignsTransactionsExportCreateResponseBodyParameters['OrderEnum'] = {
+    
+        /**
+         * value: "-created_at"
+         * @constant
+         */
+        "-created_at": "-created_at",
+    
+        /**
+         * value: "created_at"
+         * @constant
+         */
+        "created_at": "created_at"    
+    };
 
 
 /**

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The TrashBinItem model module.
  * @module model/TrashBinItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class TrashBinItem {
     /**
      * Constructs a new <code>TrashBinItem</code>.
      * Resource moved to the bin, i.e. a campaign, product, SKU, or voucher.
-     * @alias module:model/TrashBinItem
+     * @alias TrashBinItem
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class TrashBinItem {
     /**
      * Constructs a <code>TrashBinItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TrashBinItem} obj Optional instance to populate.
-     * @returns {module:model/TrashBinItem} The populated <code>TrashBinItem</code> instance.
+     * @param {Partial<TrashBinItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {TrashBinItem} [obj] Optional instance to populate.
+     * @returns {TrashBinItem} The populated <code>TrashBinItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class TrashBinItem {
 
     /**
      * Validates the JSON data with respect to <code>TrashBinItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<TrashBinItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>TrashBinItem</code>.
      */
     static validateJSON(data) {
@@ -120,121 +119,121 @@ class TrashBinItem {
 
 
 /**
- * Unique identifier of the trash bin entry. It should not be confused with the ID of the resource moved to the bin.
- * @member {String} 
- */
+    * Unique identifier of the trash bin entry. It should not be confused with the ID of the resource moved to the bin.
+    * @type {String | undefined}
+    */
 TrashBinItem.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the resource was moved to the bin. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the resource was moved to the bin. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 TrashBinItem.prototype['created_at'] = undefined;
 
 /**
- * Unique identifier of the user who moved the resource to the bin. It returns a user ID if the resource was moved to the bin through an action in the website. It returns a `null` if the resource was deleted through the API.
- * @member {String} 
- */
+    * Unique identifier of the user who moved the resource to the bin. It returns a user ID if the resource was moved to the bin through an action in the website. It returns a `null` if the resource was deleted through the API.
+    * @type {String | undefined}
+    */
 TrashBinItem.prototype['deleted_by_user_id'] = undefined;
 
 /**
- * Unique identifier of the resource moved to the bin, i.e. an ID of a campaign, product, SKU, or voucher.
- * @member {String} 
- */
+    * Unique identifier of the resource moved to the bin, i.e. an ID of a campaign, product, SKU, or voucher.
+    * @type {String | undefined}
+    */
 TrashBinItem.prototype['resource_id'] = undefined;
 
 /**
- * Type of the resource moved to the bin.
- * @member {module:model/TrashBinItem.ResourceTypeEnum} 
- */
+    * Type of the resource moved to the bin.
+    * @type {(keyof typeof TrashBinItem.ResourceTypeEnum) | undefined}
+    */
 TrashBinItem.prototype['resource_type'] = undefined;
 
 /**
- * Name of the resouce moved to the bin. It is the name of the campaign, product or SKU, or the voucher code.
- * @member {String} 
- */
+    * Name of the resouce moved to the bin. It is the name of the campaign, product or SKU, or the voucher code.
+    * @type {String | undefined}
+    */
 TrashBinItem.prototype['resource_name'] = undefined;
 
 /**
- * Unique identifier of the parent resource. For a voucher, it is a campaign ID, except for generic (standalone) vouchers. For an SKU, it is the product ID. It returns `null` for campaigns and base products.
- * @member {String} 
- */
+    * Unique identifier of the parent resource. For a voucher, it is a campaign ID, except for generic (standalone) vouchers. For an SKU, it is the product ID. It returns `null` for campaigns and base products.
+    * @type {String | undefined}
+    */
 TrashBinItem.prototype['resource_parent_id'] = undefined;
 
 /**
- * The type of the object represented by JSON. It is equal to the `resource_type`.
- * @member {module:model/TrashBinItem.ObjectEnum} 
- */
+    * The type of the object represented by JSON. It is equal to the `resource_type`.
+    * @type {(keyof typeof TrashBinItem.ObjectEnum) | undefined}
+    */
 TrashBinItem.prototype['object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>resource_type</code> property.
- * @enum {String}
- * @readonly
- */
-TrashBinItem['ResourceTypeEnum'] = {
+    /**
+     * Allowed values for the <code>resource_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    TrashBinItem['ResourceTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
+
 
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-TrashBinItem['ObjectEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku",
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    TrashBinItem['ObjectEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku",
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

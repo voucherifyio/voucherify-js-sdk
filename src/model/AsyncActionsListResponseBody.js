@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import AsyncActionBase from './AsyncActionBase';
-
 /**
  * The AsyncActionsListResponseBody model module.
  * @module model/AsyncActionsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AsyncActionsListResponseBody {
     /**
      * Constructs a new <code>AsyncActionsListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/async-actions&#x60;.
-     * @alias module:model/AsyncActionsListResponseBody
+     * @alias AsyncActionsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class AsyncActionsListResponseBody {
     /**
      * Constructs a <code>AsyncActionsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AsyncActionsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/AsyncActionsListResponseBody} The populated <code>AsyncActionsListResponseBody</code> instance.
+     * @param {Partial<AsyncActionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {AsyncActionsListResponseBody} [obj] Optional instance to populate.
+     * @returns {AsyncActionsListResponseBody} The populated <code>AsyncActionsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class AsyncActionsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>AsyncActionsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AsyncActionsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AsyncActionsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,62 +100,62 @@ class AsyncActionsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about asynchronous actions.
- * @member {module:model/AsyncActionsListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about asynchronous actions.
+    * @type {(keyof typeof AsyncActionsListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 AsyncActionsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the JSON property that contains the array of asynchronous actions.
- * @member {module:model/AsyncActionsListResponseBody.DataRefEnum} 
- * @default 'async_actions'
- */
+    * Identifies the name of the JSON property that contains the array of asynchronous actions.
+    * @type {(keyof typeof AsyncActionsListResponseBody.DataRefEnum) | undefined}
+    * @default 'async_actions'
+    */
 AsyncActionsListResponseBody.prototype['data_ref'] = 'async_actions';
 
 /**
- * @member {Array.<module:model/AsyncActionBase>} 
- */
+    * @type {Array.<AsyncActionBase> | undefined}
+    */
 AsyncActionsListResponseBody.prototype['async_actions'] = undefined;
 
 /**
- * As query results are always limited by parameters, the `has_more` flag indicates if there are more records available. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited by parameters, the `has_more` flag indicates if there are more records available. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 AsyncActionsListResponseBody.prototype['has_more'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionsListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    AsyncActionsListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-AsyncActionsListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "async_actions"
-     * @constant
-     */
-    "async_actions": "async_actions"
-};
+    AsyncActionsListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "async_actions"
+         * @constant
+         */
+        "async_actions": "async_actions"    
+    };
 
 
 

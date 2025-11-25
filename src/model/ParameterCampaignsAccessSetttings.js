@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ParameterCampaignsAccessSetttingsFilter from './ParameterCampaignsAccessSetttingsFilter';
-
 /**
  * The ParameterCampaignsAccessSetttings model module.
  * @module model/ParameterCampaignsAccessSetttings
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterCampaignsAccessSetttings {
     /**
      * Constructs a new <code>ParameterCampaignsAccessSetttings</code>.
-     * @alias module:model/ParameterCampaignsAccessSetttings
+     * @alias ParameterCampaignsAccessSetttings
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterCampaignsAccessSetttings {
     /**
      * Constructs a <code>ParameterCampaignsAccessSetttings</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterCampaignsAccessSetttings} obj Optional instance to populate.
-     * @returns {module:model/ParameterCampaignsAccessSetttings} The populated <code>ParameterCampaignsAccessSetttings</code> instance.
+     * @param {Partial<ParameterCampaignsAccessSetttings>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterCampaignsAccessSetttings} [obj] Optional instance to populate.
+     * @returns {ParameterCampaignsAccessSetttings} The populated <code>ParameterCampaignsAccessSetttings</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ParameterCampaignsAccessSetttings {
 
     /**
      * Validates the JSON data with respect to <code>ParameterCampaignsAccessSetttings</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterCampaignsAccessSetttings>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterCampaignsAccessSetttings</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class ParameterCampaignsAccessSetttings {
 
 
 /**
- * @member {module:model/ParameterCampaignsAccessSetttingsFilter} 
- */
+    * @type {ParameterCampaignsAccessSetttingsFilter | undefined}
+    */
 ParameterCampaignsAccessSetttings.prototype['filter'] = undefined;
 
 

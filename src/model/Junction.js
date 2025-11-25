@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class Junction.
-* @module model/Junction
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class Junction {
+ * Enum class Junction.
+ * @module model/Junction
+ * @version 3.0.1
+ */
+class Junction {
     
-        /**
-         * value: "and"
-         * @constant
-         */
-        "and" = "and";
-
+    /**
+     * Logical Operator Between Filters. Filter by conditions set on the &#x60;junction&#x60; parameter indicating how the &#x60;conditions&#x60; should be accounted for in the query. An &#x60;AND&#x60; is an all-inclusive logical operator, meaning the &#x60;AND&#x60; operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an &#x60;OR&#x60; operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     * @constant
+     */
+    static "and" = "and";
     
-        /**
-         * value: "or"
-         * @constant
-         */
-        "or" = "or";
-
+    /**
+     * Logical Operator Between Filters. Filter by conditions set on the &#x60;junction&#x60; parameter indicating how the &#x60;conditions&#x60; should be accounted for in the query. An &#x60;AND&#x60; is an all-inclusive logical operator, meaning the &#x60;AND&#x60; operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an &#x60;OR&#x60; operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     * @constant
+     */
+    static "or" = "or";
     
 
     /**
-    * Returns a <code>Junction</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/Junction} The enum <code>Junction</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof Junction, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof Junction[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return Junction[key];
     }
 }
+
+export default Junction;
 

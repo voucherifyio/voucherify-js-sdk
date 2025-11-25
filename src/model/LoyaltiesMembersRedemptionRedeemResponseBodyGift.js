@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyGift model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyGift {
     /**
      * Constructs a new <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code>.
      * Contains the amount subtracted from the gift card for the redemption.
-     * @alias module:model/LoyaltiesMembersRedemptionRedeemResponseBodyGift
+     * @alias LoyaltiesMembersRedemptionRedeemResponseBodyGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyGift {
     /**
      * Constructs a <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyGift} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyGift} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code> instance.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersRedemptionRedeemResponseBodyGift} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersRedemptionRedeemResponseBodyGift} The populated <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyGift {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersRedemptionRedeemResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersRedemptionRedeemResponseBodyGift</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyGift {
 
 
 /**
- * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Amount subtracted from the gift card as a result of the redemption. The amount is expressed as the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 LoyaltiesMembersRedemptionRedeemResponseBodyGift.prototype['amount'] = undefined;
 
 

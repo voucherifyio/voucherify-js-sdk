@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import Customer from './Customer';
 import OrderItem from './OrderItem';
 import Referrer from './Referrer';
-
 /**
  * The OrdersUpdateRequestBody model module.
  * @module model/OrdersUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersUpdateRequestBody {
     /**
      * Constructs a new <code>OrdersUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;v1/orders/{orderId}&#x60;.
-     * @alias module:model/OrdersUpdateRequestBody
+     * @alias OrdersUpdateRequestBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class OrdersUpdateRequestBody {
     /**
      * Constructs a <code>OrdersUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/OrdersUpdateRequestBody} The populated <code>OrdersUpdateRequestBody</code> instance.
+     * @param {Partial<OrdersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {OrdersUpdateRequestBody} The populated <code>OrdersUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -90,7 +89,7 @@ class OrdersUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>OrdersUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -134,104 +133,104 @@ class OrdersUpdateRequestBody {
 
 
 /**
- * Unique source ID of an existing order that will be linked to the redemption of this request.
- * @member {String} 
- */
+    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * @type {String | undefined}
+    */
 OrdersUpdateRequestBody.prototype['source_id'] = undefined;
 
 /**
- * The order status.
- * @member {module:model/OrdersUpdateRequestBody.StatusEnum} 
- */
+    * The order status.
+    * @type {(keyof typeof OrdersUpdateRequestBody.StatusEnum) | undefined}
+    */
 OrdersUpdateRequestBody.prototype['status'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 OrdersUpdateRequestBody.prototype['amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 OrdersUpdateRequestBody.prototype['initial_amount'] = undefined;
 
 /**
- * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
- * @member {Number} 
- */
+    * Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
+    * @type {Number | undefined}
+    */
 OrdersUpdateRequestBody.prototype['discount_amount'] = undefined;
 
 /**
- * Array of items applied to the order. It can include up to 500 items.
- * @member {Array.<module:model/OrderItem>} 
- */
+    * Array of items applied to the order. It can include up to 500 items.
+    * @type {Array.<OrderItem> | undefined}
+    */
 OrdersUpdateRequestBody.prototype['items'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
+    * @type {Object | undefined}
+    */
 OrdersUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrdersUpdateRequestBody.prototype['created_at'] = undefined;
 
 /**
- * Unique referrer ID.
- * @member {String} 
- */
+    * Unique referrer ID.
+    * @type {String | undefined}
+    */
 OrdersUpdateRequestBody.prototype['referrer_id'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 OrdersUpdateRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Referrer} 
- */
+    * @type {Referrer | undefined}
+    */
 OrdersUpdateRequestBody.prototype['referrer'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersUpdateRequestBody['StatusEnum'] = {
-
     /**
-     * value: "CREATED"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREATED": "CREATED",
-
-    /**
-     * value: "PAID"
-     * @constant
-     */
-    "PAID": "PAID",
-
-    /**
-     * value: "CANCELED"
-     * @constant
-     */
-    "CANCELED": "CANCELED",
-
-    /**
-     * value: "FULFILLED"
-     * @constant
-     */
-    "FULFILLED": "FULFILLED"
-};
+    OrdersUpdateRequestBody['StatusEnum'] = {
+    
+        /**
+         * value: "CREATED"
+         * @constant
+         */
+        "CREATED": "CREATED",
+    
+        /**
+         * value: "PAID"
+         * @constant
+         */
+        "PAID": "PAID",
+    
+        /**
+         * value: "CANCELED"
+         * @constant
+         */
+        "CANCELED": "CANCELED",
+    
+        /**
+         * value: "FULFILLED"
+         * @constant
+         */
+        "FULFILLED": "FULFILLED"    
+    };
 
 
 

@@ -23,13 +23,13 @@ import CategoriesUpdateResponseBody from '../model/CategoriesUpdateResponseBody'
 /**
 * Categories service.
 * @module api/CategoriesApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class CategoriesApi {
 
     /**
     * Constructs a new CategoriesApi. 
-    * @alias module:api/CategoriesApi
+    * @alias CategoriesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -41,18 +41,19 @@ export default class CategoriesApi {
 
     /**
      * Callback function to receive the result of the createCategory operation.
-     * @callback module:api/CategoriesApi~createCategoryCallback
+     * @callback createCategoryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CategoriesCreateResponseBody} [data] The data returned by the service call.
+     * @param {CategoriesCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Category
      * Create category with a specific name and hierarchy.
-     * @param {module:model/CategoriesCreateRequestBody} categoriesCreateRequestBody Specify the details of the category that you would like to create.
-     * @param {module:api/CategoriesApi~createCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CategoriesCreateResponseBody}
+     * @param {CategoriesCreateRequestBody} categoriesCreateRequestBody Specify the details of the category that you would like to create.
+     * @param {createCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CategoriesCreateResponseBody}
+     * @returns {Promise<(CategoriesCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CategoriesCreateResponseBody` object or with `undefined`.
      */
     createCategory(categoriesCreateRequestBody, callback) {
       let postBody = categoriesCreateRequestBody;
@@ -80,7 +81,7 @@ export default class CategoriesApi {
 
     /**
      * Callback function to receive the result of the deleteCategory operation.
-     * @callback module:api/CategoriesApi~deleteCategoryCallback
+     * @callback deleteCategoryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -90,7 +91,8 @@ export default class CategoriesApi {
      * Delete Category
      * Delete a category by the category ID.
      * @param {String} categoryId Unique category ID assigned by Voucherify.
-     * @param {module:api/CategoriesApi~deleteCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteCategory(categoryId, callback) {
       let postBody = null;
@@ -119,9 +121,9 @@ export default class CategoriesApi {
 
     /**
      * Callback function to receive the result of the getCategory operation.
-     * @callback module:api/CategoriesApi~getCategoryCallback
+     * @callback getCategoryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CategoriesGetResponseBody} [data] The data returned by the service call.
+     * @param {CategoriesGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -129,8 +131,9 @@ export default class CategoriesApi {
      * Get Category
      * Retrieve a category by the category ID.
      * @param {String} categoryId Unique category ID assigned by Voucherify.
-     * @param {module:api/CategoriesApi~getCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CategoriesGetResponseBody}
+     * @param {getCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CategoriesGetResponseBody}
+     * @returns {Promise<(CategoriesGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CategoriesGetResponseBody` object or with `undefined`.
      */
     getCategory(categoryId, callback) {
       let postBody = null;
@@ -159,17 +162,18 @@ export default class CategoriesApi {
 
     /**
      * Callback function to receive the result of the listCategories operation.
-     * @callback module:api/CategoriesApi~listCategoriesCallback
+     * @callback listCategoriesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CategoriesListResponseBody} [data] The data returned by the service call.
+     * @param {CategoriesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * List Categories
      * List all categories.
-     * @param {module:api/CategoriesApi~listCategoriesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CategoriesListResponseBody}
+     * @param {listCategoriesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CategoriesListResponseBody}
+     * @returns {Promise<(CategoriesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CategoriesListResponseBody` object or with `undefined`.
      */
     listCategories(callback) {
       let postBody = null;
@@ -196,9 +200,9 @@ export default class CategoriesApi {
 
     /**
      * Callback function to receive the result of the updateCategory operation.
-     * @callback module:api/CategoriesApi~updateCategoryCallback
+     * @callback updateCategoryCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/CategoriesUpdateResponseBody} [data] The data returned by the service call.
+     * @param {CategoriesUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -206,9 +210,10 @@ export default class CategoriesApi {
      * Update Category
      * Update a category using the category ID.
      * @param {String} categoryId Unique category ID assigned by Voucherify.
-     * @param {module:model/CategoriesUpdateRequestBody} categoriesUpdateRequestBody Specify the details of the category that you would like to update.
-     * @param {module:api/CategoriesApi~updateCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CategoriesUpdateResponseBody}
+     * @param {CategoriesUpdateRequestBody} categoriesUpdateRequestBody Specify the details of the category that you would like to update.
+     * @param {updateCategoryCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link CategoriesUpdateResponseBody}
+     * @returns {Promise<(CategoriesUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `CategoriesUpdateResponseBody` object or with `undefined`.
      */
     updateCategory(categoryId, categoriesUpdateRequestBody, callback) {
       let postBody = categoriesUpdateRequestBody;

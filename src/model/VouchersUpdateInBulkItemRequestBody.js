@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersUpdateInBulkItemRequestBody model module.
  * @module model/VouchersUpdateInBulkItemRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersUpdateInBulkItemRequestBody {
     /**
      * Constructs a new <code>VouchersUpdateInBulkItemRequestBody</code>.
-     * @alias module:model/VouchersUpdateInBulkItemRequestBody
+     * @alias VouchersUpdateInBulkItemRequestBody
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class VouchersUpdateInBulkItemRequestBody {
     /**
      * Constructs a <code>VouchersUpdateInBulkItemRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersUpdateInBulkItemRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersUpdateInBulkItemRequestBody} The populated <code>VouchersUpdateInBulkItemRequestBody</code> instance.
+     * @param {Partial<VouchersUpdateInBulkItemRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersUpdateInBulkItemRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersUpdateInBulkItemRequestBody} The populated <code>VouchersUpdateInBulkItemRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class VouchersUpdateInBulkItemRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersUpdateInBulkItemRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersUpdateInBulkItemRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersUpdateInBulkItemRequestBody</code>.
      */
     static validateJSON(data) {
@@ -77,15 +76,15 @@ class VouchersUpdateInBulkItemRequestBody {
 
 
 /**
- * Unique voucher code.
- * @member {String} 
- */
+    * Unique voucher code.
+    * @type {String | undefined}
+    */
 VouchersUpdateInBulkItemRequestBody.prototype['code'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 VouchersUpdateInBulkItemRequestBody.prototype['metadata'] = undefined;
 
 

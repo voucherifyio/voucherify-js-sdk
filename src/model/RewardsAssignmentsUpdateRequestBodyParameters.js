@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import RewardsAssignmentsUpdateRequestBodyParametersLoyalty from './RewardsAssignmentsUpdateRequestBodyParametersLoyalty';
-
 /**
  * The RewardsAssignmentsUpdateRequestBodyParameters model module.
  * @module model/RewardsAssignmentsUpdateRequestBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsAssignmentsUpdateRequestBodyParameters {
     /**
      * Constructs a new <code>RewardsAssignmentsUpdateRequestBodyParameters</code>.
      * An object that defines the price of the reward in loyalty points.
-     * @alias module:model/RewardsAssignmentsUpdateRequestBodyParameters
+     * @alias RewardsAssignmentsUpdateRequestBodyParameters
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RewardsAssignmentsUpdateRequestBodyParameters {
     /**
      * Constructs a <code>RewardsAssignmentsUpdateRequestBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsAssignmentsUpdateRequestBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/RewardsAssignmentsUpdateRequestBodyParameters} The populated <code>RewardsAssignmentsUpdateRequestBodyParameters</code> instance.
+     * @param {Partial<RewardsAssignmentsUpdateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsAssignmentsUpdateRequestBodyParameters} [obj] Optional instance to populate.
+     * @returns {RewardsAssignmentsUpdateRequestBodyParameters} The populated <code>RewardsAssignmentsUpdateRequestBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class RewardsAssignmentsUpdateRequestBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>RewardsAssignmentsUpdateRequestBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsAssignmentsUpdateRequestBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsAssignmentsUpdateRequestBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class RewardsAssignmentsUpdateRequestBodyParameters {
 
 
 /**
- * @member {module:model/RewardsAssignmentsUpdateRequestBodyParametersLoyalty} 
- */
+    * @type {RewardsAssignmentsUpdateRequestBodyParametersLoyalty | undefined}
+    */
 RewardsAssignmentsUpdateRequestBodyParameters.prototype['loyalty'] = undefined;
 
 

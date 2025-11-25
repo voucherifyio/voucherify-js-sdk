@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code>.
      * Defines the configuration for pending points. Pending points can be used only with the &#x60;order.paid&#x60; event.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints</code>.
      */
     static validateJSON(data) {
@@ -79,35 +78,35 @@ class LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints {
 
 
 /**
- * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
- * @member {module:model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints.PeriodTypeEnum} 
- * @default 'DAY'
- */
+    * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
+    * @type {(keyof typeof LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints.PeriodTypeEnum) | undefined}
+    * @default 'DAY'
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints.prototype['period_type'] = 'DAY';
 
 /**
- * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
- * @member {Number} 
- */
+    * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints.prototype['period_value'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>period_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints['PeriodTypeEnum'] = {
-
     /**
-     * value: "DAY"
-     * @constant
+     * Allowed values for the <code>period_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DAY": "DAY"
-};
+    LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints['PeriodTypeEnum'] = {
+    
+        /**
+         * value: "DAY"
+         * @constant
+         */
+        "DAY": "DAY"    
+    };
 
 
 

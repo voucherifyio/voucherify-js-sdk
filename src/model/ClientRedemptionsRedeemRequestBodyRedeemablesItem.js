@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import ClientRedemptionsRedeemRequestBodyRedeemablesItemGift from './ClientRedemptionsRedeemRequestBodyRedeemablesItemGift';
 import ClientRedemptionsRedeemRequestBodyRedeemablesItemReward from './ClientRedemptionsRedeemRequestBodyRedeemablesItemReward';
-
 /**
  * The ClientRedemptionsRedeemRequestBodyRedeemablesItem model module.
  * @module model/ClientRedemptionsRedeemRequestBodyRedeemablesItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientRedemptionsRedeemRequestBodyRedeemablesItem {
     /**
      * Constructs a new <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code>.
-     * @alias module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItem
+     * @alias ClientRedemptionsRedeemRequestBodyRedeemablesItem
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItem {
     /**
      * Constructs a <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItem} obj Optional instance to populate.
-     * @returns {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItem} The populated <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code> instance.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientRedemptionsRedeemRequestBodyRedeemablesItem} [obj] Optional instance to populate.
+     * @returns {ClientRedemptionsRedeemRequestBodyRedeemablesItem} The populated <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItem {
 
     /**
      * Validates the JSON data with respect to <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientRedemptionsRedeemRequestBodyRedeemablesItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientRedemptionsRedeemRequestBodyRedeemablesItem</code>.
      */
     static validateJSON(data) {
@@ -97,54 +96,54 @@ class ClientRedemptionsRedeemRequestBodyRedeemablesItem {
 
 
 /**
- * @member {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItem.ObjectEnum} 
- */
+    * @type {(keyof typeof ClientRedemptionsRedeemRequestBodyRedeemablesItem.ObjectEnum) | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItem.prototype['object'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItem.prototype['id'] = undefined;
 
 /**
- * @member {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemGift} 
- */
+    * @type {ClientRedemptionsRedeemRequestBodyRedeemablesItemGift | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItem.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward} 
- */
+    * @type {ClientRedemptionsRedeemRequestBodyRedeemablesItemReward | undefined}
+    */
 ClientRedemptionsRedeemRequestBodyRedeemablesItem.prototype['reward'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ClientRedemptionsRedeemRequestBodyRedeemablesItem['ObjectEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher",
-
-    /**
-     * value: "promotion_tier"
-     * @constant
-     */
-    "promotion_tier": "promotion_tier",
-
-    /**
-     * value: "promotion_stack"
-     * @constant
-     */
-    "promotion_stack": "promotion_stack"
-};
+    ClientRedemptionsRedeemRequestBodyRedeemablesItem['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher",
+    
+        /**
+         * value: "promotion_tier"
+         * @constant
+         */
+        "promotion_tier": "promotion_tier",
+    
+        /**
+         * value: "promotion_stack"
+         * @constant
+         */
+        "promotion_stack": "promotion_stack"    
+    };
 
 
 

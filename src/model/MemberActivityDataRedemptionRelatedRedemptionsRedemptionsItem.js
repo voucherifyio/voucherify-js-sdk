@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem model module.
  * @module model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code>.
-     * @alias module:model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem
+     * @alias MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem} The populated <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem} The populated <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem</code>.
      */
     static validateJSON(data) {
@@ -77,15 +76,15 @@ class MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem.prototype['date'] = undefined;
 
 

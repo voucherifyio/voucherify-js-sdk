@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import CustomEventLoyalty from './CustomEventLoyalty';
 import CustomEventReferral from './CustomEventReferral';
 import SimpleCustomerRequiredObjectType from './SimpleCustomerRequiredObjectType';
-
 /**
  * The CustomEvent model module.
  * @module model/CustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomEvent {
     /**
      * Constructs a new <code>CustomEvent</code>.
-     * @alias module:model/CustomEvent
-     * @param customer {module:model/SimpleCustomerRequiredObjectType} 
+     * @alias CustomEvent
+     * @param {SimpleCustomerRequiredObjectType} customer 
      */
     constructor(customer) { 
         
@@ -45,9 +44,9 @@ class CustomEvent {
     /**
      * Constructs a <code>CustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomEvent} obj Optional instance to populate.
-     * @returns {module:model/CustomEvent} The populated <code>CustomEvent</code> instance.
+     * @param {Partial<CustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomEvent} [obj] Optional instance to populate.
+     * @returns {CustomEvent} The populated <code>CustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -83,7 +82,7 @@ class CustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>CustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomEvent</code>.
      */
     static validateJSON(data) {
@@ -127,68 +126,68 @@ class CustomEvent {
 CustomEvent.RequiredProperties = ["customer"];
 
 /**
- * Unique custom event ID.
- * @member {String} 
- */
+    * Unique custom event ID.
+    * @type {String | undefined}
+    */
 CustomEvent.prototype['id'] = undefined;
 
 /**
- * The object represented is an `event`.
- * @member {module:model/CustomEvent.ObjectEnum} 
- * @default 'event'
- */
+    * The object represented is an `event`.
+    * @type {(keyof typeof CustomEvent.ObjectEnum) | undefined}
+    * @default 'event'
+    */
 CustomEvent.prototype['object'] = 'event';
 
 /**
- * The event name.
- * @member {String} 
- */
+    * The event name.
+    * @type {String | undefined}
+    */
 CustomEvent.prototype['type'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomerRequiredObjectType} 
- */
+    * @type {SimpleCustomerRequiredObjectType}
+    */
 CustomEvent.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/CustomEventReferral} 
- */
+    * @type {CustomEventReferral | undefined}
+    */
 CustomEvent.prototype['referral'] = undefined;
 
 /**
- * @member {module:model/CustomEventLoyalty} 
- */
+    * @type {CustomEventLoyalty | undefined}
+    */
 CustomEvent.prototype['loyalty'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer object.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer object.
+    * @type {Object | undefined}
+    */
 CustomEvent.prototype['metadata'] = undefined;
 
 /**
- * Timestamp representing the date and time when the custom event was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the custom event was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 CustomEvent.prototype['created_at'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-CustomEvent['ObjectEnum'] = {
-
     /**
-     * value: "event"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "event": "event"
-};
+    CustomEvent['ObjectEnum'] = {
+    
+        /**
+         * value: "event"
+         * @constant
+         */
+        "event": "event"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VoucherAssetsQr model module.
  * @module model/VoucherAssetsQr
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherAssetsQr {
     /**
      * Constructs a new <code>VoucherAssetsQr</code>.
      * Stores Quick Response (QR) representation of encrypted code.
-     * @alias module:model/VoucherAssetsQr
+     * @alias VoucherAssetsQr
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherAssetsQr {
     /**
      * Constructs a <code>VoucherAssetsQr</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherAssetsQr} obj Optional instance to populate.
-     * @returns {module:model/VoucherAssetsQr} The populated <code>VoucherAssetsQr</code> instance.
+     * @param {Partial<VoucherAssetsQr>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherAssetsQr} [obj] Optional instance to populate.
+     * @returns {VoucherAssetsQr} The populated <code>VoucherAssetsQr</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class VoucherAssetsQr {
 
     /**
      * Validates the JSON data with respect to <code>VoucherAssetsQr</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherAssetsQr>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherAssetsQr</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class VoucherAssetsQr {
 
 
 /**
- * Encrypted voucher code ID.
- * @member {String} 
- */
+    * Encrypted voucher code ID.
+    * @type {String | undefined}
+    */
 VoucherAssetsQr.prototype['id'] = undefined;
 
 /**
- * URL to QR code    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
- * @member {String} 
- */
+    * URL to QR code    *Optional:* Attach query parameters to base URL to customize the image of the encrypted voucher code.    - `size`: integer value from `1` to `100`   - `format`: string, either `png` (default) or `svg`
+    * @type {String | undefined}
+    */
 VoucherAssetsQr.prototype['url'] = undefined;
 
 

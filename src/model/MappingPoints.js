@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MappingPoints model module.
  * @module model/MappingPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MappingPoints {
     /**
      * Constructs a new <code>MappingPoints</code>.
-     * @alias module:model/MappingPoints
+     * @alias MappingPoints
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MappingPoints {
     /**
      * Constructs a <code>MappingPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MappingPoints} obj Optional instance to populate.
-     * @returns {module:model/MappingPoints} The populated <code>MappingPoints</code> instance.
+     * @param {Partial<MappingPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {MappingPoints} [obj] Optional instance to populate.
+     * @returns {MappingPoints} The populated <code>MappingPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class MappingPoints {
 
     /**
      * Validates the JSON data with respect to <code>MappingPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MappingPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MappingPoints</code>.
      */
     static validateJSON(data) {
@@ -80,45 +79,45 @@ class MappingPoints {
 
 
 /**
- * @member {module:model/MappingPoints.TypeEnum} 
- */
+    * @type {(keyof typeof MappingPoints.TypeEnum) | undefined}
+    */
 MappingPoints.prototype['type'] = undefined;
 
 /**
- * Multiplication factor used to multiply the points to obtain the mapped points.
- * @member {Number} 
- */
+    * Multiplication factor used to multiply the points to obtain the mapped points.
+    * @type {Number | undefined}
+    */
 MappingPoints.prototype['multiplier'] = undefined;
 
 /**
- * Fixed number of points to be applied.
- * @member {Number} 
- */
+    * Fixed number of points to be applied.
+    * @type {Number | undefined}
+    */
 MappingPoints.prototype['points'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MappingPoints['TypeEnum'] = {
-
     /**
-     * value: "MULTIPLY"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "MULTIPLY": "MULTIPLY",
-
-    /**
-     * value: "CUSTOM"
-     * @constant
-     */
-    "CUSTOM": "CUSTOM"
-};
+    MappingPoints['TypeEnum'] = {
+    
+        /**
+         * value: "MULTIPLY"
+         * @constant
+         */
+        "MULTIPLY": "MULTIPLY",
+    
+        /**
+         * value: "CUSTOM"
+         * @constant
+         */
+        "CUSTOM": "CUSTOM"    
+    };
 
 
 

@@ -14,18 +14,17 @@
 import ApiClient from '../ApiClient';
 import VoucherTransactionsFilters from './VoucherTransactionsFilters';
 import VouchersTransactionsExportCreateResponseBodyResult from './VouchersTransactionsExportCreateResponseBodyResult';
-
 /**
  * The VouchersTransactionsExportCreateResponseBody model module.
  * @module model/VouchersTransactionsExportCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersTransactionsExportCreateResponseBody {
     /**
      * Constructs a new <code>VouchersTransactionsExportCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/vouchers/{code}/transactions/export&#x60;.
-     * @alias module:model/VouchersTransactionsExportCreateResponseBody
-     * @param parameters {module:model/VoucherTransactionsFilters} 
+     * @alias VouchersTransactionsExportCreateResponseBody
+     * @param {VoucherTransactionsFilters} parameters 
      */
     constructor(parameters) { 
         
@@ -48,9 +47,9 @@ class VouchersTransactionsExportCreateResponseBody {
     /**
      * Constructs a <code>VouchersTransactionsExportCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersTransactionsExportCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersTransactionsExportCreateResponseBody} The populated <code>VouchersTransactionsExportCreateResponseBody</code> instance.
+     * @param {Partial<VouchersTransactionsExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersTransactionsExportCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersTransactionsExportCreateResponseBody} The populated <code>VouchersTransactionsExportCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -89,7 +88,7 @@ class VouchersTransactionsExportCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersTransactionsExportCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersTransactionsExportCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersTransactionsExportCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -141,108 +140,108 @@ class VouchersTransactionsExportCreateResponseBody {
 VouchersTransactionsExportCreateResponseBody.RequiredProperties = ["parameters"];
 
 /**
- * Unique export ID.
- * @member {String} 
- */
+    * Unique export ID.
+    * @type {String | undefined}
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['id'] = undefined;
 
 /**
- * The type of object being represented. This object stores information about the `export`.
- * @member {module:model/VouchersTransactionsExportCreateResponseBody.ObjectEnum} 
- * @default 'export'
- */
+    * The type of object being represented. This object stores information about the `export`.
+    * @type {(keyof typeof VouchersTransactionsExportCreateResponseBody.ObjectEnum) | undefined}
+    * @default 'export'
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['object'] = 'export';
 
 /**
- * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
- * @member {module:model/VouchersTransactionsExportCreateResponseBody.StatusEnum} 
- * @default 'SCHEDULED'
- */
+    * Status of the export. Informs you whether the export has already been completed, i.e. indicates whether the file containing the exported data has been generated.
+    * @type {(keyof typeof VouchersTransactionsExportCreateResponseBody.StatusEnum) | undefined}
+    * @default 'SCHEDULED'
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['status'] = 'SCHEDULED';
 
 /**
- * The channel through which the export was triggered.
- * @member {String} 
- * @default 'API'
- */
+    * The channel through which the export was triggered.
+    * @type {String | undefined}
+    * @default 'API'
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['channel'] = 'API';
 
 /**
- * The type of exported object.
- * @member {module:model/VouchersTransactionsExportCreateResponseBody.ExportedObjectEnum} 
- * @default 'voucher_transactions'
- */
+    * The type of exported object.
+    * @type {(keyof typeof VouchersTransactionsExportCreateResponseBody.ExportedObjectEnum) | undefined}
+    * @default 'voucher_transactions'
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['exported_object'] = 'voucher_transactions';
 
 /**
- * @member {module:model/VoucherTransactionsFilters} 
- */
+    * @type {VoucherTransactionsFilters}
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['parameters'] = undefined;
 
 /**
- * @member {module:model/VouchersTransactionsExportCreateResponseBodyResult} 
- */
+    * @type {VouchersTransactionsExportCreateResponseBodyResult | undefined}
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['result'] = undefined;
 
 /**
- * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the `channel` value is `WEBSITE`.
- * @member {String} 
- */
+    * Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the `channel` value is `WEBSITE`.
+    * @type {String | undefined}
+    */
 VouchersTransactionsExportCreateResponseBody.prototype['user_id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersTransactionsExportCreateResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    VouchersTransactionsExportCreateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "export"
+         * @constant
+         */
+        "export": "export"    
+    };
+
 
     /**
-     * value: "export"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "export": "export"
-};
+    VouchersTransactionsExportCreateResponseBody['StatusEnum'] = {
+    
+        /**
+         * value: "SCHEDULED"
+         * @constant
+         */
+        "SCHEDULED": "SCHEDULED"    
+    };
 
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersTransactionsExportCreateResponseBody['StatusEnum'] = {
 
     /**
-     * value: "SCHEDULED"
-     * @constant
+     * Allowed values for the <code>exported_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SCHEDULED": "SCHEDULED"
-};
-
-
-/**
- * Allowed values for the <code>exported_object</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersTransactionsExportCreateResponseBody['ExportedObjectEnum'] = {
-
-    /**
-     * value: "voucher_transactions"
-     * @constant
-     */
-    "voucher_transactions": "voucher_transactions"
-};
+    VouchersTransactionsExportCreateResponseBody['ExportedObjectEnum'] = {
+    
+        /**
+         * value: "voucher_transactions"
+         * @constant
+         */
+        "voucher_transactions": "voucher_transactions"    
+    };
 
 
 

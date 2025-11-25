@@ -17,17 +17,16 @@ import ClientValidationsValidateRequestBodyRedeemablesItem from './ClientValidat
 import Customer from './Customer';
 import Order from './Order';
 import Session from './Session';
-
 /**
  * The ClientValidationsValidateRequestBody model module.
  * @module model/ClientValidationsValidateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateRequestBody {
     /**
      * Constructs a new <code>ClientValidationsValidateRequestBody</code>.
      * Response body schema for **POST** &#x60;v1/validations&#x60;.
-     * @alias module:model/ClientValidationsValidateRequestBody
+     * @alias ClientValidationsValidateRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ClientValidationsValidateRequestBody {
     /**
      * Constructs a <code>ClientValidationsValidateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateRequestBody} The populated <code>ClientValidationsValidateRequestBody</code> instance.
+     * @param {Partial<ClientValidationsValidateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateRequestBody} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateRequestBody} The populated <code>ClientValidationsValidateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class ClientValidationsValidateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -124,40 +123,40 @@ class ClientValidationsValidateRequestBody {
 
 
 /**
- * @member {module:model/ClientValidationsValidateRequestBodyOptions} 
- */
+    * @type {ClientValidationsValidateRequestBodyOptions | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['options'] = undefined;
 
 /**
- * @member {Array.<module:model/ClientValidationsValidateRequestBodyRedeemablesItem>} 
- */
+    * @type {Array.<ClientValidationsValidateRequestBodyRedeemablesItem> | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['redeemables'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['order'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Session} 
- */
+    * @type {Session | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['session'] = undefined;
 
 /**
- * Is correspondent to Customer's source_id
- * @member {String} 
- */
+    * Is correspondent to Customer's source_id
+    * @type {String | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['tracking_id'] = undefined;
 
 /**
- * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
- * @member {Object} 
- */
+    * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
+    * @type {Object | undefined}
+    */
 ClientValidationsValidateRequestBody.prototype['metadata'] = undefined;
 
 

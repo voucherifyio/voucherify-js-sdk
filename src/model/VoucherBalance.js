@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherBalanceRelatedObject from './VoucherBalanceRelatedObject';
-
 /**
  * The VoucherBalance model module.
  * @module model/VoucherBalance
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherBalance {
     /**
      * Constructs a new <code>VoucherBalance</code>.
      * Contains information on how the balance was affected by the transaction.
-     * @alias module:model/VoucherBalance
+     * @alias VoucherBalance
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class VoucherBalance {
     /**
      * Constructs a <code>VoucherBalance</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherBalance} obj Optional instance to populate.
-     * @returns {module:model/VoucherBalance} The populated <code>VoucherBalance</code> instance.
+     * @param {Partial<VoucherBalance>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherBalance} [obj] Optional instance to populate.
+     * @returns {VoucherBalance} The populated <code>VoucherBalance</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class VoucherBalance {
 
     /**
      * Validates the JSON data with respect to <code>VoucherBalance</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherBalance>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherBalance</code>.
      */
     static validateJSON(data) {
@@ -110,112 +109,112 @@ class VoucherBalance {
 
 
 /**
- * The type of voucher whose balance is being adjusted due to the transaction.
- * @member {module:model/VoucherBalance.TypeEnum} 
- */
+    * The type of voucher whose balance is being adjusted due to the transaction.
+    * @type {(keyof typeof VoucherBalance.TypeEnum) | undefined}
+    */
 VoucherBalance.prototype['type'] = undefined;
 
 /**
- * The number of all points or credits accumulated on the card as affected by add or subtract operations.
- * @member {Number} 
- */
+    * The number of all points or credits accumulated on the card as affected by add or subtract operations.
+    * @type {Number | undefined}
+    */
 VoucherBalance.prototype['total'] = undefined;
 
 /**
- * The type of the object represented by the JSON.
- * @member {module:model/VoucherBalance.ObjectEnum} 
- * @default 'balance'
- */
+    * The type of the object represented by the JSON.
+    * @type {(keyof typeof VoucherBalance.ObjectEnum) | undefined}
+    * @default 'balance'
+    */
 VoucherBalance.prototype['object'] = 'balance';
 
 /**
- * Credits added or subtracted on a gift card.
- * @member {Number} 
- */
+    * Credits added or subtracted on a gift card.
+    * @type {Number | undefined}
+    */
 VoucherBalance.prototype['amount'] = undefined;
 
 /**
- * Points added or subtracted in the transaction of a loyalty card.
- * @member {Number} 
- */
+    * Points added or subtracted in the transaction of a loyalty card.
+    * @type {Number | undefined}
+    */
 VoucherBalance.prototype['points'] = undefined;
 
 /**
- * The available points or credits on the card after the transaction as affected by redemption or rollback.
- * @member {Number} 
- */
+    * The available points or credits on the card after the transaction as affected by redemption or rollback.
+    * @type {Number | undefined}
+    */
 VoucherBalance.prototype['balance'] = undefined;
 
 /**
- * The type of the operation being performed. The operation type is `AUTOMATIC` if it is an automatic redemption.
- * @member {module:model/VoucherBalance.OperationTypeEnum} 
- */
+    * The type of the operation being performed. The operation type is `AUTOMATIC` if it is an automatic redemption.
+    * @type {(keyof typeof VoucherBalance.OperationTypeEnum) | undefined}
+    */
 VoucherBalance.prototype['operation_type'] = undefined;
 
 /**
- * @member {module:model/VoucherBalanceRelatedObject} 
- */
+    * @type {VoucherBalanceRelatedObject | undefined}
+    */
 VoucherBalance.prototype['related_object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherBalance['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    VoucherBalance['TypeEnum'] = {
+    
+        /**
+         * value: "loyalty_card"
+         * @constant
+         */
+        "loyalty_card": "loyalty_card",
+    
+        /**
+         * value: "gift_voucher"
+         * @constant
+         */
+        "gift_voucher": "gift_voucher"    
+    };
+
 
     /**
-     * value: "loyalty_card"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_card": "loyalty_card",
+    VoucherBalance['ObjectEnum'] = {
+    
+        /**
+         * value: "balance"
+         * @constant
+         */
+        "balance": "balance"    
+    };
+
 
     /**
-     * value: "gift_voucher"
-     * @constant
+     * Allowed values for the <code>operation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "gift_voucher": "gift_voucher"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherBalance['ObjectEnum'] = {
-
-    /**
-     * value: "balance"
-     * @constant
-     */
-    "balance": "balance"
-};
-
-
-/**
- * Allowed values for the <code>operation_type</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherBalance['OperationTypeEnum'] = {
-
-    /**
-     * value: "MANUAL"
-     * @constant
-     */
-    "MANUAL": "MANUAL",
-
-    /**
-     * value: "AUTOMATIC"
-     * @constant
-     */
-    "AUTOMATIC": "AUTOMATIC"
-};
+    VoucherBalance['OperationTypeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL",
+    
+        /**
+         * value: "AUTOMATIC"
+         * @constant
+         */
+        "AUTOMATIC": "AUTOMATIC"    
+    };
 
 
 

@@ -1431,7 +1431,7 @@ import VouchersApi from './api/VouchersApi';
 * </pre>
 * </p>
 * @module index
-* @version 3.0.0
+* @version 3.0.1
 */
 export {
     /**
@@ -1442,8323 +1442,8323 @@ export {
 
     /**
      * The AccessSettings model constructor.
-     * @property {module:model/AccessSettings}
+     * @property {AccessSettings}
      */
     AccessSettings,
 
     /**
      * The AccessSettingsAssign model constructor.
-     * @property {module:model/AccessSettingsAssign}
+     * @property {AccessSettingsAssign}
      */
     AccessSettingsAssign,
 
     /**
      * The AccessSettingsCampaignAssignmentsList model constructor.
-     * @property {module:model/AccessSettingsCampaignAssignmentsList}
+     * @property {AccessSettingsCampaignAssignmentsList}
      */
     AccessSettingsCampaignAssignmentsList,
 
     /**
      * The AccessSettingsUnassign model constructor.
-     * @property {module:model/AccessSettingsUnassign}
+     * @property {AccessSettingsUnassign}
      */
     AccessSettingsUnassign,
 
     /**
      * The ApplicableTo model constructor.
-     * @property {module:model/ApplicableTo}
+     * @property {ApplicableTo}
      */
     ApplicableTo,
 
     /**
      * The ApplicableToEffect model constructor.
-     * @property {module:model/ApplicableToEffect}
+     * @property {Exclude<keyof typeof ApplicableToEffect, "prototype" | "constructFromObject">}
      */
     ApplicableToEffect,
 
     /**
      * The ApplicableToOrderItemUnitsItem model constructor.
-     * @property {module:model/ApplicableToOrderItemUnitsItem}
+     * @property {ApplicableToOrderItemUnitsItem}
      */
     ApplicableToOrderItemUnitsItem,
 
     /**
      * The ApplicableToResultList model constructor.
-     * @property {module:model/ApplicableToResultList}
+     * @property {ApplicableToResultList}
      */
     ApplicableToResultList,
 
     /**
      * The ApplicationDetailsItem model constructor.
-     * @property {module:model/ApplicationDetailsItem}
+     * @property {ApplicationDetailsItem}
      */
     ApplicationDetailsItem,
 
     /**
      * The AreaStoreCampaignAssignment model constructor.
-     * @property {module:model/AreaStoreCampaignAssignment}
+     * @property {AreaStoreCampaignAssignment}
      */
     AreaStoreCampaignAssignment,
 
     /**
      * The AsyncActionBase model constructor.
-     * @property {module:model/AsyncActionBase}
+     * @property {AsyncActionBase}
      */
     AsyncActionBase,
 
     /**
      * The AsyncActionGetResponseBody model constructor.
-     * @property {module:model/AsyncActionGetResponseBody}
+     * @property {AsyncActionGetResponseBody}
      */
     AsyncActionGetResponseBody,
 
     /**
      * The AsyncActionsListResponseBody model constructor.
-     * @property {module:model/AsyncActionsListResponseBody}
+     * @property {AsyncActionsListResponseBody}
      */
     AsyncActionsListResponseBody,
 
     /**
      * The Bundle model constructor.
-     * @property {module:model/Bundle}
+     * @property {Bundle}
      */
     Bundle,
 
     /**
      * The BundleIdentifiedItem model constructor.
-     * @property {module:model/BundleIdentifiedItem}
+     * @property {BundleIdentifiedItem}
      */
     BundleIdentifiedItem,
 
     /**
      * The BundleMissingItem model constructor.
-     * @property {module:model/BundleMissingItem}
+     * @property {BundleMissingItem}
      */
     BundleMissingItem,
 
     /**
      * The BusValRuleAssignment model constructor.
-     * @property {module:model/BusValRuleAssignment}
+     * @property {BusValRuleAssignment}
      */
     BusValRuleAssignment,
 
     /**
      * The Campaign model constructor.
-     * @property {module:model/Campaign}
+     * @property {Campaign}
      */
     Campaign,
 
     /**
      * The CampaignBase model constructor.
-     * @property {module:model/CampaignBase}
+     * @property {CampaignBase}
      */
     CampaignBase,
 
     /**
      * The CampaignLoyaltyCard model constructor.
-     * @property {module:model/CampaignLoyaltyCard}
+     * @property {CampaignLoyaltyCard}
      */
     CampaignLoyaltyCard,
 
     /**
      * The CampaignLoyaltyCardExpirationRules model constructor.
-     * @property {module:model/CampaignLoyaltyCardExpirationRules}
+     * @property {CampaignLoyaltyCardExpirationRules}
      */
     CampaignLoyaltyCardExpirationRules,
 
     /**
      * The CampaignLoyaltyVoucher model constructor.
-     * @property {module:model/CampaignLoyaltyVoucher}
+     * @property {CampaignLoyaltyVoucher}
      */
     CampaignLoyaltyVoucher,
 
     /**
      * The CampaignLoyaltyVoucherRedemption model constructor.
-     * @property {module:model/CampaignLoyaltyVoucherRedemption}
+     * @property {CampaignLoyaltyVoucherRedemption}
      */
     CampaignLoyaltyVoucherRedemption,
 
     /**
      * The CampaignTemplate model constructor.
-     * @property {module:model/CampaignTemplate}
+     * @property {CampaignTemplate}
      */
     CampaignTemplate,
 
     /**
      * The CampaignVoucher model constructor.
-     * @property {module:model/CampaignVoucher}
+     * @property {CampaignVoucher}
      */
     CampaignVoucher,
 
     /**
      * The CampaignVoucherRedemption model constructor.
-     * @property {module:model/CampaignVoucherRedemption}
+     * @property {CampaignVoucherRedemption}
      */
     CampaignVoucherRedemption,
 
     /**
      * The CampaignsCreateRequestBody model constructor.
-     * @property {module:model/CampaignsCreateRequestBody}
+     * @property {CampaignsCreateRequestBody}
      */
     CampaignsCreateRequestBody,
 
     /**
      * The CampaignsCreateRequestBodyPromotion model constructor.
-     * @property {module:model/CampaignsCreateRequestBodyPromotion}
+     * @property {CampaignsCreateRequestBodyPromotion}
      */
     CampaignsCreateRequestBodyPromotion,
 
     /**
      * The CampaignsCreateRequestBodyVoucher model constructor.
-     * @property {module:model/CampaignsCreateRequestBodyVoucher}
+     * @property {CampaignsCreateRequestBodyVoucher}
      */
     CampaignsCreateRequestBodyVoucher,
 
     /**
      * The CampaignsCreateRequestBodyVoucherRedemption model constructor.
-     * @property {module:model/CampaignsCreateRequestBodyVoucherRedemption}
+     * @property {CampaignsCreateRequestBodyVoucherRedemption}
      */
     CampaignsCreateRequestBodyVoucherRedemption,
 
     /**
      * The CampaignsCreateResponseBody model constructor.
-     * @property {module:model/CampaignsCreateResponseBody}
+     * @property {CampaignsCreateResponseBody}
      */
     CampaignsCreateResponseBody,
 
     /**
      * The CampaignsDeleteResponseBody model constructor.
-     * @property {module:model/CampaignsDeleteResponseBody}
+     * @property {CampaignsDeleteResponseBody}
      */
     CampaignsDeleteResponseBody,
 
     /**
      * The CampaignsGetResponseBody model constructor.
-     * @property {module:model/CampaignsGetResponseBody}
+     * @property {CampaignsGetResponseBody}
      */
     CampaignsGetResponseBody,
 
     /**
      * The CampaignsImportCreateResponseBody model constructor.
-     * @property {module:model/CampaignsImportCreateResponseBody}
+     * @property {CampaignsImportCreateResponseBody}
      */
     CampaignsImportCreateResponseBody,
 
     /**
      * The CampaignsImportCsvCreateResponseBody model constructor.
-     * @property {module:model/CampaignsImportCsvCreateResponseBody}
+     * @property {CampaignsImportCsvCreateResponseBody}
      */
     CampaignsImportCsvCreateResponseBody,
 
     /**
      * The CampaignsImportVoucherItem model constructor.
-     * @property {module:model/CampaignsImportVoucherItem}
+     * @property {CampaignsImportVoucherItem}
      */
     CampaignsImportVoucherItem,
 
     /**
      * The CampaignsImportVoucherItemRedemption model constructor.
-     * @property {module:model/CampaignsImportVoucherItemRedemption}
+     * @property {CampaignsImportVoucherItemRedemption}
      */
     CampaignsImportVoucherItemRedemption,
 
     /**
      * The CampaignsListResponseBody model constructor.
-     * @property {module:model/CampaignsListResponseBody}
+     * @property {CampaignsListResponseBody}
      */
     CampaignsListResponseBody,
 
     /**
      * The CampaignsSummaryGetResponseBody model constructor.
-     * @property {module:model/CampaignsSummaryGetResponseBody}
+     * @property {CampaignsSummaryGetResponseBody}
      */
     CampaignsSummaryGetResponseBody,
 
     /**
      * The CampaignsTransactionsExportCreateRequestBody model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateRequestBody}
+     * @property {CampaignsTransactionsExportCreateRequestBody}
      */
     CampaignsTransactionsExportCreateRequestBody,
 
     /**
      * The CampaignsTransactionsExportCreateRequestBodyParameters model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateRequestBodyParameters}
+     * @property {CampaignsTransactionsExportCreateRequestBodyParameters}
      */
     CampaignsTransactionsExportCreateRequestBodyParameters,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBody model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBody}
+     * @property {CampaignsTransactionsExportCreateResponseBody}
      */
     CampaignsTransactionsExportCreateResponseBody,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBodyParameters model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBodyParameters}
+     * @property {CampaignsTransactionsExportCreateResponseBodyParameters}
      */
     CampaignsTransactionsExportCreateResponseBodyParameters,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBodyParametersFilters model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFilters}
+     * @property {CampaignsTransactionsExportCreateResponseBodyParametersFilters}
      */
     CampaignsTransactionsExportCreateResponseBodyParametersFilters,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId}
+     * @property {CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId}
      */
     CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions}
+     * @property {CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions}
      */
     CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions,
 
     /**
      * The CampaignsTransactionsExportCreateResponseBodyResult model constructor.
-     * @property {module:model/CampaignsTransactionsExportCreateResponseBodyResult}
+     * @property {CampaignsTransactionsExportCreateResponseBodyResult}
      */
     CampaignsTransactionsExportCreateResponseBodyResult,
 
     /**
      * The CampaignsTransactionsListResponseBody model constructor.
-     * @property {module:model/CampaignsTransactionsListResponseBody}
+     * @property {CampaignsTransactionsListResponseBody}
      */
     CampaignsTransactionsListResponseBody,
 
     /**
      * The CampaignsUpdateRequestBody model constructor.
-     * @property {module:model/CampaignsUpdateRequestBody}
+     * @property {CampaignsUpdateRequestBody}
      */
     CampaignsUpdateRequestBody,
 
     /**
      * The CampaignsUpdateRequestBodyOptions model constructor.
-     * @property {module:model/CampaignsUpdateRequestBodyOptions}
+     * @property {CampaignsUpdateRequestBodyOptions}
      */
     CampaignsUpdateRequestBodyOptions,
 
     /**
      * The CampaignsUpdateResponseBody model constructor.
-     * @property {module:model/CampaignsUpdateResponseBody}
+     * @property {CampaignsUpdateResponseBody}
      */
     CampaignsUpdateResponseBody,
 
     /**
      * The CampaignsVouchersCreateCombinedResponseBody model constructor.
-     * @property {module:model/CampaignsVouchersCreateCombinedResponseBody}
+     * @property {CampaignsVouchersCreateCombinedResponseBody}
      */
     CampaignsVouchersCreateCombinedResponseBody,
 
     /**
      * The CampaignsVouchersCreateCombinedResponseBodyGift model constructor.
-     * @property {module:model/CampaignsVouchersCreateCombinedResponseBodyGift}
+     * @property {CampaignsVouchersCreateCombinedResponseBodyGift}
      */
     CampaignsVouchersCreateCombinedResponseBodyGift,
 
     /**
      * The CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard}
+     * @property {CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard}
      */
     CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard,
 
     /**
      * The CampaignsVouchersCreateCombinedResponseBodyPublish model constructor.
-     * @property {module:model/CampaignsVouchersCreateCombinedResponseBodyPublish}
+     * @property {CampaignsVouchersCreateCombinedResponseBodyPublish}
      */
     CampaignsVouchersCreateCombinedResponseBodyPublish,
 
     /**
      * The CampaignsVouchersCreateCombinedResponseBodyRedemption model constructor.
-     * @property {module:model/CampaignsVouchersCreateCombinedResponseBodyRedemption}
+     * @property {CampaignsVouchersCreateCombinedResponseBodyRedemption}
      */
     CampaignsVouchersCreateCombinedResponseBodyRedemption,
 
     /**
      * The CampaignsVouchersCreateInBulkRequestBody model constructor.
-     * @property {module:model/CampaignsVouchersCreateInBulkRequestBody}
+     * @property {CampaignsVouchersCreateInBulkRequestBody}
      */
     CampaignsVouchersCreateInBulkRequestBody,
 
     /**
      * The CampaignsVouchersCreateInBulkRequestBodyRedemption model constructor.
-     * @property {module:model/CampaignsVouchersCreateInBulkRequestBodyRedemption}
+     * @property {CampaignsVouchersCreateInBulkRequestBodyRedemption}
      */
     CampaignsVouchersCreateInBulkRequestBodyRedemption,
 
     /**
      * The CampaignsVouchersCreateRequestBody model constructor.
-     * @property {module:model/CampaignsVouchersCreateRequestBody}
+     * @property {CampaignsVouchersCreateRequestBody}
      */
     CampaignsVouchersCreateRequestBody,
 
     /**
      * The CampaignsVouchersCreateRequestBodyRedemption model constructor.
-     * @property {module:model/CampaignsVouchersCreateRequestBodyRedemption}
+     * @property {CampaignsVouchersCreateRequestBodyRedemption}
      */
     CampaignsVouchersCreateRequestBodyRedemption,
 
     /**
      * The CampaignsVouchersCreateResponseBody model constructor.
-     * @property {module:model/CampaignsVouchersCreateResponseBody}
+     * @property {CampaignsVouchersCreateResponseBody}
      */
     CampaignsVouchersCreateResponseBody,
 
     /**
      * The CampaignsVouchersCreateResponseBodyGift model constructor.
-     * @property {module:model/CampaignsVouchersCreateResponseBodyGift}
+     * @property {CampaignsVouchersCreateResponseBodyGift}
      */
     CampaignsVouchersCreateResponseBodyGift,
 
     /**
      * The CampaignsVouchersCreateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/CampaignsVouchersCreateResponseBodyLoyaltyCard}
+     * @property {CampaignsVouchersCreateResponseBodyLoyaltyCard}
      */
     CampaignsVouchersCreateResponseBodyLoyaltyCard,
 
     /**
      * The CampaignsVouchersCreateResponseBodyPublish model constructor.
-     * @property {module:model/CampaignsVouchersCreateResponseBodyPublish}
+     * @property {CampaignsVouchersCreateResponseBodyPublish}
      */
     CampaignsVouchersCreateResponseBodyPublish,
 
     /**
      * The CampaignsVouchersCreateResponseBodyRedemption model constructor.
-     * @property {module:model/CampaignsVouchersCreateResponseBodyRedemption}
+     * @property {CampaignsVouchersCreateResponseBodyRedemption}
      */
     CampaignsVouchersCreateResponseBodyRedemption,
 
     /**
      * The CategoriesCreateRequestBody model constructor.
-     * @property {module:model/CategoriesCreateRequestBody}
+     * @property {CategoriesCreateRequestBody}
      */
     CategoriesCreateRequestBody,
 
     /**
      * The CategoriesCreateResponseBody model constructor.
-     * @property {module:model/CategoriesCreateResponseBody}
+     * @property {CategoriesCreateResponseBody}
      */
     CategoriesCreateResponseBody,
 
     /**
      * The CategoriesGetResponseBody model constructor.
-     * @property {module:model/CategoriesGetResponseBody}
+     * @property {CategoriesGetResponseBody}
      */
     CategoriesGetResponseBody,
 
     /**
      * The CategoriesListResponseBody model constructor.
-     * @property {module:model/CategoriesListResponseBody}
+     * @property {CategoriesListResponseBody}
      */
     CategoriesListResponseBody,
 
     /**
      * The CategoriesUpdateRequestBody model constructor.
-     * @property {module:model/CategoriesUpdateRequestBody}
+     * @property {CategoriesUpdateRequestBody}
      */
     CategoriesUpdateRequestBody,
 
     /**
      * The CategoriesUpdateResponseBody model constructor.
-     * @property {module:model/CategoriesUpdateResponseBody}
+     * @property {CategoriesUpdateResponseBody}
      */
     CategoriesUpdateResponseBody,
 
     /**
      * The Category model constructor.
-     * @property {module:model/Category}
+     * @property {Category}
      */
     Category,
 
     /**
      * The CategoryWithStackingRulesType model constructor.
-     * @property {module:model/CategoryWithStackingRulesType}
+     * @property {CategoryWithStackingRulesType}
      */
     CategoryWithStackingRulesType,
 
     /**
      * The ClientEventsCreateRequestBody model constructor.
-     * @property {module:model/ClientEventsCreateRequestBody}
+     * @property {ClientEventsCreateRequestBody}
      */
     ClientEventsCreateRequestBody,
 
     /**
      * The ClientEventsCreateRequestBodyLoyalty model constructor.
-     * @property {module:model/ClientEventsCreateRequestBodyLoyalty}
+     * @property {ClientEventsCreateRequestBodyLoyalty}
      */
     ClientEventsCreateRequestBodyLoyalty,
 
     /**
      * The ClientEventsCreateRequestBodyReferral model constructor.
-     * @property {module:model/ClientEventsCreateRequestBodyReferral}
+     * @property {ClientEventsCreateRequestBodyReferral}
      */
     ClientEventsCreateRequestBodyReferral,
 
     /**
      * The ClientEventsCreateResponseBody model constructor.
-     * @property {module:model/ClientEventsCreateResponseBody}
+     * @property {ClientEventsCreateResponseBody}
      */
     ClientEventsCreateResponseBody,
 
     /**
      * The ClientPromotionsTiersListResponseBody model constructor.
-     * @property {module:model/ClientPromotionsTiersListResponseBody}
+     * @property {ClientPromotionsTiersListResponseBody}
      */
     ClientPromotionsTiersListResponseBody,
 
     /**
      * The ClientQualificationsCheckEligibilityRequestBody model constructor.
-     * @property {module:model/ClientQualificationsCheckEligibilityRequestBody}
+     * @property {ClientQualificationsCheckEligibilityRequestBody}
      */
     ClientQualificationsCheckEligibilityRequestBody,
 
     /**
      * The ClientQualificationsCheckEligibilityRequestBodySession model constructor.
-     * @property {module:model/ClientQualificationsCheckEligibilityRequestBodySession}
+     * @property {ClientQualificationsCheckEligibilityRequestBodySession}
      */
     ClientQualificationsCheckEligibilityRequestBodySession,
 
     /**
      * The ClientQualificationsCheckEligibilityResponseBody model constructor.
-     * @property {module:model/ClientQualificationsCheckEligibilityResponseBody}
+     * @property {ClientQualificationsCheckEligibilityResponseBody}
      */
     ClientQualificationsCheckEligibilityResponseBody,
 
     /**
      * The ClientQualificationsCheckEligibilityResponseBodyOrder model constructor.
-     * @property {module:model/ClientQualificationsCheckEligibilityResponseBodyOrder}
+     * @property {ClientQualificationsCheckEligibilityResponseBodyOrder}
      */
     ClientQualificationsCheckEligibilityResponseBodyOrder,
 
     /**
      * The ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem}
+     * @property {ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem}
      */
     ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem,
 
     /**
      * The ClientRedemptionsRedeemRequestBody model constructor.
-     * @property {module:model/ClientRedemptionsRedeemRequestBody}
+     * @property {ClientRedemptionsRedeemRequestBody}
      */
     ClientRedemptionsRedeemRequestBody,
 
     /**
      * The ClientRedemptionsRedeemRequestBodyOptions model constructor.
-     * @property {module:model/ClientRedemptionsRedeemRequestBodyOptions}
+     * @property {ClientRedemptionsRedeemRequestBodyOptions}
      */
     ClientRedemptionsRedeemRequestBodyOptions,
 
     /**
      * The ClientRedemptionsRedeemRequestBodyRedeemablesItem model constructor.
-     * @property {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItem}
+     * @property {ClientRedemptionsRedeemRequestBodyRedeemablesItem}
      */
     ClientRedemptionsRedeemRequestBodyRedeemablesItem,
 
     /**
      * The ClientRedemptionsRedeemRequestBodyRedeemablesItemGift model constructor.
-     * @property {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemGift}
+     * @property {ClientRedemptionsRedeemRequestBodyRedeemablesItemGift}
      */
     ClientRedemptionsRedeemRequestBodyRedeemablesItemGift,
 
     /**
      * The ClientRedemptionsRedeemRequestBodyRedeemablesItemReward model constructor.
-     * @property {module:model/ClientRedemptionsRedeemRequestBodyRedeemablesItemReward}
+     * @property {ClientRedemptionsRedeemRequestBodyRedeemablesItemReward}
      */
     ClientRedemptionsRedeemRequestBodyRedeemablesItemReward,
 
     /**
      * The ClientRedemptionsRedeemResponseBody model constructor.
-     * @property {module:model/ClientRedemptionsRedeemResponseBody}
+     * @property {ClientRedemptionsRedeemResponseBody}
      */
     ClientRedemptionsRedeemResponseBody,
 
     /**
      * The ClientRedemptionsRedeemResponseBodyOrder model constructor.
-     * @property {module:model/ClientRedemptionsRedeemResponseBodyOrder}
+     * @property {ClientRedemptionsRedeemResponseBodyOrder}
      */
     ClientRedemptionsRedeemResponseBodyOrder,
 
     /**
      * The ClientRedemptionsRedeemResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/ClientRedemptionsRedeemResponseBodyOrderItemsItem}
+     * @property {ClientRedemptionsRedeemResponseBodyOrderItemsItem}
      */
     ClientRedemptionsRedeemResponseBodyOrderItemsItem,
 
     /**
      * The ClientValidationsValidateRequestBody model constructor.
-     * @property {module:model/ClientValidationsValidateRequestBody}
+     * @property {ClientValidationsValidateRequestBody}
      */
     ClientValidationsValidateRequestBody,
 
     /**
      * The ClientValidationsValidateRequestBodyOptions model constructor.
-     * @property {module:model/ClientValidationsValidateRequestBodyOptions}
+     * @property {ClientValidationsValidateRequestBodyOptions}
      */
     ClientValidationsValidateRequestBodyOptions,
 
     /**
      * The ClientValidationsValidateRequestBodyRedeemablesItem model constructor.
-     * @property {module:model/ClientValidationsValidateRequestBodyRedeemablesItem}
+     * @property {ClientValidationsValidateRequestBodyRedeemablesItem}
      */
     ClientValidationsValidateRequestBodyRedeemablesItem,
 
     /**
      * The ClientValidationsValidateRequestBodyRedeemablesItemGift model constructor.
-     * @property {module:model/ClientValidationsValidateRequestBodyRedeemablesItemGift}
+     * @property {ClientValidationsValidateRequestBodyRedeemablesItemGift}
      */
     ClientValidationsValidateRequestBodyRedeemablesItemGift,
 
     /**
      * The ClientValidationsValidateRequestBodyRedeemablesItemReward model constructor.
-     * @property {module:model/ClientValidationsValidateRequestBodyRedeemablesItemReward}
+     * @property {ClientValidationsValidateRequestBodyRedeemablesItemReward}
      */
     ClientValidationsValidateRequestBodyRedeemablesItemReward,
 
     /**
      * The ClientValidationsValidateResponseBody model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBody}
+     * @property {ClientValidationsValidateResponseBody}
      */
     ClientValidationsValidateResponseBody,
 
     /**
      * The ClientValidationsValidateResponseBodyOrder model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyOrder}
+     * @property {ClientValidationsValidateResponseBodyOrder}
      */
     ClientValidationsValidateResponseBodyOrder,
 
     /**
      * The ClientValidationsValidateResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyOrderItemsItem}
+     * @property {ClientValidationsValidateResponseBodyOrderItemsItem}
      */
     ClientValidationsValidateResponseBodyOrderItemsItem,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItem model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItem}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItem}
      */
     ClientValidationsValidateResponseBodyRedeemablesItem,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemOrder model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrder}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemOrder}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemOrder,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemOrderCustomer,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResult model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResult}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResult}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResult,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResultDetails model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDetails}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResultDetails}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResultDetails,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResultGift model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultGift}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResultGift}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResultGift,
 
     /**
      * The ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard model constructor.
-     * @property {module:model/ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard}
+     * @property {ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard}
      */
     ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard,
 
     /**
      * The CodeConfig model constructor.
-     * @property {module:model/CodeConfig}
+     * @property {CodeConfig}
      */
     CodeConfig,
 
     /**
      * The CreatePublicationCampaign model constructor.
-     * @property {module:model/CreatePublicationCampaign}
+     * @property {CreatePublicationCampaign}
      */
     CreatePublicationCampaign,
 
     /**
      * The CustomEvent model constructor.
-     * @property {module:model/CustomEvent}
+     * @property {CustomEvent}
      */
     CustomEvent,
 
     /**
      * The CustomEventLoyalty model constructor.
-     * @property {module:model/CustomEventLoyalty}
+     * @property {CustomEventLoyalty}
      */
     CustomEventLoyalty,
 
     /**
      * The CustomEventReferral model constructor.
-     * @property {module:model/CustomEventReferral}
+     * @property {CustomEventReferral}
      */
     CustomEventReferral,
 
     /**
      * The Customer model constructor.
-     * @property {module:model/Customer}
+     * @property {Customer}
      */
     Customer,
 
     /**
      * The CustomerActivity model constructor.
-     * @property {module:model/CustomerActivity}
+     * @property {CustomerActivity}
      */
     CustomerActivity,
 
     /**
      * The CustomerAddress model constructor.
-     * @property {module:model/CustomerAddress}
+     * @property {CustomerAddress}
      */
     CustomerAddress,
 
     /**
      * The CustomerId model constructor.
-     * @property {module:model/CustomerId}
+     * @property {CustomerId}
      */
     CustomerId,
 
     /**
      * The CustomerLoyalty model constructor.
-     * @property {module:model/CustomerLoyalty}
+     * @property {CustomerLoyalty}
      */
     CustomerLoyalty,
 
     /**
      * The CustomerLoyaltyCampaignsEntryValue model constructor.
-     * @property {module:model/CustomerLoyaltyCampaignsEntryValue}
+     * @property {CustomerLoyaltyCampaignsEntryValue}
      */
     CustomerLoyaltyCampaignsEntryValue,
 
     /**
      * The CustomerRedeemable model constructor.
-     * @property {module:model/CustomerRedeemable}
+     * @property {CustomerRedeemable}
      */
     CustomerRedeemable,
 
     /**
      * The CustomerRedeemableRedeemable model constructor.
-     * @property {module:model/CustomerRedeemableRedeemable}
+     * @property {CustomerRedeemableRedeemable}
      */
     CustomerRedeemableRedeemable,
 
     /**
      * The CustomerReferrals model constructor.
-     * @property {module:model/CustomerReferrals}
+     * @property {CustomerReferrals}
      */
     CustomerReferrals,
 
     /**
      * The CustomerReferralsCampaignsItem model constructor.
-     * @property {module:model/CustomerReferralsCampaignsItem}
+     * @property {CustomerReferralsCampaignsItem}
      */
     CustomerReferralsCampaignsItem,
 
     /**
      * The CustomerSummary model constructor.
-     * @property {module:model/CustomerSummary}
+     * @property {CustomerSummary}
      */
     CustomerSummary,
 
     /**
      * The CustomerSummaryOrders model constructor.
-     * @property {module:model/CustomerSummaryOrders}
+     * @property {CustomerSummaryOrders}
      */
     CustomerSummaryOrders,
 
     /**
      * The CustomerSummaryRedemptions model constructor.
-     * @property {module:model/CustomerSummaryRedemptions}
+     * @property {CustomerSummaryRedemptions}
      */
     CustomerSummaryRedemptions,
 
     /**
      * The CustomerSummaryRedemptionsGift model constructor.
-     * @property {module:model/CustomerSummaryRedemptionsGift}
+     * @property {CustomerSummaryRedemptionsGift}
      */
     CustomerSummaryRedemptionsGift,
 
     /**
      * The CustomerSummaryRedemptionsLoyaltyCard model constructor.
-     * @property {module:model/CustomerSummaryRedemptionsLoyaltyCard}
+     * @property {CustomerSummaryRedemptionsLoyaltyCard}
      */
     CustomerSummaryRedemptionsLoyaltyCard,
 
     /**
      * The CustomerWithSummaryLoyaltyReferrals model constructor.
-     * @property {module:model/CustomerWithSummaryLoyaltyReferrals}
+     * @property {CustomerWithSummaryLoyaltyReferrals}
      */
     CustomerWithSummaryLoyaltyReferrals,
 
     /**
      * The CustomerWithSummaryLoyaltyReferralsAddress model constructor.
-     * @property {module:model/CustomerWithSummaryLoyaltyReferralsAddress}
+     * @property {CustomerWithSummaryLoyaltyReferralsAddress}
      */
     CustomerWithSummaryLoyaltyReferralsAddress,
 
     /**
      * The CustomerWithSummaryLoyaltyReferralsAssets model constructor.
-     * @property {module:model/CustomerWithSummaryLoyaltyReferralsAssets}
+     * @property {CustomerWithSummaryLoyaltyReferralsAssets}
      */
     CustomerWithSummaryLoyaltyReferralsAssets,
 
     /**
      * The CustomersActivityListResponseBody model constructor.
-     * @property {module:model/CustomersActivityListResponseBody}
+     * @property {CustomersActivityListResponseBody}
      */
     CustomersActivityListResponseBody,
 
     /**
      * The CustomersCreateRequestBody model constructor.
-     * @property {module:model/CustomersCreateRequestBody}
+     * @property {CustomersCreateRequestBody}
      */
     CustomersCreateRequestBody,
 
     /**
      * The CustomersCreateRequestBodyAddress model constructor.
-     * @property {module:model/CustomersCreateRequestBodyAddress}
+     * @property {CustomersCreateRequestBodyAddress}
      */
     CustomersCreateRequestBodyAddress,
 
     /**
      * The CustomersCreateResponseBody model constructor.
-     * @property {module:model/CustomersCreateResponseBody}
+     * @property {CustomersCreateResponseBody}
      */
     CustomersCreateResponseBody,
 
     /**
      * The CustomersCreateResponseBodyAddress model constructor.
-     * @property {module:model/CustomersCreateResponseBodyAddress}
+     * @property {CustomersCreateResponseBodyAddress}
      */
     CustomersCreateResponseBodyAddress,
 
     /**
      * The CustomersCreateResponseBodyAssets model constructor.
-     * @property {module:model/CustomersCreateResponseBodyAssets}
+     * @property {CustomersCreateResponseBodyAssets}
      */
     CustomersCreateResponseBodyAssets,
 
     /**
      * The CustomersGetResponseBody model constructor.
-     * @property {module:model/CustomersGetResponseBody}
+     * @property {CustomersGetResponseBody}
      */
     CustomersGetResponseBody,
 
     /**
      * The CustomersGetResponseBodyAddress model constructor.
-     * @property {module:model/CustomersGetResponseBodyAddress}
+     * @property {CustomersGetResponseBodyAddress}
      */
     CustomersGetResponseBodyAddress,
 
     /**
      * The CustomersGetResponseBodyAssets model constructor.
-     * @property {module:model/CustomersGetResponseBodyAssets}
+     * @property {CustomersGetResponseBodyAssets}
      */
     CustomersGetResponseBodyAssets,
 
     /**
      * The CustomersImportCsvCreateResponseBody model constructor.
-     * @property {module:model/CustomersImportCsvCreateResponseBody}
+     * @property {CustomersImportCsvCreateResponseBody}
      */
     CustomersImportCsvCreateResponseBody,
 
     /**
      * The CustomersListResponseBody model constructor.
-     * @property {module:model/CustomersListResponseBody}
+     * @property {CustomersListResponseBody}
      */
     CustomersListResponseBody,
 
     /**
      * The CustomersMetadataUpdateInBulkRequestBody model constructor.
-     * @property {module:model/CustomersMetadataUpdateInBulkRequestBody}
+     * @property {CustomersMetadataUpdateInBulkRequestBody}
      */
     CustomersMetadataUpdateInBulkRequestBody,
 
     /**
      * The CustomersMetadataUpdateInBulkResponseBody model constructor.
-     * @property {module:model/CustomersMetadataUpdateInBulkResponseBody}
+     * @property {CustomersMetadataUpdateInBulkResponseBody}
      */
     CustomersMetadataUpdateInBulkResponseBody,
 
     /**
      * The CustomersPermanentDeletionCreateResponseBody model constructor.
-     * @property {module:model/CustomersPermanentDeletionCreateResponseBody}
+     * @property {CustomersPermanentDeletionCreateResponseBody}
      */
     CustomersPermanentDeletionCreateResponseBody,
 
     /**
      * The CustomersPermanentDeletionCreateResponseBodyDataJson model constructor.
-     * @property {module:model/CustomersPermanentDeletionCreateResponseBodyDataJson}
+     * @property {CustomersPermanentDeletionCreateResponseBodyDataJson}
      */
     CustomersPermanentDeletionCreateResponseBodyDataJson,
 
     /**
      * The CustomersRedeemablesListResponseBody model constructor.
-     * @property {module:model/CustomersRedeemablesListResponseBody}
+     * @property {CustomersRedeemablesListResponseBody}
      */
     CustomersRedeemablesListResponseBody,
 
     /**
      * The CustomersSegmentsListResponseBody model constructor.
-     * @property {module:model/CustomersSegmentsListResponseBody}
+     * @property {CustomersSegmentsListResponseBody}
      */
     CustomersSegmentsListResponseBody,
 
     /**
      * The CustomersUpdateInBulkRequestBody model constructor.
-     * @property {module:model/CustomersUpdateInBulkRequestBody}
+     * @property {CustomersUpdateInBulkRequestBody}
      */
     CustomersUpdateInBulkRequestBody,
 
     /**
      * The CustomersUpdateInBulkRequestBodyAddress model constructor.
-     * @property {module:model/CustomersUpdateInBulkRequestBodyAddress}
+     * @property {CustomersUpdateInBulkRequestBodyAddress}
      */
     CustomersUpdateInBulkRequestBodyAddress,
 
     /**
      * The CustomersUpdateInBulkResponseBody model constructor.
-     * @property {module:model/CustomersUpdateInBulkResponseBody}
+     * @property {CustomersUpdateInBulkResponseBody}
      */
     CustomersUpdateInBulkResponseBody,
 
     /**
      * The CustomersUpdateRequestBody model constructor.
-     * @property {module:model/CustomersUpdateRequestBody}
+     * @property {CustomersUpdateRequestBody}
      */
     CustomersUpdateRequestBody,
 
     /**
      * The CustomersUpdateRequestBodyAddress model constructor.
-     * @property {module:model/CustomersUpdateRequestBodyAddress}
+     * @property {CustomersUpdateRequestBodyAddress}
      */
     CustomersUpdateRequestBodyAddress,
 
     /**
      * The CustomersUpdateResponseBody model constructor.
-     * @property {module:model/CustomersUpdateResponseBody}
+     * @property {CustomersUpdateResponseBody}
      */
     CustomersUpdateResponseBody,
 
     /**
      * The CustomersUpdateResponseBodyAddress model constructor.
-     * @property {module:model/CustomersUpdateResponseBodyAddress}
+     * @property {CustomersUpdateResponseBodyAddress}
      */
     CustomersUpdateResponseBodyAddress,
 
     /**
      * The CustomersUpdateResponseBodyAssets model constructor.
-     * @property {module:model/CustomersUpdateResponseBodyAssets}
+     * @property {CustomersUpdateResponseBodyAssets}
      */
     CustomersUpdateResponseBodyAssets,
 
     /**
      * The Discount model constructor.
-     * @property {module:model/Discount}
+     * @property {Discount}
      */
     Discount,
 
     /**
      * The DiscountProduct model constructor.
-     * @property {module:model/DiscountProduct}
+     * @property {DiscountProduct}
      */
     DiscountProduct,
 
     /**
      * The DiscountUnitMultipleOneUnit model constructor.
-     * @property {module:model/DiscountUnitMultipleOneUnit}
+     * @property {DiscountUnitMultipleOneUnit}
      */
     DiscountUnitMultipleOneUnit,
 
     /**
      * The EarningRule model constructor.
-     * @property {module:model/EarningRule}
+     * @property {EarningRule}
      */
     EarningRule,
 
     /**
      * The EarningRuleCustomEvent model constructor.
-     * @property {module:model/EarningRuleCustomEvent}
+     * @property {EarningRuleCustomEvent}
      */
     EarningRuleCustomEvent,
 
     /**
      * The EarningRuleExpirationRules model constructor.
-     * @property {module:model/EarningRuleExpirationRules}
+     * @property {EarningRuleExpirationRules}
      */
     EarningRuleExpirationRules,
 
     /**
      * The EarningRuleLoyalty model constructor.
-     * @property {module:model/EarningRuleLoyalty}
+     * @property {EarningRuleLoyalty}
      */
     EarningRuleLoyalty,
 
     /**
      * The EarningRuleLoyaltyCustomEvent model constructor.
-     * @property {module:model/EarningRuleLoyaltyCustomEvent}
+     * @property {EarningRuleLoyaltyCustomEvent}
      */
     EarningRuleLoyaltyCustomEvent,
 
     /**
      * The EarningRuleLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/EarningRuleLoyaltyCustomEventMetadata}
+     * @property {EarningRuleLoyaltyCustomEventMetadata}
      */
     EarningRuleLoyaltyCustomEventMetadata,
 
     /**
      * The EarningRuleLoyaltyCustomer model constructor.
-     * @property {module:model/EarningRuleLoyaltyCustomer}
+     * @property {EarningRuleLoyaltyCustomer}
      */
     EarningRuleLoyaltyCustomer,
 
     /**
      * The EarningRuleLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/EarningRuleLoyaltyCustomerMetadata}
+     * @property {EarningRuleLoyaltyCustomerMetadata}
      */
     EarningRuleLoyaltyCustomerMetadata,
 
     /**
      * The EarningRuleLoyaltyOrder model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrder}
+     * @property {EarningRuleLoyaltyOrder}
      */
     EarningRuleLoyaltyOrder,
 
     /**
      * The EarningRuleLoyaltyOrderAmount model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderAmount}
+     * @property {EarningRuleLoyaltyOrderAmount}
      */
     EarningRuleLoyaltyOrderAmount,
 
     /**
      * The EarningRuleLoyaltyOrderItems model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItems}
+     * @property {EarningRuleLoyaltyOrderItems}
      */
     EarningRuleLoyaltyOrderItems,
 
     /**
      * The EarningRuleLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsAmount}
+     * @property {EarningRuleLoyaltyOrderItemsAmount}
      */
     EarningRuleLoyaltyOrderItemsAmount,
 
     /**
      * The EarningRuleLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {EarningRuleLoyaltyOrderItemsAmountApplicableToItem}
      */
     EarningRuleLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The EarningRuleLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsQuantity}
+     * @property {EarningRuleLoyaltyOrderItemsQuantity}
      */
     EarningRuleLoyaltyOrderItemsQuantity,
 
     /**
      * The EarningRuleLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {EarningRuleLoyaltyOrderItemsQuantityApplicableToItem}
      */
     EarningRuleLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The EarningRuleLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsSubtotalAmount}
+     * @property {EarningRuleLoyaltyOrderItemsSubtotalAmount}
      */
     EarningRuleLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The EarningRuleLoyaltyOrderMetadata model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderMetadata}
+     * @property {EarningRuleLoyaltyOrderMetadata}
      */
     EarningRuleLoyaltyOrderMetadata,
 
     /**
      * The EarningRuleLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/EarningRuleLoyaltyOrderTotalAmount}
+     * @property {EarningRuleLoyaltyOrderTotalAmount}
      */
     EarningRuleLoyaltyOrderTotalAmount,
 
     /**
      * The EarningRuleLoyaltyTier model constructor.
-     * @property {module:model/EarningRuleLoyaltyTier}
+     * @property {EarningRuleLoyaltyTier}
      */
     EarningRuleLoyaltyTier,
 
     /**
      * The EarningRulePendingPoints model constructor.
-     * @property {module:model/EarningRulePendingPoints}
+     * @property {EarningRulePendingPoints}
      */
     EarningRulePendingPoints,
 
     /**
      * The EarningRuleSegment model constructor.
-     * @property {module:model/EarningRuleSegment}
+     * @property {EarningRuleSegment}
      */
     EarningRuleSegment,
 
     /**
      * The EarningRuleSource model constructor.
-     * @property {module:model/EarningRuleSource}
+     * @property {EarningRuleSource}
      */
     EarningRuleSource,
 
     /**
      * The Error model constructor.
-     * @property {module:model/Error}
+     * @property {Error}
      */
     Error,
 
     /**
      * The ErrorError model constructor.
-     * @property {module:model/ErrorError}
+     * @property {ErrorError}
      */
     ErrorError,
 
     /**
      * The EventSource model constructor.
-     * @property {module:model/EventSource}
+     * @property {EventSource}
      */
     EventSource,
 
     /**
      * The EventSourceApiKey model constructor.
-     * @property {module:model/EventSourceApiKey}
+     * @property {EventSourceApiKey}
      */
     EventSourceApiKey,
 
     /**
      * The EventSourceUser model constructor.
-     * @property {module:model/EventSourceUser}
+     * @property {EventSourceUser}
      */
     EventSourceUser,
 
     /**
      * The EventsCreateRequestBody model constructor.
-     * @property {module:model/EventsCreateRequestBody}
+     * @property {EventsCreateRequestBody}
      */
     EventsCreateRequestBody,
 
     /**
      * The EventsCreateRequestBodyLoyalty model constructor.
-     * @property {module:model/EventsCreateRequestBodyLoyalty}
+     * @property {EventsCreateRequestBodyLoyalty}
      */
     EventsCreateRequestBodyLoyalty,
 
     /**
      * The EventsCreateRequestBodyReferral model constructor.
-     * @property {module:model/EventsCreateRequestBodyReferral}
+     * @property {EventsCreateRequestBodyReferral}
      */
     EventsCreateRequestBodyReferral,
 
     /**
      * The EventsCreateResponseBody model constructor.
-     * @property {module:model/EventsCreateResponseBody}
+     * @property {EventsCreateResponseBody}
      */
     EventsCreateResponseBody,
 
     /**
      * The Export model constructor.
-     * @property {module:model/Export}
+     * @property {Export}
      */
     Export,
 
     /**
      * The ExportCampaignTransactionsFilters model constructor.
-     * @property {module:model/ExportCampaignTransactionsFilters}
+     * @property {ExportCampaignTransactionsFilters}
      */
     ExportCampaignTransactionsFilters,
 
     /**
      * The ExportOrderFields model constructor.
-     * @property {module:model/ExportOrderFields}
+     * @property {Exclude<keyof typeof ExportOrderFields, "prototype" | "constructFromObject">}
      */
     ExportOrderFields,
 
     /**
      * The ExportOrderOrder model constructor.
-     * @property {module:model/ExportOrderOrder}
+     * @property {Exclude<keyof typeof ExportOrderOrder, "prototype" | "constructFromObject">}
      */
     ExportOrderOrder,
 
     /**
      * The ExportParameters model constructor.
-     * @property {module:model/ExportParameters}
+     * @property {ExportParameters}
      */
     ExportParameters,
 
     /**
      * The ExportResult model constructor.
-     * @property {module:model/ExportResult}
+     * @property {ExportResult}
      */
     ExportResult,
 
     /**
      * The ExportVoucherTransactionsFields model constructor.
-     * @property {module:model/ExportVoucherTransactionsFields}
+     * @property {Exclude<keyof typeof ExportVoucherTransactionsFields, "prototype" | "constructFromObject">}
      */
     ExportVoucherTransactionsFields,
 
     /**
      * The ExportVoucherTransactionsFilters model constructor.
-     * @property {module:model/ExportVoucherTransactionsFilters}
+     * @property {ExportVoucherTransactionsFilters}
      */
     ExportVoucherTransactionsFilters,
 
     /**
      * The ExportVoucherTransactionsOrder model constructor.
-     * @property {module:model/ExportVoucherTransactionsOrder}
+     * @property {Exclude<keyof typeof ExportVoucherTransactionsOrder, "prototype" | "constructFromObject">}
      */
     ExportVoucherTransactionsOrder,
 
     /**
      * The ExportsCreateRequestBody model constructor.
-     * @property {module:model/ExportsCreateRequestBody}
+     * @property {ExportsCreateRequestBody}
      */
     ExportsCreateRequestBody,
 
     /**
      * The ExportsCreateRequestBodyParameters model constructor.
-     * @property {module:model/ExportsCreateRequestBodyParameters}
+     * @property {ExportsCreateRequestBodyParameters}
      */
     ExportsCreateRequestBodyParameters,
 
     /**
      * The ExportsCreateResponseBody model constructor.
-     * @property {module:model/ExportsCreateResponseBody}
+     * @property {ExportsCreateResponseBody}
      */
     ExportsCreateResponseBody,
 
     /**
      * The ExportsCreateResponseBodyParameters model constructor.
-     * @property {module:model/ExportsCreateResponseBodyParameters}
+     * @property {ExportsCreateResponseBodyParameters}
      */
     ExportsCreateResponseBodyParameters,
 
     /**
      * The ExportsGetResponseBody model constructor.
-     * @property {module:model/ExportsGetResponseBody}
+     * @property {ExportsGetResponseBody}
      */
     ExportsGetResponseBody,
 
     /**
      * The ExportsGetResponseBodyParameters model constructor.
-     * @property {module:model/ExportsGetResponseBodyParameters}
+     * @property {ExportsGetResponseBodyParameters}
      */
     ExportsGetResponseBodyParameters,
 
     /**
      * The ExportsGetResponseBodyResult model constructor.
-     * @property {module:model/ExportsGetResponseBodyResult}
+     * @property {ExportsGetResponseBodyResult}
      */
     ExportsGetResponseBodyResult,
 
     /**
      * The ExportsListResponseBody model constructor.
-     * @property {module:model/ExportsListResponseBody}
+     * @property {ExportsListResponseBody}
      */
     ExportsListResponseBody,
 
     /**
      * The FieldConditions model constructor.
-     * @property {module:model/FieldConditions}
+     * @property {FieldConditions}
      */
     FieldConditions,
 
     /**
      * The FilterConditionsDateTime model constructor.
-     * @property {module:model/FilterConditionsDateTime}
+     * @property {FilterConditionsDateTime}
      */
     FilterConditionsDateTime,
 
     /**
      * The FilterConditionsString model constructor.
-     * @property {module:model/FilterConditionsString}
+     * @property {FilterConditionsString}
      */
     FilterConditionsString,
 
     /**
      * The FiltersCondition model constructor.
-     * @property {module:model/FiltersCondition}
+     * @property {FiltersCondition}
      */
     FiltersCondition,
 
     /**
      * The Gift model constructor.
-     * @property {module:model/Gift}
+     * @property {Gift}
      */
     Gift,
 
     /**
      * The InapplicableTo model constructor.
-     * @property {module:model/InapplicableTo}
+     * @property {InapplicableTo}
      */
     InapplicableTo,
 
     /**
      * The InapplicableToOrderItemUnitsItem model constructor.
-     * @property {module:model/InapplicableToOrderItemUnitsItem}
+     * @property {InapplicableToOrderItemUnitsItem}
      */
     InapplicableToOrderItemUnitsItem,
 
     /**
      * The InapplicableToResultList model constructor.
-     * @property {module:model/InapplicableToResultList}
+     * @property {InapplicableToResultList}
      */
     InapplicableToResultList,
 
     /**
      * The Junction model constructor.
-     * @property {module:model/Junction}
+     * @property {Exclude<keyof typeof Junction, "prototype" | "constructFromObject">}
      */
     Junction,
 
     /**
      * The ListPublicationsItemValidSingleVoucher model constructor.
-     * @property {module:model/ListPublicationsItemValidSingleVoucher}
+     * @property {ListPublicationsItemValidSingleVoucher}
      */
     ListPublicationsItemValidSingleVoucher,
 
     /**
      * The ListPublicationsItemValidSingleVoucherMetadata model constructor.
-     * @property {module:model/ListPublicationsItemValidSingleVoucherMetadata}
+     * @property {ListPublicationsItemValidSingleVoucherMetadata}
      */
     ListPublicationsItemValidSingleVoucherMetadata,
 
     /**
      * The ListPublicationsItemVoucher model constructor.
-     * @property {module:model/ListPublicationsItemVoucher}
+     * @property {ListPublicationsItemVoucher}
      */
     ListPublicationsItemVoucher,
 
     /**
      * The Location model constructor.
-     * @property {module:model/Location}
+     * @property {Location}
      */
     Location,
 
     /**
      * The LocationShape model constructor.
-     * @property {module:model/LocationShape}
+     * @property {LocationShape}
      */
     LocationShape,
 
     /**
      * The LocationShapeDistance model constructor.
-     * @property {module:model/LocationShapeDistance}
+     * @property {LocationShapeDistance}
      */
     LocationShapeDistance,
 
     /**
      * The LocationShapeGeojson model constructor.
-     * @property {module:model/LocationShapeGeojson}
+     * @property {LocationShapeGeojson}
      */
     LocationShapeGeojson,
 
     /**
      * The LocationsGetResponseBody model constructor.
-     * @property {module:model/LocationsGetResponseBody}
+     * @property {LocationsGetResponseBody}
      */
     LocationsGetResponseBody,
 
     /**
      * The LocationsGetResponseBodyShape model constructor.
-     * @property {module:model/LocationsGetResponseBodyShape}
+     * @property {LocationsGetResponseBodyShape}
      */
     LocationsGetResponseBodyShape,
 
     /**
      * The LocationsGetResponseBodyShapeDistance model constructor.
-     * @property {module:model/LocationsGetResponseBodyShapeDistance}
+     * @property {LocationsGetResponseBodyShapeDistance}
      */
     LocationsGetResponseBodyShapeDistance,
 
     /**
      * The LocationsGetResponseBodyShapeGeojson model constructor.
-     * @property {module:model/LocationsGetResponseBodyShapeGeojson}
+     * @property {LocationsGetResponseBodyShapeGeojson}
      */
     LocationsGetResponseBodyShapeGeojson,
 
     /**
      * The LocationsListResponseBody model constructor.
-     * @property {module:model/LocationsListResponseBody}
+     * @property {LocationsListResponseBody}
      */
     LocationsListResponseBody,
 
     /**
      * The LoyaltiesCreateCampaignRequestBody model constructor.
-     * @property {module:model/LoyaltiesCreateCampaignRequestBody}
+     * @property {LoyaltiesCreateCampaignRequestBody}
      */
     LoyaltiesCreateCampaignRequestBody,
 
     /**
      * The LoyaltiesCreateCampaignResponseBody model constructor.
-     * @property {module:model/LoyaltiesCreateCampaignResponseBody}
+     * @property {LoyaltiesCreateCampaignResponseBody}
      */
     LoyaltiesCreateCampaignResponseBody,
 
     /**
      * The LoyaltiesDeleteResponseBody model constructor.
-     * @property {module:model/LoyaltiesDeleteResponseBody}
+     * @property {LoyaltiesDeleteResponseBody}
      */
     LoyaltiesDeleteResponseBody,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItem}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItem}
      */
     LoyaltiesEarningRulesCreateRequestBodyItem,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyalty}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyalty}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyalty,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemSegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemSegment}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemSegment}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemSegment,
 
     /**
      * The LoyaltiesEarningRulesCreateRequestBodyItemSource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateRequestBodyItemSource}
+     * @property {LoyaltiesEarningRulesCreateRequestBodyItemSource}
      */
     LoyaltiesEarningRulesCreateRequestBodyItemSource,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBody}
+     * @property {LoyaltiesEarningRulesCreateResponseBody}
      */
     LoyaltiesEarningRulesCreateResponseBody,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyCustomEvent}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyCustomEvent}
      */
     LoyaltiesEarningRulesCreateResponseBodyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyalty}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyalty}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier}
      */
     LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesCreateResponseBodyPendingPoints}
      */
     LoyaltiesEarningRulesCreateResponseBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodySegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodySegment}
+     * @property {LoyaltiesEarningRulesCreateResponseBodySegment}
      */
     LoyaltiesEarningRulesCreateResponseBodySegment,
 
     /**
      * The LoyaltiesEarningRulesCreateResponseBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesCreateResponseBodySource}
+     * @property {LoyaltiesEarningRulesCreateResponseBodySource}
      */
     LoyaltiesEarningRulesCreateResponseBodySource,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBody}
+     * @property {LoyaltiesEarningRulesDisableResponseBody}
      */
     LoyaltiesEarningRulesDisableResponseBody,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyCustomEvent}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyCustomEvent}
      */
     LoyaltiesEarningRulesDisableResponseBodyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyalty}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyalty}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier}
      */
     LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesDisableResponseBodyPendingPoints}
      */
     LoyaltiesEarningRulesDisableResponseBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodySegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodySegment}
+     * @property {LoyaltiesEarningRulesDisableResponseBodySegment}
      */
     LoyaltiesEarningRulesDisableResponseBodySegment,
 
     /**
      * The LoyaltiesEarningRulesDisableResponseBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesDisableResponseBodySource}
+     * @property {LoyaltiesEarningRulesDisableResponseBodySource}
      */
     LoyaltiesEarningRulesDisableResponseBodySource,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBody}
+     * @property {LoyaltiesEarningRulesEnableResponseBody}
      */
     LoyaltiesEarningRulesEnableResponseBody,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyCustomEvent}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyCustomEvent}
      */
     LoyaltiesEarningRulesEnableResponseBodyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyalty}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyalty}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier}
      */
     LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesEnableResponseBodyPendingPoints}
      */
     LoyaltiesEarningRulesEnableResponseBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodySegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodySegment}
+     * @property {LoyaltiesEarningRulesEnableResponseBodySegment}
      */
     LoyaltiesEarningRulesEnableResponseBodySegment,
 
     /**
      * The LoyaltiesEarningRulesEnableResponseBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesEnableResponseBodySource}
+     * @property {LoyaltiesEarningRulesEnableResponseBodySource}
      */
     LoyaltiesEarningRulesEnableResponseBodySource,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBody}
+     * @property {LoyaltiesEarningRulesGetResponseBody}
      */
     LoyaltiesEarningRulesGetResponseBody,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyCustomEvent}
+     * @property {LoyaltiesEarningRulesGetResponseBodyCustomEvent}
      */
     LoyaltiesEarningRulesGetResponseBodyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyalty}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier}
+     * @property {LoyaltiesEarningRulesGetResponseBodyLoyaltyTier}
      */
     LoyaltiesEarningRulesGetResponseBodyLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesGetResponseBodyPendingPoints}
      */
     LoyaltiesEarningRulesGetResponseBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodySegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodySegment}
+     * @property {LoyaltiesEarningRulesGetResponseBodySegment}
      */
     LoyaltiesEarningRulesGetResponseBodySegment,
 
     /**
      * The LoyaltiesEarningRulesGetResponseBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesGetResponseBodySource}
+     * @property {LoyaltiesEarningRulesGetResponseBodySource}
      */
     LoyaltiesEarningRulesGetResponseBodySource,
 
     /**
      * The LoyaltiesEarningRulesListResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesListResponseBody}
+     * @property {LoyaltiesEarningRulesListResponseBody}
      */
     LoyaltiesEarningRulesListResponseBody,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBody}
+     * @property {LoyaltiesEarningRulesUpdateRequestBody}
      */
     LoyaltiesEarningRulesUpdateRequestBody,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyalty}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyalty}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodyPendingPoints}
      */
     LoyaltiesEarningRulesUpdateRequestBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesUpdateRequestBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateRequestBodySource}
+     * @property {LoyaltiesEarningRulesUpdateRequestBodySource}
      */
     LoyaltiesEarningRulesUpdateRequestBodySource,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBody model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBody}
+     * @property {LoyaltiesEarningRulesUpdateResponseBody}
      */
     LoyaltiesEarningRulesUpdateResponseBody,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyCustomEvent}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyCustomEvent}
      */
     LoyaltiesEarningRulesUpdateResponseBodyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyalty model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyalty}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyalty}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyalty,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEventMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEventMetadata}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEventMetadata}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEventMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomer model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomer}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomer}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomer,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomerMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomerMetadata}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomerMetadata}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomerMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrder,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier}
      */
     LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodyPendingPoints model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodyPendingPoints}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodyPendingPoints}
      */
     LoyaltiesEarningRulesUpdateResponseBodyPendingPoints,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodySegment model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodySegment}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodySegment}
      */
     LoyaltiesEarningRulesUpdateResponseBodySegment,
 
     /**
      * The LoyaltiesEarningRulesUpdateResponseBodySource model constructor.
-     * @property {module:model/LoyaltiesEarningRulesUpdateResponseBodySource}
+     * @property {LoyaltiesEarningRulesUpdateResponseBodySource}
      */
     LoyaltiesEarningRulesUpdateResponseBodySource,
 
     /**
      * The LoyaltiesGetCampaignResponseBody model constructor.
-     * @property {module:model/LoyaltiesGetCampaignResponseBody}
+     * @property {LoyaltiesGetCampaignResponseBody}
      */
     LoyaltiesGetCampaignResponseBody,
 
     /**
      * The LoyaltiesListCampaignsResponseBody model constructor.
-     * @property {module:model/LoyaltiesListCampaignsResponseBody}
+     * @property {LoyaltiesListCampaignsResponseBody}
      */
     LoyaltiesListCampaignsResponseBody,
 
     /**
      * The LoyaltiesListMembersResponseBody model constructor.
-     * @property {module:model/LoyaltiesListMembersResponseBody}
+     * @property {LoyaltiesListMembersResponseBody}
      */
     LoyaltiesListMembersResponseBody,
 
     /**
      * The LoyaltiesLoyaltyTierReward model constructor.
-     * @property {module:model/LoyaltiesLoyaltyTierReward}
+     * @property {LoyaltiesLoyaltyTierReward}
      */
     LoyaltiesLoyaltyTierReward,
 
     /**
      * The LoyaltiesMemberActivityListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMemberActivityListResponseBody}
+     * @property {LoyaltiesMemberActivityListResponseBody}
      */
     LoyaltiesMemberActivityListResponseBody,
 
     /**
      * The LoyaltiesMembersBalanceUpdateRequestBody model constructor.
-     * @property {module:model/LoyaltiesMembersBalanceUpdateRequestBody}
+     * @property {LoyaltiesMembersBalanceUpdateRequestBody}
      */
     LoyaltiesMembersBalanceUpdateRequestBody,
 
     /**
      * The LoyaltiesMembersBalanceUpdateResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersBalanceUpdateResponseBody}
+     * @property {LoyaltiesMembersBalanceUpdateResponseBody}
      */
     LoyaltiesMembersBalanceUpdateResponseBody,
 
     /**
      * The LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject model constructor.
-     * @property {module:model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject}
+     * @property {LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject}
      */
     LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject,
 
     /**
      * The LoyaltiesMembersCreateRequestBody model constructor.
-     * @property {module:model/LoyaltiesMembersCreateRequestBody}
+     * @property {LoyaltiesMembersCreateRequestBody}
      */
     LoyaltiesMembersCreateRequestBody,
 
     /**
      * The LoyaltiesMembersCreateResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersCreateResponseBody}
+     * @property {LoyaltiesMembersCreateResponseBody}
      */
     LoyaltiesMembersCreateResponseBody,
 
     /**
      * The LoyaltiesMembersCreateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/LoyaltiesMembersCreateResponseBodyLoyaltyCard}
+     * @property {LoyaltiesMembersCreateResponseBodyLoyaltyCard}
      */
     LoyaltiesMembersCreateResponseBodyLoyaltyCard,
 
     /**
      * The LoyaltiesMembersCreateResponseBodyPublish model constructor.
-     * @property {module:model/LoyaltiesMembersCreateResponseBodyPublish}
+     * @property {LoyaltiesMembersCreateResponseBodyPublish}
      */
     LoyaltiesMembersCreateResponseBodyPublish,
 
     /**
      * The LoyaltiesMembersCreateResponseBodyRedemption model constructor.
-     * @property {module:model/LoyaltiesMembersCreateResponseBodyRedemption}
+     * @property {LoyaltiesMembersCreateResponseBodyRedemption}
      */
     LoyaltiesMembersCreateResponseBodyRedemption,
 
     /**
      * The LoyaltiesMembersGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersGetResponseBody}
+     * @property {LoyaltiesMembersGetResponseBody}
      */
     LoyaltiesMembersGetResponseBody,
 
     /**
      * The LoyaltiesMembersGetResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/LoyaltiesMembersGetResponseBodyLoyaltyCard}
+     * @property {LoyaltiesMembersGetResponseBodyLoyaltyCard}
      */
     LoyaltiesMembersGetResponseBodyLoyaltyCard,
 
     /**
      * The LoyaltiesMembersGetResponseBodyPublish model constructor.
-     * @property {module:model/LoyaltiesMembersGetResponseBodyPublish}
+     * @property {LoyaltiesMembersGetResponseBodyPublish}
      */
     LoyaltiesMembersGetResponseBodyPublish,
 
     /**
      * The LoyaltiesMembersGetResponseBodyRedemption model constructor.
-     * @property {module:model/LoyaltiesMembersGetResponseBodyRedemption}
+     * @property {LoyaltiesMembersGetResponseBodyRedemption}
      */
     LoyaltiesMembersGetResponseBodyRedemption,
 
     /**
      * The LoyaltiesMembersPendingPointsActivateResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsActivateResponseBody}
+     * @property {LoyaltiesMembersPendingPointsActivateResponseBody}
      */
     LoyaltiesMembersPendingPointsActivateResponseBody,
 
     /**
      * The LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject}
+     * @property {LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject}
      */
     LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject,
 
     /**
      * The LoyaltiesMembersPendingPointsBalanceRequestBody model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsBalanceRequestBody}
+     * @property {LoyaltiesMembersPendingPointsBalanceRequestBody}
      */
     LoyaltiesMembersPendingPointsBalanceRequestBody,
 
     /**
      * The LoyaltiesMembersPendingPointsBalanceResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsBalanceResponseBody}
+     * @property {LoyaltiesMembersPendingPointsBalanceResponseBody}
      */
     LoyaltiesMembersPendingPointsBalanceResponseBody,
 
     /**
      * The LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject}
+     * @property {LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject}
      */
     LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject,
 
     /**
      * The LoyaltiesMembersPendingPointsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersPendingPointsListResponseBody}
+     * @property {LoyaltiesMembersPendingPointsListResponseBody}
      */
     LoyaltiesMembersPendingPointsListResponseBody,
 
     /**
      * The LoyaltiesMembersPointsExpirationListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersPointsExpirationListResponseBody}
+     * @property {LoyaltiesMembersPointsExpirationListResponseBody}
      */
     LoyaltiesMembersPointsExpirationListResponseBody,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemRequestBody model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemRequestBody}
+     * @property {LoyaltiesMembersRedemptionRedeemRequestBody}
      */
     LoyaltiesMembersRedemptionRedeemRequestBody,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemRequestBodyReward model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemRequestBodyReward}
+     * @property {LoyaltiesMembersRedemptionRedeemRequestBodyReward}
      */
     LoyaltiesMembersRedemptionRedeemRequestBodyReward,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBody}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBody}
      */
     LoyaltiesMembersRedemptionRedeemResponseBody,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyChannel model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyChannel}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyChannel}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyChannel,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyGift model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyGift}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyGift}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyGift,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyOrder model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrder}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyOrder}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyOrder,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderCustomer model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderCustomer}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyOrderCustomer}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyOrderCustomer,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodySession model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodySession}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodySession}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodySession,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucher model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucher}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyVoucher}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyVoucher,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish,
 
     /**
      * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucherRedemption model constructor.
-     * @property {module:model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherRedemption}
+     * @property {LoyaltiesMembersRedemptionRedeemResponseBodyVoucherRedemption}
      */
     LoyaltiesMembersRedemptionRedeemResponseBodyVoucherRedemption,
 
     /**
      * The LoyaltiesMembersRewardsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersRewardsListResponseBody}
+     * @property {LoyaltiesMembersRewardsListResponseBody}
      */
     LoyaltiesMembersRewardsListResponseBody,
 
     /**
      * The LoyaltiesMembersRewardsListResponseBodyDataItem model constructor.
-     * @property {module:model/LoyaltiesMembersRewardsListResponseBodyDataItem}
+     * @property {LoyaltiesMembersRewardsListResponseBodyDataItem}
      */
     LoyaltiesMembersRewardsListResponseBodyDataItem,
 
     /**
      * The LoyaltiesMembersTiersListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersTiersListResponseBody}
+     * @property {LoyaltiesMembersTiersListResponseBody}
      */
     LoyaltiesMembersTiersListResponseBody,
 
     /**
      * The LoyaltiesMembersTransactionsExportCreateRequestBody model constructor.
-     * @property {module:model/LoyaltiesMembersTransactionsExportCreateRequestBody}
+     * @property {LoyaltiesMembersTransactionsExportCreateRequestBody}
      */
     LoyaltiesMembersTransactionsExportCreateRequestBody,
 
     /**
      * The LoyaltiesMembersTransactionsExportCreateRequestBodyParameters model constructor.
-     * @property {module:model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters}
+     * @property {LoyaltiesMembersTransactionsExportCreateRequestBodyParameters}
      */
     LoyaltiesMembersTransactionsExportCreateRequestBodyParameters,
 
     /**
      * The LoyaltiesMembersTransactionsExportCreateResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersTransactionsExportCreateResponseBody}
+     * @property {LoyaltiesMembersTransactionsExportCreateResponseBody}
      */
     LoyaltiesMembersTransactionsExportCreateResponseBody,
 
     /**
      * The LoyaltiesMembersTransactionsExportCreateResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters}
+     * @property {LoyaltiesMembersTransactionsExportCreateResponseBodyParameters}
      */
     LoyaltiesMembersTransactionsExportCreateResponseBodyParameters,
 
     /**
      * The LoyaltiesMembersTransactionsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersTransactionsListResponseBody}
+     * @property {LoyaltiesMembersTransactionsListResponseBody}
      */
     LoyaltiesMembersTransactionsListResponseBody,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBody model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBody}
+     * @property {LoyaltiesMembersTransfersCreateResponseBody}
      */
     LoyaltiesMembersTransfersCreateResponseBody,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyAssets model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssets}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyAssets}
      */
     LoyaltiesMembersTransfersCreateResponseBodyAssets,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode}
      */
     LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyAssetsQr model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyAssetsQr}
      */
     LoyaltiesMembersTransfersCreateResponseBodyAssetsQr,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard}
      */
     LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyPublish model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyPublish}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyPublish}
      */
     LoyaltiesMembersTransfersCreateResponseBodyPublish,
 
     /**
      * The LoyaltiesMembersTransfersCreateResponseBodyRedemption model constructor.
-     * @property {module:model/LoyaltiesMembersTransfersCreateResponseBodyRedemption}
+     * @property {LoyaltiesMembersTransfersCreateResponseBodyRedemption}
      */
     LoyaltiesMembersTransfersCreateResponseBodyRedemption,
 
     /**
      * The LoyaltiesPendingPointsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesPendingPointsListResponseBody}
+     * @property {LoyaltiesPendingPointsListResponseBody}
      */
     LoyaltiesPendingPointsListResponseBody,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBody model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBody}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBody}
      */
     LoyaltiesPointsExpirationExportCreateRequestBody,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParameters model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParameters}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParameters}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParameters,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParametersFilters,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignIdConditions model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignIdConditions}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignIdConditions}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignIdConditions,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions}
+     * @property {LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions}
      */
     LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBody model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBody}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBody}
      */
     LoyaltiesPointsExpirationExportCreateResponseBody,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParameters}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParameters}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParameters,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId,
 
     /**
      * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions model constructor.
-     * @property {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions}
+     * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions,
 
     /**
      * The LoyaltiesRewardAssignmentsGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsGetResponseBody}
+     * @property {LoyaltiesRewardAssignmentsGetResponseBody}
      */
     LoyaltiesRewardAssignmentsGetResponseBody,
 
     /**
      * The LoyaltiesRewardAssignmentsGetResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsGetResponseBodyParameters}
+     * @property {LoyaltiesRewardAssignmentsGetResponseBodyParameters}
      */
     LoyaltiesRewardAssignmentsGetResponseBodyParameters,
 
     /**
      * The LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty}
+     * @property {LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty}
      */
     LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty,
 
     /**
      * The LoyaltiesRewardAssignmentsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsListResponseBody}
+     * @property {LoyaltiesRewardAssignmentsListResponseBody}
      */
     LoyaltiesRewardAssignmentsListResponseBody,
 
     /**
      * The LoyaltiesRewardAssignmentsRewardGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsRewardGetResponseBody}
+     * @property {LoyaltiesRewardAssignmentsRewardGetResponseBody}
      */
     LoyaltiesRewardAssignmentsRewardGetResponseBody,
 
     /**
      * The LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes model constructor.
-     * @property {module:model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes}
+     * @property {LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes}
      */
     LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentItemRequestBody model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBody}
+     * @property {LoyaltiesRewardsCreateAssignmentItemRequestBody}
      */
     LoyaltiesRewardsCreateAssignmentItemRequestBody,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters}
+     * @property {LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters}
      */
     LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty}
+     * @property {LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty}
      */
     LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentResponseBody}
+     * @property {LoyaltiesRewardsCreateAssignmentResponseBody}
      */
     LoyaltiesRewardsCreateAssignmentResponseBody,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParameters}
+     * @property {LoyaltiesRewardsCreateAssignmentResponseBodyParameters}
      */
     LoyaltiesRewardsCreateAssignmentResponseBodyParameters,
 
     /**
      * The LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty}
+     * @property {LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty}
      */
     LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty,
 
     /**
      * The LoyaltiesRewardsGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardsGetResponseBody}
+     * @property {LoyaltiesRewardsGetResponseBody}
      */
     LoyaltiesRewardsGetResponseBody,
 
     /**
      * The LoyaltiesRewardsGetResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardsGetResponseBodyParameters}
+     * @property {LoyaltiesRewardsGetResponseBodyParameters}
      */
     LoyaltiesRewardsGetResponseBodyParameters,
 
     /**
      * The LoyaltiesRewardsGetResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardsGetResponseBodyParametersLoyalty}
+     * @property {LoyaltiesRewardsGetResponseBodyParametersLoyalty}
      */
     LoyaltiesRewardsGetResponseBodyParametersLoyalty,
 
     /**
      * The LoyaltiesRewardsListAssignmentsResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardsListAssignmentsResponseBody}
+     * @property {LoyaltiesRewardsListAssignmentsResponseBody}
      */
     LoyaltiesRewardsListAssignmentsResponseBody,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentRequestBody model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentRequestBody}
+     * @property {LoyaltiesRewardsUpdateAssignmentRequestBody}
      */
     LoyaltiesRewardsUpdateAssignmentRequestBody,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentRequestBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentRequestBodyParameters}
+     * @property {LoyaltiesRewardsUpdateAssignmentRequestBodyParameters}
      */
     LoyaltiesRewardsUpdateAssignmentRequestBodyParameters,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty}
+     * @property {LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty}
      */
     LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentResponseBody model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentResponseBody}
+     * @property {LoyaltiesRewardsUpdateAssignmentResponseBody}
      */
     LoyaltiesRewardsUpdateAssignmentResponseBody,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentResponseBodyParameters model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentResponseBodyParameters}
+     * @property {LoyaltiesRewardsUpdateAssignmentResponseBodyParameters}
      */
     LoyaltiesRewardsUpdateAssignmentResponseBodyParameters,
 
     /**
      * The LoyaltiesRewardsUpdateAssignmentResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/LoyaltiesRewardsUpdateAssignmentResponseBodyParametersLoyalty}
+     * @property {LoyaltiesRewardsUpdateAssignmentResponseBodyParametersLoyalty}
      */
     LoyaltiesRewardsUpdateAssignmentResponseBodyParametersLoyalty,
 
     /**
      * The LoyaltiesTiersCreateInBulkRequestBodyItem model constructor.
-     * @property {module:model/LoyaltiesTiersCreateInBulkRequestBodyItem}
+     * @property {LoyaltiesTiersCreateInBulkRequestBodyItem}
      */
     LoyaltiesTiersCreateInBulkRequestBodyItem,
 
     /**
      * The LoyaltiesTiersEarningRulesListResponseBody model constructor.
-     * @property {module:model/LoyaltiesTiersEarningRulesListResponseBody}
+     * @property {LoyaltiesTiersEarningRulesListResponseBody}
      */
     LoyaltiesTiersEarningRulesListResponseBody,
 
     /**
      * The LoyaltiesTiersGetResponseBody model constructor.
-     * @property {module:model/LoyaltiesTiersGetResponseBody}
+     * @property {LoyaltiesTiersGetResponseBody}
      */
     LoyaltiesTiersGetResponseBody,
 
     /**
      * The LoyaltiesTiersGetResponseBodyConfig model constructor.
-     * @property {module:model/LoyaltiesTiersGetResponseBodyConfig}
+     * @property {LoyaltiesTiersGetResponseBodyConfig}
      */
     LoyaltiesTiersGetResponseBodyConfig,
 
     /**
      * The LoyaltiesTiersGetResponseBodyConfigPoints model constructor.
-     * @property {module:model/LoyaltiesTiersGetResponseBodyConfigPoints}
+     * @property {LoyaltiesTiersGetResponseBodyConfigPoints}
      */
     LoyaltiesTiersGetResponseBodyConfigPoints,
 
     /**
      * The LoyaltiesTiersGetResponseBodyPoints model constructor.
-     * @property {module:model/LoyaltiesTiersGetResponseBodyPoints}
+     * @property {LoyaltiesTiersGetResponseBodyPoints}
      */
     LoyaltiesTiersGetResponseBodyPoints,
 
     /**
      * The LoyaltiesTiersListResponseBody model constructor.
-     * @property {module:model/LoyaltiesTiersListResponseBody}
+     * @property {LoyaltiesTiersListResponseBody}
      */
     LoyaltiesTiersListResponseBody,
 
     /**
      * The LoyaltiesTiersRewardsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesTiersRewardsListResponseBody}
+     * @property {LoyaltiesTiersRewardsListResponseBody}
      */
     LoyaltiesTiersRewardsListResponseBody,
 
     /**
      * The LoyaltiesTransactionsExportCreateRequestBody model constructor.
-     * @property {module:model/LoyaltiesTransactionsExportCreateRequestBody}
+     * @property {LoyaltiesTransactionsExportCreateRequestBody}
      */
     LoyaltiesTransactionsExportCreateRequestBody,
 
     /**
      * The LoyaltiesTransactionsExportCreateRequestBodyParameters model constructor.
-     * @property {module:model/LoyaltiesTransactionsExportCreateRequestBodyParameters}
+     * @property {LoyaltiesTransactionsExportCreateRequestBodyParameters}
      */
     LoyaltiesTransactionsExportCreateRequestBodyParameters,
 
     /**
      * The LoyaltiesTransactionsListResponseBody model constructor.
-     * @property {module:model/LoyaltiesTransactionsListResponseBody}
+     * @property {LoyaltiesTransactionsListResponseBody}
      */
     LoyaltiesTransactionsListResponseBody,
 
     /**
      * The LoyaltiesTransferPoints model constructor.
-     * @property {module:model/LoyaltiesTransferPoints}
+     * @property {LoyaltiesTransferPoints}
      */
     LoyaltiesTransferPoints,
 
     /**
      * The LoyaltiesUpdateCampaignRequestBody model constructor.
-     * @property {module:model/LoyaltiesUpdateCampaignRequestBody}
+     * @property {LoyaltiesUpdateCampaignRequestBody}
      */
     LoyaltiesUpdateCampaignRequestBody,
 
     /**
      * The LoyaltiesUpdateCampaignRequestBodyOptions model constructor.
-     * @property {module:model/LoyaltiesUpdateCampaignRequestBodyOptions}
+     * @property {LoyaltiesUpdateCampaignRequestBodyOptions}
      */
     LoyaltiesUpdateCampaignRequestBodyOptions,
 
     /**
      * The LoyaltiesUpdateCampaignResponseBody model constructor.
-     * @property {module:model/LoyaltiesUpdateCampaignResponseBody}
+     * @property {LoyaltiesUpdateCampaignResponseBody}
      */
     LoyaltiesUpdateCampaignResponseBody,
 
     /**
      * The LoyaltyCampaign model constructor.
-     * @property {module:model/LoyaltyCampaign}
+     * @property {LoyaltyCampaign}
      */
     LoyaltyCampaign,
 
     /**
      * The LoyaltyCampaignVoucher model constructor.
-     * @property {module:model/LoyaltyCampaignVoucher}
+     * @property {LoyaltyCampaignVoucher}
      */
     LoyaltyCampaignVoucher,
 
     /**
      * The LoyaltyCampaignVoucherRedemption model constructor.
-     * @property {module:model/LoyaltyCampaignVoucherRedemption}
+     * @property {LoyaltyCampaignVoucherRedemption}
      */
     LoyaltyCampaignVoucherRedemption,
 
     /**
      * The LoyaltyCardTransaction model constructor.
-     * @property {module:model/LoyaltyCardTransaction}
+     * @property {LoyaltyCardTransaction}
      */
     LoyaltyCardTransaction,
 
     /**
      * The LoyaltyCardTransactionDetails model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetails}
+     * @property {LoyaltyCardTransactionDetails}
      */
     LoyaltyCardTransactionDetails,
 
     /**
      * The LoyaltyCardTransactionDetailsCustomEvent model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsCustomEvent}
+     * @property {LoyaltyCardTransactionDetailsCustomEvent}
      */
     LoyaltyCardTransactionDetailsCustomEvent,
 
     /**
      * The LoyaltyCardTransactionDetailsEarningRule model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsEarningRule}
+     * @property {LoyaltyCardTransactionDetailsEarningRule}
      */
     LoyaltyCardTransactionDetailsEarningRule,
 
     /**
      * The LoyaltyCardTransactionDetailsEarningRuleSource model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsEarningRuleSource}
+     * @property {LoyaltyCardTransactionDetailsEarningRuleSource}
      */
     LoyaltyCardTransactionDetailsEarningRuleSource,
 
     /**
      * The LoyaltyCardTransactionDetailsEvent model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsEvent}
+     * @property {LoyaltyCardTransactionDetailsEvent}
      */
     LoyaltyCardTransactionDetailsEvent,
 
     /**
      * The LoyaltyCardTransactionDetailsEventSchema model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsEventSchema}
+     * @property {LoyaltyCardTransactionDetailsEventSchema}
      */
     LoyaltyCardTransactionDetailsEventSchema,
 
     /**
      * The LoyaltyCardTransactionDetailsHolderLoyaltyTier model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsHolderLoyaltyTier}
+     * @property {LoyaltyCardTransactionDetailsHolderLoyaltyTier}
      */
     LoyaltyCardTransactionDetailsHolderLoyaltyTier,
 
     /**
      * The LoyaltyCardTransactionDetailsLoyaltyTier model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsLoyaltyTier}
+     * @property {LoyaltyCardTransactionDetailsLoyaltyTier}
      */
     LoyaltyCardTransactionDetailsLoyaltyTier,
 
     /**
      * The LoyaltyCardTransactionDetailsOrder model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsOrder}
+     * @property {LoyaltyCardTransactionDetailsOrder}
      */
     LoyaltyCardTransactionDetailsOrder,
 
     /**
      * The LoyaltyCardTransactionDetailsRedemption model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsRedemption}
+     * @property {LoyaltyCardTransactionDetailsRedemption}
      */
     LoyaltyCardTransactionDetailsRedemption,
 
     /**
      * The LoyaltyCardTransactionDetailsReward model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsReward}
+     * @property {LoyaltyCardTransactionDetailsReward}
      */
     LoyaltyCardTransactionDetailsReward,
 
     /**
      * The LoyaltyCardTransactionDetailsRollback model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsRollback}
+     * @property {LoyaltyCardTransactionDetailsRollback}
      */
     LoyaltyCardTransactionDetailsRollback,
 
     /**
      * The LoyaltyCardTransactionDetailsSegment model constructor.
-     * @property {module:model/LoyaltyCardTransactionDetailsSegment}
+     * @property {LoyaltyCardTransactionDetailsSegment}
      */
     LoyaltyCardTransactionDetailsSegment,
 
     /**
      * The LoyaltyCardTransactionsType model constructor.
-     * @property {module:model/LoyaltyCardTransactionsType}
+     * @property {Exclude<keyof typeof LoyaltyCardTransactionsType, "prototype" | "constructFromObject">}
      */
     LoyaltyCardTransactionsType,
 
     /**
      * The LoyaltyMember model constructor.
-     * @property {module:model/LoyaltyMember}
+     * @property {LoyaltyMember}
      */
     LoyaltyMember,
 
     /**
      * The LoyaltyMemberLoyaltyCard model constructor.
-     * @property {module:model/LoyaltyMemberLoyaltyCard}
+     * @property {LoyaltyMemberLoyaltyCard}
      */
     LoyaltyMemberLoyaltyCard,
 
     /**
      * The LoyaltyMemberPublish model constructor.
-     * @property {module:model/LoyaltyMemberPublish}
+     * @property {LoyaltyMemberPublish}
      */
     LoyaltyMemberPublish,
 
     /**
      * The LoyaltyMemberRedemption model constructor.
-     * @property {module:model/LoyaltyMemberRedemption}
+     * @property {LoyaltyMemberRedemption}
      */
     LoyaltyMemberRedemption,
 
     /**
      * The LoyaltyPendingPoints model constructor.
-     * @property {module:model/LoyaltyPendingPoints}
+     * @property {LoyaltyPendingPoints}
      */
     LoyaltyPendingPoints,
 
     /**
      * The LoyaltyPendingPointsDetails model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetails}
+     * @property {LoyaltyPendingPointsDetails}
      */
     LoyaltyPendingPointsDetails,
 
     /**
      * The LoyaltyPendingPointsDetailsEarningRule model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsEarningRule}
+     * @property {LoyaltyPendingPointsDetailsEarningRule}
      */
     LoyaltyPendingPointsDetailsEarningRule,
 
     /**
      * The LoyaltyPendingPointsDetailsEarningRuleSource model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsEarningRuleSource}
+     * @property {LoyaltyPendingPointsDetailsEarningRuleSource}
      */
     LoyaltyPendingPointsDetailsEarningRuleSource,
 
     /**
      * The LoyaltyPendingPointsDetailsEvent model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsEvent}
+     * @property {LoyaltyPendingPointsDetailsEvent}
      */
     LoyaltyPendingPointsDetailsEvent,
 
     /**
      * The LoyaltyPendingPointsDetailsHolderLoyaltyTier model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsHolderLoyaltyTier}
+     * @property {LoyaltyPendingPointsDetailsHolderLoyaltyTier}
      */
     LoyaltyPendingPointsDetailsHolderLoyaltyTier,
 
     /**
      * The LoyaltyPendingPointsDetailsLoyaltyTier model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsLoyaltyTier}
+     * @property {LoyaltyPendingPointsDetailsLoyaltyTier}
      */
     LoyaltyPendingPointsDetailsLoyaltyTier,
 
     /**
      * The LoyaltyPendingPointsDetailsOrder model constructor.
-     * @property {module:model/LoyaltyPendingPointsDetailsOrder}
+     * @property {LoyaltyPendingPointsDetailsOrder}
      */
     LoyaltyPendingPointsDetailsOrder,
 
     /**
      * The LoyaltyPointsBucket model constructor.
-     * @property {module:model/LoyaltyPointsBucket}
+     * @property {LoyaltyPointsBucket}
      */
     LoyaltyPointsBucket,
 
     /**
      * The LoyaltyPointsBucketBucket model constructor.
-     * @property {module:model/LoyaltyPointsBucketBucket}
+     * @property {LoyaltyPointsBucketBucket}
      */
     LoyaltyPointsBucketBucket,
 
     /**
      * The LoyaltyTier model constructor.
-     * @property {module:model/LoyaltyTier}
+     * @property {LoyaltyTier}
      */
     LoyaltyTier,
 
     /**
      * The LoyaltyTierBase model constructor.
-     * @property {module:model/LoyaltyTierBase}
+     * @property {LoyaltyTierBase}
      */
     LoyaltyTierBase,
 
     /**
      * The LoyaltyTierBasePoints model constructor.
-     * @property {module:model/LoyaltyTierBasePoints}
+     * @property {LoyaltyTierBasePoints}
      */
     LoyaltyTierBasePoints,
 
     /**
      * The LoyaltyTierConfig model constructor.
-     * @property {module:model/LoyaltyTierConfig}
+     * @property {LoyaltyTierConfig}
      */
     LoyaltyTierConfig,
 
     /**
      * The LoyaltyTierConfigPoints model constructor.
-     * @property {module:model/LoyaltyTierConfigPoints}
+     * @property {LoyaltyTierConfigPoints}
      */
     LoyaltyTierConfigPoints,
 
     /**
      * The LoyaltyTierExpiration model constructor.
-     * @property {module:model/LoyaltyTierExpiration}
+     * @property {LoyaltyTierExpiration}
      */
     LoyaltyTierExpiration,
 
     /**
      * The LoyaltyTierPoints model constructor.
-     * @property {module:model/LoyaltyTierPoints}
+     * @property {LoyaltyTierPoints}
      */
     LoyaltyTierPoints,
 
     /**
      * The LoyaltyTiersExpirationAll model constructor.
-     * @property {module:model/LoyaltyTiersExpirationAll}
+     * @property {LoyaltyTiersExpirationAll}
      */
     LoyaltyTiersExpirationAll,
 
     /**
      * The LoyaltyTiersExpirationAllExpirationDate model constructor.
-     * @property {module:model/LoyaltyTiersExpirationAllExpirationDate}
+     * @property {LoyaltyTiersExpirationAllExpirationDate}
      */
     LoyaltyTiersExpirationAllExpirationDate,
 
     /**
      * The LoyaltyTiersExpirationAllExpirationDateRounding model constructor.
-     * @property {module:model/LoyaltyTiersExpirationAllExpirationDateRounding}
+     * @property {LoyaltyTiersExpirationAllExpirationDateRounding}
      */
     LoyaltyTiersExpirationAllExpirationDateRounding,
 
     /**
      * The LoyaltyTiersExpirationAllStartDate model constructor.
-     * @property {module:model/LoyaltyTiersExpirationAllStartDate}
+     * @property {LoyaltyTiersExpirationAllStartDate}
      */
     LoyaltyTiersExpirationAllStartDate,
 
     /**
      * The ManagementProject model constructor.
-     * @property {module:model/ManagementProject}
+     * @property {ManagementProject}
      */
     ManagementProject,
 
     /**
      * The ManagementProjectApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectApiUsageNotifications}
+     * @property {ManagementProjectApiUsageNotifications}
      */
     ManagementProjectApiUsageNotifications,
 
     /**
      * The ManagementProjectDefaultCodeConfig model constructor.
-     * @property {module:model/ManagementProjectDefaultCodeConfig}
+     * @property {ManagementProjectDefaultCodeConfig}
      */
     ManagementProjectDefaultCodeConfig,
 
     /**
      * The ManagementProjectLimits model constructor.
-     * @property {module:model/ManagementProjectLimits}
+     * @property {ManagementProjectLimits}
      */
     ManagementProjectLimits,
 
     /**
      * The ManagementProjectLimitsApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectLimitsApiCallsItem}
+     * @property {ManagementProjectLimitsApiCallsItem}
      */
     ManagementProjectLimitsApiCallsItem,
 
     /**
      * The ManagementProjectLimitsBulkApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectLimitsBulkApiCallsItem}
+     * @property {ManagementProjectLimitsBulkApiCallsItem}
      */
     ManagementProjectLimitsBulkApiCallsItem,
 
     /**
      * The ManagementProjectWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectWebhooksCalloutNotifications}
+     * @property {ManagementProjectWebhooksCalloutNotifications}
      */
     ManagementProjectWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsBranding model constructor.
-     * @property {module:model/ManagementProjectsBranding}
+     * @property {ManagementProjectsBranding}
      */
     ManagementProjectsBranding,
 
     /**
      * The ManagementProjectsBrandingAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingAddress}
+     * @property {ManagementProjectsBrandingAddress}
      */
     ManagementProjectsBrandingAddress,
 
     /**
      * The ManagementProjectsBrandingBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingBrand}
+     * @property {ManagementProjectsBrandingBrand}
      */
     ManagementProjectsBrandingBrand,
 
     /**
      * The ManagementProjectsBrandingCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingCockpits}
+     * @property {ManagementProjectsBrandingCockpits}
      */
     ManagementProjectsBrandingCockpits,
 
     /**
      * The ManagementProjectsBrandingContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingContact}
+     * @property {ManagementProjectsBrandingContact}
      */
     ManagementProjectsBrandingContact,
 
     /**
      * The ManagementProjectsBrandingCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateRequestBody}
+     * @property {ManagementProjectsBrandingCreateRequestBody}
      */
     ManagementProjectsBrandingCreateRequestBody,
 
     /**
      * The ManagementProjectsBrandingCreateRequestBodyAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateRequestBodyAddress}
+     * @property {ManagementProjectsBrandingCreateRequestBodyAddress}
      */
     ManagementProjectsBrandingCreateRequestBodyAddress,
 
     /**
      * The ManagementProjectsBrandingCreateRequestBodyBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateRequestBodyBrand}
+     * @property {ManagementProjectsBrandingCreateRequestBodyBrand}
      */
     ManagementProjectsBrandingCreateRequestBodyBrand,
 
     /**
      * The ManagementProjectsBrandingCreateRequestBodyCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateRequestBodyCockpits}
+     * @property {ManagementProjectsBrandingCreateRequestBodyCockpits}
      */
     ManagementProjectsBrandingCreateRequestBodyCockpits,
 
     /**
      * The ManagementProjectsBrandingCreateRequestBodyContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateRequestBodyContact}
+     * @property {ManagementProjectsBrandingCreateRequestBodyContact}
      */
     ManagementProjectsBrandingCreateRequestBodyContact,
 
     /**
      * The ManagementProjectsBrandingCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateResponseBody}
+     * @property {ManagementProjectsBrandingCreateResponseBody}
      */
     ManagementProjectsBrandingCreateResponseBody,
 
     /**
      * The ManagementProjectsBrandingCreateResponseBodyAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateResponseBodyAddress}
+     * @property {ManagementProjectsBrandingCreateResponseBodyAddress}
      */
     ManagementProjectsBrandingCreateResponseBodyAddress,
 
     /**
      * The ManagementProjectsBrandingCreateResponseBodyBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateResponseBodyBrand}
+     * @property {ManagementProjectsBrandingCreateResponseBodyBrand}
      */
     ManagementProjectsBrandingCreateResponseBodyBrand,
 
     /**
      * The ManagementProjectsBrandingCreateResponseBodyCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateResponseBodyCockpits}
+     * @property {ManagementProjectsBrandingCreateResponseBodyCockpits}
      */
     ManagementProjectsBrandingCreateResponseBodyCockpits,
 
     /**
      * The ManagementProjectsBrandingCreateResponseBodyContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingCreateResponseBodyContact}
+     * @property {ManagementProjectsBrandingCreateResponseBodyContact}
      */
     ManagementProjectsBrandingCreateResponseBodyContact,
 
     /**
      * The ManagementProjectsBrandingGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingGetResponseBody}
+     * @property {ManagementProjectsBrandingGetResponseBody}
      */
     ManagementProjectsBrandingGetResponseBody,
 
     /**
      * The ManagementProjectsBrandingGetResponseBodyAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingGetResponseBodyAddress}
+     * @property {ManagementProjectsBrandingGetResponseBodyAddress}
      */
     ManagementProjectsBrandingGetResponseBodyAddress,
 
     /**
      * The ManagementProjectsBrandingGetResponseBodyBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingGetResponseBodyBrand}
+     * @property {ManagementProjectsBrandingGetResponseBodyBrand}
      */
     ManagementProjectsBrandingGetResponseBodyBrand,
 
     /**
      * The ManagementProjectsBrandingGetResponseBodyCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingGetResponseBodyCockpits}
+     * @property {ManagementProjectsBrandingGetResponseBodyCockpits}
      */
     ManagementProjectsBrandingGetResponseBodyCockpits,
 
     /**
      * The ManagementProjectsBrandingGetResponseBodyContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingGetResponseBodyContact}
+     * @property {ManagementProjectsBrandingGetResponseBodyContact}
      */
     ManagementProjectsBrandingGetResponseBodyContact,
 
     /**
      * The ManagementProjectsBrandingListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingListResponseBody}
+     * @property {ManagementProjectsBrandingListResponseBody}
      */
     ManagementProjectsBrandingListResponseBody,
 
     /**
      * The ManagementProjectsBrandingUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateRequestBody}
+     * @property {ManagementProjectsBrandingUpdateRequestBody}
      */
     ManagementProjectsBrandingUpdateRequestBody,
 
     /**
      * The ManagementProjectsBrandingUpdateRequestBodyAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateRequestBodyAddress}
+     * @property {ManagementProjectsBrandingUpdateRequestBodyAddress}
      */
     ManagementProjectsBrandingUpdateRequestBodyAddress,
 
     /**
      * The ManagementProjectsBrandingUpdateRequestBodyBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateRequestBodyBrand}
+     * @property {ManagementProjectsBrandingUpdateRequestBodyBrand}
      */
     ManagementProjectsBrandingUpdateRequestBodyBrand,
 
     /**
      * The ManagementProjectsBrandingUpdateRequestBodyCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateRequestBodyCockpits}
+     * @property {ManagementProjectsBrandingUpdateRequestBodyCockpits}
      */
     ManagementProjectsBrandingUpdateRequestBodyCockpits,
 
     /**
      * The ManagementProjectsBrandingUpdateRequestBodyContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateRequestBodyContact}
+     * @property {ManagementProjectsBrandingUpdateRequestBodyContact}
      */
     ManagementProjectsBrandingUpdateRequestBodyContact,
 
     /**
      * The ManagementProjectsBrandingUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateResponseBody}
+     * @property {ManagementProjectsBrandingUpdateResponseBody}
      */
     ManagementProjectsBrandingUpdateResponseBody,
 
     /**
      * The ManagementProjectsBrandingUpdateResponseBodyAddress model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateResponseBodyAddress}
+     * @property {ManagementProjectsBrandingUpdateResponseBodyAddress}
      */
     ManagementProjectsBrandingUpdateResponseBodyAddress,
 
     /**
      * The ManagementProjectsBrandingUpdateResponseBodyBrand model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateResponseBodyBrand}
+     * @property {ManagementProjectsBrandingUpdateResponseBodyBrand}
      */
     ManagementProjectsBrandingUpdateResponseBodyBrand,
 
     /**
      * The ManagementProjectsBrandingUpdateResponseBodyCockpits model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateResponseBodyCockpits}
+     * @property {ManagementProjectsBrandingUpdateResponseBodyCockpits}
      */
     ManagementProjectsBrandingUpdateResponseBodyCockpits,
 
     /**
      * The ManagementProjectsBrandingUpdateResponseBodyContact model constructor.
-     * @property {module:model/ManagementProjectsBrandingUpdateResponseBodyContact}
+     * @property {ManagementProjectsBrandingUpdateResponseBodyContact}
      */
     ManagementProjectsBrandingUpdateResponseBodyContact,
 
     /**
      * The ManagementProjectsCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBody}
+     * @property {ManagementProjectsCreateRequestBody}
      */
     ManagementProjectsCreateRequestBody,
 
     /**
      * The ManagementProjectsCreateRequestBodyApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBodyApiUsageNotifications}
+     * @property {ManagementProjectsCreateRequestBodyApiUsageNotifications}
      */
     ManagementProjectsCreateRequestBodyApiUsageNotifications,
 
     /**
      * The ManagementProjectsCreateRequestBodyUsersItem model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBodyUsersItem}
+     * @property {ManagementProjectsCreateRequestBodyUsersItem}
      */
     ManagementProjectsCreateRequestBodyUsersItem,
 
     /**
      * The ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications}
+     * @property {ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications}
      */
     ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBody}
+     * @property {ManagementProjectsCreateResponseBody}
      */
     ManagementProjectsCreateResponseBody,
 
     /**
      * The ManagementProjectsCreateResponseBodyApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyApiUsageNotifications}
+     * @property {ManagementProjectsCreateResponseBodyApiUsageNotifications}
      */
     ManagementProjectsCreateResponseBodyApiUsageNotifications,
 
     /**
      * The ManagementProjectsCreateResponseBodyClientSideKey model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyClientSideKey}
+     * @property {ManagementProjectsCreateResponseBodyClientSideKey}
      */
     ManagementProjectsCreateResponseBodyClientSideKey,
 
     /**
      * The ManagementProjectsCreateResponseBodyServerSideKey model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyServerSideKey}
+     * @property {ManagementProjectsCreateResponseBodyServerSideKey}
      */
     ManagementProjectsCreateResponseBodyServerSideKey,
 
     /**
      * The ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications}
+     * @property {ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications}
      */
     ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsCustomEventSchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchema}
+     * @property {ManagementProjectsCustomEventSchema}
      */
     ManagementProjectsCustomEventSchema,
 
     /**
      * The ManagementProjectsCustomEventSchemaSchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemaSchema}
+     * @property {ManagementProjectsCustomEventSchemaSchema}
      */
     ManagementProjectsCustomEventSchemaSchema,
 
     /**
      * The ManagementProjectsCustomEventSchemasCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasCreateRequestBody}
+     * @property {ManagementProjectsCustomEventSchemasCreateRequestBody}
      */
     ManagementProjectsCustomEventSchemasCreateRequestBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasCreateRequestBodySchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchema}
+     * @property {ManagementProjectsCustomEventSchemasCreateRequestBodySchema}
      */
     ManagementProjectsCustomEventSchemasCreateRequestBodySchema,
 
     /**
      * The ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue}
+     * @property {ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue}
      */
     ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue,
 
     /**
      * The ManagementProjectsCustomEventSchemasCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasCreateResponseBody}
+     * @property {ManagementProjectsCustomEventSchemasCreateResponseBody}
      */
     ManagementProjectsCustomEventSchemasCreateResponseBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasCreateResponseBodySchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasCreateResponseBodySchema}
+     * @property {ManagementProjectsCustomEventSchemasCreateResponseBodySchema}
      */
     ManagementProjectsCustomEventSchemasCreateResponseBodySchema,
 
     /**
      * The ManagementProjectsCustomEventSchemasGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasGetResponseBody}
+     * @property {ManagementProjectsCustomEventSchemasGetResponseBody}
      */
     ManagementProjectsCustomEventSchemasGetResponseBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasGetResponseBodySchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasGetResponseBodySchema}
+     * @property {ManagementProjectsCustomEventSchemasGetResponseBodySchema}
      */
     ManagementProjectsCustomEventSchemasGetResponseBodySchema,
 
     /**
      * The ManagementProjectsCustomEventSchemasListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasListResponseBody}
+     * @property {ManagementProjectsCustomEventSchemasListResponseBody}
      */
     ManagementProjectsCustomEventSchemasListResponseBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBody}
+     * @property {ManagementProjectsCustomEventSchemasUpdateRequestBody}
      */
     ManagementProjectsCustomEventSchemasUpdateRequestBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasUpdateRequestBodySchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasUpdateRequestBodySchema}
+     * @property {ManagementProjectsCustomEventSchemasUpdateRequestBodySchema}
      */
     ManagementProjectsCustomEventSchemasUpdateRequestBodySchema,
 
     /**
      * The ManagementProjectsCustomEventSchemasUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasUpdateResponseBody}
+     * @property {ManagementProjectsCustomEventSchemasUpdateResponseBody}
      */
     ManagementProjectsCustomEventSchemasUpdateResponseBody,
 
     /**
      * The ManagementProjectsCustomEventSchemasUpdateResponseBodySchema model constructor.
-     * @property {module:model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema}
+     * @property {ManagementProjectsCustomEventSchemasUpdateResponseBodySchema}
      */
     ManagementProjectsCustomEventSchemasUpdateResponseBodySchema,
 
     /**
      * The ManagementProjectsGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBody}
+     * @property {ManagementProjectsGetResponseBody}
      */
     ManagementProjectsGetResponseBody,
 
     /**
      * The ManagementProjectsGetResponseBodyApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyApiUsageNotifications}
+     * @property {ManagementProjectsGetResponseBodyApiUsageNotifications}
      */
     ManagementProjectsGetResponseBodyApiUsageNotifications,
 
     /**
      * The ManagementProjectsGetResponseBodyDefaultCodeConfig model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyDefaultCodeConfig}
+     * @property {ManagementProjectsGetResponseBodyDefaultCodeConfig}
      */
     ManagementProjectsGetResponseBodyDefaultCodeConfig,
 
     /**
      * The ManagementProjectsGetResponseBodyLimits model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyLimits}
+     * @property {ManagementProjectsGetResponseBodyLimits}
      */
     ManagementProjectsGetResponseBodyLimits,
 
     /**
      * The ManagementProjectsGetResponseBodyLimitsApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyLimitsApiCallsItem}
+     * @property {ManagementProjectsGetResponseBodyLimitsApiCallsItem}
      */
     ManagementProjectsGetResponseBodyLimitsApiCallsItem,
 
     /**
      * The ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem}
+     * @property {ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem}
      */
     ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem,
 
     /**
      * The ManagementProjectsGetResponseBodyWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications}
+     * @property {ManagementProjectsGetResponseBodyWebhooksCalloutNotifications}
      */
     ManagementProjectsGetResponseBodyWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsListResponseBody}
+     * @property {ManagementProjectsListResponseBody}
      */
     ManagementProjectsListResponseBody,
 
     /**
      * The ManagementProjectsMetadataSchema model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchema}
+     * @property {ManagementProjectsMetadataSchema}
      */
     ManagementProjectsMetadataSchema,
 
     /**
      * The ManagementProjectsMetadataSchemaDefinition model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemaDefinition}
+     * @property {ManagementProjectsMetadataSchemaDefinition}
      */
     ManagementProjectsMetadataSchemaDefinition,
 
     /**
      * The ManagementProjectsMetadataSchemasCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasCreateRequestBody}
+     * @property {ManagementProjectsMetadataSchemasCreateRequestBody}
      */
     ManagementProjectsMetadataSchemasCreateRequestBody,
 
     /**
      * The ManagementProjectsMetadataSchemasCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasCreateResponseBody}
+     * @property {ManagementProjectsMetadataSchemasCreateResponseBody}
      */
     ManagementProjectsMetadataSchemasCreateResponseBody,
 
     /**
      * The ManagementProjectsMetadataSchemasGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasGetResponseBody}
+     * @property {ManagementProjectsMetadataSchemasGetResponseBody}
      */
     ManagementProjectsMetadataSchemasGetResponseBody,
 
     /**
      * The ManagementProjectsMetadataSchemasListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasListResponseBody}
+     * @property {ManagementProjectsMetadataSchemasListResponseBody}
      */
     ManagementProjectsMetadataSchemasListResponseBody,
 
     /**
      * The ManagementProjectsMetadataSchemasUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasUpdateRequestBody}
+     * @property {ManagementProjectsMetadataSchemasUpdateRequestBody}
      */
     ManagementProjectsMetadataSchemasUpdateRequestBody,
 
     /**
      * The ManagementProjectsMetadataSchemasUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsMetadataSchemasUpdateResponseBody}
+     * @property {ManagementProjectsMetadataSchemasUpdateResponseBody}
      */
     ManagementProjectsMetadataSchemasUpdateResponseBody,
 
     /**
      * The ManagementProjectsStackingRules model constructor.
-     * @property {module:model/ManagementProjectsStackingRules}
+     * @property {ManagementProjectsStackingRules}
      */
     ManagementProjectsStackingRules,
 
     /**
      * The ManagementProjectsStackingRulesCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesCreateRequestBody}
+     * @property {ManagementProjectsStackingRulesCreateRequestBody}
      */
     ManagementProjectsStackingRulesCreateRequestBody,
 
     /**
      * The ManagementProjectsStackingRulesCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesCreateResponseBody}
+     * @property {ManagementProjectsStackingRulesCreateResponseBody}
      */
     ManagementProjectsStackingRulesCreateResponseBody,
 
     /**
      * The ManagementProjectsStackingRulesGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesGetResponseBody}
+     * @property {ManagementProjectsStackingRulesGetResponseBody}
      */
     ManagementProjectsStackingRulesGetResponseBody,
 
     /**
      * The ManagementProjectsStackingRulesListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesListResponseBody}
+     * @property {ManagementProjectsStackingRulesListResponseBody}
      */
     ManagementProjectsStackingRulesListResponseBody,
 
     /**
      * The ManagementProjectsStackingRulesUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesUpdateRequestBody}
+     * @property {ManagementProjectsStackingRulesUpdateRequestBody}
      */
     ManagementProjectsStackingRulesUpdateRequestBody,
 
     /**
      * The ManagementProjectsStackingRulesUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsStackingRulesUpdateResponseBody}
+     * @property {ManagementProjectsStackingRulesUpdateResponseBody}
      */
     ManagementProjectsStackingRulesUpdateResponseBody,
 
     /**
      * The ManagementProjectsTemplatesCampaignsCopyCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody}
+     * @property {ManagementProjectsTemplatesCampaignsCopyCreateRequestBody}
      */
     ManagementProjectsTemplatesCampaignsCopyCreateRequestBody,
 
     /**
      * The ManagementProjectsTemplatesCampaignsCopyCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody}
+     * @property {ManagementProjectsTemplatesCampaignsCopyCreateResponseBody}
      */
     ManagementProjectsTemplatesCampaignsCopyCreateResponseBody,
 
     /**
      * The ManagementProjectsTemplatesCampaignsListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsTemplatesCampaignsListResponseBody}
+     * @property {ManagementProjectsTemplatesCampaignsListResponseBody}
      */
     ManagementProjectsTemplatesCampaignsListResponseBody,
 
     /**
      * The ManagementProjectsUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBody}
+     * @property {ManagementProjectsUpdateRequestBody}
      */
     ManagementProjectsUpdateRequestBody,
 
     /**
      * The ManagementProjectsUpdateRequestBodyApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBodyApiUsageNotifications}
+     * @property {ManagementProjectsUpdateRequestBodyApiUsageNotifications}
      */
     ManagementProjectsUpdateRequestBodyApiUsageNotifications,
 
     /**
      * The ManagementProjectsUpdateRequestBodyDefaultCodeConfig model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig}
+     * @property {ManagementProjectsUpdateRequestBodyDefaultCodeConfig}
      */
     ManagementProjectsUpdateRequestBodyDefaultCodeConfig,
 
     /**
      * The ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications}
+     * @property {ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications}
      */
     ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBody}
+     * @property {ManagementProjectsUpdateResponseBody}
      */
     ManagementProjectsUpdateResponseBody,
 
     /**
      * The ManagementProjectsUpdateResponseBodyApiUsageNotifications model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyApiUsageNotifications}
+     * @property {ManagementProjectsUpdateResponseBodyApiUsageNotifications}
      */
     ManagementProjectsUpdateResponseBodyApiUsageNotifications,
 
     /**
      * The ManagementProjectsUpdateResponseBodyDefaultCodeConfig model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyDefaultCodeConfig}
+     * @property {ManagementProjectsUpdateResponseBodyDefaultCodeConfig}
      */
     ManagementProjectsUpdateResponseBodyDefaultCodeConfig,
 
     /**
      * The ManagementProjectsUpdateResponseBodyLimits model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyLimits}
+     * @property {ManagementProjectsUpdateResponseBodyLimits}
      */
     ManagementProjectsUpdateResponseBodyLimits,
 
     /**
      * The ManagementProjectsUpdateResponseBodyLimitsApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyLimitsApiCallsItem}
+     * @property {ManagementProjectsUpdateResponseBodyLimitsApiCallsItem}
      */
     ManagementProjectsUpdateResponseBodyLimitsApiCallsItem,
 
     /**
      * The ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem}
+     * @property {ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem}
      */
     ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem,
 
     /**
      * The ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications}
+     * @property {ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications}
      */
     ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications,
 
     /**
      * The ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions}
+     * @property {ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions}
      */
     ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions,
 
     /**
      * The ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks model constructor.
-     * @property {module:model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks}
+     * @property {ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks}
      */
     ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks,
 
     /**
      * The ManagementProjectsUsersAssignRequestBody model constructor.
-     * @property {module:model/ManagementProjectsUsersAssignRequestBody}
+     * @property {ManagementProjectsUsersAssignRequestBody}
      */
     ManagementProjectsUsersAssignRequestBody,
 
     /**
      * The ManagementProjectsUsersAssignResponseBody model constructor.
-     * @property {module:model/ManagementProjectsUsersAssignResponseBody}
+     * @property {ManagementProjectsUsersAssignResponseBody}
      */
     ManagementProjectsUsersAssignResponseBody,
 
     /**
      * The ManagementProjectsUsersGetUserResponseBody model constructor.
-     * @property {module:model/ManagementProjectsUsersGetUserResponseBody}
+     * @property {ManagementProjectsUsersGetUserResponseBody}
      */
     ManagementProjectsUsersGetUserResponseBody,
 
     /**
      * The ManagementProjectsUsersInviteCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsUsersInviteCreateRequestBody}
+     * @property {ManagementProjectsUsersInviteCreateRequestBody}
      */
     ManagementProjectsUsersInviteCreateRequestBody,
 
     /**
      * The ManagementProjectsUsersListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsUsersListResponseBody}
+     * @property {ManagementProjectsUsersListResponseBody}
      */
     ManagementProjectsUsersListResponseBody,
 
     /**
      * The ManagementProjectsUsersUpdateRoleRequestBody model constructor.
-     * @property {module:model/ManagementProjectsUsersUpdateRoleRequestBody}
+     * @property {ManagementProjectsUsersUpdateRoleRequestBody}
      */
     ManagementProjectsUsersUpdateRoleRequestBody,
 
     /**
      * The ManagementProjectsUsersUpdateRoleResponseBody model constructor.
-     * @property {module:model/ManagementProjectsUsersUpdateRoleResponseBody}
+     * @property {ManagementProjectsUsersUpdateRoleResponseBody}
      */
     ManagementProjectsUsersUpdateRoleResponseBody,
 
     /**
      * The ManagementProjectsWebhook model constructor.
-     * @property {module:model/ManagementProjectsWebhook}
+     * @property {ManagementProjectsWebhook}
      */
     ManagementProjectsWebhook,
 
     /**
      * The ManagementProjectsWebhooksCreateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksCreateRequestBody}
+     * @property {ManagementProjectsWebhooksCreateRequestBody}
      */
     ManagementProjectsWebhooksCreateRequestBody,
 
     /**
      * The ManagementProjectsWebhooksCreateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksCreateResponseBody}
+     * @property {ManagementProjectsWebhooksCreateResponseBody}
      */
     ManagementProjectsWebhooksCreateResponseBody,
 
     /**
      * The ManagementProjectsWebhooksGetResponseBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksGetResponseBody}
+     * @property {ManagementProjectsWebhooksGetResponseBody}
      */
     ManagementProjectsWebhooksGetResponseBody,
 
     /**
      * The ManagementProjectsWebhooksListResponseBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksListResponseBody}
+     * @property {ManagementProjectsWebhooksListResponseBody}
      */
     ManagementProjectsWebhooksListResponseBody,
 
     /**
      * The ManagementProjectsWebhooksUpdateRequestBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksUpdateRequestBody}
+     * @property {ManagementProjectsWebhooksUpdateRequestBody}
      */
     ManagementProjectsWebhooksUpdateRequestBody,
 
     /**
      * The ManagementProjectsWebhooksUpdateResponseBody model constructor.
-     * @property {module:model/ManagementProjectsWebhooksUpdateResponseBody}
+     * @property {ManagementProjectsWebhooksUpdateResponseBody}
      */
     ManagementProjectsWebhooksUpdateResponseBody,
 
     /**
      * The MappingPoints model constructor.
-     * @property {module:model/MappingPoints}
+     * @property {MappingPoints}
      */
     MappingPoints,
 
     /**
      * The MemberActivity model constructor.
-     * @property {module:model/MemberActivity}
+     * @property {MemberActivity}
      */
     MemberActivity,
 
     /**
      * The MemberActivityData model constructor.
-     * @property {module:model/MemberActivityData}
+     * @property {MemberActivityData}
      */
     MemberActivityData,
 
     /**
      * The MemberActivityData1 model constructor.
-     * @property {module:model/MemberActivityData1}
+     * @property {MemberActivityData1}
      */
     MemberActivityData1,
 
     /**
      * The MemberActivityDataBalance model constructor.
-     * @property {module:model/MemberActivityDataBalance}
+     * @property {MemberActivityDataBalance}
      */
     MemberActivityDataBalance,
 
     /**
      * The MemberActivityDataBalanceRelatedObject model constructor.
-     * @property {module:model/MemberActivityDataBalanceRelatedObject}
+     * @property {MemberActivityDataBalanceRelatedObject}
      */
     MemberActivityDataBalanceRelatedObject,
 
     /**
      * The MemberActivityDataCustomerEvent model constructor.
-     * @property {module:model/MemberActivityDataCustomerEvent}
+     * @property {MemberActivityDataCustomerEvent}
      */
     MemberActivityDataCustomerEvent,
 
     /**
      * The MemberActivityDataOrder model constructor.
-     * @property {module:model/MemberActivityDataOrder}
+     * @property {MemberActivityDataOrder}
      */
     MemberActivityDataOrder,
 
     /**
      * The MemberActivityDataOrderCustomer model constructor.
-     * @property {module:model/MemberActivityDataOrderCustomer}
+     * @property {MemberActivityDataOrderCustomer}
      */
     MemberActivityDataOrderCustomer,
 
     /**
      * The MemberActivityDataOrderItemsItem model constructor.
-     * @property {module:model/MemberActivityDataOrderItemsItem}
+     * @property {MemberActivityDataOrderItemsItem}
      */
     MemberActivityDataOrderItemsItem,
 
     /**
      * The MemberActivityDataOrderItemsItemProduct model constructor.
-     * @property {module:model/MemberActivityDataOrderItemsItemProduct}
+     * @property {MemberActivityDataOrderItemsItemProduct}
      */
     MemberActivityDataOrderItemsItemProduct,
 
     /**
      * The MemberActivityDataOrderItemsItemSku model constructor.
-     * @property {module:model/MemberActivityDataOrderItemsItemSku}
+     * @property {MemberActivityDataOrderItemsItemSku}
      */
     MemberActivityDataOrderItemsItemSku,
 
     /**
      * The MemberActivityDataOrderReferrer model constructor.
-     * @property {module:model/MemberActivityDataOrderReferrer}
+     * @property {MemberActivityDataOrderReferrer}
      */
     MemberActivityDataOrderReferrer,
 
     /**
      * The MemberActivityDataRedemption model constructor.
-     * @property {module:model/MemberActivityDataRedemption}
+     * @property {MemberActivityDataRedemption}
      */
     MemberActivityDataRedemption,
 
     /**
      * The MemberActivityDataRedemptionChannel model constructor.
-     * @property {module:model/MemberActivityDataRedemptionChannel}
+     * @property {MemberActivityDataRedemptionChannel}
      */
     MemberActivityDataRedemptionChannel,
 
     /**
      * The MemberActivityDataRedemptionOrder model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrder}
+     * @property {MemberActivityDataRedemptionOrder}
      */
     MemberActivityDataRedemptionOrder,
 
     /**
      * The MemberActivityDataRedemptionOrderCustomer model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrderCustomer}
+     * @property {MemberActivityDataRedemptionOrderCustomer}
      */
     MemberActivityDataRedemptionOrderCustomer,
 
     /**
      * The MemberActivityDataRedemptionOrderItemsItem model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrderItemsItem}
+     * @property {MemberActivityDataRedemptionOrderItemsItem}
      */
     MemberActivityDataRedemptionOrderItemsItem,
 
     /**
      * The MemberActivityDataRedemptionOrderItemsItemProduct model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrderItemsItemProduct}
+     * @property {MemberActivityDataRedemptionOrderItemsItemProduct}
      */
     MemberActivityDataRedemptionOrderItemsItemProduct,
 
     /**
      * The MemberActivityDataRedemptionOrderItemsItemSku model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrderItemsItemSku}
+     * @property {MemberActivityDataRedemptionOrderItemsItemSku}
      */
     MemberActivityDataRedemptionOrderItemsItemSku,
 
     /**
      * The MemberActivityDataRedemptionOrderReferrer model constructor.
-     * @property {module:model/MemberActivityDataRedemptionOrderReferrer}
+     * @property {MemberActivityDataRedemptionOrderReferrer}
      */
     MemberActivityDataRedemptionOrderReferrer,
 
     /**
      * The MemberActivityDataRedemptionPreviousOrder model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPreviousOrder}
+     * @property {MemberActivityDataRedemptionPreviousOrder}
      */
     MemberActivityDataRedemptionPreviousOrder,
 
     /**
      * The MemberActivityDataRedemptionPreviousOrderCustomer model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPreviousOrderCustomer}
+     * @property {MemberActivityDataRedemptionPreviousOrderCustomer}
      */
     MemberActivityDataRedemptionPreviousOrderCustomer,
 
     /**
      * The MemberActivityDataRedemptionPreviousOrderReferrer model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPreviousOrderReferrer}
+     * @property {MemberActivityDataRedemptionPreviousOrderReferrer}
      */
     MemberActivityDataRedemptionPreviousOrderReferrer,
 
     /**
      * The MemberActivityDataRedemptionPromotionTier model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTier}
+     * @property {MemberActivityDataRedemptionPromotionTier}
      */
     MemberActivityDataRedemptionPromotionTier,
 
     /**
      * The MemberActivityDataRedemptionPromotionTierAction model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTierAction}
+     * @property {MemberActivityDataRedemptionPromotionTierAction}
      */
     MemberActivityDataRedemptionPromotionTierAction,
 
     /**
      * The MemberActivityDataRedemptionPromotionTierCampaign model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTierCampaign}
+     * @property {MemberActivityDataRedemptionPromotionTierCampaign}
      */
     MemberActivityDataRedemptionPromotionTierCampaign,
 
     /**
      * The MemberActivityDataRedemptionPromotionTierSummary model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTierSummary}
+     * @property {MemberActivityDataRedemptionPromotionTierSummary}
      */
     MemberActivityDataRedemptionPromotionTierSummary,
 
     /**
      * The MemberActivityDataRedemptionPromotionTierSummaryOrders model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTierSummaryOrders}
+     * @property {MemberActivityDataRedemptionPromotionTierSummaryOrders}
      */
     MemberActivityDataRedemptionPromotionTierSummaryOrders,
 
     /**
      * The MemberActivityDataRedemptionPromotionTierSummaryRedemptions model constructor.
-     * @property {module:model/MemberActivityDataRedemptionPromotionTierSummaryRedemptions}
+     * @property {MemberActivityDataRedemptionPromotionTierSummaryRedemptions}
      */
     MemberActivityDataRedemptionPromotionTierSummaryRedemptions,
 
     /**
      * The MemberActivityDataRedemptionRelatedRedemptions model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRelatedRedemptions}
+     * @property {MemberActivityDataRedemptionRelatedRedemptions}
      */
     MemberActivityDataRedemptionRelatedRedemptions,
 
     /**
      * The MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem}
+     * @property {MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem}
      */
     MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem,
 
     /**
      * The MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem}
+     * @property {MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem}
      */
     MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem,
 
     /**
      * The MemberActivityDataRedemptionReward model constructor.
-     * @property {module:model/MemberActivityDataRedemptionReward}
+     * @property {MemberActivityDataRedemptionReward}
      */
     MemberActivityDataRedemptionReward,
 
     /**
      * The MemberActivityDataRedemptionRewardCustomer model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardCustomer}
+     * @property {MemberActivityDataRedemptionRewardCustomer}
      */
     MemberActivityDataRedemptionRewardCustomer,
 
     /**
      * The MemberActivityDataRedemptionRewardParameters model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardParameters}
+     * @property {MemberActivityDataRedemptionRewardParameters}
      */
     MemberActivityDataRedemptionRewardParameters,
 
     /**
      * The MemberActivityDataRedemptionRewardParametersCampaign model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardParametersCampaign}
+     * @property {MemberActivityDataRedemptionRewardParametersCampaign}
      */
     MemberActivityDataRedemptionRewardParametersCampaign,
 
     /**
      * The MemberActivityDataRedemptionRewardParametersCoin model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardParametersCoin}
+     * @property {MemberActivityDataRedemptionRewardParametersCoin}
      */
     MemberActivityDataRedemptionRewardParametersCoin,
 
     /**
      * The MemberActivityDataRedemptionRewardParametersProduct model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardParametersProduct}
+     * @property {MemberActivityDataRedemptionRewardParametersProduct}
      */
     MemberActivityDataRedemptionRewardParametersProduct,
 
     /**
      * The MemberActivityDataRedemptionRewardProduct model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardProduct}
+     * @property {MemberActivityDataRedemptionRewardProduct}
      */
     MemberActivityDataRedemptionRewardProduct,
 
     /**
      * The MemberActivityDataRedemptionRewardSku model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardSku}
+     * @property {MemberActivityDataRedemptionRewardSku}
      */
     MemberActivityDataRedemptionRewardSku,
 
     /**
      * The MemberActivityDataRedemptionRewardVoucher model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardVoucher}
+     * @property {MemberActivityDataRedemptionRewardVoucher}
      */
     MemberActivityDataRedemptionRewardVoucher,
 
     /**
      * The MemberActivityDataRedemptionRewardVoucherGift model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardVoucherGift}
+     * @property {MemberActivityDataRedemptionRewardVoucherGift}
      */
     MemberActivityDataRedemptionRewardVoucherGift,
 
     /**
      * The MemberActivityDataRedemptionRewardVoucherLoyaltyCard model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardVoucherLoyaltyCard}
+     * @property {MemberActivityDataRedemptionRewardVoucherLoyaltyCard}
      */
     MemberActivityDataRedemptionRewardVoucherLoyaltyCard,
 
     /**
      * The MemberActivityDataRedemptionRewardVoucherPublish model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardVoucherPublish}
+     * @property {MemberActivityDataRedemptionRewardVoucherPublish}
      */
     MemberActivityDataRedemptionRewardVoucherPublish,
 
     /**
      * The MemberActivityDataRedemptionRewardVoucherRedemption model constructor.
-     * @property {module:model/MemberActivityDataRedemptionRewardVoucherRedemption}
+     * @property {MemberActivityDataRedemptionRewardVoucherRedemption}
      */
     MemberActivityDataRedemptionRewardVoucherRedemption,
 
     /**
      * The MemberActivityDataRedemptionVoucher model constructor.
-     * @property {module:model/MemberActivityDataRedemptionVoucher}
+     * @property {MemberActivityDataRedemptionVoucher}
      */
     MemberActivityDataRedemptionVoucher,
 
     /**
      * The MemberActivityDataRedemptionVoucherGift model constructor.
-     * @property {module:model/MemberActivityDataRedemptionVoucherGift}
+     * @property {MemberActivityDataRedemptionVoucherGift}
      */
     MemberActivityDataRedemptionVoucherGift,
 
     /**
      * The MemberActivityDataRedemptionVoucherLoyaltyCard model constructor.
-     * @property {module:model/MemberActivityDataRedemptionVoucherLoyaltyCard}
+     * @property {MemberActivityDataRedemptionVoucherLoyaltyCard}
      */
     MemberActivityDataRedemptionVoucherLoyaltyCard,
 
     /**
      * The MemberActivityDataRedemptionVoucherPublish model constructor.
-     * @property {module:model/MemberActivityDataRedemptionVoucherPublish}
+     * @property {MemberActivityDataRedemptionVoucherPublish}
      */
     MemberActivityDataRedemptionVoucherPublish,
 
     /**
      * The MemberActivityDataRedemptionVoucherRedemption model constructor.
-     * @property {module:model/MemberActivityDataRedemptionVoucherRedemption}
+     * @property {MemberActivityDataRedemptionVoucherRedemption}
      */
     MemberActivityDataRedemptionVoucherRedemption,
 
     /**
      * The MemberActivityDataTransaction model constructor.
-     * @property {module:model/MemberActivityDataTransaction}
+     * @property {MemberActivityDataTransaction}
      */
     MemberActivityDataTransaction,
 
     /**
      * The MemberActivityDataTransactionDetails model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetails}
+     * @property {MemberActivityDataTransactionDetails}
      */
     MemberActivityDataTransactionDetails,
 
     /**
      * The MemberActivityDataTransactionDetailsCustomEvent model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsCustomEvent}
+     * @property {MemberActivityDataTransactionDetailsCustomEvent}
      */
     MemberActivityDataTransactionDetailsCustomEvent,
 
     /**
      * The MemberActivityDataTransactionDetailsDestinationVoucher model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsDestinationVoucher}
+     * @property {MemberActivityDataTransactionDetailsDestinationVoucher}
      */
     MemberActivityDataTransactionDetailsDestinationVoucher,
 
     /**
      * The MemberActivityDataTransactionDetailsDestinationVoucherGift model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsDestinationVoucherGift}
+     * @property {MemberActivityDataTransactionDetailsDestinationVoucherGift}
      */
     MemberActivityDataTransactionDetailsDestinationVoucherGift,
 
     /**
      * The MemberActivityDataTransactionDetailsDestinationVoucherLoyaltyCard model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsDestinationVoucherLoyaltyCard}
+     * @property {MemberActivityDataTransactionDetailsDestinationVoucherLoyaltyCard}
      */
     MemberActivityDataTransactionDetailsDestinationVoucherLoyaltyCard,
 
     /**
      * The MemberActivityDataTransactionDetailsDestinationVoucherRedemption model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsDestinationVoucherRedemption}
+     * @property {MemberActivityDataTransactionDetailsDestinationVoucherRedemption}
      */
     MemberActivityDataTransactionDetailsDestinationVoucherRedemption,
 
     /**
      * The MemberActivityDataTransactionDetailsEarningRule model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsEarningRule}
+     * @property {MemberActivityDataTransactionDetailsEarningRule}
      */
     MemberActivityDataTransactionDetailsEarningRule,
 
     /**
      * The MemberActivityDataTransactionDetailsEarningRuleSource model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsEarningRuleSource}
+     * @property {MemberActivityDataTransactionDetailsEarningRuleSource}
      */
     MemberActivityDataTransactionDetailsEarningRuleSource,
 
     /**
      * The MemberActivityDataTransactionDetailsEvent model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsEvent}
+     * @property {MemberActivityDataTransactionDetailsEvent}
      */
     MemberActivityDataTransactionDetailsEvent,
 
     /**
      * The MemberActivityDataTransactionDetailsEventSchema model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsEventSchema}
+     * @property {MemberActivityDataTransactionDetailsEventSchema}
      */
     MemberActivityDataTransactionDetailsEventSchema,
 
     /**
      * The MemberActivityDataTransactionDetailsHolderLoyaltyTier model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsHolderLoyaltyTier}
+     * @property {MemberActivityDataTransactionDetailsHolderLoyaltyTier}
      */
     MemberActivityDataTransactionDetailsHolderLoyaltyTier,
 
     /**
      * The MemberActivityDataTransactionDetailsLoyaltyTier model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsLoyaltyTier}
+     * @property {MemberActivityDataTransactionDetailsLoyaltyTier}
      */
     MemberActivityDataTransactionDetailsLoyaltyTier,
 
     /**
      * The MemberActivityDataTransactionDetailsOrder model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsOrder}
+     * @property {MemberActivityDataTransactionDetailsOrder}
      */
     MemberActivityDataTransactionDetailsOrder,
 
     /**
      * The MemberActivityDataTransactionDetailsRedemption model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsRedemption}
+     * @property {MemberActivityDataTransactionDetailsRedemption}
      */
     MemberActivityDataTransactionDetailsRedemption,
 
     /**
      * The MemberActivityDataTransactionDetailsReward model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsReward}
+     * @property {MemberActivityDataTransactionDetailsReward}
      */
     MemberActivityDataTransactionDetailsReward,
 
     /**
      * The MemberActivityDataTransactionDetailsRollback model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsRollback}
+     * @property {MemberActivityDataTransactionDetailsRollback}
      */
     MemberActivityDataTransactionDetailsRollback,
 
     /**
      * The MemberActivityDataTransactionDetailsSegment model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsSegment}
+     * @property {MemberActivityDataTransactionDetailsSegment}
      */
     MemberActivityDataTransactionDetailsSegment,
 
     /**
      * The MemberActivityDataTransactionDetailsSourceVoucher model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsSourceVoucher}
+     * @property {MemberActivityDataTransactionDetailsSourceVoucher}
      */
     MemberActivityDataTransactionDetailsSourceVoucher,
 
     /**
      * The MemberActivityDataTransactionDetailsSourceVoucherGift model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsSourceVoucherGift}
+     * @property {MemberActivityDataTransactionDetailsSourceVoucherGift}
      */
     MemberActivityDataTransactionDetailsSourceVoucherGift,
 
     /**
      * The MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard}
+     * @property {MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard}
      */
     MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard,
 
     /**
      * The MemberActivityDataTransactionDetailsSourceVoucherRedemption model constructor.
-     * @property {module:model/MemberActivityDataTransactionDetailsSourceVoucherRedemption}
+     * @property {MemberActivityDataTransactionDetailsSourceVoucherRedemption}
      */
     MemberActivityDataTransactionDetailsSourceVoucherRedemption,
 
     /**
      * The MetadataSchemaDefinitionDeprecated model constructor.
-     * @property {module:model/MetadataSchemaDefinitionDeprecated}
+     * @property {MetadataSchemaDefinitionDeprecated}
      */
     MetadataSchemaDefinitionDeprecated,
 
     /**
      * The MetadataSchemaDeprecated model constructor.
-     * @property {module:model/MetadataSchemaDeprecated}
+     * @property {MetadataSchemaDeprecated}
      */
     MetadataSchemaDeprecated,
 
     /**
      * The MetadataSchemasGetResponseBody model constructor.
-     * @property {module:model/MetadataSchemasGetResponseBody}
+     * @property {MetadataSchemasGetResponseBody}
      */
     MetadataSchemasGetResponseBody,
 
     /**
      * The MetadataSchemasListResponseBody model constructor.
-     * @property {module:model/MetadataSchemasListResponseBody}
+     * @property {MetadataSchemasListResponseBody}
      */
     MetadataSchemasListResponseBody,
 
     /**
      * The OAuthTokenGenerateResponseBody model constructor.
-     * @property {module:model/OAuthTokenGenerateResponseBody}
+     * @property {OAuthTokenGenerateResponseBody}
      */
     OAuthTokenGenerateResponseBody,
 
     /**
      * The OAuthTokenIntrospectResponseBody model constructor.
-     * @property {module:model/OAuthTokenIntrospectResponseBody}
+     * @property {OAuthTokenIntrospectResponseBody}
      */
     OAuthTokenIntrospectResponseBody,
 
     /**
      * The Order model constructor.
-     * @property {module:model/Order}
+     * @property {Order}
      */
     Order,
 
     /**
      * The OrderCalculated model constructor.
-     * @property {module:model/OrderCalculated}
+     * @property {OrderCalculated}
      */
     OrderCalculated,
 
     /**
      * The OrderCalculatedItem model constructor.
-     * @property {module:model/OrderCalculatedItem}
+     * @property {OrderCalculatedItem}
      */
     OrderCalculatedItem,
 
     /**
      * The OrderCalculatedItemProduct model constructor.
-     * @property {module:model/OrderCalculatedItemProduct}
+     * @property {OrderCalculatedItemProduct}
      */
     OrderCalculatedItemProduct,
 
     /**
      * The OrderCalculatedItemSku model constructor.
-     * @property {module:model/OrderCalculatedItemSku}
+     * @property {OrderCalculatedItemSku}
      */
     OrderCalculatedItemSku,
 
     /**
      * The OrderItem model constructor.
-     * @property {module:model/OrderItem}
+     * @property {OrderItem}
      */
     OrderItem,
 
     /**
      * The OrderItemProduct model constructor.
-     * @property {module:model/OrderItemProduct}
+     * @property {OrderItemProduct}
      */
     OrderItemProduct,
 
     /**
      * The OrderItemSku model constructor.
-     * @property {module:model/OrderItemSku}
+     * @property {OrderItemSku}
      */
     OrderItemSku,
 
     /**
      * The OrderRedemptionsEntry model constructor.
-     * @property {module:model/OrderRedemptionsEntry}
+     * @property {OrderRedemptionsEntry}
      */
     OrderRedemptionsEntry,
 
     /**
      * The OrdersCreateRequestBody model constructor.
-     * @property {module:model/OrdersCreateRequestBody}
+     * @property {OrdersCreateRequestBody}
      */
     OrdersCreateRequestBody,
 
     /**
      * The OrdersCreateResponseBody model constructor.
-     * @property {module:model/OrdersCreateResponseBody}
+     * @property {OrdersCreateResponseBody}
      */
     OrdersCreateResponseBody,
 
     /**
      * The OrdersExportCreateRequestBody model constructor.
-     * @property {module:model/OrdersExportCreateRequestBody}
+     * @property {OrdersExportCreateRequestBody}
      */
     OrdersExportCreateRequestBody,
 
     /**
      * The OrdersExportCreateRequestBodyParameters model constructor.
-     * @property {module:model/OrdersExportCreateRequestBodyParameters}
+     * @property {OrdersExportCreateRequestBodyParameters}
      */
     OrdersExportCreateRequestBodyParameters,
 
     /**
      * The OrdersExportCreateResponseBody model constructor.
-     * @property {module:model/OrdersExportCreateResponseBody}
+     * @property {OrdersExportCreateResponseBody}
      */
     OrdersExportCreateResponseBody,
 
     /**
      * The OrdersExportCreateResponseBodyParameters model constructor.
-     * @property {module:model/OrdersExportCreateResponseBodyParameters}
+     * @property {OrdersExportCreateResponseBodyParameters}
      */
     OrdersExportCreateResponseBodyParameters,
 
     /**
      * The OrdersGetResponseBody model constructor.
-     * @property {module:model/OrdersGetResponseBody}
+     * @property {OrdersGetResponseBody}
      */
     OrdersGetResponseBody,
 
     /**
      * The OrdersImportCreateRequestBodyItem model constructor.
-     * @property {module:model/OrdersImportCreateRequestBodyItem}
+     * @property {OrdersImportCreateRequestBodyItem}
      */
     OrdersImportCreateRequestBodyItem,
 
     /**
      * The OrdersImportCreateResponseBody model constructor.
-     * @property {module:model/OrdersImportCreateResponseBody}
+     * @property {OrdersImportCreateResponseBody}
      */
     OrdersImportCreateResponseBody,
 
     /**
      * The OrdersListResponseBody model constructor.
-     * @property {module:model/OrdersListResponseBody}
+     * @property {OrdersListResponseBody}
      */
     OrdersListResponseBody,
 
     /**
      * The OrdersListResponseBodyOrdersItem model constructor.
-     * @property {module:model/OrdersListResponseBodyOrdersItem}
+     * @property {OrdersListResponseBodyOrdersItem}
      */
     OrdersListResponseBodyOrdersItem,
 
     /**
      * The OrdersUpdateRequestBody model constructor.
-     * @property {module:model/OrdersUpdateRequestBody}
+     * @property {OrdersUpdateRequestBody}
      */
     OrdersUpdateRequestBody,
 
     /**
      * The OrdersUpdateResponseBody model constructor.
-     * @property {module:model/OrdersUpdateResponseBody}
+     * @property {OrdersUpdateResponseBody}
      */
     OrdersUpdateResponseBody,
 
     /**
      * The ParameterActivityCategory model constructor.
-     * @property {module:model/ParameterActivityCategory}
+     * @property {Exclude<keyof typeof ParameterActivityCategory, "prototype" | "constructFromObject">}
      */
     ParameterActivityCategory,
 
     /**
      * The ParameterCampaignStatusListCampaigns model constructor.
-     * @property {module:model/ParameterCampaignStatusListCampaigns}
+     * @property {Exclude<keyof typeof ParameterCampaignStatusListCampaigns, "prototype" | "constructFromObject">}
      */
     ParameterCampaignStatusListCampaigns,
 
     /**
      * The ParameterCampaignType model constructor.
-     * @property {module:model/ParameterCampaignType}
+     * @property {Exclude<keyof typeof ParameterCampaignType, "prototype" | "constructFromObject">}
      */
     ParameterCampaignType,
 
     /**
      * The ParameterCampaignsAccessSetttings model constructor.
-     * @property {module:model/ParameterCampaignsAccessSetttings}
+     * @property {ParameterCampaignsAccessSetttings}
      */
     ParameterCampaignsAccessSetttings,
 
     /**
      * The ParameterCampaignsAccessSetttingsFilter model constructor.
-     * @property {module:model/ParameterCampaignsAccessSetttingsFilter}
+     * @property {ParameterCampaignsAccessSetttingsFilter}
      */
     ParameterCampaignsAccessSetttingsFilter,
 
     /**
      * The ParameterCreatedBeforeAfter model constructor.
-     * @property {module:model/ParameterCreatedBeforeAfter}
+     * @property {ParameterCreatedBeforeAfter}
      */
     ParameterCreatedBeforeAfter,
 
     /**
      * The ParameterCustomerEvent model constructor.
-     * @property {module:model/ParameterCustomerEvent}
+     * @property {Exclude<keyof typeof ParameterCustomerEvent, "prototype" | "constructFromObject">}
      */
     ParameterCustomerEvent,
 
     /**
      * The ParameterExpandListCampaigns model constructor.
-     * @property {module:model/ParameterExpandListCampaigns}
+     * @property {Exclude<keyof typeof ParameterExpandListCampaigns, "prototype" | "constructFromObject">}
      */
     ParameterExpandListCampaigns,
 
     /**
      * The ParameterFiltersListBin model constructor.
-     * @property {module:model/ParameterFiltersListBin}
+     * @property {ParameterFiltersListBin}
      */
     ParameterFiltersListBin,
 
     /**
      * The ParameterFiltersListBinId model constructor.
-     * @property {module:model/ParameterFiltersListBinId}
+     * @property {ParameterFiltersListBinId}
      */
     ParameterFiltersListBinId,
 
     /**
      * The ParameterFiltersListBinResourceId model constructor.
-     * @property {module:model/ParameterFiltersListBinResourceId}
+     * @property {ParameterFiltersListBinResourceId}
      */
     ParameterFiltersListBinResourceId,
 
     /**
      * The ParameterFiltersListBinResourceName model constructor.
-     * @property {module:model/ParameterFiltersListBinResourceName}
+     * @property {ParameterFiltersListBinResourceName}
      */
     ParameterFiltersListBinResourceName,
 
     /**
      * The ParameterFiltersListBinResourceType model constructor.
-     * @property {module:model/ParameterFiltersListBinResourceType}
+     * @property {ParameterFiltersListBinResourceType}
      */
     ParameterFiltersListBinResourceType,
 
     /**
      * The ParameterFiltersListBinResourceTypeConditions model constructor.
-     * @property {module:model/ParameterFiltersListBinResourceTypeConditions}
+     * @property {ParameterFiltersListBinResourceTypeConditions}
      */
     ParameterFiltersListBinResourceTypeConditions,
 
     /**
      * The ParameterFiltersListCampaigns model constructor.
-     * @property {module:model/ParameterFiltersListCampaigns}
+     * @property {ParameterFiltersListCampaigns}
      */
     ParameterFiltersListCampaigns,
 
     /**
      * The ParameterFiltersListCampaignsActive model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsActive}
+     * @property {ParameterFiltersListCampaignsActive}
      */
     ParameterFiltersListCampaignsActive,
 
     /**
      * The ParameterFiltersListCampaignsCampaignStatus model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCampaignStatus}
+     * @property {ParameterFiltersListCampaignsCampaignStatus}
      */
     ParameterFiltersListCampaignsCampaignStatus,
 
     /**
      * The ParameterFiltersListCampaignsCampaignStatusConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCampaignStatusConditions}
+     * @property {ParameterFiltersListCampaignsCampaignStatusConditions}
      */
     ParameterFiltersListCampaignsCampaignStatusConditions,
 
     /**
      * The ParameterFiltersListCampaignsCampaigns model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCampaigns}
+     * @property {ParameterFiltersListCampaignsCampaigns}
      */
     ParameterFiltersListCampaignsCampaigns,
 
     /**
      * The ParameterFiltersListCampaignsCampaignsId model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCampaignsId}
+     * @property {ParameterFiltersListCampaignsCampaignsId}
      */
     ParameterFiltersListCampaignsCampaignsId,
 
     /**
      * The ParameterFiltersListCampaignsCategories model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCategories}
+     * @property {ParameterFiltersListCampaignsCategories}
      */
     ParameterFiltersListCampaignsCategories,
 
     /**
      * The ParameterFiltersListCampaignsCategoryIds model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCategoryIds}
+     * @property {ParameterFiltersListCampaignsCategoryIds}
      */
     ParameterFiltersListCampaignsCategoryIds,
 
     /**
      * The ParameterFiltersListCampaignsCreatedDate model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsCreatedDate}
+     * @property {ParameterFiltersListCampaignsCreatedDate}
      */
     ParameterFiltersListCampaignsCreatedDate,
 
     /**
      * The ParameterFiltersListCampaignsExpirationDate model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsExpirationDate}
+     * @property {ParameterFiltersListCampaignsExpirationDate}
      */
     ParameterFiltersListCampaignsExpirationDate,
 
     /**
      * The ParameterFiltersListCampaignsIsReferralCode model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsIsReferralCode}
+     * @property {ParameterFiltersListCampaignsIsReferralCode}
      */
     ParameterFiltersListCampaignsIsReferralCode,
 
     /**
      * The ParameterFiltersListCampaignsIsReferralCodeConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsIsReferralCodeConditions}
+     * @property {ParameterFiltersListCampaignsIsReferralCodeConditions}
      */
     ParameterFiltersListCampaignsIsReferralCodeConditions,
 
     /**
      * The ParameterFiltersListCampaignsStartDate model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsStartDate}
+     * @property {ParameterFiltersListCampaignsStartDate}
      */
     ParameterFiltersListCampaignsStartDate,
 
     /**
      * The ParameterFiltersListCampaignsStatus model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsStatus}
+     * @property {ParameterFiltersListCampaignsStatus}
      */
     ParameterFiltersListCampaignsStatus,
 
     /**
      * The ParameterFiltersListCampaignsStatusConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsStatusConditions}
+     * @property {ParameterFiltersListCampaignsStatusConditions}
      */
     ParameterFiltersListCampaignsStatusConditions,
 
     /**
      * The ParameterFiltersListCampaignsType model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsType}
+     * @property {ParameterFiltersListCampaignsType}
      */
     ParameterFiltersListCampaignsType,
 
     /**
      * The ParameterFiltersListCampaignsTypeConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsTypeConditions}
+     * @property {ParameterFiltersListCampaignsTypeConditions}
      */
     ParameterFiltersListCampaignsTypeConditions,
 
     /**
      * The ParameterFiltersListCampaignsUpdatedAt model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsUpdatedAt}
+     * @property {ParameterFiltersListCampaignsUpdatedAt}
      */
     ParameterFiltersListCampaignsUpdatedAt,
 
     /**
      * The ParameterFiltersListCampaignsValidityDayOfWeek model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsValidityDayOfWeek}
+     * @property {ParameterFiltersListCampaignsValidityDayOfWeek}
      */
     ParameterFiltersListCampaignsValidityDayOfWeek,
 
     /**
      * The ParameterFiltersListCampaignsValidityDayOfWeekConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsValidityDayOfWeekConditions}
+     * @property {ParameterFiltersListCampaignsValidityDayOfWeekConditions}
      */
     ParameterFiltersListCampaignsValidityDayOfWeekConditions,
 
     /**
      * The ParameterFiltersListCampaignsValidityTimeframe model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsValidityTimeframe}
+     * @property {ParameterFiltersListCampaignsValidityTimeframe}
      */
     ParameterFiltersListCampaignsValidityTimeframe,
 
     /**
      * The ParameterFiltersListCampaignsVoucherType model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsVoucherType}
+     * @property {ParameterFiltersListCampaignsVoucherType}
      */
     ParameterFiltersListCampaignsVoucherType,
 
     /**
      * The ParameterFiltersListCampaignsVoucherTypeConditions model constructor.
-     * @property {module:model/ParameterFiltersListCampaignsVoucherTypeConditions}
+     * @property {ParameterFiltersListCampaignsVoucherTypeConditions}
      */
     ParameterFiltersListCampaignsVoucherTypeConditions,
 
     /**
      * The ParameterFiltersListCustomerRedeemables model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemables}
+     * @property {ParameterFiltersListCustomerRedeemables}
      */
     ParameterFiltersListCustomerRedeemables,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesCampaignId model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesCampaignId}
+     * @property {ParameterFiltersListCustomerRedeemablesCampaignId}
      */
     ParameterFiltersListCustomerRedeemablesCampaignId,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesCampaignType model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesCampaignType}
+     * @property {ParameterFiltersListCustomerRedeemablesCampaignType}
      */
     ParameterFiltersListCustomerRedeemablesCampaignType,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesCampaignTypeConditions model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions}
+     * @property {ParameterFiltersListCustomerRedeemablesCampaignTypeConditions}
      */
     ParameterFiltersListCustomerRedeemablesCampaignTypeConditions,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesCreatedAt model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesCreatedAt}
+     * @property {ParameterFiltersListCustomerRedeemablesCreatedAt}
      */
     ParameterFiltersListCustomerRedeemablesCreatedAt,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesHolderRole model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesHolderRole}
+     * @property {ParameterFiltersListCustomerRedeemablesHolderRole}
      */
     ParameterFiltersListCustomerRedeemablesHolderRole,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesHolderRoleConditions model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions}
+     * @property {ParameterFiltersListCustomerRedeemablesHolderRoleConditions}
      */
     ParameterFiltersListCustomerRedeemablesHolderRoleConditions,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesId model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesId}
+     * @property {ParameterFiltersListCustomerRedeemablesId}
      */
     ParameterFiltersListCustomerRedeemablesId,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesRedeemableId model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesRedeemableId}
+     * @property {ParameterFiltersListCustomerRedeemablesRedeemableId}
      */
     ParameterFiltersListCustomerRedeemablesRedeemableId,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesRedeemableObject model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObject}
+     * @property {ParameterFiltersListCustomerRedeemablesRedeemableObject}
      */
     ParameterFiltersListCustomerRedeemablesRedeemableObject,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions}
+     * @property {ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions}
      */
     ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions,
 
     /**
      * The ParameterFiltersListCustomerRedeemablesVoucherType model constructor.
-     * @property {module:model/ParameterFiltersListCustomerRedeemablesVoucherType}
+     * @property {ParameterFiltersListCustomerRedeemablesVoucherType}
      */
     ParameterFiltersListCustomerRedeemablesVoucherType,
 
     /**
      * The ParameterFiltersListLocations model constructor.
-     * @property {module:model/ParameterFiltersListLocations}
+     * @property {ParameterFiltersListLocations}
      */
     ParameterFiltersListLocations,
 
     /**
      * The ParameterFiltersListLocationsCreatedAt model constructor.
-     * @property {module:model/ParameterFiltersListLocationsCreatedAt}
+     * @property {ParameterFiltersListLocationsCreatedAt}
      */
     ParameterFiltersListLocationsCreatedAt,
 
     /**
      * The ParameterFiltersListLocationsName model constructor.
-     * @property {module:model/ParameterFiltersListLocationsName}
+     * @property {ParameterFiltersListLocationsName}
      */
     ParameterFiltersListLocationsName,
 
     /**
      * The ParameterFiltersListLocationsUpdatedAt model constructor.
-     * @property {module:model/ParameterFiltersListLocationsUpdatedAt}
+     * @property {ParameterFiltersListLocationsUpdatedAt}
      */
     ParameterFiltersListLocationsUpdatedAt,
 
     /**
      * The ParameterFiltersListMemberTransactions model constructor.
-     * @property {module:model/ParameterFiltersListMemberTransactions}
+     * @property {ParameterFiltersListMemberTransactions}
      */
     ParameterFiltersListMemberTransactions,
 
     /**
      * The ParameterFiltersListPublications model constructor.
-     * @property {module:model/ParameterFiltersListPublications}
+     * @property {ParameterFiltersListPublications}
      */
     ParameterFiltersListPublications,
 
     /**
      * The ParameterFiltersListPublicationsCampaignName model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsCampaignName}
+     * @property {ParameterFiltersListPublicationsCampaignName}
      */
     ParameterFiltersListPublicationsCampaignName,
 
     /**
      * The ParameterFiltersListPublicationsCustomerId model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsCustomerId}
+     * @property {ParameterFiltersListPublicationsCustomerId}
      */
     ParameterFiltersListPublicationsCustomerId,
 
     /**
      * The ParameterFiltersListPublicationsFailureCode model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsFailureCode}
+     * @property {ParameterFiltersListPublicationsFailureCode}
      */
     ParameterFiltersListPublicationsFailureCode,
 
     /**
      * The ParameterFiltersListPublicationsIsReferralCode model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsIsReferralCode}
+     * @property {ParameterFiltersListPublicationsIsReferralCode}
      */
     ParameterFiltersListPublicationsIsReferralCode,
 
     /**
      * The ParameterFiltersListPublicationsParentObjectId model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsParentObjectId}
+     * @property {ParameterFiltersListPublicationsParentObjectId}
      */
     ParameterFiltersListPublicationsParentObjectId,
 
     /**
      * The ParameterFiltersListPublicationsRelatedObjectId model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsRelatedObjectId}
+     * @property {ParameterFiltersListPublicationsRelatedObjectId}
      */
     ParameterFiltersListPublicationsRelatedObjectId,
 
     /**
      * The ParameterFiltersListPublicationsResult model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsResult}
+     * @property {ParameterFiltersListPublicationsResult}
      */
     ParameterFiltersListPublicationsResult,
 
     /**
      * The ParameterFiltersListPublicationsSourceId model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsSourceId}
+     * @property {ParameterFiltersListPublicationsSourceId}
      */
     ParameterFiltersListPublicationsSourceId,
 
     /**
      * The ParameterFiltersListPublicationsVoucherType model constructor.
-     * @property {module:model/ParameterFiltersListPublicationsVoucherType}
+     * @property {ParameterFiltersListPublicationsVoucherType}
      */
     ParameterFiltersListPublicationsVoucherType,
 
     /**
      * The ParameterFiltersListRedemptions model constructor.
-     * @property {module:model/ParameterFiltersListRedemptions}
+     * @property {ParameterFiltersListRedemptions}
      */
     ParameterFiltersListRedemptions,
 
     /**
      * The ParameterFiltersListRedemptionsCampaignName model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsCampaignName}
+     * @property {ParameterFiltersListRedemptionsCampaignName}
      */
     ParameterFiltersListRedemptionsCampaignName,
 
     /**
      * The ParameterFiltersListRedemptionsCustomerId model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsCustomerId}
+     * @property {ParameterFiltersListRedemptionsCustomerId}
      */
     ParameterFiltersListRedemptionsCustomerId,
 
     /**
      * The ParameterFiltersListRedemptionsFailureCode model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsFailureCode}
+     * @property {ParameterFiltersListRedemptionsFailureCode}
      */
     ParameterFiltersListRedemptionsFailureCode,
 
     /**
      * The ParameterFiltersListRedemptionsObject model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsObject}
+     * @property {ParameterFiltersListRedemptionsObject}
      */
     ParameterFiltersListRedemptionsObject,
 
     /**
      * The ParameterFiltersListRedemptionsParentRedemptionId model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsParentRedemptionId}
+     * @property {ParameterFiltersListRedemptionsParentRedemptionId}
      */
     ParameterFiltersListRedemptionsParentRedemptionId,
 
     /**
      * The ParameterFiltersListRedemptionsRelatedObjectId model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsRelatedObjectId}
+     * @property {ParameterFiltersListRedemptionsRelatedObjectId}
      */
     ParameterFiltersListRedemptionsRelatedObjectId,
 
     /**
      * The ParameterFiltersListRedemptionsRelatedObjectParentId model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsRelatedObjectParentId}
+     * @property {ParameterFiltersListRedemptionsRelatedObjectParentId}
      */
     ParameterFiltersListRedemptionsRelatedObjectParentId,
 
     /**
      * The ParameterFiltersListRedemptionsResult model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsResult}
+     * @property {ParameterFiltersListRedemptionsResult}
      */
     ParameterFiltersListRedemptionsResult,
 
     /**
      * The ParameterFiltersListRedemptionsUserLogin model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsUserLogin}
+     * @property {ParameterFiltersListRedemptionsUserLogin}
      */
     ParameterFiltersListRedemptionsUserLogin,
 
     /**
      * The ParameterFiltersListRedemptionsVoucherCode model constructor.
-     * @property {module:model/ParameterFiltersListRedemptionsVoucherCode}
+     * @property {ParameterFiltersListRedemptionsVoucherCode}
      */
     ParameterFiltersListRedemptionsVoucherCode,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHolders model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHolders}
+     * @property {ParameterFiltersListReferralsRedeemableHolders}
      */
     ParameterFiltersListReferralsRedeemableHolders,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHoldersCreatedAt model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt}
+     * @property {ParameterFiltersListReferralsRedeemableHoldersCreatedAt}
      */
     ParameterFiltersListReferralsRedeemableHoldersCreatedAt,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHoldersCustomerId model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHoldersCustomerId}
+     * @property {ParameterFiltersListReferralsRedeemableHoldersCustomerId}
      */
     ParameterFiltersListReferralsRedeemableHoldersCustomerId,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHoldersHolderRole model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRole}
+     * @property {ParameterFiltersListReferralsRedeemableHoldersHolderRole}
      */
     ParameterFiltersListReferralsRedeemableHoldersHolderRole,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions}
+     * @property {ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions}
      */
     ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions,
 
     /**
      * The ParameterFiltersListReferralsRedeemableHoldersId model constructor.
-     * @property {module:model/ParameterFiltersListReferralsRedeemableHoldersId}
+     * @property {ParameterFiltersListReferralsRedeemableHoldersId}
      */
     ParameterFiltersListReferralsRedeemableHoldersId,
 
     /**
      * The ParameterFiltersListTemplates model constructor.
-     * @property {module:model/ParameterFiltersListTemplates}
+     * @property {ParameterFiltersListTemplates}
      */
     ParameterFiltersListTemplates,
 
     /**
      * The ParameterFiltersListTemplatesCampaignType model constructor.
-     * @property {module:model/ParameterFiltersListTemplatesCampaignType}
+     * @property {ParameterFiltersListTemplatesCampaignType}
      */
     ParameterFiltersListTemplatesCampaignType,
 
     /**
      * The ParameterFiltersListTemplatesCampaignTypeConditions model constructor.
-     * @property {module:model/ParameterFiltersListTemplatesCampaignTypeConditions}
+     * @property {ParameterFiltersListTemplatesCampaignTypeConditions}
      */
     ParameterFiltersListTemplatesCampaignTypeConditions,
 
     /**
      * The ParameterFiltersListTemplatesId model constructor.
-     * @property {module:model/ParameterFiltersListTemplatesId}
+     * @property {ParameterFiltersListTemplatesId}
      */
     ParameterFiltersListTemplatesId,
 
     /**
      * The ParameterFiltersListTemplatesName model constructor.
-     * @property {module:model/ParameterFiltersListTemplatesName}
+     * @property {ParameterFiltersListTemplatesName}
      */
     ParameterFiltersListTemplatesName,
 
     /**
      * The ParameterOrder model constructor.
-     * @property {module:model/ParameterOrder}
+     * @property {Exclude<keyof typeof ParameterOrder, "prototype" | "constructFromObject">}
      */
     ParameterOrder,
 
     /**
      * The ParameterOrderCreatedAt model constructor.
-     * @property {module:model/ParameterOrderCreatedAt}
+     * @property {Exclude<keyof typeof ParameterOrderCreatedAt, "prototype" | "constructFromObject">}
      */
     ParameterOrderCreatedAt,
 
     /**
      * The ParameterOrderListAllPromotionStacks model constructor.
-     * @property {module:model/ParameterOrderListAllPromotionStacks}
+     * @property {Exclude<keyof typeof ParameterOrderListAllPromotionStacks, "prototype" | "constructFromObject">}
      */
     ParameterOrderListAllPromotionStacks,
 
     /**
      * The ParameterOrderListBin model constructor.
-     * @property {module:model/ParameterOrderListBin}
+     * @property {Exclude<keyof typeof ParameterOrderListBin, "prototype" | "constructFromObject">}
      */
     ParameterOrderListBin,
 
     /**
      * The ParameterOrderListCampaigns model constructor.
-     * @property {module:model/ParameterOrderListCampaigns}
+     * @property {Exclude<keyof typeof ParameterOrderListCampaigns, "prototype" | "constructFromObject">}
      */
     ParameterOrderListCampaigns,
 
     /**
      * The ParameterOrderListCustomers model constructor.
-     * @property {module:model/ParameterOrderListCustomers}
+     * @property {Exclude<keyof typeof ParameterOrderListCustomers, "prototype" | "constructFromObject">}
      */
     ParameterOrderListCustomers,
 
     /**
      * The ParameterOrderListEarningRules model constructor.
-     * @property {module:model/ParameterOrderListEarningRules}
+     * @property {Exclude<keyof typeof ParameterOrderListEarningRules, "prototype" | "constructFromObject">}
      */
     ParameterOrderListEarningRules,
 
     /**
      * The ParameterOrderListExports model constructor.
-     * @property {module:model/ParameterOrderListExports}
+     * @property {Exclude<keyof typeof ParameterOrderListExports, "prototype" | "constructFromObject">}
      */
     ParameterOrderListExports,
 
     /**
      * The ParameterOrderListLocations model constructor.
-     * @property {module:model/ParameterOrderListLocations}
+     * @property {Exclude<keyof typeof ParameterOrderListLocations, "prototype" | "constructFromObject">}
      */
     ParameterOrderListLocations,
 
     /**
      * The ParameterOrderListLoyaltyTiers model constructor.
-     * @property {module:model/ParameterOrderListLoyaltyTiers}
+     * @property {Exclude<keyof typeof ParameterOrderListLoyaltyTiers, "prototype" | "constructFromObject">}
      */
     ParameterOrderListLoyaltyTiers,
 
     /**
      * The ParameterOrderListOrders model constructor.
-     * @property {module:model/ParameterOrderListOrders}
+     * @property {Exclude<keyof typeof ParameterOrderListOrders, "prototype" | "constructFromObject">}
      */
     ParameterOrderListOrders,
 
     /**
      * The ParameterOrderListPendingPoints model constructor.
-     * @property {module:model/ParameterOrderListPendingPoints}
+     * @property {Exclude<keyof typeof ParameterOrderListPendingPoints, "prototype" | "constructFromObject">}
      */
     ParameterOrderListPendingPoints,
 
     /**
      * The ParameterOrderListPromotionTiers model constructor.
-     * @property {module:model/ParameterOrderListPromotionTiers}
+     * @property {Exclude<keyof typeof ParameterOrderListPromotionTiers, "prototype" | "constructFromObject">}
      */
     ParameterOrderListPromotionTiers,
 
     /**
      * The ParameterOrderListPromotionTiersClientSide model constructor.
-     * @property {module:model/ParameterOrderListPromotionTiersClientSide}
+     * @property {Exclude<keyof typeof ParameterOrderListPromotionTiersClientSide, "prototype" | "constructFromObject">}
      */
     ParameterOrderListPromotionTiersClientSide,
 
     /**
      * The ParameterOrderListPublications model constructor.
-     * @property {module:model/ParameterOrderListPublications}
+     * @property {Exclude<keyof typeof ParameterOrderListPublications, "prototype" | "constructFromObject">}
      */
     ParameterOrderListPublications,
 
     /**
      * The ParameterOrderListRedeemables model constructor.
-     * @property {module:model/ParameterOrderListRedeemables}
+     * @property {Exclude<keyof typeof ParameterOrderListRedeemables, "prototype" | "constructFromObject">}
      */
     ParameterOrderListRedeemables,
 
     /**
      * The ParameterOrderListRedemptions model constructor.
-     * @property {module:model/ParameterOrderListRedemptions}
+     * @property {Exclude<keyof typeof ParameterOrderListRedemptions, "prototype" | "constructFromObject">}
      */
     ParameterOrderListRedemptions,
 
     /**
      * The ParameterOrderListTransactions model constructor.
-     * @property {module:model/ParameterOrderListTransactions}
+     * @property {Exclude<keyof typeof ParameterOrderListTransactions, "prototype" | "constructFromObject">}
      */
     ParameterOrderListTransactions,
 
     /**
      * The ParameterOrderListValidationRuleAssignments model constructor.
-     * @property {module:model/ParameterOrderListValidationRuleAssignments}
+     * @property {Exclude<keyof typeof ParameterOrderListValidationRuleAssignments, "prototype" | "constructFromObject">}
      */
     ParameterOrderListValidationRuleAssignments,
 
     /**
      * The ParameterOrderListValidationRules model constructor.
-     * @property {module:model/ParameterOrderListValidationRules}
+     * @property {Exclude<keyof typeof ParameterOrderListValidationRules, "prototype" | "constructFromObject">}
      */
     ParameterOrderListValidationRules,
 
     /**
      * The ParameterOrderVouchers model constructor.
-     * @property {module:model/ParameterOrderVouchers}
+     * @property {Exclude<keyof typeof ParameterOrderVouchers, "prototype" | "constructFromObject">}
      */
     ParameterOrderVouchers,
 
     /**
      * The ParameterResultListPublications model constructor.
-     * @property {module:model/ParameterResultListPublications}
+     * @property {Exclude<keyof typeof ParameterResultListPublications, "prototype" | "constructFromObject">}
      */
     ParameterResultListPublications,
 
     /**
      * The ParameterTemplatesList model constructor.
-     * @property {module:model/ParameterTemplatesList}
+     * @property {Exclude<keyof typeof ParameterTemplatesList, "prototype" | "constructFromObject">}
      */
     ParameterTemplatesList,
 
     /**
      * The ParameterUpdatedBeforeAfter model constructor.
-     * @property {module:model/ParameterUpdatedBeforeAfter}
+     * @property {ParameterUpdatedBeforeAfter}
      */
     ParameterUpdatedBeforeAfter,
 
     /**
      * The ParameterVoucherTypeListPublications model constructor.
-     * @property {module:model/ParameterVoucherTypeListPublications}
+     * @property {Exclude<keyof typeof ParameterVoucherTypeListPublications, "prototype" | "constructFromObject">}
      */
     ParameterVoucherTypeListPublications,
 
     /**
      * The ParametersFiltersListCampaignTransactions model constructor.
-     * @property {module:model/ParametersFiltersListCampaignTransactions}
+     * @property {ParametersFiltersListCampaignTransactions}
      */
     ParametersFiltersListCampaignTransactions,
 
     /**
      * The PointsExpirationTypes model constructor.
-     * @property {module:model/PointsExpirationTypes}
+     * @property {Exclude<keyof typeof PointsExpirationTypes, "prototype" | "constructFromObject">}
      */
     PointsExpirationTypes,
 
     /**
      * The Product model constructor.
-     * @property {module:model/Product}
+     * @property {Product}
      */
     Product,
 
     /**
      * The ProductCollectionsCreateRequestBody model constructor.
-     * @property {module:model/ProductCollectionsCreateRequestBody}
+     * @property {ProductCollectionsCreateRequestBody}
      */
     ProductCollectionsCreateRequestBody,
 
     /**
      * The ProductCollectionsCreateRequestBodyProductsItem model constructor.
-     * @property {module:model/ProductCollectionsCreateRequestBodyProductsItem}
+     * @property {ProductCollectionsCreateRequestBodyProductsItem}
      */
     ProductCollectionsCreateRequestBodyProductsItem,
 
     /**
      * The ProductCollectionsCreateResponseBody model constructor.
-     * @property {module:model/ProductCollectionsCreateResponseBody}
+     * @property {ProductCollectionsCreateResponseBody}
      */
     ProductCollectionsCreateResponseBody,
 
     /**
      * The ProductCollectionsCreateResponseBodyProductsItem model constructor.
-     * @property {module:model/ProductCollectionsCreateResponseBodyProductsItem}
+     * @property {ProductCollectionsCreateResponseBodyProductsItem}
      */
     ProductCollectionsCreateResponseBodyProductsItem,
 
     /**
      * The ProductCollectionsGetResponseBody model constructor.
-     * @property {module:model/ProductCollectionsGetResponseBody}
+     * @property {ProductCollectionsGetResponseBody}
      */
     ProductCollectionsGetResponseBody,
 
     /**
      * The ProductCollectionsGetResponseBodyProductsItem model constructor.
-     * @property {module:model/ProductCollectionsGetResponseBodyProductsItem}
+     * @property {ProductCollectionsGetResponseBodyProductsItem}
      */
     ProductCollectionsGetResponseBodyProductsItem,
 
     /**
      * The ProductCollectionsItem model constructor.
-     * @property {module:model/ProductCollectionsItem}
+     * @property {ProductCollectionsItem}
      */
     ProductCollectionsItem,
 
     /**
      * The ProductCollectionsItemProductsItem model constructor.
-     * @property {module:model/ProductCollectionsItemProductsItem}
+     * @property {ProductCollectionsItemProductsItem}
      */
     ProductCollectionsItemProductsItem,
 
     /**
      * The ProductCollectionsListResponseBody model constructor.
-     * @property {module:model/ProductCollectionsListResponseBody}
+     * @property {ProductCollectionsListResponseBody}
      */
     ProductCollectionsListResponseBody,
 
     /**
      * The ProductCollectionsProductsListResponseBody model constructor.
-     * @property {module:model/ProductCollectionsProductsListResponseBody}
+     * @property {ProductCollectionsProductsListResponseBody}
      */
     ProductCollectionsProductsListResponseBody,
 
     /**
      * The ProductCollectionsProductsListResponseBodyDataItem model constructor.
-     * @property {module:model/ProductCollectionsProductsListResponseBodyDataItem}
+     * @property {ProductCollectionsProductsListResponseBodyDataItem}
      */
     ProductCollectionsProductsListResponseBodyDataItem,
 
     /**
      * The ProductWithoutSkus model constructor.
-     * @property {module:model/ProductWithoutSkus}
+     * @property {ProductWithoutSkus}
      */
     ProductWithoutSkus,
 
     /**
      * The ProductsCreateRequestBody model constructor.
-     * @property {module:model/ProductsCreateRequestBody}
+     * @property {ProductsCreateRequestBody}
      */
     ProductsCreateRequestBody,
 
     /**
      * The ProductsCreateResponseBody model constructor.
-     * @property {module:model/ProductsCreateResponseBody}
+     * @property {ProductsCreateResponseBody}
      */
     ProductsCreateResponseBody,
 
     /**
      * The ProductsGetResponseBody model constructor.
-     * @property {module:model/ProductsGetResponseBody}
+     * @property {ProductsGetResponseBody}
      */
     ProductsGetResponseBody,
 
     /**
      * The ProductsImportCsvCreateResponseBody model constructor.
-     * @property {module:model/ProductsImportCsvCreateResponseBody}
+     * @property {ProductsImportCsvCreateResponseBody}
      */
     ProductsImportCsvCreateResponseBody,
 
     /**
      * The ProductsListResponseBody model constructor.
-     * @property {module:model/ProductsListResponseBody}
+     * @property {ProductsListResponseBody}
      */
     ProductsListResponseBody,
 
     /**
      * The ProductsMetadataUpdateInBulkRequestBody model constructor.
-     * @property {module:model/ProductsMetadataUpdateInBulkRequestBody}
+     * @property {ProductsMetadataUpdateInBulkRequestBody}
      */
     ProductsMetadataUpdateInBulkRequestBody,
 
     /**
      * The ProductsMetadataUpdateInBulkResponseBody model constructor.
-     * @property {module:model/ProductsMetadataUpdateInBulkResponseBody}
+     * @property {ProductsMetadataUpdateInBulkResponseBody}
      */
     ProductsMetadataUpdateInBulkResponseBody,
 
     /**
      * The ProductsSkusCreateRequestBody model constructor.
-     * @property {module:model/ProductsSkusCreateRequestBody}
+     * @property {ProductsSkusCreateRequestBody}
      */
     ProductsSkusCreateRequestBody,
 
     /**
      * The ProductsSkusCreateResponseBody model constructor.
-     * @property {module:model/ProductsSkusCreateResponseBody}
+     * @property {ProductsSkusCreateResponseBody}
      */
     ProductsSkusCreateResponseBody,
 
     /**
      * The ProductsSkusListResponseBody model constructor.
-     * @property {module:model/ProductsSkusListResponseBody}
+     * @property {ProductsSkusListResponseBody}
      */
     ProductsSkusListResponseBody,
 
     /**
      * The ProductsSkusUpdateRequestBody model constructor.
-     * @property {module:model/ProductsSkusUpdateRequestBody}
+     * @property {ProductsSkusUpdateRequestBody}
      */
     ProductsSkusUpdateRequestBody,
 
     /**
      * The ProductsSkusUpdateResponseBody model constructor.
-     * @property {module:model/ProductsSkusUpdateResponseBody}
+     * @property {ProductsSkusUpdateResponseBody}
      */
     ProductsSkusUpdateResponseBody,
 
     /**
      * The ProductsUpdateInBulkRequestBody model constructor.
-     * @property {module:model/ProductsUpdateInBulkRequestBody}
+     * @property {ProductsUpdateInBulkRequestBody}
      */
     ProductsUpdateInBulkRequestBody,
 
     /**
      * The ProductsUpdateInBulkResponseBody model constructor.
-     * @property {module:model/ProductsUpdateInBulkResponseBody}
+     * @property {ProductsUpdateInBulkResponseBody}
      */
     ProductsUpdateInBulkResponseBody,
 
     /**
      * The ProductsUpdateRequestBody model constructor.
-     * @property {module:model/ProductsUpdateRequestBody}
+     * @property {ProductsUpdateRequestBody}
      */
     ProductsUpdateRequestBody,
 
     /**
      * The ProductsUpdateResponseBody model constructor.
-     * @property {module:model/ProductsUpdateResponseBody}
+     * @property {ProductsUpdateResponseBody}
      */
     ProductsUpdateResponseBody,
 
     /**
      * The PromotionStack model constructor.
-     * @property {module:model/PromotionStack}
+     * @property {PromotionStack}
      */
     PromotionStack,
 
     /**
      * The PromotionStackBase model constructor.
-     * @property {module:model/PromotionStackBase}
+     * @property {PromotionStackBase}
      */
     PromotionStackBase,
 
     /**
      * The PromotionStackBaseTiers model constructor.
-     * @property {module:model/PromotionStackBaseTiers}
+     * @property {PromotionStackBaseTiers}
      */
     PromotionStackBaseTiers,
 
     /**
      * The PromotionStackTiers model constructor.
-     * @property {module:model/PromotionStackTiers}
+     * @property {PromotionStackTiers}
      */
     PromotionStackTiers,
 
     /**
      * The PromotionTier model constructor.
-     * @property {module:model/PromotionTier}
+     * @property {PromotionTier}
      */
     PromotionTier,
 
     /**
      * The PromotionTierAction model constructor.
-     * @property {module:model/PromotionTierAction}
+     * @property {PromotionTierAction}
      */
     PromotionTierAction,
 
     /**
      * The PromotionTierCampaign model constructor.
-     * @property {module:model/PromotionTierCampaign}
+     * @property {PromotionTierCampaign}
      */
     PromotionTierCampaign,
 
     /**
      * The PromotionTierCreateParams model constructor.
-     * @property {module:model/PromotionTierCreateParams}
+     * @property {PromotionTierCreateParams}
      */
     PromotionTierCreateParams,
 
     /**
      * The PromotionTierCreateParamsAction model constructor.
-     * @property {module:model/PromotionTierCreateParamsAction}
+     * @property {PromotionTierCreateParamsAction}
      */
     PromotionTierCreateParamsAction,
 
     /**
      * The PromotionTierSummary model constructor.
-     * @property {module:model/PromotionTierSummary}
+     * @property {PromotionTierSummary}
      */
     PromotionTierSummary,
 
     /**
      * The PromotionTierSummaryOrders model constructor.
-     * @property {module:model/PromotionTierSummaryOrders}
+     * @property {PromotionTierSummaryOrders}
      */
     PromotionTierSummaryOrders,
 
     /**
      * The PromotionTierSummaryRedemptions model constructor.
-     * @property {module:model/PromotionTierSummaryRedemptions}
+     * @property {PromotionTierSummaryRedemptions}
      */
     PromotionTierSummaryRedemptions,
 
     /**
      * The PromotionTiersList model constructor.
-     * @property {module:model/PromotionTiersList}
+     * @property {PromotionTiersList}
      */
     PromotionTiersList,
 
     /**
      * The PromotionsStacksCreateRequestBody model constructor.
-     * @property {module:model/PromotionsStacksCreateRequestBody}
+     * @property {PromotionsStacksCreateRequestBody}
      */
     PromotionsStacksCreateRequestBody,
 
     /**
      * The PromotionsStacksCreateRequestBodyTiers model constructor.
-     * @property {module:model/PromotionsStacksCreateRequestBodyTiers}
+     * @property {PromotionsStacksCreateRequestBodyTiers}
      */
     PromotionsStacksCreateRequestBodyTiers,
 
     /**
      * The PromotionsStacksCreateResponseBody model constructor.
-     * @property {module:model/PromotionsStacksCreateResponseBody}
+     * @property {PromotionsStacksCreateResponseBody}
      */
     PromotionsStacksCreateResponseBody,
 
     /**
      * The PromotionsStacksCreateResponseBodyTiers model constructor.
-     * @property {module:model/PromotionsStacksCreateResponseBodyTiers}
+     * @property {PromotionsStacksCreateResponseBodyTiers}
      */
     PromotionsStacksCreateResponseBodyTiers,
 
     /**
      * The PromotionsStacksGetResponseBody model constructor.
-     * @property {module:model/PromotionsStacksGetResponseBody}
+     * @property {PromotionsStacksGetResponseBody}
      */
     PromotionsStacksGetResponseBody,
 
     /**
      * The PromotionsStacksGetResponseBodyTiers model constructor.
-     * @property {module:model/PromotionsStacksGetResponseBodyTiers}
+     * @property {PromotionsStacksGetResponseBodyTiers}
      */
     PromotionsStacksGetResponseBodyTiers,
 
     /**
      * The PromotionsStacksListResponseBody model constructor.
-     * @property {module:model/PromotionsStacksListResponseBody}
+     * @property {PromotionsStacksListResponseBody}
      */
     PromotionsStacksListResponseBody,
 
     /**
      * The PromotionsStacksUpdateRequestBody model constructor.
-     * @property {module:model/PromotionsStacksUpdateRequestBody}
+     * @property {PromotionsStacksUpdateRequestBody}
      */
     PromotionsStacksUpdateRequestBody,
 
     /**
      * The PromotionsStacksUpdateRequestBodyTiers model constructor.
-     * @property {module:model/PromotionsStacksUpdateRequestBodyTiers}
+     * @property {PromotionsStacksUpdateRequestBodyTiers}
      */
     PromotionsStacksUpdateRequestBodyTiers,
 
     /**
      * The PromotionsStacksUpdateResponseBody model constructor.
-     * @property {module:model/PromotionsStacksUpdateResponseBody}
+     * @property {PromotionsStacksUpdateResponseBody}
      */
     PromotionsStacksUpdateResponseBody,
 
     /**
      * The PromotionsStacksUpdateResponseBodyTiers model constructor.
-     * @property {module:model/PromotionsStacksUpdateResponseBodyTiers}
+     * @property {PromotionsStacksUpdateResponseBodyTiers}
      */
     PromotionsStacksUpdateResponseBodyTiers,
 
     /**
      * The PromotionsTiersCreateRequestBody model constructor.
-     * @property {module:model/PromotionsTiersCreateRequestBody}
+     * @property {PromotionsTiersCreateRequestBody}
      */
     PromotionsTiersCreateRequestBody,
 
     /**
      * The PromotionsTiersCreateRequestBodyAction model constructor.
-     * @property {module:model/PromotionsTiersCreateRequestBodyAction}
+     * @property {PromotionsTiersCreateRequestBodyAction}
      */
     PromotionsTiersCreateRequestBodyAction,
 
     /**
      * The PromotionsTiersCreateResponseBody model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBody}
+     * @property {PromotionsTiersCreateResponseBody}
      */
     PromotionsTiersCreateResponseBody,
 
     /**
      * The PromotionsTiersCreateResponseBodyAction model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBodyAction}
+     * @property {PromotionsTiersCreateResponseBodyAction}
      */
     PromotionsTiersCreateResponseBodyAction,
 
     /**
      * The PromotionsTiersCreateResponseBodyCampaign model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBodyCampaign}
+     * @property {PromotionsTiersCreateResponseBodyCampaign}
      */
     PromotionsTiersCreateResponseBodyCampaign,
 
     /**
      * The PromotionsTiersCreateResponseBodySummary model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBodySummary}
+     * @property {PromotionsTiersCreateResponseBodySummary}
      */
     PromotionsTiersCreateResponseBodySummary,
 
     /**
      * The PromotionsTiersCreateResponseBodySummaryOrders model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBodySummaryOrders}
+     * @property {PromotionsTiersCreateResponseBodySummaryOrders}
      */
     PromotionsTiersCreateResponseBodySummaryOrders,
 
     /**
      * The PromotionsTiersCreateResponseBodySummaryRedemptions model constructor.
-     * @property {module:model/PromotionsTiersCreateResponseBodySummaryRedemptions}
+     * @property {PromotionsTiersCreateResponseBodySummaryRedemptions}
      */
     PromotionsTiersCreateResponseBodySummaryRedemptions,
 
     /**
      * The PromotionsTiersDisableResponseBody model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBody}
+     * @property {PromotionsTiersDisableResponseBody}
      */
     PromotionsTiersDisableResponseBody,
 
     /**
      * The PromotionsTiersDisableResponseBodyAction model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBodyAction}
+     * @property {PromotionsTiersDisableResponseBodyAction}
      */
     PromotionsTiersDisableResponseBodyAction,
 
     /**
      * The PromotionsTiersDisableResponseBodyCampaign model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBodyCampaign}
+     * @property {PromotionsTiersDisableResponseBodyCampaign}
      */
     PromotionsTiersDisableResponseBodyCampaign,
 
     /**
      * The PromotionsTiersDisableResponseBodySummary model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBodySummary}
+     * @property {PromotionsTiersDisableResponseBodySummary}
      */
     PromotionsTiersDisableResponseBodySummary,
 
     /**
      * The PromotionsTiersDisableResponseBodySummaryOrders model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBodySummaryOrders}
+     * @property {PromotionsTiersDisableResponseBodySummaryOrders}
      */
     PromotionsTiersDisableResponseBodySummaryOrders,
 
     /**
      * The PromotionsTiersDisableResponseBodySummaryRedemptions model constructor.
-     * @property {module:model/PromotionsTiersDisableResponseBodySummaryRedemptions}
+     * @property {PromotionsTiersDisableResponseBodySummaryRedemptions}
      */
     PromotionsTiersDisableResponseBodySummaryRedemptions,
 
     /**
      * The PromotionsTiersEnableResponseBody model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBody}
+     * @property {PromotionsTiersEnableResponseBody}
      */
     PromotionsTiersEnableResponseBody,
 
     /**
      * The PromotionsTiersEnableResponseBodyAction model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBodyAction}
+     * @property {PromotionsTiersEnableResponseBodyAction}
      */
     PromotionsTiersEnableResponseBodyAction,
 
     /**
      * The PromotionsTiersEnableResponseBodyCampaign model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBodyCampaign}
+     * @property {PromotionsTiersEnableResponseBodyCampaign}
      */
     PromotionsTiersEnableResponseBodyCampaign,
 
     /**
      * The PromotionsTiersEnableResponseBodySummary model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBodySummary}
+     * @property {PromotionsTiersEnableResponseBodySummary}
      */
     PromotionsTiersEnableResponseBodySummary,
 
     /**
      * The PromotionsTiersEnableResponseBodySummaryOrders model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBodySummaryOrders}
+     * @property {PromotionsTiersEnableResponseBodySummaryOrders}
      */
     PromotionsTiersEnableResponseBodySummaryOrders,
 
     /**
      * The PromotionsTiersEnableResponseBodySummaryRedemptions model constructor.
-     * @property {module:model/PromotionsTiersEnableResponseBodySummaryRedemptions}
+     * @property {PromotionsTiersEnableResponseBodySummaryRedemptions}
      */
     PromotionsTiersEnableResponseBodySummaryRedemptions,
 
     /**
      * The PromotionsTiersGetResponseBody model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBody}
+     * @property {PromotionsTiersGetResponseBody}
      */
     PromotionsTiersGetResponseBody,
 
     /**
      * The PromotionsTiersGetResponseBodyAction model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBodyAction}
+     * @property {PromotionsTiersGetResponseBodyAction}
      */
     PromotionsTiersGetResponseBodyAction,
 
     /**
      * The PromotionsTiersGetResponseBodyCampaign model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBodyCampaign}
+     * @property {PromotionsTiersGetResponseBodyCampaign}
      */
     PromotionsTiersGetResponseBodyCampaign,
 
     /**
      * The PromotionsTiersGetResponseBodySummary model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBodySummary}
+     * @property {PromotionsTiersGetResponseBodySummary}
      */
     PromotionsTiersGetResponseBodySummary,
 
     /**
      * The PromotionsTiersGetResponseBodySummaryOrders model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBodySummaryOrders}
+     * @property {PromotionsTiersGetResponseBodySummaryOrders}
      */
     PromotionsTiersGetResponseBodySummaryOrders,
 
     /**
      * The PromotionsTiersGetResponseBodySummaryRedemptions model constructor.
-     * @property {module:model/PromotionsTiersGetResponseBodySummaryRedemptions}
+     * @property {PromotionsTiersGetResponseBodySummaryRedemptions}
      */
     PromotionsTiersGetResponseBodySummaryRedemptions,
 
     /**
      * The PromotionsTiersListResponseBody model constructor.
-     * @property {module:model/PromotionsTiersListResponseBody}
+     * @property {PromotionsTiersListResponseBody}
      */
     PromotionsTiersListResponseBody,
 
     /**
      * The PromotionsTiersUpdateRequestBody model constructor.
-     * @property {module:model/PromotionsTiersUpdateRequestBody}
+     * @property {PromotionsTiersUpdateRequestBody}
      */
     PromotionsTiersUpdateRequestBody,
 
     /**
      * The PromotionsTiersUpdateRequestBodyAction model constructor.
-     * @property {module:model/PromotionsTiersUpdateRequestBodyAction}
+     * @property {PromotionsTiersUpdateRequestBodyAction}
      */
     PromotionsTiersUpdateRequestBodyAction,
 
     /**
      * The PromotionsTiersUpdateResponseBody model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBody}
+     * @property {PromotionsTiersUpdateResponseBody}
      */
     PromotionsTiersUpdateResponseBody,
 
     /**
      * The PromotionsTiersUpdateResponseBodyAction model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBodyAction}
+     * @property {PromotionsTiersUpdateResponseBodyAction}
      */
     PromotionsTiersUpdateResponseBodyAction,
 
     /**
      * The PromotionsTiersUpdateResponseBodyCampaign model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBodyCampaign}
+     * @property {PromotionsTiersUpdateResponseBodyCampaign}
      */
     PromotionsTiersUpdateResponseBodyCampaign,
 
     /**
      * The PromotionsTiersUpdateResponseBodySummary model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBodySummary}
+     * @property {PromotionsTiersUpdateResponseBodySummary}
      */
     PromotionsTiersUpdateResponseBodySummary,
 
     /**
      * The PromotionsTiersUpdateResponseBodySummaryOrders model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBodySummaryOrders}
+     * @property {PromotionsTiersUpdateResponseBodySummaryOrders}
      */
     PromotionsTiersUpdateResponseBodySummaryOrders,
 
     /**
      * The PromotionsTiersUpdateResponseBodySummaryRedemptions model constructor.
-     * @property {module:model/PromotionsTiersUpdateResponseBodySummaryRedemptions}
+     * @property {PromotionsTiersUpdateResponseBodySummaryRedemptions}
      */
     PromotionsTiersUpdateResponseBodySummaryRedemptions,
 
     /**
      * The PublicationsCreateRequestBody model constructor.
-     * @property {module:model/PublicationsCreateRequestBody}
+     * @property {PublicationsCreateRequestBody}
      */
     PublicationsCreateRequestBody,
 
     /**
      * The PublicationsCreateResponseBody model constructor.
-     * @property {module:model/PublicationsCreateResponseBody}
+     * @property {PublicationsCreateResponseBody}
      */
     PublicationsCreateResponseBody,
 
     /**
      * The PublicationsListResponseBody model constructor.
-     * @property {module:model/PublicationsListResponseBody}
+     * @property {PublicationsListResponseBody}
      */
     PublicationsListResponseBody,
 
     /**
      * The PublicationsListResponseBodyPublicationsItem model constructor.
-     * @property {module:model/PublicationsListResponseBodyPublicationsItem}
+     * @property {PublicationsListResponseBodyPublicationsItem}
      */
     PublicationsListResponseBodyPublicationsItem,
 
     /**
      * The PublicationsListResponseBodyPublicationsItemMetadata model constructor.
-     * @property {module:model/PublicationsListResponseBodyPublicationsItemMetadata}
+     * @property {PublicationsListResponseBodyPublicationsItemMetadata}
      */
     PublicationsListResponseBodyPublicationsItemMetadata,
 
     /**
      * The QualificationsCheckEligibilityRequestBody model constructor.
-     * @property {module:model/QualificationsCheckEligibilityRequestBody}
+     * @property {QualificationsCheckEligibilityRequestBody}
      */
     QualificationsCheckEligibilityRequestBody,
 
     /**
      * The QualificationsCheckEligibilityRequestBodySession model constructor.
-     * @property {module:model/QualificationsCheckEligibilityRequestBodySession}
+     * @property {QualificationsCheckEligibilityRequestBodySession}
      */
     QualificationsCheckEligibilityRequestBodySession,
 
     /**
      * The QualificationsCheckEligibilityResponseBody model constructor.
-     * @property {module:model/QualificationsCheckEligibilityResponseBody}
+     * @property {QualificationsCheckEligibilityResponseBody}
      */
     QualificationsCheckEligibilityResponseBody,
 
     /**
      * The QualificationsCheckEligibilityResponseBodyOrder model constructor.
-     * @property {module:model/QualificationsCheckEligibilityResponseBodyOrder}
+     * @property {QualificationsCheckEligibilityResponseBodyOrder}
      */
     QualificationsCheckEligibilityResponseBodyOrder,
 
     /**
      * The QualificationsFieldConditions model constructor.
-     * @property {module:model/QualificationsFieldConditions}
+     * @property {QualificationsFieldConditions}
      */
     QualificationsFieldConditions,
 
     /**
      * The QualificationsFiltersCondition model constructor.
-     * @property {module:model/QualificationsFiltersCondition}
+     * @property {QualificationsFiltersCondition}
      */
     QualificationsFiltersCondition,
 
     /**
      * The QualificationsOption model constructor.
-     * @property {module:model/QualificationsOption}
+     * @property {QualificationsOption}
      */
     QualificationsOption,
 
     /**
      * The QualificationsOptionFilters model constructor.
-     * @property {module:model/QualificationsOptionFilters}
+     * @property {QualificationsOptionFilters}
      */
     QualificationsOptionFilters,
 
     /**
      * The QualificationsOptionFiltersCampaignType model constructor.
-     * @property {module:model/QualificationsOptionFiltersCampaignType}
+     * @property {QualificationsOptionFiltersCampaignType}
      */
     QualificationsOptionFiltersCampaignType,
 
     /**
      * The QualificationsOptionFiltersCampaignTypeConditions model constructor.
-     * @property {module:model/QualificationsOptionFiltersCampaignTypeConditions}
+     * @property {QualificationsOptionFiltersCampaignTypeConditions}
      */
     QualificationsOptionFiltersCampaignTypeConditions,
 
     /**
      * The QualificationsOptionFiltersHolderRole model constructor.
-     * @property {module:model/QualificationsOptionFiltersHolderRole}
+     * @property {QualificationsOptionFiltersHolderRole}
      */
     QualificationsOptionFiltersHolderRole,
 
     /**
      * The QualificationsOptionFiltersHolderRoleConditions model constructor.
-     * @property {module:model/QualificationsOptionFiltersHolderRoleConditions}
+     * @property {QualificationsOptionFiltersHolderRoleConditions}
      */
     QualificationsOptionFiltersHolderRoleConditions,
 
     /**
      * The QualificationsOptionFiltersResourceType model constructor.
-     * @property {module:model/QualificationsOptionFiltersResourceType}
+     * @property {QualificationsOptionFiltersResourceType}
      */
     QualificationsOptionFiltersResourceType,
 
     /**
      * The QualificationsOptionFiltersResourceTypeConditions model constructor.
-     * @property {module:model/QualificationsOptionFiltersResourceTypeConditions}
+     * @property {QualificationsOptionFiltersResourceTypeConditions}
      */
     QualificationsOptionFiltersResourceTypeConditions,
 
     /**
      * The QualificationsRedeemable model constructor.
-     * @property {module:model/QualificationsRedeemable}
+     * @property {QualificationsRedeemable}
      */
     QualificationsRedeemable,
 
     /**
      * The QualificationsRedeemableBase model constructor.
-     * @property {module:model/QualificationsRedeemableBase}
+     * @property {QualificationsRedeemableBase}
      */
     QualificationsRedeemableBase,
 
     /**
      * The QualificationsRedeemableBaseOrder model constructor.
-     * @property {module:model/QualificationsRedeemableBaseOrder}
+     * @property {QualificationsRedeemableBaseOrder}
      */
     QualificationsRedeemableBaseOrder,
 
     /**
      * The QualificationsRedeemableBaseOrderItemsItem model constructor.
-     * @property {module:model/QualificationsRedeemableBaseOrderItemsItem}
+     * @property {QualificationsRedeemableBaseOrderItemsItem}
      */
     QualificationsRedeemableBaseOrderItemsItem,
 
     /**
      * The QualificationsRedeemableOrder model constructor.
-     * @property {module:model/QualificationsRedeemableOrder}
+     * @property {QualificationsRedeemableOrder}
      */
     QualificationsRedeemableOrder,
 
     /**
      * The QualificationsRedeemableOrderItemsItem model constructor.
-     * @property {module:model/QualificationsRedeemableOrderItemsItem}
+     * @property {QualificationsRedeemableOrderItemsItem}
      */
     QualificationsRedeemableOrderItemsItem,
 
     /**
      * The QualificationsRedeemables model constructor.
-     * @property {module:model/QualificationsRedeemables}
+     * @property {QualificationsRedeemables}
      */
     QualificationsRedeemables,
 
     /**
      * The RedeemableGift model constructor.
-     * @property {module:model/RedeemableGift}
+     * @property {RedeemableGift}
      */
     RedeemableGift,
 
     /**
      * The RedeemableHolder model constructor.
-     * @property {module:model/RedeemableHolder}
+     * @property {RedeemableHolder}
      */
     RedeemableHolder,
 
     /**
      * The RedeemableLoyaltyCard model constructor.
-     * @property {module:model/RedeemableLoyaltyCard}
+     * @property {RedeemableLoyaltyCard}
      */
     RedeemableLoyaltyCard,
 
     /**
      * The RedeemableResult model constructor.
-     * @property {module:model/RedeemableResult}
+     * @property {RedeemableResult}
      */
     RedeemableResult,
 
     /**
      * The RedeemableVoucher model constructor.
-     * @property {module:model/RedeemableVoucher}
+     * @property {RedeemableVoucher}
      */
     RedeemableVoucher,
 
     /**
      * The RedeemableVoucherGift model constructor.
-     * @property {module:model/RedeemableVoucherGift}
+     * @property {RedeemableVoucherGift}
      */
     RedeemableVoucherGift,
 
     /**
      * The RedeemableVoucherLoyaltyCard model constructor.
-     * @property {module:model/RedeemableVoucherLoyaltyCard}
+     * @property {RedeemableVoucherLoyaltyCard}
      */
     RedeemableVoucherLoyaltyCard,
 
     /**
      * The RedeemableVoucherPublish model constructor.
-     * @property {module:model/RedeemableVoucherPublish}
+     * @property {RedeemableVoucherPublish}
      */
     RedeemableVoucherPublish,
 
     /**
      * The RedeemableVoucherRedemption model constructor.
-     * @property {module:model/RedeemableVoucherRedemption}
+     * @property {RedeemableVoucherRedemption}
      */
     RedeemableVoucherRedemption,
 
     /**
      * The Redemption model constructor.
-     * @property {module:model/Redemption}
+     * @property {Redemption}
      */
     Redemption,
 
     /**
      * The RedemptionChannel model constructor.
-     * @property {module:model/RedemptionChannel}
+     * @property {RedemptionChannel}
      */
     RedemptionChannel,
 
     /**
      * The RedemptionEntry model constructor.
-     * @property {module:model/RedemptionEntry}
+     * @property {RedemptionEntry}
      */
     RedemptionEntry,
 
     /**
      * The RedemptionEntryChannel model constructor.
-     * @property {module:model/RedemptionEntryChannel}
+     * @property {RedemptionEntryChannel}
      */
     RedemptionEntryChannel,
 
     /**
      * The RedemptionEntryCustomer model constructor.
-     * @property {module:model/RedemptionEntryCustomer}
+     * @property {RedemptionEntryCustomer}
      */
     RedemptionEntryCustomer,
 
     /**
      * The RedemptionEntryGift model constructor.
-     * @property {module:model/RedemptionEntryGift}
+     * @property {RedemptionEntryGift}
      */
     RedemptionEntryGift,
 
     /**
      * The RedemptionEntryLoyaltyCard model constructor.
-     * @property {module:model/RedemptionEntryLoyaltyCard}
+     * @property {RedemptionEntryLoyaltyCard}
      */
     RedemptionEntryLoyaltyCard,
 
     /**
      * The RedemptionEntryOrder model constructor.
-     * @property {module:model/RedemptionEntryOrder}
+     * @property {RedemptionEntryOrder}
      */
     RedemptionEntryOrder,
 
     /**
      * The RedemptionEntryOrderCustomer model constructor.
-     * @property {module:model/RedemptionEntryOrderCustomer}
+     * @property {RedemptionEntryOrderCustomer}
      */
     RedemptionEntryOrderCustomer,
 
     /**
      * The RedemptionEntryOrderItemsItem model constructor.
-     * @property {module:model/RedemptionEntryOrderItemsItem}
+     * @property {RedemptionEntryOrderItemsItem}
      */
     RedemptionEntryOrderItemsItem,
 
     /**
      * The RedemptionEntryOrderItemsItemProduct model constructor.
-     * @property {module:model/RedemptionEntryOrderItemsItemProduct}
+     * @property {RedemptionEntryOrderItemsItemProduct}
      */
     RedemptionEntryOrderItemsItemProduct,
 
     /**
      * The RedemptionEntryOrderItemsItemSku model constructor.
-     * @property {module:model/RedemptionEntryOrderItemsItemSku}
+     * @property {RedemptionEntryOrderItemsItemSku}
      */
     RedemptionEntryOrderItemsItemSku,
 
     /**
      * The RedemptionEntryOrderReferrer model constructor.
-     * @property {module:model/RedemptionEntryOrderReferrer}
+     * @property {RedemptionEntryOrderReferrer}
      */
     RedemptionEntryOrderReferrer,
 
     /**
      * The RedemptionEntryPromotionTier model constructor.
-     * @property {module:model/RedemptionEntryPromotionTier}
+     * @property {RedemptionEntryPromotionTier}
      */
     RedemptionEntryPromotionTier,
 
     /**
      * The RedemptionEntryPromotionTierAction model constructor.
-     * @property {module:model/RedemptionEntryPromotionTierAction}
+     * @property {RedemptionEntryPromotionTierAction}
      */
     RedemptionEntryPromotionTierAction,
 
     /**
      * The RedemptionEntryPromotionTierCampaign model constructor.
-     * @property {module:model/RedemptionEntryPromotionTierCampaign}
+     * @property {RedemptionEntryPromotionTierCampaign}
      */
     RedemptionEntryPromotionTierCampaign,
 
     /**
      * The RedemptionEntryPromotionTierSummary model constructor.
-     * @property {module:model/RedemptionEntryPromotionTierSummary}
+     * @property {RedemptionEntryPromotionTierSummary}
      */
     RedemptionEntryPromotionTierSummary,
 
     /**
      * The RedemptionEntryPromotionTierSummaryOrders model constructor.
-     * @property {module:model/RedemptionEntryPromotionTierSummaryOrders}
+     * @property {RedemptionEntryPromotionTierSummaryOrders}
      */
     RedemptionEntryPromotionTierSummaryOrders,
 
     /**
      * The RedemptionEntryPromotionTierSummaryRedemptions model constructor.
-     * @property {module:model/RedemptionEntryPromotionTierSummaryRedemptions}
+     * @property {RedemptionEntryPromotionTierSummaryRedemptions}
      */
     RedemptionEntryPromotionTierSummaryRedemptions,
 
     /**
      * The RedemptionEntryRelatedRedemptions model constructor.
-     * @property {module:model/RedemptionEntryRelatedRedemptions}
+     * @property {RedemptionEntryRelatedRedemptions}
      */
     RedemptionEntryRelatedRedemptions,
 
     /**
      * The RedemptionEntryRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/RedemptionEntryRelatedRedemptionsRedemptionsItem}
+     * @property {RedemptionEntryRelatedRedemptionsRedemptionsItem}
      */
     RedemptionEntryRelatedRedemptionsRedemptionsItem,
 
     /**
      * The RedemptionEntryRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/RedemptionEntryRelatedRedemptionsRollbacksItem}
+     * @property {RedemptionEntryRelatedRedemptionsRollbacksItem}
      */
     RedemptionEntryRelatedRedemptionsRollbacksItem,
 
     /**
      * The RedemptionEntrySession model constructor.
-     * @property {module:model/RedemptionEntrySession}
+     * @property {RedemptionEntrySession}
      */
     RedemptionEntrySession,
 
     /**
      * The RedemptionEntryVoucher model constructor.
-     * @property {module:model/RedemptionEntryVoucher}
+     * @property {RedemptionEntryVoucher}
      */
     RedemptionEntryVoucher,
 
     /**
      * The RedemptionEntryVoucherGift model constructor.
-     * @property {module:model/RedemptionEntryVoucherGift}
+     * @property {RedemptionEntryVoucherGift}
      */
     RedemptionEntryVoucherGift,
 
     /**
      * The RedemptionEntryVoucherLoyaltyCard model constructor.
-     * @property {module:model/RedemptionEntryVoucherLoyaltyCard}
+     * @property {RedemptionEntryVoucherLoyaltyCard}
      */
     RedemptionEntryVoucherLoyaltyCard,
 
     /**
      * The RedemptionEntryVoucherPublish model constructor.
-     * @property {module:model/RedemptionEntryVoucherPublish}
+     * @property {RedemptionEntryVoucherPublish}
      */
     RedemptionEntryVoucherPublish,
 
     /**
      * The RedemptionEntryVoucherRedemption model constructor.
-     * @property {module:model/RedemptionEntryVoucherRedemption}
+     * @property {RedemptionEntryVoucherRedemption}
      */
     RedemptionEntryVoucherRedemption,
 
     /**
      * The RedemptionGift model constructor.
-     * @property {module:model/RedemptionGift}
+     * @property {RedemptionGift}
      */
     RedemptionGift,
 
     /**
      * The RedemptionLoyaltyCard model constructor.
-     * @property {module:model/RedemptionLoyaltyCard}
+     * @property {RedemptionLoyaltyCard}
      */
     RedemptionLoyaltyCard,
 
     /**
      * The RedemptionOrder model constructor.
-     * @property {module:model/RedemptionOrder}
+     * @property {RedemptionOrder}
      */
     RedemptionOrder,
 
     /**
      * The RedemptionOrderCustomer model constructor.
-     * @property {module:model/RedemptionOrderCustomer}
+     * @property {RedemptionOrderCustomer}
      */
     RedemptionOrderCustomer,
 
     /**
      * The RedemptionOrderItemsItem model constructor.
-     * @property {module:model/RedemptionOrderItemsItem}
+     * @property {RedemptionOrderItemsItem}
      */
     RedemptionOrderItemsItem,
 
     /**
      * The RedemptionOrderReferrer model constructor.
-     * @property {module:model/RedemptionOrderReferrer}
+     * @property {RedemptionOrderReferrer}
      */
     RedemptionOrderReferrer,
 
     /**
      * The RedemptionRelatedRedemptions model constructor.
-     * @property {module:model/RedemptionRelatedRedemptions}
+     * @property {RedemptionRelatedRedemptions}
      */
     RedemptionRelatedRedemptions,
 
     /**
      * The RedemptionRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/RedemptionRelatedRedemptionsRedemptionsItem}
+     * @property {RedemptionRelatedRedemptionsRedemptionsItem}
      */
     RedemptionRelatedRedemptionsRedemptionsItem,
 
     /**
      * The RedemptionRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/RedemptionRelatedRedemptionsRollbacksItem}
+     * @property {RedemptionRelatedRedemptionsRollbacksItem}
      */
     RedemptionRelatedRedemptionsRollbacksItem,
 
     /**
      * The RedemptionRewardResult model constructor.
-     * @property {module:model/RedemptionRewardResult}
+     * @property {RedemptionRewardResult}
      */
     RedemptionRewardResult,
 
     /**
      * The RedemptionRewardResultParameters model constructor.
-     * @property {module:model/RedemptionRewardResultParameters}
+     * @property {RedemptionRewardResultParameters}
      */
     RedemptionRewardResultParameters,
 
     /**
      * The RedemptionRewardResultParametersCampaign model constructor.
-     * @property {module:model/RedemptionRewardResultParametersCampaign}
+     * @property {RedemptionRewardResultParametersCampaign}
      */
     RedemptionRewardResultParametersCampaign,
 
     /**
      * The RedemptionRewardResultParametersCoin model constructor.
-     * @property {module:model/RedemptionRewardResultParametersCoin}
+     * @property {RedemptionRewardResultParametersCoin}
      */
     RedemptionRewardResultParametersCoin,
 
     /**
      * The RedemptionRewardResultParametersProduct model constructor.
-     * @property {module:model/RedemptionRewardResultParametersProduct}
+     * @property {RedemptionRewardResultParametersProduct}
      */
     RedemptionRewardResultParametersProduct,
 
     /**
      * The RedemptionRollback model constructor.
-     * @property {module:model/RedemptionRollback}
+     * @property {RedemptionRollback}
      */
     RedemptionRollback,
 
     /**
      * The RedemptionRollbackChannel model constructor.
-     * @property {module:model/RedemptionRollbackChannel}
+     * @property {RedemptionRollbackChannel}
      */
     RedemptionRollbackChannel,
 
     /**
      * The RedemptionRollbackGift model constructor.
-     * @property {module:model/RedemptionRollbackGift}
+     * @property {RedemptionRollbackGift}
      */
     RedemptionRollbackGift,
 
     /**
      * The RedemptionRollbackLoyaltyCard model constructor.
-     * @property {module:model/RedemptionRollbackLoyaltyCard}
+     * @property {RedemptionRollbackLoyaltyCard}
      */
     RedemptionRollbackLoyaltyCard,
 
     /**
      * The RedemptionRollbackOrder model constructor.
-     * @property {module:model/RedemptionRollbackOrder}
+     * @property {RedemptionRollbackOrder}
      */
     RedemptionRollbackOrder,
 
     /**
      * The RedemptionSession model constructor.
-     * @property {module:model/RedemptionSession}
+     * @property {RedemptionSession}
      */
     RedemptionSession,
 
     /**
      * The RedemptionVoucher model constructor.
-     * @property {module:model/RedemptionVoucher}
+     * @property {RedemptionVoucher}
      */
     RedemptionVoucher,
 
     /**
      * The RedemptionVoucherGift model constructor.
-     * @property {module:model/RedemptionVoucherGift}
+     * @property {RedemptionVoucherGift}
      */
     RedemptionVoucherGift,
 
     /**
      * The RedemptionVoucherLoyaltyCard model constructor.
-     * @property {module:model/RedemptionVoucherLoyaltyCard}
+     * @property {RedemptionVoucherLoyaltyCard}
      */
     RedemptionVoucherLoyaltyCard,
 
     /**
      * The RedemptionVoucherPublish model constructor.
-     * @property {module:model/RedemptionVoucherPublish}
+     * @property {RedemptionVoucherPublish}
      */
     RedemptionVoucherPublish,
 
     /**
      * The RedemptionVoucherRedemption model constructor.
-     * @property {module:model/RedemptionVoucherRedemption}
+     * @property {RedemptionVoucherRedemption}
      */
     RedemptionVoucherRedemption,
 
     /**
      * The RedemptionsGetResponseBody model constructor.
-     * @property {module:model/RedemptionsGetResponseBody}
+     * @property {RedemptionsGetResponseBody}
      */
     RedemptionsGetResponseBody,
 
     /**
      * The RedemptionsGetResponseBodyChannel model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyChannel}
+     * @property {RedemptionsGetResponseBodyChannel}
      */
     RedemptionsGetResponseBodyChannel,
 
     /**
      * The RedemptionsGetResponseBodyCustomer model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyCustomer}
+     * @property {RedemptionsGetResponseBodyCustomer}
      */
     RedemptionsGetResponseBodyCustomer,
 
     /**
      * The RedemptionsGetResponseBodyGift model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyGift}
+     * @property {RedemptionsGetResponseBodyGift}
      */
     RedemptionsGetResponseBodyGift,
 
     /**
      * The RedemptionsGetResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyLoyaltyCard}
+     * @property {RedemptionsGetResponseBodyLoyaltyCard}
      */
     RedemptionsGetResponseBodyLoyaltyCard,
 
     /**
      * The RedemptionsGetResponseBodyOrder model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrder}
+     * @property {RedemptionsGetResponseBodyOrder}
      */
     RedemptionsGetResponseBodyOrder,
 
     /**
      * The RedemptionsGetResponseBodyOrderCustomer model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrderCustomer}
+     * @property {RedemptionsGetResponseBodyOrderCustomer}
      */
     RedemptionsGetResponseBodyOrderCustomer,
 
     /**
      * The RedemptionsGetResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrderItemsItem}
+     * @property {RedemptionsGetResponseBodyOrderItemsItem}
      */
     RedemptionsGetResponseBodyOrderItemsItem,
 
     /**
      * The RedemptionsGetResponseBodyOrderItemsItemProduct model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrderItemsItemProduct}
+     * @property {RedemptionsGetResponseBodyOrderItemsItemProduct}
      */
     RedemptionsGetResponseBodyOrderItemsItemProduct,
 
     /**
      * The RedemptionsGetResponseBodyOrderItemsItemSku model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrderItemsItemSku}
+     * @property {RedemptionsGetResponseBodyOrderItemsItemSku}
      */
     RedemptionsGetResponseBodyOrderItemsItemSku,
 
     /**
      * The RedemptionsGetResponseBodyOrderReferrer model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyOrderReferrer}
+     * @property {RedemptionsGetResponseBodyOrderReferrer}
      */
     RedemptionsGetResponseBodyOrderReferrer,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTier model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTier}
+     * @property {RedemptionsGetResponseBodyPromotionTier}
      */
     RedemptionsGetResponseBodyPromotionTier,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTierAction model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTierAction}
+     * @property {RedemptionsGetResponseBodyPromotionTierAction}
      */
     RedemptionsGetResponseBodyPromotionTierAction,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTierCampaign model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTierCampaign}
+     * @property {RedemptionsGetResponseBodyPromotionTierCampaign}
      */
     RedemptionsGetResponseBodyPromotionTierCampaign,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTierSummary model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTierSummary}
+     * @property {RedemptionsGetResponseBodyPromotionTierSummary}
      */
     RedemptionsGetResponseBodyPromotionTierSummary,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTierSummaryOrders model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTierSummaryOrders}
+     * @property {RedemptionsGetResponseBodyPromotionTierSummaryOrders}
      */
     RedemptionsGetResponseBodyPromotionTierSummaryOrders,
 
     /**
      * The RedemptionsGetResponseBodyPromotionTierSummaryRedemptions model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyPromotionTierSummaryRedemptions}
+     * @property {RedemptionsGetResponseBodyPromotionTierSummaryRedemptions}
      */
     RedemptionsGetResponseBodyPromotionTierSummaryRedemptions,
 
     /**
      * The RedemptionsGetResponseBodyRelatedRedemptions model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyRelatedRedemptions}
+     * @property {RedemptionsGetResponseBodyRelatedRedemptions}
      */
     RedemptionsGetResponseBodyRelatedRedemptions,
 
     /**
      * The RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem}
+     * @property {RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem}
      */
     RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem,
 
     /**
      * The RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem}
+     * @property {RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem}
      */
     RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem,
 
     /**
      * The RedemptionsGetResponseBodySession model constructor.
-     * @property {module:model/RedemptionsGetResponseBodySession}
+     * @property {RedemptionsGetResponseBodySession}
      */
     RedemptionsGetResponseBodySession,
 
     /**
      * The RedemptionsGetResponseBodyVoucher model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyVoucher}
+     * @property {RedemptionsGetResponseBodyVoucher}
      */
     RedemptionsGetResponseBodyVoucher,
 
     /**
      * The RedemptionsGetResponseBodyVoucherGift model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyVoucherGift}
+     * @property {RedemptionsGetResponseBodyVoucherGift}
      */
     RedemptionsGetResponseBodyVoucherGift,
 
     /**
      * The RedemptionsGetResponseBodyVoucherLoyaltyCard model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyVoucherLoyaltyCard}
+     * @property {RedemptionsGetResponseBodyVoucherLoyaltyCard}
      */
     RedemptionsGetResponseBodyVoucherLoyaltyCard,
 
     /**
      * The RedemptionsGetResponseBodyVoucherPublish model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyVoucherPublish}
+     * @property {RedemptionsGetResponseBodyVoucherPublish}
      */
     RedemptionsGetResponseBodyVoucherPublish,
 
     /**
      * The RedemptionsGetResponseBodyVoucherRedemption model constructor.
-     * @property {module:model/RedemptionsGetResponseBodyVoucherRedemption}
+     * @property {RedemptionsGetResponseBodyVoucherRedemption}
      */
     RedemptionsGetResponseBodyVoucherRedemption,
 
     /**
      * The RedemptionsListResponseBody model constructor.
-     * @property {module:model/RedemptionsListResponseBody}
+     * @property {RedemptionsListResponseBody}
      */
     RedemptionsListResponseBody,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItem model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItem}
+     * @property {RedemptionsListResponseBodyRedemptionsItem}
      */
     RedemptionsListResponseBodyRedemptionsItem,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemChannel model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemChannel}
+     * @property {RedemptionsListResponseBodyRedemptionsItemChannel}
      */
     RedemptionsListResponseBodyRedemptionsItemChannel,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemCustomer model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemCustomer}
+     * @property {RedemptionsListResponseBodyRedemptionsItemCustomer}
      */
     RedemptionsListResponseBodyRedemptionsItemCustomer,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemGift model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemGift}
+     * @property {RedemptionsListResponseBodyRedemptionsItemGift}
      */
     RedemptionsListResponseBodyRedemptionsItemGift,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemLoyaltyCard model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard}
+     * @property {RedemptionsListResponseBodyRedemptionsItemLoyaltyCard}
      */
     RedemptionsListResponseBodyRedemptionsItemLoyaltyCard,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrder model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrder}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrder}
      */
     RedemptionsListResponseBodyRedemptionsItemOrder,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrderCustomer model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrderCustomer}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrderCustomer}
      */
     RedemptionsListResponseBodyRedemptionsItemOrderCustomer,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrderItemsItem model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrderItemsItem}
      */
     RedemptionsListResponseBodyRedemptionsItemOrderItemsItem,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct}
      */
     RedemptionsListResponseBodyRedemptionsItemOrderItemsItemProduct,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku}
      */
     RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemOrderReferrer model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer}
+     * @property {RedemptionsListResponseBodyRedemptionsItemOrderReferrer}
      */
     RedemptionsListResponseBodyRedemptionsItemOrderReferrer,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTier model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTier}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTier}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTier,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTierAction model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTierAction}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTierAction}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTierAction,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTierCampaign model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTierCampaign}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTierCampaign}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTierCampaign,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryOrders model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryOrders}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryOrders}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryOrders,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions}
+     * @property {RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions}
      */
     RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions}
+     * @property {RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions}
      */
     RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem}
+     * @property {RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem}
      */
     RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem}
+     * @property {RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem}
      */
     RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemSession model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemSession}
+     * @property {RedemptionsListResponseBodyRedemptionsItemSession}
      */
     RedemptionsListResponseBodyRedemptionsItemSession,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemVoucher model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemVoucher}
+     * @property {RedemptionsListResponseBodyRedemptionsItemVoucher}
      */
     RedemptionsListResponseBodyRedemptionsItemVoucher,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemVoucherGift model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherGift}
+     * @property {RedemptionsListResponseBodyRedemptionsItemVoucherGift}
      */
     RedemptionsListResponseBodyRedemptionsItemVoucherGift,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard}
+     * @property {RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard}
      */
     RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemVoucherPublish model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherPublish}
+     * @property {RedemptionsListResponseBodyRedemptionsItemVoucherPublish}
      */
     RedemptionsListResponseBodyRedemptionsItemVoucherPublish,
 
     /**
      * The RedemptionsListResponseBodyRedemptionsItemVoucherRedemption model constructor.
-     * @property {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherRedemption}
+     * @property {RedemptionsListResponseBodyRedemptionsItemVoucherRedemption}
      */
     RedemptionsListResponseBodyRedemptionsItemVoucherRedemption,
 
     /**
      * The RedemptionsRedeemRequestBody model constructor.
-     * @property {module:model/RedemptionsRedeemRequestBody}
+     * @property {RedemptionsRedeemRequestBody}
      */
     RedemptionsRedeemRequestBody,
 
     /**
      * The RedemptionsRedeemRequestBodyOptions model constructor.
-     * @property {module:model/RedemptionsRedeemRequestBodyOptions}
+     * @property {RedemptionsRedeemRequestBodyOptions}
      */
     RedemptionsRedeemRequestBodyOptions,
 
     /**
      * The RedemptionsRedeemRequestBodyRedeemablesItem model constructor.
-     * @property {module:model/RedemptionsRedeemRequestBodyRedeemablesItem}
+     * @property {RedemptionsRedeemRequestBodyRedeemablesItem}
      */
     RedemptionsRedeemRequestBodyRedeemablesItem,
 
     /**
      * The RedemptionsRedeemRequestBodyRedeemablesItemGift model constructor.
-     * @property {module:model/RedemptionsRedeemRequestBodyRedeemablesItemGift}
+     * @property {RedemptionsRedeemRequestBodyRedeemablesItemGift}
      */
     RedemptionsRedeemRequestBodyRedeemablesItemGift,
 
     /**
      * The RedemptionsRedeemRequestBodyRedeemablesItemReward model constructor.
-     * @property {module:model/RedemptionsRedeemRequestBodyRedeemablesItemReward}
+     * @property {RedemptionsRedeemRequestBodyRedeemablesItemReward}
      */
     RedemptionsRedeemRequestBodyRedeemablesItemReward,
 
     /**
      * The RedemptionsRedeemResponseBody model constructor.
-     * @property {module:model/RedemptionsRedeemResponseBody}
+     * @property {RedemptionsRedeemResponseBody}
      */
     RedemptionsRedeemResponseBody,
 
     /**
      * The RedemptionsRedeemResponseBodyOrder model constructor.
-     * @property {module:model/RedemptionsRedeemResponseBodyOrder}
+     * @property {RedemptionsRedeemResponseBodyOrder}
      */
     RedemptionsRedeemResponseBodyOrder,
 
     /**
      * The RedemptionsRedeemResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/RedemptionsRedeemResponseBodyOrderItemsItem}
+     * @property {RedemptionsRedeemResponseBodyOrderItemsItem}
      */
     RedemptionsRedeemResponseBodyOrderItemsItem,
 
     /**
      * The RedemptionsRollbackCreateRequestBody model constructor.
-     * @property {module:model/RedemptionsRollbackCreateRequestBody}
+     * @property {RedemptionsRollbackCreateRequestBody}
      */
     RedemptionsRollbackCreateRequestBody,
 
     /**
      * The RedemptionsRollbackCreateResponseBody model constructor.
-     * @property {module:model/RedemptionsRollbackCreateResponseBody}
+     * @property {RedemptionsRollbackCreateResponseBody}
      */
     RedemptionsRollbackCreateResponseBody,
 
     /**
      * The RedemptionsRollbackCreateResponseBodyChannel model constructor.
-     * @property {module:model/RedemptionsRollbackCreateResponseBodyChannel}
+     * @property {RedemptionsRollbackCreateResponseBodyChannel}
      */
     RedemptionsRollbackCreateResponseBodyChannel,
 
     /**
      * The RedemptionsRollbackCreateResponseBodyGift model constructor.
-     * @property {module:model/RedemptionsRollbackCreateResponseBodyGift}
+     * @property {RedemptionsRollbackCreateResponseBodyGift}
      */
     RedemptionsRollbackCreateResponseBodyGift,
 
     /**
      * The RedemptionsRollbackCreateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/RedemptionsRollbackCreateResponseBodyLoyaltyCard}
+     * @property {RedemptionsRollbackCreateResponseBodyLoyaltyCard}
      */
     RedemptionsRollbackCreateResponseBodyLoyaltyCard,
 
     /**
      * The RedemptionsRollbackCreateResponseBodyOrder model constructor.
-     * @property {module:model/RedemptionsRollbackCreateResponseBodyOrder}
+     * @property {RedemptionsRollbackCreateResponseBodyOrder}
      */
     RedemptionsRollbackCreateResponseBodyOrder,
 
     /**
      * The RedemptionsRollbacksCreateRequestBody model constructor.
-     * @property {module:model/RedemptionsRollbacksCreateRequestBody}
+     * @property {RedemptionsRollbacksCreateRequestBody}
      */
     RedemptionsRollbacksCreateRequestBody,
 
     /**
      * The RedemptionsRollbacksCreateResponseBody model constructor.
-     * @property {module:model/RedemptionsRollbacksCreateResponseBody}
+     * @property {RedemptionsRollbacksCreateResponseBody}
      */
     RedemptionsRollbacksCreateResponseBody,
 
     /**
      * The RedemptionsRollbacksCreateResponseBodyOrder model constructor.
-     * @property {module:model/RedemptionsRollbacksCreateResponseBodyOrder}
+     * @property {RedemptionsRollbacksCreateResponseBodyOrder}
      */
     RedemptionsRollbacksCreateResponseBodyOrder,
 
     /**
      * The ReferralProgram model constructor.
-     * @property {module:model/ReferralProgram}
+     * @property {ReferralProgram}
      */
     ReferralProgram,
 
     /**
      * The ReferralProgramCustomEvent model constructor.
-     * @property {module:model/ReferralProgramCustomEvent}
+     * @property {ReferralProgramCustomEvent}
      */
     ReferralProgramCustomEvent,
 
     /**
      * The ReferralProgramRefereeReward model constructor.
-     * @property {module:model/ReferralProgramRefereeReward}
+     * @property {ReferralProgramRefereeReward}
      */
     ReferralProgramRefereeReward,
 
     /**
      * The ReferralProgramRefereeRewardRelatedObjectParent model constructor.
-     * @property {module:model/ReferralProgramRefereeRewardRelatedObjectParent}
+     * @property {ReferralProgramRefereeRewardRelatedObjectParent}
      */
     ReferralProgramRefereeRewardRelatedObjectParent,
 
     /**
      * The ReferralsMembersHoldersCreateInBulkRequestBody model constructor.
-     * @property {module:model/ReferralsMembersHoldersCreateInBulkRequestBody}
+     * @property {ReferralsMembersHoldersCreateInBulkRequestBody}
      */
     ReferralsMembersHoldersCreateInBulkRequestBody,
 
     /**
      * The ReferralsMembersHoldersCreateInBulkResponseBody model constructor.
-     * @property {module:model/ReferralsMembersHoldersCreateInBulkResponseBody}
+     * @property {ReferralsMembersHoldersCreateInBulkResponseBody}
      */
     ReferralsMembersHoldersCreateInBulkResponseBody,
 
     /**
      * The ReferralsMembersHoldersListResponseBody model constructor.
-     * @property {module:model/ReferralsMembersHoldersListResponseBody}
+     * @property {ReferralsMembersHoldersListResponseBody}
      */
     ReferralsMembersHoldersListResponseBody,
 
     /**
      * The Referrer model constructor.
-     * @property {module:model/Referrer}
+     * @property {Referrer}
      */
     Referrer,
 
     /**
      * The ReferrerAddress model constructor.
-     * @property {module:model/ReferrerAddress}
+     * @property {ReferrerAddress}
      */
     ReferrerAddress,
 
     /**
      * The ReferrerId model constructor.
-     * @property {module:model/ReferrerId}
+     * @property {ReferrerId}
      */
     ReferrerId,
 
     /**
      * The ResourceTypes model constructor.
-     * @property {module:model/ResourceTypes}
+     * @property {Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">}
      */
     ResourceTypes,
 
     /**
      * The Reward model constructor.
-     * @property {module:model/Reward}
+     * @property {Reward}
      */
     Reward,
 
     /**
      * The RewardAssignment model constructor.
-     * @property {module:model/RewardAssignment}
+     * @property {RewardAssignment}
      */
     RewardAssignment,
 
     /**
      * The RewardAssignmentParameters model constructor.
-     * @property {module:model/RewardAssignmentParameters}
+     * @property {RewardAssignmentParameters}
      */
     RewardAssignmentParameters,
 
     /**
      * The RewardAssignmentParametersLoyalty model constructor.
-     * @property {module:model/RewardAssignmentParametersLoyalty}
+     * @property {RewardAssignmentParametersLoyalty}
      */
     RewardAssignmentParametersLoyalty,
 
     /**
      * The RewardAttributes model constructor.
-     * @property {module:model/RewardAttributes}
+     * @property {RewardAttributes}
      */
     RewardAttributes,
 
     /**
      * The RewardType model constructor.
-     * @property {module:model/RewardType}
+     * @property {RewardType}
      */
     RewardType,
 
     /**
      * The RewardTypeCampaign model constructor.
-     * @property {module:model/RewardTypeCampaign}
+     * @property {RewardTypeCampaign}
      */
     RewardTypeCampaign,
 
     /**
      * The RewardTypeCoin model constructor.
-     * @property {module:model/RewardTypeCoin}
+     * @property {RewardTypeCoin}
      */
     RewardTypeCoin,
 
     /**
      * The RewardTypeProduct model constructor.
-     * @property {module:model/RewardTypeProduct}
+     * @property {RewardTypeProduct}
      */
     RewardTypeProduct,
 
     /**
      * The RewardsAssignmentsCreateRequestBody model constructor.
-     * @property {module:model/RewardsAssignmentsCreateRequestBody}
+     * @property {RewardsAssignmentsCreateRequestBody}
      */
     RewardsAssignmentsCreateRequestBody,
 
     /**
      * The RewardsAssignmentsCreateRequestBodyParameters model constructor.
-     * @property {module:model/RewardsAssignmentsCreateRequestBodyParameters}
+     * @property {RewardsAssignmentsCreateRequestBodyParameters}
      */
     RewardsAssignmentsCreateRequestBodyParameters,
 
     /**
      * The RewardsAssignmentsCreateRequestBodyParametersLoyalty model constructor.
-     * @property {module:model/RewardsAssignmentsCreateRequestBodyParametersLoyalty}
+     * @property {RewardsAssignmentsCreateRequestBodyParametersLoyalty}
      */
     RewardsAssignmentsCreateRequestBodyParametersLoyalty,
 
     /**
      * The RewardsAssignmentsCreateResponseBody model constructor.
-     * @property {module:model/RewardsAssignmentsCreateResponseBody}
+     * @property {RewardsAssignmentsCreateResponseBody}
      */
     RewardsAssignmentsCreateResponseBody,
 
     /**
      * The RewardsAssignmentsCreateResponseBodyParameters model constructor.
-     * @property {module:model/RewardsAssignmentsCreateResponseBodyParameters}
+     * @property {RewardsAssignmentsCreateResponseBodyParameters}
      */
     RewardsAssignmentsCreateResponseBodyParameters,
 
     /**
      * The RewardsAssignmentsCreateResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/RewardsAssignmentsCreateResponseBodyParametersLoyalty}
+     * @property {RewardsAssignmentsCreateResponseBodyParametersLoyalty}
      */
     RewardsAssignmentsCreateResponseBodyParametersLoyalty,
 
     /**
      * The RewardsAssignmentsGetResponseBody model constructor.
-     * @property {module:model/RewardsAssignmentsGetResponseBody}
+     * @property {RewardsAssignmentsGetResponseBody}
      */
     RewardsAssignmentsGetResponseBody,
 
     /**
      * The RewardsAssignmentsGetResponseBodyParameters model constructor.
-     * @property {module:model/RewardsAssignmentsGetResponseBodyParameters}
+     * @property {RewardsAssignmentsGetResponseBodyParameters}
      */
     RewardsAssignmentsGetResponseBodyParameters,
 
     /**
      * The RewardsAssignmentsGetResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/RewardsAssignmentsGetResponseBodyParametersLoyalty}
+     * @property {RewardsAssignmentsGetResponseBodyParametersLoyalty}
      */
     RewardsAssignmentsGetResponseBodyParametersLoyalty,
 
     /**
      * The RewardsAssignmentsListResponseBody model constructor.
-     * @property {module:model/RewardsAssignmentsListResponseBody}
+     * @property {RewardsAssignmentsListResponseBody}
      */
     RewardsAssignmentsListResponseBody,
 
     /**
      * The RewardsAssignmentsUpdateRequestBody model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateRequestBody}
+     * @property {RewardsAssignmentsUpdateRequestBody}
      */
     RewardsAssignmentsUpdateRequestBody,
 
     /**
      * The RewardsAssignmentsUpdateRequestBodyParameters model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateRequestBodyParameters}
+     * @property {RewardsAssignmentsUpdateRequestBodyParameters}
      */
     RewardsAssignmentsUpdateRequestBodyParameters,
 
     /**
      * The RewardsAssignmentsUpdateRequestBodyParametersLoyalty model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateRequestBodyParametersLoyalty}
+     * @property {RewardsAssignmentsUpdateRequestBodyParametersLoyalty}
      */
     RewardsAssignmentsUpdateRequestBodyParametersLoyalty,
 
     /**
      * The RewardsAssignmentsUpdateResponseBody model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateResponseBody}
+     * @property {RewardsAssignmentsUpdateResponseBody}
      */
     RewardsAssignmentsUpdateResponseBody,
 
     /**
      * The RewardsAssignmentsUpdateResponseBodyParameters model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateResponseBodyParameters}
+     * @property {RewardsAssignmentsUpdateResponseBodyParameters}
      */
     RewardsAssignmentsUpdateResponseBodyParameters,
 
     /**
      * The RewardsAssignmentsUpdateResponseBodyParametersLoyalty model constructor.
-     * @property {module:model/RewardsAssignmentsUpdateResponseBodyParametersLoyalty}
+     * @property {RewardsAssignmentsUpdateResponseBodyParametersLoyalty}
      */
     RewardsAssignmentsUpdateResponseBodyParametersLoyalty,
 
     /**
      * The RewardsCreateRequestBody model constructor.
-     * @property {module:model/RewardsCreateRequestBody}
+     * @property {RewardsCreateRequestBody}
      */
     RewardsCreateRequestBody,
 
     /**
      * The RewardsCreateRequestBodyAttributes model constructor.
-     * @property {module:model/RewardsCreateRequestBodyAttributes}
+     * @property {RewardsCreateRequestBodyAttributes}
      */
     RewardsCreateRequestBodyAttributes,
 
     /**
      * The RewardsCreateRequestBodyParameters model constructor.
-     * @property {module:model/RewardsCreateRequestBodyParameters}
+     * @property {RewardsCreateRequestBodyParameters}
      */
     RewardsCreateRequestBodyParameters,
 
     /**
      * The RewardsCreateRequestBodyParametersCampaign model constructor.
-     * @property {module:model/RewardsCreateRequestBodyParametersCampaign}
+     * @property {RewardsCreateRequestBodyParametersCampaign}
      */
     RewardsCreateRequestBodyParametersCampaign,
 
     /**
      * The RewardsCreateRequestBodyParametersCoin model constructor.
-     * @property {module:model/RewardsCreateRequestBodyParametersCoin}
+     * @property {RewardsCreateRequestBodyParametersCoin}
      */
     RewardsCreateRequestBodyParametersCoin,
 
     /**
      * The RewardsCreateRequestBodyParametersProduct model constructor.
-     * @property {module:model/RewardsCreateRequestBodyParametersProduct}
+     * @property {RewardsCreateRequestBodyParametersProduct}
      */
     RewardsCreateRequestBodyParametersProduct,
 
     /**
      * The RewardsCreateResponseBody model constructor.
-     * @property {module:model/RewardsCreateResponseBody}
+     * @property {RewardsCreateResponseBody}
      */
     RewardsCreateResponseBody,
 
     /**
      * The RewardsCreateResponseBodyAttributes model constructor.
-     * @property {module:model/RewardsCreateResponseBodyAttributes}
+     * @property {RewardsCreateResponseBodyAttributes}
      */
     RewardsCreateResponseBodyAttributes,
 
     /**
      * The RewardsListResponseBody model constructor.
-     * @property {module:model/RewardsListResponseBody}
+     * @property {RewardsListResponseBody}
      */
     RewardsListResponseBody,
 
     /**
      * The RewardsUpdateRequestBody model constructor.
-     * @property {module:model/RewardsUpdateRequestBody}
+     * @property {RewardsUpdateRequestBody}
      */
     RewardsUpdateRequestBody,
 
     /**
      * The RewardsUpdateRequestBodyAttributes model constructor.
-     * @property {module:model/RewardsUpdateRequestBodyAttributes}
+     * @property {RewardsUpdateRequestBodyAttributes}
      */
     RewardsUpdateRequestBodyAttributes,
 
     /**
      * The RewardsUpdateRequestBodyParameters model constructor.
-     * @property {module:model/RewardsUpdateRequestBodyParameters}
+     * @property {RewardsUpdateRequestBodyParameters}
      */
     RewardsUpdateRequestBodyParameters,
 
     /**
      * The RewardsUpdateRequestBodyParametersCampaign model constructor.
-     * @property {module:model/RewardsUpdateRequestBodyParametersCampaign}
+     * @property {RewardsUpdateRequestBodyParametersCampaign}
      */
     RewardsUpdateRequestBodyParametersCampaign,
 
     /**
      * The RewardsUpdateRequestBodyParametersCoin model constructor.
-     * @property {module:model/RewardsUpdateRequestBodyParametersCoin}
+     * @property {RewardsUpdateRequestBodyParametersCoin}
      */
     RewardsUpdateRequestBodyParametersCoin,
 
     /**
      * The RewardsUpdateRequestBodyParametersProduct model constructor.
-     * @property {module:model/RewardsUpdateRequestBodyParametersProduct}
+     * @property {RewardsUpdateRequestBodyParametersProduct}
      */
     RewardsUpdateRequestBodyParametersProduct,
 
     /**
      * The RewardsUpdateResponseBody model constructor.
-     * @property {module:model/RewardsUpdateResponseBody}
+     * @property {RewardsUpdateResponseBody}
      */
     RewardsUpdateResponseBody,
 
     /**
      * The RewardsUpdateResponseBodyAttributes model constructor.
-     * @property {module:model/RewardsUpdateResponseBodyAttributes}
+     * @property {RewardsUpdateResponseBodyAttributes}
      */
     RewardsUpdateResponseBodyAttributes,
 
     /**
      * The SegmentsCreateRequestBody model constructor.
-     * @property {module:model/SegmentsCreateRequestBody}
+     * @property {SegmentsCreateRequestBody}
      */
     SegmentsCreateRequestBody,
 
     /**
      * The SegmentsCreateResponseBody model constructor.
-     * @property {module:model/SegmentsCreateResponseBody}
+     * @property {SegmentsCreateResponseBody}
      */
     SegmentsCreateResponseBody,
 
     /**
      * The SegmentsGetResponseBody model constructor.
-     * @property {module:model/SegmentsGetResponseBody}
+     * @property {SegmentsGetResponseBody}
      */
     SegmentsGetResponseBody,
 
     /**
      * The Session model constructor.
-     * @property {module:model/Session}
+     * @property {Session}
      */
     Session,
 
     /**
      * The SimpleCampaign model constructor.
-     * @property {module:model/SimpleCampaign}
+     * @property {SimpleCampaign}
      */
     SimpleCampaign,
 
     /**
      * The SimpleCampaignVoucher model constructor.
-     * @property {module:model/SimpleCampaignVoucher}
+     * @property {SimpleCampaignVoucher}
      */
     SimpleCampaignVoucher,
 
     /**
      * The SimpleCampaignVoucherRedemption model constructor.
-     * @property {module:model/SimpleCampaignVoucherRedemption}
+     * @property {SimpleCampaignVoucherRedemption}
      */
     SimpleCampaignVoucherRedemption,
 
     /**
      * The SimpleCustomer model constructor.
-     * @property {module:model/SimpleCustomer}
+     * @property {SimpleCustomer}
      */
     SimpleCustomer,
 
     /**
      * The SimpleCustomerRequiredObjectType model constructor.
-     * @property {module:model/SimpleCustomerRequiredObjectType}
+     * @property {SimpleCustomerRequiredObjectType}
      */
     SimpleCustomerRequiredObjectType,
 
     /**
      * The SimpleEvent model constructor.
-     * @property {module:model/SimpleEvent}
+     * @property {SimpleEvent}
      */
     SimpleEvent,
 
     /**
      * The SimpleLoyaltyCard model constructor.
-     * @property {module:model/SimpleLoyaltyCard}
+     * @property {SimpleLoyaltyCard}
      */
     SimpleLoyaltyCard,
 
     /**
      * The SimpleOrder model constructor.
-     * @property {module:model/SimpleOrder}
+     * @property {SimpleOrder}
      */
     SimpleOrder,
 
     /**
      * The SimpleOrderItem model constructor.
-     * @property {module:model/SimpleOrderItem}
+     * @property {SimpleOrderItem}
      */
     SimpleOrderItem,
 
     /**
      * The SimpleProduct model constructor.
-     * @property {module:model/SimpleProduct}
+     * @property {SimpleProduct}
      */
     SimpleProduct,
 
     /**
      * The SimpleProductDiscountUnit model constructor.
-     * @property {module:model/SimpleProductDiscountUnit}
+     * @property {SimpleProductDiscountUnit}
      */
     SimpleProductDiscountUnit,
 
     /**
      * The SimplePromotionStack model constructor.
-     * @property {module:model/SimplePromotionStack}
+     * @property {SimplePromotionStack}
      */
     SimplePromotionStack,
 
     /**
      * The SimplePromotionStackCampaign model constructor.
-     * @property {module:model/SimplePromotionStackCampaign}
+     * @property {SimplePromotionStackCampaign}
      */
     SimplePromotionStackCampaign,
 
     /**
      * The SimplePromotionStackTiers model constructor.
-     * @property {module:model/SimplePromotionStackTiers}
+     * @property {SimplePromotionStackTiers}
      */
     SimplePromotionStackTiers,
 
     /**
      * The SimplePromotionTier model constructor.
-     * @property {module:model/SimplePromotionTier}
+     * @property {SimplePromotionTier}
      */
     SimplePromotionTier,
 
     /**
      * The SimplePromotionTierCampaign model constructor.
-     * @property {module:model/SimplePromotionTierCampaign}
+     * @property {SimplePromotionTierCampaign}
      */
     SimplePromotionTierCampaign,
 
     /**
      * The SimpleRedemption model constructor.
-     * @property {module:model/SimpleRedemption}
+     * @property {SimpleRedemption}
      */
     SimpleRedemption,
 
     /**
      * The SimpleRedemptionChannel model constructor.
-     * @property {module:model/SimpleRedemptionChannel}
+     * @property {SimpleRedemptionChannel}
      */
     SimpleRedemptionChannel,
 
     /**
      * The SimpleRedemptionRewardResult model constructor.
-     * @property {module:model/SimpleRedemptionRewardResult}
+     * @property {SimpleRedemptionRewardResult}
      */
     SimpleRedemptionRewardResult,
 
     /**
      * The SimpleReferralTier model constructor.
-     * @property {module:model/SimpleReferralTier}
+     * @property {SimpleReferralTier}
      */
     SimpleReferralTier,
 
     /**
      * The SimpleSegment model constructor.
-     * @property {module:model/SimpleSegment}
+     * @property {SimpleSegment}
      */
     SimpleSegment,
 
     /**
      * The SimpleSku model constructor.
-     * @property {module:model/SimpleSku}
+     * @property {SimpleSku}
      */
     SimpleSku,
 
     /**
      * The SimpleSkuDiscountUnit model constructor.
-     * @property {module:model/SimpleSkuDiscountUnit}
+     * @property {SimpleSkuDiscountUnit}
      */
     SimpleSkuDiscountUnit,
 
     /**
      * The SimpleVoucher model constructor.
-     * @property {module:model/SimpleVoucher}
+     * @property {SimpleVoucher}
      */
     SimpleVoucher,
 
     /**
      * The SimpleVoucherRedemption model constructor.
-     * @property {module:model/SimpleVoucherRedemption}
+     * @property {SimpleVoucherRedemption}
      */
     SimpleVoucherRedemption,
 
     /**
      * The Sku model constructor.
-     * @property {module:model/Sku}
+     * @property {Sku}
      */
     Sku,
 
     /**
      * The SkusGetResponseBody model constructor.
-     * @property {module:model/SkusGetResponseBody}
+     * @property {SkusGetResponseBody}
      */
     SkusGetResponseBody,
 
     /**
      * The SkusImportCsvCreateResponseBody model constructor.
-     * @property {module:model/SkusImportCsvCreateResponseBody}
+     * @property {SkusImportCsvCreateResponseBody}
      */
     SkusImportCsvCreateResponseBody,
 
     /**
      * The SkusListForProduct model constructor.
-     * @property {module:model/SkusListForProduct}
+     * @property {SkusListForProduct}
      */
     SkusListForProduct,
 
     /**
      * The StackingRules model constructor.
-     * @property {module:model/StackingRules}
+     * @property {StackingRules}
      */
     StackingRules,
 
     /**
      * The TemplatesCampaignsCampaignSetupCreateRequestBody model constructor.
-     * @property {module:model/TemplatesCampaignsCampaignSetupCreateRequestBody}
+     * @property {TemplatesCampaignsCampaignSetupCreateRequestBody}
      */
     TemplatesCampaignsCampaignSetupCreateRequestBody,
 
     /**
      * The TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher model constructor.
-     * @property {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher}
+     * @property {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher}
      */
     TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher,
 
     /**
      * The TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption model constructor.
-     * @property {module:model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption}
+     * @property {TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption}
      */
     TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption,
 
     /**
      * The TemplatesCampaignsCampaignSetupCreateResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsCampaignSetupCreateResponseBody}
+     * @property {TemplatesCampaignsCampaignSetupCreateResponseBody}
      */
     TemplatesCampaignsCampaignSetupCreateResponseBody,
 
     /**
      * The TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem model constructor.
-     * @property {module:model/TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem}
+     * @property {TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem}
      */
     TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem,
 
     /**
      * The TemplatesCampaignsCreateRequestBody model constructor.
-     * @property {module:model/TemplatesCampaignsCreateRequestBody}
+     * @property {TemplatesCampaignsCreateRequestBody}
      */
     TemplatesCampaignsCreateRequestBody,
 
     /**
      * The TemplatesCampaignsCreateTemplateResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsCreateTemplateResponseBody}
+     * @property {TemplatesCampaignsCreateTemplateResponseBody}
      */
     TemplatesCampaignsCreateTemplateResponseBody,
 
     /**
      * The TemplatesCampaignsGetResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsGetResponseBody}
+     * @property {TemplatesCampaignsGetResponseBody}
      */
     TemplatesCampaignsGetResponseBody,
 
     /**
      * The TemplatesCampaignsListResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsListResponseBody}
+     * @property {TemplatesCampaignsListResponseBody}
      */
     TemplatesCampaignsListResponseBody,
 
     /**
      * The TemplatesCampaignsTierSetupCreateRequestBody model constructor.
-     * @property {module:model/TemplatesCampaignsTierSetupCreateRequestBody}
+     * @property {TemplatesCampaignsTierSetupCreateRequestBody}
      */
     TemplatesCampaignsTierSetupCreateRequestBody,
 
     /**
      * The TemplatesCampaignsTierSetupCreateResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsTierSetupCreateResponseBody}
+     * @property {TemplatesCampaignsTierSetupCreateResponseBody}
      */
     TemplatesCampaignsTierSetupCreateResponseBody,
 
     /**
      * The TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem model constructor.
-     * @property {module:model/TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem}
+     * @property {TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem}
      */
     TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem,
 
     /**
      * The TemplatesCampaignsUpdateRequestBody model constructor.
-     * @property {module:model/TemplatesCampaignsUpdateRequestBody}
+     * @property {TemplatesCampaignsUpdateRequestBody}
      */
     TemplatesCampaignsUpdateRequestBody,
 
     /**
      * The TemplatesCampaignsUpdateResponseBody model constructor.
-     * @property {module:model/TemplatesCampaignsUpdateResponseBody}
+     * @property {TemplatesCampaignsUpdateResponseBody}
      */
     TemplatesCampaignsUpdateResponseBody,
 
     /**
      * The TrashBinItem model constructor.
-     * @property {module:model/TrashBinItem}
+     * @property {TrashBinItem}
      */
     TrashBinItem,
 
     /**
      * The TrashBinListResponseBody model constructor.
-     * @property {module:model/TrashBinListResponseBody}
+     * @property {TrashBinListResponseBody}
      */
     TrashBinListResponseBody,
 
     /**
      * The UsageNotifications model constructor.
-     * @property {module:model/UsageNotifications}
+     * @property {UsageNotifications}
      */
     UsageNotifications,
 
     /**
      * The User model constructor.
-     * @property {module:model/User}
+     * @property {User}
      */
     User,
 
     /**
      * The ValidationRule model constructor.
-     * @property {module:model/ValidationRule}
+     * @property {ValidationRule}
      */
     ValidationRule,
 
     /**
      * The ValidationRuleApplicableTo model constructor.
-     * @property {module:model/ValidationRuleApplicableTo}
+     * @property {ValidationRuleApplicableTo}
      */
     ValidationRuleApplicableTo,
 
     /**
      * The ValidationRuleAssignment model constructor.
-     * @property {module:model/ValidationRuleAssignment}
+     * @property {ValidationRuleAssignment}
      */
     ValidationRuleAssignment,
 
     /**
      * The ValidationRuleAssignmentsList model constructor.
-     * @property {module:model/ValidationRuleAssignmentsList}
+     * @property {ValidationRuleAssignmentsList}
      */
     ValidationRuleAssignmentsList,
 
     /**
      * The ValidationRuleError model constructor.
-     * @property {module:model/ValidationRuleError}
+     * @property {ValidationRuleError}
      */
     ValidationRuleError,
 
     /**
      * The ValidationRulesAssignmentsCreateRequestBody model constructor.
-     * @property {module:model/ValidationRulesAssignmentsCreateRequestBody}
+     * @property {ValidationRulesAssignmentsCreateRequestBody}
      */
     ValidationRulesAssignmentsCreateRequestBody,
 
     /**
      * The ValidationRulesAssignmentsCreateResponseBody model constructor.
-     * @property {module:model/ValidationRulesAssignmentsCreateResponseBody}
+     * @property {ValidationRulesAssignmentsCreateResponseBody}
      */
     ValidationRulesAssignmentsCreateResponseBody,
 
     /**
      * The ValidationRulesAssignmentsList model constructor.
-     * @property {module:model/ValidationRulesAssignmentsList}
+     * @property {ValidationRulesAssignmentsList}
      */
     ValidationRulesAssignmentsList,
 
     /**
      * The ValidationRulesAssignmentsListResponseBody model constructor.
-     * @property {module:model/ValidationRulesAssignmentsListResponseBody}
+     * @property {ValidationRulesAssignmentsListResponseBody}
      */
     ValidationRulesAssignmentsListResponseBody,
 
     /**
      * The ValidationRulesCreateRequestBody model constructor.
-     * @property {module:model/ValidationRulesCreateRequestBody}
+     * @property {ValidationRulesCreateRequestBody}
      */
     ValidationRulesCreateRequestBody,
 
     /**
      * The ValidationRulesCreateRequestBodyApplicableTo model constructor.
-     * @property {module:model/ValidationRulesCreateRequestBodyApplicableTo}
+     * @property {ValidationRulesCreateRequestBodyApplicableTo}
      */
     ValidationRulesCreateRequestBodyApplicableTo,
 
     /**
      * The ValidationRulesCreateRequestBodyError model constructor.
-     * @property {module:model/ValidationRulesCreateRequestBodyError}
+     * @property {ValidationRulesCreateRequestBodyError}
      */
     ValidationRulesCreateRequestBodyError,
 
     /**
      * The ValidationRulesCreateResponseBody model constructor.
-     * @property {module:model/ValidationRulesCreateResponseBody}
+     * @property {ValidationRulesCreateResponseBody}
      */
     ValidationRulesCreateResponseBody,
 
     /**
      * The ValidationRulesCreateResponseBodyApplicableTo model constructor.
-     * @property {module:model/ValidationRulesCreateResponseBodyApplicableTo}
+     * @property {ValidationRulesCreateResponseBodyApplicableTo}
      */
     ValidationRulesCreateResponseBodyApplicableTo,
 
     /**
      * The ValidationRulesCreateResponseBodyError model constructor.
-     * @property {module:model/ValidationRulesCreateResponseBodyError}
+     * @property {ValidationRulesCreateResponseBodyError}
      */
     ValidationRulesCreateResponseBodyError,
 
     /**
      * The ValidationRulesGetResponseBody model constructor.
-     * @property {module:model/ValidationRulesGetResponseBody}
+     * @property {ValidationRulesGetResponseBody}
      */
     ValidationRulesGetResponseBody,
 
     /**
      * The ValidationRulesGetResponseBodyApplicableTo model constructor.
-     * @property {module:model/ValidationRulesGetResponseBodyApplicableTo}
+     * @property {ValidationRulesGetResponseBodyApplicableTo}
      */
     ValidationRulesGetResponseBodyApplicableTo,
 
     /**
      * The ValidationRulesGetResponseBodyError model constructor.
-     * @property {module:model/ValidationRulesGetResponseBodyError}
+     * @property {ValidationRulesGetResponseBodyError}
      */
     ValidationRulesGetResponseBodyError,
 
     /**
      * The ValidationRulesListResponseBody model constructor.
-     * @property {module:model/ValidationRulesListResponseBody}
+     * @property {ValidationRulesListResponseBody}
      */
     ValidationRulesListResponseBody,
 
     /**
      * The ValidationRulesUpdateRequestBody model constructor.
-     * @property {module:model/ValidationRulesUpdateRequestBody}
+     * @property {ValidationRulesUpdateRequestBody}
      */
     ValidationRulesUpdateRequestBody,
 
     /**
      * The ValidationRulesUpdateRequestBodyApplicableTo model constructor.
-     * @property {module:model/ValidationRulesUpdateRequestBodyApplicableTo}
+     * @property {ValidationRulesUpdateRequestBodyApplicableTo}
      */
     ValidationRulesUpdateRequestBodyApplicableTo,
 
     /**
      * The ValidationRulesUpdateRequestBodyError model constructor.
-     * @property {module:model/ValidationRulesUpdateRequestBodyError}
+     * @property {ValidationRulesUpdateRequestBodyError}
      */
     ValidationRulesUpdateRequestBodyError,
 
     /**
      * The ValidationRulesUpdateResponseBody model constructor.
-     * @property {module:model/ValidationRulesUpdateResponseBody}
+     * @property {ValidationRulesUpdateResponseBody}
      */
     ValidationRulesUpdateResponseBody,
 
     /**
      * The ValidationRulesUpdateResponseBodyApplicableTo model constructor.
-     * @property {module:model/ValidationRulesUpdateResponseBodyApplicableTo}
+     * @property {ValidationRulesUpdateResponseBodyApplicableTo}
      */
     ValidationRulesUpdateResponseBodyApplicableTo,
 
     /**
      * The ValidationRulesUpdateResponseBodyError model constructor.
-     * @property {module:model/ValidationRulesUpdateResponseBodyError}
+     * @property {ValidationRulesUpdateResponseBodyError}
      */
     ValidationRulesUpdateResponseBodyError,
 
     /**
      * The ValidationsRedeemableInapplicable model constructor.
-     * @property {module:model/ValidationsRedeemableInapplicable}
+     * @property {ValidationsRedeemableInapplicable}
      */
     ValidationsRedeemableInapplicable,
 
     /**
      * The ValidationsRedeemableInapplicableResult model constructor.
-     * @property {module:model/ValidationsRedeemableInapplicableResult}
+     * @property {ValidationsRedeemableInapplicableResult}
      */
     ValidationsRedeemableInapplicableResult,
 
     /**
      * The ValidationsRedeemableInapplicableResultDetails model constructor.
-     * @property {module:model/ValidationsRedeemableInapplicableResultDetails}
+     * @property {ValidationsRedeemableInapplicableResultDetails}
      */
     ValidationsRedeemableInapplicableResultDetails,
 
     /**
      * The ValidationsRedeemableSkipped model constructor.
-     * @property {module:model/ValidationsRedeemableSkipped}
+     * @property {ValidationsRedeemableSkipped}
      */
     ValidationsRedeemableSkipped,
 
     /**
      * The ValidationsRedeemableSkippedResult model constructor.
-     * @property {module:model/ValidationsRedeemableSkippedResult}
+     * @property {ValidationsRedeemableSkippedResult}
      */
     ValidationsRedeemableSkippedResult,
 
     /**
      * The ValidationsRedeemableSkippedResultDetails model constructor.
-     * @property {module:model/ValidationsRedeemableSkippedResultDetails}
+     * @property {ValidationsRedeemableSkippedResultDetails}
      */
     ValidationsRedeemableSkippedResultDetails,
 
     /**
      * The ValidationsValidateRequestBody model constructor.
-     * @property {module:model/ValidationsValidateRequestBody}
+     * @property {ValidationsValidateRequestBody}
      */
     ValidationsValidateRequestBody,
 
     /**
      * The ValidationsValidateRequestBodyOptions model constructor.
-     * @property {module:model/ValidationsValidateRequestBodyOptions}
+     * @property {ValidationsValidateRequestBodyOptions}
      */
     ValidationsValidateRequestBodyOptions,
 
     /**
      * The ValidationsValidateRequestBodyRedeemablesItem model constructor.
-     * @property {module:model/ValidationsValidateRequestBodyRedeemablesItem}
+     * @property {ValidationsValidateRequestBodyRedeemablesItem}
      */
     ValidationsValidateRequestBodyRedeemablesItem,
 
     /**
      * The ValidationsValidateRequestBodyRedeemablesItemGift model constructor.
-     * @property {module:model/ValidationsValidateRequestBodyRedeemablesItemGift}
+     * @property {ValidationsValidateRequestBodyRedeemablesItemGift}
      */
     ValidationsValidateRequestBodyRedeemablesItemGift,
 
     /**
      * The ValidationsValidateRequestBodyRedeemablesItemReward model constructor.
-     * @property {module:model/ValidationsValidateRequestBodyRedeemablesItemReward}
+     * @property {ValidationsValidateRequestBodyRedeemablesItemReward}
      */
     ValidationsValidateRequestBodyRedeemablesItemReward,
 
     /**
      * The ValidationsValidateResponseBody model constructor.
-     * @property {module:model/ValidationsValidateResponseBody}
+     * @property {ValidationsValidateResponseBody}
      */
     ValidationsValidateResponseBody,
 
     /**
      * The ValidationsValidateResponseBodyOrder model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyOrder}
+     * @property {ValidationsValidateResponseBodyOrder}
      */
     ValidationsValidateResponseBodyOrder,
 
     /**
      * The ValidationsValidateResponseBodyOrderItemsItem model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyOrderItemsItem}
+     * @property {ValidationsValidateResponseBodyOrderItemsItem}
      */
     ValidationsValidateResponseBodyOrderItemsItem,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItem model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItem}
+     * @property {ValidationsValidateResponseBodyRedeemablesItem}
      */
     ValidationsValidateResponseBodyRedeemablesItem,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemOrder model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemOrder}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemOrder}
      */
     ValidationsValidateResponseBodyRedeemablesItemOrder,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemOrderCustomer model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemOrderCustomer}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemOrderCustomer}
      */
     ValidationsValidateResponseBodyRedeemablesItemOrderCustomer,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemOrderReferrer model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemOrderReferrer}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemOrderReferrer}
      */
     ValidationsValidateResponseBodyRedeemablesItemOrderReferrer,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResult model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResult}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResult}
      */
     ValidationsValidateResponseBodyRedeemablesItemResult,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResultDetails model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDetails}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResultDetails}
      */
     ValidationsValidateResponseBodyRedeemablesItemResultDetails,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResultDiscount model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDiscount}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResultDiscount}
      */
     ValidationsValidateResponseBodyRedeemablesItemResultDiscount,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct}
      */
     ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResultGift model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResultGift}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResultGift}
      */
     ValidationsValidateResponseBodyRedeemablesItemResultGift,
 
     /**
      * The ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard model constructor.
-     * @property {module:model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard}
+     * @property {ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard}
      */
     ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard,
 
     /**
      * The ValidityHours model constructor.
-     * @property {module:model/ValidityHours}
+     * @property {ValidityHours}
      */
     ValidityHours,
 
     /**
      * The ValidityHoursDailyItem model constructor.
-     * @property {module:model/ValidityHoursDailyItem}
+     * @property {ValidityHoursDailyItem}
      */
     ValidityHoursDailyItem,
 
     /**
      * The ValidityTimeframe model constructor.
-     * @property {module:model/ValidityTimeframe}
+     * @property {ValidityTimeframe}
      */
     ValidityTimeframe,
 
     /**
      * The Voucher model constructor.
-     * @property {module:model/Voucher}
+     * @property {Voucher}
      */
     Voucher,
 
     /**
      * The VoucherAssets model constructor.
-     * @property {module:model/VoucherAssets}
+     * @property {VoucherAssets}
      */
     VoucherAssets,
 
     /**
      * The VoucherAssetsBarcode model constructor.
-     * @property {module:model/VoucherAssetsBarcode}
+     * @property {VoucherAssetsBarcode}
      */
     VoucherAssetsBarcode,
 
     /**
      * The VoucherAssetsQr model constructor.
-     * @property {module:model/VoucherAssetsQr}
+     * @property {VoucherAssetsQr}
      */
     VoucherAssetsQr,
 
     /**
      * The VoucherBalance model constructor.
-     * @property {module:model/VoucherBalance}
+     * @property {VoucherBalance}
      */
     VoucherBalance,
 
     /**
      * The VoucherBalanceRelatedObject model constructor.
-     * @property {module:model/VoucherBalanceRelatedObject}
+     * @property {VoucherBalanceRelatedObject}
      */
     VoucherBalanceRelatedObject,
 
     /**
      * The VoucherGift model constructor.
-     * @property {module:model/VoucherGift}
+     * @property {VoucherGift}
      */
     VoucherGift,
 
     /**
      * The VoucherLoyaltyCard model constructor.
-     * @property {module:model/VoucherLoyaltyCard}
+     * @property {VoucherLoyaltyCard}
      */
     VoucherLoyaltyCard,
 
     /**
      * The VoucherPublish model constructor.
-     * @property {module:model/VoucherPublish}
+     * @property {VoucherPublish}
      */
     VoucherPublish,
 
     /**
      * The VoucherRedemption model constructor.
-     * @property {module:model/VoucherRedemption}
+     * @property {VoucherRedemption}
      */
     VoucherRedemption,
 
     /**
      * The VoucherTransaction model constructor.
-     * @property {module:model/VoucherTransaction}
+     * @property {VoucherTransaction}
      */
     VoucherTransaction,
 
     /**
      * The VoucherTransactionDetails model constructor.
-     * @property {module:model/VoucherTransactionDetails}
+     * @property {VoucherTransactionDetails}
      */
     VoucherTransactionDetails,
 
     /**
      * The VoucherTransactionDetailsCustomEvent model constructor.
-     * @property {module:model/VoucherTransactionDetailsCustomEvent}
+     * @property {VoucherTransactionDetailsCustomEvent}
      */
     VoucherTransactionDetailsCustomEvent,
 
     /**
      * The VoucherTransactionDetailsEarningRule model constructor.
-     * @property {module:model/VoucherTransactionDetailsEarningRule}
+     * @property {VoucherTransactionDetailsEarningRule}
      */
     VoucherTransactionDetailsEarningRule,
 
     /**
      * The VoucherTransactionDetailsEarningRuleSource model constructor.
-     * @property {module:model/VoucherTransactionDetailsEarningRuleSource}
+     * @property {VoucherTransactionDetailsEarningRuleSource}
      */
     VoucherTransactionDetailsEarningRuleSource,
 
     /**
      * The VoucherTransactionDetailsEvent model constructor.
-     * @property {module:model/VoucherTransactionDetailsEvent}
+     * @property {VoucherTransactionDetailsEvent}
      */
     VoucherTransactionDetailsEvent,
 
     /**
      * The VoucherTransactionDetailsEventSchema model constructor.
-     * @property {module:model/VoucherTransactionDetailsEventSchema}
+     * @property {VoucherTransactionDetailsEventSchema}
      */
     VoucherTransactionDetailsEventSchema,
 
     /**
      * The VoucherTransactionDetailsHolderLoyaltyTier model constructor.
-     * @property {module:model/VoucherTransactionDetailsHolderLoyaltyTier}
+     * @property {VoucherTransactionDetailsHolderLoyaltyTier}
      */
     VoucherTransactionDetailsHolderLoyaltyTier,
 
     /**
      * The VoucherTransactionDetailsLoyaltyTier model constructor.
-     * @property {module:model/VoucherTransactionDetailsLoyaltyTier}
+     * @property {VoucherTransactionDetailsLoyaltyTier}
      */
     VoucherTransactionDetailsLoyaltyTier,
 
     /**
      * The VoucherTransactionDetailsOrder model constructor.
-     * @property {module:model/VoucherTransactionDetailsOrder}
+     * @property {VoucherTransactionDetailsOrder}
      */
     VoucherTransactionDetailsOrder,
 
     /**
      * The VoucherTransactionDetailsRedemption model constructor.
-     * @property {module:model/VoucherTransactionDetailsRedemption}
+     * @property {VoucherTransactionDetailsRedemption}
      */
     VoucherTransactionDetailsRedemption,
 
     /**
      * The VoucherTransactionDetailsReward model constructor.
-     * @property {module:model/VoucherTransactionDetailsReward}
+     * @property {VoucherTransactionDetailsReward}
      */
     VoucherTransactionDetailsReward,
 
     /**
      * The VoucherTransactionDetailsRollback model constructor.
-     * @property {module:model/VoucherTransactionDetailsRollback}
+     * @property {VoucherTransactionDetailsRollback}
      */
     VoucherTransactionDetailsRollback,
 
     /**
      * The VoucherTransactionDetailsSegment model constructor.
-     * @property {module:model/VoucherTransactionDetailsSegment}
+     * @property {VoucherTransactionDetailsSegment}
      */
     VoucherTransactionDetailsSegment,
 
     /**
      * The VoucherTransactionsExportFilterConditions model constructor.
-     * @property {module:model/VoucherTransactionsExportFilterConditions}
+     * @property {VoucherTransactionsExportFilterConditions}
      */
     VoucherTransactionsExportFilterConditions,
 
     /**
      * The VoucherTransactionsExportFilterConditionsVoucherId model constructor.
-     * @property {module:model/VoucherTransactionsExportFilterConditionsVoucherId}
+     * @property {VoucherTransactionsExportFilterConditionsVoucherId}
      */
     VoucherTransactionsExportFilterConditionsVoucherId,
 
     /**
      * The VoucherTransactionsExportFilterConditionsVoucherIdConditions model constructor.
-     * @property {module:model/VoucherTransactionsExportFilterConditionsVoucherIdConditions}
+     * @property {VoucherTransactionsExportFilterConditionsVoucherIdConditions}
      */
     VoucherTransactionsExportFilterConditionsVoucherIdConditions,
 
     /**
      * The VoucherTransactionsExportParameters model constructor.
-     * @property {module:model/VoucherTransactionsExportParameters}
+     * @property {VoucherTransactionsExportParameters}
      */
     VoucherTransactionsExportParameters,
 
     /**
      * The VoucherTransactionsFilters model constructor.
-     * @property {module:model/VoucherTransactionsFilters}
+     * @property {VoucherTransactionsFilters}
      */
     VoucherTransactionsFilters,
 
     /**
      * The VoucherWithCategories model constructor.
-     * @property {module:model/VoucherWithCategories}
+     * @property {VoucherWithCategories}
      */
     VoucherWithCategories,
 
     /**
      * The VoucherWithCategoriesGift model constructor.
-     * @property {module:model/VoucherWithCategoriesGift}
+     * @property {VoucherWithCategoriesGift}
      */
     VoucherWithCategoriesGift,
 
     /**
      * The VoucherWithCategoriesLoyaltyCard model constructor.
-     * @property {module:model/VoucherWithCategoriesLoyaltyCard}
+     * @property {VoucherWithCategoriesLoyaltyCard}
      */
     VoucherWithCategoriesLoyaltyCard,
 
     /**
      * The VoucherWithCategoriesPublish model constructor.
-     * @property {module:model/VoucherWithCategoriesPublish}
+     * @property {VoucherWithCategoriesPublish}
      */
     VoucherWithCategoriesPublish,
 
     /**
      * The VoucherWithCategoriesRedemption model constructor.
-     * @property {module:model/VoucherWithCategoriesRedemption}
+     * @property {VoucherWithCategoriesRedemption}
      */
     VoucherWithCategoriesRedemption,
 
     /**
      * The VouchersBalanceUpdateRequestBody model constructor.
-     * @property {module:model/VouchersBalanceUpdateRequestBody}
+     * @property {VouchersBalanceUpdateRequestBody}
      */
     VouchersBalanceUpdateRequestBody,
 
     /**
      * The VouchersBalanceUpdateResponseBody model constructor.
-     * @property {module:model/VouchersBalanceUpdateResponseBody}
+     * @property {VouchersBalanceUpdateResponseBody}
      */
     VouchersBalanceUpdateResponseBody,
 
     /**
      * The VouchersBalanceUpdateResponseBodyRelatedObject model constructor.
-     * @property {module:model/VouchersBalanceUpdateResponseBodyRelatedObject}
+     * @property {VouchersBalanceUpdateResponseBodyRelatedObject}
      */
     VouchersBalanceUpdateResponseBodyRelatedObject,
 
     /**
      * The VouchersCreateRequestBody model constructor.
-     * @property {module:model/VouchersCreateRequestBody}
+     * @property {VouchersCreateRequestBody}
      */
     VouchersCreateRequestBody,
 
     /**
      * The VouchersCreateRequestBodyRedemption model constructor.
-     * @property {module:model/VouchersCreateRequestBodyRedemption}
+     * @property {VouchersCreateRequestBodyRedemption}
      */
     VouchersCreateRequestBodyRedemption,
 
     /**
      * The VouchersCreateResponseBody model constructor.
-     * @property {module:model/VouchersCreateResponseBody}
+     * @property {VouchersCreateResponseBody}
      */
     VouchersCreateResponseBody,
 
     /**
      * The VouchersCreateResponseBodyGift model constructor.
-     * @property {module:model/VouchersCreateResponseBodyGift}
+     * @property {VouchersCreateResponseBodyGift}
      */
     VouchersCreateResponseBodyGift,
 
     /**
      * The VouchersCreateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/VouchersCreateResponseBodyLoyaltyCard}
+     * @property {VouchersCreateResponseBodyLoyaltyCard}
      */
     VouchersCreateResponseBodyLoyaltyCard,
 
     /**
      * The VouchersCreateResponseBodyPublish model constructor.
-     * @property {module:model/VouchersCreateResponseBodyPublish}
+     * @property {VouchersCreateResponseBodyPublish}
      */
     VouchersCreateResponseBodyPublish,
 
     /**
      * The VouchersCreateResponseBodyRedemption model constructor.
-     * @property {module:model/VouchersCreateResponseBodyRedemption}
+     * @property {VouchersCreateResponseBodyRedemption}
      */
     VouchersCreateResponseBodyRedemption,
 
     /**
      * The VouchersCreateWithSpecificCodeRequestBody model constructor.
-     * @property {module:model/VouchersCreateWithSpecificCodeRequestBody}
+     * @property {VouchersCreateWithSpecificCodeRequestBody}
      */
     VouchersCreateWithSpecificCodeRequestBody,
 
     /**
      * The VouchersCreateWithSpecificCodeRequestBodyRedemption model constructor.
-     * @property {module:model/VouchersCreateWithSpecificCodeRequestBodyRedemption}
+     * @property {VouchersCreateWithSpecificCodeRequestBodyRedemption}
      */
     VouchersCreateWithSpecificCodeRequestBodyRedemption,
 
     /**
      * The VouchersDisableResponseBody model constructor.
-     * @property {module:model/VouchersDisableResponseBody}
+     * @property {VouchersDisableResponseBody}
      */
     VouchersDisableResponseBody,
 
     /**
      * The VouchersDisableResponseBodyGift model constructor.
-     * @property {module:model/VouchersDisableResponseBodyGift}
+     * @property {VouchersDisableResponseBodyGift}
      */
     VouchersDisableResponseBodyGift,
 
     /**
      * The VouchersDisableResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/VouchersDisableResponseBodyLoyaltyCard}
+     * @property {VouchersDisableResponseBodyLoyaltyCard}
      */
     VouchersDisableResponseBodyLoyaltyCard,
 
     /**
      * The VouchersDisableResponseBodyPublish model constructor.
-     * @property {module:model/VouchersDisableResponseBodyPublish}
+     * @property {VouchersDisableResponseBodyPublish}
      */
     VouchersDisableResponseBodyPublish,
 
     /**
      * The VouchersDisableResponseBodyRedemption model constructor.
-     * @property {module:model/VouchersDisableResponseBodyRedemption}
+     * @property {VouchersDisableResponseBodyRedemption}
      */
     VouchersDisableResponseBodyRedemption,
 
     /**
      * The VouchersEnableResponseBody model constructor.
-     * @property {module:model/VouchersEnableResponseBody}
+     * @property {VouchersEnableResponseBody}
      */
     VouchersEnableResponseBody,
 
     /**
      * The VouchersEnableResponseBodyGift model constructor.
-     * @property {module:model/VouchersEnableResponseBodyGift}
+     * @property {VouchersEnableResponseBodyGift}
      */
     VouchersEnableResponseBodyGift,
 
     /**
      * The VouchersEnableResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/VouchersEnableResponseBodyLoyaltyCard}
+     * @property {VouchersEnableResponseBodyLoyaltyCard}
      */
     VouchersEnableResponseBodyLoyaltyCard,
 
     /**
      * The VouchersEnableResponseBodyPublish model constructor.
-     * @property {module:model/VouchersEnableResponseBodyPublish}
+     * @property {VouchersEnableResponseBodyPublish}
      */
     VouchersEnableResponseBodyPublish,
 
     /**
      * The VouchersEnableResponseBodyRedemption model constructor.
-     * @property {module:model/VouchersEnableResponseBodyRedemption}
+     * @property {VouchersEnableResponseBodyRedemption}
      */
     VouchersEnableResponseBodyRedemption,
 
     /**
      * The VouchersGetResponseBody model constructor.
-     * @property {module:model/VouchersGetResponseBody}
+     * @property {VouchersGetResponseBody}
      */
     VouchersGetResponseBody,
 
     /**
      * The VouchersGetResponseBodyGift model constructor.
-     * @property {module:model/VouchersGetResponseBodyGift}
+     * @property {VouchersGetResponseBodyGift}
      */
     VouchersGetResponseBodyGift,
 
     /**
      * The VouchersGetResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/VouchersGetResponseBodyLoyaltyCard}
+     * @property {VouchersGetResponseBodyLoyaltyCard}
      */
     VouchersGetResponseBodyLoyaltyCard,
 
     /**
      * The VouchersGetResponseBodyPublish model constructor.
-     * @property {module:model/VouchersGetResponseBodyPublish}
+     * @property {VouchersGetResponseBodyPublish}
      */
     VouchersGetResponseBodyPublish,
 
     /**
      * The VouchersGetResponseBodyRedemption model constructor.
-     * @property {module:model/VouchersGetResponseBodyRedemption}
+     * @property {VouchersGetResponseBodyRedemption}
      */
     VouchersGetResponseBodyRedemption,
 
     /**
      * The VouchersImportCreateItemRequestBody model constructor.
-     * @property {module:model/VouchersImportCreateItemRequestBody}
+     * @property {VouchersImportCreateItemRequestBody}
      */
     VouchersImportCreateItemRequestBody,
 
     /**
      * The VouchersImportCreateItemRequestBodyRedemption model constructor.
-     * @property {module:model/VouchersImportCreateItemRequestBodyRedemption}
+     * @property {VouchersImportCreateItemRequestBodyRedemption}
      */
     VouchersImportCreateItemRequestBodyRedemption,
 
     /**
      * The VouchersImportCreateResponseBody model constructor.
-     * @property {module:model/VouchersImportCreateResponseBody}
+     * @property {VouchersImportCreateResponseBody}
      */
     VouchersImportCreateResponseBody,
 
     /**
      * The VouchersImportCsvCreateResponseBody model constructor.
-     * @property {module:model/VouchersImportCsvCreateResponseBody}
+     * @property {VouchersImportCsvCreateResponseBody}
      */
     VouchersImportCsvCreateResponseBody,
 
     /**
      * The VouchersListResponseBody model constructor.
-     * @property {module:model/VouchersListResponseBody}
+     * @property {VouchersListResponseBody}
      */
     VouchersListResponseBody,
 
     /**
      * The VouchersMetadataUpdateInBulkRequestBody model constructor.
-     * @property {module:model/VouchersMetadataUpdateInBulkRequestBody}
+     * @property {VouchersMetadataUpdateInBulkRequestBody}
      */
     VouchersMetadataUpdateInBulkRequestBody,
 
     /**
      * The VouchersMetadataUpdateInBulkResponseBody model constructor.
-     * @property {module:model/VouchersMetadataUpdateInBulkResponseBody}
+     * @property {VouchersMetadataUpdateInBulkResponseBody}
      */
     VouchersMetadataUpdateInBulkResponseBody,
 
     /**
      * The VouchersRedemptionGetResponseBody model constructor.
-     * @property {module:model/VouchersRedemptionGetResponseBody}
+     * @property {VouchersRedemptionGetResponseBody}
      */
     VouchersRedemptionGetResponseBody,
 
     /**
      * The VouchersTransactionsExportCreateRequestBody model constructor.
-     * @property {module:model/VouchersTransactionsExportCreateRequestBody}
+     * @property {VouchersTransactionsExportCreateRequestBody}
      */
     VouchersTransactionsExportCreateRequestBody,
 
     /**
      * The VouchersTransactionsExportCreateResponseBody model constructor.
-     * @property {module:model/VouchersTransactionsExportCreateResponseBody}
+     * @property {VouchersTransactionsExportCreateResponseBody}
      */
     VouchersTransactionsExportCreateResponseBody,
 
     /**
      * The VouchersTransactionsExportCreateResponseBodyResult model constructor.
-     * @property {module:model/VouchersTransactionsExportCreateResponseBodyResult}
+     * @property {VouchersTransactionsExportCreateResponseBodyResult}
      */
     VouchersTransactionsExportCreateResponseBodyResult,
 
     /**
      * The VouchersTransactionsListResponseBody model constructor.
-     * @property {module:model/VouchersTransactionsListResponseBody}
+     * @property {VouchersTransactionsListResponseBody}
      */
     VouchersTransactionsListResponseBody,
 
     /**
      * The VouchersUpdateInBulkItemRequestBody model constructor.
-     * @property {module:model/VouchersUpdateInBulkItemRequestBody}
+     * @property {VouchersUpdateInBulkItemRequestBody}
      */
     VouchersUpdateInBulkItemRequestBody,
 
     /**
      * The VouchersUpdateInBulkResponseBody model constructor.
-     * @property {module:model/VouchersUpdateInBulkResponseBody}
+     * @property {VouchersUpdateInBulkResponseBody}
      */
     VouchersUpdateInBulkResponseBody,
 
     /**
      * The VouchersUpdateRequestBody model constructor.
-     * @property {module:model/VouchersUpdateRequestBody}
+     * @property {VouchersUpdateRequestBody}
      */
     VouchersUpdateRequestBody,
 
     /**
      * The VouchersUpdateResponseBody model constructor.
-     * @property {module:model/VouchersUpdateResponseBody}
+     * @property {VouchersUpdateResponseBody}
      */
     VouchersUpdateResponseBody,
 
     /**
      * The VouchersUpdateResponseBodyGift model constructor.
-     * @property {module:model/VouchersUpdateResponseBodyGift}
+     * @property {VouchersUpdateResponseBodyGift}
      */
     VouchersUpdateResponseBodyGift,
 
     /**
      * The VouchersUpdateResponseBodyLoyaltyCard model constructor.
-     * @property {module:model/VouchersUpdateResponseBodyLoyaltyCard}
+     * @property {VouchersUpdateResponseBodyLoyaltyCard}
      */
     VouchersUpdateResponseBodyLoyaltyCard,
 
     /**
      * The VouchersUpdateResponseBodyPublish model constructor.
-     * @property {module:model/VouchersUpdateResponseBodyPublish}
+     * @property {VouchersUpdateResponseBodyPublish}
      */
     VouchersUpdateResponseBodyPublish,
 
     /**
      * The VouchersUpdateResponseBodyRedemption model constructor.
-     * @property {module:model/VouchersUpdateResponseBodyRedemption}
+     * @property {VouchersUpdateResponseBodyRedemption}
      */
     VouchersUpdateResponseBodyRedemption,
 
     /**
     * The AsyncActionsApi service constructor.
-    * @property {module:api/AsyncActionsApi}
+    * @property {AsyncActionsApi}
     */
     AsyncActionsApi,
 
     /**
     * The BinApi service constructor.
-    * @property {module:api/BinApi}
+    * @property {BinApi}
     */
     BinApi,
 
     /**
     * The CampaignsApi service constructor.
-    * @property {module:api/CampaignsApi}
+    * @property {CampaignsApi}
     */
     CampaignsApi,
 
     /**
     * The CategoriesApi service constructor.
-    * @property {module:api/CategoriesApi}
+    * @property {CategoriesApi}
     */
     CategoriesApi,
 
     /**
     * The ClientSideApi service constructor.
-    * @property {module:api/ClientSideApi}
+    * @property {ClientSideApi}
     */
     ClientSideApi,
 
     /**
     * The CustomersApi service constructor.
-    * @property {module:api/CustomersApi}
+    * @property {CustomersApi}
     */
     CustomersApi,
 
     /**
     * The EventsApi service constructor.
-    * @property {module:api/EventsApi}
+    * @property {EventsApi}
     */
     EventsApi,
 
     /**
     * The ExportsApi service constructor.
-    * @property {module:api/ExportsApi}
+    * @property {ExportsApi}
     */
     ExportsApi,
 
     /**
     * The LocationsApi service constructor.
-    * @property {module:api/LocationsApi}
+    * @property {LocationsApi}
     */
     LocationsApi,
 
     /**
     * The LoyaltiesApi service constructor.
-    * @property {module:api/LoyaltiesApi}
+    * @property {LoyaltiesApi}
     */
     LoyaltiesApi,
 
     /**
     * The ManagementApi service constructor.
-    * @property {module:api/ManagementApi}
+    * @property {ManagementApi}
     */
     ManagementApi,
 
     /**
     * The MetadataSchemasApi service constructor.
-    * @property {module:api/MetadataSchemasApi}
+    * @property {MetadataSchemasApi}
     */
     MetadataSchemasApi,
 
     /**
     * The OAuthApi service constructor.
-    * @property {module:api/OAuthApi}
+    * @property {OAuthApi}
     */
     OAuthApi,
 
     /**
     * The OrdersApi service constructor.
-    * @property {module:api/OrdersApi}
+    * @property {OrdersApi}
     */
     OrdersApi,
 
     /**
     * The ProductCollectionsApi service constructor.
-    * @property {module:api/ProductCollectionsApi}
+    * @property {ProductCollectionsApi}
     */
     ProductCollectionsApi,
 
     /**
     * The ProductsApi service constructor.
-    * @property {module:api/ProductsApi}
+    * @property {ProductsApi}
     */
     ProductsApi,
 
     /**
     * The PromotionsApi service constructor.
-    * @property {module:api/PromotionsApi}
+    * @property {PromotionsApi}
     */
     PromotionsApi,
 
     /**
     * The PublicationsApi service constructor.
-    * @property {module:api/PublicationsApi}
+    * @property {PublicationsApi}
     */
     PublicationsApi,
 
     /**
     * The QualificationsApi service constructor.
-    * @property {module:api/QualificationsApi}
+    * @property {QualificationsApi}
     */
     QualificationsApi,
 
     /**
     * The RedemptionsApi service constructor.
-    * @property {module:api/RedemptionsApi}
+    * @property {RedemptionsApi}
     */
     RedemptionsApi,
 
     /**
     * The ReferralsApi service constructor.
-    * @property {module:api/ReferralsApi}
+    * @property {ReferralsApi}
     */
     ReferralsApi,
 
     /**
     * The RewardsApi service constructor.
-    * @property {module:api/RewardsApi}
+    * @property {RewardsApi}
     */
     RewardsApi,
 
     /**
     * The SegmentsApi service constructor.
-    * @property {module:api/SegmentsApi}
+    * @property {SegmentsApi}
     */
     SegmentsApi,
 
     /**
     * The TemplatesApi service constructor.
-    * @property {module:api/TemplatesApi}
+    * @property {TemplatesApi}
     */
     TemplatesApi,
 
     /**
     * The ValidationRulesApi service constructor.
-    * @property {module:api/ValidationRulesApi}
+    * @property {ValidationRulesApi}
     */
     ValidationRulesApi,
 
     /**
     * The ValidationsApi service constructor.
-    * @property {module:api/ValidationsApi}
+    * @property {ValidationsApi}
     */
     ValidationsApi,
 
     /**
     * The VouchersApi service constructor.
-    * @property {module:api/VouchersApi}
+    * @property {VouchersApi}
     */
     VouchersApi
 };

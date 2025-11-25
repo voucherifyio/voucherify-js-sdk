@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedeemableHolder model module.
  * @module model/RedeemableHolder
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedeemableHolder {
     /**
      * Constructs a new <code>RedeemableHolder</code>.
      * Single customer&#39;s redeemable
-     * @alias module:model/RedeemableHolder
+     * @alias RedeemableHolder
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RedeemableHolder {
     /**
      * Constructs a <code>RedeemableHolder</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedeemableHolder} obj Optional instance to populate.
-     * @returns {module:model/RedeemableHolder} The populated <code>RedeemableHolder</code> instance.
+     * @param {Partial<RedeemableHolder>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedeemableHolder} [obj] Optional instance to populate.
+     * @returns {RedeemableHolder} The populated <code>RedeemableHolder</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -89,7 +88,7 @@ class RedeemableHolder {
 
     /**
      * Validates the JSON data with respect to <code>RedeemableHolder</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedeemableHolder>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedeemableHolder</code>.
      */
     static validateJSON(data) {
@@ -139,159 +138,159 @@ class RedeemableHolder {
 
 
 /**
- * Unique identifier of the redeemable holder.
- * @member {String} 
- */
+    * Unique identifier of the redeemable holder.
+    * @type {String | undefined}
+    */
 RedeemableHolder.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RedeemableHolder.prototype['created_at'] = undefined;
 
 /**
- * Identifier of the redeemable item.
- * @member {String} 
- */
+    * Identifier of the redeemable item.
+    * @type {String | undefined}
+    */
 RedeemableHolder.prototype['redeemable_id'] = undefined;
 
 /**
- * Type of the redeemable.
- * @member {String} 
- */
+    * Type of the redeemable.
+    * @type {String | undefined}
+    */
 RedeemableHolder.prototype['redeemable_object'] = undefined;
 
 /**
- * Unique identifier of the customer.
- * @member {String} 
- */
+    * Unique identifier of the customer.
+    * @type {String | undefined}
+    */
 RedeemableHolder.prototype['customer_id'] = undefined;
 
 /**
- * Role of the holder.
- * @member {module:model/RedeemableHolder.HolderRoleEnum} 
- */
+    * Role of the holder.
+    * @type {(keyof typeof RedeemableHolder.HolderRoleEnum) | undefined}
+    */
 RedeemableHolder.prototype['holder_role'] = undefined;
 
 /**
- * Unique identifier of the campaign as assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the campaign as assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RedeemableHolder.prototype['campaign_id'] = undefined;
 
 /**
- * Defines the type of the campaign.
- * @member {module:model/RedeemableHolder.CampaignTypeEnum} 
- * @default 'REFERRAL_PROGRAM'
- */
+    * Defines the type of the campaign.
+    * @type {(keyof typeof RedeemableHolder.CampaignTypeEnum) | undefined}
+    * @default 'REFERRAL_PROGRAM'
+    */
 RedeemableHolder.prototype['campaign_type'] = 'REFERRAL_PROGRAM';
 
 /**
- * Defines the type of the voucher.
- * @member {module:model/RedeemableHolder.VoucherTypeEnum} 
- */
+    * Defines the type of the voucher.
+    * @type {(keyof typeof RedeemableHolder.VoucherTypeEnum) | undefined}
+    */
 RedeemableHolder.prototype['voucher_type'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a redeemable holder. The metadata object stores all custom attributes assigned to the `redeemable_holder` object.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a redeemable holder. The metadata object stores all custom attributes assigned to the `redeemable_holder` object.
+    * @type {Object | undefined}
+    */
 RedeemableHolder.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/RedeemableHolder.ObjectEnum} 
- * @default 'redeemable_holder'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof RedeemableHolder.ObjectEnum) | undefined}
+    * @default 'redeemable_holder'
+    */
 RedeemableHolder.prototype['object'] = 'redeemable_holder';
 
 
 
 
 
-/**
- * Allowed values for the <code>holder_role</code> property.
- * @enum {String}
- * @readonly
- */
-RedeemableHolder['HolderRoleEnum'] = {
+    /**
+     * Allowed values for the <code>holder_role</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RedeemableHolder['HolderRoleEnum'] = {
+    
+        /**
+         * value: "OWNER"
+         * @constant
+         */
+        "OWNER": "OWNER",
+    
+        /**
+         * value: "REFERRER"
+         * @constant
+         */
+        "REFERRER": "REFERRER",
+    
+        /**
+         * value: "REFEREE"
+         * @constant
+         */
+        "REFEREE": "REFEREE"    
+    };
+
 
     /**
-     * value: "OWNER"
-     * @constant
+     * Allowed values for the <code>campaign_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "OWNER": "OWNER",
+    RedeemableHolder['CampaignTypeEnum'] = {
+    
+        /**
+         * value: "REFERRAL_PROGRAM"
+         * @constant
+         */
+        "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"    
+    };
+
 
     /**
-     * value: "REFERRER"
-     * @constant
+     * Allowed values for the <code>voucher_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "REFERRER": "REFERRER",
+    RedeemableHolder['VoucherTypeEnum'] = {
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
+
 
     /**
-     * value: "REFEREE"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "REFEREE": "REFEREE"
-};
-
-
-/**
- * Allowed values for the <code>campaign_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedeemableHolder['CampaignTypeEnum'] = {
-
-    /**
-     * value: "REFERRAL_PROGRAM"
-     * @constant
-     */
-    "REFERRAL_PROGRAM": "REFERRAL_PROGRAM"
-};
-
-
-/**
- * Allowed values for the <code>voucher_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedeemableHolder['VoucherTypeEnum'] = {
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RedeemableHolder['ObjectEnum'] = {
-
-    /**
-     * value: "redeemable_holder"
-     * @constant
-     */
-    "redeemable_holder": "redeemable_holder"
-};
+    RedeemableHolder['ObjectEnum'] = {
+    
+        /**
+         * value: "redeemable_holder"
+         * @constant
+         */
+        "redeemable_holder": "redeemable_holder"    
+    };
 
 
 

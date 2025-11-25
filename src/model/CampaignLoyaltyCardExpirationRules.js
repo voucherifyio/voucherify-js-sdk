@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignLoyaltyCardExpirationRules model module.
  * @module model/CampaignLoyaltyCardExpirationRules
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignLoyaltyCardExpirationRules {
     /**
      * Constructs a new <code>CampaignLoyaltyCardExpirationRules</code>.
      * Defines the loyalty point expiration rule. This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
-     * @alias module:model/CampaignLoyaltyCardExpirationRules
+     * @alias CampaignLoyaltyCardExpirationRules
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignLoyaltyCardExpirationRules {
     /**
      * Constructs a <code>CampaignLoyaltyCardExpirationRules</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignLoyaltyCardExpirationRules} obj Optional instance to populate.
-     * @returns {module:model/CampaignLoyaltyCardExpirationRules} The populated <code>CampaignLoyaltyCardExpirationRules</code> instance.
+     * @param {Partial<CampaignLoyaltyCardExpirationRules>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignLoyaltyCardExpirationRules} [obj] Optional instance to populate.
+     * @returns {CampaignLoyaltyCardExpirationRules} The populated <code>CampaignLoyaltyCardExpirationRules</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class CampaignLoyaltyCardExpirationRules {
 
     /**
      * Validates the JSON data with respect to <code>CampaignLoyaltyCardExpirationRules</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignLoyaltyCardExpirationRules>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignLoyaltyCardExpirationRules</code>.
      */
     static validateJSON(data) {
@@ -94,103 +93,103 @@ class CampaignLoyaltyCardExpirationRules {
 
 
 /**
- * Type of period. Can be set for `MONTH` or `FIXED_DAY_OF_YEAR`. `MONTH` requires the `period_value` field. `FIXED_DAY_OF_YEAR` requires the `fixed_month` and `fixed_day` fields.
- * @member {module:model/CampaignLoyaltyCardExpirationRules.PeriodTypeEnum} 
- */
+    * Type of period. Can be set for `MONTH` or `FIXED_DAY_OF_YEAR`. `MONTH` requires the `period_value` field. `FIXED_DAY_OF_YEAR` requires the `fixed_month` and `fixed_day` fields.
+    * @type {(keyof typeof CampaignLoyaltyCardExpirationRules.PeriodTypeEnum) | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['period_type'] = undefined;
 
 /**
- * Value of the period. Required for the `period_type: MONTH`.
- * @member {Number} 
- */
+    * Value of the period. Required for the `period_type: MONTH`.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['period_value'] = undefined;
 
 /**
- * Type of rounding of the expiration period. Optional for the `period_type: MONTH`.
- * @member {module:model/CampaignLoyaltyCardExpirationRules.RoundingTypeEnum} 
- */
+    * Type of rounding of the expiration period. Optional for the `period_type: MONTH`.
+    * @type {(keyof typeof CampaignLoyaltyCardExpirationRules.RoundingTypeEnum) | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['rounding_type'] = undefined;
 
 /**
- * Value of rounding of the expiration period. Required for the `rounding_type`.
- * @member {Number} 
- */
+    * Value of rounding of the expiration period. Required for the `rounding_type`.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['rounding_value'] = undefined;
 
 /**
- * Determines the month when the points expire; `1` is January, `2` is February, and so on. Required for the `period_type: FIXED_DAY_OF_YEAR`.
- * @member {Number} 
- */
+    * Determines the month when the points expire; `1` is January, `2` is February, and so on. Required for the `period_type: FIXED_DAY_OF_YEAR`.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['fixed_month'] = undefined;
 
 /**
- * Determines the day of the month when the points expire. Required for the `period_type: FIXED_DAY_OF_YEAR`.
- * @member {Number} 
- */
+    * Determines the day of the month when the points expire. Required for the `period_type: FIXED_DAY_OF_YEAR`.
+    * @type {Number | undefined}
+    */
 CampaignLoyaltyCardExpirationRules.prototype['fixed_day'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>period_type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignLoyaltyCardExpirationRules['PeriodTypeEnum'] = {
+    /**
+     * Allowed values for the <code>period_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    CampaignLoyaltyCardExpirationRules['PeriodTypeEnum'] = {
+    
+        /**
+         * value: "FIXED_DAY_OF_YEAR"
+         * @constant
+         */
+        "FIXED_DAY_OF_YEAR": "FIXED_DAY_OF_YEAR",
+    
+        /**
+         * value: "MONTH"
+         * @constant
+         */
+        "MONTH": "MONTH"    
+    };
+
 
     /**
-     * value: "FIXED_DAY_OF_YEAR"
-     * @constant
+     * Allowed values for the <code>rounding_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "FIXED_DAY_OF_YEAR": "FIXED_DAY_OF_YEAR",
-
-    /**
-     * value: "MONTH"
-     * @constant
-     */
-    "MONTH": "MONTH"
-};
-
-
-/**
- * Allowed values for the <code>rounding_type</code> property.
- * @enum {String}
- * @readonly
- */
-CampaignLoyaltyCardExpirationRules['RoundingTypeEnum'] = {
-
-    /**
-     * value: "END_OF_MONTH"
-     * @constant
-     */
-    "END_OF_MONTH": "END_OF_MONTH",
-
-    /**
-     * value: "END_OF_QUARTER"
-     * @constant
-     */
-    "END_OF_QUARTER": "END_OF_QUARTER",
-
-    /**
-     * value: "END_OF_HALF_YEAR"
-     * @constant
-     */
-    "END_OF_HALF_YEAR": "END_OF_HALF_YEAR",
-
-    /**
-     * value: "END_OF_YEAR"
-     * @constant
-     */
-    "END_OF_YEAR": "END_OF_YEAR",
-
-    /**
-     * value: "PARTICULAR_MONTH"
-     * @constant
-     */
-    "PARTICULAR_MONTH": "PARTICULAR_MONTH"
-};
+    CampaignLoyaltyCardExpirationRules['RoundingTypeEnum'] = {
+    
+        /**
+         * value: "END_OF_MONTH"
+         * @constant
+         */
+        "END_OF_MONTH": "END_OF_MONTH",
+    
+        /**
+         * value: "END_OF_QUARTER"
+         * @constant
+         */
+        "END_OF_QUARTER": "END_OF_QUARTER",
+    
+        /**
+         * value: "END_OF_HALF_YEAR"
+         * @constant
+         */
+        "END_OF_HALF_YEAR": "END_OF_HALF_YEAR",
+    
+        /**
+         * value: "END_OF_YEAR"
+         * @constant
+         */
+        "END_OF_YEAR": "END_OF_YEAR",
+    
+        /**
+         * value: "PARTICULAR_MONTH"
+         * @constant
+         */
+        "PARTICULAR_MONTH": "PARTICULAR_MONTH"    
+    };
 
 
 

@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ManagementProjectLimitsApiCallsItem from './ManagementProjectLimitsApiCallsItem';
 import ManagementProjectLimitsBulkApiCallsItem from './ManagementProjectLimitsBulkApiCallsItem';
-
 /**
  * The ManagementProjectLimits model module.
  * @module model/ManagementProjectLimits
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectLimits {
     /**
      * Constructs a new <code>ManagementProjectLimits</code>.
      * Determines additional limits set on a given project, e.g. the Sandbox project. If no limits are returned, the limits set for the whole organization apply.
-     * @alias module:model/ManagementProjectLimits
+     * @alias ManagementProjectLimits
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectLimits {
     /**
      * Constructs a <code>ManagementProjectLimits</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectLimits} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectLimits} The populated <code>ManagementProjectLimits</code> instance.
+     * @param {Partial<ManagementProjectLimits>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectLimits} [obj] Optional instance to populate.
+     * @returns {ManagementProjectLimits} The populated <code>ManagementProjectLimits</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ManagementProjectLimits {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectLimits</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectLimits>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectLimits</code>.
      */
     static validateJSON(data) {
@@ -96,13 +95,13 @@ class ManagementProjectLimits {
 
 
 /**
- * @member {Array.<module:model/ManagementProjectLimitsApiCallsItem>} 
- */
+    * @type {Array.<ManagementProjectLimitsApiCallsItem> | undefined}
+    */
 ManagementProjectLimits.prototype['api_calls'] = undefined;
 
 /**
- * @member {Array.<module:model/ManagementProjectLimitsBulkApiCallsItem>} 
- */
+    * @type {Array.<ManagementProjectLimitsBulkApiCallsItem> | undefined}
+    */
 ManagementProjectLimits.prototype['bulk_api_calls'] = undefined;
 
 

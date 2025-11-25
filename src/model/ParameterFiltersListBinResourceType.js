@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListBinResourceTypeConditions from './ParameterFiltersListBinResourceTypeConditions';
-
 /**
  * The ParameterFiltersListBinResourceType model module.
  * @module model/ParameterFiltersListBinResourceType
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListBinResourceType {
     /**
      * Constructs a new <code>ParameterFiltersListBinResourceType</code>.
      * Resource type of the resource moved to the bin.
-     * @alias module:model/ParameterFiltersListBinResourceType
+     * @alias ParameterFiltersListBinResourceType
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListBinResourceType {
     /**
      * Constructs a <code>ParameterFiltersListBinResourceType</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListBinResourceType} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListBinResourceType} The populated <code>ParameterFiltersListBinResourceType</code> instance.
+     * @param {Partial<ParameterFiltersListBinResourceType>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListBinResourceType} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListBinResourceType} The populated <code>ParameterFiltersListBinResourceType</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListBinResourceType {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListBinResourceType</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListBinResourceType>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListBinResourceType</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListBinResourceType {
 
 
 /**
- * @member {module:model/ParameterFiltersListBinResourceTypeConditions} 
- */
+    * @type {ParameterFiltersListBinResourceTypeConditions | undefined}
+    */
 ParameterFiltersListBinResourceType.prototype['conditions'] = undefined;
 
 

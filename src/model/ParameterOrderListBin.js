@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListBin.
-* @module model/ParameterOrderListBin
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListBin {
+ * Enum class ParameterOrderListBin.
+ * @module model/ParameterOrderListBin
+ * @version 3.0.1
+ */
+class ParameterOrderListBin {
     
-        /**
-         * value: "id"
-         * @constant
-         */
-        "id" = "id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "id" = "id";
     
-        /**
-         * value: "-id"
-         * @constant
-         */
-        "-id" = "-id";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-id" = "-id";
     
 
     /**
-    * Returns a <code>ParameterOrderListBin</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListBin} The enum <code>ParameterOrderListBin</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListBin, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListBin[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListBin[key];
     }
 }
+
+export default ParameterOrderListBin;
 

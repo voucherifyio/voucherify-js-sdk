@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RewardsCreateRequestBodyAttributes model module.
  * @module model/RewardsCreateRequestBodyAttributes
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsCreateRequestBodyAttributes {
     /**
      * Constructs a new <code>RewardsCreateRequestBodyAttributes</code>.
      * Attributes of a material reward.
-     * @alias module:model/RewardsCreateRequestBodyAttributes
+     * @alias RewardsCreateRequestBodyAttributes
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RewardsCreateRequestBodyAttributes {
     /**
      * Constructs a <code>RewardsCreateRequestBodyAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsCreateRequestBodyAttributes} obj Optional instance to populate.
-     * @returns {module:model/RewardsCreateRequestBodyAttributes} The populated <code>RewardsCreateRequestBodyAttributes</code> instance.
+     * @param {Partial<RewardsCreateRequestBodyAttributes>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsCreateRequestBodyAttributes} [obj] Optional instance to populate.
+     * @returns {RewardsCreateRequestBodyAttributes} The populated <code>RewardsCreateRequestBodyAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RewardsCreateRequestBodyAttributes {
 
     /**
      * Validates the JSON data with respect to <code>RewardsCreateRequestBodyAttributes</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsCreateRequestBodyAttributes>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsCreateRequestBodyAttributes</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class RewardsCreateRequestBodyAttributes {
 
 
 /**
- * HTTPS URL pointing to a .png or .jpg file.
- * @member {String} 
- */
+    * HTTPS URL pointing to a .png or .jpg file.
+    * @type {String | undefined}
+    */
 RewardsCreateRequestBodyAttributes.prototype['image_url'] = undefined;
 
 /**
- * Description of a material reward.
- * @member {String} 
- */
+    * Description of a material reward.
+    * @type {String | undefined}
+    */
 RewardsCreateRequestBodyAttributes.prototype['description'] = undefined;
 
 

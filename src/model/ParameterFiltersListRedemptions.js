@@ -23,16 +23,15 @@ import ParameterFiltersListRedemptionsRelatedObjectParentId from './ParameterFil
 import ParameterFiltersListRedemptionsResult from './ParameterFiltersListRedemptionsResult';
 import ParameterFiltersListRedemptionsUserLogin from './ParameterFiltersListRedemptionsUserLogin';
 import ParameterFiltersListRedemptionsVoucherCode from './ParameterFiltersListRedemptionsVoucherCode';
-
 /**
  * The ParameterFiltersListRedemptions model module.
  * @module model/ParameterFiltersListRedemptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListRedemptions {
     /**
      * Constructs a new <code>ParameterFiltersListRedemptions</code>.
-     * @alias module:model/ParameterFiltersListRedemptions
+     * @alias ParameterFiltersListRedemptions
      */
     constructor() { 
         
@@ -50,9 +49,9 @@ class ParameterFiltersListRedemptions {
     /**
      * Constructs a <code>ParameterFiltersListRedemptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListRedemptions} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListRedemptions} The populated <code>ParameterFiltersListRedemptions</code> instance.
+     * @param {Partial<ParameterFiltersListRedemptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListRedemptions} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListRedemptions} The populated <code>ParameterFiltersListRedemptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -97,7 +96,7 @@ class ParameterFiltersListRedemptions {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListRedemptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListRedemptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListRedemptions</code>.
      */
     static validateJSON(data) {
@@ -151,58 +150,58 @@ class ParameterFiltersListRedemptions {
 
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsVoucherCode} 
- */
+    * @type {ParameterFiltersListRedemptionsVoucherCode | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['voucher_code'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsRelatedObjectId} 
- */
+    * @type {ParameterFiltersListRedemptionsRelatedObjectId | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['related_object_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsRelatedObjectParentId} 
- */
+    * @type {ParameterFiltersListRedemptionsRelatedObjectParentId | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['related_object_parent_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsParentRedemptionId} 
- */
+    * @type {ParameterFiltersListRedemptionsParentRedemptionId | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['parent_redemption_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsFailureCode} 
- */
+    * @type {ParameterFiltersListRedemptionsFailureCode | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['failure_code'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsResult} 
- */
+    * @type {ParameterFiltersListRedemptionsResult | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['result'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsObject} 
- */
+    * @type {ParameterFiltersListRedemptionsObject | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['object'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsCustomerId} 
- */
+    * @type {ParameterFiltersListRedemptionsCustomerId | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['customer_id'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsCampaignName} 
- */
+    * @type {ParameterFiltersListRedemptionsCampaignName | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['campaign_name'] = undefined;
 
 /**
- * @member {module:model/ParameterFiltersListRedemptionsUserLogin} 
- */
+    * @type {ParameterFiltersListRedemptionsUserLogin | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['user_login'] = undefined;
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 ParameterFiltersListRedemptions.prototype['junction'] = undefined;
 
 

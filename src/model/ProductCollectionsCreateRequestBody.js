@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ProductCollectionsCreateRequestBodyProductsItem from './ProductCollectionsCreateRequestBodyProductsItem';
-
 /**
  * The ProductCollectionsCreateRequestBody model module.
  * @module model/ProductCollectionsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ProductCollectionsCreateRequestBody {
     /**
      * Constructs a new <code>ProductCollectionsCreateRequestBody</code>.
-     * @alias module:model/ProductCollectionsCreateRequestBody
+     * @alias ProductCollectionsCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ProductCollectionsCreateRequestBody {
     /**
      * Constructs a <code>ProductCollectionsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ProductCollectionsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ProductCollectionsCreateRequestBody} The populated <code>ProductCollectionsCreateRequestBody</code> instance.
+     * @param {Partial<ProductCollectionsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ProductCollectionsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ProductCollectionsCreateRequestBody} The populated <code>ProductCollectionsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class ProductCollectionsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ProductCollectionsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ProductCollectionsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ProductCollectionsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -99,47 +98,47 @@ class ProductCollectionsCreateRequestBody {
 
 
 /**
- * Show that the product collection is static (manually selected products).
- * @member {module:model/ProductCollectionsCreateRequestBody.TypeEnum} 
- * @default 'STATIC'
- */
+    * Show that the product collection is static (manually selected products).
+    * @type {(keyof typeof ProductCollectionsCreateRequestBody.TypeEnum) | undefined}
+    * @default 'STATIC'
+    */
 ProductCollectionsCreateRequestBody.prototype['type'] = 'STATIC';
 
 /**
- * Unique user-defined product collection name.
- * @member {String} 
- */
+    * Unique user-defined product collection name.
+    * @type {String | undefined}
+    */
 ProductCollectionsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * Defines a set of products for a `STATIC` product collection type.
- * @member {Array.<module:model/ProductCollectionsCreateRequestBodyProductsItem>} 
- */
+    * Defines a set of products for a `STATIC` product collection type.
+    * @type {Array.<ProductCollectionsCreateRequestBodyProductsItem> | undefined}
+    */
 ProductCollectionsCreateRequestBody.prototype['products'] = undefined;
 
 /**
- * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
- * @member {Object} 
- */
+    * Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
+    * @type {Object | undefined}
+    */
 ProductCollectionsCreateRequestBody.prototype['filter'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ProductCollectionsCreateRequestBody['TypeEnum'] = {
-
     /**
-     * value: "STATIC"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "STATIC": "STATIC"
-};
+    ProductCollectionsCreateRequestBody['TypeEnum'] = {
+    
+        /**
+         * value: "STATIC"
+         * @constant
+         */
+        "STATIC": "STATIC"    
+    };
 
 
 

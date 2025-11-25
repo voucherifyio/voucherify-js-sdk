@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ClientValidationsValidateRequestBodyOptions model module.
  * @module model/ClientValidationsValidateRequestBodyOptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientValidationsValidateRequestBodyOptions {
     /**
      * Constructs a new <code>ClientValidationsValidateRequestBodyOptions</code>.
      * Configure parameters returned in the response.
-     * @alias module:model/ClientValidationsValidateRequestBodyOptions
+     * @alias ClientValidationsValidateRequestBodyOptions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ClientValidationsValidateRequestBodyOptions {
     /**
      * Constructs a <code>ClientValidationsValidateRequestBodyOptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientValidationsValidateRequestBodyOptions} obj Optional instance to populate.
-     * @returns {module:model/ClientValidationsValidateRequestBodyOptions} The populated <code>ClientValidationsValidateRequestBodyOptions</code> instance.
+     * @param {Partial<ClientValidationsValidateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientValidationsValidateRequestBodyOptions} [obj] Optional instance to populate.
+     * @returns {ClientValidationsValidateRequestBodyOptions} The populated <code>ClientValidationsValidateRequestBodyOptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ClientValidationsValidateRequestBodyOptions {
 
     /**
      * Validates the JSON data with respect to <code>ClientValidationsValidateRequestBodyOptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientValidationsValidateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientValidationsValidateRequestBodyOptions</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class ClientValidationsValidateRequestBodyOptions {
 
 
 /**
- * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. |
- * @member {Array.<module:model/ClientValidationsValidateRequestBodyOptions.ExpandEnum>} 
- */
+    * The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"order\"] | - Same response as fallback response (without an options object).<br />- Order data with calculated discounts are listed in each child redeemable object.<br />- Metadata not included for each discount type. | | [\"redeemable\"] | Expands redeemable objects by including `metadata` for each discount type. | | [\"order\", \"redeemable\"] | - Order data with calculated discounts are listed in each child redeemable object.<br />- Includes `metadata` for each discount type. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. |
+    * @type {(Array<keyof typeof ClientValidationsValidateRequestBodyOptions.ExpandEnum>) | undefined}
+    */
 ClientValidationsValidateRequestBodyOptions.prototype['expand'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The QualificationsOptionFiltersHolderRoleConditions model module.
  * @module model/QualificationsOptionFiltersHolderRoleConditions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFiltersHolderRoleConditions {
     /**
      * Constructs a new <code>QualificationsOptionFiltersHolderRoleConditions</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/QualificationsOptionFiltersHolderRoleConditions
+     * @alias QualificationsOptionFiltersHolderRoleConditions
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class QualificationsOptionFiltersHolderRoleConditions {
     /**
      * Constructs a <code>QualificationsOptionFiltersHolderRoleConditions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFiltersHolderRoleConditions} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFiltersHolderRoleConditions} The populated <code>QualificationsOptionFiltersHolderRoleConditions</code> instance.
+     * @param {Partial<QualificationsOptionFiltersHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFiltersHolderRoleConditions} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFiltersHolderRoleConditions} The populated <code>QualificationsOptionFiltersHolderRoleConditions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class QualificationsOptionFiltersHolderRoleConditions {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFiltersHolderRoleConditions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFiltersHolderRoleConditions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFiltersHolderRoleConditions</code>.
      */
     static validateJSON(data) {
@@ -96,27 +95,27 @@ class QualificationsOptionFiltersHolderRoleConditions {
 
 
 /**
- * Will return records only for the first value in the array.
- * @member {Array.<module:model/QualificationsOptionFiltersHolderRoleConditions.IsEnum>} 
- */
+    * Will return records only for the first value in the array.
+    * @type {(Array<keyof typeof QualificationsOptionFiltersHolderRoleConditions.IsEnum>) | undefined}
+    */
 QualificationsOptionFiltersHolderRoleConditions.prototype['$is'] = undefined;
 
 /**
- * Will return records only for the first value in the array.
- * @member {Array.<module:model/QualificationsOptionFiltersHolderRoleConditions.IsNotEnum>} 
- */
+    * Will return records only for the first value in the array.
+    * @type {(Array<keyof typeof QualificationsOptionFiltersHolderRoleConditions.IsNotEnum>) | undefined}
+    */
 QualificationsOptionFiltersHolderRoleConditions.prototype['$is_not'] = undefined;
 
 /**
- * Will return records for the values in the array.
- * @member {Array.<module:model/QualificationsOptionFiltersHolderRoleConditions.InEnum>} 
- */
+    * Will return records for the values in the array.
+    * @type {(Array<keyof typeof QualificationsOptionFiltersHolderRoleConditions.InEnum>) | undefined}
+    */
 QualificationsOptionFiltersHolderRoleConditions.prototype['$in'] = undefined;
 
 /**
- * Will return records for the values in the array.
- * @member {Array.<module:model/QualificationsOptionFiltersHolderRoleConditions.NotInEnum>} 
- */
+    * Will return records for the values in the array.
+    * @type {(Array<keyof typeof QualificationsOptionFiltersHolderRoleConditions.NotInEnum>) | undefined}
+    */
 QualificationsOptionFiltersHolderRoleConditions.prototype['$not_in'] = undefined;
 
 

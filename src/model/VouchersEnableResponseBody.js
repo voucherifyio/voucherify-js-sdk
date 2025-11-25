@@ -22,17 +22,16 @@ import VouchersEnableResponseBodyGift from './VouchersEnableResponseBodyGift';
 import VouchersEnableResponseBodyLoyaltyCard from './VouchersEnableResponseBodyLoyaltyCard';
 import VouchersEnableResponseBodyPublish from './VouchersEnableResponseBodyPublish';
 import VouchersEnableResponseBodyRedemption from './VouchersEnableResponseBodyRedemption';
-
 /**
  * The VouchersEnableResponseBody model module.
  * @module model/VouchersEnableResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersEnableResponseBody {
     /**
      * Constructs a new <code>VouchersEnableResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/vouchers/{code}/enable&#x60;.
-     * @alias module:model/VouchersEnableResponseBody
+     * @alias VouchersEnableResponseBody
      */
     constructor() { 
         
@@ -51,9 +50,9 @@ class VouchersEnableResponseBody {
     /**
      * Constructs a <code>VouchersEnableResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersEnableResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersEnableResponseBody} The populated <code>VouchersEnableResponseBody</code> instance.
+     * @param {Partial<VouchersEnableResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersEnableResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersEnableResponseBody} The populated <code>VouchersEnableResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -152,7 +151,7 @@ class VouchersEnableResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersEnableResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersEnableResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersEnableResponseBody</code>.
      */
     static validateJSON(data) {
@@ -260,200 +259,200 @@ class VouchersEnableResponseBody {
 
 
 /**
- * Assigned by the Voucherify API, identifies the voucher.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the voucher.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['id'] = undefined;
 
 /**
- * A code that identifies a voucher. Pattern can use all letters of the English alphabet, Arabic numerals, and special characters.
- * @member {String} 
- */
+    * A code that identifies a voucher. Pattern can use all letters of the English alphabet, Arabic numerals, and special characters.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['code'] = undefined;
 
 /**
- * A unique campaign name, identifies the voucher's parent campaign.
- * @member {String} 
- */
+    * A unique campaign name, identifies the voucher's parent campaign.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['campaign'] = undefined;
 
 /**
- * Assigned by the Voucherify API, identifies the voucher's parent campaign.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the voucher's parent campaign.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['campaign_id'] = undefined;
 
 /**
- * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
- * @member {String} 
- */
+    * Tag defining the category that this voucher belongs to. Useful when listing vouchers using the List Vouchers endpoint.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['category'] = undefined;
 
 /**
- * Unique category ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique category ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['category_id'] = undefined;
 
 /**
- * Defines the type of the voucher. 
- * @member {module:model/VouchersEnableResponseBody.TypeEnum} 
- */
+    * Defines the type of the voucher. 
+    * @type {(keyof typeof VouchersEnableResponseBody.TypeEnum) | undefined}
+    */
 VouchersEnableResponseBody.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 VouchersEnableResponseBody.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/VouchersEnableResponseBodyGift} 
- */
+    * @type {VouchersEnableResponseBodyGift | undefined}
+    */
 VouchersEnableResponseBody.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/VouchersEnableResponseBodyLoyaltyCard} 
- */
+    * @type {VouchersEnableResponseBodyLoyaltyCard | undefined}
+    */
 VouchersEnableResponseBody.prototype['loyalty_card'] = undefined;
 
 /**
- * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 VouchersEnableResponseBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 VouchersEnableResponseBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 VouchersEnableResponseBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/VouchersEnableResponseBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof VouchersEnableResponseBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 VouchersEnableResponseBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 VouchersEnableResponseBody.prototype['validity_hours'] = undefined;
 
 /**
- * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
- * @member {Boolean} 
- */
+    * A flag to toggle the voucher on or off. You can disable a voucher even though it's within the active period defined by the `start_date` and `expiration_date`.    - `true` indicates an *active* voucher - `false` indicates an *inactive* voucher
+    * @type {Boolean | undefined}
+    */
 VouchersEnableResponseBody.prototype['active'] = undefined;
 
 /**
- * An optional field to keep any extra textual information about the code such as a code description and details.
- * @member {String} 
- */
+    * An optional field to keep any extra textual information about the code such as a code description and details.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['additional_info'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
+    * @type {Object | undefined}
+    */
 VouchersEnableResponseBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/VoucherAssets} 
- */
+    * @type {VoucherAssets | undefined}
+    */
 VouchersEnableResponseBody.prototype['assets'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 VouchersEnableResponseBody.prototype['is_referral_code'] = undefined;
 
 /**
- * Timestamp representing the date and time when the voucher was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the voucher was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 VouchersEnableResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 VouchersEnableResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['holder_id'] = undefined;
 
 /**
- * Unique identifier of the referring person.
- * @member {String} 
- */
+    * Unique identifier of the referring person.
+    * @type {String | undefined}
+    */
 VouchersEnableResponseBody.prototype['referrer_id'] = undefined;
 
 /**
- * The type of the object represented by JSON. Default is `voucher`.
- * @member {String} 
- * @default 'voucher'
- */
+    * The type of the object represented by JSON. Default is `voucher`.
+    * @type {String | undefined}
+    * @default 'voucher'
+    */
 VouchersEnableResponseBody.prototype['object'] = 'voucher';
 
 /**
- * @member {module:model/VouchersEnableResponseBodyPublish} 
- */
+    * @type {VouchersEnableResponseBodyPublish | undefined}
+    */
 VouchersEnableResponseBody.prototype['publish'] = undefined;
 
 /**
- * @member {module:model/VouchersEnableResponseBodyRedemption} 
- */
+    * @type {VouchersEnableResponseBodyRedemption | undefined}
+    */
 VouchersEnableResponseBody.prototype['redemption'] = undefined;
 
 /**
- * Contains details about the category.
- * @member {Array.<module:model/Category>} 
- */
+    * Contains details about the category.
+    * @type {Array.<Category> | undefined}
+    */
 VouchersEnableResponseBody.prototype['categories'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesAssignmentsList} 
- */
+    * @type {ValidationRulesAssignmentsList | undefined}
+    */
 VouchersEnableResponseBody.prototype['validation_rules_assignments'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersEnableResponseBody['TypeEnum'] = {
-
     /**
-     * value: "GIFT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "GIFT_VOUCHER": "GIFT_VOUCHER",
-
-    /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
-     */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD"
-};
+    VouchersEnableResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER",
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD"    
+    };
 
 
 /**

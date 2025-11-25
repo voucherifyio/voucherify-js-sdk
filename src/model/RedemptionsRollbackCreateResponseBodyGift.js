@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsRollbackCreateResponseBodyGift model module.
  * @module model/RedemptionsRollbackCreateResponseBodyGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRollbackCreateResponseBodyGift {
     /**
      * Constructs a new <code>RedemptionsRollbackCreateResponseBodyGift</code>.
      * Contains the amount returned to the gift card in the redemption rollback. It is expressed as a negative integer.
-     * @alias module:model/RedemptionsRollbackCreateResponseBodyGift
+     * @alias RedemptionsRollbackCreateResponseBodyGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsRollbackCreateResponseBodyGift {
     /**
      * Constructs a <code>RedemptionsRollbackCreateResponseBodyGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRollbackCreateResponseBodyGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRollbackCreateResponseBodyGift} The populated <code>RedemptionsRollbackCreateResponseBodyGift</code> instance.
+     * @param {Partial<RedemptionsRollbackCreateResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRollbackCreateResponseBodyGift} [obj] Optional instance to populate.
+     * @returns {RedemptionsRollbackCreateResponseBodyGift} The populated <code>RedemptionsRollbackCreateResponseBodyGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionsRollbackCreateResponseBodyGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRollbackCreateResponseBodyGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRollbackCreateResponseBodyGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRollbackCreateResponseBodyGift</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class RedemptionsRollbackCreateResponseBodyGift {
 
 
 /**
- * Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
- * @member {Number} 
- */
+    * Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
+    * @type {Number | undefined}
+    */
 RedemptionsRollbackCreateResponseBodyGift.prototype['amount'] = undefined;
 
 

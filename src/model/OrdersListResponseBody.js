@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import OrdersListResponseBodyOrdersItem from './OrdersListResponseBodyOrdersItem';
-
 /**
  * The OrdersListResponseBody model module.
  * @module model/OrdersListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersListResponseBody {
     /**
      * Constructs a new <code>OrdersListResponseBody</code>.
      * Response body schema representing **GET** &#x60;v1/orders&#x60;.
-     * @alias module:model/OrdersListResponseBody
+     * @alias OrdersListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class OrdersListResponseBody {
     /**
      * Constructs a <code>OrdersListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/OrdersListResponseBody} The populated <code>OrdersListResponseBody</code> instance.
+     * @param {Partial<OrdersListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersListResponseBody} [obj] Optional instance to populate.
+     * @returns {OrdersListResponseBody} The populated <code>OrdersListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class OrdersListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>OrdersListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class OrdersListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about orders in a dictionary.
- * @member {module:model/OrdersListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about orders in a dictionary.
+    * @type {(keyof typeof OrdersListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 OrdersListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of order objects.
- * @member {module:model/OrdersListResponseBody.DataRefEnum} 
- * @default 'orders'
- */
+    * Identifies the name of the attribute that contains the array of order objects.
+    * @type {(keyof typeof OrdersListResponseBody.DataRefEnum) | undefined}
+    * @default 'orders'
+    */
 OrdersListResponseBody.prototype['data_ref'] = 'orders';
 
 /**
- * Contains array of order objects.
- * @member {Array.<module:model/OrdersListResponseBodyOrdersItem>} 
- */
+    * Contains array of order objects.
+    * @type {Array.<OrdersListResponseBodyOrdersItem> | undefined}
+    */
 OrdersListResponseBody.prototype['orders'] = undefined;
 
 /**
- * Total number of orders.
- * @member {Number} 
- */
+    * Total number of orders.
+    * @type {Number | undefined}
+    */
 OrdersListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    OrdersListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-OrdersListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "orders"
-     * @constant
-     */
-    "orders": "orders"
-};
+    OrdersListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "orders"
+         * @constant
+         */
+        "orders": "orders"    
+    };
 
 
 

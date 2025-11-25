@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersBalanceUpdateResponseBodyRelatedObject model module.
  * @module model/VouchersBalanceUpdateResponseBodyRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersBalanceUpdateResponseBodyRelatedObject {
     /**
      * Constructs a new <code>VouchersBalanceUpdateResponseBodyRelatedObject</code>.
      * Defines the resource that is being modified with the values that are returned in the balance object.
-     * @alias module:model/VouchersBalanceUpdateResponseBodyRelatedObject
+     * @alias VouchersBalanceUpdateResponseBodyRelatedObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VouchersBalanceUpdateResponseBodyRelatedObject {
     /**
      * Constructs a <code>VouchersBalanceUpdateResponseBodyRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersBalanceUpdateResponseBodyRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/VouchersBalanceUpdateResponseBodyRelatedObject} The populated <code>VouchersBalanceUpdateResponseBodyRelatedObject</code> instance.
+     * @param {Partial<VouchersBalanceUpdateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersBalanceUpdateResponseBodyRelatedObject} [obj] Optional instance to populate.
+     * @returns {VouchersBalanceUpdateResponseBodyRelatedObject} The populated <code>VouchersBalanceUpdateResponseBodyRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class VouchersBalanceUpdateResponseBodyRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>VouchersBalanceUpdateResponseBodyRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersBalanceUpdateResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersBalanceUpdateResponseBodyRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class VouchersBalanceUpdateResponseBodyRelatedObject {
 
 
 /**
- * The object being modified, i.e. `voucher`.
- * @member {module:model/VouchersBalanceUpdateResponseBodyRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified, i.e. `voucher`.
+    * @type {(keyof typeof VouchersBalanceUpdateResponseBodyRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 VouchersBalanceUpdateResponseBodyRelatedObject.prototype['type'] = 'voucher';
 
 /**
- * Identifies the voucher that is being modified, this is the ID that was assigned by the Voucherify API.
- * @member {String} 
- */
+    * Identifies the voucher that is being modified, this is the ID that was assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 VouchersBalanceUpdateResponseBodyRelatedObject.prototype['id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersBalanceUpdateResponseBodyRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    VouchersBalanceUpdateResponseBodyRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

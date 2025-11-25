@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionPreviousOrderReferrer model module.
  * @module model/MemberActivityDataRedemptionPreviousOrderReferrer
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionPreviousOrderReferrer {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionPreviousOrderReferrer</code>.
-     * @alias module:model/MemberActivityDataRedemptionPreviousOrderReferrer
+     * @alias MemberActivityDataRedemptionPreviousOrderReferrer
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataRedemptionPreviousOrderReferrer {
     /**
      * Constructs a <code>MemberActivityDataRedemptionPreviousOrderReferrer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionPreviousOrderReferrer} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionPreviousOrderReferrer} The populated <code>MemberActivityDataRedemptionPreviousOrderReferrer</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionPreviousOrderReferrer>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionPreviousOrderReferrer} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionPreviousOrderReferrer} The populated <code>MemberActivityDataRedemptionPreviousOrderReferrer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class MemberActivityDataRedemptionPreviousOrderReferrer {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionPreviousOrderReferrer</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionPreviousOrderReferrer>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionPreviousOrderReferrer</code>.
      */
     static validateJSON(data) {
@@ -82,35 +81,35 @@ class MemberActivityDataRedemptionPreviousOrderReferrer {
 
 
 /**
- * A unique identifier of an existing customer.
- * @member {String} 
- */
+    * A unique identifier of an existing customer.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionPreviousOrderReferrer.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/MemberActivityDataRedemptionPreviousOrderReferrer.ObjectEnum} 
- * @default 'customer'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof MemberActivityDataRedemptionPreviousOrderReferrer.ObjectEnum) | undefined}
+    * @default 'customer'
+    */
 MemberActivityDataRedemptionPreviousOrderReferrer.prototype['object'] = 'customer';
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionPreviousOrderReferrer['ObjectEnum'] = {
-
     /**
-     * value: "customer"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "customer": "customer"
-};
+    MemberActivityDataRedemptionPreviousOrderReferrer['ObjectEnum'] = {
+    
+        /**
+         * value: "customer"
+         * @constant
+         */
+        "customer": "customer"    
+    };
 
 
 

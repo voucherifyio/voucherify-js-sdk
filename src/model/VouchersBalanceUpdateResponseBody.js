@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VouchersBalanceUpdateResponseBodyRelatedObject from './VouchersBalanceUpdateResponseBodyRelatedObject';
-
 /**
  * The VouchersBalanceUpdateResponseBody model module.
  * @module model/VouchersBalanceUpdateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersBalanceUpdateResponseBody {
     /**
      * Constructs a new <code>VouchersBalanceUpdateResponseBody</code>.
      * Response body schema for &#x60;vouchers/{code}/balance.&#x60;
-     * @alias module:model/VouchersBalanceUpdateResponseBody
+     * @alias VouchersBalanceUpdateResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class VouchersBalanceUpdateResponseBody {
     /**
      * Constructs a <code>VouchersBalanceUpdateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersBalanceUpdateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersBalanceUpdateResponseBody} The populated <code>VouchersBalanceUpdateResponseBody</code> instance.
+     * @param {Partial<VouchersBalanceUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersBalanceUpdateResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersBalanceUpdateResponseBody} The populated <code>VouchersBalanceUpdateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class VouchersBalanceUpdateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersBalanceUpdateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersBalanceUpdateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersBalanceUpdateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -108,101 +107,101 @@ class VouchersBalanceUpdateResponseBody {
 
 
 /**
- * The incremental amount added (positive integer) or subtracted (negative integer) to the current balance on the gift card or loyalty card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The incremental amount added (positive integer) or subtracted (negative integer) to the current balance on the gift card or loyalty card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VouchersBalanceUpdateResponseBody.prototype['amount'] = undefined;
 
 /**
- * Total income incurred over the lifespan of the gift card or loyalty card.
- * @member {Number} 
- */
+    * Total income incurred over the lifespan of the gift card or loyalty card.
+    * @type {Number | undefined}
+    */
 VouchersBalanceUpdateResponseBody.prototype['total'] = undefined;
 
 /**
- * The balance after adding or subtracting a specified amount. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * The balance after adding or subtracting a specified amount. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 VouchersBalanceUpdateResponseBody.prototype['balance'] = undefined;
 
 /**
- * The type of voucher being modified.
- * @member {module:model/VouchersBalanceUpdateResponseBody.TypeEnum} 
- */
+    * The type of voucher being modified.
+    * @type {(keyof typeof VouchersBalanceUpdateResponseBody.TypeEnum) | undefined}
+    */
 VouchersBalanceUpdateResponseBody.prototype['type'] = undefined;
 
 /**
- * The type of the operation being performed.
- * @member {module:model/VouchersBalanceUpdateResponseBody.OperationTypeEnum} 
- * @default 'MANUAL'
- */
+    * The type of the operation being performed.
+    * @type {(keyof typeof VouchersBalanceUpdateResponseBody.OperationTypeEnum) | undefined}
+    * @default 'MANUAL'
+    */
 VouchersBalanceUpdateResponseBody.prototype['operation_type'] = 'MANUAL';
 
 /**
- * The type of the object represented by JSON. Default is `balance`.
- * @member {module:model/VouchersBalanceUpdateResponseBody.ObjectEnum} 
- * @default 'balance'
- */
+    * The type of the object represented by JSON. Default is `balance`.
+    * @type {(keyof typeof VouchersBalanceUpdateResponseBody.ObjectEnum) | undefined}
+    * @default 'balance'
+    */
 VouchersBalanceUpdateResponseBody.prototype['object'] = 'balance';
 
 /**
- * @member {module:model/VouchersBalanceUpdateResponseBodyRelatedObject} 
- */
+    * @type {VouchersBalanceUpdateResponseBodyRelatedObject | undefined}
+    */
 VouchersBalanceUpdateResponseBody.prototype['related_object'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersBalanceUpdateResponseBody['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    VouchersBalanceUpdateResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "gift_voucher"
+         * @constant
+         */
+        "gift_voucher": "gift_voucher",
+    
+        /**
+         * value: "loyalty_card"
+         * @constant
+         */
+        "loyalty_card": "loyalty_card"    
+    };
+
 
     /**
-     * value: "gift_voucher"
-     * @constant
+     * Allowed values for the <code>operation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "gift_voucher": "gift_voucher",
+    VouchersBalanceUpdateResponseBody['OperationTypeEnum'] = {
+    
+        /**
+         * value: "MANUAL"
+         * @constant
+         */
+        "MANUAL": "MANUAL"    
+    };
+
 
     /**
-     * value: "loyalty_card"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "loyalty_card": "loyalty_card"
-};
-
-
-/**
- * Allowed values for the <code>operation_type</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersBalanceUpdateResponseBody['OperationTypeEnum'] = {
-
-    /**
-     * value: "MANUAL"
-     * @constant
-     */
-    "MANUAL": "MANUAL"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-VouchersBalanceUpdateResponseBody['ObjectEnum'] = {
-
-    /**
-     * value: "balance"
-     * @constant
-     */
-    "balance": "balance"
-};
+    VouchersBalanceUpdateResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "balance"
+         * @constant
+         */
+        "balance": "balance"    
+    };
 
 
 

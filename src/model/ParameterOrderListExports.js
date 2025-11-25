@@ -13,50 +13,47 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterOrderListExports.
-* @module model/ParameterOrderListExports
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterOrderListExports {
+ * Enum class ParameterOrderListExports.
+ * @module model/ParameterOrderListExports
+ * @version 3.0.1
+ */
+class ParameterOrderListExports {
     
-        /**
-         * value: "created_at"
-         * @constant
-         */
-        "created_at" = "created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "created_at" = "created_at";
     
-        /**
-         * value: "-created_at"
-         * @constant
-         */
-        "-created_at" = "-created_at";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-created_at" = "-created_at";
     
-        /**
-         * value: "status"
-         * @constant
-         */
-        "status" = "status";
-
+    /**
+     * 
+     * @constant
+     */
+    static "status" = "status";
     
-        /**
-         * value: "-status"
-         * @constant
-         */
-        "-status" = "-status";
-
+    /**
+     * 
+     * @constant
+     */
+    static "-status" = "-status";
     
 
     /**
-    * Returns a <code>ParameterOrderListExports</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterOrderListExports} The enum <code>ParameterOrderListExports</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterOrderListExports, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterOrderListExports[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterOrderListExports[key];
     }
 }
+
+export default ParameterOrderListExports;
 

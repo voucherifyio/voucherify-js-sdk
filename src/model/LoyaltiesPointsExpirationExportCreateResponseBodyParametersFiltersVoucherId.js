@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions from './LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions';
-
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId {
     /**
      * Constructs a new <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code>.
      * Data filters used to narrow down the data records to be returned in the result.
-     * @alias module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId
+     * @alias LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
     /**
      * Constructs a <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code> instance.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId} [obj] Optional instance to populate.
+     * @returns {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId} The populated <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherI
 
 
 /**
- * @member {module:model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions} 
- */
+    * @type {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions | undefined}
+    */
 LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId.prototype['conditions'] = undefined;
 
 

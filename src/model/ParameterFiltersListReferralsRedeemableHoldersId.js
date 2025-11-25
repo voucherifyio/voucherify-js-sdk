@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersId model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListReferralsRedeemableHoldersId {
     /**
      * Constructs a new <code>ParameterFiltersListReferralsRedeemableHoldersId</code>.
      * Unique redeemable holder ID, i.e. &#x60;rh_0e77502f84f0f4a6a8&#x60;.
-     * @alias module:model/ParameterFiltersListReferralsRedeemableHoldersId
+     * @alias ParameterFiltersListReferralsRedeemableHoldersId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListReferralsRedeemableHoldersId {
     /**
      * Constructs a <code>ParameterFiltersListReferralsRedeemableHoldersId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHoldersId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListReferralsRedeemableHoldersId} The populated <code>ParameterFiltersListReferralsRedeemableHoldersId</code> instance.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListReferralsRedeemableHoldersId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListReferralsRedeemableHoldersId} The populated <code>ParameterFiltersListReferralsRedeemableHoldersId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListReferralsRedeemableHoldersId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListReferralsRedeemableHoldersId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListReferralsRedeemableHoldersId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListReferralsRedeemableHoldersId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersId.prototype['conditions'] = undefined;
 
 

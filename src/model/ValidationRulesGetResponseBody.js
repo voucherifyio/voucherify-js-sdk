@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import ValidationRulesGetResponseBodyApplicableTo from './ValidationRulesGetResponseBodyApplicableTo';
 import ValidationRulesGetResponseBodyError from './ValidationRulesGetResponseBodyError';
-
 /**
  * The ValidationRulesGetResponseBody model module.
  * @module model/ValidationRulesGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesGetResponseBody {
     /**
      * Constructs a new <code>ValidationRulesGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/validation-rules/{validationRuleId}&#x60;.
-     * @alias module:model/ValidationRulesGetResponseBody
+     * @alias ValidationRulesGetResponseBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ValidationRulesGetResponseBody {
     /**
      * Constructs a <code>ValidationRulesGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesGetResponseBody} The populated <code>ValidationRulesGetResponseBody</code> instance.
+     * @param {Partial<ValidationRulesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesGetResponseBody} [obj] Optional instance to populate.
+     * @returns {ValidationRulesGetResponseBody} The populated <code>ValidationRulesGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -95,7 +94,7 @@ class ValidationRulesGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -137,452 +136,452 @@ class ValidationRulesGetResponseBody {
 
 
 /**
- * Custom, unique name for set of validation rules.
- * @member {String} 
- */
+    * Custom, unique name for set of validation rules.
+    * @type {String | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['name'] = undefined;
 
 /**
- * Contains all the rule definitions for the validation rule. It is a set of key value pairs representing the rules and logic between the rules. The keys are numbered consecutively beginning from `1`. The values are objects containing the rule conditions.
- * @member {Object} 
- */
+    * Contains all the rule definitions for the validation rule. It is a set of key value pairs representing the rules and logic between the rules. The keys are numbered consecutively beginning from `1`. The values are objects containing the rule conditions.
+    * @type {Object | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['rules'] = undefined;
 
 /**
- * Contains all the definitions for the bundle rules. It is a set of key value pairs representing the rules and logic between them. The keys are numbered consecutively beginning from `1`. The values are objects containing the rule conditions.  While updating with the PUT method, you can pass `\"bundle_rules\": null` to delete the configuration; in the response, an empty object is then returned.
- * @member {Object} 
- */
+    * Contains all the definitions for the bundle rules. It is a set of key value pairs representing the rules and logic between them. The keys are numbered consecutively beginning from `1`. The values are objects containing the rule conditions.  While updating with the PUT method, you can pass `\"bundle_rules\": null` to delete the configuration; in the response, an empty object is then returned.
+    * @type {Object | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['bundle_rules'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesGetResponseBodyError} 
- */
+    * @type {ValidationRulesGetResponseBodyError | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['error'] = undefined;
 
 /**
- * @member {module:model/ValidationRulesGetResponseBodyApplicableTo} 
- */
+    * @type {ValidationRulesGetResponseBodyApplicableTo | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['applicable_to'] = undefined;
 
 /**
- * Type of validation rule.
- * @member {module:model/ValidationRulesGetResponseBody.TypeEnum} 
- * @default 'expression'
- */
+    * Type of validation rule.
+    * @type {(keyof typeof ValidationRulesGetResponseBody.TypeEnum) | undefined}
+    * @default 'expression'
+    */
 ValidationRulesGetResponseBody.prototype['type'] = 'expression';
 
 /**
- * Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
- * @member {module:model/ValidationRulesGetResponseBody.ContextTypeEnum} 
- * @default 'global'
- */
+    * Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
+    * @type {(keyof typeof ValidationRulesGetResponseBody.ContextTypeEnum) | undefined}
+    * @default 'global'
+    */
 ValidationRulesGetResponseBody.prototype['context_type'] = 'global';
 
 /**
- * Unique validation rule ID.
- * @member {String} 
- */
+    * Unique validation rule ID.
+    * @type {String | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the validation rule was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the validation rule was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the validation rule was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the validation rule was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * The number of instances the validation rule has been assigned to different types of redeemables.
- * @member {Number} 
- */
+    * The number of instances the validation rule has been assigned to different types of redeemables.
+    * @type {Number | undefined}
+    */
 ValidationRulesGetResponseBody.prototype['assignments_count'] = undefined;
 
 /**
- * The type of the object represented by JSON. This object stores information about the validation rule.
- * @member {String} 
- * @default 'validation_rules'
- */
+    * The type of the object represented by JSON. This object stores information about the validation rule.
+    * @type {String | undefined}
+    * @default 'validation_rules'
+    */
 ValidationRulesGetResponseBody.prototype['object'] = 'validation_rules';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRulesGetResponseBody['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationRulesGetResponseBody['TypeEnum'] = {
+    
+        /**
+         * value: "expression"
+         * @constant
+         */
+        "expression": "expression",
+    
+        /**
+         * value: "basic"
+         * @constant
+         */
+        "basic": "basic",
+    
+        /**
+         * value: "advanced"
+         * @constant
+         */
+        "advanced": "advanced",
+    
+        /**
+         * value: "complex"
+         * @constant
+         */
+        "complex": "complex"    
+    };
+
 
     /**
-     * value: "expression"
-     * @constant
+     * Allowed values for the <code>context_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "expression": "expression",
-
-    /**
-     * value: "basic"
-     * @constant
-     */
-    "basic": "basic",
-
-    /**
-     * value: "advanced"
-     * @constant
-     */
-    "advanced": "advanced",
-
-    /**
-     * value: "complex"
-     * @constant
-     */
-    "complex": "complex"
-};
-
-
-/**
- * Allowed values for the <code>context_type</code> property.
- * @enum {String}
- * @readonly
- */
-ValidationRulesGetResponseBody['ContextTypeEnum'] = {
-
-    /**
-     * value: "earning_rule.order.paid"
-     * @constant
-     */
-    "earning_rule.order.paid": "earning_rule.order.paid",
-
-    /**
-     * value: "earning_rule.custom_event"
-     * @constant
-     */
-    "earning_rule.custom_event": "earning_rule.custom_event",
-
-    /**
-     * value: "earning_rule.customer.segment.entered"
-     * @constant
-     */
-    "earning_rule.customer.segment.entered": "earning_rule.customer.segment.entered",
-
-    /**
-     * value: "earning_rule.customer.tier.joined"
-     * @constant
-     */
-    "earning_rule.customer.tier.joined": "earning_rule.customer.tier.joined",
-
-    /**
-     * value: "earning_rule.customer.tier.left"
-     * @constant
-     */
-    "earning_rule.customer.tier.left": "earning_rule.customer.tier.left",
-
-    /**
-     * value: "earning_rule.customer.tier.upgraded"
-     * @constant
-     */
-    "earning_rule.customer.tier.upgraded": "earning_rule.customer.tier.upgraded",
-
-    /**
-     * value: "earning_rule.customer.tier.downgraded"
-     * @constant
-     */
-    "earning_rule.customer.tier.downgraded": "earning_rule.customer.tier.downgraded",
-
-    /**
-     * value: "earning_rule.customer.tier.prolonged"
-     * @constant
-     */
-    "earning_rule.customer.tier.prolonged": "earning_rule.customer.tier.prolonged",
-
-    /**
-     * value: "campaign.discount_coupons"
-     * @constant
-     */
-    "campaign.discount_coupons": "campaign.discount_coupons",
-
-    /**
-     * value: "campaign.discount_coupons.discount.apply_to_order"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.apply_to_order": "campaign.discount_coupons.discount.apply_to_order",
-
-    /**
-     * value: "campaign.discount_coupons.discount.apply_to_items"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.apply_to_items": "campaign.discount_coupons.discount.apply_to_items",
-
-    /**
-     * value: "campaign.discount_coupons.discount.apply_to_items_proportionally"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.apply_to_items_proportionally": "campaign.discount_coupons.discount.apply_to_items_proportionally",
-
-    /**
-     * value: "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity": "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity",
-
-    /**
-     * value: "campaign.discount_coupons.discount.apply_to_items_by_quantity"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.apply_to_items_by_quantity": "campaign.discount_coupons.discount.apply_to_items_by_quantity",
-
-    /**
-     * value: "campaign.discount_coupons.discount.fixed.apply_to_items"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.fixed.apply_to_items": "campaign.discount_coupons.discount.fixed.apply_to_items",
-
-    /**
-     * value: "campaign.discount_coupons.discount.percent.apply_to_items"
-     * @constant
-     */
-    "campaign.discount_coupons.discount.percent.apply_to_items": "campaign.discount_coupons.discount.percent.apply_to_items",
-
-    /**
-     * value: "campaign.gift_vouchers"
-     * @constant
-     */
-    "campaign.gift_vouchers": "campaign.gift_vouchers",
-
-    /**
-     * value: "campaign.gift_vouchers.gift.apply_to_order"
-     * @constant
-     */
-    "campaign.gift_vouchers.gift.apply_to_order": "campaign.gift_vouchers.gift.apply_to_order",
-
-    /**
-     * value: "campaign.gift_vouchers.gift.apply_to_items"
-     * @constant
-     */
-    "campaign.gift_vouchers.gift.apply_to_items": "campaign.gift_vouchers.gift.apply_to_items",
-
-    /**
-     * value: "campaign.referral_program"
-     * @constant
-     */
-    "campaign.referral_program": "campaign.referral_program",
-
-    /**
-     * value: "campaign.referral_program.discount.apply_to_order"
-     * @constant
-     */
-    "campaign.referral_program.discount.apply_to_order": "campaign.referral_program.discount.apply_to_order",
-
-    /**
-     * value: "campaign.referral_program.discount.apply_to_items"
-     * @constant
-     */
-    "campaign.referral_program.discount.apply_to_items": "campaign.referral_program.discount.apply_to_items",
-
-    /**
-     * value: "campaign.referral_program.discount.apply_to_items_proportionally"
-     * @constant
-     */
-    "campaign.referral_program.discount.apply_to_items_proportionally": "campaign.referral_program.discount.apply_to_items_proportionally",
-
-    /**
-     * value: "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity"
-     * @constant
-     */
-    "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity": "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity",
-
-    /**
-     * value: "campaign.referral_program.discount.apply_to_items_by_quantity"
-     * @constant
-     */
-    "campaign.referral_program.discount.apply_to_items_by_quantity": "campaign.referral_program.discount.apply_to_items_by_quantity",
-
-    /**
-     * value: "campaign.referral_program.discount.fixed.apply_to_items"
-     * @constant
-     */
-    "campaign.referral_program.discount.fixed.apply_to_items": "campaign.referral_program.discount.fixed.apply_to_items",
-
-    /**
-     * value: "campaign.referral_program.discount.percent.apply_to_items"
-     * @constant
-     */
-    "campaign.referral_program.discount.percent.apply_to_items": "campaign.referral_program.discount.percent.apply_to_items",
-
-    /**
-     * value: "campaign.promotion"
-     * @constant
-     */
-    "campaign.promotion": "campaign.promotion",
-
-    /**
-     * value: "campaign.promotion.discount.apply_to_order"
-     * @constant
-     */
-    "campaign.promotion.discount.apply_to_order": "campaign.promotion.discount.apply_to_order",
-
-    /**
-     * value: "campaign.promotion.discount.apply_to_items"
-     * @constant
-     */
-    "campaign.promotion.discount.apply_to_items": "campaign.promotion.discount.apply_to_items",
-
-    /**
-     * value: "campaign.promotion.discount.apply_to_items_proportionally"
-     * @constant
-     */
-    "campaign.promotion.discount.apply_to_items_proportionally": "campaign.promotion.discount.apply_to_items_proportionally",
-
-    /**
-     * value: "campaign.promotion.discount.apply_to_items_proportionally_by_quantity"
-     * @constant
-     */
-    "campaign.promotion.discount.apply_to_items_proportionally_by_quantity": "campaign.promotion.discount.apply_to_items_proportionally_by_quantity",
-
-    /**
-     * value: "campaign.promotion.discount.apply_to_items_by_quantity"
-     * @constant
-     */
-    "campaign.promotion.discount.apply_to_items_by_quantity": "campaign.promotion.discount.apply_to_items_by_quantity",
-
-    /**
-     * value: "campaign.promotion.discount.fixed.apply_to_items"
-     * @constant
-     */
-    "campaign.promotion.discount.fixed.apply_to_items": "campaign.promotion.discount.fixed.apply_to_items",
-
-    /**
-     * value: "campaign.promotion.discount.percent.apply_to_items"
-     * @constant
-     */
-    "campaign.promotion.discount.percent.apply_to_items": "campaign.promotion.discount.percent.apply_to_items",
-
-    /**
-     * value: "campaign.loyalty_program"
-     * @constant
-     */
-    "campaign.loyalty_program": "campaign.loyalty_program",
-
-    /**
-     * value: "voucher.discount_voucher"
-     * @constant
-     */
-    "voucher.discount_voucher": "voucher.discount_voucher",
-
-    /**
-     * value: "voucher.discount_voucher.discount.apply_to_order"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.apply_to_order": "voucher.discount_voucher.discount.apply_to_order",
-
-    /**
-     * value: "voucher.discount_voucher.discount.apply_to_items"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.apply_to_items": "voucher.discount_voucher.discount.apply_to_items",
-
-    /**
-     * value: "voucher.discount_voucher.discount.apply_to_items_proportionally"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.apply_to_items_proportionally": "voucher.discount_voucher.discount.apply_to_items_proportionally",
-
-    /**
-     * value: "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity": "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity",
-
-    /**
-     * value: "voucher.discount_voucher.discount.apply_to_items_by_quantity"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.apply_to_items_by_quantity": "voucher.discount_voucher.discount.apply_to_items_by_quantity",
-
-    /**
-     * value: "voucher.discount_voucher.discount.fixed.apply_to_items"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.fixed.apply_to_items": "voucher.discount_voucher.discount.fixed.apply_to_items",
-
-    /**
-     * value: "voucher.discount_voucher.discount.percent.apply_to_items"
-     * @constant
-     */
-    "voucher.discount_voucher.discount.percent.apply_to_items": "voucher.discount_voucher.discount.percent.apply_to_items",
-
-    /**
-     * value: "voucher.gift_voucher"
-     * @constant
-     */
-    "voucher.gift_voucher": "voucher.gift_voucher",
-
-    /**
-     * value: "voucher.gift_voucher.gift.apply_to_order"
-     * @constant
-     */
-    "voucher.gift_voucher.gift.apply_to_order": "voucher.gift_voucher.gift.apply_to_order",
-
-    /**
-     * value: "voucher.gift_voucher.gift.apply_to_items"
-     * @constant
-     */
-    "voucher.gift_voucher.gift.apply_to_items": "voucher.gift_voucher.gift.apply_to_items",
-
-    /**
-     * value: "voucher.loyalty_card"
-     * @constant
-     */
-    "voucher.loyalty_card": "voucher.loyalty_card",
-
-    /**
-     * value: "distribution.custom_event"
-     * @constant
-     */
-    "distribution.custom_event": "distribution.custom_event",
-
-    /**
-     * value: "distribution.order.paid"
-     * @constant
-     */
-    "distribution.order.paid": "distribution.order.paid",
-
-    /**
-     * value: "distribution.order.created"
-     * @constant
-     */
-    "distribution.order.created": "distribution.order.created",
-
-    /**
-     * value: "distribution.order.canceled"
-     * @constant
-     */
-    "distribution.order.canceled": "distribution.order.canceled",
-
-    /**
-     * value: "distribution.order.updated"
-     * @constant
-     */
-    "distribution.order.updated": "distribution.order.updated",
-
-    /**
-     * value: "reward_assignment.pay_with_points"
-     * @constant
-     */
-    "reward_assignment.pay_with_points": "reward_assignment.pay_with_points",
-
-    /**
-     * value: "global"
-     * @constant
-     */
-    "global": "global"
-};
+    ValidationRulesGetResponseBody['ContextTypeEnum'] = {
+    
+        /**
+         * value: "earning_rule.order.paid"
+         * @constant
+         */
+        "earning_rule.order.paid": "earning_rule.order.paid",
+    
+        /**
+         * value: "earning_rule.custom_event"
+         * @constant
+         */
+        "earning_rule.custom_event": "earning_rule.custom_event",
+    
+        /**
+         * value: "earning_rule.customer.segment.entered"
+         * @constant
+         */
+        "earning_rule.customer.segment.entered": "earning_rule.customer.segment.entered",
+    
+        /**
+         * value: "earning_rule.customer.tier.joined"
+         * @constant
+         */
+        "earning_rule.customer.tier.joined": "earning_rule.customer.tier.joined",
+    
+        /**
+         * value: "earning_rule.customer.tier.left"
+         * @constant
+         */
+        "earning_rule.customer.tier.left": "earning_rule.customer.tier.left",
+    
+        /**
+         * value: "earning_rule.customer.tier.upgraded"
+         * @constant
+         */
+        "earning_rule.customer.tier.upgraded": "earning_rule.customer.tier.upgraded",
+    
+        /**
+         * value: "earning_rule.customer.tier.downgraded"
+         * @constant
+         */
+        "earning_rule.customer.tier.downgraded": "earning_rule.customer.tier.downgraded",
+    
+        /**
+         * value: "earning_rule.customer.tier.prolonged"
+         * @constant
+         */
+        "earning_rule.customer.tier.prolonged": "earning_rule.customer.tier.prolonged",
+    
+        /**
+         * value: "campaign.discount_coupons"
+         * @constant
+         */
+        "campaign.discount_coupons": "campaign.discount_coupons",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.apply_to_order"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.apply_to_order": "campaign.discount_coupons.discount.apply_to_order",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.apply_to_items"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.apply_to_items": "campaign.discount_coupons.discount.apply_to_items",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.apply_to_items_proportionally"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.apply_to_items_proportionally": "campaign.discount_coupons.discount.apply_to_items_proportionally",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity": "campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.apply_to_items_by_quantity"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.apply_to_items_by_quantity": "campaign.discount_coupons.discount.apply_to_items_by_quantity",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.fixed.apply_to_items"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.fixed.apply_to_items": "campaign.discount_coupons.discount.fixed.apply_to_items",
+    
+        /**
+         * value: "campaign.discount_coupons.discount.percent.apply_to_items"
+         * @constant
+         */
+        "campaign.discount_coupons.discount.percent.apply_to_items": "campaign.discount_coupons.discount.percent.apply_to_items",
+    
+        /**
+         * value: "campaign.gift_vouchers"
+         * @constant
+         */
+        "campaign.gift_vouchers": "campaign.gift_vouchers",
+    
+        /**
+         * value: "campaign.gift_vouchers.gift.apply_to_order"
+         * @constant
+         */
+        "campaign.gift_vouchers.gift.apply_to_order": "campaign.gift_vouchers.gift.apply_to_order",
+    
+        /**
+         * value: "campaign.gift_vouchers.gift.apply_to_items"
+         * @constant
+         */
+        "campaign.gift_vouchers.gift.apply_to_items": "campaign.gift_vouchers.gift.apply_to_items",
+    
+        /**
+         * value: "campaign.referral_program"
+         * @constant
+         */
+        "campaign.referral_program": "campaign.referral_program",
+    
+        /**
+         * value: "campaign.referral_program.discount.apply_to_order"
+         * @constant
+         */
+        "campaign.referral_program.discount.apply_to_order": "campaign.referral_program.discount.apply_to_order",
+    
+        /**
+         * value: "campaign.referral_program.discount.apply_to_items"
+         * @constant
+         */
+        "campaign.referral_program.discount.apply_to_items": "campaign.referral_program.discount.apply_to_items",
+    
+        /**
+         * value: "campaign.referral_program.discount.apply_to_items_proportionally"
+         * @constant
+         */
+        "campaign.referral_program.discount.apply_to_items_proportionally": "campaign.referral_program.discount.apply_to_items_proportionally",
+    
+        /**
+         * value: "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity"
+         * @constant
+         */
+        "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity": "campaign.referral_program.discount.apply_to_items_proportionally_by_quantity",
+    
+        /**
+         * value: "campaign.referral_program.discount.apply_to_items_by_quantity"
+         * @constant
+         */
+        "campaign.referral_program.discount.apply_to_items_by_quantity": "campaign.referral_program.discount.apply_to_items_by_quantity",
+    
+        /**
+         * value: "campaign.referral_program.discount.fixed.apply_to_items"
+         * @constant
+         */
+        "campaign.referral_program.discount.fixed.apply_to_items": "campaign.referral_program.discount.fixed.apply_to_items",
+    
+        /**
+         * value: "campaign.referral_program.discount.percent.apply_to_items"
+         * @constant
+         */
+        "campaign.referral_program.discount.percent.apply_to_items": "campaign.referral_program.discount.percent.apply_to_items",
+    
+        /**
+         * value: "campaign.promotion"
+         * @constant
+         */
+        "campaign.promotion": "campaign.promotion",
+    
+        /**
+         * value: "campaign.promotion.discount.apply_to_order"
+         * @constant
+         */
+        "campaign.promotion.discount.apply_to_order": "campaign.promotion.discount.apply_to_order",
+    
+        /**
+         * value: "campaign.promotion.discount.apply_to_items"
+         * @constant
+         */
+        "campaign.promotion.discount.apply_to_items": "campaign.promotion.discount.apply_to_items",
+    
+        /**
+         * value: "campaign.promotion.discount.apply_to_items_proportionally"
+         * @constant
+         */
+        "campaign.promotion.discount.apply_to_items_proportionally": "campaign.promotion.discount.apply_to_items_proportionally",
+    
+        /**
+         * value: "campaign.promotion.discount.apply_to_items_proportionally_by_quantity"
+         * @constant
+         */
+        "campaign.promotion.discount.apply_to_items_proportionally_by_quantity": "campaign.promotion.discount.apply_to_items_proportionally_by_quantity",
+    
+        /**
+         * value: "campaign.promotion.discount.apply_to_items_by_quantity"
+         * @constant
+         */
+        "campaign.promotion.discount.apply_to_items_by_quantity": "campaign.promotion.discount.apply_to_items_by_quantity",
+    
+        /**
+         * value: "campaign.promotion.discount.fixed.apply_to_items"
+         * @constant
+         */
+        "campaign.promotion.discount.fixed.apply_to_items": "campaign.promotion.discount.fixed.apply_to_items",
+    
+        /**
+         * value: "campaign.promotion.discount.percent.apply_to_items"
+         * @constant
+         */
+        "campaign.promotion.discount.percent.apply_to_items": "campaign.promotion.discount.percent.apply_to_items",
+    
+        /**
+         * value: "campaign.loyalty_program"
+         * @constant
+         */
+        "campaign.loyalty_program": "campaign.loyalty_program",
+    
+        /**
+         * value: "voucher.discount_voucher"
+         * @constant
+         */
+        "voucher.discount_voucher": "voucher.discount_voucher",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.apply_to_order"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.apply_to_order": "voucher.discount_voucher.discount.apply_to_order",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.apply_to_items"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.apply_to_items": "voucher.discount_voucher.discount.apply_to_items",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.apply_to_items_proportionally"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.apply_to_items_proportionally": "voucher.discount_voucher.discount.apply_to_items_proportionally",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity": "voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.apply_to_items_by_quantity"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.apply_to_items_by_quantity": "voucher.discount_voucher.discount.apply_to_items_by_quantity",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.fixed.apply_to_items"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.fixed.apply_to_items": "voucher.discount_voucher.discount.fixed.apply_to_items",
+    
+        /**
+         * value: "voucher.discount_voucher.discount.percent.apply_to_items"
+         * @constant
+         */
+        "voucher.discount_voucher.discount.percent.apply_to_items": "voucher.discount_voucher.discount.percent.apply_to_items",
+    
+        /**
+         * value: "voucher.gift_voucher"
+         * @constant
+         */
+        "voucher.gift_voucher": "voucher.gift_voucher",
+    
+        /**
+         * value: "voucher.gift_voucher.gift.apply_to_order"
+         * @constant
+         */
+        "voucher.gift_voucher.gift.apply_to_order": "voucher.gift_voucher.gift.apply_to_order",
+    
+        /**
+         * value: "voucher.gift_voucher.gift.apply_to_items"
+         * @constant
+         */
+        "voucher.gift_voucher.gift.apply_to_items": "voucher.gift_voucher.gift.apply_to_items",
+    
+        /**
+         * value: "voucher.loyalty_card"
+         * @constant
+         */
+        "voucher.loyalty_card": "voucher.loyalty_card",
+    
+        /**
+         * value: "distribution.custom_event"
+         * @constant
+         */
+        "distribution.custom_event": "distribution.custom_event",
+    
+        /**
+         * value: "distribution.order.paid"
+         * @constant
+         */
+        "distribution.order.paid": "distribution.order.paid",
+    
+        /**
+         * value: "distribution.order.created"
+         * @constant
+         */
+        "distribution.order.created": "distribution.order.created",
+    
+        /**
+         * value: "distribution.order.canceled"
+         * @constant
+         */
+        "distribution.order.canceled": "distribution.order.canceled",
+    
+        /**
+         * value: "distribution.order.updated"
+         * @constant
+         */
+        "distribution.order.updated": "distribution.order.updated",
+    
+        /**
+         * value: "reward_assignment.pay_with_points"
+         * @constant
+         */
+        "reward_assignment.pay_with_points": "reward_assignment.pay_with_points",
+    
+        /**
+         * value: "global"
+         * @constant
+         */
+        "global": "global"    
+    };
 
 
 

@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsUpdateRequestBodyOptions model module.
  * @module model/CampaignsUpdateRequestBodyOptions
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsUpdateRequestBodyOptions {
     /**
      * Constructs a new <code>CampaignsUpdateRequestBodyOptions</code>.
-     * @alias module:model/CampaignsUpdateRequestBodyOptions
+     * @alias CampaignsUpdateRequestBodyOptions
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class CampaignsUpdateRequestBodyOptions {
     /**
      * Constructs a <code>CampaignsUpdateRequestBodyOptions</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsUpdateRequestBodyOptions} obj Optional instance to populate.
-     * @returns {module:model/CampaignsUpdateRequestBodyOptions} The populated <code>CampaignsUpdateRequestBodyOptions</code> instance.
+     * @param {Partial<CampaignsUpdateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsUpdateRequestBodyOptions} [obj] Optional instance to populate.
+     * @returns {CampaignsUpdateRequestBodyOptions} The populated <code>CampaignsUpdateRequestBodyOptions</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class CampaignsUpdateRequestBodyOptions {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsUpdateRequestBodyOptions</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsUpdateRequestBodyOptions>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsUpdateRequestBodyOptions</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class CampaignsUpdateRequestBodyOptions {
 
 
 /**
- * Determine if tiers should be recalculated or no.
- * @member {Boolean} 
- */
+    * Determine if tiers should be recalculated or no.
+    * @type {Boolean | undefined}
+    */
 CampaignsUpdateRequestBodyOptions.prototype['recalculate_tiers'] = undefined;
 
 

@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import ApplicableTo from './ApplicableTo';
-
 /**
  * The ValidationRuleApplicableTo model module.
  * @module model/ValidationRuleApplicableTo
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRuleApplicableTo {
     /**
      * Constructs a new <code>ValidationRuleApplicableTo</code>.
-     * @alias module:model/ValidationRuleApplicableTo
+     * @alias ValidationRuleApplicableTo
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationRuleApplicableTo {
     /**
      * Constructs a <code>ValidationRuleApplicableTo</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRuleApplicableTo} obj Optional instance to populate.
-     * @returns {module:model/ValidationRuleApplicableTo} The populated <code>ValidationRuleApplicableTo</code> instance.
+     * @param {Partial<ValidationRuleApplicableTo>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRuleApplicableTo} [obj] Optional instance to populate.
+     * @returns {ValidationRuleApplicableTo} The populated <code>ValidationRuleApplicableTo</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class ValidationRuleApplicableTo {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRuleApplicableTo</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRuleApplicableTo>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRuleApplicableTo</code>.
      */
     static validateJSON(data) {
@@ -97,21 +96,21 @@ class ValidationRuleApplicableTo {
 
 
 /**
- * Defines which items are excluded from a discount.
- * @member {Array.<module:model/ApplicableTo>} 
- */
+    * Defines which items are excluded from a discount.
+    * @type {Array.<ApplicableTo> | undefined}
+    */
 ValidationRuleApplicableTo.prototype['excluded'] = undefined;
 
 /**
- * Defines which items are included in a discount.
- * @member {Array.<module:model/ApplicableTo>} 
- */
+    * Defines which items are included in a discount.
+    * @type {Array.<ApplicableTo> | undefined}
+    */
 ValidationRuleApplicableTo.prototype['included'] = undefined;
 
 /**
- * Indicates whether all items are included in the discount.
- * @member {Boolean} 
- */
+    * Indicates whether all items are included in the discount.
+    * @type {Boolean | undefined}
+    */
 ValidationRuleApplicableTo.prototype['included_all'] = undefined;
 
 

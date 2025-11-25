@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomersUpdateInBulkRequestBodyAddress from './CustomersUpdateInBulkRequestBodyAddress';
-
 /**
  * The CustomersUpdateInBulkRequestBody model module.
  * @module model/CustomersUpdateInBulkRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersUpdateInBulkRequestBody {
     /**
      * Constructs a new <code>CustomersUpdateInBulkRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/customers/bulk/async&#x60;.
-     * @alias module:model/CustomersUpdateInBulkRequestBody
+     * @alias CustomersUpdateInBulkRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CustomersUpdateInBulkRequestBody {
     /**
      * Constructs a <code>CustomersUpdateInBulkRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersUpdateInBulkRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersUpdateInBulkRequestBody} The populated <code>CustomersUpdateInBulkRequestBody</code> instance.
+     * @param {Partial<CustomersUpdateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersUpdateInBulkRequestBody} [obj] Optional instance to populate.
+     * @returns {CustomersUpdateInBulkRequestBody} The populated <code>CustomersUpdateInBulkRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -82,7 +81,7 @@ class CustomersUpdateInBulkRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersUpdateInBulkRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersUpdateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersUpdateInBulkRequestBody</code>.
      */
     static validateJSON(data) {
@@ -120,56 +119,56 @@ class CustomersUpdateInBulkRequestBody {
 
 
 /**
- * Unique customer source ID.
- * @member {String} 
- */
+    * Unique customer source ID.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['source_id'] = undefined;
 
 /**
- * Customer's first and last name.
- * @member {String} 
- */
+    * Customer's first and last name.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['name'] = undefined;
 
 /**
- * An arbitrary string that you can attach to a customer object.
- * @member {String} 
- */
+    * An arbitrary string that you can attach to a customer object.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['description'] = undefined;
 
 /**
- * Customer's email address.
- * @member {String} 
- */
+    * Customer's email address.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['email'] = undefined;
 
 /**
- * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
- * @member {String} 
- */
+    * Customer's phone number. This parameter is mandatory when you try to send out codes to customers via an SMS channel.
+    * @type {String | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['phone'] = undefined;
 
 /**
- * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
- * @member {Date} 
- */
+    * `Deprecated`. ~~Customer's birthdate; format YYYY-MM-DD~~.
+    * @type {Date | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['birthday'] = undefined;
 
 /**
- * Customer's birthdate; format YYYY-MM-DD.
- * @member {Date} 
- */
+    * Customer's birthdate; format YYYY-MM-DD.
+    * @type {Date | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['birthdate'] = undefined;
 
 /**
- * @member {module:model/CustomersUpdateInBulkRequestBodyAddress} 
- */
+    * @type {CustomersUpdateInBulkRequestBodyAddress | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['address'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 CustomersUpdateInBulkRequestBody.prototype['metadata'] = undefined;
 
 

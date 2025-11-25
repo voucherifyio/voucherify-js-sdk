@@ -21,17 +21,16 @@ import LoyaltiesEarningRulesGetResponseBodySegment from './LoyaltiesEarningRules
 import LoyaltiesEarningRulesGetResponseBodySource from './LoyaltiesEarningRulesGetResponseBodySource';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBody model module.
  * @module model/LoyaltiesEarningRulesGetResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBody {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/loyalties/{campaignId}/earning-rules/{earningRuleId}&#x60;.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBody
+     * @alias LoyaltiesEarningRulesGetResponseBody
      */
     constructor() { 
         
@@ -50,9 +49,9 @@ class LoyaltiesEarningRulesGetResponseBody {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBody} The populated <code>LoyaltiesEarningRulesGetResponseBody</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBody} The populated <code>LoyaltiesEarningRulesGetResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -127,7 +126,7 @@ class LoyaltiesEarningRulesGetResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBody</code>.
      */
     static validateJSON(data) {
@@ -209,139 +208,139 @@ class LoyaltiesEarningRulesGetResponseBody {
 
 
 /**
- * Assigned by the Voucherify API, identifies the earning rule object.
- * @member {String} 
- */
+    * Assigned by the Voucherify API, identifies the earning rule object.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyalty | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['loyalty'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['event'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyCustomEvent} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyCustomEvent | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['custom_event'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodySegment} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodySegment | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['segment'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyaltyTier | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['loyalty_tier'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyPendingPoints} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyPendingPoints | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['pending_points'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodySource} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodySource | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['source'] = undefined;
 
 /**
- * The type of the object represented by JSON. Default is earning_rule.
- * @member {module:model/LoyaltiesEarningRulesGetResponseBody.ObjectEnum} 
- * @default 'earning_rule'
- */
+    * The type of the object represented by JSON. Default is earning_rule.
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBody.ObjectEnum) | undefined}
+    * @default 'earning_rule'
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['object'] = 'earning_rule';
 
 /**
- * For internal use by Voucherify.
- * @member {String} 
- */
+    * For internal use by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['automation_id'] = undefined;
 
 /**
- * Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
- * @member {String} 
- */
+    * Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['start_date'] = undefined;
 
 /**
- * Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
- * @member {String} 
- */
+    * Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/LoyaltiesEarningRulesGetResponseBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof LoyaltiesEarningRulesGetResponseBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['validity_hours'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the earning rule. A set of key/value pairs that you can attach to an earning rule object. It can be useful for storing additional information about the earning rule in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the earning rule. A set of key/value pairs that you can attach to an earning rule object. It can be useful for storing additional information about the earning rule in a structured format.
+    * @type {Object | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['metadata'] = undefined;
 
 /**
- * @member {module:model/EarningRuleExpirationRules} 
- */
+    * @type {EarningRuleExpirationRules | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['expiration_rules'] = undefined;
 
 /**
- * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
- * @member {String} 
- */
+    * A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['validation_rule_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
+    * @type {Date | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
- * A flag to toggle the earning rule on or off. You can disable an earning rule even though it's within the active period defined by the start_date and expiration_date of the campaign or the earning rule's own start_date and expiration_date.  - `true` indicates an active earning rule - `false` indicates an inactive earning rule
- * @member {Boolean} 
- */
+    * A flag to toggle the earning rule on or off. You can disable an earning rule even though it's within the active period defined by the start_date and expiration_date of the campaign or the earning rule's own start_date and expiration_date.  - `true` indicates an active earning rule - `false` indicates an inactive earning rule
+    * @type {Boolean | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBody.prototype['active'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBody['ObjectEnum'] = {
-
     /**
-     * value: "earning_rule"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "earning_rule": "earning_rule"
-};
+    LoyaltiesEarningRulesGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "earning_rule"
+         * @constant
+         */
+        "earning_rule": "earning_rule"    
+    };
 
 
 /**

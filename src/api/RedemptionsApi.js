@@ -29,13 +29,13 @@ import VouchersRedemptionGetResponseBody from '../model/VouchersRedemptionGetRes
 /**
 * Redemptions service.
 * @module api/RedemptionsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class RedemptionsApi {
 
     /**
     * Constructs a new RedemptionsApi. 
-    * @alias module:api/RedemptionsApi
+    * @alias RedemptionsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -47,9 +47,9 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the getRedemption operation.
-     * @callback module:api/RedemptionsApi~getRedemptionCallback
+     * @callback getRedemptionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RedemptionsGetResponseBody} [data] The data returned by the service call.
+     * @param {RedemptionsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -57,8 +57,9 @@ export default class RedemptionsApi {
      * Get Redemption
      * Return a redemption or redemption rollback object. This object can either be a successfull or failed redemption or redemption rollback.
      * @param {String} redemptionId ID of previously created redemption.
-     * @param {module:api/RedemptionsApi~getRedemptionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RedemptionsGetResponseBody}
+     * @param {getRedemptionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RedemptionsGetResponseBody}
+     * @returns {Promise<(RedemptionsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RedemptionsGetResponseBody` object or with `undefined`.
      */
     getRedemption(redemptionId, callback) {
       let postBody = null;
@@ -87,9 +88,9 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the getVoucherRedemptions operation.
-     * @callback module:api/RedemptionsApi~getVoucherRedemptionsCallback
+     * @callback getVoucherRedemptionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/VouchersRedemptionGetResponseBody} [data] The data returned by the service call.
+     * @param {VouchersRedemptionGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -97,8 +98,9 @@ export default class RedemptionsApi {
      * Get Voucher's Redemptions
      * Retrieve the number of times a voucher was redeemed and each of the redemption details.
      * @param {String} code A **code** that identifies the voucher.
-     * @param {module:api/RedemptionsApi~getVoucherRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VouchersRedemptionGetResponseBody}
+     * @param {getVoucherRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link VouchersRedemptionGetResponseBody}
+     * @returns {Promise<(VouchersRedemptionGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `VouchersRedemptionGetResponseBody` object or with `undefined`.
      */
     getVoucherRedemptions(code, callback) {
       let postBody = null;
@@ -127,9 +129,9 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the listRedemptions operation.
-     * @callback module:api/RedemptionsApi~listRedemptionsCallback
+     * @callback listRedemptionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RedemptionsListResponseBody} [data] The data returned by the service call.
+     * @param {RedemptionsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -142,12 +144,13 @@ export default class RedemptionsApi {
         result?: String,
         campaign?: String,
         customer?: String,
-        order?: module:model/ParameterOrderListRedemptions,
-        createdAt?: module:model/ParameterCreatedBeforeAfter,
-        filters?: module:model/ParameterFiltersListRedemptions,
+        order?: Exclude<keyof typeof ParameterOrderListRedemptions, "prototype" | "constructFromObject">,
+        createdAt?: ParameterCreatedBeforeAfter,
+        filters?: ParameterFiltersListRedemptions,
      }} [opts] Optional parameters
-     * @param {module:api/RedemptionsApi~listRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RedemptionsListResponseBody}
+     * @param {listRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RedemptionsListResponseBody}
+     * @returns {Promise<(RedemptionsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RedemptionsListResponseBody` object or with `undefined`.
      */
     listRedemptions(opts, callback) {
       opts = opts || {};
@@ -183,18 +186,19 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the redeemStackedDiscounts operation.
-     * @callback module:api/RedemptionsApi~redeemStackedDiscountsCallback
+     * @callback redeemStackedDiscountsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RedemptionsRedeemResponseBody} [data] The data returned by the service call.
+     * @param {RedemptionsRedeemResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Redeem Stackable Discounts
      * # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint.  📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).      📘 Also available on client-side  This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more.  - Use X-Client-Application-Id as the application ID header.  - Use X-Client-Token as the appliction secret key header.  - Use client-side base URL.  - Use an origin header for your custom domain.
-     * @param {module:model/RedemptionsRedeemRequestBody} redemptionsRedeemRequestBody 
-     * @param {module:api/RedemptionsApi~redeemStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RedemptionsRedeemResponseBody}
+     * @param {RedemptionsRedeemRequestBody} redemptionsRedeemRequestBody 
+     * @param {redeemStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RedemptionsRedeemResponseBody}
+     * @returns {Promise<(RedemptionsRedeemResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RedemptionsRedeemResponseBody` object or with `undefined`.
      */
     redeemStackedDiscounts(redemptionsRedeemRequestBody, callback) {
       let postBody = redemptionsRedeemRequestBody;
@@ -222,9 +226,9 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the rollbackRedemption operation.
-     * @callback module:api/RedemptionsApi~rollbackRedemptionCallback
+     * @callback rollbackRedemptionCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RedemptionsRollbackCreateResponseBody} [data] The data returned by the service call.
+     * @param {RedemptionsRollbackCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -232,13 +236,14 @@ export default class RedemptionsApi {
      * Rollback Redemption
      * Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint. This endpoint rolls back only single redemptions, meaning those that are not stacked. Stacked redemptions belong to a parent redemption. To roll back a parent redemption, including all of its individual redemptions, use the [POST Rollback Stackable Redemptions](/api-reference/redemptions/rollback-stackable-redemptions)  🚧  You can roll back a redemption up to 3 months back.   # Effect  The operation  - creates a rollback entry in vouchers redemption history (redemption.redemption_entries) and  - gives 1 redemption back to the pool (decreases redeemed_quantity by 1).  # Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
      * @param {String} redemptionId The original redemption ID to be rolled back (undone).
-     * @param {module:model/RedemptionsRollbackCreateRequestBody} redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+     * @param {RedemptionsRollbackCreateRequestBody} redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
      * @param {{
         reason?: String,
         trackingId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/RedemptionsApi~rollbackRedemptionCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RedemptionsRollbackCreateResponseBody}
+     * @param {rollbackRedemptionCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RedemptionsRollbackCreateResponseBody}
+     * @returns {Promise<(RedemptionsRollbackCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RedemptionsRollbackCreateResponseBody` object or with `undefined`.
      */
     rollbackRedemption(redemptionId, redemptionsRollbackCreateRequestBody, opts, callback) {
       opts = opts || {};
@@ -271,9 +276,9 @@ export default class RedemptionsApi {
 
     /**
      * Callback function to receive the result of the rollbackStackedRedemptions operation.
-     * @callback module:api/RedemptionsApi~rollbackStackedRedemptionsCallback
+     * @callback rollbackStackedRedemptionsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/RedemptionsRollbacksCreateResponseBody} [data] The data returned by the service call.
+     * @param {RedemptionsRollbacksCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -281,13 +286,14 @@ export default class RedemptionsApi {
      * Rollback Stackable Redemptions
      * Rollback a stackable redemption. When you roll back a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter. However, you can use this endpoint to roll back a single redemption that does not have a parent, similarly to [POST Rollback redemption](/api-reference/redemptions/rollback-redemption). 🚧   You can roll back a redemption up to 3 months back.
      * @param {String} parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm.
-     * @param {module:model/RedemptionsRollbacksCreateRequestBody} redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+     * @param {RedemptionsRollbacksCreateRequestBody} redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
      * @param {{
         reason?: String,
         trackingId?: String,
      }} [opts] Optional parameters
-     * @param {module:api/RedemptionsApi~rollbackStackedRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RedemptionsRollbacksCreateResponseBody}
+     * @param {rollbackStackedRedemptionsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link RedemptionsRollbacksCreateResponseBody}
+     * @returns {Promise<(RedemptionsRollbacksCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `RedemptionsRollbacksCreateResponseBody` object or with `undefined`.
      */
     rollbackStackedRedemptions(parentRedemptionId, redemptionsRollbacksCreateRequestBody, opts, callback) {
       opts = opts || {};

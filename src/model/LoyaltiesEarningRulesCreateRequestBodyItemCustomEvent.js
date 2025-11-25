@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code>.
      * Contains the schema id of a custom event. **Required** for the custom event option in &#x60;event&#x60;.
-     * @alias module:model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent
+     * @alias LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent {
     /**
      * Constructs a <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent} The populated <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent {
 
 
 /**
- * Contains a unique identifier of a custom event schema. Assigned by the Voucherify API.
- * @member {String} 
- */
+    * Contains a unique identifier of a custom event schema. Assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent.prototype['schema_id'] = undefined;
 
 

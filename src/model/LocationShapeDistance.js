@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LocationShapeDistance model module.
  * @module model/LocationShapeDistance
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LocationShapeDistance {
     /**
      * Constructs a new <code>LocationShapeDistance</code>.
      * Defines the parameters for the circle.
-     * @alias module:model/LocationShapeDistance
+     * @alias LocationShapeDistance
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LocationShapeDistance {
     /**
      * Constructs a <code>LocationShapeDistance</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LocationShapeDistance} obj Optional instance to populate.
-     * @returns {module:model/LocationShapeDistance} The populated <code>LocationShapeDistance</code> instance.
+     * @param {Partial<LocationShapeDistance>} data The plain JavaScript object bearing properties of interest.
+     * @param {LocationShapeDistance} [obj] Optional instance to populate.
+     * @returns {LocationShapeDistance} The populated <code>LocationShapeDistance</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class LocationShapeDistance {
 
     /**
      * Validates the JSON data with respect to <code>LocationShapeDistance</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LocationShapeDistance>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LocationShapeDistance</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class LocationShapeDistance {
 
 
 /**
- * Center of the circle identified by GPS coordinates in decimal degrees.
- * @member {String} 
- */
+    * Center of the circle identified by GPS coordinates in decimal degrees.
+    * @type {String | undefined}
+    */
 LocationShapeDistance.prototype['center'] = undefined;
 
 /**
- * Defines the radius of the circle.
- * @member {String} 
- */
+    * Defines the radius of the circle.
+    * @type {String | undefined}
+    */
 LocationShapeDistance.prototype['radius'] = undefined;
 
 

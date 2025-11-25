@@ -17,17 +17,16 @@ import Order from './Order';
 import RedemptionsRedeemRequestBodyOptions from './RedemptionsRedeemRequestBodyOptions';
 import RedemptionsRedeemRequestBodyRedeemablesItem from './RedemptionsRedeemRequestBodyRedeemablesItem';
 import Session from './Session';
-
 /**
  * The RedemptionsRedeemRequestBody model module.
  * @module model/RedemptionsRedeemRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRedeemRequestBody {
     /**
      * Constructs a new <code>RedemptionsRedeemRequestBody</code>.
      * Response body schema for **POST** &#x60;v1/redemptions&#x60;.
-     * @alias module:model/RedemptionsRedeemRequestBody
+     * @alias RedemptionsRedeemRequestBody
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class RedemptionsRedeemRequestBody {
     /**
      * Constructs a <code>RedemptionsRedeemRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRedeemRequestBody} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRedeemRequestBody} The populated <code>RedemptionsRedeemRequestBody</code> instance.
+     * @param {Partial<RedemptionsRedeemRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRedeemRequestBody} [obj] Optional instance to populate.
+     * @returns {RedemptionsRedeemRequestBody} The populated <code>RedemptionsRedeemRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class RedemptionsRedeemRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRedeemRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRedeemRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRedeemRequestBody</code>.
      */
     static validateJSON(data) {
@@ -124,40 +123,40 @@ class RedemptionsRedeemRequestBody {
 
 
 /**
- * @member {module:model/RedemptionsRedeemRequestBodyOptions} 
- */
+    * @type {RedemptionsRedeemRequestBodyOptions | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['options'] = undefined;
 
 /**
- * @member {Array.<module:model/RedemptionsRedeemRequestBodyRedeemablesItem>} 
- */
+    * @type {Array.<RedemptionsRedeemRequestBodyRedeemablesItem> | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['redeemables'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['order'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Session} 
- */
+    * @type {Session | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['session'] = undefined;
 
 /**
- * Is correspondent to Customer's source_id
- * @member {String} 
- */
+    * Is correspondent to Customer's source_id
+    * @type {String | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['tracking_id'] = undefined;
 
 /**
- * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
- * @member {Object} 
- */
+    * A set of key/value pairs that you can attach to a redemption object. It can be useful for storing additional information about the redemption in a structured format.
+    * @type {Object | undefined}
+    */
 RedemptionsRedeemRequestBody.prototype['metadata'] = undefined;
 
 

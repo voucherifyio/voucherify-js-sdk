@@ -17,16 +17,15 @@ import Discount from './Discount';
 import MemberActivityDataTransactionDetailsSourceVoucherGift from './MemberActivityDataTransactionDetailsSourceVoucherGift';
 import MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard from './MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard';
 import MemberActivityDataTransactionDetailsSourceVoucherRedemption from './MemberActivityDataTransactionDetailsSourceVoucherRedemption';
-
 /**
  * The MemberActivityDataTransactionDetailsSourceVoucher model module.
  * @module model/MemberActivityDataTransactionDetailsSourceVoucher
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsSourceVoucher {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsSourceVoucher</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsSourceVoucher
+     * @alias MemberActivityDataTransactionDetailsSourceVoucher
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class MemberActivityDataTransactionDetailsSourceVoucher {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsSourceVoucher</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsSourceVoucher} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsSourceVoucher} The populated <code>MemberActivityDataTransactionDetailsSourceVoucher</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsSourceVoucher>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsSourceVoucher} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsSourceVoucher} The populated <code>MemberActivityDataTransactionDetailsSourceVoucher</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -122,7 +121,7 @@ class MemberActivityDataTransactionDetailsSourceVoucher {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsSourceVoucher</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsSourceVoucher>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsSourceVoucher</code>.
      */
     static validateJSON(data) {
@@ -198,172 +197,172 @@ class MemberActivityDataTransactionDetailsSourceVoucher {
 
 
 /**
- * A unique identifier that represents the voucher assigned by Voucherify.
- * @member {String} 
- */
+    * A unique identifier that represents the voucher assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['id'] = undefined;
 
 /**
- * Voucher code.
- * @member {String} 
- */
+    * Voucher code.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['code'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucherGift} 
- */
+    * @type {MemberActivityDataTransactionDetailsSourceVoucherGift | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/Discount} 
- */
+    * @type {Discount | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard} 
- */
+    * @type {MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['loyalty_card'] = undefined;
 
 /**
- * Type of the voucher.
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucher.TypeEnum} 
- */
+    * Type of the voucher.
+    * @type {(keyof typeof MemberActivityDataTransactionDetailsSourceVoucher.TypeEnum) | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['type'] = undefined;
 
 /**
- * Campaign name.
- * @member {String} 
- */
+    * Campaign name.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['campaign'] = undefined;
 
 /**
- * Campaign unique ID.
- * @member {String} 
- */
+    * Campaign unique ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['campaign_id'] = undefined;
 
 /**
- * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
- * @member {Boolean} 
- */
+    * Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['is_referral_code'] = undefined;
 
 /**
- * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
- * @member {String} 
- */
+    * Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['holder_id'] = undefined;
 
 /**
- * Unique identifier of the referrer assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the referrer assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['referrer_id'] = undefined;
 
 /**
- * Unique identifier of the category that this voucher belongs to.
- * @member {String} 
- */
+    * Unique identifier of the category that this voucher belongs to.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['category_id'] = undefined;
 
 /**
- * Contains details about the category.
- * @member {Array.<module:model/Category>} 
- */
+    * Contains details about the category.
+    * @type {Array.<Category> | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['categories'] = undefined;
 
 /**
- * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher.
- * @member {Boolean} 
- */
+    * Shows whether the voucher is on or off. `true` indicates an *active* voucher and `false` indicates an *inactive* voucher.
+    * @type {Boolean | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['active'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['updated_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucherRedemption} 
- */
+    * @type {MemberActivityDataTransactionDetailsSourceVoucherRedemption | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['redemption'] = undefined;
 
 /**
- * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
- * @member {Date} 
- */
+    * Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
+    * @type {Date | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['start_date'] = undefined;
 
 /**
- * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
- * @member {Date} 
- */
+    * Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
+    * @type {Date | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['expiration_date'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to a voucher. The metadata object stores all custom attributes assigned to the voucher.
+    * @type {Object | undefined}
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['metadata'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/MemberActivityDataTransactionDetailsSourceVoucher.ObjectEnum} 
- * @default 'voucher'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof MemberActivityDataTransactionDetailsSourceVoucher.ObjectEnum) | undefined}
+    * @default 'voucher'
+    */
 MemberActivityDataTransactionDetailsSourceVoucher.prototype['object'] = 'voucher';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataTransactionDetailsSourceVoucher['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    MemberActivityDataTransactionDetailsSourceVoucher['TypeEnum'] = {
+    
+        /**
+         * value: "DISCOUNT_VOUCHER"
+         * @constant
+         */
+        "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
+    
+        /**
+         * value: "LOYALTY_CARD"
+         * @constant
+         */
+        "LOYALTY_CARD": "LOYALTY_CARD",
+    
+        /**
+         * value: "GIFT_VOUCHER"
+         * @constant
+         */
+        "GIFT_VOUCHER": "GIFT_VOUCHER"    
+    };
+
 
     /**
-     * value: "DISCOUNT_VOUCHER"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DISCOUNT_VOUCHER": "DISCOUNT_VOUCHER",
-
-    /**
-     * value: "LOYALTY_CARD"
-     * @constant
-     */
-    "LOYALTY_CARD": "LOYALTY_CARD",
-
-    /**
-     * value: "GIFT_VOUCHER"
-     * @constant
-     */
-    "GIFT_VOUCHER": "GIFT_VOUCHER"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataTransactionDetailsSourceVoucher['ObjectEnum'] = {
-
-    /**
-     * value: "voucher"
-     * @constant
-     */
-    "voucher": "voucher"
-};
+    MemberActivityDataTransactionDetailsSourceVoucher['ObjectEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

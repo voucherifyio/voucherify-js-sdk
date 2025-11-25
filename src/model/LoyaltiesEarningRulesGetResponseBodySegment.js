@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodySegment model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodySegment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodySegment {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodySegment</code>.
      * Contains the ID of a customer segment. Required for the &#x60;customer.segment.entered&#x60; option in the event.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodySegment
+     * @alias LoyaltiesEarningRulesGetResponseBodySegment
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesEarningRulesGetResponseBodySegment {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodySegment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodySegment} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodySegment} The populated <code>LoyaltiesEarningRulesGetResponseBodySegment</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodySegment>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodySegment} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodySegment} The populated <code>LoyaltiesEarningRulesGetResponseBodySegment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class LoyaltiesEarningRulesGetResponseBodySegment {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodySegment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodySegment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodySegment</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class LoyaltiesEarningRulesGetResponseBodySegment {
 
 
 /**
- * Contains a unique identifier of a customer segment. Assigned by the Voucherify API.
- * @member {String} 
- */
+    * Contains a unique identifier of a customer segment. Assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodySegment.prototype['id'] = undefined;
 
 

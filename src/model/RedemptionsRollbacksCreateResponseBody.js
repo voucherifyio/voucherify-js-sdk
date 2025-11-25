@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import RedemptionRollback from './RedemptionRollback';
 import RedemptionsRollbacksCreateResponseBodyOrder from './RedemptionsRollbacksCreateResponseBodyOrder';
-
 /**
  * The RedemptionsRollbacksCreateResponseBody model module.
  * @module model/RedemptionsRollbacksCreateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRollbacksCreateResponseBody {
     /**
      * Constructs a new <code>RedemptionsRollbacksCreateResponseBody</code>.
      * Response body schema for **POST** &#x60;/redemptions/{parentRedemptionID}/rollbacks&#x60;.
-     * @alias module:model/RedemptionsRollbacksCreateResponseBody
+     * @alias RedemptionsRollbacksCreateResponseBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RedemptionsRollbacksCreateResponseBody {
     /**
      * Constructs a <code>RedemptionsRollbacksCreateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRollbacksCreateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRollbacksCreateResponseBody} The populated <code>RedemptionsRollbacksCreateResponseBody</code> instance.
+     * @param {Partial<RedemptionsRollbacksCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRollbacksCreateResponseBody} [obj] Optional instance to populate.
+     * @returns {RedemptionsRollbacksCreateResponseBody} The populated <code>RedemptionsRollbacksCreateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -65,7 +64,7 @@ class RedemptionsRollbacksCreateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRollbacksCreateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRollbacksCreateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRollbacksCreateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -97,19 +96,19 @@ class RedemptionsRollbacksCreateResponseBody {
 
 
 /**
- * Contains the rollback redemption objects of the particular incentives.
- * @member {Array.<module:model/RedemptionRollback>} 
- */
+    * Contains the rollback redemption objects of the particular incentives.
+    * @type {Array.<RedemptionRollback> | undefined}
+    */
 RedemptionsRollbacksCreateResponseBody.prototype['rollbacks'] = undefined;
 
 /**
- * @member {module:model/RedemptionRollback} 
- */
+    * @type {RedemptionRollback | undefined}
+    */
 RedemptionsRollbacksCreateResponseBody.prototype['parent_rollback'] = undefined;
 
 /**
- * @member {module:model/RedemptionsRollbacksCreateResponseBodyOrder} 
- */
+    * @type {RedemptionsRollbacksCreateResponseBodyOrder | undefined}
+    */
 RedemptionsRollbacksCreateResponseBody.prototype['order'] = undefined;
 
 

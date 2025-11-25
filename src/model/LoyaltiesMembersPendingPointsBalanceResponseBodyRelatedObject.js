@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject model module.
  * @module model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject {
     /**
      * Constructs a new <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code>.
      * Defines the resource that is being modified.
-     * @alias module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject
+     * @alias LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject {
     /**
      * Constructs a <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject} The populated <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code> instance.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject} The populated <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject</code>.
      */
     static validateJSON(data) {
@@ -83,35 +82,35 @@ class LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject {
 
 
 /**
- * The object being modified, i.e. `voucher`.
- * @member {module:model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject.TypeEnum} 
- * @default 'voucher'
- */
+    * The object being modified, i.e. `voucher`.
+    * @type {(keyof typeof LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject.TypeEnum) | undefined}
+    * @default 'voucher'
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject.prototype['type'] = 'voucher';
 
 /**
- * Identifies the voucher that is being modified. This is the unique identifer that was assigned by Voucherify.
- * @member {String} 
- */
+    * Identifies the voucher that is being modified. This is the unique identifer that was assigned by Voucherify.
+    * @type {String | undefined}
+    */
 LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject.prototype['id'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject['TypeEnum'] = {
-
     /**
-     * value: "voucher"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "voucher": "voucher"
-};
+    LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject['TypeEnum'] = {
+    
+        /**
+         * value: "voucher"
+         * @constant
+         */
+        "voucher": "voucher"    
+    };
 
 
 

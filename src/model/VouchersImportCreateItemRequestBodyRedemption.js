@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersImportCreateItemRequestBodyRedemption model module.
  * @module model/VouchersImportCreateItemRequestBodyRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersImportCreateItemRequestBodyRedemption {
     /**
      * Constructs a new <code>VouchersImportCreateItemRequestBodyRedemption</code>.
-     * @alias module:model/VouchersImportCreateItemRequestBodyRedemption
+     * @alias VouchersImportCreateItemRequestBodyRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class VouchersImportCreateItemRequestBodyRedemption {
     /**
      * Constructs a <code>VouchersImportCreateItemRequestBodyRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersImportCreateItemRequestBodyRedemption} obj Optional instance to populate.
-     * @returns {module:model/VouchersImportCreateItemRequestBodyRedemption} The populated <code>VouchersImportCreateItemRequestBodyRedemption</code> instance.
+     * @param {Partial<VouchersImportCreateItemRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersImportCreateItemRequestBodyRedemption} [obj] Optional instance to populate.
+     * @returns {VouchersImportCreateItemRequestBodyRedemption} The populated <code>VouchersImportCreateItemRequestBodyRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class VouchersImportCreateItemRequestBodyRedemption {
 
     /**
      * Validates the JSON data with respect to <code>VouchersImportCreateItemRequestBodyRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersImportCreateItemRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersImportCreateItemRequestBodyRedemption</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class VouchersImportCreateItemRequestBodyRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 VouchersImportCreateItemRequestBodyRedemption.prototype['quantity'] = undefined;
 
 

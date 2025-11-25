@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions from './ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions';
-
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersHolderRole model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersHolderRole
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListReferralsRedeemableHoldersHolderRole {
     /**
      * Constructs a new <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code>.
      * Holder role of the redeemable. Allowed values: &#x60;REFEREE&#x60;, &#x60;REFERRER&#x60;
-     * @alias module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRole
+     * @alias ParameterFiltersListReferralsRedeemableHoldersHolderRole
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRole {
     /**
      * Constructs a <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRole} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRole} The populated <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code> instance.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersHolderRole>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListReferralsRedeemableHoldersHolderRole} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListReferralsRedeemableHoldersHolderRole} The populated <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRole {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListReferralsRedeemableHoldersHolderRole>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListReferralsRedeemableHoldersHolderRole</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListReferralsRedeemableHoldersHolderRole {
 
 
 /**
- * @member {module:model/ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions} 
- */
+    * @type {ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions | undefined}
+    */
 ParameterFiltersListReferralsRedeemableHoldersHolderRole.prototype['conditions'] = undefined;
 
 

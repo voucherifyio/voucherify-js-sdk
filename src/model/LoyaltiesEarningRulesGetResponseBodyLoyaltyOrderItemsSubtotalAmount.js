@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem from './LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code>.
      * Defines the ratio based on the property defined in the calculation_type parameter. For every set of value (1, 10, etc) defined in the every parameter for the property defined in calculation_type, give the customer the number of points defined in the points parameter. In other words, for every calculation_type, give points.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount
+     * @alias LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -73,7 +72,7 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount</code>.
      */
     static validateJSON(data) {
@@ -109,70 +108,70 @@ class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount {
 
 
 /**
- * Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 order amount is written as 1000.
- * @member {Number} 
- */
+    * Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 order amount is written as 1000.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['every'] = undefined;
 
 /**
- * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
- * @member {Number} 
- */
+    * Number of points to be awarded, i.e. how many points to be added to the loyalty card.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['points_formula'] = undefined;
 
 /**
- * Type of object which will be covered by the earning rule. This is required together with `id`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used.
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.ObjectEnum} 
- */
+    * Type of object which will be covered by the earning rule. This is required together with `id`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used.
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.ObjectEnum) | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['object'] = undefined;
 
 /**
- * Unique ID of the resource assigned by Voucherify. This is required together with `object`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used. Values are, for example, `pc_75U0dHlr7u75BJodrW1AE3t6` for product collection, `prod_0bae32322150fd0546` for a product, or `sku_0b7d7dfb090be5c619` for a SKU.
- * @member {String} 
- */
+    * Unique ID of the resource assigned by Voucherify. This is required together with `object`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used. Values are, for example, `pc_75U0dHlr7u75BJodrW1AE3t6` for product collection, `prod_0bae32322150fd0546` for a product, or `sku_0b7d7dfb090be5c619` for a SKU.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['id'] = undefined;
 
 /**
- * Defines products, SKUs, or product collections covered by the earning rule. Can be replaced by `object` and `id` to define only one object.
- * @member {Array.<module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem>} 
- */
+    * Defines products, SKUs, or product collections covered by the earning rule. Can be replaced by `object` and `id` to define only one object.
+    * @type {Array.<LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem> | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.prototype['applicable_to'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount['ObjectEnum'] = {
-
     /**
-     * value: "products_collection"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "products_collection": "products_collection",
-
-    /**
-     * value: "product"
-     * @constant
-     */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount['ObjectEnum'] = {
+    
+        /**
+         * value: "products_collection"
+         * @constant
+         */
+        "products_collection": "products_collection",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

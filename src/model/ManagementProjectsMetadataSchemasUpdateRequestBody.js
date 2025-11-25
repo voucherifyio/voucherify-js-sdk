@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsMetadataSchemaDefinition from './ManagementProjectsMetadataSchemaDefinition';
-
 /**
  * The ManagementProjectsMetadataSchemasUpdateRequestBody model module.
  * @module model/ManagementProjectsMetadataSchemasUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsMetadataSchemasUpdateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code>.
      * 
-     * @alias module:model/ManagementProjectsMetadataSchemasUpdateRequestBody
+     * @alias ManagementProjectsMetadataSchemasUpdateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ManagementProjectsMetadataSchemasUpdateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsMetadataSchemasUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsMetadataSchemasUpdateRequestBody} The populated <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsMetadataSchemasUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsMetadataSchemasUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsMetadataSchemasUpdateRequestBody} The populated <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class ManagementProjectsMetadataSchemasUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsMetadataSchemasUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsMetadataSchemasUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -75,15 +74,15 @@ class ManagementProjectsMetadataSchemasUpdateRequestBody {
 
 
 /**
- * Restricts the creation of metadata fields when set to `true`. In other words, it indicates whether or not you are allowed to create new metadata definitions; for example, in the campaign manager or publication manager. If it is set to true, then only the defined fields will be available for assigning values. 
- * @member {Boolean} 
- */
+    * Restricts the creation of metadata fields when set to `true`. In other words, it indicates whether or not you are allowed to create new metadata definitions; for example, in the campaign manager or publication manager. If it is set to true, then only the defined fields will be available for assigning values. 
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsMetadataSchemasUpdateRequestBody.prototype['allow_defined_only'] = undefined;
 
 /**
- * Contains metadata definitions. There can be many properties within this object.  Only the properties sent in the request will be updated. However, if you send a property, all its key-value pairs must be provided - otherwise, they will be overwritten to new values.  You cannot change the `\"type\"` property. However, it is required, so you need to add it to the request.
- * @member {Object.<String, module:model/ManagementProjectsMetadataSchemaDefinition>} 
- */
+    * Contains metadata definitions. There can be many properties within this object.  Only the properties sent in the request will be updated. However, if you send a property, all its key-value pairs must be provided - otherwise, they will be overwritten to new values.  You cannot change the `\"type\"` property. However, it is required, so you need to add it to the request.
+    * @type {Object.<String, ManagementProjectsMetadataSchemaDefinition> | undefined}
+    */
 ManagementProjectsMetadataSchemasUpdateRequestBody.prototype['properties'] = undefined;
 
 

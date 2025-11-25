@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterCampaignsAccessSetttingsFilter model module.
  * @module model/ParameterCampaignsAccessSetttingsFilter
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterCampaignsAccessSetttingsFilter {
     /**
      * Constructs a new <code>ParameterCampaignsAccessSetttingsFilter</code>.
-     * @alias module:model/ParameterCampaignsAccessSetttingsFilter
+     * @alias ParameterCampaignsAccessSetttingsFilter
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ParameterCampaignsAccessSetttingsFilter {
     /**
      * Constructs a <code>ParameterCampaignsAccessSetttingsFilter</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterCampaignsAccessSetttingsFilter} obj Optional instance to populate.
-     * @returns {module:model/ParameterCampaignsAccessSetttingsFilter} The populated <code>ParameterCampaignsAccessSetttingsFilter</code> instance.
+     * @param {Partial<ParameterCampaignsAccessSetttingsFilter>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterCampaignsAccessSetttingsFilter} [obj] Optional instance to populate.
+     * @returns {ParameterCampaignsAccessSetttingsFilter} The populated <code>ParameterCampaignsAccessSetttingsFilter</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class ParameterCampaignsAccessSetttingsFilter {
 
     /**
      * Validates the JSON data with respect to <code>ParameterCampaignsAccessSetttingsFilter</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterCampaignsAccessSetttingsFilter>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterCampaignsAccessSetttingsFilter</code>.
      */
     static validateJSON(data) {
@@ -88,21 +87,21 @@ class ParameterCampaignsAccessSetttingsFilter {
 
 
 /**
- * Add area IDs to list all campaigns that are assigned to those areas.
- * @member {Array.<String>} 
- */
+    * Add area IDs to list all campaigns that are assigned to those areas.
+    * @type {Array.<String> | undefined}
+    */
 ParameterCampaignsAccessSetttingsFilter.prototype['areas_ids'] = undefined;
 
 /**
- * Add area IDs to list all campaigns that are assigned to all stores in those areas.
- * @member {Array.<String>} 
- */
+    * Add area IDs to list all campaigns that are assigned to all stores in those areas.
+    * @type {Array.<String> | undefined}
+    */
 ParameterCampaignsAccessSetttingsFilter.prototype['area_all_stores_ids'] = undefined;
 
 /**
- * Add store IDs to list all campaigns that are assigned to those stores. The response returns also those campaigns that are assigned to those stores with the assignment to all stores.
- * @member {Array.<String>} 
- */
+    * Add store IDs to list all campaigns that are assigned to those stores. The response returns also those campaigns that are assigned to those stores with the assignment to all stores.
+    * @type {Array.<String> | undefined}
+    */
 ParameterCampaignsAccessSetttingsFilter.prototype['area_stores_ids'] = undefined;
 
 

@@ -15,17 +15,16 @@ import ApiClient from '../ApiClient';
 import ExportVoucherTransactionsFields from './ExportVoucherTransactionsFields';
 import ExportVoucherTransactionsFilters from './ExportVoucherTransactionsFilters';
 import ExportVoucherTransactionsOrder from './ExportVoucherTransactionsOrder';
-
 /**
  * The LoyaltiesMembersTransactionsExportCreateResponseBodyParameters model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransactionsExportCreateResponseBodyParameters {
     /**
      * Constructs a new <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code>.
      * List of available fields and filters that can be exported with an order along with the sorting order of the returned data.
-     * @alias module:model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters
+     * @alias LoyaltiesMembersTransactionsExportCreateResponseBodyParameters
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesMembersTransactionsExportCreateResponseBodyParameters {
     /**
      * Constructs a <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransactionsExportCreateResponseBodyParameters} The populated <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code> instance.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransactionsExportCreateResponseBodyParameters} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransactionsExportCreateResponseBodyParameters} The populated <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class LoyaltiesMembersTransactionsExportCreateResponseBodyParameters {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransactionsExportCreateResponseBodyParameters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransactionsExportCreateResponseBodyParameters</code>.
      */
     static validateJSON(data) {
@@ -88,19 +87,19 @@ class LoyaltiesMembersTransactionsExportCreateResponseBodyParameters {
 
 
 /**
- * @member {module:model/ExportVoucherTransactionsOrder} 
- */
+    * @type {Exclude<keyof typeof ExportVoucherTransactionsOrder, "prototype" | "constructFromObject"> | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBodyParameters.prototype['order'] = undefined;
 
 /**
- * Array of strings containing the data in the export. These fields define the headers in the CSV file.
- * @member {Array.<module:model/ExportVoucherTransactionsFields>} 
- */
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file.
+    * @type {Array.<Exclude<keyof typeof ExportVoucherTransactionsFields, "prototype" | "constructFromObject">> | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBodyParameters.prototype['fields'] = undefined;
 
 /**
- * @member {module:model/ExportVoucherTransactionsFilters} 
- */
+    * @type {ExportVoucherTransactionsFilters | undefined}
+    */
 LoyaltiesMembersTransactionsExportCreateResponseBodyParameters.prototype['filters'] = undefined;
 
 

@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerReferralsCampaignsItem model module.
  * @module model/CustomerReferralsCampaignsItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerReferralsCampaignsItem {
     /**
      * Constructs a new <code>CustomerReferralsCampaignsItem</code>.
      * Contains information about the source of the referral.
-     * @alias module:model/CustomerReferralsCampaignsItem
-     * @param campaignId {String} Unique campaign ID, assigned by Voucherify.
-     * @param referrerId {String} Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
-     * @param relatedObjectId {String} Related object id
-     * @param relatedObjectType {String} Related object type, i.e. `redemption`.
-     * @param date {Date} Timestamp representing the date and time when the customer was referred in ISO 8601 format.
+     * @alias CustomerReferralsCampaignsItem
+     * @param {String} campaignId Unique campaign ID, assigned by Voucherify.
+     * @param {String} referrerId Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
+     * @param {String} relatedObjectId Related object id
+     * @param {String} relatedObjectType Related object type, i.e. `redemption`.
+     * @param {Date} date Timestamp representing the date and time when the customer was referred in ISO 8601 format.
      */
     constructor(campaignId, referrerId, relatedObjectId, relatedObjectType, date) { 
         
@@ -50,9 +49,9 @@ class CustomerReferralsCampaignsItem {
     /**
      * Constructs a <code>CustomerReferralsCampaignsItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerReferralsCampaignsItem} obj Optional instance to populate.
-     * @returns {module:model/CustomerReferralsCampaignsItem} The populated <code>CustomerReferralsCampaignsItem</code> instance.
+     * @param {Partial<CustomerReferralsCampaignsItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerReferralsCampaignsItem} [obj] Optional instance to populate.
+     * @returns {CustomerReferralsCampaignsItem} The populated <code>CustomerReferralsCampaignsItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -79,7 +78,7 @@ class CustomerReferralsCampaignsItem {
 
     /**
      * Validates the JSON data with respect to <code>CustomerReferralsCampaignsItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerReferralsCampaignsItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerReferralsCampaignsItem</code>.
      */
     static validateJSON(data) {
@@ -115,33 +114,33 @@ class CustomerReferralsCampaignsItem {
 CustomerReferralsCampaignsItem.RequiredProperties = ["campaign_id", "referrer_id", "related_object_id", "related_object_type", "date"];
 
 /**
- * Unique campaign ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique campaign ID, assigned by Voucherify.
+    * @type {String}
+    */
 CustomerReferralsCampaignsItem.prototype['campaign_id'] = undefined;
 
 /**
- * Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
- * @member {String} 
- */
+    * Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
+    * @type {String}
+    */
 CustomerReferralsCampaignsItem.prototype['referrer_id'] = undefined;
 
 /**
- * Related object id
- * @member {String} 
- */
+    * Related object id
+    * @type {String}
+    */
 CustomerReferralsCampaignsItem.prototype['related_object_id'] = undefined;
 
 /**
- * Related object type, i.e. `redemption`.
- * @member {String} 
- */
+    * Related object type, i.e. `redemption`.
+    * @type {String}
+    */
 CustomerReferralsCampaignsItem.prototype['related_object_type'] = undefined;
 
 /**
- * Timestamp representing the date and time when the customer was referred in ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the customer was referred in ISO 8601 format.
+    * @type {Date}
+    */
 CustomerReferralsCampaignsItem.prototype['date'] = undefined;
 
 

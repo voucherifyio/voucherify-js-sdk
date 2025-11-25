@@ -12,19 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue model module.
  * @module model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code>.
      * Custom event metadata name.
-     * @alias module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue
-     * @param type {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.TypeEnum} Indicates the type of the custom event.
-     * @param optional {Boolean} Indicates if this property is optional or not for the resource.
+     * @alias ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue
+     * @param {ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.TypeEnum} type Indicates the type of the custom event.
+     * @param {Boolean} optional Indicates if this property is optional or not for the resource.
      */
     constructor(type, optional) { 
         
@@ -44,9 +43,9 @@ class ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntry
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue} The populated <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue} The populated <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -67,7 +66,7 @@ class ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntry
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue</code>.
      */
     static validateJSON(data) {
@@ -91,64 +90,64 @@ class ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntry
 ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.RequiredProperties = ["type", "optional"];
 
 /**
- * Indicates the type of the custom event.
- * @member {module:model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.TypeEnum} 
- */
+    * Indicates the type of the custom event.
+    * @type {(keyof typeof ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.TypeEnum)}
+    */
 ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.prototype['type'] = undefined;
 
 /**
- * Indicates if this property is optional or not for the resource.
- * @member {Boolean} 
- */
+    * Indicates if this property is optional or not for the resource.
+    * @type {Boolean}
+    */
 ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.prototype['optional'] = undefined;
 
 /**
- * Indicates if the property has been deleted from the schema. A deleted schema is inactive, but it can be restored.
- * @member {Boolean} 
- */
+    * Indicates if the property has been deleted from the schema. A deleted schema is inactive, but it can be restored.
+    * @type {Boolean | undefined}
+    */
 ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue.prototype['deleted'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue['TypeEnum'] = {
-
     /**
-     * value: "string"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "string": "string",
-
-    /**
-     * value: "number"
-     * @constant
-     */
-    "number": "number",
-
-    /**
-     * value: "date"
-     * @constant
-     */
-    "date": "date",
-
-    /**
-     * value: "datetime"
-     * @constant
-     */
-    "datetime": "datetime",
-
-    /**
-     * value: "boolean"
-     * @constant
-     */
-    "boolean": "boolean"
-};
+    ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue['TypeEnum'] = {
+    
+        /**
+         * value: "string"
+         * @constant
+         */
+        "string": "string",
+    
+        /**
+         * value: "number"
+         * @constant
+         */
+        "number": "number",
+    
+        /**
+         * value: "date"
+         * @constant
+         */
+        "date": "date",
+    
+        /**
+         * value: "datetime"
+         * @constant
+         */
+        "datetime": "datetime",
+    
+        /**
+         * value: "boolean"
+         * @constant
+         */
+        "boolean": "boolean"    
+    };
 
 
 

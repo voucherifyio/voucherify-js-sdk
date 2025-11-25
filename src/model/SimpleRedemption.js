@@ -18,17 +18,16 @@ import SimplePromotionTier from './SimplePromotionTier';
 import SimpleRedemptionChannel from './SimpleRedemptionChannel';
 import SimpleRedemptionRewardResult from './SimpleRedemptionRewardResult';
 import SimpleVoucher from './SimpleVoucher';
-
 /**
  * The SimpleRedemption model module.
  * @module model/SimpleRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleRedemption {
     /**
      * Constructs a new <code>SimpleRedemption</code>.
      * Simplified redemption data.
-     * @alias module:model/SimpleRedemption
+     * @alias SimpleRedemption
      */
     constructor() { 
         
@@ -47,9 +46,9 @@ class SimpleRedemption {
     /**
      * Constructs a <code>SimpleRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleRedemption} obj Optional instance to populate.
-     * @returns {module:model/SimpleRedemption} The populated <code>SimpleRedemption</code> instance.
+     * @param {Partial<SimpleRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleRedemption} [obj] Optional instance to populate.
+     * @returns {SimpleRedemption} The populated <code>SimpleRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -118,7 +117,7 @@ class SimpleRedemption {
 
     /**
      * Validates the JSON data with respect to <code>SimpleRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleRedemption</code>.
      */
     static validateJSON(data) {
@@ -196,163 +195,163 @@ class SimpleRedemption {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['id'] = undefined;
 
 /**
- * Unique customer ID of the redeeming customer.
- * @member {String} 
- */
+    * Unique customer ID of the redeeming customer.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['customer_id'] = undefined;
 
 /**
- * Hashed customer source ID.
- * @member {String} 
- */
+    * Hashed customer source ID.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['tracking_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the redemption was created in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption was created in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 SimpleRedemption.prototype['date'] = undefined;
 
 /**
- * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. In the case of redemption rollback, the numbers are expressed as negative integers.
- * @member {Number} 
- */
+    * For gift cards, this is a positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the number of redeemed credits. For loyalty cards, this is the number of loyalty points used in the transaction. In the case of redemption rollback, the numbers are expressed as negative integers.
+    * @type {Number | undefined}
+    */
 SimpleRedemption.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/SimpleOrder} 
- */
+    * @type {SimpleOrder | undefined}
+    */
 SimpleRedemption.prototype['order'] = undefined;
 
 /**
- * @member {module:model/SimpleRedemptionRewardResult} 
- */
+    * @type {SimpleRedemptionRewardResult | undefined}
+    */
 SimpleRedemption.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/SimpleCustomer} 
- */
+    * @type {SimpleCustomer | undefined}
+    */
 SimpleRedemption.prototype['customer'] = undefined;
 
 /**
- * Redemption result.
- * @member {module:model/SimpleRedemption.ResultEnum} 
- */
+    * Redemption result.
+    * @type {(keyof typeof SimpleRedemption.ResultEnum) | undefined}
+    */
 SimpleRedemption.prototype['result'] = undefined;
 
 /**
- * @member {module:model/SimpleRedemption.StatusEnum} 
- */
+    * @type {(keyof typeof SimpleRedemption.StatusEnum) | undefined}
+    */
 SimpleRedemption.prototype['status'] = undefined;
 
 /**
- * @member {module:model/SimpleVoucher} 
- */
+    * @type {SimpleVoucher | undefined}
+    */
 SimpleRedemption.prototype['voucher'] = undefined;
 
 /**
- * @member {module:model/SimplePromotionTier} 
- */
+    * @type {SimplePromotionTier | undefined}
+    */
 SimpleRedemption.prototype['promotion_tier'] = undefined;
 
 /**
- * Unique redemption ID of the parent redemption.
- * @member {String} 
- */
+    * Unique redemption ID of the parent redemption.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['redemption'] = undefined;
 
 /**
- * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redemption.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes in the form of key/value pairs assigned to the redemption.
+    * @type {Object | undefined}
+    */
 SimpleRedemption.prototype['metadata'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['failure_code'] = undefined;
 
 /**
- * If the result is `FAILURE`, this parameter will provide an expanded reason as to why the redemption failed.
- * @member {String} 
- */
+    * If the result is `FAILURE`, this parameter will provide an expanded reason as to why the redemption failed.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['failure_message'] = undefined;
 
 /**
- * The reason for the redemption rollback.
- * @member {String} 
- */
+    * The reason for the redemption rollback.
+    * @type {String | undefined}
+    */
 SimpleRedemption.prototype['reason'] = undefined;
 
 /**
- * @member {module:model/SimpleRedemptionChannel} 
- */
+    * @type {SimpleRedemptionChannel | undefined}
+    */
 SimpleRedemption.prototype['channel'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the `redemption`.
- * @member {String} 
- * @default 'redemption'
- */
+    * The type of the object represented by the JSON. This object stores information about the `redemption`.
+    * @type {String | undefined}
+    * @default 'redemption'
+    */
 SimpleRedemption.prototype['object'] = 'redemption';
 
 
 
 
 
-/**
- * Allowed values for the <code>result</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleRedemption['ResultEnum'] = {
+    /**
+     * Allowed values for the <code>result</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SimpleRedemption['ResultEnum'] = {
+    
+        /**
+         * value: "SUCCESS"
+         * @constant
+         */
+        "SUCCESS": "SUCCESS",
+    
+        /**
+         * value: "FAILURE"
+         * @constant
+         */
+        "FAILURE": "FAILURE"    
+    };
+
 
     /**
-     * value: "SUCCESS"
-     * @constant
+     * Allowed values for the <code>status</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "SUCCESS": "SUCCESS",
-
-    /**
-     * value: "FAILURE"
-     * @constant
-     */
-    "FAILURE": "FAILURE"
-};
-
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleRedemption['StatusEnum'] = {
-
-    /**
-     * value: "SUCCEEDED"
-     * @constant
-     */
-    "SUCCEEDED": "SUCCEEDED",
-
-    /**
-     * value: "FAILED"
-     * @constant
-     */
-    "FAILED": "FAILED",
-
-    /**
-     * value: "ROLLED BACK"
-     * @constant
-     */
-    "ROLLED BACK": "ROLLED BACK"
-};
+    SimpleRedemption['StatusEnum'] = {
+    
+        /**
+         * value: "SUCCEEDED"
+         * @constant
+         */
+        "SUCCEEDED": "SUCCEEDED",
+    
+        /**
+         * value: "FAILED"
+         * @constant
+         */
+        "FAILED": "FAILED",
+    
+        /**
+         * value: "ROLLED BACK"
+         * @constant
+         */
+        "ROLLED BACK": "ROLLED BACK"    
+    };
 
 
 

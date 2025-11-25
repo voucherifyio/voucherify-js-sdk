@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultDetails model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultDetails {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code>.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItemResultDetails
+     * @alias ValidationsValidateResponseBodyRedeemablesItemResultDetails
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDetails} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDetails} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItemResultDetails} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItemResultDetails} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResultDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResultDetails</code>.
      */
     static validateJSON(data) {
@@ -81,13 +80,13 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResultDetails.prototype['message'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResultDetails.prototype['key'] = undefined;
 
 

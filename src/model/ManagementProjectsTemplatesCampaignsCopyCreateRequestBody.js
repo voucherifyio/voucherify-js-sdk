@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsTemplatesCampaignsCopyCreateRequestBody model module.
  * @module model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsTemplatesCampaignsCopyCreateRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code>.
      * Response body schema for **POST** &#x60;/management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy&#x60;.
-     * @alias module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody
+     * @alias ManagementProjectsTemplatesCampaignsCopyCreateRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsTemplatesCampaignsCopyCreateRequestBody {
     /**
      * Constructs a <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} The populated <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsCopyCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsTemplatesCampaignsCopyCreateRequestBody} The populated <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class ManagementProjectsTemplatesCampaignsCopyCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsTemplatesCampaignsCopyCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsTemplatesCampaignsCopyCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class ManagementProjectsTemplatesCampaignsCopyCreateRequestBody {
 
 
 /**
- * User-defined name of the campaign template. It must be unique.
- * @member {String} 
- */
+    * User-defined name of the campaign template. It must be unique.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * User-defined description of the campaign template.
- * @member {String} 
- */
+    * User-defined description of the campaign template.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateRequestBody.prototype['description'] = undefined;
 
 /**
- * Unique identifier of the project to which the campaign template will be copied.
- * @member {String} 
- */
+    * Unique identifier of the project to which the campaign template will be copied.
+    * @type {String | undefined}
+    */
 ManagementProjectsTemplatesCampaignsCopyCreateRequestBody.prototype['destination_project_id'] = undefined;
 
 

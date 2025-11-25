@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard {
     /**
      * Constructs a new <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code>.
-     * @alias module:model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard
+     * @alias RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard {
     /**
      * Constructs a <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard} The populated <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code> instance.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard} The populated <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -88,45 +87,45 @@ class RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard {
 
 
 /**
- * Total number of points added to the loyalty card over its lifespan.
- * @member {Number} 
- */
+    * Total number of points added to the loyalty card over its lifespan.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['balance'] = undefined;
 
 /**
- * The next closest date when the next set of points are due to expire.
- * @member {Date} 
- */
+    * The next closest date when the next set of points are due to expire.
+    * @type {Date | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['next_expiration_date'] = undefined;
 
 /**
- * The amount of points that are set to expire next.
- * @member {Number} 
- */
+    * The amount of points that are set to expire next.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['next_expiration_points'] = undefined;
 
 /**
- * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
- * @member {Number} 
- */
+    * Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['pending_points'] = undefined;
 
 /**
- * Shows the total number of expired points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of expired points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['expired_points'] = undefined;
 
 /**
- * Shows the total number of subtracted points over the lifetime of the loyalty card.
- * @member {Number} 
- */
+    * Shows the total number of subtracted points over the lifetime of the loyalty card.
+    * @type {Number | undefined}
+    */
 RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.prototype['subtracted_points'] = undefined;
 
 

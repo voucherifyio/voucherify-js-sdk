@@ -13,43 +13,41 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class PointsExpirationTypes.
-* @module model/PointsExpirationTypes
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class PointsExpirationTypes {
+ * Enum class PointsExpirationTypes.
+ * @module model/PointsExpirationTypes
+ * @version 3.0.1
+ */
+class PointsExpirationTypes {
     
-        /**
-         * value: "PROGRAM_RULES"
-         * @constant
-         */
-        "PROGRAM_RULES" = "PROGRAM_RULES";
-
+    /**
+     * 
+     * @constant
+     */
+    static "PROGRAM_RULES" = "PROGRAM_RULES";
     
-        /**
-         * value: "CUSTOM_DATE"
-         * @constant
-         */
-        "CUSTOM_DATE" = "CUSTOM_DATE";
-
+    /**
+     * 
+     * @constant
+     */
+    static "CUSTOM_DATE" = "CUSTOM_DATE";
     
-        /**
-         * value: "NON_EXPIRING"
-         * @constant
-         */
-        "NON_EXPIRING" = "NON_EXPIRING";
-
+    /**
+     * 
+     * @constant
+     */
+    static "NON_EXPIRING" = "NON_EXPIRING";
     
 
     /**
-    * Returns a <code>PointsExpirationTypes</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/PointsExpirationTypes} The enum <code>PointsExpirationTypes</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof PointsExpirationTypes, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof PointsExpirationTypes[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return PointsExpirationTypes[key];
     }
 }
+
+export default PointsExpirationTypes;
 

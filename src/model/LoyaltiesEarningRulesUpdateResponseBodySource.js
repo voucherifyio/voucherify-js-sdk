@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltiesEarningRulesUpdateResponseBodySource model module.
  * @module model/LoyaltiesEarningRulesUpdateResponseBodySource
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesUpdateResponseBodySource {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesUpdateResponseBodySource</code>.
      * Contains the custom earning rule name and parent campaign.
-     * @alias module:model/LoyaltiesEarningRulesUpdateResponseBodySource
+     * @alias LoyaltiesEarningRulesUpdateResponseBodySource
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesEarningRulesUpdateResponseBodySource {
     /**
      * Constructs a <code>LoyaltiesEarningRulesUpdateResponseBodySource</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesUpdateResponseBodySource} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesUpdateResponseBodySource} The populated <code>LoyaltiesEarningRulesUpdateResponseBodySource</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodySource>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesUpdateResponseBodySource} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesUpdateResponseBodySource} The populated <code>LoyaltiesEarningRulesUpdateResponseBodySource</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class LoyaltiesEarningRulesUpdateResponseBodySource {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesUpdateResponseBodySource</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesUpdateResponseBodySource>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesUpdateResponseBodySource</code>.
      */
     static validateJSON(data) {
@@ -90,41 +89,41 @@ class LoyaltiesEarningRulesUpdateResponseBodySource {
 
 
 /**
- * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
- * @member {String} 
- */
+    * Name of the earning rule. This is displayed as a header for the earning rule in the Dashboard.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodySource.prototype['banner'] = undefined;
 
 /**
- * A unique campaign identifier assigned by the Voucherify API.
- * @member {String} 
- */
+    * A unique campaign identifier assigned by the Voucherify API.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesUpdateResponseBodySource.prototype['object_id'] = undefined;
 
 /**
- * Defines the object associated with the earning rule. Defaults to `campaign`.
- * @member {module:model/LoyaltiesEarningRulesUpdateResponseBodySource.ObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Defines the object associated with the earning rule. Defaults to `campaign`.
+    * @type {(keyof typeof LoyaltiesEarningRulesUpdateResponseBodySource.ObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 LoyaltiesEarningRulesUpdateResponseBodySource.prototype['object_type'] = 'campaign';
 
 
 
 
 
-/**
- * Allowed values for the <code>object_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesUpdateResponseBodySource['ObjectTypeEnum'] = {
-
     /**
-     * value: "campaign"
-     * @constant
+     * Allowed values for the <code>object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "campaign": "campaign"
-};
+    LoyaltiesEarningRulesUpdateResponseBodySource['ObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

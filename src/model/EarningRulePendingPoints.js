@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EarningRulePendingPoints model module.
  * @module model/EarningRulePendingPoints
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EarningRulePendingPoints {
     /**
      * Constructs a new <code>EarningRulePendingPoints</code>.
      * Defines the configuration for pending points. Pending points can be used only with the &#x60;order.paid&#x60; event.
-     * @alias module:model/EarningRulePendingPoints
+     * @alias EarningRulePendingPoints
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class EarningRulePendingPoints {
     /**
      * Constructs a <code>EarningRulePendingPoints</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EarningRulePendingPoints} obj Optional instance to populate.
-     * @returns {module:model/EarningRulePendingPoints} The populated <code>EarningRulePendingPoints</code> instance.
+     * @param {Partial<EarningRulePendingPoints>} data The plain JavaScript object bearing properties of interest.
+     * @param {EarningRulePendingPoints} [obj] Optional instance to populate.
+     * @returns {EarningRulePendingPoints} The populated <code>EarningRulePendingPoints</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class EarningRulePendingPoints {
 
     /**
      * Validates the JSON data with respect to <code>EarningRulePendingPoints</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EarningRulePendingPoints>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EarningRulePendingPoints</code>.
      */
     static validateJSON(data) {
@@ -79,35 +78,35 @@ class EarningRulePendingPoints {
 
 
 /**
- * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
- * @member {module:model/EarningRulePendingPoints.PeriodTypeEnum} 
- * @default 'DAY'
- */
+    * Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
+    * @type {(keyof typeof EarningRulePendingPoints.PeriodTypeEnum) | undefined}
+    * @default 'DAY'
+    */
 EarningRulePendingPoints.prototype['period_type'] = 'DAY';
 
 /**
- * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
- * @member {Number} 
- */
+    * Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
+    * @type {Number | undefined}
+    */
 EarningRulePendingPoints.prototype['period_value'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>period_type</code> property.
- * @enum {String}
- * @readonly
- */
-EarningRulePendingPoints['PeriodTypeEnum'] = {
-
     /**
-     * value: "DAY"
-     * @constant
+     * Allowed values for the <code>period_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "DAY": "DAY"
-};
+    EarningRulePendingPoints['PeriodTypeEnum'] = {
+    
+        /**
+         * value: "DAY"
+         * @constant
+         */
+        "DAY": "DAY"    
+    };
 
 
 

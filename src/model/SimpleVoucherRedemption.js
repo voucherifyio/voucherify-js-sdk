@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleVoucherRedemption model module.
  * @module model/SimpleVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleVoucherRedemption {
     /**
      * Constructs a new <code>SimpleVoucherRedemption</code>.
      * Defines the redemption limits on vouchers.
-     * @alias module:model/SimpleVoucherRedemption
+     * @alias SimpleVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimpleVoucherRedemption {
     /**
      * Constructs a <code>SimpleVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/SimpleVoucherRedemption} The populated <code>SimpleVoucherRedemption</code> instance.
+     * @param {Partial<SimpleVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {SimpleVoucherRedemption} The populated <code>SimpleVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class SimpleVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>SimpleVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -77,21 +76,21 @@ class SimpleVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 SimpleVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 SimpleVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 SimpleVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 

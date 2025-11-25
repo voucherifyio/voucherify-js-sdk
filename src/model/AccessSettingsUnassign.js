@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The AccessSettingsUnassign model module.
  * @module model/AccessSettingsUnassign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AccessSettingsUnassign {
     /**
      * Constructs a new <code>AccessSettingsUnassign</code>.
      * Unassigns the campaign from an area or a store. Provide the area and/or store IDs in the respective arrays. If a campaign changes assignments between areas or stores, unassign it first. For example, if a campaign is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the campaign from Area-01 and assigned to Store-01 only.  If you want to assign the campaign to stores only, you do not have to send the area ID.
-     * @alias module:model/AccessSettingsUnassign
+     * @alias AccessSettingsUnassign
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class AccessSettingsUnassign {
     /**
      * Constructs a <code>AccessSettingsUnassign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AccessSettingsUnassign} obj Optional instance to populate.
-     * @returns {module:model/AccessSettingsUnassign} The populated <code>AccessSettingsUnassign</code> instance.
+     * @param {Partial<AccessSettingsUnassign>} data The plain JavaScript object bearing properties of interest.
+     * @param {AccessSettingsUnassign} [obj] Optional instance to populate.
+     * @returns {AccessSettingsUnassign} The populated <code>AccessSettingsUnassign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class AccessSettingsUnassign {
 
     /**
      * Validates the JSON data with respect to <code>AccessSettingsUnassign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AccessSettingsUnassign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AccessSettingsUnassign</code>.
      */
     static validateJSON(data) {
@@ -89,21 +88,21 @@ class AccessSettingsUnassign {
 
 
 /**
- * List all area IDs from which the campaign will be unassigned.
- * @member {Array.<String>} 
- */
+    * List all area IDs from which the campaign will be unassigned.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsUnassign.prototype['areas_ids'] = undefined;
 
 /**
- * List all store IDs from which the campaign will be unassigned.
- * @member {Array.<String>} 
- */
+    * List all store IDs from which the campaign will be unassigned.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsUnassign.prototype['area_stores_ids'] = undefined;
 
 /**
- * List all area IDs where the campaign will be unassigned from all stores in the area. This unassignment is not equal to the unassignment from all `area_stores_ids` listed separately.
- * @member {Array.<String>} 
- */
+    * List all area IDs where the campaign will be unassigned from all stores in the area. This unassignment is not equal to the unassignment from all `area_stores_ids` listed separately.
+    * @type {Array.<String> | undefined}
+    */
 AccessSettingsUnassign.prototype['area_all_stores_ids'] = undefined;
 
 

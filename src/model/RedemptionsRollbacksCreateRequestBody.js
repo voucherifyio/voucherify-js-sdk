@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import Customer from './Customer';
 import Order from './Order';
-
 /**
  * The RedemptionsRollbacksCreateRequestBody model module.
  * @module model/RedemptionsRollbacksCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRollbacksCreateRequestBody {
     /**
      * Constructs a new <code>RedemptionsRollbacksCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/redemptions/{parentRedemptionId}/rollbacks&#x60;.
-     * @alias module:model/RedemptionsRollbacksCreateRequestBody
+     * @alias RedemptionsRollbacksCreateRequestBody
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RedemptionsRollbacksCreateRequestBody {
     /**
      * Constructs a <code>RedemptionsRollbacksCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRollbacksCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRollbacksCreateRequestBody} The populated <code>RedemptionsRollbacksCreateRequestBody</code> instance.
+     * @param {Partial<RedemptionsRollbacksCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRollbacksCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {RedemptionsRollbacksCreateRequestBody} The populated <code>RedemptionsRollbacksCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -71,7 +70,7 @@ class RedemptionsRollbacksCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRollbacksCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRollbacksCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRollbacksCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -101,31 +100,31 @@ class RedemptionsRollbacksCreateRequestBody {
 
 
 /**
- * Reason for the rollback.
- * @member {String} 
- */
+    * Reason for the rollback.
+    * @type {String | undefined}
+    */
 RedemptionsRollbacksCreateRequestBody.prototype['reason'] = undefined;
 
 /**
- * Customer's `source_id`.
- * @member {String} 
- */
+    * Customer's `source_id`.
+    * @type {String | undefined}
+    */
 RedemptionsRollbacksCreateRequestBody.prototype['tracking_id'] = undefined;
 
 /**
- * @member {module:model/Customer} 
- */
+    * @type {Customer | undefined}
+    */
 RedemptionsRollbacksCreateRequestBody.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/Order} 
- */
+    * @type {Order | undefined}
+    */
 RedemptionsRollbacksCreateRequestBody.prototype['order'] = undefined;
 
 /**
- * A set of key/value pairs that you can send in the request body to update **redemption** metadata.
- * @member {Object} 
- */
+    * A set of key/value pairs that you can send in the request body to update **redemption** metadata.
+    * @type {Object | undefined}
+    */
 RedemptionsRollbacksCreateRequestBody.prototype['metadata'] = undefined;
 
 

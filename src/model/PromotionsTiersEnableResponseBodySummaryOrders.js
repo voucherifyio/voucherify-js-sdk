@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The PromotionsTiersEnableResponseBodySummaryOrders model module.
  * @module model/PromotionsTiersEnableResponseBodySummaryOrders
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsTiersEnableResponseBodySummaryOrders {
     /**
      * Constructs a new <code>PromotionsTiersEnableResponseBodySummaryOrders</code>.
      * Contains statistics about orders related to the promotion tier.
-     * @alias module:model/PromotionsTiersEnableResponseBodySummaryOrders
+     * @alias PromotionsTiersEnableResponseBodySummaryOrders
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class PromotionsTiersEnableResponseBodySummaryOrders {
     /**
      * Constructs a <code>PromotionsTiersEnableResponseBodySummaryOrders</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsTiersEnableResponseBodySummaryOrders} obj Optional instance to populate.
-     * @returns {module:model/PromotionsTiersEnableResponseBodySummaryOrders} The populated <code>PromotionsTiersEnableResponseBodySummaryOrders</code> instance.
+     * @param {Partial<PromotionsTiersEnableResponseBodySummaryOrders>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsTiersEnableResponseBodySummaryOrders} [obj] Optional instance to populate.
+     * @returns {PromotionsTiersEnableResponseBodySummaryOrders} The populated <code>PromotionsTiersEnableResponseBodySummaryOrders</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class PromotionsTiersEnableResponseBodySummaryOrders {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsTiersEnableResponseBodySummaryOrders</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsTiersEnableResponseBodySummaryOrders>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsTiersEnableResponseBodySummaryOrders</code>.
      */
     static validateJSON(data) {
@@ -74,15 +73,15 @@ class PromotionsTiersEnableResponseBodySummaryOrders {
 
 
 /**
- * Sum of order totals.
- * @member {Number} 
- */
+    * Sum of order totals.
+    * @type {Number | undefined}
+    */
 PromotionsTiersEnableResponseBodySummaryOrders.prototype['total_amount'] = undefined;
 
 /**
- * Sum of total discount applied using the promotion tier.
- * @member {Number} 
- */
+    * Sum of total discount applied using the promotion tier.
+    * @type {Number | undefined}
+    */
 PromotionsTiersEnableResponseBodySummaryOrders.prototype['total_discount_amount'] = undefined;
 
 

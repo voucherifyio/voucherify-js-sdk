@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The User model module.
  * @module model/User
- * @version 3.0.0
+ * @version 3.0.1
  */
 class User {
     /**
      * Constructs a new <code>User</code>.
      * Details about the user.
-     * @alias module:model/User
+     * @alias User
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class User {
     /**
      * Constructs a <code>User</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/User} obj Optional instance to populate.
-     * @returns {module:model/User} The populated <code>User</code> instance.
+     * @param {Partial<User>} data The plain JavaScript object bearing properties of interest.
+     * @param {User} [obj] Optional instance to populate.
+     * @returns {User} The populated <code>User</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -75,7 +74,7 @@ class User {
 
     /**
      * Validates the JSON data with respect to <code>User</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<User>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>User</code>.
      */
     static validateJSON(data) {
@@ -109,45 +108,45 @@ class User {
 
 
 /**
- * The unique identifier of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The unique identifier of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 User.prototype['id'] = undefined;
 
 /**
- * The login data of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The login data of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 User.prototype['login'] = undefined;
 
 /**
- * The email address of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The email address of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 User.prototype['email'] = undefined;
 
 /**
- * The first name of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The first name of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 User.prototype['first_name'] = undefined;
 
 /**
- * The last name of the user who has been assigned to the project.
- * @member {String} 
- */
+    * The last name of the user who has been assigned to the project.
+    * @type {String | undefined}
+    */
 User.prototype['last_name'] = undefined;
 
 /**
- * Lists key-value pairs, where the key is the project to which the user is assigned. The value is the role assigned in a given project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature).
- * @member {Object.<String, String>} 
- */
+    * Lists key-value pairs, where the key is the project to which the user is assigned. The value is the role assigned in a given project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature).
+    * @type {Object.<String, String> | undefined}
+    */
 User.prototype['projects'] = undefined;
 
 /**
- * Determines if the user is the owner for the organization in Voucherify.
- * @member {Boolean} 
- */
+    * Determines if the user is the owner for the organization in Voucherify.
+    * @type {Boolean | undefined}
+    */
 User.prototype['is_owner'] = undefined;
 
 

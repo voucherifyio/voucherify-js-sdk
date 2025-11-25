@@ -13,36 +13,35 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ParameterExpandListCampaigns.
-* @module model/ParameterExpandListCampaigns
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ParameterExpandListCampaigns {
+ * Enum class ParameterExpandListCampaigns.
+ * @module model/ParameterExpandListCampaigns
+ * @version 3.0.1
+ */
+class ParameterExpandListCampaigns {
     
-        /**
-         * value: "category"
-         * @constant
-         */
-        "category" = "category";
-
+    /**
+     * 
+     * @constant
+     */
+    static "category" = "category";
     
-        /**
-         * value: "access_settings_assignments"
-         * @constant
-         */
-        "access_settings_assignments" = "access_settings_assignments";
-
+    /**
+     * 
+     * @constant
+     */
+    static "access_settings_assignments" = "access_settings_assignments";
     
 
     /**
-    * Returns a <code>ParameterExpandListCampaigns</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ParameterExpandListCampaigns} The enum <code>ParameterExpandListCampaigns</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ParameterExpandListCampaigns, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ParameterExpandListCampaigns[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ParameterExpandListCampaigns[key];
     }
 }
+
+export default ParameterExpandListCampaigns;
 

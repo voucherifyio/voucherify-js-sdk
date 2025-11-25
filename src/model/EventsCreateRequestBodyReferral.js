@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The EventsCreateRequestBodyReferral model module.
  * @module model/EventsCreateRequestBodyReferral
- * @version 3.0.0
+ * @version 3.0.1
  */
 class EventsCreateRequestBodyReferral {
     /**
      * Constructs a new <code>EventsCreateRequestBodyReferral</code>.
      * If a **conversion event** for a referral program is set to a custom event, then you need to send the referral code in the payload to make a record of the conversion event. 
-     * @alias module:model/EventsCreateRequestBodyReferral
+     * @alias EventsCreateRequestBodyReferral
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class EventsCreateRequestBodyReferral {
     /**
      * Constructs a <code>EventsCreateRequestBodyReferral</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventsCreateRequestBodyReferral} obj Optional instance to populate.
-     * @returns {module:model/EventsCreateRequestBodyReferral} The populated <code>EventsCreateRequestBodyReferral</code> instance.
+     * @param {Partial<EventsCreateRequestBodyReferral>} data The plain JavaScript object bearing properties of interest.
+     * @param {EventsCreateRequestBodyReferral} [obj] Optional instance to populate.
+     * @returns {EventsCreateRequestBodyReferral} The populated <code>EventsCreateRequestBodyReferral</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class EventsCreateRequestBodyReferral {
 
     /**
      * Validates the JSON data with respect to <code>EventsCreateRequestBodyReferral</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<EventsCreateRequestBodyReferral>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>EventsCreateRequestBodyReferral</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class EventsCreateRequestBodyReferral {
 
 
 /**
- * A code through which a new visitor has been referred to a service.
- * @member {String} 
- */
+    * A code through which a new visitor has been referred to a service.
+    * @type {String | undefined}
+    */
 EventsCreateRequestBodyReferral.prototype['code'] = undefined;
 
 /**
- * Unique ID of the referring person - it is optional and not required if the referral **code** is provided.
- * @member {String} 
- */
+    * Unique ID of the referring person - it is optional and not required if the referral **code** is provided.
+    * @type {String | undefined}
+    */
 EventsCreateRequestBodyReferral.prototype['referrer_id'] = undefined;
 
 

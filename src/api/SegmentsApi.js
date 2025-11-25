@@ -20,13 +20,13 @@ import SegmentsGetResponseBody from '../model/SegmentsGetResponseBody';
 /**
 * Segments service.
 * @module api/SegmentsApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class SegmentsApi {
 
     /**
     * Constructs a new SegmentsApi. 
-    * @alias module:api/SegmentsApi
+    * @alias SegmentsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -38,18 +38,19 @@ export default class SegmentsApi {
 
     /**
      * Callback function to receive the result of the createSegment operation.
-     * @callback module:api/SegmentsApi~createSegmentCallback
+     * @callback createSegmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/SegmentsCreateResponseBody} [data] The data returned by the service call.
+     * @param {SegmentsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Segment
      * Create a customer segment.  🚧 Limit on static segments  There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment.  🚧 Limit on Active and Passive segments  You can create a maximum of 100 passive and active segments.
-     * @param {module:model/SegmentsCreateRequestBody} segmentsCreateRequestBody Specify the boundary conditions for the customer segment.
-     * @param {module:api/SegmentsApi~createSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SegmentsCreateResponseBody}
+     * @param {SegmentsCreateRequestBody} segmentsCreateRequestBody Specify the boundary conditions for the customer segment.
+     * @param {createSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link SegmentsCreateResponseBody}
+     * @returns {Promise<(SegmentsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `SegmentsCreateResponseBody` object or with `undefined`.
      */
     createSegment(segmentsCreateRequestBody, callback) {
       let postBody = segmentsCreateRequestBody;
@@ -77,7 +78,7 @@ export default class SegmentsApi {
 
     /**
      * Callback function to receive the result of the deleteSegment operation.
-     * @callback module:api/SegmentsApi~deleteSegmentCallback
+     * @callback deleteSegmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -87,7 +88,8 @@ export default class SegmentsApi {
      * Delete Segment
      * This method deletes a customer segment.
      * @param {String} segmentId A unique customer segment ID.
-     * @param {module:api/SegmentsApi~deleteSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteSegment(segmentId, callback) {
       let postBody = null;
@@ -116,9 +118,9 @@ export default class SegmentsApi {
 
     /**
      * Callback function to receive the result of the getSegment operation.
-     * @callback module:api/SegmentsApi~getSegmentCallback
+     * @callback getSegmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/SegmentsGetResponseBody} [data] The data returned by the service call.
+     * @param {SegmentsGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -126,8 +128,9 @@ export default class SegmentsApi {
      * Get Segment
      * Retrieves the segment with a given segment ID.
      * @param {String} segmentId A unique customer segment ID.
-     * @param {module:api/SegmentsApi~getSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/SegmentsGetResponseBody}
+     * @param {getSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link SegmentsGetResponseBody}
+     * @returns {Promise<(SegmentsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `SegmentsGetResponseBody` object or with `undefined`.
      */
     getSegment(segmentId, callback) {
       let postBody = null;

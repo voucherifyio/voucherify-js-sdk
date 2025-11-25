@@ -40,27 +40,31 @@ For more info, visit those places:
 - 🐛 Caught a bug? [Add an issue](https://github.com/voucherifyio/voucherify-js-sdk/issues "Visit issues in Voucherify JS SDK")!
 - 🧑‍💻 Need help? [Contact support](https://www.voucherify.io/contact-support "Visit contact support page").
 
-## 🔄 V2 vs V3
+## 🔄 JS SDK versions: v2 and v3
 
-- Language and generation:
-    - V2: hand-written in TypeScript.
-    - V3: auto-generated from the OpenAPI definition and written in JavaScript.
-- Types:
-    - V2: built-in TypeScript types.
-    - V3: no native TypeScript support; all functions and models include JSDoc. Each generated model/class exposes a `validateJSON` method to verify data shape/types at runtime. If you need TypeScript, add your own type declarations (e.g., a .d.ts file) based on JSDoc/OpenAPI.
-- Client creation and auth:
-    - V2: different client initialization and API key handling.
-    - V3: a new way to configure the API client and provide API keys (see “Get your keys and address” and “Run code” below).
-- API coverage:
-    - V2: limited and historically maintained.
-    - V3: supports all non-deprecated endpoints. We strongly recommend using v3.
+The v2 and v3 JS SDK version differ in:
 
-## 🧭 Quick migration guide
+- **Language and generation:**
+    - v2: hand-written in TypeScript.
+    - v3: auto-generated from the OpenAPI definition and written in JavaScript.
+- **Types:**
+    - v2: built-in TypeScript types.
+    - v3: **Includes built-in TypeScript definitions (starting from v3.0.1).** Although written in JS, the SDK now ships with type declarations generated from JSDoc. Each generated model/class also exposes a `validateJSON` method to verify data shape/types at runtime.
+- **Client creation and auth:**
+    - v2: different client initialization and API key handling.
+    - v3: a new way to configure the API client and provide API keys (see [Get your keys and address](#-get-your-keys-and-address) and [Run code](#-run-code)).
+- **API coverage:**
+    - v2: limited and historically maintained.
+    - v3: supports all non-deprecated endpoints. We strongly recommend using v3.
 
-- Install: you can install v3 under an alias to migrate gradually (see Install section).
-- Initialization: update client creation and key/basePath setup as shown in “Run code”.
-- Types: if your project requires TypeScript, add custom type definitions (e.g., from the OpenAPI spec or derived from JSDoc) and use the models’ `validateJSON` methods for runtime validation.
-- Endpoints: review [ENDPOINTS-COVERAGE.md](./ENDPOINTS-COVERAGE.md) and switch calls to their v3 equivalents. Avoid deprecated endpoints — v3 covers active ones only.
+### 🧭 Quick migration guide
+
+To migrate from v2 to v3:
+
+- **Install:** you can install v3 under an alias to migrate gradually (see [Install](#️-install) section).
+- **Initialization:** update client creation and key/basePath setup as shown in [Run code](#-run-code).
+- **Types:** ensure you are using **v3.0.1 or later** to leverage the included TypeScript definitions automatically. You no longer need to create custom `.d.ts` files. You can still use the models’ `validateJSON` methods for extra runtime validation.
+- **Endpoints:** review [ENDPOINTS-COVERAGE.md](./ENDPOINTS-COVERAGE.md) and switch calls to their v3 equivalents. Avoid deprecated endpoints — v3 covers active ones only.
 
 ## ⚙️ Install
 
@@ -94,28 +98,47 @@ Get your Voucherify keys for valid authorization and setting the basePath (clust
 
 Once installed, run:
 
-```javascript
-const Voucherify = require("@voucherify/sdk");
+```typescript
+import * as Voucherify from "@voucherify/sdk";
 
-const defaultClient = Voucherify.ApiClient.instance;
-// Configure the server url
-defaultClient.basePath = "https://{cluster}.api.voucherify.io";
-// Configure API key authorization: X-App-Id
-const XAppId = defaultClient.authentications["X-App-Id"];
-XAppId.apiKey = "YOUR APP ID";
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//X-App-Id.apiKeyPrefix['X-App-Id'] = "Token"
-// Configure API key authorization: X-App-Token
-const XAppToken = defaultClient.authentications["X-App-Token"];
-XAppToken.apiKey = "YOUR APP TOKEN";
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//X-App-Token.apiKeyPrefix['X-App-Token'] = "Token"
-// Configure OAuth2 access token for authorization: X-Voucherify-OAuth
-const XVoucherifyOAuth = defaultClient.authentications["X-Voucherify-OAuth"];
-XVoucherifyOAuth.accessToken = "";
+// Note: dotenv is an external library used for demonstration purposes only. It is not required.
+import dotenv from "dotenv";
+dotenv.config();
 
-const api = new Voucherify.CampaignsApi(defaultClient);
-const callback = function (error, data, response) {
+const apiClient = Voucherify.ApiClient.instance;
+
+const HOST = process.env.VOUCHERIFY_HOST || "https://api.voucherify.io";
+const X_APP_ID = process.env.X_APP_ID;
+const X_APP_TOKEN = process.env.X_APP_TOKEN;
+
+apiClient.basePath = HOST;
+apiClient.authentications["X-App-Id"].apiKey = X_APP_ID;
+apiClient.authentications["X-App-Token"].apiKey = X_APP_TOKEN;
+
+const api = new Voucherify.CampaignsApi(apiClient);
+
+const options = {
+  filters: Voucherify.ParameterFiltersListCampaigns.constructFromObject({
+    junction: "and",
+    campaign_status:
+      Voucherify.ParameterFiltersListCampaignsCampaignStatus.constructFromObject(
+        {
+          conditions:
+            Voucherify.ParameterFiltersListCampaignsCampaignStatusConditions.constructFromObject(
+              {
+                $in: ["DONE"],
+              },
+            ),
+        },
+      ),
+  }),
+};
+
+const callback = function (
+  error: Error | null,
+  data?: Voucherify.CampaignsListResponseBody,
+  response?: any,
+) {
   if (error) {
     console.error(error);
   } else {
@@ -125,8 +148,12 @@ const callback = function (error, data, response) {
     );
   }
 };
-api.listCampaigns(undefined, callback);
 
+// Example with callback:
+api.listCampaigns(options, callback);
+
+// Example with promise:
+api.listCampaigns(options).then((response) => console.log(response));
 ```
 
 > [!NOTE]
@@ -159,7 +186,7 @@ This SDK is auto-generated (except for tests), so changes made here will be over
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.0).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.1).
 
 ## 🔐 Authorization
 
@@ -260,6 +287,7 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2025-11-24** - `3.0.1` - Introduced native TypeScript type definitions generated from JSDoc, enabling automatic type inference and IDE autocompletion.
 - **2025-11-05** - `3.0.0` - The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
 
 *Previous versions of the SDK are no longer supported. We highly recommend upgrading to version 3.0.0 or newer, as it is now designated as Long-Term Support (LTS).*

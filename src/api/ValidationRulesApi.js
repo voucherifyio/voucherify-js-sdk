@@ -28,13 +28,13 @@ import ValidationRulesUpdateResponseBody from '../model/ValidationRulesUpdateRes
 /**
 * ValidationRules service.
 * @module api/ValidationRulesApi
-* @version 3.0.0
+* @version 3.0.1
 */
 export default class ValidationRulesApi {
 
     /**
     * Constructs a new ValidationRulesApi. 
-    * @alias module:api/ValidationRulesApi
+    * @alias ValidationRulesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -46,9 +46,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the createValidationRuleAssignment operation.
-     * @callback module:api/ValidationRulesApi~createValidationRuleAssignmentCallback
+     * @callback createValidationRuleAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesAssignmentsCreateResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesAssignmentsCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -56,12 +56,13 @@ export default class ValidationRulesApi {
      * Create Validation Rules Assignments
      * Assign validation rule to either one of the following objects: voucher, campaign, promotion tier, earning rule, reward, distribution.
      * @param {String} validationRuleId Unique validation rule ID.
-     * @param {module:model/ValidationRulesAssignmentsCreateRequestBody} validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to.
+     * @param {ValidationRulesAssignmentsCreateRequestBody} validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to.
      * @param {{
         force?: Boolean,
      }} [opts] Optional parameters
-     * @param {module:api/ValidationRulesApi~createValidationRuleAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesAssignmentsCreateResponseBody}
+     * @param {createValidationRuleAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesAssignmentsCreateResponseBody}
+     * @returns {Promise<(ValidationRulesAssignmentsCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesAssignmentsCreateResponseBody` object or with `undefined`.
      */
     createValidationRuleAssignment(validationRuleId, validationRulesAssignmentsCreateRequestBody, opts, callback) {
       opts = opts || {};
@@ -93,18 +94,19 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the createValidationRules operation.
-     * @callback module:api/ValidationRulesApi~createValidationRulesCallback
+     * @callback createValidationRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesCreateResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesCreateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
     /**
      * Create Validation Rules
      * Create a validation rule.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
-     * @param {module:model/ValidationRulesCreateRequestBody} validationRulesCreateRequestBody Specify the validation rules parameters.
-     * @param {module:api/ValidationRulesApi~createValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesCreateResponseBody}
+     * @param {ValidationRulesCreateRequestBody} validationRulesCreateRequestBody Specify the validation rules parameters.
+     * @param {createValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesCreateResponseBody}
+     * @returns {Promise<(ValidationRulesCreateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesCreateResponseBody` object or with `undefined`.
      */
     createValidationRules(validationRulesCreateRequestBody, callback) {
       let postBody = validationRulesCreateRequestBody;
@@ -132,7 +134,7 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the deleteValidationRuleAssignment operation.
-     * @callback module:api/ValidationRulesApi~deleteValidationRuleAssignmentCallback
+     * @callback deleteValidationRuleAssignmentCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -143,7 +145,8 @@ export default class ValidationRulesApi {
      * This method deletes a validation rule assignment.
      * @param {String} validationRuleId A unique validation rule ID.
      * @param {String} assignmentId A unique validation rule assignment ID.
-     * @param {module:api/ValidationRulesApi~deleteValidationRuleAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteValidationRuleAssignmentCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteValidationRuleAssignment(validationRuleId, assignmentId, callback) {
       let postBody = null;
@@ -174,7 +177,7 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the deleteValidationRules operation.
-     * @callback module:api/ValidationRulesApi~deleteValidationRulesCallback
+     * @callback deleteValidationRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
      * @param data This operation does not return a value.
      * @param {Object} [response] Full response object if successful.
@@ -184,7 +187,8 @@ export default class ValidationRulesApi {
      * Delete Validation Rule
      * This method deletes a validation rule.
      * @param {String} validationRuleId A unique validation rule ID.
-     * @param {module:api/ValidationRulesApi~deleteValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @param {deleteValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
     deleteValidationRules(validationRuleId, callback) {
       let postBody = null;
@@ -213,9 +217,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the getValidationRule operation.
-     * @callback module:api/ValidationRulesApi~getValidationRuleCallback
+     * @callback getValidationRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesGetResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesGetResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -223,8 +227,9 @@ export default class ValidationRulesApi {
      * Get Validation Rule
      * Retrieve the details of a validation rule.
      * @param {String} validationRuleId A unique validation rule ID.
-     * @param {module:api/ValidationRulesApi~getValidationRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesGetResponseBody}
+     * @param {getValidationRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesGetResponseBody}
+     * @returns {Promise<(ValidationRulesGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesGetResponseBody` object or with `undefined`.
      */
     getValidationRule(validationRuleId, callback) {
       let postBody = null;
@@ -253,9 +258,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the listValidationRuleAssignments operation.
-     * @callback module:api/ValidationRulesApi~listValidationRuleAssignmentsCallback
+     * @callback listValidationRuleAssignmentsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesAssignmentsListResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesAssignmentsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -266,10 +271,11 @@ export default class ValidationRulesApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListValidationRuleAssignments,
+        order?: Exclude<keyof typeof ParameterOrderListValidationRuleAssignments, "prototype" | "constructFromObject">,
      }} [opts] Optional parameters
-     * @param {module:api/ValidationRulesApi~listValidationRuleAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
+     * @param {listValidationRuleAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesAssignmentsListResponseBody}
+     * @returns {Promise<(ValidationRulesAssignmentsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesAssignmentsListResponseBody` object or with `undefined`.
      */
     listValidationRuleAssignments(validationRuleId, opts, callback) {
       opts = opts || {};
@@ -302,9 +308,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the listValidationRules operation.
-     * @callback module:api/ValidationRulesApi~listValidationRulesCallback
+     * @callback listValidationRulesCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesListResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -314,12 +320,13 @@ export default class ValidationRulesApi {
      * @param {{
         limit?: Number,
         page?: Number,
-        order?: module:model/ParameterOrderListValidationRules,
+        order?: Exclude<keyof typeof ParameterOrderListValidationRules, "prototype" | "constructFromObject">,
         startDate?: Date,
         endDate?: Date,
      }} [opts] Optional parameters
-     * @param {module:api/ValidationRulesApi~listValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesListResponseBody}
+     * @param {listValidationRulesCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesListResponseBody}
+     * @returns {Promise<(ValidationRulesListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesListResponseBody` object or with `undefined`.
      */
     listValidationRules(opts, callback) {
       opts = opts || {};
@@ -352,9 +359,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the listValidationRulesAssignments operation.
-     * @callback module:api/ValidationRulesApi~listValidationRulesAssignmentsCallback
+     * @callback listValidationRulesAssignmentsCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesAssignmentsListResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesAssignmentsListResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -368,8 +375,9 @@ export default class ValidationRulesApi {
         limit?: Number,
         order?: String,
      }} [opts] Optional parameters
-     * @param {module:api/ValidationRulesApi~listValidationRulesAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesAssignmentsListResponseBody}
+     * @param {listValidationRulesAssignmentsCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesAssignmentsListResponseBody}
+     * @returns {Promise<(ValidationRulesAssignmentsListResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesAssignmentsListResponseBody` object or with `undefined`.
      */
     listValidationRulesAssignments(opts, callback) {
       opts = opts || {};
@@ -402,9 +410,9 @@ export default class ValidationRulesApi {
 
     /**
      * Callback function to receive the result of the updateValidationRule operation.
-     * @callback module:api/ValidationRulesApi~updateValidationRuleCallback
+     * @callback updateValidationRuleCallback
      * @param {Error|null} error Error object if failed, null otherwise.
-     * @param {module:model/ValidationRulesUpdateResponseBody} [data] The data returned by the service call.
+     * @param {ValidationRulesUpdateResponseBody} [data] The data returned by the service call.
      * @param {Object} [response] Full response object if successful.
      */
 
@@ -412,9 +420,10 @@ export default class ValidationRulesApi {
      * Update Validation Rule
      * Update validation rule parameters.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
      * @param {String} validationRuleId A unique validation rule ID.
-     * @param {module:model/ValidationRulesUpdateRequestBody} validationRulesUpdateRequestBody Specify the parameters to be updated.
-     * @param {module:api/ValidationRulesApi~updateValidationRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ValidationRulesUpdateResponseBody}
+     * @param {ValidationRulesUpdateRequestBody} validationRulesUpdateRequestBody Specify the parameters to be updated.
+     * @param {updateValidationRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link ValidationRulesUpdateResponseBody}
+     * @returns {Promise<(ValidationRulesUpdateResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ValidationRulesUpdateResponseBody` object or with `undefined`.
      */
     updateValidationRule(validationRuleId, validationRulesUpdateRequestBody, callback) {
       let postBody = validationRulesUpdateRequestBody;

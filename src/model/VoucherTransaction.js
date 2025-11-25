@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransactionDetails from './VoucherTransactionDetails';
-
 /**
  * The VoucherTransaction model module.
  * @module model/VoucherTransaction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VoucherTransaction {
     /**
      * Constructs a new <code>VoucherTransaction</code>.
-     * @alias module:model/VoucherTransaction
+     * @alias VoucherTransaction
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VoucherTransaction {
     /**
      * Constructs a <code>VoucherTransaction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VoucherTransaction} obj Optional instance to populate.
-     * @returns {module:model/VoucherTransaction} The populated <code>VoucherTransaction</code> instance.
+     * @param {Partial<VoucherTransaction>} data The plain JavaScript object bearing properties of interest.
+     * @param {VoucherTransaction} [obj] Optional instance to populate.
+     * @returns {VoucherTransaction} The populated <code>VoucherTransaction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class VoucherTransaction {
 
     /**
      * Validates the JSON data with respect to <code>VoucherTransaction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VoucherTransaction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VoucherTransaction</code>.
      */
     static validateJSON(data) {
@@ -134,152 +133,152 @@ class VoucherTransaction {
 
 
 /**
- * Unique transaction ID.
- * @member {String} 
- */
+    * Unique transaction ID.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['id'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['source_id'] = undefined;
 
 /**
- * Unique voucher ID.
- * @member {String} 
- */
+    * Unique voucher ID.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['voucher_id'] = undefined;
 
 /**
- * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
- * @member {String} 
- */
+    * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['campaign_id'] = undefined;
 
 /**
- * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['source'] = undefined;
 
 /**
- * Reason why the transaction occurred. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * Reason why the transaction occurred. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['reason'] = undefined;
 
 /**
- * The related transaction ID on the receiving card.
- * @member {String} 
- */
+    * The related transaction ID on the receiving card.
+    * @type {String | undefined}
+    */
 VoucherTransaction.prototype['related_transaction_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 VoucherTransaction.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/VoucherTransactionDetails} 
- */
+    * @type {VoucherTransactionDetails | undefined}
+    */
 VoucherTransaction.prototype['details'] = undefined;
 
 /**
- * @member {module:model/VoucherTransaction.TypeEnum} 
- */
+    * @type {(keyof typeof VoucherTransaction.TypeEnum) | undefined}
+    */
 VoucherTransaction.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-VoucherTransaction['TypeEnum'] = {
-
     /**
-     * value: "CREDITS_REDEMPTION"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREDITS_REDEMPTION": "CREDITS_REDEMPTION",
-
-    /**
-     * value: "CREDITS_REFUND"
-     * @constant
-     */
-    "CREDITS_REFUND": "CREDITS_REFUND",
-
-    /**
-     * value: "CREDITS_ADDITION"
-     * @constant
-     */
-    "CREDITS_ADDITION": "CREDITS_ADDITION",
-
-    /**
-     * value: "CREDITS_REMOVAL"
-     * @constant
-     */
-    "CREDITS_REMOVAL": "CREDITS_REMOVAL",
-
-    /**
-     * value: "PENDING_POINTS_ACTIVATION"
-     * @constant
-     */
-    "PENDING_POINTS_ACTIVATION": "PENDING_POINTS_ACTIVATION",
-
-    /**
-     * value: "POINTS_ACCRUAL"
-     * @constant
-     */
-    "POINTS_ACCRUAL": "POINTS_ACCRUAL",
-
-    /**
-     * value: "POINTS_REDEMPTION"
-     * @constant
-     */
-    "POINTS_REDEMPTION": "POINTS_REDEMPTION",
-
-    /**
-     * value: "POINTS_REFUND"
-     * @constant
-     */
-    "POINTS_REFUND": "POINTS_REFUND",
-
-    /**
-     * value: "POINTS_ADDITION"
-     * @constant
-     */
-    "POINTS_ADDITION": "POINTS_ADDITION",
-
-    /**
-     * value: "POINTS_REMOVAL"
-     * @constant
-     */
-    "POINTS_REMOVAL": "POINTS_REMOVAL",
-
-    /**
-     * value: "POINTS_EXPIRATION"
-     * @constant
-     */
-    "POINTS_EXPIRATION": "POINTS_EXPIRATION",
-
-    /**
-     * value: "POINTS_TRANSFER_IN"
-     * @constant
-     */
-    "POINTS_TRANSFER_IN": "POINTS_TRANSFER_IN",
-
-    /**
-     * value: "POINTS_TRANSFER_OUT"
-     * @constant
-     */
-    "POINTS_TRANSFER_OUT": "POINTS_TRANSFER_OUT"
-};
+    VoucherTransaction['TypeEnum'] = {
+    
+        /**
+         * value: "CREDITS_REDEMPTION"
+         * @constant
+         */
+        "CREDITS_REDEMPTION": "CREDITS_REDEMPTION",
+    
+        /**
+         * value: "CREDITS_REFUND"
+         * @constant
+         */
+        "CREDITS_REFUND": "CREDITS_REFUND",
+    
+        /**
+         * value: "CREDITS_ADDITION"
+         * @constant
+         */
+        "CREDITS_ADDITION": "CREDITS_ADDITION",
+    
+        /**
+         * value: "CREDITS_REMOVAL"
+         * @constant
+         */
+        "CREDITS_REMOVAL": "CREDITS_REMOVAL",
+    
+        /**
+         * value: "PENDING_POINTS_ACTIVATION"
+         * @constant
+         */
+        "PENDING_POINTS_ACTIVATION": "PENDING_POINTS_ACTIVATION",
+    
+        /**
+         * value: "POINTS_ACCRUAL"
+         * @constant
+         */
+        "POINTS_ACCRUAL": "POINTS_ACCRUAL",
+    
+        /**
+         * value: "POINTS_REDEMPTION"
+         * @constant
+         */
+        "POINTS_REDEMPTION": "POINTS_REDEMPTION",
+    
+        /**
+         * value: "POINTS_REFUND"
+         * @constant
+         */
+        "POINTS_REFUND": "POINTS_REFUND",
+    
+        /**
+         * value: "POINTS_ADDITION"
+         * @constant
+         */
+        "POINTS_ADDITION": "POINTS_ADDITION",
+    
+        /**
+         * value: "POINTS_REMOVAL"
+         * @constant
+         */
+        "POINTS_REMOVAL": "POINTS_REMOVAL",
+    
+        /**
+         * value: "POINTS_EXPIRATION"
+         * @constant
+         */
+        "POINTS_EXPIRATION": "POINTS_EXPIRATION",
+    
+        /**
+         * value: "POINTS_TRANSFER_IN"
+         * @constant
+         */
+        "POINTS_TRANSFER_IN": "POINTS_TRANSFER_IN",
+    
+        /**
+         * value: "POINTS_TRANSFER_OUT"
+         * @constant
+         */
+        "POINTS_TRANSFER_OUT": "POINTS_TRANSFER_OUT"    
+    };
 
 
 

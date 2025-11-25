@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsUsersUpdateRoleRequestBody model module.
  * @module model/ManagementProjectsUsersUpdateRoleRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsUsersUpdateRoleRequestBody {
     /**
      * Constructs a new <code>ManagementProjectsUsersUpdateRoleRequestBody</code>.
-     * @alias module:model/ManagementProjectsUsersUpdateRoleRequestBody
+     * @alias ManagementProjectsUsersUpdateRoleRequestBody
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class ManagementProjectsUsersUpdateRoleRequestBody {
     /**
      * Constructs a <code>ManagementProjectsUsersUpdateRoleRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsUsersUpdateRoleRequestBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsUsersUpdateRoleRequestBody} The populated <code>ManagementProjectsUsersUpdateRoleRequestBody</code> instance.
+     * @param {Partial<ManagementProjectsUsersUpdateRoleRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsUsersUpdateRoleRequestBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsUsersUpdateRoleRequestBody} The populated <code>ManagementProjectsUsersUpdateRoleRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class ManagementProjectsUsersUpdateRoleRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsUsersUpdateRoleRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsUsersUpdateRoleRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsUsersUpdateRoleRequestBody</code>.
      */
     static validateJSON(data) {
@@ -74,9 +73,9 @@ class ManagementProjectsUsersUpdateRoleRequestBody {
 
 
 /**
- * The role of the user to be added. It can be a custom role or one of following predefined roles: - `ADMIN`, `USER`, `VIEWER`, `MERCHANT` - or an ID of a custom role.
- * @member {String} 
- */
+    * The role of the user to be added. It can be a custom role or one of following predefined roles: - `ADMIN`, `USER`, `VIEWER`, `MERCHANT` - or an ID of a custom role.
+    * @type {String | undefined}
+    */
 ManagementProjectsUsersUpdateRoleRequestBody.prototype['role'] = undefined;
 
 

@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters from './LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters';
-
 /**
  * The LoyaltiesRewardsCreateAssignmentItemRequestBody model module.
  * @module model/LoyaltiesRewardsCreateAssignmentItemRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesRewardsCreateAssignmentItemRequestBody {
     /**
      * Constructs a new <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code>.
-     * @alias module:model/LoyaltiesRewardsCreateAssignmentItemRequestBody
+     * @alias LoyaltiesRewardsCreateAssignmentItemRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBody {
     /**
      * Constructs a <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBody} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBody} The populated <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code> instance.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentItemRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesRewardsCreateAssignmentItemRequestBody} [obj] Optional instance to populate.
+     * @returns {LoyaltiesRewardsCreateAssignmentItemRequestBody} The populated <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -63,7 +62,7 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesRewardsCreateAssignmentItemRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesRewardsCreateAssignmentItemRequestBody</code>.
      */
     static validateJSON(data) {
@@ -89,19 +88,19 @@ class LoyaltiesRewardsCreateAssignmentItemRequestBody {
 
 
 /**
- * The ID of the reward that will be assigned to the campaign.
- * @member {String} 
- */
+    * The ID of the reward that will be assigned to the campaign.
+    * @type {String | undefined}
+    */
 LoyaltiesRewardsCreateAssignmentItemRequestBody.prototype['reward'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters} 
- */
+    * @type {LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters | undefined}
+    */
 LoyaltiesRewardsCreateAssignmentItemRequestBody.prototype['parameters'] = undefined;
 
 /**
- * @member {Array.<String>} 
- */
+    * @type {Array.<String> | undefined}
+    */
 LoyaltiesRewardsCreateAssignmentItemRequestBody.prototype['validation_rules'] = undefined;
 
 

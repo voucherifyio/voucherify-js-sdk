@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import OrderItemProduct from './OrderItemProduct';
 import OrderItemSku from './OrderItemSku';
-
 /**
  * The OrderItem model module.
  * @module model/OrderItem
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrderItem {
     /**
      * Constructs a new <code>OrderItem</code>.
-     * @alias module:model/OrderItem
+     * @alias OrderItem
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class OrderItem {
     /**
      * Constructs a <code>OrderItem</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderItem} obj Optional instance to populate.
-     * @returns {module:model/OrderItem} The populated <code>OrderItem</code> instance.
+     * @param {Partial<OrderItem>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrderItem} [obj] Optional instance to populate.
+     * @returns {OrderItem} The populated <code>OrderItem</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -97,7 +96,7 @@ class OrderItem {
 
     /**
      * Validates the JSON data with respect to <code>OrderItem</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrderItem>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrderItem</code>.
      */
     static validateJSON(data) {
@@ -135,110 +134,110 @@ class OrderItem {
 
 
 /**
- * Unique identifier of the SKU. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the SKU. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 OrderItem.prototype['sku_id'] = undefined;
 
 /**
- * Unique identifier of the product. It is assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the product. It is assigned by Voucherify.
+    * @type {String | undefined}
+    */
 OrderItem.prototype['product_id'] = undefined;
 
 /**
- * Used along with the source_id property, can be set to either sku or product.
- * @member {module:model/OrderItem.RelatedObjectEnum} 
- */
+    * Used along with the source_id property, can be set to either sku or product.
+    * @type {(keyof typeof OrderItem.RelatedObjectEnum) | undefined}
+    */
 OrderItem.prototype['related_object'] = undefined;
 
 /**
- * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
- * @member {String} 
- */
+    * The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+    * @type {String | undefined}
+    */
 OrderItem.prototype['source_id'] = undefined;
 
 /**
- * The quantity of the particular item in the cart.
- * @member {Number} 
- */
+    * The quantity of the particular item in the cart.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['quantity'] = undefined;
 
 /**
- * Number of dicounted items.
- * @member {Number} 
- */
+    * Number of dicounted items.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['discount_quantity'] = undefined;
 
 /**
- * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
- * @member {Number} 
- */
+    * A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['initial_quantity'] = undefined;
 
 /**
- * The total amount of the order item (price * quantity).
- * @member {Number} 
- */
+    * The total amount of the order item (price * quantity).
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['amount'] = undefined;
 
 /**
- * Sum of all order-item-level discounts applied to the order.
- * @member {Number} 
- */
+    * Sum of all order-item-level discounts applied to the order.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['discount_amount'] = undefined;
 
 /**
- * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
- * @member {Number} 
- */
+    * A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['initial_amount'] = undefined;
 
 /**
- * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
- * @member {Number} 
- */
+    * Unit price of an item. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * @type {Number | undefined}
+    */
 OrderItem.prototype['price'] = undefined;
 
 /**
- * @member {module:model/OrderItemProduct} 
- */
+    * @type {OrderItemProduct | undefined}
+    */
 OrderItem.prototype['product'] = undefined;
 
 /**
- * @member {module:model/OrderItemSku} 
- */
+    * @type {OrderItemSku | undefined}
+    */
 OrderItem.prototype['sku'] = undefined;
 
 /**
- * A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format. It can be used to define business validation rules.
- * @member {Object} 
- */
+    * A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format. It can be used to define business validation rules.
+    * @type {Object | undefined}
+    */
 OrderItem.prototype['metadata'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>related_object</code> property.
- * @enum {String}
- * @readonly
- */
-OrderItem['RelatedObjectEnum'] = {
-
     /**
-     * value: "product"
-     * @constant
+     * Allowed values for the <code>related_object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "product": "product",
-
-    /**
-     * value: "sku"
-     * @constant
-     */
-    "sku": "sku"
-};
+    OrderItem['RelatedObjectEnum'] = {
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
+    };
 
 
 

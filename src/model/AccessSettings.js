@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import AccessSettingsAssign from './AccessSettingsAssign';
 import AccessSettingsUnassign from './AccessSettingsUnassign';
-
 /**
  * The AccessSettings model module.
  * @module model/AccessSettings
- * @version 3.0.0
+ * @version 3.0.1
  */
 class AccessSettings {
     /**
      * Constructs a new <code>AccessSettings</code>.
      * Assigns or unassigns an area or store to the campaign.  **NOTE**: this object can be sent if the Areas and Stores enterprise feature is enabled. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.
-     * @alias module:model/AccessSettings
+     * @alias AccessSettings
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class AccessSettings {
     /**
      * Constructs a <code>AccessSettings</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/AccessSettings} obj Optional instance to populate.
-     * @returns {module:model/AccessSettings} The populated <code>AccessSettings</code> instance.
+     * @param {Partial<AccessSettings>} data The plain JavaScript object bearing properties of interest.
+     * @param {AccessSettings} [obj] Optional instance to populate.
+     * @returns {AccessSettings} The populated <code>AccessSettings</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class AccessSettings {
 
     /**
      * Validates the JSON data with respect to <code>AccessSettings</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<AccessSettings>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>AccessSettings</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class AccessSettings {
 
 
 /**
- * @member {module:model/AccessSettingsAssign} 
- */
+    * @type {AccessSettingsAssign | undefined}
+    */
 AccessSettings.prototype['assign'] = undefined;
 
 /**
- * @member {module:model/AccessSettingsUnassign} 
- */
+    * @type {AccessSettingsUnassign | undefined}
+    */
 AccessSettings.prototype['unassign'] = undefined;
 
 

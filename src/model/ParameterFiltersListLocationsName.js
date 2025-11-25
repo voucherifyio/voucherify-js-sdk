@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListLocationsName model module.
  * @module model/ParameterFiltersListLocationsName
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListLocationsName {
     /**
      * Constructs a new <code>ParameterFiltersListLocationsName</code>.
-     * @alias module:model/ParameterFiltersListLocationsName
+     * @alias ParameterFiltersListLocationsName
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListLocationsName {
     /**
      * Constructs a <code>ParameterFiltersListLocationsName</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListLocationsName} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListLocationsName} The populated <code>ParameterFiltersListLocationsName</code> instance.
+     * @param {Partial<ParameterFiltersListLocationsName>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListLocationsName} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListLocationsName} The populated <code>ParameterFiltersListLocationsName</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class ParameterFiltersListLocationsName {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListLocationsName</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListLocationsName>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListLocationsName</code>.
      */
     static validateJSON(data) {
@@ -75,8 +74,8 @@ class ParameterFiltersListLocationsName {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListLocationsName.prototype['conditions'] = undefined;
 
 

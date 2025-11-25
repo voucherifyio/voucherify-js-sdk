@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomersMetadataUpdateInBulkRequestBody model module.
  * @module model/CustomersMetadataUpdateInBulkRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomersMetadataUpdateInBulkRequestBody {
     /**
      * Constructs a new <code>CustomersMetadataUpdateInBulkRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/customers/metadata/async&#x60;.
-     * @alias module:model/CustomersMetadataUpdateInBulkRequestBody
+     * @alias CustomersMetadataUpdateInBulkRequestBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomersMetadataUpdateInBulkRequestBody {
     /**
      * Constructs a <code>CustomersMetadataUpdateInBulkRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomersMetadataUpdateInBulkRequestBody} obj Optional instance to populate.
-     * @returns {module:model/CustomersMetadataUpdateInBulkRequestBody} The populated <code>CustomersMetadataUpdateInBulkRequestBody</code> instance.
+     * @param {Partial<CustomersMetadataUpdateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomersMetadataUpdateInBulkRequestBody} [obj] Optional instance to populate.
+     * @returns {CustomersMetadataUpdateInBulkRequestBody} The populated <code>CustomersMetadataUpdateInBulkRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class CustomersMetadataUpdateInBulkRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>CustomersMetadataUpdateInBulkRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomersMetadataUpdateInBulkRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomersMetadataUpdateInBulkRequestBody</code>.
      */
     static validateJSON(data) {
@@ -78,15 +77,15 @@ class CustomersMetadataUpdateInBulkRequestBody {
 
 
 /**
- * An array of customer `source_id`'s.
- * @member {Array.<String>} 
- */
+    * An array of customer `source_id`'s.
+    * @type {Array.<String> | undefined}
+    */
 CustomersMetadataUpdateInBulkRequestBody.prototype['source_ids'] = undefined;
 
 /**
- * Metadata key value pairs to be updated. A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
- * @member {Object} 
- */
+    * Metadata key value pairs to be updated. A set of custom key/value pairs that you can attach to a customer. The metadata object stores all custom attributes assigned to the customer. It can be useful for storing additional information about the customer in a structured format. This metadata can be used for validating whether the customer qualifies for a discount or it can be used in building customer segments.
+    * @type {Object | undefined}
+    */
 CustomersMetadataUpdateInBulkRequestBody.prototype['metadata'] = undefined;
 
 

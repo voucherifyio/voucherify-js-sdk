@@ -18,18 +18,17 @@ import ValidationsRedeemableInapplicable from './ValidationsRedeemableInapplicab
 import ValidationsRedeemableSkipped from './ValidationsRedeemableSkipped';
 import ValidationsValidateResponseBodyOrder from './ValidationsValidateResponseBodyOrder';
 import ValidationsValidateResponseBodyRedeemablesItem from './ValidationsValidateResponseBodyRedeemablesItem';
-
 /**
  * The ValidationsValidateResponseBody model module.
  * @module model/ValidationsValidateResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBody {
     /**
      * Constructs a new <code>ValidationsValidateResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/validations&#x60;.
-     * @alias module:model/ValidationsValidateResponseBody
-     * @param stackingRules {module:model/StackingRules} 
+     * @alias ValidationsValidateResponseBody
+     * @param {StackingRules} stackingRules 
      */
     constructor(stackingRules) { 
         
@@ -48,9 +47,9 @@ class ValidationsValidateResponseBody {
     /**
      * Constructs a <code>ValidationsValidateResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBody} The populated <code>ValidationsValidateResponseBody</code> instance.
+     * @param {Partial<ValidationsValidateResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBody} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBody} The populated <code>ValidationsValidateResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -89,7 +88,7 @@ class ValidationsValidateResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBody</code>.
      */
     static validateJSON(data) {
@@ -159,53 +158,53 @@ class ValidationsValidateResponseBody {
 ValidationsValidateResponseBody.RequiredProperties = ["stacking_rules"];
 
 /**
- * Unique identifier of the validation, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of the validation, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBody.prototype['id'] = undefined;
 
 /**
- * The result of the validation. It takes all of the redeemables into account and returns a `false` if at least one redeemable is inapplicable. Returns `true` if all redeemables are applicable.
- * @member {Boolean} 
- */
+    * The result of the validation. It takes all of the redeemables into account and returns a `false` if at least one redeemable is inapplicable. Returns `true` if all redeemables are applicable.
+    * @type {Boolean | undefined}
+    */
 ValidationsValidateResponseBody.prototype['valid'] = undefined;
 
 /**
- * @member {Array.<module:model/ValidationsValidateResponseBodyRedeemablesItem>} 
- */
+    * @type {Array.<ValidationsValidateResponseBodyRedeemablesItem> | undefined}
+    */
 ValidationsValidateResponseBody.prototype['redeemables'] = undefined;
 
 /**
- * Lists validation results of each skipped redeemable.
- * @member {Array.<module:model/ValidationsRedeemableSkipped>} 
- */
+    * Lists validation results of each skipped redeemable.
+    * @type {Array.<ValidationsRedeemableSkipped> | undefined}
+    */
 ValidationsValidateResponseBody.prototype['skipped_redeemables'] = undefined;
 
 /**
- * Lists validation results of each inapplicable redeemable.
- * @member {Array.<module:model/ValidationsRedeemableInapplicable>} 
- */
+    * Lists validation results of each inapplicable redeemable.
+    * @type {Array.<ValidationsRedeemableInapplicable> | undefined}
+    */
 ValidationsValidateResponseBody.prototype['inapplicable_redeemables'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyOrder} 
- */
+    * @type {ValidationsValidateResponseBodyOrder | undefined}
+    */
 ValidationsValidateResponseBody.prototype['order'] = undefined;
 
 /**
- * Hashed customer source ID.
- * @member {String} 
- */
+    * Hashed customer source ID.
+    * @type {String | undefined}
+    */
 ValidationsValidateResponseBody.prototype['tracking_id'] = undefined;
 
 /**
- * @member {module:model/Session} 
- */
+    * @type {Session | undefined}
+    */
 ValidationsValidateResponseBody.prototype['session'] = undefined;
 
 /**
- * @member {module:model/StackingRules} 
- */
+    * @type {StackingRules}
+    */
 ValidationsValidateResponseBody.prototype['stacking_rules'] = undefined;
 
 

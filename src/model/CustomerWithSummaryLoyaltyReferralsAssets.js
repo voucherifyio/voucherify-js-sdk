@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CustomerWithSummaryLoyaltyReferralsAssets model module.
  * @module model/CustomerWithSummaryLoyaltyReferralsAssets
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerWithSummaryLoyaltyReferralsAssets {
     /**
      * Constructs a new <code>CustomerWithSummaryLoyaltyReferralsAssets</code>.
      * Contains information about the customer&#39;s cockpit.
-     * @alias module:model/CustomerWithSummaryLoyaltyReferralsAssets
+     * @alias CustomerWithSummaryLoyaltyReferralsAssets
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CustomerWithSummaryLoyaltyReferralsAssets {
     /**
      * Constructs a <code>CustomerWithSummaryLoyaltyReferralsAssets</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerWithSummaryLoyaltyReferralsAssets} obj Optional instance to populate.
-     * @returns {module:model/CustomerWithSummaryLoyaltyReferralsAssets} The populated <code>CustomerWithSummaryLoyaltyReferralsAssets</code> instance.
+     * @param {Partial<CustomerWithSummaryLoyaltyReferralsAssets>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerWithSummaryLoyaltyReferralsAssets} [obj] Optional instance to populate.
+     * @returns {CustomerWithSummaryLoyaltyReferralsAssets} The populated <code>CustomerWithSummaryLoyaltyReferralsAssets</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CustomerWithSummaryLoyaltyReferralsAssets {
 
     /**
      * Validates the JSON data with respect to <code>CustomerWithSummaryLoyaltyReferralsAssets</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerWithSummaryLoyaltyReferralsAssets>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerWithSummaryLoyaltyReferralsAssets</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class CustomerWithSummaryLoyaltyReferralsAssets {
 
 
 /**
- * Customer's cockpit URL address.
- * @member {String} 
- */
+    * Customer's cockpit URL address.
+    * @type {String | undefined}
+    */
 CustomerWithSummaryLoyaltyReferralsAssets.prototype['cockpit_url'] = undefined;
 
 

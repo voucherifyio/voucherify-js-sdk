@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesTiersGetResponseBodyConfigPoints from './LoyaltiesTiersGetResponseBodyConfigPoints';
-
 /**
  * The LoyaltiesTiersGetResponseBodyConfig model module.
  * @module model/LoyaltiesTiersGetResponseBodyConfig
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesTiersGetResponseBodyConfig {
     /**
      * Constructs a new <code>LoyaltiesTiersGetResponseBodyConfig</code>.
      * Defines loyalty tier range in points.
-     * @alias module:model/LoyaltiesTiersGetResponseBodyConfig
+     * @alias LoyaltiesTiersGetResponseBodyConfig
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltiesTiersGetResponseBodyConfig {
     /**
      * Constructs a <code>LoyaltiesTiersGetResponseBodyConfig</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesTiersGetResponseBodyConfig} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesTiersGetResponseBodyConfig} The populated <code>LoyaltiesTiersGetResponseBodyConfig</code> instance.
+     * @param {Partial<LoyaltiesTiersGetResponseBodyConfig>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesTiersGetResponseBodyConfig} [obj] Optional instance to populate.
+     * @returns {LoyaltiesTiersGetResponseBodyConfig} The populated <code>LoyaltiesTiersGetResponseBodyConfig</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class LoyaltiesTiersGetResponseBodyConfig {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesTiersGetResponseBodyConfig</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesTiersGetResponseBodyConfig>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesTiersGetResponseBodyConfig</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class LoyaltiesTiersGetResponseBodyConfig {
 
 
 /**
- * @member {module:model/LoyaltiesTiersGetResponseBodyConfigPoints} 
- */
+    * @type {LoyaltiesTiersGetResponseBodyConfigPoints | undefined}
+    */
 LoyaltiesTiersGetResponseBodyConfig.prototype['points'] = undefined;
 
 

@@ -16,16 +16,15 @@ import LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent from './LoyaltiesE
 import LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer from './LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer';
 import LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder from './LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder';
 import LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems from './LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems';
-
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyalty model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyalty
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyalty {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code>.
-     * @alias module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty
+     * @alias LoyaltiesEarningRulesGetResponseBodyLoyalty
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class LoyaltiesEarningRulesGetResponseBodyLoyalty {
     /**
      * Constructs a <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code> instance.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyalty>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesEarningRulesGetResponseBodyLoyalty} [obj] Optional instance to populate.
+     * @returns {LoyaltiesEarningRulesGetResponseBodyLoyalty} The populated <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -81,7 +80,7 @@ class LoyaltiesEarningRulesGetResponseBodyLoyalty {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesEarningRulesGetResponseBodyLoyalty>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesEarningRulesGetResponseBodyLoyalty</code>.
      */
     static validateJSON(data) {
@@ -123,127 +122,127 @@ class LoyaltiesEarningRulesGetResponseBodyLoyalty {
 
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty.TypeEnum} 
- */
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBodyLoyalty.TypeEnum) | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['type'] = undefined;
 
 /**
- * Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
- * @member {Number} 
- */
+    * Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
+    * @type {Number | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['points'] = undefined;
 
 /**
- * Formula used to dynamically calculate the rewarded points.
- * @member {String} 
- */
+    * Formula used to dynamically calculate the rewarded points.
+    * @type {String | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['points_formula'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyalty.CalculationTypeEnum} 
- */
+    * @type {(keyof typeof LoyaltiesEarningRulesGetResponseBodyLoyalty.CalculationTypeEnum) | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['calculation_type'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['order'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['order_items'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomer | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['customer'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent} 
- */
+    * @type {LoyaltiesEarningRulesGetResponseBodyLoyaltyCustomEvent | undefined}
+    */
 LoyaltiesEarningRulesGetResponseBodyLoyalty.prototype['custom_event'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBodyLoyalty['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    LoyaltiesEarningRulesGetResponseBodyLoyalty['TypeEnum'] = {
+    
+        /**
+         * value: "FIXED"
+         * @constant
+         */
+        "FIXED": "FIXED",
+    
+        /**
+         * value: "PROPORTIONAL"
+         * @constant
+         */
+        "PROPORTIONAL": "PROPORTIONAL"    
+    };
+
 
     /**
-     * value: "FIXED"
-     * @constant
+     * Allowed values for the <code>calculation_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "FIXED": "FIXED",
-
-    /**
-     * value: "PROPORTIONAL"
-     * @constant
-     */
-    "PROPORTIONAL": "PROPORTIONAL"
-};
-
-
-/**
- * Allowed values for the <code>calculation_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoyaltiesEarningRulesGetResponseBodyLoyalty['CalculationTypeEnum'] = {
-
-    /**
-     * value: "ORDER_AMOUNT"
-     * @constant
-     */
-    "ORDER_AMOUNT": "ORDER_AMOUNT",
-
-    /**
-     * value: "ORDER_TOTAL_AMOUNT"
-     * @constant
-     */
-    "ORDER_TOTAL_AMOUNT": "ORDER_TOTAL_AMOUNT",
-
-    /**
-     * value: "ORDER_METADATA"
-     * @constant
-     */
-    "ORDER_METADATA": "ORDER_METADATA",
-
-    /**
-     * value: "ORDER_ITEMS_QUANTITY"
-     * @constant
-     */
-    "ORDER_ITEMS_QUANTITY": "ORDER_ITEMS_QUANTITY",
-
-    /**
-     * value: "ORDER_ITEMS_AMOUNT"
-     * @constant
-     */
-    "ORDER_ITEMS_AMOUNT": "ORDER_ITEMS_AMOUNT",
-
-    /**
-     * value: "ORDER_ITEMS_SUBTOTAL_AMOUNT"
-     * @constant
-     */
-    "ORDER_ITEMS_SUBTOTAL_AMOUNT": "ORDER_ITEMS_SUBTOTAL_AMOUNT",
-
-    /**
-     * value: "CUSTOMER_METADATA"
-     * @constant
-     */
-    "CUSTOMER_METADATA": "CUSTOMER_METADATA",
-
-    /**
-     * value: "CUSTOM_EVENT_METADATA"
-     * @constant
-     */
-    "CUSTOM_EVENT_METADATA": "CUSTOM_EVENT_METADATA"
-};
+    LoyaltiesEarningRulesGetResponseBodyLoyalty['CalculationTypeEnum'] = {
+    
+        /**
+         * value: "ORDER_AMOUNT"
+         * @constant
+         */
+        "ORDER_AMOUNT": "ORDER_AMOUNT",
+    
+        /**
+         * value: "ORDER_TOTAL_AMOUNT"
+         * @constant
+         */
+        "ORDER_TOTAL_AMOUNT": "ORDER_TOTAL_AMOUNT",
+    
+        /**
+         * value: "ORDER_METADATA"
+         * @constant
+         */
+        "ORDER_METADATA": "ORDER_METADATA",
+    
+        /**
+         * value: "ORDER_ITEMS_QUANTITY"
+         * @constant
+         */
+        "ORDER_ITEMS_QUANTITY": "ORDER_ITEMS_QUANTITY",
+    
+        /**
+         * value: "ORDER_ITEMS_AMOUNT"
+         * @constant
+         */
+        "ORDER_ITEMS_AMOUNT": "ORDER_ITEMS_AMOUNT",
+    
+        /**
+         * value: "ORDER_ITEMS_SUBTOTAL_AMOUNT"
+         * @constant
+         */
+        "ORDER_ITEMS_SUBTOTAL_AMOUNT": "ORDER_ITEMS_SUBTOTAL_AMOUNT",
+    
+        /**
+         * value: "CUSTOMER_METADATA"
+         * @constant
+         */
+        "CUSTOMER_METADATA": "CUSTOMER_METADATA",
+    
+        /**
+         * value: "CUSTOM_EVENT_METADATA"
+         * @constant
+         */
+        "CUSTOM_EVENT_METADATA": "CUSTOM_EVENT_METADATA"    
+    };
 
 
 

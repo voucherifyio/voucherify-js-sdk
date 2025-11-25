@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsRollbackCreateResponseBodyChannel model module.
  * @module model/RedemptionsRollbackCreateResponseBodyChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsRollbackCreateResponseBodyChannel {
     /**
      * Constructs a new <code>RedemptionsRollbackCreateResponseBodyChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/RedemptionsRollbackCreateResponseBodyChannel
+     * @alias RedemptionsRollbackCreateResponseBodyChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsRollbackCreateResponseBodyChannel {
     /**
      * Constructs a <code>RedemptionsRollbackCreateResponseBodyChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsRollbackCreateResponseBodyChannel} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsRollbackCreateResponseBodyChannel} The populated <code>RedemptionsRollbackCreateResponseBodyChannel</code> instance.
+     * @param {Partial<RedemptionsRollbackCreateResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsRollbackCreateResponseBodyChannel} [obj] Optional instance to populate.
+     * @returns {RedemptionsRollbackCreateResponseBodyChannel} The populated <code>RedemptionsRollbackCreateResponseBodyChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class RedemptionsRollbackCreateResponseBodyChannel {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsRollbackCreateResponseBodyChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsRollbackCreateResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsRollbackCreateResponseBodyChannel</code>.
      */
     static validateJSON(data) {
@@ -82,40 +81,40 @@ class RedemptionsRollbackCreateResponseBodyChannel {
 
 
 /**
- * Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
- * @member {String} 
- */
+    * Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
+    * @type {String | undefined}
+    */
 RedemptionsRollbackCreateResponseBodyChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
- * @member {module:model/RedemptionsRollbackCreateResponseBodyChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+    * @type {(keyof typeof RedemptionsRollbackCreateResponseBodyChannel.ChannelTypeEnum) | undefined}
+    */
 RedemptionsRollbackCreateResponseBodyChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsRollbackCreateResponseBodyChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API"
-};
+    RedemptionsRollbackCreateResponseBodyChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API"    
+    };
 
 
 

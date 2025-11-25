@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import RewardAttributes from './RewardAttributes';
 import RewardType from './RewardType';
-
 /**
  * The Reward model module.
  * @module model/Reward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class Reward {
     /**
      * Constructs a new <code>Reward</code>.
-     * @alias module:model/Reward
-     * @param object {module:model/Reward.ObjectEnum} The type of the object represented by the JSON. This object stores information about the reward.
+     * @alias Reward
+     * @param {Reward.ObjectEnum} object The type of the object represented by the JSON. This object stores information about the reward.
      */
     constructor(object) { 
         
@@ -43,9 +42,9 @@ class Reward {
     /**
      * Constructs a <code>Reward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Reward} obj Optional instance to populate.
-     * @returns {module:model/Reward} The populated <code>Reward</code> instance.
+     * @param {Partial<Reward>} data The plain JavaScript object bearing properties of interest.
+     * @param {Reward} [obj] Optional instance to populate.
+     * @returns {Reward} The populated <code>Reward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -90,7 +89,7 @@ class Reward {
 
     /**
      * Validates the JSON data with respect to <code>Reward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<Reward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>Reward</code>.
      */
     static validateJSON(data) {
@@ -134,114 +133,114 @@ class Reward {
 Reward.RequiredProperties = ["object"];
 
 /**
- * Unique reward ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 Reward.prototype['id'] = undefined;
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 Reward.prototype['name'] = undefined;
 
 /**
- * Configurable for **material rewards**. The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
- * @member {Number} 
- */
+    * Configurable for **material rewards**. The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
+    * @type {Number | undefined}
+    */
 Reward.prototype['stock'] = undefined;
 
 /**
- * Defines the number of already invoked (successful) reward redemptions. 
- * @member {Number} 
- */
+    * Defines the number of already invoked (successful) reward redemptions. 
+    * @type {Number | undefined}
+    */
 Reward.prototype['redeemed'] = undefined;
 
 /**
- * @member {module:model/RewardAttributes} 
- */
+    * @type {RewardAttributes | undefined}
+    */
 Reward.prototype['attributes'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
+    * @type {Object | undefined}
+    */
 Reward.prototype['metadata'] = undefined;
 
 /**
- * Reward type.
- * @member {module:model/Reward.TypeEnum} 
- */
+    * Reward type.
+    * @type {(keyof typeof Reward.TypeEnum) | undefined}
+    */
 Reward.prototype['type'] = undefined;
 
 /**
- * @member {module:model/RewardType} 
- */
+    * @type {RewardType | undefined}
+    */
 Reward.prototype['parameters'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Reward.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 Reward.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward.
- * @member {module:model/Reward.ObjectEnum} 
- * @default 'reward'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward.
+    * @type {(keyof typeof Reward.ObjectEnum)}
+    * @default 'reward'
+    */
 Reward.prototype['object'] = 'reward';
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-Reward['TypeEnum'] = {
+    /**
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    Reward['TypeEnum'] = {
+    
+        /**
+         * value: "CAMPAIGN"
+         * @constant
+         */
+        "CAMPAIGN": "CAMPAIGN",
+    
+        /**
+         * value: "COIN"
+         * @constant
+         */
+        "COIN": "COIN",
+    
+        /**
+         * value: "MATERIAL"
+         * @constant
+         */
+        "MATERIAL": "MATERIAL"    
+    };
+
 
     /**
-     * value: "CAMPAIGN"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CAMPAIGN": "CAMPAIGN",
-
-    /**
-     * value: "COIN"
-     * @constant
-     */
-    "COIN": "COIN",
-
-    /**
-     * value: "MATERIAL"
-     * @constant
-     */
-    "MATERIAL": "MATERIAL"
-};
-
-
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-Reward['ObjectEnum'] = {
-
-    /**
-     * value: "reward"
-     * @constant
-     */
-    "reward": "reward"
-};
+    Reward['ObjectEnum'] = {
+    
+        /**
+         * value: "reward"
+         * @constant
+         */
+        "reward": "reward"    
+    };
 
 
 

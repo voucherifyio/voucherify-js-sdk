@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CampaignBase from './CampaignBase';
-
 /**
  * The CampaignsListResponseBody model module.
  * @module model/CampaignsListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsListResponseBody {
     /**
      * Constructs a new <code>CampaignsListResponseBody</code>.
      * Schema model for **GET** &#x60;v1/campaigns&#x60;.
-     * @alias module:model/CampaignsListResponseBody
+     * @alias CampaignsListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class CampaignsListResponseBody {
     /**
      * Constructs a <code>CampaignsListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsListResponseBody} The populated <code>CampaignsListResponseBody</code> instance.
+     * @param {Partial<CampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsListResponseBody} [obj] Optional instance to populate.
+     * @returns {CampaignsListResponseBody} The populated <code>CampaignsListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class CampaignsListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class CampaignsListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about campaigns in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about campaigns in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 CampaignsListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of campaign objects.
- * @member {String} 
- * @default 'campaigns'
- */
+    * Identifies the name of the attribute that contains the array of campaign objects.
+    * @type {String | undefined}
+    * @default 'campaigns'
+    */
 CampaignsListResponseBody.prototype['data_ref'] = 'campaigns';
 
 /**
- * Contains array of campaign objects.
- * @member {Array.<module:model/CampaignBase>} 
- */
+    * Contains array of campaign objects.
+    * @type {Array.<CampaignBase> | undefined}
+    */
 CampaignsListResponseBody.prototype['campaigns'] = undefined;
 
 /**
- * Total number of campaigns.
- * @member {Number} 
- */
+    * Total number of campaigns.
+    * @type {Number | undefined}
+    */
 CampaignsListResponseBody.prototype['total'] = undefined;
 
 

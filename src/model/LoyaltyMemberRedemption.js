@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The LoyaltyMemberRedemption model module.
  * @module model/LoyaltyMemberRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltyMemberRedemption {
     /**
      * Constructs a new <code>LoyaltyMemberRedemption</code>.
      * Stores a summary of redemptions that have been applied to the voucher.
-     * @alias module:model/LoyaltyMemberRedemption
+     * @alias LoyaltyMemberRedemption
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class LoyaltyMemberRedemption {
     /**
      * Constructs a <code>LoyaltyMemberRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltyMemberRedemption} obj Optional instance to populate.
-     * @returns {module:model/LoyaltyMemberRedemption} The populated <code>LoyaltyMemberRedemption</code> instance.
+     * @param {Partial<LoyaltyMemberRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltyMemberRedemption} [obj] Optional instance to populate.
+     * @returns {LoyaltyMemberRedemption} The populated <code>LoyaltyMemberRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class LoyaltyMemberRedemption {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltyMemberRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltyMemberRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltyMemberRedemption</code>.
      */
     static validateJSON(data) {
@@ -92,34 +91,34 @@ class LoyaltyMemberRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 LoyaltyMemberRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 LoyaltyMemberRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 LoyaltyMemberRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 LoyaltyMemberRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 LoyaltyMemberRedemption.prototype['url'] = undefined;
 
 

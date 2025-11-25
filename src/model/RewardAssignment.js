@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RewardAssignmentParameters from './RewardAssignmentParameters';
-
 /**
  * The RewardAssignment model module.
  * @module model/RewardAssignment
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardAssignment {
     /**
      * Constructs a new <code>RewardAssignment</code>.
-     * @alias module:model/RewardAssignment
+     * @alias RewardAssignment
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class RewardAssignment {
     /**
      * Constructs a <code>RewardAssignment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardAssignment} obj Optional instance to populate.
-     * @returns {module:model/RewardAssignment} The populated <code>RewardAssignment</code> instance.
+     * @param {Partial<RewardAssignment>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardAssignment} [obj] Optional instance to populate.
+     * @returns {RewardAssignment} The populated <code>RewardAssignment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -80,7 +79,7 @@ class RewardAssignment {
 
     /**
      * Validates the JSON data with respect to <code>RewardAssignment</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardAssignment>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardAssignment</code>.
      */
     static validateJSON(data) {
@@ -118,86 +117,86 @@ class RewardAssignment {
 
 
 /**
- * Unique reward assignment ID, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique reward assignment ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 RewardAssignment.prototype['id'] = undefined;
 
 /**
- * Associated reward ID.
- * @member {String} 
- */
+    * Associated reward ID.
+    * @type {String | undefined}
+    */
 RewardAssignment.prototype['reward_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RewardAssignment.prototype['created_at'] = undefined;
 
 /**
- * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 RewardAssignment.prototype['updated_at'] = undefined;
 
 /**
- * The type of the object represented by the JSON. This object stores information about the reward assignment.
- * @member {module:model/RewardAssignment.ObjectEnum} 
- * @default 'reward_assignment'
- */
+    * The type of the object represented by the JSON. This object stores information about the reward assignment.
+    * @type {(keyof typeof RewardAssignment.ObjectEnum) | undefined}
+    * @default 'reward_assignment'
+    */
 RewardAssignment.prototype['object'] = 'reward_assignment';
 
 /**
- * Related object ID to which the reward was assigned.
- * @member {String} 
- */
+    * Related object ID to which the reward was assigned.
+    * @type {String | undefined}
+    */
 RewardAssignment.prototype['related_object_id'] = undefined;
 
 /**
- * Related object type to which the reward was assigned.
- * @member {module:model/RewardAssignment.RelatedObjectTypeEnum} 
- * @default 'campaign'
- */
+    * Related object type to which the reward was assigned.
+    * @type {(keyof typeof RewardAssignment.RelatedObjectTypeEnum) | undefined}
+    * @default 'campaign'
+    */
 RewardAssignment.prototype['related_object_type'] = 'campaign';
 
 /**
- * @member {module:model/RewardAssignmentParameters} 
- */
+    * @type {RewardAssignmentParameters | undefined}
+    */
 RewardAssignment.prototype['parameters'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-RewardAssignment['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RewardAssignment['ObjectEnum'] = {
+    
+        /**
+         * value: "reward_assignment"
+         * @constant
+         */
+        "reward_assignment": "reward_assignment"    
+    };
+
 
     /**
-     * value: "reward_assignment"
-     * @constant
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "reward_assignment": "reward_assignment"
-};
-
-
-/**
- * Allowed values for the <code>related_object_type</code> property.
- * @enum {String}
- * @readonly
- */
-RewardAssignment['RelatedObjectTypeEnum'] = {
-
-    /**
-     * value: "campaign"
-     * @constant
-     */
-    "campaign": "campaign"
-};
+    RewardAssignment['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign"    
+    };
 
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionChannel model module.
  * @module model/MemberActivityDataRedemptionChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionChannel {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/MemberActivityDataRedemptionChannel
+     * @alias MemberActivityDataRedemptionChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataRedemptionChannel {
     /**
      * Constructs a <code>MemberActivityDataRedemptionChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionChannel} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionChannel} The populated <code>MemberActivityDataRedemptionChannel</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionChannel} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionChannel} The populated <code>MemberActivityDataRedemptionChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class MemberActivityDataRedemptionChannel {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionChannel</code>.
      */
     static validateJSON(data) {
@@ -82,46 +81,46 @@ class MemberActivityDataRedemptionChannel {
 
 
 /**
- * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard, an X-APP-Id of a user using the API, or the reward assignment ID for automatic reward redemption.
- * @member {String} 
- */
+    * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard, an X-APP-Id of a user using the API, or the reward assignment ID for automatic reward redemption.
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption: `USER` - the redemption was made in the Voucherify Dashboard by a user,  `API` - redemption was made through the API, `AUTO_REDEEM` - the redemption was made automatically for a reward.
- * @member {module:model/MemberActivityDataRedemptionChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption: `USER` - the redemption was made in the Voucherify Dashboard by a user,  `API` - redemption was made through the API, `AUTO_REDEEM` - the redemption was made automatically for a reward.
+    * @type {(keyof typeof MemberActivityDataRedemptionChannel.ChannelTypeEnum) | undefined}
+    */
 MemberActivityDataRedemptionChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataRedemptionChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "API"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM",
-
-    /**
-     * value: "USER"
-     * @constant
-     */
-    "USER": "USER"
-};
+    MemberActivityDataRedemptionChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM",
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER"    
+    };
 
 
 

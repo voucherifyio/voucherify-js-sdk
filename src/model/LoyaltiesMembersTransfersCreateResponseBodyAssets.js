@@ -14,17 +14,16 @@
 import ApiClient from '../ApiClient';
 import LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode from './LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode';
 import LoyaltiesMembersTransfersCreateResponseBodyAssetsQr from './LoyaltiesMembersTransfersCreateResponseBodyAssetsQr';
-
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyAssets model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyAssets
- * @version 3.0.0
+ * @version 3.0.1
  */
 class LoyaltiesMembersTransfersCreateResponseBodyAssets {
     /**
      * Constructs a new <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code>.
      * Stores links to images of QR and barcode that correspond to an encrypted voucher code.
-     * @alias module:model/LoyaltiesMembersTransfersCreateResponseBodyAssets
+     * @alias LoyaltiesMembersTransfersCreateResponseBodyAssets
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssets {
     /**
      * Constructs a <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssets} obj Optional instance to populate.
-     * @returns {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssets} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code> instance.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyAssets>} data The plain JavaScript object bearing properties of interest.
+     * @param {LoyaltiesMembersTransfersCreateResponseBodyAssets} [obj] Optional instance to populate.
+     * @returns {LoyaltiesMembersTransfersCreateResponseBodyAssets} The populated <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssets {
 
     /**
      * Validates the JSON data with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<LoyaltiesMembersTransfersCreateResponseBodyAssets>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>LoyaltiesMembersTransfersCreateResponseBodyAssets</code>.
      */
     static validateJSON(data) {
@@ -84,13 +83,13 @@ class LoyaltiesMembersTransfersCreateResponseBodyAssets {
 
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyAssetsQr | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyAssets.prototype['qr'] = undefined;
 
 /**
- * @member {module:model/LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode} 
- */
+    * @type {LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode | undefined}
+    */
 LoyaltiesMembersTransfersCreateResponseBodyAssets.prototype['barcode'] = undefined;
 
 

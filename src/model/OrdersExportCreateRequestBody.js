@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import OrdersExportCreateRequestBodyParameters from './OrdersExportCreateRequestBodyParameters';
-
 /**
  * The OrdersExportCreateRequestBody model module.
  * @module model/OrdersExportCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrdersExportCreateRequestBody {
     /**
      * Constructs a new <code>OrdersExportCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/orders/export&#x60;.
-     * @alias module:model/OrdersExportCreateRequestBody
+     * @alias OrdersExportCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class OrdersExportCreateRequestBody {
     /**
      * Constructs a <code>OrdersExportCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrdersExportCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/OrdersExportCreateRequestBody} The populated <code>OrdersExportCreateRequestBody</code> instance.
+     * @param {Partial<OrdersExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrdersExportCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {OrdersExportCreateRequestBody} The populated <code>OrdersExportCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class OrdersExportCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>OrdersExportCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrdersExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrdersExportCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class OrdersExportCreateRequestBody {
 
 
 /**
- * @member {module:model/OrdersExportCreateRequestBodyParameters} 
- */
+    * @type {OrdersExportCreateRequestBodyParameters | undefined}
+    */
 OrdersExportCreateRequestBody.prototype['parameters'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The SimpleRedemptionChannel model module.
  * @module model/SimpleRedemptionChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class SimpleRedemptionChannel {
     /**
      * Constructs a new <code>SimpleRedemptionChannel</code>.
      * Defines the details of the channel through which the redemption was issued.
-     * @alias module:model/SimpleRedemptionChannel
+     * @alias SimpleRedemptionChannel
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class SimpleRedemptionChannel {
     /**
      * Constructs a <code>SimpleRedemptionChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SimpleRedemptionChannel} obj Optional instance to populate.
-     * @returns {module:model/SimpleRedemptionChannel} The populated <code>SimpleRedemptionChannel</code> instance.
+     * @param {Partial<SimpleRedemptionChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {SimpleRedemptionChannel} [obj] Optional instance to populate.
+     * @returns {SimpleRedemptionChannel} The populated <code>SimpleRedemptionChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class SimpleRedemptionChannel {
 
     /**
      * Validates the JSON data with respect to <code>SimpleRedemptionChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<SimpleRedemptionChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>SimpleRedemptionChannel</code>.
      */
     static validateJSON(data) {
@@ -82,46 +81,46 @@ class SimpleRedemptionChannel {
 
 
 /**
- * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard, an X-APP-Id of a user using the API, or the reward assignment ID for automatic reward redemption.
- * @member {String} 
- */
+    * Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard, an X-APP-Id of a user using the API, or the reward assignment ID for automatic reward redemption.
+    * @type {String | undefined}
+    */
 SimpleRedemptionChannel.prototype['channel_id'] = undefined;
 
 /**
- * The source of the channel for the redemption: `USER` - the redemption was made in the Voucherify Dashboard by a user,  `API` - redemption was made through the API, `AUTO_REDEEM` - the redemption was made automatically for a reward.
- * @member {module:model/SimpleRedemptionChannel.ChannelTypeEnum} 
- */
+    * The source of the channel for the redemption: `USER` - the redemption was made in the Voucherify Dashboard by a user,  `API` - redemption was made through the API, `AUTO_REDEEM` - the redemption was made automatically for a reward.
+    * @type {(keyof typeof SimpleRedemptionChannel.ChannelTypeEnum) | undefined}
+    */
 SimpleRedemptionChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-SimpleRedemptionChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "API"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM",
-
-    /**
-     * value: "USER"
-     * @constant
-     */
-    "USER": "USER"
-};
+    SimpleRedemptionChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM",
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER"    
+    };
 
 
 

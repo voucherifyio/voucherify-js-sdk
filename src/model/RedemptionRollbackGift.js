@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionRollbackGift model module.
  * @module model/RedemptionRollbackGift
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionRollbackGift {
     /**
      * Constructs a new <code>RedemptionRollbackGift</code>.
      * Contains the amount returned to the gift card in the redemption rollback. It is expressed as a negative integer.
-     * @alias module:model/RedemptionRollbackGift
+     * @alias RedemptionRollbackGift
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionRollbackGift {
     /**
      * Constructs a <code>RedemptionRollbackGift</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionRollbackGift} obj Optional instance to populate.
-     * @returns {module:model/RedemptionRollbackGift} The populated <code>RedemptionRollbackGift</code> instance.
+     * @param {Partial<RedemptionRollbackGift>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionRollbackGift} [obj] Optional instance to populate.
+     * @returns {RedemptionRollbackGift} The populated <code>RedemptionRollbackGift</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class RedemptionRollbackGift {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionRollbackGift</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionRollbackGift>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionRollbackGift</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class RedemptionRollbackGift {
 
 
 /**
- * Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
- * @member {Number} 
- */
+    * Amount returned to the gift card as a result of the redemption rollback and expressed as a negative integer. The amount is expressed as the smallest currency unit (e.g. -100 cents for $1.00 returned).
+    * @type {Number | undefined}
+    */
 RedemptionRollbackGift.prototype['amount'] = undefined;
 
 

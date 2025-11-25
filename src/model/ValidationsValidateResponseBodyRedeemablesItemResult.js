@@ -18,16 +18,15 @@ import ValidationsValidateResponseBodyRedeemablesItemResultDetails from './Valid
 import ValidationsValidateResponseBodyRedeemablesItemResultDiscount from './ValidationsValidateResponseBodyRedeemablesItemResultDiscount';
 import ValidationsValidateResponseBodyRedeemablesItemResultGift from './ValidationsValidateResponseBodyRedeemablesItemResultGift';
 import ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard from './ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard';
-
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResult model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResult
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsValidateResponseBodyRedeemablesItemResult {
     /**
      * Constructs a new <code>ValidationsValidateResponseBodyRedeemablesItemResult</code>.
-     * @alias module:model/ValidationsValidateResponseBodyRedeemablesItemResult
+     * @alias ValidationsValidateResponseBodyRedeemablesItemResult
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResult {
     /**
      * Constructs a <code>ValidationsValidateResponseBodyRedeemablesItemResult</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsValidateResponseBodyRedeemablesItemResult} obj Optional instance to populate.
-     * @returns {module:model/ValidationsValidateResponseBodyRedeemablesItemResult} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResult</code> instance.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResult>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsValidateResponseBodyRedeemablesItemResult} [obj] Optional instance to populate.
+     * @returns {ValidationsValidateResponseBodyRedeemablesItemResult} The populated <code>ValidationsValidateResponseBodyRedeemablesItemResult</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -77,7 +76,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResult</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsValidateResponseBodyRedeemablesItemResult>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsValidateResponseBodyRedeemablesItemResult</code>.
      */
     static validateJSON(data) {
@@ -115,33 +114,33 @@ class ValidationsValidateResponseBodyRedeemablesItemResult {
 
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDiscount} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemResultDiscount | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['discount'] = undefined;
 
 /**
- * @member {module:model/Bundle} 
- */
+    * @type {Bundle | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['bundle'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemResultGift} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemResultGift | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['gift'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['loyalty_card'] = undefined;
 
 /**
- * @member {module:model/Error} 
- */
+    * @type {Error | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['error'] = undefined;
 
 /**
- * @member {module:model/ValidationsValidateResponseBodyRedeemablesItemResultDetails} 
- */
+    * @type {ValidationsValidateResponseBodyRedeemablesItemResultDetails | undefined}
+    */
 ValidationsValidateResponseBodyRedeemablesItemResult.prototype['details'] = undefined;
 
 

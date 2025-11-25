@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The OrderRedemptionsEntry model module.
  * @module model/OrderRedemptionsEntry
- * @version 3.0.0
+ * @version 3.0.1
  */
 class OrderRedemptionsEntry {
     /**
      * Constructs a new <code>OrderRedemptionsEntry</code>.
-     * @alias module:model/OrderRedemptionsEntry
+     * @alias OrderRedemptionsEntry
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class OrderRedemptionsEntry {
     /**
      * Constructs a <code>OrderRedemptionsEntry</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderRedemptionsEntry} obj Optional instance to populate.
-     * @returns {module:model/OrderRedemptionsEntry} The populated <code>OrderRedemptionsEntry</code> instance.
+     * @param {Partial<OrderRedemptionsEntry>} data The plain JavaScript object bearing properties of interest.
+     * @param {OrderRedemptionsEntry} [obj] Optional instance to populate.
+     * @returns {OrderRedemptionsEntry} The populated <code>OrderRedemptionsEntry</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -78,7 +77,7 @@ class OrderRedemptionsEntry {
 
     /**
      * Validates the JSON data with respect to <code>OrderRedemptionsEntry</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<OrderRedemptionsEntry>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>OrderRedemptionsEntry</code>.
      */
     static validateJSON(data) {
@@ -116,52 +115,52 @@ class OrderRedemptionsEntry {
 
 
 /**
- * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrderRedemptionsEntry.prototype['date'] = undefined;
 
 /**
- * Unique ID of the redemption rollback.
- * @member {String} 
- */
+    * Unique ID of the redemption rollback.
+    * @type {String | undefined}
+    */
 OrderRedemptionsEntry.prototype['rollback_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the redemption rollback was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the redemption rollback was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 OrderRedemptionsEntry.prototype['rollback_date'] = undefined;
 
 /**
- * The source of the incentive.
- * @member {String} 
- * @default 'redemption'
- */
+    * The source of the incentive.
+    * @type {String | undefined}
+    * @default 'redemption'
+    */
 OrderRedemptionsEntry.prototype['related_object_type'] = 'redemption';
 
 /**
- * Unique ID of the parent redemption.
- * @member {String} 
- */
+    * Unique ID of the parent redemption.
+    * @type {String | undefined}
+    */
 OrderRedemptionsEntry.prototype['related_object_id'] = undefined;
 
 /**
- * Represent's the campaign ID of the voucher if the redemption was based on a voucher that was part of bulk codes generated within a campaign. In case of a promotion tier, this represents the campaign ID of the promotion tier's parent campaign.
- * @member {String} 
- */
+    * Represent's the campaign ID of the voucher if the redemption was based on a voucher that was part of bulk codes generated within a campaign. In case of a promotion tier, this represents the campaign ID of the promotion tier's parent campaign.
+    * @type {String | undefined}
+    */
 OrderRedemptionsEntry.prototype['related_object_parent_id'] = undefined;
 
 /**
- * Contains a list of unique IDs of child redemptions, which belong to the stacked incentives.
- * @member {Array.<String>} 
- */
+    * Contains a list of unique IDs of child redemptions, which belong to the stacked incentives.
+    * @type {Array.<String> | undefined}
+    */
 OrderRedemptionsEntry.prototype['stacked'] = undefined;
 
 /**
- * Lists the rollback redemption IDs of the particular child redemptions.
- * @member {Array.<String>} 
- */
+    * Lists the rollback redemption IDs of the particular child redemptions.
+    * @type {Array.<String> | undefined}
+    */
 OrderRedemptionsEntry.prototype['rollback_stacked'] = undefined;
 
 

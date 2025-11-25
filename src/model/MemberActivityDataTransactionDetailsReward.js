@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsReward model module.
  * @module model/MemberActivityDataTransactionDetailsReward
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsReward {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsReward</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsReward
+     * @alias MemberActivityDataTransactionDetailsReward
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsReward {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsReward</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsReward} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsReward} The populated <code>MemberActivityDataTransactionDetailsReward</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsReward>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsReward} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsReward} The populated <code>MemberActivityDataTransactionDetailsReward</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataTransactionDetailsReward {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsReward</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsReward>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsReward</code>.
      */
     static validateJSON(data) {
@@ -81,15 +80,15 @@ class MemberActivityDataTransactionDetailsReward {
 
 
 /**
- * Unique reward ID.
- * @member {String} 
- */
+    * Unique reward ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsReward.prototype['id'] = undefined;
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsReward.prototype['name'] = undefined;
 
 

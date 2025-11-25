@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ValidationsRedeemableInapplicableResultDetails model module.
  * @module model/ValidationsRedeemableInapplicableResultDetails
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationsRedeemableInapplicableResultDetails {
     /**
      * Constructs a new <code>ValidationsRedeemableInapplicableResultDetails</code>.
      * Provides details about the reason why the redeemable is inapplicable.
-     * @alias module:model/ValidationsRedeemableInapplicableResultDetails
+     * @alias ValidationsRedeemableInapplicableResultDetails
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ValidationsRedeemableInapplicableResultDetails {
     /**
      * Constructs a <code>ValidationsRedeemableInapplicableResultDetails</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationsRedeemableInapplicableResultDetails} obj Optional instance to populate.
-     * @returns {module:model/ValidationsRedeemableInapplicableResultDetails} The populated <code>ValidationsRedeemableInapplicableResultDetails</code> instance.
+     * @param {Partial<ValidationsRedeemableInapplicableResultDetails>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationsRedeemableInapplicableResultDetails} [obj] Optional instance to populate.
+     * @returns {ValidationsRedeemableInapplicableResultDetails} The populated <code>ValidationsRedeemableInapplicableResultDetails</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class ValidationsRedeemableInapplicableResultDetails {
 
     /**
      * Validates the JSON data with respect to <code>ValidationsRedeemableInapplicableResultDetails</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationsRedeemableInapplicableResultDetails>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationsRedeemableInapplicableResultDetails</code>.
      */
     static validateJSON(data) {
@@ -82,15 +81,15 @@ class ValidationsRedeemableInapplicableResultDetails {
 
 
 /**
- * Generic message from the `message` string shown in the `error` object or the message configured in a validation rule.
- * @member {String} 
- */
+    * Generic message from the `message` string shown in the `error` object or the message configured in a validation rule.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicableResultDetails.prototype['message'] = undefined;
 
 /**
- * Generic message from the `key` string shown in the `error` object.
- * @member {String} 
- */
+    * Generic message from the `key` string shown in the `error` object.
+    * @type {String | undefined}
+    */
 ValidationsRedeemableInapplicableResultDetails.prototype['key'] = undefined;
 
 

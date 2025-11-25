@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersMetadataUpdateInBulkResponseBody model module.
  * @module model/VouchersMetadataUpdateInBulkResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersMetadataUpdateInBulkResponseBody {
     /**
      * Constructs a new <code>VouchersMetadataUpdateInBulkResponseBody</code>.
      * Response body schema for **POST** &#x60;v1/vouchers/metadata/async&#x60;.
-     * @alias module:model/VouchersMetadataUpdateInBulkResponseBody
+     * @alias VouchersMetadataUpdateInBulkResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class VouchersMetadataUpdateInBulkResponseBody {
     /**
      * Constructs a <code>VouchersMetadataUpdateInBulkResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersMetadataUpdateInBulkResponseBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersMetadataUpdateInBulkResponseBody} The populated <code>VouchersMetadataUpdateInBulkResponseBody</code> instance.
+     * @param {Partial<VouchersMetadataUpdateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersMetadataUpdateInBulkResponseBody} [obj] Optional instance to populate.
+     * @returns {VouchersMetadataUpdateInBulkResponseBody} The populated <code>VouchersMetadataUpdateInBulkResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class VouchersMetadataUpdateInBulkResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersMetadataUpdateInBulkResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersMetadataUpdateInBulkResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersMetadataUpdateInBulkResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class VouchersMetadataUpdateInBulkResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 VouchersMetadataUpdateInBulkResponseBody.prototype['async_action_id'] = undefined;
 
 

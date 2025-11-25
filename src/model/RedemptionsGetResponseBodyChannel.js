@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodyChannel model module.
  * @module model/RedemptionsGetResponseBodyChannel
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyChannel {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyChannel</code>.
-     * @alias module:model/RedemptionsGetResponseBodyChannel
+     * @alias RedemptionsGetResponseBodyChannel
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class RedemptionsGetResponseBodyChannel {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyChannel</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyChannel} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyChannel} The populated <code>RedemptionsGetResponseBodyChannel</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyChannel} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyChannel} The populated <code>RedemptionsGetResponseBodyChannel</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class RedemptionsGetResponseBodyChannel {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyChannel</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyChannel>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyChannel</code>.
      */
     static validateJSON(data) {
@@ -81,44 +80,44 @@ class RedemptionsGetResponseBodyChannel {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyChannel.prototype['channel_id'] = undefined;
 
 /**
- * @member {module:model/RedemptionsGetResponseBodyChannel.ChannelTypeEnum} 
- */
+    * @type {(keyof typeof RedemptionsGetResponseBodyChannel.ChannelTypeEnum) | undefined}
+    */
 RedemptionsGetResponseBodyChannel.prototype['channel_type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>channel_type</code> property.
- * @enum {String}
- * @readonly
- */
-RedemptionsGetResponseBodyChannel['ChannelTypeEnum'] = {
-
     /**
-     * value: "USER"
-     * @constant
+     * Allowed values for the <code>channel_type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "USER": "USER",
-
-    /**
-     * value: "API"
-     * @constant
-     */
-    "API": "API",
-
-    /**
-     * value: "AUTO_REDEEM"
-     * @constant
-     */
-    "AUTO_REDEEM": "AUTO_REDEEM"
-};
+    RedemptionsGetResponseBodyChannel['ChannelTypeEnum'] = {
+    
+        /**
+         * value: "USER"
+         * @constant
+         */
+        "USER": "USER",
+    
+        /**
+         * value: "API"
+         * @constant
+         */
+        "API": "API",
+    
+        /**
+         * value: "AUTO_REDEEM"
+         * @constant
+         */
+        "AUTO_REDEEM": "AUTO_REDEEM"    
+    };
 
 
 

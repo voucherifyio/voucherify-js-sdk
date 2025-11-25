@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsDeleteResponseBody model module.
  * @module model/CampaignsDeleteResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsDeleteResponseBody {
     /**
      * Constructs a new <code>CampaignsDeleteResponseBody</code>.
      * Response body schema for **DELETE** &#x60;/campaigns/{campaignId}&#x60;.
-     * @alias module:model/CampaignsDeleteResponseBody
+     * @alias CampaignsDeleteResponseBody
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsDeleteResponseBody {
     /**
      * Constructs a <code>CampaignsDeleteResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsDeleteResponseBody} obj Optional instance to populate.
-     * @returns {module:model/CampaignsDeleteResponseBody} The populated <code>CampaignsDeleteResponseBody</code> instance.
+     * @param {Partial<CampaignsDeleteResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsDeleteResponseBody} [obj] Optional instance to populate.
+     * @returns {CampaignsDeleteResponseBody} The populated <code>CampaignsDeleteResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignsDeleteResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsDeleteResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsDeleteResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsDeleteResponseBody</code>.
      */
     static validateJSON(data) {
@@ -75,9 +74,9 @@ class CampaignsDeleteResponseBody {
 
 
 /**
- * The ID of the scheduled asynchronous action.
- * @member {String} 
- */
+    * The ID of the scheduled asynchronous action.
+    * @type {String | undefined}
+    */
 CampaignsDeleteResponseBody.prototype['async_action_id'] = undefined;
 
 

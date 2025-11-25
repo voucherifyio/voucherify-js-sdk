@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataRedemptionRewardParametersCampaign model module.
  * @module model/MemberActivityDataRedemptionRewardParametersCampaign
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataRedemptionRewardParametersCampaign {
     /**
      * Constructs a new <code>MemberActivityDataRedemptionRewardParametersCampaign</code>.
-     * @alias module:model/MemberActivityDataRedemptionRewardParametersCampaign
+     * @alias MemberActivityDataRedemptionRewardParametersCampaign
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataRedemptionRewardParametersCampaign {
     /**
      * Constructs a <code>MemberActivityDataRedemptionRewardParametersCampaign</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataRedemptionRewardParametersCampaign} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataRedemptionRewardParametersCampaign} The populated <code>MemberActivityDataRedemptionRewardParametersCampaign</code> instance.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersCampaign>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataRedemptionRewardParametersCampaign} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataRedemptionRewardParametersCampaign} The populated <code>MemberActivityDataRedemptionRewardParametersCampaign</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -62,7 +61,7 @@ class MemberActivityDataRedemptionRewardParametersCampaign {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataRedemptionRewardParametersCampaign</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataRedemptionRewardParametersCampaign>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataRedemptionRewardParametersCampaign</code>.
      */
     static validateJSON(data) {
@@ -84,19 +83,19 @@ class MemberActivityDataRedemptionRewardParametersCampaign {
 
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersCampaign.prototype['id'] = undefined;
 
 /**
- * The number of points to be added to a loyalty card or the amount to be added to the current balance on the gift card.  For gift cards, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000. and Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * The number of points to be added to a loyalty card or the amount to be added to the current balance on the gift card.  For gift cards, the value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000. and Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersCampaign.prototype['balance'] = undefined;
 
 /**
- * @member {String} 
- */
+    * @type {String | undefined}
+    */
 MemberActivityDataRedemptionRewardParametersCampaign.prototype['type'] = undefined;
 
 

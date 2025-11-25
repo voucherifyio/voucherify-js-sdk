@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import MemberActivityDataTransactionDetails from './MemberActivityDataTransactionDetails';
-
 /**
  * The MemberActivityDataTransaction model module.
  * @module model/MemberActivityDataTransaction
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransaction {
     /**
      * Constructs a new <code>MemberActivityDataTransaction</code>.
-     * @alias module:model/MemberActivityDataTransaction
+     * @alias MemberActivityDataTransaction
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataTransaction {
     /**
      * Constructs a <code>MemberActivityDataTransaction</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransaction} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransaction} The populated <code>MemberActivityDataTransaction</code> instance.
+     * @param {Partial<MemberActivityDataTransaction>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransaction} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransaction} The populated <code>MemberActivityDataTransaction</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -84,7 +83,7 @@ class MemberActivityDataTransaction {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransaction</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransaction>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransaction</code>.
      */
     static validateJSON(data) {
@@ -134,152 +133,152 @@ class MemberActivityDataTransaction {
 
 
 /**
- * Unique transaction ID.
- * @member {String} 
- */
+    * Unique transaction ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['id'] = undefined;
 
 /**
- * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['source_id'] = undefined;
 
 /**
- * Unique voucher ID.
- * @member {String} 
- */
+    * Unique voucher ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['voucher_id'] = undefined;
 
 /**
- * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
- * @member {String} 
- */
+    * Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['campaign_id'] = undefined;
 
 /**
- * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['source'] = undefined;
 
 /**
- * Reason why the transaction occurred. In case of a redemption, this value is null.
- * @member {String} 
- */
+    * Reason why the transaction occurred. In case of a redemption, this value is null.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['reason'] = undefined;
 
 /**
- * The related transaction ID on the receiving card.
- * @member {String} 
- */
+    * The related transaction ID on the receiving card.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransaction.prototype['related_transaction_id'] = undefined;
 
 /**
- * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 MemberActivityDataTransaction.prototype['created_at'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetails} 
- */
+    * @type {MemberActivityDataTransactionDetails | undefined}
+    */
 MemberActivityDataTransaction.prototype['details'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransaction.TypeEnum} 
- */
+    * @type {(keyof typeof MemberActivityDataTransaction.TypeEnum) | undefined}
+    */
 MemberActivityDataTransaction.prototype['type'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-MemberActivityDataTransaction['TypeEnum'] = {
-
     /**
-     * value: "CREDITS_REDEMPTION"
-     * @constant
+     * Allowed values for the <code>type</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "CREDITS_REDEMPTION": "CREDITS_REDEMPTION",
-
-    /**
-     * value: "CREDITS_REFUND"
-     * @constant
-     */
-    "CREDITS_REFUND": "CREDITS_REFUND",
-
-    /**
-     * value: "CREDITS_ADDITION"
-     * @constant
-     */
-    "CREDITS_ADDITION": "CREDITS_ADDITION",
-
-    /**
-     * value: "CREDITS_REMOVAL"
-     * @constant
-     */
-    "CREDITS_REMOVAL": "CREDITS_REMOVAL",
-
-    /**
-     * value: "PENDING_POINTS_ACTIVATION"
-     * @constant
-     */
-    "PENDING_POINTS_ACTIVATION": "PENDING_POINTS_ACTIVATION",
-
-    /**
-     * value: "POINTS_ACCRUAL"
-     * @constant
-     */
-    "POINTS_ACCRUAL": "POINTS_ACCRUAL",
-
-    /**
-     * value: "POINTS_REDEMPTION"
-     * @constant
-     */
-    "POINTS_REDEMPTION": "POINTS_REDEMPTION",
-
-    /**
-     * value: "POINTS_REFUND"
-     * @constant
-     */
-    "POINTS_REFUND": "POINTS_REFUND",
-
-    /**
-     * value: "POINTS_ADDITION"
-     * @constant
-     */
-    "POINTS_ADDITION": "POINTS_ADDITION",
-
-    /**
-     * value: "POINTS_REMOVAL"
-     * @constant
-     */
-    "POINTS_REMOVAL": "POINTS_REMOVAL",
-
-    /**
-     * value: "POINTS_EXPIRATION"
-     * @constant
-     */
-    "POINTS_EXPIRATION": "POINTS_EXPIRATION",
-
-    /**
-     * value: "POINTS_TRANSFER_IN"
-     * @constant
-     */
-    "POINTS_TRANSFER_IN": "POINTS_TRANSFER_IN",
-
-    /**
-     * value: "POINTS_TRANSFER_OUT"
-     * @constant
-     */
-    "POINTS_TRANSFER_OUT": "POINTS_TRANSFER_OUT"
-};
+    MemberActivityDataTransaction['TypeEnum'] = {
+    
+        /**
+         * value: "CREDITS_REDEMPTION"
+         * @constant
+         */
+        "CREDITS_REDEMPTION": "CREDITS_REDEMPTION",
+    
+        /**
+         * value: "CREDITS_REFUND"
+         * @constant
+         */
+        "CREDITS_REFUND": "CREDITS_REFUND",
+    
+        /**
+         * value: "CREDITS_ADDITION"
+         * @constant
+         */
+        "CREDITS_ADDITION": "CREDITS_ADDITION",
+    
+        /**
+         * value: "CREDITS_REMOVAL"
+         * @constant
+         */
+        "CREDITS_REMOVAL": "CREDITS_REMOVAL",
+    
+        /**
+         * value: "PENDING_POINTS_ACTIVATION"
+         * @constant
+         */
+        "PENDING_POINTS_ACTIVATION": "PENDING_POINTS_ACTIVATION",
+    
+        /**
+         * value: "POINTS_ACCRUAL"
+         * @constant
+         */
+        "POINTS_ACCRUAL": "POINTS_ACCRUAL",
+    
+        /**
+         * value: "POINTS_REDEMPTION"
+         * @constant
+         */
+        "POINTS_REDEMPTION": "POINTS_REDEMPTION",
+    
+        /**
+         * value: "POINTS_REFUND"
+         * @constant
+         */
+        "POINTS_REFUND": "POINTS_REFUND",
+    
+        /**
+         * value: "POINTS_ADDITION"
+         * @constant
+         */
+        "POINTS_ADDITION": "POINTS_ADDITION",
+    
+        /**
+         * value: "POINTS_REMOVAL"
+         * @constant
+         */
+        "POINTS_REMOVAL": "POINTS_REMOVAL",
+    
+        /**
+         * value: "POINTS_EXPIRATION"
+         * @constant
+         */
+        "POINTS_EXPIRATION": "POINTS_EXPIRATION",
+    
+        /**
+         * value: "POINTS_TRANSFER_IN"
+         * @constant
+         */
+        "POINTS_TRANSFER_IN": "POINTS_TRANSFER_IN",
+    
+        /**
+         * value: "POINTS_TRANSFER_OUT"
+         * @constant
+         */
+        "POINTS_TRANSFER_OUT": "POINTS_TRANSFER_OUT"    
+    };
 
 
 

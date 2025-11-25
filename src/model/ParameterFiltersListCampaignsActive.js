@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ParameterFiltersListCampaignsActive model module.
  * @module model/ParameterFiltersListCampaignsActive
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListCampaignsActive {
     /**
      * Constructs a new <code>ParameterFiltersListCampaignsActive</code>.
      * Filters campaigns by their &#x60;active&#x60; state. Pass the filter as an empty object, for example &#x60;filters[active][conditions][$enabled]&#x3D;&#x60;.
-     * @alias module:model/ParameterFiltersListCampaignsActive
+     * @alias ParameterFiltersListCampaignsActive
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ParameterFiltersListCampaignsActive {
     /**
      * Constructs a <code>ParameterFiltersListCampaignsActive</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListCampaignsActive} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListCampaignsActive} The populated <code>ParameterFiltersListCampaignsActive</code> instance.
+     * @param {Partial<ParameterFiltersListCampaignsActive>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListCampaignsActive} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListCampaignsActive} The populated <code>ParameterFiltersListCampaignsActive</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -66,7 +65,7 @@ class ParameterFiltersListCampaignsActive {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListCampaignsActive</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListCampaignsActive>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListCampaignsActive</code>.
      */
     static validateJSON(data) {
@@ -80,27 +79,27 @@ class ParameterFiltersListCampaignsActive {
 
 
 /**
- * Campaigns are enabled.
- * @member {Object} 
- */
+    * Campaigns are enabled.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsActive.prototype['$enabled'] = undefined;
 
 /**
- * Campaigns are disabled.
- * @member {Object} 
- */
+    * Campaigns are disabled.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsActive.prototype['$disabled'] = undefined;
 
 /**
- * Campaign `expiration_date` is in the past.
- * @member {Object} 
- */
+    * Campaign `expiration_date` is in the past.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsActive.prototype['$expired'] = undefined;
 
 /**
- * Campaigns are active, `start_date` is `null` or in the past, and `expiration_date` is `null` or in the future.
- * @member {Object} 
- */
+    * Campaigns are active, `start_date` is `null` or in the past, and `expiration_date` is `null` or in the future.
+    * @type {Object | undefined}
+    */
 ParameterFiltersListCampaignsActive.prototype['$active'] = undefined;
 
 

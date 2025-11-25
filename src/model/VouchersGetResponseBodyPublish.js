@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The VouchersGetResponseBodyPublish model module.
  * @module model/VouchersGetResponseBodyPublish
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersGetResponseBodyPublish {
     /**
      * Constructs a new <code>VouchersGetResponseBodyPublish</code>.
      * Stores a summary of publication events: an event counter and endpoint to return details of each event. Publication is an assignment of a code to a customer, e.g. through a distribution.
-     * @alias module:model/VouchersGetResponseBodyPublish
+     * @alias VouchersGetResponseBodyPublish
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VouchersGetResponseBodyPublish {
     /**
      * Constructs a <code>VouchersGetResponseBodyPublish</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersGetResponseBodyPublish} obj Optional instance to populate.
-     * @returns {module:model/VouchersGetResponseBodyPublish} The populated <code>VouchersGetResponseBodyPublish</code> instance.
+     * @param {Partial<VouchersGetResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersGetResponseBodyPublish} [obj] Optional instance to populate.
+     * @returns {VouchersGetResponseBodyPublish} The populated <code>VouchersGetResponseBodyPublish</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -64,7 +63,7 @@ class VouchersGetResponseBodyPublish {
 
     /**
      * Validates the JSON data with respect to <code>VouchersGetResponseBodyPublish</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersGetResponseBodyPublish>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersGetResponseBodyPublish</code>.
      */
     static validateJSON(data) {
@@ -86,22 +85,22 @@ class VouchersGetResponseBodyPublish {
 
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the `url` attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 VouchersGetResponseBodyPublish.prototype['object'] = 'list';
 
 /**
- * Publication events counter.
- * @member {Number} 
- */
+    * Publication events counter.
+    * @type {Number | undefined}
+    */
 VouchersGetResponseBodyPublish.prototype['count'] = undefined;
 
 /**
- * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
- * @member {String} 
- */
+    * The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
+    * @type {String | undefined}
+    */
 VouchersGetResponseBodyPublish.prototype['url'] = undefined;
 
 

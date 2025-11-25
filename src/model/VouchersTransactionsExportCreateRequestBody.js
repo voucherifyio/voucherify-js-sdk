@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import VoucherTransactionsExportParameters from './VoucherTransactionsExportParameters';
-
 /**
  * The VouchersTransactionsExportCreateRequestBody model module.
  * @module model/VouchersTransactionsExportCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class VouchersTransactionsExportCreateRequestBody {
     /**
      * Constructs a new <code>VouchersTransactionsExportCreateRequestBody</code>.
      * Request body schema for **POST** &#x60;v1/vouchers/transactions/export&#x60;.
-     * @alias module:model/VouchersTransactionsExportCreateRequestBody
+     * @alias VouchersTransactionsExportCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class VouchersTransactionsExportCreateRequestBody {
     /**
      * Constructs a <code>VouchersTransactionsExportCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/VouchersTransactionsExportCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/VouchersTransactionsExportCreateRequestBody} The populated <code>VouchersTransactionsExportCreateRequestBody</code> instance.
+     * @param {Partial<VouchersTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {VouchersTransactionsExportCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {VouchersTransactionsExportCreateRequestBody} The populated <code>VouchersTransactionsExportCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class VouchersTransactionsExportCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>VouchersTransactionsExportCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<VouchersTransactionsExportCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>VouchersTransactionsExportCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class VouchersTransactionsExportCreateRequestBody {
 
 
 /**
- * @member {module:model/VoucherTransactionsExportParameters} 
- */
+    * @type {VoucherTransactionsExportParameters | undefined}
+    */
 VouchersTransactionsExportCreateRequestBody.prototype['parameters'] = undefined;
 
 

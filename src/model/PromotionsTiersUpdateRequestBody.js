@@ -16,17 +16,16 @@ import PromotionsTiersUpdateRequestBodyAction from './PromotionsTiersUpdateReque
 import ValidationRuleAssignmentsList from './ValidationRuleAssignmentsList';
 import ValidityHours from './ValidityHours';
 import ValidityTimeframe from './ValidityTimeframe';
-
 /**
  * The PromotionsTiersUpdateRequestBody model module.
  * @module model/PromotionsTiersUpdateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class PromotionsTiersUpdateRequestBody {
     /**
      * Constructs a new <code>PromotionsTiersUpdateRequestBody</code>.
      * Request body schema for **PUT** &#x60;v1/promotions/tiers/{promotionTierId}&#x60;.
-     * @alias module:model/PromotionsTiersUpdateRequestBody
+     * @alias PromotionsTiersUpdateRequestBody
      */
     constructor() { 
         
@@ -44,9 +43,9 @@ class PromotionsTiersUpdateRequestBody {
     /**
      * Constructs a <code>PromotionsTiersUpdateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PromotionsTiersUpdateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/PromotionsTiersUpdateRequestBody} The populated <code>PromotionsTiersUpdateRequestBody</code> instance.
+     * @param {Partial<PromotionsTiersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {PromotionsTiersUpdateRequestBody} [obj] Optional instance to populate.
+     * @returns {PromotionsTiersUpdateRequestBody} The populated <code>PromotionsTiersUpdateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -97,7 +96,7 @@ class PromotionsTiersUpdateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>PromotionsTiersUpdateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<PromotionsTiersUpdateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>PromotionsTiersUpdateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -147,77 +146,77 @@ class PromotionsTiersUpdateRequestBody {
 
 
 /**
- * Name of the promotion tier.
- * @member {String} 
- */
+    * Name of the promotion tier.
+    * @type {String | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['name'] = undefined;
 
 /**
- * Text to be displayed to your customers on your website.
- * @member {String} 
- */
+    * Text to be displayed to your customers on your website.
+    * @type {String | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['banner'] = undefined;
 
 /**
- * @member {module:model/PromotionsTiersUpdateRequestBodyAction} 
- */
+    * @type {PromotionsTiersUpdateRequestBodyAction | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['action'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
+    * @type {Object | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
- * @member {Number} 
- */
+    * The promotions hierarchy defines the order in which the discounts from different tiers will be applied to a customer's order. If a customer qualifies for discounts from more than one tier, discounts will be applied in the order defined in the hierarchy.
+    * @type {Number | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['hierarchy'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date. 
+    * @type {Date | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['start_date'] = undefined;
 
 /**
- * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
- * @member {Date} 
- */
+    * Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date. 
+    * @type {Date | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['expiration_date'] = undefined;
 
 /**
- * @member {module:model/ValidityTimeframe} 
- */
+    * @type {ValidityTimeframe | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['validity_timeframe'] = undefined;
 
 /**
- * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
- * @member {Array.<module:model/PromotionsTiersUpdateRequestBody.ValidityDayOfWeekEnum>} 
- */
+    * Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+    * @type {(Array<keyof typeof PromotionsTiersUpdateRequestBody.ValidityDayOfWeekEnum>) | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['validity_day_of_week'] = undefined;
 
 /**
- * @member {module:model/ValidityHours} 
- */
+    * @type {ValidityHours | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['validity_hours'] = undefined;
 
 /**
- * @member {module:model/ValidationRuleAssignmentsList} 
- */
+    * @type {ValidationRuleAssignmentsList | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['validation_rule_assignments'] = undefined;
 
 /**
- * Assign a new or update the promotion tier's category using name.
- * @member {String} 
- */
+    * Assign a new or update the promotion tier's category using name.
+    * @type {String | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['category'] = undefined;
 
 /**
- * Assign a new or update the promotion tier's category using id
- * @member {String} 
- */
+    * Assign a new or update the promotion tier's category using id
+    * @type {String | undefined}
+    */
 PromotionsTiersUpdateRequestBody.prototype['category_id'] = undefined;
 
 

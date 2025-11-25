@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import FilterConditionsString from './FilterConditionsString';
-
 /**
  * The ParameterFiltersListTemplatesId model module.
  * @module model/ParameterFiltersListTemplatesId
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ParameterFiltersListTemplatesId {
     /**
      * Constructs a new <code>ParameterFiltersListTemplatesId</code>.
      * Unique template ID.
-     * @alias module:model/ParameterFiltersListTemplatesId
+     * @alias ParameterFiltersListTemplatesId
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class ParameterFiltersListTemplatesId {
     /**
      * Constructs a <code>ParameterFiltersListTemplatesId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ParameterFiltersListTemplatesId} obj Optional instance to populate.
-     * @returns {module:model/ParameterFiltersListTemplatesId} The populated <code>ParameterFiltersListTemplatesId</code> instance.
+     * @param {Partial<ParameterFiltersListTemplatesId>} data The plain JavaScript object bearing properties of interest.
+     * @param {ParameterFiltersListTemplatesId} [obj] Optional instance to populate.
+     * @returns {ParameterFiltersListTemplatesId} The populated <code>ParameterFiltersListTemplatesId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -58,7 +57,7 @@ class ParameterFiltersListTemplatesId {
 
     /**
      * Validates the JSON data with respect to <code>ParameterFiltersListTemplatesId</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ParameterFiltersListTemplatesId>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ParameterFiltersListTemplatesId</code>.
      */
     static validateJSON(data) {
@@ -76,8 +75,8 @@ class ParameterFiltersListTemplatesId {
 
 
 /**
- * @member {module:model/FilterConditionsString} 
- */
+    * @type {FilterConditionsString | undefined}
+    */
 ParameterFiltersListTemplatesId.prototype['conditions'] = undefined;
 
 

@@ -17,17 +17,16 @@ import QualificationsFieldConditions from './QualificationsFieldConditions';
 import QualificationsOptionFiltersCampaignType from './QualificationsOptionFiltersCampaignType';
 import QualificationsOptionFiltersHolderRole from './QualificationsOptionFiltersHolderRole';
 import QualificationsOptionFiltersResourceType from './QualificationsOptionFiltersResourceType';
-
 /**
  * The QualificationsOptionFilters model module.
  * @module model/QualificationsOptionFilters
- * @version 3.0.0
+ * @version 3.0.1
  */
 class QualificationsOptionFilters {
     /**
      * Constructs a new <code>QualificationsOptionFilters</code>.
      * A set of filters to return only a specific category or type of redeemable.
-     * @alias module:model/QualificationsOptionFilters
+     * @alias QualificationsOptionFilters
      */
     constructor() { 
         
@@ -45,9 +44,9 @@ class QualificationsOptionFilters {
     /**
      * Constructs a <code>QualificationsOptionFilters</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/QualificationsOptionFilters} obj Optional instance to populate.
-     * @returns {module:model/QualificationsOptionFilters} The populated <code>QualificationsOptionFilters</code> instance.
+     * @param {Partial<QualificationsOptionFilters>} data The plain JavaScript object bearing properties of interest.
+     * @param {QualificationsOptionFilters} [obj] Optional instance to populate.
+     * @returns {QualificationsOptionFilters} The populated <code>QualificationsOptionFilters</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -86,7 +85,7 @@ class QualificationsOptionFilters {
 
     /**
      * Validates the JSON data with respect to <code>QualificationsOptionFilters</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<QualificationsOptionFilters>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>QualificationsOptionFilters</code>.
      */
     static validateJSON(data) {
@@ -132,48 +131,48 @@ class QualificationsOptionFilters {
 
 
 /**
- * @member {module:model/Junction} 
- */
+    * @type {Exclude<keyof typeof Junction, "prototype" | "constructFromObject"> | undefined}
+    */
 QualificationsOptionFilters.prototype['junction'] = undefined;
 
 /**
- * @member {module:model/QualificationsFieldConditions} 
- */
+    * @type {QualificationsFieldConditions | undefined}
+    */
 QualificationsOptionFilters.prototype['category_id'] = undefined;
 
 /**
- * @member {module:model/QualificationsFieldConditions} 
- */
+    * @type {QualificationsFieldConditions | undefined}
+    */
 QualificationsOptionFilters.prototype['campaign_id'] = undefined;
 
 /**
- * @member {module:model/QualificationsOptionFiltersCampaignType} 
- */
+    * @type {QualificationsOptionFiltersCampaignType | undefined}
+    */
 QualificationsOptionFilters.prototype['campaign_type'] = undefined;
 
 /**
- * @member {module:model/QualificationsFieldConditions} 
- */
+    * @type {QualificationsFieldConditions | undefined}
+    */
 QualificationsOptionFilters.prototype['resource_id'] = undefined;
 
 /**
- * @member {module:model/QualificationsOptionFiltersResourceType} 
- */
+    * @type {QualificationsOptionFiltersResourceType | undefined}
+    */
 QualificationsOptionFilters.prototype['resource_type'] = undefined;
 
 /**
- * @member {module:model/QualificationsFieldConditions} 
- */
+    * @type {QualificationsFieldConditions | undefined}
+    */
 QualificationsOptionFilters.prototype['voucher_type'] = undefined;
 
 /**
- * @member {module:model/QualificationsFieldConditions} 
- */
+    * @type {QualificationsFieldConditions | undefined}
+    */
 QualificationsOptionFilters.prototype['code'] = undefined;
 
 /**
- * @member {module:model/QualificationsOptionFiltersHolderRole} 
- */
+    * @type {QualificationsOptionFiltersHolderRole | undefined}
+    */
 QualificationsOptionFilters.prototype['holder_role'] = undefined;
 
 

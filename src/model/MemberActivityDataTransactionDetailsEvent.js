@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsEvent model module.
  * @module model/MemberActivityDataTransactionDetailsEvent
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsEvent {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsEvent</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsEvent
+     * @alias MemberActivityDataTransactionDetailsEvent
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsEvent {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsEvent</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsEvent} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsEvent} The populated <code>MemberActivityDataTransactionDetailsEvent</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsEvent} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsEvent} The populated <code>MemberActivityDataTransactionDetailsEvent</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -59,7 +58,7 @@ class MemberActivityDataTransactionDetailsEvent {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsEvent</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsEvent>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsEvent</code>.
      */
     static validateJSON(data) {
@@ -81,15 +80,15 @@ class MemberActivityDataTransactionDetailsEvent {
 
 
 /**
- * Unique event ID.
- * @member {String} 
- */
+    * Unique event ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsEvent.prototype['id'] = undefined;
 
 /**
- * Type of event.
- * @member {String} 
- */
+    * Type of event.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsEvent.prototype['type'] = undefined;
 
 

@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ValidationRule from './ValidationRule';
-
 /**
  * The ValidationRulesListResponseBody model module.
  * @module model/ValidationRulesListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ValidationRulesListResponseBody {
     /**
      * Constructs a new <code>ValidationRulesListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/validation-rules&#x60;.
-     * @alias module:model/ValidationRulesListResponseBody
+     * @alias ValidationRulesListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ValidationRulesListResponseBody {
     /**
      * Constructs a <code>ValidationRulesListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ValidationRulesListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ValidationRulesListResponseBody} The populated <code>ValidationRulesListResponseBody</code> instance.
+     * @param {Partial<ValidationRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesListResponseBody} [obj] Optional instance to populate.
+     * @returns {ValidationRulesListResponseBody} The populated <code>ValidationRulesListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ValidationRulesListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ValidationRulesListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ValidationRulesListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,29 +100,29 @@ class ValidationRulesListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about validation rules.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about validation rules.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ValidationRulesListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of validation rules.
- * @member {String} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of validation rules.
+    * @type {String | undefined}
+    * @default 'data'
+    */
 ValidationRulesListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * An array of validation rules.
- * @member {Array.<module:model/ValidationRule>} 
- */
+    * An array of validation rules.
+    * @type {Array.<ValidationRule> | undefined}
+    */
 ValidationRulesListResponseBody.prototype['data'] = undefined;
 
 /**
- * Total number of validation rules in the project.
- * @member {Number} 
- */
+    * Total number of validation rules in the project.
+    * @type {Number | undefined}
+    */
 ValidationRulesListResponseBody.prototype['total'] = undefined;
 
 

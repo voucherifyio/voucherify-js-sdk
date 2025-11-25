@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import ManagementProjectsCustomEventSchema from './ManagementProjectsCustomEventSchema';
-
 /**
  * The ManagementProjectsCustomEventSchemasListResponseBody model module.
  * @module model/ManagementProjectsCustomEventSchemasListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsCustomEventSchemasListResponseBody {
     /**
      * Constructs a new <code>ManagementProjectsCustomEventSchemasListResponseBody</code>.
      * Object containing a list of custom event schemas.
-     * @alias module:model/ManagementProjectsCustomEventSchemasListResponseBody
+     * @alias ManagementProjectsCustomEventSchemasListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ManagementProjectsCustomEventSchemasListResponseBody {
     /**
      * Constructs a <code>ManagementProjectsCustomEventSchemasListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsCustomEventSchemasListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsCustomEventSchemasListResponseBody} The populated <code>ManagementProjectsCustomEventSchemasListResponseBody</code> instance.
+     * @param {Partial<ManagementProjectsCustomEventSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsCustomEventSchemasListResponseBody} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsCustomEventSchemasListResponseBody} The populated <code>ManagementProjectsCustomEventSchemasListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsCustomEventSchemasListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsCustomEventSchemasListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsCustomEventSchemasListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsCustomEventSchemasListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -101,63 +100,63 @@ class ManagementProjectsCustomEventSchemasListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about the custom event schemas in a dictionary.
- * @member {module:model/ManagementProjectsCustomEventSchemasListResponseBody.ObjectEnum} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about the custom event schemas in a dictionary.
+    * @type {(keyof typeof ManagementProjectsCustomEventSchemasListResponseBody.ObjectEnum) | undefined}
+    * @default 'list'
+    */
 ManagementProjectsCustomEventSchemasListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of custom event schema objects.
- * @member {module:model/ManagementProjectsCustomEventSchemasListResponseBody.DataRefEnum} 
- * @default 'data'
- */
+    * Identifies the name of the attribute that contains the array of custom event schema objects.
+    * @type {(keyof typeof ManagementProjectsCustomEventSchemasListResponseBody.DataRefEnum) | undefined}
+    * @default 'data'
+    */
 ManagementProjectsCustomEventSchemasListResponseBody.prototype['data_ref'] = 'data';
 
 /**
- * Array of custom event schema objects.
- * @member {Array.<module:model/ManagementProjectsCustomEventSchema>} 
- */
+    * Array of custom event schema objects.
+    * @type {Array.<ManagementProjectsCustomEventSchema> | undefined}
+    */
 ManagementProjectsCustomEventSchemasListResponseBody.prototype['data'] = undefined;
 
 /**
- * The total number of custom event schema objects.
- * @member {Number} 
- */
+    * The total number of custom event schema objects.
+    * @type {Number | undefined}
+    */
 ManagementProjectsCustomEventSchemasListResponseBody.prototype['total'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCustomEventSchemasListResponseBody['ObjectEnum'] = {
+    /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ManagementProjectsCustomEventSchemasListResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "list"
+         * @constant
+         */
+        "list": "list"    
+    };
+
 
     /**
-     * value: "list"
-     * @constant
+     * Allowed values for the <code>data_ref</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "list": "list"
-};
-
-
-/**
- * Allowed values for the <code>data_ref</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsCustomEventSchemasListResponseBody['DataRefEnum'] = {
-
-    /**
-     * value: "data"
-     * @constant
-     */
-    "data": "data"
-};
+    ManagementProjectsCustomEventSchemasListResponseBody['DataRefEnum'] = {
+    
+        /**
+         * value: "data"
+         * @constant
+         */
+        "data": "data"    
+    };
 
 
 

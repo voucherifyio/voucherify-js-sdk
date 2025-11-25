@@ -14,16 +14,15 @@
 import ApiClient from '../ApiClient';
 import RewardsCreateRequestBodyAttributes from './RewardsCreateRequestBodyAttributes';
 import RewardsCreateRequestBodyParameters from './RewardsCreateRequestBodyParameters';
-
 /**
  * The RewardsCreateRequestBody model module.
  * @module model/RewardsCreateRequestBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RewardsCreateRequestBody {
     /**
      * Constructs a new <code>RewardsCreateRequestBody</code>.
-     * @alias module:model/RewardsCreateRequestBody
+     * @alias RewardsCreateRequestBody
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RewardsCreateRequestBody {
     /**
      * Constructs a <code>RewardsCreateRequestBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RewardsCreateRequestBody} obj Optional instance to populate.
-     * @returns {module:model/RewardsCreateRequestBody} The populated <code>RewardsCreateRequestBody</code> instance.
+     * @param {Partial<RewardsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {RewardsCreateRequestBody} [obj] Optional instance to populate.
+     * @returns {RewardsCreateRequestBody} The populated <code>RewardsCreateRequestBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class RewardsCreateRequestBody {
 
     /**
      * Validates the JSON data with respect to <code>RewardsCreateRequestBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RewardsCreateRequestBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RewardsCreateRequestBody</code>.
      */
     static validateJSON(data) {
@@ -96,31 +95,31 @@ class RewardsCreateRequestBody {
 
 
 /**
- * Reward name.
- * @member {String} 
- */
+    * Reward name.
+    * @type {String | undefined}
+    */
 RewardsCreateRequestBody.prototype['name'] = undefined;
 
 /**
- * @member {module:model/RewardsCreateRequestBodyParameters} 
- */
+    * @type {RewardsCreateRequestBodyParameters | undefined}
+    */
 RewardsCreateRequestBody.prototype['parameters'] = undefined;
 
 /**
- * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
- * @member {Object} 
- */
+    * The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format.
+    * @type {Object | undefined}
+    */
 RewardsCreateRequestBody.prototype['metadata'] = undefined;
 
 /**
- * The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
- * @member {Number} 
- */
+    * The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
+    * @type {Number | undefined}
+    */
 RewardsCreateRequestBody.prototype['stock'] = undefined;
 
 /**
- * @member {module:model/RewardsCreateRequestBodyAttributes} 
- */
+    * @type {RewardsCreateRequestBodyAttributes | undefined}
+    */
 RewardsCreateRequestBody.prototype['attributes'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsWebhook model module.
  * @module model/ManagementProjectsWebhook
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsWebhook {
     /**
      * Constructs a new <code>ManagementProjectsWebhook</code>.
      * Response body schema for webhook endpoints.
-     * @alias module:model/ManagementProjectsWebhook
+     * @alias ManagementProjectsWebhook
      */
     constructor() { 
         
@@ -42,9 +41,9 @@ class ManagementProjectsWebhook {
     /**
      * Constructs a <code>ManagementProjectsWebhook</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsWebhook} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsWebhook} The populated <code>ManagementProjectsWebhook</code> instance.
+     * @param {Partial<ManagementProjectsWebhook>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsWebhook} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsWebhook} The populated <code>ManagementProjectsWebhook</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -74,7 +73,7 @@ class ManagementProjectsWebhook {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsWebhook</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsWebhook>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsWebhook</code>.
      */
     static validateJSON(data) {
@@ -104,60 +103,60 @@ class ManagementProjectsWebhook {
 
 
 /**
- * Unique identifier of the webhook.
- * @member {String} 
- */
+    * Unique identifier of the webhook.
+    * @type {String | undefined}
+    */
 ManagementProjectsWebhook.prototype['id'] = undefined;
 
 /**
- * The type of the object represented by JSON.
- * @member {module:model/ManagementProjectsWebhook.ObjectEnum} 
- * @default 'webhook'
- */
+    * The type of the object represented by JSON.
+    * @type {(keyof typeof ManagementProjectsWebhook.ObjectEnum) | undefined}
+    * @default 'webhook'
+    */
 ManagementProjectsWebhook.prototype['object'] = 'webhook';
 
 /**
- * Timestamp representing the date and time when the webhook configuration was created. The value for this parameter is shown in the ISO 8601 format.
- * @member {Date} 
- */
+    * Timestamp representing the date and time when the webhook configuration was created. The value for this parameter is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
 ManagementProjectsWebhook.prototype['created_at'] = undefined;
 
 /**
- * URL address that receives webhooks.
- * @member {String} 
- */
+    * URL address that receives webhooks.
+    * @type {String | undefined}
+    */
 ManagementProjectsWebhook.prototype['target_url'] = undefined;
 
 /**
- * Lists the events that trigger webhook sendout.
- * @member {Array.<module:model/ManagementProjectsWebhook.EventsEnum>} 
- */
+    * Lists the events that trigger webhook sendout.
+    * @type {(Array<keyof typeof ManagementProjectsWebhook.EventsEnum>) | undefined}
+    */
 ManagementProjectsWebhook.prototype['events'] = undefined;
 
 /**
- * Determines if the webhook configuration is active.
- * @member {Boolean} 
- * @default true
- */
+    * Determines if the webhook configuration is active.
+    * @type {Boolean | undefined}
+    * @default true
+    */
 ManagementProjectsWebhook.prototype['active'] = true;
 
 
 
 
 
-/**
- * Allowed values for the <code>object</code> property.
- * @enum {String}
- * @readonly
- */
-ManagementProjectsWebhook['ObjectEnum'] = {
-
     /**
-     * value: "webhook"
-     * @constant
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
      */
-    "webhook": "webhook"
-};
+    ManagementProjectsWebhook['ObjectEnum'] = {
+    
+        /**
+         * value: "webhook"
+         * @constant
+         */
+        "webhook": "webhook"    
+    };
 
 
 /**

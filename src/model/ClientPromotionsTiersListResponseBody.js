@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import PromotionTier from './PromotionTier';
-
 /**
  * The ClientPromotionsTiersListResponseBody model module.
  * @module model/ClientPromotionsTiersListResponseBody
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ClientPromotionsTiersListResponseBody {
     /**
      * Constructs a new <code>ClientPromotionsTiersListResponseBody</code>.
      * Response body schema for **GET** &#x60;v1/client/v1/promotions/tiers&#x60;.
-     * @alias module:model/ClientPromotionsTiersListResponseBody
+     * @alias ClientPromotionsTiersListResponseBody
      */
     constructor() { 
         
@@ -43,9 +42,9 @@ class ClientPromotionsTiersListResponseBody {
     /**
      * Constructs a <code>ClientPromotionsTiersListResponseBody</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ClientPromotionsTiersListResponseBody} obj Optional instance to populate.
-     * @returns {module:model/ClientPromotionsTiersListResponseBody} The populated <code>ClientPromotionsTiersListResponseBody</code> instance.
+     * @param {Partial<ClientPromotionsTiersListResponseBody>} data The plain JavaScript object bearing properties of interest.
+     * @param {ClientPromotionsTiersListResponseBody} [obj] Optional instance to populate.
+     * @returns {ClientPromotionsTiersListResponseBody} The populated <code>ClientPromotionsTiersListResponseBody</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -72,7 +71,7 @@ class ClientPromotionsTiersListResponseBody {
 
     /**
      * Validates the JSON data with respect to <code>ClientPromotionsTiersListResponseBody</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ClientPromotionsTiersListResponseBody>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ClientPromotionsTiersListResponseBody</code>.
      */
     static validateJSON(data) {
@@ -104,35 +103,35 @@ class ClientPromotionsTiersListResponseBody {
 
 
 /**
- * The type of the object represented by JSON. This object stores information about promotion tiers in a dictionary.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented by JSON. This object stores information about promotion tiers in a dictionary.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 ClientPromotionsTiersListResponseBody.prototype['object'] = 'list';
 
 /**
- * Identifies the name of the attribute that contains the array of promotion tier objects.
- * @member {String} 
- * @default 'tiers'
- */
+    * Identifies the name of the attribute that contains the array of promotion tier objects.
+    * @type {String | undefined}
+    * @default 'tiers'
+    */
 ClientPromotionsTiersListResponseBody.prototype['data_ref'] = 'tiers';
 
 /**
- * Contains array of promotion tier objects.
- * @member {Array.<module:model/PromotionTier>} 
- */
+    * Contains array of promotion tier objects.
+    * @type {Array.<PromotionTier> | undefined}
+    */
 ClientPromotionsTiersListResponseBody.prototype['tiers'] = undefined;
 
 /**
- * Total number of promotion tiers.
- * @member {Number} 
- */
+    * Total number of promotion tiers.
+    * @type {Number | undefined}
+    */
 ClientPromotionsTiersListResponseBody.prototype['total'] = undefined;
 
 /**
- * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
- * @member {Boolean} 
- */
+    * As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
+    * @type {Boolean | undefined}
+    */
 ClientPromotionsTiersListResponseBody.prototype['has_more'] = undefined;
 
 

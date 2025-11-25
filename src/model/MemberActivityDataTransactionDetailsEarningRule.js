@@ -13,16 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import MemberActivityDataTransactionDetailsEarningRuleSource from './MemberActivityDataTransactionDetailsEarningRuleSource';
-
 /**
  * The MemberActivityDataTransactionDetailsEarningRule model module.
  * @module model/MemberActivityDataTransactionDetailsEarningRule
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsEarningRule {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsEarningRule</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsEarningRule
+     * @alias MemberActivityDataTransactionDetailsEarningRule
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class MemberActivityDataTransactionDetailsEarningRule {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsEarningRule</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsEarningRule} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsEarningRule} The populated <code>MemberActivityDataTransactionDetailsEarningRule</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsEarningRule} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsEarningRule} The populated <code>MemberActivityDataTransactionDetailsEarningRule</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -60,7 +59,7 @@ class MemberActivityDataTransactionDetailsEarningRule {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsEarningRule</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsEarningRule>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsEarningRule</code>.
      */
     static validateJSON(data) {
@@ -82,14 +81,14 @@ class MemberActivityDataTransactionDetailsEarningRule {
 
 
 /**
- * Unique identifier of an earning rule, assigned by Voucherify.
- * @member {String} 
- */
+    * Unique identifier of an earning rule, assigned by Voucherify.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsEarningRule.prototype['id'] = undefined;
 
 /**
- * @member {module:model/MemberActivityDataTransactionDetailsEarningRuleSource} 
- */
+    * @type {MemberActivityDataTransactionDetailsEarningRuleSource | undefined}
+    */
 MemberActivityDataTransactionDetailsEarningRule.prototype['source'] = undefined;
 
 

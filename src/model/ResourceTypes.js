@@ -13,43 +13,41 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class ResourceTypes.
-* @module model/ResourceTypes
-* @version 3.0.0
-* @enum {}
-* @readonly
-*/
-export default class ResourceTypes {
+ * Enum class ResourceTypes.
+ * @module model/ResourceTypes
+ * @version 3.0.1
+ */
+class ResourceTypes {
     
-        /**
-         * value: "campaign"
-         * @constant
-         */
-        "campaign" = "campaign";
-
+    /**
+     * Types of usable resources.
+     * @constant
+     */
+    static "campaign" = "campaign";
     
-        /**
-         * value: "voucher"
-         * @constant
-         */
-        "voucher" = "voucher";
-
+    /**
+     * Types of usable resources.
+     * @constant
+     */
+    static "voucher" = "voucher";
     
-        /**
-         * value: "promotion_tier"
-         * @constant
-         */
-        "promotion_tier" = "promotion_tier";
-
+    /**
+     * Types of usable resources.
+     * @constant
+     */
+    static "promotion_tier" = "promotion_tier";
     
 
     /**
-    * Returns a <code>ResourceTypes</code> enum value from a Javascript object name.
-    * @param {object} object The plain JavaScript object containing the name of the enum value.
-    * @returns {module:model/ResourceTypes} The enum <code>ResourceTypes</code> value.
+    * Returns the value associated with the given enum key.
+    *
+    * @param {Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">} key - The name of the enum constant (the key).
+    * @returns {typeof ResourceTypes[key]} The value associated with the key.
     */
-    static constructFromObject(object) {
-        return object;
+    static constructFromObject(key) {
+        return ResourceTypes[key];
     }
 }
+
+export default ResourceTypes;
 

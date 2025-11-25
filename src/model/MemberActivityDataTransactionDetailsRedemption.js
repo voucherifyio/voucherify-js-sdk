@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The MemberActivityDataTransactionDetailsRedemption model module.
  * @module model/MemberActivityDataTransactionDetailsRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class MemberActivityDataTransactionDetailsRedemption {
     /**
      * Constructs a new <code>MemberActivityDataTransactionDetailsRedemption</code>.
-     * @alias module:model/MemberActivityDataTransactionDetailsRedemption
+     * @alias MemberActivityDataTransactionDetailsRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class MemberActivityDataTransactionDetailsRedemption {
     /**
      * Constructs a <code>MemberActivityDataTransactionDetailsRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/MemberActivityDataTransactionDetailsRedemption} obj Optional instance to populate.
-     * @returns {module:model/MemberActivityDataTransactionDetailsRedemption} The populated <code>MemberActivityDataTransactionDetailsRedemption</code> instance.
+     * @param {Partial<MemberActivityDataTransactionDetailsRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {MemberActivityDataTransactionDetailsRedemption} [obj] Optional instance to populate.
+     * @returns {MemberActivityDataTransactionDetailsRedemption} The populated <code>MemberActivityDataTransactionDetailsRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class MemberActivityDataTransactionDetailsRedemption {
 
     /**
      * Validates the JSON data with respect to <code>MemberActivityDataTransactionDetailsRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<MemberActivityDataTransactionDetailsRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>MemberActivityDataTransactionDetailsRedemption</code>.
      */
     static validateJSON(data) {
@@ -74,9 +73,9 @@ class MemberActivityDataTransactionDetailsRedemption {
 
 
 /**
- * Unique redemption ID.
- * @member {String} 
- */
+    * Unique redemption ID.
+    * @type {String | undefined}
+    */
 MemberActivityDataTransactionDetailsRedemption.prototype['id'] = undefined;
 
 

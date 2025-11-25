@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The ManagementProjectsBrandingUpdateResponseBodyAddress model module.
  * @module model/ManagementProjectsBrandingUpdateResponseBodyAddress
- * @version 3.0.0
+ * @version 3.0.1
  */
 class ManagementProjectsBrandingUpdateResponseBodyAddress {
     /**
      * Constructs a new <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code>.
      * Defines the address details.
-     * @alias module:model/ManagementProjectsBrandingUpdateResponseBodyAddress
+     * @alias ManagementProjectsBrandingUpdateResponseBodyAddress
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class ManagementProjectsBrandingUpdateResponseBodyAddress {
     /**
      * Constructs a <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ManagementProjectsBrandingUpdateResponseBodyAddress} obj Optional instance to populate.
-     * @returns {module:model/ManagementProjectsBrandingUpdateResponseBodyAddress} The populated <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code> instance.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyAddress>} data The plain JavaScript object bearing properties of interest.
+     * @param {ManagementProjectsBrandingUpdateResponseBodyAddress} [obj] Optional instance to populate.
+     * @returns {ManagementProjectsBrandingUpdateResponseBodyAddress} The populated <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class ManagementProjectsBrandingUpdateResponseBodyAddress {
 
     /**
      * Validates the JSON data with respect to <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<ManagementProjectsBrandingUpdateResponseBodyAddress>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ManagementProjectsBrandingUpdateResponseBodyAddress</code>.
      */
     static validateJSON(data) {
@@ -103,33 +102,33 @@ class ManagementProjectsBrandingUpdateResponseBodyAddress {
 
 
 /**
- * Defines the brand's street.
- * @member {String} 
- */
+    * Defines the brand's street.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyAddress.prototype['street'] = undefined;
 
 /**
- * Defines the brand's city.
- * @member {String} 
- */
+    * Defines the brand's city.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyAddress.prototype['city'] = undefined;
 
 /**
- * Defines the brand's postal code.
- * @member {String} 
- */
+    * Defines the brand's postal code.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyAddress.prototype['postal'] = undefined;
 
 /**
- * Defines the brand's state or similar administrative area.
- * @member {String} 
- */
+    * Defines the brand's state or similar administrative area.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyAddress.prototype['state'] = undefined;
 
 /**
- * Defines the brand's country.
- * @member {String} 
- */
+    * Defines the brand's country.
+    * @type {String | undefined}
+    */
 ManagementProjectsBrandingUpdateResponseBodyAddress.prototype['country'] = undefined;
 
 

@@ -12,17 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsVouchersCreateInBulkRequestBodyRedemption model module.
  * @module model/CampaignsVouchersCreateInBulkRequestBodyRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsVouchersCreateInBulkRequestBodyRedemption {
     /**
      * Constructs a new <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code>.
      * Stores the quantity of redemptions that can be applied to the voucher.
-     * @alias module:model/CampaignsVouchersCreateInBulkRequestBodyRedemption
+     * @alias CampaignsVouchersCreateInBulkRequestBodyRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class CampaignsVouchersCreateInBulkRequestBodyRedemption {
     /**
      * Constructs a <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsVouchersCreateInBulkRequestBodyRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignsVouchersCreateInBulkRequestBodyRedemption} The populated <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code> instance.
+     * @param {Partial<CampaignsVouchersCreateInBulkRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsVouchersCreateInBulkRequestBodyRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignsVouchersCreateInBulkRequestBodyRedemption} The populated <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -57,7 +56,7 @@ class CampaignsVouchersCreateInBulkRequestBodyRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsVouchersCreateInBulkRequestBodyRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsVouchersCreateInBulkRequestBodyRedemption</code>.
      */
     static validateJSON(data) {
@@ -71,9 +70,9 @@ class CampaignsVouchersCreateInBulkRequestBodyRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignsVouchersCreateInBulkRequestBodyRedemption.prototype['quantity'] = undefined;
 
 

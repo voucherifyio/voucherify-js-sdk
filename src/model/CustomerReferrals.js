@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import CustomerReferralsCampaignsItem from './CustomerReferralsCampaignsItem';
-
 /**
  * The CustomerReferrals model module.
  * @module model/CustomerReferrals
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CustomerReferrals {
     /**
      * Constructs a new <code>CustomerReferrals</code>.
      * Summary of customer&#39;s referrals, in this case, the customer being the referee, i.e. information about the source of referrals and number of times the customer was referred by other customers.
-     * @alias module:model/CustomerReferrals
+     * @alias CustomerReferrals
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class CustomerReferrals {
     /**
      * Constructs a <code>CustomerReferrals</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CustomerReferrals} obj Optional instance to populate.
-     * @returns {module:model/CustomerReferrals} The populated <code>CustomerReferrals</code> instance.
+     * @param {Partial<CustomerReferrals>} data The plain JavaScript object bearing properties of interest.
+     * @param {CustomerReferrals} [obj] Optional instance to populate.
+     * @returns {CustomerReferrals} The populated <code>CustomerReferrals</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -61,7 +60,7 @@ class CustomerReferrals {
 
     /**
      * Validates the JSON data with respect to <code>CustomerReferrals</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CustomerReferrals>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CustomerReferrals</code>.
      */
     static validateJSON(data) {
@@ -85,15 +84,15 @@ class CustomerReferrals {
 
 
 /**
- * Total number of times this customer received a referral, i.e. was referred by another customer.
- * @member {Number} 
- */
+    * Total number of times this customer received a referral, i.e. was referred by another customer.
+    * @type {Number | undefined}
+    */
 CustomerReferrals.prototype['total'] = undefined;
 
 /**
- * Contains an array of campaigns that served as the source of a referral for the customer.
- * @member {Array.<module:model/CustomerReferralsCampaignsItem>} 
- */
+    * Contains an array of campaigns that served as the source of a referral for the customer.
+    * @type {Array.<CustomerReferralsCampaignsItem> | undefined}
+    */
 CustomerReferrals.prototype['campaigns'] = undefined;
 
 

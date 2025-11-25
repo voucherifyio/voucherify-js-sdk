@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The CampaignsCreateRequestBodyVoucherRedemption model module.
  * @module model/CampaignsCreateRequestBodyVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class CampaignsCreateRequestBodyVoucherRedemption {
     /**
      * Constructs a new <code>CampaignsCreateRequestBodyVoucherRedemption</code>.
-     * @alias module:model/CampaignsCreateRequestBodyVoucherRedemption
+     * @alias CampaignsCreateRequestBodyVoucherRedemption
      */
     constructor() { 
         
@@ -39,9 +38,9 @@ class CampaignsCreateRequestBodyVoucherRedemption {
     /**
      * Constructs a <code>CampaignsCreateRequestBodyVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CampaignsCreateRequestBodyVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/CampaignsCreateRequestBodyVoucherRedemption} The populated <code>CampaignsCreateRequestBodyVoucherRedemption</code> instance.
+     * @param {Partial<CampaignsCreateRequestBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {CampaignsCreateRequestBodyVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {CampaignsCreateRequestBodyVoucherRedemption} The populated <code>CampaignsCreateRequestBodyVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -56,7 +55,7 @@ class CampaignsCreateRequestBodyVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>CampaignsCreateRequestBodyVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<CampaignsCreateRequestBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignsCreateRequestBodyVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -70,9 +69,9 @@ class CampaignsCreateRequestBodyVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 CampaignsCreateRequestBodyVoucherRedemption.prototype['quantity'] = undefined;
 
 

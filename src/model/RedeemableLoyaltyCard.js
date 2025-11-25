@@ -13,17 +13,16 @@
 
 import ApiClient from '../ApiClient';
 import LoyaltiesTransferPoints from './LoyaltiesTransferPoints';
-
 /**
  * The RedeemableLoyaltyCard model module.
  * @module model/RedeemableLoyaltyCard
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedeemableLoyaltyCard {
     /**
      * Constructs a new <code>RedeemableLoyaltyCard</code>.
      * Redeemable loyalty card object response
-     * @alias module:model/RedeemableLoyaltyCard
+     * @alias RedeemableLoyaltyCard
      */
     constructor() { 
         
@@ -41,9 +40,9 @@ class RedeemableLoyaltyCard {
     /**
      * Constructs a <code>RedeemableLoyaltyCard</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedeemableLoyaltyCard} obj Optional instance to populate.
-     * @returns {module:model/RedeemableLoyaltyCard} The populated <code>RedeemableLoyaltyCard</code> instance.
+     * @param {Partial<RedeemableLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedeemableLoyaltyCard} [obj] Optional instance to populate.
+     * @returns {RedeemableLoyaltyCard} The populated <code>RedeemableLoyaltyCard</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -70,7 +69,7 @@ class RedeemableLoyaltyCard {
 
     /**
      * Validates the JSON data with respect to <code>RedeemableLoyaltyCard</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedeemableLoyaltyCard>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedeemableLoyaltyCard</code>.
      */
     static validateJSON(data) {
@@ -94,32 +93,32 @@ class RedeemableLoyaltyCard {
 
 
 /**
- * Total number of points added to the loyalty card over its lifespan.
- * @member {Number} 
- */
+    * Total number of points added to the loyalty card over its lifespan.
+    * @type {Number | undefined}
+    */
 RedeemableLoyaltyCard.prototype['points'] = undefined;
 
 /**
- * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
- * @member {Number} 
- */
+    * Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+    * @type {Number | undefined}
+    */
 RedeemableLoyaltyCard.prototype['balance'] = undefined;
 
 /**
- * The cash equivalent of the points defined in the points_ratio property.
- * @member {Number} 
- */
+    * The cash equivalent of the points defined in the points_ratio property.
+    * @type {Number | undefined}
+    */
 RedeemableLoyaltyCard.prototype['exchange_ratio'] = undefined;
 
 /**
- * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
- * @member {Number} 
- */
+    * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
+    * @type {Number | undefined}
+    */
 RedeemableLoyaltyCard.prototype['points_ratio'] = undefined;
 
 /**
- * @member {Array.<module:model/LoyaltiesTransferPoints>} 
- */
+    * @type {Array.<LoyaltiesTransferPoints> | undefined}
+    */
 RedeemableLoyaltyCard.prototype['transfers'] = undefined;
 
 

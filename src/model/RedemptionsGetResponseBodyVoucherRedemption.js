@@ -12,16 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
-
 /**
  * The RedemptionsGetResponseBodyVoucherRedemption model module.
  * @module model/RedemptionsGetResponseBodyVoucherRedemption
- * @version 3.0.0
+ * @version 3.0.1
  */
 class RedemptionsGetResponseBodyVoucherRedemption {
     /**
      * Constructs a new <code>RedemptionsGetResponseBodyVoucherRedemption</code>.
-     * @alias module:model/RedemptionsGetResponseBodyVoucherRedemption
+     * @alias RedemptionsGetResponseBodyVoucherRedemption
      */
     constructor() { 
         
@@ -40,9 +39,9 @@ class RedemptionsGetResponseBodyVoucherRedemption {
     /**
      * Constructs a <code>RedemptionsGetResponseBodyVoucherRedemption</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RedemptionsGetResponseBodyVoucherRedemption} obj Optional instance to populate.
-     * @returns {module:model/RedemptionsGetResponseBodyVoucherRedemption} The populated <code>RedemptionsGetResponseBodyVoucherRedemption</code> instance.
+     * @param {Partial<RedemptionsGetResponseBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
+     * @param {RedemptionsGetResponseBodyVoucherRedemption} [obj] Optional instance to populate.
+     * @returns {RedemptionsGetResponseBodyVoucherRedemption} The populated <code>RedemptionsGetResponseBodyVoucherRedemption</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
@@ -69,7 +68,7 @@ class RedemptionsGetResponseBodyVoucherRedemption {
 
     /**
      * Validates the JSON data with respect to <code>RedemptionsGetResponseBodyVoucherRedemption</code>.
-     * @param {object} data The plain JavaScript object bearing properties of interest.
+     * @param {Partial<RedemptionsGetResponseBodyVoucherRedemption>} data The plain JavaScript object bearing properties of interest.
      * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>RedemptionsGetResponseBodyVoucherRedemption</code>.
      */
     static validateJSON(data) {
@@ -91,34 +90,34 @@ class RedemptionsGetResponseBodyVoucherRedemption {
 
 
 /**
- * How many times a voucher can be redeemed. A `null` value means unlimited.
- * @member {Number} 
- */
+    * How many times a voucher can be redeemed. A `null` value means unlimited.
+    * @type {Number | undefined}
+    */
 RedemptionsGetResponseBodyVoucherRedemption.prototype['quantity'] = undefined;
 
 /**
- * How many times a voucher has already been redeemed.
- * @member {Number} 
- */
+    * How many times a voucher has already been redeemed.
+    * @type {Number | undefined}
+    */
 RedemptionsGetResponseBodyVoucherRedemption.prototype['redeemed_quantity'] = undefined;
 
 /**
- * Total loyalty points redeemed.
- * @member {Number} 
- */
+    * Total loyalty points redeemed.
+    * @type {Number | undefined}
+    */
 RedemptionsGetResponseBodyVoucherRedemption.prototype['redeemed_points'] = undefined;
 
 /**
- * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
- * @member {String} 
- * @default 'list'
- */
+    * The type of the object represented is by default `list`. To get this list, you need to make a call to the endpoint returned in the url attribute.
+    * @type {String | undefined}
+    * @default 'list'
+    */
 RedemptionsGetResponseBodyVoucherRedemption.prototype['object'] = 'list';
 
 /**
- * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
- * @member {String} 
- */
+    * The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
+    * @type {String | undefined}
+    */
 RedemptionsGetResponseBodyVoucherRedemption.prototype['url'] = undefined;
 
 
