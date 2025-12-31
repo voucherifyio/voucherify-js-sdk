@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsReward model module.
  * @module model/MemberActivityDataTransactionDetailsReward
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetailsReward {
     /**

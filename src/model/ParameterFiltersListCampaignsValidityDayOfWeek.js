@@ -16,7 +16,7 @@ import ParameterFiltersListCampaignsValidityDayOfWeekConditions from './Paramete
 /**
  * The ParameterFiltersListCampaignsValidityDayOfWeek model module.
  * @module model/ParameterFiltersListCampaignsValidityDayOfWeek
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListCampaignsValidityDayOfWeek {
     /**

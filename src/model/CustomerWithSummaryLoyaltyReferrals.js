@@ -20,7 +20,7 @@ import CustomerWithSummaryLoyaltyReferralsAssets from './CustomerWithSummaryLoya
 /**
  * The CustomerWithSummaryLoyaltyReferrals model module.
  * @module model/CustomerWithSummaryLoyaltyReferrals
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomerWithSummaryLoyaltyReferrals {
     /**

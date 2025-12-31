@@ -16,7 +16,7 @@ import ProductCollectionsCreateRequestBodyProductsItem from './ProductCollection
 /**
  * The ProductCollectionsCreateRequestBody model module.
  * @module model/ProductCollectionsCreateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ProductCollectionsCreateRequestBody {
     /**
@@ -34,7 +34,6 @@ class ProductCollectionsCreateRequestBody {
      * Only for internal use.
      */
     static initialize(obj) { 
-        obj['type'] = 'STATIC';
     }
 
     /**
@@ -98,11 +97,9 @@ class ProductCollectionsCreateRequestBody {
 
 
 /**
-    * Show that the product collection is static (manually selected products).
     * @type {(keyof typeof ProductCollectionsCreateRequestBody.TypeEnum) | undefined}
-    * @default 'STATIC'
     */
-ProductCollectionsCreateRequestBody.prototype['type'] = 'STATIC';
+ProductCollectionsCreateRequestBody.prototype['type'] = undefined;
 
 /**
     * Unique user-defined product collection name.
@@ -137,7 +134,13 @@ ProductCollectionsCreateRequestBody.prototype['filter'] = undefined;
          * value: "STATIC"
          * @constant
          */
-        "STATIC": "STATIC"    
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "AUTO_UPDATE"
+         * @constant
+         */
+        "AUTO_UPDATE": "AUTO_UPDATE"    
     };
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LocationShapeDistance model module.
  * @module model/LocationShapeDistance
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LocationShapeDistance {
     /**

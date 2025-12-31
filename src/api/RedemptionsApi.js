@@ -29,7 +29,7 @@ import VouchersRedemptionGetResponseBody from '../model/VouchersRedemptionGetRes
 /**
 * Redemptions service.
 * @module api/RedemptionsApi
-* @version 3.0.1
+* @version 3.0.2
 */
 export default class RedemptionsApi {
 
@@ -194,7 +194,7 @@ export default class RedemptionsApi {
 
     /**
      * Redeem Stackable Discounts
-     * # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint.  📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).      📘 Also available on client-side  This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more.  - Use X-Client-Application-Id as the application ID header.  - Use X-Client-Token as the appliction secret key header.  - Use client-side base URL.  - Use an origin header for your custom domain.
+     * # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint.  📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).      📘 Also available on client-side  This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more.
      * @param {RedemptionsRedeemRequestBody} redemptionsRedeemRequestBody 
      * @param {redeemStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link RedemptionsRedeemResponseBody}

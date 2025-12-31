@@ -23,7 +23,7 @@ import SimpleCustomer from './SimpleCustomer';
 /**
  * The MemberActivityDataRedemption model module.
  * @module model/MemberActivityDataRedemption
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataRedemption {
     /**

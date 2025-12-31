@@ -19,7 +19,7 @@ import Referrer from './Referrer';
 /**
  * The OrdersImportCreateRequestBodyItem model module.
  * @module model/OrdersImportCreateRequestBodyItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class OrdersImportCreateRequestBodyItem {
     /**
@@ -76,9 +76,6 @@ class OrdersImportCreateRequestBodyItem {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
             }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-            }
             if (data.hasOwnProperty('referrer_id')) {
                 obj['referrer_id'] = ApiClient.convertToType(data['referrer_id'], 'String');
             }
@@ -87,6 +84,9 @@ class OrdersImportCreateRequestBodyItem {
             }
             if (data.hasOwnProperty('referrer')) {
                 obj['referrer'] = Referrer.constructFromObject(data['referrer']);
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
         }
         return obj;
@@ -190,12 +190,6 @@ OrdersImportCreateRequestBodyItem.prototype['items'] = undefined;
 OrdersImportCreateRequestBodyItem.prototype['metadata'] = undefined;
 
 /**
-    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
-    * @type {Date | undefined}
-    */
-OrdersImportCreateRequestBodyItem.prototype['created_at'] = undefined;
-
-/**
     * Unique referrer ID.
     * @type {String | undefined}
     */
@@ -210,6 +204,12 @@ OrdersImportCreateRequestBodyItem.prototype['customer'] = undefined;
     * @type {Referrer | undefined}
     */
 OrdersImportCreateRequestBodyItem.prototype['referrer'] = undefined;
+
+/**
+    * Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+    * @type {Date | undefined}
+    */
+OrdersImportCreateRequestBodyItem.prototype['created_at'] = undefined;
 
 
 // Implement Order interface:

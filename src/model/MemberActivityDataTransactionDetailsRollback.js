@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsRollback model module.
  * @module model/MemberActivityDataTransactionDetailsRollback
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetailsRollback {
     /**

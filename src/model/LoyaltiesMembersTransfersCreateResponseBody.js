@@ -22,7 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltiesMembersTransfersCreateResponseBody model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesMembersTransfersCreateResponseBody {
     /**

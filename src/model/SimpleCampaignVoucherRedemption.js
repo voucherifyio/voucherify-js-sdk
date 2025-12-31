@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleCampaignVoucherRedemption model module.
  * @module model/SimpleCampaignVoucherRedemption
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SimpleCampaignVoucherRedemption {
     /**

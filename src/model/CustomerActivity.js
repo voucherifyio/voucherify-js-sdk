@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerActivity model module.
  * @module model/CustomerActivity
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomerActivity {
     /**

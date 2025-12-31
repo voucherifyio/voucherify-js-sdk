@@ -19,7 +19,7 @@ import OrderRedemptionsEntry from './OrderRedemptionsEntry';
 /**
  * The MemberActivityDataRedemptionPreviousOrder model module.
  * @module model/MemberActivityDataRedemptionPreviousOrder
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataRedemptionPreviousOrder {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventsCreateRequestBodyLoyalty model module.
  * @module model/EventsCreateRequestBodyLoyalty
- * @version 3.0.1
+ * @version 3.0.2
  */
 class EventsCreateRequestBodyLoyalty {
     /**

@@ -17,7 +17,7 @@ import LoyaltyCardTransactionsType from './LoyaltyCardTransactionsType';
 /**
  * The LoyaltyCardTransaction model module.
  * @module model/LoyaltyCardTransaction
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltyCardTransaction {
     /**
@@ -154,7 +154,7 @@ LoyaltyCardTransaction.prototype['voucher_id'] = undefined;
 LoyaltyCardTransaction.prototype['campaign_id'] = undefined;
 
 /**
-    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * The channel through which the transaction took place, whether through the API or the Dashboard. In case of a redemption, this value is null.
     * @type {String | undefined}
     */
 LoyaltyCardTransaction.prototype['source'] = undefined;

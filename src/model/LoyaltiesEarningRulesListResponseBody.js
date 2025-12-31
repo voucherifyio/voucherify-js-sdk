@@ -16,7 +16,7 @@ import EarningRule from './EarningRule';
 /**
  * The LoyaltiesEarningRulesListResponseBody model module.
  * @module model/LoyaltiesEarningRulesListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesEarningRulesListResponseBody {
     /**

@@ -16,7 +16,7 @@ import ValidityHoursDailyItem from './ValidityHoursDailyItem';
 /**
  * The ValidityHours model module.
  * @module model/ValidityHours
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ValidityHours {
     /**
@@ -81,7 +81,7 @@ class ValidityHours {
 
 
 /**
-    * Defines the reccuring period(s) when the resource is active. The periods should not overlap.
+    * Defines the recurring period(s) when the resource is active. The periods should not overlap.
     * @type {Array.<ValidityHoursDailyItem> | undefined}
     */
 ValidityHours.prototype['daily'] = undefined;

@@ -16,7 +16,7 @@ import QualificationsOptionFiltersResourceTypeConditions from './QualificationsO
 /**
  * The QualificationsOptionFiltersResourceType model module.
  * @module model/QualificationsOptionFiltersResourceType
- * @version 3.0.1
+ * @version 3.0.2
  */
 class QualificationsOptionFiltersResourceType {
     /**

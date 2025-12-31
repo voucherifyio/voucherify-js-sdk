@@ -16,7 +16,7 @@ import Reward from './Reward';
 /**
  * The RewardsListResponseBody model module.
  * @module model/RewardsListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RewardsListResponseBody {
     /**

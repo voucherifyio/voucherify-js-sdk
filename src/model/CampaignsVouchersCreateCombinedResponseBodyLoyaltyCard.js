@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignsVouchersCreateCombinedResponseBodyLoyaltyCard {
     /**

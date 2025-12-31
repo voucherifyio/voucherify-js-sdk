@@ -16,7 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListPublicationsIsReferralCode model module.
  * @module model/ParameterFiltersListPublicationsIsReferralCode
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListPublicationsIsReferralCode {
     /**

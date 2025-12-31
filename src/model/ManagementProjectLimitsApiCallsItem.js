@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectLimitsApiCallsItem model module.
  * @module model/ManagementProjectLimitsApiCallsItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectLimitsApiCallsItem {
     /**

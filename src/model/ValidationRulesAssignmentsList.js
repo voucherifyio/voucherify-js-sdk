@@ -16,7 +16,7 @@ import BusValRuleAssignment from './BusValRuleAssignment';
 /**
  * The ValidationRulesAssignmentsList model module.
  * @module model/ValidationRulesAssignmentsList
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ValidationRulesAssignmentsList {
     /**

@@ -16,7 +16,7 @@ import LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEventMetadata from './
 /**
  * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent model module.
  * @module model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomEvent {
     /**

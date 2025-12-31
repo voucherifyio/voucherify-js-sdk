@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleSegment model module.
  * @module model/SimpleSegment
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SimpleSegment {
     /**

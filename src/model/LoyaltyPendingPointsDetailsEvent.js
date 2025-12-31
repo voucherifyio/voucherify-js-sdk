@@ -16,7 +16,7 @@ import EventSource from './EventSource';
 /**
  * The LoyaltyPendingPointsDetailsEvent model module.
  * @module model/LoyaltyPendingPointsDetailsEvent
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltyPendingPointsDetailsEvent {
     /**

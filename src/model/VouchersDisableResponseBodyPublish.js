@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersDisableResponseBodyPublish model module.
  * @module model/VouchersDisableResponseBodyPublish
- * @version 3.0.1
+ * @version 3.0.2
  */
 class VouchersDisableResponseBodyPublish {
     /**

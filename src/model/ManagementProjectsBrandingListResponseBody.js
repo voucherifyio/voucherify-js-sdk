@@ -16,7 +16,7 @@ import ManagementProjectsBranding from './ManagementProjectsBranding';
 /**
  * The ManagementProjectsBrandingListResponseBody model module.
  * @module model/ManagementProjectsBrandingListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectsBrandingListResponseBody {
     /**

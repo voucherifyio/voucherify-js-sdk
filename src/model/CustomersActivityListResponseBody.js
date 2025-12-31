@@ -16,7 +16,7 @@ import CustomerActivity from './CustomerActivity';
 /**
  * The CustomersActivityListResponseBody model module.
  * @module model/CustomersActivityListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomersActivityListResponseBody {
     /**

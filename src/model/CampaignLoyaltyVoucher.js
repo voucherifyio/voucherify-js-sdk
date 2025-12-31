@@ -18,7 +18,7 @@ import CodeConfig from './CodeConfig';
 /**
  * The CampaignLoyaltyVoucher model module.
  * @module model/CampaignLoyaltyVoucher
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignLoyaltyVoucher {
     /**

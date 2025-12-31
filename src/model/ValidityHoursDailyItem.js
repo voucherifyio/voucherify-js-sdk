@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidityHoursDailyItem model module.
  * @module model/ValidityHoursDailyItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ValidityHoursDailyItem {
     /**
      * Constructs a new <code>ValidityHoursDailyItem</code>.
-     * Defines the reccuring period(s) when the resource will be active.
+     * Defines the recurring period(s) when the resource will be active.
      * @alias ValidityHoursDailyItem
      */
     constructor() { 

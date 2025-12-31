@@ -16,7 +16,7 @@ import CampaignBase from './CampaignBase';
 /**
  * The CampaignsSummaryGetResponseBody model module.
  * @module model/CampaignsSummaryGetResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignsSummaryGetResponseBody {
     /**

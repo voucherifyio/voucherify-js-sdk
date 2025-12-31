@@ -16,7 +16,7 @@ import Sku from './Sku';
 /**
  * The ProductsSkusListResponseBody model module.
  * @module model/ProductsSkusListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ProductsSkusListResponseBody {
     /**

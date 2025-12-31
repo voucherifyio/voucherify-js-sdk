@@ -20,12 +20,12 @@ import Session from './Session';
 /**
  * The ClientValidationsValidateRequestBody model module.
  * @module model/ClientValidationsValidateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ClientValidationsValidateRequestBody {
     /**
      * Constructs a new <code>ClientValidationsValidateRequestBody</code>.
-     * Response body schema for **POST** &#x60;v1/validations&#x60;.
+     * Request body schema for **POST** &#x60;v1/validations&#x60;.
      * @alias ClientValidationsValidateRequestBody
      */
     constructor() { 

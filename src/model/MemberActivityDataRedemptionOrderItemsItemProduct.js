@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionOrderItemsItemProduct model module.
  * @module model/MemberActivityDataRedemptionOrderItemsItemProduct
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataRedemptionOrderItemsItemProduct {
     /**

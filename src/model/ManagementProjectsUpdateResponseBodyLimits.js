@@ -17,7 +17,7 @@ import ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem from './Manage
 /**
  * The ManagementProjectsUpdateResponseBodyLimits model module.
  * @module model/ManagementProjectsUpdateResponseBodyLimits
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectsUpdateResponseBodyLimits {
     /**

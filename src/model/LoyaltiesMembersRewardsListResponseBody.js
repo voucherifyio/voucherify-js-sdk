@@ -16,7 +16,7 @@ import LoyaltiesMembersRewardsListResponseBodyDataItem from './LoyaltiesMembersR
 /**
  * The LoyaltiesMembersRewardsListResponseBody model module.
  * @module model/LoyaltiesMembersRewardsListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesMembersRewardsListResponseBody {
     /**

@@ -16,7 +16,7 @@ import RedemptionsListResponseBodyRedemptionsItem from './RedemptionsListRespons
 /**
  * The RedemptionsListResponseBody model module.
  * @module model/RedemptionsListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RedemptionsListResponseBody {
     /**

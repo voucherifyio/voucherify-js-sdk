@@ -18,7 +18,7 @@ import ParameterFiltersListLocationsUpdatedAt from './ParameterFiltersListLocati
 /**
  * The ParameterFiltersListLocations model module.
  * @module model/ParameterFiltersListLocations
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListLocations {
     /**

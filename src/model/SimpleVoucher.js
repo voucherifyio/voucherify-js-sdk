@@ -20,7 +20,7 @@ import SimpleVoucherRedemption from './SimpleVoucherRedemption';
 /**
  * The SimpleVoucher model module.
  * @module model/SimpleVoucher
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SimpleVoucher {
     /**

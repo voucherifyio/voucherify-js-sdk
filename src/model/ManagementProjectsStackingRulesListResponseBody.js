@@ -16,7 +16,7 @@ import ManagementProjectsStackingRules from './ManagementProjectsStackingRules';
 /**
  * The ManagementProjectsStackingRulesListResponseBody model module.
  * @module model/ManagementProjectsStackingRulesListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectsStackingRulesListResponseBody {
     /**

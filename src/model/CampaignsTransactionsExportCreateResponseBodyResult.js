@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsTransactionsExportCreateResponseBodyResult model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyResult
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignsTransactionsExportCreateResponseBodyResult {
     /**

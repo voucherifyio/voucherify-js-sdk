@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard model module.
  * @module model/MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard {
     /**

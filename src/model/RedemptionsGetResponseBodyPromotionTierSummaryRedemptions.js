@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodyPromotionTierSummaryRedemptions model module.
  * @module model/RedemptionsGetResponseBodyPromotionTierSummaryRedemptions
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RedemptionsGetResponseBodyPromotionTierSummaryRedemptions {
     /**

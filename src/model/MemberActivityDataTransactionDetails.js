@@ -30,7 +30,7 @@ import VoucherBalance from './VoucherBalance';
 /**
  * The MemberActivityDataTransactionDetails model module.
  * @module model/MemberActivityDataTransactionDetails
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetails {
     /**

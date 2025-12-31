@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleSkuDiscountUnit model module.
  * @module model/SimpleSkuDiscountUnit
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SimpleSkuDiscountUnit {
     /**

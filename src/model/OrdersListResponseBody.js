@@ -16,7 +16,7 @@ import OrdersListResponseBodyOrdersItem from './OrdersListResponseBodyOrdersItem
 /**
  * The OrdersListResponseBody model module.
  * @module model/OrdersListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class OrdersListResponseBody {
     /**

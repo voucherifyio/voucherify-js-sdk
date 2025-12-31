@@ -16,7 +16,7 @@ import MemberActivityDataTransactionDetailsEarningRuleSource from './MemberActiv
 /**
  * The MemberActivityDataTransactionDetailsEarningRule model module.
  * @module model/MemberActivityDataTransactionDetailsEarningRule
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetailsEarningRule {
     /**

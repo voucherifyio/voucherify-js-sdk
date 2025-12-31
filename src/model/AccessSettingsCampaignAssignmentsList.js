@@ -16,7 +16,7 @@ import AreaStoreCampaignAssignment from './AreaStoreCampaignAssignment';
 /**
  * The AccessSettingsCampaignAssignmentsList model module.
  * @module model/AccessSettingsCampaignAssignmentsList
- * @version 3.0.1
+ * @version 3.0.2
  */
 class AccessSettingsCampaignAssignmentsList {
     /**

@@ -16,7 +16,7 @@ import PromotionStack from './PromotionStack';
 /**
  * The PromotionsStacksListResponseBody model module.
  * @module model/PromotionsStacksListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class PromotionsStacksListResponseBody {
     /**

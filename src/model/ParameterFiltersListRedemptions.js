@@ -26,7 +26,7 @@ import ParameterFiltersListRedemptionsVoucherCode from './ParameterFiltersListRe
 /**
  * The ParameterFiltersListRedemptions model module.
  * @module model/ParameterFiltersListRedemptions
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListRedemptions {
     /**

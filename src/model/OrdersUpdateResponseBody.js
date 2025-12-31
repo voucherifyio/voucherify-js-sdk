@@ -19,7 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The OrdersUpdateResponseBody model module.
  * @module model/OrdersUpdateResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class OrdersUpdateResponseBody {
     /**

@@ -22,7 +22,7 @@ import VouchersCreateRequestBodyRedemption from './VouchersCreateRequestBodyRede
 /**
  * The VouchersCreateRequestBody model module.
  * @module model/VouchersCreateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class VouchersCreateRequestBody {
     /**

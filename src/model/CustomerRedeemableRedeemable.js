@@ -16,7 +16,7 @@ import RedeemableVoucher from './RedeemableVoucher';
 /**
  * The CustomerRedeemableRedeemable model module.
  * @module model/CustomerRedeemableRedeemable
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomerRedeemableRedeemable {
     /**

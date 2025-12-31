@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata {
     /**

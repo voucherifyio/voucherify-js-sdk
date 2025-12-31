@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicableToOrderItemUnitsItem model module.
  * @module model/ApplicableToOrderItemUnitsItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ApplicableToOrderItemUnitsItem {
     /**

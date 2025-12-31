@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LocationsGetResponseBodyShapeGeojson model module.
  * @module model/LocationsGetResponseBodyShapeGeojson
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LocationsGetResponseBodyShapeGeojson {
     /**

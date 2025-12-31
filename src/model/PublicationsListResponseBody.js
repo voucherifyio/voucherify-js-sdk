@@ -16,7 +16,7 @@ import PublicationsListResponseBodyPublicationsItem from './PublicationsListResp
 /**
  * The PublicationsListResponseBody model module.
  * @module model/PublicationsListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class PublicationsListResponseBody {
     /**
