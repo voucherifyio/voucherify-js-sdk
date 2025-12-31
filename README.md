@@ -287,7 +287,7 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
-- **2026-01-03** - `3.0.2`:
+- **2025-12-31** - `3.0.2`:
     - Added the `AUTO_UPDATE` enum value to the `type` property in the `ProductCollectionsCreateRequestBody` model.
     - Added support for the new `filters` query parameter in the `listVouchers` method of `VouchersApi` (GET /v1/vouchers).
 - **2025-11-24** - `3.0.1` - Introduced native TypeScript type definitions generated from JSDoc, enabling automatic type inference and IDE autocompletion.
