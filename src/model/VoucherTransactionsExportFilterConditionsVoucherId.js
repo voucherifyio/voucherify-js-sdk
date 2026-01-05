@@ -16,7 +16,7 @@ import VoucherTransactionsExportFilterConditionsVoucherIdConditions from './Vouc
 /**
  * The VoucherTransactionsExportFilterConditionsVoucherId model module.
  * @module model/VoucherTransactionsExportFilterConditionsVoucherId
- * @version 3.0.1
+ * @version 3.0.2
  */
 class VoucherTransactionsExportFilterConditionsVoucherId {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SegmentsCreateRequestBody model module.
  * @module model/SegmentsCreateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SegmentsCreateRequestBody {
     /**

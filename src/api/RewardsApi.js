@@ -29,7 +29,7 @@ import RewardsUpdateResponseBody from '../model/RewardsUpdateResponseBody';
 /**
 * Rewards service.
 * @module api/RewardsApi
-* @version 3.0.1
+* @version 3.0.2
 */
 export default class RewardsApi {
 

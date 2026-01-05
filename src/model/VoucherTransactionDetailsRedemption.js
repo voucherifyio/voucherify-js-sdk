@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionDetailsRedemption model module.
  * @module model/VoucherTransactionDetailsRedemption
- * @version 3.0.1
+ * @version 3.0.2
  */
 class VoucherTransactionDetailsRedemption {
     /**

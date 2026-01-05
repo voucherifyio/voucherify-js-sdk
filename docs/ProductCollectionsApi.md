@@ -40,7 +40,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.ProductCollectionsApi();
-let productCollectionsCreateRequestBody = new Voucherify.ProductCollectionsCreateRequestBody(); // ProductCollectionsCreateRequestBody | 
+let productCollectionsCreateRequestBody = {"type":"STATIC","name":"Static collection example","products":[{"id":"prod_0a41dd45dc85fcab40","object":"product"}]}; // ProductCollectionsCreateRequestBody | 
 apiInstance.createProductCollection(productCollectionsCreateRequestBody, (error, data, response) => {
   if (error) {
     console.error(error);

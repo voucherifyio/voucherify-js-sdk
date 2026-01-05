@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductsSkusUpdateRequestBody model module.
  * @module model/ProductsSkusUpdateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ProductsSkusUpdateRequestBody {
     /**

@@ -16,7 +16,7 @@ import VoucherTransactionDetails from './VoucherTransactionDetails';
 /**
  * The VoucherTransaction model module.
  * @module model/VoucherTransaction
- * @version 3.0.1
+ * @version 3.0.2
  */
 class VoucherTransaction {
     /**
@@ -157,7 +157,7 @@ VoucherTransaction.prototype['voucher_id'] = undefined;
 VoucherTransaction.prototype['campaign_id'] = undefined;
 
 /**
-    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * The channel through which the transaction took place, whether through the API or the Dashboard. In case of a redemption, this value is null.
     * @type {String | undefined}
     */
 VoucherTransaction.prototype['source'] = undefined;

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetadataSchemaDefinitionDeprecated model module.
  * @module model/MetadataSchemaDefinitionDeprecated
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MetadataSchemaDefinitionDeprecated {
     /**

@@ -17,7 +17,7 @@ import PromotionStackTiers from './PromotionStackTiers';
 /**
  * The PromotionStack model module.
  * @module model/PromotionStack
- * @version 3.0.1
+ * @version 3.0.2
  */
 class PromotionStack {
     /**

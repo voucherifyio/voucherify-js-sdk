@@ -16,7 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListPublicationsCampaignName model module.
  * @module model/ParameterFiltersListPublicationsCampaignName
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListPublicationsCampaignName {
     /**

@@ -36,7 +36,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.QualificationsApi();
-let qualificationsCheckEligibilityRequestBody = new Voucherify.QualificationsCheckEligibilityRequestBody(); // QualificationsCheckEligibilityRequestBody | Define order and customer context.
+let qualificationsCheckEligibilityRequestBody = {"scenario":"ALL","options":{"limit":10,"expand":["redeemable"],"sorting_rule":"DEFAULT"}}; // QualificationsCheckEligibilityRequestBody | Define order and customer context.
 apiInstance.checkEligibility(qualificationsCheckEligibilityRequestBody, (error, data, response) => {
   if (error) {
     console.error(error);

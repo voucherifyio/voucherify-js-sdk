@@ -17,7 +17,7 @@ import TemplatesCampaignsTierSetupCreateResponseBodyCreatedResourcesItem from '.
 /**
  * The TemplatesCampaignsTierSetupCreateResponseBody model module.
  * @module model/TemplatesCampaignsTierSetupCreateResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class TemplatesCampaignsTierSetupCreateResponseBody {
     /**

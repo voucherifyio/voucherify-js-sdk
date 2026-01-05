@@ -16,7 +16,7 @@ import Product from './Product';
 /**
  * The ProductsListResponseBody model module.
  * @module model/ProductsListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ProductsListResponseBody {
     /**

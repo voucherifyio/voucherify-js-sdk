@@ -16,7 +16,7 @@ import LocationShape from './LocationShape';
 /**
  * The Location model module.
  * @module model/Location
- * @version 3.0.1
+ * @version 3.0.2
  */
 class Location {
     /**

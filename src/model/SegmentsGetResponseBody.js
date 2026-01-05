@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SegmentsGetResponseBody model module.
  * @module model/SegmentsGetResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class SegmentsGetResponseBody {
     /**
@@ -63,11 +63,11 @@ class SegmentsGetResponseBody {
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], Object);
             }
-            if (data.hasOwnProperty('initial_sync_status')) {
-                obj['initial_sync_status'] = ApiClient.convertToType(data['initial_sync_status'], 'String');
-            }
             if (data.hasOwnProperty('object')) {
                 obj['object'] = ApiClient.convertToType(data['object'], 'String');
+            }
+            if (data.hasOwnProperty('initial_sync_status')) {
+                obj['initial_sync_status'] = ApiClient.convertToType(data['initial_sync_status'], 'String');
             }
         }
         return obj;
@@ -92,12 +92,12 @@ class SegmentsGetResponseBody {
             throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
         }
         // ensure the json data is a string
-        if (data['initial_sync_status'] && !(typeof data['initial_sync_status'] === 'string' || data['initial_sync_status'] instanceof String)) {
-            throw new Error("Expected the field `initial_sync_status` to be a primitive type in the JSON string but got " + data['initial_sync_status']);
-        }
-        // ensure the json data is a string
         if (data['object'] && !(typeof data['object'] === 'string' || data['object'] instanceof String)) {
             throw new Error("Expected the field `object` to be a primitive type in the JSON string but got " + data['object']);
+        }
+        // ensure the json data is a string
+        if (data['initial_sync_status'] && !(typeof data['initial_sync_status'] === 'string' || data['initial_sync_status'] instanceof String)) {
+            throw new Error("Expected the field `initial_sync_status` to be a primitive type in the JSON string but got " + data['initial_sync_status']);
         }
 
         return true;
@@ -139,16 +139,16 @@ SegmentsGetResponseBody.prototype['type'] = undefined;
 SegmentsGetResponseBody.prototype['filter'] = undefined;
 
 /**
-    * @type {(keyof typeof SegmentsGetResponseBody.InitialSyncStatusEnum) | undefined}
-    */
-SegmentsGetResponseBody.prototype['initial_sync_status'] = undefined;
-
-/**
     * The type of the object represented by JSON. This object stores information about the customer segment.
     * @type {(keyof typeof SegmentsGetResponseBody.ObjectEnum) | undefined}
     * @default 'segment'
     */
 SegmentsGetResponseBody.prototype['object'] = 'segment';
+
+/**
+    * @type {(keyof typeof SegmentsGetResponseBody.InitialSyncStatusEnum) | undefined}
+    */
+SegmentsGetResponseBody.prototype['initial_sync_status'] = undefined;
 
 
 
@@ -182,6 +182,21 @@ SegmentsGetResponseBody.prototype['object'] = 'segment';
 
 
     /**
+     * Allowed values for the <code>object</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    SegmentsGetResponseBody['ObjectEnum'] = {
+    
+        /**
+         * value: "segment"
+         * @constant
+         */
+        "segment": "segment"    
+    };
+
+
+    /**
      * Allowed values for the <code>initial_sync_status</code> property.
      * @enum     {String}    
      * @readonly
@@ -199,21 +214,6 @@ SegmentsGetResponseBody.prototype['object'] = 'segment';
          * @constant
          */
         "DONE": "DONE"    
-    };
-
-
-    /**
-     * Allowed values for the <code>object</code> property.
-     * @enum     {String}    
-     * @readonly
-     */
-    SegmentsGetResponseBody['ObjectEnum'] = {
-    
-        /**
-         * value: "segment"
-         * @constant
-         */
-        "segment": "segment"    
     };
 
 

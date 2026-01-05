@@ -16,7 +16,7 @@ import ParameterFiltersListBinResourceTypeConditions from './ParameterFiltersLis
 /**
  * The ParameterFiltersListBinResourceType model module.
  * @module model/ParameterFiltersListBinResourceType
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListBinResourceType {
     /**

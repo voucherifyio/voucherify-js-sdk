@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUsersAssignResponseBody model module.
  * @module model/ManagementProjectsUsersAssignResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectsUsersAssignResponseBody {
     /**

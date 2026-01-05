@@ -16,7 +16,7 @@ import LoyaltyTierConfigPoints from './LoyaltyTierConfigPoints';
 /**
  * The LoyaltyTierConfig model module.
  * @module model/LoyaltyTierConfig
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltyTierConfig {
     /**

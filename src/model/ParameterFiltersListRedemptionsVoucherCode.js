@@ -16,7 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListRedemptionsVoucherCode model module.
  * @module model/ParameterFiltersListRedemptionsVoucherCode
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListRedemptionsVoucherCode {
     /**

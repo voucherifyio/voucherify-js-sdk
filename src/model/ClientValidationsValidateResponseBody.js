@@ -21,7 +21,7 @@ import ValidationsRedeemableSkipped from './ValidationsRedeemableSkipped';
 /**
  * The ClientValidationsValidateResponseBody model module.
  * @module model/ClientValidationsValidateResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ClientValidationsValidateResponseBody {
     /**

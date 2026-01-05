@@ -16,7 +16,7 @@ import LoyaltiesRewardsGetResponseBodyParametersLoyalty from './LoyaltiesRewards
 /**
  * The LoyaltiesRewardsGetResponseBodyParameters model module.
  * @module model/LoyaltiesRewardsGetResponseBodyParameters
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesRewardsGetResponseBodyParameters {
     /**

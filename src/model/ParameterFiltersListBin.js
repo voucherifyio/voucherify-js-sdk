@@ -20,7 +20,7 @@ import ParameterFiltersListBinResourceType from './ParameterFiltersListBinResour
 /**
  * The ParameterFiltersListBin model module.
  * @module model/ParameterFiltersListBin
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterFiltersListBin {
     /**

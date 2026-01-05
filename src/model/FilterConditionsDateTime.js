@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FilterConditionsDateTime model module.
  * @module model/FilterConditionsDateTime
- * @version 3.0.1
+ * @version 3.0.2
  */
 class FilterConditionsDateTime {
     /**

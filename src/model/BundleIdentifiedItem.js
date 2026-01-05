@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BundleIdentifiedItem model module.
  * @module model/BundleIdentifiedItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class BundleIdentifiedItem {
     /**

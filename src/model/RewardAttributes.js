@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardAttributes model module.
  * @module model/RewardAttributes
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RewardAttributes {
     /**

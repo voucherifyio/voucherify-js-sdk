@@ -16,7 +16,7 @@ import LoyaltiesRewardAssignmentsGetResponseBodyParameters from './LoyaltiesRewa
 /**
  * The LoyaltiesRewardAssignmentsGetResponseBody model module.
  * @module model/LoyaltiesRewardAssignmentsGetResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesRewardAssignmentsGetResponseBody {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardsCreateRequestBodyParametersCampaign model module.
  * @module model/RewardsCreateRequestBodyParametersCampaign
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RewardsCreateRequestBodyParametersCampaign {
     /**
@@ -81,7 +81,7 @@ class RewardsCreateRequestBodyParametersCampaign {
 RewardsCreateRequestBodyParametersCampaign.prototype['id'] = undefined;
 
 /**
-    * The incremental points to be added to the current balance on the loyalty card. and The incremental amout to be added to the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+    * The incremental points to be added to the current balance on the loyalty card. and The incremental amount to be added to the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
     * @type {Number | undefined}
     */
 RewardsCreateRequestBodyParametersCampaign.prototype['balance'] = undefined;

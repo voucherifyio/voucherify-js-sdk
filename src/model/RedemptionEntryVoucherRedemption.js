@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryVoucherRedemption model module.
  * @module model/RedemptionEntryVoucherRedemption
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RedemptionEntryVoucherRedemption {
     /**

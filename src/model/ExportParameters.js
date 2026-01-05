@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportParameters model module.
  * @module model/ExportParameters
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ExportParameters {
     /**

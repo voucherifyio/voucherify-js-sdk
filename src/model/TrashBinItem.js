@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TrashBinItem model module.
  * @module model/TrashBinItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class TrashBinItem {
     /**

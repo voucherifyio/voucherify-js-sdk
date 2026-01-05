@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterCampaignsAccessSetttingsFilter model module.
  * @module model/ParameterCampaignsAccessSetttingsFilter
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ParameterCampaignsAccessSetttingsFilter {
     /**

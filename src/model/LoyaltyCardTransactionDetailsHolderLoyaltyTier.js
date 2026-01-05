@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardTransactionDetailsHolderLoyaltyTier model module.
  * @module model/LoyaltyCardTransactionDetailsHolderLoyaltyTier
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltyCardTransactionDetailsHolderLoyaltyTier {
     /**

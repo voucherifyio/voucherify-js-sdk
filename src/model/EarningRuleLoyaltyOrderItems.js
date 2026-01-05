@@ -18,7 +18,7 @@ import EarningRuleLoyaltyOrderItemsSubtotalAmount from './EarningRuleLoyaltyOrde
 /**
  * The EarningRuleLoyaltyOrderItems model module.
  * @module model/EarningRuleLoyaltyOrderItems
- * @version 3.0.1
+ * @version 3.0.2
  */
 class EarningRuleLoyaltyOrderItems {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventSourceApiKey model module.
  * @module model/EventSourceApiKey
- * @version 3.0.1
+ * @version 3.0.2
  */
 class EventSourceApiKey {
     /**

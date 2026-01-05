@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsImportVoucherItemRedemption model module.
  * @module model/CampaignsImportVoucherItemRedemption
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignsImportVoucherItemRedemption {
     /**

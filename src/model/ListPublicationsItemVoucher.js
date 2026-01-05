@@ -17,7 +17,7 @@ import Gift from './Gift';
 /**
  * The ListPublicationsItemVoucher model module.
  * @module model/ListPublicationsItemVoucher
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ListPublicationsItemVoucher {
     /**

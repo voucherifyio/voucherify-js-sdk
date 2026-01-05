@@ -16,7 +16,7 @@ import Discount from './Discount';
 /**
  * The MemberActivityDataRedemptionPromotionTierAction model module.
  * @module model/MemberActivityDataRedemptionPromotionTierAction
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataRedemptionPromotionTierAction {
     /**

@@ -16,7 +16,7 @@ import ProductCollectionsGetResponseBodyProductsItem from './ProductCollectionsG
 /**
  * The ProductCollectionsGetResponseBody model module.
  * @module model/ProductCollectionsGetResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ProductCollectionsGetResponseBody {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerLoyaltyCampaignsEntryValue model module.
  * @module model/CustomerLoyaltyCampaignsEntryValue
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomerLoyaltyCampaignsEntryValue {
     /**

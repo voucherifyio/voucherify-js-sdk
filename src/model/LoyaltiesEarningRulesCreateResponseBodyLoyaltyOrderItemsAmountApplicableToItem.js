@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem {
     /**

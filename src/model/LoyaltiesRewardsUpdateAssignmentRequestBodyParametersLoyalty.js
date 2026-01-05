@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty model module.
  * @module model/LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesRewardsUpdateAssignmentRequestBodyParametersLoyalty {
     /**

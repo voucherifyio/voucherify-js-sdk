@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientRedemptionsRedeemRequestBodyOptions model module.
  * @module model/ClientRedemptionsRedeemRequestBodyOptions
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ClientRedemptionsRedeemRequestBodyOptions {
     /**

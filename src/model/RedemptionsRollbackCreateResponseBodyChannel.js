@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsRollbackCreateResponseBodyChannel model module.
  * @module model/RedemptionsRollbackCreateResponseBodyChannel
- * @version 3.0.1
+ * @version 3.0.2
  */
 class RedemptionsRollbackCreateResponseBodyChannel {
     /**

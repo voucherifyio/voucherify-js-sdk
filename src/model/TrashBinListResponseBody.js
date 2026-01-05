@@ -16,7 +16,7 @@ import TrashBinItem from './TrashBinItem';
 /**
  * The TrashBinListResponseBody model module.
  * @module model/TrashBinListResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class TrashBinListResponseBody {
     /**

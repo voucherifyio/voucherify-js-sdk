@@ -16,7 +16,7 @@ import MemberActivityDataTransactionDetails from './MemberActivityDataTransactio
 /**
  * The MemberActivityDataTransaction model module.
  * @module model/MemberActivityDataTransaction
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransaction {
     /**
@@ -157,7 +157,7 @@ MemberActivityDataTransaction.prototype['voucher_id'] = undefined;
 MemberActivityDataTransaction.prototype['campaign_id'] = undefined;
 
 /**
-    * The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+    * The channel through which the transaction took place, whether through the API or the Dashboard. In case of a redemption, this value is null.
     * @type {String | undefined}
     */
 MemberActivityDataTransaction.prototype['source'] = undefined;

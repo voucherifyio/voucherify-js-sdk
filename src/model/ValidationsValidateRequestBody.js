@@ -20,12 +20,12 @@ import ValidationsValidateRequestBodyRedeemablesItem from './ValidationsValidate
 /**
  * The ValidationsValidateRequestBody model module.
  * @module model/ValidationsValidateRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ValidationsValidateRequestBody {
     /**
      * Constructs a new <code>ValidationsValidateRequestBody</code>.
-     * Response body schema for **POST** &#x60;v1/validations&#x60;.
+     * Request body schema for **POST** &#x60;v1/validations&#x60;.
      * @alias ValidationsValidateRequestBody
      */
     constructor() { 

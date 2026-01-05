@@ -16,7 +16,7 @@ import LoyaltyPointsBucketBucket from './LoyaltyPointsBucketBucket';
 /**
  * The LoyaltyPointsBucket model module.
  * @module model/LoyaltyPointsBucket
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltyPointsBucket {
     /**
@@ -143,7 +143,7 @@ LoyaltyPointsBucket.prototype['campaign_id'] = undefined;
 LoyaltyPointsBucket.prototype['bucket'] = undefined;
 
 /**
-    * Loyalty point point bucket status.
+    * Loyalty point bucket status.
     * @type {String | undefined}
     */
 LoyaltyPointsBucket.prototype['status'] = undefined;

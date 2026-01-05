@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsImportCsvCreateResponseBody model module.
  * @module model/CampaignsImportCsvCreateResponseBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CampaignsImportCsvCreateResponseBody {
     /**

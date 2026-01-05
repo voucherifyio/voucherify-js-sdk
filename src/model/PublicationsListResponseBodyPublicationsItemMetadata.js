@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PublicationsListResponseBodyPublicationsItemMetadata model module.
  * @module model/PublicationsListResponseBodyPublicationsItemMetadata
- * @version 3.0.1
+ * @version 3.0.2
  */
 class PublicationsListResponseBodyPublicationsItemMetadata {
     /**

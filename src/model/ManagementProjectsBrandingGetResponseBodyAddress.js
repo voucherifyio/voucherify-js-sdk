@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingGetResponseBodyAddress model module.
  * @module model/ManagementProjectsBrandingGetResponseBodyAddress
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ManagementProjectsBrandingGetResponseBodyAddress {
     /**

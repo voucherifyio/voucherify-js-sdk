@@ -16,7 +16,7 @@ import LoyaltiesTiersGetResponseBodyConfigPoints from './LoyaltiesTiersGetRespon
 /**
  * The LoyaltiesTiersGetResponseBodyConfig model module.
  * @module model/LoyaltiesTiersGetResponseBodyConfig
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesTiersGetResponseBodyConfig {
     /**

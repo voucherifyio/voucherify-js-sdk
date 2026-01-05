@@ -17,7 +17,7 @@ import ValidationsRedeemableSkippedResult from './ValidationsRedeemableSkippedRe
 /**
  * The ValidationsRedeemableSkipped model module.
  * @module model/ValidationsRedeemableSkipped
- * @version 3.0.1
+ * @version 3.0.2
  */
 class ValidationsRedeemableSkipped {
     /**

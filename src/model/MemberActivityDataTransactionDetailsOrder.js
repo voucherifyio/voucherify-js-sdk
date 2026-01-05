@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsOrder model module.
  * @module model/MemberActivityDataTransactionDetailsOrder
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataTransactionDetailsOrder {
     /**

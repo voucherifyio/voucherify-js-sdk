@@ -16,7 +16,7 @@ import LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomerMetadata from './Lo
 /**
  * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer
- * @version 3.0.1
+ * @version 3.0.2
  */
 class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomer {
     /**

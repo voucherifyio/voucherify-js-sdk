@@ -16,7 +16,7 @@ import MemberActivityDataBalanceRelatedObject from './MemberActivityDataBalanceR
 /**
  * The MemberActivityDataBalance model module.
  * @module model/MemberActivityDataBalance
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataBalance {
     /**

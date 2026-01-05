@@ -17,7 +17,7 @@ import AccessSettingsUnassign from './AccessSettingsUnassign';
 /**
  * The AccessSettings model module.
  * @module model/AccessSettings
- * @version 3.0.1
+ * @version 3.0.2
  */
 class AccessSettings {
     /**

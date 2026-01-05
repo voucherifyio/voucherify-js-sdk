@@ -1,6 +1,7 @@
 import expect from "expect.js";
 import * as voucherifyClient from "../src/index.js"
 import specUtils from "./spec_utils.js";
+import { VouchersCreateWithSpecificCodeRequestBody } from '../src';
 
 
 describe("VouchersAPI", function () {
@@ -8,6 +9,21 @@ describe("VouchersAPI", function () {
   const INITIAL_BALANCE = 1000;
   let createdCampaigns = [];
   let createdCustomers = [];
+  let voucherToBeUsedInAdvancedFiltering;
+
+  before(async function () {
+    const vouchersApi = new voucherifyClient.VouchersApi(specUtils.apiClient);
+
+    voucherToBeUsedInAdvancedFiltering = await vouchersApi.createVoucher(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15), VouchersCreateWithSpecificCodeRequestBody.constructFromObject({
+      "discount": {
+        "amount_off": 2000,
+        "type": "AMOUNT"
+      },
+      "redemption": {
+        "quantity": null
+      },
+    }));
+  })
 
   afterEach(async function () {
     if (specUtils.HAS_CREDENTIALS) {
@@ -67,7 +83,6 @@ describe("VouchersAPI", function () {
     const voucher = vouchersList.vouchers[0];
 
     expect(voucher.active).to.be(true);
-
 
     await vouchersApi.disableVoucher(voucher.code);
 
@@ -156,4 +171,29 @@ describe("VouchersAPI", function () {
     expect(updated).to.not.be(null);
     expect(updated.balance).to.be(INITIAL_BALANCE + amount);
   });
+
+  it("test_03_list_vouchers_with_advanced_filtering_then_delete_voucher", async function () {
+    const vouchersApi = new voucherifyClient.VouchersApi(specUtils.apiClient);
+
+    const vouchersListAdvancedFiltering = await vouchersApi.listVouchers({
+      filters: {
+        junction: "OR",
+        campaign_ids: {
+          conditions: {
+            $in: ['does-not-exist'],
+          }
+        },
+        code: {
+          conditions: {
+            $is: voucherToBeUsedInAdvancedFiltering.code,
+          }
+        }
+      }
+    });
+
+    expect(vouchersListAdvancedFiltering?.vouchers.length).to.be(1)
+    expect(vouchersListAdvancedFiltering?.vouchers?.[0]?.code).to.be(voucherToBeUsedInAdvancedFiltering.code)
+
+    await vouchersApi.deleteVoucher(voucherToBeUsedInAdvancedFiltering.code, { force: true });
+  })
 });

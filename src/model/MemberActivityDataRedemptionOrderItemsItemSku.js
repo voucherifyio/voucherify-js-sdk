@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionOrderItemsItemSku model module.
  * @module model/MemberActivityDataRedemptionOrderItemsItemSku
- * @version 3.0.1
+ * @version 3.0.2
  */
 class MemberActivityDataRedemptionOrderItemsItemSku {
     /**

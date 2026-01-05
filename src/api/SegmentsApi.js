@@ -20,7 +20,7 @@ import SegmentsGetResponseBody from '../model/SegmentsGetResponseBody';
 /**
 * Segments service.
 * @module api/SegmentsApi
-* @version 3.0.1
+* @version 3.0.2
 */
 export default class SegmentsApi {
 

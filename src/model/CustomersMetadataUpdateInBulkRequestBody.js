@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersMetadataUpdateInBulkRequestBody model module.
  * @module model/CustomersMetadataUpdateInBulkRequestBody
- * @version 3.0.1
+ * @version 3.0.2
  */
 class CustomersMetadataUpdateInBulkRequestBody {
     /**

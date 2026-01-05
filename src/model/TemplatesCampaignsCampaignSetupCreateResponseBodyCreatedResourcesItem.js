@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem
- * @version 3.0.1
+ * @version 3.0.2
  */
 class TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem {
     /**
