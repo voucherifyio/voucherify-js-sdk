@@ -22,7 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The PromotionsTiersEnableResponseBody model module.
  * @module model/PromotionsTiersEnableResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class PromotionsTiersEnableResponseBody {
     /**

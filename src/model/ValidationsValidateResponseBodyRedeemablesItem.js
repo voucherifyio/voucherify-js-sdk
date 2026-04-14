@@ -20,7 +20,7 @@ import ValidationsValidateResponseBodyRedeemablesItemResult from './ValidationsV
 /**
  * The ValidationsValidateResponseBodyRedeemablesItem model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ValidationsValidateResponseBodyRedeemablesItem {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardTransactionDetailsRollback model module.
  * @module model/LoyaltyCardTransactionDetailsRollback
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltyCardTransactionDetailsRollback {
     /**

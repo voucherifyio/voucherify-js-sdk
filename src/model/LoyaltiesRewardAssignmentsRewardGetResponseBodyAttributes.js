@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes model module.
  * @module model/LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes {
     /**

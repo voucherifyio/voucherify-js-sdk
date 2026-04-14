@@ -17,7 +17,7 @@ import RewardType from './RewardType';
 /**
  * The Reward model module.
  * @module model/Reward
- * @version 3.0.2
+ * @version 3.0.3
  */
 class Reward {
     /**

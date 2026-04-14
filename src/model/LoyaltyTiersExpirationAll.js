@@ -17,7 +17,7 @@ import LoyaltyTiersExpirationAllStartDate from './LoyaltyTiersExpirationAllStart
 /**
  * The LoyaltyTiersExpirationAll model module.
  * @module model/LoyaltyTiersExpirationAll
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltyTiersExpirationAll {
     /**

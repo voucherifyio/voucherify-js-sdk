@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodyChannel model module.
  * @module model/RedemptionsGetResponseBodyChannel
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionsGetResponseBodyChannel {
     /**

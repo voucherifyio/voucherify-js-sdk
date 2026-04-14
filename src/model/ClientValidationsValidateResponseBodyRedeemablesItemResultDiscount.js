@@ -18,7 +18,7 @@ import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**

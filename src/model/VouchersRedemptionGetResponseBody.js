@@ -16,7 +16,7 @@ import RedemptionEntry from './RedemptionEntry';
 /**
  * The VouchersRedemptionGetResponseBody model module.
  * @module model/VouchersRedemptionGetResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VouchersRedemptionGetResponseBody {
     /**

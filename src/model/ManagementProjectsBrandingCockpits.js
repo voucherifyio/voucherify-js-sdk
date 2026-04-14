@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingCockpits model module.
  * @module model/ManagementProjectsBrandingCockpits
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ManagementProjectsBrandingCockpits {
     /**

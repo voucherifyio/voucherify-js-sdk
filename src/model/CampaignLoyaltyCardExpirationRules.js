@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignLoyaltyCardExpirationRules model module.
  * @module model/CampaignLoyaltyCardExpirationRules
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CampaignLoyaltyCardExpirationRules {
     /**

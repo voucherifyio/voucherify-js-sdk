@@ -20,7 +20,7 @@ import Session from './Session';
 /**
  * The ClientValidationsValidateRequestBody model module.
  * @module model/ClientValidationsValidateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ClientValidationsValidateRequestBody {
     /**

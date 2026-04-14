@@ -24,7 +24,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltiesEarningRulesDisableResponseBody model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesEarningRulesDisableResponseBody {
     /**

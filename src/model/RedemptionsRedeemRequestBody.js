@@ -20,7 +20,7 @@ import Session from './Session';
 /**
  * The RedemptionsRedeemRequestBody model module.
  * @module model/RedemptionsRedeemRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionsRedeemRequestBody {
     /**

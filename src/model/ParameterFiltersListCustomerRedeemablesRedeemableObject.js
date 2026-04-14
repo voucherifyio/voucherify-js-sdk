@@ -16,7 +16,7 @@ import ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions from '.
 /**
  * The ParameterFiltersListCustomerRedeemablesRedeemableObject model module.
  * @module model/ParameterFiltersListCustomerRedeemablesRedeemableObject
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ParameterFiltersListCustomerRedeemablesRedeemableObject {
     /**

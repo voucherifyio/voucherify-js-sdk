@@ -20,7 +20,7 @@ import RedeemableLoyaltyCard from './RedeemableLoyaltyCard';
 /**
  * The RedeemableResult model module.
  * @module model/RedeemableResult
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedeemableResult {
     /**

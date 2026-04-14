@@ -16,7 +16,7 @@ import ExportsCreateRequestBodyParameters from './ExportsCreateRequestBodyParame
 /**
  * The ExportsCreateRequestBody model module.
  * @module model/ExportsCreateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ExportsCreateRequestBody {
     /**

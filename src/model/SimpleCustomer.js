@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleCustomer model module.
  * @module model/SimpleCustomer
- * @version 3.0.2
+ * @version 3.0.3
  */
 class SimpleCustomer {
     /**

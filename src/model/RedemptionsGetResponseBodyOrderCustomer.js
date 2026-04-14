@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodyOrderCustomer model module.
  * @module model/RedemptionsGetResponseBodyOrderCustomer
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionsGetResponseBodyOrderCustomer {
     /**

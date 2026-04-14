@@ -18,7 +18,7 @@ import Referrer from './Referrer';
 /**
  * The OrdersUpdateRequestBody model module.
  * @module model/OrdersUpdateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class OrdersUpdateRequestBody {
     /**

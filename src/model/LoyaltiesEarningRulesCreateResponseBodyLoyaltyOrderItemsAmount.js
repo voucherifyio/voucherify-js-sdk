@@ -16,7 +16,7 @@ import LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableT
 /**
  * The LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount {
     /**

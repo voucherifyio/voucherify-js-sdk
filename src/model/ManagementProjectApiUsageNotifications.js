@@ -16,7 +16,7 @@ import UsageNotifications from './UsageNotifications';
 /**
  * The ManagementProjectApiUsageNotifications model module.
  * @module model/ManagementProjectApiUsageNotifications
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ManagementProjectApiUsageNotifications {
     /**

@@ -17,7 +17,7 @@ import Order from './Order';
 /**
  * The LoyaltiesMembersRedemptionRedeemRequestBody model module.
  * @module model/LoyaltiesMembersRedemptionRedeemRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesMembersRedemptionRedeemRequestBody {
     /**

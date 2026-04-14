@@ -16,7 +16,7 @@ import EarningRuleLoyaltyOrderItemsAmountApplicableToItem from './EarningRuleLoy
 /**
  * The EarningRuleLoyaltyOrderItemsAmount model module.
  * @module model/EarningRuleLoyaltyOrderItemsAmount
- * @version 3.0.2
+ * @version 3.0.3
  */
 class EarningRuleLoyaltyOrderItemsAmount {
     /**

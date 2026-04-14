@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ApplicableToEffect.
  * @module model/ApplicableToEffect
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ApplicableToEffect {
     

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataOrderItemsItemSku model module.
  * @module model/MemberActivityDataOrderItemsItemSku
- * @version 3.0.2
+ * @version 3.0.3
  */
 class MemberActivityDataOrderItemsItemSku {
     /**

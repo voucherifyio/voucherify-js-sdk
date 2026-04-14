@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePublicationCampaign model module.
  * @module model/CreatePublicationCampaign
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CreatePublicationCampaign {
     /**

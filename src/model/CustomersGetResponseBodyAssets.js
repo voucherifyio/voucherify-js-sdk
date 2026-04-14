@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersGetResponseBodyAssets model module.
  * @module model/CustomersGetResponseBodyAssets
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CustomersGetResponseBodyAssets {
     /**

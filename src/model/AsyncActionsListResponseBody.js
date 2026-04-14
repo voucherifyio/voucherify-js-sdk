@@ -16,7 +16,7 @@ import AsyncActionBase from './AsyncActionBase';
 /**
  * The AsyncActionsListResponseBody model module.
  * @module model/AsyncActionsListResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class AsyncActionsListResponseBody {
     /**

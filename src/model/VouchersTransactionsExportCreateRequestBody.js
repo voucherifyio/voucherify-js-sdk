@@ -16,7 +16,7 @@ import VoucherTransactionsExportParameters from './VoucherTransactionsExportPara
 /**
  * The VouchersTransactionsExportCreateRequestBody model module.
  * @module model/VouchersTransactionsExportCreateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VouchersTransactionsExportCreateRequestBody {
     /**

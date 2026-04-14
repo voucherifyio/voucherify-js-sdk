@@ -42,7 +42,7 @@ import VouchersUpdateResponseBody from '../model/VouchersUpdateResponseBody';
 /**
 * Vouchers service.
 * @module api/VouchersApi
-* @version 3.0.2
+* @version 3.0.3
 */
 export default class VouchersApi {
 

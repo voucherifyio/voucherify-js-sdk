@@ -16,7 +16,7 @@ import SimpleOrderItem from './SimpleOrderItem';
 /**
  * The SimpleOrder model module.
  * @module model/SimpleOrder
- * @version 3.0.2
+ * @version 3.0.3
  */
 class SimpleOrder {
     /**

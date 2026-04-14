@@ -16,7 +16,7 @@ import ManagementProjectsMetadataSchemaDefinition from './ManagementProjectsMeta
 /**
  * The ManagementProjectsMetadataSchemasUpdateRequestBody model module.
  * @module model/ManagementProjectsMetadataSchemasUpdateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ManagementProjectsMetadataSchemasUpdateRequestBody {
     /**

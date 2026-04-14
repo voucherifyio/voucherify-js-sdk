@@ -16,7 +16,7 @@ import SimpleSegment from './SimpleSegment';
 /**
  * The CustomersSegmentsListResponseBody model module.
  * @module model/CustomersSegmentsListResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CustomersSegmentsListResponseBody {
     /**

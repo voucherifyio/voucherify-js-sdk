@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerAddress model module.
  * @module model/CustomerAddress
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CustomerAddress {
     /**

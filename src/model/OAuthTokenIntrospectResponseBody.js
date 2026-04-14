@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OAuthTokenIntrospectResponseBody model module.
  * @module model/OAuthTokenIntrospectResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class OAuthTokenIntrospectResponseBody {
     /**

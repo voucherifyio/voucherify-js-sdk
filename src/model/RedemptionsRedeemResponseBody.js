@@ -19,7 +19,7 @@ import ValidationsRedeemableSkipped from './ValidationsRedeemableSkipped';
 /**
  * The RedemptionsRedeemResponseBody model module.
  * @module model/RedemptionsRedeemResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionsRedeemResponseBody {
     /**

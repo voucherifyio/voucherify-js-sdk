@@ -17,7 +17,7 @@ import RewardsCreateResponseBodyAttributes from './RewardsCreateResponseBodyAttr
 /**
  * The RewardsCreateResponseBody model module.
  * @module model/RewardsCreateResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RewardsCreateResponseBody {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsSegment model module.
  * @module model/MemberActivityDataTransactionDetailsSegment
- * @version 3.0.2
+ * @version 3.0.3
  */
 class MemberActivityDataTransactionDetailsSegment {
     /**

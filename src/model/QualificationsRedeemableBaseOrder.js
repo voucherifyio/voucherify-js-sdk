@@ -19,7 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The QualificationsRedeemableBaseOrder model module.
  * @module model/QualificationsRedeemableBaseOrder
- * @version 3.0.2
+ * @version 3.0.3
  */
 class QualificationsRedeemableBaseOrder {
     /**

@@ -16,7 +16,7 @@ import LoyaltyCampaign from './LoyaltyCampaign';
 /**
  * The LoyaltiesListCampaignsResponseBody model module.
  * @module model/LoyaltiesListCampaignsResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesListCampaignsResponseBody {
     /**

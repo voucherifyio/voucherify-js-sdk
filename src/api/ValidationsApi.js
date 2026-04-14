@@ -19,7 +19,7 @@ import ValidationsValidateResponseBody from '../model/ValidationsValidateRespons
 /**
 * Validations service.
 * @module api/ValidationsApi
-* @version 3.0.2
+* @version 3.0.3
 */
 export default class ValidationsApi {
 

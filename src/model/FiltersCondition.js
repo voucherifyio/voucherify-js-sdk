@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FiltersCondition model module.
  * @module model/FiltersCondition
- * @version 3.0.2
+ * @version 3.0.3
  */
 class FiltersCondition {
     /**

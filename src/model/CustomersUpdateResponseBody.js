@@ -20,7 +20,7 @@ import CustomersUpdateResponseBodyAssets from './CustomersUpdateResponseBodyAsse
 /**
  * The CustomersUpdateResponseBody model module.
  * @module model/CustomersUpdateResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CustomersUpdateResponseBody {
     /**
