@@ -1,18 +1,39 @@
 import expect from "expect.js";
-import * as voucherifyClient from "../src/index.js"
+import * as voucherifyClient from "../src/index.js";
+import { VouchersCreateWithSpecificCodeRequestBody } from "../src";
 import specUtils from "./spec_utils.js";
 
-// Store voucher code retrieved from qualifications
-let voucherCode = null;
+const randomCode = Math.floor(Math.random() * 10000000);
+const VOUCHER_CODE = `qual_test_voucher_${randomCode}`;
+
+const QUALIFICATIONS_RETRY_ATTEMPTS = 10;
+const QUALIFICATIONS_RETRY_DELAY_MS = 500;
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe("QualificationsAPI", function () {
-  // Setup: retrieve a voucher code using qualifications API
+  let voucherCode = null;
+
   before(async function () {
+    const vouchersApi = new voucherifyClient.VouchersApi(specUtils.apiClient);
     const qualificationsApi = new voucherifyClient.QualificationsApi(
       specUtils.apiClient,
     );
 
-    // Prepare eligibility check request
+    const voucher = await vouchersApi.createVoucher(
+      VOUCHER_CODE,
+      VouchersCreateWithSpecificCodeRequestBody.constructFromObject({
+        discount: {
+          amount_off: 1000,
+          type: "AMOUNT",
+        },
+        redemption: {
+          quantity: null,
+        },
+      }),
+    );
+    voucherCode = voucher.code;
+
     const qualificationsCheckEligibilityRequestBody =
       new voucherifyClient.QualificationsCheckEligibilityRequestBody();
     qualificationsCheckEligibilityRequestBody.scenario = "ALL";
@@ -27,11 +48,42 @@ describe("QualificationsAPI", function () {
 
     qualificationsCheckEligibilityRequestBody.options = options;
 
-    // Check eligibility and store the first voucher code
-    const qualifications = await qualificationsApi.checkEligibility(
-      qualificationsCheckEligibilityRequestBody,
-    );
-    voucherCode = qualifications.redeemables.data[0].id;
+    let sawVoucherInQualifications = false;
+    for (let attempt = 0; attempt < QUALIFICATIONS_RETRY_ATTEMPTS; attempt++) {
+      if (attempt > 0) {
+        await sleep(QUALIFICATIONS_RETRY_DELAY_MS);
+      }
+      const qualifications = await qualificationsApi.checkEligibility(
+        qualificationsCheckEligibilityRequestBody,
+      );
+      const rows = qualifications.redeemables?.data;
+      if (rows?.length) {
+        sawVoucherInQualifications = rows.some((row) => row.id === voucherCode);
+        if (sawVoucherInQualifications) {
+          break;
+        }
+      }
+    }
+
+    if (!sawVoucherInQualifications) {
+      throw new Error(
+        `Qualifications did not return voucher ${voucherCode} after ${QUALIFICATIONS_RETRY_ATTEMPTS} attempts`,
+      );
+    }
+  });
+
+  after(async function () {
+    if (!specUtils.HAS_CREDENTIALS || !voucherCode) {
+      return;
+    }
+    const vouchersApi = new voucherifyClient.VouchersApi(specUtils.apiClient);
+    try {
+      await vouchersApi.deleteVoucher(voucherCode, { force: true });
+    } catch (e) {
+      if (e.status !== 404) {
+        console.log(`Failed to delete voucher ${voucherCode}: ${e}`);
+      }
+    }
   });
 
   it("test_01_check_if_voucher_code_was_returned", function () {
@@ -43,7 +95,6 @@ describe("QualificationsAPI", function () {
       specUtils.apiClient,
     );
 
-    // Prepare a validation request with the voucher from qualifications
     const validationsValidateRequestBody =
       new voucherifyClient.ValidationsValidateRequestBody();
 
@@ -53,21 +104,21 @@ describe("QualificationsAPI", function () {
     redeemableItem.object = "voucher";
 
     validationsValidateRequestBody.redeemables = [redeemableItem];
+    validationsValidateRequestBody.customer = null;
 
     const order = new voucherifyClient.Order();
-    order.amount = 30000;
-    order.metadata = { key_customer: "test" };
+    order.amount = 20000;
     validationsValidateRequestBody.order = order;
 
-    validationsValidateRequestBody.metadata = { key: "value" };
-
-    // Validate the voucher
     const result = await validationsApi.validateStackedDiscounts(
       validationsValidateRequestBody,
     );
 
-    // Verify validation is successful
     expect(result).to.not.be(null);
     expect(result.valid).to.be(true);
+    expect(result.redeemables).to.not.be(null);
+    expect(result.order).to.not.be(null);
+    expect(result.order.amount).to.be(20000);
+    expect(result.order.total_amount).to.be(20000 - 1000);
   });
 });
