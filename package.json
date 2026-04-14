@@ -68,7 +68,7 @@
     "expect.js": "0.3.1",
     "mocha": "11.7.4",
     "prettier": "3.4.2",
-    "rollup": "4.52.4"
+    "rollup": "4.59.0"
   },
   "files": [
     "dist",
