@@ -16,7 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListLocationsName model module.
  * @module model/ParameterFiltersListLocationsName
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ParameterFiltersListLocationsName {
     /**

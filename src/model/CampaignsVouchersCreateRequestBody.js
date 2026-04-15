@@ -16,7 +16,7 @@ import CampaignsVouchersCreateRequestBodyRedemption from './CampaignsVouchersCre
 /**
  * The CampaignsVouchersCreateRequestBody model module.
  * @module model/CampaignsVouchersCreateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CampaignsVouchersCreateRequestBody {
     /**

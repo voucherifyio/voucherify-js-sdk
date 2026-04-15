@@ -28,7 +28,7 @@ import ParameterOrderListOrders from '../model/ParameterOrderListOrders';
 /**
 * Orders service.
 * @module api/OrdersApi
-* @version 3.0.2
+* @version 3.0.3
 */
 export default class OrdersApi {
 

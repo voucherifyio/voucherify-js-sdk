@@ -19,7 +19,7 @@ import QualificationsOption from './QualificationsOption';
 /**
  * The ClientQualificationsCheckEligibilityRequestBody model module.
  * @module model/ClientQualificationsCheckEligibilityRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ClientQualificationsCheckEligibilityRequestBody {
     /**

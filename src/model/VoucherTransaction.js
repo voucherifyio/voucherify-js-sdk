@@ -16,7 +16,7 @@ import VoucherTransactionDetails from './VoucherTransactionDetails';
 /**
  * The VoucherTransaction model module.
  * @module model/VoucherTransaction
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VoucherTransaction {
     /**

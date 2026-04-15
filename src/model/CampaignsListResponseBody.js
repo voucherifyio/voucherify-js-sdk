@@ -16,7 +16,7 @@ import CampaignBase from './CampaignBase';
 /**
  * The CampaignsListResponseBody model module.
  * @module model/CampaignsListResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CampaignsListResponseBody {
     /**

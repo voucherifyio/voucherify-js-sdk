@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersImportCreateItemRequestBodyRedemption model module.
  * @module model/VouchersImportCreateItemRequestBodyRedemption
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VouchersImportCreateItemRequestBodyRedemption {
     /**

@@ -186,7 +186,7 @@ This SDK is auto-generated (except for tests), so changes made here will be over
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.2).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.3).
 
 ## 🔐 Authorization
 
@@ -287,6 +287,14 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-04-14** - `3.0.3`:
+    - Bumped brace-expansion from 1.1.12 to 1.1.13
+    - Bumped picomatch
+    - Bumped flatted from 3.3.3 to 3.4.2
+    - Bumped rollup from 4.52.4 to 4.59.0
+    - Bumped qs from 6.14.1 to 6.15.1
+    - Bumped minimatch
+    - Updated the Qualification test to remove dependency with other tests
 - **2025-12-31** - `3.0.2`:
     - Added the `AUTO_UPDATE` enum value to the `type` property in the `ProductCollectionsCreateRequestBody` model.
     - Added support for the new `filters` query parameter in the `listVouchers` method of `VouchersApi` (GET /v1/vouchers).

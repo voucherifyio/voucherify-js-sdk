@@ -18,7 +18,7 @@ import RedemptionsListResponseBodyRedemptionsItemOrderItemsItemSku from './Redem
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrderItemsItem model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrderItemsItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionsListResponseBodyRedemptionsItemOrderItemsItem {
     /**

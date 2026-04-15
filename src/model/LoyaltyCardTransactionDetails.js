@@ -29,7 +29,7 @@ import VoucherBalance from './VoucherBalance';
 /**
  * The LoyaltyCardTransactionDetails model module.
  * @module model/LoyaltyCardTransactionDetails
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltyCardTransactionDetails {
     /**

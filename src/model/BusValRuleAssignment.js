@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BusValRuleAssignment model module.
  * @module model/BusValRuleAssignment
- * @version 3.0.2
+ * @version 3.0.3
  */
 class BusValRuleAssignment {
     /**

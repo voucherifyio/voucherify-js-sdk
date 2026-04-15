@@ -16,7 +16,7 @@ import PromotionsStacksUpdateRequestBodyTiers from './PromotionsStacksUpdateRequ
 /**
  * The PromotionsStacksUpdateRequestBody model module.
  * @module model/PromotionsStacksUpdateRequestBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class PromotionsStacksUpdateRequestBody {
     /**

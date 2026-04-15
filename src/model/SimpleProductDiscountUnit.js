@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleProductDiscountUnit model module.
  * @module model/SimpleProductDiscountUnit
- * @version 3.0.2
+ * @version 3.0.3
  */
 class SimpleProductDiscountUnit {
     /**

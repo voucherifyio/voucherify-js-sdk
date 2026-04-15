@@ -17,7 +17,7 @@ import PromotionsTiersGetResponseBodySummaryRedemptions from './PromotionsTiersG
 /**
  * The PromotionsTiersGetResponseBodySummary model module.
  * @module model/PromotionsTiersGetResponseBodySummary
- * @version 3.0.2
+ * @version 3.0.3
  */
 class PromotionsTiersGetResponseBodySummary {
     /**

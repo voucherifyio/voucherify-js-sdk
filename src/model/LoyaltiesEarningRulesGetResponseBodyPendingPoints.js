@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesGetResponseBodyPendingPoints model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyPendingPoints
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesEarningRulesGetResponseBodyPendingPoints {
     /**

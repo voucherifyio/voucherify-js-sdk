@@ -19,7 +19,7 @@ import ManagementProjectsBrandingGetResponseBodyContact from './ManagementProjec
 /**
  * The ManagementProjectsBrandingGetResponseBody model module.
  * @module model/ManagementProjectsBrandingGetResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ManagementProjectsBrandingGetResponseBody {
     /**

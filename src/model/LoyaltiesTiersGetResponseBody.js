@@ -19,7 +19,7 @@ import MappingPoints from './MappingPoints';
 /**
  * The LoyaltiesTiersGetResponseBody model module.
  * @module model/LoyaltiesTiersGetResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesTiersGetResponseBody {
     /**

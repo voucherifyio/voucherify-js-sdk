@@ -17,7 +17,7 @@ import ExportResult from './ExportResult';
 /**
  * The Export model module.
  * @module model/Export
- * @version 3.0.2
+ * @version 3.0.3
  */
 class Export {
     /**

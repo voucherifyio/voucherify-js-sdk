@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesTiersGetResponseBodyPoints model module.
  * @module model/LoyaltiesTiersGetResponseBodyPoints
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesTiersGetResponseBodyPoints {
     /**

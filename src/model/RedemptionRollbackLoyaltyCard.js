@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionRollbackLoyaltyCard model module.
  * @module model/RedemptionRollbackLoyaltyCard
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionRollbackLoyaltyCard {
     /**

@@ -16,7 +16,7 @@ import ApplicableTo from './ApplicableTo';
 /**
  * The ApplicableToResultList model module.
  * @module model/ApplicableToResultList
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ApplicableToResultList {
     /**

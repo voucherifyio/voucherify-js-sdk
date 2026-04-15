@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionOrderReferrer model module.
  * @module model/RedemptionOrderReferrer
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionOrderReferrer {
     /**

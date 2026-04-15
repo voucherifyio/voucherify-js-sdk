@@ -16,7 +16,7 @@ import ProductCollectionsItemProductsItem from './ProductCollectionsItemProducts
 /**
  * The ProductCollectionsItem model module.
  * @module model/ProductCollectionsItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ProductCollectionsItem {
     /**

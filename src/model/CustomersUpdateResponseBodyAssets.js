@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersUpdateResponseBodyAssets model module.
  * @module model/CustomersUpdateResponseBodyAssets
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CustomersUpdateResponseBodyAssets {
     /**

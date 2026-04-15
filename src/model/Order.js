@@ -16,7 +16,7 @@ import OrderItem from './OrderItem';
 /**
  * The Order model module.
  * @module model/Order
- * @version 3.0.2
+ * @version 3.0.3
  */
 class Order {
     /**

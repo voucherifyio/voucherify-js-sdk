@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PromotionStackBaseTiers model module.
  * @module model/PromotionStackBaseTiers
- * @version 3.0.2
+ * @version 3.0.3
  */
 class PromotionStackBaseTiers {
     /**

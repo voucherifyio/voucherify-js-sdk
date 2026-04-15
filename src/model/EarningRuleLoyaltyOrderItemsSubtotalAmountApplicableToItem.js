@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem model module.
  * @module model/EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem {
     /**

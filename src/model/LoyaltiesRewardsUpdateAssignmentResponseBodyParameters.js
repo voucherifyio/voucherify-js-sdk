@@ -16,7 +16,7 @@ import LoyaltiesRewardsUpdateAssignmentResponseBodyParametersLoyalty from './Loy
 /**
  * The LoyaltiesRewardsUpdateAssignmentResponseBodyParameters model module.
  * @module model/LoyaltiesRewardsUpdateAssignmentResponseBodyParameters
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesRewardsUpdateAssignmentResponseBodyParameters {
     /**

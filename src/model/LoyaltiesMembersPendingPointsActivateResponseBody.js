@@ -16,7 +16,7 @@ import LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject from './Lo
 /**
  * The LoyaltiesMembersPendingPointsActivateResponseBody model module.
  * @module model/LoyaltiesMembersPendingPointsActivateResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesMembersPendingPointsActivateResponseBody {
     /**

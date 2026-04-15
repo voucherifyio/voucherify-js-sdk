@@ -16,7 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListRedemptionsCustomerId model module.
  * @module model/ParameterFiltersListRedemptionsCustomerId
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ParameterFiltersListRedemptionsCustomerId {
     /**

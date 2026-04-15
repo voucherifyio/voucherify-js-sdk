@@ -17,7 +17,7 @@ import Junction from './Junction';
 /**
  * The ParametersFiltersListCampaignTransactions model module.
  * @module model/ParametersFiltersListCampaignTransactions
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ParametersFiltersListCampaignTransactions {
     /**

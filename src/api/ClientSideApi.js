@@ -27,7 +27,7 @@ import ParameterOrderListPromotionTiersClientSide from '../model/ParameterOrderL
 /**
 * ClientSide service.
 * @module api/ClientSideApi
-* @version 3.0.2
+* @version 3.0.3
 */
 export default class ClientSideApi {
 

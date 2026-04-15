@@ -18,7 +18,7 @@ import ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct from 
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultDiscount model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultDiscount
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**

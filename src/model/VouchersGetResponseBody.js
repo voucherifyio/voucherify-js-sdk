@@ -25,7 +25,7 @@ import VouchersGetResponseBodyRedemption from './VouchersGetResponseBodyRedempti
 /**
  * The VouchersGetResponseBody model module.
  * @module model/VouchersGetResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VouchersGetResponseBody {
     /**

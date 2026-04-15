@@ -24,7 +24,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The EarningRule model module.
  * @module model/EarningRule
- * @version 3.0.2
+ * @version 3.0.3
  */
 class EarningRule {
     /**

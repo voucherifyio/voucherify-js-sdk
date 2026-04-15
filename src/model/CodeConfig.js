@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CodeConfig model module.
  * @module model/CodeConfig
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CodeConfig {
     /**

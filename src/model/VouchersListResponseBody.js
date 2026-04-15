@@ -16,7 +16,7 @@ import VoucherWithCategories from './VoucherWithCategories';
 /**
  * The VouchersListResponseBody model module.
  * @module model/VouchersListResponseBody
- * @version 3.0.2
+ * @version 3.0.3
  */
 class VouchersListResponseBody {
     /**

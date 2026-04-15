@@ -16,7 +16,7 @@ import FilterConditionsDateTime from './FilterConditionsDateTime';
 /**
  * The ParameterFiltersListCampaignsCreatedDate model module.
  * @module model/ParameterFiltersListCampaignsCreatedDate
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ParameterFiltersListCampaignsCreatedDate {
     /**

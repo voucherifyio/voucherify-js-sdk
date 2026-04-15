@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks model module.
  * @module model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks {
     /**

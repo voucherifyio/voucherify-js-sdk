@@ -17,7 +17,7 @@ import LoyaltyCardTransactionsType from './LoyaltyCardTransactionsType';
 /**
  * The LoyaltyCardTransaction model module.
  * @module model/LoyaltyCardTransaction
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltyCardTransaction {
     /**

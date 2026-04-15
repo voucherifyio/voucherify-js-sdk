@@ -17,7 +17,7 @@ import RewardAssignment from './RewardAssignment';
 /**
  * The LoyaltiesMembersRewardsListResponseBodyDataItem model module.
  * @module model/LoyaltiesMembersRewardsListResponseBodyDataItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class LoyaltiesMembersRewardsListResponseBodyDataItem {
     /**

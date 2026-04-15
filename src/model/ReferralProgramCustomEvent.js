@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralProgramCustomEvent model module.
  * @module model/ReferralProgramCustomEvent
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ReferralProgramCustomEvent {
     /**

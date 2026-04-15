@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleVoucherRedemption model module.
  * @module model/SimpleVoucherRedemption
- * @version 3.0.2
+ * @version 3.0.3
  */
 class SimpleVoucherRedemption {
     /**

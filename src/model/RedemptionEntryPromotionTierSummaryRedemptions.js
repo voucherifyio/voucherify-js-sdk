@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryPromotionTierSummaryRedemptions model module.
  * @module model/RedemptionEntryPromotionTierSummaryRedemptions
- * @version 3.0.2
+ * @version 3.0.3
  */
 class RedemptionEntryPromotionTierSummaryRedemptions {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions
- * @version 3.0.2
+ * @version 3.0.3
  */
 class CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions {
     /**

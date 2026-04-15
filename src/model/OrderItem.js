@@ -17,7 +17,7 @@ import OrderItemSku from './OrderItemSku';
 /**
  * The OrderItem model module.
  * @module model/OrderItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class OrderItem {
     /**

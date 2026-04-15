@@ -17,7 +17,7 @@ import ClientRedemptionsRedeemRequestBodyRedeemablesItemReward from './ClientRed
 /**
  * The ClientRedemptionsRedeemRequestBodyRedeemablesItem model module.
  * @module model/ClientRedemptionsRedeemRequestBodyRedeemablesItem
- * @version 3.0.2
+ * @version 3.0.3
  */
 class ClientRedemptionsRedeemRequestBodyRedeemablesItem {
     /**
