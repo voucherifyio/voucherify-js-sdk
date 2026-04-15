@@ -5,7 +5,16 @@ import * as voucherifyClient from "../src/index.js"
 dotenv.config();
 
 // API configuration
-const HOST = process.env.VOUCHERIFY_HOST || "https://api.voucherify.io";
+const normalizeHost = (host) => {
+  const sanitized = (host || "https://api.voucherify.io")
+    .trim()
+    .replace(/\/+$/, "");
+
+  // API methods already include "/v1" in paths, so avoid duplicate "/v1/v1".
+  return sanitized.replace(/\/v1$/i, "");
+};
+
+const HOST = normalizeHost(process.env.VOUCHERIFY_HOST);
 const X_APP_ID = process.env.X_APP_ID;
 const X_APP_TOKEN = process.env.X_APP_TOKEN;
 
