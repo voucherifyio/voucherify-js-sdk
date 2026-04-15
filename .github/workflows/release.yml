@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
         with:
           fetch-depth: 100
 
       - name: Setup Node.js 22.16.0
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.16.0
           registry-url: "https://registry.npmjs.org"
