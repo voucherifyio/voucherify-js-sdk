@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "Node16",
     "allowJs": true,
     "checkJs": false,
     "declaration": true,
     "emitDeclarationOnly": true,
+    "rootDir": "./src",
     "outDir": "./dist/types",
     "strict": false,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "esModuleInterop": true
   },
   "include": [
