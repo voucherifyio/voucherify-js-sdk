@@ -283,6 +283,9 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-08-26** - `3.0.4`:
+    - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
+    - Aligned generated models with the latest OpenAPI definition (including `ADD_SAME_ITEMS` discount effect, `cockpitPreferenceCenterUrl` on customer assets, segment `updatedAt`, and related schema updates not yet present in `3.0.3`).
 - **2026-04-14** - `3.0.3`:
     - Bumped brace-expansion from 1.1.12 to 1.1.13
     - Bumped picomatch
