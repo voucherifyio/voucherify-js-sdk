@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject model module.
  * @module model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject {
     /**

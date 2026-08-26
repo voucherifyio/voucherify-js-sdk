@@ -18,7 +18,7 @@ import EventsCreateRequestBodyReferral from './EventsCreateRequestBodyReferral';
 /**
  * The EventsCreateRequestBody model module.
  * @module model/EventsCreateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class EventsCreateRequestBody {
     /**

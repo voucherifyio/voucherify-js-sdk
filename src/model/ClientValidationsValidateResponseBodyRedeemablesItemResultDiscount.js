@@ -18,7 +18,7 @@ import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**
@@ -352,7 +352,13 @@ ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['fi
          * value: "ADD_MANY_ITEMS"
          * @constant
          */
-        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS"    
+        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS",
+    
+        /**
+         * value: "ADD_SAME_ITEMS"
+         * @constant
+         */
+        "ADD_SAME_ITEMS": "ADD_SAME_ITEMS"    
     };
 
 

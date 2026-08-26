@@ -26,7 +26,7 @@ import PublicationsListResponseBody from '../model/PublicationsListResponseBody'
 /**
 * Publications service.
 * @module api/PublicationsApi
-* @version 3.0.3
+* @version 3.0.4
 */
 export default class PublicationsApi {
 
@@ -52,7 +52,7 @@ export default class PublicationsApi {
 
     /**
      * Create Publication
-     * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish.    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.
+     * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.   <Warning> <Badge color yellow>Clearly define the source of the voucher</Badge> You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code. </Warning> <Warning> <Badge color yellow>Publish multiple vouchers</Badge> In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish. </Warning> <Note> <Badge color blue>Auto-update campaign</Badge> In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign. </Note>
      * @param {PublicationsCreateRequestBody} publicationsCreateRequestBody Specify the publication parameters.
      * @param {{
         joinOnce?: Boolean,
@@ -97,8 +97,8 @@ export default class PublicationsApi {
 
     /**
      * Create Publication with GET
-     * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.  ❗️ Limited access  Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &rarr; **Project Settings** &rarr; **General** &rarr; **Integration Keys** to set up a pair of API keys and use them to send the request.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication).    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.   # Example Request      ❗️ Required    Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped.
-     * @param {Customer} customer Contains information about the customer to whom the publication was directed.
+     * This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet. <Danger> <Badge color red>Limited access</Badge> Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &rarr; **Project Settings** &rarr; **General** &rarr; **Integration Keys** to set up a pair of API keys and use them to send the request. </Danger> <Warning> <Badge color yellow>Clearly define the source of the voucher</Badge> You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code. </Warning> <Warning> <Badge color yellow>Publish multiple vouchers</Badge> This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication). </Warning> <Note> <Badge color blue>Auto-update campaign</Badge> In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign. </Note> # Example Request     <Danger> <Badge color red>Required</Badge> Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped. </Danger>
+     * @param {Customer} customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required.
      * @param {{
         joinOnce?: Boolean,
         voucher?: String,
@@ -151,7 +151,7 @@ export default class PublicationsApi {
 
     /**
      * List Publications
-     * Retrieve a list of publications. To return a **particular** publication, you can use the source_id query parameter and provide the source_id of the publication you are looking for specifically. # Pagination  🚧 Important!  If you want to scroll through a huge set of records, it is recommended to use the [Exports API](/api-reference/exports/create-export). This API will return an error page_over_limit if you reach a page above 1000. # Filter Query The filters query parameter allows for joining multiple parameters with logical operators. The syntax looks as follows:  ## Examples  
+     * Retrieve a list of publications. To return a **particular** publication, you can use the source_id query parameter and provide the source_id of the publication you are looking for specifically. # Pagination <Warning> <Badge color yellow>Important!</Badge> If you want to scroll through a huge set of records, it is recommended to use the [Exports API](/api-reference/exports/create-export). This API will return an error page_over_limit if you reach a page above 1000. </Warning> # Filter Query The filters query parameter allows for joining multiple parameters with logical operators. The syntax looks as follows:  ## Examples  
      * @param {{
         limit?: Number,
         page?: Number,

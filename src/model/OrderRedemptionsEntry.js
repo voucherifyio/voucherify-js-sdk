@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrderRedemptionsEntry model module.
  * @module model/OrderRedemptionsEntry
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OrderRedemptionsEntry {
     /**

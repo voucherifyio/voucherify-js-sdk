@@ -32,7 +32,7 @@ import ParameterFiltersListCampaignsVoucherType from './ParameterFiltersListCamp
 /**
  * The ParameterFiltersListCampaigns model module.
  * @module model/ParameterFiltersListCampaigns
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListCampaigns {
     /**

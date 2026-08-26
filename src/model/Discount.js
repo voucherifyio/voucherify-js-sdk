@@ -18,7 +18,7 @@ import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
 /**
  * The Discount model module.
  * @module model/Discount
- * @version 3.0.3
+ * @version 3.0.4
  */
 class Discount {
     /**
@@ -352,7 +352,13 @@ Discount.prototype['fixed_amount_formula'] = undefined;
          * value: "ADD_MANY_ITEMS"
          * @constant
          */
-        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS"    
+        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS",
+    
+        /**
+         * value: "ADD_SAME_ITEMS"
+         * @constant
+         */
+        "ADD_SAME_ITEMS": "ADD_SAME_ITEMS"    
     };
 
 

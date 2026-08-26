@@ -16,7 +16,7 @@ import MetadataSchemaDefinitionDeprecated from './MetadataSchemaDefinitionDeprec
 /**
  * The MetadataSchemasGetResponseBody model module.
  * @module model/MetadataSchemasGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MetadataSchemasGetResponseBody {
     /**

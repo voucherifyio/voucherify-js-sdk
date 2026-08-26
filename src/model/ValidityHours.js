@@ -16,7 +16,7 @@ import ValidityHoursDailyItem from './ValidityHoursDailyItem';
 /**
  * The ValidityHours model module.
  * @module model/ValidityHours
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidityHours {
     /**

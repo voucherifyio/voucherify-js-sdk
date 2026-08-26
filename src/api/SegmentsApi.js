@@ -20,7 +20,7 @@ import SegmentsGetResponseBody from '../model/SegmentsGetResponseBody';
 /**
 * Segments service.
 * @module api/SegmentsApi
-* @version 3.0.3
+* @version 3.0.4
 */
 export default class SegmentsApi {
 
@@ -46,7 +46,7 @@ export default class SegmentsApi {
 
     /**
      * Create Segment
-     * Create a customer segment.  🚧 Limit on static segments  There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment.  🚧 Limit on Active and Passive segments  You can create a maximum of 100 passive and active segments.
+     * Create a customer segment. <Warning> <Badge color yellow>Limit on static segments</Badge> There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment. </Warning> <Warning> <Badge color yellow>Limit on Active and Passive segments</Badge> You can create a maximum of 100 passive and active segments. </Warning>
      * @param {SegmentsCreateRequestBody} segmentsCreateRequestBody Specify the boundary conditions for the customer segment.
      * @param {createSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link SegmentsCreateResponseBody}
@@ -126,7 +126,7 @@ export default class SegmentsApi {
 
     /**
      * Get Segment
-     * Retrieves the segment with a given segment ID.
+     * Retrieves the segment with a given segment ID. This method doesnt return the customers that belong to the segment. To return a list of customers who belong to a segment, use [GET List customers](/api-reference/customers/list-customers) endpoint with the segment_id query parameter.
      * @param {String} segmentId A unique customer segment ID.
      * @param {getSegmentCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link SegmentsGetResponseBody}

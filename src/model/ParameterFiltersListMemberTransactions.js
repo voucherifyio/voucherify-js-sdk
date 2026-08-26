@@ -17,7 +17,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListMemberTransactions model module.
  * @module model/ParameterFiltersListMemberTransactions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListMemberTransactions {
     /**

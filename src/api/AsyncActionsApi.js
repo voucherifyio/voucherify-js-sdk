@@ -19,7 +19,7 @@ import AsyncActionsListResponseBody from '../model/AsyncActionsListResponseBody'
 /**
 * AsyncActions service.
 * @module api/AsyncActionsApi
-* @version 3.0.3
+* @version 3.0.4
 */
 export default class AsyncActionsApi {
 
@@ -45,7 +45,7 @@ export default class AsyncActionsApi {
 
     /**
      * Get Async Action
-     * Check the result of a scheduled asynchronous operation.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action. If you would like to learn more about importing data into Voucherify, read more [here](https://support.voucherify.io/article/574-data-import).       
+     * Check the result of a scheduled asynchronous operation.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action.        
      * @param {String} asyncActionId Unique ID of the asynchronous operation.
      * @param {getAsyncActionCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link AsyncActionGetResponseBody}
@@ -86,7 +86,7 @@ export default class AsyncActionsApi {
 
     /**
      * List Async Actions
-     * Track asynchronous operations scheduled in your project.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action. If you would like to learn more about importing data into Voucherify, read more [here](https://support.voucherify.io/article/574-data-import).       
+     * Track asynchronous operations scheduled in your project.   The table below lists the possible types of async actions. The types are different for each endpoint generating the async action.       
      * @param {{
         limit?: Number,
         endDate?: Date,

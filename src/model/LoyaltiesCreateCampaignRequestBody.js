@@ -19,7 +19,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltiesCreateCampaignRequestBody model module.
  * @module model/LoyaltiesCreateCampaignRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesCreateCampaignRequestBody {
     /**
@@ -189,7 +189,7 @@ LoyaltiesCreateCampaignRequestBody.prototype['name'] = undefined;
 LoyaltiesCreateCampaignRequestBody.prototype['description'] = undefined;
 
 /**
-    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
+    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: the campaign is a generic (standalone) one with a single voucher for public use (only for discount and gift card campaigns)
     * @type {(keyof typeof LoyaltiesCreateCampaignRequestBody.TypeEnum) | undefined}
     */
 LoyaltiesCreateCampaignRequestBody.prototype['type'] = undefined;
@@ -308,7 +308,13 @@ LoyaltiesCreateCampaignRequestBody.prototype['voucher'] = undefined;
          * value: "STATIC"
          * @constant
          */
-        "STATIC": "STATIC"    
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "STANDALONE"
+         * @constant
+         */
+        "STANDALONE": "STANDALONE"    
     };
 
 

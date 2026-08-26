@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The StackingRules model module.
  * @module model/StackingRules
- * @version 3.0.3
+ * @version 3.0.4
  */
 class StackingRules {
     /**
      * Constructs a new <code>StackingRules</code>.
-     * Defines stacking rules for redeemables. Read more in the [Stacking Rule Documentation](https://support.voucherify.io/article/604-stacking-rules).
+     * Defines stacking rules for redeemables. Read more in the [Stacking Rule Documentation](/orchestrate/stacking-rules).
      * @alias StackingRules
      */
     constructor() { 

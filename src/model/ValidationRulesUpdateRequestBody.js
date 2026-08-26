@@ -17,7 +17,7 @@ import ValidationRulesUpdateRequestBodyError from './ValidationRulesUpdateReques
 /**
  * The ValidationRulesUpdateRequestBody model module.
  * @module model/ValidationRulesUpdateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationRulesUpdateRequestBody {
     /**

@@ -18,7 +18,7 @@ import LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount from './Loy
 /**
  * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder model module.
  * @module model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrder {
     /**

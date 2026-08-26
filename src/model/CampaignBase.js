@@ -22,7 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignBase model module.
  * @module model/CampaignBase
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CampaignBase {
     /**

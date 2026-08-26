@@ -19,7 +19,7 @@ import ValidationsValidateResponseBodyOrderItemsItem from './ValidationsValidate
 /**
  * The ValidationsValidateResponseBodyOrder model module.
  * @module model/ValidationsValidateResponseBodyOrder
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateResponseBodyOrder {
     /**

@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 Create Customer
 
-Creates a customer object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields.
+Creates a customer object. &lt;Note&gt; &lt;Badge color blue&gt;Upsert Mode&lt;/Badge&gt; If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields. &lt;/Note&gt;
 
 ### Example
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 Import and Update Customers using CSV
 
-This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.   # Request Example # CSV File Format The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  📘 Standard customer fields mapping  **No spaces allowed in field names**    Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2 # Update Customers using CSV If you would like to update customers data, you can do it using the CSV file with new data. However, remember to include a source_id in your CSV file to manage the update successfully. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
+This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.   # Request Example # CSV File Format The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object. &lt;Note&gt; &lt;Badge color blue&gt;Standard customer fields mapping&lt;/Badge&gt; **No spaces allowed in field names** Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2 &lt;/Note&gt; # Update Customers using CSV If you would like to update customers data, you can do it using the CSV file with new data. However, remember to include a source_id in your CSV file to manage the update successfully. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
 
 ### Example
 
@@ -557,7 +557,7 @@ let opts = {
   'email': "email_example", // String | Limit the customers to the ones that have this specific email address.
   'city': "city_example", // String | Limit the customers to the ones that are located in the specified city.
   'name': "name_example", // String | Filter customers by the name property.
-  'segmentId': "segmentId_example", // String | Filter customers by the segment id.
+  'segmentId': "segmentId_example", // String | Filter customers by the segment ID. Warning: Passing additional query parameter filters that are in conflict with the segment filters may return unexpected results.
   'createdAtBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter customers by date customer was created.
   'createdAtAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter customers by date customer was created.
   'updatedAtBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter customers by date customer was updated last time.
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
  **email** | **String**| Limit the customers to the ones that have this specific email address. | [optional] 
  **city** | **String**| Limit the customers to the ones that are located in the specified city. | [optional] 
  **name** | **String**| Filter customers by the name property. | [optional] 
- **segmentId** | **String**| Filter customers by the segment id. | [optional] 
+ **segmentId** | **String**| Filter customers by the segment ID. Warning: Passing additional query parameter filters that are in conflict with the segment filters may return unexpected results. | [optional] 
  **createdAtBefore** | **Date**| Filter customers by date customer was created. | [optional] 
  **createdAtAfter** | **Date**| Filter customers by date customer was created. | [optional] 
  **updatedAtBefore** | **Date**| Filter customers by date customer was updated last time. | [optional] 
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 Update Customers&#39; Metadata in Bulk
 
-Updates metadata parameters for a list of customers. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a product object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
+Updates metadata parameters for a list of customers. Every resource in the list will receive the metadata defined in the request. The request can include up to **10 MB** of data. The response returns a unique asynchronous action ID. Use this ID in the query paramater of the [GET Async Action](/api-reference/async-actions/get-async-action) endpoint to check, e.g.: - The status of your request (in queue, in progress, done, or failed) - Resources that failed to be updated - The report file with details about the update If a customer object is not found, it is **upserted**. This is shown in the report file in the **GET** Async Action endpoint. The upserted resources have value false in the found column and true in the updated column. This API request starts a process that affects Voucherify data in bulk. In the case of small jobs (like bulk update), the request is put into a queue and processed when every other bulk request placed in the queue prior to this request is finished.
 
 ### Example
 

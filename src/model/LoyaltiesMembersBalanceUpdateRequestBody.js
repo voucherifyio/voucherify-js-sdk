@@ -16,7 +16,7 @@ import PointsExpirationTypes from './PointsExpirationTypes';
 /**
  * The LoyaltiesMembersBalanceUpdateRequestBody model module.
  * @module model/LoyaltiesMembersBalanceUpdateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersBalanceUpdateRequestBody {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRulePendingPoints model module.
  * @module model/EarningRulePendingPoints
- * @version 3.0.3
+ * @version 3.0.4
  */
 class EarningRulePendingPoints {
     /**

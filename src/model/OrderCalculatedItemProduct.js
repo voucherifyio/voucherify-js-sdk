@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrderCalculatedItemProduct model module.
  * @module model/OrderCalculatedItemProduct
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OrderCalculatedItemProduct {
     /**

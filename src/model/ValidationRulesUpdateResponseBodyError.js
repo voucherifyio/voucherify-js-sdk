@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationRulesUpdateResponseBodyError model module.
  * @module model/ValidationRulesUpdateResponseBodyError
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationRulesUpdateResponseBodyError {
     /**

@@ -16,7 +16,7 @@ import ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntr
 /**
  * The ManagementProjectsCustomEventSchemasCreateResponseBodySchema model module.
  * @module model/ManagementProjectsCustomEventSchemasCreateResponseBodySchema
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsCustomEventSchemasCreateResponseBodySchema {
     /**

@@ -16,7 +16,7 @@ import Export from './Export';
 /**
  * The ExportsListResponseBody model module.
  * @module model/ExportsListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ExportsListResponseBody {
     /**

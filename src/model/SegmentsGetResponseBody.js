@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The SegmentsGetResponseBody model module.
  * @module model/SegmentsGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class SegmentsGetResponseBody {
     /**
      * Constructs a new <code>SegmentsGetResponseBody</code>.
-     * Response body schema for **GET** &#x60;v1/v1/segments/{segmentId}&#x60;.
+     * Response body schema for **GET** &#x60;v1/segments/{segmentId}&#x60;.
      * @alias SegmentsGetResponseBody
      */
     constructor() { 
@@ -56,6 +56,9 @@ class SegmentsGetResponseBody {
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -125,6 +128,12 @@ SegmentsGetResponseBody.prototype['name'] = undefined;
     * @type {Date | undefined}
     */
 SegmentsGetResponseBody.prototype['created_at'] = undefined;
+
+/**
+    * Timestamp in ISO 8601 format indicating when the segment was updated.
+    * @type {Date | undefined}
+    */
+SegmentsGetResponseBody.prototype['updated_at'] = undefined;
 
 /**
     * Defines whether the segment is: - Active (`auto-update`): customers enter and leave the segment based on the defined filters and the `customer.segment.entered` and `customer.segment.left` events are triggered, - Passive (`passive`): customers enter and leave the segment based on the defined filters, but the `customer.segment.entered` and `customer.segment.left` events are not triggered, - Static (`static`): manually selected customers.

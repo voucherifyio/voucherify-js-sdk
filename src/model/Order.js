@@ -16,7 +16,7 @@ import OrderItem from './OrderItem';
 /**
  * The Order model module.
  * @module model/Order
- * @version 3.0.3
+ * @version 3.0.4
  */
 class Order {
     /**
@@ -120,7 +120,7 @@ class Order {
 Order.prototype['id'] = undefined;
 
 /**
-    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.
     * @type {String | undefined}
     */
 Order.prototype['source_id'] = undefined;

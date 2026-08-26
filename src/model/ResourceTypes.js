@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ResourceTypes.
  * @module model/ResourceTypes
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ResourceTypes {
     

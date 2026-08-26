@@ -16,7 +16,7 @@ import RewardsAssignmentsCreateRequestBodyParameters from './RewardsAssignmentsC
 /**
  * The RewardsAssignmentsCreateRequestBody model module.
  * @module model/RewardsAssignmentsCreateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RewardsAssignmentsCreateRequestBody {
     /**

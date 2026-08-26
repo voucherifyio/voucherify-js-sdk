@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsMetadataSchemaDefinition model module.
  * @module model/ManagementProjectsMetadataSchemaDefinition
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsMetadataSchemaDefinition {
     /**

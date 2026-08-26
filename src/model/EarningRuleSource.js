@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleSource model module.
  * @module model/EarningRuleSource
- * @version 3.0.3
+ * @version 3.0.4
  */
 class EarningRuleSource {
     /**

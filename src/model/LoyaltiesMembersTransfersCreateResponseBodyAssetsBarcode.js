@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersTransfersCreateResponseBodyAssetsBarcode {
     /**

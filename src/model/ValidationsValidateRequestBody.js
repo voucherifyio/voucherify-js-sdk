@@ -20,7 +20,7 @@ import ValidationsValidateRequestBodyRedeemablesItem from './ValidationsValidate
 /**
  * The ValidationsValidateRequestBody model module.
  * @module model/ValidationsValidateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateRequestBody {
     /**

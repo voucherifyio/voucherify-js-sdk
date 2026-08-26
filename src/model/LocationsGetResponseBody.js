@@ -16,7 +16,7 @@ import LocationsGetResponseBodyShape from './LocationsGetResponseBodyShape';
 /**
  * The LocationsGetResponseBody model module.
  * @module model/LocationsGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LocationsGetResponseBody {
     /**

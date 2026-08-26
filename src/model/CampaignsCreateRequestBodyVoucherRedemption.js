@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsCreateRequestBodyVoucherRedemption model module.
  * @module model/CampaignsCreateRequestBodyVoucherRedemption
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CampaignsCreateRequestBodyVoucherRedemption {
     /**

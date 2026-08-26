@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionDetailsSegment model module.
  * @module model/VoucherTransactionDetailsSegment
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VoucherTransactionDetailsSegment {
     /**

@@ -25,7 +25,7 @@ import VouchersEnableResponseBodyRedemption from './VouchersEnableResponseBodyRe
 /**
  * The VouchersEnableResponseBody model module.
  * @module model/VouchersEnableResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VouchersEnableResponseBody {
     /**

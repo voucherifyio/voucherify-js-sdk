@@ -25,7 +25,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucher model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucher
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyVoucher {
     /**

@@ -18,7 +18,7 @@ import ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct from 
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultDiscount model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultDiscount
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultDiscount {
     /**
@@ -352,7 +352,13 @@ ValidationsValidateResponseBodyRedeemablesItemResultDiscount.prototype['fixed_am
          * value: "ADD_MANY_ITEMS"
          * @constant
          */
-        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS"    
+        "ADD_MANY_ITEMS": "ADD_MANY_ITEMS",
+    
+        /**
+         * value: "ADD_SAME_ITEMS"
+         * @constant
+         */
+        "ADD_SAME_ITEMS": "ADD_SAME_ITEMS"    
     };
 
 

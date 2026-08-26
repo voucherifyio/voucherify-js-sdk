@@ -16,7 +16,7 @@ import ParameterFiltersListReferralsRedeemableHoldersHolderRoleConditions from '
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersHolderRole model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersHolderRole
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListReferralsRedeemableHoldersHolderRole {
     /**

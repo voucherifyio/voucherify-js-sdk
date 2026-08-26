@@ -16,7 +16,7 @@ import LoyaltyPointsBucket from './LoyaltyPointsBucket';
 /**
  * The LoyaltiesMembersPointsExpirationListResponseBody model module.
  * @module model/LoyaltiesMembersPointsExpirationListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersPointsExpirationListResponseBody {
     /**

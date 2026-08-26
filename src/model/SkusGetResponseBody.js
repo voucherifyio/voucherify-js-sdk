@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SkusGetResponseBody model module.
  * @module model/SkusGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class SkusGetResponseBody {
     /**

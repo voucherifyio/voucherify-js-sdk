@@ -19,7 +19,7 @@ import Referrer from './Referrer';
 /**
  * The OrdersImportCreateRequestBodyItem model module.
  * @module model/OrdersImportCreateRequestBodyItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OrdersImportCreateRequestBodyItem {
     /**
@@ -148,7 +148,7 @@ class OrdersImportCreateRequestBodyItem {
 OrdersImportCreateRequestBodyItem.prototype['id'] = undefined;
 
 /**
-    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.
     * @type {String | undefined}
     */
 OrdersImportCreateRequestBodyItem.prototype['source_id'] = undefined;
@@ -220,7 +220,7 @@ OrdersImportCreateRequestBodyItem.prototype['created_at'] = undefined;
     */
 Order.prototype['id'] = undefined;
 /**
-    * Unique source ID of an existing order that will be linked to the redemption of this request.    *
+    * Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.    *
     * @type {String | undefined}
     * @member {String | undefined} source_id
     */

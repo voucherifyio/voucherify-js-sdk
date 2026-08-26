@@ -182,7 +182,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.3).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.4).
 
 ## 🔐 Authorization
 

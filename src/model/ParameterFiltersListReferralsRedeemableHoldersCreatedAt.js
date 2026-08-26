@@ -16,7 +16,7 @@ import FilterConditionsDateTime from './FilterConditionsDateTime';
 /**
  * The ParameterFiltersListReferralsRedeemableHoldersCreatedAt model module.
  * @module model/ParameterFiltersListReferralsRedeemableHoldersCreatedAt
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListReferralsRedeemableHoldersCreatedAt {
     /**

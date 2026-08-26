@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardTransactionDetailsEventSchema model module.
  * @module model/LoyaltyCardTransactionDetailsEventSchema
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltyCardTransactionDetailsEventSchema {
     /**

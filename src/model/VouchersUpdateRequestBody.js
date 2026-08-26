@@ -18,7 +18,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The VouchersUpdateRequestBody model module.
  * @module model/VouchersUpdateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VouchersUpdateRequestBody {
     /**

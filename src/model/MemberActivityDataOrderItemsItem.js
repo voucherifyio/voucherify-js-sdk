@@ -17,7 +17,7 @@ import MemberActivityDataOrderItemsItemSku from './MemberActivityDataOrderItemsI
 /**
  * The MemberActivityDataOrderItemsItem model module.
  * @module model/MemberActivityDataOrderItemsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MemberActivityDataOrderItemsItem {
     /**

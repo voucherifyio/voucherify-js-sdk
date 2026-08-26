@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsWebhook model module.
  * @module model/ManagementProjectsWebhook
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsWebhook {
     /**

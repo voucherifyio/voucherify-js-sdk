@@ -16,7 +16,7 @@ import SkusListForProduct from './SkusListForProduct';
 /**
  * The MemberActivityDataRedemptionRewardProduct model module.
  * @module model/MemberActivityDataRedemptionRewardProduct
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MemberActivityDataRedemptionRewardProduct {
     /**

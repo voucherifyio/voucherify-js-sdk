@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodySession model module.
  * @module model/RedemptionsGetResponseBodySession
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionsGetResponseBodySession {
     /**

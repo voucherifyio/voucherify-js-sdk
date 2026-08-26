@@ -17,7 +17,7 @@ import CustomerSummaryRedemptionsLoyaltyCard from './CustomerSummaryRedemptionsL
 /**
  * The CustomerSummaryRedemptions model module.
  * @module model/CustomerSummaryRedemptions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CustomerSummaryRedemptions {
     /**

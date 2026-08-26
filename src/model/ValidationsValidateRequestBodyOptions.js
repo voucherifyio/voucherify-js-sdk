@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsValidateRequestBodyOptions model module.
  * @module model/ValidationsValidateRequestBodyOptions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateRequestBodyOptions {
     /**

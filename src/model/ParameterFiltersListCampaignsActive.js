@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCampaignsActive model module.
  * @module model/ParameterFiltersListCampaignsActive
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListCampaignsActive {
     /**

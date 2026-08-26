@@ -18,7 +18,7 @@ import RewardsCreateRequestBodyParametersProduct from './RewardsCreateRequestBod
 /**
  * The RewardsCreateRequestBodyParameters model module.
  * @module model/RewardsCreateRequestBodyParameters
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RewardsCreateRequestBodyParameters {
     /**

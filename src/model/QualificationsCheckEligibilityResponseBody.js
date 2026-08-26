@@ -18,7 +18,7 @@ import StackingRules from './StackingRules';
 /**
  * The QualificationsCheckEligibilityResponseBody model module.
  * @module model/QualificationsCheckEligibilityResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class QualificationsCheckEligibilityResponseBody {
     /**

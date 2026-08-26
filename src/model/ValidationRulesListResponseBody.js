@@ -16,7 +16,7 @@ import ValidationRule from './ValidationRule';
 /**
  * The ValidationRulesListResponseBody model module.
  * @module model/ValidationRulesListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationRulesListResponseBody {
     /**

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create Publication
 
-This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish.    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.
+This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.   &lt;Warning&gt; &lt;Badge color yellow&gt;Clearly define the source of the voucher&lt;/Badge&gt; You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code. &lt;/Warning&gt; &lt;Warning&gt; &lt;Badge color yellow&gt;Publish multiple vouchers&lt;/Badge&gt; In case you want to publish multiple vouchers within a single publication, you need to specify the campaign name and number of vouchers you want to publish. &lt;/Warning&gt; &lt;Note&gt; &lt;Badge color blue&gt;Auto-update campaign&lt;/Badge&gt; In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign. &lt;/Note&gt;
 
 ### Example
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 Create Publication with GET
 
-This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet.  ❗️ Limited access  Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &amp;rarr; **Project Settings** &amp;rarr; **General** &amp;rarr; **Integration Keys** to set up a pair of API keys and use them to send the request.    🚧 Clearly define the source of the voucher  You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code.    🚧 Publish multiple vouchers  This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication).    📘 Auto-update campaign  In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign.   # Example Request      ❗️ Required    Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped.
+This method selects vouchers that are suitable for publication, adds a publish entry and returns the publication. A voucher is suitable for publication when its active and hasnt been published yet. &lt;Danger&gt; &lt;Badge color red&gt;Limited access&lt;/Badge&gt; Access to this endpoint is limited. This endpoint is designed for specific integrations and the API keys need to be configured to access this endpoint. Navigate to the **Dashboard** &amp;rarr; **Project Settings** &amp;rarr; **General** &amp;rarr; **Integration Keys** to set up a pair of API keys and use them to send the request. &lt;/Danger&gt; &lt;Warning&gt; &lt;Badge color yellow&gt;Clearly define the source of the voucher&lt;/Badge&gt; You must clearly define which source you want to publish the voucher code from. It can either be a code from a campaign or a specific voucher identified by a code. &lt;/Warning&gt; &lt;Warning&gt; &lt;Badge color yellow&gt;Publish multiple vouchers&lt;/Badge&gt; This endpoint does not support the publishing of multiple vouchers from a single campaign. In case you want to publish multiple vouchers within a single publication, you need to use a [dedicated endpoint](/api-reference/publications/create-publication). &lt;/Warning&gt; &lt;Note&gt; &lt;Badge color blue&gt;Auto-update campaign&lt;/Badge&gt; In case you want to ensure the number of publishable codes increases automatically with the number of customers, you should use an **auto-update** campaign. &lt;/Note&gt; # Example Request     &lt;Danger&gt; &lt;Badge color red&gt;Required&lt;/Badge&gt; Query param voucher OR campaign MUST be filled out. If you provide both, campaign param will be skipped. &lt;/Danger&gt;
 
 ### Example
 
@@ -101,7 +101,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.PublicationsApi();
-let customer = new Voucherify.Customer(); // Customer | Contains information about the customer to whom the publication was directed.
+let customer = new Voucherify.Customer(); // Customer | Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required.
 let opts = {
   'joinOnce': true, // Boolean | Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
   'voucher': "voucher_example", // String | Code of voucher being published.
@@ -123,7 +123,7 @@ apiInstance.createPublication1(customer, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**Customer**](.md)| Contains information about the customer to whom the publication was directed. | 
+ **customer** | [**Customer**](.md)| Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. | 
  **joinOnce** | **Boolean**| Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. | [optional] 
  **voucher** | **String**| Code of voucher being published. | [optional] 
  **campaign** | [**CreatePublicationCampaign**](.md)| Create publication with campaign. | [optional] 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 List Publications
 
-Retrieve a list of publications. To return a **particular** publication, you can use the source_id query parameter and provide the source_id of the publication you are looking for specifically. # Pagination  🚧 Important!  If you want to scroll through a huge set of records, it is recommended to use the [Exports API](/api-reference/exports/create-export). This API will return an error page_over_limit if you reach a page above 1000. # Filter Query The filters query parameter allows for joining multiple parameters with logical operators. The syntax looks as follows:  ## Examples  
+Retrieve a list of publications. To return a **particular** publication, you can use the source_id query parameter and provide the source_id of the publication you are looking for specifically. # Pagination &lt;Warning&gt; &lt;Badge color yellow&gt;Important!&lt;/Badge&gt; If you want to scroll through a huge set of records, it is recommended to use the [Exports API](/api-reference/exports/create-export). This API will return an error page_over_limit if you reach a page above 1000. &lt;/Warning&gt; # Filter Query The filters query parameter allows for joining multiple parameters with logical operators. The syntax looks as follows:  ## Examples  
 
 ### Example
 

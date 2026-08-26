@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultGift model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultGift
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultGift {
     /**

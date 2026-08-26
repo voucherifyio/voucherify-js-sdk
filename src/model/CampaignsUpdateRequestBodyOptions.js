@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsUpdateRequestBodyOptions model module.
  * @module model/CampaignsUpdateRequestBodyOptions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CampaignsUpdateRequestBodyOptions {
     /**

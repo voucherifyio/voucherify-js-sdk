@@ -18,7 +18,7 @@ import Referrer from './Referrer';
 /**
  * The OrdersUpdateRequestBody model module.
  * @module model/OrdersUpdateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OrdersUpdateRequestBody {
     /**
@@ -133,7 +133,7 @@ class OrdersUpdateRequestBody {
 
 
 /**
-    * Unique source ID of an existing order that will be linked to the redemption of this request.
+    * Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.
     * @type {String | undefined}
     */
 OrdersUpdateRequestBody.prototype['source_id'] = undefined;

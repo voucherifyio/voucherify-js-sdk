@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersCreateResponseBodyAssets model module.
  * @module model/CustomersCreateResponseBodyAssets
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CustomersCreateResponseBodyAssets {
     /**
      * Constructs a new <code>CustomersCreateResponseBodyAssets</code>.
-     * Contains information about the customer&#39;s cockpit.
+     * Contains information about the customer&#39;s cockpit.  ⚠️ Warning: Customer cockpits were removed. The customer cockpit URLs redirect to customer preference center.
      * @alias CustomersCreateResponseBodyAssets
      */
     constructor() { 
@@ -50,6 +50,9 @@ class CustomersCreateResponseBodyAssets {
             if (data.hasOwnProperty('cockpit_url')) {
                 obj['cockpit_url'] = ApiClient.convertToType(data['cockpit_url'], 'String');
             }
+            if (data.hasOwnProperty('cockpit_preference_center_url')) {
+                obj['cockpit_preference_center_url'] = ApiClient.convertToType(data['cockpit_preference_center_url'], 'String');
+            }
         }
         return obj;
     }
@@ -64,6 +67,10 @@ class CustomersCreateResponseBodyAssets {
         if (data['cockpit_url'] && !(typeof data['cockpit_url'] === 'string' || data['cockpit_url'] instanceof String)) {
             throw new Error("Expected the field `cockpit_url` to be a primitive type in the JSON string but got " + data['cockpit_url']);
         }
+        // ensure the json data is a string
+        if (data['cockpit_preference_center_url'] && !(typeof data['cockpit_preference_center_url'] === 'string' || data['cockpit_preference_center_url'] instanceof String)) {
+            throw new Error("Expected the field `cockpit_preference_center_url` to be a primitive type in the JSON string but got " + data['cockpit_preference_center_url']);
+        }
 
         return true;
     }
@@ -74,10 +81,16 @@ class CustomersCreateResponseBodyAssets {
 
 
 /**
-    * Customer's cockpit URL address.
+    * URL address to customer preference center. Previously, a customer's cockpit URL address.
     * @type {String | undefined}
     */
 CustomersCreateResponseBodyAssets.prototype['cockpit_url'] = undefined;
+
+/**
+    * URL address to customer preference center.
+    * @type {String | undefined}
+    */
+CustomersCreateResponseBodyAssets.prototype['cockpit_preference_center_url'] = undefined;
 
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ExportOrderFields.
  * @module model/ExportOrderFields
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ExportOrderFields {
     

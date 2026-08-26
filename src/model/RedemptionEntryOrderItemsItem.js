@@ -18,7 +18,7 @@ import RedemptionEntryOrderItemsItemSku from './RedemptionEntryOrderItemsItemSku
 /**
  * The RedemptionEntryOrderItemsItem model module.
  * @module model/RedemptionEntryOrderItemsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionEntryOrderItemsItem {
     /**

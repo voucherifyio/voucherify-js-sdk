@@ -16,7 +16,7 @@ import CustomersUpdateInBulkRequestBodyAddress from './CustomersUpdateInBulkRequ
 /**
  * The CustomersUpdateInBulkRequestBody model module.
  * @module model/CustomersUpdateInBulkRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CustomersUpdateInBulkRequestBody {
     /**

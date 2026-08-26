@@ -17,7 +17,7 @@ import ApplicableToOrderItemUnitsItem from './ApplicableToOrderItemUnitsItem';
 /**
  * The ApplicableTo model module.
  * @module model/ApplicableTo
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ApplicableTo {
     /**
@@ -86,6 +86,54 @@ class ApplicableTo {
             if (data.hasOwnProperty('aggregated_amount_limit')) {
                 obj['aggregated_amount_limit'] = ApiClient.convertToType(data['aggregated_amount_limit'], 'Number');
             }
+            if (data.hasOwnProperty('product_campaign_quantity_limit')) {
+                obj['product_campaign_quantity_limit'] = ApiClient.convertToType(data['product_campaign_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_campaign_quantity_limit_formula')) {
+                obj['product_campaign_quantity_limit_formula'] = ApiClient.convertToType(data['product_campaign_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_customer_campaign_quantity_limit')) {
+                obj['product_customer_campaign_quantity_limit'] = ApiClient.convertToType(data['product_customer_campaign_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_customer_campaign_quantity_limit_formula')) {
+                obj['product_customer_campaign_quantity_limit_formula'] = ApiClient.convertToType(data['product_customer_campaign_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_in_collection_campaign_quantity_limit')) {
+                obj['product_in_collection_campaign_quantity_limit'] = ApiClient.convertToType(data['product_in_collection_campaign_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_in_collection_campaign_quantity_limit_formula')) {
+                obj['product_in_collection_campaign_quantity_limit_formula'] = ApiClient.convertToType(data['product_in_collection_campaign_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_in_collection_customer_campaign_quantity_limit')) {
+                obj['product_in_collection_customer_campaign_quantity_limit'] = ApiClient.convertToType(data['product_in_collection_customer_campaign_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_in_collection_customer_campaign_quantity_limit_formula')) {
+                obj['product_in_collection_customer_campaign_quantity_limit_formula'] = ApiClient.convertToType(data['product_in_collection_customer_campaign_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_promotion_tier_quantity_limit')) {
+                obj['product_promotion_tier_quantity_limit'] = ApiClient.convertToType(data['product_promotion_tier_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_promotion_tier_quantity_limit_formula')) {
+                obj['product_promotion_tier_quantity_limit_formula'] = ApiClient.convertToType(data['product_promotion_tier_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_customer_promotion_tier_quantity_limit')) {
+                obj['product_customer_promotion_tier_quantity_limit'] = ApiClient.convertToType(data['product_customer_promotion_tier_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_customer_promotion_tier_quantity_limit_formula')) {
+                obj['product_customer_promotion_tier_quantity_limit_formula'] = ApiClient.convertToType(data['product_customer_promotion_tier_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_in_collection_promotion_tier_quantity_limit')) {
+                obj['product_in_collection_promotion_tier_quantity_limit'] = ApiClient.convertToType(data['product_in_collection_promotion_tier_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_in_collection_promotion_tier_quantity_limit_formula')) {
+                obj['product_in_collection_promotion_tier_quantity_limit_formula'] = ApiClient.convertToType(data['product_in_collection_promotion_tier_quantity_limit_formula'], 'String');
+            }
+            if (data.hasOwnProperty('product_in_collection_customer_promotion_tier_quantity_limit')) {
+                obj['product_in_collection_customer_promotion_tier_quantity_limit'] = ApiClient.convertToType(data['product_in_collection_customer_promotion_tier_quantity_limit'], 'Number');
+            }
+            if (data.hasOwnProperty('product_in_collection_customer_promotion_tier_quantity_limit_formula')) {
+                obj['product_in_collection_customer_promotion_tier_quantity_limit_formula'] = ApiClient.convertToType(data['product_in_collection_customer_promotion_tier_quantity_limit_formula'], 'String');
+            }
             if (data.hasOwnProperty('order_item_indices')) {
                 obj['order_item_indices'] = ApiClient.convertToType(data['order_item_indices'], ['Number']);
             }
@@ -136,6 +184,38 @@ class ApplicableTo {
         // ensure the json data is a string
         if (data['product_source_id'] && !(typeof data['product_source_id'] === 'string' || data['product_source_id'] instanceof String)) {
             throw new Error("Expected the field `product_source_id` to be a primitive type in the JSON string but got " + data['product_source_id']);
+        }
+        // ensure the json data is a string
+        if (data['product_campaign_quantity_limit_formula'] && !(typeof data['product_campaign_quantity_limit_formula'] === 'string' || data['product_campaign_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_campaign_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_campaign_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_customer_campaign_quantity_limit_formula'] && !(typeof data['product_customer_campaign_quantity_limit_formula'] === 'string' || data['product_customer_campaign_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_customer_campaign_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_customer_campaign_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_in_collection_campaign_quantity_limit_formula'] && !(typeof data['product_in_collection_campaign_quantity_limit_formula'] === 'string' || data['product_in_collection_campaign_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_in_collection_campaign_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_in_collection_campaign_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_in_collection_customer_campaign_quantity_limit_formula'] && !(typeof data['product_in_collection_customer_campaign_quantity_limit_formula'] === 'string' || data['product_in_collection_customer_campaign_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_in_collection_customer_campaign_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_in_collection_customer_campaign_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_promotion_tier_quantity_limit_formula'] && !(typeof data['product_promotion_tier_quantity_limit_formula'] === 'string' || data['product_promotion_tier_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_promotion_tier_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_promotion_tier_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_customer_promotion_tier_quantity_limit_formula'] && !(typeof data['product_customer_promotion_tier_quantity_limit_formula'] === 'string' || data['product_customer_promotion_tier_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_customer_promotion_tier_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_customer_promotion_tier_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_in_collection_promotion_tier_quantity_limit_formula'] && !(typeof data['product_in_collection_promotion_tier_quantity_limit_formula'] === 'string' || data['product_in_collection_promotion_tier_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_in_collection_promotion_tier_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_in_collection_promotion_tier_quantity_limit_formula']);
+        }
+        // ensure the json data is a string
+        if (data['product_in_collection_customer_promotion_tier_quantity_limit_formula'] && !(typeof data['product_in_collection_customer_promotion_tier_quantity_limit_formula'] === 'string' || data['product_in_collection_customer_promotion_tier_quantity_limit_formula'] instanceof String)) {
+            throw new Error("Expected the field `product_in_collection_customer_promotion_tier_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_in_collection_customer_promotion_tier_quantity_limit_formula']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['order_item_indices'])) {
@@ -234,6 +314,102 @@ ApplicableTo.prototype['amount_limit'] = undefined;
     * @type {Number | undefined}
     */
 ApplicableTo.prototype['aggregated_amount_limit'] = undefined;
+
+/**
+    * Limits the number of discounted item units (product, SKU, collection) that all customers can receive in a given campaign. If a product is selected, the limit covers all discounts across all SKUs belonging to that product. If a product collection is selected, the limit covers all products/SKUs within the collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_campaign_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_campaign_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units (product, SKU, collection) that one customer can receive in a given campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_customer_campaign_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per customer in a campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_customer_campaign_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units of a given product in a collection that all customers can receive in a given campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_campaign_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per campaign for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_campaign_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units of a given product in a collection that one customer can receive in a campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_customer_campaign_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per customer for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_customer_campaign_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units that all customers can receive in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_promotion_tier_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_promotion_tier_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units that one customer can receive in a given promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_customer_promotion_tier_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per customer in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_customer_promotion_tier_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units of a given product in a collection that all customers can receive in a given promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_promotion_tier_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per promotion tier for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_promotion_tier_quantity_limit_formula'] = undefined;
+
+/**
+    * Limits the number of discounted item units of a given product in a collection that one customer can receive in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {Number | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_customer_promotion_tier_quantity_limit'] = undefined;
+
+/**
+    * Formula used to dynamically calculate the maximum units per customer in a promotion tier for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+    * @type {String | undefined}
+    */
+ApplicableTo.prototype['product_in_collection_customer_promotion_tier_quantity_limit_formula'] = undefined;
 
 /**
     * Lists which order lines are (not) covered by the discount. The order in the array is determined by the sequence of applied discounts, while the numbers correspond to the order lines sent in the `order` object in the request. The first order line is assigned `0`, the second order line is assigned `1`, and so on.

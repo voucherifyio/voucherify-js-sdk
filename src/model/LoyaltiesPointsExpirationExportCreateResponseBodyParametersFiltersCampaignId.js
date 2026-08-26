@@ -16,7 +16,7 @@ import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaig
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId {
     /**

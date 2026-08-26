@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCampaignsValidityDayOfWeekConditions model module.
  * @module model/ParameterFiltersListCampaignsValidityDayOfWeekConditions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListCampaignsValidityDayOfWeekConditions {
     /**

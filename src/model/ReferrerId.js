@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferrerId model module.
  * @module model/ReferrerId
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ReferrerId {
     /**
