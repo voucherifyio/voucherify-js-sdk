@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionsExportParameters model module.
  * @module model/VoucherTransactionsExportParameters
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VoucherTransactionsExportParameters {
     /**

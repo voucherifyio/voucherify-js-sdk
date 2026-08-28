@@ -19,7 +19,7 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The RedemptionOrderItemsItem model module.
  * @module model/RedemptionOrderItemsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionOrderItemsItem {
     /**

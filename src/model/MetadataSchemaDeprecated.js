@@ -16,7 +16,7 @@ import MetadataSchemaDefinitionDeprecated from './MetadataSchemaDefinitionDeprec
 /**
  * The MetadataSchemaDeprecated model module.
  * @module model/MetadataSchemaDeprecated
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MetadataSchemaDeprecated {
     /**

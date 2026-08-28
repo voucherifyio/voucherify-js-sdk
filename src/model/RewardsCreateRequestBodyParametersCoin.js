@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardsCreateRequestBodyParametersCoin model module.
  * @module model/RewardsCreateRequestBodyParametersCoin
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RewardsCreateRequestBodyParametersCoin {
     /**
@@ -48,7 +48,7 @@ class RewardsCreateRequestBodyParametersCoin {
             obj = obj || new RewardsCreateRequestBodyParametersCoin();
 
             if (data.hasOwnProperty('exchange_ratio')) {
-                obj['exchange_ratio'] = ApiClient.convertToType(data['exchange_ratio'], 'String');
+                obj['exchange_ratio'] = ApiClient.convertToType(data['exchange_ratio'], 'Number');
             }
             if (data.hasOwnProperty('points_ratio')) {
                 obj['points_ratio'] = ApiClient.convertToType(data['points_ratio'], 'String');
@@ -64,10 +64,6 @@ class RewardsCreateRequestBodyParametersCoin {
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['exchange_ratio'] && !(typeof data['exchange_ratio'] === 'string' || data['exchange_ratio'] instanceof String)) {
-            throw new Error("Expected the field `exchange_ratio` to be a primitive type in the JSON string but got " + data['exchange_ratio']);
-        }
-        // ensure the json data is a string
         if (data['points_ratio'] && !(typeof data['points_ratio'] === 'string' || data['points_ratio'] instanceof String)) {
             throw new Error("Expected the field `points_ratio` to be a primitive type in the JSON string but got " + data['points_ratio']);
         }
@@ -82,7 +78,7 @@ class RewardsCreateRequestBodyParametersCoin {
 
 /**
     * The cash equivalent of the points defined in the `points_ratio` property.
-    * @type {String | undefined}
+    * @type {Number | undefined}
     */
 RewardsCreateRequestBodyParametersCoin.prototype['exchange_ratio'] = undefined;
 

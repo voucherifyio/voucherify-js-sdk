@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersMetadataUpdateInBulkResponseBody model module.
  * @module model/VouchersMetadataUpdateInBulkResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VouchersMetadataUpdateInBulkResponseBody {
     /**

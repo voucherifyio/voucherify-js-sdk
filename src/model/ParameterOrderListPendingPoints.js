@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListPendingPoints.
  * @module model/ParameterOrderListPendingPoints
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterOrderListPendingPoints {
     

@@ -17,7 +17,7 @@ import Junction from './Junction';
 /**
  * The ExportVoucherTransactionsFilters model module.
  * @module model/ExportVoucherTransactionsFilters
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ExportVoucherTransactionsFilters {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionRollbackChannel model module.
  * @module model/RedemptionRollbackChannel
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionRollbackChannel {
     /**

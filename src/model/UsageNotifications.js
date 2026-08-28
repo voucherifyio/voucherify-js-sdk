@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsageNotifications model module.
  * @module model/UsageNotifications
- * @version 3.0.3
+ * @version 3.0.4
  */
 class UsageNotifications {
     /**

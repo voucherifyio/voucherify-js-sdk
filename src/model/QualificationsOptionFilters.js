@@ -20,7 +20,7 @@ import QualificationsOptionFiltersResourceType from './QualificationsOptionFilte
 /**
  * The QualificationsOptionFilters model module.
  * @module model/QualificationsOptionFilters
- * @version 3.0.3
+ * @version 3.0.4
  */
 class QualificationsOptionFilters {
     /**

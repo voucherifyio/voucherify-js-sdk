@@ -16,7 +16,7 @@ import MemberActivityDataTransactionDetails from './MemberActivityDataTransactio
 /**
  * The MemberActivityDataTransaction model module.
  * @module model/MemberActivityDataTransaction
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MemberActivityDataTransaction {
     /**

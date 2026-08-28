@@ -182,7 +182,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.3).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.4).
 
 ## 🔐 Authorization
 
@@ -283,6 +283,13 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-08-26** - `3.0.4`:
+    - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
+    - Aligned generated models with the latest OpenAPI definition (including `ADD_SAME_ITEMS` discount effect, `cockpitPreferenceCenterUrl` on customer assets, segment `updatedAt`, and related schema updates not yet present in `3.0.3`).
+    - Bumped `qs` from 6.15.1 to 6.15.2.
+    - Bumped `form-data` from 4.0.4 to 4.0.6 (indirect dependency).
+    - Moved `@babel/cli` from `dependencies` to `devDependencies` (build-time tool only).
+    - Added `typescript` to `devDependencies` (fixes `tsc: not found` on fresh install and Docker test builds).
 - **2026-04-14** - `3.0.3`:
     - Bumped brace-expansion from 1.1.12 to 1.1.13
     - Bumped picomatch

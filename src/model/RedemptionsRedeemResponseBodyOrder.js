@@ -19,7 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The RedemptionsRedeemResponseBodyOrder model module.
  * @module model/RedemptionsRedeemResponseBodyOrder
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionsRedeemResponseBodyOrder {
     /**

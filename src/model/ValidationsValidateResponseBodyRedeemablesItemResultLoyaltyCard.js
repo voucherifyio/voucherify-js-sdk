@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard {
     /**

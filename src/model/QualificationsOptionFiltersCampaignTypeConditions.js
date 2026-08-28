@@ -16,7 +16,7 @@ import ParameterCampaignType from './ParameterCampaignType';
 /**
  * The QualificationsOptionFiltersCampaignTypeConditions model module.
  * @module model/QualificationsOptionFiltersCampaignTypeConditions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class QualificationsOptionFiltersCampaignTypeConditions {
     /**

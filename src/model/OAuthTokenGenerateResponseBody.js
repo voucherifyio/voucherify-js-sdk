@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OAuthTokenGenerateResponseBody model module.
  * @module model/OAuthTokenGenerateResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OAuthTokenGenerateResponseBody {
     /**
@@ -126,7 +126,7 @@ OAuthTokenGenerateResponseBody.prototype['expires_at'] = undefined;
 OAuthTokenGenerateResponseBody.prototype['expires_in'] = undefined;
 
 /**
-    * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `SKUs`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
+    * Defines the scope of possible actions that can be done with the OAuth token. The `api` scope allows using the server-side API. The `client_api` scope allows using the whole client-side API. Possible values: `api`, `assets`, `async-actions`, `campaigns`, `categories`, `client_api`, `client_consents`, `client_customers`, `client_events`, `client_promotions`, `client_publish`, `client_qualifications`, `client_redeem`, `client_redemptions`, `client_validate`, `client_validations`, `client_vouchers`, `consents`, `customers`, `events`, `exports`, `locations`, `loyalties`, `metadata-schemas`, `orders`, `product-collections`, `products`, `promotions`, `publications`, `qualifications`, `redemptions`, `referrals`, `rewards`, `segments`, `skus`, `task-results`, `templates`, `trash-bin`, `validation-rules-assignments`, `validation-rules`, `validations`, `vouchers`.
     * @type {String | undefined}
     */
 OAuthTokenGenerateResponseBody.prototype['scope'] = undefined;

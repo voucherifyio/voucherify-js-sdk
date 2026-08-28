@@ -16,7 +16,7 @@ import ManagementProjectsCustomEventSchemasGetResponseBodySchema from './Managem
 /**
  * The ManagementProjectsCustomEventSchemasGetResponseBody model module.
  * @module model/ManagementProjectsCustomEventSchemasGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsCustomEventSchemasGetResponseBody {
     /**

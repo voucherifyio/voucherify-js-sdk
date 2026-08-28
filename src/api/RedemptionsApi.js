@@ -29,7 +29,7 @@ import VouchersRedemptionGetResponseBody from '../model/VouchersRedemptionGetRes
 /**
 * Redemptions service.
 * @module api/RedemptionsApi
-* @version 3.0.3
+* @version 3.0.4
 */
 export default class RedemptionsApi {
 
@@ -194,7 +194,7 @@ export default class RedemptionsApi {
 
     /**
      * Redeem Stackable Discounts
-     * # How API returns calculated discounts and order amounts in the response In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint.  📘 Rollbacks  You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions).      📘 Also available on client-side  This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more.
+     * In the table below, you can see the logic the API follows to calculate discounts and amounts:   API keys with a Merchant role cant use this endpoint. <Note> <Badge color blue>Rollbacks</Badge> You cant roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](/api-reference/redemptions/rollback-stackable-redemptions). </Note> <Note> <Badge color blue>Also available on client-side</Badge> This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](/api-reference/client-side/redeem-stackable-discounts-client-side) to learn more. </Note>
      * @param {RedemptionsRedeemRequestBody} redemptionsRedeemRequestBody 
      * @param {redeemStackedDiscountsCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link RedemptionsRedeemResponseBody}
@@ -234,7 +234,7 @@ export default class RedemptionsApi {
 
     /**
      * Rollback Redemption
-     * Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint. This endpoint rolls back only single redemptions, meaning those that are not stacked. Stacked redemptions belong to a parent redemption. To roll back a parent redemption, including all of its individual redemptions, use the [POST Rollback Stackable Redemptions](/api-reference/redemptions/rollback-stackable-redemptions)  🚧  You can roll back a redemption up to 3 months back.   # Effect  The operation  - creates a rollback entry in vouchers redemption history (redemption.redemption_entries) and  - gives 1 redemption back to the pool (decreases redeemed_quantity by 1).  # Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
+     * Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint. This endpoint rolls back only single redemptions, meaning those that are not stacked. Stacked redemptions belong to a parent redemption. To roll back a parent redemption, including all of its individual redemptions, use the [POST Rollback Stackable Redemptions](/api-reference/redemptions/rollback-stackable-redemptions)  <Warning> You can roll back a redemption up to 3 months back. </Warning>  # Effect  The operation  - creates a rollback entry in vouchers redemption history (redemption.redemption_entries) and  - gives 1 redemption back to the pool (decreases redeemed_quantity by 1).  # Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
      * @param {String} redemptionId The original redemption ID to be rolled back (undone).
      * @param {RedemptionsRollbackCreateRequestBody} redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
      * @param {{
@@ -284,7 +284,7 @@ export default class RedemptionsApi {
 
     /**
      * Rollback Stackable Redemptions
-     * Rollback a stackable redemption. When you roll back a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter. However, you can use this endpoint to roll back a single redemption that does not have a parent, similarly to [POST Rollback redemption](/api-reference/redemptions/rollback-redemption). 🚧   You can roll back a redemption up to 3 months back.
+     * Rollback a stackable redemption. When you roll back a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter. However, you can use this endpoint to roll back a single redemption that does not have a parent, similarly to [POST Rollback redemption](/api-reference/redemptions/rollback-redemption). <Warning> You can roll back a redemption up to 3 months back. </Warning>
      * @param {String} parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm.
      * @param {RedemptionsRollbacksCreateRequestBody} redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
      * @param {{

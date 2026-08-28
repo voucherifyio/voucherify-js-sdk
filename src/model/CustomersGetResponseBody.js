@@ -20,7 +20,7 @@ import CustomersGetResponseBodyAssets from './CustomersGetResponseBodyAssets';
 /**
  * The CustomersGetResponseBody model module.
  * @module model/CustomersGetResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CustomersGetResponseBody {
     /**

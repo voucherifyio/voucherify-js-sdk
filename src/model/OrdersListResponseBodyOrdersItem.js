@@ -20,7 +20,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The OrdersListResponseBodyOrdersItem model module.
  * @module model/OrdersListResponseBodyOrdersItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class OrdersListResponseBodyOrdersItem {
     /**

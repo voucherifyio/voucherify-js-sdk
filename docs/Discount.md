@@ -58,6 +58,8 @@ Name | Type | Description | Notes
 
 * `ADD_MANY_ITEMS` (value: `"ADD_MANY_ITEMS"`)
 
+* `ADD_SAME_ITEMS` (value: `"ADD_SAME_ITEMS"`)
+
 
 
 

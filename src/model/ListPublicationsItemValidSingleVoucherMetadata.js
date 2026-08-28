@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListPublicationsItemValidSingleVoucherMetadata model module.
  * @module model/ListPublicationsItemValidSingleVoucherMetadata
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ListPublicationsItemValidSingleVoucherMetadata {
     /**

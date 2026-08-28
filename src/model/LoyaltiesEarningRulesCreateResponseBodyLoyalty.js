@@ -19,7 +19,7 @@ import LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems from './Loyaltie
 /**
  * The LoyaltiesEarningRulesCreateResponseBodyLoyalty model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodyLoyalty
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesEarningRulesCreateResponseBodyLoyalty {
     /**

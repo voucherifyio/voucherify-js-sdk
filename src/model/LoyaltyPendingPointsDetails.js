@@ -20,7 +20,7 @@ import LoyaltyPendingPointsDetailsOrder from './LoyaltyPendingPointsDetailsOrder
 /**
  * The LoyaltyPendingPointsDetails model module.
  * @module model/LoyaltyPendingPointsDetails
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltyPendingPointsDetails {
     /**

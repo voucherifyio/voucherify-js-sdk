@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionsExportFilterConditionsVoucherIdConditions model module.
  * @module model/VoucherTransactionsExportFilterConditionsVoucherIdConditions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VoucherTransactionsExportFilterConditionsVoucherIdConditions {
     /**

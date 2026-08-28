@@ -16,7 +16,7 @@ import EarningRuleLoyaltyCustomerMetadata from './EarningRuleLoyaltyCustomerMeta
 /**
  * The EarningRuleLoyaltyCustomer model module.
  * @module model/EarningRuleLoyaltyCustomer
- * @version 3.0.3
+ * @version 3.0.4
  */
 class EarningRuleLoyaltyCustomer {
     /**

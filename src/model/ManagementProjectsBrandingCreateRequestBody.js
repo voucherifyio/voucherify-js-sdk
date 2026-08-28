@@ -19,7 +19,7 @@ import ManagementProjectsBrandingCreateRequestBodyContact from './ManagementProj
 /**
  * The ManagementProjectsBrandingCreateRequestBody model module.
  * @module model/ManagementProjectsBrandingCreateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsBrandingCreateRequestBody {
     /**

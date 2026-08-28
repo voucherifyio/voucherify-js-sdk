@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PromotionsTiersEnableResponseBodySummaryOrders model module.
  * @module model/PromotionsTiersEnableResponseBodySummaryOrders
- * @version 3.0.3
+ * @version 3.0.4
  */
 class PromotionsTiersEnableResponseBodySummaryOrders {
     /**

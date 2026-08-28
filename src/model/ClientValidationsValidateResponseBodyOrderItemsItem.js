@@ -19,7 +19,7 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The ClientValidationsValidateResponseBodyOrderItemsItem model module.
  * @module model/ClientValidationsValidateResponseBodyOrderItemsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ClientValidationsValidateResponseBodyOrderItemsItem {
     /**

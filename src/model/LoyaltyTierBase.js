@@ -17,7 +17,7 @@ import MappingPoints from './MappingPoints';
 /**
  * The LoyaltyTierBase model module.
  * @module model/LoyaltyTierBase
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltyTierBase {
     /**

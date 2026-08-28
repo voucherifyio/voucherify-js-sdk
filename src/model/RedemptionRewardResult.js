@@ -20,7 +20,7 @@ import Voucher from './Voucher';
 /**
  * The RedemptionRewardResult model module.
  * @module model/RedemptionRewardResult
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionRewardResult {
     /**

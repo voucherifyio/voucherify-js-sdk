@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingUpdateRequestBodyBrand model module.
  * @module model/ManagementProjectsBrandingUpdateRequestBodyBrand
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ManagementProjectsBrandingUpdateRequestBodyBrand {
     /**

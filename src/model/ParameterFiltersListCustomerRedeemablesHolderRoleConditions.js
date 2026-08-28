@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCustomerRedeemablesHolderRoleConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListCustomerRedeemablesHolderRoleConditions {
     /**

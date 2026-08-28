@@ -17,7 +17,7 @@ import Customer from './Customer';
 /**
  * The PublicationsCreateRequestBody model module.
  * @module model/PublicationsCreateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class PublicationsCreateRequestBody {
     /**

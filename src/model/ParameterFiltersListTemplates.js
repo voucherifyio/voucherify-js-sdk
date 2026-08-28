@@ -19,7 +19,7 @@ import ParameterFiltersListTemplatesName from './ParameterFiltersListTemplatesNa
 /**
  * The ParameterFiltersListTemplates model module.
  * @module model/ParameterFiltersListTemplates
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterFiltersListTemplates {
     /**

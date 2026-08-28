@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersImportCsvCreateResponseBody model module.
  * @module model/VouchersImportCsvCreateResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VouchersImportCsvCreateResponseBody {
     /**

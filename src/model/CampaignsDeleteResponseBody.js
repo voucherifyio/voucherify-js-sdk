@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsDeleteResponseBody model module.
  * @module model/CampaignsDeleteResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CampaignsDeleteResponseBody {
     /**

@@ -16,7 +16,7 @@ import PromotionTier from './PromotionTier';
 /**
  * The PromotionsTiersListResponseBody model module.
  * @module model/PromotionsTiersListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class PromotionsTiersListResponseBody {
     /**

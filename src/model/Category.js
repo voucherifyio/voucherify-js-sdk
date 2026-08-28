@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Category model module.
  * @module model/Category
- * @version 3.0.3
+ * @version 3.0.4
  */
 class Category {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncActionBase model module.
  * @module model/AsyncActionBase
- * @version 3.0.3
+ * @version 3.0.4
  */
 class AsyncActionBase {
     /**

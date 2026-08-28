@@ -16,7 +16,7 @@ import SkusListForProduct from './SkusListForProduct';
 /**
  * The ProductsUpdateResponseBody model module.
  * @module model/ProductsUpdateResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ProductsUpdateResponseBody {
     /**

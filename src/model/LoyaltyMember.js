@@ -21,7 +21,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The LoyaltyMember model module.
  * @module model/LoyaltyMember
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltyMember {
     /**

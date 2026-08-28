@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsSourceVoucherRedemption model module.
  * @module model/MemberActivityDataTransactionDetailsSourceVoucherRedemption
- * @version 3.0.3
+ * @version 3.0.4
  */
 class MemberActivityDataTransactionDetailsSourceVoucherRedemption {
     /**

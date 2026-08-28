@@ -16,7 +16,7 @@ import LoyaltyPendingPoints from './LoyaltyPendingPoints';
 /**
  * The LoyaltiesMembersPendingPointsListResponseBody model module.
  * @module model/LoyaltiesMembersPendingPointsListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersPendingPointsListResponseBody {
     /**

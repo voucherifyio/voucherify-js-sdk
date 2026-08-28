@@ -17,7 +17,7 @@ import ValidationsValidateRequestBodyRedeemablesItemReward from './ValidationsVa
 /**
  * The ValidationsValidateRequestBodyRedeemablesItem model module.
  * @module model/ValidationsValidateRequestBodyRedeemablesItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateRequestBodyRedeemablesItem {
     /**

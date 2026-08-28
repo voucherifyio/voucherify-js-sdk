@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimplePromotionTierCampaign model module.
  * @module model/SimplePromotionTierCampaign
- * @version 3.0.3
+ * @version 3.0.4
  */
 class SimplePromotionTierCampaign {
     /**

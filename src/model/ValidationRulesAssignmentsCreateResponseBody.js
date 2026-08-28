@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationRulesAssignmentsCreateResponseBody model module.
  * @module model/ValidationRulesAssignmentsCreateResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationRulesAssignmentsCreateResponseBody {
     /**

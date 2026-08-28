@@ -16,7 +16,7 @@ import ParameterCampaignsAccessSetttingsFilter from './ParameterCampaignsAccessS
 /**
  * The ParameterCampaignsAccessSetttings model module.
  * @module model/ParameterCampaignsAccessSetttings
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ParameterCampaignsAccessSetttings {
     /**

@@ -16,7 +16,7 @@ import Discount from './Discount';
 /**
  * The RedemptionsListResponseBodyRedemptionsItemPromotionTierAction model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemPromotionTierAction
- * @version 3.0.3
+ * @version 3.0.4
  */
 class RedemptionsListResponseBodyRedemptionsItemPromotionTierAction {
     /**

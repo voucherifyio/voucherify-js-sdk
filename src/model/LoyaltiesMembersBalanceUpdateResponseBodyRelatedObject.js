@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject model module.
  * @module model/LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject {
     /**

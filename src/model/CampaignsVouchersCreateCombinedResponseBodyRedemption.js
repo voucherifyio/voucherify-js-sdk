@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyRedemption model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyRedemption
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CampaignsVouchersCreateCombinedResponseBodyRedemption {
     /**

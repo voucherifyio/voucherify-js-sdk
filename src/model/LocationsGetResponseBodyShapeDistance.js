@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LocationsGetResponseBodyShapeDistance model module.
  * @module model/LocationsGetResponseBodyShapeDistance
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LocationsGetResponseBodyShapeDistance {
     /**

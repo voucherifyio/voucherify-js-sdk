@@ -18,7 +18,7 @@ import Customer from './Customer';
 /**
  * The ClientEventsCreateRequestBody model module.
  * @module model/ClientEventsCreateRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ClientEventsCreateRequestBody {
     /**

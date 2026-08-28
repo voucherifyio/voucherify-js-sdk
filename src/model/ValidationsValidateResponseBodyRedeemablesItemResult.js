@@ -21,7 +21,7 @@ import ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard from './V
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemResult model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemResult
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidationsValidateResponseBodyRedeemablesItemResult {
     /**

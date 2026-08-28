@@ -18,7 +18,7 @@ import SimpleCustomerRequiredObjectType from './SimpleCustomerRequiredObjectType
 /**
  * The CustomEvent model module.
  * @module model/CustomEvent
- * @version 3.0.3
+ * @version 3.0.4
  */
 class CustomEvent {
     /**

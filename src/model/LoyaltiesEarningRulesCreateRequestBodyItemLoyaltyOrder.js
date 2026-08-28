@@ -18,7 +18,7 @@ import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount from '.
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder {
     /**

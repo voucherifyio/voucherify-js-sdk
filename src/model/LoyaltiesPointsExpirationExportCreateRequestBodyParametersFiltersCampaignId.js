@@ -16,7 +16,7 @@ import LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaign
 /**
  * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId model module.
  * @module model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersCampaignId {
     /**

@@ -16,7 +16,7 @@ import Customer from './Customer';
 /**
  * The ReferralsMembersHoldersCreateInBulkRequestBody model module.
  * @module model/ReferralsMembersHoldersCreateInBulkRequestBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ReferralsMembersHoldersCreateInBulkRequestBody {
     /**

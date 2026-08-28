@@ -16,7 +16,7 @@ import CustomerAddress from './CustomerAddress';
 /**
  * The Customer model module.
  * @module model/Customer
- * @version 3.0.3
+ * @version 3.0.4
  */
 class Customer {
     /**

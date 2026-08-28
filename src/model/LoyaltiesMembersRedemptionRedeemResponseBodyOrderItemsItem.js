@@ -19,7 +19,7 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyOrderItemsItem {
     /**

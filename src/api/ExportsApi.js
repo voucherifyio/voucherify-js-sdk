@@ -22,7 +22,7 @@ import ParameterOrderListExports from '../model/ParameterOrderListExports';
 /**
 * Exports service.
 * @module api/ExportsApi
-* @version 3.0.3
+* @version 3.0.4
 */
 export default class ExportsApi {
 
@@ -48,7 +48,7 @@ export default class ExportsApi {
 
     /**
      * Create Export
-     * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:    📘 Date and time in the export API  The exported date and times are always provided in the UTC time zone. # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
+     * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   <Note> <Badge color blue>Date and time in the export API</Badge> The exported date and times are always provided in the UTC time zone. </Note> # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
      * @param {ExportsCreateRequestBody} exportsCreateRequestBody Specify the details of the export that you would like to create.
      * @param {createExportCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link ExportsCreateResponseBody}
@@ -128,7 +128,7 @@ export default class ExportsApi {
 
     /**
      * Download Export
-     * Download the contents of the exported CSV file.   📘 Important notes  **Base URL:**   - https://download.voucherify.io (Europe)   - https://us1.download.voucherify.io (US)   - https://as1.download.voucherify.io (Asia)   **Token:** Can be found within the result parameter of the [Get Export](/api-reference/exports/get-export) method response.
+     * Download the contents of the exported CSV file.  <Note> <Badge color blue>Important notes</Badge> **Base URL:** - https://download.voucherify.io (Europe) - https://us1.download.voucherify.io (US) - https://as1.download.voucherify.io (Asia) **Token:** Can be found within the result parameter of the [Get Export](/api-reference/exports/get-export) method response. </Note>
      * @param {String} exportId Unique export object ID.
      * @param {{
         token?: String,

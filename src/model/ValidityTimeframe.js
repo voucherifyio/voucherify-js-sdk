@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidityTimeframe model module.
  * @module model/ValidityTimeframe
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ValidityTimeframe {
     /**

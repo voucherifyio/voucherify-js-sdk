@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductCollectionsItemProductsItem model module.
  * @module model/ProductCollectionsItemProductsItem
- * @version 3.0.3
+ * @version 3.0.4
  */
 class ProductCollectionsItemProductsItem {
     /**

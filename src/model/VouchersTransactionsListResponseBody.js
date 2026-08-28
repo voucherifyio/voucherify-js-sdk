@@ -16,7 +16,7 @@ import VoucherTransaction from './VoucherTransaction';
 /**
  * The VouchersTransactionsListResponseBody model module.
  * @module model/VouchersTransactionsListResponseBody
- * @version 3.0.3
+ * @version 3.0.4
  */
 class VouchersTransactionsListResponseBody {
     /**

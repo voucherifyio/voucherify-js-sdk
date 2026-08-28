@@ -16,7 +16,7 @@ import LoyaltyPointsBucketBucket from './LoyaltyPointsBucketBucket';
 /**
  * The LoyaltyPointsBucket model module.
  * @module model/LoyaltyPointsBucket
- * @version 3.0.3
+ * @version 3.0.4
  */
 class LoyaltyPointsBucket {
     /**
