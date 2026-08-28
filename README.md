@@ -289,6 +289,7 @@ Authorization schemes defined for the API.
     - Bumped `qs` from 6.15.1 to 6.15.2.
     - Bumped `form-data` from 4.0.4 to 4.0.6 (indirect dependency).
     - Moved `@babel/cli` from `dependencies` to `devDependencies` (build-time tool only).
+    - Added `typescript` to `devDependencies` (fixes `tsc: not found` on fresh install and Docker test builds).
 - **2026-04-14** - `3.0.3`:
     - Bumped brace-expansion from 1.1.12 to 1.1.13
     - Bumped picomatch
