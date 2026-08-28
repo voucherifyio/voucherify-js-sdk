@@ -288,6 +288,7 @@ Authorization schemes defined for the API.
     - Aligned generated models with the latest OpenAPI definition (including `ADD_SAME_ITEMS` discount effect, `cockpitPreferenceCenterUrl` on customer assets, segment `updatedAt`, and related schema updates not yet present in `3.0.3`).
     - Bumped `qs` from 6.15.1 to 6.15.2.
     - Bumped `form-data` from 4.0.4 to 4.0.6 (indirect dependency).
+    - Moved `@babel/cli` from `dependencies` to `devDependencies` (build-time tool only).
 - **2026-04-14** - `3.0.3`:
     - Bumped brace-expansion from 1.1.12 to 1.1.13
     - Bumped picomatch
