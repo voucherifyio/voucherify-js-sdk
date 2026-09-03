@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@babel/cli": "7.28.3",
-    "qs": "6.15.1",
+    "qs": "6.16.0",
     "superagent": "10.2.3"
   },
   "devDependencies": {
