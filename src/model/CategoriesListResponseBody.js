@@ -16,7 +16,6 @@ import Category from './Category';
 /**
  * The CategoriesListResponseBody model module.
  * @module model/CategoriesListResponseBody
- * @version 3.0.4
  */
 class CategoriesListResponseBody {
     /**

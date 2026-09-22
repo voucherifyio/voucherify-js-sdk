@@ -21,7 +21,6 @@ import ValidationsValidateResponseBodyRedeemablesItem from './ValidationsValidat
 /**
  * The ValidationsValidateResponseBody model module.
  * @module model/ValidationsValidateResponseBody
- * @version 3.0.4
  */
 class ValidationsValidateResponseBody {
     /**

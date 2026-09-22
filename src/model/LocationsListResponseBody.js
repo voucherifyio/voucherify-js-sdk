@@ -16,7 +16,6 @@ import Location from './Location';
 /**
  * The LocationsListResponseBody model module.
  * @module model/LocationsListResponseBody
- * @version 3.0.4
  */
 class LocationsListResponseBody {
     /**

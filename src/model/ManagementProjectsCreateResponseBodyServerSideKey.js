@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsCreateResponseBodyServerSideKey model module.
  * @module model/ManagementProjectsCreateResponseBodyServerSideKey
- * @version 3.0.4
  */
 class ManagementProjectsCreateResponseBodyServerSideKey {
     /**

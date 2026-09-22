@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyTiersExpirationAllStartDate model module.
  * @module model/LoyaltyTiersExpirationAllStartDate
- * @version 3.0.4
  */
 class LoyaltyTiersExpirationAllStartDate {
     /**

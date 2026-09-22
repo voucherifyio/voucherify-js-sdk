@@ -16,7 +16,6 @@ import LoyaltiesPointsExpirationExportCreateResponseBodyParameters from './Loyal
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBody model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBody
- * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateResponseBody {
     /**

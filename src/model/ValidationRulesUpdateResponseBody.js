@@ -17,7 +17,6 @@ import ValidationRulesUpdateResponseBodyApplicableTo from './ValidationRulesUpda
 /**
  * The ValidationRulesUpdateResponseBody model module.
  * @module model/ValidationRulesUpdateResponseBody
- * @version 3.0.4
  */
 class ValidationRulesUpdateResponseBody {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPointsBucketBucket model module.
  * @module model/LoyaltyPointsBucketBucket
- * @version 3.0.4
  */
 class LoyaltyPointsBucketBucket {
     /**

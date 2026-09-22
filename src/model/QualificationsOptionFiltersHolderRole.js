@@ -16,7 +16,6 @@ import QualificationsOptionFiltersHolderRoleConditions from './QualificationsOpt
 /**
  * The QualificationsOptionFiltersHolderRole model module.
  * @module model/QualificationsOptionFiltersHolderRole
- * @version 3.0.4
  */
 class QualificationsOptionFiltersHolderRole {
     /**

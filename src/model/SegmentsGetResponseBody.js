@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SegmentsGetResponseBody model module.
  * @module model/SegmentsGetResponseBody
- * @version 3.0.4
  */
 class SegmentsGetResponseBody {
     /**

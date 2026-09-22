@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRewardSku model module.
  * @module model/MemberActivityDataRedemptionRewardSku
- * @version 3.0.4
  */
 class MemberActivityDataRedemptionRewardSku {
     /**

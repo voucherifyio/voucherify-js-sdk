@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationDetailsItem model module.
  * @module model/ApplicationDetailsItem
- * @version 3.0.4
  */
 class ApplicationDetailsItem {
     /**

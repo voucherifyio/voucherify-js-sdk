@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions model module.
  * @module model/LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions
- * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherIdConditions {
     /**

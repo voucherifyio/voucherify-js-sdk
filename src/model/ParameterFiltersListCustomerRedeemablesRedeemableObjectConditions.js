@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions
- * @version 3.0.4
  */
 class ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions {
     /**

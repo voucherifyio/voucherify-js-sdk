@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionPromotionTierSummaryOrders model module.
  * @module model/MemberActivityDataRedemptionPromotionTierSummaryOrders
- * @version 3.0.4
  */
 class MemberActivityDataRedemptionPromotionTierSummaryOrders {
     /**

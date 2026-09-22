@@ -16,7 +16,6 @@ import LoyaltiesPointsExpirationExportCreateRequestBodyParameters from './Loyalt
 /**
  * The LoyaltiesPointsExpirationExportCreateRequestBody model module.
  * @module model/LoyaltiesPointsExpirationExportCreateRequestBody
- * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateRequestBody {
     /**

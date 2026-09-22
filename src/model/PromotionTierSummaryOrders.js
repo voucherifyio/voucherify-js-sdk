@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PromotionTierSummaryOrders model module.
  * @module model/PromotionTierSummaryOrders
- * @version 3.0.4
  */
 class PromotionTierSummaryOrders {
     /**

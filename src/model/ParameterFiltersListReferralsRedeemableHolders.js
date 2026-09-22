@@ -20,7 +20,6 @@ import ParameterFiltersListReferralsRedeemableHoldersId from './ParameterFilters
 /**
  * The ParameterFiltersListReferralsRedeemableHolders model module.
  * @module model/ParameterFiltersListReferralsRedeemableHolders
- * @version 3.0.4
  */
 class ParameterFiltersListReferralsRedeemableHolders {
     /**

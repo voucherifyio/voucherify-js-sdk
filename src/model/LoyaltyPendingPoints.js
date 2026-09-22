@@ -16,7 +16,6 @@ import LoyaltyPendingPointsDetails from './LoyaltyPendingPointsDetails';
 /**
  * The LoyaltyPendingPoints model module.
  * @module model/LoyaltyPendingPoints
- * @version 3.0.4
  */
 class LoyaltyPendingPoints {
     /**

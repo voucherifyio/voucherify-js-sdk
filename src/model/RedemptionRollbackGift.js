@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionRollbackGift model module.
  * @module model/RedemptionRollbackGift
- * @version 3.0.4
  */
 class RedemptionRollbackGift {
     /**

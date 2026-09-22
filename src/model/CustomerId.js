@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerId model module.
  * @module model/CustomerId
- * @version 3.0.4
  */
 class CustomerId {
     /**

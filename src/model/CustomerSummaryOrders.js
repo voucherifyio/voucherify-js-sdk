@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerSummaryOrders model module.
  * @module model/CustomerSummaryOrders
- * @version 3.0.4
  */
 class CustomerSummaryOrders {
     /**

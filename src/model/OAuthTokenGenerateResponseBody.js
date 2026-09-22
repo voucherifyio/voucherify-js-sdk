@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OAuthTokenGenerateResponseBody model module.
  * @module model/OAuthTokenGenerateResponseBody
- * @version 3.0.4
  */
 class OAuthTokenGenerateResponseBody {
     /**

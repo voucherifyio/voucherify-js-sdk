@@ -24,7 +24,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 3.0.4
  */
 class Campaign {
     /**

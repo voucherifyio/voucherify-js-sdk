@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LocationShapeGeojson model module.
  * @module model/LocationShapeGeojson
- * @version 3.0.4
  */
 class LocationShapeGeojson {
     /**

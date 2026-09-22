@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodyVoucherRedemption model module.
  * @module model/RedemptionsGetResponseBodyVoucherRedemption
- * @version 3.0.4
  */
 class RedemptionsGetResponseBodyVoucherRedemption {
     /**

@@ -16,7 +16,6 @@ import RewardsAssignmentsGetResponseBodyParameters from './RewardsAssignmentsGet
 /**
  * The RewardsAssignmentsGetResponseBody model module.
  * @module model/RewardsAssignmentsGetResponseBody
- * @version 3.0.4
  */
 class RewardsAssignmentsGetResponseBody {
     /**

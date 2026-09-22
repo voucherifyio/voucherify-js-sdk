@@ -16,7 +16,6 @@ import LoyaltiesTransferPoints from './LoyaltiesTransferPoints';
 /**
  * The RedeemableLoyaltyCard model module.
  * @module model/RedeemableLoyaltyCard
- * @version 3.0.4
  */
 class RedeemableLoyaltyCard {
     /**

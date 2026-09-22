@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class PointsExpirationTypes.
  * @module model/PointsExpirationTypes
- * @version 3.0.4
  */
 class PointsExpirationTypes {
     

@@ -17,7 +17,6 @@ import PromotionsStacksCreateResponseBodyTiers from './PromotionsStacksCreateRes
 /**
  * The PromotionsStacksCreateResponseBody model module.
  * @module model/PromotionsStacksCreateResponseBody
- * @version 3.0.4
  */
 class PromotionsStacksCreateResponseBody {
     /**

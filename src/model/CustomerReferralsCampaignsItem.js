@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerReferralsCampaignsItem model module.
  * @module model/CustomerReferralsCampaignsItem
- * @version 3.0.4
  */
 class CustomerReferralsCampaignsItem {
     /**

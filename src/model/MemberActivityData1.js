@@ -17,7 +17,6 @@ import MemberActivityData from './MemberActivityData';
 /**
  * The MemberActivityData1 model module.
  * @module model/MemberActivityData1
- * @version 3.0.4
  */
 class MemberActivityData1 {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterActivityCategory.
  * @module model/ParameterActivityCategory
- * @version 3.0.4
  */
 class ParameterActivityCategory {
     

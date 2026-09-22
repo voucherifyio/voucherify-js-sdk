@@ -17,7 +17,6 @@ import qs from "qs";
 
 /**
 * @module ApiClient
-* @version 3.0.4
 */
 
 /**

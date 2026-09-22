@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterCustomerEvent.
  * @module model/ParameterCustomerEvent
- * @version 3.0.4
  */
 class ParameterCustomerEvent {
     

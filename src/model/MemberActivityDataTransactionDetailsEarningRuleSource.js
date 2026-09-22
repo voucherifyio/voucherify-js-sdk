@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataTransactionDetailsEarningRuleSource model module.
  * @module model/MemberActivityDataTransactionDetailsEarningRuleSource
- * @version 3.0.4
  */
 class MemberActivityDataTransactionDetailsEarningRuleSource {
     /**

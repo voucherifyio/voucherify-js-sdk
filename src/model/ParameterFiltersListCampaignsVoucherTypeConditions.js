@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCampaignsVoucherTypeConditions model module.
  * @module model/ParameterFiltersListCampaignsVoucherTypeConditions
- * @version 3.0.4
  */
 class ParameterFiltersListCampaignsVoucherTypeConditions {
     /**

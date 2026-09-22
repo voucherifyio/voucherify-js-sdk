@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListValidationRules.
  * @module model/ParameterOrderListValidationRules
- * @version 3.0.4
  */
 class ParameterOrderListValidationRules {
     

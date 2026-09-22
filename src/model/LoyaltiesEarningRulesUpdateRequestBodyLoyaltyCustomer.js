@@ -16,7 +16,6 @@ import LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomerMetadata from './Loy
 /**
  * The LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer model module.
  * @module model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer
- * @version 3.0.4
  */
 class LoyaltiesEarningRulesUpdateRequestBodyLoyaltyCustomer {
     /**

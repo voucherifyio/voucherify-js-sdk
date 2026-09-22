@@ -17,7 +17,6 @@ import ApplicableToOrderItemUnitsItem from './ApplicableToOrderItemUnitsItem';
 /**
  * The ApplicableTo model module.
  * @module model/ApplicableTo
- * @version 3.0.4
  */
 class ApplicableTo {
     /**

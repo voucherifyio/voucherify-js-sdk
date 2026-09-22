@@ -17,7 +17,6 @@ import ValidationRulesCreateResponseBodyApplicableTo from './ValidationRulesCrea
 /**
  * The ValidationRulesCreateResponseBody model module.
  * @module model/ValidationRulesCreateResponseBody
- * @version 3.0.4
  */
 class ValidationRulesCreateResponseBody {
     /**

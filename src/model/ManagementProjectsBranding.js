@@ -19,7 +19,6 @@ import ManagementProjectsBrandingContact from './ManagementProjectsBrandingConta
 /**
  * The ManagementProjectsBranding model module.
  * @module model/ManagementProjectsBranding
- * @version 3.0.4
  */
 class ManagementProjectsBranding {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersCreateWithSpecificCodeRequestBodyRedemption model module.
  * @module model/VouchersCreateWithSpecificCodeRequestBodyRedemption
- * @version 3.0.4
  */
 class VouchersCreateWithSpecificCodeRequestBodyRedemption {
     /**

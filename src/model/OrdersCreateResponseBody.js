@@ -19,7 +19,6 @@ import ReferrerId from './ReferrerId';
 /**
  * The OrdersCreateResponseBody model module.
  * @module model/OrdersCreateResponseBody
- * @version 3.0.4
  */
 class OrdersCreateResponseBody {
     /**

@@ -16,7 +16,6 @@ import ManagementProjectsWebhook from './ManagementProjectsWebhook';
 /**
  * The ManagementProjectsWebhooksListResponseBody model module.
  * @module model/ManagementProjectsWebhooksListResponseBody
- * @version 3.0.4
  */
 class ManagementProjectsWebhooksListResponseBody {
     /**

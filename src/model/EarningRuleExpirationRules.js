@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleExpirationRules model module.
  * @module model/EarningRuleExpirationRules
- * @version 3.0.4
  */
 class EarningRuleExpirationRules {
     /**

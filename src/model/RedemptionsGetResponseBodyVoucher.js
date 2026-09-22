@@ -26,7 +26,6 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The RedemptionsGetResponseBodyVoucher model module.
  * @module model/RedemptionsGetResponseBodyVoucher
- * @version 3.0.4
  */
 class RedemptionsGetResponseBodyVoucher {
     /**

@@ -19,7 +19,6 @@ import MetadataSchemasListResponseBody from '../model/MetadataSchemasListRespons
 /**
 * MetadataSchemas service.
 * @module api/MetadataSchemasApi
-* @version 3.0.4
 */
 export default class MetadataSchemasApi {
 

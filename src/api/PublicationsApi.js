@@ -26,7 +26,6 @@ import PublicationsListResponseBody from '../model/PublicationsListResponseBody'
 /**
 * Publications service.
 * @module api/PublicationsApi
-* @version 3.0.4
 */
 export default class PublicationsApi {
 

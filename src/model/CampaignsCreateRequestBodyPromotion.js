@@ -16,7 +16,6 @@ import PromotionTierCreateParams from './PromotionTierCreateParams';
 /**
  * The CampaignsCreateRequestBodyPromotion model module.
  * @module model/CampaignsCreateRequestBodyPromotion
- * @version 3.0.4
  */
 class CampaignsCreateRequestBodyPromotion {
     /**

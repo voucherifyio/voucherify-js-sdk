@@ -22,7 +22,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The RedemptionEntryPromotionTier model module.
  * @module model/RedemptionEntryPromotionTier
- * @version 3.0.4
  */
 class RedemptionEntryPromotionTier {
     /**

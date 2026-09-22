@@ -16,7 +16,6 @@ import ValidationRuleErrorLibrary from './ValidationRuleErrorLibrary';
 /**
  * The ValidationRuleError model module.
  * @module model/ValidationRuleError
- * @version 3.0.4
  */
 class ValidationRuleError {
     /**

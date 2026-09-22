@@ -28,7 +28,6 @@ import ValidationRulesUpdateResponseBody from '../model/ValidationRulesUpdateRes
 /**
 * ValidationRules service.
 * @module api/ValidationRulesApi
-* @version 3.0.4
 */
 export default class ValidationRulesApi {
 

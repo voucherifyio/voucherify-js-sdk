@@ -16,7 +16,6 @@ import ExportsCreateResponseBodyParameters from './ExportsCreateResponseBodyPara
 /**
  * The ExportsCreateResponseBody model module.
  * @module model/ExportsCreateResponseBody
- * @version 3.0.4
  */
 class ExportsCreateResponseBody {
     /**

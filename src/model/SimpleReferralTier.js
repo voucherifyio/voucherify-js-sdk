@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleReferralTier model module.
  * @module model/SimpleReferralTier
- * @version 3.0.4
  */
 class SimpleReferralTier {
     /**

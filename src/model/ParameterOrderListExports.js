@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListExports.
  * @module model/ParameterOrderListExports
- * @version 3.0.4
  */
 class ParameterOrderListExports {
     

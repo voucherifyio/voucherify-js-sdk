@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyCardTransactionDetailsRedemption model module.
  * @module model/LoyaltyCardTransactionDetailsRedemption
- * @version 3.0.4
  */
 class LoyaltyCardTransactionDetailsRedemption {
     /**

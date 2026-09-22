@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryRelatedRedemptionsRedemptionsItem model module.
  * @module model/RedemptionEntryRelatedRedemptionsRedemptionsItem
- * @version 3.0.4
  */
 class RedemptionEntryRelatedRedemptionsRedemptionsItem {
     /**

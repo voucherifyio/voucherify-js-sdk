@@ -17,7 +17,6 @@ import MemberActivityDataRedemptionPromotionTierSummaryRedemptions from './Membe
 /**
  * The MemberActivityDataRedemptionPromotionTierSummary model module.
  * @module model/MemberActivityDataRedemptionPromotionTierSummary
- * @version 3.0.4
  */
 class MemberActivityDataRedemptionPromotionTierSummary {
     /**

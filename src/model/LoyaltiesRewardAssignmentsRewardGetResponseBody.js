@@ -17,7 +17,6 @@ import RewardType from './RewardType';
 /**
  * The LoyaltiesRewardAssignmentsRewardGetResponseBody model module.
  * @module model/LoyaltiesRewardAssignmentsRewardGetResponseBody
- * @version 3.0.4
  */
 class LoyaltiesRewardAssignmentsRewardGetResponseBody {
     /**

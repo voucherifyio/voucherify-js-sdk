@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersBalanceUpdateResponseBodyRelatedObject model module.
  * @module model/VouchersBalanceUpdateResponseBodyRelatedObject
- * @version 3.0.4
  */
 class VouchersBalanceUpdateResponseBodyRelatedObject {
     /**

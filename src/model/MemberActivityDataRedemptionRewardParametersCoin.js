@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRewardParametersCoin model module.
  * @module model/MemberActivityDataRedemptionRewardParametersCoin
- * @version 3.0.4
  */
 class MemberActivityDataRedemptionRewardParametersCoin {
     /**

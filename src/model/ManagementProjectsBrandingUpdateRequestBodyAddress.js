@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingUpdateRequestBodyAddress model module.
  * @module model/ManagementProjectsBrandingUpdateRequestBodyAddress
- * @version 3.0.4
  */
 class ManagementProjectsBrandingUpdateRequestBodyAddress {
     /**

@@ -16,7 +16,6 @@ import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucher
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId
- * @version 3.0.4
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId {
     /**

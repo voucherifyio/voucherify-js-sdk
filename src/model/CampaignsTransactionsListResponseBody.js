@@ -16,7 +16,6 @@ import VoucherTransaction from './VoucherTransaction';
 /**
  * The CampaignsTransactionsListResponseBody model module.
  * @module model/CampaignsTransactionsListResponseBody
- * @version 3.0.4
  */
 class CampaignsTransactionsListResponseBody {
     /**

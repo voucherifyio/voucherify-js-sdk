@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrderReferrer model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrderReferrer
- * @version 3.0.4
  */
 class RedemptionsListResponseBodyRedemptionsItemOrderReferrer {
     /**

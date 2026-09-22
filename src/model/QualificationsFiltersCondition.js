@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The QualificationsFiltersCondition model module.
  * @module model/QualificationsFiltersCondition
- * @version 3.0.4
  */
 class QualificationsFiltersCondition {
     /**

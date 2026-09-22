@@ -16,7 +16,6 @@ import Customer from './Customer';
 /**
  * The LoyaltiesMembersCreateRequestBody model module.
  * @module model/LoyaltiesMembersCreateRequestBody
- * @version 3.0.4
  */
 class LoyaltiesMembersCreateRequestBody {
     /**

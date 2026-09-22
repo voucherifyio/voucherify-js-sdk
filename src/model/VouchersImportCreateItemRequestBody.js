@@ -19,7 +19,6 @@ import VouchersImportCreateItemRequestBodyRedemption from './VouchersImportCreat
 /**
  * The VouchersImportCreateItemRequestBody model module.
  * @module model/VouchersImportCreateItemRequestBody
- * @version 3.0.4
  */
 class VouchersImportCreateItemRequestBody {
     /**

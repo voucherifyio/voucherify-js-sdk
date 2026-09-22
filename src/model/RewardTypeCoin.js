@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardTypeCoin model module.
  * @module model/RewardTypeCoin
- * @version 3.0.4
  */
 class RewardTypeCoin {
     /**

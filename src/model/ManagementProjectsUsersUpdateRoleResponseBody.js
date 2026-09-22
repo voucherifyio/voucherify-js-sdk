@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUsersUpdateRoleResponseBody model module.
  * @module model/ManagementProjectsUsersUpdateRoleResponseBody
- * @version 3.0.4
  */
 class ManagementProjectsUsersUpdateRoleResponseBody {
     /**

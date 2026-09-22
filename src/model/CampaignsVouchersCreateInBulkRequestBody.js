@@ -17,7 +17,6 @@ import CodeConfig from './CodeConfig';
 /**
  * The CampaignsVouchersCreateInBulkRequestBody model module.
  * @module model/CampaignsVouchersCreateInBulkRequestBody
- * @version 3.0.4
  */
 class CampaignsVouchersCreateInBulkRequestBody {
     /**

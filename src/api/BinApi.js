@@ -20,7 +20,6 @@ import TrashBinListResponseBody from '../model/TrashBinListResponseBody';
 /**
 * Bin service.
 * @module api/BinApi
-* @version 3.0.4
 */
 export default class BinApi {
 

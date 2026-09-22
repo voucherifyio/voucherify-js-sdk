@@ -25,7 +25,6 @@ import RedemptionsGetResponseBodyVoucher from './RedemptionsGetResponseBodyVouch
 /**
  * The RedemptionsGetResponseBody model module.
  * @module model/RedemptionsGetResponseBody
- * @version 3.0.4
  */
 class RedemptionsGetResponseBody {
     /**

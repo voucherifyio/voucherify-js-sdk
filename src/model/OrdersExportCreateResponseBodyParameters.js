@@ -17,7 +17,6 @@ import ExportOrderOrder from './ExportOrderOrder';
 /**
  * The OrdersExportCreateResponseBodyParameters model module.
  * @module model/OrdersExportCreateResponseBodyParameters
- * @version 3.0.4
  */
 class OrdersExportCreateResponseBodyParameters {
     /**

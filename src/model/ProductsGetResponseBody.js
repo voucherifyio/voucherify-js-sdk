@@ -16,7 +16,6 @@ import SkusListForProduct from './SkusListForProduct';
 /**
  * The ProductsGetResponseBody model module.
  * @module model/ProductsGetResponseBody
- * @version 3.0.4
  */
 class ProductsGetResponseBody {
     /**

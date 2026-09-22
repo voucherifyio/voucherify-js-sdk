@@ -25,7 +25,6 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The CampaignsVouchersCreateResponseBody model module.
  * @module model/CampaignsVouchersCreateResponseBody
- * @version 3.0.4
  */
 class CampaignsVouchersCreateResponseBody {
     /**

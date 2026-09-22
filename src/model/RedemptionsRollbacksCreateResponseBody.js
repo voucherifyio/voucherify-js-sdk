@@ -17,7 +17,6 @@ import RedemptionsRollbacksCreateResponseBodyOrder from './RedemptionsRollbacksC
 /**
  * The RedemptionsRollbacksCreateResponseBody model module.
  * @module model/RedemptionsRollbacksCreateResponseBody
- * @version 3.0.4
  */
 class RedemptionsRollbacksCreateResponseBody {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersCreateResponseBodyPublish model module.
  * @module model/LoyaltiesMembersCreateResponseBodyPublish
- * @version 3.0.4
  */
 class LoyaltiesMembersCreateResponseBodyPublish {
     /**

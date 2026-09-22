@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListEarningRules.
  * @module model/ParameterOrderListEarningRules
- * @version 3.0.4
  */
 class ParameterOrderListEarningRules {
     

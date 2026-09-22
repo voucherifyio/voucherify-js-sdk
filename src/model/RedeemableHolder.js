@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedeemableHolder model module.
  * @module model/RedeemableHolder
- * @version 3.0.4
  */
 class RedeemableHolder {
     /**

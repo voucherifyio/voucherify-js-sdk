@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class LoyaltyCardTransactionsType.
  * @module model/LoyaltyCardTransactionsType
- * @version 3.0.4
  */
 class LoyaltyCardTransactionsType {
     

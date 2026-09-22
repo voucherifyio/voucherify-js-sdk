@@ -16,7 +16,6 @@ import PromotionStackBaseTiers from './PromotionStackBaseTiers';
 /**
  * The PromotionStackBase model module.
  * @module model/PromotionStackBase
- * @version 3.0.4
  */
 class PromotionStackBase {
     /**

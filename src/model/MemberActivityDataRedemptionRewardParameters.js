@@ -18,7 +18,6 @@ import MemberActivityDataRedemptionRewardParametersProduct from './MemberActivit
 /**
  * The MemberActivityDataRedemptionRewardParameters model module.
  * @module model/MemberActivityDataRedemptionRewardParameters
- * @version 3.0.4
  */
 class MemberActivityDataRedemptionRewardParameters {
     /**

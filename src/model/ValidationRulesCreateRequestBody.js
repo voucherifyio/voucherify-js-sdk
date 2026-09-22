@@ -17,7 +17,6 @@ import ValidationRulesCreateRequestBodyApplicableTo from './ValidationRulesCreat
 /**
  * The ValidationRulesCreateRequestBody model module.
  * @module model/ValidationRulesCreateRequestBody
- * @version 3.0.4
  */
 class ValidationRulesCreateRequestBody {
     /**

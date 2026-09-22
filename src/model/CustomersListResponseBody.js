@@ -16,7 +16,6 @@ import CustomerWithSummaryLoyaltyReferrals from './CustomerWithSummaryLoyaltyRef
 /**
  * The CustomersListResponseBody model module.
  * @module model/CustomersListResponseBody
- * @version 3.0.4
  */
 class CustomersListResponseBody {
     /**

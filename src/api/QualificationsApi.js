@@ -19,7 +19,6 @@ import QualificationsCheckEligibilityResponseBody from '../model/QualificationsC
 /**
 * Qualifications service.
 * @module api/QualificationsApi
-* @version 3.0.4
 */
 export default class QualificationsApi {
 

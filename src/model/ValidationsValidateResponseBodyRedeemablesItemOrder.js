@@ -19,7 +19,6 @@ import ValidationsValidateResponseBodyRedeemablesItemOrderReferrer from './Valid
 /**
  * The ValidationsValidateResponseBodyRedeemablesItemOrder model module.
  * @module model/ValidationsValidateResponseBodyRedeemablesItemOrder
- * @version 3.0.4
  */
 class ValidationsValidateResponseBodyRedeemablesItemOrder {
     /**

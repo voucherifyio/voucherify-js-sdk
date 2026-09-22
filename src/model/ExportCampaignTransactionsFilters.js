@@ -18,7 +18,6 @@ import Junction from './Junction';
 /**
  * The ExportCampaignTransactionsFilters model module.
  * @module model/ExportCampaignTransactionsFilters
- * @version 3.0.4
  */
 class ExportCampaignTransactionsFilters {
     /**

@@ -19,7 +19,6 @@ import RedemptionOrderReferrer from './RedemptionOrderReferrer';
 /**
  * The RedemptionOrder model module.
  * @module model/RedemptionOrder
- * @version 3.0.4
  */
 class RedemptionOrder {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesUpdateCampaignRequestBodyOptions model module.
  * @module model/LoyaltiesUpdateCampaignRequestBodyOptions
- * @version 3.0.4
  */
 class LoyaltiesUpdateCampaignRequestBodyOptions {
     /**

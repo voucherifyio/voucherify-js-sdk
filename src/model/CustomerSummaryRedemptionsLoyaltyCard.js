@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerSummaryRedemptionsLoyaltyCard model module.
  * @module model/CustomerSummaryRedemptionsLoyaltyCard
- * @version 3.0.4
  */
 class CustomerSummaryRedemptionsLoyaltyCard {
     /**

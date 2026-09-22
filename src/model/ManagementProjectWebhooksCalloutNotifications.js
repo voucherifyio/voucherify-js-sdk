@@ -17,7 +17,6 @@ import ManagementProjectWebhooksCalloutNotificationsWebhooks from './ManagementP
 /**
  * The ManagementProjectWebhooksCalloutNotifications model module.
  * @module model/ManagementProjectWebhooksCalloutNotifications
- * @version 3.0.4
  */
 class ManagementProjectWebhooksCalloutNotifications {
     /**

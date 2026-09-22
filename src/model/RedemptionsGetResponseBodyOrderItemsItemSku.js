@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsGetResponseBodyOrderItemsItemSku model module.
  * @module model/RedemptionsGetResponseBodyOrderItemsItemSku
- * @version 3.0.4
  */
 class RedemptionsGetResponseBodyOrderItemsItemSku {
     /**

@@ -16,7 +16,6 @@ import CustomerLoyaltyCampaignsEntryValue from './CustomerLoyaltyCampaignsEntryV
 /**
  * The CustomerLoyalty model module.
  * @module model/CustomerLoyalty
- * @version 3.0.4
  */
 class CustomerLoyalty {
     /**

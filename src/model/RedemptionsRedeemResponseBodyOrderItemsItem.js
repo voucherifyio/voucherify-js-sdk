@@ -19,7 +19,6 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The RedemptionsRedeemResponseBodyOrderItemsItem model module.
  * @module model/RedemptionsRedeemResponseBodyOrderItemsItem
- * @version 3.0.4
  */
 class RedemptionsRedeemResponseBodyOrderItemsItem {
     /**

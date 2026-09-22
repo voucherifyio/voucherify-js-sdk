@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsRedeemableInapplicableResultDetails model module.
  * @module model/ValidationsRedeemableInapplicableResultDetails
- * @version 3.0.4
  */
 class ValidationsRedeemableInapplicableResultDetails {
     /**

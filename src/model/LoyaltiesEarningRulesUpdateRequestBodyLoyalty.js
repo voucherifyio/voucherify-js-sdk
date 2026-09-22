@@ -19,7 +19,6 @@ import LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems from './Loyalties
 /**
  * The LoyaltiesEarningRulesUpdateRequestBodyLoyalty model module.
  * @module model/LoyaltiesEarningRulesUpdateRequestBodyLoyalty
- * @version 3.0.4
  */
 class LoyaltiesEarningRulesUpdateRequestBodyLoyalty {
     /**

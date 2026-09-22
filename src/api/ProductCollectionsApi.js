@@ -23,7 +23,6 @@ import ProductCollectionsProductsListResponseBody from '../model/ProductCollecti
 /**
 * ProductCollections service.
 * @module api/ProductCollectionsApi
-* @version 3.0.4
 */
 export default class ProductCollectionsApi {
 

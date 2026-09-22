@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleSku model module.
  * @module model/SimpleSku
- * @version 3.0.4
  */
 class SimpleSku {
     /**

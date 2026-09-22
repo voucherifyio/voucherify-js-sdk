@@ -65,7 +65,6 @@ import ParameterTemplatesList from '../model/ParameterTemplatesList';
 /**
 * Management service.
 * @module api/ManagementApi
-* @version 3.0.4
 */
 export default class ManagementApi {
 

@@ -86,7 +86,6 @@ import ParametersFiltersListCampaignTransactions from '../model/ParametersFilter
 /**
 * Loyalties service.
 * @module api/LoyaltiesApi
-* @version 3.0.4
 */
 export default class LoyaltiesApi {
 

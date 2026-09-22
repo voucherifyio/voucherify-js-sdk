@@ -19,7 +19,6 @@ import QualificationsOption from './QualificationsOption';
 /**
  * The ClientQualificationsCheckEligibilityRequestBody model module.
  * @module model/ClientQualificationsCheckEligibilityRequestBody
- * @version 3.0.4
  */
 class ClientQualificationsCheckEligibilityRequestBody {
     /**

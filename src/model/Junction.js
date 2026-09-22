@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class Junction.
  * @module model/Junction
- * @version 3.0.4
  */
 class Junction {
     

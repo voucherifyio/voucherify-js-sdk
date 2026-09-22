@@ -19,7 +19,6 @@ import MappingPoints from './MappingPoints';
 /**
  * The LoyaltyTier model module.
  * @module model/LoyaltyTier
- * @version 3.0.4
  */
 class LoyaltyTier {
     /**

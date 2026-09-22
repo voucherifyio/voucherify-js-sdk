@@ -17,7 +17,6 @@ import Voucher from './Voucher';
 /**
  * The PublicationsCreateResponseBody model module.
  * @module model/PublicationsCreateResponseBody
- * @version 3.0.4
  */
 class PublicationsCreateResponseBody {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersUpdateInBulkRequestBodyAddress model module.
  * @module model/CustomersUpdateInBulkRequestBodyAddress
- * @version 3.0.4
  */
 class CustomersUpdateInBulkRequestBodyAddress {
     /**

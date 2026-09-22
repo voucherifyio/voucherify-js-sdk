@@ -39,7 +39,6 @@ import ParameterOrderListRedeemables from '../model/ParameterOrderListRedeemable
 /**
 * Customers service.
 * @module api/CustomersApi
-* @version 3.0.4
 */
 export default class CustomersApi {
 

@@ -17,7 +17,6 @@ import EventSourceUser from './EventSourceUser';
 /**
  * The EventSource model module.
  * @module model/EventSource
- * @version 3.0.4
  */
 class EventSource {
     /**

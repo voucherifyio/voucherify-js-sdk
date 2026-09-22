@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersPermanentDeletionCreateResponseBodyDataJson model module.
  * @module model/CustomersPermanentDeletionCreateResponseBodyDataJson
- * @version 3.0.4
  */
 class CustomersPermanentDeletionCreateResponseBodyDataJson {
     /**

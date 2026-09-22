@@ -16,7 +16,6 @@ import LoyaltiesMembersTransactionsExportCreateResponseBodyParameters from './Lo
 /**
  * The LoyaltiesMembersTransactionsExportCreateResponseBody model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateResponseBody
- * @version 3.0.4
  */
 class LoyaltiesMembersTransactionsExportCreateResponseBody {
     /**

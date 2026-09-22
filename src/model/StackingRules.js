@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The StackingRules model module.
  * @module model/StackingRules
- * @version 3.0.4
  */
 class StackingRules {
     /**

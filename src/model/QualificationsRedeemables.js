@@ -16,7 +16,6 @@ import QualificationsRedeemable from './QualificationsRedeemable';
 /**
  * The QualificationsRedeemables model module.
  * @module model/QualificationsRedeemables
- * @version 3.0.4
  */
 class QualificationsRedeemables {
     /**

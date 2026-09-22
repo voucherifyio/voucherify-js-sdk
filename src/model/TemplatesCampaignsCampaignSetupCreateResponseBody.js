@@ -17,7 +17,6 @@ import TemplatesCampaignsCampaignSetupCreateResponseBodyCreatedResourcesItem fro
 /**
  * The TemplatesCampaignsCampaignSetupCreateResponseBody model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateResponseBody
- * @version 3.0.4
  */
 class TemplatesCampaignsCampaignSetupCreateResponseBody {
     /**

@@ -19,7 +19,6 @@ import RedemptionsListResponseBodyRedemptionsItemOrderReferrer from './Redemptio
 /**
  * The RedemptionsListResponseBodyRedemptionsItemOrder model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemOrder
- * @version 3.0.4
  */
 class RedemptionsListResponseBodyRedemptionsItemOrder {
     /**

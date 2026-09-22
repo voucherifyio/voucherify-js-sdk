@@ -17,7 +17,6 @@ import InapplicableToOrderItemUnitsItem from './InapplicableToOrderItemUnitsItem
 /**
  * The InapplicableTo model module.
  * @module model/InapplicableTo
- * @version 3.0.4
  */
 class InapplicableTo {
     /**
