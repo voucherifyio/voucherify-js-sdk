@@ -1,4 +1,4 @@
-# Voucherify.ValidationRuleError
+# Voucherify.ValidationRulesCreateRequestBodyError
 
 ## Properties
 

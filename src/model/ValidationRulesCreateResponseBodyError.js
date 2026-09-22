@@ -13,18 +13,18 @@
 
 import ApiClient from '../ApiClient';
 /**
- * The ValidationRuleError model module.
- * @module model/ValidationRuleError
+ * The ValidationRulesCreateResponseBodyError model module.
+ * @module model/ValidationRulesCreateResponseBodyError
  */
-class ValidationRuleError {
+class ValidationRulesCreateResponseBodyError {
     /**
-     * Constructs a new <code>ValidationRuleError</code>.
+     * Constructs a new <code>ValidationRulesCreateResponseBodyError</code>.
      * Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
-     * @alias ValidationRuleError
+     * @alias ValidationRulesCreateResponseBodyError
      */
     constructor() { 
         
-        ValidationRuleError.initialize(this);
+        ValidationRulesCreateResponseBodyError.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class ValidationRuleError {
     }
 
     /**
-     * Constructs a <code>ValidationRuleError</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ValidationRulesCreateResponseBodyError</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Partial<ValidationRuleError>} data The plain JavaScript object bearing properties of interest.
-     * @param {ValidationRuleError} [obj] Optional instance to populate.
-     * @returns {ValidationRuleError} The populated <code>ValidationRuleError</code> instance.
+     * @param {Partial<ValidationRulesCreateResponseBodyError>} data The plain JavaScript object bearing properties of interest.
+     * @param {ValidationRulesCreateResponseBodyError} [obj] Optional instance to populate.
+     * @returns {ValidationRulesCreateResponseBodyError} The populated <code>ValidationRulesCreateResponseBodyError</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ValidationRuleError();
+            obj = obj || new ValidationRulesCreateResponseBodyError();
 
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -54,9 +54,9 @@ class ValidationRuleError {
     }
 
     /**
-     * Validates the JSON data with respect to <code>ValidationRuleError</code>.
-     * @param {Partial<ValidationRuleError>} data The plain JavaScript object bearing properties of interest.
-     * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRuleError</code>.
+     * Validates the JSON data with respect to <code>ValidationRulesCreateResponseBodyError</code>.
+     * @param {Partial<ValidationRulesCreateResponseBodyError>} data The plain JavaScript object bearing properties of interest.
+     * @returns {boolean} to indicate whether the JSON data is valid with respect to <code>ValidationRulesCreateResponseBodyError</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -76,12 +76,12 @@ class ValidationRuleError {
     * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
     * @type {String | undefined}
     */
-ValidationRuleError.prototype['message'] = undefined;
+ValidationRulesCreateResponseBodyError.prototype['message'] = undefined;
 
 
 
 
 
 
-export default ValidationRuleError;
+export default ValidationRulesCreateResponseBodyError;
 

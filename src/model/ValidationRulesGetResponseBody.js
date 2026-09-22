@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import ValidationRuleError from './ValidationRuleError';
 import ValidationRulesGetResponseBodyApplicableTo from './ValidationRulesGetResponseBodyApplicableTo';
+import ValidationRulesGetResponseBodyError from './ValidationRulesGetResponseBodyError';
 /**
  * The ValidationRulesGetResponseBody model module.
  * @module model/ValidationRulesGetResponseBody
@@ -61,7 +61,7 @@ class ValidationRulesGetResponseBody {
                 obj['bundle_rules'] = ApiClient.convertToType(data['bundle_rules'], Object);
             }
             if (data.hasOwnProperty('error')) {
-                obj['error'] = ValidationRuleError.constructFromObject(data['error']);
+                obj['error'] = ValidationRulesGetResponseBodyError.constructFromObject(data['error']);
             }
             if (data.hasOwnProperty('applicable_to')) {
                 obj['applicable_to'] = ValidationRulesGetResponseBodyApplicableTo.constructFromObject(data['applicable_to']);
@@ -103,7 +103,7 @@ class ValidationRulesGetResponseBody {
         }
         // validate the optional field `error`
         if (data['error']) { // data not null
-          ValidationRuleError.validateJSON(data['error']);
+          ValidationRulesGetResponseBodyError.validateJSON(data['error']);
         }
         // validate the optional field `applicable_to`
         if (data['applicable_to']) { // data not null
@@ -153,7 +153,7 @@ ValidationRulesGetResponseBody.prototype['rules'] = undefined;
 ValidationRulesGetResponseBody.prototype['bundle_rules'] = undefined;
 
 /**
-    * @type {ValidationRuleError | undefined}
+    * @type {ValidationRulesGetResponseBodyError | undefined}
     */
 ValidationRulesGetResponseBody.prototype['error'] = undefined;
 
