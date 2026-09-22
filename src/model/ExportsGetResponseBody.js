@@ -278,7 +278,19 @@ ExportsGetResponseBody.prototype['parameters'] = undefined;
          * value: "voucher_transactions"
          * @constant
          */
-        "voucher_transactions": "voucher_transactions"    
+        "voucher_transactions": "voucher_transactions",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
     };
 
 

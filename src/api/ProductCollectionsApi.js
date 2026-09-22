@@ -89,7 +89,7 @@ export default class ProductCollectionsApi {
 
     /**
      * Delete Product Collection
-     * This method deletes a product collection.
+     * Deletes a product collection. <Warning>This endpoint performs database-heavy operations. It is not designed for highly frequent use.</Warning>
      * @param {String} productCollectionId A unique product collection ID.
      * @param {deleteProductCollectionCallback} [callback] The callback function, accepting three arguments: error, data, response
      * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.

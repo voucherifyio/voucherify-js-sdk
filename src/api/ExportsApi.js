@@ -48,7 +48,7 @@ export default class ExportsApi {
 
     /**
      * Create Export
-     * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   <Note> <Badge color blue>Date and time in the export API</Badge> The exported date and times are always provided in the UTC time zone. </Note> # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
+     * Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   <Note> <Badge color blue>Date and time in the export API</Badge> The exported date and times are always provided in the UTC time zone. </Note> # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions    # Products   # SKUs   
      * @param {ExportsCreateRequestBody} exportsCreateRequestBody Specify the details of the export that you would like to create.
      * @param {createExportCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link ExportsCreateResponseBody}
@@ -89,7 +89,7 @@ export default class ExportsApi {
     /**
      * Delete Export
      * This method deletes a previously created export object.
-     * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+     * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
      * @param {deleteExportCallback} [callback] The callback function, accepting three arguments: error, data, response
      * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
      */
@@ -175,7 +175,7 @@ export default class ExportsApi {
     /**
      * Get Export
      * Retrieves the URL of the downloadable file, which was generated via the [Create Export](/api-reference/exports/create-export) method.
-     * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+     * @param {String} exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
      * @param {getExportCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link ExportsGetResponseBody}
      * @returns {Promise<(ExportsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `ExportsGetResponseBody` object or with `undefined`.

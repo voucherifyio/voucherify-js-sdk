@@ -20,7 +20,7 @@ import ApiClient from '../ApiClient';
 class ErrorError {
     /**
      * Constructs a new <code>ErrorError</code>.
-     * Includes additional information about the error.
+     * Includes the resolved custom validation-rule error message when one is configured.
      * @alias ErrorError
      */
     constructor() { 
@@ -74,7 +74,7 @@ class ErrorError {
 
 
 /**
-    * The message configured by the user in a validation rule.
+    * Resolved custom validation-rule error message for `options.language`, falling back to the Error Message Library default language. Present only when a custom message can be resolved.
     * @type {String | undefined}
     */
 ErrorError.prototype['message'] = undefined;

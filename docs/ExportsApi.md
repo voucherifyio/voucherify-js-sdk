@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create Export
 
-Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   &lt;Note&gt; &lt;Badge color blue&gt;Date and time in the export API&lt;/Badge&gt; The exported date and times are always provided in the UTC time zone. &lt;/Note&gt; # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
+Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   &lt;Note&gt; &lt;Badge color blue&gt;Date and time in the export API&lt;/Badge&gt; The exported date and times are always provided in the UTC time zone. &lt;/Note&gt; # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions    # Products   # SKUs   
 
 ### Example
 
@@ -40,7 +40,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.ExportsApi();
-let exportsCreateRequestBody = new Voucherify.ExportsCreateRequestBody(); // ExportsCreateRequestBody | Specify the details of the export that you would like to create.
+let exportsCreateRequestBody = {"exported_object":"product","parameters":{"order":"-created_at","fields":["id","name","price","image_url","source_id","attributes","created_at"],"filters":{"junction":"and","created_at":{"conditions":{"$after":["2024-01-01T00:00:00.000Z"]}}}}}; // ExportsCreateRequestBody | Specify the details of the export that you would like to create.
 apiInstance.createExport(exportsCreateRequestBody, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -99,7 +99,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.ExportsApi();
-let exportId = "exportId_example"; // String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+let exportId = "exportId_example"; // String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
 apiInstance.deleteExport(exportId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -114,7 +114,7 @@ apiInstance.deleteExport(exportId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exportId** | **String**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | 
+ **exportId** | **String**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. | 
 
 ### Return type
 
@@ -221,7 +221,7 @@ let X-Voucherify-OAuth = defaultClient.authentications['X-Voucherify-OAuth'];
 X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.ExportsApi();
-let exportId = "exportId_example"; // String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+let exportId = "exportId_example"; // String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
 apiInstance.getExport(exportId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -236,7 +236,7 @@ apiInstance.getExport(exportId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exportId** | **String**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | 
+ **exportId** | **String**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. | 
 
 ### Return type
 

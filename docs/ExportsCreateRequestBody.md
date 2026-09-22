@@ -26,6 +26,10 @@ Name | Type | Description | Notes
 
 * `voucher_transactions` (value: `"voucher_transactions"`)
 
+* `product` (value: `"product"`)
+
+* `sku` (value: `"sku"`)
+
 
 
 

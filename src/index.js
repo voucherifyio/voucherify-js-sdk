@@ -1245,26 +1245,22 @@ import ValidationRuleApplicableTo from './model/ValidationRuleApplicableTo';
 import ValidationRuleAssignment from './model/ValidationRuleAssignment';
 import ValidationRuleAssignmentsList from './model/ValidationRuleAssignmentsList';
 import ValidationRuleError from './model/ValidationRuleError';
+import ValidationRuleErrorLibrary from './model/ValidationRuleErrorLibrary';
 import ValidationRulesAssignmentsCreateRequestBody from './model/ValidationRulesAssignmentsCreateRequestBody';
 import ValidationRulesAssignmentsCreateResponseBody from './model/ValidationRulesAssignmentsCreateResponseBody';
 import ValidationRulesAssignmentsList from './model/ValidationRulesAssignmentsList';
 import ValidationRulesAssignmentsListResponseBody from './model/ValidationRulesAssignmentsListResponseBody';
 import ValidationRulesCreateRequestBody from './model/ValidationRulesCreateRequestBody';
 import ValidationRulesCreateRequestBodyApplicableTo from './model/ValidationRulesCreateRequestBodyApplicableTo';
-import ValidationRulesCreateRequestBodyError from './model/ValidationRulesCreateRequestBodyError';
 import ValidationRulesCreateResponseBody from './model/ValidationRulesCreateResponseBody';
 import ValidationRulesCreateResponseBodyApplicableTo from './model/ValidationRulesCreateResponseBodyApplicableTo';
-import ValidationRulesCreateResponseBodyError from './model/ValidationRulesCreateResponseBodyError';
 import ValidationRulesGetResponseBody from './model/ValidationRulesGetResponseBody';
 import ValidationRulesGetResponseBodyApplicableTo from './model/ValidationRulesGetResponseBodyApplicableTo';
-import ValidationRulesGetResponseBodyError from './model/ValidationRulesGetResponseBodyError';
 import ValidationRulesListResponseBody from './model/ValidationRulesListResponseBody';
 import ValidationRulesUpdateRequestBody from './model/ValidationRulesUpdateRequestBody';
 import ValidationRulesUpdateRequestBodyApplicableTo from './model/ValidationRulesUpdateRequestBodyApplicableTo';
-import ValidationRulesUpdateRequestBodyError from './model/ValidationRulesUpdateRequestBodyError';
 import ValidationRulesUpdateResponseBody from './model/ValidationRulesUpdateResponseBody';
 import ValidationRulesUpdateResponseBodyApplicableTo from './model/ValidationRulesUpdateResponseBodyApplicableTo';
-import ValidationRulesUpdateResponseBodyError from './model/ValidationRulesUpdateResponseBodyError';
 import ValidationsRedeemableInapplicable from './model/ValidationsRedeemableInapplicable';
 import ValidationsRedeemableInapplicableResult from './model/ValidationsRedeemableInapplicableResult';
 import ValidationsRedeemableInapplicableResultDetails from './model/ValidationsRedeemableInapplicableResultDetails';
@@ -8833,6 +8829,12 @@ export {
     ValidationRuleError,
 
     /**
+     * The ValidationRuleErrorLibrary model constructor.
+     * @property {ValidationRuleErrorLibrary}
+     */
+    ValidationRuleErrorLibrary,
+
+    /**
      * The ValidationRulesAssignmentsCreateRequestBody model constructor.
      * @property {ValidationRulesAssignmentsCreateRequestBody}
      */
@@ -8869,12 +8871,6 @@ export {
     ValidationRulesCreateRequestBodyApplicableTo,
 
     /**
-     * The ValidationRulesCreateRequestBodyError model constructor.
-     * @property {ValidationRulesCreateRequestBodyError}
-     */
-    ValidationRulesCreateRequestBodyError,
-
-    /**
      * The ValidationRulesCreateResponseBody model constructor.
      * @property {ValidationRulesCreateResponseBody}
      */
@@ -8887,12 +8883,6 @@ export {
     ValidationRulesCreateResponseBodyApplicableTo,
 
     /**
-     * The ValidationRulesCreateResponseBodyError model constructor.
-     * @property {ValidationRulesCreateResponseBodyError}
-     */
-    ValidationRulesCreateResponseBodyError,
-
-    /**
      * The ValidationRulesGetResponseBody model constructor.
      * @property {ValidationRulesGetResponseBody}
      */
@@ -8903,12 +8893,6 @@ export {
      * @property {ValidationRulesGetResponseBodyApplicableTo}
      */
     ValidationRulesGetResponseBodyApplicableTo,
-
-    /**
-     * The ValidationRulesGetResponseBodyError model constructor.
-     * @property {ValidationRulesGetResponseBodyError}
-     */
-    ValidationRulesGetResponseBodyError,
 
     /**
      * The ValidationRulesListResponseBody model constructor.
@@ -8929,12 +8913,6 @@ export {
     ValidationRulesUpdateRequestBodyApplicableTo,
 
     /**
-     * The ValidationRulesUpdateRequestBodyError model constructor.
-     * @property {ValidationRulesUpdateRequestBodyError}
-     */
-    ValidationRulesUpdateRequestBodyError,
-
-    /**
      * The ValidationRulesUpdateResponseBody model constructor.
      * @property {ValidationRulesUpdateResponseBody}
      */
@@ -8945,12 +8923,6 @@ export {
      * @property {ValidationRulesUpdateResponseBodyApplicableTo}
      */
     ValidationRulesUpdateResponseBodyApplicableTo,
-
-    /**
-     * The ValidationRulesUpdateResponseBodyError model constructor.
-     * @property {ValidationRulesUpdateResponseBodyError}
-     */
-    ValidationRulesUpdateResponseBodyError,
 
     /**
      * The ValidationsRedeemableInapplicable model constructor.

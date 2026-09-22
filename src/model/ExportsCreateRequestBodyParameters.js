@@ -95,13 +95,13 @@ class ExportsCreateRequestBodyParameters {
 ExportsCreateRequestBodyParameters.prototype['order'] = undefined;
 
 /**
-    * Array of strings containing the data in the export. These fields define the headers in the CSV file.
+    * Array of strings containing the data in the export. These fields define the headers in the CSV file. and Array of strings containing the data in the export. These fields define the headers in the CSV file. The `metadata` field expands into one CSV column per metadata property. You can also pass specific properties as `metadata.<property_name>`.
     * @type {(Array<keyof typeof ExportsCreateRequestBodyParameters.FieldsEnum>) | undefined}
     */
 ExportsCreateRequestBodyParameters.prototype['fields'] = undefined;
 
 /**
-    * Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\"
+    * Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\" and Allowed additional properties must start with \"metadata.\" or \"attributes.\"
     * @type {Object | undefined}
     */
 ExportsCreateRequestBodyParameters.prototype['filters'] = undefined;
@@ -277,7 +277,31 @@ ExportsCreateRequestBodyParameters.prototype['campaign_id'] = undefined;
          * value: "expires_at"
          * @constant
          */
-        "expires_at": "expires_at"    
+        "expires_at": "expires_at",
+    
+        /**
+         * value: "-product_id"
+         * @constant
+         */
+        "-product_id": "-product_id",
+    
+        /**
+         * value: "product_id"
+         * @constant
+         */
+        "product_id": "product_id",
+    
+        /**
+         * value: "-sku"
+         * @constant
+         */
+        "-sku": "-sku",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
     };
 
 
@@ -820,7 +844,43 @@ ExportsCreateRequestBodyParameters['FieldsEnum'] = {
      * value: "details"
      * @constant
      */
-    "details": "details"
+    "details": "details",
+
+    /**
+     * value: "price"
+     * @constant
+     */
+    "price": "price",
+
+    /**
+     * value: "image_url"
+     * @constant
+     */
+    "image_url": "image_url",
+
+    /**
+     * value: "attributes"
+     * @constant
+     */
+    "attributes": "attributes",
+
+    /**
+     * value: "sku"
+     * @constant
+     */
+    "sku": "sku",
+
+    /**
+     * value: "product_id"
+     * @constant
+     */
+    "product_id": "product_id",
+
+    /**
+     * value: "currency"
+     * @constant
+     */
+    "currency": "currency"
 };
 
 

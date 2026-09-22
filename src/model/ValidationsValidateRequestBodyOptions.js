@@ -20,7 +20,7 @@ import ApiClient from '../ApiClient';
 class ValidationsValidateRequestBodyOptions {
     /**
      * Constructs a new <code>ValidationsValidateRequestBodyOptions</code>.
-     * Configure parameters returned in the response.
+     * Configure response expansion and the language of custom validation-rule error messages.
      * @alias ValidationsValidateRequestBodyOptions
      */
     constructor() { 
@@ -50,6 +50,9 @@ class ValidationsValidateRequestBodyOptions {
             if (data.hasOwnProperty('expand')) {
                 obj['expand'] = ApiClient.convertToType(data['expand'], ['String']);
             }
+            if (data.hasOwnProperty('language')) {
+                obj['language'] = ApiClient.convertToType(data['language'], 'String');
+            }
         }
         return obj;
     }
@@ -63,6 +66,10 @@ class ValidationsValidateRequestBodyOptions {
         // ensure the json data is an array
         if (!Array.isArray(data['expand'])) {
             throw new Error("Expected the field `expand` to be an array in the JSON data but got " + data['expand']);
+        }
+        // ensure the json data is a string
+        if (data['language'] && !(typeof data['language'] === 'string' || data['language'] instanceof String)) {
+            throw new Error("Expected the field `language` to be a primitive type in the JSON string but got " + data['language']);
         }
 
         return true;
@@ -78,6 +85,12 @@ class ValidationsValidateRequestBodyOptions {
     * @type {(Array<keyof typeof ValidationsValidateRequestBodyOptions.ExpandEnum>) | undefined}
     */
 ValidationsValidateRequestBodyOptions.prototype['expand'] = undefined;
+
+/**
+    * Selects the language for the custom validation-rule error message. Returns the message in this language when a validation rule fails. Falls back to the Error Message Library default language when omitted or when the requested language has no message. Omits the custom error when no message can be resolved.
+    * @type {String | undefined}
+    */
+ValidationsValidateRequestBodyOptions.prototype['language'] = undefined;
 
 
 

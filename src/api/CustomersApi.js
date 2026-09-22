@@ -105,7 +105,7 @@ export default class CustomersApi {
 
     /**
      * Delete Customer Permanently
-     * The organization user can remove consumer data permanently from the Voucherify system by using this API method. It deletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
+     * The organization user can remove customer data permanently from the Voucherify system by using this API method. It deletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify as per the GDPR.
      * @param {String} customerId A Voucherify customers id or source_id.
      * @param {customerPermanentlyDeletionCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link CustomersPermanentDeletionCreateResponseBody}
@@ -146,7 +146,7 @@ export default class CustomersApi {
 
     /**
      * Delete Customer
-     * This method deletes a customer.
+     * This method deletes a customer. The customer is permanently deleted. This means that a new customer with the same source_id can be created. <Note> <Badge color blue>GDPR compliance</Badge> This method does NOT delete all related data, including personal data, from Voucherify databases. To delete these records and fulfil the right to be forgotten in the sense of the GDPR, use the [Delete Customer Permanently](/api-reference/customers/delete-customer-permanently) endpoint or go to [Delete people data](/manage/team-settings#delete-people-data) in the Voucherify [Team settings](/manage/team-settings). </Note>
      * @param {String} customerId A Voucherify customers id or source_id.
      * @param {deleteCustomerCallback} [callback] The callback function, accepting three arguments: error, data, response
      * @returns {Promise<( | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `` object or with `undefined`.
