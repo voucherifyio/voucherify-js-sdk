@@ -19,7 +19,6 @@ import Junction from './Junction';
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParametersFilters model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParametersFilters
- * @version 3.0.3
  */
 class CampaignsTransactionsExportCreateResponseBodyParametersFilters {
     /**

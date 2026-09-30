@@ -16,7 +16,6 @@ import LoyaltyPendingPointsDetailsEarningRuleSource from './LoyaltyPendingPoints
 /**
  * The LoyaltyPendingPointsDetailsEarningRule model module.
  * @module model/LoyaltyPendingPointsDetailsEarningRule
- * @version 3.0.3
  */
 class LoyaltyPendingPointsDetailsEarningRule {
     /**

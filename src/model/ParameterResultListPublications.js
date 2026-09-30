@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterResultListPublications.
  * @module model/ParameterResultListPublications
- * @version 3.0.3
  */
 class ParameterResultListPublications {
     

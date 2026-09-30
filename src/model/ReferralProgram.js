@@ -17,7 +17,6 @@ import ReferralProgramRefereeReward from './ReferralProgramRefereeReward';
 /**
  * The ReferralProgram model module.
  * @module model/ReferralProgram
- * @version 3.0.3
  */
 class ReferralProgram {
     /**

@@ -17,7 +17,6 @@ import LocationsGetResponseBodyShapeGeojson from './LocationsGetResponseBodyShap
 /**
  * The LocationsGetResponseBodyShape model module.
  * @module model/LocationsGetResponseBodyShape
- * @version 3.0.3
  */
 class LocationsGetResponseBodyShape {
     /**

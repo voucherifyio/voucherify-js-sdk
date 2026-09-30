@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardTypeCampaign model module.
  * @module model/RewardTypeCampaign
- * @version 3.0.3
  */
 class RewardTypeCampaign {
     /**

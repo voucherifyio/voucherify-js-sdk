@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleCustomEvent model module.
  * @module model/EarningRuleCustomEvent
- * @version 3.0.3
  */
 class EarningRuleCustomEvent {
     /**

@@ -16,7 +16,6 @@ import CampaignsTransactionsExportCreateRequestBodyParameters from './CampaignsT
 /**
  * The CampaignsTransactionsExportCreateRequestBody model module.
  * @module model/CampaignsTransactionsExportCreateRequestBody
- * @version 3.0.3
  */
 class CampaignsTransactionsExportCreateRequestBody {
     /**

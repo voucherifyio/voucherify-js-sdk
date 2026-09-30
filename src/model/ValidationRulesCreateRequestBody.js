@@ -17,7 +17,6 @@ import ValidationRulesCreateRequestBodyError from './ValidationRulesCreateReques
 /**
  * The ValidationRulesCreateRequestBody model module.
  * @module model/ValidationRulesCreateRequestBody
- * @version 3.0.3
  */
 class ValidationRulesCreateRequestBody {
     /**

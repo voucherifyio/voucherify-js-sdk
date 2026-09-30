@@ -20,7 +20,6 @@ import MemberActivityDataRedemptionRewardVoucher from './MemberActivityDataRedem
 /**
  * The MemberActivityDataRedemptionReward model module.
  * @module model/MemberActivityDataRedemptionReward
- * @version 3.0.3
  */
 class MemberActivityDataRedemptionReward {
     /**

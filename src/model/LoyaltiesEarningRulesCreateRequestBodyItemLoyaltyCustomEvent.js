@@ -16,7 +16,6 @@ import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata from
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent {
     /**

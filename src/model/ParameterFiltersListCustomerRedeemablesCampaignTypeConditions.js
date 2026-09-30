@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCustomerRedeemablesCampaignTypeConditions model module.
  * @module model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions
- * @version 3.0.3
  */
 class ParameterFiltersListCustomerRedeemablesCampaignTypeConditions {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryOrderItemsItemProduct model module.
  * @module model/RedemptionEntryOrderItemsItemProduct
- * @version 3.0.3
  */
 class RedemptionEntryOrderItemsItemProduct {
     /**

@@ -17,7 +17,6 @@ import RedemptionsRedeemRequestBodyRedeemablesItemReward from './RedemptionsRede
 /**
  * The RedemptionsRedeemRequestBodyRedeemablesItem model module.
  * @module model/RedemptionsRedeemRequestBodyRedeemablesItem
- * @version 3.0.3
  */
 class RedemptionsRedeemRequestBodyRedeemablesItem {
     /**

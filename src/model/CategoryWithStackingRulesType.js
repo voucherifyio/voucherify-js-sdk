@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryWithStackingRulesType model module.
  * @module model/CategoryWithStackingRulesType
- * @version 3.0.3
  */
 class CategoryWithStackingRulesType {
     /**

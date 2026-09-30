@@ -16,7 +16,6 @@ import VoucherTransactionsExportFilterConditions from './VoucherTransactionsExpo
 /**
  * The VoucherTransactionsFilters model module.
  * @module model/VoucherTransactionsFilters
- * @version 3.0.3
  */
 class VoucherTransactionsFilters {
     /**

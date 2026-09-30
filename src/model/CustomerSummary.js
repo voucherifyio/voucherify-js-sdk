@@ -17,7 +17,6 @@ import CustomerSummaryRedemptions from './CustomerSummaryRedemptions';
 /**
  * The CustomerSummary model module.
  * @module model/CustomerSummary
- * @version 3.0.3
  */
 class CustomerSummary {
     /**

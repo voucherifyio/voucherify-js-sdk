@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesDeleteResponseBody model module.
  * @module model/LoyaltiesDeleteResponseBody
- * @version 3.0.3
  */
 class LoyaltiesDeleteResponseBody {
     /**

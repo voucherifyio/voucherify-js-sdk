@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsStackingRulesUpdateResponseBody model module.
  * @module model/ManagementProjectsStackingRulesUpdateResponseBody
- * @version 3.0.3
  */
 class ManagementProjectsStackingRulesUpdateResponseBody {
     /**

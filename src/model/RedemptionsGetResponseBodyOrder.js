@@ -19,7 +19,6 @@ import RedemptionsGetResponseBodyOrderReferrer from './RedemptionsGetResponseBod
 /**
  * The RedemptionsGetResponseBodyOrder model module.
  * @module model/RedemptionsGetResponseBodyOrder
- * @version 3.0.3
  */
 class RedemptionsGetResponseBodyOrder {
     /**

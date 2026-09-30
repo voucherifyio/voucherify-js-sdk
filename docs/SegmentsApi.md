@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create Segment
 
-Create a customer segment.  🚧 Limit on static segments  There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment.  🚧 Limit on Active and Passive segments  You can create a maximum of 100 passive and active segments.
+Create a customer segment. &lt;Warning&gt; &lt;Badge color yellow&gt;Limit on static segments&lt;/Badge&gt; There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment. &lt;/Warning&gt; &lt;Warning&gt; &lt;Badge color yellow&gt;Limit on Active and Passive segments&lt;/Badge&gt; You can create a maximum of 100 passive and active segments. &lt;/Warning&gt;
 
 ### Example
 
@@ -134,7 +134,7 @@ null (empty response body)
 
 Get Segment
 
-Retrieves the segment with a given segment ID.
+Retrieves the segment with a given segment ID. This method doesnt return the customers that belong to the segment. To return a list of customers who belong to a segment, use [GET List customers](/api-reference/customers/list-customers) endpoint with the segment_id query parameter.
 
 ### Example
 

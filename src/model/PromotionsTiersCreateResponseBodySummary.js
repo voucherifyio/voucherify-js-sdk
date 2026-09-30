@@ -17,7 +17,6 @@ import PromotionsTiersCreateResponseBodySummaryRedemptions from './PromotionsTie
 /**
  * The PromotionsTiersCreateResponseBodySummary model module.
  * @module model/PromotionsTiersCreateResponseBodySummary
- * @version 3.0.3
  */
 class PromotionsTiersCreateResponseBodySummary {
     /**

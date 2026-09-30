@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The AreaStoreCampaignAssignment model module.
  * @module model/AreaStoreCampaignAssignment
- * @version 3.0.3
  */
 class AreaStoreCampaignAssignment {
     /**

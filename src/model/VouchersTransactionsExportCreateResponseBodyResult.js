@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersTransactionsExportCreateResponseBodyResult model module.
  * @module model/VouchersTransactionsExportCreateResponseBodyResult
- * @version 3.0.3
  */
 class VouchersTransactionsExportCreateResponseBodyResult {
     /**

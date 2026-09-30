@@ -19,7 +19,6 @@ import ManagementProjectsBrandingUpdateResponseBodyContact from './ManagementPro
 /**
  * The ManagementProjectsBrandingUpdateResponseBody model module.
  * @module model/ManagementProjectsBrandingUpdateResponseBody
- * @version 3.0.3
  */
 class ManagementProjectsBrandingUpdateResponseBody {
     /**

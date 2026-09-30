@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ExportOrderOrder.
  * @module model/ExportOrderOrder
- * @version 3.0.3
  */
 class ExportOrderOrder {
     

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUsersGetUserResponseBody model module.
  * @module model/ManagementProjectsUsersGetUserResponseBody
- * @version 3.0.3
  */
 class ManagementProjectsUsersGetUserResponseBody {
     /**

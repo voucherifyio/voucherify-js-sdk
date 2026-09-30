@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardTypeProduct model module.
  * @module model/RewardTypeProduct
- * @version 3.0.3
  */
 class RewardTypeProduct {
     /**

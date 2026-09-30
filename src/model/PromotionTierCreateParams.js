@@ -18,7 +18,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The PromotionTierCreateParams model module.
  * @module model/PromotionTierCreateParams
- * @version 3.0.3
  */
 class PromotionTierCreateParams {
     /**

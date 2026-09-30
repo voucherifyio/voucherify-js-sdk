@@ -17,7 +17,6 @@ import RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions
 /**
  * The RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary
- * @version 3.0.3
  */
 class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummary {
     /**

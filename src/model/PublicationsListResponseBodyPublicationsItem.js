@@ -18,7 +18,6 @@ import PublicationsListResponseBodyPublicationsItemMetadata from './Publications
 /**
  * The PublicationsListResponseBodyPublicationsItem model module.
  * @module model/PublicationsListResponseBodyPublicationsItem
- * @version 3.0.3
  */
 class PublicationsListResponseBodyPublicationsItem {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherAssetsQr model module.
  * @module model/VoucherAssetsQr
- * @version 3.0.3
  */
 class VoucherAssetsQr {
     /**

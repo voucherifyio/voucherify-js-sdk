@@ -16,7 +16,6 @@ import InapplicableTo from './InapplicableTo';
 /**
  * The InapplicableToResultList model module.
  * @module model/InapplicableToResultList
- * @version 3.0.3
  */
 class InapplicableToResultList {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish
- * @version 3.0.3
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidityHoursDailyItem model module.
  * @module model/ValidityHoursDailyItem
- * @version 3.0.3
  */
 class ValidityHoursDailyItem {
     /**

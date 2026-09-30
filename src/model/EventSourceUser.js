@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The EventSourceUser model module.
  * @module model/EventSourceUser
- * @version 3.0.3
  */
 class EventSourceUser {
     /**

@@ -16,7 +16,6 @@ import ParameterFiltersListCampaignsTypeConditions from './ParameterFiltersListC
 /**
  * The ParameterFiltersListCampaignsType model module.
  * @module model/ParameterFiltersListCampaignsType
- * @version 3.0.3
  */
 class ParameterFiltersListCampaignsType {
     /**

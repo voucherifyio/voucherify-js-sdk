@@ -16,7 +16,6 @@ import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicab
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount {
     /**

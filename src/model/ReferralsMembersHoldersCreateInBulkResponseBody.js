@@ -16,7 +16,6 @@ import RedeemableHolder from './RedeemableHolder';
 /**
  * The ReferralsMembersHoldersCreateInBulkResponseBody model module.
  * @module model/ReferralsMembersHoldersCreateInBulkResponseBody
- * @version 3.0.3
  */
 class ReferralsMembersHoldersCreateInBulkResponseBody {
     /**

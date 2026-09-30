@@ -16,7 +16,6 @@ import ManagementProjectsCustomEventSchemasCreateResponseBodySchema from './Mana
 /**
  * The ManagementProjectsCustomEventSchemasCreateResponseBody model module.
  * @module model/ManagementProjectsCustomEventSchemasCreateResponseBody
- * @version 3.0.3
  */
 class ManagementProjectsCustomEventSchemasCreateResponseBody {
     /**

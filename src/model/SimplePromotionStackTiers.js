@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SimplePromotionStackTiers model module.
  * @module model/SimplePromotionStackTiers
- * @version 3.0.3
  */
 class SimplePromotionStackTiers {
     /**

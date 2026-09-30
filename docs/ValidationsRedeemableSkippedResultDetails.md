@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 
 * `preceding_validation_failed` (value: `"preceding_validation_failed"`)
 
+* `no_effect` (value: `"no_effect"`)
+
 
 
 

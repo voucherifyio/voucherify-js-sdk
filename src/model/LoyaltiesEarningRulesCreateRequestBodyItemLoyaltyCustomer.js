@@ -16,7 +16,6 @@ import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata from '.
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer {
     /**

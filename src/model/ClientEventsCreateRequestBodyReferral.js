@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientEventsCreateRequestBodyReferral model module.
  * @module model/ClientEventsCreateRequestBodyReferral
- * @version 3.0.3
  */
 class ClientEventsCreateRequestBodyReferral {
     /**

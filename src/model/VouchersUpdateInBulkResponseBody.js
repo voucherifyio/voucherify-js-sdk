@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersUpdateInBulkResponseBody model module.
  * @module model/VouchersUpdateInBulkResponseBody
- * @version 3.0.3
  */
 class VouchersUpdateInBulkResponseBody {
     /**

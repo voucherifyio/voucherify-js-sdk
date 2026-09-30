@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions model module.
  * @module model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions
- * @version 3.0.3
  */
 class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions {
     /**

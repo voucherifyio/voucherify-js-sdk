@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUpdateRequestBodyDefaultCodeConfig model module.
  * @module model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig
- * @version 3.0.3
  */
 class ManagementProjectsUpdateRequestBodyDefaultCodeConfig {
     /**

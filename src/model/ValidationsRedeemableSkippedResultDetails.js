@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsRedeemableSkippedResultDetails model module.
  * @module model/ValidationsRedeemableSkippedResultDetails
- * @version 3.0.3
  */
 class ValidationsRedeemableSkippedResultDetails {
     /**
@@ -134,7 +133,13 @@ ValidationsRedeemableSkippedResultDetails.prototype['message'] = undefined;
          * value: "preceding_validation_failed"
          * @constant
          */
-        "preceding_validation_failed": "preceding_validation_failed"    
+        "preceding_validation_failed": "preceding_validation_failed",
+    
+        /**
+         * value: "no_effect"
+         * @constant
+         */
+        "no_effect": "no_effect"    
     };
 
 

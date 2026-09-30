@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomersUpdateResponseBodyAddress model module.
  * @module model/CustomersUpdateResponseBodyAddress
- * @version 3.0.3
  */
 class CustomersUpdateResponseBodyAddress {
     /**

@@ -22,7 +22,6 @@ import ValidationRulesAssignmentsList from './ValidationRulesAssignmentsList';
 /**
  * The QualificationsRedeemable model module.
  * @module model/QualificationsRedeemable
- * @version 3.0.3
  */
 class QualificationsRedeemable {
     /**

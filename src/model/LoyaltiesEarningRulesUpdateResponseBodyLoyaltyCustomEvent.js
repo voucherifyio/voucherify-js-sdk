@@ -16,7 +16,6 @@ import LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEventMetadata from '.
 /**
  * The LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent model module.
  * @module model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyCustomEvent {
     /**

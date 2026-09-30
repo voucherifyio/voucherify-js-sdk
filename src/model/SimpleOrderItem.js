@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleOrderItem model module.
  * @module model/SimpleOrderItem
- * @version 3.0.3
  */
 class SimpleOrderItem {
     /**

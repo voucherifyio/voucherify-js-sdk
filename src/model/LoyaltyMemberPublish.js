@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyMemberPublish model module.
  * @module model/LoyaltyMemberPublish
- * @version 3.0.3
  */
 class LoyaltyMemberPublish {
     /**

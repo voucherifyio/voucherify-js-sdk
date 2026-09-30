@@ -17,7 +17,6 @@ import ExportResult from './ExportResult';
 /**
  * The Export model module.
  * @module model/Export
- * @version 3.0.3
  */
 class Export {
     /**
@@ -278,7 +277,19 @@ Export.prototype['parameters'] = undefined;
          * value: "voucher_transactions"
          * @constant
          */
-        "voucher_transactions": "voucher_transactions"    
+        "voucher_transactions": "voucher_transactions",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
     };
 
 

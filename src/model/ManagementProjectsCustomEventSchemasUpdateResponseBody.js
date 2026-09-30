@@ -16,7 +16,6 @@ import ManagementProjectsCustomEventSchemasUpdateResponseBodySchema from './Mana
 /**
  * The ManagementProjectsCustomEventSchemasUpdateResponseBody model module.
  * @module model/ManagementProjectsCustomEventSchemasUpdateResponseBody
- * @version 3.0.3
  */
 class ManagementProjectsCustomEventSchemasUpdateResponseBody {
     /**

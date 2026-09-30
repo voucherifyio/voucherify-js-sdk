@@ -19,7 +19,6 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The QualificationsRedeemableBaseOrderItemsItem model module.
  * @module model/QualificationsRedeemableBaseOrderItemsItem
- * @version 3.0.3
  */
 class QualificationsRedeemableBaseOrderItemsItem {
     /**

@@ -18,7 +18,6 @@ import ReferrerId from './ReferrerId';
 /**
  * The OrderCalculated model module.
  * @module model/OrderCalculated
- * @version 3.0.3
  */
 class OrderCalculated {
     /**

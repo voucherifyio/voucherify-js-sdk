@@ -16,7 +16,6 @@ import RewardsAssignmentsCreateResponseBodyParametersLoyalty from './RewardsAssi
 /**
  * The RewardsAssignmentsCreateResponseBodyParameters model module.
  * @module model/RewardsAssignmentsCreateResponseBodyParameters
- * @version 3.0.3
  */
 class RewardsAssignmentsCreateResponseBodyParameters {
     /**

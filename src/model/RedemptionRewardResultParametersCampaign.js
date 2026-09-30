@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionRewardResultParametersCampaign model module.
  * @module model/RedemptionRewardResultParametersCampaign
- * @version 3.0.3
  */
 class RedemptionRewardResultParametersCampaign {
     /**

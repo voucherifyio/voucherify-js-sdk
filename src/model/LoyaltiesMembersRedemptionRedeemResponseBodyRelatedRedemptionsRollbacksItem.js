@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem
- * @version 3.0.3
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem {
     /**

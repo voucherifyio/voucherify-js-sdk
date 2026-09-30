@@ -21,7 +21,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignsCreateRequestBody model module.
  * @module model/CampaignsCreateRequestBody
- * @version 3.0.3
  */
 class CampaignsCreateRequestBody {
     /**
@@ -210,7 +209,7 @@ CampaignsCreateRequestBody.prototype['name'] = undefined;
 CampaignsCreateRequestBody.prototype['description'] = undefined;
 
 /**
-    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
+    * Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: the campaign is a generic (standalone) one with a single voucher for public use (only for discount and gift card campaigns)
     * @type {(keyof typeof CampaignsCreateRequestBody.TypeEnum) | undefined}
     */
 CampaignsCreateRequestBody.prototype['type'] = undefined;
@@ -343,7 +342,13 @@ CampaignsCreateRequestBody.prototype['promotion'] = undefined;
          * value: "STATIC"
          * @constant
          */
-        "STATIC": "STATIC"    
+        "STATIC": "STATIC",
+    
+        /**
+         * value: "STANDALONE"
+         * @constant
+         */
+        "STANDALONE": "STANDALONE"    
     };
 
 

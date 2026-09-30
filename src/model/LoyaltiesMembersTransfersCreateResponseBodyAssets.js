@@ -17,7 +17,6 @@ import LoyaltiesMembersTransfersCreateResponseBodyAssetsQr from './LoyaltiesMemb
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyAssets model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyAssets
- * @version 3.0.3
  */
 class LoyaltiesMembersTransfersCreateResponseBodyAssets {
     /**

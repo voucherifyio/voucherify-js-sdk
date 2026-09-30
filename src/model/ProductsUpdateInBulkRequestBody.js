@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductsUpdateInBulkRequestBody model module.
  * @module model/ProductsUpdateInBulkRequestBody
- * @version 3.0.3
  */
 class ProductsUpdateInBulkRequestBody {
     /**

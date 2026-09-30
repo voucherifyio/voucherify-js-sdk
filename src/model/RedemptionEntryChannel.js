@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryChannel model module.
  * @module model/RedemptionEntryChannel
- * @version 3.0.3
  */
 class RedemptionEntryChannel {
     /**

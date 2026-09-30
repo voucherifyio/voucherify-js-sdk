@@ -25,7 +25,6 @@ import SimpleCustomer from './SimpleCustomer';
 /**
  * The Redemption model module.
  * @module model/Redemption
- * @version 3.0.3
  */
 class Redemption {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersTransfersCreateResponseBodyAssetsQr model module.
  * @module model/LoyaltiesMembersTransfersCreateResponseBodyAssetsQr
- * @version 3.0.3
  */
 class LoyaltiesMembersTransfersCreateResponseBodyAssetsQr {
     /**

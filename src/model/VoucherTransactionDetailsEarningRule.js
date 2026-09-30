@@ -16,7 +16,6 @@ import VoucherTransactionDetailsEarningRuleSource from './VoucherTransactionDeta
 /**
  * The VoucherTransactionDetailsEarningRule model module.
  * @module model/VoucherTransactionDetailsEarningRule
- * @version 3.0.3
  */
 class VoucherTransactionDetailsEarningRule {
     /**

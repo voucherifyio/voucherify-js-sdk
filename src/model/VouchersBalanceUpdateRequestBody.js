@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersBalanceUpdateRequestBody model module.
  * @module model/VouchersBalanceUpdateRequestBody
- * @version 3.0.3
  */
 class VouchersBalanceUpdateRequestBody {
     /**

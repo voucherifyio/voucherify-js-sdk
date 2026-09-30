@@ -16,7 +16,6 @@ import RewardAssignmentParameters from './RewardAssignmentParameters';
 /**
  * The RewardAssignment model module.
  * @module model/RewardAssignment
- * @version 3.0.3
  */
 class RewardAssignment {
     /**

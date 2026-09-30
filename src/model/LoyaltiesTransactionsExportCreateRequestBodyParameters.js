@@ -16,7 +16,6 @@ import ExportCampaignTransactionsFilters from './ExportCampaignTransactionsFilte
 /**
  * The LoyaltiesTransactionsExportCreateRequestBodyParameters model module.
  * @module model/LoyaltiesTransactionsExportCreateRequestBodyParameters
- * @version 3.0.3
  */
 class LoyaltiesTransactionsExportCreateRequestBodyParameters {
     /**

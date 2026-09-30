@@ -17,7 +17,6 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The OrderCalculatedItem model module.
  * @module model/OrderCalculatedItem
- * @version 3.0.3
  */
 class OrderCalculatedItem {
     /**

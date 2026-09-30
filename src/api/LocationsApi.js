@@ -21,7 +21,6 @@ import ParameterOrderListLocations from '../model/ParameterOrderListLocations';
 /**
 * Locations service.
 * @module api/LocationsApi
-* @version 3.0.3
 */
 export default class LocationsApi {
 

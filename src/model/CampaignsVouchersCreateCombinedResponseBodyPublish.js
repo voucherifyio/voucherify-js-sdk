@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyPublish model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyPublish
- * @version 3.0.3
  */
 class CampaignsVouchersCreateCombinedResponseBodyPublish {
     /**

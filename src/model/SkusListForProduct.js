@@ -16,7 +16,6 @@ import Sku from './Sku';
 /**
  * The SkusListForProduct model module.
  * @module model/SkusListForProduct
- * @version 3.0.3
  */
 class SkusListForProduct {
     /**

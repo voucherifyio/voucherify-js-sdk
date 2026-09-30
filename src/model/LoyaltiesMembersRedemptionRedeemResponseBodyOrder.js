@@ -19,7 +19,6 @@ import OrderRedemptionsEntry from './OrderRedemptionsEntry';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyOrder model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyOrder
- * @version 3.0.3
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyOrder {
     /**

@@ -16,7 +16,6 @@ import QualificationsOptionFilters from './QualificationsOptionFilters';
 /**
  * The QualificationsOption model module.
  * @module model/QualificationsOption
- * @version 3.0.3
  */
 class QualificationsOption {
     /**

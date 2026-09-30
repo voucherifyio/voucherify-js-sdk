@@ -17,7 +17,6 @@ import RedemptionEntryRelatedRedemptionsRollbacksItem from './RedemptionEntryRel
 /**
  * The RedemptionEntryRelatedRedemptions model module.
  * @module model/RedemptionEntryRelatedRedemptions
- * @version 3.0.3
  */
 class RedemptionEntryRelatedRedemptions {
     /**

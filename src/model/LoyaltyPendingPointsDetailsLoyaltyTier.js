@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPendingPointsDetailsLoyaltyTier model module.
  * @module model/LoyaltyPendingPointsDetailsLoyaltyTier
- * @version 3.0.3
  */
 class LoyaltyPendingPointsDetailsLoyaltyTier {
     /**

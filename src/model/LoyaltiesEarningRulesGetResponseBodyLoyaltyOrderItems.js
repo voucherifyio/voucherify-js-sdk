@@ -18,7 +18,6 @@ import LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount from 
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRewardParametersCoin model module.
  * @module model/MemberActivityDataRedemptionRewardParametersCoin
- * @version 3.0.3
  */
 class MemberActivityDataRedemptionRewardParametersCoin {
     /**
@@ -72,7 +71,7 @@ class MemberActivityDataRedemptionRewardParametersCoin {
 
 
 /**
-    * The cash equivalent of the points defined in the points_ratio property.
+    * The cash equivalent of the points defined in the points_ratio property. and The cash equivalent of the points defined in the `points_ratio` property.
     * @type {Number | undefined}
     */
 MemberActivityDataRedemptionRewardParametersCoin.prototype['exchange_ratio'] = undefined;

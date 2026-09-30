@@ -16,7 +16,6 @@ import LoyaltyCardTransactionDetailsEarningRuleSource from './LoyaltyCardTransac
 /**
  * The LoyaltyCardTransactionDetailsEarningRule model module.
  * @module model/LoyaltyCardTransactionDetailsEarningRule
- * @version 3.0.3
  */
 class LoyaltyCardTransactionDetailsEarningRule {
     /**

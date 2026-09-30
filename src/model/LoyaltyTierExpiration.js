@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyTierExpiration model module.
  * @module model/LoyaltyTierExpiration
- * @version 3.0.3
  */
 class LoyaltyTierExpiration {
     /**

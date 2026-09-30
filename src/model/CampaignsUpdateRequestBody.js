@@ -23,7 +23,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignsUpdateRequestBody model module.
  * @module model/CampaignsUpdateRequestBody
- * @version 3.0.3
  */
 class CampaignsUpdateRequestBody {
     /**

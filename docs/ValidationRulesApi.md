@@ -45,7 +45,7 @@ X-Voucherify-OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Voucherify.ValidationRulesApi();
 let validationRuleId = "validationRuleId_example"; // String | Unique validation rule ID.
-let validationRulesAssignmentsCreateRequestBody = {"voucher":"v_ssR6vhswwh5odSloN2Vc3O60w7aea018"}; // ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
+let validationRulesAssignmentsCreateRequestBody = {"related_object_type":"voucher","related_object_id":"{{voucherId}}"}; // ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
 let opts = {
   'force': true // Boolean | If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added.
 };
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 Create Validation Rules
 
-Create a validation rule.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
+Create a validation rule. &lt;Warning&gt; &lt;Badge color yellow&gt;Managing validation rules&lt;/Badge&gt; It is recommended to [create or update validation rules](/personalize/create-validation-rules) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules. &lt;/Warning&gt;
 
 ### Example
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 Update Validation Rule
 
-Update validation rule parameters.  🚧 Managing validation rules  It is recommended to [create or update validation rules](https://support.voucherify.io/article/148-how-to-build-a-rule) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
+Update validation rule parameters. &lt;Warning&gt; &lt;Badge color yellow&gt;Managing validation rules&lt;/Badge&gt; It is recommended to [create or update validation rules](/personalize/create-validation-rules) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules. &lt;/Warning&gt;
 
 ### Example
 

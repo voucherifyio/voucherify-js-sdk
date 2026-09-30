@@ -20,7 +20,6 @@ import SimpleCampaignVoucherRedemption from './SimpleCampaignVoucherRedemption';
 /**
  * The SimpleCampaignVoucher model module.
  * @module model/SimpleCampaignVoucher
- * @version 3.0.3
  */
 class SimpleCampaignVoucher {
     /**

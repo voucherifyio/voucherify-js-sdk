@@ -25,7 +25,6 @@ import RedemptionRewardResult from './RedemptionRewardResult';
 /**
  * The RedemptionEntry model module.
  * @module model/RedemptionEntry
- * @version 3.0.3
  */
 class RedemptionEntry {
     /**

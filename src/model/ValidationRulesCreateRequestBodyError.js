@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationRulesCreateRequestBodyError model module.
  * @module model/ValidationRulesCreateRequestBodyError
- * @version 3.0.3
  */
 class ValidationRulesCreateRequestBodyError {
     /**

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsVouchersCreateCombinedResponseBodyGift model module.
  * @module model/CampaignsVouchersCreateCombinedResponseBodyGift
- * @version 3.0.3
  */
 class CampaignsVouchersCreateCombinedResponseBodyGift {
     /**

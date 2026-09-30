@@ -17,7 +17,6 @@ import ExportsGetResponseBodyResult from './ExportsGetResponseBodyResult';
 /**
  * The ExportsGetResponseBody model module.
  * @module model/ExportsGetResponseBody
- * @version 3.0.3
  */
 class ExportsGetResponseBody {
     /**
@@ -278,7 +277,19 @@ ExportsGetResponseBody.prototype['parameters'] = undefined;
          * value: "voucher_transactions"
          * @constant
          */
-        "voucher_transactions": "voucher_transactions"    
+        "voucher_transactions": "voucher_transactions",
+    
+        /**
+         * value: "product"
+         * @constant
+         */
+        "product": "product",
+    
+        /**
+         * value: "sku"
+         * @constant
+         */
+        "sku": "sku"    
     };
 
 

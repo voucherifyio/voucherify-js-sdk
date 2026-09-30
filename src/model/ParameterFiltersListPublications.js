@@ -25,7 +25,6 @@ import ParameterFiltersListPublicationsVoucherType from './ParameterFiltersListP
 /**
  * The ParameterFiltersListPublications model module.
  * @module model/ParameterFiltersListPublications
- * @version 3.0.3
  */
 class ParameterFiltersListPublications {
     /**

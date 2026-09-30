@@ -17,7 +17,6 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The PromotionsTiersCreateResponseBodyCampaign model module.
  * @module model/PromotionsTiersCreateResponseBodyCampaign
- * @version 3.0.3
  */
 class PromotionsTiersCreateResponseBodyCampaign {
     /**

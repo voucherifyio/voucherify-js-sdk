@@ -16,7 +16,6 @@ import ParameterFiltersListCampaignsVoucherTypeConditions from './ParameterFilte
 /**
  * The ParameterFiltersListCustomerRedeemablesVoucherType model module.
  * @module model/ParameterFiltersListCustomerRedeemablesVoucherType
- * @version 3.0.3
  */
 class ParameterFiltersListCustomerRedeemablesVoucherType {
     /**

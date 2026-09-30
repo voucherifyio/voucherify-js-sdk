@@ -16,7 +16,6 @@ import SimplePromotionTierCampaign from './SimplePromotionTierCampaign';
 /**
  * The SimplePromotionTier model module.
  * @module model/SimplePromotionTier
- * @version 3.0.3
  */
 class SimplePromotionTier {
     /**

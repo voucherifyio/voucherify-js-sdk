@@ -16,7 +16,6 @@ import CustomerReferralsCampaignsItem from './CustomerReferralsCampaignsItem';
 /**
  * The CustomerReferrals model module.
  * @module model/CustomerReferrals
- * @version 3.0.3
  */
 class CustomerReferrals {
     /**

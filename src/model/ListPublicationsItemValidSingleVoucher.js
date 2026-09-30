@@ -18,7 +18,6 @@ import ListPublicationsItemVoucher from './ListPublicationsItemVoucher';
 /**
  * The ListPublicationsItemValidSingleVoucher model module.
  * @module model/ListPublicationsItemValidSingleVoucher
- * @version 3.0.3
  */
 class ListPublicationsItemValidSingleVoucher {
     /**

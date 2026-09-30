@@ -16,7 +16,6 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListPublicationsVoucherType model module.
  * @module model/ParameterFiltersListPublicationsVoucherType
- * @version 3.0.3
  */
 class ParameterFiltersListPublicationsVoucherType {
     /**

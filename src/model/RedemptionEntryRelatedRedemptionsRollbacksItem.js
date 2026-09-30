@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionEntryRelatedRedemptionsRollbacksItem model module.
  * @module model/RedemptionEntryRelatedRedemptionsRollbacksItem
- * @version 3.0.3
  */
 class RedemptionEntryRelatedRedemptionsRollbacksItem {
     /**

@@ -16,7 +16,6 @@ import LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject from './LoyaltiesM
 /**
  * The LoyaltiesMembersBalanceUpdateResponseBody model module.
  * @module model/LoyaltiesMembersBalanceUpdateResponseBody
- * @version 3.0.3
  */
 class LoyaltiesMembersBalanceUpdateResponseBody {
     /**

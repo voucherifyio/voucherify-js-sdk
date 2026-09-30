@@ -16,7 +16,6 @@ import OrdersExportCreateRequestBodyParameters from './OrdersExportCreateRequest
 /**
  * The OrdersExportCreateRequestBody model module.
  * @module model/OrdersExportCreateRequestBody
- * @version 3.0.3
  */
 class OrdersExportCreateRequestBody {
     /**

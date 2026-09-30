@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterFiltersListCampaignsStatusConditions model module.
  * @module model/ParameterFiltersListCampaignsStatusConditions
- * @version 3.0.3
  */
 class ParameterFiltersListCampaignsStatusConditions {
     /**

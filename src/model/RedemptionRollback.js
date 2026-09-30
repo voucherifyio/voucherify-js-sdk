@@ -23,7 +23,6 @@ import Voucher from './Voucher';
 /**
  * The RedemptionRollback model module.
  * @module model/RedemptionRollback
- * @version 3.0.3
  */
 class RedemptionRollback {
     /**

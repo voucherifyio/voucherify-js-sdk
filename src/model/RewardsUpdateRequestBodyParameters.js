@@ -18,7 +18,6 @@ import RewardsUpdateRequestBodyParametersProduct from './RewardsUpdateRequestBod
 /**
  * The RewardsUpdateRequestBodyParameters model module.
  * @module model/RewardsUpdateRequestBodyParameters
- * @version 3.0.3
  */
 class RewardsUpdateRequestBodyParameters {
     /**

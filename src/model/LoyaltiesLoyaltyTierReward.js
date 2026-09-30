@@ -17,7 +17,6 @@ import RewardAssignment from './RewardAssignment';
 /**
  * The LoyaltiesLoyaltyTierReward model module.
  * @module model/LoyaltiesLoyaltyTierReward
- * @version 3.0.3
  */
 class LoyaltiesLoyaltyTierReward {
     /**

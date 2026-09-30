@@ -7,6 +7,6 @@ COPY .env* ./
 
 COPY . .
 
-RUN npm install
+RUN npm install --ignore-scripts && npm run build
 
 CMD ["npm", "test"]

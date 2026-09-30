@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cockpitUrl** | **String** | Customer&#39;s cockpit URL address. | [optional] 
+**cockpitUrl** | **String** | URL address to customer preference center. Previously, a customer&#39;s cockpit URL address. | [optional] 
+**cockpitPreferenceCenterUrl** | **String** | URL address to customer preference center. | [optional] 
 
 

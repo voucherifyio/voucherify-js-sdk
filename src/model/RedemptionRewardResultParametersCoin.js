@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionRewardResultParametersCoin model module.
  * @module model/RedemptionRewardResultParametersCoin
- * @version 3.0.3
  */
 class RedemptionRewardResultParametersCoin {
     /**

@@ -16,7 +16,6 @@ import CampaignsTransactionsExportCreateResponseBodyParametersFilters from './Ca
 /**
  * The CampaignsTransactionsExportCreateResponseBodyParameters model module.
  * @module model/CampaignsTransactionsExportCreateResponseBodyParameters
- * @version 3.0.3
  */
 class CampaignsTransactionsExportCreateResponseBodyParameters {
     /**

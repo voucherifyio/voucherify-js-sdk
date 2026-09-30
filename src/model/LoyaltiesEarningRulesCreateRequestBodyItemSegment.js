@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemSegment model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemSegment
- * @version 3.0.3
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemSegment {
     /**
