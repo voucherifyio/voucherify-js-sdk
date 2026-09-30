@@ -5,8 +5,37 @@ import { VouchersCreateWithSpecificCodeRequestBody } from '../src';
 
 
 describe("VouchersAPI", function () {
+  this.timeout(30000);
   const DELAY_TIME = 2000;
   const INITIAL_BALANCE = 1000;
+  const CAMPAIGN_READY_TIMEOUT_MS = 12000;
+  const CAMPAIGN_POLL_INTERVAL_MS = 500;
+
+  async function waitUntilCampaignReady(campaignsApi, campaignId) {
+    const started = Date.now();
+    let campaign;
+    while (Date.now() - started < CAMPAIGN_READY_TIMEOUT_MS) {
+      campaign = await campaignsApi.getCampaign(campaignId);
+      if (
+        campaign.creation_status === "DONE" &&
+        campaign.vouchers_generation_status === "DONE"
+      ) {
+        return campaign;
+      }
+      if (
+        campaign.creation_status === "FAILED" ||
+        campaign.vouchers_generation_status === "FAILED"
+      ) {
+        throw new Error(
+          `Campaign ${campaignId} generation failed: creation_status=${campaign.creation_status}, vouchers_generation_status=${campaign.vouchers_generation_status}`,
+        );
+      }
+      await specUtils.delay(CAMPAIGN_POLL_INTERVAL_MS);
+    }
+    throw new Error(
+      `Campaign ${campaignId} stayed locked: creation_status=${campaign?.creation_status}, vouchers_generation_status=${campaign?.vouchers_generation_status}`,
+    );
+  }
   let createdCampaigns = [];
   let createdCustomers = [];
   let voucherToBeUsedInAdvancedFiltering;
@@ -36,6 +65,7 @@ describe("VouchersAPI", function () {
 
       for (const campaign of createdCampaigns) {
         try {
+          await waitUntilCampaignReady(campaignsApi, campaign.id);
           await campaignsApi.deleteCampaign(campaign.id);
         } catch (e) {
           console.log(`Failed to delete campaign ${campaign.id}: ${e}`);
@@ -72,8 +102,7 @@ describe("VouchersAPI", function () {
     const campaign = await campaignsApi.createCampaign(campaignBody);
     createdCampaigns.push(campaign);
 
-    await specUtils.delay(DELAY_TIME);
-
+    await waitUntilCampaignReady(campaignsApi, campaign.id);
 
     const vouchersList = await vouchersApi.listVouchers({
       campaignId: campaign.id,
@@ -124,8 +153,7 @@ describe("VouchersAPI", function () {
     const campaign = await campaignsApi.createCampaign(campaignBody);
     createdCampaigns.push(campaign);
 
-    await specUtils.delay(DELAY_TIME);
-
+    await waitUntilCampaignReady(campaignsApi, campaign.id);
 
     const vouchersList = await vouchersApi.listVouchers({
       campaignId: campaign.id,
