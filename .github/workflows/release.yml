@@ -44,8 +44,8 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Publish package to npm
+      - name: Stage-publish package to npm
         run: |
-          npm publish --access public --tag ${{ github.event.inputs.tag }}
+          npm stage publish --access public --tag ${{ github.event.inputs.tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
