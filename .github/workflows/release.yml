@@ -44,6 +44,15 @@ jobs:
       - name: Build package
         run: npm run build
 
+      # `npm stage` exists only in npm >= 11.15.0. Node 22.16.0 bundles npm 10.9.2,
+      # so `npm stage publish` exits with: Unknown command: "stage".
+      # npm 12 needs Node >= 22.22.2; 11.21.0 is the newest 11.x that still runs here.
+      # Ignore the publish .npmrc so a package-scoped token is not sent for this install.
+      - name: Install npm CLI with staged publishing
+        run: |
+          NPM_CONFIG_USERCONFIG="$(mktemp)" npm install -g npm@11.21.0
+          npm --version
+
       - name: Stage-publish package to npm
         run: |
           npm stage publish --access public --tag ${{ github.event.inputs.tag }}
