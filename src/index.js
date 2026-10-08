@@ -78,6 +78,7 @@ import CampaignsVouchersCreateResponseBodyGift from './model/CampaignsVouchersCr
 import CampaignsVouchersCreateResponseBodyLoyaltyCard from './model/CampaignsVouchersCreateResponseBodyLoyaltyCard';
 import CampaignsVouchersCreateResponseBodyPublish from './model/CampaignsVouchersCreateResponseBodyPublish';
 import CampaignsVouchersCreateResponseBodyRedemption from './model/CampaignsVouchersCreateResponseBodyRedemption';
+import CardTransaction from './model/CardTransaction';
 import CategoriesCreateRequestBody from './model/CategoriesCreateRequestBody';
 import CategoriesCreateResponseBody from './model/CategoriesCreateResponseBody';
 import CategoriesGetResponseBody from './model/CategoriesGetResponseBody';
@@ -205,6 +206,11 @@ import EventsCreateRequestBody from './model/EventsCreateRequestBody';
 import EventsCreateRequestBodyLoyalty from './model/EventsCreateRequestBodyLoyalty';
 import EventsCreateRequestBodyReferral from './model/EventsCreateRequestBodyReferral';
 import EventsCreateResponseBody from './model/EventsCreateResponseBody';
+import ExamineCardReference from './model/ExamineCardReference';
+import ExamineCustomerIdentification from './model/ExamineCustomerIdentification';
+import ExamineCustomerReference from './model/ExamineCustomerReference';
+import ExamineMemberReference from './model/ExamineMemberReference';
+import ExamineProgramReference from './model/ExamineProgramReference';
 import Export from './model/Export';
 import ExportCampaignTransactionsFilters from './model/ExportCampaignTransactionsFilters';
 import ExportOrderFields from './model/ExportOrderFields';
@@ -231,6 +237,7 @@ import InapplicableTo from './model/InapplicableTo';
 import InapplicableToOrderItemUnitsItem from './model/InapplicableToOrderItemUnitsItem';
 import InapplicableToResultList from './model/InapplicableToResultList';
 import Junction from './model/Junction';
+import ListCardTransactionsOrderParameter from './model/ListCardTransactionsOrderParameter';
 import ListPublicationsItemValidSingleVoucher from './model/ListPublicationsItemValidSingleVoucher';
 import ListPublicationsItemValidSingleVoucherMetadata from './model/ListPublicationsItemValidSingleVoucherMetadata';
 import ListPublicationsItemVoucher from './model/ListPublicationsItemVoucher';
@@ -398,6 +405,40 @@ import LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier from './model/Loyaltie
 import LoyaltiesEarningRulesUpdateResponseBodyPendingPoints from './model/LoyaltiesEarningRulesUpdateResponseBodyPendingPoints';
 import LoyaltiesEarningRulesUpdateResponseBodySegment from './model/LoyaltiesEarningRulesUpdateResponseBodySegment';
 import LoyaltiesEarningRulesUpdateResponseBodySource from './model/LoyaltiesEarningRulesUpdateResponseBodySource';
+import LoyaltiesExamineEarningRulesExamineRequestBody from './model/LoyaltiesExamineEarningRulesExamineRequestBody';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventAll from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventAll';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventSpecific from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventSpecific';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomer from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomer';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEvent from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEvent';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventAll from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventAll';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventSpecific from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventSpecific';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid';
+import LoyaltiesExamineEarningRulesExamineRequestBodyCustomerSegmentEntered from './model/LoyaltiesExamineEarningRulesExamineRequestBodyCustomerSegmentEntered';
+import LoyaltiesExamineEarningRulesExamineRequestBodyMember from './model/LoyaltiesExamineEarningRulesExamineRequestBodyMember';
+import LoyaltiesExamineEarningRulesExamineRequestBodyOrder from './model/LoyaltiesExamineEarningRulesExamineRequestBodyOrder';
+import LoyaltiesExamineEarningRulesExamineRequestBodyOrderItem from './model/LoyaltiesExamineEarningRulesExamineRequestBodyOrderItem';
+import LoyaltiesExamineEarningRulesExamineRequestBodyTrigger from './model/LoyaltiesExamineEarningRulesExamineRequestBodyTrigger';
+import LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific from './model/LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific';
+import LoyaltiesExamineEarningRulesExamineResponseBody from './model/LoyaltiesExamineEarningRulesExamineResponseBody';
+import LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEarningRuleEstimation from './model/LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEarningRuleEstimation';
+import LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEstimation from './model/LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEstimation';
+import LoyaltiesExamineEarningRulesExamineResponseBodyBenefitReference from './model/LoyaltiesExamineEarningRulesExamineResponseBodyBenefitReference';
+import LoyaltiesExamineEarningRulesExamineResponseBodyCardEarningRuleEstimation from './model/LoyaltiesExamineEarningRulesExamineResponseBodyCardEarningRuleEstimation';
+import LoyaltiesExamineEarningRulesExamineResponseBodyCardEstimation from './model/LoyaltiesExamineEarningRulesExamineResponseBodyCardEstimation';
+import LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleDetail from './model/LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleDetail';
+import LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleReference from './model/LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleReference';
+import LoyaltiesExamineEarningRulesExamineResponseBodyMembership from './model/LoyaltiesExamineEarningRulesExamineResponseBodyMembership';
+import LoyaltiesExamineRewardsExamineRequestBody from './model/LoyaltiesExamineRewardsExamineRequestBody';
+import LoyaltiesExamineRewardsExamineRequestBodyCustomer from './model/LoyaltiesExamineRewardsExamineRequestBodyCustomer';
+import LoyaltiesExamineRewardsExamineRequestBodyMember from './model/LoyaltiesExamineRewardsExamineRequestBodyMember';
+import LoyaltiesExamineRewardsExamineResponseBody from './model/LoyaltiesExamineRewardsExamineResponseBody';
+import LoyaltiesExamineRewardsExamineResponseBodyCardEstimation from './model/LoyaltiesExamineRewardsExamineResponseBodyCardEstimation';
+import LoyaltiesExamineRewardsExamineResponseBodyCardRewardEstimation from './model/LoyaltiesExamineRewardsExamineResponseBodyCardRewardEstimation';
+import LoyaltiesExamineRewardsExamineResponseBodyMembership from './model/LoyaltiesExamineRewardsExamineResponseBodyMembership';
+import LoyaltiesExamineRewardsExamineResponseBodyRewardCost from './model/LoyaltiesExamineRewardsExamineResponseBodyRewardCost';
+import LoyaltiesExamineRewardsExamineResponseBodyRewardDetail from './model/LoyaltiesExamineRewardsExamineResponseBodyRewardDetail';
+import LoyaltiesExamineRewardsExamineResponseBodyRewardReference from './model/LoyaltiesExamineRewardsExamineResponseBodyRewardReference';
+import LoyaltiesExamineRewardsExamineResponseBodyRewardUnavailabilityReason from './model/LoyaltiesExamineRewardsExamineResponseBodyRewardUnavailabilityReason';
 import LoyaltiesGetCampaignResponseBody from './model/LoyaltiesGetCampaignResponseBody';
 import LoyaltiesListCampaignsResponseBody from './model/LoyaltiesListCampaignsResponseBody';
 import LoyaltiesListMembersResponseBody from './model/LoyaltiesListMembersResponseBody';
@@ -471,6 +512,23 @@ import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaig
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions from './model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignIdConditions';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId from './model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId';
 import LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions from './model/LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions';
+import LoyaltiesProgramsMembersCardsTransactionsListRequestQuery from './model/LoyaltiesProgramsMembersCardsTransactionsListRequestQuery';
+import LoyaltiesProgramsMembersCardsTransactionsListResponseBody from './model/LoyaltiesProgramsMembersCardsTransactionsListResponseBody';
+import LoyaltiesProgramsMembersCreateInBulkResponseBody from './model/LoyaltiesProgramsMembersCreateInBulkResponseBody';
+import LoyaltiesProgramsMembersCreateRequestBody from './model/LoyaltiesProgramsMembersCreateRequestBody';
+import LoyaltiesProgramsMembersCreateResponseBody from './model/LoyaltiesProgramsMembersCreateResponseBody';
+import LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBody from './model/LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBody';
+import LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBodyTransaction from './model/LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBodyTransaction';
+import LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody from './model/LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody';
+import LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery from './model/LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery';
+import LoyaltiesProgramsMembersOrdersPaymentsListResponseBody from './model/LoyaltiesProgramsMembersOrdersPaymentsListResponseBody';
+import LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBody from './model/LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBody';
+import LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransaction from './model/LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransaction';
+import LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransactionDetails from './model/LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransactionDetails';
+import LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody from './model/LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody';
+import LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery from './model/LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery';
+import LoyaltiesProgramsMembersRewardsPurchasesListResponseBody from './model/LoyaltiesProgramsMembersRewardsPurchasesListResponseBody';
+import LoyaltiesProgramsMembershipsGetResponseBody from './model/LoyaltiesProgramsMembershipsGetResponseBody';
 import LoyaltiesRewardAssignmentsGetResponseBody from './model/LoyaltiesRewardAssignmentsGetResponseBody';
 import LoyaltiesRewardAssignmentsGetResponseBodyParameters from './model/LoyaltiesRewardAssignmentsGetResponseBodyParameters';
 import LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty from './model/LoyaltiesRewardAssignmentsGetResponseBodyParametersLoyalty';
@@ -551,6 +609,9 @@ import LoyaltyTiersExpirationAll from './model/LoyaltyTiersExpirationAll';
 import LoyaltyTiersExpirationAllExpirationDate from './model/LoyaltyTiersExpirationAllExpirationDate';
 import LoyaltyTiersExpirationAllExpirationDateRounding from './model/LoyaltyTiersExpirationAllExpirationDateRounding';
 import LoyaltyTiersExpirationAllStartDate from './model/LoyaltyTiersExpirationAllStartDate';
+import LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriod from './model/LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriod';
+import LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriodCurrentPeriod from './model/LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriodCurrentPeriod';
+import LoyaltyV2ActivityRewardPurchaseLimitsFrequencyLimitTriggers from './model/LoyaltyV2ActivityRewardPurchaseLimitsFrequencyLimitTriggers';
 import ManagementProject from './model/ManagementProject';
 import ManagementProjectApiUsageNotifications from './model/ManagementProjectApiUsageNotifications';
 import ManagementProjectDefaultCodeConfig from './model/ManagementProjectDefaultCodeConfig';
@@ -676,6 +737,7 @@ import ManagementProjectsWebhooksListResponseBody from './model/ManagementProjec
 import ManagementProjectsWebhooksUpdateRequestBody from './model/ManagementProjectsWebhooksUpdateRequestBody';
 import ManagementProjectsWebhooksUpdateResponseBody from './model/ManagementProjectsWebhooksUpdateResponseBody';
 import MappingPoints from './model/MappingPoints';
+import Member from './model/Member';
 import MemberActivity from './model/MemberActivity';
 import MemberActivityData from './model/MemberActivityData';
 import MemberActivityData1 from './model/MemberActivityData1';
@@ -748,6 +810,14 @@ import MemberActivityDataTransactionDetailsSourceVoucher from './model/MemberAct
 import MemberActivityDataTransactionDetailsSourceVoucherGift from './model/MemberActivityDataTransactionDetailsSourceVoucherGift';
 import MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard from './model/MemberActivityDataTransactionDetailsSourceVoucherLoyaltyCard';
 import MemberActivityDataTransactionDetailsSourceVoucherRedemption from './model/MemberActivityDataTransactionDetailsSourceVoucherRedemption';
+import MemberCard from './model/MemberCard';
+import MemberCreate from './model/MemberCreate';
+import MemberTierProgress from './model/MemberTierProgress';
+import MemberTierProgressDeferred from './model/MemberTierProgressDeferred';
+import MemberTierProgressOpportunity from './model/MemberTierProgressOpportunity';
+import MemberTierProgressRisk from './model/MemberTierProgressRisk';
+import MemberWithCards from './model/MemberWithCards';
+import MembershipCard from './model/MembershipCard';
 import MetadataSchemaDefinitionDeprecated from './model/MetadataSchemaDefinitionDeprecated';
 import MetadataSchemaDeprecated from './model/MetadataSchemaDeprecated';
 import MetadataSchemasGetResponseBody from './model/MetadataSchemasGetResponseBody';
@@ -762,6 +832,8 @@ import OrderCalculatedItemSku from './model/OrderCalculatedItemSku';
 import OrderItem from './model/OrderItem';
 import OrderItemProduct from './model/OrderItemProduct';
 import OrderItemSku from './model/OrderItemSku';
+import OrderPaymentOrder from './model/OrderPaymentOrder';
+import OrderPaymentTransaction from './model/OrderPaymentTransaction';
 import OrderRedemptionsEntry from './model/OrderRedemptionsEntry';
 import OrdersCreateRequestBody from './model/OrdersCreateRequestBody';
 import OrdersCreateResponseBody from './model/OrdersCreateResponseBody';
@@ -918,6 +990,7 @@ import ProductsUpdateInBulkRequestBody from './model/ProductsUpdateInBulkRequest
 import ProductsUpdateInBulkResponseBody from './model/ProductsUpdateInBulkResponseBody';
 import ProductsUpdateRequestBody from './model/ProductsUpdateRequestBody';
 import ProductsUpdateResponseBody from './model/ProductsUpdateResponseBody';
+import ProgramSimple from './model/ProgramSimple';
 import PromotionStack from './model/PromotionStack';
 import PromotionStackBase from './model/PromotionStackBase';
 import PromotionStackBaseTiers from './model/PromotionStackBaseTiers';
@@ -1151,6 +1224,11 @@ import RewardAssignment from './model/RewardAssignment';
 import RewardAssignmentParameters from './model/RewardAssignmentParameters';
 import RewardAssignmentParametersLoyalty from './model/RewardAssignmentParametersLoyalty';
 import RewardAttributes from './model/RewardAttributes';
+import RewardPurchaseLimits from './model/RewardPurchaseLimits';
+import RewardPurchaseLimitsCooldown from './model/RewardPurchaseLimitsCooldown';
+import RewardPurchaseLimitsFrequency from './model/RewardPurchaseLimitsFrequency';
+import RewardPurchaseLimitsFrequencyLimit from './model/RewardPurchaseLimitsFrequencyLimit';
+import RewardPurchaseTransaction from './model/RewardPurchaseTransaction';
 import RewardType from './model/RewardType';
 import RewardTypeCampaign from './model/RewardTypeCampaign';
 import RewardTypeCoin from './model/RewardTypeCoin';
@@ -1245,6 +1323,7 @@ import ValidationRuleApplicableTo from './model/ValidationRuleApplicableTo';
 import ValidationRuleAssignment from './model/ValidationRuleAssignment';
 import ValidationRuleAssignmentsList from './model/ValidationRuleAssignmentsList';
 import ValidationRuleError from './model/ValidationRuleError';
+import ValidationRuleErrorLibrary from './model/ValidationRuleErrorLibrary';
 import ValidationRulesAssignmentsCreateRequestBody from './model/ValidationRulesAssignmentsCreateRequestBody';
 import ValidationRulesAssignmentsCreateResponseBody from './model/ValidationRulesAssignmentsCreateResponseBody';
 import ValidationRulesAssignmentsList from './model/ValidationRulesAssignmentsList';
@@ -1381,6 +1460,8 @@ import ClientSideApi from './api/ClientSideApi';
 import CustomersApi from './api/CustomersApi';
 import EventsApi from './api/EventsApi';
 import ExportsApi from './api/ExportsApi';
+import LV2ExamineApi from './api/LV2ExamineApi';
+import LV2ProgramsApi from './api/LV2ProgramsApi';
 import LocationsApi from './api/LocationsApi';
 import LoyaltiesApi from './api/LoyaltiesApi';
 import ManagementApi from './api/ManagementApi';
@@ -1828,6 +1909,12 @@ export {
      * @property {CampaignsVouchersCreateResponseBodyRedemption}
      */
     CampaignsVouchersCreateResponseBodyRedemption,
+
+    /**
+     * The CardTransaction model constructor.
+     * @property {CardTransaction}
+     */
+    CardTransaction,
 
     /**
      * The CategoriesCreateRequestBody model constructor.
@@ -2592,6 +2679,36 @@ export {
     EventsCreateResponseBody,
 
     /**
+     * The ExamineCardReference model constructor.
+     * @property {ExamineCardReference}
+     */
+    ExamineCardReference,
+
+    /**
+     * The ExamineCustomerIdentification model constructor.
+     * @property {ExamineCustomerIdentification}
+     */
+    ExamineCustomerIdentification,
+
+    /**
+     * The ExamineCustomerReference model constructor.
+     * @property {ExamineCustomerReference}
+     */
+    ExamineCustomerReference,
+
+    /**
+     * The ExamineMemberReference model constructor.
+     * @property {ExamineMemberReference}
+     */
+    ExamineMemberReference,
+
+    /**
+     * The ExamineProgramReference model constructor.
+     * @property {ExamineProgramReference}
+     */
+    ExamineProgramReference,
+
+    /**
      * The Export model constructor.
      * @property {Export}
      */
@@ -2746,6 +2863,12 @@ export {
      * @property {Exclude<keyof typeof Junction, "prototype" | "constructFromObject">}
      */
     Junction,
+
+    /**
+     * The ListCardTransactionsOrderParameter model constructor.
+     * @property {ListCardTransactionsOrderParameter}
+     */
+    ListCardTransactionsOrderParameter,
 
     /**
      * The ListPublicationsItemValidSingleVoucher model constructor.
@@ -3750,6 +3873,210 @@ export {
     LoyaltiesEarningRulesUpdateResponseBodySource,
 
     /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBody model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBody}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBody,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventAll model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventAll}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventAll,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventSpecific model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventSpecific}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomEventSpecific,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomer model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomer}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomer,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEvent model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEvent}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEvent,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventAll model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventAll}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventAll,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventSpecific model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventSpecific}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomerCustomEventSpecific,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyCustomerSegmentEntered model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyCustomerSegmentEntered}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyCustomerSegmentEntered,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyMember model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyMember}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyMember,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyOrder model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyOrder}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyOrder,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyOrderItem model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyOrderItem}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyOrderItem,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyTrigger model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyTrigger}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyTrigger,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific}
+     */
+    LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBody model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBody}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBody,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEarningRuleEstimation model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEarningRuleEstimation}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEarningRuleEstimation,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEstimation model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEstimation}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyBenefitEstimation,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyBenefitReference model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyBenefitReference}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyBenefitReference,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyCardEarningRuleEstimation model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyCardEarningRuleEstimation}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyCardEarningRuleEstimation,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyCardEstimation model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyCardEstimation}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyCardEstimation,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleDetail model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleDetail}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleDetail,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleReference model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleReference}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyEarningRuleReference,
+
+    /**
+     * The LoyaltiesExamineEarningRulesExamineResponseBodyMembership model constructor.
+     * @property {LoyaltiesExamineEarningRulesExamineResponseBodyMembership}
+     */
+    LoyaltiesExamineEarningRulesExamineResponseBodyMembership,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineRequestBody model constructor.
+     * @property {LoyaltiesExamineRewardsExamineRequestBody}
+     */
+    LoyaltiesExamineRewardsExamineRequestBody,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineRequestBodyCustomer model constructor.
+     * @property {LoyaltiesExamineRewardsExamineRequestBodyCustomer}
+     */
+    LoyaltiesExamineRewardsExamineRequestBodyCustomer,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineRequestBodyMember model constructor.
+     * @property {LoyaltiesExamineRewardsExamineRequestBodyMember}
+     */
+    LoyaltiesExamineRewardsExamineRequestBodyMember,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBody model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBody}
+     */
+    LoyaltiesExamineRewardsExamineResponseBody,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyCardEstimation model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyCardEstimation}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyCardEstimation,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyCardRewardEstimation model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyCardRewardEstimation}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyCardRewardEstimation,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyMembership model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyMembership}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyMembership,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyRewardCost model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyRewardCost}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyRewardCost,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyRewardDetail model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyRewardDetail}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyRewardDetail,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyRewardReference model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyRewardReference}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyRewardReference,
+
+    /**
+     * The LoyaltiesExamineRewardsExamineResponseBodyRewardUnavailabilityReason model constructor.
+     * @property {LoyaltiesExamineRewardsExamineResponseBodyRewardUnavailabilityReason}
+     */
+    LoyaltiesExamineRewardsExamineResponseBodyRewardUnavailabilityReason,
+
+    /**
      * The LoyaltiesGetCampaignResponseBody model constructor.
      * @property {LoyaltiesGetCampaignResponseBody}
      */
@@ -4186,6 +4513,108 @@ export {
      * @property {LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions}
      */
     LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherIdConditions,
+
+    /**
+     * The LoyaltiesProgramsMembersCardsTransactionsListRequestQuery model constructor.
+     * @property {LoyaltiesProgramsMembersCardsTransactionsListRequestQuery}
+     */
+    LoyaltiesProgramsMembersCardsTransactionsListRequestQuery,
+
+    /**
+     * The LoyaltiesProgramsMembersCardsTransactionsListResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersCardsTransactionsListResponseBody}
+     */
+    LoyaltiesProgramsMembersCardsTransactionsListResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersCreateInBulkResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersCreateInBulkResponseBody}
+     */
+    LoyaltiesProgramsMembersCreateInBulkResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersCreateRequestBody model constructor.
+     * @property {LoyaltiesProgramsMembersCreateRequestBody}
+     */
+    LoyaltiesProgramsMembersCreateRequestBody,
+
+    /**
+     * The LoyaltiesProgramsMembersCreateResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersCreateResponseBody}
+     */
+    LoyaltiesProgramsMembersCreateResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBody}
+     */
+    LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBodyTransaction model constructor.
+     * @property {LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBodyTransaction}
+     */
+    LoyaltiesProgramsMembersOrdersPaymentsCreateCombinedResponseBodyTransaction,
+
+    /**
+     * The LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody model constructor.
+     * @property {LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody}
+     */
+    LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody,
+
+    /**
+     * The LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery model constructor.
+     * @property {LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery}
+     */
+    LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery,
+
+    /**
+     * The LoyaltiesProgramsMembersOrdersPaymentsListResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersOrdersPaymentsListResponseBody}
+     */
+    LoyaltiesProgramsMembersOrdersPaymentsListResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBody}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransaction model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransaction}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransaction,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransactionDetails model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransactionDetails}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesCreateCombinedResponseBodyTransactionDetails,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery,
+
+    /**
+     * The LoyaltiesProgramsMembersRewardsPurchasesListResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembersRewardsPurchasesListResponseBody}
+     */
+    LoyaltiesProgramsMembersRewardsPurchasesListResponseBody,
+
+    /**
+     * The LoyaltiesProgramsMembershipsGetResponseBody model constructor.
+     * @property {LoyaltiesProgramsMembershipsGetResponseBody}
+     */
+    LoyaltiesProgramsMembershipsGetResponseBody,
 
     /**
      * The LoyaltiesRewardAssignmentsGetResponseBody model constructor.
@@ -4666,6 +5095,24 @@ export {
      * @property {LoyaltyTiersExpirationAllStartDate}
      */
     LoyaltyTiersExpirationAllStartDate,
+
+    /**
+     * The LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriod model constructor.
+     * @property {LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriod}
+     */
+    LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriod,
+
+    /**
+     * The LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriodCurrentPeriod model constructor.
+     * @property {LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriodCurrentPeriod}
+     */
+    LoyaltyV2ActivityCardDefinitionLimitTimeBasedPeriodCurrentPeriod,
+
+    /**
+     * The LoyaltyV2ActivityRewardPurchaseLimitsFrequencyLimitTriggers model constructor.
+     * @property {LoyaltyV2ActivityRewardPurchaseLimitsFrequencyLimitTriggers}
+     */
+    LoyaltyV2ActivityRewardPurchaseLimitsFrequencyLimitTriggers,
 
     /**
      * The ManagementProject model constructor.
@@ -5418,6 +5865,12 @@ export {
     MappingPoints,
 
     /**
+     * The Member model constructor.
+     * @property {Member}
+     */
+    Member,
+
+    /**
      * The MemberActivity model constructor.
      * @property {MemberActivity}
      */
@@ -5850,6 +6303,54 @@ export {
     MemberActivityDataTransactionDetailsSourceVoucherRedemption,
 
     /**
+     * The MemberCard model constructor.
+     * @property {MemberCard}
+     */
+    MemberCard,
+
+    /**
+     * The MemberCreate model constructor.
+     * @property {MemberCreate}
+     */
+    MemberCreate,
+
+    /**
+     * The MemberTierProgress model constructor.
+     * @property {MemberTierProgress}
+     */
+    MemberTierProgress,
+
+    /**
+     * The MemberTierProgressDeferred model constructor.
+     * @property {MemberTierProgressDeferred}
+     */
+    MemberTierProgressDeferred,
+
+    /**
+     * The MemberTierProgressOpportunity model constructor.
+     * @property {MemberTierProgressOpportunity}
+     */
+    MemberTierProgressOpportunity,
+
+    /**
+     * The MemberTierProgressRisk model constructor.
+     * @property {MemberTierProgressRisk}
+     */
+    MemberTierProgressRisk,
+
+    /**
+     * The MemberWithCards model constructor.
+     * @property {MemberWithCards}
+     */
+    MemberWithCards,
+
+    /**
+     * The MembershipCard model constructor.
+     * @property {MembershipCard}
+     */
+    MembershipCard,
+
+    /**
      * The MetadataSchemaDefinitionDeprecated model constructor.
      * @property {MetadataSchemaDefinitionDeprecated}
      */
@@ -5932,6 +6433,18 @@ export {
      * @property {OrderItemSku}
      */
     OrderItemSku,
+
+    /**
+     * The OrderPaymentOrder model constructor.
+     * @property {OrderPaymentOrder}
+     */
+    OrderPaymentOrder,
+
+    /**
+     * The OrderPaymentTransaction model constructor.
+     * @property {OrderPaymentTransaction}
+     */
+    OrderPaymentTransaction,
 
     /**
      * The OrderRedemptionsEntry model constructor.
@@ -6868,6 +7381,12 @@ export {
      * @property {ProductsUpdateResponseBody}
      */
     ProductsUpdateResponseBody,
+
+    /**
+     * The ProgramSimple model constructor.
+     * @property {ProgramSimple}
+     */
+    ProgramSimple,
 
     /**
      * The PromotionStack model constructor.
@@ -8268,6 +8787,36 @@ export {
     RewardAttributes,
 
     /**
+     * The RewardPurchaseLimits model constructor.
+     * @property {RewardPurchaseLimits}
+     */
+    RewardPurchaseLimits,
+
+    /**
+     * The RewardPurchaseLimitsCooldown model constructor.
+     * @property {RewardPurchaseLimitsCooldown}
+     */
+    RewardPurchaseLimitsCooldown,
+
+    /**
+     * The RewardPurchaseLimitsFrequency model constructor.
+     * @property {RewardPurchaseLimitsFrequency}
+     */
+    RewardPurchaseLimitsFrequency,
+
+    /**
+     * The RewardPurchaseLimitsFrequencyLimit model constructor.
+     * @property {RewardPurchaseLimitsFrequencyLimit}
+     */
+    RewardPurchaseLimitsFrequencyLimit,
+
+    /**
+     * The RewardPurchaseTransaction model constructor.
+     * @property {RewardPurchaseTransaction}
+     */
+    RewardPurchaseTransaction,
+
+    /**
      * The RewardType model constructor.
      * @property {RewardType}
      */
@@ -8830,6 +9379,12 @@ export {
      * @property {ValidationRuleError}
      */
     ValidationRuleError,
+
+    /**
+     * The ValidationRuleErrorLibrary model constructor.
+     * @property {ValidationRuleErrorLibrary}
+     */
+    ValidationRuleErrorLibrary,
 
     /**
      * The ValidationRulesAssignmentsCreateRequestBody model constructor.
@@ -9646,6 +10201,18 @@ export {
     * @property {ExportsApi}
     */
     ExportsApi,
+
+    /**
+    * The LV2ExamineApi service constructor.
+    * @property {LV2ExamineApi}
+    */
+    LV2ExamineApi,
+
+    /**
+    * The LV2ProgramsApi service constructor.
+    * @property {LV2ProgramsApi}
+    */
+    LV2ProgramsApi,
 
     /**
     * The LocationsApi service constructor.

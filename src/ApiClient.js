@@ -51,7 +51,8 @@ class ApiClient {
             'X-Client-Application-Id': {type: 'apiKey', 'in': 'header', name: 'X-Client-Application-Id'},
             'X-Management-Id': {type: 'apiKey', 'in': 'header', name: 'X-Management-Id'},
             'X-Management-Token': {type: 'apiKey', 'in': 'header', name: 'X-Management-Token'},
-            'X-Voucherify-OAuth': {type: 'oauth2'}
+            'X-Voucherify-OAuth': {type: 'oauth2'},
+            'bearerAuth': {type: 'bearer'} // JWT
         }
 
 	/**
@@ -60,7 +61,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Javascript-SDK/3.0.4'
+            'User-Agent': 'OpenAPI-Javascript-SDK/3.1.0'
         };
 
         /**
