@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **options** | [**ValidationsValidateRequestBodyOptions**](ValidationsValidateRequestBodyOptions.md) |  | [optional] 
-**redeemables** | [**[ValidationsValidateRequestBodyRedeemablesItem]**](ValidationsValidateRequestBodyRedeemablesItem.md) |  | [optional] 
+**redeemables** | [**[ValidationsValidateRequestBodyRedeemablesItem]**](ValidationsValidateRequestBodyRedeemablesItem.md) | An array of redeemables. You can combine &#x60;voucher&#x60;(s) and &#x60;promotion_tier&#x60;(s). Alternatively, send one unique&#x60;promotion_stack&#x60; in the array. Each unique redeemable can be sent in one request only once. | [optional] 
 **order** | [**Order**](Order.md) |  | [optional] 
 **customer** | [**Customer**](Customer.md) |  | [optional] 
 **session** | [**Session**](Session.md) |  | [optional] 

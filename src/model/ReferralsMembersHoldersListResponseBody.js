@@ -129,7 +129,7 @@ ReferralsMembersHoldersListResponseBody.prototype['data_ref'] = 'data';
 ReferralsMembersHoldersListResponseBody.prototype['data'] = undefined;
 
 /**
-    * Total number of holders assigned to the redeemable.
+    * Total number of results returned on this page.
     * @type {Number | undefined}
     */
 ReferralsMembersHoldersListResponseBody.prototype['total'] = undefined;

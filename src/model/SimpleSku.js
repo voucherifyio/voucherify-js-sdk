@@ -92,7 +92,7 @@ class SimpleSku {
 SimpleSku.prototype['id'] = undefined;
 
 /**
-    * Sku source id.
+    * Sku source ID.
     * @type {String | undefined}
     */
 SimpleSku.prototype['source_id'] = undefined;

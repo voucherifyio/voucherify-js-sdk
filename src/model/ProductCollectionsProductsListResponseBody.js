@@ -113,6 +113,7 @@ ProductCollectionsProductsListResponseBody.prototype['object'] = 'list';
 ProductCollectionsProductsListResponseBody.prototype['data_ref'] = 'data';
 
 /**
+    * A dictionary that contains an array of products and SKUs.
     * @type {Array.<ProductCollectionsProductsListResponseBodyDataItem> | undefined}
     */
 ProductCollectionsProductsListResponseBody.prototype['data'] = undefined;

@@ -129,7 +129,7 @@ CustomersRedeemablesListResponseBody.prototype['data_ref'] = 'data';
 CustomersRedeemablesListResponseBody.prototype['data'] = undefined;
 
 /**
-    * Total number of results returned.
+    * Total number of results returned on this page.
     * @type {Number | undefined}
     */
 CustomersRedeemablesListResponseBody.prototype['total'] = undefined;
