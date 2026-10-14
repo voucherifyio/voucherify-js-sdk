@@ -1,4 +1,5 @@
 import expect from "expect.js";
+import * as voucherifyClient from "../src/index.js";
 import specUtils from "./spec_utils.js";
 import {
   setupLoyaltyV2Program,
@@ -6,11 +7,87 @@ import {
 } from "./loyalty_v2_fixture.js";
 
 describe("Loyalty v2", function () {
-  this.timeout(120000);
+  this.timeout(180000);
 
   let fixtureCtx = null;
+  let customer = null;
+  let member = null;
+  let primaryCardId = null;
+  const programsApi = () =>
+    new voucherifyClient.LV2ProgramsApi(specUtils.apiClient);
+  const customersApi = () =>
+    new voucherifyClient.CustomersApi(specUtils.apiClient);
+
+  const resolvePrimaryCardId = (memberBody) => {
+    const cards = memberBody?.cards || [];
+    const match = cards.find(
+      (entry) => entry?.card?.card_definition_id === fixtureCtx.cardDefinitionId,
+    );
+    const id = (match || cards[0])?.card?.id;
+    if (!id) {
+      throw new Error(
+        `No loyalty card on member: ${JSON.stringify(memberBody?.cards)}`,
+      );
+    }
+    return id;
+  };
+
+  before(async function () {
+    if (!specUtils.HAS_CREDENTIALS) {
+      this.skip();
+    }
+
+    fixtureCtx = await setupLoyaltyV2Program();
+
+    const customerBody = new voucherifyClient.CustomersCreateRequestBody();
+    customerBody.source_id = `lv2_customer_${fixtureCtx.suffix}`;
+    customerBody.name = "Loyalty v2 JS SDK test";
+    customer = await customersApi().createCustomer(customerBody);
+
+    member = await programsApi().createProgramMember(fixtureCtx.programId, {
+      customer_identification: {
+        type: "customer_id",
+        customer_id: customer.id,
+        customer_source_id: null,
+      },
+    });
+    primaryCardId = resolvePrimaryCardId(member);
+  });
 
   after(async function () {
+    if (fixtureCtx && member?.id) {
+      try {
+        await programsApi().deactivateProgramMember(
+          fixtureCtx.programId,
+          member.id,
+        );
+      } catch (error) {
+        if (error?.status !== 404) {
+          console.log(`deactivateProgramMember: ${error?.message || error}`);
+        }
+      }
+      try {
+        await programsApi().deleteProgramMember(
+          fixtureCtx.programId,
+          member.id,
+        );
+      } catch (error) {
+        if (error?.status !== 404) {
+          console.log(`deleteProgramMember: ${error?.message || error}`);
+        }
+      }
+    }
+
+    if (customer?.id) {
+      try {
+        await customersApi().deleteCustomer(customer.id);
+      } catch (error) {
+        if (error?.status !== 404) {
+          console.log(`deleteCustomer: ${error?.message || error}`);
+        }
+      }
+    }
+
     if (fixtureCtx) {
       await teardownLoyaltyV2Program(fixtureCtx);
       fixtureCtx = null;
@@ -18,15 +95,64 @@ describe("Loyalty v2", function () {
   });
 
   it("setup creates an activated program with card definition, earning rule, and reward", async function () {
-    if (!specUtils.HAS_CREDENTIALS) {
-      this.skip();
-    }
-
-    fixtureCtx = await setupLoyaltyV2Program();
-
     expect(fixtureCtx.programId).to.be.a("string");
     expect(fixtureCtx.cardDefinitionId).to.match(/^lcdef_/);
     expect(fixtureCtx.earningRuleId).to.match(/^lern_/);
     expect(fixtureCtx.rewardId).to.match(/^lrew_/);
+  });
+
+  it("creates, gets, lists, activates, and deactivates a program member via SDK", async function () {
+    expect(member).to.be.ok();
+    expect(member.id).to.be.a("string");
+    expect(member.customer_id).to.be(customer.id);
+    expect(member.cards).to.be.an("array");
+    expect(member.cards.length).to.be.above(0);
+
+    const fetched = await programsApi().getProgramMember(
+      fixtureCtx.programId,
+      member.id,
+    );
+    expect(fetched.id).to.be(member.id);
+
+    const listed = await programsApi().listProgramMembers(
+      fixtureCtx.programId,
+      {},
+    );
+    const ids = (listed.data || listed.members || []).map((item) => item.id);
+    expect(ids).to.contain(member.id);
+
+    const membership = await programsApi().getProgramMembership(
+      fixtureCtx.programId,
+      customer.id,
+      {},
+    );
+    expect(membership).to.be.ok();
+
+    if (member.status === "INACTIVE" || member.status === "DRAFT") {
+      const activated = await programsApi().activateProgramMember(
+        fixtureCtx.programId,
+        member.id,
+      );
+      expect(activated.status).to.be("ACTIVE");
+      member = activated;
+    }
+
+    const deactivated = await programsApi().deactivateProgramMember(
+      fixtureCtx.programId,
+      member.id,
+    );
+    expect(deactivated.status).to.not.be("ACTIVE");
+
+    const reactivated = await programsApi().activateProgramMember(
+      fixtureCtx.programId,
+      member.id,
+    );
+    expect(reactivated.status).to.be("ACTIVE");
+    member = await programsApi().getProgramMember(
+      fixtureCtx.programId,
+      member.id,
+    );
+    expect(primaryCardId).to.match(/^lcrd_/);
+    expect(resolvePrimaryCardId(member)).to.be(primaryCardId);
   });
 });
