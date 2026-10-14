@@ -15,6 +15,8 @@ describe("Loyalty v2", function () {
   let primaryCardId = null;
   const programsApi = () =>
     new voucherifyClient.LV2ProgramsApi(specUtils.apiClient);
+  const examineApi = () =>
+    new voucherifyClient.LV2ExamineApi(specUtils.apiClient);
   const customersApi = () =>
     new voucherifyClient.CustomersApi(specUtils.apiClient);
 
@@ -280,5 +282,71 @@ describe("Loyalty v2", function () {
     );
     expect(refunded).to.be.ok();
   });
+
+  it("examines earning rules and rewards via SDK", async function () {
+    const earningRules = await examineApi().examineEarningRules({
+      trigger: {
+        type: "SPECIFIC",
+        specific: { event: "customer.order.paid" },
+      },
+      customer_identification: {
+        type: "member_id",
+        member_id: member.id,
+      },
+      customer_order_paid: {
+        order: { amount: 5000 },
+      },
+    });
+    expect(earningRules).to.be.ok();
+    expect(earningRules.memberships || earningRules).to.be.ok();
+
+    const rewards = await examineApi().examineRewards({
+      customer_identification: {
+        type: "member_id",
+        member_id: member.id,
+      },
+    });
+    expect(rewards).to.be.ok();
+  });
+
+  it("lists selected Loyalty v2 reports via SDK", async function () {
+    const membersSummary = await programsApi().listProgramMembersSummaryReports(
+      fixtureCtx.programId,
+    );
+    expect(membersSummary).to.be.ok();
+    expect(membersSummary.data || []).to.be.an("array");
+
+    const rewardsSummary = await programsApi().listProgramRewardsSummaryReports(
+      fixtureCtx.programId,
+      {},
+    );
+    expect(rewardsSummary).to.be.ok();
+    expect(rewardsSummary.data || []).to.be.an("array");
+
+    // start_date must be strictly before end_date.
+    const endDate = new Date().toISOString().slice(0, 10);
+    const startDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    const membersDaily = await programsApi().listProgramMembersDailyReports(
+      fixtureCtx.programId,
+      startDate,
+      endDate,
+      "day",
+    );
+    expect(membersDaily).to.be.ok();
+    expect(membersDaily.data || []).to.be.an("array");
+
+    const cardDaily = await programsApi().listMemberCardDailyReports(
+      fixtureCtx.programId,
+      member.id,
+      primaryCardId,
+      startDate,
+      endDate,
+      "day",
+    );
+    expect(cardDaily).to.be.ok();
+    expect(cardDaily.data || []).to.be.an("array");
+  });
 });
+
+
 
