@@ -155,4 +155,99 @@ describe("Loyalty v2", function () {
     expect(primaryCardId).to.match(/^lcrd_/);
     expect(resolvePrimaryCardId(member)).to.be(primaryCardId);
   });
+
+  it("adjusts card points and lists card transactions via SDK", async function () {
+    const adjusted = await programsApi().adjustCardPoints(
+      fixtureCtx.programId,
+      member.id,
+      primaryCardId,
+      { points: 100, reason: "js sdk loyalty v2 e2e" },
+    );
+    expect(adjusted).to.be.ok();
+
+    const transactions = await programsApi().listCardTransactions(
+      fixtureCtx.programId,
+      member.id,
+      primaryCardId,
+      {},
+    );
+    expect(transactions).to.be.ok();
+    const rows = transactions.data || transactions.transactions || [];
+    expect(rows.length).to.be.above(0);
+  });
+
+  it("creates a member order payment dry-run via SDK", async function () {
+    const ordersApi = new voucherifyClient.OrdersApi(specUtils.apiClient);
+    const orderBody = new voucherifyClient.OrdersCreateRequestBody();
+    orderBody.amount = 2500;
+    orderBody.source_id = `lv2_order_${fixtureCtx.suffix}`;
+    orderBody.customer = { id: customer.id };
+
+    const order = await ordersApi.createOrder(orderBody);
+    expect(order.id).to.match(/^ord_/);
+
+    const payment = await programsApi().createMemberOrderPayment(
+      fixtureCtx.programId,
+      member.id,
+      {
+        card_id: primaryCardId,
+        order: { id: order.id, source_id: null },
+        payment_limit: { type: "CARD_BALANCE" },
+        mode: "DRY_RUN",
+      },
+    );
+    expect(payment).to.be.ok();
+
+    const listed = await programsApi().listMemberOrderPayments(
+      fixtureCtx.programId,
+      member.id,
+      {},
+    );
+    expect(listed).to.be.ok();
+  });
+
+  it("purchases a member reward via SDK", async function () {
+    const dryRun = await programsApi().purchaseMemberReward(
+      fixtureCtx.programId,
+      member.id,
+      {
+        reward_id: fixtureCtx.rewardId,
+        mode: "DRY_RUN",
+      },
+    );
+    expect(dryRun).to.be.ok();
+
+    const purchase = await programsApi().purchaseMemberReward(
+      fixtureCtx.programId,
+      member.id,
+      {
+        reward_id: fixtureCtx.rewardId,
+        mode: "TRANSACTION",
+      },
+    );
+    expect(purchase).to.be.ok();
+
+    const listed = await programsApi().listMemberRewardPurchases(
+      fixtureCtx.programId,
+      member.id,
+      {},
+    );
+    expect(listed).to.be.ok();
+    const rows = listed.data || listed.purchases || [];
+    expect(rows.length).to.be.above(0);
+
+    const rewardTransactionId =
+      purchase.id ||
+      purchase.transaction?.id ||
+      purchase.reward_transaction_id ||
+      rows[0]?.id;
+    if (rewardTransactionId) {
+      const refunded = await programsApi().refundRewardPurchase(
+        fixtureCtx.programId,
+        rewardTransactionId,
+        {},
+      );
+      expect(refunded).to.be.ok();
+    }
+  });
 });
