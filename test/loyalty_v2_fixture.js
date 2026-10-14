@@ -31,7 +31,7 @@ export const setupLoyaltyV2Program = async () => {
     throw new Error(`createProgram returned no id: ${JSON.stringify(program)}`);
   }
 
-  const buildCardDefinitionBody = (name) => ({
+  const buildCardDefinitionBody = (name, { enablePayWithPoints = false } = {}) => ({
     name,
     type: "INDIVIDUAL",
     status: "DRAFT",
@@ -41,10 +41,17 @@ export const setupLoyaltyV2Program = async () => {
       global: { type: "NO_LIMIT", limits: null },
       transactions: { type: "NO_LIMIT", limits: null },
     },
+    // Order payments require EXCHANGE_RATIO; default is NO_PAYMENTS (423).
+    pay_with_points: enablePayWithPoints
+      ? {
+          type: "EXCHANGE_RATIO",
+          exchange_ratio: { formula: 1 },
+        }
+      : { type: "NO_PAYMENTS" },
   });
 
   const cardDefinition = await loyaltyV2Http.createCardDefinition(
-    buildCardDefinitionBody(cardName),
+    buildCardDefinitionBody(cardName, { enablePayWithPoints: true }),
   );
   const cardDefinitionId = cardDefinition.id;
   if (!cardDefinitionId) {

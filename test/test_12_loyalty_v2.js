@@ -164,6 +164,18 @@ describe("Loyalty v2", function () {
       { points: 100, reason: "js sdk loyalty v2 e2e" },
     );
     expect(adjusted).to.be.ok();
+    // ADMIN_CREDIT is async; wait until balance is visible before spend ops.
+    await specUtils.delay(3000);
+
+    const refreshed = await programsApi().getProgramMember(
+      fixtureCtx.programId,
+      member.id,
+    );
+    member = refreshed;
+    const primaryCard = (refreshed.cards || []).find(
+      (entry) => entry?.card?.id === primaryCardId,
+    );
+    expect(primaryCard?.card?.balance?.points).to.be.above(0);
 
     const transactions = await programsApi().listCardTransactions(
       fixtureCtx.programId,
@@ -227,27 +239,46 @@ describe("Loyalty v2", function () {
     );
     expect(purchase).to.be.ok();
 
-    const listed = await programsApi().listMemberRewardPurchases(
-      fixtureCtx.programId,
-      member.id,
-      {},
-    );
-    expect(listed).to.be.ok();
-    const rows = listed.data || listed.purchases || [];
-    expect(rows.length).to.be.above(0);
-
     const rewardTransactionId =
-      purchase.id ||
       purchase.transaction?.id ||
-      purchase.reward_transaction_id ||
-      rows[0]?.id;
-    if (rewardTransactionId) {
-      const refunded = await programsApi().refundRewardPurchase(
+      purchase.id ||
+      purchase.reward_transaction_id;
+    expect(rewardTransactionId).to.be.a("string");
+
+    // Purchase settles asynchronously; refund requires APPROVED.
+    let approvedRow = null;
+    for (let attempt = 0; attempt < 15; attempt += 1) {
+      await specUtils.delay(1000);
+      const listed = await programsApi().listMemberRewardPurchases(
         fixtureCtx.programId,
-        rewardTransactionId,
+        member.id,
         {},
       );
-      expect(refunded).to.be.ok();
+      const rows = listed.data || listed.purchases || [];
+      expect(rows.length).to.be.above(0);
+      const match =
+        rows.find((row) => row.id === rewardTransactionId) ||
+        rows.find((row) => row.transaction?.id === rewardTransactionId) ||
+        rows[0];
+      const status = match?.status || match?.transaction?.status;
+      if (status === "APPROVED") {
+        approvedRow = match;
+        break;
+      }
     }
+    expect(approvedRow).to.be.ok();
+
+    const refundId = approvedRow.id || rewardTransactionId;
+    const refunded = await programsApi().refundRewardPurchase(
+      fixtureCtx.programId,
+      refundId,
+      {
+        v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody: {
+          policies: { refund: "ALLOW", stock: "DEFAULT" },
+        },
+      },
+    );
+    expect(refunded).to.be.ok();
   });
 });
+
