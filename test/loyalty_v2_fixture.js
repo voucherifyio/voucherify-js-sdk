@@ -159,7 +159,12 @@ export const setupLoyaltyV2Program = async () => {
 
 /**
  * Best-effort teardown for resources created by setupLoyaltyV2Program.
- * Order: deactivate program → deactivate children → delete when API allows.
+ *
+ * Cleanup matrix (what the API allows):
+ * - Program: deactivate → delete (delete soft-removes assignments).
+ * - Earning rule / reward: deactivate → delete (no draft required).
+ * - Card definitions: delete after program + reward are gone.
+ *   Drafting while still assigned to a non-draft program/reward returns 423.
  */
 export const teardownLoyaltyV2Program = async (ctx) => {
   if (!ctx) {
@@ -180,9 +185,7 @@ export const teardownLoyaltyV2Program = async (ctx) => {
       if (error?.status === 404) {
         return;
       }
-      console.log(
-        `Loyalty v2 teardown ${label}: ${error?.message || error}`,
-      );
+      console.log(`Loyalty v2 teardown ${label}: ${error?.message || error}`);
     }
   };
 
@@ -190,7 +193,9 @@ export const teardownLoyaltyV2Program = async (ctx) => {
     await ignore("deactivateProgram", () =>
       loyaltyV2Http.deactivateProgram(programId),
     );
+    await ignore("deleteProgram", () => loyaltyV2Http.deleteProgram(programId));
   }
+
   if (earningRuleId) {
     await ignore("deactivateEarningRule", () =>
       loyaltyV2Http.deactivateEarningRule(earningRuleId),
@@ -201,19 +206,9 @@ export const teardownLoyaltyV2Program = async (ctx) => {
       loyaltyV2Http.deactivateReward(rewardId),
     );
   }
-  for (const id of [cardDefinitionId, rewardCardDefinitionId]) {
-    if (id) {
-      await ignore(`draftCardDefinition ${id}`, () =>
-        loyaltyV2Http.draftCardDefinition(id),
-      );
-    }
-  }
 
   await specUtils.delay(500);
 
-  if (programId) {
-    await ignore("deleteProgram", () => loyaltyV2Http.deleteProgram(programId));
-  }
   if (earningRuleId) {
     await ignore("deleteEarningRule", () =>
       loyaltyV2Http.deleteEarningRule(earningRuleId),

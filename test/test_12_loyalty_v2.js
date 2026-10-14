@@ -57,44 +57,48 @@ describe("Loyalty v2", function () {
   });
 
   after(async function () {
-    if (fixtureCtx && member?.id) {
+    // Always run cleanup; ignore 404 / empty SDK responses.
+    const ignore = async (label, fn) => {
       try {
-        await programsApi().deactivateProgramMember(
-          fixtureCtx.programId,
-          member.id,
-        );
+        await fn();
       } catch (error) {
-        if (error?.status !== 404) {
-          console.log(`deactivateProgramMember: ${error?.message || error}`);
+        if (error?.status === 404) {
+          return;
         }
+        console.log(`${label}: ${error?.message || error}`);
       }
-      try {
-        await programsApi().deleteProgramMember(
-          fixtureCtx.programId,
-          member.id,
-        );
-      } catch (error) {
-        if (error?.status !== 404) {
-          console.log(`deleteProgramMember: ${error?.message || error}`);
-        }
-      }
-    }
+    };
 
-    if (customer?.id) {
-      try {
-        await customersApi().deleteCustomer(customer.id);
-      } catch (error) {
-        if (error?.status !== 404) {
-          console.log(`deleteCustomer: ${error?.message || error}`);
-        }
+    try {
+      if (fixtureCtx?.programId && member?.id) {
+        await ignore("deactivateProgramMember", () =>
+          programsApi().deactivateProgramMember(
+            fixtureCtx.programId,
+            member.id,
+          ),
+        );
+        await ignore("deleteProgramMember", () =>
+          programsApi().deleteProgramMember(fixtureCtx.programId, member.id),
+        );
       }
-    }
 
-    if (fixtureCtx) {
-      await teardownLoyaltyV2Program(fixtureCtx);
+      if (customer?.id) {
+        await ignore("deleteCustomer", () =>
+          customersApi().deleteCustomer(customer.id),
+        );
+      }
+
+      if (fixtureCtx) {
+        await teardownLoyaltyV2Program(fixtureCtx);
+      }
+    } finally {
       fixtureCtx = null;
+      member = null;
+      customer = null;
+      primaryCardId = null;
     }
   });
+
 
   it("setup creates an activated program with card definition, earning rule, and reward", async function () {
     expect(fixtureCtx.programId).to.be.a("string");
