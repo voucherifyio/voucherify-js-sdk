@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import ValidationRuleErrorLibrary from './ValidationRuleErrorLibrary';
 /**
  * The ValidationRulesUpdateResponseBodyError model module.
  * @module model/ValidationRulesUpdateResponseBodyError
@@ -19,7 +20,7 @@ import ApiClient from '../ApiClient';
 class ValidationRulesUpdateResponseBodyError {
     /**
      * Constructs a new <code>ValidationRulesUpdateResponseBodyError</code>.
-     * Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
+     * Defines the custom error returned when validation or redemption fails this rule. Use legacy &#x60;message&#x60;, &#x60;mode: MESSAGES&#x60; with per-language &#x60;messages&#x60;, or &#x60;mode: LIBRARY&#x60; with a library &#x60;key&#x60;. &#x60;MESSAGES&#x60; and &#x60;LIBRARY&#x60; are mutually exclusive. At validation or redemption time the API resolves this object to a single &#x60;{ message }&#x60; using &#x60;options.language&#x60;.
      * @alias ValidationRulesUpdateResponseBodyError
      */
     constructor() { 
@@ -49,6 +50,15 @@ class ValidationRulesUpdateResponseBodyError {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
+            if (data.hasOwnProperty('mode')) {
+                obj['mode'] = ApiClient.convertToType(data['mode'], 'String');
+            }
+            if (data.hasOwnProperty('messages')) {
+                obj['messages'] = ApiClient.convertToType(data['messages'], {'String': 'String'});
+            }
+            if (data.hasOwnProperty('library')) {
+                obj['library'] = ValidationRuleErrorLibrary.constructFromObject(data['library']);
+            }
         }
         return obj;
     }
@@ -63,6 +73,14 @@ class ValidationRulesUpdateResponseBodyError {
         if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
             throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
         }
+        // ensure the json data is a string
+        if (data['mode'] && !(typeof data['mode'] === 'string' || data['mode'] instanceof String)) {
+            throw new Error("Expected the field `mode` to be a primitive type in the JSON string but got " + data['mode']);
+        }
+        // validate the optional field `library`
+        if (data['library']) { // data not null
+          ValidationRuleErrorLibrary.validateJSON(data['library']);
+        }
 
         return true;
     }
@@ -73,13 +91,51 @@ class ValidationRulesUpdateResponseBodyError {
 
 
 /**
-    * The error message returned from API when validation / redemption fails to meet requirements of defined rules.
+    * Legacy single-language error message. Used when `mode` is omitted. In `MESSAGES` mode, used when neither the requested language nor the default language has a translation.
     * @type {String | undefined}
     */
 ValidationRulesUpdateResponseBodyError.prototype['message'] = undefined;
 
+/**
+    * Selects how the custom error is defined. `MESSAGES` stores per-language text in `messages`. `LIBRARY` references an Error Message Library entry in `library`. Omit `mode` to use the legacy `message` field only.
+    * @type {(keyof typeof ValidationRulesUpdateResponseBodyError.ModeEnum) | undefined}
+    */
+ValidationRulesUpdateResponseBodyError.prototype['mode'] = undefined;
+
+/**
+    * Per-language custom messages keyed by language code (`en`, `pl`, `en-US`). Required when `mode` is `MESSAGES`. Must be omitted or `null` when `mode` is `LIBRARY`.
+    * @type {Object.<String, String> | undefined}
+    */
+ValidationRulesUpdateResponseBodyError.prototype['messages'] = undefined;
+
+/**
+    * @type {ValidationRuleErrorLibrary | undefined}
+    */
+ValidationRulesUpdateResponseBodyError.prototype['library'] = undefined;
 
 
+
+
+
+    /**
+     * Allowed values for the <code>mode</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    ValidationRulesUpdateResponseBodyError['ModeEnum'] = {
+    
+        /**
+         * value: "MESSAGES"
+         * @constant
+         */
+        "MESSAGES": "MESSAGES",
+    
+        /**
+         * value: "LIBRARY"
+         * @constant
+         */
+        "LIBRARY": "LIBRARY"    
+    };
 
 
 
