@@ -290,6 +290,7 @@ Authorization schemes defined for the API.
 - **2026-10-14** - `3.1.0`:
     - Added Loyalty v2 API methods for members, memberships, cards, examine, reports, and related non-WIP reads under `/v2/loyalties`.
     - Added `loyalty_memberships` on customer summary models.
+    - Added e2e coverage for Loyalty v2 member and runtime flows (setup uses HTTP for unpublished admin endpoints).
 - **2026-08-26** - `3.0.4`:
     - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
     - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
