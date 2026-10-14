@@ -1608,7 +1608,6 @@ import ValidationRuleApplicableTo from './model/ValidationRuleApplicableTo';
 import ValidationRuleAssignment from './model/ValidationRuleAssignment';
 import ValidationRuleAssignmentsList from './model/ValidationRuleAssignmentsList';
 import ValidationRuleError from './model/ValidationRuleError';
-import ValidationRuleErrorLibrary from './model/ValidationRuleErrorLibrary';
 import ValidationRulesAssignmentsCreateRequestBody from './model/ValidationRulesAssignmentsCreateRequestBody';
 import ValidationRulesAssignmentsCreateResponseBody from './model/ValidationRulesAssignmentsCreateResponseBody';
 import ValidationRulesAssignmentsList from './model/ValidationRulesAssignmentsList';
@@ -11377,12 +11376,6 @@ export {
      * @property {ValidationRuleError}
      */
     ValidationRuleError,
-
-    /**
-     * The ValidationRuleErrorLibrary model constructor.
-     * @property {ValidationRuleErrorLibrary}
-     */
-    ValidationRuleErrorLibrary,
 
     /**
      * The ValidationRulesAssignmentsCreateRequestBody model constructor.

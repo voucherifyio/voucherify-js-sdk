@@ -1626,7 +1626,6 @@ docs/ValidationRuleApplicableTo.md
 docs/ValidationRuleAssignment.md
 docs/ValidationRuleAssignmentsList.md
 docs/ValidationRuleError.md
-docs/ValidationRuleErrorLibrary.md
 docs/ValidationRulesApi.md
 docs/ValidationRulesAssignmentsCreateRequestBody.md
 docs/ValidationRulesAssignmentsCreateResponseBody.md
@@ -3390,7 +3389,6 @@ src/model/ValidationRuleApplicableTo.js
 src/model/ValidationRuleAssignment.js
 src/model/ValidationRuleAssignmentsList.js
 src/model/ValidationRuleError.js
-src/model/ValidationRuleErrorLibrary.js
 src/model/ValidationRulesAssignmentsCreateRequestBody.js
 src/model/ValidationRulesAssignmentsCreateResponseBody.js
 src/model/ValidationRulesAssignmentsList.js
@@ -5146,7 +5144,6 @@ test/model/ValidationRuleApplicableTo.spec.js
 test/model/ValidationRuleAssignment.spec.js
 test/model/ValidationRuleAssignmentsList.spec.js
 test/model/ValidationRuleError.spec.js
-test/model/ValidationRuleErrorLibrary.spec.js
 test/model/ValidationRulesAssignmentsCreateRequestBody.spec.js
 test/model/ValidationRulesAssignmentsCreateResponseBody.spec.js
 test/model/ValidationRulesAssignmentsList.spec.js

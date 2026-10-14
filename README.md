@@ -2215,7 +2215,6 @@ Class | Method | HTTP request | Description
  - [Voucherify.ValidationRuleAssignment](docs/ValidationRuleAssignment.md)
  - [Voucherify.ValidationRuleAssignmentsList](docs/ValidationRuleAssignmentsList.md)
  - [Voucherify.ValidationRuleError](docs/ValidationRuleError.md)
- - [Voucherify.ValidationRuleErrorLibrary](docs/ValidationRuleErrorLibrary.md)
  - [Voucherify.ValidationRulesAssignmentsCreateRequestBody](docs/ValidationRulesAssignmentsCreateRequestBody.md)
  - [Voucherify.ValidationRulesAssignmentsCreateResponseBody](docs/ValidationRulesAssignmentsCreateResponseBody.md)
  - [Voucherify.ValidationRulesAssignmentsList](docs/ValidationRulesAssignmentsList.md)
