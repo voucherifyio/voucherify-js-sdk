@@ -113,7 +113,7 @@ PublicationsListResponseBody.prototype['object'] = 'list';
 PublicationsListResponseBody.prototype['data_ref'] = 'publications';
 
 /**
-    * Response schema model for publishing vouchers to a specific customer.
+    * Contains array of publication objects, voucher object will be simplified.
     * @type {Array.<PublicationsListResponseBodyPublicationsItem> | undefined}
     */
 PublicationsListResponseBody.prototype['publications'] = undefined;

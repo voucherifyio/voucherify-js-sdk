@@ -172,6 +172,7 @@ ManagementProjectsMetadataSchemaDefinition.prototype['max_length'] = undefined;
 ManagementProjectsMetadataSchemaDefinition.prototype['exact_length'] = undefined;
 
 /**
+    * Array of values that are allowed. Available only for the `string` and `number` types.
     * @type {Array.<Object> | undefined}
     */
 ManagementProjectsMetadataSchemaDefinition.prototype['eq'] = undefined;

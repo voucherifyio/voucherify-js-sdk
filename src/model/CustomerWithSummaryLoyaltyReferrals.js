@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CustomerLoyalty from './CustomerLoyalty';
+import CustomerLoyaltyMembership from './CustomerLoyaltyMembership';
 import CustomerReferrals from './CustomerReferrals';
 import CustomerSummary from './CustomerSummary';
 import CustomerWithSummaryLoyaltyReferralsAddress from './CustomerWithSummaryLoyaltyReferralsAddress';
@@ -62,6 +63,9 @@ class CustomerWithSummaryLoyaltyReferrals {
             }
             if (data.hasOwnProperty('loyalty')) {
                 obj['loyalty'] = CustomerLoyalty.constructFromObject(data['loyalty']);
+            }
+            if (data.hasOwnProperty('loyalty_memberships')) {
+                obj['loyalty_memberships'] = ApiClient.convertToType(data['loyalty_memberships'], [CustomerLoyaltyMembership]);
             }
             if (data.hasOwnProperty('referrals')) {
                 obj['referrals'] = CustomerReferrals.constructFromObject(data['referrals']);
@@ -131,6 +135,16 @@ class CustomerWithSummaryLoyaltyReferrals {
         if (data['loyalty']) { // data not null
           CustomerLoyalty.validateJSON(data['loyalty']);
         }
+        if (data['loyalty_memberships']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['loyalty_memberships'])) {
+                throw new Error("Expected the field `loyalty_memberships` to be an array in the JSON data but got " + data['loyalty_memberships']);
+            }
+            // validate the optional field `loyalty_memberships` (array)
+            for (const item of data['loyalty_memberships']) {
+                CustomerLoyaltyMembership.validateJSON(item);
+            };
+        }
         // validate the optional field `referrals`
         if (data['referrals']) { // data not null
           CustomerReferrals.validateJSON(data['referrals']);
@@ -193,6 +207,12 @@ CustomerWithSummaryLoyaltyReferrals.prototype['summary'] = undefined;
     * @type {CustomerLoyalty | undefined}
     */
 CustomerWithSummaryLoyaltyReferrals.prototype['loyalty'] = undefined;
+
+/**
+    * List of Loyalty v2 program memberships for the customer. Lists only existing `ACTIVE` memberships. `null` when no memberships are stored. Absent or `null` for `v1/orders` and `v1/publications` endpoints and events.
+    * @type {Array.<CustomerLoyaltyMembership> | undefined}
+    */
+CustomerWithSummaryLoyaltyReferrals.prototype['loyalty_memberships'] = undefined;
 
 /**
     * @type {CustomerReferrals | undefined}
