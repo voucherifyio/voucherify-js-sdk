@@ -291,6 +291,8 @@ Authorization schemes defined for the API.
     - Added Loyalty v2 API methods for members, memberships, cards, examine, reports, and related non-WIP reads under `/v2/loyalties`.
     - Added `loyalty_memberships` on customer summary models.
     - Added e2e coverage for Loyalty v2 member and runtime flows (setup uses HTTP for unpublished admin endpoints).
+    - Added an optional `filters` query parameter on list customers.
+    - Customer loyalty membership responses list only `ACTIVE` memberships. The status enum still includes `INACTIVE` and `DELETED`.
 - **2026-08-26** - `3.0.4`:
     - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
     - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
@@ -1739,8 +1741,6 @@ Class | Method | HTTP request | Description
  - [Voucherify.ParameterVoucherTypeListPublications](docs/ParameterVoucherTypeListPublications.md)
  - [Voucherify.ParametersFiltersListCampaignTransactions](docs/ParametersFiltersListCampaignTransactions.md)
  - [Voucherify.PointsEarningsReportDailyEntry](docs/PointsEarningsReportDailyEntry.md)
- - [Voucherify.PointsEarningsReportFilterCardDefinitionIdConditions](docs/PointsEarningsReportFilterCardDefinitionIdConditions.md)
- - [Voucherify.PointsEarningsReportFilterCardDefinitionIdConditionsConditions](docs/PointsEarningsReportFilterCardDefinitionIdConditionsConditions.md)
  - [Voucherify.PointsEarningsReportListFilters](docs/PointsEarningsReportListFilters.md)
  - [Voucherify.PointsEarningsReportSummaryEntry](docs/PointsEarningsReportSummaryEntry.md)
  - [Voucherify.PointsExpirationTypes](docs/PointsExpirationTypes.md)
@@ -2010,6 +2010,8 @@ Class | Method | HTTP request | Description
  - [Voucherify.Referrer](docs/Referrer.md)
  - [Voucherify.ReferrerAddress](docs/ReferrerAddress.md)
  - [Voucherify.ReferrerId](docs/ReferrerId.md)
+ - [Voucherify.ReportCardDefinitionIdFilterConditions](docs/ReportCardDefinitionIdFilterConditions.md)
+ - [Voucherify.ReportCardDefinitionIdFilterConditionsConditions](docs/ReportCardDefinitionIdFilterConditionsConditions.md)
  - [Voucherify.ResourceTypes](docs/ResourceTypes.md)
  - [Voucherify.Reward](docs/Reward.md)
  - [Voucherify.RewardAssignment](docs/RewardAssignment.md)
@@ -2114,8 +2116,6 @@ Class | Method | HTTP request | Description
  - [Voucherify.SkusImportCsvCreateResponseBody](docs/SkusImportCsvCreateResponseBody.md)
  - [Voucherify.SkusListForProduct](docs/SkusListForProduct.md)
  - [Voucherify.SpendingReportDailyEntry](docs/SpendingReportDailyEntry.md)
- - [Voucherify.SpendingReportFilterCardDefinitionIdConditions](docs/SpendingReportFilterCardDefinitionIdConditions.md)
- - [Voucherify.SpendingReportFilterCardDefinitionIdConditionsConditions](docs/SpendingReportFilterCardDefinitionIdConditionsConditions.md)
  - [Voucherify.SpendingReportListFilters](docs/SpendingReportListFilters.md)
  - [Voucherify.SpendingReportSummaryEntry](docs/SpendingReportSummaryEntry.md)
  - [Voucherify.StackingRules](docs/StackingRules.md)

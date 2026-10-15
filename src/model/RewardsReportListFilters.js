@@ -81,7 +81,7 @@ class RewardsReportListFilters {
 
 
 /**
-    * Sets the logical junction between the field filters. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof RewardsReportListFilters.JunctionEnum) | undefined}
     */
 RewardsReportListFilters.prototype['junction'] = undefined;

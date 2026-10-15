@@ -93,25 +93,25 @@ class LoyaltiesProgramsMembersListRequestQueryStatusConditions {
 
 
 /**
-    * Value equals. Single value or an array with exactly one value.
+    * Matches one value. A string or a one-element array.
     * @type {(keyof typeof LoyaltiesProgramsMembersListRequestQueryStatusConditions.IsEnum) | undefined}
     */
 LoyaltiesProgramsMembersListRequestQueryStatusConditions.prototype['$is'] = undefined;
 
 /**
-    * Value does not equal. Single value or an array with exactly one value.
+    * Excludes one value. A string or a one-element array.
     * @type {(keyof typeof LoyaltiesProgramsMembersListRequestQueryStatusConditions.IsNotEnum) | undefined}
     */
 LoyaltiesProgramsMembersListRequestQueryStatusConditions.prototype['$is_not'] = undefined;
 
 /**
-    * Value is one of. Single value or an array of 1-10 values.
+    * Matches any of the values. A string or an array of 1 to 10 values.
     * @type {(keyof typeof LoyaltiesProgramsMembersListRequestQueryStatusConditions.InEnum) | undefined}
     */
 LoyaltiesProgramsMembersListRequestQueryStatusConditions.prototype['$in'] = undefined;
 
 /**
-    * Value is not one of. Single value or an array of 1-10 values.
+    * Excludes any of the values. A string or an array of 1 to 10 values.
     * @type {(keyof typeof LoyaltiesProgramsMembersListRequestQueryStatusConditions.NotInEnum) | undefined}
     */
 LoyaltiesProgramsMembersListRequestQueryStatusConditions.prototype['$not_in'] = undefined;

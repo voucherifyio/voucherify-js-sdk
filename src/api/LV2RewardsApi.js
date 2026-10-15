@@ -44,7 +44,7 @@ export default class LV2RewardsApi {
     /**
      * Get reward by ID
      * Returns a single reward by its ID.
-     * @param {String} rewardId Unique reward identifier, prefixed with lrew_.
+     * @param {String} rewardId Identifies the reward. Format lrew_[a-f0-9]+.
      * @param {getRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link V2LoyaltiesRewardsGetResponseBody}
      * @returns {Promise<(V2LoyaltiesRewardsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `V2LoyaltiesRewardsGetResponseBody` object or with `undefined`.

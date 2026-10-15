@@ -36,7 +36,7 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new Voucherify.LV2EarningRulesApi();
-let earningRuleId = "earningRuleId_example"; // String | Earning rule ID.
+let earningRuleId = "earningRuleId_example"; // String | Identifies the earning rule. Format lern_[a-f0-9]+.
 apiInstance.getEarningRule(earningRuleId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -51,7 +51,7 @@ apiInstance.getEarningRule(earningRuleId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **earningRuleId** | **String**| Earning rule ID. | 
+ **earningRuleId** | **String**| Identifies the earning rule. Format lern_[a-f0-9]+. | 
 
 ### Return type
 

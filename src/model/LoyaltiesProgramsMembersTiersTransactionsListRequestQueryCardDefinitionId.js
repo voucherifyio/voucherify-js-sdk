@@ -20,7 +20,7 @@ import LoyaltiesProgramsMembersTiersTransactionsListRequestQueryCardDefinitionId
 class LoyaltiesProgramsMembersTiersTransactionsListRequestQueryCardDefinitionId {
     /**
      * Constructs a new <code>LoyaltiesProgramsMembersTiersTransactionsListRequestQueryCardDefinitionId</code>.
-     * ID filter conditions for card definition ids. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
+     * ID filter conditions for card definition IDs. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
      * @alias LoyaltiesProgramsMembersTiersTransactionsListRequestQueryCardDefinitionId
      */
     constructor() { 

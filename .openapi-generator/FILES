@@ -1139,8 +1139,6 @@ docs/ParameterUpdatedBeforeAfter.md
 docs/ParameterVoucherTypeListPublications.md
 docs/ParametersFiltersListCampaignTransactions.md
 docs/PointsEarningsReportDailyEntry.md
-docs/PointsEarningsReportFilterCardDefinitionIdConditions.md
-docs/PointsEarningsReportFilterCardDefinitionIdConditionsConditions.md
 docs/PointsEarningsReportListFilters.md
 docs/PointsEarningsReportSummaryEntry.md
 docs/PointsExpirationTypes.md
@@ -1417,6 +1415,8 @@ docs/ReferralsMembersHoldersListResponseBody.md
 docs/Referrer.md
 docs/ReferrerAddress.md
 docs/ReferrerId.md
+docs/ReportCardDefinitionIdFilterConditions.md
+docs/ReportCardDefinitionIdFilterConditionsConditions.md
 docs/ResourceTypes.md
 docs/Reward.md
 docs/RewardAssignment.md
@@ -1523,8 +1523,6 @@ docs/SkusGetResponseBody.md
 docs/SkusImportCsvCreateResponseBody.md
 docs/SkusListForProduct.md
 docs/SpendingReportDailyEntry.md
-docs/SpendingReportFilterCardDefinitionIdConditions.md
-docs/SpendingReportFilterCardDefinitionIdConditionsConditions.md
 docs/SpendingReportListFilters.md
 docs/SpendingReportSummaryEntry.md
 docs/StackingRules.md
@@ -2912,8 +2910,6 @@ src/model/ParameterUpdatedBeforeAfter.js
 src/model/ParameterVoucherTypeListPublications.js
 src/model/ParametersFiltersListCampaignTransactions.js
 src/model/PointsEarningsReportDailyEntry.js
-src/model/PointsEarningsReportFilterCardDefinitionIdConditions.js
-src/model/PointsEarningsReportFilterCardDefinitionIdConditionsConditions.js
 src/model/PointsEarningsReportListFilters.js
 src/model/PointsEarningsReportSummaryEntry.js
 src/model/PointsExpirationTypes.js
@@ -3183,6 +3179,8 @@ src/model/ReferralsMembersHoldersListResponseBody.js
 src/model/Referrer.js
 src/model/ReferrerAddress.js
 src/model/ReferrerId.js
+src/model/ReportCardDefinitionIdFilterConditions.js
+src/model/ReportCardDefinitionIdFilterConditionsConditions.js
 src/model/ResourceTypes.js
 src/model/Reward.js
 src/model/RewardAssignment.js
@@ -3287,8 +3285,6 @@ src/model/SkusGetResponseBody.js
 src/model/SkusImportCsvCreateResponseBody.js
 src/model/SkusListForProduct.js
 src/model/SpendingReportDailyEntry.js
-src/model/SpendingReportFilterCardDefinitionIdConditions.js
-src/model/SpendingReportFilterCardDefinitionIdConditionsConditions.js
 src/model/SpendingReportListFilters.js
 src/model/SpendingReportSummaryEntry.js
 src/model/StackingRules.js
@@ -4667,8 +4663,6 @@ test/model/ParameterUpdatedBeforeAfter.spec.js
 test/model/ParameterVoucherTypeListPublications.spec.js
 test/model/ParametersFiltersListCampaignTransactions.spec.js
 test/model/PointsEarningsReportDailyEntry.spec.js
-test/model/PointsEarningsReportFilterCardDefinitionIdConditions.spec.js
-test/model/PointsEarningsReportFilterCardDefinitionIdConditionsConditions.spec.js
 test/model/PointsEarningsReportListFilters.spec.js
 test/model/PointsEarningsReportSummaryEntry.spec.js
 test/model/PointsExpirationTypes.spec.js
@@ -4938,6 +4932,8 @@ test/model/ReferralsMembersHoldersListResponseBody.spec.js
 test/model/Referrer.spec.js
 test/model/ReferrerAddress.spec.js
 test/model/ReferrerId.spec.js
+test/model/ReportCardDefinitionIdFilterConditions.spec.js
+test/model/ReportCardDefinitionIdFilterConditionsConditions.spec.js
 test/model/ResourceTypes.spec.js
 test/model/Reward.spec.js
 test/model/RewardAssignment.spec.js
@@ -5042,8 +5038,6 @@ test/model/SkusGetResponseBody.spec.js
 test/model/SkusImportCsvCreateResponseBody.spec.js
 test/model/SkusListForProduct.spec.js
 test/model/SpendingReportDailyEntry.spec.js
-test/model/SpendingReportFilterCardDefinitionIdConditions.spec.js
-test/model/SpendingReportFilterCardDefinitionIdConditionsConditions.spec.js
 test/model/SpendingReportListFilters.spec.js
 test/model/SpendingReportSummaryEntry.spec.js
 test/model/StackingRules.spec.js

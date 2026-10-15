@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**junction** | **String** | Defines the logical junction between field filters. Allowed values: &#x60;AND&#x60;, &#x60;OR&#x60;. Defaults to &#x60;AND&#x60;. | [optional] 
+**junction** | **String** | Joins the field filters. Allowed values are &#x60;AND&#x60; and &#x60;OR&#x60;. Defaults to &#x60;AND&#x60;. | [optional] 
 **benefitId** | [**LoyaltiesProgramsMembersBenefitsTransactionsListRequestQueryBenefitId**](LoyaltiesProgramsMembersBenefitsTransactionsListRequestQueryBenefitId.md) |  | [optional] 
 **createdAt** | [**TransactionFilterDateConditions**](TransactionFilterDateConditions.md) |  | [optional] 
 

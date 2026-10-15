@@ -89,7 +89,7 @@ class V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery {
 
 
 /**
-    * Defines the logical junction between field filters. Allowed values: `AND`, `OR`. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery.JunctionEnum) | undefined}
     */
 V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery.prototype['junction'] = undefined;

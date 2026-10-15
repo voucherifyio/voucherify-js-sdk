@@ -92,7 +92,7 @@ class CustomerLoyaltyMembershipMember {
 CustomerLoyaltyMembershipMember.prototype['id'] = undefined;
 
 /**
-    * Member status.
+    * Member status. List responses include only ACTIVE memberships. INACTIVE and DELETED remain so existing SDK callers keep compiling.
     * @type {(keyof typeof CustomerLoyaltyMembershipMember.StatusEnum) | undefined}
     */
 CustomerLoyaltyMembershipMember.prototype['status'] = undefined;

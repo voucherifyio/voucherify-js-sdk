@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import SpendingReportFilterCardDefinitionIdConditions from './SpendingReportFilterCardDefinitionIdConditions';
+import ReportCardDefinitionIdFilterConditions from './ReportCardDefinitionIdFilterConditions';
 /**
  * The SpendingReportListFilters model module.
  * @module model/SpendingReportListFilters
@@ -51,7 +51,7 @@ class SpendingReportListFilters {
                 obj['junction'] = ApiClient.convertToType(data['junction'], 'String');
             }
             if (data.hasOwnProperty('card_definition_id')) {
-                obj['card_definition_id'] = SpendingReportFilterCardDefinitionIdConditions.constructFromObject(data['card_definition_id']);
+                obj['card_definition_id'] = ReportCardDefinitionIdFilterConditions.constructFromObject(data['card_definition_id']);
             }
         }
         return obj;
@@ -69,7 +69,7 @@ class SpendingReportListFilters {
         }
         // validate the optional field `card_definition_id`
         if (data['card_definition_id']) { // data not null
-          SpendingReportFilterCardDefinitionIdConditions.validateJSON(data['card_definition_id']);
+          ReportCardDefinitionIdFilterConditions.validateJSON(data['card_definition_id']);
         }
 
         return true;
@@ -81,13 +81,13 @@ class SpendingReportListFilters {
 
 
 /**
-    * Sets the logical junction between field filters. Allowed values: `AND`, `OR`. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof SpendingReportListFilters.JunctionEnum) | undefined}
     */
 SpendingReportListFilters.prototype['junction'] = undefined;
 
 /**
-    * @type {SpendingReportFilterCardDefinitionIdConditions | undefined}
+    * @type {ReportCardDefinitionIdFilterConditions | undefined}
     */
 SpendingReportListFilters.prototype['card_definition_id'] = undefined;
 

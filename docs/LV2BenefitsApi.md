@@ -36,7 +36,7 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new Voucherify.LV2BenefitsApi();
-let benefitId = "benefitId_example"; // String | Unique benefit ID, prefixed with lben_.
+let benefitId = "benefitId_example"; // String | Identifies the benefit. Format lben_[a-f0-9]+.
 apiInstance.getBenefit(benefitId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -51,7 +51,7 @@ apiInstance.getBenefit(benefitId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benefitId** | **String**| Unique benefit ID, prefixed with lben_. | 
+ **benefitId** | **String**| Identifies the benefit. Format lben_[a-f0-9]+. | 
 
 ### Return type
 

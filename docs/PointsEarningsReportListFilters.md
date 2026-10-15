@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**junction** | **String** | Combines the field filters. Allowed values are &#x60;AND&#x60; and &#x60;OR&#x60;. Defaults to &#x60;AND&#x60;. | [optional] 
+**junction** | **String** | Joins the field filters. Allowed values are &#x60;AND&#x60; and &#x60;OR&#x60;. Defaults to &#x60;AND&#x60;. | [optional] 
 **earningRuleId** | [**EarningRuleIdFilterConditions**](EarningRuleIdFilterConditions.md) |  | [optional] 
-**cardDefinitionId** | [**PointsEarningsReportFilterCardDefinitionIdConditions**](PointsEarningsReportFilterCardDefinitionIdConditions.md) |  | [optional] 
+**cardDefinitionId** | [**ReportCardDefinitionIdFilterConditions**](ReportCardDefinitionIdFilterConditions.md) |  | [optional] 
 
 
 

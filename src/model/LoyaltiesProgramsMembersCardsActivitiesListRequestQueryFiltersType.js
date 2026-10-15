@@ -20,7 +20,7 @@ import LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditi
 class LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersType {
     /**
      * Constructs a new <code>LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersType</code>.
-     * Enum filter conditions for card activity types. At least one condition is required.
+     * Enum conditions. At least one condition is required.
      * @alias LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersType
      */
     constructor() { 

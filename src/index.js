@@ -1131,8 +1131,6 @@ import ParameterUpdatedBeforeAfter from './model/ParameterUpdatedBeforeAfter';
 import ParameterVoucherTypeListPublications from './model/ParameterVoucherTypeListPublications';
 import ParametersFiltersListCampaignTransactions from './model/ParametersFiltersListCampaignTransactions';
 import PointsEarningsReportDailyEntry from './model/PointsEarningsReportDailyEntry';
-import PointsEarningsReportFilterCardDefinitionIdConditions from './model/PointsEarningsReportFilterCardDefinitionIdConditions';
-import PointsEarningsReportFilterCardDefinitionIdConditionsConditions from './model/PointsEarningsReportFilterCardDefinitionIdConditionsConditions';
 import PointsEarningsReportListFilters from './model/PointsEarningsReportListFilters';
 import PointsEarningsReportSummaryEntry from './model/PointsEarningsReportSummaryEntry';
 import PointsExpirationTypes from './model/PointsExpirationTypes';
@@ -1402,6 +1400,8 @@ import ReferralsMembersHoldersListResponseBody from './model/ReferralsMembersHol
 import Referrer from './model/Referrer';
 import ReferrerAddress from './model/ReferrerAddress';
 import ReferrerId from './model/ReferrerId';
+import ReportCardDefinitionIdFilterConditions from './model/ReportCardDefinitionIdFilterConditions';
+import ReportCardDefinitionIdFilterConditionsConditions from './model/ReportCardDefinitionIdFilterConditionsConditions';
 import ResourceTypes from './model/ResourceTypes';
 import Reward from './model/Reward';
 import RewardAssignment from './model/RewardAssignment';
@@ -1506,8 +1506,6 @@ import SkusGetResponseBody from './model/SkusGetResponseBody';
 import SkusImportCsvCreateResponseBody from './model/SkusImportCsvCreateResponseBody';
 import SkusListForProduct from './model/SkusListForProduct';
 import SpendingReportDailyEntry from './model/SpendingReportDailyEntry';
-import SpendingReportFilterCardDefinitionIdConditions from './model/SpendingReportFilterCardDefinitionIdConditions';
-import SpendingReportFilterCardDefinitionIdConditionsConditions from './model/SpendingReportFilterCardDefinitionIdConditionsConditions';
 import SpendingReportListFilters from './model/SpendingReportListFilters';
 import SpendingReportSummaryEntry from './model/SpendingReportSummaryEntry';
 import StackingRules from './model/StackingRules';
@@ -8516,18 +8514,6 @@ export {
     PointsEarningsReportDailyEntry,
 
     /**
-     * The PointsEarningsReportFilterCardDefinitionIdConditions model constructor.
-     * @property {PointsEarningsReportFilterCardDefinitionIdConditions}
-     */
-    PointsEarningsReportFilterCardDefinitionIdConditions,
-
-    /**
-     * The PointsEarningsReportFilterCardDefinitionIdConditionsConditions model constructor.
-     * @property {PointsEarningsReportFilterCardDefinitionIdConditionsConditions}
-     */
-    PointsEarningsReportFilterCardDefinitionIdConditionsConditions,
-
-    /**
      * The PointsEarningsReportListFilters model constructor.
      * @property {PointsEarningsReportListFilters}
      */
@@ -10142,6 +10128,18 @@ export {
     ReferrerId,
 
     /**
+     * The ReportCardDefinitionIdFilterConditions model constructor.
+     * @property {ReportCardDefinitionIdFilterConditions}
+     */
+    ReportCardDefinitionIdFilterConditions,
+
+    /**
+     * The ReportCardDefinitionIdFilterConditionsConditions model constructor.
+     * @property {ReportCardDefinitionIdFilterConditionsConditions}
+     */
+    ReportCardDefinitionIdFilterConditionsConditions,
+
+    /**
      * The ResourceTypes model constructor.
      * @property {Exclude<keyof typeof ResourceTypes, "prototype" | "constructFromObject">}
      */
@@ -10764,18 +10762,6 @@ export {
      * @property {SpendingReportDailyEntry}
      */
     SpendingReportDailyEntry,
-
-    /**
-     * The SpendingReportFilterCardDefinitionIdConditions model constructor.
-     * @property {SpendingReportFilterCardDefinitionIdConditions}
-     */
-    SpendingReportFilterCardDefinitionIdConditions,
-
-    /**
-     * The SpendingReportFilterCardDefinitionIdConditionsConditions model constructor.
-     * @property {SpendingReportFilterCardDefinitionIdConditionsConditions}
-     */
-    SpendingReportFilterCardDefinitionIdConditionsConditions,
 
     /**
      * The SpendingReportListFilters model constructor.

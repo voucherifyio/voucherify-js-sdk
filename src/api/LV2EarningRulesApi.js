@@ -44,7 +44,7 @@ export default class LV2EarningRulesApi {
     /**
      * Get earning rule
      * Returns a single earning rule by its ID.
-     * @param {String} earningRuleId Earning rule ID.
+     * @param {String} earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+.
      * @param {getEarningRuleCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link V2LoyaltiesEarningRulesGetResponseBody}
      * @returns {Promise<(V2LoyaltiesEarningRulesGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `V2LoyaltiesEarningRulesGetResponseBody` object or with `undefined`.

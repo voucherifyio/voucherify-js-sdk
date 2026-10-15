@@ -20,7 +20,7 @@ import LoyaltiesProgramsMembersActivitiesListRequestQueryFiltersIdConditions fro
 class LoyaltiesProgramsMembersActivitiesListRequestQueryFiltersId {
     /**
      * Constructs a new <code>LoyaltiesProgramsMembersActivitiesListRequestQueryFiltersId</code>.
-     * ID filter conditions for member activity IDs. At least one condition is required.
+     * ID conditions. Format &#x60;lambr_[a-f0-9]+&#x60;. At least one condition is required.
      * @alias LoyaltiesProgramsMembersActivitiesListRequestQueryFiltersId
      */
     constructor() { 

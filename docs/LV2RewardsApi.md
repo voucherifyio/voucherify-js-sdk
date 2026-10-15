@@ -36,7 +36,7 @@ let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new Voucherify.LV2RewardsApi();
-let rewardId = "rewardId_example"; // String | Unique reward identifier, prefixed with lrew_.
+let rewardId = "rewardId_example"; // String | Identifies the reward. Format lrew_[a-f0-9]+.
 apiInstance.getReward(rewardId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -51,7 +51,7 @@ apiInstance.getReward(rewardId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rewardId** | **String**| Unique reward identifier, prefixed with lrew_. | 
+ **rewardId** | **String**| Identifies the reward. Format lrew_[a-f0-9]+. | 
 
 ### Return type
 

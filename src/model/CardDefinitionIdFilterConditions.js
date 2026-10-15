@@ -20,7 +20,7 @@ import CardDefinitionIdFilterConditionsConditions from './CardDefinitionIdFilter
 class CardDefinitionIdFilterConditions {
     /**
      * Constructs a new <code>CardDefinitionIdFilterConditions</code>.
-     * ID filter conditions for card definition IDs. At least one condition is required.
+     * ID conditions. Format &#x60;lcdef_[a-f0-9]+&#x60;. At least one condition is required.
      * @alias CardDefinitionIdFilterConditions
      */
     constructor() { 

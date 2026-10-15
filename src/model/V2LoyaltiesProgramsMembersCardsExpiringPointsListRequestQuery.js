@@ -89,7 +89,7 @@ class V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery {
 
 
 /**
-    * How multiple field filters are combined. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery.JunctionEnum) | undefined}
     */
 V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery.prototype['junction'] = undefined;

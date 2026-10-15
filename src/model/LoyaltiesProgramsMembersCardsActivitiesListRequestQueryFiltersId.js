@@ -20,7 +20,7 @@ import LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersIdCondition
 class LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersId {
     /**
      * Constructs a new <code>LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersId</code>.
-     * ID filter conditions for card activity IDs. At least one condition is required.
+     * ID conditions. Format &#x60;lacrd_[a-f0-9]+&#x60;. At least one condition is required.
      * @alias LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersId
      */
     constructor() { 

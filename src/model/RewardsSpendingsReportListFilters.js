@@ -12,10 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
+import ReportCardDefinitionIdFilterConditions from './ReportCardDefinitionIdFilterConditions';
 import RewardsReportFilterRewardIdConditions from './RewardsReportFilterRewardIdConditions';
 import RewardsSpendingsReportFilterCostIdConditions from './RewardsSpendingsReportFilterCostIdConditions';
 import RewardsSpendingsReportFilterSpendingIdConditions from './RewardsSpendingsReportFilterSpendingIdConditions';
-import SpendingReportFilterCardDefinitionIdConditions from './SpendingReportFilterCardDefinitionIdConditions';
 /**
  * The RewardsSpendingsReportListFilters model module.
  * @module model/RewardsSpendingsReportListFilters
@@ -57,7 +57,7 @@ class RewardsSpendingsReportListFilters {
                 obj['reward_id'] = RewardsReportFilterRewardIdConditions.constructFromObject(data['reward_id']);
             }
             if (data.hasOwnProperty('card_definition_id')) {
-                obj['card_definition_id'] = SpendingReportFilterCardDefinitionIdConditions.constructFromObject(data['card_definition_id']);
+                obj['card_definition_id'] = ReportCardDefinitionIdFilterConditions.constructFromObject(data['card_definition_id']);
             }
             if (data.hasOwnProperty('cost_id')) {
                 obj['cost_id'] = RewardsSpendingsReportFilterCostIdConditions.constructFromObject(data['cost_id']);
@@ -85,7 +85,7 @@ class RewardsSpendingsReportListFilters {
         }
         // validate the optional field `card_definition_id`
         if (data['card_definition_id']) { // data not null
-          SpendingReportFilterCardDefinitionIdConditions.validateJSON(data['card_definition_id']);
+          ReportCardDefinitionIdFilterConditions.validateJSON(data['card_definition_id']);
         }
         // validate the optional field `cost_id`
         if (data['cost_id']) { // data not null
@@ -105,7 +105,7 @@ class RewardsSpendingsReportListFilters {
 
 
 /**
-    * Sets the logical junction between the field filters. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof RewardsSpendingsReportListFilters.JunctionEnum) | undefined}
     */
 RewardsSpendingsReportListFilters.prototype['junction'] = undefined;
@@ -116,7 +116,7 @@ RewardsSpendingsReportListFilters.prototype['junction'] = undefined;
 RewardsSpendingsReportListFilters.prototype['reward_id'] = undefined;
 
 /**
-    * @type {SpendingReportFilterCardDefinitionIdConditions | undefined}
+    * @type {ReportCardDefinitionIdFilterConditions | undefined}
     */
 RewardsSpendingsReportListFilters.prototype['card_definition_id'] = undefined;
 

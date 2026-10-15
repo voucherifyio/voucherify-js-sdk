@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EarningRuleIdFilterConditions from './EarningRuleIdFilterConditions';
-import PointsEarningsReportFilterCardDefinitionIdConditions from './PointsEarningsReportFilterCardDefinitionIdConditions';
+import ReportCardDefinitionIdFilterConditions from './ReportCardDefinitionIdFilterConditions';
 /**
  * The PointsEarningsReportListFilters model module.
  * @module model/PointsEarningsReportListFilters
@@ -55,7 +55,7 @@ class PointsEarningsReportListFilters {
                 obj['earning_rule_id'] = EarningRuleIdFilterConditions.constructFromObject(data['earning_rule_id']);
             }
             if (data.hasOwnProperty('card_definition_id')) {
-                obj['card_definition_id'] = PointsEarningsReportFilterCardDefinitionIdConditions.constructFromObject(data['card_definition_id']);
+                obj['card_definition_id'] = ReportCardDefinitionIdFilterConditions.constructFromObject(data['card_definition_id']);
             }
         }
         return obj;
@@ -77,7 +77,7 @@ class PointsEarningsReportListFilters {
         }
         // validate the optional field `card_definition_id`
         if (data['card_definition_id']) { // data not null
-          PointsEarningsReportFilterCardDefinitionIdConditions.validateJSON(data['card_definition_id']);
+          ReportCardDefinitionIdFilterConditions.validateJSON(data['card_definition_id']);
         }
 
         return true;
@@ -89,7 +89,7 @@ class PointsEarningsReportListFilters {
 
 
 /**
-    * Combines the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof PointsEarningsReportListFilters.JunctionEnum) | undefined}
     */
 PointsEarningsReportListFilters.prototype['junction'] = undefined;
@@ -100,7 +100,7 @@ PointsEarningsReportListFilters.prototype['junction'] = undefined;
 PointsEarningsReportListFilters.prototype['earning_rule_id'] = undefined;
 
 /**
-    * @type {PointsEarningsReportFilterCardDefinitionIdConditions | undefined}
+    * @type {ReportCardDefinitionIdFilterConditions | undefined}
     */
 PointsEarningsReportListFilters.prototype['card_definition_id'] = undefined;
 

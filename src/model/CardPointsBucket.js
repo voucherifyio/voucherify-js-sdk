@@ -61,6 +61,9 @@ class CardPointsBucket {
             if (data.hasOwnProperty('member_id')) {
                 obj['member_id'] = ApiClient.convertToType(data['member_id'], 'String');
             }
+            if (data.hasOwnProperty('card_type')) {
+                obj['card_type'] = ApiClient.convertToType(data['card_type'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -72,9 +75,6 @@ class CardPointsBucket {
             }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
-            }
-            if (data.hasOwnProperty('card_type')) {
-                obj['card_type'] = ApiClient.convertToType(data['card_type'], 'String');
             }
             if (data.hasOwnProperty('points')) {
                 obj['points'] = CardPointsBucketPoints.constructFromObject(data['points']);
@@ -118,16 +118,16 @@ class CardPointsBucket {
             throw new Error("Expected the field `member_id` to be a primitive type in the JSON string but got " + data['member_id']);
         }
         // ensure the json data is a string
+        if (data['card_type'] && !(typeof data['card_type'] === 'string' || data['card_type'] instanceof String)) {
+            throw new Error("Expected the field `card_type` to be a primitive type in the JSON string but got " + data['card_type']);
+        }
+        // ensure the json data is a string
         if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
             throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
         }
         // ensure the json data is a string
         if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
             throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
-        }
-        // ensure the json data is a string
-        if (data['card_type'] && !(typeof data['card_type'] === 'string' || data['card_type'] instanceof String)) {
-            throw new Error("Expected the field `card_type` to be a primitive type in the JSON string but got " + data['card_type']);
         }
         // validate the optional field `points`
         if (data['points']) { // data not null
@@ -179,6 +179,13 @@ CardPointsBucket.prototype['program_id'] = undefined;
 CardPointsBucket.prototype['member_id'] = undefined;
 
 /**
+    * Card type. Currently, only `INDIVIDUAL` is supported.
+    * @type {(keyof typeof CardPointsBucket.CardTypeEnum) | undefined}
+    * @default 'INDIVIDUAL'
+    */
+CardPointsBucket.prototype['card_type'] = 'INDIVIDUAL';
+
+/**
     * Timestamp when the bucket was created (ISO 8601).
     * @type {Date | undefined}
     */
@@ -201,13 +208,6 @@ CardPointsBucket.prototype['id'] = undefined;
     * @type {String | undefined}
     */
 CardPointsBucket.prototype['customer_id'] = undefined;
-
-/**
-    * Card type. Currently, only `INDIVIDUAL` is supported.
-    * @type {(keyof typeof CardPointsBucket.CardTypeEnum) | undefined}
-    * @default 'INDIVIDUAL'
-    */
-CardPointsBucket.prototype['card_type'] = 'INDIVIDUAL';
 
 /**
     * @type {CardPointsBucketPoints | undefined}

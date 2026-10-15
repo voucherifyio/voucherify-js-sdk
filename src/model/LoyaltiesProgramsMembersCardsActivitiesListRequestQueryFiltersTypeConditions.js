@@ -93,25 +93,25 @@ class LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditio
 
 
 /**
-    * Value equals. Single value or an array with exactly one value.
+    * Matches one value. A string or a one-element array.
     * @type {(keyof typeof LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.IsEnum) | undefined}
     */
 LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.prototype['$is'] = undefined;
 
 /**
-    * Value does not equal. Single value or an array with exactly one value.
+    * Excludes one value. A string or a one-element array.
     * @type {(keyof typeof LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.IsNotEnum) | undefined}
     */
 LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.prototype['$is_not'] = undefined;
 
 /**
-    * Value is one of. Single value or an array of 1-10 values.
+    * Matches any of the values. A string or an array of 1 to 10 values.
     * @type {(keyof typeof LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.InEnum) | undefined}
     */
 LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.prototype['$in'] = undefined;
 
 /**
-    * Value is not one of. Single value or an array of 1-10 values.
+    * Excludes any of the values. A string or an array of 1 to 10 values.
     * @type {(keyof typeof LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.NotInEnum) | undefined}
     */
 LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFiltersTypeConditions.prototype['$not_in'] = undefined;

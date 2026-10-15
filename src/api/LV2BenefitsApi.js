@@ -44,7 +44,7 @@ export default class LV2BenefitsApi {
     /**
      * Get benefit
      * Returns a single benefit by its ID.
-     * @param {String} benefitId Unique benefit ID, prefixed with lben_.
+     * @param {String} benefitId Identifies the benefit. Format lben_[a-f0-9]+.
      * @param {getBenefitCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link V2LoyaltiesBenefitsGetResponseBody}
      * @returns {Promise<(V2LoyaltiesBenefitsGetResponseBody | undefined)>} Depending on whether the `callback` parameter is provided, the promise will resolve with a `V2LoyaltiesBenefitsGetResponseBody` object or with `undefined`.

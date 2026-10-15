@@ -50,8 +50,17 @@ class Card {
         if (data) {
             obj = obj || new Card();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('card_definition_id')) {
+                obj['card_definition_id'] = ApiClient.convertToType(data['card_definition_id'], 'String');
+            }
             if (data.hasOwnProperty('card_type')) {
                 obj['card_type'] = ApiClient.convertToType(data['card_type'], 'String');
+            }
+            if (data.hasOwnProperty('code')) {
+                obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
             if (data.hasOwnProperty('lifetime_bucket')) {
                 obj['lifetime_bucket'] = CardLifetimeBucket.constructFromObject(data['lifetime_bucket']);
@@ -59,17 +68,11 @@ class Card {
             if (data.hasOwnProperty('balance')) {
                 obj['balance'] = CardBalance.constructFromObject(data['balance']);
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('object')) {
+                obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
             if (data.hasOwnProperty('program_id')) {
                 obj['program_id'] = ApiClient.convertToType(data['program_id'], 'String');
-            }
-            if (data.hasOwnProperty('card_definition_id')) {
-                obj['card_definition_id'] = ApiClient.convertToType(data['card_definition_id'], 'String');
-            }
-            if (data.hasOwnProperty('code')) {
-                obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -83,9 +86,6 @@ class Card {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
-            if (data.hasOwnProperty('object')) {
-                obj['object'] = ApiClient.convertToType(data['object'], 'String');
-            }
         }
         return obj;
     }
@@ -97,8 +97,20 @@ class Card {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        // ensure the json data is a string
+        if (data['card_definition_id'] && !(typeof data['card_definition_id'] === 'string' || data['card_definition_id'] instanceof String)) {
+            throw new Error("Expected the field `card_definition_id` to be a primitive type in the JSON string but got " + data['card_definition_id']);
+        }
+        // ensure the json data is a string
         if (data['card_type'] && !(typeof data['card_type'] === 'string' || data['card_type'] instanceof String)) {
             throw new Error("Expected the field `card_type` to be a primitive type in the JSON string but got " + data['card_type']);
+        }
+        // ensure the json data is a string
+        if (data['code'] && !(typeof data['code'] === 'string' || data['code'] instanceof String)) {
+            throw new Error("Expected the field `code` to be a primitive type in the JSON string but got " + data['code']);
         }
         // validate the optional field `lifetime_bucket`
         if (data['lifetime_bucket']) { // data not null
@@ -109,20 +121,12 @@ class Card {
           CardBalance.validateJSON(data['balance']);
         }
         // ensure the json data is a string
-        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
-            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        if (data['object'] && !(typeof data['object'] === 'string' || data['object'] instanceof String)) {
+            throw new Error("Expected the field `object` to be a primitive type in the JSON string but got " + data['object']);
         }
         // ensure the json data is a string
         if (data['program_id'] && !(typeof data['program_id'] === 'string' || data['program_id'] instanceof String)) {
             throw new Error("Expected the field `program_id` to be a primitive type in the JSON string but got " + data['program_id']);
-        }
-        // ensure the json data is a string
-        if (data['card_definition_id'] && !(typeof data['card_definition_id'] === 'string' || data['card_definition_id'] instanceof String)) {
-            throw new Error("Expected the field `card_definition_id` to be a primitive type in the JSON string but got " + data['card_definition_id']);
-        }
-        // ensure the json data is a string
-        if (data['code'] && !(typeof data['code'] === 'string' || data['code'] instanceof String)) {
-            throw new Error("Expected the field `code` to be a primitive type in the JSON string but got " + data['code']);
         }
         // ensure the json data is a string
         if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
@@ -131,10 +135,6 @@ class Card {
         // ensure the json data is a string
         if (data['member_id'] && !(typeof data['member_id'] === 'string' || data['member_id'] instanceof String)) {
             throw new Error("Expected the field `member_id` to be a primitive type in the JSON string but got " + data['member_id']);
-        }
-        // ensure the json data is a string
-        if (data['object'] && !(typeof data['object'] === 'string' || data['object'] instanceof String)) {
-            throw new Error("Expected the field `object` to be a primitive type in the JSON string but got " + data['object']);
         }
 
         return true;
@@ -146,11 +146,29 @@ class Card {
 
 
 /**
+    * Identifies the card.
+    * @type {String | undefined}
+    */
+Card.prototype['id'] = undefined;
+
+/**
+    * Identifies the card definition.
+    * @type {String | undefined}
+    */
+Card.prototype['card_definition_id'] = undefined;
+
+/**
     * Card type. Currently only `INDIVIDUAL` is supported.
     * @type {(keyof typeof Card.CardTypeEnum) | undefined}
     * @default 'INDIVIDUAL'
     */
 Card.prototype['card_type'] = 'INDIVIDUAL';
+
+/**
+    * Human-readable card code. Card code generation is asynchronous - this field is `null` right after member creation and is populated shortly after, once the background code generation completes.
+    * @type {String | undefined}
+    */
+Card.prototype['code'] = undefined;
 
 /**
     * @type {CardLifetimeBucket | undefined}
@@ -163,28 +181,17 @@ Card.prototype['lifetime_bucket'] = undefined;
 Card.prototype['balance'] = undefined;
 
 /**
-    * Identifies the card.
-    * @type {String | undefined}
+    * Object type. Always `card`.
+    * @type {(keyof typeof Card.ObjectEnum) | undefined}
+    * @default 'card'
     */
-Card.prototype['id'] = undefined;
+Card.prototype['object'] = 'card';
 
 /**
     * Identifies the loyalty program.
     * @type {String | undefined}
     */
 Card.prototype['program_id'] = undefined;
-
-/**
-    * Identifies the card definition.
-    * @type {String | undefined}
-    */
-Card.prototype['card_definition_id'] = undefined;
-
-/**
-    * Human-readable card code. `null` until asynchronous code generation finishes.
-    * @type {String | undefined}
-    */
-Card.prototype['code'] = undefined;
 
 /**
     * Identifies the customer linked to the card.
@@ -209,13 +216,6 @@ Card.prototype['created_at'] = undefined;
     * @type {Date | undefined}
     */
 Card.prototype['updated_at'] = undefined;
-
-/**
-    * Object type. Always `card`.
-    * @type {(keyof typeof Card.ObjectEnum) | undefined}
-    * @default 'card'
-    */
-Card.prototype['object'] = 'card';
 
 
 

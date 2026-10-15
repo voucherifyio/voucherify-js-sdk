@@ -97,7 +97,7 @@ class V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters {
 
 
 /**
-    * How multiple field filters are combined. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters.JunctionEnum) | undefined}
     */
 V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters.prototype['junction'] = undefined;

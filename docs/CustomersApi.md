@@ -563,7 +563,8 @@ let opts = {
   'updatedAtBefore': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter customers by date customer was updated last time.
   'updatedAtAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | Filter customers by date customer was updated last time.
   'order': new Voucherify.ParameterOrderListCustomers(), // ParameterOrderListCustomers | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-  'startingAfter': new Date("2013-10-20T19:20:30+01:00") // Date | A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.  
+  'startingAfter': new Date("2013-10-20T19:20:30+01:00"), // Date | A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.  
+  'filters': {key: null} // Object | Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples.
 };
 apiInstance.listCustomers(opts, (error, data, response) => {
   if (error) {
@@ -591,6 +592,7 @@ Name | Type | Description  | Notes
  **updatedAtAfter** | **Date**| Filter customers by date customer was updated last time. | [optional] 
  **order** | [**ParameterOrderListCustomers**](.md)| This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] 
  **startingAfter** | **Date**| A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.   | [optional] 
+ **filters** | [**Object**](.md)| Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. | [optional] 
 
 ### Return type
 

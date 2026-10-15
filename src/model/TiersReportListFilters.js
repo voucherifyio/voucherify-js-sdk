@@ -89,7 +89,7 @@ class TiersReportListFilters {
 
 
 /**
-    * Joins the field filters. Allowed values: `AND`, `OR`. Defaults to `AND`.
+    * Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
     * @type {(keyof typeof TiersReportListFilters.JunctionEnum) | undefined}
     */
 TiersReportListFilters.prototype['junction'] = undefined;

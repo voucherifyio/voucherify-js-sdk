@@ -20,7 +20,7 @@ import LoyaltiesProgramsMembersListRequestQueryCustomerIdConditions from './Loya
 class LoyaltiesProgramsMembersListRequestQueryCustomerId {
     /**
      * Constructs a new <code>LoyaltiesProgramsMembersListRequestQueryCustomerId</code>.
-     * ID filter conditions for customer IDs. At least one condition is required.
+     * ID conditions. Format &#x60;cust_[a-zA-Z0-9]+&#x60;. At least one condition is required.
      * @alias LoyaltiesProgramsMembersListRequestQueryCustomerId
      */
     constructor() { 

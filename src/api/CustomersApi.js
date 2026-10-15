@@ -438,6 +438,7 @@ export default class CustomersApi {
         updatedAtAfter?: Date,
         order?: Exclude<keyof typeof ParameterOrderListCustomers, "prototype" | "constructFromObject">,
         startingAfter?: Date,
+        filters?: Object.<String, Object>,
      }} [opts] Optional parameters
      * @param {listCustomersCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link CustomersListResponseBody}
@@ -461,7 +462,8 @@ export default class CustomersApi {
         'updated_at[before]': opts['updatedAtBefore'],
         'updated_at[after]': opts['updatedAtAfter'],
         'order': opts['order'],
-        'starting_after': opts['startingAfter']
+        'starting_after': opts['startingAfter'],
+        'filters': opts['filters']
       };
       let headerParams = {
       };
