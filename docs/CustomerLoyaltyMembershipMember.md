@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Identifies the Loyalty v2 program member. | [optional] 
-**status** | **String** | Member status. List responses include only ACTIVE memberships. INACTIVE and DELETED remain so existing SDK callers keep compiling. | [optional] 
+**status** | **String** | Member status. The value is &#x60;ACTIVE&#x60;. | [optional] [default to &#39;ACTIVE&#39;]
 **createdAt** | **Date** | Timestamp representing when the member was created. The value is shown in the ISO 8601 format. | [optional] 
 **updatedAt** | **Date** | Timestamp representing when the member was updated. The value is shown in the ISO 8601 format. &#x60;null&#x60; when not set. | [optional] 
 
@@ -15,10 +15,6 @@ Name | Type | Description | Notes
 
 
 * `ACTIVE` (value: `"ACTIVE"`)
-
-* `INACTIVE` (value: `"INACTIVE"`)
-
-* `DELETED` (value: `"DELETED"`)
 
 
 

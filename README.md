@@ -292,7 +292,7 @@ Authorization schemes defined for the API.
     - Added `loyalty_memberships` on customer summary models.
     - Added e2e coverage for Loyalty v2 member and runtime flows (setup uses HTTP for unpublished admin endpoints).
     - Added an optional `filters` query parameter on list customers.
-    - Customer loyalty membership responses list only `ACTIVE` memberships. The status enum still includes `INACTIVE` and `DELETED`.
+    - Customer loyalty membership responses list only `ACTIVE` memberships.
 - **2026-08-26** - `3.0.4`:
     - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
     - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.

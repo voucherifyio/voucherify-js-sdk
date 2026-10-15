@@ -33,6 +33,7 @@ class CustomerLoyaltyMembershipMember {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['status'] = 'ACTIVE';
     }
 
     /**
@@ -92,10 +93,11 @@ class CustomerLoyaltyMembershipMember {
 CustomerLoyaltyMembershipMember.prototype['id'] = undefined;
 
 /**
-    * Member status. List responses include only ACTIVE memberships. INACTIVE and DELETED remain so existing SDK callers keep compiling.
+    * Member status. The value is `ACTIVE`.
     * @type {(keyof typeof CustomerLoyaltyMembershipMember.StatusEnum) | undefined}
+    * @default 'ACTIVE'
     */
-CustomerLoyaltyMembershipMember.prototype['status'] = undefined;
+CustomerLoyaltyMembershipMember.prototype['status'] = 'ACTIVE';
 
 /**
     * Timestamp representing when the member was created. The value is shown in the ISO 8601 format.
@@ -124,19 +126,7 @@ CustomerLoyaltyMembershipMember.prototype['updated_at'] = undefined;
          * value: "ACTIVE"
          * @constant
          */
-        "ACTIVE": "ACTIVE",
-    
-        /**
-         * value: "INACTIVE"
-         * @constant
-         */
-        "INACTIVE": "INACTIVE",
-    
-        /**
-         * value: "DELETED"
-         * @constant
-         */
-        "DELETED": "DELETED"    
+        "ACTIVE": "ACTIVE"    
     };
 
 
