@@ -33,7 +33,7 @@
     "url": "git+https://github.com/voucherifyio/voucherify-js-sdk.git"
   },
   "dependencies": {
-    "qs": "6.15.2",
+    "qs": "6.16.0",
     "superagent": "10.2.3"
   },
   "devDependencies": {
