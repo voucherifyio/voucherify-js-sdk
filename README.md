@@ -288,7 +288,7 @@ Authorization schemes defined for the API.
 ## 📅 Changelog
 
 - **2026-10-14** - `3.1.0`:
-    - Added Loyalty v2 API methods for members, memberships, cards, examine, reports, and related non-WIP reads under `/v2/loyalties`.
+    - Added Loyalty v2 API methods under `/v2/loyalties` for member create, update, delete, activate, and deactivate, point adjustments, order payments, reward purchase, and refund, plus memberships, cards, examine, and reports.
     - Added `loyalty_memberships` on customer summary models.
     - Added e2e coverage for Loyalty v2 member and runtime flows (setup uses HTTP for unpublished admin endpoints).
     - Added an optional `filters` query parameter on list customers.
