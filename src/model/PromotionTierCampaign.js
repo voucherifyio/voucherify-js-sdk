@@ -154,7 +154,7 @@ PromotionTierCampaign.prototype['validity_day_of_week'] = undefined;
 PromotionTierCampaign.prototype['validity_hours'] = undefined;
 
 /**
-    * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+    * A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/campaigns/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
     * @type {Boolean | undefined}
     */
 PromotionTierCampaign.prototype['active'] = undefined;

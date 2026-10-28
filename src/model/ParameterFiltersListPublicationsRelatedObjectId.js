@@ -20,7 +20,7 @@ import FilterConditionsString from './FilterConditionsString';
 class ParameterFiltersListPublicationsRelatedObjectId {
     /**
      * Constructs a new <code>ParameterFiltersListPublicationsRelatedObjectId</code>.
-     * Filter publications by related object id.
+     * Filter publications by related object ID.
      * @alias ParameterFiltersListPublicationsRelatedObjectId
      */
     constructor() { 

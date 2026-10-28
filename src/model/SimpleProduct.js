@@ -92,7 +92,7 @@ class SimpleProduct {
 SimpleProduct.prototype['id'] = undefined;
 
 /**
-    * Product source id.
+    * Product source ID.
     * @type {String | undefined}
     */
 SimpleProduct.prototype['source_id'] = undefined;
