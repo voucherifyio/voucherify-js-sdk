@@ -16,6 +16,7 @@ import ManagementProjectsCustomEventSchemaSchema from './ManagementProjectsCusto
 /**
  * The ManagementProjectsCustomEventSchema model module.
  * @module model/ManagementProjectsCustomEventSchema
+ * @version 3.0.5
  */
 class ManagementProjectsCustomEventSchema {
     /**

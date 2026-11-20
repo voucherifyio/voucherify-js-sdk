@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionOrderReferrer model module.
  * @module model/MemberActivityDataRedemptionOrderReferrer
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionOrderReferrer {
     /**

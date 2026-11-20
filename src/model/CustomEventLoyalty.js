@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomEventLoyalty model module.
  * @module model/CustomEventLoyalty
+ * @version 3.0.5
  */
 class CustomEventLoyalty {
     /**

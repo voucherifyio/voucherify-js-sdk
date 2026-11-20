@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRewardVoucherPublish model module.
  * @module model/MemberActivityDataRedemptionRewardVoucherPublish
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionRewardVoucherPublish {
     /**

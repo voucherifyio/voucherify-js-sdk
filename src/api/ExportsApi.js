@@ -22,6 +22,7 @@ import ParameterOrderListExports from '../model/ParameterOrderListExports';
 /**
 * Exports service.
 * @module api/ExportsApi
+* @version 3.0.5
 */
 export default class ExportsApi {
 

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem
+ * @version 3.0.5
  */
 class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem {
     /**

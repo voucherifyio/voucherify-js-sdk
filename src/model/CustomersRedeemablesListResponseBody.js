@@ -16,6 +16,7 @@ import CustomerRedeemable from './CustomerRedeemable';
 /**
  * The CustomersRedeemablesListResponseBody model module.
  * @module model/CustomersRedeemablesListResponseBody
+ * @version 3.0.5
  */
 class CustomersRedeemablesListResponseBody {
     /**

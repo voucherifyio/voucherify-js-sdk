@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem model module.
  * @module model/MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionRelatedRedemptionsRedemptionsItem {
     /**

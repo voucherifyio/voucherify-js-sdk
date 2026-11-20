@@ -25,6 +25,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The MemberActivityDataRedemptionRewardVoucher model module.
  * @module model/MemberActivityDataRedemptionRewardVoucher
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionRewardVoucher {
     /**

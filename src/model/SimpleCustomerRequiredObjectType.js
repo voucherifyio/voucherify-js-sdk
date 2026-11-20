@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleCustomerRequiredObjectType model module.
  * @module model/SimpleCustomerRequiredObjectType
+ * @version 3.0.5
  */
 class SimpleCustomerRequiredObjectType {
     /**

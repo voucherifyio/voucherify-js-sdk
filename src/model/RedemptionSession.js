@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionSession model module.
  * @module model/RedemptionSession
+ * @version 3.0.5
  */
 class RedemptionSession {
     /**

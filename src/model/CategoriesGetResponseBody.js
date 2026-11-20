@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoriesGetResponseBody model module.
  * @module model/CategoriesGetResponseBody
+ * @version 3.0.5
  */
 class CategoriesGetResponseBody {
     /**

@@ -20,6 +20,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignsImportVoucherItem model module.
  * @module model/CampaignsImportVoucherItem
+ * @version 3.0.5
  */
 class CampaignsImportVoucherItem {
     /**

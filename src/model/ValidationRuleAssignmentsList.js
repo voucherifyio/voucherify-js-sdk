@@ -16,6 +16,7 @@ import ValidationRuleAssignment from './ValidationRuleAssignment';
 /**
  * The ValidationRuleAssignmentsList model module.
  * @module model/ValidationRuleAssignmentsList
+ * @version 3.0.5
  */
 class ValidationRuleAssignmentsList {
     /**

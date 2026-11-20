@@ -16,6 +16,7 @@ import EarningRuleLoyaltyCustomEventMetadata from './EarningRuleLoyaltyCustomEve
 /**
  * The EarningRuleLoyaltyCustomEvent model module.
  * @module model/EarningRuleLoyaltyCustomEvent
+ * @version 3.0.5
  */
 class EarningRuleLoyaltyCustomEvent {
     /**

@@ -17,6 +17,7 @@ import Order from './Order';
 /**
  * The RedemptionsRollbackCreateRequestBody model module.
  * @module model/RedemptionsRollbackCreateRequestBody
+ * @version 3.0.5
  */
 class RedemptionsRollbackCreateRequestBody {
     /**

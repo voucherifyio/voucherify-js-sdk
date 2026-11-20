@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer
+ * @version 3.0.5
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemOrderReferrer {
     /**

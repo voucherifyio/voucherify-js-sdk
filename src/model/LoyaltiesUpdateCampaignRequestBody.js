@@ -20,6 +20,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltiesUpdateCampaignRequestBody model module.
  * @module model/LoyaltiesUpdateCampaignRequestBody
+ * @version 3.0.5
  */
 class LoyaltiesUpdateCampaignRequestBody {
     /**

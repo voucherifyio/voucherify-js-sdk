@@ -16,6 +16,7 @@ import SimpleCustomerRequiredObjectType from './SimpleCustomerRequiredObjectType
 /**
  * The EventsCreateResponseBody model module.
  * @module model/EventsCreateResponseBody
+ * @version 3.0.5
  */
 class EventsCreateResponseBody {
     /**

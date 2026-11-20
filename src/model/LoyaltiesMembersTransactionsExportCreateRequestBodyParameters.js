@@ -18,6 +18,7 @@ import ExportVoucherTransactionsOrder from './ExportVoucherTransactionsOrder';
 /**
  * The LoyaltiesMembersTransactionsExportCreateRequestBodyParameters model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateRequestBodyParameters
+ * @version 3.0.5
  */
 class LoyaltiesMembersTransactionsExportCreateRequestBodyParameters {
     /**

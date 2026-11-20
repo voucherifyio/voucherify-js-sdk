@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductsUpdateRequestBody model module.
  * @module model/ProductsUpdateRequestBody
+ * @version 3.0.5
  */
 class ProductsUpdateRequestBody {
     /**

@@ -16,6 +16,7 @@ import MemberActivity from './MemberActivity';
 /**
  * The LoyaltiesMemberActivityListResponseBody model module.
  * @module model/LoyaltiesMemberActivityListResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesMemberActivityListResponseBody {
     /**

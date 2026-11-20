@@ -36,6 +36,7 @@ import SkusImportCsvCreateResponseBody from '../model/SkusImportCsvCreateRespons
 /**
 * Products service.
 * @module api/ProductsApi
+* @version 3.0.5
 */
 export default class ProductsApi {
 

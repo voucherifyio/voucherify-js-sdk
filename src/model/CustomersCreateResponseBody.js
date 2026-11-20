@@ -20,6 +20,7 @@ import CustomersCreateResponseBodyAssets from './CustomersCreateResponseBodyAsse
 /**
  * The CustomersCreateResponseBody model module.
  * @module model/CustomersCreateResponseBody
+ * @version 3.0.5
  */
 class CustomersCreateResponseBody {
     /**

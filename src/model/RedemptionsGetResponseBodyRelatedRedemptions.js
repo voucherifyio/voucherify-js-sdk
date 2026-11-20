@@ -17,6 +17,7 @@ import RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem from './Redempt
 /**
  * The RedemptionsGetResponseBodyRelatedRedemptions model module.
  * @module model/RedemptionsGetResponseBodyRelatedRedemptions
+ * @version 3.0.5
  */
 class RedemptionsGetResponseBodyRelatedRedemptions {
     /**

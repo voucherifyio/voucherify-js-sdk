@@ -16,6 +16,7 @@ import ReferralProgramRefereeRewardRelatedObjectParent from './ReferralProgramRe
 /**
  * The ReferralProgramRefereeReward model module.
  * @module model/ReferralProgramRefereeReward
+ * @version 3.0.5
  */
 class ReferralProgramRefereeReward {
     /**

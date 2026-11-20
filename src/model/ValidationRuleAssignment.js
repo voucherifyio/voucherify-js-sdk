@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationRuleAssignment model module.
  * @module model/ValidationRuleAssignment
+ * @version 3.0.5
  */
 class ValidationRuleAssignment {
     /**

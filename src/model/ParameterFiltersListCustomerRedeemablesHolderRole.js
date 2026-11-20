@@ -16,6 +16,7 @@ import ParameterFiltersListCustomerRedeemablesHolderRoleConditions from './Param
 /**
  * The ParameterFiltersListCustomerRedeemablesHolderRole model module.
  * @module model/ParameterFiltersListCustomerRedeemablesHolderRole
+ * @version 3.0.5
  */
 class ParameterFiltersListCustomerRedeemablesHolderRole {
     /**

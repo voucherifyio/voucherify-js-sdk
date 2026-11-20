@@ -16,6 +16,7 @@ import ExportCampaignTransactionsFilters from './ExportCampaignTransactionsFilte
 /**
  * The CampaignsTransactionsExportCreateRequestBodyParameters model module.
  * @module model/CampaignsTransactionsExportCreateRequestBodyParameters
+ * @version 3.0.5
  */
 class CampaignsTransactionsExportCreateRequestBodyParameters {
     /**

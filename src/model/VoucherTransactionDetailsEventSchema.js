@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionDetailsEventSchema model module.
  * @module model/VoucherTransactionDetailsEventSchema
+ * @version 3.0.5
  */
 class VoucherTransactionDetailsEventSchema {
     /**

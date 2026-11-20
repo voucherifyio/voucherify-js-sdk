@@ -18,6 +18,7 @@ import LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount from './Loyal
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyaltyOrder {
     /**

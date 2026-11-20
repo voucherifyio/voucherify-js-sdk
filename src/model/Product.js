@@ -16,6 +16,7 @@ import SkusListForProduct from './SkusListForProduct';
 /**
  * The Product model module.
  * @module model/Product
+ * @version 3.0.5
  */
 class Product {
     /**

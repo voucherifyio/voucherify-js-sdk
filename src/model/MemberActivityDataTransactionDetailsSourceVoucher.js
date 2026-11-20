@@ -20,6 +20,7 @@ import MemberActivityDataTransactionDetailsSourceVoucherRedemption from './Membe
 /**
  * The MemberActivityDataTransactionDetailsSourceVoucher model module.
  * @module model/MemberActivityDataTransactionDetailsSourceVoucher
+ * @version 3.0.5
  */
 class MemberActivityDataTransactionDetailsSourceVoucher {
     /**

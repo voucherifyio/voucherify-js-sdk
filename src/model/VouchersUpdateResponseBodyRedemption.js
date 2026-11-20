@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersUpdateResponseBodyRedemption model module.
  * @module model/VouchersUpdateResponseBodyRedemption
+ * @version 3.0.5
  */
 class VouchersUpdateResponseBodyRedemption {
     /**

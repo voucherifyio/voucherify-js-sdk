@@ -35,6 +35,7 @@ import PromotionsTiersUpdateResponseBody from '../model/PromotionsTiersUpdateRes
 /**
 * Promotions service.
 * @module api/PromotionsApi
+* @version 3.0.5
 */
 export default class PromotionsApi {
 

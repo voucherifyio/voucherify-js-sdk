@@ -19,6 +19,7 @@ import OAuthTokenIntrospectResponseBody from '../model/OAuthTokenIntrospectRespo
 /**
 * OAuth service.
 * @module api/OAuthApi
+* @version 3.0.5
 */
 export default class OAuthApi {
 

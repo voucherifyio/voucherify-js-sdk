@@ -16,6 +16,7 @@ import LoyaltiesMembersTransactionsExportCreateRequestBodyParameters from './Loy
 /**
  * The LoyaltiesMembersTransactionsExportCreateRequestBody model module.
  * @module model/LoyaltiesMembersTransactionsExportCreateRequestBody
+ * @version 3.0.5
  */
 class LoyaltiesMembersTransactionsExportCreateRequestBody {
     /**

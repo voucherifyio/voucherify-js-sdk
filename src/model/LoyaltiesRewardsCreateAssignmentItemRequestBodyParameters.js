@@ -16,6 +16,7 @@ import LoyaltiesRewardsCreateAssignmentItemRequestBodyParametersLoyalty from './
 /**
  * The LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters model module.
  * @module model/LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters
+ * @version 3.0.5
  */
 class LoyaltiesRewardsCreateAssignmentItemRequestBodyParameters {
     /**

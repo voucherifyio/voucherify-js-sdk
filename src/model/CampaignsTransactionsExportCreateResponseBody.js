@@ -17,6 +17,7 @@ import CampaignsTransactionsExportCreateResponseBodyResult from './CampaignsTran
 /**
  * The CampaignsTransactionsExportCreateResponseBody model module.
  * @module model/CampaignsTransactionsExportCreateResponseBody
+ * @version 3.0.5
  */
 class CampaignsTransactionsExportCreateResponseBody {
     /**

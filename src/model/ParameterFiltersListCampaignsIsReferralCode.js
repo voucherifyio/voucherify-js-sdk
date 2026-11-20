@@ -16,6 +16,7 @@ import ParameterFiltersListCampaignsIsReferralCodeConditions from './ParameterFi
 /**
  * The ParameterFiltersListCampaignsIsReferralCode model module.
  * @module model/ParameterFiltersListCampaignsIsReferralCode
+ * @version 3.0.5
  */
 class ParameterFiltersListCampaignsIsReferralCode {
     /**

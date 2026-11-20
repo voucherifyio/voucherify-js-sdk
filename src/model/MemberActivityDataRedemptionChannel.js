@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionChannel model module.
  * @module model/MemberActivityDataRedemptionChannel
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionChannel {
     /**

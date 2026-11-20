@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersDisableResponseBodyLoyaltyCard model module.
  * @module model/VouchersDisableResponseBodyLoyaltyCard
+ * @version 3.0.5
  */
 class VouchersDisableResponseBodyLoyaltyCard {
     /**

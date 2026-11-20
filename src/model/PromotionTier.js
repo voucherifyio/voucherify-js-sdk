@@ -22,6 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The PromotionTier model module.
  * @module model/PromotionTier
+ * @version 3.0.5
  */
 class PromotionTier {
     /**

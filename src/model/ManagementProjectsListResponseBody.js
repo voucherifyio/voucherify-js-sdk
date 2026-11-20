@@ -16,6 +16,7 @@ import ManagementProject from './ManagementProject';
 /**
  * The ManagementProjectsListResponseBody model module.
  * @module model/ManagementProjectsListResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsListResponseBody {
     /**

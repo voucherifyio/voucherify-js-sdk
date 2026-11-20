@@ -25,6 +25,7 @@ import RedemptionsListResponseBodyRedemptionsItemVoucher from './RedemptionsList
 /**
  * The RedemptionsListResponseBodyRedemptionsItem model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItem
+ * @version 3.0.5
  */
 class RedemptionsListResponseBodyRedemptionsItem {
     /**

@@ -17,6 +17,7 @@ import ExportsGetResponseBodyResult from './ExportsGetResponseBodyResult';
 /**
  * The ExportsGetResponseBody model module.
  * @module model/ExportsGetResponseBody
+ * @version 3.0.5
  */
 class ExportsGetResponseBody {
     /**

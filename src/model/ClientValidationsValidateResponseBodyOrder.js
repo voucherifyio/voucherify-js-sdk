@@ -19,6 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The ClientValidationsValidateResponseBodyOrder model module.
  * @module model/ClientValidationsValidateResponseBodyOrder
+ * @version 3.0.5
  */
 class ClientValidationsValidateResponseBodyOrder {
     /**

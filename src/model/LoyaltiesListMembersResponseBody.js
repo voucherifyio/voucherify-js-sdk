@@ -16,6 +16,7 @@ import LoyaltyMember from './LoyaltyMember';
 /**
  * The LoyaltiesListMembersResponseBody model module.
  * @module model/LoyaltiesListMembersResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesListMembersResponseBody {
     /**

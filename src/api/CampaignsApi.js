@@ -43,6 +43,7 @@ import ParametersFiltersListCampaignTransactions from '../model/ParametersFilter
 /**
 * Campaigns service.
 * @module api/CampaignsApi
+* @version 3.0.5
 */
 export default class CampaignsApi {
 

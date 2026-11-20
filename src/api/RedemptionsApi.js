@@ -29,6 +29,7 @@ import VouchersRedemptionGetResponseBody from '../model/VouchersRedemptionGetRes
 /**
 * Redemptions service.
 * @module api/RedemptionsApi
+* @version 3.0.5
 */
 export default class RedemptionsApi {
 

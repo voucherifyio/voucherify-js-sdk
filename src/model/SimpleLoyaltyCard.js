@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleLoyaltyCard model module.
  * @module model/SimpleLoyaltyCard
+ * @version 3.0.5
  */
 class SimpleLoyaltyCard {
     /**

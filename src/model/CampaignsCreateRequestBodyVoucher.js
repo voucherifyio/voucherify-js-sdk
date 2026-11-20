@@ -20,6 +20,7 @@ import Gift from './Gift';
 /**
  * The CampaignsCreateRequestBodyVoucher model module.
  * @module model/CampaignsCreateRequestBodyVoucher
+ * @version 3.0.5
  */
 class CampaignsCreateRequestBodyVoucher {
     /**

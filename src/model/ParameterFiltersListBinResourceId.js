@@ -16,6 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListBinResourceId model module.
  * @module model/ParameterFiltersListBinResourceId
+ * @version 3.0.5
  */
 class ParameterFiltersListBinResourceId {
     /**

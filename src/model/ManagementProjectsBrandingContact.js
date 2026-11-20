@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingContact model module.
  * @module model/ManagementProjectsBrandingContact
+ * @version 3.0.5
  */
 class ManagementProjectsBrandingContact {
     /**

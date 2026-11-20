@@ -16,6 +16,7 @@ import ManagementProjectsMetadataSchemaDefinition from './ManagementProjectsMeta
 /**
  * The ManagementProjectsMetadataSchemasCreateResponseBody model module.
  * @module model/ManagementProjectsMetadataSchemasCreateResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsMetadataSchemasCreateResponseBody {
     /**

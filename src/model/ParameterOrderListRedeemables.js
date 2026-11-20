@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListRedeemables.
  * @module model/ParameterOrderListRedeemables
+ * @version 3.0.5
  */
 class ParameterOrderListRedeemables {
     

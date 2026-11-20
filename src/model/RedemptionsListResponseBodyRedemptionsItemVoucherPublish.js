@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsListResponseBodyRedemptionsItemVoucherPublish model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemVoucherPublish
+ * @version 3.0.5
  */
 class RedemptionsListResponseBodyRedemptionsItemVoucherPublish {
     /**

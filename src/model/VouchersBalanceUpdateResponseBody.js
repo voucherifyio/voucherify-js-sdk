@@ -16,6 +16,7 @@ import VouchersBalanceUpdateResponseBodyRelatedObject from './VouchersBalanceUpd
 /**
  * The VouchersBalanceUpdateResponseBody model module.
  * @module model/VouchersBalanceUpdateResponseBody
+ * @version 3.0.5
  */
 class VouchersBalanceUpdateResponseBody {
     /**

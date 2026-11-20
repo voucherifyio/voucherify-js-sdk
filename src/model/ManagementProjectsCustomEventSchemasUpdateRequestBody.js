@@ -16,6 +16,7 @@ import ManagementProjectsCustomEventSchemasUpdateRequestBodySchema from './Manag
 /**
  * The ManagementProjectsCustomEventSchemasUpdateRequestBody model module.
  * @module model/ManagementProjectsCustomEventSchemasUpdateRequestBody
+ * @version 3.0.5
  */
 class ManagementProjectsCustomEventSchemasUpdateRequestBody {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferralProgramRefereeRewardRelatedObjectParent model module.
  * @module model/ReferralProgramRefereeRewardRelatedObjectParent
+ * @version 3.0.5
  */
 class ReferralProgramRefereeRewardRelatedObjectParent {
     /**

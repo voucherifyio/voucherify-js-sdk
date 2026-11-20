@@ -16,6 +16,7 @@ import FilterConditionsDateTime from './FilterConditionsDateTime';
 /**
  * The ParameterFiltersListCampaignsValidityTimeframe model module.
  * @module model/ParameterFiltersListCampaignsValidityTimeframe
+ * @version 3.0.5
  */
 class ParameterFiltersListCampaignsValidityTimeframe {
     /**

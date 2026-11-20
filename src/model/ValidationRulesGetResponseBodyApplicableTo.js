@@ -16,6 +16,7 @@ import ApplicableTo from './ApplicableTo';
 /**
  * The ValidationRulesGetResponseBodyApplicableTo model module.
  * @module model/ValidationRulesGetResponseBodyApplicableTo
+ * @version 3.0.5
  */
 class ValidationRulesGetResponseBodyApplicableTo {
     /**

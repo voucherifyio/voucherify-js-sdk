@@ -17,6 +17,7 @@ import RewardsUpdateRequestBodyParameters from './RewardsUpdateRequestBodyParame
 /**
  * The RewardsUpdateRequestBody model module.
  * @module model/RewardsUpdateRequestBody
+ * @version 3.0.5
  */
 class RewardsUpdateRequestBody {
     /**

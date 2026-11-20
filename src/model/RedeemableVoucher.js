@@ -23,6 +23,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The RedeemableVoucher model module.
  * @module model/RedeemableVoucher
+ * @version 3.0.5
  */
 class RedeemableVoucher {
     /**

@@ -16,6 +16,7 @@ import CustomersCreateRequestBodyAddress from './CustomersCreateRequestBodyAddre
 /**
  * The CustomersCreateRequestBody model module.
  * @module model/CustomersCreateRequestBody
+ * @version 3.0.5
  */
 class CustomersCreateRequestBody {
     /**

@@ -17,6 +17,7 @@ import LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksIt
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions
+ * @version 3.0.5
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions {
     /**

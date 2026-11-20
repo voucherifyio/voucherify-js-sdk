@@ -24,6 +24,7 @@ import ParameterFiltersListCustomerRedeemablesVoucherType from './ParameterFilte
 /**
  * The ParameterFiltersListCustomerRedeemables model module.
  * @module model/ParameterFiltersListCustomerRedeemables
+ * @version 3.0.5
  */
 class ParameterFiltersListCustomerRedeemables {
     /**

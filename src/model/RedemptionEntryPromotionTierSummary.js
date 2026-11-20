@@ -17,6 +17,7 @@ import RedemptionEntryPromotionTierSummaryRedemptions from './RedemptionEntryPro
 /**
  * The RedemptionEntryPromotionTierSummary model module.
  * @module model/RedemptionEntryPromotionTierSummary
+ * @version 3.0.5
  */
 class RedemptionEntryPromotionTierSummary {
     /**

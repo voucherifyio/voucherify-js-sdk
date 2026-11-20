@@ -17,6 +17,7 @@ import ClientValidationsValidateRequestBodyRedeemablesItemReward from './ClientV
 /**
  * The ClientValidationsValidateRequestBodyRedeemablesItem model module.
  * @module model/ClientValidationsValidateRequestBodyRedeemablesItem
+ * @version 3.0.5
  */
 class ClientValidationsValidateRequestBodyRedeemablesItem {
     /**

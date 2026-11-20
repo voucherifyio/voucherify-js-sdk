@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersCreateResponseBodyPublish model module.
  * @module model/VouchersCreateResponseBodyPublish
+ * @version 3.0.5
  */
 class VouchersCreateResponseBodyPublish {
     /**

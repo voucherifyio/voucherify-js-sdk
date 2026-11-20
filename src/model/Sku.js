@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Sku model module.
  * @module model/Sku
+ * @version 3.0.5
  */
 class Sku {
     /**

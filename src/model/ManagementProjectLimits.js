@@ -17,6 +17,7 @@ import ManagementProjectLimitsBulkApiCallsItem from './ManagementProjectLimitsBu
 /**
  * The ManagementProjectLimits model module.
  * @module model/ManagementProjectLimits
+ * @version 3.0.5
  */
 class ManagementProjectLimits {
     /**

@@ -16,6 +16,7 @@ import SimpleSegment from './SimpleSegment';
 /**
  * The MemberActivityDataCustomerEvent model module.
  * @module model/MemberActivityDataCustomerEvent
+ * @version 3.0.5
  */
 class MemberActivityDataCustomerEvent {
     /**

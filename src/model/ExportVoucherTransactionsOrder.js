@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ExportVoucherTransactionsOrder.
  * @module model/ExportVoucherTransactionsOrder
+ * @version 3.0.5
  */
 class ExportVoucherTransactionsOrder {
     

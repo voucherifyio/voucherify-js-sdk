@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersPendingPointsBalanceRequestBody model module.
  * @module model/LoyaltiesMembersPendingPointsBalanceRequestBody
+ * @version 3.0.5
  */
 class LoyaltiesMembersPendingPointsBalanceRequestBody {
     /**

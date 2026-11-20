@@ -19,6 +19,7 @@ import EarningRuleLoyaltyOrderItems from './EarningRuleLoyaltyOrderItems';
 /**
  * The EarningRuleLoyalty model module.
  * @module model/EarningRuleLoyalty
+ * @version 3.0.5
  */
 class EarningRuleLoyalty {
     /**

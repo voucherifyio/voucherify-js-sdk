@@ -29,6 +29,7 @@ import TemplatesCampaignsUpdateResponseBody from '../model/TemplatesCampaignsUpd
 /**
 * Templates service.
 * @module api/TemplatesApi
+* @version 3.0.5
 */
 export default class TemplatesApi {
 

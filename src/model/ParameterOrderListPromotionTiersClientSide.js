@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListPromotionTiersClientSide.
  * @module model/ParameterOrderListPromotionTiersClientSide
+ * @version 3.0.5
  */
 class ParameterOrderListPromotionTiersClientSide {
     

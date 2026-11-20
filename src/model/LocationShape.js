@@ -17,6 +17,7 @@ import LocationShapeGeojson from './LocationShapeGeojson';
 /**
  * The LocationShape model module.
  * @module model/LocationShape
+ * @version 3.0.5
  */
 class LocationShape {
     /**

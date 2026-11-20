@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListBin.
  * @module model/ParameterOrderListBin
+ * @version 3.0.5
  */
 class ParameterOrderListBin {
     

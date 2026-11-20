@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleEvent model module.
  * @module model/SimpleEvent
+ * @version 3.0.5
  */
 class SimpleEvent {
     /**

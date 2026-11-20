@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsBrandingCreateRequestBodyContact model module.
  * @module model/ManagementProjectsBrandingCreateRequestBodyContact
+ * @version 3.0.5
  */
 class ManagementProjectsBrandingCreateRequestBodyContact {
     /**

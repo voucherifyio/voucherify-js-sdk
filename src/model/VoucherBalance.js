@@ -16,6 +16,7 @@ import VoucherBalanceRelatedObject from './VoucherBalanceRelatedObject';
 /**
  * The VoucherBalance model module.
  * @module model/VoucherBalance
+ * @version 3.0.5
  */
 class VoucherBalance {
     /**

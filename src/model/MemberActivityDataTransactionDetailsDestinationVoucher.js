@@ -20,6 +20,7 @@ import MemberActivityDataTransactionDetailsDestinationVoucherRedemption from './
 /**
  * The MemberActivityDataTransactionDetailsDestinationVoucher model module.
  * @module model/MemberActivityDataTransactionDetailsDestinationVoucher
+ * @version 3.0.5
  */
 class MemberActivityDataTransactionDetailsDestinationVoucher {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplatesCampaignsCreateRequestBody model module.
  * @module model/TemplatesCampaignsCreateRequestBody
+ * @version 3.0.5
  */
 class TemplatesCampaignsCreateRequestBody {
     /**

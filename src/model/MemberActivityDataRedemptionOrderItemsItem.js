@@ -17,6 +17,7 @@ import MemberActivityDataRedemptionOrderItemsItemSku from './MemberActivityDataR
 /**
  * The MemberActivityDataRedemptionOrderItemsItem model module.
  * @module model/MemberActivityDataRedemptionOrderItemsItem
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionOrderItemsItem {
     /**

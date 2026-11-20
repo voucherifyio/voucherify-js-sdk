@@ -18,6 +18,7 @@ import SimpleCampaignVoucher from './SimpleCampaignVoucher';
 /**
  * The SimpleCampaign model module.
  * @module model/SimpleCampaign
+ * @version 3.0.5
  */
 class SimpleCampaign {
     /**

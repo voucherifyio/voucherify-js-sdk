@@ -22,6 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltyCampaign model module.
  * @module model/LoyaltyCampaign
+ * @version 3.0.5
  */
 class LoyaltyCampaign {
     /**

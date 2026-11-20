@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionVoucherRedemption model module.
  * @module model/MemberActivityDataRedemptionVoucherRedemption
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionVoucherRedemption {
     /**

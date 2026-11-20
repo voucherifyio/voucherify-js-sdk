@@ -22,6 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The RedemptionsGetResponseBodyPromotionTier model module.
  * @module model/RedemptionsGetResponseBodyPromotionTier
+ * @version 3.0.5
  */
 class RedemptionsGetResponseBodyPromotionTier {
     /**

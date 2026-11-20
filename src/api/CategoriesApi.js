@@ -23,6 +23,7 @@ import CategoriesUpdateResponseBody from '../model/CategoriesUpdateResponseBody'
 /**
 * Categories service.
 * @module api/CategoriesApi
+* @version 3.0.5
 */
 export default class CategoriesApi {
 

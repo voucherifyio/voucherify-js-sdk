@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListLoyaltyTiers.
  * @module model/ParameterOrderListLoyaltyTiers
+ * @version 3.0.5
  */
 class ParameterOrderListLoyaltyTiers {
     

@@ -182,7 +182,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.4).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.0.5).
 
 ## 🔐 Authorization
 
@@ -283,10 +283,10 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-11-20** - `3.0.5`:
+    - Fixed: `priceFormula` in `ApplicableTo` and `InapplicableTo` typed as `String` (was `Number`). The API expects a formula expression string such as `IF(ORDER_AMOUNT > 300;ORDER_ITEM_PRICE * 0.8;ORDER_ITEM_PRICE)`.
 - **2026-08-26** - `3.0.4`:
     - Fixed: `exchange_ratio` in COIN reward models typed as `Number` (was `String`). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
-    - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
-    - Added: product/sku export order and field values (`product_id`, `sku`, `price`, `image_url`, `attributes`, `currency`).
     - Aligned generated models with the latest OpenAPI definition (including `ADD_SAME_ITEMS` discount effect, `cockpitPreferenceCenterUrl` on customer assets, segment `updatedAt`, and related schema updates not yet present in `3.0.3`).
     - Bumped `qs` from 6.15.1 to 6.15.2.
     - Bumped `form-data` from 4.0.4 to 4.0.6 (indirect dependency).
@@ -1796,26 +1796,22 @@ Class | Method | HTTP request | Description
  - [Voucherify.ValidationRuleAssignment](docs/ValidationRuleAssignment.md)
  - [Voucherify.ValidationRuleAssignmentsList](docs/ValidationRuleAssignmentsList.md)
  - [Voucherify.ValidationRuleError](docs/ValidationRuleError.md)
+ - [Voucherify.ValidationRuleErrorLibrary](docs/ValidationRuleErrorLibrary.md)
  - [Voucherify.ValidationRulesAssignmentsCreateRequestBody](docs/ValidationRulesAssignmentsCreateRequestBody.md)
  - [Voucherify.ValidationRulesAssignmentsCreateResponseBody](docs/ValidationRulesAssignmentsCreateResponseBody.md)
  - [Voucherify.ValidationRulesAssignmentsList](docs/ValidationRulesAssignmentsList.md)
  - [Voucherify.ValidationRulesAssignmentsListResponseBody](docs/ValidationRulesAssignmentsListResponseBody.md)
  - [Voucherify.ValidationRulesCreateRequestBody](docs/ValidationRulesCreateRequestBody.md)
  - [Voucherify.ValidationRulesCreateRequestBodyApplicableTo](docs/ValidationRulesCreateRequestBodyApplicableTo.md)
- - [Voucherify.ValidationRulesCreateRequestBodyError](docs/ValidationRulesCreateRequestBodyError.md)
  - [Voucherify.ValidationRulesCreateResponseBody](docs/ValidationRulesCreateResponseBody.md)
  - [Voucherify.ValidationRulesCreateResponseBodyApplicableTo](docs/ValidationRulesCreateResponseBodyApplicableTo.md)
- - [Voucherify.ValidationRulesCreateResponseBodyError](docs/ValidationRulesCreateResponseBodyError.md)
  - [Voucherify.ValidationRulesGetResponseBody](docs/ValidationRulesGetResponseBody.md)
  - [Voucherify.ValidationRulesGetResponseBodyApplicableTo](docs/ValidationRulesGetResponseBodyApplicableTo.md)
- - [Voucherify.ValidationRulesGetResponseBodyError](docs/ValidationRulesGetResponseBodyError.md)
  - [Voucherify.ValidationRulesListResponseBody](docs/ValidationRulesListResponseBody.md)
  - [Voucherify.ValidationRulesUpdateRequestBody](docs/ValidationRulesUpdateRequestBody.md)
  - [Voucherify.ValidationRulesUpdateRequestBodyApplicableTo](docs/ValidationRulesUpdateRequestBodyApplicableTo.md)
- - [Voucherify.ValidationRulesUpdateRequestBodyError](docs/ValidationRulesUpdateRequestBodyError.md)
  - [Voucherify.ValidationRulesUpdateResponseBody](docs/ValidationRulesUpdateResponseBody.md)
  - [Voucherify.ValidationRulesUpdateResponseBodyApplicableTo](docs/ValidationRulesUpdateResponseBodyApplicableTo.md)
- - [Voucherify.ValidationRulesUpdateResponseBodyError](docs/ValidationRulesUpdateResponseBodyError.md)
  - [Voucherify.ValidationsRedeemableInapplicable](docs/ValidationsRedeemableInapplicable.md)
  - [Voucherify.ValidationsRedeemableInapplicableResult](docs/ValidationsRedeemableInapplicableResult.md)
  - [Voucherify.ValidationsRedeemableInapplicableResultDetails](docs/ValidationsRedeemableInapplicableResultDetails.md)

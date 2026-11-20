@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductCollectionsCreateRequestBodyProductsItem model module.
  * @module model/ProductCollectionsCreateRequestBodyProductsItem
+ * @version 3.0.5
  */
 class ProductCollectionsCreateRequestBodyProductsItem {
     /**

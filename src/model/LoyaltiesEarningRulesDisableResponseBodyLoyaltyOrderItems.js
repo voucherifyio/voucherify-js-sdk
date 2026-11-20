@@ -18,6 +18,7 @@ import LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount f
 /**
  * The LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems model module.
  * @module model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems {
     /**

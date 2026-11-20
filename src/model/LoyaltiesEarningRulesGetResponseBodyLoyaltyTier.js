@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesGetResponseBodyLoyaltyTier model module.
  * @module model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesGetResponseBodyLoyaltyTier {
     /**

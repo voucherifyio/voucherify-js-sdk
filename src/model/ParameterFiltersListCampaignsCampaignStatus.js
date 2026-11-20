@@ -16,6 +16,7 @@ import ParameterFiltersListCampaignsCampaignStatusConditions from './ParameterFi
 /**
  * The ParameterFiltersListCampaignsCampaignStatus model module.
  * @module model/ParameterFiltersListCampaignsCampaignStatus
+ * @version 3.0.5
  */
 class ParameterFiltersListCampaignsCampaignStatus {
     /**

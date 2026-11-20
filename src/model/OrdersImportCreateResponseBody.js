@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrdersImportCreateResponseBody model module.
  * @module model/OrdersImportCreateResponseBody
+ * @version 3.0.5
  */
 class OrdersImportCreateResponseBody {
     /**

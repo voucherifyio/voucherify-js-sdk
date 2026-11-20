@@ -21,6 +21,7 @@ import Error from './Error';
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemResult model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemResult
+ * @version 3.0.5
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemResult {
     /**

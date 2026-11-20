@@ -16,6 +16,7 @@ import ProductCollectionsCreateRequestBodyProductsItem from './ProductCollection
 /**
  * The ProductCollectionsCreateRequestBody model module.
  * @module model/ProductCollectionsCreateRequestBody
+ * @version 3.0.5
  */
 class ProductCollectionsCreateRequestBody {
     /**

@@ -16,6 +16,7 @@ import ParameterFiltersListCustomerRedeemablesCampaignTypeConditions from './Par
 /**
  * The ParameterFiltersListCustomerRedeemablesCampaignType model module.
  * @module model/ParameterFiltersListCustomerRedeemablesCampaignType
+ * @version 3.0.5
  */
 class ParameterFiltersListCustomerRedeemablesCampaignType {
     /**

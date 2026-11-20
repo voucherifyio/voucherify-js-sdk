@@ -16,6 +16,7 @@ import CampaignTemplate from './CampaignTemplate';
 /**
  * The ManagementProjectsTemplatesCampaignsListResponseBody model module.
  * @module model/ManagementProjectsTemplatesCampaignsListResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsTemplatesCampaignsListResponseBody {
     /**

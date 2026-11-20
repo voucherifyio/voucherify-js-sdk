@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportResult model module.
  * @module model/ExportResult
+ * @version 3.0.5
  */
 class ExportResult {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterCampaignType.
  * @module model/ParameterCampaignType
+ * @version 3.0.5
  */
 class ParameterCampaignType {
     

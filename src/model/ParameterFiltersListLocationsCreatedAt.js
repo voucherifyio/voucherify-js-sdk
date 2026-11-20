@@ -16,6 +16,7 @@ import FilterConditionsDateTime from './FilterConditionsDateTime';
 /**
  * The ParameterFiltersListLocationsCreatedAt model module.
  * @module model/ParameterFiltersListLocationsCreatedAt
+ * @version 3.0.5
  */
 class ParameterFiltersListLocationsCreatedAt {
     /**

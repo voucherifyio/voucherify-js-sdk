@@ -18,6 +18,7 @@ import ValidationsRedeemableInapplicableResultDetails from './ValidationsRedeema
 /**
  * The ValidationsRedeemableInapplicableResult model module.
  * @module model/ValidationsRedeemableInapplicableResult
+ * @version 3.0.5
  */
 class ValidationsRedeemableInapplicableResult {
     /**

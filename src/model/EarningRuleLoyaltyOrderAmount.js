@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleLoyaltyOrderAmount model module.
  * @module model/EarningRuleLoyaltyOrderAmount
+ * @version 3.0.5
  */
 class EarningRuleLoyaltyOrderAmount {
     /**

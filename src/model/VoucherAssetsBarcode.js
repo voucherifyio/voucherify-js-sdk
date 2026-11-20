@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherAssetsBarcode model module.
  * @module model/VoucherAssetsBarcode
+ * @version 3.0.5
  */
 class VoucherAssetsBarcode {
     /**

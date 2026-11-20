@@ -16,6 +16,7 @@ import LoyaltyTiersExpirationAllExpirationDateRounding from './LoyaltyTiersExpir
 /**
  * The LoyaltyTiersExpirationAllExpirationDate model module.
  * @module model/LoyaltyTiersExpirationAllExpirationDate
+ * @version 3.0.5
  */
 class LoyaltyTiersExpirationAllExpirationDate {
     /**

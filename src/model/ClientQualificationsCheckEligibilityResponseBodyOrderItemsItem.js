@@ -19,6 +19,7 @@ import OrderCalculatedItemSku from './OrderCalculatedItemSku';
 /**
  * The ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem model module.
  * @module model/ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem
+ * @version 3.0.5
  */
 class ClientQualificationsCheckEligibilityResponseBodyOrderItemsItem {
     /**

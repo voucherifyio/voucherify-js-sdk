@@ -16,6 +16,7 @@ import LoyaltyCardTransaction from './LoyaltyCardTransaction';
 /**
  * The LoyaltiesMembersTransactionsListResponseBody model module.
  * @module model/LoyaltiesMembersTransactionsListResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesMembersTransactionsListResponseBody {
     /**

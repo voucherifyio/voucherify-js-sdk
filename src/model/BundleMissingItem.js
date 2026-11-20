@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BundleMissingItem model module.
  * @module model/BundleMissingItem
+ * @version 3.0.5
  */
 class BundleMissingItem {
     /**

@@ -16,6 +16,7 @@ import Discount from './Discount';
 /**
  * The PromotionTierCreateParamsAction model module.
  * @module model/PromotionTierCreateParamsAction
+ * @version 3.0.5
  */
 class PromotionTierCreateParamsAction {
     /**

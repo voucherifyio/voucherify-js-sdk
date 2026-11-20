@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsCreateRequestBodyUsersItem model module.
  * @module model/ManagementProjectsCreateRequestBodyUsersItem
+ * @version 3.0.5
  */
 class ManagementProjectsCreateRequestBodyUsersItem {
     /**

@@ -21,6 +21,7 @@ import VouchersCreateWithSpecificCodeRequestBodyRedemption from './VouchersCreat
 /**
  * The VouchersCreateWithSpecificCodeRequestBody model module.
  * @module model/VouchersCreateWithSpecificCodeRequestBody
+ * @version 3.0.5
  */
 class VouchersCreateWithSpecificCodeRequestBody {
     /**

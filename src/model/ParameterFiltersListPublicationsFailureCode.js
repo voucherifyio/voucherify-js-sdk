@@ -16,6 +16,7 @@ import FilterConditionsString from './FilterConditionsString';
 /**
  * The ParameterFiltersListPublicationsFailureCode model module.
  * @module model/ParameterFiltersListPublicationsFailureCode
+ * @version 3.0.5
  */
 class ParameterFiltersListPublicationsFailureCode {
     /**

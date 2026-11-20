@@ -26,6 +26,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The RedemptionEntryVoucher model module.
  * @module model/RedemptionEntryVoucher
+ * @version 3.0.5
  */
 class RedemptionEntryVoucher {
     /**

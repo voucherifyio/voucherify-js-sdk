@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRuleSegment model module.
  * @module model/EarningRuleSegment
+ * @version 3.0.5
  */
 class EarningRuleSegment {
     /**

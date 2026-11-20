@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesCreateResponseBodySource model module.
  * @module model/LoyaltiesEarningRulesCreateResponseBodySource
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesCreateResponseBodySource {
     /**

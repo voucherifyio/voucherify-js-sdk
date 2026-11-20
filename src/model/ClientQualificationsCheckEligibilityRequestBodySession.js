@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientQualificationsCheckEligibilityRequestBodySession model module.
  * @module model/ClientQualificationsCheckEligibilityRequestBodySession
+ * @version 3.0.5
  */
 class ClientQualificationsCheckEligibilityRequestBodySession {
     /**

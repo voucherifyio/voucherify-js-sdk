@@ -16,6 +16,7 @@ import CustomerRedeemableRedeemable from './CustomerRedeemableRedeemable';
 /**
  * The CustomerRedeemable model module.
  * @module model/CustomerRedeemable
+ * @version 3.0.5
  */
 class CustomerRedeemable {
     /**

@@ -17,6 +17,7 @@ import PromotionTierSummaryRedemptions from './PromotionTierSummaryRedemptions';
 /**
  * The PromotionTierSummary model module.
  * @module model/PromotionTierSummary
+ * @version 3.0.5
  */
 class PromotionTierSummary {
     /**

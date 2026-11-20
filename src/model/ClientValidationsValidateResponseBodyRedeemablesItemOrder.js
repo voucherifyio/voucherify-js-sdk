@@ -19,6 +19,7 @@ import OrderRedemptionsEntry from './OrderRedemptionsEntry';
 /**
  * The ClientValidationsValidateResponseBodyRedeemablesItemOrder model module.
  * @module model/ClientValidationsValidateResponseBodyRedeemablesItemOrder
+ * @version 3.0.5
  */
 class ClientValidationsValidateResponseBodyRedeemablesItemOrder {
     /**

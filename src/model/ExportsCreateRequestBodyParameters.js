@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportsCreateRequestBodyParameters model module.
  * @module model/ExportsCreateRequestBodyParameters
+ * @version 3.0.5
  */
 class ExportsCreateRequestBodyParameters {
     /**

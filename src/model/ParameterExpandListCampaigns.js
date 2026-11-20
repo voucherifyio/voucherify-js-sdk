@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterExpandListCampaigns.
  * @module model/ParameterExpandListCampaigns
+ * @version 3.0.5
  */
 class ParameterExpandListCampaigns {
     

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MappingPoints model module.
  * @module model/MappingPoints
+ * @version 3.0.5
  */
 class MappingPoints {
     /**

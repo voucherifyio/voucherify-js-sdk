@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardAssignmentParametersLoyalty model module.
  * @module model/RewardAssignmentParametersLoyalty
+ * @version 3.0.5
  */
 class RewardAssignmentParametersLoyalty {
     /**

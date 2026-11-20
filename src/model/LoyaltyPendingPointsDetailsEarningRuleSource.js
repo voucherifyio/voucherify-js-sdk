@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltyPendingPointsDetailsEarningRuleSource model module.
  * @module model/LoyaltyPendingPointsDetailsEarningRuleSource
+ * @version 3.0.5
  */
 class LoyaltyPendingPointsDetailsEarningRuleSource {
     /**

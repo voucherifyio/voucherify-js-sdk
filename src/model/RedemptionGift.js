@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionGift model module.
  * @module model/RedemptionGift
+ * @version 3.0.5
  */
 class RedemptionGift {
     /**

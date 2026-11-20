@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessSettingsAssign model module.
  * @module model/AccessSettingsAssign
+ * @version 3.0.5
  */
 class AccessSettingsAssign {
     /**

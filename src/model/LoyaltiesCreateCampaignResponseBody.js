@@ -22,6 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The LoyaltiesCreateCampaignResponseBody model module.
  * @module model/LoyaltiesCreateCampaignResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesCreateCampaignResponseBody {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersDisableResponseBodyRedemption model module.
  * @module model/VouchersDisableResponseBodyRedemption
+ * @version 3.0.5
  */
 class VouchersDisableResponseBodyRedemption {
     /**

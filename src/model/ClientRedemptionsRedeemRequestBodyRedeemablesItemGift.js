@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientRedemptionsRedeemRequestBodyRedeemablesItemGift model module.
  * @module model/ClientRedemptionsRedeemRequestBodyRedeemablesItemGift
+ * @version 3.0.5
  */
 class ClientRedemptionsRedeemRequestBodyRedeemablesItemGift {
     /**

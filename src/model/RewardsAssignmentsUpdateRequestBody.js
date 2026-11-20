@@ -16,6 +16,7 @@ import RewardsAssignmentsUpdateRequestBodyParameters from './RewardsAssignmentsU
 /**
  * The RewardsAssignmentsUpdateRequestBody model module.
  * @module model/RewardsAssignmentsUpdateRequestBody
+ * @version 3.0.5
  */
 class RewardsAssignmentsUpdateRequestBody {
     /**

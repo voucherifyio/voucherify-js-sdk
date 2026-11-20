@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimpleRedemptionChannel model module.
  * @module model/SimpleRedemptionChannel
+ * @version 3.0.5
  */
 class SimpleRedemptionChannel {
     /**

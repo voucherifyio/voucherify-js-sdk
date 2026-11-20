@@ -17,6 +17,7 @@ import InapplicableToOrderItemUnitsItem from './InapplicableToOrderItemUnitsItem
 /**
  * The InapplicableTo model module.
  * @module model/InapplicableTo
+ * @version 3.0.5
  */
 class InapplicableTo {
     /**
@@ -68,7 +69,7 @@ class InapplicableTo {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
             }
             if (data.hasOwnProperty('price_formula')) {
-                obj['price_formula'] = ApiClient.convertToType(data['price_formula'], 'Number');
+                obj['price_formula'] = ApiClient.convertToType(data['price_formula'], 'String');
             }
             if (data.hasOwnProperty('effect')) {
                 obj['effect'] = ApplicableToEffect.constructFromObject(data['effect']);
@@ -185,6 +186,10 @@ class InapplicableTo {
             throw new Error("Expected the field `product_source_id` to be a primitive type in the JSON string but got " + data['product_source_id']);
         }
         // ensure the json data is a string
+        if (data['price_formula'] && !(typeof data['price_formula'] === 'string' || data['price_formula'] instanceof String)) {
+            throw new Error("Expected the field `price_formula` to be a primitive type in the JSON string but got " + data['price_formula']);
+        }
+        // ensure the json data is a string
         if (data['product_campaign_quantity_limit_formula'] && !(typeof data['product_campaign_quantity_limit_formula'] === 'string' || data['product_campaign_quantity_limit_formula'] instanceof String)) {
             throw new Error("Expected the field `product_campaign_quantity_limit_formula` to be a primitive type in the JSON string but got " + data['product_campaign_quantity_limit_formula']);
         }
@@ -281,7 +286,7 @@ InapplicableTo.prototype['price'] = undefined;
 
 /**
     * Formula used to dynamically calculate the discounted price of an item.
-    * @type {Number | undefined}
+    * @type {String | undefined}
     */
 InapplicableTo.prototype['price_formula'] = undefined;
 

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsGetResponseBodyDefaultCodeConfig model module.
  * @module model/ManagementProjectsGetResponseBodyDefaultCodeConfig
+ * @version 3.0.5
  */
 class ManagementProjectsGetResponseBodyDefaultCodeConfig {
     /**

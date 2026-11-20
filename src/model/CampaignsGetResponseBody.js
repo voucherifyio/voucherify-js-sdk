@@ -24,6 +24,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignsGetResponseBody model module.
  * @module model/CampaignsGetResponseBody
+ * @version 3.0.5
  */
 class CampaignsGetResponseBody {
     /**

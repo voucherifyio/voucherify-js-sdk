@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue model module.
  * @module model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue
+ * @version 3.0.5
  */
 class ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntryValue {
     /**

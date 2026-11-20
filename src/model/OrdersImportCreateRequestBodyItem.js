@@ -19,6 +19,7 @@ import Referrer from './Referrer';
 /**
  * The OrdersImportCreateRequestBodyItem model module.
  * @module model/OrdersImportCreateRequestBodyItem
+ * @version 3.0.5
  */
 class OrdersImportCreateRequestBodyItem {
     /**

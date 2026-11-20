@@ -17,6 +17,7 @@ import MemberActivityDataRedemptionRelatedRedemptionsRollbacksItem from './Membe
 /**
  * The MemberActivityDataRedemptionRelatedRedemptions model module.
  * @module model/MemberActivityDataRedemptionRelatedRedemptions
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionRelatedRedemptions {
     /**

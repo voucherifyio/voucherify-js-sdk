@@ -16,6 +16,7 @@ import LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount
 /**
  * The LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount model module.
  * @module model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount {
     /**

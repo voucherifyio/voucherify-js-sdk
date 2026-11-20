@@ -19,6 +19,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The TemplatesCampaignsCampaignSetupCreateRequestBody model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateRequestBody
+ * @version 3.0.5
  */
 class TemplatesCampaignsCampaignSetupCreateRequestBody {
     /**

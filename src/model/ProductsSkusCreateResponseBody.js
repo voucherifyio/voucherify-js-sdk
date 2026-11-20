@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProductsSkusCreateResponseBody model module.
  * @module model/ProductsSkusCreateResponseBody
+ * @version 3.0.5
  */
 class ProductsSkusCreateResponseBody {
     /**

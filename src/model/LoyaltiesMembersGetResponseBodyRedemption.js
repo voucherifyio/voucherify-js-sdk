@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersGetResponseBodyRedemption model module.
  * @module model/LoyaltiesMembersGetResponseBodyRedemption
+ * @version 3.0.5
  */
 class LoyaltiesMembersGetResponseBodyRedemption {
     /**

@@ -19,6 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The RedemptionRollbackOrder model module.
  * @module model/RedemptionRollbackOrder
+ * @version 3.0.5
  */
 class RedemptionRollbackOrder {
     /**

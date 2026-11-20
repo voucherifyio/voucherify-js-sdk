@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplatesCampaignsUpdateResponseBody model module.
  * @module model/TemplatesCampaignsUpdateResponseBody
+ * @version 3.0.5
  */
 class TemplatesCampaignsUpdateResponseBody {
     /**

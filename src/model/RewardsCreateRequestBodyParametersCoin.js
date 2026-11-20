@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardsCreateRequestBodyParametersCoin model module.
  * @module model/RewardsCreateRequestBodyParametersCoin
+ * @version 3.0.5
  */
 class RewardsCreateRequestBodyParametersCoin {
     /**

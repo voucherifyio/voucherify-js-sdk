@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsWebhooksCreateResponseBody model module.
  * @module model/ManagementProjectsWebhooksCreateResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsWebhooksCreateResponseBody {
     /**

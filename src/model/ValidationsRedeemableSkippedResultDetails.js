@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidationsRedeemableSkippedResultDetails model module.
  * @module model/ValidationsRedeemableSkippedResultDetails
+ * @version 3.0.5
  */
 class ValidationsRedeemableSkippedResultDetails {
     /**

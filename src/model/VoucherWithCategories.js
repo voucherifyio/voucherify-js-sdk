@@ -24,6 +24,7 @@ import VoucherWithCategoriesRedemption from './VoucherWithCategoriesRedemption';
 /**
  * The VoucherWithCategories model module.
  * @module model/VoucherWithCategories
+ * @version 3.0.5
  */
 class VoucherWithCategories {
     /**

@@ -25,6 +25,7 @@ import SimpleCustomer from './SimpleCustomer';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBody model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesMembersRedemptionRedeemResponseBody {
     /**

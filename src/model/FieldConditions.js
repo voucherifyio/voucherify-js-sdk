@@ -16,6 +16,7 @@ import FiltersCondition from './FiltersCondition';
 /**
  * The FieldConditions model module.
  * @module model/FieldConditions
+ * @version 3.0.5
  */
 class FieldConditions {
     /**

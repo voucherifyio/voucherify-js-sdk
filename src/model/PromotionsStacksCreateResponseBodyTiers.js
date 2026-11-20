@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PromotionsStacksCreateResponseBodyTiers model module.
  * @module model/PromotionsStacksCreateResponseBodyTiers
+ * @version 3.0.5
  */
 class PromotionsStacksCreateResponseBodyTiers {
     /**

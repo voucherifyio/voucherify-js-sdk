@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ExportVoucherTransactionsFields.
  * @module model/ExportVoucherTransactionsFields
+ * @version 3.0.5
  */
 class ExportVoucherTransactionsFields {
     

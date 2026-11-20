@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RewardsUpdateRequestBodyParametersCampaign model module.
  * @module model/RewardsUpdateRequestBodyParametersCampaign
+ * @version 3.0.5
  */
 class RewardsUpdateRequestBodyParametersCampaign {
     /**

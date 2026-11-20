@@ -16,6 +16,7 @@ import CustomersPermanentDeletionCreateResponseBodyDataJson from './CustomersPer
 /**
  * The CustomersPermanentDeletionCreateResponseBody model module.
  * @module model/CustomersPermanentDeletionCreateResponseBody
+ * @version 3.0.5
  */
 class CustomersPermanentDeletionCreateResponseBody {
     /**

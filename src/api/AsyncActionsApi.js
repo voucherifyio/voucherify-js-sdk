@@ -19,6 +19,7 @@ import AsyncActionsListResponseBody from '../model/AsyncActionsListResponseBody'
 /**
 * AsyncActions service.
 * @module api/AsyncActionsApi
+* @version 3.0.5
 */
 export default class AsyncActionsApi {
 

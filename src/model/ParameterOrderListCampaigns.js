@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListCampaigns.
  * @module model/ParameterOrderListCampaigns
+ * @version 3.0.5
  */
 class ParameterOrderListCampaigns {
     

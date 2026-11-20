@@ -16,6 +16,7 @@ import Discount from './Discount';
 /**
  * The PromotionsTiersCreateResponseBodyAction model module.
  * @module model/PromotionsTiersCreateResponseBodyAction
+ * @version 3.0.5
  */
 class PromotionsTiersCreateResponseBodyAction {
     /**

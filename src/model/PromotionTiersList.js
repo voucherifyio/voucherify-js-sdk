@@ -16,6 +16,7 @@ import PromotionTier from './PromotionTier';
 /**
  * The PromotionTiersList model module.
  * @module model/PromotionTiersList
+ * @version 3.0.5
  */
 class PromotionTiersList {
     /**

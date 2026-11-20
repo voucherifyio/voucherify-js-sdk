@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SkusImportCsvCreateResponseBody model module.
  * @module model/SkusImportCsvCreateResponseBody
+ * @version 3.0.5
  */
 class SkusImportCsvCreateResponseBody {
     /**

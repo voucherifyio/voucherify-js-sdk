@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata model module.
  * @module model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata
+ * @version 3.0.5
  */
 class LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEventMetadata {
     /**

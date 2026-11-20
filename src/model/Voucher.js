@@ -25,6 +25,7 @@ import VoucherRedemption from './VoucherRedemption';
 /**
  * The Voucher model module.
  * @module model/Voucher
+ * @version 3.0.5
  */
 class Voucher {
     /**

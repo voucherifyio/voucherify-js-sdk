@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer model module.
  * @module model/LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer
+ * @version 3.0.5
  */
 class LoyaltiesMembersRedemptionRedeemResponseBodyOrderReferrer {
     /**

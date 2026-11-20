@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderListRedemptions.
  * @module model/ParameterOrderListRedemptions
+ * @version 3.0.5
  */
 class ParameterOrderListRedemptions {
     

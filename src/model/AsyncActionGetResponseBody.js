@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AsyncActionGetResponseBody model module.
  * @module model/AsyncActionGetResponseBody
+ * @version 3.0.5
  */
 class AsyncActionGetResponseBody {
     /**

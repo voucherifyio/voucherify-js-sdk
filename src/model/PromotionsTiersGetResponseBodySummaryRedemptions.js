@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PromotionsTiersGetResponseBodySummaryRedemptions model module.
  * @module model/PromotionsTiersGetResponseBodySummaryRedemptions
+ * @version 3.0.5
  */
 class PromotionsTiersGetResponseBodySummaryRedemptions {
     /**

@@ -22,6 +22,7 @@ import ReferralsMembersHoldersListResponseBody from '../model/ReferralsMembersHo
 /**
 * Referrals service.
 * @module api/ReferralsApi
+* @version 3.0.5
 */
 export default class ReferralsApi {
 

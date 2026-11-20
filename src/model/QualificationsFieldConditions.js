@@ -16,6 +16,7 @@ import QualificationsFiltersCondition from './QualificationsFiltersCondition';
 /**
  * The QualificationsFieldConditions model module.
  * @module model/QualificationsFieldConditions
+ * @version 3.0.5
  */
 class QualificationsFieldConditions {
     /**

@@ -19,6 +19,7 @@ import ReferrerId from './ReferrerId';
 /**
  * The QualificationsCheckEligibilityResponseBodyOrder model module.
  * @module model/QualificationsCheckEligibilityResponseBodyOrder
+ * @version 3.0.5
  */
 class QualificationsCheckEligibilityResponseBodyOrder {
     /**

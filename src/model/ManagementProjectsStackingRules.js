@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsStackingRules model module.
  * @module model/ManagementProjectsStackingRules
+ * @version 3.0.5
  */
 class ManagementProjectsStackingRules {
     /**

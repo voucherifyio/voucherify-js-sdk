@@ -22,6 +22,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 /**
  * The CampaignVoucher model module.
  * @module model/CampaignVoucher
+ * @version 3.0.5
  */
 class CampaignVoucher {
     /**

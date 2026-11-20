@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerSummaryRedemptionsGift model module.
  * @module model/CustomerSummaryRedemptionsGift
+ * @version 3.0.5
  */
 class CustomerSummaryRedemptionsGift {
     /**

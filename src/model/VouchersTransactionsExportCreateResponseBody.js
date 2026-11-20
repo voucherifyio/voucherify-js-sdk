@@ -17,6 +17,7 @@ import VouchersTransactionsExportCreateResponseBodyResult from './VouchersTransa
 /**
  * The VouchersTransactionsExportCreateResponseBody model module.
  * @module model/VouchersTransactionsExportCreateResponseBody
+ * @version 3.0.5
  */
 class VouchersTransactionsExportCreateResponseBody {
     /**

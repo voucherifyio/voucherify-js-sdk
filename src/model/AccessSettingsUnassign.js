@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessSettingsUnassign model module.
  * @module model/AccessSettingsUnassign
+ * @version 3.0.5
  */
 class AccessSettingsUnassign {
     /**

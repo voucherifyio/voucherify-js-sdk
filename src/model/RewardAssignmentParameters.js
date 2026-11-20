@@ -16,6 +16,7 @@ import RewardAssignmentParametersLoyalty from './RewardAssignmentParametersLoyal
 /**
  * The RewardAssignmentParameters model module.
  * @module model/RewardAssignmentParameters
+ * @version 3.0.5
  */
 class RewardAssignmentParameters {
     /**

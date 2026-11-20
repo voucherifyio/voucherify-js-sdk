@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionVoucherLoyaltyCard model module.
  * @module model/RedemptionVoucherLoyaltyCard
+ * @version 3.0.5
  */
 class RedemptionVoucherLoyaltyCard {
     /**

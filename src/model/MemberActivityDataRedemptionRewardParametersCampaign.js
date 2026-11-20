@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberActivityDataRedemptionRewardParametersCampaign model module.
  * @module model/MemberActivityDataRedemptionRewardParametersCampaign
+ * @version 3.0.5
  */
 class MemberActivityDataRedemptionRewardParametersCampaign {
     /**

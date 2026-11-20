@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsTemplatesCampaignsCopyCreateResponseBody model module.
  * @module model/ManagementProjectsTemplatesCampaignsCopyCreateResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsTemplatesCampaignsCopyCreateResponseBody {
     /**

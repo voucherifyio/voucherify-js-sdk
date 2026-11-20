@@ -21,6 +21,7 @@ import VoucherAssets from './VoucherAssets';
 /**
  * The LoyaltiesMembersGetResponseBody model module.
  * @module model/LoyaltiesMembersGetResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesMembersGetResponseBody {
     /**

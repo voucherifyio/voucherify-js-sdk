@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerWithSummaryLoyaltyReferralsAssets model module.
  * @module model/CustomerWithSummaryLoyaltyReferralsAssets
+ * @version 3.0.5
  */
 class CustomerWithSummaryLoyaltyReferralsAssets {
     /**

@@ -18,6 +18,7 @@ import RedemptionRewardResultParametersProduct from './RedemptionRewardResultPar
 /**
  * The RedemptionRewardResultParameters model module.
  * @module model/RedemptionRewardResultParameters
+ * @version 3.0.5
  */
 class RedemptionRewardResultParameters {
     /**

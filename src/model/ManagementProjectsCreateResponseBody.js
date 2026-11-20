@@ -19,6 +19,7 @@ import ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications from './
 /**
  * The ManagementProjectsCreateResponseBody model module.
  * @module model/ManagementProjectsCreateResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsCreateResponseBody {
     /**

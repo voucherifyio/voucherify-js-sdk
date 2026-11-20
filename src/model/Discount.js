@@ -18,6 +18,7 @@ import SimpleSkuDiscountUnit from './SimpleSkuDiscountUnit';
 /**
  * The Discount model module.
  * @module model/Discount
+ * @version 3.0.5
  */
 class Discount {
     /**

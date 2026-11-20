@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedemptionsListResponseBodyRedemptionsItemLoyaltyCard model module.
  * @module model/RedemptionsListResponseBodyRedemptionsItemLoyaltyCard
+ * @version 3.0.5
  */
 class RedemptionsListResponseBodyRedemptionsItemLoyaltyCard {
     /**

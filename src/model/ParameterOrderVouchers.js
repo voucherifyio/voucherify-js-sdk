@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterOrderVouchers.
  * @module model/ParameterOrderVouchers
+ * @version 3.0.5
  */
 class ParameterOrderVouchers {
     

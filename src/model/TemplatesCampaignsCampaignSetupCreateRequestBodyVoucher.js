@@ -17,6 +17,7 @@ import TemplatesCampaignsCampaignSetupCreateRequestBodyVoucherRedemption from '.
 /**
  * The TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher model module.
  * @module model/TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher
+ * @version 3.0.5
  */
 class TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher {
     /**

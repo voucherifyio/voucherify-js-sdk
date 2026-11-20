@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherBalanceRelatedObject model module.
  * @module model/VoucherBalanceRelatedObject
+ * @version 3.0.5
  */
 class VoucherBalanceRelatedObject {
     /**

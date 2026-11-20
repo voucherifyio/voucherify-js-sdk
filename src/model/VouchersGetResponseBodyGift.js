@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VouchersGetResponseBodyGift model module.
  * @module model/VouchersGetResponseBodyGift
+ * @version 3.0.5
  */
 class VouchersGetResponseBodyGift {
     /**

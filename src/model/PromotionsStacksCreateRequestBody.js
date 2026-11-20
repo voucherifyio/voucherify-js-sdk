@@ -16,6 +16,7 @@ import PromotionsStacksCreateRequestBodyTiers from './PromotionsStacksCreateRequ
 /**
  * The PromotionsStacksCreateRequestBody model module.
  * @module model/PromotionsStacksCreateRequestBody
+ * @version 3.0.5
  */
 class PromotionsStacksCreateRequestBody {
     /**

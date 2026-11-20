@@ -16,6 +16,7 @@ import LoyaltyTier from './LoyaltyTier';
 /**
  * The LoyaltiesTiersListResponseBody model module.
  * @module model/LoyaltiesTiersListResponseBody
+ * @version 3.0.5
  */
 class LoyaltiesTiersListResponseBody {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignsVouchersCreateInBulkRequestBodyRedemption model module.
  * @module model/CampaignsVouchersCreateInBulkRequestBodyRedemption
+ * @version 3.0.5
  */
 class CampaignsVouchersCreateInBulkRequestBodyRedemption {
     /**

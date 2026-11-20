@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * Enum class ParameterTemplatesList.
  * @module model/ParameterTemplatesList
+ * @version 3.0.5
  */
 class ParameterTemplatesList {
     

@@ -16,6 +16,7 @@ import User from './User';
 /**
  * The ManagementProjectsUsersListResponseBody model module.
  * @module model/ManagementProjectsUsersListResponseBody
+ * @version 3.0.5
  */
 class ManagementProjectsUsersListResponseBody {
     /**

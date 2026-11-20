@@ -19,6 +19,7 @@ import ManagementProjectWebhooksCalloutNotifications from './ManagementProjectWe
 /**
  * The ManagementProject model module.
  * @module model/ManagementProject
+ * @version 3.0.5
  */
 class ManagementProject {
     /**

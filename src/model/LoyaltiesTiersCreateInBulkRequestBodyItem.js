@@ -18,6 +18,7 @@ import MappingPoints from './MappingPoints';
 /**
  * The LoyaltiesTiersCreateInBulkRequestBodyItem model module.
  * @module model/LoyaltiesTiersCreateInBulkRequestBodyItem
+ * @version 3.0.5
  */
 class LoyaltiesTiersCreateInBulkRequestBodyItem {
     /**

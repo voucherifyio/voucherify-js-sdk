@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QualificationsOptionFiltersHolderRoleConditions model module.
  * @module model/QualificationsOptionFiltersHolderRoleConditions
+ * @version 3.0.5
  */
 class QualificationsOptionFiltersHolderRoleConditions {
     /**

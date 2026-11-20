@@ -16,6 +16,7 @@ import CampaignLoyaltyCardExpirationRules from './CampaignLoyaltyCardExpirationR
 /**
  * The CampaignLoyaltyCard model module.
  * @module model/CampaignLoyaltyCard
+ * @version 3.0.5
  */
 class CampaignLoyaltyCard {
     /**

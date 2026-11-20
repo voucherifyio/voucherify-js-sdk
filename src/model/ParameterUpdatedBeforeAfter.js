@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParameterUpdatedBeforeAfter model module.
  * @module model/ParameterUpdatedBeforeAfter
+ * @version 3.0.5
  */
 class ParameterUpdatedBeforeAfter {
     /**

@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ManagementProjectsUpdateResponseBodyLimitsApiCallsItem model module.
  * @module model/ManagementProjectsUpdateResponseBodyLimitsApiCallsItem
+ * @version 3.0.5
  */
 class ManagementProjectsUpdateResponseBodyLimitsApiCallsItem {
     /**

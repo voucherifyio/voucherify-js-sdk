@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VoucherTransactionDetailsEarningRuleSource model module.
  * @module model/VoucherTransactionDetailsEarningRuleSource
+ * @version 3.0.5
  */
 class VoucherTransactionDetailsEarningRuleSource {
     /**

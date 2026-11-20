@@ -16,6 +16,7 @@ import ProductCollectionsCreateResponseBodyProductsItem from './ProductCollectio
 /**
  * The ProductCollectionsCreateResponseBody model module.
  * @module model/ProductCollectionsCreateResponseBody
+ * @version 3.0.5
  */
 class ProductCollectionsCreateResponseBody {
     /**

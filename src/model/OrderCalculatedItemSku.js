@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrderCalculatedItemSku model module.
  * @module model/OrderCalculatedItemSku
+ * @version 3.0.5
  */
 class OrderCalculatedItemSku {
     /**
