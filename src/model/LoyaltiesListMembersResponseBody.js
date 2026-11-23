@@ -113,7 +113,7 @@ LoyaltiesListMembersResponseBody.prototype['object'] = 'list';
 LoyaltiesListMembersResponseBody.prototype['data_ref'] = 'vouchers';
 
 /**
-    * Contains array of voucher objects representing loyalty cards, in other words, loyalty program members.
+    * Contains an array of voucher objects representing loyalty cards (legacy loyalty campaign members).
     * @type {Array.<LoyaltyMember> | undefined}
     */
 LoyaltiesListMembersResponseBody.prototype['vouchers'] = undefined;

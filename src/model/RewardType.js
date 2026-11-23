@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import RewardTypeCampaign from './RewardTypeCampaign';
 import RewardTypeCoin from './RewardTypeCoin';
+import RewardTypeLoyaltyPoints from './RewardTypeLoyaltyPoints';
 import RewardTypeProduct from './RewardTypeProduct';
 /**
  * The RewardType model module.
@@ -57,6 +58,9 @@ class RewardType {
             if (data.hasOwnProperty('product')) {
                 obj['product'] = RewardTypeProduct.constructFromObject(data['product']);
             }
+            if (data.hasOwnProperty('loyalty_points')) {
+                obj['loyalty_points'] = RewardTypeLoyaltyPoints.constructFromObject(data['loyalty_points']);
+            }
         }
         return obj;
     }
@@ -78,6 +82,10 @@ class RewardType {
         // validate the optional field `product`
         if (data['product']) { // data not null
           RewardTypeProduct.validateJSON(data['product']);
+        }
+        // validate the optional field `loyalty_points`
+        if (data['loyalty_points']) { // data not null
+          RewardTypeLoyaltyPoints.validateJSON(data['loyalty_points']);
         }
 
         return true;
@@ -102,6 +110,11 @@ RewardType.prototype['coin'] = undefined;
     * @type {RewardTypeProduct | undefined}
     */
 RewardType.prototype['product'] = undefined;
+
+/**
+    * @type {RewardTypeLoyaltyPoints | undefined}
+    */
+RewardType.prototype['loyalty_points'] = undefined;
 
 
 

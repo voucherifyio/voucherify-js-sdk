@@ -25,7 +25,7 @@ import VoucherAssets from './VoucherAssets';
 class LoyaltyMember {
     /**
      * Constructs a new <code>LoyaltyMember</code>.
-     * This is an object representing a loyalty member.
+     * **Legacy loyalty.** This is an object representing a loyalty member.
      * @alias LoyaltyMember
      */
     constructor() { 

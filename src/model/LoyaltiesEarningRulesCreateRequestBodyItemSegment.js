@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class LoyaltiesEarningRulesCreateRequestBodyItemSegment {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemSegment</code>.
-     * Contains the ID of a customer segment. **Required** for the &#x60;customer.segment.entered&#x60; option in &#x60;event&#x60;.
+     * Contains the ID of a customer segment. Required for the &#x60;customer.segment.entered&#x60; option in &#x60;event&#x60;.
      * @alias LoyaltiesEarningRulesCreateRequestBodyItemSegment
      */
     constructor() { 

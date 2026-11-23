@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Earning rule ID (&#x60;lern_...&#x60;). | [optional] 
 **name** | **String** | Earning rule name. | [optional] 
-**status** | **String** | Current status. &#x60;DELETED&#x60; also exists internally but deleted rules are excluded from API reads. | [optional] 
+**status** | **String** | Current status. &#x60;DELETED&#x60; is returned only by the delete operation. | [optional] 
 **earnings** | [**[EarningRuleEarning]**](EarningRuleEarning.md) | Earning definitions of the rule. Contains at least one earning. | [optional] 
 **trigger** | [**EarningRuleTrigger**](EarningRuleTrigger.md) |  | 
 **error** | [**LoyaltyV2ActivityEarningRuleError**](LoyaltyV2ActivityEarningRuleError.md) |  | [optional] 
@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 * `ACTIVE` (value: `"ACTIVE"`)
 
 * `INACTIVE` (value: `"INACTIVE"`)
+
+* `DELETED` (value: `"DELETED"`)
 
 
 

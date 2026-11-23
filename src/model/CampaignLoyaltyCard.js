@@ -20,7 +20,7 @@ import CampaignLoyaltyCardExpirationRules from './CampaignLoyaltyCardExpirationR
 class CampaignLoyaltyCard {
     /**
      * Constructs a new <code>CampaignLoyaltyCard</code>.
-     * Schema model for a campaign loyalty card.
+     * Schema model for a campaign loyalty card (**legacy loyalty**).
      * @alias CampaignLoyaltyCard
      */
     constructor() { 

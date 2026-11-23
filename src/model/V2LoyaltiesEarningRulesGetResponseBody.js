@@ -190,7 +190,7 @@ V2LoyaltiesEarningRulesGetResponseBody.prototype['id'] = undefined;
 V2LoyaltiesEarningRulesGetResponseBody.prototype['name'] = undefined;
 
 /**
-    * Current status. `DELETED` also exists internally but deleted rules are excluded from API reads.
+    * Current status. `DELETED` is returned only by the delete operation.
     * @type {(keyof typeof V2LoyaltiesEarningRulesGetResponseBody.StatusEnum) | undefined}
     */
 V2LoyaltiesEarningRulesGetResponseBody.prototype['status'] = undefined;
@@ -290,7 +290,13 @@ V2LoyaltiesEarningRulesGetResponseBody.prototype['object'] = 'earning_rule';
          * value: "INACTIVE"
          * @constant
          */
-        "INACTIVE": "INACTIVE"    
+        "INACTIVE": "INACTIVE",
+    
+        /**
+         * value: "DELETED"
+         * @constant
+         */
+        "DELETED": "DELETED"    
     };
 
 

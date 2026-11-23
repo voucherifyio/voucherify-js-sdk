@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent</code>.
-     * Contains the schema id of a custom event. **Required** for the custom event option in &#x60;event&#x60;.
+     * Contains the schema ID of a custom event. Required for the custom event option in &#x60;event&#x60;.
      * @alias LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent
      */
     constructor() { 

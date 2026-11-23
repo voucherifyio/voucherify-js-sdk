@@ -20,7 +20,7 @@ import LoyaltyCampaign from './LoyaltyCampaign';
 class LoyaltiesListCampaignsResponseBody {
     /**
      * Constructs a new <code>LoyaltiesListCampaignsResponseBody</code>.
-     * Response body schema for **Get** &#x60;/loyalties&#x60;.
+     * **Legacy loyalty.** Response body schema for **Get** &#x60;/loyalties&#x60;.
      * @alias LoyaltiesListCampaignsResponseBody
      */
     constructor() { 

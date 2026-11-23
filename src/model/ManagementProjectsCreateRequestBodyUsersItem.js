@@ -95,13 +95,13 @@ class ManagementProjectsCreateRequestBodyUsersItem {
 ManagementProjectsCreateRequestBodyUsersItem.RequiredProperties = ["role"];
 
 /**
-    * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
+    * The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. Required with the `role` string.  Do **not** use with the `login` string.
     * @type {String | undefined}
     */
 ManagementProjectsCreateRequestBodyUsersItem.prototype['id'] = undefined;
 
 /**
-    * The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
+    * The login data of the user who will be assigned to the project. Required with the `role` string.  Do **not** use with the `id` string.
     * @type {String | undefined}
     */
 ManagementProjectsCreateRequestBodyUsersItem.prototype['login'] = undefined;

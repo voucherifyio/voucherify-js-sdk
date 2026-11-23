@@ -43,7 +43,7 @@ export default class LV2BenefitsApi {
 
     /**
      * Get benefit
-     * Returns a single benefit by its ID.
+     * Returns a single benefit by its ID. A successful call records no activity.
      * @param {String} benefitId Identifies the benefit. Format lben_[a-f0-9]+.
      * @param {getBenefitCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link V2LoyaltiesBenefitsGetResponseBody}

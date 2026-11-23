@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class BenefitPointsProportionalOrderTotalAmount {
     /**
      * Constructs a new <code>BenefitPointsProportionalOrderTotalAmount</code>.
-     * Ratio definition - &#x60;value&#x60; points for every &#x60;every&#x60; units.
+     * Ratio definition. &#x60;value&#x60; points for every &#x60;every&#x60; units.
      * @alias BenefitPointsProportionalOrderTotalAmount
      */
     constructor() { 

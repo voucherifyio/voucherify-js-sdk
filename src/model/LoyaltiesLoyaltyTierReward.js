@@ -21,7 +21,7 @@ import RewardAssignment from './RewardAssignment';
 class LoyaltiesLoyaltyTierReward {
     /**
      * Constructs a new <code>LoyaltiesLoyaltyTierReward</code>.
-     * This is an object representing a loyalty tier reward.
+     * **Legacy loyalty.** This is an object representing a loyalty tier reward.
      * @alias LoyaltiesLoyaltyTierReward
      * @param {Reward} reward 
      * @param {RewardAssignment} assignment 

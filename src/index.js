@@ -935,6 +935,7 @@ import MemberActivityDataRedemptionRewardCustomer from './model/MemberActivityDa
 import MemberActivityDataRedemptionRewardParameters from './model/MemberActivityDataRedemptionRewardParameters';
 import MemberActivityDataRedemptionRewardParametersCampaign from './model/MemberActivityDataRedemptionRewardParametersCampaign';
 import MemberActivityDataRedemptionRewardParametersCoin from './model/MemberActivityDataRedemptionRewardParametersCoin';
+import MemberActivityDataRedemptionRewardParametersLoyaltyPoints from './model/MemberActivityDataRedemptionRewardParametersLoyaltyPoints';
 import MemberActivityDataRedemptionRewardParametersProduct from './model/MemberActivityDataRedemptionRewardParametersProduct';
 import MemberActivityDataRedemptionRewardProduct from './model/MemberActivityDataRedemptionRewardProduct';
 import MemberActivityDataRedemptionRewardSku from './model/MemberActivityDataRedemptionRewardSku';
@@ -1425,6 +1426,7 @@ import RewardPurchaseTransaction from './model/RewardPurchaseTransaction';
 import RewardType from './model/RewardType';
 import RewardTypeCampaign from './model/RewardTypeCampaign';
 import RewardTypeCoin from './model/RewardTypeCoin';
+import RewardTypeLoyaltyPoints from './model/RewardTypeLoyaltyPoints';
 import RewardTypeProduct from './model/RewardTypeProduct';
 import RewardValidityHoursResponse from './model/RewardValidityHoursResponse';
 import RewardsAssignmentsCreateRequestBody from './model/RewardsAssignmentsCreateRequestBody';
@@ -1448,6 +1450,7 @@ import RewardsCreateRequestBodyAttributes from './model/RewardsCreateRequestBody
 import RewardsCreateRequestBodyParameters from './model/RewardsCreateRequestBodyParameters';
 import RewardsCreateRequestBodyParametersCampaign from './model/RewardsCreateRequestBodyParametersCampaign';
 import RewardsCreateRequestBodyParametersCoin from './model/RewardsCreateRequestBodyParametersCoin';
+import RewardsCreateRequestBodyParametersLoyaltyPoints from './model/RewardsCreateRequestBodyParametersLoyaltyPoints';
 import RewardsCreateRequestBodyParametersProduct from './model/RewardsCreateRequestBodyParametersProduct';
 import RewardsCreateResponseBody from './model/RewardsCreateResponseBody';
 import RewardsCreateResponseBodyAttributes from './model/RewardsCreateResponseBodyAttributes';
@@ -1469,6 +1472,7 @@ import RewardsUpdateRequestBodyAttributes from './model/RewardsUpdateRequestBody
 import RewardsUpdateRequestBodyParameters from './model/RewardsUpdateRequestBodyParameters';
 import RewardsUpdateRequestBodyParametersCampaign from './model/RewardsUpdateRequestBodyParametersCampaign';
 import RewardsUpdateRequestBodyParametersCoin from './model/RewardsUpdateRequestBodyParametersCoin';
+import RewardsUpdateRequestBodyParametersLoyaltyPoints from './model/RewardsUpdateRequestBodyParametersLoyaltyPoints';
 import RewardsUpdateRequestBodyParametersProduct from './model/RewardsUpdateRequestBodyParametersProduct';
 import RewardsUpdateResponseBody from './model/RewardsUpdateResponseBody';
 import RewardsUpdateResponseBodyAttributes from './model/RewardsUpdateResponseBodyAttributes';
@@ -7338,6 +7342,12 @@ export {
     MemberActivityDataRedemptionRewardParametersCoin,
 
     /**
+     * The MemberActivityDataRedemptionRewardParametersLoyaltyPoints model constructor.
+     * @property {MemberActivityDataRedemptionRewardParametersLoyaltyPoints}
+     */
+    MemberActivityDataRedemptionRewardParametersLoyaltyPoints,
+
+    /**
      * The MemberActivityDataRedemptionRewardParametersProduct model constructor.
      * @property {MemberActivityDataRedemptionRewardParametersProduct}
      */
@@ -10278,6 +10288,12 @@ export {
     RewardTypeCoin,
 
     /**
+     * The RewardTypeLoyaltyPoints model constructor.
+     * @property {RewardTypeLoyaltyPoints}
+     */
+    RewardTypeLoyaltyPoints,
+
+    /**
      * The RewardTypeProduct model constructor.
      * @property {RewardTypeProduct}
      */
@@ -10416,6 +10432,12 @@ export {
     RewardsCreateRequestBodyParametersCoin,
 
     /**
+     * The RewardsCreateRequestBodyParametersLoyaltyPoints model constructor.
+     * @property {RewardsCreateRequestBodyParametersLoyaltyPoints}
+     */
+    RewardsCreateRequestBodyParametersLoyaltyPoints,
+
+    /**
      * The RewardsCreateRequestBodyParametersProduct model constructor.
      * @property {RewardsCreateRequestBodyParametersProduct}
      */
@@ -10540,6 +10562,12 @@ export {
      * @property {RewardsUpdateRequestBodyParametersCoin}
      */
     RewardsUpdateRequestBodyParametersCoin,
+
+    /**
+     * The RewardsUpdateRequestBodyParametersLoyaltyPoints model constructor.
+     * @property {RewardsUpdateRequestBodyParametersLoyaltyPoints}
+     */
+    RewardsUpdateRequestBodyParametersLoyaltyPoints,
 
     /**
      * The RewardsUpdateRequestBodyParametersProduct model constructor.

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **redeemed** | **Number** | Defines the number of already invoked (successful) reward redemptions.  | [optional] 
 **attributes** | [**LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes**](LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes.md) |  | [optional] 
 **metadata** | **Object** | The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format. | [optional] 
-**type** | **String** | Reward type. | [optional] 
+**type** | **String** | Reward type. &#x60;LOYALTY_POINTS&#x60; credits points on a &#x60;v2/loyalties&#x60; (loyalty hub) card (for example from a referral tier). | [optional] 
 **parameters** | [**RewardType**](RewardType.md) |  | [optional] 
 **createdAt** | **Date** | Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format. | [optional] 
 **updatedAt** | **Date** | Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format. | [optional] 
@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 * `COIN` (value: `"COIN"`)
 
 * `MATERIAL` (value: `"MATERIAL"`)
+
+* `LOYALTY_POINTS` (value: `"LOYALTY_POINTS"`)
 
 
 

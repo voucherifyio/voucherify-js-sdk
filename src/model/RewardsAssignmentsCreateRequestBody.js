@@ -49,11 +49,17 @@ class RewardsAssignmentsCreateRequestBody {
             if (data.hasOwnProperty('campaign')) {
                 obj['campaign'] = ApiClient.convertToType(data['campaign'], 'String');
             }
+            if (data.hasOwnProperty('related_object_type')) {
+                obj['related_object_type'] = ApiClient.convertToType(data['related_object_type'], 'String');
+            }
             if (data.hasOwnProperty('parameters')) {
                 obj['parameters'] = RewardsAssignmentsCreateRequestBodyParameters.constructFromObject(data['parameters']);
             }
             if (data.hasOwnProperty('validation_rules')) {
                 obj['validation_rules'] = ApiClient.convertToType(data['validation_rules'], ['String']);
+            }
+            if (data.hasOwnProperty('related_object_id')) {
+                obj['related_object_id'] = ApiClient.convertToType(data['related_object_id'], 'String');
             }
         }
         return obj;
@@ -69,6 +75,10 @@ class RewardsAssignmentsCreateRequestBody {
         if (data['campaign'] && !(typeof data['campaign'] === 'string' || data['campaign'] instanceof String)) {
             throw new Error("Expected the field `campaign` to be a primitive type in the JSON string but got " + data['campaign']);
         }
+        // ensure the json data is a string
+        if (data['related_object_type'] && !(typeof data['related_object_type'] === 'string' || data['related_object_type'] instanceof String)) {
+            throw new Error("Expected the field `related_object_type` to be a primitive type in the JSON string but got " + data['related_object_type']);
+        }
         // validate the optional field `parameters`
         if (data['parameters']) { // data not null
           RewardsAssignmentsCreateRequestBodyParameters.validateJSON(data['parameters']);
@@ -76,6 +86,10 @@ class RewardsAssignmentsCreateRequestBody {
         // ensure the json data is an array
         if (!Array.isArray(data['validation_rules'])) {
             throw new Error("Expected the field `validation_rules` to be an array in the JSON data but got " + data['validation_rules']);
+        }
+        // ensure the json data is a string
+        if (data['related_object_id'] && !(typeof data['related_object_id'] === 'string' || data['related_object_id'] instanceof String)) {
+            throw new Error("Expected the field `related_object_id` to be a primitive type in the JSON string but got " + data['related_object_id']);
         }
 
         return true;
@@ -93,6 +107,11 @@ class RewardsAssignmentsCreateRequestBody {
 RewardsAssignmentsCreateRequestBody.prototype['campaign'] = undefined;
 
 /**
+    * @type {(keyof typeof RewardsAssignmentsCreateRequestBody.RelatedObjectTypeEnum) | undefined}
+    */
+RewardsAssignmentsCreateRequestBody.prototype['related_object_type'] = undefined;
+
+/**
     * @type {RewardsAssignmentsCreateRequestBodyParameters | undefined}
     */
 RewardsAssignmentsCreateRequestBody.prototype['parameters'] = undefined;
@@ -102,8 +121,35 @@ RewardsAssignmentsCreateRequestBody.prototype['parameters'] = undefined;
     */
 RewardsAssignmentsCreateRequestBody.prototype['validation_rules'] = undefined;
 
+/**
+    * Unique referral tier ID, assigned by Voucherify.
+    * @type {String | undefined}
+    */
+RewardsAssignmentsCreateRequestBody.prototype['related_object_id'] = undefined;
 
 
+
+
+
+    /**
+     * Allowed values for the <code>related_object_type</code> property.
+     * @enum     {String}    
+     * @readonly
+     */
+    RewardsAssignmentsCreateRequestBody['RelatedObjectTypeEnum'] = {
+    
+        /**
+         * value: "campaign"
+         * @constant
+         */
+        "campaign": "campaign",
+    
+        /**
+         * value: "referral_tier"
+         * @constant
+         */
+        "referral_tier": "referral_tier"    
+    };
 
 
 

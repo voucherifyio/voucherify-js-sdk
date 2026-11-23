@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **campaign** | [**RewardTypeCampaign**](RewardTypeCampaign.md) |  | [optional] 
 **coin** | [**RewardTypeCoin**](RewardTypeCoin.md) |  | [optional] 
 **product** | [**RewardTypeProduct**](RewardTypeProduct.md) |  | [optional] 
+**loyaltyPoints** | [**RewardTypeLoyaltyPoints**](RewardTypeLoyaltyPoints.md) |  | [optional] 
 
 

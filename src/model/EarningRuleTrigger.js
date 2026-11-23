@@ -21,7 +21,7 @@ import LoyaltyV2ActivityEarningRuleTriggerSegment from './LoyaltyV2ActivityEarni
 class EarningRuleTrigger {
     /**
      * Constructs a new <code>EarningRuleTrigger</code>.
-     * Event that triggers the earning rule. Depending on &#x60;event&#x60;, either &#x60;custom_event&#x60; or &#x60;segment&#x60; is required and the other trigger contexts must be null/absent. The API validates field combinations that this schema does not express.
+     * Event that triggers the earning rule. Depending on &#x60;event&#x60;, either &#x60;custom_event&#x60; or &#x60;segment&#x60; is required and the other trigger contexts must be &#x60;null&#x60;/absent. The API validates field combinations that this schema does not express.
      * @alias EarningRuleTrigger
      */
     constructor() { 

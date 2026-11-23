@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class RewardsCreateRequestBodyParametersCoin {
     /**
      * Constructs a new <code>RewardsCreateRequestBodyParametersCoin</code>.
-     * Define the ratio by mapping the number of loyalty points in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
+     * Define the ratio by mapping the number of loyalty points (**legacy loyalty**) in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
      * @alias RewardsCreateRequestBodyParametersCoin
      */
     constructor() { 
@@ -82,7 +82,7 @@ class RewardsCreateRequestBodyParametersCoin {
 RewardsCreateRequestBodyParametersCoin.prototype['exchange_ratio'] = undefined;
 
 /**
-    * The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+    * The number of loyalty points (**legacy loyalty**) that will map to the predefined cash amount defined by the `exchange_ratio` property.
     * @type {String | undefined}
     */
 RewardsCreateRequestBodyParametersCoin.prototype['points_ratio'] = undefined;

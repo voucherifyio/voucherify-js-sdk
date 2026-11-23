@@ -23,7 +23,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class LoyaltiesCreateCampaignRequestBody {
     /**
      * Constructs a new <code>LoyaltiesCreateCampaignRequestBody</code>.
-     * Request body schema for **POST** &#x60;/loyalties&#x60;.
+     * **Legacy loyalty.** Request body schema for **POST** &#x60;/loyalties&#x60;.
      * @alias LoyaltiesCreateCampaignRequestBody
      */
     constructor() { 
@@ -194,13 +194,13 @@ LoyaltiesCreateCampaignRequestBody.prototype['description'] = undefined;
 LoyaltiesCreateCampaignRequestBody.prototype['type'] = undefined;
 
 /**
-    * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
+    * If this value is set to `true`, customers will be able to join the campaign only once. For **legacy loyalty** campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
     * @type {Boolean | undefined}
     */
 LoyaltiesCreateCampaignRequestBody.prototype['join_once'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 LoyaltiesCreateCampaignRequestBody.prototype['auto_join'] = undefined;

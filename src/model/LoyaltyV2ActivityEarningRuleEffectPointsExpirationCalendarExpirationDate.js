@@ -72,13 +72,13 @@ class LoyaltyV2ActivityEarningRuleEffectPointsExpirationCalendarExpirationDate {
 
 
 /**
-    * Day of month (1-31; validated against the month length).
+    * Day of month (1–31; validated against the month length).
     * @type {Number | undefined}
     */
 LoyaltyV2ActivityEarningRuleEffectPointsExpirationCalendarExpirationDate.prototype['day'] = undefined;
 
 /**
-    * Month number (1-12).
+    * Month number (1–12).
     * @type {Number | undefined}
     */
 LoyaltyV2ActivityEarningRuleEffectPointsExpirationCalendarExpirationDate.prototype['month'] = undefined;

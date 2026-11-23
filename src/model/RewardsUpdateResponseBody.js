@@ -168,7 +168,7 @@ RewardsUpdateResponseBody.prototype['attributes'] = undefined;
 RewardsUpdateResponseBody.prototype['metadata'] = undefined;
 
 /**
-    * Reward type.
+    * Reward type. `LOYALTY_POINTS` credits points on a `v2/loyalties` (loyalty hub) card (for example from a referral tier).
     * @type {(keyof typeof RewardsUpdateResponseBody.TypeEnum) | undefined}
     */
 RewardsUpdateResponseBody.prototype['type'] = undefined;
@@ -224,7 +224,13 @@ RewardsUpdateResponseBody.prototype['object'] = 'reward';
          * value: "MATERIAL"
          * @constant
          */
-        "MATERIAL": "MATERIAL"    
+        "MATERIAL": "MATERIAL",
+    
+        /**
+         * value: "LOYALTY_POINTS"
+         * @constant
+         */
+        "LOYALTY_POINTS": "LOYALTY_POINTS"    
     };
 
 

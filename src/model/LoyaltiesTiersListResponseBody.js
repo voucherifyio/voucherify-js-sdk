@@ -113,7 +113,7 @@ LoyaltiesTiersListResponseBody.prototype['object'] = 'list';
 LoyaltiesTiersListResponseBody.prototype['data_ref'] = 'data';
 
 /**
-    * This is an object representing a loyalty tier. Loyalty tiers are used to create a loyalty program with different levels of membership and varied earning rules and rewards based on customer's tiers.
+    * This is an object representing a loyalty tier. Loyalty tiers are used in a **legacy loyalty** campaign with different levels of membership and varied earning rules and rewards based on the customer's tiers.
     * @type {Array.<LoyaltyTier> | undefined}
     */
 LoyaltiesTiersListResponseBody.prototype['data'] = undefined;

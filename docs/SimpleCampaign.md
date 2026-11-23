@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **voucher** | [**SimpleCampaignVoucher**](SimpleCampaignVoucher.md) |  | [optional] 
 **referralProgram** | [**ReferralProgram**](ReferralProgram.md) |  | [optional] 
 **autoJoin** | **Boolean** | Indicates whether customers will be able to auto-join the campaign if any earning rule is fulfilled. | [optional] 
-**joinOnce** | **Boolean** | If this value is set to &#x60;true&#x60;, customers will be able to join the campaign only once. It is always &#x60;false&#x60; for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always &#x60;true&#x60; for loyalty campaigns and it cannot be changed in them. | [optional] 
+**joinOnce** | **Boolean** | If this value is set to &#x60;true&#x60;, customers will be able to join the campaign only once. It is always &#x60;false&#x60; for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always &#x60;true&#x60; for **legacy loyalty** campaigns and it cannot be changed in them. | [optional] 
 **active** | **Boolean** | Indicates whether the campaign is active. | [optional] 
 **categoryId** | **String** | The unique category ID that this campaign belongs to. | [optional] 
 **category** | **String** | Unique category name. | [optional] 

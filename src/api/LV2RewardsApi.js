@@ -43,7 +43,7 @@ export default class LV2RewardsApi {
 
     /**
      * Get reward by ID
-     * Returns a single reward by its ID.
+     * Returns a single reward by its ID. A successful call records no activity.
      * @param {String} rewardId Identifies the reward. Format lrew_[a-f0-9]+.
      * @param {getRewardCallback} [callback] The callback function, accepting three arguments: error, data, response
      * data is of type: {@link V2LoyaltiesRewardsGetResponseBody}

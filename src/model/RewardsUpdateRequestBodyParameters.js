@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import RewardsUpdateRequestBodyParametersCampaign from './RewardsUpdateRequestBodyParametersCampaign';
 import RewardsUpdateRequestBodyParametersCoin from './RewardsUpdateRequestBodyParametersCoin';
+import RewardsUpdateRequestBodyParametersLoyaltyPoints from './RewardsUpdateRequestBodyParametersLoyaltyPoints';
 import RewardsUpdateRequestBodyParametersProduct from './RewardsUpdateRequestBodyParametersProduct';
 /**
  * The RewardsUpdateRequestBodyParameters model module.
@@ -57,6 +58,9 @@ class RewardsUpdateRequestBodyParameters {
             if (data.hasOwnProperty('coin')) {
                 obj['coin'] = RewardsUpdateRequestBodyParametersCoin.constructFromObject(data['coin']);
             }
+            if (data.hasOwnProperty('loyalty_points')) {
+                obj['loyalty_points'] = RewardsUpdateRequestBodyParametersLoyaltyPoints.constructFromObject(data['loyalty_points']);
+            }
         }
         return obj;
     }
@@ -78,6 +82,10 @@ class RewardsUpdateRequestBodyParameters {
         // validate the optional field `coin`
         if (data['coin']) { // data not null
           RewardsUpdateRequestBodyParametersCoin.validateJSON(data['coin']);
+        }
+        // validate the optional field `loyalty_points`
+        if (data['loyalty_points']) { // data not null
+          RewardsUpdateRequestBodyParametersLoyaltyPoints.validateJSON(data['loyalty_points']);
         }
 
         return true;
@@ -102,6 +110,11 @@ RewardsUpdateRequestBodyParameters.prototype['product'] = undefined;
     * @type {RewardsUpdateRequestBodyParametersCoin | undefined}
     */
 RewardsUpdateRequestBodyParameters.prototype['coin'] = undefined;
+
+/**
+    * @type {RewardsUpdateRequestBodyParametersLoyaltyPoints | undefined}
+    */
+RewardsUpdateRequestBodyParameters.prototype['loyalty_points'] = undefined;
 
 
 

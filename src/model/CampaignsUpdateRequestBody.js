@@ -262,13 +262,13 @@ CampaignsUpdateRequestBody.prototype['access_settings'] = undefined;
 CampaignsUpdateRequestBody.prototype['activity_duration_after_publishing'] = undefined;
 
 /**
-    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
+    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for **legacy loyalty** campaigns and it cannot be changed in them.
     * @type {Boolean | undefined}
     */
 CampaignsUpdateRequestBody.prototype['join_once'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 CampaignsUpdateRequestBody.prototype['auto_join'] = undefined;

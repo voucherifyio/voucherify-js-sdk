@@ -144,7 +144,7 @@ class V2LoyaltiesBenefitsGetResponseBody {
 V2LoyaltiesBenefitsGetResponseBody.prototype['id'] = undefined;
 
 /**
-    * Benefit name, unique within the project.
+    * Benefit name.
     * @type {String | undefined}
     */
 V2LoyaltiesBenefitsGetResponseBody.prototype['name'] = undefined;

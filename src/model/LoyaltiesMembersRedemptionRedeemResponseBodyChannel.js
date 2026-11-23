@@ -86,7 +86,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel {
 LoyaltiesMembersRedemptionRedeemResponseBodyChannel.prototype['channel_id'] = undefined;
 
 /**
-    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
+    * The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a **legacy loyalty** campaign reward that has been redeemed automatically.
     * @type {(keyof typeof LoyaltiesMembersRedemptionRedeemResponseBodyChannel.ChannelTypeEnum) | undefined}
     */
 LoyaltiesMembersRedemptionRedeemResponseBodyChannel.prototype['channel_type'] = undefined;

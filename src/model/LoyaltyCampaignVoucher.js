@@ -24,7 +24,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class LoyaltyCampaignVoucher {
     /**
      * Constructs a new <code>LoyaltyCampaignVoucher</code>.
-     * Schema model for a campaign voucher.
+     * **Legacy loyalty.** Schema model for a campaign voucher.
      * @alias LoyaltyCampaignVoucher
      * @param {CodeConfig} codeConfig 
      */

@@ -71,13 +71,13 @@ class MemberActivityDataRedemptionRewardParametersCoin {
 
 
 /**
-    * The cash equivalent of the points defined in the points_ratio property. and The cash equivalent of the points defined in the `points_ratio` property.
+    * The cash equivalent of the points defined in the `points_ratio` property.
     * @type {Number | undefined}
     */
 MemberActivityDataRedemptionRewardParametersCoin.prototype['exchange_ratio'] = undefined;
 
 /**
-    * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property. and The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+    * The number of loyalty points (**legacy loyalty**) that will map to the predefined cash amount defined by the `exchange_ratio` property.
     * @type {Number | undefined}
     */
 MemberActivityDataRedemptionRewardParametersCoin.prototype['points_ratio'] = undefined;
