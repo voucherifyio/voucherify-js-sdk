@@ -69,7 +69,7 @@ class LoyaltyV2ActivityBenefitStockLimited {
 
 
 /**
-    * Available Remaining stock quantity. For responses, updates with each benefit purchase.
+    * Remaining stock quantity. On create, this is the starting quantity. Each benefit purchase decreases it by one.
     * @type {Number | undefined}
     */
 LoyaltyV2ActivityBenefitStockLimited.prototype['quantity'] = undefined;

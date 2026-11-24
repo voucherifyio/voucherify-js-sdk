@@ -86,6 +86,12 @@ class CardDailyReportEntry {
             if (data.hasOwnProperty('points_unlocked')) {
                 obj['points_unlocked'] = ApiClient.convertToType(data['points_unlocked'], 'Number');
             }
+            if (data.hasOwnProperty('referrer_points_earned')) {
+                obj['referrer_points_earned'] = ApiClient.convertToType(data['referrer_points_earned'], 'Number');
+            }
+            if (data.hasOwnProperty('referee_points_earned')) {
+                obj['referee_points_earned'] = ApiClient.convertToType(data['referee_points_earned'], 'Number');
+            }
             if (data.hasOwnProperty('pending_points_total')) {
                 obj['pending_points_total'] = ApiClient.convertToType(data['pending_points_total'], 'Number');
             }
@@ -128,7 +134,7 @@ class CardDailyReportEntry {
 CardDailyReportEntry.prototype['date'] = undefined;
 
 /**
-    * Points credited to the card in the period. Sums `points_earned`, `points_added`, and `points_purchased`. Points spent, expired, subtracted, refunded, returned, or reversed are not deducted.
+    * Points credited to the card in the period. Sums `points_earned`, `points_added`, `points_purchased`, `referrer_points_earned`, and `referee_points_earned`. Points spent, expired, subtracted, refunded, returned, or reversed are not deducted.
     * @type {Number | undefined}
     */
 CardDailyReportEntry.prototype['points_total'] = undefined;
@@ -198,6 +204,18 @@ CardDailyReportEntry.prototype['points_locked'] = undefined;
     * @type {Number | undefined}
     */
 CardDailyReportEntry.prototype['points_unlocked'] = undefined;
+
+/**
+    * Points credited from referral referrer awards in the period (`REFERRER_POINTS_EARNED` card transactions, for example a `LOYALTY_POINTS` reward assigned to a referrer tier). Also counted in `points_total`. Not counted in `points_earned`.
+    * @type {Number | undefined}
+    */
+CardDailyReportEntry.prototype['referrer_points_earned'] = undefined;
+
+/**
+    * Points credited from referral referee awards in the period (`REFEREE_POINTS_EARNED` card transactions, for example a `LOYALTY_POINTS` reward assigned to a referee tier). Also counted in `points_total`. Not counted in `points_earned`.
+    * @type {Number | undefined}
+    */
+CardDailyReportEntry.prototype['referee_points_earned'] = undefined;
 
 /**
     * Pending points added in the period. Activated and canceled pending points are not deducted.

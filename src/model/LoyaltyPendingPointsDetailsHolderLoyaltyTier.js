@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class LoyaltyPendingPointsDetailsHolderLoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyPendingPointsDetailsHolderLoyaltyTier</code>.
-     * Loyalty tier of the loyalty card holder at the moment when the transaction occurred. The loyalty tier is the tier in which the holder was at the moment pending points were created.
+     * Legacy loyalty tier of the loyalty card holder at the moment when the transaction occurred. The loyalty tier is the tier in which the holder was at the moment pending points were created.
      * @alias LoyaltyPendingPointsDetailsHolderLoyaltyTier
      */
     constructor() { 

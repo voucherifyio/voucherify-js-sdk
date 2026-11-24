@@ -325,7 +325,19 @@ CardTransaction.prototype['object'] = 'card_transaction';
          * value: "PENDING_POINTS_CANCELED"
          * @constant
          */
-        "PENDING_POINTS_CANCELED": "PENDING_POINTS_CANCELED"    
+        "PENDING_POINTS_CANCELED": "PENDING_POINTS_CANCELED",
+    
+        /**
+         * value: "REFERRER_POINTS_EARNED"
+         * @constant
+         */
+        "REFERRER_POINTS_EARNED": "REFERRER_POINTS_EARNED",
+    
+        /**
+         * value: "REFEREE_POINTS_EARNED"
+         * @constant
+         */
+        "REFEREE_POINTS_EARNED": "REFEREE_POINTS_EARNED"    
     };
 
 

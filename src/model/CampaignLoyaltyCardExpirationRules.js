@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class CampaignLoyaltyCardExpirationRules {
     /**
      * Constructs a new <code>CampaignLoyaltyCardExpirationRules</code>.
-     * Defines the loyalty point expiration rule. This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
+     * Defines the loyalty point expiration rule (**legacy loyalty**). This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
      * @alias CampaignLoyaltyCardExpirationRules
      */
     constructor() { 

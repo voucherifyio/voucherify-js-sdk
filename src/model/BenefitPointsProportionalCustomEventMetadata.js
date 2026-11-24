@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class BenefitPointsProportionalCustomEventMetadata {
     /**
      * Constructs a new <code>BenefitPointsProportionalCustomEventMetadata</code>.
-     * Metadata-based ratio definition - &#x60;value&#x60; points for every &#x60;every&#x60; units of the metadata property.
+     * Metadata-based ratio definition. &#x60;value&#x60; points for every &#x60;every&#x60; units of the metadata property.
      * @alias BenefitPointsProportionalCustomEventMetadata
      */
     constructor() { 

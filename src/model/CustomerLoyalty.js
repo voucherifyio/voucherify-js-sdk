@@ -20,6 +20,7 @@ import CustomerLoyaltyCampaignsEntryValue from './CustomerLoyaltyCampaignsEntryV
 class CustomerLoyalty {
     /**
      * Constructs a new <code>CustomerLoyalty</code>.
+     * Summary of the customer&#39;s **legacy loyalty** activity: points on loyalty cards and referred customers. Loyalty hub memberships are listed separately under &#x60;loyalty_memberships&#x60; on the customer object.
      * @alias CustomerLoyalty
      */
     constructor() { 
@@ -75,7 +76,7 @@ class CustomerLoyalty {
 
 
 /**
-    * Customer's loyalty points minus expired for all loyalty cards which the customer has.
+    * Customer's loyalty points minus expired points for all loyalty cards (**legacy loyalty**) which the customer has.
     * @type {Number | undefined}
     */
 CustomerLoyalty.prototype['points'] = undefined;
@@ -87,7 +88,7 @@ CustomerLoyalty.prototype['points'] = undefined;
 CustomerLoyalty.prototype['referred_customers'] = undefined;
 
 /**
-    * Contains campaigns with details about point balances and how many customers were referred by the customer.
+    * Contains **legacy loyalty** and referral campaigns with details about point balances and how many customers were referred by the customer.
     * @type {Object.<String, CustomerLoyaltyCampaignsEntryValue> | undefined}
     */
 CustomerLoyalty.prototype['campaigns'] = undefined;

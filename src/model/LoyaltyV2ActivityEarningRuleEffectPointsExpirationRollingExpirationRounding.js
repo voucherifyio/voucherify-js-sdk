@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding {
     /**
      * Constructs a new <code>LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding</code>.
-     * &#x60;value&#x60; is the month (1-12). Required when &#x60;type&#x60; is &#x60;END_OF_PARTICULAR_MONTH&#x60;. Absent for other rounding types. The API validates field combinations that this schema does not express.
+     * &#x60;value&#x60; is the month (1–12). Required when &#x60;type&#x60; is &#x60;END_OF_PARTICULAR_MONTH&#x60;. Absent for other rounding types. The API validates field combinations that this schema does not express.
      * @alias LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding
      */
     constructor() { 
@@ -82,7 +82,7 @@ class LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRoundin
 LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding.prototype['type'] = undefined;
 
 /**
-    * Month number (1-12). Present only when `type` is `END_OF_PARTICULAR_MONTH`.
+    * Month number (1–12). Present only when `type` is `END_OF_PARTICULAR_MONTH`.
     * @type {Number | undefined}
     */
 LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding.prototype['value'] = undefined;

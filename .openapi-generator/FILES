@@ -940,6 +940,7 @@ docs/MemberActivityDataRedemptionRewardCustomer.md
 docs/MemberActivityDataRedemptionRewardParameters.md
 docs/MemberActivityDataRedemptionRewardParametersCampaign.md
 docs/MemberActivityDataRedemptionRewardParametersCoin.md
+docs/MemberActivityDataRedemptionRewardParametersLoyaltyPoints.md
 docs/MemberActivityDataRedemptionRewardParametersProduct.md
 docs/MemberActivityDataRedemptionRewardProduct.md
 docs/MemberActivityDataRedemptionRewardSku.md
@@ -1440,6 +1441,7 @@ docs/RewardPurchaseTransaction.md
 docs/RewardType.md
 docs/RewardTypeCampaign.md
 docs/RewardTypeCoin.md
+docs/RewardTypeLoyaltyPoints.md
 docs/RewardTypeProduct.md
 docs/RewardValidityHoursResponse.md
 docs/RewardsApi.md
@@ -1464,6 +1466,7 @@ docs/RewardsCreateRequestBodyAttributes.md
 docs/RewardsCreateRequestBodyParameters.md
 docs/RewardsCreateRequestBodyParametersCampaign.md
 docs/RewardsCreateRequestBodyParametersCoin.md
+docs/RewardsCreateRequestBodyParametersLoyaltyPoints.md
 docs/RewardsCreateRequestBodyParametersProduct.md
 docs/RewardsCreateResponseBody.md
 docs/RewardsCreateResponseBodyAttributes.md
@@ -1485,6 +1488,7 @@ docs/RewardsUpdateRequestBodyAttributes.md
 docs/RewardsUpdateRequestBodyParameters.md
 docs/RewardsUpdateRequestBodyParametersCampaign.md
 docs/RewardsUpdateRequestBodyParametersCoin.md
+docs/RewardsUpdateRequestBodyParametersLoyaltyPoints.md
 docs/RewardsUpdateRequestBodyParametersProduct.md
 docs/RewardsUpdateResponseBody.md
 docs/RewardsUpdateResponseBodyAttributes.md
@@ -2714,6 +2718,7 @@ src/model/MemberActivityDataRedemptionRewardCustomer.js
 src/model/MemberActivityDataRedemptionRewardParameters.js
 src/model/MemberActivityDataRedemptionRewardParametersCampaign.js
 src/model/MemberActivityDataRedemptionRewardParametersCoin.js
+src/model/MemberActivityDataRedemptionRewardParametersLoyaltyPoints.js
 src/model/MemberActivityDataRedemptionRewardParametersProduct.js
 src/model/MemberActivityDataRedemptionRewardProduct.js
 src/model/MemberActivityDataRedemptionRewardSku.js
@@ -3204,6 +3209,7 @@ src/model/RewardPurchaseTransaction.js
 src/model/RewardType.js
 src/model/RewardTypeCampaign.js
 src/model/RewardTypeCoin.js
+src/model/RewardTypeLoyaltyPoints.js
 src/model/RewardTypeProduct.js
 src/model/RewardValidityHoursResponse.js
 src/model/RewardsAssignmentsCreateRequestBody.js
@@ -3227,6 +3233,7 @@ src/model/RewardsCreateRequestBodyAttributes.js
 src/model/RewardsCreateRequestBodyParameters.js
 src/model/RewardsCreateRequestBodyParametersCampaign.js
 src/model/RewardsCreateRequestBodyParametersCoin.js
+src/model/RewardsCreateRequestBodyParametersLoyaltyPoints.js
 src/model/RewardsCreateRequestBodyParametersProduct.js
 src/model/RewardsCreateResponseBody.js
 src/model/RewardsCreateResponseBodyAttributes.js
@@ -3248,6 +3255,7 @@ src/model/RewardsUpdateRequestBodyAttributes.js
 src/model/RewardsUpdateRequestBodyParameters.js
 src/model/RewardsUpdateRequestBodyParametersCampaign.js
 src/model/RewardsUpdateRequestBodyParametersCoin.js
+src/model/RewardsUpdateRequestBodyParametersLoyaltyPoints.js
 src/model/RewardsUpdateRequestBodyParametersProduct.js
 src/model/RewardsUpdateResponseBody.js
 src/model/RewardsUpdateResponseBodyAttributes.js
@@ -4467,6 +4475,7 @@ test/model/MemberActivityDataRedemptionRewardCustomer.spec.js
 test/model/MemberActivityDataRedemptionRewardParameters.spec.js
 test/model/MemberActivityDataRedemptionRewardParametersCampaign.spec.js
 test/model/MemberActivityDataRedemptionRewardParametersCoin.spec.js
+test/model/MemberActivityDataRedemptionRewardParametersLoyaltyPoints.spec.js
 test/model/MemberActivityDataRedemptionRewardParametersProduct.spec.js
 test/model/MemberActivityDataRedemptionRewardProduct.spec.js
 test/model/MemberActivityDataRedemptionRewardSku.spec.js
@@ -4957,6 +4966,7 @@ test/model/RewardPurchaseTransaction.spec.js
 test/model/RewardType.spec.js
 test/model/RewardTypeCampaign.spec.js
 test/model/RewardTypeCoin.spec.js
+test/model/RewardTypeLoyaltyPoints.spec.js
 test/model/RewardTypeProduct.spec.js
 test/model/RewardValidityHoursResponse.spec.js
 test/model/RewardsAssignmentsCreateRequestBody.spec.js
@@ -4980,6 +4990,7 @@ test/model/RewardsCreateRequestBodyAttributes.spec.js
 test/model/RewardsCreateRequestBodyParameters.spec.js
 test/model/RewardsCreateRequestBodyParametersCampaign.spec.js
 test/model/RewardsCreateRequestBodyParametersCoin.spec.js
+test/model/RewardsCreateRequestBodyParametersLoyaltyPoints.spec.js
 test/model/RewardsCreateRequestBodyParametersProduct.spec.js
 test/model/RewardsCreateResponseBody.spec.js
 test/model/RewardsCreateResponseBodyAttributes.spec.js
@@ -5001,6 +5012,7 @@ test/model/RewardsUpdateRequestBodyAttributes.spec.js
 test/model/RewardsUpdateRequestBodyParameters.spec.js
 test/model/RewardsUpdateRequestBodyParametersCampaign.spec.js
 test/model/RewardsUpdateRequestBodyParametersCoin.spec.js
+test/model/RewardsUpdateRequestBodyParametersLoyaltyPoints.spec.js
 test/model/RewardsUpdateRequestBodyParametersProduct.spec.js
 test/model/RewardsUpdateResponseBody.spec.js
 test/model/RewardsUpdateResponseBodyAttributes.spec.js

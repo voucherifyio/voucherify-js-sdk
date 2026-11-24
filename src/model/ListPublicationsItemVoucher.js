@@ -133,7 +133,7 @@ ListPublicationsItemVoucher.prototype['campaign'] = undefined;
 ListPublicationsItemVoucher.prototype['gift'] = undefined;
 
 /**
-    * Defines the loyalty card details.
+    * Defines the legacy loyalty card details.
     * @type {Object | undefined}
     */
 ListPublicationsItemVoucher.prototype['loyalty_card'] = undefined;

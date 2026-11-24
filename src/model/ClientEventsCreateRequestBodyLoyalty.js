@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class ClientEventsCreateRequestBodyLoyalty {
     /**
      * Constructs a new <code>ClientEventsCreateRequestBodyLoyalty</code>.
-     * If an earning rule in a loyalty program is based on a custom event. This objects let&#39;s you specify the loyalty card to which the custom event should be attributed to.
+     * If an earning rule in a **legacy loyalty** campaign is based on a custom event, use this object to specify the loyalty card to which the custom event should be attributed.
      * @alias ClientEventsCreateRequestBodyLoyalty
      */
     constructor() { 

@@ -20,7 +20,7 @@ import ParameterFiltersListCustomerRedeemablesCampaignTypeConditions from './Par
 class ParameterFiltersListCustomerRedeemablesCampaignType {
     /**
      * Constructs a new <code>ParameterFiltersListCustomerRedeemablesCampaignType</code>.
-     * Type of the campaign. Allowed values: &#x60;DISCOUNT_COUPONS&#x60;, &#x60;REFERRAL_PROGRAM&#x60;, &#x60;GIFT_VOUCHERS&#x60;, &#x60;LOYALTY_PROGRAM&#x60;
+     * Type of the campaign. Allowed values: &#x60;DISCOUNT_COUPONS&#x60;, &#x60;REFERRAL_PROGRAM&#x60;, &#x60;GIFT_VOUCHERS&#x60;, &#x60;LOYALTY_PROGRAM&#x60;  &#x60;LOYALTY_PROGRAM&#x60; is the campaign type for **legacy loyalty** (loyalty card campaigns). It does not refer to &#x60;v2/loyalties&#x60; programs.
      * @alias ParameterFiltersListCustomerRedeemablesCampaignType
      */
     constructor() { 

@@ -45,6 +45,8 @@ class CardLifetimeBucketPoints {
         obj['returned'] = 0;
         obj['locked'] = 0;
         obj['unlocked'] = 0;
+        obj['referrer_earned'] = 0;
+        obj['referee_earned'] = 0;
     }
 
     /**
@@ -93,6 +95,12 @@ class CardLifetimeBucketPoints {
             }
             if (data.hasOwnProperty('unlocked')) {
                 obj['unlocked'] = ApiClient.convertToType(data['unlocked'], 'Number');
+            }
+            if (data.hasOwnProperty('referrer_earned')) {
+                obj['referrer_earned'] = ApiClient.convertToType(data['referrer_earned'], 'Number');
+            }
+            if (data.hasOwnProperty('referee_earned')) {
+                obj['referee_earned'] = ApiClient.convertToType(data['referee_earned'], 'Number');
             }
         }
         return obj;
@@ -196,6 +204,20 @@ CardLifetimeBucketPoints.prototype['locked'] = 0;
     * @default 0
     */
 CardLifetimeBucketPoints.prototype['unlocked'] = 0;
+
+/**
+    * Total points credited as a referrer from a `LOYALTY_POINTS` referral reward. Already included in `total`, not in `earned`.
+    * @type {Number | undefined}
+    * @default 0
+    */
+CardLifetimeBucketPoints.prototype['referrer_earned'] = 0;
+
+/**
+    * Total points credited as a referee from a `LOYALTY_POINTS` referral reward. Already included in `total`, not in `earned`.
+    * @type {Number | undefined}
+    * @default 0
+    */
+CardLifetimeBucketPoints.prototype['referee_earned'] = 0;
 
 
 

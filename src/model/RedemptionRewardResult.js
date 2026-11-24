@@ -231,7 +231,7 @@ RedemptionRewardResult.prototype['parameters'] = undefined;
 RedemptionRewardResult.prototype['metadata'] = undefined;
 
 /**
-    * Reward type.
+    * Reward type. `LOYALTY_POINTS` credits points on a `v2/loyalties` (loyalty hub) card (for example from a referral tier).
     * @type {(keyof typeof RedemptionRewardResult.TypeEnum) | undefined}
     */
 RedemptionRewardResult.prototype['type'] = undefined;
@@ -278,7 +278,13 @@ RedemptionRewardResult.prototype['type'] = undefined;
          * value: "MATERIAL"
          * @constant
          */
-        "MATERIAL": "MATERIAL"    
+        "MATERIAL": "MATERIAL",
+    
+        /**
+         * value: "LOYALTY_POINTS"
+         * @constant
+         */
+        "LOYALTY_POINTS": "LOYALTY_POINTS"    
     };
 
 

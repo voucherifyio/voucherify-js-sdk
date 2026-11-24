@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class SimpleLoyaltyCard {
     /**
      * Constructs a new <code>SimpleLoyaltyCard</code>.
-     * Simplified loyalty card data.
+     * Simplified legacy loyalty card data.
      * @alias SimpleLoyaltyCard
      */
     constructor() { 

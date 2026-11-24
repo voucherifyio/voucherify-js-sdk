@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class RewardTypeCoin {
     /**
      * Constructs a new <code>RewardTypeCoin</code>.
-     * Defines the ratio by mapping the number of loyalty points in points_ratio to a predefined cash amount in exchange_ratio.
+     * Defines the ratio by mapping the number of legacy loyalty points in &#x60;points_rati&#x60;o to a predefined cash amount in &#x60;exchange_ratio&#x60;.
      * @alias RewardTypeCoin
      */
     constructor() { 
@@ -72,13 +72,13 @@ class RewardTypeCoin {
 
 
 /**
-    * The cash equivalent of the points defined in the points_ratio property.
+    * The cash equivalent of the points defined in the `points_ratio` property.
     * @type {Number | undefined}
     */
 RewardTypeCoin.prototype['exchange_ratio'] = undefined;
 
 /**
-    * The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
+    * The number of loyalty points (**legacy loyalty**) that will map to the predefined cash amount defined by the `exchange_ratio` property.
     * @type {Number | undefined}
     */
 RewardTypeCoin.prototype['points_ratio'] = undefined;

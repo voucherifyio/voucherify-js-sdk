@@ -28,6 +28,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class EarningRule {
     /**
      * Constructs a new <code>EarningRule</code>.
+     * Earning rule for a **legacy loyalty** campaign. For Loyalty hub earning rules, see &#x60;/v2/loyalties/earning-rules&#x60;.
      * @alias EarningRule
      */
     constructor() { 

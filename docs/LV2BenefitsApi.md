@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get benefit
 
-Returns a single benefit by its ID.
+Returns a single benefit by its ID. A successful call records no activity.
 
 ### Example
 

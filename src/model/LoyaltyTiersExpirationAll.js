@@ -21,7 +21,7 @@ import LoyaltyTiersExpirationAllStartDate from './LoyaltyTiersExpirationAllStart
 class LoyaltyTiersExpirationAll {
     /**
      * Constructs a new <code>LoyaltyTiersExpirationAll</code>.
-     * Defines the Loyalty Tiers Expiration.
+     * **Legacy loyalty.** Defines the Loyalty Tiers Expiration.
      * @alias LoyaltyTiersExpirationAll
      */
     constructor() { 

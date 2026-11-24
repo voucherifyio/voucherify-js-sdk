@@ -215,13 +215,13 @@ CampaignsCreateRequestBody.prototype['description'] = undefined;
 CampaignsCreateRequestBody.prototype['type'] = undefined;
 
 /**
-    * If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
+    * If this value is set to `true`, customers will be able to join the campaign only once. For **legacy loyalty** campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
     * @type {Boolean | undefined}
     */
 CampaignsCreateRequestBody.prototype['join_once'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 CampaignsCreateRequestBody.prototype['auto_join'] = undefined;

@@ -182,7 +182,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.1.0).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/releases/tag/sdk-js-3.2.0).
 
 ## 🔐 Authorization
 
@@ -287,6 +287,12 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-11-23** - `3.2.0`:
+    - Added Loyalty referral fields: `referrer_points_earned` and `referee_points_earned` on `CardDailyReportEntry`, `referrer_earned` and `referee_earned` on `CardLifetimeBucketPoints`, the transaction types `REFERRER_POINTS_EARNED` and `REFEREE_POINTS_EARNED` on `CardTransaction`, and the status `DELETED` on `V2LoyaltiesEarningRulesGetResponseBody`.
+    - Added `referral_tier` as `related_object_type` on reward assignment models. `RewardsAssignmentsCreateRequestBody` accepts optional `related_object_type` (`campaign` or `referral_tier`) and `related_object_id` for assigning a `LOYALTY_POINTS` reward to a referral tier. The SDK does not set `related_object_type` by default, so assigning a reward to a campaign with `campaign` works as before.
+    - Added the `LOYALTY_POINTS` reward type: the `LOYALTY_POINTS` value on reward `type` fields, and `parameters.loyalty_points` (`points`, `program_id`, `card_definition_id`, `on_missing_member`) on reward create, update, response, and member activity parameter models.
+    - Added optional `type` on `RewardsCreateRequestBody` (`CAMPAIGN`, `MATERIAL`, `COIN`, `LOYALTY_POINTS`). The SDK does not set it by default and Voucherify infers the type from `parameters`, so creating a campaign, product, or pay-with-points reward without `type` works as before.
+    - Fixed: `price_formula` in `ApplicableTo` and `InapplicableTo` typed as `String` (was `Number`). The API expects a formula expression string such as `IF(ORDER_AMOUNT > 300;ORDER_ITEM_PRICE * 0.8;ORDER_ITEM_PRICE)`.
 - **2026-10-14** - `3.1.0`:
     - Added Loyalty v2 API methods under `/v2/loyalties` for member create, update, delete, activate, and deactivate, point adjustments, order payments, reward purchase, and refund, plus memberships, cards, examine, and reports.
     - Added `loyalty_memberships` on customer summary models.
@@ -1545,6 +1551,7 @@ Class | Method | HTTP request | Description
  - [Voucherify.MemberActivityDataRedemptionRewardParameters](docs/MemberActivityDataRedemptionRewardParameters.md)
  - [Voucherify.MemberActivityDataRedemptionRewardParametersCampaign](docs/MemberActivityDataRedemptionRewardParametersCampaign.md)
  - [Voucherify.MemberActivityDataRedemptionRewardParametersCoin](docs/MemberActivityDataRedemptionRewardParametersCoin.md)
+ - [Voucherify.MemberActivityDataRedemptionRewardParametersLoyaltyPoints](docs/MemberActivityDataRedemptionRewardParametersLoyaltyPoints.md)
  - [Voucherify.MemberActivityDataRedemptionRewardParametersProduct](docs/MemberActivityDataRedemptionRewardParametersProduct.md)
  - [Voucherify.MemberActivityDataRedemptionRewardProduct](docs/MemberActivityDataRedemptionRewardProduct.md)
  - [Voucherify.MemberActivityDataRedemptionRewardSku](docs/MemberActivityDataRedemptionRewardSku.md)
@@ -2035,6 +2042,7 @@ Class | Method | HTTP request | Description
  - [Voucherify.RewardType](docs/RewardType.md)
  - [Voucherify.RewardTypeCampaign](docs/RewardTypeCampaign.md)
  - [Voucherify.RewardTypeCoin](docs/RewardTypeCoin.md)
+ - [Voucherify.RewardTypeLoyaltyPoints](docs/RewardTypeLoyaltyPoints.md)
  - [Voucherify.RewardTypeProduct](docs/RewardTypeProduct.md)
  - [Voucherify.RewardValidityHoursResponse](docs/RewardValidityHoursResponse.md)
  - [Voucherify.RewardsAssignmentsCreateRequestBody](docs/RewardsAssignmentsCreateRequestBody.md)
@@ -2058,6 +2066,7 @@ Class | Method | HTTP request | Description
  - [Voucherify.RewardsCreateRequestBodyParameters](docs/RewardsCreateRequestBodyParameters.md)
  - [Voucherify.RewardsCreateRequestBodyParametersCampaign](docs/RewardsCreateRequestBodyParametersCampaign.md)
  - [Voucherify.RewardsCreateRequestBodyParametersCoin](docs/RewardsCreateRequestBodyParametersCoin.md)
+ - [Voucherify.RewardsCreateRequestBodyParametersLoyaltyPoints](docs/RewardsCreateRequestBodyParametersLoyaltyPoints.md)
  - [Voucherify.RewardsCreateRequestBodyParametersProduct](docs/RewardsCreateRequestBodyParametersProduct.md)
  - [Voucherify.RewardsCreateResponseBody](docs/RewardsCreateResponseBody.md)
  - [Voucherify.RewardsCreateResponseBodyAttributes](docs/RewardsCreateResponseBodyAttributes.md)
@@ -2079,6 +2088,7 @@ Class | Method | HTTP request | Description
  - [Voucherify.RewardsUpdateRequestBodyParameters](docs/RewardsUpdateRequestBodyParameters.md)
  - [Voucherify.RewardsUpdateRequestBodyParametersCampaign](docs/RewardsUpdateRequestBodyParametersCampaign.md)
  - [Voucherify.RewardsUpdateRequestBodyParametersCoin](docs/RewardsUpdateRequestBodyParametersCoin.md)
+ - [Voucherify.RewardsUpdateRequestBodyParametersLoyaltyPoints](docs/RewardsUpdateRequestBodyParametersLoyaltyPoints.md)
  - [Voucherify.RewardsUpdateRequestBodyParametersProduct](docs/RewardsUpdateRequestBodyParametersProduct.md)
  - [Voucherify.RewardsUpdateResponseBody](docs/RewardsUpdateResponseBody.md)
  - [Voucherify.RewardsUpdateResponseBodyAttributes](docs/RewardsUpdateResponseBodyAttributes.md)

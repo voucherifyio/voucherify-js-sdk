@@ -23,6 +23,7 @@ import MappingPoints from './MappingPoints';
 class LoyaltyTier {
     /**
      * Constructs a new <code>LoyaltyTier</code>.
+     * Loyalty tier within a **legacy loyalty** campaign.
      * @alias LoyaltyTier
      */
     constructor() { 

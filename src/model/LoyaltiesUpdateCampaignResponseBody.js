@@ -26,7 +26,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class LoyaltiesUpdateCampaignResponseBody {
     /**
      * Constructs a new <code>LoyaltiesUpdateCampaignResponseBody</code>.
-     * Response body schema for **PUT** &#x60;/loyalties/{campaignId}&#x60;.
+     * **Legacy loyalty.** Response body schema for **PUT** &#x60;/loyalties/{campaignId}&#x60;.
      * @alias LoyaltiesUpdateCampaignResponseBody
      */
     constructor() { 
@@ -286,13 +286,13 @@ LoyaltiesUpdateCampaignResponseBody.prototype['type'] = undefined;
 LoyaltiesUpdateCampaignResponseBody.prototype['voucher'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 LoyaltiesUpdateCampaignResponseBody.prototype['auto_join'] = undefined;
 
 /**
-    * Always set to `true` for loyalty campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
+    * Always set to `true` for **legacy loyalty** campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
     * @type {Boolean | undefined}
     */
 LoyaltiesUpdateCampaignResponseBody.prototype['join_once'] = undefined;

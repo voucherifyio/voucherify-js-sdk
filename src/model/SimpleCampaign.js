@@ -226,7 +226,7 @@ SimpleCampaign.prototype['referral_program'] = undefined;
 SimpleCampaign.prototype['auto_join'] = undefined;
 
 /**
-    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
+    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for **legacy loyalty** campaigns and it cannot be changed in them.
     * @type {Boolean | undefined}
     */
 SimpleCampaign.prototype['join_once'] = undefined;

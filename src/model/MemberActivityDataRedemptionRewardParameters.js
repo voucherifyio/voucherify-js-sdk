@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import MemberActivityDataRedemptionRewardParametersCampaign from './MemberActivityDataRedemptionRewardParametersCampaign';
 import MemberActivityDataRedemptionRewardParametersCoin from './MemberActivityDataRedemptionRewardParametersCoin';
+import MemberActivityDataRedemptionRewardParametersLoyaltyPoints from './MemberActivityDataRedemptionRewardParametersLoyaltyPoints';
 import MemberActivityDataRedemptionRewardParametersProduct from './MemberActivityDataRedemptionRewardParametersProduct';
 /**
  * The MemberActivityDataRedemptionRewardParameters model module.
@@ -57,6 +58,9 @@ class MemberActivityDataRedemptionRewardParameters {
             if (data.hasOwnProperty('product')) {
                 obj['product'] = MemberActivityDataRedemptionRewardParametersProduct.constructFromObject(data['product']);
             }
+            if (data.hasOwnProperty('loyalty_points')) {
+                obj['loyalty_points'] = MemberActivityDataRedemptionRewardParametersLoyaltyPoints.constructFromObject(data['loyalty_points']);
+            }
         }
         return obj;
     }
@@ -78,6 +82,10 @@ class MemberActivityDataRedemptionRewardParameters {
         // validate the optional field `product`
         if (data['product']) { // data not null
           MemberActivityDataRedemptionRewardParametersProduct.validateJSON(data['product']);
+        }
+        // validate the optional field `loyalty_points`
+        if (data['loyalty_points']) { // data not null
+          MemberActivityDataRedemptionRewardParametersLoyaltyPoints.validateJSON(data['loyalty_points']);
         }
 
         return true;
@@ -102,6 +110,11 @@ MemberActivityDataRedemptionRewardParameters.prototype['coin'] = undefined;
     * @type {MemberActivityDataRedemptionRewardParametersProduct | undefined}
     */
 MemberActivityDataRedemptionRewardParameters.prototype['product'] = undefined;
+
+/**
+    * @type {MemberActivityDataRedemptionRewardParametersLoyaltyPoints | undefined}
+    */
+MemberActivityDataRedemptionRewardParameters.prototype['loyalty_points'] = undefined;
 
 
 

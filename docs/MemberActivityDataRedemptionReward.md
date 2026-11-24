@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **updatedAt** | **String** |  | [optional] 
 **parameters** | [**MemberActivityDataRedemptionRewardParameters**](MemberActivityDataRedemptionRewardParameters.md) |  | [optional] 
 **metadata** | **Object** | A set of custom key/value pairs that you can attach to a reward. The metadata object stores all custom attributes assigned to the reward. | [optional] 
-**type** | **String** | Reward type. | [optional] 
+**type** | **String** | Reward type. &#x60;LOYALTY_POINTS&#x60; credits points on a &#x60;v2/loyalties&#x60; (loyalty hub) card (for example from a referral tier). | [optional] 
 
 
 
@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 * `COIN` (value: `"COIN"`)
 
 * `MATERIAL` (value: `"MATERIAL"`)
+
+* `LOYALTY_POINTS` (value: `"LOYALTY_POINTS"`)
 
 
 

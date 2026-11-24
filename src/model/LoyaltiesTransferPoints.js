@@ -19,6 +19,7 @@ import ApiClient from '../ApiClient';
 class LoyaltiesTransferPoints {
     /**
      * Constructs a new <code>LoyaltiesTransferPoints</code>.
+     * Request body for transferring points between **legacy loyalty** cards.
      * @alias LoyaltiesTransferPoints
      */
     constructor() { 

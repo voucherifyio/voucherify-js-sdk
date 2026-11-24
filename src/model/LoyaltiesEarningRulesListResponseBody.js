@@ -20,7 +20,7 @@ import EarningRule from './EarningRule';
 class LoyaltiesEarningRulesListResponseBody {
     /**
      * Constructs a new <code>LoyaltiesEarningRulesListResponseBody</code>.
-     * Response body schema for listing earning rules using **GET** &#x60;v1/loyalties/{campaignId}/earning-rules&#x60; endpoint.
+     * **Legacy loyalty.** Response body schema for listing earning rules using **GET** &#x60;v1/loyalties/{campaignId}/earning-rules&#x60; endpoint.
      * @alias LoyaltiesEarningRulesListResponseBody
      */
     constructor() { 

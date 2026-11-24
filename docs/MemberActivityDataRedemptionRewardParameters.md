@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **campaign** | [**MemberActivityDataRedemptionRewardParametersCampaign**](MemberActivityDataRedemptionRewardParametersCampaign.md) |  | [optional] 
 **coin** | [**MemberActivityDataRedemptionRewardParametersCoin**](MemberActivityDataRedemptionRewardParametersCoin.md) |  | [optional] 
 **product** | [**MemberActivityDataRedemptionRewardParametersProduct**](MemberActivityDataRedemptionRewardParametersProduct.md) |  | [optional] 
+**loyaltyPoints** | [**MemberActivityDataRedemptionRewardParametersLoyaltyPoints**](MemberActivityDataRedemptionRewardParametersLoyaltyPoints.md) |  | [optional] 
 
 

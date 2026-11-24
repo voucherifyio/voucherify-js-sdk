@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class CustomerLoyaltyCampaignsEntryValue {
     /**
      * Constructs a new <code>CustomerLoyaltyCampaignsEntryValue</code>.
-     * Contains details about the point balances left on loyalty cards and the number of referred customers in each campaign.
+     * Contains details about the point balances left on loyalty cards (**legacy loyalty**) and the number of referred customers in each campaign.
      * @alias CustomerLoyaltyCampaignsEntryValue
      */
     constructor() { 
@@ -85,7 +85,7 @@ class CustomerLoyaltyCampaignsEntryValue {
 CustomerLoyaltyCampaignsEntryValue.prototype['points'] = undefined;
 
 /**
-    * Customer's loyalty tier within the campaign.
+    * Customer's loyalty tier within the **legacy loyalty** campaign.
     * @type {String | undefined}
     */
 CustomerLoyaltyCampaignsEntryValue.prototype['loyalty_tier'] = undefined;

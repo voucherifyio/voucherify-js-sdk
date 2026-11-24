@@ -148,13 +148,13 @@ RewardsAssignmentsGetResponseBody.prototype['updated_at'] = undefined;
 RewardsAssignmentsGetResponseBody.prototype['object'] = 'reward_assignment';
 
 /**
-    * Related object ID to which the reward was assigned.
+    * Related object ID to which the reward was assigned. For `related_object_type` `campaign`, this is the campaign ID. For `referral_tier`, this is the referral tier ID.
     * @type {String | undefined}
     */
 RewardsAssignmentsGetResponseBody.prototype['related_object_id'] = undefined;
 
 /**
-    * Related object type to which the reward was assigned.
+    * Related object type to which the reward was assigned. Use `campaign` for **legacy loyalty** campaign rewards. Use `referral_tier` for `LOYALTY_POINTS` rewards that credit a `v2/loyalties` (loyalty hub) card from a referral tier. A `LOYALTY_POINTS` reward can only be assigned to a referral tier.
     * @type {(keyof typeof RewardsAssignmentsGetResponseBody.RelatedObjectTypeEnum) | undefined}
     * @default 'campaign'
     */
@@ -195,7 +195,13 @@ RewardsAssignmentsGetResponseBody.prototype['parameters'] = undefined;
          * value: "campaign"
          * @constant
          */
-        "campaign": "campaign"    
+        "campaign": "campaign",
+    
+        /**
+         * value: "referral_tier"
+         * @constant
+         */
+        "referral_tier": "referral_tier"    
     };
 
 

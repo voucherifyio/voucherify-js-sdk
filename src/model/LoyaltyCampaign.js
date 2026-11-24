@@ -26,6 +26,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class LoyaltyCampaign {
     /**
      * Constructs a new <code>LoyaltyCampaign</code>.
+     * Loyalty campaign object (**legacy loyalty**). Created and managed through &#x60;/v1/loyalties&#x60; and campaign endpoints with type &#x60;LOYALTY_PROGRAM&#x60;.
      * @alias LoyaltyCampaign
      */
     constructor() { 
@@ -285,13 +286,13 @@ LoyaltyCampaign.prototype['type'] = undefined;
 LoyaltyCampaign.prototype['voucher'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 LoyaltyCampaign.prototype['auto_join'] = undefined;
 
 /**
-    * Always set to `true` for loyalty campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
+    * Always set to `true` for **legacy loyalty** campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
     * @type {Boolean | undefined}
     */
 LoyaltyCampaign.prototype['join_once'] = undefined;

@@ -19,7 +19,7 @@ import ApiClient from '../ApiClient';
 class CustomerSummaryRedemptionsLoyaltyCard {
     /**
      * Constructs a new <code>CustomerSummaryRedemptionsLoyaltyCard</code>.
-     * Summary of loyalty points.
+     * Summary of loyalty points (**legacy loyalty**).
      * @alias CustomerSummaryRedemptionsLoyaltyCard
      */
     constructor() { 

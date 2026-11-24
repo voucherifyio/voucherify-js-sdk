@@ -82,7 +82,7 @@ class V2LoyaltiesBenefitsGetResponseBodyPoints {
 V2LoyaltiesBenefitsGetResponseBodyPoints.prototype['value'] = undefined;
 
 /**
-    * ID of the card definition whose cards receive the points. The card definition must exist and be `ACTIVE`.
+    * ID of the card definition whose cards receive the points. The card definition must exist. Creating with `status: ACTIVE`, or updating with this object, requires an `ACTIVE` card definition.
     * @type {String | undefined}
     */
 V2LoyaltiesBenefitsGetResponseBodyPoints.prototype['card_definition_id'] = undefined;

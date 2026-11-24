@@ -24,7 +24,7 @@ import ValidityTimeframe from './ValidityTimeframe';
 class LoyaltiesUpdateCampaignRequestBody {
     /**
      * Constructs a new <code>LoyaltiesUpdateCampaignRequestBody</code>.
-     * Request body schema for **PUT** &#x60;/loyalties/{campaignId}&#x60;.
+     * **Legacy loyalty.** Request body schema for **PUT** &#x60;/loyalties/{campaignId}&#x60;.
      * @alias LoyaltiesUpdateCampaignRequestBody
      */
     constructor() { 
@@ -239,13 +239,13 @@ LoyaltiesUpdateCampaignRequestBody.prototype['access_settings'] = undefined;
 LoyaltiesUpdateCampaignRequestBody.prototype['activity_duration_after_publishing'] = undefined;
 
 /**
-    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
+    * If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for **legacy loyalty** campaigns and it cannot be changed in them.
     * @type {Boolean | undefined}
     */
 LoyaltiesUpdateCampaignRequestBody.prototype['join_once'] = undefined;
 
 /**
-    * Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+    * Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
     * @type {Boolean | undefined}
     */
 LoyaltiesUpdateCampaignRequestBody.prototype['auto_join'] = undefined;
